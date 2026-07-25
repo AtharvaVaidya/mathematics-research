@@ -184,7 +184,76 @@ finite global support termination or a relation between the two resonant
 constants through the common outer Hurwitz cover.  See
 `current_context/CASE_C_CAP_RESONANT_STAR_NO_GO.md`.
 
-### 1.4 Fixed-plane Green formula
+The first attempted realization of that cross-cap relation has also been
+closed.  The tempting \(2/3\) ordinary-Jacobian conormal truncation is not
+the case-c diagonal system: the complete chart has eleven \(P\)-layers,
+sixteen \(Q\)-layers, and an Euler bracket.  At deficit four the omitted
+tail is nonzero and cancels the retained middle term exactly on a
+certified square-branch point.  Its remainder is nonzero modulo the outer
+quartic, so the truncated quotient and its discriminant cannot be
+identified with the canonical radial obstruction.  See
+`current_context/CASE_C_CONORMAL_TRUNCATION_NO_GO.md`.
+
+The outer quartic itself now has an exact geometric interpretation.  Its
+four roots are the four simple, unramified residual points in the
+degree-\(21\) fiber with local monodromy \((17)(1^4)\), not unused branch
+points.  Consequently an equivariant injection of the eight or twelve
+cap leaves into the outer sheets would be impossible, but no such
+leaf-to-sheet map is currently known.  A simultaneous formal
+\((8,12)\) cap over the quartic incidence algebra proves that the four
+valuations and all completed local jets are compatible.  See
+`current_context/CASE_C_OUTER_QUARTIC_INCIDENCE_NO_GO.md`.
+
+There is a stronger representative-independent no-go.  At deficits four
+and five the complete new-block operators have two-dimensional cokernels,
+but their reductions are surjective onto \(K[w]/(E)\) and
+\(K[w]/(E^2)\), respectively, over both rational and the cubic outer
+factors modulo \(32003\).  Raw quartic remainder can therefore be changed
+arbitrarily without changing the full solvability problem and is not a
+cokernel invariant.  See
+`current_context/CASE_C_OUTER_QUARTIC_COKERNEL_NO_GO.md`.
+
+### 1.4 Pseudo-plane function-field degree
+
+For the Route A quadratic pseudo-plane
+\[
+B=\mathbf C[u,v,w]/(w^2-u-u^2v),
+\]
+there is a new global normalization theorem.  More generally, let
+\(S=\operatorname {Spec}B\) be a normal integral affine complex surface
+with \(B^\times=\mathbf C^\times\).  If an étale map
+\(S\to\mathbf A^2\) has finite function-field extension, that extension
+cannot be nontrivial and Galois.  Indeed, its finite normalization must
+have a branch divisor by purity and
+\(\pi_1^{\mathrm{et}}(\mathbf A^2)=1\); Galois symmetry makes every prime
+above that divisor ramified and hence absent from \(S\), forcing the
+branch equation to pull back to a nonconstant unit.
+
+Every quadratic extension in characteristic zero is Galois, so a Route A
+Darboux pair cannot have generic degree \(2\).  This is a rigorous
+all-coefficient obstruction, not a bounded search.  See
+`current_context/ROUTE_A_QUADRATIC_DEGREE_EXCLUSION.md`.
+
+The first surviving degree, \(3\), is now sharply constrained rather than
+excluded.  It must have \(S_3\) closure.  Above every branch component,
+\[
+\operatorname {div}_Y(f)=2E+C,
+\]
+where the ramified double sheet \(E\) is omitted and the unramified sheet
+\(C\) is retained as a principal divisor on \(S\).  Since
+\(\operatorname {Cl}(B)\simeq\mathbf Z/2\), neither distinguished
+nonprincipal boundary curve can be \(C\), and the mandatory collision
+curve is not a branch component.  The exact model
+\[
+(s,t)\longmapsto(s,t^3-3st)
+\]
+realizes the same \(2+1\) branch pattern after deleting its ramification
+curve, while \(V(u-1)\subset S\) supplies an internal class-zero prime.
+Thus cubic ramification, the class group, and the symplectic form alone
+do not contradict one another.  See
+`current_context/ROUTE_A_CUBIC_BRANCH_SECTION_AUDIT.md`.
+
+### 1.5 Fixed-plane Green formula
 
 For the fixed-source-plane construction, the global pullback equations
 give the defect
@@ -301,6 +370,13 @@ Several attractive shortcuts are now known to be false.
 - The transverse \((2,3)\) root-consumption argument does not extend to
   \((3,4)\).
 - All local Puiseux cap jets can coexist in exact formal bracket germs.
+- The \(2/3\) conormal truncation omits essential case-c Laurent tails,
+  and raw remainder modulo the outer quartic is not a full-system
+  invariant.
+- The four outer-quartic points are unramified incidence sheets, not an
+  additional Riemann--Hurwitz obstruction.
+- Galois normalization excludes Route A degree \(2\), but the required
+  non-Galois cubic \(2+1\) branch geometry is locally consistent.
 - Global endpoint pairing and sheet-loss counts add no contradiction
   before finality or section realization is imposed.
 
@@ -346,10 +422,12 @@ One concrete formulation is:
 
 By the divisor-invariance theorem, this would give full field descent.
 Unlike one-boundary Rees membership or a local contact tree, this can see
-both caps and the finite polynomial cutoff simultaneously.  The natural
-small target is the first cross-cap outer remainder (equivalently the
-quartic relation \(wV^2-LU^3\) in the normalized outer variables), not the
-full 165-coordinate system.
+both caps and the finite polynomial cutoff simultaneously.  The raw
+outer-quartic remainder is now known not to descend through the full
+new-block quotient.  The viable small target is instead a genuine
+monodromy-equivariant incidence correspondence from cap leaves to outer
+sheets, or an adjoint/transvectant of the full cokernel that constructs
+such a correspondence.
 
 The fixed-plane analogue is:
 
@@ -363,10 +441,14 @@ termination, finality, or higher-order integrability.
 
 The research program should therefore prioritize:
 
-1. cross-cap termination through the common outer Hurwitz cover;
-2. minimal-resolution finality coupled to actual polynomial sections;
-3. second-order extension of the fixed-source Hermite-CRT Keller jet; and
-4. exact countermodels whenever a proposed global inequality is too weak.
+1. a global leaf-to-sheet incidence theorem through the common outer
+   Hurwitz cover, rather than raw quartic divisibility;
+2. the Route A non-Galois cubic, especially the interaction between its
+   principal retained branch sections and the distinguished
+   \(\mathbf Z/2\) boundary class;
+3. minimal-resolution finality coupled to actual polynomial sections;
+4. second-order extension of the fixed-source Hermite-CRT Keller jet; and
+5. exact countermodels whenever a proposed global inequality is too weak.
 
 It should not return to unrestricted coefficient brute force except for
 small, theorem-driven certificate targets.

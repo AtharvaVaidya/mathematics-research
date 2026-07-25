@@ -126,6 +126,44 @@ identity is valid but retains a homogeneous constant, so no global
 contradiction is claimed; see
 [`current_context/CAP_PUISEUX_EULER_JET_INVARIANT.md`](current_context/CAP_PUISEUX_EULER_JET_INVARIANT.md).
 
+The first proposed cross-cap conormal shortcut has now been audited and
+withdrawn.  The actual diagonal chart has eleven \(P\)-layers and sixteen
+\(Q\)-layers and satisfies an Euler bracket.  At deficit four, the three
+Laurent-tail pairings omitted by the \(2/3\) ordinary-Jacobian truncation
+are nonzero and cancel the retained middle contribution exactly.  Hence
+its local quotient and completed-square discriminant are not invariants
+of the full case-c system; see
+[`current_context/CASE_C_CONORMAL_TRUNCATION_NO_GO.md`](current_context/CASE_C_CONORMAL_TRUNCATION_NO_GO.md).
+The associated outer quartic is instead the four-point unramified
+residual part of the degree-\(21\) fiber with monodromy
+\((17)(1^4)\).  It yields a sharp conditional obstruction—there is no
+invariant subset of \(8\) or \(12\) sheets—but an equivariant injection
+from cap leaves to outer sheets has not been proved.  Exact formal caps
+over the quartic incidence algebra show that valuations and completed
+local jets alone remain compatible; see
+[`current_context/CASE_C_OUTER_QUARTIC_INCIDENCE_NO_GO.md`](current_context/CASE_C_OUTER_QUARTIC_INCIDENCE_NO_GO.md).
+At the full deficit-\(4\) and deficit-\(5\) linear quotients, the
+new-block operators are surjective modulo the quartic and its square on
+all three outer Hurwitz factors.  Thus even raw \(E\)- or \(E^2\)-remainder
+is not a cokernel invariant; any surviving quartic construction must use
+a nontrivial adjoint or transvectant.  See
+[`current_context/CASE_C_OUTER_QUARTIC_COKERNEL_NO_GO.md`](current_context/CASE_C_OUTER_QUARTIC_COKERNEL_NO_GO.md).
+
+The pseudo-plane construction route has a new degree-independent
+function-field restriction.  For any étale map from a normal affine
+complex surface with only constant units to \(\mathbf A^2\), a finite
+nontrivial Galois function-field extension is impossible: normalization,
+purity, and Galois inertia would otherwise make a branch equation pull
+back to a nonconstant unit.  Applied to the quadratic pseudo-plane, this
+excludes generic degree \(2\).  A surviving cubic must have \(S_3\)
+closure and, over each branch component, retain a principal unramified
+sheet while omitting a ramified double sheet.  The two nonprincipal
+boundary curves cannot be retained sheets, but an exact cubic model shows
+that the \(2+1\) branch geometry itself is consistent.  See
+[`current_context/ROUTE_A_QUADRATIC_DEGREE_EXCLUSION.md`](current_context/ROUTE_A_QUADRATIC_DEGREE_EXCLUSION.md)
+and
+[`current_context/ROUTE_A_CUBIC_BRANCH_SECTION_AUDIT.md`](current_context/ROUTE_A_CUBIC_BRANCH_SECTION_AUDIT.md).
+
 The counterexample-first fixed-source-plane route has a second independently
 audited global theorem.  If a Darboux pair existed in its explicit pinch
 ring and \(F(U,V)=D H\) were the pullback of the conductor-image equation,
