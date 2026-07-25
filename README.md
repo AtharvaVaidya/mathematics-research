@@ -98,6 +98,12 @@ couple effectivity to finality rather than add more scalar inequalities.
 The ledger is explicitly numerical—not a morphism or counterexample—and is
 recorded in
 [`current_context/GLOBAL_PULLBACK_INTERSECTION_SYSTEM.md`](current_context/GLOBAL_PULLBACK_INTERSECTION_SYSTEM.md).
+For that ledger, the defect vector \(db-\eta\) now rules out every
+branched or crossing exceptional cap over its decisive positive-label
+final curve while the old coefficients are retained.  This is an exact
+arbitrary-cluster theorem, although a different enlarged global ledger
+remains possible; see
+[`current_context/FIXED_PLANE_FINALITY_CAP_OBSTRUCTION.md`](current_context/FIXED_PLANE_FINALITY_CAP_OBSTRUCTION.md).
 
 The workspace also contains a computer-assisted candidate elimination of
 the remaining \((72,108)\) degree pair in the Guccione--Guccione--
