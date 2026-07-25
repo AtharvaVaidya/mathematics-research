@@ -46,7 +46,15 @@ of \(Z,W\) is equivalent to descent of the single weighted invariant
 \(\Xi=ZW^k\); an exact torus countermodel shows why valuations and local
 symplecticity alone cannot force it.  See
 [`current_context/RADIAL_INVARIANT_FIELD_DESCENT.md`](current_context/RADIAL_INVARIANT_FIELD_DESCENT.md).
-The remaining global-invariance lemma is open.
+The reciprocal Wronskian further gives canonical Darboux powers
+\(S=\Xi^5\) and \(Y=T^{5k+2}\).  An exact trace-and-support argument proves
+that descent of either power is equivalent to descent of the entire
+comparison branch.  A genuine-endpoint completed-local cusp model shows
+that neither power is forced by the Liouville identity or the sole allowed
+ramification signature, isolating the normalized global infinity sheet and
+polynomial Newton support as essential.  See
+[`current_context/RECIPROCAL_DARBOUX_LIOUVILLE_AUDIT.md`](current_context/RECIPROCAL_DARBOUX_LIOUVILLE_AUDIT.md).
+The remaining global section lemma is open.
 
 The counterexample-first fixed-source-plane route has a second independently
 audited global theorem.  If a Darboux pair existed in its explicit pinch

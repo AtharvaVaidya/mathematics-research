@@ -63,6 +63,7 @@ SCRIPTS = [
     ROOT / "route_bd_integral_branch_rigidity.py",
     ROOT / "route_bd_radial_rational_descent_criterion.py",
     ROOT / "route_bd_radial_invariant_field_descent.py",
+    ROOT / "current_context" / "verify_reciprocal_darboux_liouville.py",
     ROOT / "route_bd_radial_cusp_complement_audit.py",
     ROOT / "route_bd_asymptotic_curve_invariant.py",
     ROOT / "route_bd_rees_cusp_degeneration_audit.py",
