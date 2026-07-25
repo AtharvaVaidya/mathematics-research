@@ -70,6 +70,17 @@ Darboux mate even in the normalization.  See
 This still constrains only the fixed-source construction and is not a proof
 of \(JC(2)\).
 
+The corresponding projective intersection system has now been pushed
+through the full effective pullback of the conductor image.  An exact dual
+certificate rules out the first scalar boundary skeleton, but a second
+19-component integral ledger satisfies every current effectivity,
+adjunction, ramification, and residual-cover equation.  It fails the
+minimal-resolution final-curve condition, so the next obstruction must
+couple effectivity to finality rather than add more scalar inequalities.
+The ledger is explicitly numerical—not a morphism or counterexample—and is
+recorded in
+[`current_context/GLOBAL_PULLBACK_INTERSECTION_SYSTEM.md`](current_context/GLOBAL_PULLBACK_INTERSECTION_SYSTEM.md).
+
 The workspace also contains a computer-assisted candidate elimination of
 the remaining \((72,108)\) degree pair in the Guccione--Guccione--
 Horruitiner--Valqui reduction.  If its full interface and reproducibility

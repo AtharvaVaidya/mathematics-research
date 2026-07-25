@@ -121,6 +121,7 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_fixed_plane_residual_hamiltonian.py",
     ROOT / "current_context" / "verify_fixed_plane_linking_countermodel.py",
     ROOT / "current_context" / "verify_fixed_plane_residual_arm_entry.py",
+    ROOT / "current_context" / "verify_fixed_plane_global_pullback_system.py",
     ROOT / "current_context" / "verify_fixed_plane_ab_boundary.py",
     ROOT / "current_context" / "verify_fixed_plane_affine_tail_critical.py",
     ROOT / "current_context" / "verify_fixed_plane_constant_tail_critical.py",
