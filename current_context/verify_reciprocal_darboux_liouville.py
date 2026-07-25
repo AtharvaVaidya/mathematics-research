@@ -45,6 +45,7 @@ def verify_general_weight_arithmetic() -> None:
     n = 5 * m + 2
 
     assert sp.expand(p + q - n) == 0
+    assert sp.expand(5 * m - n) == -2
     assert sp.gcd(p, n) == 1
     assert sp.gcd(5, n) == 1
 
@@ -75,6 +76,10 @@ def verify_k1_wronskian_and_darboux_signs() -> None:
     assert liouville_x == 0
     assert sp.factor(liouville_t - s * t ** (n - 1)) == 0
     assert sp.factor(liouville_t - s * sp.diff(y, t) / n) == 0
+
+    product = s * y
+    logarithmic_y = sp.diff(y, t) / y
+    assert sp.factor(n * liouville_t / product - logarithmic_y) == 0
 
     darboux = -wedge_coefficient(s, y, x, t) / (5 * n)
     assert sp.factor(jacobian - darboux) == 0
@@ -170,6 +175,7 @@ def main() -> None:
     print("verified reciprocal Wronskian sign and normalized constant")
     print("verified Liouville and Darboux identities with negative wedge sign")
     print("verified descent equivalence arithmetic for Xi^5 and T^(5k+2)")
+    print("verified the product invariant Xi^5*T^(5k+2)=Z^5/W^2")
     print("verified exact k=1 genuine-endpoint local cusp countermodel")
     print("RESULT: either Darboux power descends iff the whole branch descends")
 

@@ -40,6 +40,15 @@ and checked by
 Keeping such countermodels is part of the proof audit: they prevent a valid
 special theorem from being promoted into a false general one.
 
+The proposed global degree-lowering bridge has also been audited.  Full
+membership in the affine-modification subring \(k[x,x^r y]\) really does
+turn a pair with Jacobian \(cx^r\) into a constant-Jacobian polynomial pair
+with the same field degree.  However, an exact arbitrary-degree family
+shows that boundary contraction, the leading normal jets, high field
+degree, and even a finite-flat Rees comparison do not force that subring
+membership or keep the diagonal sheet separate from the cusp.  See
+[`current_context/LAURENT_DEGREE_DESCENT_AUDIT.md`](current_context/LAURENT_DEGREE_DESCENT_AUDIT.md).
+
 The complementary Standard/Kummer route now has an exact one-coordinate
 field-descent criterion.  For a normalized comparison branch, full descent
 of \(Z,W\) is equivalent to descent of the single weighted invariant
@@ -48,11 +57,12 @@ symplecticity alone cannot force it.  See
 [`current_context/RADIAL_INVARIANT_FIELD_DESCENT.md`](current_context/RADIAL_INVARIANT_FIELD_DESCENT.md).
 The reciprocal Wronskian further gives canonical Darboux powers
 \(S=\Xi^5\) and \(Y=T^{5k+2}\).  An exact trace-and-support argument proves
-that descent of either power is equivalent to descent of the entire
-comparison branch.  A genuine-endpoint completed-local cusp model shows
-that neither power is forced by the Liouville identity or the sole allowed
-ramification signature, isolating the normalized global infinity sheet and
-polynomial Newton support as essential.  See
+that descent of either power—or of their product
+\(SY=Z^5/W^2\)—is equivalent to descent of the entire comparison branch.
+A genuine-endpoint completed-local cusp model shows that none is forced by
+the Liouville identity or the sole allowed ramification signature,
+isolating the normalized global infinity sheet and polynomial Newton
+support as essential.  See
 [`current_context/RECIPROCAL_DARBOUX_LIOUVILLE_AUDIT.md`](current_context/RECIPROCAL_DARBOUX_LIOUVILLE_AUDIT.md).
 The remaining global section lemma is open.
 
