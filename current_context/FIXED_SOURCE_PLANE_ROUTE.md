@@ -1654,6 +1654,310 @@ The blowup transforms, multiplicity recurrences, self-intersections, and
 incidence graphs are checked in
 `verify_fixed_plane_conductor_arm_resolution.py`.
 
+### 1.15 Residual oddness forces an affine coexceptional divisor
+
+There is a global constraint that is invisible in the two-puncture
+classification alone.  Continue to work over an algebraically closed
+field of characteristic zero, let \(F(X,Y)\) be a reduced irreducible
+equation of \(\Gamma\).  Since \(e\) is étale, the scheme-theoretic
+pullback of this reduced Cartier divisor is reduced.  Since \(D\) is
+the smooth irreducible equation of \(C\), unique factorization gives
+\[
+F(U,V)=D H,\qquad D\nmid H.
+\tag{8ci}
+\]
+Constants have been absorbed into \(H\).  On the normalization of \(C\),
+put
+\[
+h(v)=H\left(\frac{3(v+2)}{v^2},\frac{v^2}{9}\right)
+\in \mathbf C[v,v^{-1}].
+\]
+Then
+\[
+\boxed{\qquad h(-v)=-h(v).\qquad}
+\tag{8cj}
+\]
+
+Here is a coordinate proof.  Near a generic point of \(C\), use
+\((D,c)\) as source coordinates, where
+\[
+v=3ct-2,\qquad D=v^2-9c.
+\]
+The Keller identity gives
+\[
+dU\wedge dV
+=dt\wedge dc
+=\frac1{6cv}\,dD\wedge dc.
+\tag{8ck}
+\]
+On \(D=0\), both \(U\) and \(V\) depend only on \(c\); write their common
+tangent vector at the paired points \(v,-v\) as
+\[
+r=(u'(c),w'(c)).
+\]
+Let \(n_v=\partial_D(U,V)|_{v}\).  Equation (8ck) says
+\[
+\det(n_v,r)=\frac1{6cv}.
+\tag{8cl}
+\]
+At the common target point \(e(v)=e(-v)\), the covector \(dF\) is the
+same, annihilates \(r\), and, by differentiating (8ci), satisfies
+\[
+dF(n_v)=h(v).
+\tag{8cm}
+\]
+At a generic smooth point of \(\Gamma\), \(dF\ne0\).  A fixed nonzero
+covector annihilating the fixed vector \(r\) evaluates on \(n_v\)
+proportionally to \(\det(n_v,r)\).  Replacing \(v\) by \(-v\) therefore
+changes the sign in (8cl), proving (8cj) generically and hence
+identically as a Laurent-polynomial identity.
+
+This immediately removes one branch of the earlier dichotomy.  If
+\(e^{-1}(\Gamma)=C\) set-theoretically, the reduced pullback would have
+\(H\in\mathbf C^\times\), contradicting (8cj).  Therefore every Darboux
+pair in the fixed-source ring must satisfy
+\[
+\boxed{\qquad e^{-1}(\Gamma)\supsetneq C.\qquad}
+\tag{8cn}
+\]
+In particular the extra affine coexceptional divisor over the conductor
+image is compulsory; a separate component of the nonproper-value set is
+not an alternative to it.
+
+The same identity locates the attachment more precisely.  If the affine
+curve \(\Gamma\) is singular, then at every point of \(C\) over
+\(\operatorname {Sing}\Gamma\) one has \(dF=0\).  Since \(dD\ne0\) on
+the affine conductor, differentiating (8ci) forces \(H=0\) there.
+Thus the residual divisor meets \(C\) in the affine plane.
+
+If \(\Gamma\) is smooth, its étale pullback is smooth, so the components
+of \(D H=0\) are pairwise disjoint in the affine plane.  Hence \(h\) is
+a unit of \(\mathbf C[v,v^{-1}]\).  Equation (8cj) gives
+\[
+h(v)=\lambda v^m,\qquad m\ \hbox{odd}.
+\tag{8co}
+\]
+Let \(d=\deg H\), and let \(\overline H\) be its projective
+homogenization.  Along the two branches of \(\overline C\), the
+homogeneous scale \(Z\) has order \(2\).  Consequently
+\[
+I_{P_0}(\overline C,\overline H)=2d+m,\qquad
+I_{P_\infty}(\overline C,\overline H)=2d-m.
+\tag{8cp}
+\]
+Both numbers are nonnegative local intersection multiplicities and sum
+to \(4d\), as required by Bézout.  Because \(m\) is odd, neither can
+vanish:
+\[
+\boxed{\quad
+I_{P_0}(\overline C,\overline H)>0,\quad
+I_{P_\infty}(\overline C,\overline H)>0,
+\quad\text{and both are odd}.
+\quad}
+\tag{8cq}
+\]
+Thus, in the smooth-image case, the projective residual divisor meets
+\(\overline C\) at **both** marked source points, and therefore enters
+both marked cusp-resolution arms.  This does not yet identify which
+exceptional component receives either strict transform.  Even in this
+precise sense, the conclusion is stronger than the abstract attachment
+supplied by the compactification theorems.
+Factorwise, if \(H=\prod H_i\), then
+\(H_i|_C=\lambda_i v^{m_i}\); since \(\sum m_i\) is odd, some \(m_i\)
+is odd, and that single irreducible residual component has positive odd
+intersection with \(\overline C\) at both marked arms.
+
+The intersection bounds are sharp at the level of divisors descending
+from the fixed-source ring.  The smallest odd unit is represented by
+\[
+H_0=3ct-2=v,\qquad \deg H_0=2,
+\]
+whose zero curve is disjoint from \(C\), and
+\[
+D H_0=9bc-27ac^2-8\in R.
+\tag{8cqa}
+\]
+Its projective intersections with \(\overline C\) are
+\[
+(2\deg H_0+1,\ 2\deg H_0-1)=(5,3),
+\]
+exactly the characteristic odd numbers of the two cusp arms.  Thus
+(8cq) is an attachment theorem, not by itself a contradiction; even its
+minimal pattern is realized by an actual descended divisor.  This
+example does not assert that \(D H_0\) is a polynomial in a hypothetical
+Darboux pair \(U,V\).
+
+There is one further arithmetic constraint when \(\Gamma\) is smooth.
+Write its coordinate ring as
+\[
+\mathbf C[\Gamma]=\mathbf C[s,s^{-1}],\qquad
+X=\bar u(s),\quad Y=\bar w(s).
+\]
+The tangent vector
+\[
+\tau=(s\bar u_s,s\bar w_s)
+\]
+is unimodular: \(dX,dY\) generate
+\(\Omega^1_{\Gamma}=\mathbf C[s,s^{-1}]\,ds/s\).  The conormal vector is
+also unimodular, and the rank-one syzygy module of \(\tau\) therefore
+gives a Laurent unit \(k(s)\) such that
+\[
+dF=k(s)(-s\bar w_s,s\bar u_s),
+\qquad k(s)\in\mathbf C^\times s^{\mathbf Z}.
+\tag{8cqb}
+\]
+Compare this with (8cl)--(8cm).  Since
+\(r=(s_c/s)\tau\), one obtains
+\[
+h(v)=-\frac{k(s)s}{6cv\,s_c}.
+\]
+Using \(s=\alpha c^{\pm\delta}\) and \(h=\lambda v^m\) gives
+\[
+k(s)=\text{constant}\cdot v^{m+1}.
+\]
+But a Laurent monomial in \(s\) pulls back to a Laurent monomial whose
+\(v\)-exponent is divisible by \(2\delta\).  Hence
+\[
+\boxed{\qquad m\equiv-1\pmod {2\delta}.\qquad}
+\tag{8cqc}
+\]
+Equivalently, the two odd attachment multiplicities obey
+\[
+I_{P_0}\equiv2d-1,\qquad
+I_{P_\infty}\equiv2d+1
+\pmod {2\delta}.
+\tag{8cqd}
+\]
+For example the sharp factor \(H_0=v\) can occur only when
+\(\delta=1\); higher conductor-cover degree forces a different
+attachment exponent (with \(m=-1\) still arithmetically possible).
+
+What remains is a precise boundary-incidence problem, rather than the
+former affine/dicritical dichotomy.  The strongest useful next lemma
+would show that the odd intersection in (8cq) cannot be absorbed
+entirely by type-\(2\) vertices when the rational map is resolved:
+at one marked arm it must land on a type-\(3\) valuation at its cyclic
+quotient point.  The bare augmented-canonical labels in Section 1.14 do
+not prove this.  Establishing it requires the full pullback
+multiplicities and ramification coefficients of the resolved map, not
+only the conductor cusp tree.
+
+The coordinate sign and the two projective scale calculations are
+checked in `verify_fixed_plane_residual_oddness.py`.
+
+### 1.16 Both global alternatives are compulsory, but topology alone is compatible
+
+The nonproper-value-set theorem of Jelonek, in the plane form used by
+Nguyen Van Chau, supplies the complementary half of the global picture:
+every irreducible component of \(S_e\) is the image of a nonconstant
+polynomial map \(\mathbf A^1\to\mathbf A^2\).  Such a component has
+one-place normalization.  Indeed, the map lifts to the normalization;
+the lift is finite because any nonconstant coordinate polynomial makes
+\(\mathbf C[\xi]\) integral over the generated coordinate ring.  After
+projective completion, Lüroth gives a finite map
+\(\mathbf P^1\to\mathbf P^1\), and every missing point must have all its
+preimages at the single point \(\infty\) of the parameter line.  Thus
+the affine normalization is \(\mathbf A^1\), not \(\mathbf G_m\).
+
+The conductor image has normalization \(\mathbf G_m\) by (8bs), so it
+cannot be one of those components:
+\[
+\Gamma\ \text{is not an irreducible component of }S_e.
+\tag{8cr}
+\]
+The conductor collisions make \(e\) nonautomorphic.  A proper étale
+self-map of \(\mathbf A^2_{\mathbf C}\) would be a finite étale cover
+and hence trivial, so \(e\) is nonproper and \(S_e\ne\varnothing\).
+Combining this fact with (8cn) gives the sharpened simultaneous
+requirement
+\[
+\boxed{\quad
+e^{-1}(\Gamma)\supsetneq C
+\qquad\text{and}\qquad
+S_e\ \text{has a component }\Lambda\ne\Gamma .
+\quad}
+\tag{8cs}
+\]
+Thus neither side of (8cc) can be used to avoid the other.
+
+There is also an exact monodromy constraint.  Put
+\[
+Y=\mathbf A^2\setminus S_e,\qquad
+X=e^{-1}(Y).
+\]
+Then \(e:X\to Y\) is a finite étale cover.  Take a small loop
+\(\gamma_0\) around either missing point of the normalized
+\(\Gamma\simeq\mathbf G_m\), chosen beyond the finite set
+\(\Gamma\cap S_e\).  The completed conductor map is
+\[
+s=\alpha v^{\pm2\delta}.
+\]
+Consequently the monodromy of \(\gamma_0\) on the fiber of \(e\)
+contains a \(2\delta\)-cycle on the conductor sheets.  In particular
+\[
+\boxed{\quad [\gamma_0]\ne1\ \text{in }\pi_1(Y).\quad}
+\tag{8ct}
+\]
+
+For equations \(L_j=0\) of the irreducible components
+\(\Lambda_j\subset S_e\), the abelianized class of an end loop is the
+linking vector
+\[
+\left(
+\operatorname {ord}_{s=0}L_j(\bar u(s),\bar w(s))
+\right)_j
+\in H_1(Y,\mathbf Z)\simeq\mathbf Z^{\,\#\{\Lambda_j\}}.
+\tag{8cu}
+\]
+Therefore a nonzero entry would force an intersection/link at that
+marked target end.  What (8ct) proves by itself, however, is
+nontriviality in the full fundamental group, not in its abelianization.
+The \(2\delta\)-cycle has odd sign on the conductor subset, but the
+remaining sheets over \(\Gamma\) need not preserve that subset under
+arbitrary loops in \(Y\), and their permutation signs along
+\(\gamma_0\) can cancel it.  Hence a sign-character argument does not
+currently prove that the vector (8cu) is nonzero.
+
+Nor does the one-place-at-infinity property of the \(\Lambda_j\) by
+itself conflict with the two conductor ends.  A sharp étale-complement
+countermodel is
+\[
+Y=(\mathbf C^\times)^2
+=\mathbf A^2\setminus\{XY=0\},\qquad
+(p,q)\longmapsto (X,Y)=(p^{2\delta},q).
+\tag{8cv}
+\]
+Both removed components are affine lines with one place at infinity.
+For the two-place curve \(\Gamma=\{XY=1\}\), its inverse image
+\[
+p^{2\delta}q=1
+\]
+is connected and maps to \(\Gamma\) with cyclic degree \(2\delta\).
+The two end loops have linking vectors \((1,-1)\) and \((-1,1)\).
+Thus one-place nonproper components, nontrivial linking, and two-end
+cyclic ramification are mutually compatible.  This is not a polynomial
+Keller countermodel on \(\mathbf A^2\): the cover ramifies when extended
+across \(p=0\).  It shows exactly which extra hypothesis a contradiction
+must use.
+
+The strongest precise next target is therefore a **Keller peripheral
+detection lemma**: for a finite cover of
+\(\mathbf A^2\setminus S_e\) coming from an everywhere-étale polynomial
+self-map, a normalized-conductor end loop whose monodromy contains the
+distinguished \(2\delta\)-cycle must have nonzero linking vector (8cu),
+with the corresponding link realized on one of the explicit
+\((2,5)\) or \((2,3)\) source arms.  Even this lemma would force
+incidence rather than an immediate contradiction; the torus model
+shows that the subsequent step must use the constant-Jacobian extension
+across all of \(\mathbf A^2\), or equivalently its canonical and
+ramification divisor equations.
+
+The complement countermodel and its linking vector are checked in
+`verify_fixed_plane_linking_countermodel.py`.  The nonproper-set input
+is Nguyen Van Chau, *Non-proper value set and the Jacobian condition*
+([arXiv:math/0305088](https://arxiv.org/abs/math/0305088)), building on
+Jelonek's polynomial-parametrization theorem.
+
 ## 2. Every linear target Hamiltonian is excluded in all degrees
 
 Let

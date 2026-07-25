@@ -114,15 +114,25 @@ separate affine case-c curve \(F(x=0)\).
 
 The fixed-plane route gives an explicit nonnormal pinch ring, an exact
 Darboux reduction, broad all-degree no-go families, and a global conductor
-image with \(\mathbf G_m\)-normalization.  Combining the last fact with
-Chau's theorem that every irreducible nonproper component is polynomially
-parametrized proves:
+image with \(\mathbf G_m\)-normalization.  A new residual-oddness theorem
+shows that if \(F(U,V)=DH\) is the pullback of its image equation, then
 \[
-\text{a hypothetical map must have a different dicritical component }
-\Lambda\ne\Gamma.
+H|_C(-v)=-H|_C(v).
 \]
-This is a potentially publishable case study, not a route that presently
-settles all plane Keller maps.
+Consequently an extra affine component over the conductor image is
+compulsory.  In the smooth-image case one irreducible residual component
+meets both marked cusp arms with positive odd multiplicity, with exponent
+\(m\equiv-1\pmod{2\delta}\).  Combining the \(\mathbf G_m\)-normalization
+with Chau's theorem that every irreducible nonproper component is
+polynomially parametrized proves simultaneously:
+\[
+e^{-1}(\Gamma)\supsetneq C,
+\qquad
+\text{and a different dicritical component }\Lambda\ne\Gamma.
+\]
+This independently audited theorem is a potentially publishable global
+incidence result, not a resolution of the fixed-ring Darboux equation or of
+all plane Keller maps.
 
 ### 4. Homogeneous-centralizer and osculating-cubic package
 

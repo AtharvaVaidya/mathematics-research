@@ -27,6 +27,28 @@ and checked by
 Keeping such countermodels is part of the proof audit: they prevent a valid
 special theorem from being promoted into a false general one.
 
+The counterexample-first fixed-source-plane route has a second independently
+audited global theorem.  If a Darboux pair existed in its explicit pinch
+ring and \(F(U,V)=D H\) were the pullback of the conductor-image equation,
+then
+\[
+H|_C(-v)=-H|_C(v).
+\]
+Thus an additional affine preimage component over the conductor image is
+compulsory.  If that image is smooth, one irreducible residual component
+meets both marked cusp arms with positive odd multiplicity, and its Laurent
+exponent satisfies \(m\equiv-1\pmod{2\delta}\).  Independently, the
+Chau--Jelonek theorem forces a different nonproper-value component.  The
+complete statement and its sharp countermodels are in
+[`current_context/FIXED_SOURCE_PLANE_ROUTE.md`](current_context/FIXED_SOURCE_PLANE_ROUTE.md).
+The associated counterexample-first test family is also closed exactly:
+among all \(f(c)+g(c)D(3ct-2)\), the sole nonconstant submersions are
+affine rescalings of \(cD(3ct-2)\), and that Hamiltonian has no polynomial
+Darboux mate even in the normalization.  See
+[`current_context/RESIDUAL_FACTOR_HAMILTONIAN.md`](current_context/RESIDUAL_FACTOR_HAMILTONIAN.md).
+This still constrains only the fixed-source construction and is not a proof
+of \(JC(2)\).
+
 The workspace also contains a computer-assisted candidate elimination of
 the remaining \((72,108)\) degree pair in the Guccione--Guccione--
 Horruitiner--Valqui reduction.  If its full interface and reproducibility
