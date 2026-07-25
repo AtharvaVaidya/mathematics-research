@@ -11,12 +11,17 @@ The plane Jacobian conjecture is **not resolved here**.  This repository
 does not contain a proof or a counterexample in two variables.
 
 The strongest independently audited structural result currently in the
-workspace is an all-scale obstruction for the pole-sensitive nonintegral
-marked cusps in the consecutive \((2,3)\) five-block family.  The proof is
-in
+workspace excludes every genuine consecutive \((2,3)\) five-block
+completion, at every radial scale.  The proof combines the universal
+deficit-one mode, a completed-square root-consumption lemma, and the
+exhaustive fixed-pole Puiseux charts; it also closes ramified
+multisections of the boundary normalization.  The precise hypotheses and
+proof are in
 [`current_context/ALLSCALE_MARKED_CUSP_OBSTRUCTION.md`](current_context/ALLSCALE_MARKED_CUSP_OBSTRUCTION.md),
 with a symbolic verifier in
 [`route_bd_allscale_marked_cusp_obstruction.py`](route_bd_allscale_marked_cusp_obstruction.py).
+This eliminates the full consecutive five-block class, not arbitrary
+Newton configurations or case c.
 
 This mechanism is genuinely special to transverse degree two.  The tempting
 extension to general consecutive transverse degrees is refuted by an exact

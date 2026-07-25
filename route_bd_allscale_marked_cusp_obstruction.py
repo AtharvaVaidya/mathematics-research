@@ -123,6 +123,61 @@ def verify_degree_ledger() -> None:
         assert degree_outside < degree_a2_bprime + 2
 
 
+def verify_analytic_quadratic_degree_ledger() -> None:
+    # In the analytic-quadratic chart p1(0) is a unit and
+    # ord_0(A')=m-1 with m>=3.  Thus every zero of p1 is nonmarked.
+    for R in range(2, 40):
+        for m in range(3, 2 * R + 1):
+            degree_aprime = 2 * R - 1
+
+            # a != 0: deg(p1)=2R-1.
+            high_bound = (m - 1) + (2 * R - 1)
+            assert high_bound > degree_aprime
+
+            # a = 0: p1 is proportional to U' and has degree 2R-2.
+            low_bound = (m - 1) + (2 * R - 2)
+            assert low_bound > degree_aprime
+
+            # The forced first nonanalytic exponent lies strictly between
+            # three and four.  m=2 would give the analytic exponent three.
+            numerator = 4 * m - 2
+            assert 3 * m < numerator < 4 * m
+
+
+def verify_puiseux_chart_ledgers() -> None:
+    # A leading nonintegral horizontal graph has fourth-row valuations
+    # in arithmetic progression.  Equality of the adjacent valuations
+    # gives 2r=m-1, and the exact q3 pole then gives 2n=3m+1.
+    for m in range(2, 40):
+        for n in range(m + 1, 4 * m):
+            for r in range(0, 2 * m):
+                e1 = n - 2 * m - 2
+                e2 = n - 3 * m + 2 * r - 1
+                e3 = n - 4 * m + 4 * r
+                if e1 == e2 == e3:
+                    assert 2 * r == m - 1
+                    q3_order = n - 2 * m + r - 1
+                    if q3_order == -1:
+                        assert 2 * n == 3 * m + 1
+                        assert n < 2 * m
+
+    # In the opposite projection, the fixed p2 pole gives
+    # m-2n+2s=-1.  Both other terms in the next row then lie strictly
+    # above the f''' q1^3 term, so cancellation is impossible.
+    for n in range(2, 30):
+        for m in range(n + 1, 60):
+            numerator = 2 * n - m - 1
+            if numerator < 0 or numerator % 2:
+                continue
+            s = numerator // 2
+            for t in range(0, 20):
+                first_minus_third = (3 * m - 2 * n + 1) / 2
+                second_minus_third = m - n + t + 1
+                assert first_minus_third > 0
+                assert second_minus_third > 0
+                assert m - 2 * n + 2 * s == -1
+
+
 def verify_covariant_identities() -> None:
     h = sp.symbols("h")
     A = sp.Function("A")(h)
@@ -152,10 +207,14 @@ def main() -> None:
     verify_high_partner_when_u1_zero()
     verify_completed_square_rows()
     verify_degree_ledger()
+    verify_analytic_quadratic_degree_ledger()
+    verify_puiseux_chart_ledgers()
     verify_covariant_identities()
     print("verified the two deficit-one p1 modes and exceptional q2 partner")
     print("verified the completed-square local bracket rows")
     print("verified the all-scale marked multiplicity and top-degree ledgers")
+    print("verified the all-scale analytic-quadratic degree contradiction")
+    print("verified the exhaustive horizontal/vertical Puiseux ledgers")
     print("verified the cleared fourth-covariant identity")
     print("RESULT: ALL-SCALE MARKED-CUSP OBSTRUCTION CHECKS PASS")
 

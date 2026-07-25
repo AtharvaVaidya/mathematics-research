@@ -34,6 +34,29 @@ Thus the obstruction is not special to the scale-four cells
 It excludes the complete infinite family selected by the fixed-pole
 valuation equation \(2n=3m+1\).
 
+There is a stronger consequence.  The fixed-pole immersion lemma makes
+the corresponding point on the **normalization of the boundary image**
+nonimmersive.  This remains true when
+\[
+h\longmapsto(A(h),B(h))
+\]
+is a nontrivial multisection of that normalization.  The exhaustive local
+projection analysis has only two potentially surviving kinds of
+horizontal branch:
+
+1. the nonintegral family above; and
+2. a branch with a nonzero analytic quadratic term.
+
+The second kind is also impossible at every scale.  Consequently:
+\[
+\boxed{\text{no genuine consecutive \((2,3)\) five-block completion
+with the stated full vertices and fixed poles exists.}} \tag{0}
+\]
+
+This is a theorem about the consecutive five-block class.  It does not
+assert that every hypothetical plane Keller counterexample belongs to
+that class.
+
 ## 1. The deficit-one mode
 
 The universal bounded kernel at deficit one has two \(C\)-modes,
@@ -256,7 +279,109 @@ coefficient.  This is impossible.
 
 The equality case is eliminated, completing the proof.
 
-## 5. Companion outer-root covariant
+## 5. The analytic-quadratic chart
+
+For completeness, consider the other local chart left by the
+pole-sensitive Puiseux analysis.  Put
+\[
+x=A-A(0),
+\]
+and suppose
+\[
+B-B(0)=c_2x^2+c_3x^3+c\,x^{N/m}+\cdots ,
+\qquad c_2c\ne0,
+\tag{7}
+\]
+where
+\[
+m=\operatorname{ord}_0x
+\]
+and \(x^{N/m}\) is the first nonanalytic term after the displayed
+analytic terms.
+
+The fixed pole of \(q_3\) forces
+\[
+\operatorname{ord}_0p_1=0.
+\tag{8}
+\]
+Indeed, in
+\[
+q_3=g''p_1p_2+\frac16g'''p_1^3
+\]
+the pole can only come from the nonzero constant term of \(g''\) times
+the fixed simple pole of \(p_2\).
+
+The fourth Taylor row has the term
+\[
+\frac12g''p_2^2
+\]
+of exact order \(-2\).  Its only possible singular competitor is the
+first nonanalytic contribution to
+\(\frac1{24}g''''p_1^4\), so
+\[
+N=4m-2.
+\tag{9}
+\]
+The exponent \(N/m=4-2/m\) must be strictly between three and four.
+Hence \(m\ge3\), and therefore
+\[
+\operatorname{ord}_0A'=m-1\ge2.
+\tag{10}
+\]
+(The case \(m=2\) makes \(N/m=3\) analytic and is absorbed into the
+displayed cubic term; the next nonanalytic term leaves the order
+\(-2\) contribution uncancelled.)
+
+Now use only the root-consumption lemma (5).  Since \(p_1(0)\ne0\), all
+zeros of \(p_1\) are nonmarked.  If \(a\ne0\) in (1), their total
+multiplicity is \(2R-1\), so (5) and (10) force
+\[
+\deg A'\ge (m-1)+(2R-1)>2R-1,
+\]
+impossible.  If \(a=0\), then \(p_1=bU'\) has degree \(2R-2\), and
+\[
+\deg A'\ge (m-1)+(2R-2)>2R-1
+\]
+because \(m\ge3\).  Thus the analytic-quadratic chart is empty at every
+scale.
+
+The remaining local charts are already degree-independent:
+
+- a nonzero tangent gives an uncancelled fixed pole;
+- the opposite (vertical) projection gives a unique lowest valuation;
+- a horizontal analytic term of order at least three cannot supply the
+  fixed pole of \(q_3\); and
+- a leading nonintegral horizontal term is forced into
+  \(2n=3m+1\), the family eliminated in Sections 1--4.
+
+Here is the small normalization point needed for multisections.  Factor
+the boundary parametrization as
+\[
+h\longmapsto \xi=H(h)
+\longmapsto \bigl(A_0(\xi),B_0(\xi)\bigr),
+\]
+where the second map is the normalization of the image curve.  The
+fixed-pole immersion lemma, whose proof allows an arbitrary polynomial
+\(H\), gives
+\[
+A_0'(H(0))=B_0'(H(0))=0.
+\]
+If \(e=\operatorname{ord}_0(H-H(0))\), every local normalization order
+is simply multiplied by \(e\) after pullback to \(h\).  The graph
+identities and every valuation comparison above are written in this
+pulled-back parameter, so no primitivity of \(A(h),B(h)\) was used.
+For example the nonintegral relation
+\(2n=3m+1\) itself forces \(e=1\), while the
+analytic-quadratic relation \(N=4m-2\) allows at most \(e=2\) and is
+already killed by the degree count.
+
+A wholly analytic graph cannot be the remaining case.  It would make the
+image branch smooth, over which its normalization map is an isomorphism,
+contrary to the simultaneous vanishing of \(A_0'\) and \(B_0'\).
+Therefore the displayed alternatives exhaust the two normalization
+projection charts, even for a multisection, and prove (0).
+
+## 6. Companion outer-root covariant
 
 For
 \[

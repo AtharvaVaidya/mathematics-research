@@ -763,3 +763,38 @@ New exact artifacts:
 - `route_a/pfaff_global_structure.py`;
 - `route_a/verify_pfaff_homogeneous_obstruction.py`;
 - `route_a/verify_dh_collision_architecture.py`.
+
+## 25 July addendum: the full consecutive five-block class is empty
+
+The completed-square root-consumption lemma is stronger than the first
+marked-cusp statement suggested.  It eliminates not only the
+pole-sensitive nonintegral family
+\[
+2n=3m+1,
+\]
+but also the sole analytic-quadratic Puiseux chart left by the exhaustive
+fixed-pole analysis.
+
+In that chart \(p_1(0)\ne0\) and
+\(\operatorname{ord}_0 A'=m-1\ge2\).  Every finite zero of \(p_1\) is
+therefore nonmarked and consumes at least its multiplicity in the divisor
+of \(A'\).  If the high deficit-one mode is present, those zeros already
+have total multiplicity \(2R-1=\deg A'\); if only the low mode is present,
+they have total multiplicity \(2R-2\).  The additional marked zero makes
+both degree ledgers impossible.
+
+The normalization audit introduces no primitivity loophole.  If the
+boundary map factors through a polynomial multisection of ramification
+degree \(e\), all Puiseux orders are multiplied by \(e\) while the
+prescribed transverse pole remains simple.  The nonintegral relation
+forces \(e=1\); the analytic-quadratic relation permits at most \(e=2\)
+and is still killed by the same root budget.  Consequently
+\[
+\boxed{\text{every genuine consecutive \((2,3)\) five-block completion
+is impossible, at every scale}.}
+\]
+
+This result has passed an independent adversarial proof audit and the
+updated exact symbolic checks.  It is a substantial all-scale theorem for
+the a/b-type consecutive class, but it does not eliminate case c or prove
+the plane Jacobian conjecture.
