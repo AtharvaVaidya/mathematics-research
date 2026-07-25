@@ -23,6 +23,14 @@ with a symbolic verifier in
 This eliminates the full consecutive five-block class, not arbitrary
 Newton configurations or case c.
 
+An exact scope audit identifies its consequence for the published GGHV
+reduction: both alternatives a and b at the remaining \((72,108)\)
+frontier are covered, while case c and the other higher-degree admissible
+corner chains are not.  Thus the theorem plus the published reduction
+forces any hypothetical counterexample of maximum degree below \(125\)
+into case c; it does not by itself prove the \(125\) lower bound.  See
+[`current_context/ALLSCALE_GGHV_SCOPE_AUDIT.md`](current_context/ALLSCALE_GGHV_SCOPE_AUDIT.md).
+
 This mechanism is genuinely special to transverse degree two.  The tempting
 extension to general consecutive transverse degrees is refuted by an exact
 local analytic \((3,4)\) countermodel, archived in

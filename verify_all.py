@@ -44,6 +44,7 @@ SCRIPTS = [
     ROOT / "route_bd_universal_wronskian_countermodel.py",
     ROOT / "route_bd_fiveblock_discriminant_square.py",
     ROOT / "route_bd_allscale_marked_cusp_obstruction.py",
+    ROOT / "current_context" / "verify_gghv_allscale_scope.py",
     ROOT / "route_bd_transverse_34_local_countermodel.py",
     ROOT / "route_bd_osculating_leading_ode.py",
     ROOT / "route_bd_ab_osculating_delta4.py",
