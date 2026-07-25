@@ -12,7 +12,8 @@ calculations return the unit ideal on both normalized generic charts:
 L=0,\ A\ne0&\Longrightarrow\varnothing
 &&\text{by a direct exact-\(K\) certificate},\\
 L\ne0&\Longrightarrow\varnothing
-&&\text{by exact finite-field computation plus proper specialization}.
+&&\text{by the complete finite-field projective fiber plus proper
+specialization}.
 \end{aligned}}
 \]
 
@@ -144,6 +145,32 @@ the quotient presentation but the documented exactness scope of
 `modStd` for a global nonhomogeneous input.  The cached provisional run
 took \(14.5\) seconds for all six minimal ideals.
 
+### Homogenized direct-\(\mathbf Q\) path
+
+There is a logically exact way to turn a normalized affine calculation
+into a direct characteristic-zero certificate.  In
+\(\mathbf Q[s,X,h]\), with \(f(s)\) adjoined to the chart ideal \(J\), set
+
+```text
+ideal Jh=homog(J,h);
+ideal Hh=modStd(Jh,1);
+```
+
+and test a power of \(h\) for zero remainder.  Singular
+`modstd.lib` 4.4.1.4 states that `modStd(...,1)` gives the standard basis
+of the input ideal when its generators are homogeneous.  Therefore a
+completed calculation with \(h^N\in J^h\) would dehomogenize to
+\(1\in J\); unlike the nonhomogeneous run above, this implication is
+exact.
+
+The verifier contains this path, checks `homog(Jh)==1`, and allows one
+sufficient minimal row choice to run without launching the three
+redundant choices concurrently.  The optimized \(L\ne0\) replay was
+nevertheless stopped after a bounded audit window because the complete-
+projective-fiber proof below had already closed the theorem.  No completed
+`HPOWER` output is archived, so this path is **not** cited as an executed
+certificate.
+
 ## Weighted-projective repair
 
 The imposed rows before chart normalization are homogeneous for weights
@@ -203,16 +230,26 @@ weighted `std`, `slimgb`, lexicographic elimination, targeted `lift`, and
 homogeneous modular reconstruction.  None completed within the bounded
 audit windows, so no direct-\(K\) \(L^{23}\) claim is made.
 
-This does **not** reopen the characteristic-zero theorem for chart I.
-The original equations are weighted homogeneous, hence define a proper
-weighted-projective family over the good integral localization used by
-the modular verifier.  The exact empty fiber modulo \(32003\) therefore
-forces the characteristic-zero generic fiber to be empty: a nonempty
-generic projective fiber would have a specialization in every good
-closed fiber after taking closure.  The \(L^{23}\) computation above is
-additional structural evidence and a sharply reduced target for a future
-direct-\(K\) replay, not the logical basis of the existing
-proper-specialization proof.
+This does **not** reopen the characteristic-zero theorem for chart I, but
+the specialization argument must be stated globally.  The open set
+\(D(L)\) is not proper, and its modular emptiness alone would not prevent
+a generic \(L\ne0\) point from specializing to \(L=0\).  What is proper
+is the **complete** weighted-projective consistency fiber.  The modular
+calculations for
+
+\[
+D(L),\quad V(L)\cap D(A),\quad
+V(L,A)\cap D(B),\quad V(L,A,B)
+\]
+
+together make that entire special fiber empty.  Coefficientwise exact-to-
+modular transport identifies it with a good fiber of the characteristic-
+zero projective model, so properness forces the generic fiber to be empty.
+See `CASE_C_FULL_CERTIFICATE_BRIDGE.md` for the assembled argument.
+
+The \(L^{23}\) computation above is additional structural evidence and a
+sharply reduced target for a future direct-\(K\) replay, not the logical
+basis of the proper-specialization proof.
 
 The standalone weighted verifier is
 
@@ -255,8 +292,9 @@ and recertify everything from the 64 modular bases.
 This exactly certifies the characteristic-zero outer algebra, the lower
 recurrence, the generic-chart equation transport, and direct exact-\(K\)
 emptiness of the \(L=0,\ A\ne0\) chart.  Together with the already
-audited proper weighted-projective good-reduction argument, it also
-certifies the \(L\ne0\) chart in characteristic zero.  What remains
-unavailable is only a direct exact-\(K\) \(L^{23}\) certificate.  This
-memo does not by itself treat the two special charts; those have their
-separate determinant/resultant/deepest-branch arguments.
+audited **complete-fiber** weighted-projective good-reduction argument,
+it also certifies the \(L\ne0\) chart in characteristic zero.  What
+remains unavailable is only an optional direct exact-\(K\) \(L^{23}\)
+certificate, and no completed direct-\(\mathbf Q\) `HPOWER` replay is
+claimed.  This memo does not by itself treat the two special charts;
+those have their separate determinant/resultant/deepest-branch arguments.

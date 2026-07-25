@@ -207,50 +207,63 @@ is set-theoretically exhaustive.
 
 The exact-to-modular coefficient comparisons in the chart verifiers
 lock the primitive element, mode order, endpoint change, imposed-row
-order, and row scalars.  They are not being used to infer
-characteristic-zero emptiness; they audit that the exact recurrence is
-the same recurrence as the independently generated full-support
-calculation.
+order, and row scalars.  They both identify the good integral model used
+by the complete-projective-fiber specialization proof and audit that the
+exact recurrence is the same recurrence as the independently generated
+full-support calculation.  The direct homogeneous characteristic-zero
+chart certificates provide a separate route.
 
 ## 4. The cone origin is not a case-c point
 
 The original case-c support requires the opposite vertical vertices
 
 \[
-[h^8]A_0\ne0,\qquad [h^{12}]B_0\ne0.
+[z^{-8}h^8]P\ne0,\qquad [z^{-12}h^{12}]Q\ne0.
 \]
 
-The two relevant coefficients occur very early in the exact recurrence:
-\(A_0\) is the deficit-two block and \(B_0\) is the deficit-three block.
-Every coefficient of \(A_0\) is a weighted-homogeneous polynomial of
-weight two in the seven parameters, and every coefficient of \(B_0\) is
-weighted homogeneous of weight three.  Since the parameter weights are
+Indeed, under
+\[
+x^ay^b=z^{2a-b}h^{b-a},
+\]
+the GGHV vertices \((0,8)\) and \((0,12)\) become \((-8,8)\) and
+\((-12,12)\).  They occur in radial deficits ten and fifteen,
+respectively—not in the early deficit-two and deficit-three blocks.
+
+This correction does not create an origin loophole.  The exact linear
+kernel dimensions at deficits one through fifteen are
+
+\[
+(2,2,2,1,0,0,\ldots,0).
+\]
+
+Thus after the seven parameters of weights
 
 \[
 (1,1,2,2,3,3,4),
 \]
 
-neither block has a constant term.  Therefore the seven-parameter origin
-already gives
+are set to zero, the first four lower blocks are zero.  Every later
+inhomogeneous source is built from already determined lower blocks and is
+therefore zero, while the corresponding linear operator has zero kernel.
+Induction forces every later nonconstant lower coefficient to be zero.
+In particular,
 
 \[
-[h^8]A_0=[h^{12}]B_0=0.
+[z^{-8}h^8]P=[z^{-12}h^{12}]Q=0.
 \]
 
-No continuation through the remaining 165 coordinates is needed for this
-conclusion, and later stages cannot alter blocks already solved.  The
 endpoint-coordinate changes used by the chart verifiers fix the origin,
 as does the square substitution, so their deepest-chart origin is the
-same origin in the canonical seven parameters.  The omitted additive
-constants in \(A_0,B_0\) are irrelevant to the displayed positive powers
-of \(h\).
+same origin in the canonical seven parameters.  The two omitted additive
+constants are bracket-invisible and cannot contribute to either displayed
+vertex.
 
-This homogeneity is part of the exact recurrence construction used by
-both exact chart scripts.  The support locations
-\([h^8]A_0\) and \([h^{12}]B_0\), and the omission of only the two
-additive constants, are independently checked by the combinatorial
-inventory in `route_bd_case_c_radial_obstruction.py`; that inventory uses
-no finite-field inference.
+The support locations, all fifteen kernel ranks, and the omission of only
+the two additive constants are independently checked in
+`current_context/verify_case_c_full_certificate_bridge.py`.  The full
+165-coordinate recurrence in `route_bd_case_c_radial_obstruction.py`
+provides a second check and uses no characteristic-zero inference for the
+support dictionary.
 
 Therefore every genuine case-c solution supplies a nonzero point of
 
@@ -259,8 +272,8 @@ Therefore every genuine case-c solution supplies a nonzero point of
 \]
 
 The affine cone origin left by the deepest exact chart is excluded by the
-required original vertices; it is not an additional solution requiring a
-later bracket row.
+required original vertices: zero-kernel propagation through the later
+radial blocks forces those two vertex coefficients to vanish.
 
 ## Conclusion
 

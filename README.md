@@ -10,7 +10,7 @@ notes, countermodels, and route audits.
 The plane Jacobian conjecture is **not resolved here**.  This repository
 does not contain a proof or a counterexample in two variables.
 
-The strongest independently audited structural result currently in the
+The strongest adversarially audited structural result currently in the
 workspace excludes every genuine consecutive \((2,3)\) five-block
 completion, at every radial scale.  The proof combines the universal
 deficit-one mode, a completed-square root-consumption lemma, and the
@@ -23,13 +23,30 @@ with a symbolic verifier in
 This eliminates the full consecutive five-block class, not arbitrary
 Newton configurations or case c.
 
-An exact scope audit identifies its consequence for the published GGHV
+An exact scope audit identifies its consequence for the public GGHV preprint
 reduction: both alternatives a and b at the remaining \((72,108)\)
 frontier are covered, while case c and the other higher-degree admissible
-corner chains are not.  Thus the theorem plus the published reduction
-forces any hypothetical counterexample of maximum degree below \(125\)
-into case c; it does not by itself prove the \(125\) lower bound.  See
+corner chains are not.  See
 [`current_context/ALLSCALE_GGHV_SCOPE_AUDIT.md`](current_context/ALLSCALE_GGHV_SCOPE_AUDIT.md).
+
+The remaining case-c coefficient system has now been eliminated by an
+exact computer-assisted certificate.  A unimodular support audit checks
+all 61 and 125 lattice positions, the outer Hurwitz count exhausts the
+five normalized covers, and the full 165-coordinate recurrence reduces to
+seven weighted modes.  Its complete weighted-projective special fiber is
+empty over every factor above \(32003\); proper specialization then proves
+characteristic-zero emptiness.  The required late Newton vertices have
+also been checked explicitly, closing an earlier interface loophole.
+Together with the GGHV preprint reduction and the a/b theorem, this gives,
+over an algebraically closed field of characteristic zero, the bounded result
+\[
+\boxed{\max(\deg P,\deg Q)\ge125}
+\]
+for any hypothetical plane Keller counterexample.  The audited dependency
+chain and reproduction protocol are in
+[`current_context/CASE_C_FULL_CERTIFICATE_BRIDGE.md`](current_context/CASE_C_FULL_CERTIFICATE_BRIDGE.md).
+An independent announcement of the same bound exists, so no priority or
+uniqueness claim is made here.
 
 This mechanism is genuinely special to transverse degree two.  The tempting
 extension to general consecutive transverse degrees is refuted by an exact
@@ -48,6 +65,13 @@ shows that boundary contraction, the leading normal jets, high field
 degree, and even a finite-flat Rees comparison do not force that subring
 membership or keep the diagonal sheet separate from the cusp.  See
 [`current_context/LAURENT_DEGREE_DESCENT_AUDIT.md`](current_context/LAURENT_DEGREE_DESCENT_AUDIT.md).
+The larger one-boundary toroidal class is now classified as well: every
+triangular chart absorbing a monomial Jacobian is
+\(u=x^a,\ v=x^{r+1-a}y+f(x)\), and iterations produce nothing new.
+Required GGHV vertices exclude every such chart, while normalization leaves
+a residual Jacobian power.  Thus any global degree-lowering proof must use
+multiple boundary valuations or genuinely nontriangular geometry; see
+[`current_context/TOROIDAL_DEGREE_DESCENT_NO_GO.md`](current_context/TOROIDAL_DEGREE_DESCENT_NO_GO.md).
 
 The complementary Standard/Kummer route now has an exact one-coordinate
 field-descent criterion.  For a normalized comparison branch, full descent
@@ -64,7 +88,43 @@ the Liouville identity or the sole allowed ramification signature,
 isolating the normalized global infinity sheet and polynomial Newton
 support as essential.  See
 [`current_context/RECIPROCAL_DARBOUX_LIOUVILLE_AUDIT.md`](current_context/RECIPROCAL_DARBOUX_LIOUVILLE_AUDIT.md).
-The remaining global section lemma is open.
+At the global level, invariance of the complete principal divisor of
+either Darboux power—or of their product \(Z^5/W^2\)—does force full
+descent.  Divisor divisibility alone is tautological, and an exact target-
+translation model shows that the normalized infinity sheet and outer
+support do not force invariance.  The remaining target is therefore a
+boundary-orbit theorem using the forced inner vertices; see
+[`current_context/GLOBAL_DARBOUX_DIVISOR_SECTION_AUDIT.md`](current_context/GLOBAL_DARBOUX_DIVISOR_SECTION_AUDIT.md).
+Two adjacent boundary orders, even to arbitrarily high precision, still
+do not suffice: an exact symplectic countermodel hides the moving divisor
+support away from both rays.  The sharp positive criterion is now support
+exhaustion for every divisor quotient \(\sigma J/J\); the exact GGHV cap
+vertices remain the possible mechanism.  See
+[`current_context/TWO_BOUNDARY_DIVISOR_ORBIT_AUDIT.md`](current_context/TWO_BOUNDARY_DIVISOR_ORBIT_AUDIT.md).
+Even the exact case-c cap faces do not suffice by themselves.  A
+constrained generic pair with the full case-c polygons, genuine outer
+Wronskian, and both forced cap factorizations has degree \(131\), not
+divisible by the endpoint degree \(21\), so its comparison branch still
+has hidden monodromy.  It is not a bracket solution; its role is to prove
+that deeper bracket-controlled infinitely-near jets are indispensable.
+See
+[`current_context/CASE_C_CAP_SUPPORT_EXHAUSTION_NO_GO.md`](current_context/CASE_C_CAP_SUPPORT_EXHAUSTION_NO_GO.md).
+The full local bracket still does not close this gap.  At both the
+vertical and diagonal caps there is a unique minimum-height resonant
+contact star; each star avoids every no-log threshold, preserves the
+resultant constant, and lifts recursively to an exact formal local bracket
+solution.  Consequently no purely local infinitely-near refinement can
+exclude case c.  What remains is finite global support termination or a
+cross-cap relation through the common outer cover; see
+[`current_context/CASE_C_CAP_RESONANT_STAR_NO_GO.md`](current_context/CASE_C_CAP_RESONANT_STAR_NO_GO.md).
+The required deeper input now has a general branchwise form: the bracket
+restricts on every cap Puiseux leaf to an Euler equation whose only free
+term is one resonant constant per irreducible factor.  Its finite
+no-log residues forbid the exact same-color contact sums \(5,9\) at the
+vertical cap and \(10,14\) at the diagonal cap.  The accompanying trace
+identity is valid but retains a homogeneous constant, so no global
+contradiction is claimed; see
+[`current_context/CAP_PUISEUX_EULER_JET_INVARIANT.md`](current_context/CAP_PUISEUX_EULER_JET_INVARIANT.md).
 
 The counterexample-first fixed-source-plane route has a second independently
 audited global theorem.  If a Darboux pair existed in its explicit pinch
@@ -104,19 +164,46 @@ final curve while the old coefficients are retained.  This is an exact
 arbitrary-cluster theorem, although a different enlarged global ledger
 remains possible; see
 [`current_context/FIXED_PLANE_FINALITY_CAP_OBSTRUCTION.md`](current_context/FIXED_PLANE_FINALITY_CAP_OBSTRUCTION.md).
-
-The workspace also contains a computer-assisted candidate elimination of
-the remaining \((72,108)\) degree pair in the Guccione--Guccione--
-Horruitiner--Valqui reduction.  If its full interface and reproducibility
-audit is completed, it gives the bounded conclusion
-
-\[
-\max(\deg P,\deg Q)\ge125
-\]
-
-for a hypothetical complex plane Keller counterexample.  This bounded
-conclusion has also been announced independently by other researchers, so
-no priority or uniqueness claim is made here.
+Globally, every point-mapping subtree has a positive Green kernel and the
+conductor endpoints obey the exact defect budget
+\(\sigma_\alpha+\sigma_\beta=-q\).  Residual components also obey the new
+endpoint-charge law
+\(\sum(a_i+\sigma_i)=2g+s-2\).  This law rules out the first
+four-curve local stress test as non-geometric, but an exact degree-two
+component ledger still satisfies projection, adjunction,
+Riemann--Hurwitz, Hodge, and ramification while retaining negative
+defect under those summed tests.  The missing pointwise normal-map law is
+now derived: every residual endpoint charge is fixed by the single
+Laurent exponent of the target Poincaré residue.  It rules out the
+degree-two repair and the earlier degree-nine witness for its particular
+displayed target curve, while leaving other target embeddings open; see
+[`current_context/FIXED_PLANE_DEFECT_GREEN_FUNCTION.md`](current_context/FIXED_PLANE_DEFECT_GREEN_FUNCTION.md)
+and
+[`current_context/FIXED_PLANE_COMPONENT_ENDPOINT_PAIRING.md`](current_context/FIXED_PLANE_COMPONENT_ENDPOINT_PAIRING.md),
+with the gluing theorem in
+[`current_context/FIXED_PLANE_NORMAL_MAP_GLUING.md`](current_context/FIXED_PLANE_NORMAL_MAP_GLUING.md).
+The remaining Laurent exponent is now classified exactly: if
+\(H|_C=\lambda v^m\) and the conductor cover is
+\(s=\alpha c^{\epsilon\delta}\), then
+\(m=-1-2\epsilon\delta j\).  This does not force \(j=0\): a smooth
+quartic \(\mathbf G_m\) has the exact conductor residue \(2/3\), the
+same \((2,5)\) and \((2,3)\) ends, and \(j=-1\), while satisfying both
+local endpoint ledgers and the necessary Green/finality rows.  This is
+a sharp scoped countermodel, not a Keller map; see
+[`current_context/FIXED_PLANE_RESIDUE_EXPONENT_CLASSIFICATION.md`](current_context/FIXED_PLANE_RESIDUE_EXPONENT_CLASSIFICATION.md).
+Even global pairing of both target ends does not repair the divisor-level
+route.  A smooth degree-nine \(\mathbf G_m\) with residue \(2/3\) realizes
+all four conductor/residual normal contacts of the 19-vertex pullback
+ledger at once.  Its only recorded failure is exactly the six forbidden
+final point-mapping curves; no global sections or morphism are claimed.
+See
+[`current_context/FIXED_PLANE_GLOBAL_ENDPOINT_NORMAL_COUNTERMODEL.md`](current_context/FIXED_PLANE_GLOBAL_ENDPOINT_NORMAL_COUNTERMODEL.md).
+Likewise, the finite endpoint-charge sum is exactly the missing-sheet
+Euler/Riemann--Hurwitz identity, not an additional inequality.  An exact
+first-order Hermite-CRT model realizes the conductor, a residual sheet,
+the odd normal factor, and the Keller determinant modulo their union,
+while deliberately stopping short of a global Keller pair.  See
+[`current_context/FIXED_PLANE_SHEET_LOSS_AND_FIRST_ORDER_CRT.md`](current_context/FIXED_PLANE_SHEET_LOSS_AND_FIRST_ORDER_CRT.md).
 
 ## Reproduction
 
@@ -149,7 +236,9 @@ without a corresponding audited note.
   counterexample to two-dimensional descent problems.
 - `RESEARCH_REPORT.md` — long-form research history and consolidated
   derivations.
-- `STATUS_AND_PIVOT_2026-07-24.md` — the latest high-level result and
+- `papers/degree-125-bound/` — preprint source and publication replay
+  instructions for the bounded theorem.
+- `STATUS_AND_PIVOT_2026-07-25.md` — the latest high-level result and
   strategy audit.
 - `verify_all.py` — bundled deterministic regression suite.
 

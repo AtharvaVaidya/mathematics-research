@@ -1,0 +1,982 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\A}{\mathbb A}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\Jac}{\operatorname{Jac}}
+\newcommand{\conv}{\operatorname{conv}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Proj}{\operatorname{Proj}}
+
+\title{An Exact Computer-Assisted Exclusion at the Degree-\(125\)
+Frontier of the Plane Jacobian Conjecture}
+\author{Atharva Vaidya}
+\date{25 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let \(k\) be an algebraically closed field of characteristic zero and let
+\((P,Q)\in k[x,y]^2\) have nonzero constant Jacobian.  Combining the
+public preprint reduction of Guccione--Guccione--Horruitiner--Valqui
+with two exact eliminations, we prove that a noninvertible pair must satisfy
+\[
+   \max\{\deg P,\deg Q\}\geq 125.
+\]
+The first elimination is a uniform geometric obstruction for the
+consecutive transverse-degree \((2,3)\) Newton family.  The second is an
+exact computer-assisted elimination of the remaining case-c coefficient
+system.  Its outer equation is exhausted by a five-point Hurwitz fiber;
+the lower equations reduce to seven weighted modes; and a complete
+finite-field weighted-projective fiber is certified empty.  Properness
+then gives the characteristic-zero conclusion.  We specify the external
+theorems used, the exact arithmetic trust base, and a cache-free
+reproduction protocol.  This result is a bounded exclusion, not a proof
+of the plane Jacobian conjecture.  An independent announcement of the
+same numerical bound exists, and no priority claim is made.
+\end{abstract}
+
+\section{Statement and logical boundary}
+
+\begin{definition}
+A \emph{plane Keller pair} over a field \(k\) is a pair
+\((P,Q)\in k[x,y]^2\) for which
+\[
+  \Jac(P,Q):=P_xQ_y-P_yQ_x\in k^\times.
+\]
+\end{definition}
+
+\begin{theorem}[Bounded exclusion]\label{thm:main}
+Let \(k\) be an algebraically closed field of characteristic zero.  If a
+plane Keller pair \((P,Q)\) is not a polynomial automorphism, then
+\[
+  \max\{\deg P,\deg Q\}\geq 125.
+\]
+\end{theorem}
+
+It is enough to prove the statement over \(\mathbb C\).  Indeed, the
+coefficients of a proposed pair generate a finitely generated
+characteristic-zero subfield \(k_0\), which embeds in \(\mathbb C\).
+If the base-changed endomorphism of \(\mathbb C[x,y]\) were invertible,
+then the original endomorphism of \(k_0[x,y]\) would be invertible by
+faithfully flat descent.  Thus a noninvertible pair remains
+noninvertible after a suitable embedding in \(\mathbb C\).
+
+Theorem~\ref{thm:main} is not the two-dimensional Jacobian conjecture.
+It excludes a finite degree range.  The passage from a general
+counterexample of degree below \(125\) to the coefficient systems treated
+here uses results from the public preprint of
+Guccione--Guccione--Horruitiner--Valqui (GGHV)~\cite{GGHV2022}; those
+results are external dependencies and are not reproved.
+We use them with the algebraically closed characteristic-zero convention
+inherited from the earlier papers cited by GGHV.
+
+The precise imported chain is as follows.
+
+\begin{enumerate}
+\item GGHV Theorem 2.1, together with the exhaustive small-case table on
+  its page 3, reduces a counterexample with maximum degree below \(125\),
+  up to exchanging \(P,Q\), to the degree pair \((72,108)\) and one of
+  the two corner cases \((8,28)\), \((9,27)\).
+\item GGHV Proposition 4.1 and Corollary 5.7, the latter proved through
+  Theorem 5.1, eliminate the \((9,27)\) corner configuration.
+\item GGHV Proposition 4.3 reduces the remaining \((8,28)\) corner
+  configuration to exactly the two Newton-polygon alternatives displayed
+  in Section~\ref{sec:import}.
+\end{enumerate}
+
+Our contribution to this chain is to exclude both alternatives.  We do
+not claim an independent derivation of the GGHV reduction, nor do we
+claim priority for the resulting bound; see Remark~\ref{rem:priority}.
+
+\section{Exact import of the two GGHV systems}\label{sec:import}
+
+GGHV Proposition 4.3 produces a Laurent-polynomial pair satisfying
+\[
+ [P,Q]_{x,y}=x^2. \tag{2.1}
+\]
+Its case-c alternative has polygons
+\[
+\begin{aligned}
+\Delta_P&=\conv\{(0,0),(1,0),(8,14),(8,16),(0,8)\},\\
+\Delta_Q&=\conv\{(0,0),(2,1),(12,21),(12,24),(0,12)\}.
+\end{aligned} \tag{2.2}
+\]
+The a/b alternative has the same polygons with \((0,8)\) and \((0,12)\)
+omitted.  Equality of Newton polygons means that all displayed vertices
+have nonzero coefficients.
+
+Put
+\[
+   z=xy,\qquad h=xy^2.
+\]
+Then
+\[
+   x^ay^b=z^{\,2a-b}h^{\,b-a},\qquad
+   \det\begin{pmatrix}2&-1\\-1&1\end{pmatrix}=1, \tag{2.3}
+\]
+so this is a unimodular change of exponent lattice.  Moreover,
+\[
+ \det\frac{\partial(z,h)}{\partial(x,y)}=h,\qquad
+ x^2=\frac{z^4}{h^2},
+\]
+and, after an inessential sign convention,
+\[
+   \{P,Q\}_{z,h}=\frac{z^4}{h^3}. \tag{2.4}
+\]
+
+For a/b, enumerating every lattice point gives the five consecutive
+blocks
+\[
+\begin{aligned}
+P&=A(h)+zp_1(h)+z^2\frac{U(h)}h,\\
+Q&=B(h)+zq_1(h)+z^2q_2(h)+z^3\frac{V(h)}h,             \tag{2.5}
+\end{aligned}
+\]
+where
+\[
+\deg A=8,\quad \deg B=12,\quad \deg U=7,\quad \deg V=10.
+\]
+The fixed-pole coefficients can be normalized to
+\[
+ U(0)=V(0)=1,
+\]
+and the outer bracket row is
+\[
+ UV+2hUV'-3hU'V=1.                                   \tag{2.6}
+\]
+
+For case c the two extra vertices transform as
+\[
+ (0,8)\longmapsto(-8,8),\qquad
+ (0,12)\longmapsto(-12,12).                           \tag{2.7}
+\]
+Thus case c has \(P\)-blocks \(z^{-8},\ldots,z^2\) and \(Q\)-blocks
+\(z^{-12},\ldots,z^3\).  It is not a five-block system and must be
+eliminated separately.
+
+\begin{lemma}[Support inventory]\label{lem:support}
+The polygons in (2.2) contain respectively \(61\) and \(125\) lattice
+points.  After removing the two bracket-invisible additive constants and
+the \(8+11\) outer coefficients of \(U,V\), the case-c lower system has
+\[
+  61+125-2-8-11=165
+\]
+coefficient positions.  The radial inventory used in the certificate is
+exactly their image under (2.3), with no omitted or duplicated monomial.
+\end{lemma}
+
+\begin{proof}
+The assertion is a finite convex-lattice enumeration.  The verifier
+\texttt{current\_context/verify\_case\_c\_full\_certificate\_bridge.py}
+reconstructs both polygons, enumerates their lattice points, applies
+(2.3), and compares the result with the recurrence inventory.
+\end{proof}
+
+\section{The consecutive five-block alternative}\label{sec:fiveblock}
+
+The argument used here applies uniformly, although only the scale
+\(R=4\) instance is needed for Theorem~\ref{thm:main}.
+
+\begin{theorem}[Consecutive \((2,3)\) obstruction]\label{thm:allscale}
+For \(R\geq1\), suppose (2.5) satisfies (2.4), with
+\[
+\begin{gathered}
+\deg A=2R,\qquad \deg B=3R,\\
+\deg U=2R-1,\qquad\deg V=3R-2,\qquad U(0)=V(0)=1,
+\end{gathered}
+\]
+and with the full vertices that make these degrees exact.  Then no such
+five-block completion exists.
+\end{theorem}
+
+\begin{lemma}[Deficit-one form and coprimality]\label{lem:deficit-one}
+In a completion from Theorem~\ref{thm:allscale}, \(p_1\ne0\), and there
+are constants \(a,b\), not both zero, such that
+\[
+   p_1=(ah+b)U'-\frac a2U.                              \tag{3.1}
+\]
+Moreover,
+\[
+   \gcd(U,p_1)=1.                                      \tag{3.2}
+\]
+\end{lemma}
+
+\begin{proof}
+For a deficit-one kernel pair \((p_1,q_2)\), the combination
+\(C=2Uq_2-3Vp_1\) recovers the pair: substituting the outer equation
+into the linear bracket row gives
+\[
+\begin{aligned}
+p_1&=hCU'-\frac12CU-\frac12hC'U,\\
+q_2&=hCV'-\frac14CV-\frac34hC'V.
+\end{aligned}
+\]
+The endpoint degree and divisibility conditions, compared coefficient by
+coefficient from the two ends, leave exactly
+\[
+ C=1,\qquad
+ C_*=\frac{U^2-U(0)^2-2U(0)U'(0)h}{h},
+\]
+as a basis.  Direct substitution gives
+\[
+ p_{1,1}=hU'-\frac12U,\qquad
+ p_{1,C_*}
+ =-2U(0)U'(0)p_{1,1}-U(0)^2U'.
+\]
+Their span is exactly (3.1).  This is a coefficientwise identity; the
+script
+\texttt{route\_bd\_universal\_radial\_kernel\_theorem.py} checks the
+kernel exhaustion and both substitutions.  If \(p_1=0\), the
+\(z^0\)-row of the bracket first gives \(q_1=0\), and its \(z^2\)-row
+then gives \(A'q_3=0\), impossible because \(A'\ne0\) and \(q_3=V/h\ne0\).
+
+The outer equation shows that every root of \(U\) is nonzero and simple
+and that \(V\) does not vanish there.  Suppose that
+\(U(\alpha)=p_1(\alpha)=0\).  Evaluating the bracket at \(h=\alpha\)
+gives
+\[
+ -\bigl(A'+p_1'z+p_2'z^2\bigr)
+  \bigl(q_1+2q_2z+3q_3z^2\bigr)
+ =\alpha^{-3}z^4.
+\]
+Here
+\[
+ p_2'(\alpha)=\frac{U'(\alpha)}{\alpha}\ne0,\qquad
+ q_3(\alpha)=\frac{V(\alpha)}{\alpha}\ne0.
+\]
+Thus both quadratic factors are monomials in \(z\), and
+\[
+ A'(\alpha)=p_1'(\alpha)=q_1(\alpha)=q_2(\alpha)=0.
+\]
+If \(a=0\), then \(p_1=bU'\) is nonzero at \(\alpha\).  If \(a\ne0\),
+(3.1) first gives \(a\alpha+b=0\), and differentiation gives
+\(p_1'(\alpha)=aU'(\alpha)/2\ne0\).  Both cases are contradictions.
+\end{proof}
+
+\begin{lemma}[Fixed-pole nonimmersion]\label{lem:nonimmersion}
+Factor the boundary parametrization polynomially as
+\[
+ h\longmapsto \xi=H(h)\longmapsto(A_0(\xi),B_0(\xi)),
+\]
+where the second map is the normalization of its image.  At
+\(\xi_0=H(0)\),
+\[
+ A_0'(\xi_0)=B_0'(\xi_0)=0.                            \tag{3.3}
+\]
+\end{lemma}
+
+\begin{proof}
+Suppose first that \(A_0'(\xi_0)\ne0\), and write the normalized image
+locally as \(B_0=g(A_0)\).  Over \(\mathbb C(h)\), put \(N=Q-g(P)\).
+The identity
+\[
+ \{P,N\}_{z,h}=z^4/h^3
+\]
+and the nonvanishing of \((A_0\circ H)'\) in \(\mathbb C(h)\) imply
+\(N=O(z^5)\).  Comparing its first four Taylor coefficients gives
+\[
+\begin{aligned}
+q_1&=g'p_1,\\
+q_2&=g'p_2+\frac12g''p_1^2,\\
+q_3&=g''p_1p_2+\frac16g'''p_1^3,\\
+0&=\frac12g''p_2^2+\frac12g'''p_1^2p_2
+  +\frac1{24}g''''p_1^4.                               \tag{3.4}
+\end{aligned}
+\]
+Because \(p_2=1/h+O(1)\), \(q_3=1/h+O(1)\), and \(p_1\) is
+polynomial, the third row forces \(g''p_1\) to be a unit at \(h=0\).
+The fourth row then has an uncancelled pole of order two.
+
+If \(A_0'(\xi_0)=0\) but \(B_0'(\xi_0)\ne0\), write
+\(A_0=f(B_0)\).  The \(z^2\)-coefficient of \(P-f(Q)=O(z^5)\) is
+\[
+ p_2=f'q_2+\frac12f''q_1^2.
+\]
+Its right side is regular at \(h=0\), whereas \(p_2\) has a simple
+pole.  This proves (3.3).
+\end{proof}
+
+\begin{lemma}[Root consumption]\label{lem:consumption}
+If \(\beta\ne0\) is a root of \(p_1\) of multiplicity \(m\), then
+\[
+   \ord_\beta A'\geq2m-1.                              \tag{3.5}
+\]
+\end{lemma}
+
+\begin{proof}
+Lemma~\ref{lem:deficit-one} gives \(p_2(\beta)\ne0\).  First
+\(A'(\beta)=0\).  Otherwise \(B=g(A)\) is a local graph and (3.4)
+applies.  At \(p_1(\beta)=0\), its third row gives \(q_3(\beta)=0\).
+The outer equation makes this zero simple.  The fourth row gives
+\(g''(\beta)=0\), but differentiating the third row then gives
+\(q_3'(\beta)=0\), a contradiction.
+
+Complete the square locally:
+\[
+ \zeta=\sqrt{p_2}\left(z+\frac{p_1}{2p_2}\right),\qquad
+ P=\zeta^2+H_1(h).
+\]
+The boundary \(z=0\) is \(\zeta=s(h)\), where
+\(\ord_\beta s=m\), and
+\[
+ \{P,Q\}_{\zeta,h}=u(h)(\zeta-s(h))^4,\qquad u(\beta)\ne0.
+\]
+Writing \(Q=\sum_{j=0}^3\widetilde q_j(h)\zeta^j\), the coefficients
+of \(\zeta^0,\zeta^2,\zeta^4\) are
+\[
+\begin{aligned}
+H_1'\widetilde q_1&=-us^4,\\
+2\widetilde q_1'-3H_1'\widetilde q_3&=6us^2,\\
+2\widetilde q_3'&=u.                                   \tag{3.6}
+\end{aligned}
+\]
+Put \(c=\ord_\beta H_1'\).  The last row says that
+\(\widetilde q_3\) is a unit or has a simple zero.  If
+\(c\le2m-2\), the first row gives
+\[
+\ord_\beta\widetilde q_1=4m-c\ge2m+2.
+\]
+In the middle row, \(\widetilde q_1'\) then has order at least
+\(2m+1\), while \(H_1'\widetilde q_3\) has order at most \(2m-1\);
+this cannot equal a term of order \(2m\).  Hence \(c\ge2m-1\).
+Finally \(A'=H_1'+2ss'\), proving (3.5).
+\end{proof}
+
+\begin{lemma}[Marked chart exhaustion]\label{lem:charts}
+The fixed-pole conditions and Lemma~\ref{lem:nonimmersion} leave only the
+following two horizontal charts in the pulled-back parameter \(h\):
+\[
+\begin{array}{ll}
+\text{\rm(i)}&
+\ord_0(A-A(0))=2t+1,\quad
+\ord_0(B-B(0))=3t+2,\quad
+\ord_0p_1=t;\\[2mm]
+\text{\rm(ii)}&
+p_1(0)\ne0,\quad \ord_0 A'\ge2,
+\end{array}                                             \tag{3.7}
+\]
+where in (ii) the normalized graph begins with a nonzero quadratic
+term.  The opposite projection and every other analytic or fractional
+chart are impossible.
+\end{lemma}
+
+\begin{proof}
+We give the valuation exhaustion because the fixed poles make it much
+shorter than a general Puiseux classification.  Write
+\[
+ m=\ord_0(A-A(0)),\qquad n=\ord_0(B-B(0)),\qquad
+ r=\ord_0p_1.
+\]
+A nonzero tangent is impossible.  If no later fractional term cancels
+its simple pole in \(g'p_2\), this follows already from the second row
+of (3.4).  If a first fractional term of pulled-back order \(N>m\)
+does cancel it, then necessarily
+\(N-2m+2r=-1\).  Its three contributions to the fourth row have orders
+\[
+N-2m-2,\qquad -m-2,\qquad -N-2,
+\]
+so the last is uniquely lowest.  Suppose first that the horizontal graph
+therefore begins with a nonintegral term
+\(g(X)=cX^{n/m}+\cdots\).
+The three valuations in the fourth row of (3.4) are
+\[
+ n-2m-2,\qquad n-3m+2r-1,\qquad n-4m+4r.               \tag{3.8}
+\]
+They form an arithmetic progression.  Unless
+\(2r=m-1\), (3.8) has a unique lowest term.  With
+\(2r=m-1\), the two terms in the third row of (3.4) have the same
+valuation.  Their leading coefficients cannot cancel: writing \(T\) for
+the normalized leading value of \(p_1^2h/(A-A(0))\), simultaneous
+vanishing of the fourth-row leading coefficient and of
+\(1+(n/m-2)T/6\), the third-row leading factor, would force
+\(n/m=1/2\).  Since \(n/m>1\), the exact simple pole of \(q_3\) forces
+\[
+ 2n=3m+1.
+\]
+Thus \(m=2t+1,n=3t+2,r=t\), which is (i).
+
+The opposite projection is impossible.  Indeed, if
+\(A=f(B)\), put \(s=\ord_0q_1\).  The fixed pole in
+\[
+ p_2=f'q_2+\frac12f''q_1^2
+\]
+forces \(m-2n+2s=-1\).  In the next Taylor row
+\[
+ 0=f'q_3+f''q_1q_2+\frac16f'''q_1^3,
+\]
+the first two terms exceed the order of the last by respectively
+\[
+ \frac{3m-2n+1}{2}>0,\qquad m-n+\ord_0q_2+1>0.
+\]
+The last term is therefore uniquely lowest.
+
+It remains to treat an analytic initial part.  A first analytic term of
+degree at least three cannot supply the pole of \(q_3\).  Suppose instead
+\[
+ g(X)=c_2X^2+c_3X^3+cX^{N/m}+\cdots,\qquad c_2c\ne0.
+\]
+If \(2m<N<3m\), the fourth row of (3.4) is impossible as follows.
+For \(r=0\), the third row forces \(N=3m-1\), after which the
+\(g''''p_1^4\) term has unique order \(-m-1<-2\).  For \(r>0\), the
+same row forces \(N=3m-3r-1\), unless \(m=2r+1\).  In the former case
+the \(g''''p_1^4\) term is again uniquely lowest; in the exceptional
+case all fractional terms have order above \(-2\), leaving
+\(\frac12g''p_2^2\) uniquely at order \(-2\).
+
+Consequently the first nonanalytic exponent lies above three.  The pole
+of \(q_3\) then forces \(r=0\), and the only possible cancellation of
+\(\frac12g''p_2^2\) in the fourth row is
+\[
+ N=4m-2.
+\]
+Hence \(m\ge3\) and \(\ord_0A'=m-1\ge2\), giving (ii).  If there is no
+nonanalytic term, the image is a smooth graph; its normalization is an
+isomorphism there, contrary to (3.3).
+
+Finally, polynomial L\"uroth factorization gives
+\(\mathbb C(A,B)=\mathbb C(H)\) for a polynomial \(H\).  If
+\(e=\ord_0(H-H(0))\), all normalization orders above are multiplied by
+\(e\).  In (i), \(2n=3m+1\) forces \(e=1\).  In (ii),
+\(N=4m-2\) permits only \(e\mid2\), and the pulled-back inequalities
+remain unchanged.  Thus no primitivity of \(h\mapsto(A(h),B(h))\) was
+used, and the listed charts are exhaustive.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:allscale}]
+In chart (i), the marked point contributes \(2t\) zeros to \(A'\).
+If \(a\ne0\) in (3.1), then \(\deg p_1=2R-1\).  Applying
+Lemma~\ref{lem:consumption} to every nonmarked root of \(p_1\) gives
+\[
+ \deg A'\ge2t+(2R-1-t)>2R-1,
+\]
+a contradiction.  If \(a=0\), then \(p_1=bU'\) has degree \(2R-2\)
+and
+\[
+ \deg A'\ge2t+(2R-2-t).
+\]
+This is too large for \(t\ge2\).  For \(t=1\), equality forces
+\[
+ p_1=bU',\qquad A'=\lambda hU'
+\]
+with \(b,\lambda\ne0\).  The first lower bracket row gives
+\[
+ q_1=\frac b\lambda\frac{B'}h,\qquad \deg q_1=3R-2.
+\]
+Since \(U'(0)=0\), the other deficit-one partner is, up to a nonzero
+scalar,
+\[
+ q_2=V'+\frac{V}{2h}-\frac{U}{2h},
+\]
+and has degree \(3R-3\).
+The original \(z^1\)-row is
+\[
+h^2\left(
+2\frac{U-1}{h}B'+p_1q_1'-p_1'q_1-2A'q_2
+\right)+2hB'=0.                                       \tag{3.9}
+\]
+Inside the parentheses the four displayed degrees are
+\[
+5R-3,\qquad5R-5,\qquad5R-5,\qquad5R-4.
+\]
+Thus the first term in (3.9) is uniquely highest, a contradiction.
+
+In chart (ii), every zero of \(p_1\) is nonmarked.  If \(a\ne0\),
+Lemma~\ref{lem:consumption} gives
+\[
+\deg A'\ge2+(2R-1)>2R-1.
+\]
+If \(a=0\), it gives
+\[
+\deg A'\ge2+(2R-2)>2R-1.
+\]
+This excludes the second chart and completes the proof.
+\end{proof}
+
+\begin{corollary}\label{cor:ab}
+The a/b alternative of GGHV Proposition 4.3 is empty.
+\end{corollary}
+
+\begin{proof}
+Equations (2.3)--(2.6) identify the complete a/b support, including its
+vertices and fixed poles, with Theorem~\ref{thm:allscale} at \(R=4\).
+\end{proof}
+
+\begin{remark}
+The phrase ``all scale'' concerns the displayed consecutive five-block
+family.  Known minimal-counterexample theory does not put every
+possible degree or every corner chain into that family.  In particular,
+Theorem~\ref{thm:allscale} by itself neither treats case c nor proves the
+Jacobian conjecture.
+\end{remark}
+
+\section{The outer Hurwitz fiber in case c}\label{sec:hurwitz}
+
+The outer blocks of case c still satisfy (2.6), with
+\[
+ \deg U=7,\qquad \deg V=10,\qquad U(0)=V(0)=1.          \tag{4.1}
+\]
+Associate the rational function
+\[
+   R(h)=h\frac{V(h)^2}{U(h)^3}.
+\]
+Equation (2.6) gives
+\[
+   R'(h)=\frac{V(h)}{U(h)^4}.                           \tag{4.2}
+\]
+The outer equation prevents a common root of \(U,V\).  At a root of
+\(U\) it reads \(-3hU'V=1\), and at a root of \(V\) it reads
+\(2hUV'=1\); hence all seven roots of \(U\) and all ten roots of \(V\)
+are nonzero and simple.  Thus \(R\) has the first two ramification
+partitions below.  If \(\lambda\) is the ratio of the leading
+coefficients of \(hV^2\) and \(U^3\), then (4.2) has order \(-18\) at
+infinity, so \(R-\lambda\) has order \(17\) in the local parameter
+\(h^{-1}\).  Every other point above \(\lambda\) is unramified by
+(4.2).  Degree \(21\) therefore leaves exactly four such points.
+The resulting three-point passport is
+\[
+ (2^{10},1),\qquad(3^7),\qquad(17,1^4).                \tag{4.3}
+\]
+
+\begin{proposition}[Outer exhaustion]\label{prop:outer}
+Up to the normalized source scaling, the geometric solution set of
+(4.1)--(4.2) consists of five points.  It is represented by the five
+embeddings of an irreducible quintic algebra
+\[
+   K=\Q[s]/(f(s)),\qquad s=u_7^{-1}.
+\]
+No additional solution lies on \(u_1=0\).
+\end{proposition}
+
+\begin{proof}
+The exact symmetric-group character sum for (4.3) is \(5\).  Every
+permutation triple counted is transitive: a component disjoint from the
+17-cycle would lie among its four fixed sheets, where the involution and
+the product of 3-cycles cannot restrict as mutual inverses.  Cover
+automorphisms are trivial.  Indeed, they fix the unique simple zero and
+the unique point of ramification index \(17\), so in the normalized
+coordinate they have the form \(h\mapsto\lambda h\); the normalization
+\(R(h)=h+O(h^2)\) gives \(\lambda=1\).
+
+For an outer solution, normalize the third branch value by
+\(T=R/\lambda\).  The scaling below sends
+\(R(h)\) to \(R(\mu h)/\mu\), and hence sends \(T(h)\) to the
+source-isomorphic cover \(T(\mu h)\).  Conversely, an isomorphism between
+two normalized covers fixes the unique simple zero and the unique
+\(17\)-fold point, so it is \(h\mapsto\mu h\); comparing
+\(R_i'(0)=1\) shows that the two outer solutions differ by exactly this
+action.  Thus outer scaling orbits inject into the Hurwitz fiber.
+Exact rational reconstruction
+produces an irreducible quintic \(f\) and five distinct solutions in the
+chart \(u_1=1\), one at each geometric embedding.  That chart meets each
+orbit with \(u_1\ne0\) once.  The five reconstructed orbits attain the
+Hurwitz upper bound, so they exhaust the entire outer fiber and exclude
+a separate orbit on \(u_1=0\).  The scripts
+\texttt{route\_bd\_ab\_hurwitz\_count.py} and
+\texttt{route\_bd\_ab\_outer\_lift.py} perform the character calculation,
+irreducibility check, rational reconstruction, and coefficientwise
+verification of (2.6).
+\end{proof}
+
+The GGHV case-c slice is commonly normalized by \(u_7=1\), whereas
+the quintic above uses \(u_1=1\).  The bracket-preserving action
+\[
+ (P,Q)(z,h)\longmapsto
+ \bigl(\lambda P(z,\lambda h),\lambda Q(z,\lambda h)\bigr)
+\]
+acts invertibly on every lower weighted coefficient.  On a quintic
+representative, the equation \(u_7=1\) is
+\(\lambda^7=u_7^{-1}=s\).  Since \(u_7\ne0\), it has seven distinct
+solutions over the algebraic closure, and the action is free because
+\(u_1\ne0\).  Thus the two normalizations differ only by an explicitly
+audited invertible scaling; no outer or lower component is lost.
+
+At the good prime
+\[
+   p=32003,                                             \tag{4.4}
+\]
+the primitive quintic has squarefree factorization
+\[
+ (s-26839)(s-16621)
+ (s^3-11133s^2-11294s-6180).                           \tag{4.5}
+\]
+Thus the reduced outer fiber is the disjoint union of two rational points
+and one degree-three point.  These factors account for all five geometric
+outer points.
+
+\section{Seven modes and the consistency scheme}\label{sec:modes}
+
+Order the remaining blocks by radial deficit from outer degrees \(2\)
+and \(3\).  At each stage the new coefficients occur linearly, while the
+right-hand side depends polynomially on earlier blocks.
+
+\begin{proposition}[Exact lower parametrization]\label{prop:modes}
+On the complete outer algebra, the bounded homogeneous kernels at
+successive deficits have dimensions
+\[
+   (2,2,2,1,0,0,\ldots,0).                              \tag{5.1}
+\]
+Consequently every solution of the \(165\)-coordinate case-c system
+determines seven canonical parameters of weights
+\[
+   (1,1,2,2,3,3,4).                                    \tag{5.2}
+\]
+Every later coefficient is uniquely determined by these parameters, and
+every retained cokernel row is a necessary equation for the original
+system.
+\end{proposition}
+
+\begin{proof}
+The universal kernel identity gives seven explicit modes and hence the
+kernel lower bounds in (5.1).  Exact row reduction through all fifteen
+deficits gives the matching upper bounds and vanishing of every later
+kernel.  The calculation is repeated on the two linear factors and the
+cubic factor in (4.5); nonzero maximal minors at good reduction certify
+rank lower bounds, hence kernel upper bounds, while the explicit
+characteristic-zero modes certify kernel lower bounds.  Since later
+systems are affine-linear with source terms in earlier blocks, a failed
+cokernel row cannot be repaired at a later deficit.
+\end{proof}
+
+After an invertible endpoint-coordinate change, the two first
+nonautomatic rows, at deficit four, are nonzero scalar multiples of
+\[
+   \left(X_2-\frac{169}{48}X_0^2\right)^2.              \tag{5.3}
+\]
+For the transparent chart decomposition, set-theoretically we may
+therefore impose
+\[
+   X_2=\frac{169}{48}X_0^2.                             \tag{5.4}
+\]
+The surviving compatibility rows then have the following inventory:
+\[
+\begin{array}{c|cccc}
+\text{weight}&5&6&7&8\\ \midrule
+\text{number of rows}&1&3&5&6.
+\end{array}                                             \tag{5.5}
+\]
+All equations are homogeneous for the weights in (5.2).  Let
+\(I_8^{\mathrm{orig}}\) denote the ideal generated by the original
+consistency rows through deficit eight, retaining the squared rows (5.3).
+For the characteristic-zero transport, let
+\(I_8^{\mathrm{rad}}\) instead denote the homogeneous ideal generated by
+\[
+ X_2-\frac{169}{48}X_0^2
+\]
+and the exact rows in (5.5) after this substitution.  In characteristic
+zero, and at the audited good factors above \(32003\), the two ideals
+have the same field-valued projective zero set, although their scheme
+structures need not agree.
+
+\section{The complete special-fiber certificate}\label{sec:certificate}
+
+\begin{theorem}[Finite-field certificate]\label{thm:finite}
+For each of the three factors in (4.5), exact standard-basis reduction in
+the corresponding field gives
+\[
+   X_i^{32}\in I_8^{\mathrm{orig}}\qquad(0\le i\le6),  \tag{6.1}
+\]
+and
+\[
+   \dim_{\F_{p^e}}
+   \F_{p^e}[X_0,\ldots,X_6]/I_8^{\mathrm{orig}}=380,
+   \qquad e=1,1,3.                                     \tag{6.2}
+\]
+In particular,
+\[
+ \Proj\bigl(
+ \F_{p^e}[X_0,\ldots,X_6]/I_8^{\mathrm{orig}}
+ \bigr)=\varnothing
+ \quad(e=1,1,3).                                       \tag{6.3}
+\]
+\end{theorem}
+
+\begin{proof}
+All arithmetic is exact.  Singular reduces each of the seven monomials
+in (6.1) to zero against an exact finite-field standard basis.  Hence the
+radical of \(I_8^{\mathrm{orig}}\) contains the weighted irrelevant ideal
+\((X_0,\ldots,X_6)\), proving (6.3).  The independently computed quotient
+dimension (6.2) is a consistency check on all three standard-basis runs.
+\end{proof}
+
+Separately, the radical-branch scheme defined by
+\(I_8^{\mathrm{rad}}\) admits the exhaustive chart cover
+\[
+D(L),\quad V(L)\cap D(A),\quad
+V(L,A)\cap D(B),\quad V(L,A,B).                         \tag{6.4}
+\]
+The weight-five row is linear in \(X_6\) with coefficient \(L\); after
+\(L=0\), its coefficients of \(X_5,X_4\) are \(A,B\).  The first two
+charts give unit ideals at good reduction.  The third is empty by a
+nonzero resultant of two quadratics.  On the fourth, a nonzero
+\(3\times3\) determinant forces \(X_4=X_5=0\), deficit seven is automatic,
+and the deficit-eight rows are nonzero multiples of \(X_6^2\).
+The determinant and resultant statements are also checked directly in
+the exact quintic field \(K\).  It is essential to use all four charts:
+emptiness of \(D(L)\) alone would not prevent a generic point from
+specializing to \(L=0\).  This four-chart calculation, rather than a
+coefficientwise lift of \(I_8^{\mathrm{orig}}\), is the special fiber
+used below.
+
+\begin{theorem}[Characteristic-zero lift]\label{thm:lift}
+The weighted-projective radical-branch consistency scheme has empty
+characteristic-zero geometric fiber.
+\end{theorem}
+
+\begin{proof}
+The outer equation, the endpoint change, the square root equation (5.4),
+and every substituted row in (5.5) are constructed over \(K\).  After
+inverting the finitely many denominators, their coefficients are integral
+at the primes above \(32003\).  An independent transport check reduces
+every one of these exact radical-branch rows,
+coefficient-for-coefficient and in its original order, to the rows used
+in the four-chart calculation (6.4).
+
+These weighted homogeneous equations define a closed subscheme
+\[
+ \mathcal X^{\mathrm{rad}}\subset\PP_R(1,1,2,2,3,3,4)
+\]
+over the corresponding localized integral coefficient ring \(R\).
+Weighted projective space is proper over \(R\), for example by passing to
+a Veronese subring, and therefore
+\(\mathcal X^{\mathrm{rad}}\to\operatorname{Spec}R\) is proper.  If its
+characteristic-zero geometric generic fiber were nonempty, the proper
+image would be a closed subset containing the generic point of the
+integral base, and hence would contain every closed point.  This
+contradicts the complete empty radical-branch fiber in (6.4).  No
+flatness assumption is used.
+\end{proof}
+
+\begin{remark}[Secondary characteristic-zero certificates]
+The two special charts in (6.4) have direct determinant/resultant
+certificates over \(K\).  On \(L=0,A\ne0\), ordinary exact standard-basis
+reduction gives
+\[
+ A^8\in
+ (L,F_5,F_{6,0},F_{6,1},F_{6,2},F_{7,0}).
+\]
+There is a logically exact proposed direct route on \(L\ne0\): homogenize
+the affine chart ideal and use Singular \texttt{modStd(...,1)} to test a
+power of the homogenizing variable.  That run was stopped after a bounded
+audit window and no successful power-reduction output is archived.
+Accordingly it is not a certificate and is not used in
+Theorem~\ref{thm:lift}.
+\end{remark}
+
+\section{Excluding the cone origin}\label{sec:origin}
+
+The finite-field certificate leaves only the affine cone origin.  That
+origin is not a genuine case-c point.
+
+\begin{proposition}\label{prop:origin}
+Every case-c solution with the Newton polygons (2.2) determines a
+nonzero point of
+\(\PP(1,1,2,2,3,3,4)\).
+\end{proposition}
+
+\begin{proof}
+The required opposite vertices occur at
+\[
+ [z^{-8}h^8]P\ne0,\qquad[z^{-12}h^{12}]Q\ne0.           \tag{7.1}
+\]
+Their radial deficits are respectively \(10\) and \(15\).  If all seven
+modes vanish, the first four lower blocks vanish.  Every later
+inhomogeneous source is then zero; by (5.1), the corresponding linear
+operator has zero kernel.  Induction through deficits \(5,\ldots,15\)
+forces all later lower coefficients to vanish, including both
+coefficients in (7.1).  This contradicts equality with the required
+Newton polygons.  The two omitted additive constants are
+bracket-invisible and do not contribute to (7.1).
+\end{proof}
+
+\begin{corollary}[Case-c elimination]\label{cor:casec}
+The coefficient system in GGHV Proposition 4.3(1) has no solution over
+an algebraically closed field of characteristic zero.
+\end{corollary}
+
+\begin{proof}
+By Propositions~\ref{prop:outer} and~\ref{prop:modes}, any solution gives
+a nonzero point satisfying the original weighted-projective consistency
+rows.  The exact square identity (5.3) then puts that point on the
+radical-branch scheme.  Theorem~\ref{thm:lift} says that no such point
+exists.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The external GGHV reduction listed in Section~1 leaves, below degree
+\(125\), only the two alternatives in Section~\ref{sec:import}.
+Corollary~\ref{cor:ab} excludes a/b, and
+Corollary~\ref{cor:casec} excludes case c.
+\end{proof}
+
+\section{Trust base and reproduction}\label{sec:reproduce}
+
+The proof separates mathematical reductions from machine certificates.
+Its trusted computational base is:
+
+\begin{itemize}
+\item exact integer, rational, algebraic-number, and finite-field
+  arithmetic;
+\item SymPy \(1.14.0\) exact polynomial arithmetic~\cite{SymPy};
+\item Singular \(4.4\) or newer and its exact finite-field
+  standard-basis algorithm~\cite{Singular}; and
+\item for interpreting attempted direct homogeneous
+  characteristic-zero runs only, the documented exactness mode of
+  \texttt{modstd.lib}.  No such run is a premise of the proof.
+\end{itemize}
+
+Floating-point root selection is never used.  The nonhomogeneous
+\texttt{modStd} unit outputs, which Singular documents only as
+high-probability in the relevant global setting, are not premises of
+Theorem~\ref{thm:main}.
+
+From the repository root~\cite{Archive}, create the pinned Python
+environment and run the quick interface audit:
+\begin{verbatim}
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python \
+  current_context/verify_case_c_full_certificate_bridge.py
+\end{verbatim}
+The complete finite-field weighted-projective certificate is:
+\begin{verbatim}
+.venv/bin/python \
+  current_context/verify_case_c_full_certificate_bridge.py \
+  --run-special-fiber
+\end{verbatim}
+The modular square branch and its two generic charts are:
+\begin{verbatim}
+.venv/bin/python route_bd_ab_hurwitz_count.py
+.venv/bin/python route_bd_case_c_n3_hurwitz_bridge.py
+.venv/bin/python route_bd_case_c_n3_generic_charts.py
+\end{verbatim}
+The exact characteristic-zero square, row transport, and special-chart
+scalar certificates are:
+\begin{verbatim}
+.venv/bin/python scratch_case_c_n3_special_charts_Q.py
+\end{verbatim}
+For completeness, the commands below launch an optional direct
+homogeneous generic-chart experiment:
+\begin{verbatim}
+.venv/bin/python scratch_case_c_n3_generic_charts_Q.py \
+  --skip-modular-crosscheck --chart L_NE_0 --one-certificate
+.venv/bin/python scratch_case_c_n3_generic_charts_Q.py \
+  --skip-modular-crosscheck --chart L_EQ_0_A_NE_0 --one-certificate
+\end{verbatim}
+The \(L\ne0\) run was not completed in the present audit, and no
+\texttt{HPOWER} output from this route is claimed.  These commands are
+not part of the proof reproduction protocol.
+The all-scale calculation and its symbolic identities are checked by:
+\begin{verbatim}
+.venv/bin/python route_bd_universal_radial_kernel_theorem.py
+.venv/bin/python route_bd_allscale_marked_cusp_obstruction.py
+.venv/bin/python current_context/verify_gghv_allscale_scope.py
+\end{verbatim}
+
+Three files under \texttt{tmp/} are runtime caches:
+\begin{verbatim}
+tmp/case_c_n3_generic_charts_Q.pkl
+tmp/case_c_n3_special_charts_Q.pkl
+tmp/case_c_n3_special_recurrence_Q.pkl
+\end{verbatim}
+They are accelerators, not premises.  A publication replay must move
+them out of \texttt{tmp/}, reconstruct from scratch, and archive:
+
+\begin{enumerate}
+\item standard output and standard error;
+\item Python, SymPy, Singular, and \texttt{modstd.lib} versions;
+\item SHA-256 hashes of every verifier and log;
+\item the factorization (4.5), all exact-to-modular row comparisons, and
+  all seven reductions (6.1) on every factor; and
+\item regenerated cache hashes as diagnostics only.
+\end{enumerate}
+The canonical replay driver is
+\begin{verbatim}
+publication_artifacts/degree-125-bound/cleanroom-2026-07-25/replay.sh
+\end{verbatim}
+and must be invoked from the repository root after the three caches have
+been moved aside.
+
+\section{Limitations and review status}
+
+The theorem does not address the admissible corner chains at degree
+\(125\) and above.  It does not provide the global exhaustion theorem
+that would be required to deduce the plane Jacobian conjecture from
+Theorem~\ref{thm:allscale}.  It also does not reprove the GGHV
+small-degree classification.
+
+The mathematical certificate has three deliberately redundant audit
+layers: the global nilpotence test (6.1), the four-chart decomposition
+(6.4), and direct exact-\(K\) scalar certificates on the special charts.
+The accompanying publication bundle includes a cache-free replay, its
+archived log, and source hashes.  Before journal submission, the
+recommended remaining check is an independent line-by-line human audit
+of the imported GGHV implications.
+
+\begin{remark}[Independent announcement]\label{rem:priority}
+A MathOverflow answer posted in 2026 announces an independent
+computer-assisted exclusion giving the same degree-\(125\) lower bound
+and states that a write-up is in preparation~\cite{MO2026}.  The present
+manuscript does not rely on that announcement and makes no claim of
+priority or uniqueness.
+\end{remark}
+
+\paragraph{Disclosure.}
+AI systems assisted with symbolic-search orchestration, code review, and
+draft preparation.  The named author is responsible for the mathematical
+claims, the final source, and independent verification of the
+certificates.
+
+\begin{thebibliography}{9}
+
+\bibitem{GGHV2022}
+J.~A. Guccione, J.~J. Guccione, R. Horruitiner, and C. Valqui,
+\emph{Increasing the degree of a possible counterexample to the Jacobian
+Conjecture from 100 to 108},
+preprint, arXiv:2204.14178, 2022,
+\url{https://arxiv.org/abs/2204.14178}.
+
+\bibitem{SymPy}
+A. Meurer et al.,
+\emph{SymPy: symbolic computing in Python},
+PeerJ Computer Science \textbf{3} (2017), e103,
+\url{https://doi.org/10.7717/peerj-cs.103}.
+
+\bibitem{Singular}
+W. Decker, G.-M. Greuel, G. Pfister, and H. Sch\"onemann,
+\emph{Singular 4-4: A computer algebra system for polynomial
+computations},
+\url{https://www.singular.uni-kl.de}.
+
+\bibitem{Archive}
+A. Vaidya,
+\emph{Mathematics research archive: exact Jacobian-conjecture
+certificates},
+\url{https://github.com/AtharvaVaidya/mathematics-research}.
+
+\bibitem{MO2026}
+J.~A. Guccione,
+\emph{Answer to ``The simplest case of Jacobian conjecture''},
+MathOverflow, 2026,
+\url{https://mathoverflow.net/questions/513413/the-simplest-case-of-jacobian-conjecture/513458}.
+
+\end{thebibliography}
+
+\end{document}

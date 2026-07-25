@@ -2,6 +2,16 @@
 
 Date: 25 July 2026
 
+**Subsequent normal-map audit.**  The full-effectivity witness below
+passes the numerical equations stated here, but its residual bridge
+cannot realize the particular Laurent degree-nine target curve displayed
+in (36).  `FIXED_PLANE_NORMAL_MAP_GLUING.md` derives a pointwise endpoint
+charge law from the resolved target normal maps; for that curve the law
+requires zero charge at each end, whereas nodes \(3\) and \(6\) have
+charges \(-1\) and \(1\).  This strengthens the already-recorded
+finality failure without changing the witness's role as an independence
+example for the integral intersection equations.
+
 This note records the exact numerical system imposed on a projective
 resolution of a hypothetical fixed-plane Darboux pair.  It also separates
 three logically different levels:

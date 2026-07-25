@@ -332,6 +332,8 @@ def rational_quotient_ring(
 def certify_charts(
     eliminant: sp.Poly,
     exact_imposed: list[ParameterPolynomial],
+    selected_chart: str = "all",
+    one_certificate: bool = False,
 ) -> None:
     parameters = tuple(
         ParameterPolynomial.variable(index) for index in range(NVAR)
@@ -345,6 +347,8 @@ def certify_charts(
         one,
     )
     for chart in charts:
+        if selected_chart != "all" and chart.name != selected_chart:
+            continue
         assert_variable_support(chart)
         assert_reduced_shape(chart)
         weight_six = list(chart.rows_by_weight[6])
@@ -354,6 +358,8 @@ def certify_charts(
             if chart.name == "L_NE_0"
             else tuple((index,) for index in range(3))
         )
+        if one_certificate:
+            choices = choices[:1]
 
         def run_choice(choice: tuple[int, ...]) -> str:
             rows = weight_six + [
@@ -368,6 +374,8 @@ def certify_charts(
                     # high-probability even with exactness=1.  Homogenizing
                     # makes its verified standard-basis guarantee exact.
                     "ideal Jh=homog(J,h);",
+                    'if (homog(Jh)!=1) { '
+                    'print("ERROR NONHOMOGENEOUS INPUT"); exit; }',
                     "ideal Hh=modStd(Jh,1);",
                     "int hpower=0;",
                     "poly hp=1;",
@@ -388,6 +396,7 @@ def certify_charts(
             )
             output = result.stdout + result.stderr
             assert "error occurred" not in output.lower(), output
+            assert "ERROR NONHOMOGENEOUS INPUT" not in output, output
             marker = f"Q5 {chart.name} MINIMAL {choice} HPOWER "
             line = next(
                 (line for line in output.splitlines() if marker in line),
@@ -422,6 +431,17 @@ def main() -> None:
         "--skip-modular-crosscheck",
         action="store_true",
         help="skip only the inexpensive mod-32003 row comparison",
+    )
+    parser.add_argument(
+        "--chart",
+        choices=("all", "L_NE_0", "L_EQ_0_A_NE_0"),
+        default="all",
+        help="restrict the homogeneous h-power certificate to one chart",
+    )
+    parser.add_argument(
+        "--one-certificate",
+        action="store_true",
+        help="run only the first sufficient minimal row choice per chart",
     )
     parser.add_argument(
         "--cache",
@@ -486,7 +506,12 @@ def main() -> None:
             flush=True,
         )
     groebner_start = time.monotonic()
-    certify_charts(eliminant, exact_imposed)
+    certify_charts(
+        eliminant,
+        exact_imposed,
+        selected_chart=args.chart,
+        one_certificate=args.one_certificate,
+    )
     print(
         f"exact chart Groebner certificates in "
         f"{time.monotonic() - groebner_start:.1f}s",
