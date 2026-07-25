@@ -1,0 +1,104 @@
+# Mathematics research archive
+
+This repository is a reproducible research workspace for current and future
+mathematics papers.  Its first project studies the plane Jacobian
+conjecture, with exact symbolic verifiers, computational certificates, proof
+notes, countermodels, and route audits.
+
+## Status
+
+The plane Jacobian conjecture is **not resolved here**.  This repository
+does not contain a proof or a counterexample in two variables.
+
+The strongest independently audited structural result currently in the
+workspace is an all-scale obstruction for the pole-sensitive nonintegral
+marked cusps in the consecutive \((2,3)\) five-block family.  The proof is
+in
+[`current_context/ALLSCALE_MARKED_CUSP_OBSTRUCTION.md`](current_context/ALLSCALE_MARKED_CUSP_OBSTRUCTION.md),
+with a symbolic verifier in
+[`route_bd_allscale_marked_cusp_obstruction.py`](route_bd_allscale_marked_cusp_obstruction.py).
+
+This mechanism is genuinely special to transverse degree two.  The tempting
+extension to general consecutive transverse degrees is refuted by an exact
+local analytic \((3,4)\) countermodel, archived in
+[`current_context/TRANSVERSE_34_ROOT_CONSUMPTION_COUNTERMODEL.md`](current_context/TRANSVERSE_34_ROOT_CONSUMPTION_COUNTERMODEL.md)
+and checked by
+[`route_bd_transverse_34_local_countermodel.py`](route_bd_transverse_34_local_countermodel.py).
+Keeping such countermodels is part of the proof audit: they prevent a valid
+special theorem from being promoted into a false general one.
+
+The workspace also contains a computer-assisted candidate elimination of
+the remaining \((72,108)\) degree pair in the Guccione--Guccione--
+Horruitiner--Valqui reduction.  If its full interface and reproducibility
+audit is completed, it gives the bounded conclusion
+
+\[
+\max(\deg P,\deg Q)\ge125
+\]
+
+for a hypothetical complex plane Keller counterexample.  This bounded
+conclusion has also been announced independently by other researchers, so
+no priority or uniqueness claim is made here.
+
+## Reproduction
+
+The quick exact verifier suite is:
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python verify_all.py
+```
+
+Several certificates also require
+[Singular](https://www.singular.uni-kl.de/) 4.4 or newer.  Slow
+characteristic-zero reconstruction and Gröbner calculations are kept
+separate from the default suite; their notes give the exact invocation and
+cache behavior.
+
+Every script labeled a verifier uses exact arithmetic.  Files prefixed
+`scratch_` are exploratory artifacts and should not be cited as proofs
+without a corresponding audited note.
+
+## Guide
+
+- `current_context/` — focused theorem statements, derivations, and route
+  audits.
+- `route_bd_*.py` — exact verifiers for the bounded Newton-support and
+  radial/Hurwitz program.
+- `route_a/` — the pseudoplane/Darboux counterexample-first program.
+- `route_3d_*.py` — audits connecting the known three-dimensional
+  counterexample to two-dimensional descent problems.
+- `RESEARCH_REPORT.md` — long-form research history and consolidated
+  derivations.
+- `STATUS_AND_PIVOT_2026-07-24.md` — the latest high-level result and
+  strategy audit.
+- `verify_all.py` — bundled deterministic regression suite.
+
+## Standards used in this archive
+
+- A finite-field calculation is not presented as a characteristic-zero
+  theorem without a valid lifting or specialization argument.
+- Probabilistic Gröbner output is labeled as evidence until accompanied by
+  a deterministic membership, homogeneous, or independently reproduced
+  certificate.
+- Countermodels are retained when they falsify an attractive but invalid
+  extrapolation.
+- Publication claims are separated from the unresolved \(JC(2)\) goal.
+
+## References
+
+- J. A. Guccione, J. J. Guccione, R. Horruitiner, and C. Valqui,
+  “Increasing the degree of a possible counterexample to the Jacobian
+  Conjecture from 100 to 108,”
+  [arXiv:2204.14178](https://arxiv.org/abs/2204.14178).
+- A. Dubouloz and K. Palka, “The Jacobian Conjecture fails for
+  pseudo-planes,”
+  [arXiv:1701.01425](https://arxiv.org/abs/1701.01425).
+
+## Attribution
+
+The repository is maintained by Atharva Vaidya.  Computational and drafting
+assistance from AI systems should be disclosed in any paper derived from
+this archive, alongside independent human verification of the mathematical
+claims.

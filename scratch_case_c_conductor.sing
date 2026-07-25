@@ -1,0 +1,25 @@
+LIB "normal.lib";
+
+option(redSB);
+ring R = 32003,(h,T),dp;
+
+// A simple point of the open s0 != 0, s1 = -s0/t, ord(r)=4 chart.
+// Fractions are cleared harmlessly by multiplying A by 2.
+poly A2 = 2h4 + h4*T + (1-h)*T2 + 2T3;
+// The constant term 19/128 is the m=15 tail value for
+// t=r4=s0=w0=1.  Use an integral multiple of the same model.
+poly B = 19 + 128*h*T + 128*T + 128*T2 + 128*T3 + 128*(h+1)*T4;
+poly G = A2^2 + 4T5*B;
+ideal I = G;
+
+ideal C = normalConductor(I);
+C = std(C);
+"CONDUCTOR";
+C;
+"DEGREE-FIVE MONOMIAL NORMAL FORMS";
+reduce(h5,C);
+reduce(h4T,C);
+reduce(h3T2,C);
+reduce(h2T3,C);
+reduce(hT4,C);
+reduce(T5,C);
