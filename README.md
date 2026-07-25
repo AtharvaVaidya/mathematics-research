@@ -32,6 +32,14 @@ and checked by
 Keeping such countermodels is part of the proof audit: they prevent a valid
 special theorem from being promoted into a false general one.
 
+The complementary Standard/Kummer route now has an exact one-coordinate
+field-descent criterion.  For a normalized comparison branch, full descent
+of \(Z,W\) is equivalent to descent of the single weighted invariant
+\(\Xi=ZW^k\); an exact torus countermodel shows why valuations and local
+symplecticity alone cannot force it.  See
+[`current_context/RADIAL_INVARIANT_FIELD_DESCENT.md`](current_context/RADIAL_INVARIANT_FIELD_DESCENT.md).
+The remaining global-invariance lemma is open.
+
 The counterexample-first fixed-source-plane route has a second independently
 audited global theorem.  If a Darboux pair existed in its explicit pinch
 ring and \(F(U,V)=D H\) were the pullback of the conductor-image equation,
