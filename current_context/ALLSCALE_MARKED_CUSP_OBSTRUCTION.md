@@ -297,7 +297,8 @@ where
 m=\operatorname{ord}_0x
 \]
 and \(x^{N/m}\) is the first nonanalytic term after the displayed
-analytic terms.
+analytic terms.  Thus \(m,N\) are orders in the original \(h\)-parameter
+and \(N/m>3\).
 
 The fixed pole of \(q_3\) forces
 \[
@@ -342,8 +343,22 @@ impossible.  If \(a=0\), then \(p_1=bU'\) has degree \(2R-2\), and
 \[
 \deg A'\ge (m-1)+(2R-2)>2R-1
 \]
-because \(m\ge3\).  Thus the analytic-quadratic chart is empty at every
+because \(m\ge3\).  Here \(b\ne0\), as already follows from
+\(p_1(0)\ne0\).  Thus the analytic-quadratic chart is empty at every
 scale.
+
+There is no omitted analytic-quadratic chart with first nonanalytic
+exponent strictly between two and three.  If
+\(2m<N<3m\) and \(r=\operatorname{ord}_0p_1\), then for \(r=0\) the
+fixed pole of \(q_3\) forces \(N=3m-1\); the
+\(g''''p_1^4\) term in the fourth row then has the unique lowest order
+\(-m-1\).  For \(r>0\), the same fixed pole forces
+\(N=3m-3r-1\) unless \(m=2r+1\).  In the former case the
+\(g''''p_1^4\) term again has strictly lower order than every other
+term.  In the exceptional equality case all three nonanalytic terms in
+the fourth row have order \(N-2m-2>-2\), leaving
+\(\frac12g''p_2^2\) as the unique term of order \(-2\).  Both
+alternatives are impossible.
 
 The remaining local charts are already degree-independent:
 
@@ -360,7 +375,10 @@ the boundary parametrization as
 h\longmapsto \xi=H(h)
 \longmapsto \bigl(A_0(\xi),B_0(\xi)\bigr),
 \]
-where the second map is the normalization of the image curve.  The
+where \(H\) is a nonconstant polynomial and the second map is the
+polynomial normalization of the image curve.  This factorization is the
+polynomial Lüroth theorem applied to
+\(\mathbf C(A,B)\subset\mathbf C(h)\).  The
 fixed-pole immersion lemma, whose proof allows an arbitrary polynomial
 \(H\), gives
 \[

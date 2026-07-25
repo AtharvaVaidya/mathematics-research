@@ -177,6 +177,38 @@ def verify_puiseux_chart_ledgers() -> None:
                 assert second_minus_third > 0
                 assert m - 2 * n + 2 * s == -1
 
+    # If an analytic quadratic precedes a first fractional exponent
+    # 2<N/m<3, the fourth Taylor row still has a unique lowest term.
+    for m in range(2, 30):
+        for n in range(2 * m + 1, 3 * m):
+            for r in range(0, m + 1):
+                if r == 0:
+                    # The analytic g''p1p2 term supplies the q3 pole.
+                    # Avoiding a worse fractional g''' pole forces this.
+                    if n == 3 * m - 1:
+                        assert n - 4 * m == -m - 1 < -2
+                    continue
+
+                if m == 2 * r + 1:
+                    common_fractional_order = n - 2 * m - 2
+                    assert common_fractional_order > -2
+                    continue
+
+                # When m<2r+1, the fractional g'' term would need
+                # n=2m-r to supply the pole, outside 2m<n.
+                if m < 2 * r + 1:
+                    assert 2 * m - r < 2 * m
+                    continue
+
+                # When m>2r+1, q3 forces n=3m-3r-1.  The g'''' term
+                # then lies strictly below the other fourth-row terms.
+                forced_n = 3 * m - 3 * r - 1
+                if n == forced_n:
+                    g3_order = n - 3 * m + 2 * r - 1
+                    g4_order = n - 4 * m + 4 * r
+                    assert g4_order < g3_order
+                    assert g4_order < -2
+
 
 def verify_covariant_identities() -> None:
     h = sp.symbols("h")
