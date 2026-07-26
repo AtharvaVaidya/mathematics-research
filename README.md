@@ -113,6 +113,14 @@ produce a polynomial Keller pair; it proves that the arbitrary-\(d\)
 problem needs an all-order recurrence or new global rigidity rather
 than any bounded list of defect calculations.  See
 [`current_context/GENERAL_TWO_BLOCK_CYCLIC_DEFECT_DELAY.md`](current_context/GENERAL_TWO_BLOCK_CYCLIC_DEFECT_DELAY.md).
+The same family now has an exact quotient PDE with explicit Laurent
+windows and a canonical Catalan solution.  A symbolic first-chamber
+resultant excludes \(E=9,11\), while a separate exact recurrence
+excludes \(E=7\); samples \(E=13,15,17\) also have coprime first two
+obstructions.  No all-\(E\) resultant recurrence is claimed.  The
+remaining odd non-scalar cyclic quotient types lie outside the scope
+of the available equivariant theorem, so the all-order
+reparametrization problem remains open.
 
 The unrestricted formal recurrence now has an intrinsic geometric
 description for every monic \(d\).  For

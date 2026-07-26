@@ -112,9 +112,11 @@ for cutoff in range(2, 80):
 
 for e_value in range(5, 80, 2):
     s_value = (e_value + 1) // 2
+    chamber_index = (e_value - 1) // 6
     predicted = ceil((e_value + 4) / 3)
     if predicted % 2 == 0:
         predicted += 1
+    assert predicted == 2 * chamber_index + 3
     actual = next(
         defect
         for defect in range(2, e_value + 2)
@@ -124,6 +126,16 @@ for e_value in range(5, 80, 2):
     assert forbidden_character_offsets(s_value, e_value, actual) == [
         (e_value - actual) // 2
     ]
+    first_numerator_parameter_weight = (9 * actual - 13) // 2
+    next_numerator_parameter_weight = (9 * (actual + 2) - 13) // 2
+    assert first_numerator_parameter_weight == 9 * chamber_index + 7
+    assert next_numerator_parameter_weight == 9 * chamber_index + 16
+    assert (
+        first_numerator_parameter_weight - 1
+    ) // 3 == 3 * chamber_index + 2
+    assert (
+        next_numerator_parameter_weight - 1
+    ) // 3 == 3 * chamber_index + 5
 
 
 # Direct exact recurrence checks, independent of the congruence-only
@@ -192,8 +204,244 @@ assert sp.monic(numerator7) == sp.monic(p7)
 assert sp.gcd(p5, p7).degree() == 0
 assert p5.TC() != 0
 
+# The exceptional small chamber E=7 has its second permitted class
+# at the even defect six, not at defect seven.
+vectors7, _, _ = filtered_recurrence(4, 7, 6)
+actual7_5 = [value for value in vectors7[5] if value != 0]
+actual7_6 = [value for value in vectors7[6] if value != 0]
+assert len(actual7_5) == 1
+assert len(actual7_6) == 1
+numerator7_5 = sp.Poly(
+    sp.cancel(actual7_5[0].subs(ell, 1)).as_numer_denom()[0],
+    u,
+    domain=sp.QQ,
+)
+numerator7_6 = sp.Poly(
+    sp.cancel(actual7_6[0].subs(ell, 1)).as_numer_denom()[0],
+    u,
+    domain=sp.QQ,
+)
+assert sp.gcd(numerator7_5, numerator7_6).degree() == 0
+assert numerator7_5.TC() != 0
+assert numerator7_6.TC() != 0
+
+# Exact growing-chamber samples cited in the note.  E=9 is checked
+# above and E=11 is checked by the companion resultant verifier.
+for e_value in (13, 15, 17):
+    s_value = (e_value + 1) // 2
+    first_defect = ceil((e_value + 4) / 3)
+    if first_defect % 2 == 0:
+        first_defect += 1
+    sample_vectors, _, _ = filtered_recurrence(
+        s_value,
+        e_value,
+        first_defect + 2,
+    )
+    first_values = [
+        value
+        for value in sample_vectors[first_defect]
+        if value != 0
+    ]
+    next_values = [
+        value
+        for value in sample_vectors[first_defect + 2]
+        if value != 0
+    ]
+    assert len(first_values) == 1
+    assert len(next_values) == 1
+    first_polynomial = sp.Poly(
+        sp.cancel(first_values[0].subs(ell, 1)).as_numer_denom()[0],
+        u,
+        domain=sp.QQ,
+    )
+    next_polynomial = sp.Poly(
+        sp.cancel(next_values[0].subs(ell, 1)).as_numer_denom()[0],
+        u,
+        domain=sp.QQ,
+    )
+    assert sp.gcd(first_polynomial, next_polynomial).degree() == 0
+    assert first_polynomial.TC() != 0
+    assert next_polynomial.TC() != 0
+
+
+# Symbolic quotient-ring audit for the all-order resonant equation.
+E_symbol, X, Z = sp.symbols("E X Z", nonzero=True)
+s_symbol = (E_symbol + 1) / 2
+delta_symbol = (E_symbol - 3) / 2
+g_symbol = (3 * E_symbol + 1) / 2
+a0 = u + X * (X + ell) ** 2
+b0 = X**2 * (X + ell) ** 3
+a1 = -4 * (g_symbol * X + s_symbol * ell) / (3 * u**2)
+b1 = (
+    1 / u
+    - 2 * X * (X + ell) * (g_symbol * X + s_symbol * ell) / u**2
+)
+omega = sp.factor(
+    (
+        (delta_symbol + 1) * a1
+        + E_symbol * X * sp.diff(a1, X)
+    )
+    * b1
+    - E_symbol * X * a1 * sp.diff(b1, X)
+)
+
+# Catalan expansion of Phi through Z^7, audited independently of the
+# larger quotient-polynomial coefficients.
+omega_scalar = sp.symbols("omega")
+phi = sum(
+    (-1) ** (degree - 1)
+    * sp.catalan(degree - 1)
+    * omega_scalar ** (degree - 1)
+    * Z**degree
+    / 2 ** (degree - 1)
+    for degree in range(1, 8)
+)
+assert all(
+    sp.factor(
+        sp.expand(
+            phi + omega_scalar * phi**2 / 2 - Z
+        ).coeff(Z, degree)
+    )
+    == 0
+    for degree in range(1, 8)
+)
+
+# If Phi+omega*Phi^2/2=Z, then Phi_Z=(1+omega*Phi)^-1.
+# The quotient PDE numerator is affine in Phi; these are its exact
+# constant and linear coefficients.
+base_constant = sp.factor(
+    E_symbol
+    * X
+    * (
+        sp.diff(a0, X) * b1
+        - a1 * sp.diff(b0, X)
+    )
+    + a0 * b1
+    + delta_symbol * b0 * a1
+)
+base_linear = sp.factor(
+    E_symbol
+    * X
+    * (
+        sp.diff(a1, X) * b1
+        - a1 * sp.diff(b1, X)
+    )
+    + (delta_symbol + 1) * a1 * b1
+)
+assert sp.factor(base_constant - 1) == 0
+assert sp.factor(base_linear - omega) == 0
+
+# The quotient curvature is the physical straight-tube curvature,
+# and it cannot vanish because its (d')^3 term has strictly largest
+# x-degree.
+for e_value in (5, 9, 17):
+    s_value = (e_value + 1) // 2
+    delta_value = (e_value - 3) // 2
+    d_value = x**s_value * (x**e_value + ell)
+    omega_value = omega.subs(
+        {
+            E_symbol: e_value,
+            X: x**e_value,
+        }
+    )
+    assert sp.factor(
+        x**delta_value * omega_value
+        + 4
+        * (
+            u * sp.diff(d_value, x, 2)
+            + 2 * sp.diff(d_value, x) ** 3
+        )
+        / (3 * u**4)
+    ) == 0
+
+# The Laurent windows are exactly equivalent to the original
+# reciprocal degree and nonnegative-exponent bounds.
+for e_value in range(5, 40, 2):
+    delta_value = (e_value - 3) // 2
+    g_value = (3 * e_value + 1) // 2
+    for defect in range(0, min(15, 2 * g_value) + 1):
+        a_min = ceil(-(1 + defect * delta_value) / e_value)
+        a_max = (3 * e_value - defect - defect * delta_value) // e_value
+        for exponent in range(a_min, a_max + 1):
+            original_exponent = 1 + defect * delta_value + exponent * e_value
+            assert 0 <= original_exponent <= 2 * g_value - defect
+        assert 1 + defect * delta_value + (a_min - 1) * e_value < 0
+        assert (
+            1 + defect * delta_value + (a_max + 1) * e_value
+            > 2 * g_value - defect
+        )
+
+        b_min = ceil(-((defect - 1) * delta_value) / e_value)
+        b_max = (
+            (10 - defect) * e_value + defect
+        ) // (2 * e_value)
+        for exponent in range(b_min, b_max + 1):
+            original_exponent = (
+                (defect - 1) * delta_value + exponent * e_value
+            )
+            assert 0 <= original_exponent <= 3 * g_value - defect
+        assert (
+            (defect - 1) * delta_value + (b_min - 1) * e_value < 0
+        )
+        assert (
+            (defect - 1) * delta_value + (b_max + 1) * e_value
+            > 3 * g_value - defect
+        )
+
+
+def negative_continued_fraction(
+    numerator: int,
+    denominator: int,
+) -> list[int]:
+    """Return the Hirzebruch--Jung expansion numerator/denominator."""
+    output: list[int] = []
+    while denominator:
+        coefficient = (numerator + denominator - 1) // denominator
+        output.append(coefficient)
+        numerator, denominator = (
+            denominator,
+            coefficient * denominator - numerator,
+        )
+    return output
+
+
+# Exact quotient singularity strings and special-fiber multiplicities.
+for e_value in range(5, 100, 2):
+    if e_value % 3:
+        quotient_order = e_value
+        quotient_weight = (e_value + 3) // 2
+        if e_value % 6 == 1:
+            expected_chain = [2, (e_value - 1) // 6 + 1, 3]
+        else:
+            expected_chain = [2, (e_value - 5) // 6 + 2, 2, 2]
+    else:
+        quotient_order = e_value // 3
+        quotient_weight = (quotient_order + 1) // 2
+        expected_chain = [2, (quotient_order + 1) // 2]
+    assert sp.gcd(quotient_order, quotient_weight) == 1
+    assert negative_continued_fraction(
+        quotient_order,
+        quotient_weight,
+    ) == expected_chain
+    inverse_weight = pow(quotient_weight, -1, quotient_order)
+    multiplicity_zero = quotient_order // sp.gcd(
+        quotient_order,
+        quotient_weight - 1,
+    )
+    multiplicity_infinity = quotient_order // sp.gcd(
+        quotient_order,
+        inverse_weight - 1,
+    )
+    assert multiplicity_zero == quotient_order
+    assert multiplicity_infinity == quotient_order
+
 print("verified: cyclic characters constrain every forbidden coordinate")
 print("verified: no uniform bounded-defect exclusion is possible")
 print("verified: the first possible resonant defect grows linearly with E")
 print("verified: direct exact bounded recurrences through defect seven")
 print("verified: (g,E,s)=(14,9,5) survives six and fails by seven")
+print("verified: the exceptional E=7 chamber fails by defects five/six")
+print("verified: first-two-class coprimality at E=13,15,17")
+print("verified: resonant quotient PDE and Catalan generating solution")
+print("verified: exact all-order reciprocal Laurent windows")
+print("verified: short Hirzebruch--Jung strings and fiber multiplicities")
