@@ -1,0 +1,112 @@
+order-100 all-marked incidence relaxation: PASS
+canonical_profile_pairs=1002
+surviving_profiles=155
+total_search_nodes=2242008
+census_sha256=68e509b357a5bea2d645899ef1288fbaad258136f4e706bc4b72ccb4fab7d4dd
+survivor_sha256=07124090c52d1bda9de37a55c6e4df40d365c91fbb7dfd5a94c83e45891ae27f
+scope=abstract all-marked incidence relaxation; first matrix per profile; no graph realization
+canonical_frontier_survivor=
+{
+  "x": [
+    4,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "y": [
+    0,
+    0,
+    0,
+    2,
+    2,
+    1,
+    1,
+    0
+  ],
+  "matrix": [
+    [
+      2,
+      2,
+      2,
+      0,
+      0,
+      0,
+      1,
+      2
+    ],
+    [
+      2,
+      1,
+      2,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      0,
+      0,
+      1,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      2,
+      0,
+      2,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      2,
+      0,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      2,
+      2,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      2,
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      2,
+      0,
+      2,
+      0,
+      1
+    ]
+  ]
+}

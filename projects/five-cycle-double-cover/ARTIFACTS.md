@@ -25,6 +25,12 @@ copied into a separate clean clone; it was not modified or committed.
   frontier checker.  Their exact conclusion is only the
   \(|V(G)|\ge96\) bound in the connected eight-mark extremal exact-zero
   size-four minimum-counterexample branch.
+- The order-\(100\) human unmarked-factor exclusion, exact local overlap
+  tables, complete \(1002\)-profile cap and row-star censuses, independent
+  Z3 replay, all \(827\) canonical row-star-compatible incidence matrices,
+  and three fixed-primary-matrix CNF/LRAT controls.  The controls do not
+  eliminate all \(827\) matrices; the order-\(100\) branch remains open in
+  this published bundle.
 - The rooted four-mark cap-avoidance and bridge-elimination reductions,
   exact order-28 countermodel, frozen finite-screen summaries, and compact
   checkers.  The rooted theorem remains open.
@@ -59,9 +65,11 @@ f244876a123a0c0fe3ead39805ddd7c3aa18c7b7ed1e4762484f008052564ddc  preprint-fano-
 ```
 
 Package-local `SHA256SUMS` files freeze the countermodel and \(H_4\)
-records.  The manifests are retained even when a large artifact named in
-them is intentionally absent, so that a separately obtained artifact can
-be authenticated.
+records.  [`ORDER100_SHA256SUMS`](ORDER100_SHA256SUMS) freezes the
+order-\(100\) notes, complete survivor streams, matrix-orbit census, and
+the three fixed-matrix CNF/LRAT pairs.  The manifests are retained even
+when a large artifact named in them is intentionally absent, so that a
+separately obtained artifact can be authenticated.
 
 ## Deliberately omitted
 
@@ -94,6 +102,9 @@ standalone replay of the complete \(H_4\) theorem.
 The countermodel certificates refute intermediate strategies, not
 five-CDC.  The \(H_4\) result concerns one fixed graph.  The four-mark
 theorem closes one marked-core branch under additional hypotheses.
+The order-\(100\) LRAT files prove UNSAT only for one retained primary
+matrix in each of three surviving profile orbits; they do not prove
+UNSAT for every matrix in those profiles.
 The retained 240-row rooted screen is a frozen result; this bundle does
 not claim a fresh full replay of its consumer analysis.  A fresh replay
 did regenerate all 13,824 producer rows and 240 target witnesses.  The

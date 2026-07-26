@@ -1,0 +1,113 @@
+order-100 independent exact row-star SMT replay: PASS
+canonical_profile_pairs=1002
+baseline_unsat=847
+row_star_sat=3
+row_star_unsat=152
+status_sha256=f0736f1774b666e3cc2745a3b1f96f123772b3732de8166c054e0792afee322b
+survivor_sha256=7b34681ed4ba91fb0f0824961c9f7002833ca011e05e9d9f2e76ccbee7f62d72
+scope=independent row-word enumeration plus exact Z3 domain join; no global graph realization
+canonical_frontier_survivor=
+{
+  "x": [
+    2,
+    2,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+  ],
+  "y": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    1,
+    1
+  ],
+  "matrix": [
+    [
+      2,
+      0,
+      2,
+      2,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      2,
+      2,
+      2,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      2,
+      1,
+      0,
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      1,
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      2,
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      2,
+      2,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      2,
+      2,
+      0,
+      1
+    ]
+  ]
+}

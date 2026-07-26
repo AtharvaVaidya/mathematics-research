@@ -1,0 +1,7 @@
+order-100 row-star matrix orbit census: PASS
+profiles=3
+labelled_matrices=1864,1680,1984
+matrix_orbits=128,427,272
+stabilizer_orders=16,4,16
+artifact_sha256=7e6f8e9e029f5db6b486a64c4d7f77dd9b5f80db45c45c819fe70916dcafc7c0
+scope=exact simultaneous-profile-stabilizer quotient; no global rotation realization

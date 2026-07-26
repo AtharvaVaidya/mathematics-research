@@ -839,6 +839,78 @@ row count and SHA-256 of the current incomplete \(H_4\) prefix.  Its
 master had not reached UNSAT, so the rows prove only that the listed
 4,425,636 distinct minimum supports pack.
 
+## Order-100 connected eight-mark frontier
+
+Run these commands from `projects/five-cycle-double-cover/`.  The primary
+censuses use Python's standard library:
+
+```sh
+shasum -a 256 -c ORDER100_SHA256SUMS
+
+python3 -B scratch/enumerate_order100_incidence_relaxation.py \
+  > /tmp/order100-incidence.out
+diff -u scratch/order100-incidence-relaxation-result.txt \
+  /tmp/order100-incidence.out
+
+python3 -B scratch/enumerate_order100_exact_row_star_relaxation.py \
+  --baseline-json scratch/order100-incidence-relaxation-survivors.json \
+  > /tmp/order100-row-star.out
+diff -u scratch/order100-exact-row-star-result.txt \
+  /tmp/order100-row-star.out
+
+python3 -B scratch/check_order100_row_star_patterns.py
+
+python3 -B scratch/enumerate_order100_row_star_matrix_orbits.py \
+  > /tmp/order100-matrix-orbits.out
+diff -u scratch/order100-row-star-matrix-orbits-result.txt \
+  /tmp/order100-matrix-orbits.out
+shasum -a 256 -c ORDER100_SHA256SUMS
+```
+
+The independent replays require a `z3` executable on `PATH`:
+
+```sh
+python3 -B scratch/check_order100_incidence_relaxation_z3.py \
+  > /tmp/order100-incidence-z3.out
+
+python3 -B scratch/check_order100_exact_row_star_z3.py \
+  --baseline-json scratch/order100-incidence-relaxation-survivors.json \
+  > /tmp/order100-row-star-z3.out
+diff -u scratch/order100-exact-row-star-z3-result.txt \
+  /tmp/order100-row-star-z3.out
+```
+
+The local overlap table has a separate C++20 implementation:
+
+```sh
+clang++ -std=c++20 -O3 \
+  scratch/verify_marked_two_factor_overlap_caps.cpp \
+  -o /tmp/verify_marked_two_factor_overlap_caps
+/tmp/verify_marked_two_factor_overlap_caps
+```
+
+The three `order100-global-word-profile*-final.cnf` instances concern one
+retained primary incidence matrix in each surviving profile.  They are
+not certificates for all \(827\) matrix orbits.  Each corresponding LRAT
+was accepted by both the C `lrat-check` distributed with `drat-trim` and
+the verified CakeML `cake_lpr` checker.  With those binaries available:
+
+```sh
+for profile in 0 1 2; do
+  lrat-check \
+    scratch/order100-global-word-profile${profile}-final.cnf \
+    scratch/order100-global-word-profile${profile}-final.lrat
+  cake_lpr \
+    scratch/order100-global-word-profile${profile}-final.cnf \
+    scratch/order100-global-word-profile${profile}-final.lrat
+done
+```
+
+The expected solver and checker transcripts are retained beside the
+instances.  The human proof excluding an unmarked factor and the exact
+scope of every finite step are in
+`docs/order100-unmarked-exclusion-and-row-star-frontier.md`.
+
 ## Repository and generated-file state
 
 At audit time the Git branch was `main` with an unborn `HEAD`: the repository
