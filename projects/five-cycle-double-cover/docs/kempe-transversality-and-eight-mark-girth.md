@@ -162,11 +162,13 @@ diagnostic, not a proof for arbitrary three-poles.
 The same mark-precolouring flexibility has a useful consequence which
 does not require a stable-triple theorem.
 
-Let \(G\) be a cubic graph, let \(M\) be a matching of size \(r\), and
-put \(K=G-M\).  Its \(2r\) degree-two vertices are the endpoints of
-\(M\).  Suppress them on every component of \(K\), obtaining
-Tait-colourable cubic cores \(H_j\).  The suppressed edges form marked
-sets \(S_j\) with
+Let \(G\) be a finite loopless cubic multigraph, let \(M\) be an
+ordinary matching of \(r\) nonloop edges, and put \(K=G-M\).  Let \(T\)
+be the \(2r\) distinct endpoints of \(M\).  Assume that simultaneous
+suppression of the vertices of \(T\) produces loopless Tait-colourable
+cubic cores \(H_j\), with one distinct marked edge \(s_t\) for every
+\(t\in T\), and that the resulting marked sets \(S_j\) are matchings.
+Thus
 \[
  \sum_j |S_j|=2r.                                      \tag{5}
 \]
@@ -214,7 +216,11 @@ This improves the earlier bound \(68\) for the size-four extremal
 branch.  It applies both when \(G-M\) is connected, giving one
 eight-mark core, and when \(G-M\) has two components, giving two
 four-mark cores: all core colourings lift independently because the
-deleted matching edges have value zero.
+deleted matching edges have value zero.  The distinct-mark suppression
+hypotheses are not automatic for an arbitrary matching; they are proved
+for this branch in `extremal-marked-core-reduction.md`.  A clean-room
+scope and convention audit is in
+`audit-eight-mark-girth-bound.md`.
 
 ## 4. What remains open
 

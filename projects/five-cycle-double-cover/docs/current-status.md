@@ -935,13 +935,18 @@ Combining this with Huck's sourced condition
 that a smallest counterexample has flow resistance at least four.  If its
 minimum exact-zero matching has size four, all three coordinate factors
 must attain \((8,8,8)\).  Suppressing the eight zero endpoints then yields
-at least six vertex-disjoint bichromatic core circuits, each of length at
-least ten, so the original graph has order at least 68.  Hence the
+eight vertex-disjoint marked bichromatic core circuits.  Precolouring the
+marks alike and undoing suppression turns them into eight vertex-disjoint
+odd ambient circuits, each of length at least eleven, so the original
+graph has order at least 88.  Hence the
 surviving dichotomy is \(r_M\ge5\), or the separated
-size-four/order-at-least-68 branch.  The
+size-four/order-at-least-88 branch.  The
 proof and two-implementation coordinate audit are frozen in
 `docs/flow-resistance-weak-oddness.md` and
-`search/flow-weak-oddness-coordinate-20260725/`.  The \(H_4\)
+`search/flow-weak-oddness-coordinate-20260725/`; the strengthening and
+its clean-room audit are in
+`docs/kempe-transversality-and-eight-mark-girth.md` and
+`docs/audit-eight-mark-girth-bound.md`.  The \(H_4\)
 projected-support master enumeration has now exhausted after exactly
 4,931,430 distinct globally minimum size-four supports, all packing and
 none nonpacking.  The retained corpus has SHA-256
@@ -982,7 +987,7 @@ nonpacking under the even-marked circuit criterion.  The frozen finite
 result is
 `scratch/order22-cyclic4-separated4-nonpacking-result.json`.  This is
 consistent with a marked-core reducibility theorem, but is far below the
-order-at-least-68 surviving branch and is not evidence of completeness
+order-at-least-88 surviving branch and is not evidence of completeness
 there.
 
 The stronger assertion without the marked cut hypothesis is false already
@@ -1294,7 +1299,8 @@ vertex-disjoint bichromatic even circuits, one mark per circuit.
 Undoing suppression replaces each unique marked edge by a two-edge path,
 so these become eight vertex-disjoint odd circuits of the ambient graph.
 If the ambient girth is at least ten, every such odd circuit has length
-at least eleven.  Hence every counterexample in the size-four branch has
+at least eleven.  Hence every minimum counterexample in the exact-zero
+size-four extremal branch has
 \[
  |V(G)|\ge 8\cdot11=88,
 \]

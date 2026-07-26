@@ -25,6 +25,21 @@ three-cut decomposition are prior.  The appropriate claim is
 priority.  If a human graph theorist verifies the proof and finds no
 prior equivalent statement, this is suitable as a short research note.
 
+The same marked-core framework now gives a second short,
+computer-free corollary.  In the extremal size-four branch,
+common-colour precolouring places the eight suppressed marks on eight
+vertex-disjoint bichromatic circuits.  Restoring the suppressed vertices
+makes them eight vertex-disjoint odd circuits in the ambient graph.
+Ambient girth at least ten therefore forces order at least
+\(8\cdot11=88\), improving the project's earlier bound \(68\).  The
+proof is in `docs/kempe-transversality-and-eight-mark-girth.md`, with a
+clean-room scope audit in `docs/audit-eight-mark-girth-bound.md`.  The
+distinct-mark suppression hypotheses are essential and are supplied by
+the intended extremal reduction; they do not follow from an arbitrary
+matching.  Novelty is provisional: the argument is elementary, and an
+expert must check whether the same bound is implicit in the
+resistance/oddness literature.
+
 The strongest submission-ready mathematical core is the pair of explicit
 connected countermodels in
 `preprint-fano-one-switch/main.tex`:
@@ -44,6 +59,16 @@ counterexample to five-CDC.
 Those countermodels remain independently preprint-worthy but are less
 conceptually clean than the four-mark theorem and should stay in a
 separate manuscript.
+
+A further finite result is potentially suitable as a short example or
+appendix, rather than as the main paper.  The package
+`search/cyclic4-universally-separated-triple-n24-20260726/` gives a
+24-vertex cyclically \(4\)-edge-connected, Tait-colourable graph with a
+universally separated three-edge matching.  This refutes the project's
+provisional low-cut atom conjecture.  The graph has girth four and
+marked-subdivision girth five, so it does not enter the surviving
+girth-ten five-CDC branch.  Its value is as a sharp warning against an
+otherwise plausible structural lemma, not as evidence against five-CDC.
 
 ## What is prior
 
@@ -84,7 +109,12 @@ not to have been recorded are:
   co-occurrence graph;
 - the explicit connected 46-vertex countermodel and its non-cyclable
   three-cap composition;
-- the displayed two-sum closure mechanisms; and
+- the displayed two-sum closure mechanisms;
+- the 24-vertex cyclically-four universally separated triple and its
+  complete order-20-host \(K_4\)-sum census;
+- the exact paired cyclic-cut formula and signed-holonomy formulation for
+  the connected eight-mark branch;
+- the order-\(88\) lower bound within the extremal size-four branch; and
 - the exact computations reported in the draft.
 
 This is a strong provisional novelty assessment, not proof of priority.
@@ -110,6 +140,12 @@ The independent checker enumerates 128 compatible potentials and reports
 zero five-colourable co-occurrence graphs.  It is a useful replay, but it
 is also AI-written and is not independent human verification.
 
+The four-mark theorem and conditional order-\(88\) corollary are fully
+human-checkable line by line and use no finite computation.  The
+24-vertex example has a small exhaustive checker and frozen hashes; a
+human-readable colouring/cut certificate should accompany any paper
+that makes it a headline result.
+
 ## Separate computational result
 
 The \(H_4\) minimum-support enumeration is a distinct possible
@@ -132,8 +168,9 @@ claimed.
 ## Recommended publication path
 
 1. Release the current manuscript as a clearly labeled research draft
-   only after a human author checks every proof and assumes authorship
-   responsibility.
+   only after a human author checks every proof, including the new
+   order-\(88\) argument and its suppression hypotheses, and assumes
+   authorship responsibility.
 2. Ask at least one specialist in flows/cycle covers to verify novelty and
    the two-sum arguments.
 3. Have a human independently reconstruct the 40- and 46-vertex graphs

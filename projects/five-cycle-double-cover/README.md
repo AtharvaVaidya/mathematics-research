@@ -38,8 +38,13 @@ The connected eight-mark branch remains open.  The newest notes expose
 its exact remaining constraints without claiming a five-CDC resolution:
 
 - [`docs/kempe-transversality-and-eight-mark-girth.md`](docs/kempe-transversality-and-eight-mark-girth.md)
-  proves human-checkable Kempe and marked-girth lemmas and records the
-  limits of a finite counterexample.
+  proves human-checkable Kempe and marked-girth lemmas.  Its
+  \(|V|\ge88\) corollary is scoped to the extremal exact-zero size-four
+  branch: arbitrary matchings need not produce distinct suppressed marks
+  forming matchings.
+- [`docs/audit-eight-mark-girth-bound.md`](docs/audit-eight-mark-girth-bound.md)
+  independently reconstructs that corollary, verifies the numerical
+  bound, and records the necessary suppression hypotheses.
 - [`docs/eight-mark-bichromatic-code.md`](docs/eight-mark-bichromatic-code.md)
   reduces the fixed-colouring problem to an exact signed-graph component
   test.
@@ -63,6 +68,9 @@ so none satisfies the surviving connected-branch threshold of ten.
 
 - [`docs/four-mark-core-closure.md`](docs/four-mark-core-closure.md) gives
   the full computer-free four-mark proof.
+- [`docs/audit-eight-mark-girth-bound.md`](docs/audit-eight-mark-girth-bound.md)
+  gives a clean-room, computer-free proof and scope audit of the
+  conditional order-\(88\) corollary.
 - [`search/connected-one-switch-countermodel-40v-20260726/HUMAN-PROOF.md`](search/connected-one-switch-countermodel-40v-20260726/HUMAN-PROOF.md)
   proves the planar 40-vertex intermediate countermodel.
 - [`search/fano-pure-merge-one-switch-countermodel-46v-20260726/HUMAN-PROOF.md`](search/fano-pure-merge-one-switch-countermodel-46v-20260726/HUMAN-PROOF.md)
