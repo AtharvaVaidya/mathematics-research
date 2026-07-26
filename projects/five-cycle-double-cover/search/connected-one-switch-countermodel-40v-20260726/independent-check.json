@@ -1,0 +1,94 @@
+{
+  "bad_grafts": {
+    "1": {
+      "disjoint_pairs": 0,
+      "matching_edges": 2,
+      "t_joins": 16
+    },
+    "2": {
+      "disjoint_pairs": 0,
+      "matching_edges": 2,
+      "t_joins": 16
+    },
+    "3": {
+      "disjoint_pairs": 0,
+      "matching_edges": 2,
+      "t_joins": 16
+    },
+    "4": {
+      "disjoint_pairs": 0,
+      "matching_edges": 2,
+      "t_joins": 16
+    },
+    "5": {
+      "disjoint_pairs": 0,
+      "matching_edges": 2,
+      "t_joins": 16
+    },
+    "6": {
+      "disjoint_pairs": 0,
+      "matching_edges": 3,
+      "t_joins": 8
+    },
+    "7": {
+      "disjoint_pairs": 0,
+      "matching_edges": 2,
+      "t_joins": 16
+    }
+  },
+  "base_checks": {
+    "bridgeless": true,
+    "connected": true,
+    "cubic": true,
+    "flow_conservation": true,
+    "nowhere_zero": true,
+    "simple": true,
+    "value_class_sizes": {
+      "1": 5,
+      "2": 5,
+      "3": 5
+    }
+  },
+  "base_connected_circuits": 30,
+  "base_graph6": "It?GYDKKO",
+  "base_noncyclable_edges": [
+    1,
+    6,
+    7
+  ],
+  "every_expanded_circuit_misses_a_bad_block": true,
+  "expanded_checks": {
+    "bridgeless": true,
+    "connected": true,
+    "cubic": true,
+    "flow_conservation": true,
+    "nowhere_zero": true,
+    "simple": true,
+    "value_class_sizes": {
+      "1": 11,
+      "2": 11,
+      "3": 11,
+      "4": 6,
+      "5": 6,
+      "6": 9,
+      "7": 6
+    }
+  },
+  "expanded_connected_circuits": 6780,
+  "expanded_five_cdc_checks": {
+    "coordinate_edge_counts": [
+      40,
+      40,
+      40,
+      0,
+      0
+    ],
+    "even_incidence": true,
+    "exact_two": true
+  },
+  "expanded_graph6": "gd?GODKKO?????_A??_?C?BO?M??D`?@_???????????_?C???C???A???E_??@o???AoA??B????????????????O????_????A?????C?????s?????w?????D_A????W",
+  "nauty_canonical_graph6": "gt?GG?@?GB?@?D??@O?K???_?CGA_??A???@??OO??C??@_??C???G?_???G???D???C????_G???G????OC????B????K?????G????@@O????KO????BA?GC??@O??O??",
+  "nauty_canonicalization_checked": true,
+  "scope": "40-vertex connected one-switch domination countermodel; not a five-CDC counterexample",
+  "status": "ACCEPTED"
+}

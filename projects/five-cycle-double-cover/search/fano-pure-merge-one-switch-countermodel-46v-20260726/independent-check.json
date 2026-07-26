@@ -1,0 +1,226 @@
+{
+  "base_noncyclability": {
+    "circuit_count": 30,
+    "circuits_containing_all_marked_edges": 0,
+    "graph6": "It?GYDKKO",
+    "marked_edge_ids": [
+      1,
+      6,
+      7
+    ]
+  },
+  "expanded_fixed_flow": {
+    "five_colorable_solutions": 0,
+    "free_dimension": 7,
+    "maximum_clique_size_profile": {
+      "6": 128
+    },
+    "potential_equations": 141,
+    "potential_solutions": 128,
+    "rank_after_translation_gauge": 131,
+    "used_pair_count_profile": {
+      "15": 32,
+      "24": 96
+    }
+  },
+  "flow_and_positive_cover": {
+    "eight_cover_parity": true,
+    "explicit_five_cdc_sizes": [
+      46,
+      46,
+      46,
+      0,
+      0
+    ],
+    "flow_conservation": true,
+    "nowhere_zero_flow": true,
+    "proper_three_edge_coloring": true
+  },
+  "graph": {
+    "bridgeless_by_all_single_edge_deletions": true,
+    "canonical_graph6": "ms????@?G@???P?D?@_?o?_?A?????O?CC?I@?@_O?W??Q???W??_?O????G???K????G????OA????W????????E????I?????A_????S????B????????????????????C?????WO????@Q?????@`?????@__????B?O????B??",
+    "connected": true,
+    "cubic": true,
+    "edges": 69,
+    "raw_graph6": "md?GODKKS?????????????B__D??P_?H_?B_??s?G??????????????????????????B_A??D????P_???H_???B_????sA?????????????????????????????????????????B_@????D??????P_?????H_?????B_??????s?",
+    "simple": true,
+    "vertices": 46
+  },
+  "human_proof_dependencies_checked": [
+    "each retained block is potential-rigid modulo global translation",
+    "each retained block forces a coordinate K6 including its dangling ports",
+    "the three marked base edges are noncyclable",
+    "each embedded block has exactly two connectors"
+  ],
+  "rigid_block": {
+    "dangling_port_pair_from_each_side": [
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "five_colorable": false,
+    "forced_clique": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "free_dimension": 0,
+    "gauged_potentials_by_vertex": [
+      0,
+      5,
+      5,
+      1,
+      5,
+      6,
+      7,
+      4,
+      7,
+      3,
+      7,
+      2
+    ],
+    "graph6": "K??FEaKR@oE_",
+    "maximum_clique_size": 6,
+    "port_deleted_equations": 37,
+    "port_edge": 1,
+    "rank_after_translation_gauge": 36,
+    "used_pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        4,
+        6
+      ]
+    ]
+  },
+  "schema": "independent-fano-pure-merge-one-switch-check-v1",
+  "scope_warning": "This checks a countermodel to a fixed-flow pure-merge plus one-connected-circuit repair strategy. It is not a five-CDC counterexample.",
+  "status": "PASS",
+  "two_edge_block_shores": [
+    {
+      "connector_edge_ids": [
+        2,
+        7
+      ],
+      "replaced_base_edge": 1,
+      "vertices": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "connector_edge_ids": [
+        13,
+        15
+      ],
+      "replaced_base_edge": 6,
+      "vertices": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "connector_edge_ids": [
+        4,
+        17
+      ],
+      "replaced_base_edge": 7,
+      "vertices": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ]
+    }
+  ]
+}

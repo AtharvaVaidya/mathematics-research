@@ -1,0 +1,17 @@
+{
+  "schema": "h4-all-minimum-support-packing-witness-check-v1",
+  "status": "PASS",
+  "support_rows": 4931430,
+  "distinct_support_rows": 4931430,
+  "packing_witnesses_checked": 4931430,
+  "packing_failures": 0,
+  "witness_format": {
+    "file": "packing-witnesses.bin",
+    "bytes_per_row": 31,
+    "edge_bits": 243,
+    "padding_bits": 5,
+    "total_bytes": 152874330,
+    "sha256": "040fd474e7f3dfae0e530eed5579a4892bafcada1cbf0f85418393e3cbd297c3"
+  },
+  "checker_output": "VERIFIED rows 4931430 distinct 4931430 packing_witnesses 4931430"
+}

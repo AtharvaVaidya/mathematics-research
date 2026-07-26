@@ -1,9 +1,19 @@
 # Mathematics research archive
 
 This repository is a reproducible research workspace for current and future
-mathematics papers.  Its first project studies the plane Jacobian
-conjecture, with exact symbolic verifiers, computational certificates, proof
-notes, countermodels, and route audits.
+mathematics papers.  It contains projects on the plane Jacobian conjecture
+and the five-cycle double cover conjecture, with exact symbolic verifiers,
+computational certificates, proof notes, countermodels, and route audits.
+
+## Projects
+
+- The files at the repository root and in `current_context/` study the
+  plane Jacobian conjecture.
+- [`projects/five-cycle-double-cover/`](projects/five-cycle-double-cover/)
+  contains two AI-assisted research drafts, a computer-free marked-graph
+  theorem, exact encodings, human-checkable intermediate countermodels,
+  and compact reproducibility artifacts.  It explicitly does **not**
+  claim to resolve the five-cycle double cover conjecture.
 
 ## Status
 

@@ -1,0 +1,23 @@
+{
+  "schema": "h4-all-minimum-support-packing-result-v1",
+  "status": "PROOF_CERTIFIED_FIXED_GRAPH_THEOREM",
+  "scope": "the single frozen 162-vertex graph H4; no universal five-cycle-double-cover claim",
+  "graph": {
+    "path": "H4.graph.json",
+    "vertices": 162,
+    "edges": 243,
+    "sha256": "54fbfcbb96bae7c5e5220bee5ada60be82b0f569be4314bfadd6574fb07993ce"
+  },
+  "minimum_exact_zero_matching_size": 4,
+  "support_corpus": {
+    "path": "supports.tsv",
+    "rows": 4931430,
+    "rows_distinct": true,
+    "sha256": "a7ede3be51d3b937bacf702d67aa51431192bcdea9b008bf835e25f82967b483"
+  },
+  "theorem": "Every cardinality-minimum exact-zero matching of an F_2^2-flow on H4 packs two edge-disjoint boundary joins in its complement and therefore extends to a standard five-cycle double cover.",
+  "completeness": "UNSAT LRAT accepted by lrat-check and CakeML cake_lpr",
+  "packing_rows_checked": 4931430,
+  "packing_failures": 0,
+  "ai_use": "Substantial AI assistance was used for conjecture formulation, program construction, proof engineering, computation, checking, and exposition. The claim is limited to the mechanically checkable finite theorem recorded here."
+}

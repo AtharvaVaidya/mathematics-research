@@ -1,0 +1,52 @@
+{
+  "all_mark_binary_cycles": 2048,
+  "all_mark_one_colour_root_other_colour_exists": true,
+  "all_mark_root_avoiding_binary_cycles": 1024,
+  "classification": "EXACT_FINITE_COUNTERMODEL_WITHOUT_MARKED_CUT_HYPOTHESIS",
+  "cycle_space_dimension": 15,
+  "edges": 42,
+  "even_component_all_mark_binary_cycles": 360,
+  "even_component_root_avoiding_binary_cycles": 0,
+  "graph6": "[??????O@?R?d?EGGSAK?H_?HG?Ao@A_A?????????????C?G?C???M???B_???[",
+  "marked_cut_left_side_on_one_mark_shore": 3,
+  "marked_subdivision_girth": 5,
+  "marks": [
+    [
+      3,
+      11
+    ],
+    [
+      6,
+      15
+    ],
+    [
+      7,
+      18
+    ],
+    [
+      22,
+      26
+    ]
+  ],
+  "order": 28,
+  "root": [
+    0,
+    20
+  ],
+  "schema": "rooted-four-mark-countermodel-v1",
+  "scope_warning": "This refutes naive rooted avoidance, not the rooted theorem under the inherited marked-cut, marked-girth, paired-cut, and minimum-support hypotheses.",
+  "second_cut_edge": [
+    8,
+    24
+  ],
+  "tait_colourings_mod_s3": 162,
+  "two_cut_mark_split": [
+    3,
+    1
+  ],
+  "two_cut_shore_orders": [
+    20,
+    8
+  ],
+  "universally_separated": true
+}

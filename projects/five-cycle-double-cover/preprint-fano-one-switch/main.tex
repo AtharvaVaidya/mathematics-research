@@ -1,0 +1,1278 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,array}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\bd}{\partial}
+\newcommand{\Good}{\mathcal G}
+
+\title{Two connected countermodels to one-circuit repair\\
+for five-cycle double covers}
+\author{AI-assisted research draft for independent human verification\\
+\small Human author attribution to be supplied before submission}
+\date{26 July 2026}
+
+\begin{document}
+\maketitle
+
+\noindent
+\colorbox{yellow!22}{%
+  \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+  \textbf{AI-assistance disclosure.}
+  OpenAI Codex agents (GPT-5-series models, accessed 25--26 July 2026)
+  proposed the successful-value and one-circuit-repair formulations,
+  formulated the pure-coordinate-merge strategy,
+  generated proof ideas and substantial prose, wrote the producer and
+  checking programs, performed the computational searches and literature
+  audit, found the finite countermodels, designed the two-sum
+  constructions, discovered the 40- and 46-vertex reductions and the
+  rigid-cap obstruction, and generated the checking artifacts, all under
+  human direction.  A second Codex agent
+  was asked to audit the logic
+  adversarially.  The ``independent'' Python checker, the separately
+  written C++ implementation, and that audit were also AI-assisted; none
+  is independent human verification or peer review.  The main results
+  refute two intermediate one-circuit strategies, not the five-cycle
+  double cover conjecture; both constructed graphs positively have
+  standard five-cycle double covers.  No human author or referee is represented as
+  having certified the manuscript, proof, certificate, or computation.
+  This research draft is not journal-ready and should not be submitted
+  until human authors check every proof and incidence table, independently
+  reconstruct the graph, rerun the computations, verify the literature
+  attribution, and accept ordinary scholarly responsibility.}}
+
+\begin{abstract}
+We give two explicit countermodels to one-circuit repair strategies for
+the five-cycle double cover conjecture.  The first uses a
+nowhere-zero \(\F_2^3\)-flow \(f\) on a simple connected bridgeless cubic
+40-vertex graph.  No value class of \(f\), or of any allowed neighbour
+obtained by switching one connected circuit, satisfies a particular
+edge-disjoint \(T\)-join packing condition sufficient for a 5-CDC.
+
+The second concerns the potential construction of an eight-cover from
+a fixed \(\F_2^3\)-flow used in recent proofs and expositions of the
+cycle double cover theorem.  On an explicit simple connected bridgeless
+cubic 46-vertex graph, no compatible eight-cover for the displayed flow
+can be purely merged into at most five Eulerian subgraphs.  The same
+remains true after every nowhere-zero switch on one connected circuit.
+A 12-vertex port-deleted block is potential-rigid up to coordinate
+translation and forces a \(K_6\) in the coordinate co-occurrence graph.
+Three copies are attached at three same-colour base edges that no circuit
+can contain simultaneously; a short triangle argument proves this
+non-cyclability.  These ingredients give SAT-free proofs of both global
+one-switch assertions.
+
+Both countermodels are Tait-colourable and have explicit three-cycle
+double covers.  They therefore refute only the stated intermediate
+strategies and do not resolve or refute the five-cycle double cover
+conjecture.
+
+For context, exact enumeration had found no obstruction through all
+connected simple bridgeless cubic graphs of order at most 14, selected
+complete hard-graph scopes through order 20, and all 20 strict snarks of
+order 22 and the 38 strict order-24 snarks output by a retained
+Snarkhunter 2.0b run.  Connected-circuit enumeration checks
+\(847{,}539{,}220\) flow-orbit representatives at order 20,
+\(63{,}251{,}330\) at order 22, and \(617{,}079{,}260\) at order 24.
+The 40-vertex construction shows that these are finite phenomena, not a
+universal theorem.  All artifact generation, checking code, and proof
+development were AI-assisted and still require independent human
+verification.
+\end{abstract}
+
+\section{Introduction and attribution}
+
+A \emph{standard five-cycle double cover} (5-CDC) of a finite graph is a
+list \(C_1,\ldots,C_5\) of Eulerian edge-subsets such that every edge
+belongs to exactly two members.  Here Eulerian means even degree at every
+vertex; connectedness is not required.  Empty members are permitted, so a
+cover with at most five members can be padded to five.  This note concerns
+the standard, unoriented conjecture only.  This agrees with the current
+``at most \(k\)'' convention in Oum's exposition
+\cite[Section~9.1]{oum2026}.
+
+The existence of a 5-CDC for every bridgeless graph remains unproved.
+Oum's July 2026 exposition gives an 8-CDC and records the 5-CDC statement
+separately as Conjecture~18 \cite[Section~9.1]{oum2026}.  See also the
+contemporary expositions of Geelen and Kintali
+\cite{geelen2026,kintali2026}.  The
+present note does not claim otherwise.  Its two main results instead
+refute two specific intermediate proof strategies inside the space of
+nowhere-zero \(\F_2^3\)-flows.  Both countermodels have explicitly
+checked 5-CDCs.
+
+The underlying matching/nowhere-zero-4-flow characterization is prior:
+Hoffmann-Ostenhof proves that a cubic graph has a 5-CDC precisely when it
+has a matching \(M\), two Eulerian edge-subsets intersecting exactly in
+\(M\), and a nowhere-zero 4-flow on \(G-M\)
+\cite[Corollary~0.6]{hoffmann2013}.  We restate and prove the exact
+specialization needed below to eliminate convention ambiguity.
+Further 4-flow approaches and sufficient conditions for 5-CDCs, including
+Catlin-reduction and weak-oddness results, are due to Liu, Hao, Luo, and
+Zhang \cite{liu2023,liu2025}.  None of those results is claimed as new
+here.
+
+The reconfiguration language is also prior.  Esperet, Hendrey, Lagoutte,
+Marseloo, Norin, and Steiner define the graph of nowhere-zero flows in
+which consecutive flows differ on one circuit and prove positive and
+negative connectivity results \cite{esperet2025}.  Cranston, Li, Su,
+Wang, and Xu develop this theory further, including reductions to cubic
+graphs and results for several groups and graph classes
+\cite{cranston2026}.  In particular, the definition of circuit-supported
+adjacency is not a contribution of this note.  More precisely, Esperet
+et al.\ prove that for every 2-edge-connected graph the reconfiguration
+graph has minimum degree at least one when the abelian flow group has
+order at least six or is \(\mathbb Z_2^2\); they also treat
+\(\mathbb Z_4\), while frozen \(\mathbb Z_5\)-flows exist
+\cite{esperet2025}.  Even the positive minimum-degree statements are much
+weaker than requiring every unsuccessful flow to have a
+\emph{successful} neighbour.  Their universal vector-space connectivity
+result uses \(\mathbb Z_2^8\), not \(\F_2^3\).
+
+The term \emph{Fano-flow conjectures} also has an established, different
+meaning: Jin, Mazzuoccolo, and Steffen study conjectures controlling how
+many lines of the Fano plane are used by a flow
+\cite{jin2018}.  Our successful-value condition is instead a
+value-class/\(T\)-join packing condition, and \((\mathsf D)\) is a
+domination statement in a reconfiguration graph.  Neither countermodel
+below refutes any of those classical Fano-flow conjectures.
+
+We found no statement in the sources above of either specific
+one-circuit domination assertion, the pure-merge coloring obstruction,
+or the two countermodels proved here.  Accordingly, the only priority
+claim made here is provisional: these two negative results appear not to
+have been recorded.  The successful-value definition, exact blocks,
+two-sum compositions, tetrahedral \(T\)-join observation, and finite
+computations belong to those constructions; the underlying flow,
+\(T\)-join, two-sum, potential, and circuit-reconfiguration machinery is
+not claimed as new.  In particular, the flow-to-pair-label potential
+construction appears in Oum's and Kintali's presentations
+\cite[Section~5]{oum2026} and \cite{kintali2026}.  An independent expert literature
+review, including consultation with authors of the recent flow and
+reconfiguration papers, is required before submission.
+
+\section{Pair labels and the exact Boolean encoding}
+\label{sec:labels}
+
+We first fix the direct 5-CDC convention independently of the later flow
+reformulation.  For this section an undirected loop contributes its two
+incidences at its vertex.  The remaining sections and all computations
+are loopless.
+
+\begin{proposition}[pair-label equivalence]\label{prop:labels}
+For a finite undirected graph \(G\), the following are equivalent.
+\begin{enumerate}
+  \item \(G\) has Eulerian edge-subsets \(C_1,\ldots,C_5\) and every edge
+        belongs to exactly two of them.
+  \item Every edge \(e\) has a label
+        \(L(e)\in\binom{[5]}2\), and for every vertex \(v\) and
+        coordinate \(i\in[5]\), coordinate \(i\) occurs evenly among the
+        labels on the edge incidences at \(v\).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Given the cover, put \(L(e)=\{i:e\in C_i\}\).  Exact double coverage gives
+\(|L(e)|=2\), and the Eulerian condition on \(C_i\) gives the required
+incidence parity.  Conversely, put \(C_i=\{e:i\in L(e)\}\).  The incidence
+parity makes every \(C_i\) Eulerian, and \(|L(e)|=2\) makes every edge
+belong to exactly two members.
+\end{proof}
+
+This equivalence has a literal SAT/XOR encoding.  Introduce
+\(x_{e,i}\in\{0,1\}\), with \(x_{e,i}=1\) meaning \(i\in L(e)\), and impose
+\[
+ \sum_{i=1}^5x_{e,i}=2\quad(e\in E(G)),\qquad
+ \bigoplus_{e\ni v}x_{e,i}=0\quad(v\in V(G),\ i\in[5]).             \tag{1}
+\]
+Incidences, rather than merely edge names, are counted in the second
+equation.  Proposition~\ref{prop:labels} proves that (1) is equivalent to
+the intended definition.
+
+For completeness, the exactly-two condition on five variables has the
+certificate-producing CNF
+\[
+ \neg x_i\vee\neg x_j\vee\neg x_k
+ \quad(1\le i<j<k\le5),                            \tag{2}
+\]
+together with
+\[
+ \bigvee_{j\ne i}x_j\quad(i\in[5]).                \tag{3}
+\]
+The ten clauses (2) give at most two true variables.  If zero variables
+are true, every clause (3) fails; if only \(x_i\) is true, the clause
+omitting \(i\) fails.  Hence (2)--(3) give exactly two.
+
+At a cubic vertex, writing one coordinate on its incident edges as
+\(a,b,c\), even parity is exactly the four-clause CNF
+\[
+ (a\vee b\vee\neg c),\quad(a\vee\neg b\vee c),\quad
+ (\neg a\vee b\vee c),\quad(\neg a\vee\neg b\vee\neg c).           \tag{4}
+\]
+These clauses exclude the four odd assignments.  Equations (1), or their
+CNF expansion (2)--(4), are the authoritative standard-cover semantics;
+no orientation variables occur.
+
+\section{Value classes and \texorpdfstring{\(T\)}{T}-joins}
+\label{sec:value}
+
+From now on \(G\) is a finite loopless cubic graph and
+\[
+ f:E(G)\longrightarrow A-\{0\},\qquad A=\F_2^3,
+\]
+is a nowhere-zero flow.  Since \(A\) has exponent two, edge orientations
+play no role: at every vertex the xor of the three incident values is
+zero.  For \(k\in A-\{0\}\), put
+\[
+ M_k=\{e:f(e)=k\}.
+\]
+For an edge set \(X\), write \(\bd X\) for the set of vertices incident
+with an odd number of edges of \(X\).  If \(T\subseteq V(H)\), a
+\emph{\(T\)-join} of \(H\) is an edge set \(J\) with \(\bd J=T\).
+
+\begin{proposition}[value-class structure]\label{prop:value}
+For every \(k\ne0\):
+\begin{enumerate}
+  \item \(M_k\) is a matching;
+  \item the quotient of \(f\) by \(\langle k\rangle\) is an
+        \(\F_2^2\)-flow whose exact zero set is \(M_k\);
+  \item \(G-M_k\) has a canonical family of four
+        \(\bd M_k\)-joins, indexed by the linear functionals
+        \[
+          \Lambda_k=\{\lambda\in A^*:\lambda(k)=1\};
+        \]
+  \item these four joins double-cover \(G-M_k\), and each unordered pair
+        of joins intersects in one of the other six value classes.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+At a cubic vertex the three incident nonzero values sum to zero.  Two
+cannot be equal, since the third would then be zero.  Thus a fixed value
+occurs at most once at a vertex, proving that \(M_k\) is a matching.
+
+The zero coset of \(A/\langle k\rangle\) is \(\{0,k\}\).  Since \(f\) is
+nowhere zero, an edge maps to zero in the quotient exactly when its
+original value is \(k\).  This proves the second assertion.
+
+There are four linear functionals in \(\Lambda_k\).  For
+\(\lambda\in\Lambda_k\), the support of the binary flow
+\(\lambda\circ f\) is an Eulerian edge set containing \(M_k\).  Therefore
+\[
+ J_\lambda=\{e\notin M_k:\lambda(f(e))=1\}
+\]
+has boundary \(\bd M_k\) in \(G-M_k\).
+
+If \(f(e)=w\notin\{0,k\}\), the two independent equations
+\(\lambda(k)=\lambda(w)=1\) have exactly two solutions in the
+three-dimensional dual space.  Hence \(e\) occurs in exactly two of the
+four joins.  Finally, if \(\lambda\ne\mu\) belong to \(\Lambda_k\), the
+simultaneous equations
+\[
+ \lambda(x)=\mu(x)=1
+\]
+have exactly two solutions in \(A\): \(k\) and one value
+\(w\notin\{0,k\}\).  After \(M_k\) is deleted,
+\(J_\lambda\cap J_\mu=M_w\).  The six unordered pairs of functionals give
+the six values \(w\ne0,k\).
+\end{proof}
+
+In particular, the elementary component-parity obstruction to the
+existence of even one \(T\)-join never occurs for a value class.  The
+issue is whether two such joins can be made edge-disjoint; the four
+canonical joins need not contain a disjoint pair.
+
+\begin{lemma}[even-marked circuit criterion]\label{lem:criterion}
+Let \(M\) be a matching in a cubic graph \(G\), put
+\(K=G-M\) and \(T=\bd M\).  Then \(K\) has two edge-disjoint
+\(T\)-joins if and only if \(K\) has an Eulerian edge set \(Q\) that
+contains every vertex of \(T\) and whose every nonempty circuit component
+contains an even number of vertices of \(T\).
+\end{lemma}
+
+\begin{proof}
+Suppose \(J_1,J_2\) are edge-disjoint \(T\)-joins.  A terminal has degree
+two in \(K\); each join has odd degree there, so each uses one edge, and
+disjointness makes them use the two different edges.  At a nonterminal,
+each join has even degree in a three-edge incidence set.  Thus
+\(Q=J_1\mathbin{\dot\cup}J_2\) has degree two at every terminal and degree
+zero or two elsewhere.  It is a disjoint union of circuits.  Along a
+circuit, the join colour stays unchanged at a nonterminal and switches at
+a terminal.  The colour can close consistently only after an even number
+of switches, so every circuit contains evenly many terminals.
+
+Conversely, traverse each circuit of \(Q\), colouring its edges with two
+join colours.  Keep the colour through a nonterminal and switch it at a
+terminal.  The even terminal count makes the colouring consistent when
+the traversal closes.  Each colour class has degree one at every terminal
+and degree zero or two elsewhere, so the two colour classes are
+edge-disjoint \(T\)-joins.
+\end{proof}
+
+\begin{definition}
+A value \(k\ne0\) is \emph{successful} for \(f\) if
+\((G-M_k,\bd M_k)\) has two edge-disjoint \(T\)-joins.  The flow \(f\) is
+\emph{good} if it has at least one successful value.
+\end{definition}
+
+\begin{proposition}[successful value implies a 5-CDC]\label{prop:success}
+If \(f\) is good, then \(G\) has a standard five-cycle double cover.
+\end{proposition}
+
+\begin{proof}
+Let \(k\) be successful, put \(M=M_k\), and take edge-disjoint
+\(T\)-joins \(J_1,J_2\) in \(G-M\), where \(T=\bd M\).  Then
+\[
+ A_1=M\mathbin{\dot\cup}J_1,\qquad
+ A_2=M\mathbin{\dot\cup}J_2
+\]
+are Eulerian edge sets of \(G\), and \(A_1\cap A_2=M\).
+
+Let \(\phi:E(G)\to\F_2^2\) be the quotient flow from
+Proposition~\ref{prop:value}; its exact zero set is \(M\).  On
+\(K=G-M\), put
+\[
+ D_0=A_1\mathbin{\triangle}A_2=J_1\mathbin{\dot\cup}J_2.
+\]
+We construct a four-cycle double cover of \(K\) whose first coordinate is
+\(D_0\).  Represent the nonzero elements \(1,2,3\) of \(\F_2^2\) by the
+linear section
+\[
+ s(1)=1100,\qquad s(2)=1010,\qquad s(3)=0110
+\]
+into the even-weight subspace of \(\F_2^4\), and put \(r=1111\).  Let
+\(\ell(y)\) be the first coordinate of \(s(y)\).  Define
+\[
+ h(e)=1_{D_0}(e)+\ell(\phi(e)),\qquad
+ d(e)=s(\phi(e))+h(e)r.                            \tag{5}
+\]
+Both \(D_0\) and the support of the binary flow \(\ell\circ\phi\) are
+Eulerian, so \(h\) is a binary flow.  Hence \(d\) is an
+\(\F_2^4\)-flow.  For \(\phi(e)\ne0\), the two vectors
+\(s(\phi(e))\) and \(s(\phi(e))+r\) are complementary weight-two
+vectors.  Thus every \(d(e)\) has weight two.  Its first coordinate is
+\[
+ \ell(\phi(e))+h(e)=1_{D_0}(e).
+\]
+The four coordinate supports \(D_0,D_1,D_2,D_3\) of \(d\) therefore form
+a four-cycle double cover of \(K\) with prescribed member \(D_0\).
+
+Now take
+\[
+ A_1,\ A_2,\ D_1,\ D_2,\ D_3.
+\]
+An edge of \(M\) lies in \(A_1,A_2\) and nowhere else.  An edge of
+\(D_0\) lies in exactly one of \(A_1,A_2\) and exactly one of
+\(D_1,D_2,D_3\).  An edge outside \(D_0\cup M\) lies in neither
+\(A_1,A_2\) and in exactly two of \(D_1,D_2,D_3\).  Every edge is covered
+exactly twice.
+\end{proof}
+
+The conclusion and its matching/4-flow ingredients are consistent with,
+and are a direct specialization of, the prior characterization in
+\cite{hoffmann2013}.  The detailed proof is included only to make the
+coordinate convention and the role of the two \(T\)-joins checkable.
+
+\section{Circuit switches and the false domination statement}
+\label{sec:switch}
+
+Let \(a\ne0\), and let \(C\) be a circuit in \(G\).  Define
+\[
+ f^{C,a}(e)=
+ \begin{cases}
+   f(e)+a,&e\in C,\\
+   f(e),&e\notin C.
+ \end{cases}                                       \tag{6}
+\]
+
+\begin{lemma}[exact one-circuit exchange]\label{lem:switch}
+If \(C\cap M_a=\varnothing\), then \(f^{C,a}\) is a nowhere-zero flow,
+\(M'_a=M_a\), and, for \(b\notin\{0,a\}\),
+\[
+ M'_b=(M_b-C)\cup(M_{a+b}\cap C).                  \tag{7}
+\]
+\end{lemma}
+
+\begin{proof}
+At every vertex, the circuit has either zero or two incident edges.
+Adding \(a\) on those two edges changes the conservation sum by
+\(a+a=0\), so (6) remains a flow.  A switched edge becomes zero exactly
+when it previously had value \(a\), excluded by the hypothesis.
+
+No edge of \(M_a\) is switched.  No switched nonzero value can become
+\(a\), since \(x+a=a\) would imply \(x=0\).  Thus \(M'_a=M_a\).  For
+\(b\notin\{0,a\}\), an edge outside \(C\) retains value \(b\), while an
+edge of \(C\) has new value \(b\) exactly when its old value was \(a+b\).
+This is (7).
+\end{proof}
+
+The recent reconfiguration papers \cite{esperet2025,cranston2026} write
+\(\mathcal F(G,A)\) for the graph whose vertices are nowhere-zero
+\(A\)-flows and whose adjacent flows differ only on a circuit.  For
+\(A=\F_2^3\), Lemma~\ref{lem:switch} describes exactly those adjacencies.
+Indeed, if the difference of two \(A\)-flows is supported on a connected
+circuit, conservation at a circuit vertex equates the difference values
+on its two circuit edges; connectedness makes the difference constant
+around the circuit.
+
+Let \(\Good(G)\) be the set of good nowhere-zero \(\F_2^3\)-flows.
+
+\medskip
+\noindent
+\textbf{One-circuit domination statement \((\mathsf D)\).}
+\emph{For every finite connected bridgeless loopless cubic graph \(G\),
+the set \(\Good(G)\) dominates \(\mathcal F(G,\F_2^3)\).}
+
+Thus every nowhere-zero flow would either be good or have a good
+neighbour obtained by one allowed connected-circuit switch.  This
+statement is weaker than connectivity of the reconfiguration graph and
+is not implied by the known absence of isolated flows.  More importantly,
+Theorem~\ref{thm:maincountermodel} below proves that \((\mathsf D)\) is
+false even for simple graphs.
+
+\begin{proposition}[why \((\mathsf D)\) would have sufficed]
+\label{prop:conditional}
+If \((\mathsf D)\) were true, then every finite connected
+bridgeless loopless cubic graph has a standard 5-CDC.
+\end{proposition}
+
+\begin{proof}
+Every bridgeless graph has a nowhere-zero 6-flow by Seymour's theorem
+\cite{seymour1981}, hence a nowhere-zero 8-flow.  Tutte's group-order
+invariance for nowhere-zero flows \cite{tutte1954} supplies a nowhere-zero
+\(\F_2^3\)-flow.  If it is good, apply
+Proposition~\ref{prop:success}.  If it is bad,
+\((\mathsf D)\) supplies a good adjacent flow in one move,
+and the same proposition applies.
+\end{proof}
+
+Theorem~\ref{thm:maincountermodel} closes this particular route
+negatively.  It says nothing negative about the conclusion of
+Proposition~\ref{prop:conditional}; indeed, its countermodel graph has a
+standard 5-CDC.
+
+\section{A human-checkable bad supplied flow}
+\label{sec:countermodel}
+
+This section disproves the stronger assertion that every supplied
+nowhere-zero \(\F_2^3\)-flow is already good.  The proof is finite and does
+not depend on SAT or on the frontier program.
+
+\begin{theorem}[countermodel to the every-flow claim]\label{thm:countermodel}
+There is a connected simple bridgeless cubic graph \(G\) with a
+nowhere-zero \(\F_2^3\)-flow \(f\) for which none of the seven nonzero
+values is successful.  The same graph is 3-edge-colourable and has an
+explicit standard 5-CDC.
+\end{theorem}
+
+\begin{proof}
+Number the edges and assign values as follows.  The final column will be
+used for a positive-control 3-edge-colouring.
+\[
+\begin{array}{c|c|c|c@{\qquad}c|c|c|c}
+i&e_i&f(e_i)&c(e_i)&i&e_i&f(e_i)&c(e_i)\\ \hline
+0&03&7&0& 8&28&3&2\\
+1&06&6&1& 9&36&5&2\\
+2&07&1&2&10&39&2&1\\
+3&14&7&2&11&48&1&1\\
+4&16&3&0&12&49&6&0\\
+5&17&4&1&13&58&2&0\\
+6&25&6&1&14&59&4&2\\
+7&27&5&0&&&&
+\end{array}                                                       \tag{8}
+\]
+Every vertex occurs in three rows, so \(G\) is cubic and simple.  The
+vertex sequence
+\[
+ 0,3,6,1,4,9,5,8,2,7,0
+\]
+is a Hamilton circuit.  Its edges lie on that circuit, and every remaining
+edge is a chord whose union with either Hamilton path between its ends
+contains a circuit.  Hence every edge lies on a circuit and \(G\) is
+bridgeless.  Its graph6 encoding is \texttt{ICOef?kF?}.
+
+At vertices \(0,\ldots,9\), the incident value triples are
+\[
+\begin{split}
+ &(7,6,1),\ (7,3,4),\ (6,5,3),\ (7,5,2),\ (7,1,6),\\
+ &(6,2,4),\ (6,3,5),\ (1,4,5),\ (3,1,2),\ (2,6,4).
+\end{split}                                                       \tag{9}
+\]
+Each triple has xor zero and contains no zero, proving directly that
+\(f\) is a nowhere-zero flow.  Its value classes are
+\[
+\begin{array}{c|c@{\qquad}c|c}
+k&M_k&k&M_k\\ \hline
+1&\{2,11\}&5&\{7,9\}\\
+2&\{10,13\}&6&\{1,6,12\}\\
+3&\{4,8\}&7&\{0,3\}\\
+4&\{5,14\}&&
+\end{array}                                                       \tag{10}
+\]
+and the endpoint pairs in every displayed class are disjoint.
+
+It remains to prove that every class fails the criterion of
+Lemma~\ref{lem:criterion}.  Fix \(k\), put a binary variable \(q_i\) on
+edge \(i\), set \(q_i=0\) for \(i\in M_k\), and at every terminal set the
+other two incident variables to one.  The only remaining conditions are
+the ten vertex equations
+\[
+ \bigoplus_{i:e_i\ni v}q_i=0.                    \tag{11}
+\]
+Ordinary row reduction over \(\F_2\) gives the following complete reduced
+systems.  The set \(U\) lists the variables not fixed before reduction.
+\[
+\begin{array}{c|l|l}
+k&U&\text{reduced equations}\\ \hline
+1&4,6,9,10,14&(q_4,q_6,q_9,q_{10},q_{14})=(0,0,1,0,1)\\
+2&1,2,3,4,5,7&q_1+q_5=1,\ q_2+q_5=0,\ q_3=0,\
+                  q_4+q_5=0,\ q_7=0\\
+3&0,2,10,12,14&(q_0,q_2,q_{10},q_{12},q_{14})=(1,0,0,0,0)\\
+4&0,1,8,9,11&0=1\\
+5&3,11,12,13,14&0=1\\
+6&5&0=1\\
+7&6,7,8,13,14&0=1
+\end{array}                                                       \tag{12}
+\]
+For an additional rank check, the coefficient/augmented ranks in the
+last four rows are respectively \(4/5,4/5,1/2,4/5\).  Thus values
+4 through 7 admit no forced-edge Eulerian set.  Values 1 and 3 have one
+solution each, and value 2 has two solutions according to the free choice
+of \(q_5\).  Their circuit components are exactly
+\[
+\begin{array}{c|l|c}
+k&\text{circuit edge sets}&\text{terminal counts}\\ \hline
+1&\{0,1,9\}\ ;\ \{3,5,7,8,12,13,14\}&1,3\\
+2&\{0,1,9\}\ ;\ \{6,8,11,12,14\}&1,3\\
+2&\{0,2,4,5,9\}\ ;\ \{6,8,11,12,14\}&1,3\\
+3&\{0,1,9\}\ ;\ \{3,5,6,7,11,13\}&1,3
+\end{array}                                                       \tag{13}
+\]
+Equations (11) make the completeness of (12) a direct five-variable
+calculation in the largest case; substitution into (8) checks every
+listed circuit.  Every possible circuit decomposition has odd terminal
+counts on both components.  Lemma~\ref{lem:criterion} therefore excludes
+two edge-disjoint \(T\)-joins for all seven \(M_k\).
+
+Finally, the colour column of (8), in edge order, is
+\[
+ (0,1,2,2,0,1,1,0,2,2,1,1,0,0,2).               \tag{14}
+\]
+At every vertex the three incident colours are \(0,1,2\).  For each
+colour, take the union of the other two colour classes.  These three
+Eulerian edge sets cover every edge exactly twice; append two empty sets.
+Thus \(G\) has a standard 5-CDC.
+\end{proof}
+
+The frozen artifact contains a second checker which, without using
+Lemma~\ref{lem:criterion}, enumerates all \(T\)-joins in each complement.
+It finds \(16,16,16,16,16,8,16\) joins for values \(1,\ldots,7\) and
+minimum pairwise intersection one in every case.  This is a computational
+cross-check of the human proof, not a replacement for it.
+
+\section{The connected countermodel}
+\label{sec:countermodel40}
+
+We now refute \((\mathsf D)\).  The proof is a composition argument from
+the ten-vertex block \(B\) of Theorem~\ref{thm:countermodel} and a second
+ten-vertex graph with three visibly non-cyclable monochromatic edges.  No
+SAT certificate is needed for the main construction.
+
+Let \((G_1,f_1)\) and \((G_2,f_2)\) be vertex-disjoint cubic flow graphs,
+and let
+\[
+ e_1=x_1y_1\in E(G_1),\qquad e_2=x_2y_2\in E(G_2)
+\]
+have the same value \(b\).  Their \emph{aligned two-sum} deletes
+\(e_1,e_2\), adds \(x_1x_2,y_1y_2\), and gives both new edges value \(b\).
+The other pairing of the four ends is equivalent for the arguments
+below.  The two new edges are called the connectors.
+
+\begin{lemma}[flow, structure, and circuit projection]
+\label{lem:twosum-flow}
+An aligned two-sum of connected bridgeless cubic flow graphs is again a
+connected bridgeless cubic flow graph.  It is simple when the summands are
+simple.  Every circuit of the sum uses zero or both connectors.  If it
+uses both, replacing its path through either summand by that summand's
+deleted edge gives a circuit in the graph before the sum.
+If the summands have standard 5-CDCs, then so does the sum.
+\end{lemma}
+
+\begin{proof}
+Every affected vertex loses and gains one incident edge of the same flow
+value \(b\); hence conservation and degree three are preserved.  Deleting
+a non-bridge from either connected summand leaves it connected, and the
+two connectors join the two remaining graphs, so the sum is connected.
+Each connector lies on a circuit formed from the two connectors and
+paths between the deleted-edge ends in the two summands.  An old edge
+lies on an old circuit; if that circuit used a deleted edge, replace the
+deleted edge by the corresponding path through the other summand.  Thus
+every edge of the sum lies on a circuit, proving bridgelessness.
+Simplicity is immediate because the connectors join disjoint vertex
+sets.
+
+A circuit meets the displayed two-edge cut evenly, so it uses zero or
+both connectors.  In the latter case, deleting the two connectors cuts
+the circuit into one path in each summand, between the ends of the
+deleted edge.  Restoring that edge closes either path to a circuit.  This
+is the claimed projection.
+
+For the cover assertion, use Proposition~\ref{prop:labels}.  Permute the
+five coordinates of one summand so the two deleted edges have the same
+two-subset label, and give both connectors that label.  At each affected
+vertex one copy of that label is removed and one is added.  Exact-two
+coverage and all five incidence parities are therefore preserved.
+\end{proof}
+
+\begin{lemma}[non-cyclability is inherited by port replacement]
+\label{lem:twosum-ports}
+Let \(P\subseteq E(H)\) contain at least two edges, and suppose no circuit
+of \(H\) contains all of \(P\).  Replace every \(p\in P\) by an aligned
+two-sum with a separate graph.  Every circuit of the resulting graph is
+disjoint from one whole attached graph and its two connectors.
+\end{lemma}
+
+\begin{proof}
+If the circuit lies wholly in one attached graph, any other attached
+graph is missed.  Otherwise project every traversed attachment back to
+its replaced edge using Lemma~\ref{lem:twosum-flow}.  The result is a
+circuit of \(H\), so it omits some \(p\in P\).  The corresponding
+attached graph and both connectors were not traversed.
+\end{proof}
+
+\begin{lemma}[one unchanged bad block blocks every value]
+\label{lem:twosum-block}
+Attach a copy of \(B\) by an aligned two-sum at an edge \(xy\) of value
+\(b\).  Suppose a later modification leaves the flow on the \(B\)-side
+and on both connectors unchanged.  Then no value \(k\ne0\) is successful
+in the resulting global flow.
+\end{lemma}
+
+\begin{proof}
+Suppose instead that \(J_1,J_2\) are edge-disjoint global
+\(\bd M_k\)-joins in the complement of \(M_k\).
+
+If \(k=b\), both connectors are removed with \(M_k\).  Restricting
+\(J_1,J_2\) to the isolated \(B\)-side gives two edge-disjoint
+\(\bd M_k(B)\)-joins in \(B-M_k(B)\), contradicting
+Theorem~\ref{thm:countermodel}.
+
+Let \(k\ne b\).  Both connectors remain.  For either \(J_i\), the parity
+sum over all vertices on the \(B\)-side shows that it uses an even number
+of connectors: the terminals in that shore are exactly
+\(\bd M_k(B)\), a set of even cardinality.  Hence it uses zero or two
+connectors.  If it uses none, its restriction is a
+\(\bd M_k(B)\)-join.  If it uses both, delete the connectors and restore
+the port edge \(xy\); the resulting edge set is again a
+\(\bd M_k(B)\)-join.  Because \(J_1,J_2\) are edge-disjoint, at most one
+of them uses both connectors, so at most one projection uses \(xy\).
+The two projected joins are therefore edge-disjoint, again contradicting
+the defining property of \(B\).
+\end{proof}
+
+\subsection{A ten-vertex non-cyclable base}
+
+Let \(H\) have the following edge table.  The column \(c(e)\) is a proper
+three-edge-colouring, and the flow value is \(1,2,3\) on colours
+\(0,1,2\), respectively.
+\[
+\begin{array}{c|c|c|c@{\qquad}c|c|c|c}
+i&e_i&c(e_i)&f(e_i)&i&e_i&c(e_i)&f(e_i)\\ \hline
+0&01&0&1& 8&67&2&3\\
+1&02&1&2& 9&18&2&3\\
+2&03&2&3&10&48&1&2\\
+3&23&0&1&11&58&0&1\\
+4&45&2&3&12&29&2&3\\
+5&46&0&1&13&39&1&2\\
+6&56&1&2&14&79&0&1\\
+7&17&1&2&&&&
+\end{array}                                                       \tag{15}
+\]
+Its graph6 record is \texttt{It?GYDKKO}.  The table gives every vertex
+one edge of each colour, so \(H\) is cubic and the three incident flow
+values xor to zero.  It is connected: from \(0\) one reaches
+\(1,2,3\), then \(7,8,9,6\), and then \(4,5\).  Every edge lies in the
+two-colour 2-factor obtained by omitting the third colour, so \(H\) is
+bridgeless.
+
+Put
+\[
+ P=\{1,6,7\}=\{02,56,17\}.                                      \tag{16}
+\]
+All three edges have value \(2\), but no connected circuit contains all
+three.  Indeed, suppose a circuit \(C\) contains \(P\).  It has edges
+outside the triangle on \(\{0,2,3\}\), so it crosses that triangle's
+three-edge boundary in two edges.  If \(01\notin C\), then \(29,39\in C\);
+together with \(02\), the forced degrees at \(0,2,3,9\) make
+\(0\,2\,9\,3\,0\) the whole circuit, a contradiction.  Hence
+\(01\in C\).
+
+Apply the same argument to the triangle on \(\{4,5,6\}\).  If
+\(67\notin C\), the forced edges make \(8\,4\,6\,5\,8\) the whole
+circuit.  Thus \(67\in C\), and exactly one of \(48,58\) lies in \(C\).
+At vertex \(7\), the edges \(17,67\) exclude \(79\).  At vertex \(1\),
+the edges \(17,01\) exclude \(18\).  Vertex \(8\) is consequently
+incident with exactly one edge of \(C\), namely one of \(48,58\), which
+is impossible for a circuit.  This proves the non-cyclability of \(P\)
+without computation.
+
+\begin{theorem}[40-vertex countermodel to one-circuit domination]
+\label{thm:maincountermodel}
+There is an explicit simple connected bridgeless cubic graph \(G\) on
+40 vertices and 60 edges with a nowhere-zero \(\F_2^3\)-flow \(f\) such
+that \(f\notin\Good(G)\) and every allowed switch of \(f\) on one
+connected circuit also lies outside \(\Good(G)\).  Moreover, \(G\) has
+an explicit three-cycle double cover.  Thus \((\mathsf D)\) is false,
+but \(G\) is not a counterexample to the five-cycle double cover
+conjecture.
+\end{theorem}
+
+\begin{proof}
+For each of the three edges \(p\in P\), replace \(p\) by an aligned
+two-sum with a fresh copy of \(B\), using edge \(10\) of \(B\) as the
+port.  Both edges have value \(2\).  Repeated use of
+Lemma~\ref{lem:twosum-flow} proves that the resulting \(G,f\) is simple,
+connected, bridgeless, cubic, and nowhere zero.  The counts are
+\[
+ |V(G)|=10+3\cdot10=40,\qquad |E(G)|=15+3\cdot15=60.
+\]
+
+By Lemma~\ref{lem:twosum-ports}, every connected circuit \(C\) of \(G\)
+misses one whole copy of \(B\) and its connectors.  An allowed switch on
+\(C\) leaves that block unchanged, so Lemma~\ref{lem:twosum-block}
+shows that all seven values of the switched flow remain unsuccessful.
+The original flow is bad by the same lemma, using any attached block.
+
+For the positive assertion, edge \(10\) of \(B\) and all three edges of
+\(P\) have colour \(1\) in the displayed proper three-edge-colourings.
+Give both connectors colour \(1\).  At each affected vertex an edge of
+colour \(1\) is replaced by another, so the final graph remains properly
+three-edge-coloured.  For each colour, take the union of the other two
+colour classes.  These three Eulerian edge sets form a cycle double
+cover, each with 40 edges.  Appending two empty sets gives a standard
+5-CDC.
+\end{proof}
+
+\medskip
+\noindent
+\textbf{Graph metadata.}
+The nauty-canonical graph6 encoding is obtained by concatenating the
+following two displayed lines:
+\begin{center}
+\small
+\texttt{\detokenize{gt?GG?@?GB?@?D??@O?K???_?CGA_??A???@??OO??C??@_??C???G?_???G???D???C??}}\\
+\texttt{\detokenize{??_G???G????OC????B????K?????G????@@O????KO????BA?GC??@O??O??}}.
+\end{center}
+NetworkX and nauty \texttt{planarg} report that \(G\) is planar, and its
+vertex- and edge-connectivity are both two.  These are metadata about the
+route countermodel, not evidence against five-CDC; the explicit 3-CDC
+above proves the opposite for this graph.
+
+The construction has a visible nontrivial two-edge cut at each block
+attachment, so it does not address \((\mathsf D)\) restricted to
+cyclically 4-edge-connected graphs.
+
+The complete construction, flow, three-cover labels, checker, and frozen
+replay are in
+\begin{center}
+\texttt{search/connected-one-switch-countermodel-40v-20260726/}.
+\end{center}
+The checker does not import the producer.  It reconstructs the three
+two-sums; verifies simplicity, cubicity, connectedness, every single-edge
+deletion, and every flow equation; enumerates all 30 connected circuits
+of \(H\) and all 6,780 connected circuits of \(G\); confirms that every
+expanded circuit misses an entire bad block; re-enumerates all local
+\(T\)-joins; and checks the three-cover coordinate sizes
+\[
+ 40,\quad40,\quad40,\quad0,\quad0.
+\]
+This is an AI-assisted mechanical replay, not independent human review.
+
+\section{A potential-compatible pure-merge countermodel}
+\label{sec:puremerge}
+
+We now study a different, narrower route from a fixed
+\(\F_2^3\)-flow to five Eulerian coordinates.  The potential construction
+below is the flow-to-pair-label construction in the July 2026
+cycle-double-cover proof, as presented by Oum and Kintali
+\cite[Section~5]{oum2026} and \cite{kintali2026}.  We use
+\emph{potential-compatible} only as local shorthand for covers arising
+from these equations; it is not terminology attributed to those authors.
+
+\subsection{Potentials, pair labels, and pure merges}
+
+Let \(G\) be cubic and let
+\(\phi:E(G)\to\F_2^3\setminus\{0\}\) be a flow.  A family
+\((t_v:v\in V(G))\) of vertex potentials is \emph{compatible} when, for
+every edge \(e=uv\),
+\[
+ t_u+t_v\in d_e+\langle\phi(e)\rangle,\qquad
+ d_e=\phi(f_u)+\phi(f_v),                                      \tag{P}
+\]
+where \(f_u\ne e\) and \(f_v\ne e\) are incident with \(u\) and \(v\).
+The choice of either other edge at an endpoint is immaterial because the
+three incident flow values sum to zero.  A compatible potential defines
+the two-element label
+\[
+ P_e=t_u+\phi(f_u)+\langle\phi(e)\rangle
+     =t_v+\phi(f_v)+\langle\phi(e)\rangle.                       \tag{L}
+\]
+For \(s\in\F_2^3\), let \(A_s=\{e:s\in P_e\}\).  If \(e,f,g\) are the
+three edges at \(v\), then their labels at that end are
+\[
+ \{t_v+\phi(f),t_v+\phi(g)\},\quad
+ \{t_v+\phi(e),t_v+\phi(g)\},\quad
+ \{t_v+\phi(e),t_v+\phi(f)\}.
+\]
+Every coordinate consequently occurs zero or twice at \(v\).  Thus all
+eight \(A_s\) are Eulerian and cover each edge exactly twice.  We call
+such a family a \emph{potential-compatible eight-cover for the fixed flow
+\(\phi\)}.
+
+A \emph{pure merge} assigns the eight coordinates to at most five
+classes and takes the symmetric difference of the \(A_s\) inside each
+class.  It changes no edge within a coordinate before this final merging
+step.  The \emph{coordinate co-occurrence graph} \(Q(P)\) has vertex set
+\(\F_2^3\), with \(ab\) an edge when \(P_e=\{a,b\}\) for some
+\(e\in E(G)\).
+
+\begin{proposition}[pure-merge colouring equivalence]
+\label{prop:pure-colour}
+A potential-compatible eight-cover admits a pure merge into at most five
+Eulerian edge-subsets, still covering every edge exactly twice, if and
+only if \(Q(P)\) is properly five-colourable.
+\end{proposition}
+
+\begin{proof}
+Colour each coordinate by its merge class.  An edge with label
+\(\{a,b\}\) survives in two output coordinates exactly when \(a\) and
+\(b\) have different colours; if their colours agree, its two
+occurrences cancel in the same symmetric difference.  Hence a valid
+merge gives a proper colouring of \(Q(P)\).  Conversely, use the colour
+classes of a proper colouring as merge classes.  Symmetric differences
+of Eulerian edge sets are Eulerian, and every original edge survives
+once in each of two different classes.
+\end{proof}
+
+This equivalence concerns only a pure identification of the eight
+coordinates.  It says nothing against a five-cycle double cover obtained
+by a different construction.
+
+\subsection{A potential-rigid twelve-vertex cap}
+
+Let \(R\) be the cubic graph with graph6 record
+\(\texttt{K??FEaKR@oE\_}\).  The following table freezes its edge order,
+flow, proper edge-colouring \(c\), the vector \(d_e\) from (P), and one
+compatible pair label from (L).
+\[
+\begin{array}{c|c|c|c|c|c@{\qquad}c|c|c|c|c|c}
+i&e_i&\phi(e_i)&c(e_i)&d_i&P_i&
+i&e_i&\phi(e_i)&c(e_i)&d_i&P_i\\ \hline
+0&06&1&0&6&23& 9&37&5&2&5&36\\
+1&07&2&1&6&13&10&3,10&7&1&6&34\\
+2&08&3&2&4&12&11&3,11&2&0&3&46\\
+3&16&4&1&6&26&12&48&5&0&2&14\\
+4&17&7&0&6&16&13&49&1&1&6&01\\
+5&19&3&2&5&12&14&4,10&4&2&6&04\\
+6&26&5&2&2&36&15&58&6&1&1&24\\
+7&2,10&3&0&2&03&16&59&2&0&5&02\\
+8&2,11&6&1&7&06&17&5,11&4&2&0&04
+\end{array}                                                       \tag{18}
+\]
+Here pairs such as \(23\) mean \(\{2,3\}\), not an integer.
+The three incident flow values xor to zero at every vertex, and the
+colour column is proper.  In particular, every edge of \(R\) lies in a
+two-colour 2-factor, so \(R\) is bridgeless; connectedness is immediate
+from the displayed incidence table.
+
+Use edge \(1=07\) as the port and delete it.  We next give a direct
+row-reduction proof that the retained compatibility equations determine
+all twelve potentials up to adding one common vector.
+
+Fix \(t_0=0\).  On the spanning tree whose edges, in order, are
+\[
+ 0,\ 2,\ 3,\ 6,\ 12,\ 15,\ 4,\ 5,\ 7,\ 8,\ 9,
+\]
+write \(t_u+t_v=d_e+\lambda_j\phi(e)\) for the \(j\)-th displayed tree
+edge \(e=uv\).  These tree equations express all \(t_v\) in the eleven
+bits \(\lambda_0,\ldots,\lambda_{10}\).  Substitution in the six
+remaining internal edges \(10,11,13,14,16,17\), followed by elementary
+xor row operations, gives
+\[
+\begin{array}{rcl@{\qquad}rcl}
+\lambda_3+\lambda_{10}&=&0&
+\lambda_2+\lambda_6+\lambda_9&=&0\\
+\lambda_2+\lambda_8&=&1&
+\lambda_1+\lambda_7&=&0\\
+\lambda_6&=&1&
+\lambda_2+\lambda_5&=&1\\
+\lambda_2+\lambda_4&=&1&
+\lambda_0+\lambda_1+\lambda_3&=&0\\
+\lambda_1+\lambda_2&=&0&
+\lambda_1&=&1\\
+\lambda_0&=&1.&&&
+\end{array}
+\]
+The unique solution and its back-substitution are
+\[
+\begin{split}
+(\lambda_0,\ldots,\lambda_{10})
+  &=(1,1,1,0,0,0,1,1,0,0,0),\\
+(t_0,\ldots,t_{11})
+  &=(0,5,5,1,5,6,7,4,7,3,7,2).
+\end{split}                                                       \tag{19}
+\]
+Thus the 37 scalar equations---two for each retained edge and three
+fixing \(t_0\)---have rank 36.
+
+Computing (L) from (19), the internal labels and the dangling port label
+\(13\), calculated from either end of the deleted port, use exactly
+\[
+\begin{gathered}
+01,\ 02,\ 03,\ 04,\ 06,\qquad
+12,\ 13,\ 14,\ 16,\\
+23,\ 24,\ 26,\qquad
+34,\ 36,\qquad
+46.
+\end{gathered}                                                    \tag{20}
+\]
+These are all 15 pairs on \(\{0,1,2,3,4,6\}\), so the co-occurrence
+graph contains \(K_6\).
+
+\begin{lemma}[rigid-cap obstruction]\label{lem:rigid-cap}
+Suppose a copy of \(R-e_1\), with the displayed internal flow and two
+dangling flow-\(2\) connectors, occurs in a larger cubic flow graph.
+Every compatible global potential forces a coordinate \(K_6\) on the
+cap and its connectors.  Hence no compatible eight-cover for that fixed
+global flow admits a pure merge into at most five coordinates.
+\end{lemma}
+
+\begin{proof}
+Restrict a compatible global potential to the cap.  The retained
+equations just solved show that it is (19) plus one common vector
+\(a\in\F_2^3\).  Formula (L) at the cap ends gives the translated dangling
+label \(13+a\) on the connectors.  Thus (20) is translated by \(a\), and
+still induces a \(K_6\).  Proposition~\ref{prop:pure-colour} completes
+the proof.
+\end{proof}
+
+\subsection{The 46-vertex one-switch countermodel}
+
+\begin{theorem}[46-vertex pure-merge countermodel]
+\label{thm:puremerge}
+There is an explicit simple connected bridgeless cubic graph \(G^\star\)
+on 46 vertices and 69 edges, with a nowhere-zero
+\(\F_2^3\)-flow \(\phi\), such that:
+\begin{enumerate}
+  \item no potential-compatible eight-cover for \(\phi\) admits a pure merge
+        into at most five Eulerian edge-subsets; and
+  \item for every connected circuit \(C\) and every nonzero
+        \(a\in\F_2^3\) for which
+        \(\phi'=\phi+a\chi_C\) remains nowhere zero, no
+        potential-compatible eight-cover for \(\phi'\) admits such a pure
+        merge.
+\end{enumerate}
+Moreover, \(G^\star\) is Tait-colourable and has an explicit
+three-cycle double cover.  It is therefore not a counterexample to the
+five-cycle double cover conjecture.
+\end{theorem}
+
+\begin{proof}
+Start from the base \(H\) in (15).  For each
+\(p\in P=\{02,56,17\}\), replace \(p\) by an aligned two-sum with a
+fresh copy of \(R\), using edge \(1=07\) as the cap port.  Both the base
+ports and the cap port have flow value \(2\).  The resulting counts are
+\[
+ |V(G^\star)|=10+3\cdot12=46,\qquad
+ |E(G^\star)|=15+3\cdot18=69.
+\]
+Lemma~\ref{lem:twosum-flow}, together with the incidence table above,
+proves that the displayed graph and flow are simple, connected,
+bridgeless, cubic, and nowhere zero.
+
+The original flow has a compatible potential: put \(t_v=0\) on the base
+and use (19) on each cap.  The base pair labels are \(23,13,12\) on
+colours \(0,1,2\), respectively, so both sides assign \(13\) to every
+connector.  Lemma~\ref{lem:rigid-cap} applied to any cap proves (i).
+
+Let \(C\) be a connected circuit of \(G^\star\).  The non-cyclability
+proof following (16), equivalently Lemma~\ref{lem:twosum-ports}, shows
+that \(C\) leaves one whole cap and both its connectors untouched.
+For every allowed switch \(\phi'=\phi+a\chi_C\), the flow on that cap
+and its connectors is unchanged.  Restricting any potential compatible
+with \(\phi'\) to the untouched cap and applying
+Lemma~\ref{lem:rigid-cap} gives a forced \(K_6\).  This proves (ii).
+
+Finally, the base ports and cap port all have colour \(1\) in the proper
+edge-colourings in (15) and (18).  Give the connectors colour \(1\).
+This produces a proper three-edge-colouring of \(G^\star\).  If its
+colour classes are \(M_0,M_1,M_2\), then
+\[
+ E(G^\star)\setminus M_0,\quad
+ E(G^\star)\setminus M_1,\quad
+ E(G^\star)\setminus M_2
+\]
+are Eulerian and cover every edge exactly twice.  Each has 46 edges;
+append two empty sets for a standard 5-CDC with sizes
+\(46,46,46,0,0\).
+\end{proof}
+
+The construction has three visible nontrivial two-edge cuts, one at each
+cap.  It therefore does not refute a pure-merge statement restricted to
+cyclically 4-edge-connected cubic graphs.  The frozen construction
+metadata reports that \(G^\star\) is nonplanar; this fact is not used in
+the proof, and the independent checker does not recheck planarity.
+
+\medskip
+\noindent
+\textbf{Exact encoding and check.}
+The nauty-canonical graph6 encoding is obtained by concatenating:
+\begin{center}
+\small
+\texttt{\detokenize{ms????@?G@???P?D?@_?o?_?A?????O?CC?I@?@_O?W??Q???W??_?O????G???K????G???}}\\
+\texttt{\detokenize{?OA????W????????E????I?????A_????S????B????????????????????C?????WO????@}}\\
+\texttt{\detokenize{Q?????@`?????@__????B?O????B??}}.
+\end{center}
+The complete construction and SAT-free proof package are in
+\begin{center}
+\texttt{search/fano-pure-merge-one-switch-countermodel-46v-20260726/}.
+\end{center}
+Its independently written standard-library checker reconstructs the
+graph from the ten- and twelve-vertex constants; checks all 69
+single-edge deletions, every flow and parity equation, and the explicit
+three-cover; independently row-reduces the cap system to rank 36 and
+checks the forced \(K_6\); and enumerates all 30 base circuits.  As a
+further cross-check, it enumerates all 128 globally compatible gauged
+potentials for the original flow: every co-occurrence graph contains a
+\(K_6\), and none is five-colourable.  The checker and this audit remain
+AI-assisted rather than independent human verification.
+
+\section{Finite reconfiguration frontier}
+\label{sec:computation}
+
+These searches preceded the construction of
+Theorem~\ref{thm:maincountermodel}.  They are retained because they show
+how far the false statement survives finite testing, not because they
+support it as a universal claim.  We state only what the artifacts
+certify.  They test the successful-value condition and do not test the
+distinct pure-merge property in Theorem~\ref{thm:puremerge}.  A \emph{hard
+graph} in this section is connected, simple, bridgeless, cubic, and not
+3-edge-colourable.  A \emph{strict snark} is additionally cyclically
+4-edge-connected and has girth at least five.  The flow enumeration quotients by
+\(\mathrm{GL}(3,2)\).  A bad flow uses all seven nonzero values, since an
+empty value class has \(M_k=\varnothing\) and is immediately successful.
+The retained normalization first fixes the ordered value line at a root
+vertex and then removes its residual stabilizer.
+
+\medskip
+\noindent
+\textbf{Computational Observation.}
+\emph{The retained programs report the following exact finite totals.}
+\[
+\begin{array}{lrrrr}
+\toprule
+\text{scope}&\text{flow orbits}&\text{bad}&
+\text{reported repair}&\text{unrepaired}\\
+\midrule
+\text{all bridgeless cubic, orders }4\text{--}10
+ &3{,}295&5&5&0\\
+\text{all bridgeless cubic, order }12
+ &73{,}152&304&304&0\\
+\text{all bridgeless cubic, order }14
+ &2{,}216{,}590&18{,}152&18{,}152&0\\
+\text{26 hard graphs, order }16
+ &600{,}440&10{,}413&10{,}413&0\\
+\text{179 hard graphs, order }18
+ &21{,}324{,}510&757{,}221&757{,}221&0\\
+\text{1,388 hard graphs, order }20
+ &847{,}539{,}220&49{,}752{,}091&49{,}752{,}091&0\\
+\text{20 strict snarks, order }22
+ &63{,}251{,}330&279{,}836&279{,}836&0\\
+\text{38 retained strict snarks, order }24
+ &617{,}079{,}260&5{,}161{,}169&5{,}161{,}169&0\\
+\text{one retained girth-6 snark, order }28
+ &432{,}613{,}280&3{,}400{,}482&3{,}400{,}482&0\\
+\bottomrule
+\end{array}                                                       \tag{17}
+\]
+Here the first five retained producers test arbitrary nonempty binary
+cycles, which may have more than one circuit component.  Such a switch
+decomposes into a valid sequence of circuit switches because the switched
+cycle avoids the \(a\)-class, which remains fixed throughout.  But a
+one-binary-cycle repair is not by itself a certificate of
+\emph{one-circuit adjacency} from the starting flow.
+
+The complete order-20 hard-graph computation was repeated with the switch
+restricted to a connected circuit.  The elementary-only C++ ledger again
+contains all \(847{,}539{,}220\) orbit representatives and reports all
+\(49{,}752{,}091\) bad representatives repaired in one circuit, with zero
+unrepaired.  The same elementary-circuit enumerator covers the complete
+frozen sets of 20 strict order-22 snarks and 38 strict order-24 snarks.
+At order 22, among \(63{,}251{,}330\) flow orbits, all \(279{,}836\)
+initially bad representatives are repaired.  At order 24, among
+\(617{,}079{,}260\) flow orbits, \(611{,}918{,}091\) are initially good
+and all \(5{,}161{,}169\) initially bad representatives are repaired.
+Neither scope contains a switch-local bad flow.  The order-24 source is
+the complete output of one retained Snarkhunter 2.0b command and is
+frozen with the ledger.  The verifier checks all 38 distinct graph
+identities and their strict-snark premises, but does not independently
+regenerate the canonical list; census completeness therefore relies on
+Snarkhunter.  These last three rows are direct finite tests of the
+now-refuted statement \((\mathsf D)\), with no extrapolation beyond the
+displayed scopes.  No analogous full elementary-only ledger is claimed
+here for the earlier rows.  The
+\(40\)-vertex countermodel demonstrates that these zero-obstruction
+totals are a finite phenomenon.
+
+Separately, the enumerator exhausts \(432{,}613{,}280\) flow orbits on
+one retained cyclically 4-edge-connected girth-6 snark of order 28.  All
+\(3{,}400{,}482\) initially bad representatives are repaired in one
+circuit.  This is one graph, not a complete order-28 graph census.
+
+\subsection*{Artifacts and checks}
+
+The ten-vertex block package is
+\begin{center}
+\texttt{search/fano-value-class-flow-countermodel-20260726/},
+\end{center}
+the connected countermodel package is
+\begin{center}
+\texttt{search/connected-one-switch-countermodel-40v-20260726/},
+\end{center}
+the pure-merge countermodel package is
+\begin{center}
+\texttt{search/fano-pure-merge-one-switch-countermodel-46v-20260726/},
+\end{center}
+and the finite-frontier package is
+\begin{center}
+\texttt{search/fano-flow-one-switch-frontier-20260726/}.
+\end{center}
+From the repository root, the principal checks are
+\begin{verbatim}
+(cd search/fano-value-class-flow-countermodel-20260726 &&
+ python3 independent_checker.py &&
+ shasum -a 256 -c SHA256SUMS)
+
+(cd search/fano-flow-one-switch-frontier-20260726 &&
+ python3 verify.py &&
+ shasum -a 256 -c SHA256SUMS)
+
+(cd search/connected-one-switch-countermodel-40v-20260726 &&
+ python3 independent_checker.py &&
+ shasum -a 256 -c SHA256SUMS)
+
+(cd search/fano-pure-merge-one-switch-countermodel-46v-20260726 &&
+ python3 independent_checker.py)
+\end{verbatim}
+On the retained environment the first three package manifests pass, and
+the fourth command reproduces the frozen 46-vertex checker output.  The block
+checker reconstructs graph6 identity, cubicity, connectedness,
+bridgelessness by every single-edge deletion, flow conservation, all seven
+matching supports, literal \(T\)-join enumeration, the colouring, and the
+resulting five-cover.
+
+For the frontier, a separately written C++ implementation matches the
+complete Python order-14 totals.  It is also the producer for the two
+order-20 ledgers and the connected-circuit order-22, order-24, and
+one-graph order-28 ledgers.  The Python
+verifier checks the frozen aggregate identities and semantically
+reconstructs the first retained bad-flow repair on 432 graph rows.  It
+does not re-enumerate every order-16, order-18, order-20, order-22, or
+order-24 flow orbit, nor the retained order-28 graph.
+
+\subsection*{Limitations}
+
+\begin{enumerate}
+  \item The finite frontier does not contradict
+        Theorem~\ref{thm:maincountermodel}; its tested graph orders and
+        scopes simply do not include the constructed obstruction.  It
+        concerns a different property from
+        Theorem~\ref{thm:puremerge}.
+  \item At orders 16, 18, and 20, the graph scope contains only hard
+        graphs, and at orders 22 and 24 only strict snarks, not every
+        bridgeless cubic graph.  This matters because
+        Theorems~\ref{thm:maincountermodel} and \ref{thm:puremerge} are
+        both 3-edge-colourable.
+        The order-24 census additionally relies on the retained
+        Snarkhunter run rather than an independent second generation.
+        The order-28 row is explicitly only one graph.
+  \item The programs and their cross-checks were all AI-assisted.  They
+        are implementation diversity, not independent human validation.
+  \item The full positive model or repair witness for every one of the
+        hundreds of millions of orbit decisions is not retained as a
+        separately checkable certificate archive.
+  \item The computation uses simple graphs.  The structural statements
+        above allow loopless cubic multigraphs, but no finite conclusion
+        is extrapolated to untested parallel-edge instances.
+  \item No orientability condition is encoded or inferred.
+\end{enumerate}
+
+\section{What remains open}
+
+Theorem~\ref{thm:maincountermodel} ends the proposed one-connected-circuit
+domination route, and Theorem~\ref{thm:puremerge} ends the proposed route
+of applying one circuit switch and then purely merging the eight
+coordinates supplied by potential-compatible labels.  Neither theorem
+produces a graph without a 5-CDC: both graphs have displayed 3-CDCs.
+The general five-cycle double cover conjecture therefore remains exactly
+as open as before this work.  In particular, the second theorem does not
+exclude changing coordinates by operations more general than a pure
+merge, choosing a different flow after several switches, or constructing
+a 5-CDC without the potential eight-cover.
+
+Both constructions have nontrivial two-edge cuts.  Hence neither theorem
+settles the corresponding one-circuit assertion for cyclically
+4-edge-connected cubic graphs.  No reduction from either restricted
+assertion to the general 5-CDC conjecture is claimed here.
+
+The structural statements in Sections~\ref{sec:labels} and
+\ref{sec:value} may still be useful independently.  A successful value
+is a sufficient condition for a cover, and the four canonical
+\(\bd M_k\)-joins retain their tetrahedral intersection pattern.  What
+fails is the claim that one circuit switch must reach such a value.  Any
+future proof strategy must either use longer/global reconfiguration,
+combine information from unsuccessful values without requiring one to
+become successful, or leave this flow framework.  For the pure-merge
+route, a future argument would have to permit a richer transformation
+than merely identifying coordinates, use more than one local flow
+switch, or establish a restricted theorem on a domain not covered by the
+cap construction.
+
+\section*{AI-use statement}
+
+The page-one disclosure is part of the mathematical record of this draft
+and should remain in every derivative version.  OpenAI Codex agents
+materially contributed to the definitions selected for study, conjecture,
+proof search, the finite witnesses, both two-sum compositions, the
+potential-rigid cap, source code, SAT encoding, checkers, experiments,
+literature search, and exposition.
+A second Codex agent performed an adversarial audit, but that is not
+independent human peer review.  The recent flow-reconfiguration
+framework is attributed to \cite{esperet2025,cranston2026}; the
+matching/4-flow criterion is attributed to \cite{hoffmann2013}; and the
+potential construction is attributed to \cite{oum2026,kintali2026}.  The two-sum
+proofs, the three-edge non-cyclability argument, and the rigid-cap row
+reduction are written for direct human checking, but no independent
+human check is asserted to have occurred.  Any human authors should
+record their verification, independent reconstruction, and rerun history
+before considering public submission.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

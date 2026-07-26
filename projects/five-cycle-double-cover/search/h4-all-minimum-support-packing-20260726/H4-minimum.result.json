@@ -1,0 +1,33 @@
+{
+  "base_clauses": 4536,
+  "base_variables": 1215,
+  "cardinality_clauses": 2167,
+  "cardinality_variables": 966,
+  "clauses": 6703,
+  "graph": "search/mnp-h4-flow-resistance-20260725/H4.graph.json",
+  "matching_bound": 4,
+  "model_check": {
+    "cycle_intersection": [
+      58,
+      114,
+      139,
+      210
+    ],
+    "cycle_sizes": [
+      56,
+      63
+    ],
+    "failures": [],
+    "matching_edges": [
+      58,
+      114,
+      139,
+      210
+    ],
+    "matching_size": 4,
+    "valid": true
+  },
+  "schema": "minimum-matching-four-flow-result-v1",
+  "solver_result": "SAT",
+  "variables": 2181
+}

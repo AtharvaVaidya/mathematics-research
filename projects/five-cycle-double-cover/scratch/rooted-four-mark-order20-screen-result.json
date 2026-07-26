@@ -1,0 +1,61 @@
+{
+  "schema": "rooted-four-mark-standard-hypothesis-screen-v1",
+  "classification": "COMPLETE_FINITE_NEGATIVE_SCREEN_THROUGH_ORDER_20",
+  "scope_warning": "This proves only that no connected simple cubic graph through order 20 has a universally separated four-edge matching satisfying the standard marked cyclic-cut inequality. It does not prove the rooted theorem.",
+  "generator_command_template": "geng -cq -d3 -D3 ORDER",
+  "checker_command": "scratch/tait_all_coloring_mark_separation --target 4 --marked-cyclic-connectivity 4 --progress 25000",
+  "checker_source": "scratch/tait_all_coloring_mark_separation.cpp",
+  "checker_source_sha256": "a00c2f53a3b95a06a7e8767aae2eb2bfa794fc95eeeba18bcac34aea6a12072a",
+  "checker_binary_sha256": "2e9d51a213f91d176112acf8a63f12149d3f55f7574a8c187de5fa0bf3105025",
+  "orders": [
+    {
+      "order": 8,
+      "graphs": 5,
+      "tait_colourable_graphs": 5,
+      "tait_colourings_mod_s3": 12,
+      "witnesses": 0
+    },
+    {
+      "order": 10,
+      "graphs": 19,
+      "tait_colourable_graphs": 17,
+      "tait_colourings_mod_s3": 48,
+      "witnesses": 0
+    },
+    {
+      "order": 12,
+      "graphs": 85,
+      "tait_colourable_graphs": 80,
+      "tait_colourings_mod_s3": 307,
+      "witnesses": 0
+    },
+    {
+      "order": 14,
+      "graphs": 509,
+      "tait_colourable_graphs": 475,
+      "tait_colourings_mod_s3": 2258,
+      "witnesses": 0
+    },
+    {
+      "order": 16,
+      "graphs": 4060,
+      "tait_colourable_graphs": 3848,
+      "tait_colourings_mod_s3": 23420,
+      "witnesses": 0
+    },
+    {
+      "order": 18,
+      "graphs": 41301,
+      "tait_colourable_graphs": 39687,
+      "tait_colourings_mod_s3": 307606,
+      "witnesses": 0
+    },
+    {
+      "order": 20,
+      "graphs": 510489,
+      "tait_colourable_graphs": 496430,
+      "tait_colourings_mod_s3": 5015828,
+      "witnesses": 0
+    }
+  ]
+}
