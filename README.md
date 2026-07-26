@@ -65,16 +65,54 @@ global countermodel shows that divisor, multiplicity, reciprocal-degree,
 and endpoint budgets can nevertheless put every root in the deeper band
 \(aG>h\).  Thus those budgets alone cannot close the repeated-root case:
 the missing input must come from the intervening homogeneous Keller
-equations.  That input now excludes the saturated \((2,3)\) top-form
-family for every \(5\leq g\leq20\), including arbitrary compatible lower
+equations.  That input now excludes the saturated \((2,3)\) two-root
+top-form family
+\[
+d=x^{g-1}(x+\ell),\qquad p_0=d^2+ux,\qquad q_0=d^3
+\]
+for every \(g\ge5\), including arbitrary compatible lower
 coefficients: the first filtered cokernel is nonzero at defect three,
-or on its exceptional hypersurface at defect four.  This is an exact
-finite-range theorem, not an all-\(g\) claim.  See
+or on its exceptional hypersurface at defect four.
+
+A hostile normal-form audit then found that saturation does not force
+this two-root partition.  Exact strict support families exist at every
+\(E\ge2\), have
+\[
+g=2(E+1),\qquad d_E=x^{E+2}(x^E+\ell),
+\]
+and their resulting defect-one top data possess all-order formal Keller
+lifts.  These are not polynomial counterexamples: the decreasing
+total-degree filtration excludes every one by defect at most five.  For
+all \(E\ge10\), a single symbolic
+defect-four coefficient is
+\[
+\frac{160}{81}E^3(E+1)^2(188E^2+393E+183)\frac{\ell^4}{u^{11}}\ne0.
+\]
+The remaining gap is the obstruction sequence for arbitrary monic
+\(d\), or a new global theorem restricting which \(d\) can arise.  Thus
+these are infinite-family theorems, not a resolution of \(JC(2)\).  See
 [`current_context/STANDARD_SYSTEM_REPEATED_ROOT_DECK_GAP_TERMINAL_EXCLUSION.md`](current_context/STANDARD_SYSTEM_REPEATED_ROOT_DECK_GAP_TERMINAL_EXCLUSION.md)
 and
 [`current_context/STANDARD_SYSTEM_REPEATED_ROOT_GLOBAL_DECK_BUDGET_COUNTERMODEL.md`](current_context/STANDARD_SYSTEM_REPEATED_ROOT_GLOBAL_DECK_BUDGET_COUNTERMODEL.md),
-and the independently reviewed
-[`current_context/STANDARD_SYSTEM_REPEATED_ROOT_INTERVENING_DEFECT_OBSTRUCTION.md`](current_context/STANDARD_SYSTEM_REPEATED_ROOT_INTERVENING_DEFECT_OBSTRUCTION.md).
+the independently reviewed
+[`current_context/STANDARD_SYSTEM_REPEATED_ROOT_INTERVENING_DEFECT_OBSTRUCTION.md`](current_context/STANDARD_SYSTEM_REPEATED_ROOT_INTERVENING_DEFECT_OBSTRUCTION.md),
+the all-\(g\) symbolic extension
+[`current_context/GENERAL_NORMAL_DEGREE_ALL_G_REPEATED_ROOT_DEFECT_OBSTRUCTION.md`](current_context/GENERAL_NORMAL_DEGREE_ALL_G_REPEATED_ROOT_DEFECT_OBSTRUCTION.md),
+and the corrected normal-form/diagonal-family theorem
+[`current_context/GENERAL_REPEATED_ROOT_NORMAL_FORM_BRIDGE_COUNTERMODEL.md`](current_context/GENERAL_REPEATED_ROOT_NORMAL_FORM_BRIDGE_COUNTERMODEL.md).
+
+There is no uniform finite-defect shortcut to that remaining gap.  For
+the resonant two-block family
+\[
+d=x^{(E+1)/2}(x^E+\ell),\qquad E\ \text{odd},
+\]
+cyclic characters postpone the first possible obstruction until defect
+of order \(E/3\).  In particular, for every fixed cutoff there are
+reciprocal-bounded jets surviving through that cutoff.  This does not
+produce a polynomial Keller pair; it proves that the arbitrary-\(d\)
+problem needs an all-order recurrence or new global rigidity rather
+than any bounded list of defect calculations.  See
+[`current_context/GENERAL_TWO_BLOCK_CYCLIC_DEFECT_DELAY.md`](current_context/GENERAL_TWO_BLOCK_CYCLIC_DEFECT_DELAY.md).
 
 A separate coefficient calculation integrates every Keller system of
 exact normal bidegree \((4,3)\) over \(\mathbb C(x)\) and excludes it by
