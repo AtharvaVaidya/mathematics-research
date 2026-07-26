@@ -824,6 +824,27 @@ self-identification of \(\Gamma_D\) gives free rank
 Thus the full set is never simply connected; the deck involution changes
 source-boundary lifts but not this target graph.  See
 `current_context/ROUTE_A_SINGLE_INFINITY_GRAPH_NO_GO.md`.
+The cubic case is now closed by the retained sheet itself.  The unique
+unramified prime \(\overline C\) over \(\Delta\) cannot intersect the
+unique ramified boundary \(E\): since both maps are finite birational
+over the bijectively normalized branch, an intersection would make the
+whole length-three fiber have one support point, contrary to
+\(N_{\mathrm{tr}}=0\).  Boundary purity therefore puts
+\(\overline C=C\) entirely inside \(S\), and scheme-theoretic étale
+base change gives
+\[
+C\xrightarrow{\sim}\Delta.
+\]
+The curve \(C\) is a homology line.  Zaidenberg's Theorem 1(c) says
+that a singular homology line on a smooth \(\mathbf Q\)-homology plane
+forces the ambient surface to be \(\mathbf A^2\); this contradicts
+\(\operatorname {Cl}(S)=\mathbf Z/2\).  Hence
+\(\Delta\simeq\mathbf A^1\) is smooth and rectifiable.  Its complement
+has cyclic fundamental group, but a connected cubic cover requires
+transitive monodromy while the generic branch meridian is a
+transposition.  Therefore no degree-three étale map
+\(S(2,2,1)\to\mathbf A^2\) exists.  See
+`current_context/ROUTE_A_CONTRACTIBLE_RETAINED_SHEET_CUBIC_EXCLUSION.md`.
 
 The structurally different construction-first target starts from the
 weighted-lift family of genuine three-dimensional Keller maps of every
@@ -852,8 +873,9 @@ termination, finality, or higher-order integrability.
 
 The research program should therefore prioritize:
 
-1. the single-place-at-infinity monodromy of the Route A cubic cover,
-   coupling its now-unique ramified boundary to the fixed \(D_-\) arm;
+1. the degree-four-and-higher pseudoplane normalization after the Route
+   A cubic exclusion, with special attention to whether the retained
+   homology-line mechanism survives more than one unramified sheet;
 2. the source values of later case-c adjoints on the remaining generic
    charts, since the first terminal scalar now kills the deepest special
    branch but the abstract residual symbols themselves are maximally

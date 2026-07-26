@@ -328,6 +328,21 @@ Thus Chau's simply-connected-set corollary cannot apply; a contradiction
 must use the actual \(S_3\) monodromy or determinant labels at infinity.
 See
 [`current_context/ROUTE_A_SINGLE_INFINITY_GRAPH_NO_GO.md`](current_context/ROUTE_A_SINGLE_INFINITY_GRAPH_NO_GO.md).
+The remaining cubic case is nevertheless now excluded by a different
+global bridge.  The retained degree-one sheet cannot meet the unique
+ramified boundary: such an intersection would turn a \(2+1\) fiber
+into a one-support fiber, contradicting \(N_{\mathrm{tr}}=0\).
+Consequently it is a complete curve \(C\subset S\), and étale base
+change gives \(C\simeq\Delta\).  This is a homology line.  Zaidenberg's
+classification forces it to be smooth because
+\(\operatorname {Cl}(S)=\mathbf Z/2\), whereas a singular homology line
+would force \(S\simeq\mathbf A^2\).  Abhyankar--Moh--Suzuki then
+rectifies \(\Delta\simeq\mathbf A^1\).  The complement has fundamental
+group \(\mathbf Z\), so its connected cubic cover would have cyclic
+transitive monodromy, impossible because the branch meridian is a
+transposition.  Hence this pseudoplane admits no étale map of geometric
+degree three.  See
+[`current_context/ROUTE_A_CONTRACTIBLE_RETAINED_SHEET_CUBIC_EXCLUSION.md`](current_context/ROUTE_A_CONTRACTIBLE_RETAINED_SHEET_CUBIC_EXCLUSION.md).
 
 The counterexample-first fixed-source-plane route has a second independently
 audited global theorem.  If a Darboux pair existed in its explicit pinch

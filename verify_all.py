@@ -46,6 +46,7 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_route_a_canonical_infinity_tree_flexibility.py",
     ROOT / "current_context" / "verify_route_a_log_topology_cubic_collapse.py",
     ROOT / "current_context" / "verify_route_a_single_infinity_graph_no_go.py",
+    ROOT / "current_context" / "verify_route_a_contractible_retained_sheet_cubic_exclusion.py",
     ROOT / "route_a" / "equivariant_hensel.py",
     ROOT / "route_bd_verify.py",
     ROOT / "route_bd_ab_hurwitz_count.py",

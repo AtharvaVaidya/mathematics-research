@@ -247,6 +247,19 @@ self-identification.  If the curves meet in \(k\ge1\) affine points,
 \(\pi_1(A_H)=F_{\rho_\Gamma+k-1}\); if not, the union is disconnected.
 Hence Chau's full-set simply-connected prohibition does not apply.
 See `ROUTE_A_SINGLE_INFINITY_GRAPH_NO_GO.md`.
+The cubic cover is nonetheless impossible.  The retained prime cannot
+meet the sole ramified boundary prime, since that would merge the
+degree-two and degree-one specializations into a forbidden one-support
+fiber.  It is therefore a complete curve \(C\subset S\), and étale
+base change makes \(C\to\Delta\) a finite étale map of rank one, hence
+an isomorphism.  Zaidenberg's singular-homology-line theorem forces
+\(C\) and \(\Delta\) to be smooth affine lines because
+\(S\not\simeq\mathbf A^2\).  After Abhyankar--Moh--Suzuki
+rectification, the complement has cyclic fundamental group; its branch
+meridian is a transposition and cannot generate connected cubic
+monodromy.  Thus \(S(2,2,1)\) has no étale map to \(\mathbf A^2\) of
+geometric degree three.  See
+`ROUTE_A_CONTRACTIBLE_RETAINED_SHEET_CUBIC_EXCLUSION.md`.
 
 For case c, the corrected degree-four outer cover has now been tested
 against every linear jet adjoint through derivative order three.  Both
