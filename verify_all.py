@@ -229,6 +229,9 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_discriminant_fiber.py",
     ROOT / "current_context" / "verify_standard_system_weights.py",
     ROOT / "current_context" / "verify_standard_system_g_multiple_reparametrization_quotient.py",
+    ROOT / "current_context" / "verify_standard_system_endpoint_pairing_branch_invisibility.py",
+    ROOT / "current_context" / "verify_standard_system_endpoint_quotient_no_go.py",
+    ROOT / "current_context" / "verify_standard_system_sylvester_remainder_correction_audit.py",
 ]
 
 

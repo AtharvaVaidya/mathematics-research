@@ -490,12 +490,25 @@ normal obstruction is
 {x^{-1},\ldots,x^{1-n}}. \tag{34}
 \]
 For a generic non-tangent \(T\), (34) is nonzero.  The corresponding
-Sylvester remainder first appears at order \(\ell_0\), and (25) gives
-the generic determinant contact
+statement is a Laurent, or polynomiality, obstruction.  It does not
+imply that the derivative Sylvester remainder first appears at order
+\(\ell_0\).  Differentiating the earlier polynomial binomial terms can
+produce a lower-order remainder.  For example, when \(a=2,b=3\), the
+first polynomial truncation
 \[
-(n-1)\ell_0, \tag{35}
+P_\epsilon=R^2+\epsilon T,\qquad
+Q_\epsilon=R^3+\frac32\epsilon RT
 \]
-which is far below \(D=(n-1)(m-1)\).
+satisfies
+\[
+(Q_\epsilon)_x-\frac32R(P_\epsilon)_x
+=\frac32\epsilon R'T.
+\]
+Thus its derivative remainder is already linear in \(\epsilon\).
+The exact generic \(g=2\) contact is four rather than six, and an exact
+\(g=3\) specialization has contact seven rather than ten.  See
+`STANDARD_SYSTEM_SYLVESTER_REMAINDER_CORRECTION_AUDIT.md`.  No generic
+determinant-contact formula is inferred from (34).
 
 Formula (34) also explains the rootwise strata.  At a simple root
 \(\alpha\) of \(R\), put \(s_\alpha=\operatorname{ord}_\alpha T\).
@@ -508,9 +521,12 @@ If \(s_\alpha<a\), its first pole occurs at
 \ell_\alpha=
 \left\lfloor\frac{b}{a-s_\alpha}\right\rfloor+1. \tag{36}
 \]
-Thus extra vanishing of \(T\) at selected roots delays precisely those
-Hensel factors.  These are the special local-contact strata that replace
-a single generic Hessian calculation.
+Thus extra vanishing of \(T\) at selected roots delays this local
+Laurent pole.  Relating these pole orders to derivative-resultant
+Hensel contacts requires separately accounting for derivatives of the
+earlier polynomial truncation terms, as in the correction audit.  These
+are nevertheless special local strata that replace a single generic
+Hessian calculation.
 
 Finally, take the ambient saturating parameter from (28).  At order
 \(m-1\), \(\lambda_{m-1}\) contributes the negative band of \(C_0\)
@@ -1042,6 +1058,11 @@ Jacobian reappearing across the two distant Laurent orders
 This calculation rules out a tempting but invalid shortcut.  The
 nonzero class (66) cannot simply be declared incompatible with
 exactness; the meromorphic linear tail supplies the same graded class.
+In fact, exact reciprocal affine tails can have nonzero endpoint
+contribution while the coefficient (56) vanishes on every ramified
+normalization branch over the common-root divisor.  The Newton--Puiseux
+calculation and its strict scope are recorded in
+`STANDARD_SYSTEM_ENDPOINT_PAIRING_BRANCH_INVISIBILITY.md`.
 The remaining useful target must be global and strictly narrower than
 Heitmann's equivalence:
 

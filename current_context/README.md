@@ -499,6 +499,43 @@ from the final \((-2\bmod g)\) forcing.  The actual unresolved mixing is
 the non-\(g\)-multiple \(Z=0\) nilpotent cascade, together with the
 affine endpoint pairing.  See
 `STANDARD_SYSTEM_G_MULTIPLE_REPARAMETRIZATION_QUOTIENT.md`.
+The endpoint pairing itself is now known to be invisible to ordinary
+normalization-branch residues.  Exact reciprocal affine tails contribute
+\((sv-ut)\tau^{m+n-2}\ne0\) to the homogenized bracket, yet over every
+simple common-root cluster the unique ramified branch has
+\[
+\operatorname {ord}_t(\tau^{m+n-2}/P_X)
+=am+a(g-1)-1>am.
+\]
+Thus every branch coefficient tested by the exact differential vanishes.
+This is not a Keller countermodel—the earlier leading/tail cross terms
+remain—but it proves that the endpoint class must be quotiented before a
+global pole-filtered monodromy obstruction can begin.  See
+`STANDARD_SYSTEM_ENDPOINT_PAIRING_BRANCH_INVISIBILITY.md`.
+That quotient cannot be taken naively.  The endpoint-invisible affine
+pairings span the entire scalar forcing line, so quotienting all of them
+also kills the Keller forcing.  On the other hand, no nonzero pure affine
+tail solves its earlier cross equation.  Its endpoint contribution is
+therefore meaningful only after the lower nilpotent jets have been
+lifted.  See `STANDARD_SYSTEM_ENDPOINT_QUOTIENT_NO_GO.md`.
+
+A separate audit corrected the first-normal-direction determinant
+contact.  If \(q=\lfloor b/a\rfloor\), \(r=b-aq\), and \(Q_q\) retains
+the polynomial binomial terms of
+\((R^a+\epsilon T)^{b/a}\), then the exact derivative identity
+\[
+(Q_q)_X-H_\epsilon(R^a+\epsilon T)_X
+=r\binom{b/a}{q}\epsilon^qR^{r-1}R'T^q
+\]
+gives, on a natural Zariski-open set,
+\[
+\operatorname {ord}_\epsilon
+\operatorname {Res}_X\bigl((R^a+\epsilon T)_X,(Q_q)_X\bigr)
+=gb-q-1.
+\]
+Thus the first Laurent pole and the derivative-resultant remainder
+belong to different filtrations.  See
+`STANDARD_SYSTEM_SYLVESTER_REMAINDER_CORRECTION_AUDIT.md`.
 
 On the independent Danielewski-surface route, changing the affine-plane
 chart cannot rescue a Chebyshev étale endomorphism.  A preserved boundary

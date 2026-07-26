@@ -257,14 +257,6 @@ an honest change \(R\mapsto R\phi(z)\) has the complete relative
 invariant \(B^a/A^b\), up to tangent-to-the-identity composition.  One
 may normalize \(A=1\) or \(B=1\), but not both.
 
-The branch-resonance statement should accordingly be formulated after
-choosing one honest approximate-root slice, not after deleting all
-\(g\)-multiple data:
-
-> After choosing the common approximate-root slice while retaining the
-> relative unit, the final \((-2\bmod g)\) forcing produces a nonzero
-> forbidden coefficient on at least one normalization branch.
-
 The relative logarithm
 \[
 \ell=\log\left(\frac{Q^a}{P^b}\right)
@@ -275,46 +267,67 @@ jets then remain visible but their residue classes decouple.  The actual
 mixing problem is the non-\(g\)-multiple \(Z=0\) nilpotent cascade in
 the common \(P,Q\) direction.
 
-There is, however, a further subtlety already exposed by the exact
-pole-graded calculation.  The local Brieskorn class of character
-\(\zeta^{-2}\) is paired by the affine-linear Laurent orders
-\(-1\) and \(g-1\); its coarsest coefficient is exactly the original
-linear Jacobian.  Thus one cannot simply declare the local class
-incompatible with meromorphic exactness.  The resolution-directed
-target is the stronger global statement:
+Two audits now change that proposed route materially.
 
-> In the trace-zero \(A_{a-1}\) local system of the finite cover at all
-> boundary clusters, choose a common approximate-root slice, retain the
-> relative \(g\)-sector unit, and quotient the affine endpoint pairing.
-> The remaining \(\zeta^{-2}\) forcing class cannot extend as a
-> polynomial, single-valued section.
+First, the Laurent obstruction and the derivative-resultant filtration
+must be separated.  For the explicit first normal deformation
+\[
+P_\epsilon=R^a+\epsilon T
+\]
+and its polynomial binomial truncation \(Q_q\), where
+\[
+q=\left\lfloor\frac ba\right\rfloor,\qquad r=b-aq,
+\]
+there is an exact division-free identity
+\[
+(Q_q)_X-H_\epsilon(P_\epsilon)_X
+=r\binom{b/a}{q}\epsilon^qR^{r-1}R'T^q.
+\]
+On a natural Zariski-open set this gives
+\[
+\operatorname {ord}_\epsilon
+\operatorname {Res}_X((P_\epsilon)_X,(Q_q)_X)
+=gb-q-1.
+\]
+The earlier claim \((n-1)(q+1)\), inferred from the first Laurent pole,
+was false.  The correction gives the first exact obstruction map of the
+nonreduced normal cone and shows that generic nilpotent directions lose
+determinant contact much earlier than the Laurent calculation suggested.
 
-This pole-filtered monodromy lemma is more promising than a larger affine
-Groebner computation for three reasons:
+Second, the affine endpoint contribution can be nonzero while every
+individual normalization-branch coefficient
+\([t^{em}](\tau^N/P_X)\) vanishes.  More decisively, the
+endpoint-invisible affine pairings span the whole one-dimensional
+forcing line.  Quotienting all of them therefore kills the Keller
+forcing itself.  Restricting the quotient to lower-order cycles does
+not help: no nonzero pure affine tail is such a cycle, because it has a
+nonzero earlier cross term with \(R^a,R^b\).  Whether an endpoint term
+is removable depends on a full lift through the nilpotent cascade.
 
-- it targets a system equivalent to a counterexample;
-- it isolates the exact gauge that defeated earlier approximate-root
-  arguments;
-- it retains the branchwise information lost by cluster-summed
-  residues while also incorporating the global endpoint pairing that
-  defeats a purely local argument.
+This rules out the endpoint-only pole-filtered monodromy lemma as the
+next standalone obstruction.  The resolution-directed target is now:
 
-The next work should be theory-first:
+> **Lifted endpoint lemma.**  Classify the order-\(N\) obstruction
+> values of all lower \(Z=0\) nilpotent lifts with fixed reduced
+> common-root data, and prove either that the Keller scalar is absent
+> or construct a compatible lift realizing it.
 
-1. construct the honest common-root quotient and keep the relative
-   invariant \(B^a/A^b\);
-2. use the linear relative-log equation to separate \(g\)-multiple
-   resonances from the non-\(g\)-multiple \(Z=0\) cascade;
-3. identify a canonical representative through the first
-   non-\(g\)-multiple order;
-4. build the trace-zero branch local system and its monodromy across
-   all common-root and critical-point clusters;
-5. quotient the explicit affine endpoint pairing rather than counting
-   it as a new obstruction;
-6. prove that the nilpotent \(Z=0\) cascade cannot make the residual
-   \(\zeta^{-2}\) class polynomial and single-valued;
-7. use the exact branch differential to contradict the Keller residue
-   condition.
+The next work should be deformation-theoretic, not a larger coefficient
+sweep:
+
+1. use the division-free Sylvester identity to describe the first
+   obstruction ideal and its root/critical-point factors;
+2. organize successive \(Z=0\) lifts by the Rees or normal-cone
+   filtration, keeping the relative unit \(Q^a/P^b\);
+3. compute how a lift changes the endpoint obstruction, rather than
+   quotienting the raw affine determinant;
+4. test whether the resulting obstruction map has a conserved
+   rootwise valuation or trace class;
+5. if it does, prove that the scalar Keller forcing misses its image;
+   if it does not, use the first exact compatible formal lift as a
+   counterexample-construction lead;
+6. bring global monodromy back only after this liftability problem has
+   been solved.
 
 Small \((g,a,b)\) computations should be used only to discover and test
 the normal form and to search for countermodels.  They should not be
@@ -322,10 +335,10 @@ mistaken for a proof by bounded enumeration.
 
 ## 6. Bottom line
 
-The project has produced another publishable theorem and two exact route
-audits, but not the requested proof or counterexample.  The smart pivot
-is away from degree-by-degree enlargement as the main activity and
-toward the pole-filtered monodromy theorem in the finite standard system,
-with the branchwise normal form as its first technical stage.  That is
-the current direction with a plausible direct path to a genuine
-resolution.
+The project has produced another publishable theorem and several exact
+route audits, but not the requested proof or counterexample.  The
+pole-filtered endpoint idea has now been narrowed enough to expose its
+missing premise: liftability through the nonreduced normal cone.  The
+current primary direction is the lifted-endpoint obstruction map in the
+finite standard system, with Route A boundary-regular Darboux
+classification as an independent counterexample-first track.
