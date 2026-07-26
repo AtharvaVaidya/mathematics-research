@@ -146,6 +146,23 @@ hostile-audited proof and exact verifier are in
 and
 [`current_context/verify_arbitrary_d_canonical_symplectic_extension_and_collision.py`](current_context/verify_arbitrary_d_canonical_symplectic_extension_and_collision.py).
 
+The collision divisor itself is now understood scheme-theoretically.
+If \(H\) is the implicit equation of the boundary image, then every
+hypothetical completion satisfies
+\[
+H(P,Q)=yR,\qquad
+R(x,0)=-\frac{u^{3g-1}}3K_\zeta(x)K_{\zeta^2}(x),
+\]
+and this boundary factor has degree \(4g^2-2g\).  Thus the two
+cube-root collision families account for the full affine conductor.
+This does not yield a global contradiction: the degree-one case
+specializes to the audited nodal countermodel, and both an additional
+polynomial normalization lift and finite sheet loss at nonproper
+values remain compatible with the divisor data.  The exact theorem
+therefore closes conductor-only arguments and redirects the search to
+the full global correspondence:
+[`current_context/ARBITRARY_D_COLLISION_CONDUCTOR_PULLBACK_AND_GLOBAL_NO_GO.md`](current_context/ARBITRARY_D_COLLISION_CONDUCTOR_PULLBACK_AND_GLOBAL_NO_GO.md).
+
 A separate coefficient calculation integrates every Keller system of
 exact normal bidegree \((4,3)\) over \(\mathbb C(x)\) and excludes it by
 local valuation theory.  This is an independently checked structural
