@@ -87,22 +87,22 @@ prior-art caveat are in
 The apparent \((8,6)\) gap in the one-coordinate criterion is also
 closed by a high shear and the classical \(2P\) total-degree theorem.
 After all of those criteria and elementary target shears, the first
-minimal-counterexample candidate not certified automorphic is \((9,6)\),
-in the chart where the common leading factor has degree divisible by
-three.  The connected cubic-cover subchart—equivalently, the case in
-which that common factor is not a cube in \(\mathbb C(x)\)—is now
-excluded completely.  Its four approximate-root integrals split into a
-zero-Jacobian common-cubic branch and a cubic level; the latter is
-excluded by a two-value pole argument and a finite-map integrality
-valuation at its sole cuspidal level.  The cube-leading-factor chart,
-has a canonical seven-constant Laurent form: four coefficients are
-conserved and the fifth is a rational time.  Riemann--Hurwitz reduces
-the nonconstant cube \(h=r^3\) case to \(r=\gamma(x-a)^{k+1}\);
-otherwise \(r\) is constant.  The entire constant-\(r\) family is now
-excluded.  The only-\(j\) subchart has a unique \((2,5)\) Newton cusp at
-infinity, while the six extra-\(\kappa\) charts are excluded by an exact
-weighted boundary split and two singular blowups.  The sole remaining
-\((9,6)\) chart is the nonconstant single-root pure-power family.  See
+minimal-counterexample candidate not certified automorphic was
+\((9,6)\), in the chart where the common leading factor has degree
+divisible by three.  That full normal-degree frontier is now excluded.
+The connected cubic-cover subchart—equivalently, the case in which the
+common leading factor is not a cube in \(\mathbb C(x)\)—is eliminated
+by its four approximate-root integrals, a two-value pole argument, and
+a finite-map integrality valuation at the sole cuspidal level.  In the
+cube chart, a canonical seven-constant Laurent form and
+Riemann--Hurwitz leave either constant \(r\) or
+\(r=\gamma(x-a)^{k+1}\).  Exact weighted-boundary analysis excludes
+the full constant-\(r\) family.  In the nonconstant pure-power family,
+cyclic descent and the compactified invariant curves give the sharp
+terminal-pole bound \(n\ge2\rho\).  Polynomiality then makes one
+original coordinate affine on \(x=a\); injectivity on that line forces
+automorphy.  This closes \((9,6)\), not the Jacobian conjecture in
+arbitrary degree.  See
 [`current_context/NORMAL_DEGREE_ARITHMETIC_FRONTIER_AND_96_CONNECTED_REDUCTION.md`](current_context/NORMAL_DEGREE_ARITHMETIC_FRONTIER_AND_96_CONNECTED_REDUCTION.md)
 and
 [`current_context/NORMAL_DEGREE_96_CUBE_LAURENT_TIME_REDUCTION.md`](current_context/NORMAL_DEGREE_96_CUBE_LAURENT_TIME_REDUCTION.md),
@@ -110,6 +110,10 @@ with the constant-\(r\), only-\(j\) exclusion in
 [`current_context/NORMAL_DEGREE_96_CUBE_CONSTANT_H_ONLY_J_EXCLUSION.md`](current_context/NORMAL_DEGREE_96_CUBE_CONSTANT_H_ONLY_J_EXCLUSION.md)
 and the complementary extra-\(\kappa\) exclusion in
 [`current_context/NORMAL_DEGREE_96_CUBE_CONSTANT_H_EXTRA_KAPPA_EXCLUSION.md`](current_context/NORMAL_DEGREE_96_CUBE_CONSTANT_H_EXTRA_KAPPA_EXCLUSION.md).
+The final pure-power descent and one-line argument are in
+[`current_context/NORMAL_DEGREE_96_CUBE_PURE_POWER_CYCLIC_DESCENT.md`](current_context/NORMAL_DEGREE_96_CUBE_PURE_POWER_CYCLIC_DESCENT.md)
+and
+[`current_context/NORMAL_DEGREE_96_PURE_POWER_LINE_INJECTIVITY_EXCLUSION.md`](current_context/NORMAL_DEGREE_96_PURE_POWER_LINE_INJECTIVITY_EXCLUSION.md).
 A standalone, conservatively scoped manuscript of the connected-chart
 theorem is available as
 [`papers/normal-degree-96-connected-exclusion/main.pdf`](papers/normal-degree-96-connected-exclusion/main.pdf),

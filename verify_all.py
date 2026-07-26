@@ -262,6 +262,8 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_normal_degree_96_cube_laurent_time_reduction.py",
     ROOT / "current_context" / "verify_normal_degree_96_cube_constant_h_only_j_exclusion.py",
     ROOT / "current_context" / "verify_normal_degree_96_cube_constant_h_extra_kappa_exclusion.py",
+    ROOT / "current_context" / "verify_normal_degree_96_cube_pure_power_cyclic_descent.py",
+    ROOT / "current_context" / "verify_normal_degree_96_pure_power_line_injectivity_exclusion.py",
 ]
 
 

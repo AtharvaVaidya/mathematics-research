@@ -166,6 +166,18 @@ expected_exceptional = (
 )
 assert sp.factor(exceptional_E11 - expected_exceptional) == 0
 
+# A high-order approach to the exceptional divisor cannot create a
+# hidden Q-pole while C,D remain bounded.  The first equation loses
+# its Q coefficient on 2UD-CV=0, but the second retains a nonzero
+# quadratic coefficient whenever C is a unit.
+assert sp.expand(
+    sp.Poly(E11, Q).coeff_monomial(Q)
+    - 144 * C * (2 * U * D - C * V)
+) == 0
+assert sp.expand(
+    sp.Poly(E12, Q).coeff_monomial(Q**2) + 1944 * C**2 * U
+) == 0
+
 
 # Load the already verified full-cube Laurent residue A_5 without
 # duplicating its formal-series implementation.
@@ -244,9 +256,189 @@ main_lead_on_edge = sp.factor(
 )
 assert main_lead_on_edge == sp.Rational(567, 2048) * C0**6 / U
 
+# Local Laurent compactification of every remaining U!=0 edge.
+# Pole degrees are measured by x -> infinity; negative values mean
+# zeros at the place.
+x, C_edge, D_edge, D1 = sp.symbols(
+    "x C_edge D_edge D1", nonzero=True
+)
+
+
+def laurent_lead(expression: sp.Expr) -> tuple[int, sp.Expr]:
+    """Return the greatest x-exponent and its coefficient."""
+    coefficients: dict[int, sp.Expr] = {}
+    for term in sp.Add.make_args(sp.expand(expression)):
+        exponent = int(term.as_powers_dict().get(x, 0))
+        coefficients[exponent] = (
+            coefficients.get(exponent, 0) + term / x**exponent
+        )
+    degree = max(
+        exponent
+        for exponent, coefficient in coefficients.items()
+        if coefficient != 0
+    )
+    return degree, sp.factor(coefficients[degree])
+
+
+def rational_laurent_lead(
+    expression: sp.Expr,
+    c_pole: int,
+    d_pole: int,
+    relation: dict[sp.Expr, sp.Expr],
+) -> tuple[int, sp.Expr]:
+    scaled = sp.cancel(
+        expression.subs(
+            {
+                C: C_edge * x**c_pole,
+                D: D_edge * x**d_pole,
+            }
+        )
+    )
+    numerator, denominator = sp.together(scaled).as_numer_denom()
+    num_degree, num_lead = laurent_lead(numerator)
+    den_degree, den_lead = laurent_lead(denominator)
+    return (
+        num_degree - den_degree,
+        sp.factor((num_lead / den_lead).subs(relation)),
+    )
+
+
+# V!=0: the main edge was checked above.  The other two outer edges
+# have ratios pole(A5)/rho equal to 14 and 4, respectively.
+right_relation = {
+    D_edge**2: sp.Rational(128, 2187) * V**2 / C_edge**3
+}
+assert rational_laurent_lead(
+    main_A5, 2, -3, right_relation
+) == (
+    7,
+    -sp.Rational(27, 256) * C_edge**5 * D_edge / V,
+)
+assert rational_laurent_lead(
+    a_cd, 2, -3, right_relation
+)[0] == 1
+assert rational_laurent_lead(
+    Q_solution, 2, -3, right_relation
+)[0] == 3
+
+sqrt_two_i = sp.sqrt(2) * sp.I
+lower_relation = {
+    D_edge: V * (3 + sqrt_two_i) * C_edge / (4 * U)
+}
+lower_a5_degree, lower_a5_lead = rational_laurent_lead(
+    main_A5, -1, -1, lower_relation
+)
+assert lower_a5_degree == 4
+assert lower_a5_lead != 0
+assert rational_laurent_lead(
+    a_cd, -1, -1, lower_relation
+)[0] == 2
+assert rational_laurent_lead(
+    b_cd, -1, -1, lower_relation
+)[0] == 2
+
+# V=0, Z!=0: the right edge is double.  Its exact second blowup has
+# ratio 14, rather than being discarded as a reduced edge.
+double_right_substitution = {
+    V: 0,
+    C: C_edge * x**2,
+    D: (
+        8 * Z / (9 * (C_edge * x**2) ** 2)
+        + D1 * x**-9
+    ),
+}
+double_P_degree, double_P_lead = laurent_lead(
+    P.subs(double_right_substitution)
+)
+assert double_P_degree == 2
+assert double_P_lead == -C_edge * (
+    177147 * C_edge**9 * D1**2 - 32768 * U**2 * Z**2
+)
+double_A5 = sp.cancel(main_A5.subs(double_right_substitution))
+double_num, double_den = sp.together(double_A5).as_numer_denom()
+double_num_degree, double_num_lead = laurent_lead(double_num)
+double_den_degree, double_den_lead = laurent_lead(double_den)
+assert double_num_degree - double_den_degree == 7
+assert sp.factor(double_num_lead / double_den_lead) == (
+    sp.Rational(243, 4096)
+    * C_edge**8
+    * D1
+    / (U * Z)
+)
+
+# The V=0, Z!=0 lower edge has ratio 4.
+v_zero_lower_relation = {
+    D_edge: (
+        sp.Rational(27, 16)
+        * Z
+        * (1 + sqrt_two_i)
+        * C_edge**3
+        / U**2
+    )
+}
+v_zero_lower_degree, v_zero_lower_lead = rational_laurent_lead(
+    main_A5.subs(V, 0),
+    -1,
+    -3,
+    v_zero_lower_relation,
+)
+assert v_zero_lower_degree == 4
+assert v_zero_lower_lead != 0
+assert rational_laurent_lead(
+    a_cd.subs(V, 0),
+    -1,
+    -3,
+    v_zero_lower_relation,
+)[0] == 2
+
+# At the vertical C=0 boundary put y=CQ.  These are the only two
+# nonzero-D limits.
+y = sp.symbols("y")
+vertical_1 = 32 * D * U * (9 * y + 9 * D**2 + 4 * U)
+vertical_2 = -8 * U * (
+    243 * y**2
+    + 144 * U * y
+    + 72 * D**2 * U
+    + 32 * U**2
+)
+bounded_vertical = {D**2: -sp.Rational(4, 9) * U, y: 0}
+pole_vertical = {
+    D**2: -sp.Rational(4, 27) * U,
+    y: -sp.Rational(8, 27) * U,
+}
+for vertical_branch in (bounded_vertical, pole_vertical):
+    assert sp.factor(vertical_1.subs(vertical_branch)) == 0
+    assert sp.factor(vertical_2.subs(vertical_branch)) == 0
+
+vertical_a = a_solution.subs(Q, y / C)
+vertical_b = b_solution.subs(Q, y / C)
+A5_centered = (
+    -18 * C**3 * a
+    + 36 * C**2 * Q
+    + 3 * C**2 * a**3
+    - 18 * C**2 * b**2
+    + 24 * C**2 * j
+    + 72 * C * D**2
+    - 36 * C * D * a * b
+    - 12 * C * Q * a**2
+    - 8 * C * a**2 * j
+    - 6 * D**2 * a**2
+    + 72 * D * Q * b
+    + 48 * D * b * j
+) / 576
+vertical_A5 = A5_centered.subs(
+    {a: vertical_a, b: vertical_b, Q: y / C}
+)
+vertical_limit = sp.factor(sp.limit(C**4 * vertical_A5, C, 0))
+assert vertical_limit == (
+    U * (9 * D**2 + 18 * y + 4 * U) ** 2 / 4374
+)
+assert sp.factor(vertical_limit.subs(pole_vertical)) != 0
+
 print("verified: centered invariant identity and elementary-level splits")
 print("verified: exact U!=0 elimination and unique (2,5) Newton edge")
 print("verified: exceptional denominator branch")
 print("verified: lower-cusp A_5 has nonzero degree-7 leading term")
 print("verified: main Newton branch A_5 has nonzero degree-12 leading term")
+print("verified: all U!=0 Laurent pole profiles have ratio at least four")
 print("verified: constant-h only-j cube chart is excluded")
