@@ -140,9 +140,44 @@ Newton faces; the new \(AB\) ray forces a forbidden \(x^1\) graph term.
 Mixed \(AC/BC\) forces a negative infinity-chart power, pure \(AC\)
 has a fixed Euler defect, \(BC\) has no resonance, and \(C^2\) reduces
 to the linear theorem.  Hence every affine quadratic second coordinate
-fails on every polynomial graph.  Cubic target faces and non-graph
-source surfaces remain open.  See
+fails on every polynomial graph.  See
 `WEIGHTED_LIFT_ALL_QUADRATIC_PIVOT_CLOSURE.md`.
+The cubic layer is now closed as well, including arbitrary lower target
+terms through degree two and arbitrary degree-at-most-two corrections
+to \(U\).  The new \(A^2B\) ray forces a forbidden \(x^1\)-term;
+mixed \(ABC/B^2C\) forces a negative \(t\)-power or a fixed Euler
+defect; the other \(C\)-faces are nonresonant.  Exact degree separation
+prevents all lower tiers from repairing these defects.  Quartic targets
+were the next layer.  See
+`WEIGHTED_LIFT_ALL_CUBIC_PIVOT_CLOSURE.md` and
+`WEIGHTED_LIFT_C_DIVISIBLE_CUBIC_FACE_CLOSURE.md`.
+The quartic layer is now closed too, for arbitrary cubic-and-lower
+second-coordinate terms and arbitrary degree-at-most-three corrections
+to \(U\).  Nine exact rays, two finite coefficient recurrences, and an
+exact next-diagonal certificate for the sole constant-graph
+\(AB^3\) degeneracy exhaust all faces.  The all-degree binary
+characteristic also closes every pure binary monomial face, all binary
+targets through degree five, and—after its exact first lower-seed
+recurrence—the first sextic completion
+\(B^5(\lambda A+\mu B)\).  The latter residue is
+\(-(221578k+153403)/510\).  Quintic \(C\)-divisible faces and
+non-graph source surfaces are the first unresolved full layers.  See
+`WEIGHTED_LIFT_ALL_QUARTIC_PIVOT_CLOSURE.md`,
+`WEIGHTED_LIFT_ALL_DEGREE_BINARY_TARGET_REDUCTION.md`, and
+`WEIGHTED_LIFT_DEGREE_SIX_EXCEPTIONAL_RECURRENCE_CLOSURE.md`.
+The sextic computation is the first instance of a uniform result:
+every binary Newton-degree-one face
+\[
+B^{n-1}(\lambda A+\mu B),\qquad n\ge1,\quad\lambda\ne0,
+\]
+has a nonzero first-lower source-axis residue.  Its numerator is
+\[
+2975In^2+952In-2023I-3035n^2+22780n-1785>0
+\]
+for all graph sectors \(I\ge2\).  Graph corrections start in \(x^2\)
+and cannot change it.  Thus the next unresolved binary characteristic
+has Newton degree at least two.  See
+`WEIGHTED_LIFT_ALL_DEGREE_D1_RECURRENCE_CLOSURE.md`.
 
 On the independent Route A cubic normalization, the residual factor
 \(\tau^2=g(v)\) has also been audited at infinity.  After removing
@@ -174,10 +209,44 @@ nonrestrictive:
 the affine class group free on all boundary primes, while repeated
 blowups at the unique infinity end vary the raw adjunction labels
 without changing any affine datum.  Smooth branch curves and connected
-cubic families realize the resulting freedom.  Route A now requires a
-canonical-minimal infinity-tree theorem controlling \(I_\infty\) and
-\(\delta\) together.  See
+cubic families realize the resulting freedom.  See
 `ROUTE_A_PROJECTIVE_INTERSECTION_BOUND_NO_GO.md`.
+The canonical local arm has now been extracted exactly: four ordinary
+point blowups produce \(D_-\), with
+\(\operatorname {ord}(a,s,s+a^2)=(1,2,4)\) and residue parameter
+\((s+a^2)/a^4\).  But this does not determine the cubic-boundary arms.
+The one-place family with infinity pair \((k,2k+1)\) has multiplicity
+sequence \((k,k,1,\ldots,1)\) and requires exactly \(k+2\) blowups.
+That singular injective cusp supplies no Keller map or monodromy data,
+and the componentwise form of the cited Chau results does not exclude it.
+It proves that the chart, Bézout ledger, and canonical minimality alone
+cannot bound the target tree.  A viable Route A theorem must now cross
+the distinguished and cubic-boundary arms through a Keller-specific
+determinant or finality relation.  See
+`ROUTE_A_CANONICAL_INFINITY_TREE_FLEXIBILITY.md`.
+The global log topology now sharply reduces those unknown arms.  Since
+the pseudoplane is a rational \(\mathbf Q\)-homology plane, every SNC
+completion boundary is a rational tree and every boundary singularity
+has a rational-homology-sphere link.  Hence
+\(H_c^1(R;\mathbf Q)=0\).  The cubic fiber-length obstruction transfers
+unibranchness to the branch curve, and
+\(r+c+N_{\mathrm{tr}}=2\) forces \(r=c=1\) and
+\(N_{\mathrm{tr}}=0\).  The hypothetical cubic cover therefore has one
+rational unibranch boundary component, one irreducible branch curve
+with bijective \(\mathbf A^1\)-normalization, and no affine transitive or
+non-Gorenstein fiber.  A singular cusp is not excluded by the cited
+Chau results, so the remaining target is its single-place monodromy at
+infinity.  See `ROUTE_A_LOG_TOPOLOGY_CUBIC_COLLAPSE.md`.
+The two simplest ways to upgrade this collapse are now ruled out.
+The local \(A_{2m}\) double-plane model has a rational-chain
+resolution, \(C_2\) inertia, and a singular bijectively normalized
+cusp, so rational-tree topology does not force \(\Delta\) smooth.
+Also \(A_H=\Gamma_D\cup\Delta\), while the distinguished curve already
+has free rank \(\rho_\Gamma\ge1\) from its forced normalization
+self-identification.  If the curves meet in \(k\ge1\) affine points,
+\(\pi_1(A_H)=F_{\rho_\Gamma+k-1}\); if not, the union is disconnected.
+Hence Chau's full-set simply-connected prohibition does not apply.
+See `ROUTE_A_SINGLE_INFINITY_GRAPH_NO_GO.md`.
 
 For case c, the corrected degree-four outer cover has now been tested
 against every linear jet adjoint through derivative order three.  Both
@@ -196,6 +265,14 @@ rather than an identity.  The next case-c target must therefore use a
 later bounded row or a multistage relation, not only the first two
 cokernel planes.  See
 `CASE_C_COKERNEL_NONLINEAR_PAIRING_NO_GO.md`.
+A complete later-jet rank staircase now finds the first such positive
+invariant.  The deficit-\(4,5,6\) residual adjoints span the trace-zero
+quartic algebra, so the smallest three-stage Gram determinant is again
+nonzero.  But the unique deficit-eight adjoint modulo \(E^3\) evaluates
+to \(C_8X_6^2\) on the deepest weight-four branch, with \(C_8\ne0\);
+it canonically forces \(X_6=0\).  This compresses the five old
+special-chart rows into one terminal scalar without replacing the
+generic-chart certificates.  See `CASE_C_MULTISTAGE_JET_STAIRCASE.md`.
 
 The fixed source plane now has a sharper global obstruction candidate.
 Its conductor completion admits an exact formal Darboux pair, so local

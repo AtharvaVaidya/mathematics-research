@@ -238,6 +238,26 @@ a nonzero 76-term polynomial rather than an identity.  Thus the first
 resultant, norm, bilinear, tangency, and determinant constructions from
 the two cokernel planes do not couple the caps; see
 `current_context/CASE_C_COKERNEL_NONLINEAR_PAIRING_NO_GO.md`.
+The later finite-support complex does contain a canonical obstruction.
+For \(4\le d\le15\),
+\[
+\operatorname {rank}(L_d\bmod E^j)=\min(4j,r_d),
+\]
+with
+\((r_4,\ldots,r_{15})=(18,17,15,13,11,9,7,5,4,3,2,1)\).
+The centered deficit-\(4,5,6\) residual adjoints have nonzero
+three-stage trace-Gram determinant and already span the trace-zero
+quartic algebra, closing another abstract-degeneracy shortcut.  At
+deficit eight, the unique adjoint modulo \(E^3\) instead evaluates on
+the pure weight-four branch as
+\[
+C_8X_6^2,\qquad \operatorname {Nm}(C_8)=-9989\ne0\pmod {32003}.
+\]
+It therefore forces \(X_6=0\), intrinsically compressing the five old
+deficit-eight special-chart rows to one terminal scalar.  This closes
+the deepest branch structurally but does not replace the generic-chart
+certificates.  See
+`current_context/CASE_C_MULTISTAGE_JET_STAIRCASE.md`.
 
 ### 1.4 Pseudo-plane function-field degree
 
@@ -536,6 +556,56 @@ pure \(AC\) leaves a fixed Euler defect, \(BC\) has no resonance, and
 \(C^2\) reduces to the linear theorem.  Exact degree separation keeps
 all affine perturbations below these defects.  See
 `current_context/WEIGHTED_LIFT_ALL_QUADRATIC_PIVOT_CLOSURE.md`.
+The cubic layer is now closed in full.  For arbitrary
+\(Q_3\ne0\), arbitrary quadratic/affine lower target terms, and an
+arbitrary degree-at-most-two correction to \(U\), every polynomial
+graph fails.  The master characteristic classifies all binary and
+\(C\)-divisible cubic faces; each resonance yields a forbidden
+\(x^1\)-term, a negative \(t\)-power, or a fixed Euler defect, while an
+exact Newton staircase keeps lower tiers too late.  See
+`current_context/WEIGHTED_LIFT_ALL_CUBIC_PIVOT_CLOSURE.md`.
+The quartic layer is now closed in full as well.  For arbitrary
+\(Q_4\ne0\), arbitrary cubic-and-lower target terms, and arbitrary
+degree-at-most-three corrections to \(U\), every polynomial graph
+fails.  The face classification has nine integral rays.  Exact
+coefficient recurrences close \(C^2Q_2\) and the close
+\(A/B/C^4\) interleaving; on constant graphs the sole toric
+degeneracy \(AB^3\) at \(z=0\) has a certified nonzero degree-\(134\)
+next diagonal.  See
+`current_context/WEIGHTED_LIFT_ALL_QUARTIC_PIVOT_CLOSURE.md`.
+
+The binary calculation now has an all-degree form:
+\[
+8nJ=(5n+17d)I+15d-5n.
+\]
+It closes every pure monomial face in every degree and every binary
+target through degree five.  Its first honest mixed polynomial
+completion occurs at \(n=6,d=1\), but the exact first lower-seed
+recurrence closes that family with unavoidable residue
+\[
+-\frac{221578k+153403}{510}.
+\]
+Thus every homogeneous binary second coordinate through degree six is
+closed.  See
+`current_context/WEIGHTED_LIFT_ALL_DEGREE_BINARY_TARGET_REDUCTION.md`
+and
+`current_context/WEIGHTED_LIFT_DEGREE_SIX_EXCEPTIONAL_RECURRENCE_CLOSURE.md`.
+The same lower recurrence is now closed uniformly for every
+Newton-degree-one binary face
+\[
+B^{n-1}(\lambda A+\mu B),\qquad n\ge1,\quad\lambda\ne0.
+\]
+For every admissible source sector \(I\ge2\), the exact residue is
+\[
+-\frac{
+2975In^2+952In-2023I-3035n^2+22780n-1785
+}{2040n},
+\]
+whose numerator is strictly positive.  Since graph corrections enter
+through \(x^2h\), none can alter this source-axis coefficient.  The
+next unresolved binary class therefore has Newton degree \(d\ge2\).
+See
+`current_context/WEIGHTED_LIFT_ALL_DEGREE_D1_RECURRENCE_CLOSURE.md`.
 
 ## 2. What the audit disproved
 
@@ -567,6 +637,9 @@ Several attractive shortcuts are now known to be false.
 - The canonical residual cokernel lines have nonzero norm, Gram, and
   Wronskian invariants; their first source-vector determinant is not a
   universal identity.
+- The first three later residual symbols span the trace-zero quartic
+  algebra, but the unique deficit-eight \(E^3\)-adjoint supplies a
+  nonzero terminal scalar and kills the deepest weight-four branch.
 - Galois normalization excludes Route A degree \(2\), but the required
   non-Galois cubic \(2+1\) branch geometry is locally consistent.
 - A finite flat cubic normalization need not be forced non-Gorenstein;
@@ -679,15 +752,78 @@ its boundary primes, so the distinguished and omitted cubic boundaries
 have no affine divisor-class relation.  Raw adjunction labels change
 under arbitrary blowups at the unique infinity end.  Explicit smooth
 branch curves and connected Miranda cubics realize the full numerical
-freedom.  The remaining focused target has therefore narrowed again:
-
-> Select a canonical minimal completion of the specific pseudoplane
-> tower and prove an infinity-tree theorem coupling
-> \(I_\infty\), \(\delta\), ramification coefficients, and the unique
-> end of \(D_-\).
-
-The exact Bézout, class-group, adjunction, and countermodel audit is in
+freedom.  The exact Bézout, class-group, adjunction, and countermodel
+audit is in
 `current_context/ROUTE_A_PROJECTIVE_INTERSECTION_BOUND_NO_GO.md`.
+
+The canonical local completion has now been computed rather than
+postulated.  Four ordinary point blowups over
+\((a,b)=(0,\infty)\) extract \(D_-\), with fixed arm
+\[
+B_\infty-E_2-E_3-D_-,\qquad E_1\text{ attached to }E_2,
+\]
+key valuation
+\[
+\operatorname {ord}_{D_-}(a,s,s+a^2)=(1,2,4),
+\]
+and residue parameter \(q_3=(s+a^2)/a^4\).  This exact arm still supplies
+no label on the unknown cubic-boundary arms.  Moreover, the explicit
+one-place family with primitive infinity pair \((k,2k+1)\) has
+multiplicity sequence \((k,k,1,\ldots,1)\) and exactly \(k+2\) ordinary
+blowups, so its canonical minimal target tree is unbounded.  The family
+is a singular injectively parametrized curve, not a Keller
+counterexample, and the cited Chau theorems do not exclude it
+componentwise.  It is a countermodel only to deductions from the chart,
+Bézout data, and canonical minimality.  Thus the focused Route A target
+must be a Keller-specific determinant or finality identity crossing from
+\(p^{-1}(R)\) to the fixed \(D_-\) arm.  See
+`current_context/ROUTE_A_CANONICAL_INFINITY_TREE_FLEXIBILITY.md`.
+
+There is, however, a stronger Keller-specific topological restriction.
+The pseudoplane is a rational \(\mathbf Q\)-homology plane, hence every
+SNC completion boundary is a tree of rational curves.  Exceptional
+divisors over singularities of the finite cubic partial compactification
+are subtrees, so all links are rational homology spheres and
+\[
+H_c^1(R;\mathbf Q)=0.
+\]
+Every component of \(R\) consequently has normalization
+\(\mathbf A^1\), distinct components are disjoint, and all points are
+unibranch.  Finite-flat cubic length then forces the same conclusions
+for the branch curve \(\Delta\).  The exact Euler balance becomes
+\[
+r+c+N_{\mathrm{tr}}=2,\qquad r\ge c\ge1,
+\]
+and therefore
+\[
+r=c=1,\qquad N_{\mathrm{tr}}=0.
+\]
+The hypothetical cubic normalization has exactly one ramified boundary
+curve, one irreducible branch curve with bijective
+\(\mathbf A^1\)-normalization, no affine transitive inertia, and no
+non-Gorenstein triple fiber.  The remaining curve may be a singular
+cusp; the primary Chau statements audited here exclude a smooth line
+component or a simply connected full exceptional set, not an arbitrary
+singular component by itself.  Route A has therefore reduced to
+monodromy at the single place at infinity.  See
+`current_context/ROUTE_A_LOG_TOPOLOGY_CUBIC_COLLAPSE.md`.
+Neither rational-tree smoothness nor the simply-connected exceptional-set
+criterion finishes this reduction.  The exact local model
+\[
+z^2=y^2-x^{2m+1}
+\]
+is an \(A_{2m}\) rational double point with a rational-chain resolution,
+\(C_2\) inertia, and a singular bijectively normalized cusp.  For the
+degree-six lift, the full nonproper set is
+\(A_H=\Gamma_D\cup\Delta\).  The forced normalization
+self-identification of \(\Gamma_D\) gives free rank
+\(\rho_\Gamma\ge1\), and if the curves meet in \(k\ge1\) affine points,
+\[
+\pi_1(A_H)\simeq F_{\rho_\Gamma+k-1}.
+\]
+Thus the full set is never simply connected; the deck involution changes
+source-boundary lifts but not this target graph.  See
+`current_context/ROUTE_A_SINGLE_INFINITY_GRAPH_NO_GO.md`.
 
 The structurally different construction-first target starts from the
 weighted-lift family of genuine three-dimensional Keller maps of every
@@ -699,9 +835,10 @@ theorem.  The honest surviving target is therefore the lower-order
 subduction of a genuinely nonlinear second pivot or a non-graph
 affine-plane embedding; the two original-pivot rays are now closed.
 In fact all their linear mixtures are now closed as well, so the next
-pivot must be genuinely nonlinear.  Every quadratic second pivot is
-now closed too, leaving cubic target faces as the first unresolved
-polynomial-graph layer.
+pivot must be genuinely nonlinear.  Every quadratic, cubic, and
+quartic second pivot is now closed too.  Binary homogeneous targets
+are closed through degree six, leaving quintic \(C\)-divisible faces
+as the first unresolved full polynomial-graph layer.
 
 The fixed-plane analogue is:
 
@@ -715,15 +852,17 @@ termination, finality, or higher-order integrability.
 
 The research program should therefore prioritize:
 
-1. a canonical-minimal infinity-tree theorem for the Route A degree-six
-   compactification, since raw Bézout, affine classes, and adjunction
-   leave a free infinity correction;
-2. a later-row or multistage finite-support identity in case c, since
-   the common outer cover and the first two cokernel planes supply
-   neither a linear nor the smallest nonlinear adjoint;
-3. cubic-or-higher target descent or a non-graph source surface for the
-   three-dimensional weighted-lift family, since all affine quadratic
-   second pivots on polynomial graphs are closed;
+1. the single-place-at-infinity monodromy of the Route A cubic cover,
+   coupling its now-unique ramified boundary to the fixed \(D_-\) arm;
+2. the source values of later case-c adjoints on the remaining generic
+   charts, since the first terminal scalar now kills the deepest special
+   branch but the abstract residual symbols themselves are maximally
+   nondegenerate;
+3. quintic \(C\)-divisible target descent or a non-graph source surface
+   for the three-dimensional weighted-lift family, since all full
+   target layers through degree four, all binary layers through degree
+   six, and all binary Newton-degree-one faces in every degree on
+   polynomial graphs are closed;
 4. minimal-resolution finality coupled to actual polynomial sections;
 5. second-order extension of the fixed-source Hermite-CRT Keller jet; and
 6. exact countermodels whenever a proposed global inequality is too weak.
