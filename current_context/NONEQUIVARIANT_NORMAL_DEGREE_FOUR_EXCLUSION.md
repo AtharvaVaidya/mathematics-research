@@ -57,7 +57,9 @@ its two linear forms are \(L+1,L+2\), while the conclusion requires
 both to be coprime to \(2\).  Consecutive integers cannot both be odd.
 The corresponding proposed degree tuple
 \((n,u,r,v)=(1,1,2,4)\) is not a realizable Keller branch, because the
-top Jacobian coefficient forces \(nv=ru\).
+top Jacobian coefficient forces \(nv=ru\).  More generally, for
+\(u,v>0\) that equality makes the two reduced degree pairs identical,
+so the unequal-pair branch of Theorem 2.4 is vacuous for Keller data.
 
 The stronger theorem is also repairable without Lemma 2.3.  Writing
 \(n=A\widetilde n\), \(u=A\widetilde u\) with coprime reduced degrees,
@@ -65,10 +67,29 @@ the partial-degree hypothesis gives \(A\mid n\le4\), hence
 \(A\in\{1,2,3,4\}\).  Dirichlet gives arbitrarily large \(L\) for which
 \(\widetilde u+L\widetilde n\) is prime.  The source shear
 \(y\mapsto y+x^L\) then puts the relevant total degree in the
-prime, four-times-prime, or prime-square class treated by the classical
-Magnus-type criteria used in that paper.  The zero-\(n\) case is
-triangular.  Thus the theorem statement should be regarded as prior
-art even though the auxiliary lemma is defective.
+prime, four-times-prime, or product-of-two-primes class treated by the
+classical Magnus-type criteria used in that paper.  If \(u=0<n\),
+take \(L\) itself to be a sufficiently large prime and use the same
+argument; the zero-\(n\) case is triangular.  Thus the theorem
+statement should be regarded as prior art even though the auxiliary
+lemma is defective.
+
+The exact \((4,3)\) nonexistence statement is also a short consequence
+of that repaired result and M. Karaś,
+*On weighted bidegree of polynomial automorphisms of
+\(\mathbf C^2\)*, Bull. Polish Acad. Sci. Math. **70** (2022),
+107--114, Theorem 1.1
+([DOI](https://doi.org/10.4064/ba220430-21-3)).
+The leading equation gives
+\(f_4=\alpha h^4,\ g_3=\beta h^3\).  For weight \((1,N)\), with \(N\)
+larger than every lower coefficient \(x\)-degree, the weighted
+coordinate degrees are
+\[
+4(N+\deg h),\qquad3(N+\deg h).
+\]
+Moskowicz first makes the Keller pair an automorphism, whereas Karaś's
+classification requires divisibility between these non-base weighted
+degrees.  Neither divides the other.
 
 The theorem in this note is an independent coefficient proof only of
 the simultaneous bound \(\max(\deg_yF,\deg_yG)\leq4\).  It neither
@@ -383,7 +404,8 @@ and (27) forces
 Here \(Q\sim\Delta/(4r)\) and \(C\sim\Delta/(3r)\).
 Regularity of \(q_0\) forces \(D\) to have a pole of order
 \(\alpha>0\).  The only possible lowest cancellation is between
-\(D^3/27\) and \(Q\), so
+\(D^3/27\) and \(Q\): indeed
+\(v_s(ED)\ge-\alpha>-3\alpha\).  Therefore
 \[
  \beta=3\alpha,\qquad
  \frac{d^3}{27}+\frac{\Delta}{4\rho}=0,
@@ -441,6 +463,8 @@ Equation (36) forces
 
 Here \(E=-k/2\), \(B=-k/3\), and \(P=M-k^2/18\).  Regularity of
 \(q_0\) in (26) forces \(D\) to have a pole of order \(\alpha\), with
+\(v_s(ED)\ge-\alpha>-3\alpha\), so only \(D^3/27\) and \(Q\) can
+occur at the lowest order.  Hence
 \[
  \beta=3\alpha,\qquad
  \frac{d^3}{27}+\rho=0

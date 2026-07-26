@@ -115,7 +115,9 @@ its two linear forms are \(L+1,L+2\), while the lemma requires both to
 be coprime to \(2\).  Consecutive integers cannot both be odd.
 However, this tuple is not realized by the nonzero-leading-degree
 Keller branch: the top Jacobian coefficient forces \(nv=ru\), whereas
-\((n,u,r,v)=(1,1,2,4)\) violates that equality.
+\((n,u,r,v)=(1,1,2,4)\) violates that equality.  More generally, when
+\(u,v>0\), the same equality makes the two reduced degree pairs equal,
+so the unequal-pair branch of Theorem 2.4 is vacuous for Keller data.
 
 More importantly, Theorem 2.7 is repairable without Lemma 2.3.  If
 \(n,u>0\), write \(n=A\widetilde n\), \(u=A\widetilde u\), with
@@ -125,15 +127,34 @@ arbitrarily large \(L\) for which
 \(\widetilde u+L\widetilde n\) is prime.  After the triangular source
 change \(y\mapsto y+x^L\), the relevant coordinate has total degree
 \(A(\widetilde u+L\widetilde n)\), to which the classical
-Magnus-type criterion used in that paper applies.  The \(n=0\) case is
-triangular.  Thus the stronger prior statement remains available
-despite the defective auxiliary lemma.
+Magnus-type criterion used in that paper applies.  If \(u=0<n\), take
+\(L\) itself to be a sufficiently large prime and use the same
+argument; the \(n=0\) case is triangular.  Thus the stronger prior
+statement remains available despite the defective auxiliary lemma.
+
+Even the exact \((3,2)\) nonexistence statement follows quickly from
+that repaired theorem and the weighted-bidegree classification of
+M. Karaś, *On weighted bidegree of polynomial automorphisms of
+\(\mathbf C^2\)*, Bull. Polish Acad. Sci. Math. **70** (2022),
+107--114, Theorem 1.1
+([DOI](https://doi.org/10.4064/ba220430-21-3)).
+Indeed, the leading equation gives
+\(f_3=\alpha h^3,\ g_2=\beta h^2\).  For the weight \((1,N)\), with
+\(N\) larger than every lower coefficient \(x\)-degree, the weighted
+coordinate degrees are
+\[
+3(N+\deg h),\qquad2(N+\deg h).
+\]
+The repaired partial-degree theorem first makes the Keller pair an
+automorphism, while Karaś's theorem requires one of these non-base
+weighted degrees to divide the other, which is impossible.
 
 The argument below independently proves the simultaneous bound
 \(\max(\deg_yF,\deg_yG)\le3\), without that number-theoretic lemma.
 It is retained as a coefficient-level alternative proof and as the
-input for the quartic normal-form calculation below; its theorem
-statement is not claimed as new.
+input for the quartic normal-form calculation below.  The exact
+\((3,2)\) coefficient integral is likewise presented as an alternative
+structural proof, not as a new nonexistence statement.
 
 ## 1. Quadratic normal degree forces boundary injectivity
 
@@ -485,17 +506,24 @@ quartic term.
 ## 5. Consequence for the next architecture
 
 The asymmetric boundary (1) remains a valid built-in collision, but a
-counterexample thickening cannot have normal degree at most three.
-The next exact architecture must start with
+counterexample thickening cannot have normal degree at most three.  At
+the stage of this calculation, the next exact architecture was
 \[
 \max(\deg_yF,\deg_yG)=4.
 \tag{26}
 \]
-By the quartic reduction, the sole unresolved bidegree is \((4,3)\).
-The useful next move is to classify its rational depressed normal form
-and its local valuations, retaining
+The quartic reduction left \((4,3)\), whose rational depressed normal
+form and local valuations are now completely treated in the companion
+note `NONEQUIVARIANT_NORMAL_DEGREE_FOUR_EXCLUSION.md`, retaining
 \[
  p=x^3-x,\qquad q=x^5-x^4+x^3-x
 \]
-only at the final two coefficient equations.  No parity condition and
-no finite-group equivariance should be reintroduced.
+only at the final two coefficient equations.
+
+The repaired one-coordinate partial-degree theorem discussed above
+goes further.  Combined with the leading-coefficient relation and
+constant target shears, it excludes every exact normal pair of maximum
+degree at most seven.  The first arithmetic frontier is \((8,6)\);
+its common leading factor must have even degree.  This current frontier
+uses no parity assumption and should not be confused with the
+reflection-equivariant ansatz excluded elsewhere.
