@@ -2,6 +2,14 @@
 
 Date: 25 July 2026
 
+> **Later repair.**  The two gaps found here, together with the inherited
+> quadratic and cubic chains, are now closed by the global Newton-vertex
+> proof and cubic first-coordinate bifiltration in
+> `WEIGHTED_LIFT_NONHOMOGENEOUS_NEWTON_VERTEX_CLOSURE.md`.  Thus, when
+> combined with the cases that survived this audit, the original bounded
+> quartic theorem is restored.  The first-lower collision calculations
+> below remain valid and document why the former local argument failed.
+
 ## Outcome
 
 The boundary-Euler argument in Section 2.2 of

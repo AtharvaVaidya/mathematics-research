@@ -216,7 +216,41 @@ The earlier facewise Euler proof was genuinely invalid: at
 share or precede the chosen boundary order.  Its correction history is
 kept in `WEIGHTED_LIFT_TERNARY_PURE_BOUNDARY_SEPARATION_AUDIT.md`;
 the degree-six full-seed calculation remains a useful special case.
-Arbitrary nonhomogeneous lower second-coordinate tiers are not covered.
+
+The nonhomogeneous target problem is now closed through total target
+degree eight.  The globally earliest regular vertex is indexed by
+\((\beta,h)\), while the polar face is indexed by \((E,q)\); both maps
+have primitive collision kernel
+\[
+\mathbb Z(5,-6,4).
+\]
+No two support monomials of degree at most eight can differ in this
+direction, so for every nonconstant \(Q\) in that range and every
+\(R_{\le2}\),
+\[
+J(U+R_{\le2},Q)\notin\mathbb C^\times.
+\]
+The same proof closes the four formerly open remove-one-\(C\) chains.
+An explicit \(A^3/A^2B\) bifiltration then restores the bounded quartic
+scope when combined with the cases surviving its correction audit.
+See `WEIGHTED_LIFT_NONHOMOGENEOUS_NEWTON_VERTEX_CLOSURE.md`.
+
+The first possible support collision is degree nine,
+\(A^5C^4\sim B^6\).  The known subductions \(T,U\) do not yet give a
+complete SAGBI normal form: the next exact saturation
+\(BT\sim A^5C^3\) produces a new generator outside
+\(\langle A,B,C,T,U\rangle\), with distinct \(L=1\) and \(L\ge2\)
+leading behavior.  See
+`WEIGHTED_LIFT_SAGBI_SATURATION_NEXT_GENERATOR_AUDIT.md`.
+
+After adjoining that first new element \(W\), the formal
+three-component toric ideal has an exact eight-binomial minimal Markov
+basis.  The graph-degree projection is subtler: the next element \(V\)
+is projected-new for \(L=2\) and \(L\ge4\), but has exactly two reducers
+at \(L=3\).  A subsequent element \(X\) is projected-new relative to
+the displayed seven generators for every \(L\ge2\).  This proves
+additional incompleteness without claiming termination or infinitude.
+See `WEIGHTED_LIFT_SAGBI_AFTER_W_MARKOV_AND_NEXT_GENERATORS.md`.
 
 On the independent Route A cubic normalization, the residual factor
 \(\tau^2=g(v)\) has also been audited at infinity.  After removing
@@ -289,7 +323,7 @@ See `ROUTE_A_SINGLE_INFINITY_GRAPH_NO_GO.md`.
 The cubic cover is nonetheless impossible.  The retained prime cannot
 meet the sole ramified boundary prime, since that would merge the
 degree-two and degree-one specializations into a forbidden one-support
-fiber.  It is therefore a complete curve \(C\subset S\), and étale
+fiber.  It is therefore a closed, unpunctured curve \(C\subset S\), and étale
 base change makes \(C\to\Delta\) a finite étale map of rank one, hence
 an isomorphism.  Zaidenberg's singular-homology-line theorem forces
 \(C\) and \(\Delta\) to be smooth affine lines because
@@ -299,6 +333,20 @@ meridian is a transposition and cannot generate connected cubic
 monodromy.  Thus \(S(2,2,1)\) has no étale map to \(\mathbf A^2\) of
 geometric degree three.  See
 `ROUTE_A_CONTRACTIBLE_RETAINED_SHEET_CUBIC_EXCLUSION.md`.
+
+The degree-four successor now has exact Euler bookkeeping.  If
+\(c,r,t,\delta\) denote branch components, boundary components,
+triple-inertia components, and unibranch support-orbit deficit, then
+\[
+r=3-c-t-\delta,\qquad r\ge c.
+\]
+This forces one branch component and three numerical cases.  Triple
+inertia is impossible.  The two simple-inertia survivors are localized
+to a \(3+1\) collision plus a \(2+2\) self-intersection, or to an extra
+unramified boundary curve puncturing both split residual sections.  This
+is not yet a degree-four exclusion; it identifies the exact new
+obstruction.  See
+`ROUTE_A_DEGREE_FOUR_RETAINED_SHEET_AUDIT.md`.
 
 For case c, the corrected degree-four outer cover has now been tested
 against every linear jet adjoint through derivative order three.  Both

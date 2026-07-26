@@ -2,6 +2,16 @@
 
 Date: 25 July 2026
 
+> **Later repair.**  This note correctly identifies gaps in the
+> first-lower-sector argument, but those gaps are now closed by the global
+> Newton-vertex proof in
+> `WEIGHTED_LIFT_NONHOMOGENEOUS_NEWTON_VERTEX_CLOSURE.md`.  In particular,
+> the globally earliest boundary vertex separates \(AC\) from \(B\) and
+> \(ABC\) from \(B^2\), even though the two terms collide in the isolated
+> first-lower normalization used below.  The calculations here are retained
+> as the audit trail for the invalid local proof, not as the current status
+> of the quadratic and cubic theorems.
+
 ## Outcome
 
 The invalid boundary-Euler lemma can be replaced on the pure binary

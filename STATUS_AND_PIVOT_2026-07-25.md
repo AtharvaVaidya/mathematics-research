@@ -25,6 +25,23 @@ The proof has two new parts:
 An independent announcement of the same numerical bound exists.  No
 priority or uniqueness claim is made here.
 
+Two independent construction-first results have also reached
+preprint-level form.  First, there is no degree-three étale morphism
+\(S(2,2,1)\to\mathbb A^2\).  Second, in the Gallagher weighted-lift
+graph family,
+\[
+\boxed{
+\deg_{A,B,C}Q\le8,\quad Q\notin\mathbb C
+\ \Longrightarrow\
+J(U+R_{\le2},Q)\notin\mathbb C^\times
+}
+\]
+for every polynomial graph.  The latter is a fully nonhomogeneous
+target theorem; its first possible Newton cancellation is the sharp
+degree-nine cusp pair \(A^5C^4,B^6\).  Neither statement resolves the
+plane conjecture, and both still require independent human review
+before journal submission.
+
 The broader search has also reached a useful negative conclusion: every
 one-boundary triangular toroidal/Rees descent has now been classified and
 excluded.  Continuing to vary a single Rees weight is therefore not a
@@ -871,6 +888,19 @@ transposition.  Therefore no degree-three étale map
 \(S(2,2,1)\to\mathbf A^2\) exists.  See
 `current_context/ROUTE_A_CONTRACTIBLE_RETAINED_SHEET_CUBIC_EXCLUSION.md`.
 
+The degree-four successor has now been reduced without a coefficient
+search.  Its normalization data satisfy
+\[
+r=3-c-t-\delta,\qquad r\ge c,
+\]
+so the branch is irreducible and only three numerical cases remain.
+Triple inertia is excluded.  The two simple-inertia survivors precisely
+require either a \(3+1\) unibranch collision together with a \(2+2\)
+self-intersection, or an extra unramified boundary curve that punctures
+both residual sections.  Thus degree four is not yet excluded, but its
+failure to retain a homology line is completely localized.  See
+`current_context/ROUTE_A_DEGREE_FOUR_RETAINED_SHEET_AUDIT.md`.
+
 The structurally different construction-first target starts from the
 weighted-lift family of genuine three-dimensional Keller maps of every
 generic degree at least three.  Common-coordinate descent is impossible
@@ -881,10 +911,14 @@ theorem.  The honest surviving target is therefore the lower-order
 subduction of a genuinely nonlinear second pivot or a non-graph
 affine-plane embedding; the two original-pivot rays are now closed.
 In fact all their linear mixtures are now closed as well, so the next
-pivot must be genuinely nonlinear.  The arbitrary-lower-tier
-quadratic, cubic, and quartic claims have the explicit open chains
+pivot must be genuinely nonlinear.  The former lower-tier chains
 \(AC+B\), \(ABC+B^2\), \(AB^2C+B^3\), and
-\(A^2C^2+ABC\).  Binary homogeneous targets
+\(A^2C^2+ABC\) are now closed by a global Newton-vertex argument.
+More strongly, every arbitrary nonhomogeneous target of degree at most
+eight is excluded with a first-coordinate perturbation of degree at
+most two.  The simultaneous regular and polar collision kernel is
+\(\mathbb Z(5,-6,4)\), so the first possible failure is the
+degree-nine cusp relation \(A^5C^4\sim B^6\).  Binary homogeneous targets
 are now closed in every degree: the exact maximal-\(x\) filtration
 isolates the top characteristic from all 77 lower \(U\)-support terms
 and all lower \(A/B\) seeds, and the unique \(x^{-1}\) recurrence has
@@ -897,9 +931,22 @@ boundary is closed by incompatible cancellation conditions at
 \(u=1\) and \(u=\infty\).  It permits an affine perturbation of \(U\)
 and a constant in the second coordinate.  The earlier facewise
 boundary argument remains retracted, but its failure is now bypassed
-rather than left as a gap.  The next weighted-lift target is a global
-filtration for nonhomogeneous second coordinates, beginning with the
-explicit coupled chains above.
+rather than left as a gap.
+
+The next weighted-lift target is no longer those four chains.  Exact
+subduction of the first remaining saturation \(BT\sim A^5C^3\)
+produces a new two-vector frontier outside
+\(\langle A,B,C,T,U\rangle\), so the five known elements are not a
+complete SAGBI basis.  The promising task is to understand the
+resulting generator sequence structurally—separating the \(L=1\) and
+\(L\ge2\) boundary regimes—rather than assume a premature finite
+normal form.  The first step is now exact.  After adjoining \(W\), the
+formal three-component toric ideal has an eight-binomial minimal Markov
+basis.  Under the actual graph projection, its next frontier \(V\) is
+new for \(L=2\) and \(L\ge4\), but at \(L=3\) it has precisely the two
+reducers \(CA^3T\) and \(B^5A^3\).  A later element \(X\) is outside the
+displayed projected semigroup for every \(L\ge2\).  This proves further
+incompleteness, but neither infinitude nor termination.
 
 The fixed-plane analogue is:
 
@@ -920,10 +967,11 @@ The research program should therefore prioritize:
    charts, since the first terminal scalar now kills the deepest special
    branch but the abstract residual symbols themselves are maximally
    nondegenerate;
-3. the coupled \(AC+\lambda B\) recurrence and a global filtration for
-   genuinely interleaved lower nonlinear target tiers, followed by
+3. the cubic-graph \(L=3\) SAGBI branch after its two exact reducers,
+   followed by a recurrence theorem for the projected generator
+   sequence rather than further unstructured expansion, and then
    nonlinear first-coordinate perturbations or a non-graph source
-   surface for the three-dimensional weighted-lift family;
+   surface;
 4. minimal-resolution finality coupled to actual polynomial sections;
 5. second-order extension of the fixed-source Hermite-CRT Keller jet; and
 6. exact countermodels whenever a proposed global inequality is too weak.
