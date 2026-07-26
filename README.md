@@ -99,10 +99,20 @@ including constant leading factor, remains open, but its seven-constant
 lower system now has a canonical Laurent form: four coefficients are
 conserved and the fifth is a rational time.  Riemann--Hurwitz reduces
 the nonconstant cube \(h=r^3\) case to \(r=\gamma(x-a)^{k+1}\);
-otherwise \(r\) is constant.  See
+otherwise \(r\) is constant.  In the constant-\(r\) family, the full
+subchart in which only the invariant upper constant \(j\) survives is
+also excluded: a unique Newton edge forces a \((2,5)\) cusp at infinity,
+where the fifth Laurent coefficient has degree \(12e\) although the
+Keller equation makes it affine.  See
 [`current_context/NORMAL_DEGREE_ARITHMETIC_FRONTIER_AND_96_CONNECTED_REDUCTION.md`](current_context/NORMAL_DEGREE_ARITHMETIC_FRONTIER_AND_96_CONNECTED_REDUCTION.md)
 and
-[`current_context/NORMAL_DEGREE_96_CUBE_LAURENT_TIME_REDUCTION.md`](current_context/NORMAL_DEGREE_96_CUBE_LAURENT_TIME_REDUCTION.md).
+[`current_context/NORMAL_DEGREE_96_CUBE_LAURENT_TIME_REDUCTION.md`](current_context/NORMAL_DEGREE_96_CUBE_LAURENT_TIME_REDUCTION.md),
+with the constant-\(r\), only-\(j\) exclusion in
+[`current_context/NORMAL_DEGREE_96_CUBE_CONSTANT_H_ONLY_J_EXCLUSION.md`](current_context/NORMAL_DEGREE_96_CUBE_CONSTANT_H_ONLY_J_EXCLUSION.md).
+A standalone, conservatively scoped manuscript of the connected-chart
+theorem is available as
+[`papers/normal-degree-96-connected-exclusion/main.pdf`](papers/normal-degree-96-connected-exclusion/main.pdf),
+with LaTeX source and reproduction notes in the same directory.
 
 Two tempting shortcuts have also been closed rather than silently
 discarded.  Reflection-equivariant nodal thickenings are already

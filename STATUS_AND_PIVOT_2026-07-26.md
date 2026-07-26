@@ -532,9 +532,12 @@ excluded by a finite weighted-homogeneous map, normality of
 \[
 -189V^6(3hV'-Vh')=\lambda h^3.
 \]
-This theorem has passed hostile mathematical review.  Its novelty
-relative to the older approximate-root literature is still being
-audited, so no priority claim is made here.
+This theorem has passed hostile mathematical review.  A focused audit
+of the cited primary sources located no theorem that subsumes this
+connected noncube-\(h\) exclusion, although that audit was not an
+exhaustive MathSciNet or zbMATH search and no absolute priority claim is
+made.  A standalone manuscript and checked PDF are in
+`papers/normal-degree-96-connected-exclusion/`.
 
 For the remaining cube chart \(h=r^3\), all seven upper character
 constants can be retained without losing integrability.  In the formal
@@ -547,8 +550,17 @@ Riemann--Hurwitz reduces the nonconstant case to
 \[
 r=\gamma(x-a)^{k+1};
 \]
-otherwise \(r\) is constant.  The pure-power and constant-\(r\) descent
-problems remain open.
+otherwise \(r\) is constant.  When the six nontrivial-character upper
+constants vanish and only \(j\) survives, the constant-\(r\) chart is
+now excluded for arbitrary conserved levels.  Exact elimination leaves
+one upper Newton edge,
+\[
+27C_0^5=32UD_0^2,
+\]
+and the fifth Laurent coefficient has degree \(12e\), contradicting
+the affine terminal equation.  Constant \(r\) with at least one of the
+six extra constants nonzero, and the nonconstant pure-power descent,
+remain open.
 
 On the repeated-root side, the intervening filtered recurrence now
 excludes the saturated \((2,3)\) top-form family for every

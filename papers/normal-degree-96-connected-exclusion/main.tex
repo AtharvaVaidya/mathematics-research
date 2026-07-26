@@ -1,0 +1,802 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1.08in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\A}{\mathbb A}
+\newcommand{\Jac}{\operatorname{Jac}}
+\newcommand{\wt}{\operatorname{wt}}
+\newcommand{\ord}{\operatorname{ord}}
+
+\title{A Connected Cubic-Cover Exclusion\\
+at Normal Degrees \((9,6)\)}
+\author{Atharva Vaidya}
+\date{26 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let \(F,G\in\C[x,y]\) satisfy
+\(\Jac(F,G)=\lambda\in\C^\times\), with
+\(\deg_yF=9\) and \(\deg_yG=6\).  The leading Jacobian equation
+expresses their leading \(y\)-coefficients, after constant rescaling, as
+\(h^3\) and \(h^2\) for one \(h\in\C[x]\).  We prove that no such Keller
+pair exists when \(h\) is not a cube in \(\C(x)\).
+
+The proof passes to the connected cyclic cover \(H^3=h\), where the
+\(\mu _3\)-character and a triangular approximate-root argument give
+\[
+ f=(g^{3/2})_+ +j(g^{1/2})_+ .
+\]
+The remaining bracket equations integrate to four weighted first
+integrals.  A centered change of coefficient variables decomposes their
+level set into two exact branches.  One branch has zero Jacobian.  On
+the other, a two-value pole argument excludes every generic level.  At
+the exceptional cuspidal level, a finite-map integrality argument
+restores polynomial descent and a final valuation identity gives the
+contradiction.
+
+The degree pair \((9,6)\) is also the first pair left by a particular
+repackaging of earlier partial- and total-degree criteria; that
+arithmetic orientation is prior-theorem bookkeeping, not a new
+classification result.  The theorem does not cover the chart in which
+\(h\) is a cube, and it does not prove the two-dimensional Jacobian
+conjecture.
+\end{abstract}
+
+\section{Introduction and scope}
+
+The two-dimensional Jacobian conjecture asks whether a polynomial map
+\[
+ (F,G):\A^2_\C\longrightarrow\A^2_\C
+\]
+with nonzero constant Jacobian is necessarily a polynomial
+automorphism.  The problem remains open.  Earlier work gives strong
+restrictions on the total degrees and Newton data of a possible
+counterexample; see Guccione--Guccione--Valqui
+\cite{GGVShape}, Guccione--Guccione--Horruitiner--Valqui
+\cite{GGHVApprox,GGHVAlgorithms}, and the references therein.
+
+This paper studies a different, sharply delimited coefficient chart.
+Write
+\[
+ \deg_yF=9,\qquad \deg_yG=6.
+\]
+The leading Jacobian equation forces the leading coefficients to be
+coprime powers of one polynomial:
+\[
+ [y^9]F=\alpha h^3,\qquad [y^6]G=\beta h^2,
+ \qquad \alpha,\beta\in\C^\times.
+\]
+The main theorem excludes the case in which \(h\) is not a cube in the
+base rational-function field.  Equivalently, it excludes the chart on
+which adjoining \(H\) with \(H^3=h\) gives a connected cubic cover.
+
+The connectedness hypothesis is essential to the argument.  It kills
+the six nontrivial-character constants that otherwise accompany the
+invariant constant \(j\) in the approximate-root expansion.  If \(h\)
+is a cube, including when \(h\) is a nonzero constant, those six extra
+constants survive and the lower coefficient system is different.
+Section~\ref{sec:boundary} records this exact logical boundary.
+
+\paragraph{Relation to earlier results.}
+Moskowicz's partial-degree criteria \cite{Moskowicz} and the classical
+total-degree consequences used there give the arithmetic orientation
+in Section~\ref{sec:arithmetic}.  The argument is included to explain
+why \((9,6)\), rather than \((8,6)\), is the first pair not removed by
+that particular package of criteria.  It is a repackaging of prior
+theorems plus elementary integer enumeration and is not claimed as a
+new degree theorem.  The proof avoids the simultaneous-prime assertion
+in Lemma 2.3 of \cite{Moskowicz}: in the present common-leading-factor
+chart the two reduced progressions coincide, so ordinary Dirichlet
+suffices.
+
+Approximate roots and intersection constraints for Jacobian pairs have
+been developed extensively, including in \cite{GGHVApprox}; broader
+minimal-counterexample and algorithmic frameworks appear in
+\cite{GGVShape,GGHVAlgorithms}.  Kara\'s's weighted-bidegree
+classification \cite{Karas} provides useful automorphism-side
+orientation, but it is not used in the connected-chart exclusion.
+Within a scoped audit of these five sources, no prior theorem was
+located that states the connected noncube-\(h\), normal-degree
+\((9,6)\) exclusion proved here.  This is an audit report, not an
+absolute claim of priority: the literature search was not exhaustive,
+and independent verification remains necessary before dissemination.
+
+\paragraph{What is not claimed.}
+The theorem neither constructs a counterexample nor proves the plane
+Jacobian conjecture.  It does not eliminate all Keller pairs of normal
+degrees \((9,6)\), because the cube-\(h\) chart remains.  It also does
+not assert that every hypothetical counterexample can be transformed
+into the present chart.
+
+\section{Statement and arithmetic orientation}
+
+\subsection{The connected-chart theorem}
+
+We use
+\[
+ [U,V]_{x,y}=U_xV_y-U_yV_x .
+\]
+
+\begin{theorem}[Connected cubic-cover exclusion]
+\label{thm:main}
+Let \(F,G\in\C[x,y]\) satisfy
+\[
+ [F,G]_{x,y}=\lambda\in\C^\times,\qquad
+ \deg_yF=9,\qquad \deg_yG=6.
+\]
+Suppose their leading \(y\)-coefficients are
+\[
+ [y^9]F=\alpha h^3,\qquad [y^6]G=\beta h^2
+\]
+for \(h\in\C[x]\setminus\{0\}\) and
+\(\alpha,\beta\in\C^\times\).  Then \(h\) is a cube in \(\C(x)\).
+\end{theorem}
+
+Since \(\C\) is algebraically closed, constant rescalings of \(F,G\)
+absorb \(\alpha,\beta\).  We therefore prove the theorem with leading
+coefficients \(h^3,h^2\).
+
+\subsection{A prior-theorem arithmetic orientation}
+\label{sec:arithmetic}
+
+The following proposition is recorded only to locate the chart.  Its
+automorphism criteria are consequences of the results collected by
+Moskowicz \cite[Theorems 1.1, 1.2, 2.6, and 2.7]{Moskowicz}.
+
+\begin{proposition}[First survivor of the cited arithmetic sieve]
+\label{prop:orientation}
+Let \(m=\deg_yF\geq n=\deg_yG>0\), and apply:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item the leading-coefficient relation;
+ \item constant target reductions when \(m=n\), and the leading-power
+ target shear when one reduced exponent is one;
+ \item the cited one-coordinate partial-degree criterion; and
+ \item the cited total-degree criteria after a sufficiently high source
+ shear.
+\end{enumerate}
+The first degree pair not certified automorphic by this sieve is
+\((m,n)=(9,6)\).  At that pair the reduced data are
+\[
+ (a,b,d,t)=(3,2,3,3).
+\]
+\end{proposition}
+
+\begin{proof}
+Let \(f_m=[y^m]F\) and \(g_n=[y^n]G\).  The coefficient of
+\(y^{m+n-1}\) in the Jacobian is
+\[
+ n f_m'g_n-m f_mg_n'=0.
+\]
+Write
+\[
+ d=\gcd(m,n),\qquad m=ad,\qquad n=bd,\qquad \gcd(a,b)=1.
+\]
+Unique factorization in \(\C[x]\), followed by constant rescaling, gives
+\[
+ f_m=h^a,\qquad g_n=h^b
+\]
+for a nonzero \(h\in\C[x]\).  Put
+\[
+ s=\deg h,\qquad t=\gcd(d,s),
+\]
+with \(\gcd(d,0)=d\).  The two partial-degree invariants are
+\[
+ \gcd(m,\deg f_m)=at,\qquad
+ \gcd(n,\deg g_n)=bt.
+\]
+
+Choose \(L\) larger than the \(x\)-degree of every coefficient of
+\(F,G\), and make the source shear \(y\mapsto y+x^L\).  The resulting
+total degrees are
+\[
+ as+adL=at\,p,\qquad bs+bdL=bt\,p,
+ \qquad p=\frac{s}{t}+\frac{d}{t}L.
+\]
+If \(s>0\), the two coefficients in the progression defining \(p\) are
+coprime, so Dirichlet's theorem permits an arbitrarily large \(L\) for
+which \(p\) is prime.  If \(s=0\), then \(t=d\), \(p=L\), and one
+chooses \(L\) prime.  Consequently the total-degree gcd is \(tp\).
+
+The cited total-degree results certify automorphy when \(t=1\) or
+\(t=2\).  They also certify automorphy if either \(at\) or \(bt\) lies
+in
+\[
+ \{1,4\}\cup\{\text{prime numbers}\},
+\]
+because the corresponding total degree is respectively a prime,
+\(4p\), or a product of two primes.  These conclusions use one common
+prime progression only.
+
+For a minimal unresolved pair, a constant linear target change removes
+\(m=n\).  If \(b=1\), subtracting a constant multiple of \(G^a\) from
+\(F\) lowers the ordered \(y\)-degree pair.  Hence
+\[
+ a>b\geq2,\qquad \gcd(a,b)=1,\qquad t\geq3,\qquad t\mid d.
+\]
+The least possible tuple is
+\[
+ (a,b,t,d)=(3,2,3,3),
+\]
+which gives \((m,n)=(9,6)\).  Conversely, its partial invariants are
+\((9,6)\), and the high-shear total-degree gcd is \(3p\); none belongs
+to the cited classes.  Thus it is the first survivor of this sieve.
+\end{proof}
+
+\begin{remark}
+Proposition~\ref{prop:orientation} does not assert that a Keller pair of
+degree \((9,6)\) exists.  It is not used to prove
+Theorem~\ref{thm:main}; it only motivates why that coefficient system
+is examined.
+\end{remark}
+
+\section{Connected normalization and approximate roots}
+\label{sec:normalization}
+
+Assume for contradiction that \(h\) is not a cube in \(\C(x)\).  Put
+\[
+ L=\C(x)(H),\qquad H^3=h.
+\]
+Because \(\C\) contains the cube roots of unity, this is a connected
+cyclic cubic extension.  Let \(\zeta\) be a primitive cube root of
+unity and let its deck generator satisfy
+\[
+ \sigma(H)=\zeta H.
+\]
+With \(z=Hy\), define
+\[
+ f(x,z)=F(x,z/H),\qquad g(x,z)=G(x,z/H).
+\]
+Then \(f,g\in L[z]\) are monic of degrees nine and six and
+\begin{equation}
+ [f,g]_{x,z}=\frac{\lambda}{H}.
+\label{eq:normalized-jac}
+\end{equation}
+The deck action sends \(z\) to \(\zeta z\) and fixes \(f,g\).
+
+Translate \(z\) over \(L\) to kill the degree-five coefficient of
+\(g\).  Its deck character makes the translated variable \(w\) satisfy
+\(\sigma(w)=\zeta w\).  Write
+\begin{equation}
+ g=w^6+aw^4+bw^3+cw^2+dw+q.
+\label{eq:g}
+\end{equation}
+The coefficient characters are:
+\[
+\begin{array}{c|ccccc}
+ &a&b&c&d&q\\ \hline
+ \wt&2&3&4&5&6\\
+ \sigma&\zeta^2&1&\zeta&\zeta^2&1.
+\end{array}
+\]
+
+\begin{lemma}[Triangular approximate-root form]
+\label{lem:approx}
+After a constant target shear and translation, there is a
+\(j\in\C\) such that
+\[
+ \boxed{f=(g^{3/2})_+ +j(g^{1/2})_+.}
+\]
+Here \((\cdot)_+\) denotes the polynomial part of the distinguished
+Laurent expansion at \(w=\infty\).
+\end{lemma}
+
+\begin{proof}
+For \(0\leq k\leq9\), put
+\[
+ A_k=(g^{k/6})_+.
+\]
+Each \(A_k\) is monic of degree \(k\), so there is a unique triangular
+expansion
+\[
+ f=A_9+\sum_{k=0}^8c_k(x)A_k,\qquad c_k\in L.
+\]
+The full Laurent series \(g^{k/6}\) commutes with \(g\), and its
+negative part begins in degree \(-1\).  Therefore
+\[
+ \deg_w[A_k,g]\leq4.
+\]
+On the other hand,
+\[
+ [c_kA_k,g]=c_k'A_kg_w+c_k[A_k,g],
+\]
+and the first summand has leading term \(6c_k'w^{k+5}\).
+Descending from \(k=8\) to \(k=0\), equation
+\eqref{eq:normalized-jac} forces every \(c_k'=0\).  The constant field
+of the algebraic function field \(L/\C\) is \(\C\), so \(c_k\in\C\).
+
+The distinguished sixth root of \(g\) has leading term \(w\), and hence
+\(\sigma(A_k)=\zeta^kA_k\).  Since \(f\) is invariant and the
+coefficients \(c_k\) are constants, uniqueness of the triangular
+expansion forces \(c_k=0\) unless \(3\mid k\).  A target shear removes
+the \(c_6g\) term and a target translation removes \(c_0\).  Writing
+\(c_3=j\) gives the result.
+\end{proof}
+
+Expanding Lemma~\ref{lem:approx} gives
+\begin{align}
+ f={}&w^9+\frac32aw^7+\frac32bw^6
+ +\frac{3(a^2+4c)}8w^5+\frac{3(ab+2d)}4w^4 \notag\\
+ &+\frac{-a^3+12ac+6b^2+16j+24q}{16}w^3
+ -\frac{3(a^2b-4ad-4bc)}{16}w^2+L_1w+P,
+\label{eq:f-expanded}
+\end{align}
+where
+\begin{align}
+ L_1={}&\frac{
+ 3a^4-24a^2c-24ab^2+64aj+96aq+96bd+48c^2
+ }{128},\label{eq:L}\\
+ P={}&\frac{
+ 3a^3b-6a^2d-12abc-2b^3+16bj+24bq+24cd
+ }{32}.
+\label{eq:P}
+\end{align}
+Assigning
+\[
+ \wt(a,b,c,d,q;j)=(2,3,4,5,6;6)
+\]
+makes every coefficient in \eqref{eq:f-expanded} weighted homogeneous
+of the weight complementary to its power of \(w\).
+
+\section{The four lower first integrals}
+\label{sec:integrals}
+
+Define
+\begin{align}
+I_{10}={3\over128}\bigl(&3a^5-24a^3c-36a^2b^2+32a^2j+48a^2q
+ +96abd \notag\\
+ &+48ac^2+48b^2c-128cj-192cq-96d^2\bigr),
+\label{eq:I10}\\
+I_{11}={3\over128}\bigl(&15a^4b-24a^3d-72a^2bc-24ab^3
+ +64abj+96abq \notag\\
+ &+96acd+48b^2d+48bc^2-128dj-192dq\bigr),
+\label{eq:I11}\\
+I_{12}=-{1\over512}\bigl(&15a^6-132a^4c-288a^3b^2
+ +128a^3j+192a^3q \notag\\
+ &+672a^2bd+336a^2c^2+768ab^2c-512acj-768acq
+ -384ad^2 \notag\\
+ &+72b^4-384b^2j-576b^2q-1152bcd-192c^3
+ +1536jq+1152q^2\bigr),
+\label{eq:I12}\\
+I_{13}=-{1\over128}\bigl(&15a^5b-21a^4d-96a^3bc-48a^2b^3
+ +64a^2bj+96a^2bq \notag\\
+ &+120a^2cd+120ab^2d+144abc^2-64adj-96adq
+ +48b^3c \notag\\
+ &-128bcj-192bcq-96bd^2-144c^2d\bigr).
+\label{eq:I13}
+\end{align}
+
+\begin{lemma}[Exact integration of the lower equations]
+\label{lem:integrals}
+Let
+\[
+ R_k=[w^k][f,g]_{x,w}
+\]
+after substituting \eqref{eq:g} and \eqref{eq:f-expanded}.  Then
+\[
+\boxed{
+\begin{aligned}
+ R_4&=I_{10}',\\
+ R_3&=I_{11}',\\
+ R_2&=I_{12}'+\frac12aR_4,\\
+ R_1&=I_{13}'+\frac13bR_4+\frac13aR_3.
+\end{aligned}}
+\]
+The terminal coefficient is
+\[
+ R_0=dP'-L_1q'.
+\]
+\end{lemma}
+
+\begin{proof}
+Differentiate \eqref{eq:g} and \eqref{eq:f-expanded}, form
+\(f_xg_w-f_wg_x\), and collect coefficients of \(w\).
+Substitution of \eqref{eq:I10}--\eqref{eq:I13} gives the displayed
+four identities coefficient by coefficient.  The constant coefficient
+is \(dP'-L_1q'\).  This is a polynomial identity over
+\(\mathbb Q[a,b,c,d,q,j,a',b',c',d',q']\); no division or genericity
+assumption is used.
+\end{proof}
+
+Equation \eqref{eq:normalized-jac} and
+Lemma~\ref{lem:integrals} make all four \(I_r\) constant.  Their weights
+give the deck characters
+\[
+ \sigma(I_r)=\zeta^rI_r.
+\]
+Connectedness and the constant field \(\C\) therefore imply
+\begin{equation}
+ \boxed{
+ I_{10}=0,\qquad I_{11}=0,\qquad I_{12}=K,\qquad I_{13}=0
+ }
+\label{eq:levels}
+\end{equation}
+for one \(K\in\C\).  The terminal equation is
+\begin{equation}
+ \boxed{dP'-L_1q'=\frac{\lambda}{H}.}
+\label{eq:terminal}
+\end{equation}
+
+\section{Exact decomposition of the level set}
+\label{sec:decomposition}
+
+Make the centered change
+\[
+ C=c-\frac{a^2}{4},\qquad
+ D=d-\frac{ab}{2},\qquad
+ Q=q-\frac{b^2}{4}.
+\]
+Direct substitution gives
+\begin{align}
+ I_{10}&={3\over8}
+ (3C^2a-12CQ-8Cj-6D^2),\label{eq:center10}\\
+ I_{11}&={3\over8}
+ (3C^2b+6CDa-12DQ-8Dj),\label{eq:center11}\\
+ I_{12}&={1\over8}\bigl(
+ 3C^3-3C^2a^2+18CDb+12CQa+8Caj \notag\\
+ &\hspace{35mm}{}+6D^2a-18Q^2-24Qj\bigr),\label{eq:center12}\\
+ I_{13}&={1\over16}\bigl(
+ 18C^2D-9C^2ab-6CDa^2+24CQb+16Cbj \notag\\
+ &\hspace{35mm}{}+12D^2b+12DQa+8Daj\bigr).\label{eq:center13}
+\end{align}
+The key factorization is the exact identity
+\begin{equation}
+ \boxed{
+ I_{13}=\frac98C^2D-\frac b3I_{10}-\frac a6I_{11}.
+ }
+\label{eq:keyfactor}
+\end{equation}
+On the levels \eqref{eq:levels}, it gives \(C^2D=0\).
+
+\subsection{The branch \(C=0\)}
+
+If \(C=0\), equation \eqref{eq:center10} gives \(D=0\), and
+\[
+ I_{12}=-\frac34Q(3Q+4j)=K.
+\]
+Thus \(Q\), being algebraic over the constant field, is constant.
+Set
+\[
+ \rho=w^3+\frac a2w+\frac b2 .
+\]
+Substitution in \eqref{eq:g} and \eqref{eq:f-expanded} yields
+\[
+ g=\rho^2+Q,\qquad
+ f=\rho^3+\left(\frac32Q+j\right)\rho.
+\]
+Both coordinates are functions of \(\rho\), so their Jacobian is zero,
+contradicting \eqref{eq:normalized-jac}.  Hence \(C\neq0\).
+
+\subsection{The branch \(C\neq0\)}
+
+Now \eqref{eq:keyfactor} gives \(D=0\).
+Equation \eqref{eq:center11} then gives \(b=0\), and
+\eqref{eq:center10} gives
+\begin{equation}
+ a=\frac{4(3Q+2j)}{3C}.
+\label{eq:a-centered}
+\end{equation}
+The remaining invariant is the cubic level
+\begin{equation}
+ \boxed{C^3=R(Q):=6Q^2+8jQ+\frac83K.}
+\label{eq:cubic-level}
+\end{equation}
+Since \(b=D=0\), the original coefficients satisfy
+\[
+ d=0,\qquad q=Q,\qquad P=0.
+\]
+Reducing \eqref{eq:L} modulo \eqref{eq:cubic-level} gives
+\begin{equation}
+ L_1=\frac{S(Q)}{24C},\qquad
+ S(Q):=21R(Q)+32(j^2-K).
+\label{eq:S}
+\end{equation}
+The terminal equation becomes
+\begin{equation}
+ -L_1Q'=\frac{\lambda}{H}.
+\label{eq:terminal-Q}
+\end{equation}
+
+\section{Exclusion of the two levels}
+\label{sec:exclusion}
+
+\subsection{The generic level \(K\neq j^2\)}
+
+Both \(b\) and \(q\) are deck-invariant, so
+\[
+ Q=q-\frac{b^2}{4}\in\C(x).
+\]
+Cubing \eqref{eq:terminal-Q} and using \(C^3=R(Q)\) gives the
+base-field identity
+\begin{equation}
+ \boxed{
+ h=-24^3\lambda^3
+ \frac{R(Q)}{S(Q)^3Q'^3}.
+ }
+\label{eq:h-rational}
+\end{equation}
+The discriminant of the quadratic \(S\) is
+\[
+ 12096(j^2-K).
+\]
+Thus \(S\) has two distinct roots when \(K\neq j^2\).  Neither is a
+root of \(R\), since a common root in \eqref{eq:S} would give
+\(32(j^2-K)=0\).
+
+The terminal equation makes \(Q\) nonconstant.  Regard it as a
+rational map
+\(\mathbb P^1_x\to\mathbb P^1_Q\).  At least one of the two distinct
+finite roots \(\alpha\) of \(S\) has a finite preimage: the single point
+\(x=\infty\) cannot lie above two different target values.  At such a
+preimage \(x_0\), write
+\[
+ \ord_{x_0}(Q-\alpha)=e>0.
+\]
+Then
+\[
+ \ord_{x_0}S(Q)=e,\qquad
+ \ord_{x_0}Q'=e-1,\qquad
+ \ord_{x_0}R(Q)=0.
+\]
+Formula \eqref{eq:h-rational} gives \(h\) a pole of order
+\(6e-3>0\) at the finite point \(x_0\), impossible for
+\(h\in\C[x]\).  This excludes every generic level.
+
+\subsection{The cuspidal level \(K=j^2\)}
+
+Now \eqref{eq:cubic-level} is
+\[
+ C^3=6\left(Q+\frac{2j}{3}\right)^2.
+\]
+On \(C\neq0\), put
+\[
+ v=\frac{Q+2j/3}{C}.
+\]
+Then
+\begin{equation}
+ C=6v^2,\quad Q=6v^3-\frac{2j}{3},\quad
+ a=4v,\quad c=10v^2,\quad b=d=0,
+\label{eq:cusp-params}
+\end{equation}
+and the normalized pair becomes
+\begin{align}
+ f={}&w^9+6vw^7+21v^2w^5+35v^3w^3+\frac{63}{2}v^4w,
+\label{eq:cusp-f}\\
+ g={}&w^6+4vw^4+10v^2w^2+6v^3-\frac{2j}{3}.
+\label{eq:cusp-g}
+\end{align}
+A direct calculation gives
+\begin{equation}
+ [f,g]_{v,w}=-567v^6.
+\label{eq:cusp-jac}
+\end{equation}
+
+The depression used in Section~\ref{sec:normalization} occurred over
+the function field, so polynomial descent of \(v\) cannot be assumed.
+We recover exactly the polynomial quantities needed for the valuation
+argument.
+
+\begin{lemma}[Finite-map descent at the cusp]
+\label{lem:finite}
+After substitution back into the original variables,
+\[
+ v^3,\ vw\in\C[x,y].
+\]
+\end{lemma}
+
+\begin{proof}
+Put \(g_0=g+2j/3\).  The pair \((f,g_0)\) is positive
+weighted-homogeneous for
+\(\wt(v,w)=(2,1)\).  Its only common zero is the origin.
+Indeed, on the coordinate axes this follows from
+\[
+ (f,g_0)|_{v=0}=(w^9,w^6),\qquad
+ g_0|_{w=0}=6v^3.
+\]
+Away from the axes put \(T=w^2/v\).  A common nonzero zero would make
+\[
+\begin{aligned}
+ T^3+4T^2+10T+6&=0,\\
+ T^4+6T^3+21T^2+35T+\frac{63}{2}&=0,
+\end{aligned}
+\]
+but the resultant of these two polynomials is \(567/8\).
+
+Therefore \(f,g_0\) form a homogeneous system of parameters in the
+positively graded ring \(\C[v,w]\).  It follows that
+\(\C[v,w]\) is module-finite over \(\C[f,g_0]\), so \(v^3\) and \(vw\)
+are integral over \(\C[f,g_0]\).
+
+After returning to \(x,y\), the elements \(f,g_0\) are constant target
+transforms of the original polynomial coordinates.  Hence
+\(\C[f,g_0]\subset\C[x,y]\), and the same monic equations make
+\(v^3,vw\) integral over \(\C[x,y]\).  Both are deck-invariant and
+belong to the fixed field
+\[
+ L(y)^{\mu_3}=\C(x,y).
+\]
+Since \(\C[x,y]\) is normal, integrality now gives
+\(v^3,vw\in\C[x,y]\).
+\end{proof}
+
+Write the depressed translation and cusp parameter as
+\[
+ w=H(y+s),\qquad v=\frac{V}{H},
+ \qquad s,V\in\C(x).
+\]
+The character assertions justify this form: \(w/H\) and \(vH\) are
+deck-invariant.  By Lemma~\ref{lem:finite},
+\[
+ vw=V(y+s)\in\C[x,y],
+\]
+so
+\[
+ V\in\C[x],\qquad Vs\in\C[x].
+\]
+Also
+\[
+ v^3=\frac{V^3}{h}\in\C[x,y]\cap\C(x)=\C[x],
+\]
+and therefore
+\begin{equation}
+ h\mid V^3.
+\label{eq:divisibility}
+\end{equation}
+
+Combining \eqref{eq:normalized-jac},
+\eqref{eq:cusp-jac}, and \(v=V/H\) gives
+\begin{equation}
+ \boxed{
+ -189V^6(3hV'-Vh')=\lambda h^3.
+ }
+\label{eq:valuation-identity}
+\end{equation}
+Let \(x_0\) be a root of \(h\), and put
+\[
+ r=\ord_{x_0}V,\qquad s_0=\ord_{x_0}h.
+\]
+Divisibility \eqref{eq:divisibility} gives \(s_0\leq3r\).
+If \(s_0\neq3r\), then the orders of the two sides of
+\eqref{eq:valuation-identity} are
+\[
+ 7r+s_0-1,\qquad 3s_0.
+\]
+Their equality gives \(7r-1=2s_0\).  Together with
+\(s_0\leq3r\), this forces \(r=1,s_0=3\), contrary to
+\(s_0\neq3r\).  Hence \(s_0=3r\) at every root of \(h\).
+
+A root of \(V\) outside the zero set of \(h\) would give orders
+\(7r-1>0\) and \(0\) in \eqref{eq:valuation-identity}, also
+impossible.  Thus \(h\) and \(V\) have the same support, with
+\[
+ h=\gamma V^3,\qquad \gamma\in\C^\times.
+\]
+But then \(3hV'-Vh'=0\), contradicting
+\eqref{eq:valuation-identity}.  This excludes the cuspidal level and
+completes the proof of Theorem~\ref{thm:main}.
+
+\section{The cube-\(h\) boundary}
+\label{sec:boundary}
+
+\begin{remark}[Why the proof stops]
+If \(h\) is a cube in \(\C(x)\), factorization over \(\C\) gives
+\(h=r^3\), up to a constant cube, for some \(r\in\C[x]\).  This
+includes all nonzero constant \(h\).  Put \(z=ry\) and depress \(g\)
+over \(\C(x)\).  The triangular part of Lemma~\ref{lem:approx} remains
+valid, but there is no nontrivial deck character.  After removing the
+constant \(g\)-multiple and target translation, its exact conclusion is
+\[
+\begin{aligned}
+ f={}&(g^{3/2})_+
+ +\kappa _8(g^{4/3})_+
+ +\kappa _7(g^{7/6})_+
+ +\kappa _5(g^{5/6})_+\\
+ &+\kappa _4(g^{2/3})_+
+ +j(g^{1/2})_+
+ +\kappa _2(g^{1/3})_+
+ +\kappa _1(g^{1/6})_+ ,
+\end{aligned}
+\]
+with seven unrestricted constants at the upper-equation level.  In
+particular, the \(w^8\)-coefficient need not vanish.  For instance,
+\[
+ F=(xy)^9+(xy)^8,\qquad G=(xy)^6
+\]
+when \(h=x^3\), and
+\[
+ F=y^9+y^8,\qquad G=y^6
+\]
+when \(h=1\), descend polynomially and retain that coefficient.  These
+examples have zero Jacobian and are not Keller pairs; they only show
+that descent and the upper equations do not remove the extra constants.
+The lower cube-\(h\) system is outside Theorem~\ref{thm:main}.
+\end{remark}
+
+No Laurent-time reduction is used in this manuscript.  Such a reduction
+requires additional hypotheses and is best treated separately rather
+than being folded into the connected theorem.
+
+\appendix
+\section{Exact-computation companion}
+
+The proof is algebraic.  A companion script in the research archive,
+\begin{quote}\scriptsize
+\path{current_context/verify_normal_degree_arithmetic_frontier_and_96_connected_reduction.py},
+\end{quote}
+performs exact symbolic checks of:
+\begin{itemize}
+ \item the arithmetic enumeration through \(m=9\);
+ \item the approximate-root expansion
+ \eqref{eq:f-expanded}--\eqref{eq:P};
+ \item the four derivative identities in
+ Lemma~\ref{lem:integrals};
+ \item the centered formulas and factorization
+ \eqref{eq:center10}--\eqref{eq:keyfactor};
+ \item the generic-level discriminant and the cuspidal parametrization;
+ \item the resultant \(567/8\), the cusp Jacobian
+ \eqref{eq:cusp-jac}, and the descent identity
+ \eqref{eq:valuation-identity}.
+\end{itemize}
+The script is a regression check against expansion and sign errors; it
+does not replace the proof.
+
+\paragraph{Disclosure.}
+AI systems assisted with symbolic-search orchestration, adversarial
+review, exact-code checking, and draft preparation.  The named author
+is responsible for the mathematical claims, the source, and
+independent verification before dissemination.
+
+\begin{thebibliography}{9}
+
+\bibitem{Moskowicz}
+V. Moskowicz,
+\emph{A variation on Magnus' theorem and its generalizations},
+preprint, arXiv:1810.08202v2, 2018,
+\url{https://arxiv.org/abs/1810.08202v2}.
+
+\bibitem{GGHVApprox}
+J.~A. Guccione, J.~J. Guccione, R. Horruitiner, and C. Valqui,
+\emph{The Jacobian Conjecture: Approximate roots and intersection
+numbers},
+preprint, arXiv:1708.09367v2, 2018,
+\url{https://arxiv.org/abs/1708.09367v2}.
+
+\bibitem{GGVShape}
+J.~A. Guccione, J.~J. Guccione, and C. Valqui,
+\emph{On the shape of possible counterexamples to the Jacobian
+Conjecture},
+J. Algebra \textbf{471} (2017), 13--74;
+preprint arXiv:1401.1784,
+\url{https://doi.org/10.1016/j.jalgebra.2016.08.039}.
+
+\bibitem{GGHVAlgorithms}
+J.~A. Guccione, J.~J. Guccione, R. Horruitiner, and C. Valqui,
+\emph{Some algorithms related to the Jacobian Conjecture},
+preprint, arXiv:1708.07936, 2017,
+\url{https://arxiv.org/abs/1708.07936}.
+
+\bibitem{Karas}
+M. Kara\'s,
+\emph{On weighted bidegree of polynomial automorphisms of
+\(\C^2\)},
+Bull. Polish Acad. Sci. Math. \textbf{70} (2022), 107--114;
+preprint arXiv:1201.3463,
+\url{https://doi.org/10.4064/ba220430-21-3}.
+
+\end{thebibliography}
+
+\end{document}
