@@ -36,6 +36,16 @@ generic Darboux fibers were excluded on the quadratic pseudoplane.  The
 details and strict limitations are recorded in Section 5 below and in
 the corresponding exact theorem notes.
 
+The strongest subsequent advance is a reviewed exclusion theorem for
+the squarefree common-root boundary in the reciprocal standard system.
+The strict compact-face bridge and a global degree average force an
+exact resonant normal form, whose homogenized Keller bracket is zero.
+Repeated roots remain open: their local compact faces and globally first
+fixed-base layer are classified, including the exact Kummer kernel, but
+factor splitting currently prevents iteration.  Independently, a
+full-degree cusp obstruction eliminates the three explicit Route A
+degree-\(4,5,6\) branch curves from transitive quartic monodromy.
+
 ## 1. Degree-eleven weighted-lift theorem
 
 Let \(F=(A,B,C)\) be the exact Gallagher weighted lift, let \(U\) be its
@@ -344,31 +354,50 @@ is exactly the \(g\)-sector resonance.  For an actual polynomial Keller
 pair with squarefree common root, the local Keller identity makes the
 matched \(Q\)-face automatic: an Euler defect excludes every lower
 \(Q\)-face.  The resulting reduced shifts glue simultaneously in \(P\)
-and \(Q\) to a degree-compatible global change of \(R\).  What remains
-is to extend this normal form through an already-present slope-\(g\)
-relative unit and through repeated common roots.
+and \(Q\) to a degree-compatible global change of \(R\).
 
-This rules out the endpoint-only pole-filtered monodromy lemma as the
-next standalone obstruction.  The resolution-directed target is now:
+For squarefree \(R\), the post-resonant problem is now solved.  In the
+formal coordinate \(s=S(X,\tau)\), every existing \(g\)-sector lies
+strictly above a strict residual face.  Such a face would contain a
+primitive common shift of order \(<g\), contradicting least residual
+order.  If no root is strict, the reciprocal degree average forces the
+order to be \(gq\) and the residuals to be scalar multiples of
+\(R^{a-q}\) and \(R^{b-q}\).  Iteration terminates in
+\[
+P=S^aA(\tau^g/S),\qquad Q=S^bB(\tau^g/S),
+\]
+with arbitrary independent \(A,B\).  Coordinate covariance then gives
+\(\mathscr K_X(P,Q)=0\), contradicting the nonzero Keller forcing.
+Therefore no reciprocal Keller pair has squarefree common-root
+boundary.
 
-> **Post-resonant lifting lemma.**  After the automatic strict-face
-> shifts have been removed and a physical slope-\(g\) relative unit is
-> retained, every later non-\(g\)-multiple common jet is either another
-> degree-compatible root reparametrization or forces a nonzero
-> pre-endpoint Keller-bracket face.
+The remaining standard-system target is repeated \(R\).  The local
+strict-face theorem survives with root multiplicity \(e_i\), and the
+globally first fixed-base \(P\)-layer is
+\[
+T=aR^{a-1}L,\qquad \deg L\le g-E.
+\]
+The corresponding \(Q\)-layer is
+\[
+U_E=bR^{b-1}L+cR^{b-E/g},
+\]
+where the Kummer term exists precisely when \(g\mid e_iE\) for every
+\(i\).  This is not yet iterable: after
+\(R\mapsto R+\tau^EL\), repeated factors may split and \(S_X\) is not a
+formal unit at the original multiple root.
 
-The next work should be deformation-theoretic, not a larger coefficient
-sweep:
+The next work should use the finite algebra of the deforming root scheme
+rather than another bounded coefficient sweep:
 
-1. pass to the weighted blowup of the first slope-\(g\) face while
-   retaining the physical relative unit \(Q^a/P^b\);
-2. classify the first non-\(g\)-multiple jet against that resonant
-   background;
-3. extend the compact-face calculation to repeated roots of \(R\);
-4. compute the nonlinear endpoint value only after those normalizations;
-5. if an interacting face survives, use its exact support as a
-   counterexample-construction lead rather than enlarging a blind search;
-6. bring global monodromy back only after liftability has been resolved.
+1. pass to the normalization/Puiseux branches of the degree-\(g\)
+   approximate-root polynomial after the first common correction;
+2. formulate a monodromy-invariant truncated-order average over those
+   branches, replacing the lost local coordinate \(S\);
+3. identify Kummer modes as descent data for branch orbits and determine
+   whether nonlinear Keller equations kill or propagate them;
+4. prove a secondary Newton/Rees lemma across a factor-splitting event;
+5. if a non-common residual survives, use its exact orbit and support as
+   a construction ansatz rather than enlarging a blind search.
 
 Route A now supplies an independent finite geometric target.  The
 Hamiltonian slice on a split \(\mathbb A^1\) generic fiber forces
@@ -383,8 +412,15 @@ Miyanishi; the new finite target is the simultaneous
 \(3+1\)-unibranch/\(2+2\)-multibranch classification in those three
 degrees.  Exact polynomial normalizations show that degrees \(4,5,6\)
 all survive the finite genus, delta, semigroup, puncture, and local
-permutation tests.  The next Route A obstruction is therefore global
-braid monodromy of the branch complement.
+permutation tests.  They nevertheless all fail globally for the same
+reason: the trigonal projection has a full-degree \((3,2)\) cusp, and
+the local cusp group surjects onto the affine complement group.  Its
+transposition image is contained in a nontransitive \(S_3\subset S_4\).
+The stronger claim that these complement groups are cyclic was
+retracted because the proposed explicit braid transports were not
+independently certified.  The next Route A question is whether every
+remaining minimal-puncture branch curve admits such a full-degree cusp,
+or whether a different projection can have a larger transitive image.
 
 Small \((g,a,b)\) computations should be used only to discover and test
 the normal form and to search for countermodels.  They should not be
@@ -392,13 +428,13 @@ mistaken for a proof by bounded enumeration.
 
 ## 6. Bottom line
 
-The project has produced another publishable theorem and several exact
-route audits, but not the requested proof or counterexample.  The
-pole-filtered endpoint idea has now been narrowed to its missing premise:
-post-resonant liftability through the nonreduced normal cone.  The
-pre-resonant strict compact face is automatic and globally removable
-for squarefree common roots.  The current primary direction is the
-first non-\(g\)-multiple jet after a resonant sector, with the
-repeated-root extension in parallel.  Global braid monodromy for the
-Route A degree-\(4,5,6\) branch curves is the independent
-counterexample-first track.
+The project has produced a publishable squarefree-boundary exclusion
+theorem and several exact route audits, but not the requested proof or
+counterexample.  The squarefree common-root architecture is closed.
+The primary unresolved standard-system architecture has repeated
+boundary factors; its first layer and Kummer kernel are exact, while a
+secondary Newton/Rees theorem across factor splitting is missing.
+Route A's three explicit quartic branch candidates are also closed by a
+full-degree cusp monodromy obstruction.  The next counterexample-first
+Route A target must use a branch curve whose local projection does not
+already generate only a three-letter transposition group.

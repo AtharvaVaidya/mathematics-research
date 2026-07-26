@@ -593,10 +593,47 @@ degree-compatible global change
 \[
 R\longmapsto R+\tau^E\dot R(X).
 \]
-This closes the pre-resonant matching and gluing gap.  It does not yet
-classify non-\(g\)-multiple jets appearing after a physical slope-\(g\)
-sector, nor repeated roots.  See
+This closes the pre-resonant matching and gluing gap.  See
 `STANDARD_SYSTEM_STRICT_COMPACT_FACE_BRIDGE.md`.
+
+The squarefree case is now closed completely.  After the subresonant
+bridge, any least residual below a slope-\(g\) sector would expose a
+strict face and hence an already-vanished primitive shift.  The
+reciprocal degree average then forces every surviving layer to be a
+scalar \(g\)-sector.  Thus
+\[
+P=S^aA(\tau^g/S),\qquad Q=S^bB(\tau^g/S)
+\]
+for a reciprocal polynomial approximate root \(S\).  The homogenized
+Keller bracket of every such pair vanishes identically, contradicting
+its nonzero scalar forcing.  Therefore an actual reciprocal Keller pair
+cannot have squarefree common-root boundary.  This is a boundary
+exclusion theorem, not a proof of the plane Jacobian conjecture; see
+`STANDARD_SYSTEM_SQUAREFREE_COMMON_ROOT_EXCLUSION.md`.
+
+For repeated roots, the strict local compact-face calculation still
+forces a common deformation, and the globally first \(P\)-coefficient
+has the exact form
+\[
+T=aR^{a-1}L,\qquad \deg L\le g-E.
+\]
+The matching \(Q\)-coefficient differs only by a polynomial Kummer mode
+\(cR^{b-E/g}\), which exists exactly when \(g\mid e_iE\) at every root
+multiplicity \(e_i\).  These results are deliberately fixed-base and
+first-layer only: after the deformation, repeated factors may split and
+the argument cannot yet be iterated.  See
+`STANDARD_SYSTEM_REPEATED_ROOT_COMPACT_FACE.md` and
+`STANDARD_SYSTEM_REPEATED_ROOT_GLOBAL_FIRST_LAYER.md`.
+
+On Route A, each of the three explicit degree-\(4,5,6\) branch curves
+has a full-degree \((3,2)\) cusp for the trigonal projection.  A small
+generic vertical fiber lies entirely in the cusp Milnor ball, so its
+local cusp group surjects onto the global affine complement group.
+Two transposition meridians satisfying the cusp braid relation generate
+at most an \(S_3\) fixing one of four letters.  Hence none of these
+three curves supports the required transitive \(S_4\) monodromy.  No
+claim about the full complement fundamental group is made; see
+`ROUTE_A_TRIGONAL_CUSP_GLOBAL_MONODROMY_OBSTRUCTION.md`.
 
 On the independent Danielewski-surface route, changing the affine-plane
 chart cannot rescue a Chebyshev étale endomorphism.  A preserved boundary

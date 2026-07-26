@@ -2,6 +2,16 @@
 
 Date: 26 July 2026
 
+> **Subsequent global update.**  The three explicit curves below pass
+> the finite singularity and puncture ledgers, but they do not pass
+> global braid monodromy.  In each case the local group of the
+> full-degree \((3,2)\) cusp surjects onto the affine complement group;
+> its transposition image is contained in a nontransitive
+> \(S_3\subset S_4\).  Thus none admits the required connected quartic
+> transposition representation.  No computation of the full complement
+> group is claimed.  See
+> `ROUTE_A_TRIGONAL_CUSP_GLOBAL_MONODROMY_OBSTRUCTION.md`.
+
 ## Outcome
 
 Assume the all-rational, one-boundary degree-four Route A profile isolated
