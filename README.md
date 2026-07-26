@@ -114,6 +114,16 @@ The final pure-power descent and one-line argument are in
 [`current_context/NORMAL_DEGREE_96_CUBE_PURE_POWER_CYCLIC_DESCENT.md`](current_context/NORMAL_DEGREE_96_CUBE_PURE_POWER_CYCLIC_DESCENT.md)
 and
 [`current_context/NORMAL_DEGREE_96_PURE_POWER_LINE_INJECTIVITY_EXCLUSION.md`](current_context/NORMAL_DEGREE_96_PURE_POWER_LINE_INJECTIVITY_EXCLUSION.md).
+The reusable split-cover mechanism is isolated in
+[`current_context/GENERAL_SPLIT_NORMAL_DEGREE_LAURENT_LINE_LEMMA.md`](current_context/GENERAL_SPLIT_NORMAL_DEGREE_LAURENT_LINE_LEMMA.md):
+for smaller normal degree \(q\), a pole bound
+\(n\ge(q-2)\rho/2\) forces one-line injectivity.  At the next
+same-ratio frontier \((12,8)\), the exact target is \(n\ge3\rho\).
+The entire smooth Davenport--Stothers extremal stratum has already
+been removed from the possible escape range: every one-pole
+deformation has ratio \(19\), and an explicit normalized cusp has a
+nonzero homogeneous resultant and therefore no polynomial lift.  See
+[`current_context/NORMAL_DEGREE_128_COUNTEREXAMPLE_CUSP_AND_LIFT_OBSTRUCTION.md`](current_context/NORMAL_DEGREE_128_COUNTEREXAMPLE_CUSP_AND_LIFT_OBSTRUCTION.md).
 A standalone, conservatively scoped manuscript of the connected-chart
 theorem is available as
 [`papers/normal-degree-96-connected-exclusion/main.pdf`](papers/normal-degree-96-connected-exclusion/main.pdf),
