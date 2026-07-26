@@ -266,6 +266,8 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_normal_degree_96_pure_power_line_injectivity_exclusion.py",
     ROOT / "current_context" / "verify_general_split_normal_degree_laurent_line_lemma.py",
     ROOT / "current_context" / "verify_normal_degree_128_counterexample_cusp_and_lift_obstruction.py",
+    ROOT / "current_context" / "verify_kummer_character_exact_differential_classification.py",
+    ROOT / "current_context" / "verify_normal_degree_128_full_exclusion.py",
 ]
 
 

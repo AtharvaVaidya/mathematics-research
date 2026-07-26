@@ -5,6 +5,25 @@
 The plane Jacobian conjecture is not resolved here.  No counterexample
 has been constructed, and no proof of \(JC(2)\) has been obtained.
 
+The latest normal-degree checkpoint closes the full \((12,8)\)
+frontier.  Exact local invariant analysis proves
+\[
+\operatorname {pole}(A_7)\geq3\rho
+\]
+through the smooth Davenport--Stothers stratum, all common-quartic
+collisions, and every extra approximate-root constant.  A new exact
+classification of inverse-character differentials on \(H^4=h\) shows
+that every genuinely non-fourth-power chart has a finite terminal pole;
+the local bound then makes an original source line affine.  The
+fourth-power chart is closed by Laurent time and cyclic descent, and
+the constant chart by the total-degree lower bound.  The exact notes
+and verifiers are
+`current_context/NORMAL_DEGREE_128_COUNTEREXAMPLE_CUSP_AND_LIFT_OBSTRUCTION.md`,
+`current_context/KUMMER_CHARACTER_EXACT_DIFFERENTIAL_CLASSIFICATION.md`,
+and `current_context/NORMAL_DEGREE_128_FULL_EXCLUSION.md`.
+This remains a frontier theorem, not a resolution; the next arithmetic
+normal-degree candidate is \((12,9)\).
+
 Three independently checkable advances were completed after the
 25 July checkpoint:
 

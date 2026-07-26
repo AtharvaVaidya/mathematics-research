@@ -482,6 +482,345 @@ seven-variable resultant.  It is the explicit three-dimensional
 common-quartic locus (35)--(36).  The next calculation should be the
 normal cone and successive invariant equations along this locus.
 
+### 5.1 Exact normal cone and collision partitions
+
+Write a first transverse deformation as
+\[
+ g=P^2+\varepsilon S,\qquad \deg S\leq3,
+\tag{37}
+\]
+after absorbing the quotient of the original perturbation modulo
+\(P\) into a tangent deformation of \(P\).  Divide
+\[
+ S^2=PH+R,\qquad \deg R<4.
+\tag{38}
+\]
+The polynomial part of \(g^{3/2}\) starts
+\[
+ f=P^3+\frac32\varepsilon PS+\frac38\varepsilon^2H.
+\tag{39}
+\]
+Exact expansion gives
+\[
+ f^2-g^3
+ =-\frac34\varepsilon^2P^2R+O(\varepsilon^3).
+\tag{40}
+\]
+Conservation through \(w\)-degree six forces
+\[
+ \boxed{R=0,\qquad P\mid S^2.}
+\tag{41}
+\]
+
+If \(P\) is squarefree, (41) would make \(P\mid S\), impossible for
+\(\deg S\leq3\).  The only possible multiplicity partitions of the
+quartic are therefore
+\[
+ [2,1,1],\qquad[2,2],\qquad[3,1],\qquad[4].
+\tag{42}
+\]
+This is the finite stable-collision list requested by the
+Davenport--Stothers perspective.
+
+Let \(z\) be a local uniformizer after a harmless ramified extension,
+normalize the coefficient pole scale to one, and suppose the first
+normal term is \(z^\delta S\).  When (41) holds, the scaled Jacobian
+contribution at order \(z^{3\delta}\) is, up to the nonzero constant
+\(3/8\),
+\[
+ \boxed{
+ \frac{S^2}{P^2}
+ \left(4PS'+(\delta-8)SP'\right).
+ }
+\tag{43}
+\]
+It must be a constant in the scaled \(w\)-coordinate.
+
+Factor comparison at the roots of \(P\), together with the degree at
+infinity, shows that (43) can never be a nonzero constant.  If it
+vanishes, then
+\[
+ S^4=cP^{\,8-\delta}.
+\tag{44}
+\]
+Combining (41), \(\deg P=4\), and \(\deg S\leq3\) leaves only two
+silent normal types:
+\[
+\begin{array}{c|c|c|c}
+\text{type}&P&S&\delta\\ \hline
+I&Q^2&cQ&6\\
+II&L^4&cL^3&5,
+\end{array}
+\tag{45}
+\]
+where \(Q\) is monic quadratic and \(L\) is monic linear.  Thus the
+partitions \([2,1,1]\) and \([3,1]\) are excluded already in the
+first normal cone.  Type I covers partitions \([2,2]\) and its
+\([4]\) collision; Type II is the remaining \([4]\) direction.
+
+They are called silent because their first normal Jacobian is zero.
+They merely turn on a conserved level:
+
+* Type I turns on the degree-six coefficient of \(f^2-g^3\);
+* Type II turns on a degree-nine coefficient.
+
+### 5.2 The silent types do not split into a one-pole branch
+
+Depression makes the quadratic in Type I
+\[
+ Q=X^2+C.
+\tag{46}
+\]
+In scaled variables its exact pair is
+\[
+\begin{aligned}
+ \bar g&=Q^4+c z^6Q,\\
+ \bar f&=Q^6+\frac32c z^6Q^3+\frac38c^2z^{12}.
+\end{aligned}
+\tag{47}
+\]
+In the original normalized variables, with \(X=vw\) and \(z=v\),
+this is the univariate composition
+\[
+\begin{aligned}
+ g&=U^4+cU,\\
+ f&=U^6+\frac32cU^3+\frac38c^2,\\
+ U&=w^2+Cv^{-2}.
+\end{aligned}
+\tag{48}
+\]
+
+It remains to check that a later term cannot split the composition.
+Let the first such term in \(\bar g\) be
+\[
+ z^\eta R(X),\qquad \eta>6,
+\]
+and divide \(R=QA+B\), with \(\deg B<2\).  The quotient \(QA\) is
+tangent to the \(Q\)-composite stratum.  Including the exact
+polynomial-part correction in \(\bar f\), the leading transverse
+Jacobian is
+\[
+ \boxed{
+ 3c\,z^{\eta+6}Q^2
+ \left((8-\eta)BQ'-2QB'\right).
+ }
+\tag{49}
+\]
+It again cannot be a nonzero constant because of the factor \(Q^2\).
+For \(Q=X^2+C\) with \(C\ne0\), the vanishing equation has only:
+
+1. \(B=0\) when \(\eta=7\);
+2. constant \(B\) when \(\eta=8\);
+3. \(B=0\) when \(\eta>8\).
+
+The constant at \(\eta=8\) is an ordinary constant target
+translation of \(g\).  Removing it and repeating the first-splitting
+argument shows that every formal branch remains \(Q\)-composite.
+For a composite pair
+\[
+ f=\mathcal F(v,U),\qquad g=\mathcal G(v,U),
+\]
+the Jacobian is divisible by
+\[
+ U_w=2w,
+\]
+and hence cannot be a nonzero function independent of \(w\).
+
+If \(C=0\), the exceptional solution at \(\eta=7\) is
+\(B\propto X\).  But then (48) and this added term have constant
+coefficients in the original variables; they contribute no
+coefficient pole.  One must restart at a later genuine pole, where
+the preceding argument applies again.
+
+Type II is even more immediate.  Depression forces \(L=X\), and its
+scaled terms become
+\[
+ v^{-8}\left(X^8+cv^5X^3\right)=w^8+cw^3
+\]
+in the original variables, again with no coefficient pole.  It
+cannot be the leading form at a place with \(\rho>0\).
+
+We have therefore excluded every one-step and iterated split of the
+four collision partitions in (42), on the zero-upper-constant slice:
+
+> **Secondary-degeneration obstruction.**  A rational one-pole
+> branch with \(\rho>0\) and
+> \(\operatorname {pole}(A_7)<3\rho\) cannot arise from a
+> degeneration of the Davenport--Stothers passport
+> \([2^{12}],[3^8],[19,1^5]\) when
+> \(f=(g^{3/2})_+\).
+
+### 5.3 Highest extra upper constant
+
+The first effect of a nonzero extra approximate-root constant is also
+structural.  Write the highest surviving upper term as
+\[
+ \kappa_\ell(g^{\ell/8})_+,\qquad
+ \ell\in\{11,10,9,7,6,5,4,3,2,1\},
+\tag{50}
+\]
+where the \(\ell=8\) term has been removed by a target shear.  At the
+common-quartic leading form \(g_0=P^2\), put
+\[
+ H_\ell=(P^{\ell/4})_+.
+\]
+This term occurs in the scaled \(f\)-coordinate at order
+\(z^{12-\ell}\).  Its exact leading Jacobian contribution is
+\[
+ 2\kappa_\ell z^{12-\ell}P
+ \left(4PH_\ell'-\ell P'H_\ell\right).
+\tag{51}
+\]
+The factor \(P\) prevents (51) from being a nonzero constant.
+Vanishing integrates to
+\[
+ H_\ell^4=P^\ell.
+\tag{52}
+\]
+
+Consequently:
+
+1. if \(\ell\) is odd, \(P=L^4\); depression gives \(L=X\), so this
+   leading form carries no coefficient pole and the valuation must
+   be restarted at a smaller scale;
+2. if \(\ell\equiv2\pmod4\), \(P=Q^2\), with
+   \(Q=X^2+C\);
+3. if \(\ell=4\), the term is \(\kappa_4P\) and is automatically
+   silent on the square cone itself.
+
+The \(\ell=4\) case, conventionally written \(j=\kappa_4\), closes at
+the first transverse normal.  Write
+\[
+\begin{aligned}
+ P&=w^4+Aw^2+Bw+C,\\
+ S&=Uw^3+Vw^2+Ww+Z,\\
+ g&=P^2+\varepsilon S.
+\end{aligned}
+\]
+Since \((g^{1/2})_+=P\), exact Laurent expansion gives
+\[
+\begin{aligned}
+ [\varepsilon]A_1&=-\frac j2U,&
+ [\varepsilon]A_2&=-\frac j2V,\\
+ [\varepsilon]A_3&=\frac j8(3AU-4W),&
+ [\varepsilon]A_4&=\frac j8(2AV+3BU-4Z).
+\end{aligned}
+\tag{53}
+\]
+If \(j\ne0\), constancy of the four levels forces
+\[
+ U=V=W=Z=0.
+\]
+Thus the only-\(j\) chart has no transverse square-cone normal.  If
+\(j=0\), Sections 5.1--5.2 exclude the four repeated-root types.
+
+Thus every genuine positive-pole chart with an extra highest upper
+constant is either driven back to the square-quartic composite Type I
+or is the now-excluded only-\(j\) chart.  In the square case, all
+surviving even upper terms become ordinary polynomials in
+\[
+ U=w^2+Cv^{-2},
+\]
+while any lower odd term repeats (51) and forces the fourth-power,
+regular-scale restart.  Descending through the finite list (50)
+therefore leaves only even upper terms on a genuine positive-pole
+square chart.  Their leading pair remains \(U\)-composite.
+A counterexample would have to split this composition at a later
+normal order.  Formula
+(49) excludes that split when the Type-I conserved parameter
+\(c\ne0\); the remaining exact chart is the square-quartic composite
+with \(c=0\) and a highest upper exponent congruent to two modulo
+four.  This is a one-variable transverse-operator problem, not a
+seven-coefficient search.
+
+### 5.4 The even-upper residual also has no split
+
+The last chart in Section 5.3 has
+\[
+ Q=X^2+C,\qquad \bar g_0=Q^4,
+\]
+and one of the upper terms
+\[
+ \kappa z^aQ^p,\qquad
+ (p,a)=(5,2),(3,6),(1,10).
+\tag{54}
+\]
+The \((p,a)=(2,8)\) only-\(j\) case was closed by (53).
+
+After absorbing every \(Q\)-composite tangent, let the first split be
+\[
+ \bar g=Q^4+\varepsilon z^\eta B,\qquad
+ B=b_1X+b_0.
+\tag{55}
+\]
+Before any upper cross, the exact quadratic normalized bracket is
+\[
+ -6\varepsilon^2z^{2\eta}QB
+ \left(
+ Cb_1+(\eta-7)b_1X^2+(\eta-8)b_0X
+ \right).
+\tag{56}
+\]
+It cannot be a nonzero constant.  Its only nonzero vanishing
+possibilities are
+\[
+\begin{array}{c|c}
+\eta=8&B=b_0,\\
+\eta=7,\ C=0&B=b_1X .
+\end{array}
+\tag{57}
+\]
+The first is a constant target translation in the original
+variables.  The second has regular, not polar, original coefficients
+and forces a restart at the next genuine pole scale.
+
+For \(p=5,a=2\), the upper term is linear-silent and its first
+nonzero contribution occurs later than (56), so (57) is exhaustive.
+For \(p=3,2,1\), the upper-linear operator is respectively
+\[
+ -6Q^2L,\qquad -4QL,\qquad -2L,
+ \quad
+ L=Cb_1+(\eta-7)b_1X^2+(\eta-8)b_0X.
+\tag{58}
+\]
+If \(a+\eta<2\eta\), (58) is the first equation and has no genuine
+polar split.  If \(a+\eta>2\eta\), equation (56) comes first and gives
+only (57).  At the three ties \(\eta=a\), the complete leading
+expressions factor, up to nonzero scalars, as
+\[
+\begin{array}{c|l}
+(p,a)&\text{leading bracket}\\ \hline
+(3,6)&
+Q(-Cb_1+X^2b_1+2Xb_0)(\kappa Q+\varepsilon B),\\
+(2,8)&
+b_1Q^2(3\varepsilon B+2\kappa),\\
+(1,10)&
+(Cb_1+3X^2b_1+2Xb_0)
+(3\varepsilon QB+\kappa).
+\end{array}
+\tag{59}
+\]
+No row in (59) is a nonzero constant or vanishes for a genuine
+non-composite \(B\).  Thus the even-upper residual is closed.
+
+Combining Sections 5.1--5.4 yields the pole statement needed by the
+line criterion:
+
+> **Pure-power pole threshold, zero and extra upper constants.**
+> Every rational one-pole invariant curve in the fourth-power
+> \((12,8)\) chart satisfies
+> \[
+> \boxed{\operatorname {pole}(A_7)\geq3\rho.}
+> \tag{60}
+> \]
+
+A smaller ratio would force the weighted common-quartic limit (35).
+The highest upper term gives the finite alternatives in Section 5.3,
+and the four collision partitions and every first split are excluded
+by (43), (49), (53), and (56)--(59).  A regular-scale alternative in
+(57) contributes no pole and is removed by restarting at the first
+actual Laurent pole.
+
 ## 6. Counterexample status and next exact target
 
 The cusp (16) is an exact nonzero-Jacobian, one-pole solution
@@ -501,10 +840,11 @@ boundary arc satisfying all of the following:
 4. its depressing-center limit avoids the finite-cusp resultant
    obstruction.
 
-Section 5 removes the whole smooth Davenport--Stothers equality
-stratum from this list and identifies every possible low-ratio
-weighted limit with the common-quartic locus (35).  The sharply
-constrained remaining problem is therefore its normal-cone
-compactification, equivalently the collision boundary of passport
-\([2^{12}],[3^8],[19,1^5]\).  That is the appropriate next target,
-rather than an unrestricted coefficient search.
+Section 5 removes the smooth Davenport--Stothers equality stratum and
+all four collision partitions, with zero or nonzero upper constants.
+Consequently no normalized fourth-power pure-power curve can evade
+the ratio-three line criterion.  This closes that pure-power chart
+from a noninvertible Keller map.  It does not address the
+constant-\(r\) coefficient curves or the connected
+non-fourth-power cover, and therefore does not yet exclude the full
+normal-degree pair \((12,8)\).

@@ -118,12 +118,29 @@ The reusable split-cover mechanism is isolated in
 [`current_context/GENERAL_SPLIT_NORMAL_DEGREE_LAURENT_LINE_LEMMA.md`](current_context/GENERAL_SPLIT_NORMAL_DEGREE_LAURENT_LINE_LEMMA.md):
 for smaller normal degree \(q\), a pole bound
 \(n\ge(q-2)\rho/2\) forces one-line injectivity.  At the next
-same-ratio frontier \((12,8)\), the exact target is \(n\ge3\rho\).
-The entire smooth Davenport--Stothers extremal stratum has already
-been removed from the possible escape range: every one-pole
-deformation has ratio \(19\), and an explicit normalized cusp has a
-nonzero homogeneous resultant and therefore no polynomial lift.  See
-[`current_context/NORMAL_DEGREE_128_COUNTEREXAMPLE_CUSP_AND_LIFT_OBSTRUCTION.md`](current_context/NORMAL_DEGREE_128_COUNTEREXAMPLE_CUSP_AND_LIFT_OBSTRUCTION.md).
+same-ratio frontier \((12,8)\), the required bound \(n\ge3\rho\) is
+now proved for the full local coefficient compactification, including
+every collision partition and every extra approximate-root constant.
+The entire smooth Davenport--Stothers extremal stratum has ratio \(19\);
+an explicit normalized cusp has a nonzero homogeneous resultant and
+therefore no polynomial lift.
+
+The remaining global leading-factor charts at \((12,8)\) are also
+closed.  In the fourth-power chart, Laurent time and cyclic descent
+turn the local pole bound into one-line injectivity.  In a non-fourth
+Kummer chart, the terminal inverse-character differential has an exact
+classification: every multi-root solution forces a finite terminal
+pole, again giving one-line injectivity, while the arithmetic condition
+\(4\mid\deg h\) removes the only one-root alternative.  The
+constant-fourth-root chart has total degrees at most \(12\) and \(8\)
+and is excluded by the independently established counterexample lower
+bound \(125\).  Thus the full normal-degree \((12,8)\) frontier is
+excluded, but \(JC(2)\) is still open; the next unresolved arithmetic
+frontier is \((12,9)\).  See
+[`current_context/NORMAL_DEGREE_128_COUNTEREXAMPLE_CUSP_AND_LIFT_OBSTRUCTION.md`](current_context/NORMAL_DEGREE_128_COUNTEREXAMPLE_CUSP_AND_LIFT_OBSTRUCTION.md),
+[`current_context/KUMMER_CHARACTER_EXACT_DIFFERENTIAL_CLASSIFICATION.md`](current_context/KUMMER_CHARACTER_EXACT_DIFFERENTIAL_CLASSIFICATION.md),
+and
+[`current_context/NORMAL_DEGREE_128_FULL_EXCLUSION.md`](current_context/NORMAL_DEGREE_128_FULL_EXCLUSION.md).
 A standalone, conservatively scoped manuscript of the connected-chart
 theorem is available as
 [`papers/normal-degree-96-connected-exclusion/main.pdf`](papers/normal-degree-96-connected-exclusion/main.pdf),
