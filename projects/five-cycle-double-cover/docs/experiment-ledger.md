@@ -1,0 +1,1957 @@
+# Experiment ledger
+
+## Girth-ten/oddness-eight candidate-domain specimen
+
+Status: **VERIFIED FINITE CASE / POSITIVE FRONTIER SPECIMEN**.
+
+The deterministic run
+`search/candidate_domain/runs/domain-20260725-v1/` contains one graph with
+30,450 vertices and 45,675 edges.  Independent graph algorithms and both
+premise parsers find it simple, connected, cubic, and bridgeless.  Exact BFS
+gives girth 10.
+
+The base resistance certificate proves \(\rho(R_4)=7\): the at-most-six
+deletion formula is UNSAT with an LRAT accepted by `lrat-check` and
+`cake_lpr`, while a directly checked seven-deletion model supplies the
+matching upper bound.  Properness of the exact implemented \(F_{10}\)
+six-pole is certified separately:
+
+```text
+improper-colouring CNF  1,305 variables, 4,344 clauses
+CNF SHA-256             c5bc0eae7fe58090562f5c5fa8f440553460ddf543e04bf5b023e4d0f79dda18
+LRAT bytes              831,347,425
+LRAT SHA-256            1b02ae63f650386e27568e109ee8d4c656e2bcfa6ccec964f9cfad8954ef4814
+```
+
+Both external proof checkers accepted that LRAT in fresh runs.  The blind
+auditor reconstructed the 4,344 clauses from the raw retained graph and
+matched them in order and multiplicity.  Applying the sourced proper
+superposition theorem gives resistance at least 7 and hence even oddness at
+least 8.
+
+The graph is SAT for the standard five-coordinate target.  The authoritative
+v4 witness was assembled from a five-cover of \(R_4\) and ten equal-boundary
+\(F_{10}\) templates.  Its retained hashes are:
+
+```text
+Verifier-B assignment  c1a721f5a560866f1189591425e6b24e9a12eb73fa86b6a9e3103046b2ea3ff4
+JSON labels            be31250209e2e0a2a6d8fc692315502334ba5b41a5bb83a6ebbe853ec613d5dd
+DIMACS model           308d14967a103f17f39209de661b7a592e7ffe2c1566132842b98bb52c35ea7a
+```
+
+The three formats agree exactly.  Direct original semantics, a fresh
+Verifier B run, and the blind auditor all accept the witness.  Complete
+unconditioned native-XOR, Verifier-A-CNF, and Verifier-B-CNF source instances
+are retained.  Fixed-primary-unit solver checks establish that this known
+witness extends to each complete encoding; those checks are not
+unconditioned monolithic solve timings.
+
+For this particular cover, the five coordinate-complement component counts
+are 4,275, 4,390, 3,295, 4,602, and 4,311.  It therefore does not directly
+witness the stronger connected-kernel property.  This is a property of the
+retained cover, not a proof that the graph has no other cover or flow with a
+connected kernel.
+
+## Reconstructed high-flow-resistance \(H_2\)
+
+Status: **VERIFIED FINITE CASE / POSITIVE TARGET WITNESS**.
+
+The order-82 graph \(H_2\) from Mattiolo--Negrini--Pagani
+(arXiv:2604.22501v1) was reconstructed from the author vector figures and
+the labelled recursive boundary.  The source archive has no machine-readable
+author edge list, so the package claims exact figure-based reconstruction,
+not a canonical comparison with an author-supplied graph file.
+
+The inferred boundary map and all four repaired figure edges are frozen.
+Independent checks find a simple connected cubic graph with 123 edges,
+girth five, and no cyclic edge cut of size at most four; the latter exhausts
+9,388,877 deletion sets.  A retained \(\mathbb F_2^2\)-flow has exact zero
+set \(\{34,122\}\).  The at-most-one-zero formula has 246 variables and
+8,159 clauses and is UNSAT; its LRAT is accepted by a separately built
+checker.  Together these prove flow resistance exactly two.
+
+This extreme pair is nevertheless positive for both follow-up tests.  A
+23-edge binary cycle contains both zero edges and has a connected 100-edge
+complement, so \(\mu(\{34,122\})=1\).  The complete standard five-CDC CNF is
+SAT with coordinate sizes \(47,62,39,44,54\); direct semantics and both
+frozen project verifiers accept the cover.  The deterministic reconstruction
+ledger hash is
+`4babacb2794429d0eb74f5e8ee54a911ff21116d97b7c820a1bf9dd1a98f2870`;
+the independent audit ledger hash is
+`b7a8924312867cbf2292491b5581e2791eddb61e40c69607eae73e74fa2db652`.
+Thus this high-resistance family member is eliminated as a counterexample;
+no universal conclusion follows.
+
+## Connected-kernel census and switch audit
+
+Status: **VERIFIED FINITE CASES FOR A SUFFICIENT CONDITION / PARTIAL
+STRUCTURAL PROGRESS**.
+
+The connected-kernel condition asks for a nowhere-zero
+\(\mathbb F_2^3\)-flow whose edges in some Fano line induce a connected
+spanning join.  It constructively implies a five-cover, but may be stronger
+than the target conjecture.
+
+Canonical `geng` runs found and lifted such a flow on every connected simple
+bridgeless cubic class through order 18:
+
+| range | generated | bridgeless | lifted |
+|---:|---:|---:|---:|
+| 4--14 | 621 | 587 | 587 |
+| 16 | 4,060 | 3,874 | 3,874 |
+| 18 | 41,301 | 39,866 | 39,866 |
+| **total** | **45,982** | **44,327** | **44,327** |
+
+For order 18, the summary, result stream, and manifest hashes are,
+respectively:
+
+```text
+3fe7c917d4d7fbf5df23b53dc539b5b98cc9f35337519a0477f0e5478985f415
+a7288aab34f632f281f1bd7dbb46d280b15763093cbd9e0e15ddbc2c47207cc8
+15e2a8e7ac14456abb274589d60c6678f2281ec705fe4cb041b05422a0302f3f
+```
+
+The exact flow-switch audit enumerated 556,248 nowhere-zero flows on all 26
+bridgeless canonical graphs through order 10.  It classified 446,040 as
+already liftable, 109,872 at elementary-switch distance one, 336 at distance
+two, and zero unresolved.  Across 3,681,048 disconnected flow-line pairs,
+zero were stable against every component-decreasing elementary switch.  The
+retained summary SHA-256 is
+`310149c88ef91ab40b22891e06676687c4a51a4eeb407c07f04643ff283764d5`.
+
+The arbitrary-binary-cycle continuation found the first immediate
+constant-value trap at order 12, graph6 `K?ABAfCi?wF?`.  Four disjoint
+two-edge outside color classes hit all nine component-reducing cycles.  A
+two-step mixed escape—line value 1 on circuit mask 2998, then outside value
+4 on circuit mask 67293—connects the join.  The complete order-12
+fixed-join census checked 85 canonical graphs, 81 bridgeless graphs, and
+9,132 realizable disconnected joins.  Every one has some low-coordinate
+recoloring followed by a reducing outside switch; there are zero
+existential fixed-join traps.  The report SHA-256 is
+`36b29a079d544e2b6d8b057d374e84ca27cdcd913f4df2b22aea32a74bb6e4a9`.
+
+The attempted connected-kernel solve on the order-30,450 candidate was
+manually interrupted during its first SAT call and has no result.  Its
+partial CNF is not counted as either SAT or UNSAT.
+
+### Current hard-snark data portfolio
+
+Nineteen graph6 source files were downloaded from the House of Graphs snark
+meta-directory and retained byte-for-byte.  They contain 1,085 raw records
+and 1,082 unique graphs:
+
+| source-list class | records |
+|---|---:|
+| cyclic connectivity at least 5, through order 30 | 600 |
+| girth at least 6, selected available orders through 40 | 318 |
+| circular flow number 5, through order 36 | 136 |
+| exact order-44 oddness-4 list | 31 |
+
+The counts overlap.  Every unique graph independently passed
+simple/cubic/connected/bridgeless checks.  Every one admitted a
+connected-kernel flow and direct \(D_5\) lift; there were zero solver limits
+and zero stronger-property UNSAT rows.  The authoritative run is
+`search/known-snark-kernel-portfolio-v2-20260725/`.
+
+The source-list names are provenance rather than recomputed invariants:
+cyclic connectivity, girth, circular flow number, and oddness were not
+independently recomputed for all 1,082 records.  The graph premises and every
+retained flow and pair-label witness are independently checkable.
+
+### Strong-snark portfolio through order 40
+
+The four retained House of Graphs lists in the strong-snark,
+girth-at-least-five table column contain 7,984 records:
+
+| order | source records | connected-kernel lifts |
+|---:|---:|---:|
+| 34 | 7 | 7 |
+| 36 | 25 | 25 |
+| 38 | 298 | 298 |
+| 40 | 7,654 | 7,654 |
+
+Every record passed direct simple/cubic/connected/bridgeless checks and
+every returned \(\mathbb F_2^3\) flow and \(D_5\) lift passed the original
+parity semantics.  There were zero iteration limits and zero
+stronger-property UNSAT rows.  The separate blind audit passed all 7,984
+rows and found 7,984 nauty isomorphism classes.  Strongness and girth remain
+source-list provenance rather than recomputed properties.  The result-stream
+SHA-256 is
+`764d1a625b47d751351c997872164d91ab0ef4c5ab3980a2411ff66d392096cc`;
+the blind result SHA-256 is
+`94bd885cf9f9f87c637629575d1b49fe8b84d944202a8161cbf6482439639d91`.
+
+### Exact fixed-join preparation code
+
+For \(J=E-H\), arbitrary low-coordinate recoloring and normalization of the
+outside value reduce preparation to an exact common-zero-set problem:
+
+\[
+ T=E-(p\cup q)\subseteq H,\qquad
+ \mu_G(T)=\min_{H'\supseteq T}\kappa(E-H').
+\]
+
+A realizable disconnected join is preparable iff some relevant
+inclusion-minimal \(T\) has \(\mu_G(T)<\kappa(J)\).  The canonical primary
+census found zero traps through order 18.  At order 18, 179 non-three-edge-
+colourable bridgeless classes supplied 173,316 realizable disconnected hard
+joins, all preparable.  An independently written implementation replayed
+all canonical order-14 and order-16 graphs and again found zero traps among
+112,732 and 1,869,590 realizable disconnected joins.  These are per-join
+existential results, not reachability results for an initially fixed pair of
+low coordinates and not a universal theorem.
+
+### Connected odd factors and complete strong-snark preparation audits
+
+For a relevant zero set \(T\), \(\mu_G(T)\) equals the minimum component
+count of a spanning odd factor of \(G-T\).  A complete minimal-support
+enumerator combines checked \(\mathbb F_2^2\)-flow witnesses with exhaustive
+binary cycle-space evaluation.
+
+| order | graphs | minimal supports | relevant \(\mu>1\) | realizable disconnected | preparable | traps |
+|---:|---:|---:|---:|---:|---:|---:|
+| 34 | 7 | 4,418 | 7 | 1,824,090 | 1,824,090 | 0 |
+| 36 | 25 | 15,391 | 29 | 13,047,448 | 13,047,448 | 0 |
+| 38 | 298 | 234,582 | 597 | 311,344,912 | 311,344,912 | 0 |
+| 40 \(R_2\) | 1 | 33,517 | 9,516 | 1,968,017 | 1,968,017 | 0 |
+
+The order-36 minimal supports split into 14,247 pairs, 1,135 triples, and
+nine four-edge sets.  Among the relevant exceptions, 23 have \(\mu=2\)
+and six have \(\mu=3\).  Thus the pointwise connected-odd-factor conjecture
+is false even on cyclically-4-connected hosts, but every affected high
+cycle also contains another minimal support with smaller \(\mu\).
+
+Independent order-34 and order-36 audits used two-bit global blocking CNFs
+rather than the producer's one-hot enumeration.  They checked all 19,809
+flows, proved the unlisted-family formula UNSAT for each graph with
+CaDiCaL's internal DRAT/LRAT checking, exhaustively recomputed all 36
+exceptions, and classified all 14,942,208 high cycles with zero
+discrepancies.  Temporary proof bytes were not retained.  The primary reports are in
+`search/minimal-zero-set-audit-n34-20260725/` and
+`search/minimal-zero-set-audit-n36-20260725/`.
+
+The order-38 audit adds 188,843 pairs, 44,434 triples, 1,287 quadruples,
+and 18 quintuples. Its 597 relevant exceptions comprise 582 supports with
+\(\mu=2\) and 15 with \(\mu=3\), on 119 of the 298 hosts. An independent
+two-bit blocking audit validated every retained flow and \(\mu\) witness,
+checked the exceptional proper subsets, and reclassified all 312,475,648
+high cycles with a separately compiled exhaustive helper. Its temporary
+proof bytes are not retained, but CaDiCaL internally checked every
+family-completeness proof and the audit result is PASS.
+
+### Direct order-40 trap-candidate screen
+
+The complete retained order-40 source has now been screened by the exact
+necessary condition
+
+\[
+  \exists\,T\subseteq H\text{ minimal exact with }\mu(T)>1,
+  \qquad
+  \nexists\,S\subseteq H\text{ minimal exact with }\mu(S)=1.
+\]
+
+Every trap must satisfy this condition.  Realizability supplies a contained
+minimal exact support; the trap inequality and the fact that \(H\) itself
+is feasible give \(\mu(T)=\kappa(E-H)\geq2\).  Conversely, any contained
+\(\mu=1\) support strictly prepares a disconnected complement.  Candidate
+SAT with exactly two complement components is already sufficient for a
+trap, since every contained minimal support then has \(\mu=2\); for three
+or more components the screen remains only a necessary filter.
+
+| graphs | batches | minimal supports | \(\mu=1\) | non-\(\mu=1\) | candidates | traps |
+|---:|---:|---:|---:|---:|---:|---:|
+| 7,654 | 60 | 6,053,028 | 6,009,319 | 43,709 | 0 | 0 |
+
+The independent PASS replay covers all 60 batches and 7,654 graphs.  It
+directly checks all 6,053,028 flow supports, classifies
+16,051,601,408 binary cycles, and internally validates 7,654
+support-completeness UNSAT proofs and 7,654 candidate CNFs.  The exact
+\(\mu\)-profile and zero-candidate result match the primary run.  The
+result, manifest, and checksum-ledger SHA-256 values are respectively
+`0bacec06192ea5c03855ccc95070173c350f81fc809e59fbc0dbe73de2bb4c54`,
+`ed8e85f845ef398e63fc2e705236b6ae311f3c4e8a2336f77ea548f34c5a096e`,
+and
+`fb9ebf90f57453efff948dd6d9cbc05c76bb086cdedc42e2396adaf94761c457`.
+Zero candidates excludes preparation traps only on this retained finite
+source; it is not a universal preparation theorem and not five-CDC.
+
+The complete small-boundary control covers all 212 hard bases through order
+18.  It finds 3,336 relevant minimal supports with
+\(\mu\)-profile \(1:3272,\ 2:63,\ 3:1\).  The 64 non-\(\mu=1\) supports
+occur on 60 graphs and are contained in 29,312 distinct highs; every one of
+those highs also contains a \(\mu=1\) support.  Thus the candidate and trap
+counts are both zero.  An independent standard-library checker reconstructs
+all source identities and graph premises, independently rejects
+three-edge-colourability for every base, exhausts 194,859,008 ordered cycle
+pairs, and matches all support and high classifications.  Its status is
+PASS.
+
+### Complete canonical order-20 preparation-candidate census
+
+The boundary was extended to every canonical connected simple cubic graph
+of order 20.  The exact stream contains 510,489 rows: 497,818 are
+bridgeless, 496,430 of those are 3-edge-colourable, and 1,388 are hard.
+The hard rows contribute 21,686 inclusion-minimal exact supports, of which
+21,682 are relevant.  Their exact profile is
+
+\[
+\mu=1:21,219,\qquad \mu=2:455,\qquad \mu=3:8.
+\]
+
+All 425,024 high cycles containing a non-\(\mu=1\) support also contain a
+\(\mu=1\) support.  The necessary-candidate and preparation-trap counts
+are therefore both zero.  The smallest number of contained
+\(\mu=1\) supports on an affected high is three, attained by 2,240 highs
+on 20 graphs.  In the unique affected graph having no singleton
+\(\mu=1\) support, the minimum is twelve on 16 highs.
+
+A producer-free C++20 replay independently decoded and re-encoded all
+510,489 graph6 rows, reclassified bridges and Tait colourability, and
+literally traversed all 5,821,693,952 ordered cycle pairs.  It reconstructed
+every aggregate and all 1,388 semantic hard-row projections with zero
+discrepancies.  An exhaustive two- and three-edge-deletion test found
+exactly six cyclically 4-edge-connected hard graphs; all 170 of their
+minimal exact supports have \(\mu=1\).  This is an independently verified
+finite order-20 result, not a larger-order or universal theorem.
+
+### Complete standard five-CDC cubic boundary through order 22
+
+A separate target-standard run—not the preparation strengthening—generated
+all 7,319,447 canonical connected simple cubic graphs of order 22.  It
+classified 7,187,627 as bridgeless, 7,174,735 of those as
+three-edge-colourable, and 12,892 as hard.  Literal structural filtering
+found 31 hard rows with no 2-cut or nontrivial 3-cut and 20 that also have
+girth at least five.  All 20 strict rows are standard five-CDC SAT.
+
+The lower complete filters contribute three strict rows through order 18
+and six at order 20.  For every one of these 29 rows, the retained package
+contains the graph, pair labels, a complete CNF, and a satisfying
+assignment.  The primary checker validates exact-two coverage and all five
+vertex parities; the independent Go checker accepts the same raw witnesses.
+
+A producer-independent Python/C++ audit then:
+
+- scanned and decoded all 7,319,447 fixed-width order-22 records;
+- matched all 12,892 hard identities, girths, 2-cuts, and
+  inclusion-minimal nontrivial 3-cuts;
+- freshly regenerated and filtered every even order from 4 through 20;
+- checked every assignment against every clause in both CNF families;
+- checked all 435 retained \(S_5\)-normalization units and exhaustively
+  regressed the local normalization rule.
+
+The exact bounded corollary is: every finite bridgeless cubic multigraph
+whose connected components have at most 22 vertices has a standard 5-CDC.
+The proof chooses a minimum-order bad cubic component and applies the audited
+loop/parallel-edge, cut, triangle, and square reductions before invoking the
+29 strict witnesses.  Cubic expansion can increase order, so this statement
+does not cover arbitrary noncubic graphs of order at most 22.  The frozen
+construction packages are under `search/*standard-five-cdc-20260725/` and
+`search/order22-filter-census-20260725/`; the independent audit ledger is
+`blind-audit/order22-finite-package-audit-SHA256SUMS`.
+
+### Peripheral-cycle singleton theorem
+
+Tutte's theorem that every edge of a finite 3-connected graph lies on a
+peripheral cycle gives a universal preparation statement for singleton
+supports.  In a cubic graph, the complement of such an induced cycle is
+connected: the outside vertex-deletion graph is connected and every cycle
+vertex has one spoke to it.  Hence
+\(\mu_G(\{e\})=1\) for every edge of every finite simple 3-connected cubic
+graph.
+
+An independent standard-library implementation checked all 1,600 frozen
+hard rows through order 20.  Among the 985 rows satisfying the simple
+3-connected cubic premise, it found a connected-complement cycle through
+each of 29,037 edges, with zero failures.  It independently reconstructed
+the order-18 singleton \(\mu=2\) control and explicit cuts excluding that
+graph from the premise.  On the seven order-34 sources it also found the
+two arbitrary co-cyclic pair failures while confirming
+\(\mu=1\) for all 4,188 exact minimal pairs.  This last pair result is
+finite evidence only; the theorem proved here is the singleton case.
+
+### Exact-pair marked-core reduction
+
+For a connected simple cubic graph other than \(K_4\), an exact
+two-edge \(\mathbb F_2^2\)-zero set is a nonadjacent matching.  Deleting
+the pair and suppressing its four degree-two ends produces a loopless
+Tait-colourable cubic multigraph.  In girth at least five there are only
+two endpoint geometries: four independent ends give four once-subdivided
+marked core edges; one cross-edge gives two once-subdivided marked edges
+and one twice-subdivided edge.  The connected-odd-factor condition is
+equivalent in each case to a connected spanning core subgraph satisfying
+explicit component-cut parity equations.  On the twice-subdivided path,
+the alternative using only the middle edge is odd but necessarily forms a
+separate component.
+
+The producer-independent audit enumerated all 27 canonical simple cubic
+graphs of orders 4, 6, 8, and 10 and all 1,439 exact pairs.  It found zero
+nonadjacency failures and exactly three suppression degeneracies, the
+three perfect matchings of \(K_4\).  The repaired core theorem applies to
+the other 1,436 pairs.  It checked 530 independent-end cases and 15,784
+fixed-\(Q\) orientation eliminations, plus all 60 girth-five single-cross
+cases and 3,840 further fixed-\(Q\) comparisons, with zero discrepancies.
+Direct odd-factor enumeration matched all 120 reconstructed connected
+factors; all 480 middle-only controls were disconnected.  This is an exact
+reduction and finite audit, not a proof that every exact pair has
+\(\mu=1\).
+
+A targeted marked-core search then tested 5,000 marked sets on 50
+order-24 cubic-bipartite cores and 10,000 marked sets on 100 arbitrary
+order-24 Tait-colourable cores.  Complete affine enumeration found 79 and
+197 connected-odd-factor failures respectively.  All three external
+pairings were reconstructed for every failure: all 828 graphs have
+explicit proper three-edge-colourings, so the proposed exact pair is
+nonminimal because the empty zero set is already realizable.  A separate
+one-cross search tested 2,000 marked triples, found 15 failures, and again
+gave explicit Tait colourings for all 30 simple reconstructions.  Every
+one of the 858 reconstructions has girth three or four.
+
+As a non-Tait control, complete cycle-space audits of the Flower snarks
+\(J_5,J_7,J_9\) checked respectively 375, 777, and 1,323 exact minimal
+pairs.  Every one of the 2,475 pairs has a directly recorded
+connected-complement cycle.  A separate checker re-enumerated the full
+affine odd-factor spaces for the 291 failed marked instances and validated
+all reconstructions, exact flows, colourings, and cyclic-cut metadata.
+The frozen package is
+`search/marked-core-exact-pair-search-20260725/`.  These deterministic
+samples do not prove the suggested alternative “connected factor, or Tait
+reconstruction, or a cyclic cut below four.”
+
+A follow-up specification audit falsified the unqualified version of the
+pair lemma and isolated the needed hypothesis.  In lexicographic edge
+order on \(K_4\), the exact flow
+\((0,1,1,1,1,0)\) has the opposite-edge zero set
+\(\{01,23\}\), while both containing cycles leave two disjoint edges.
+The dodecahedral graph supplies a strict-looking but still Tait
+counterexample: it is simple cubic of girth five with no cycle-separating
+cut of size at most four, yet the retained exact pair has \(\mu=2\).
+Exhaustive replay checks all \(2^{11}\) binary cycles, the 512 cycles
+containing the pair, the flow, the Tait colouring, and all cuts of size at
+most four.
+
+The corrected non-Tait/inclusion-minimal statement was then screened on
+the complete 7,654-row order-40 strong-snark source.  Of 13,547,580 edge
+pairs, 13,547,063 have an explicit connected-complement cycle.  The
+remaining 517 all fail a direct exact-zero-pair flow test, leaving zero
+exact failures.  The same audit records why Catlin perfect-matching
+contraction is insufficient: ordinary 4-edge-connectivity and aggregate
+parity survive, but connectivity need not survive splitting each quotient
+vertex into its two ports.  The frozen package is
+`search/exact-pair-theory-resolution-20260725/`, whose ledger hash is
+`0957e46c0d93fb486d3183933ed4d7f69cc0e1732315475a68eb6ed6910e4fde`.
+
+For the 40-vertex \(R_2\) graph, the Petersen 2-pole decomposition instead
+gives a solver-free exact factorization of all 33,517 minimal supports:
+33,516 size-four cycle-contained matchings and one irrelevant size-six
+nonmatching support.  A full \(2^{21}\)-cycle audit found 24,000 relevant
+supports with \(\mu=1\), 8,160 with \(\mu=2\), 1,308 with \(\mu=3\), and 48
+with \(\mu=4\). It classified all 1,968,017 realizable disconnected joins
+as preparable. Across the order-34, order-36, order-38, and \(R_2\) audits
+this is 287,908 minimal supports and 329,515,008 high-cycle
+classifications; all 328,184,467 realizable disconnected joins are
+preparable. These totals remain finite evidence for a universal statement.
+
+The domination margins on the three retained strong-snark sources were
+then reconstructed by a clean-room Walsh--Hadamard implementation.  It
+classified all 131,596,288 affected highs on 134 graphs and reproduced
+every primary per-graph and aggregate histogram:
+
+| order | affected graphs | affected highs | minimum contained \(\mu=1\) supports | highs at minimum |
+|---:|---:|---:|---:|---:|
+| 34 | 4 | 204,800 | 21 | 1 |
+| 36 | 11 | 1,122,304 | 22 | 16 |
+| 38 | 119 | 30,312,192 | 20 | 3 |
+
+All three necessary-candidate counts are zero.  The audit also checks all
+254,391 retained \(\mathbb F_2^2\)-flow witnesses, every relevant
+\(\mu\)-witness, edge-mask guards, and an edge-62 UBSan control.  The
+primary reports' recorded `/private/tmp` helper binary was not retained;
+the source rebuilds reproduce the reports after deleting only the helper
+path and binary-hash fields.  The combined audit ledger is
+`search/preparation-margin-profile-audit-20260725/SHA256SUMS`.
+
+The independent \(R_2\) checker reproduced those figures without importing
+the producer and sharpened the result: all 1,970,577 cycles containing any
+relevant support contain a support with \(\mu=1\); the remaining 126,575
+cycles contain no support.  Hence no \(R_2\) high cycle needs one of the
+9,516 exceptional supports for preparation.
+
+A compact structural certificate now proves that domination without the
+global cycle scan.  Support containment is exactly nonemptiness of the base
+and three pole-internal blocks.  A pole cycle cannot remain inside the
+five-edge tree formed by the cut edge and its neighbors, so each nonempty
+pole block supplies a far edge.  Four base and three pole odd-factor
+witness rows glue to a connected odd factor for all
+\(12\cdot10^3=12,000\) all-far supports.  The corresponding block-state
+product is \(15\cdot31^3+3\cdot16\cdot31\cdot32^2=1,970,577\).  An
+independent standard-library checker verified all 2,097,152 compatible
+local tuples, the type-B necessity direction, and all 12,000 gluings with
+zero failures.
+
+A third route used a generic incremental one-hot CaDiCaL enumeration rather
+than the pole factorization.  It returned 33,517 directly validated flow
+models and an exactly equal support set with the same canonical digest.
+Because its terminal UNSAT proof bytes were not retained, this is an
+independent computational cross-check, not a second completeness
+certificate.
+
+### Rooted-preparation necessity census
+
+An exact bounded census searched for a base \(B\) and edge \(s\) for which
+unrooted preparation holds but preparation rooted at \(s\) fails. All
+45,982 canonical connected simple cubic classes through order 18 were
+generated; 44,327 were bridgeless, giving 1,181,250 singleton-root pairs.
+Of these bases, 44,115 were 3-edge-colourable and 212 required complete
+cycle-code evaluation.
+
+The hard computation covered 198,080 binary-cycle words, 194,859,008
+ordered flow pairs, 195,000 realizable highs, and 5,216,238 high/root
+obligations. It found zero unrooted failures and zero singleton-root
+failures. An independent checker that does not import the producer
+regenerated the graph6 streams, independently reclassified every graph,
+rebuilt all 212 exact common-zero-set families, and matched every retained
+profile. The substitution stage was not reached because no eligible failed
+root existed. These are finite preparation-property results only; rooted
+redundancy and five-CDC remain unresolved.
+
+### Pair-root preparation obstruction
+
+A complete exact pair census separates singleton-root from multi-root
+preparation. Across all 212 hard bases it checks 71,313 unordered edge
+pairs and 67,244,094 realizable-high/pair obligations. Nine pairs fail on
+two order-18 graphs, across 128 highs and 144 obligations. The first failure
+is order-minimal. A producer-free full replay independently derives the
+cycle codes, minimal exact supports, connected factors, and all pair-root
+quantifiers on the 212 graphs and matches every total. The first witness is
+on the graph6 record
+`Q????B?K?WWCg_?sIG?s?HO?KG?`. The graph is simple, cubic, connected, and
+bridgeless. Its binary cycle code has dimension ten. The high with mask
+1,313,837 contains exactly the five minimal supports
+\(\{10\},\{11\},\{18\},\{20\},\{2,5\}\).
+
+The full exact-zero enumeration yields 43,950 exact sets and 15
+inclusion-minimal relevant sets. For the five contained supports, unrooted
+minima are \(1,1,1,1,2\), while all five minima subject to containing roots
+\(\{9,19\}\) equal two. Among all 1,024 spanning odd factors, exactly 13
+connected factors avoid some candidate and none contains both roots. A
+global replay checks 1,008 realizable highs and all 27,216 singleton-root
+obligations with zero failures. This is an exact obstruction to a
+multi-root strengthening, not a five-CDC obstruction.
+
+### Adaptive sequential Petersen-2-pole transfer
+
+The exact one-step pullback depends on where the fixed next edge lies. For
+\(G=B[P_2/s]\), a surviving edge \(e'\) satisfies
+\(\mathsf{RP}(G;\{e'\})\) iff \(\mathsf{RP}(B;\{s,e\})\); either new
+terminal and every internal pole edge \(p\) satisfy
+\(\mathsf{RP}(G;\{p\})\) iff \(\mathsf{RP}(B;\{s\})\). This permits a
+sequential substitution path that always continues inside the newest pole,
+but not unrestricted surviving-edge branching.
+
+An independent standard-library checker enumerates all 64 binary and 4,096
+\(\mathbb F_2^2\) cut states and proves equal terminal data directly. Among
+all 16,384 internal edge subsets it finds exactly five connected
+parity-correct fragments; exactly four can omit a far edge, and they are the
+four primary templates. They cover all 882 nonempty-high/internal-root
+obligations. The checker also independently rebuilds the order-18 pair
+obstruction and its order-28 substitution. The latter has 32,768 binary
+cycles, 175 connected odd factors, and 150 factors containing surviving
+root 19. Every such factor projects correctly, with zero eligible projected
+pair-root factors. The displayed high and exact support \(\{9,32\}\) are
+validated directly. This is rooted preparation transfer plus a finite
+boundary witness, not a five-CDC result.
+
+### Nested Petersen-pole family and zero-coverage census
+
+Inducting the adaptive singleton transfer produces an infinite family from
+any verified singleton-rooted base. Each substitution adds 10 vertices and
+15 edges. At every finite depth the graph has root-free preparation and 16
+separate continuation-root properties—14 internal and two terminal—in its
+newest pole. The next root is fixed before the high is quantified; the 16
+properties do not require one common witness. A clean-room constructor
+checks every continuation and a base/internal/terminal depth-three path at
+orders 10, 20, 30, and 40, including exact reverse contractions to Petersen.
+
+The retained reduction census independently parses and premise-checks all
+7,984 frozen source rows and reproduces their 7,984 nauty identities. Its
+cut algorithm is independent of the producer: two edges form a cut exactly
+when their membership columns agree across a binary cycle-space basis.
+All 14,067,888 edge pairs are compared, with zero matches. A forward cut
+Petersen pole has a ten-vertex shore with exactly its two terminals in the
+boundary, so it necessarily implies a two-edge cut. Hence all 7,984 rows
+have zero cut poles, zero nested reductions, and an empty covered-identity
+list. This is finite zero coverage only.
+
+### Suppression and connected-complement characterizations
+
+A relevant exact common-zero set is a matching \(T\).  Deleting \(T\) and
+suppressing its degree-two endpoints produces a cubic pseudograph; exact
+zero set \(T\) exists precisely when this core is Tait-colorable.  Relevance
+is the exact condition that every component of \(G-T\) contains an even
+number of \(T\)-endpoints.  Splitting odd factors into endpoint matchings,
+branch attachments, and a branch subgraph gives a separate exact
+attachment-parity formula for \(\mu_G(T)\).
+
+On the order-34 control with \(T=\{e_{16},e_{26},e_{41}\}\), the suppressed
+core is simple, connected, and Tait-colorable, while \(G-V(T)\) is connected.
+Nevertheless \(\mu=2\).  Two bridges of the branch graph require shore
+parities \((1,1)\); the 16 possible endpoint attachments give only
+\((1,0)\) or \((0,1)\), eight times each.  This is a direct obstruction to
+the discarded connectivity-only strengthening.
+
+Separately, quotienting a \(D_5\)-flow by the weight-four vector omitting
+coordinate \(i\) sends exactly the labels in \(E-C_i\) to the distinguished
+Fano line.  Thus connected-kernel flow is equivalent to a 5-CDC with a
+connected coordinate complement.  The executable controls are
+`tools/suppression_zero_set.py` and
+`tools/test_suppression_zero_set.py`.
+
+## Exact obstruction and certificate controls
+
+Status: **PARTIAL STRUCTURAL PROGRESS / CONTROL VALIDATION**.
+
+Constructor C exhausted the ten pair-label local code and retained a
+manifested run under
+`search/obstructions/runs/control-20260725-v3/`.
+
+- The 1,000 ordered cubic triples have exactly 60 XOR-zero states, precisely
+  the ordered \(K_5\)-triangles.
+- Ordered cut-label XOR counts at sizes 1–4 are respectively
+  \(0,10,60,640\); the four-cut rows split into 280 paired and 360
+  four-cycle patterns.
+- Of all 10,000 ordered four-cycle boundaries, 640 satisfy cut parity and
+  exactly 60 fail to extend.  All 60 are the proved alternating-intersecting
+  pattern, with no discrepancy.
+- All \(2^{10}\) binary Petersen-state histograms were checked; the
+  16-element kernel is the \(K_5\) cut space, and the integer histogram
+  identities hold on independently generated Petersen witnesses.
+- Standard Petersen \(k=5\) is SAT through A-XOR, A-CNF, B-CNF, and B's
+  backtracker; every witness is accepted by both semantics checkers.
+- The deliberately modified Petersen \(k=4\) control is UNSAT.  Its
+  60-variable, 310-clause auxiliary-free CNF has an LRAT accepted by both
+  `lrat-check` and CakeML `cake_lpr`.  This is not the target formula.
+- The 112-vertex disjoint affine-plane 8-CDC is checked exactly and has
+  co-occurrence \(K_8\).  All 120 normalized seven-column subsets rule out a
+  fixed \(5\times8\) XOR compression.
+
+### Circuit-component recoloring controls
+
+For a supplied cubic CDC, an exact analyzer splits every old coordinate into
+circuits, makes two circuits adjacent when they share a graph edge, and
+computes the chromatic number of this component-conflict graph.  Proper
+colorings are exactly the valid partitions of those circuits into new CDC
+coordinates.
+
+- The disjoint 112-vertex affine control has 56 circuit components, 84
+  simple conflicts, chromatic number 4, and a checked four-coordinate
+  recoloring.
+- A connected 13-switch control has 30 components, 71 conflicts, chromatic
+  number 4, and a checked four-coordinate recoloring.
+- A connected, bridgeless 24-switch obstruction has exactly eight circuit
+  components, 28 conflicts, conflict graph \(K_8\), and chromatic number 8.
+  For each coordinate, the six selected plane links are independently
+  checked to form a tree on the seven containing planes.
+
+The last row disproves only universal partition-and-recolor compression of
+an arbitrary supplied 8-CDC.  It is not a target-standard UNSAT result.
+Artifacts are under `search/component-recoloring-affine-20260725/` and
+`search/component-recoloring-obstruction-20260725/`.
+
+### Affine relabelling plus quotient-lift audit
+
+The coordinate-tree supplied 8-CDC was tested under every arbitrary
+bijection of its coordinates with \(\mathbb F_2^3\), followed by every
+Fano-line quotient lift.  Translation and \(GL(3,2)\) reduce the 8!
+bijections to 30 labelled affine structures; every orbit size is checked as
+168.  All 210 structure/line cases fail, and the minimum number of
+four-value-odd components is two.  Direct binary Gaussian elimination
+agrees with the component criterion in every case.  The connected affine
+control has one good structure and three good lines.  The deterministic
+package `search/eight-cover-affine-relabel-audit-20260725/` has
+`SHA256SUMS` hash
+`8c51ad2e65c5154b220e762f81e724cc515deeecf6c7d1fd5d3f55f7c6c461ff`.
+This is a compression no-go for one supplied cover, not standard 5-CDC
+UNSAT.
+
+### Ten-support packing obstruction
+
+For each \(a\in D_5\), an exact two-dimensional quotient of a standard
+five-cover gives an \(\mathbb F_2^2\)-flow whose zero set is exactly the
+\(a\)-label class.  Without a nowhere-zero \(\mathbb F_2^2\)-flow, the ten
+classes contain ten pairwise edge-disjoint inclusion-minimal exact supports.
+Thus the minimal-support hypergraph has matching number at least ten.  The
+Petersen, \(R_2\), and \(R_4\) retained witnesses pass direct quotient
+checks; Petersen and \(R_2\) materialize ten disjoint minimal supports.
+The package ledger hash is
+`1f0a195a6e81aa6d3628a668ed5c214bacad39e135390ce4c9551cbb1b9092dd`.
+The numerical \(10r_f\leq |E|\) consequence is explicitly not claimed as
+new; the packing condition is the usable obstruction.
+
+### Exact matching/four-flow encoding and component parity
+
+For finite loopless cubic multigraphs, an exact alternative target formula
+uses a matching \(M\), two cycles with intersection \(M\), and an
+\(\mathbb F_2^2\)-flow with exact zero set \(M\).  The \(H_2\) control has
+615 variables, 2,296 ordinary clauses, and 328 native XOR rows and is SAT.
+A clean-room audit reconstructed every constraint and explicitly
+reverse-lifted the model to a five-cover of sizes
+\(59,55,44,23,65\).  The frozen package ledger hash is
+`4dc828e60075db452c527816dbdc33ccad38c1bb78f7811b8308aaea1b9868dd`.
+
+The cycle-intersection condition is equivalent to even endpoint demand in
+every component of the complement odd factor.  A complete replay of the
+seven order-34 relevant minimal exact supports with \(\mu=2\) checks 32,768
+containing cycles per support.  Two supports are GOOD, with 416 good cycles
+each, and five are BAD.  Every graph has a separate \(\mu=1\) positive
+control, so BAD is a support classification rather than graph UNSAT.  The
+package ledger hash is
+`dc7dec518d61a39d46ff7e1dc72896e4eb33880e9a9ba979293def882c47bfce`.
+
+### Minimum exact-zero matching frontier
+
+Status: **EXACT FINITE THEOREM / UNIVERSAL EXCHANGE STEP OPEN**.
+
+The two-cycle intersection condition is equivalent to packing two
+edge-disjoint \(T\)-joins in \((G-M,\partial M)\).  The imported
+Codato--Conforti--Serafini theorem reduces any failure for a fixed exact-zero
+matching with componentwise even terminal parity to the odd-\(K_{2,3}\)
+graft-minor obstruction.  A \(T\)-odd component is a separate obstruction
+with no \(T\)-join at all; this hypothesis was restored after blind audit.
+The auditor's ten-vertex graph6 instance `Is?AXW[[?` is frozen in
+`search/component-parity-tjoin-countermodel-20260725/`; its independent
+checker confirms cut minimum zero, no \(T\)-join, all three quotient
+forests, and an explicit standard five-cover positive control.
+The
+human proof of the reduction, including the boundary calculation and the
+precise imported-theorem boundary, is in
+`docs/minimum-zero-tjoin-route.md`.
+
+For every \(T\)-join \(J\) and every nonzero restricted-flow color \(c\),
+the binary-cycle switch on \(M\cup J\) has exact zero matching
+\(J\cap\phi^{-1}(c)\).  If \(M\) is minimum, this proves the new inequality
+\(|J\cap\phi^{-1}(c)|\ge|M|\) and therefore \(|J|\ge3|M|\).  A diagnostic
+all-support audit on reconstructed \(H_3\) found no violation: every one of
+the 92,313 rows has color-specific shortest \(T\)-join costs at least three,
+79,669 have equality in some color, and unweighted shortest sizes range
+from 12 to 25.  These values test the proof but do not establish the open
+packing step.
+
+The complete order-20 hard source has 20,749 minimum exact supports.
+Of these, 20,720 have a connected complementary odd factor.  The remaining
+29 occur on 12 hosts; exhaustive cycle enumeration proves that all 29
+still satisfy the weaker exact component-parity condition.  Thus every
+minimum support in the complete order-20 hard corpus extends.  All 20
+strict order-22 rows have a minimum connected-complement support.
+
+On reconstructed \(H_3\), the source formula restricts to exact-zero
+matchings of size at most three.  The pre-existing resistance LRAT excludes
+sizes zero, one, and two.  Projected enumeration finds exactly 92,313
+distinct size-three supports, and a compact witness row supplies the two
+flow coordinates and two intersecting cycles for each.  A direct checker
+reconstructs all five cover coordinates for all rows.  After one support
+blocking clause per row is appended, the completeness CNF is UNSAT; the
+retained LRAT is accepted independently by `lrat-check` and CakeML
+`cake_lpr`.  Therefore **every** minimum exact-zero matching of this fixed
+graph extends.  Minimum-cardinality witnesses also extend on \(H_4\) and
+\(H_5\).
+
+The full hard order-22 source was then tested by an independently replayed
+minimum-extension package.  All 12,892 rows have some extending minimum
+support, with profile \(1:12885,\ 2:7\).  The seven at-most-one lower-bound
+formulas have 132 variables and 438 clauses each; all seven text LRATs pass
+both `lrat-check` and CakeML `cake_lpr`.  All 12,892 compact positive
+witnesses are directly checked and reverse-lifted.  The package ledger is
+`ed334f2df4131ed29b2924e4178e7f7853cf5a143e0427ac91ebb2c274d343f5`.
+
+Reproduction:
+
+```sh
+(cd search/minimum-zero-matching-five-cdc-20260725 &&
+  shasum -a 256 -c SHA256SUMS &&
+  python3 verify_package.py)
+```
+
+The package ledger SHA-256 is
+`623c4d27043934fcca68534f66c252e62357714916d467a1b349b66debf19904`.
+No extrapolation to all graphs is made.
+
+### Certified nonextendible Petersen two-factor
+
+Fix the Petersen two-factor
+\(\{0,1,2,3,4,10,11,12,13,14\}\).  The complete direct formula with its
+first coordinate fixed has 175 variables and 690 clauses; the exact
+matching/four-flow cross-formula has 75 variables and 295 clauses.  Both
+are UNSAT.  Both retained LRATs pass `lrat-check` and CakeML `cake_lpr`.
+A standard-library checker independently enumerates the 64 binary cycles,
+all 4,096 ordered flow pairs, and all parity-good matching subsets, finding
+zero exact extension.  The unrestricted Petersen model remains valid with
+coordinate sizes \(6,5,5,9,5\).  This is a fixed-coordinate obstruction,
+not a target graph counterexample.  The frozen ledger hash is
+`d8a2eeb9241e2cb23f48cf4d2e9502a467e4cf46c4ab53dff1419cc582ff6b9c`.
+
+### Ten-flow exact-zero partition relaxation
+
+The target-sound relaxation asks for ten \(\mathbb F_2^2\)-flows whose
+nonempty exact zero sets partition all edge objects.  On \(H_2\) its 3,690
+variables, 15,918 ordinary clauses, and 1,640 native XOR rows are SAT.  The
+zero-set sizes are \(43,12,10,15,5,7,5,4,9,13\).  The flows need not be
+compatible quotients of one five-cover, so SAT is only a positive
+relaxation witness; certified UNSAT plus the no-nowhere-zero-flow premise
+would be a sound rejection.  The frozen ledger hash is
+`056a1e3e8cb6990af9a58390b2eab1e0d07ab93397c9851b7dc1e4e6f15a7501`.
+
+### Reconstructed high-flow-resistance \(H_3\)
+
+The next exact figure-and-label recursion step yields a simple cubic graph
+on 122 vertices and 183 edges.  Exhausting all 46,234,462 edge deletions of
+size at most four proves cyclic connectivity at least five.  An explicit
+three-zero flow and a checked LRAT excluding all two-zero flows establish
+flow resistance three.  The direct standard five-cover formula is SAT with
+coordinate sizes \(77,74,58,77,80\); both semantic verifiers accept it.
+The exact matching/four-flow formula is independently SAT and reverse-lifts
+to another valid five-cover.  A fresh clean-room run reproduced independent
+result SHA-256
+`fc466809140c3851441da82d319b38a68c9e8e03fc36434a1cd2946790d3babe`.
+The package and audit ledger hashes are respectively
+`d019c2f36a4a3ad392a00b4de64fa150c22ace4615d715583e015e14ba51e99f`
+and
+`929a46366e9275c6fe5603caa65ac61f41b318045534bba713b4f9d7e6fe0260`.
+The reconstruction remains figure-derived because no author graph file is
+available for identity comparison.
+
+### Reconstructed high-flow-resistance \(H_4\)
+
+The next exact recursion step has 162 vertices and 243 edges.  It is simple,
+cubic, girth five, and cyclically 5-edge-connected; the last property is
+proved by a 1,859-variable, 5,402-clause UNSAT cut formula and retained
+LRAT.  An explicit four-zero flow plus a 1,455-variable, 3,708-clause
+UNSAT formula excluding at most three zeros proves flow resistance four.
+The direct standard five-cover formula is SAT with coordinate sizes
+\(130,112,68,72,104\), and the exact matching/four-flow instance is also
+SAT and reverse-lifts to a valid five-cover.  Both LRATs pass `lrat-check`
+and CakeML `cake_lpr`; a fresh producer-free audit is byte-identical.  The
+package and audit ledger hashes are respectively
+`f7866131334940d4e8a98f56b9a530b8cc98a85b02124d2c8b235297a2ff39c4`
+and
+`4a9b1c26ee46aa7c2e49409464ccdb4d0757cb8f97825f7963c75bd049d91d98`.
+
+### Reconstructed high-flow-resistance \(H_5\)
+
+One more exact recursion step has 202 vertices and 303 edges.  It is simple,
+cubic, girth five, and cyclically 5-edge-connected, with the latter proved
+by a 2,319-variable, 6,742-clause UNSAT cut formula and retained LRAT.  An
+explicit five-zero flow plus a 2,117-variable, 5,224-clause UNSAT formula
+excluding at most four zeros proves flow resistance five.  The authoritative
+standard formula is SAT with coordinate sizes \(144,143,95,98,126\).
+Both independently generated direct models pass both semantic verifiers;
+the matching/four-flow model independently reverse-lifts to another valid
+five-cover.  The root replay checked both LRATs under `lrat-check` and
+CakeML `cake_lpr` and regenerated the clean-room result byte-for-byte, with
+SHA-256
+`e2060d12ef8e5263ab2d6aac58bedd4396a0c99064ea6b549cf7bf6f42bde91d`.
+The package and audit ledger hashes are respectively
+`cb8cb3b7cbdbd698c0e73b979e0f777249e2ea15b175cc94571f519a8ddff0a5`
+and
+`480e6ec07eb27c42259af23c0597d793b01848fc08d5367ed433f8d004817dc4`.
+
+### Stable \(D_5\)-tile induction for the frozen reconstruction
+
+The finite witnesses were relabeled and cut at the recursive closure.  A
+single raw open-\(J\) tile was found with identical input/output state
+\((01,01,02,23,03)\).  Its 55 internal edges and ten boundary half-edges
+are conservative at all 40 internal vertices.  The relabeled
+\(\widehat H_2\) base has the same state, so the generic boundary-cancellation
+identity proves a standard five-CDC on every frozen reconstructed
+\(\widehat H_n\), \(n\ge2\).  The coordinate-size formula is
+\[
+(62,54,39,47,44)+(n-2)(32,24,29,20,15).
+\]
+
+The checker pins 12 provenance inputs, replays the induced labeling
+edge-for-edge on \(\widehat H_2,\widehat H_3,\widehat H_4,\widehat H_5\),
+checks the 55-edge/40-vertex tile, and reproduces its semantic report.  Six
+negative tests reject corrupted topology, labels, base relabeling, and
+coordinate increments.  The independent Lean file evaluates all 65 tile
+objects and 40 conservation equations.  The package ledger SHA-256 is
+`e09cee11f74b19e4a08f18c94534207e44f601a29f059a15fb614154900cbfac`.
+
+### Oddness-two novelty audit
+
+The author-defined MNP family is already covered by a prior sufficient
+theorem.  Figures 3 and 6 and Theorem 3.6 of arXiv:2604.22501 give a
+3-edge-coloring proper except at two vertices, each incident with
+\((a,c,c)\).  Hence the \(a\)-edges form a perfect matching.  In the
+complementary 2-factor a circuit has parity equal to the number of conflict
+vertices it contains modulo two.  The conflicts cannot share a circuit,
+since otherwise all factor circuits would be even and the graph would be
+3-edge-colorable.  Thus there are exactly two odd circuits, and
+Huck--Kochol (1995) already supplies a five-cycle double cover.
+
+The uniform deduction is human, not a finite extrapolation.  As
+corroboration, an independent checker validates retained perfect matchings
+on the four frozen graphs and 8,190 abstract transition patterns.  The
+novelty-audit ledger SHA-256 is
+`3dc1455e0290624e9d6c678b6e5b0ef1115cdc68c1dcdef6d29587a0e2686e81`.
+The audit does not identify the author family formally with the frozen
+figure transcription, does not address orientability, and limits any
+publication claim to the explicit stable certificate and its packaging.
+
+Reproduction:
+
+```sh
+python3 -m unittest search.obstructions.test_obstruction_miner -v
+python3 search/obstructions/run_experiments.py \
+  --run-dir search/obstructions/runs/my-new-run
+```
+
+The retained run has 104 checksum entries.  Key hashes:
+
+```text
+summary.json          aada0cf923771abffa8cd6d76e9d745fc1a914df8e25c3498f4091d52465db83
+SHA256SUMS            1bbf5d30b935417c8115edb90014d3022fcd6fcb60d2926442068fe2243026d4
+Petersen k=4 CNF      b8bfd5e8ba32e46098f47fab81bd35a374315c4fb51758bb4aa109e94f4edca3
+Petersen k=4 LRAT     1ad51b7ab5f2970d728e1c4bb8787e7083f463c8502035137cd29724d4bba4fc
+```
+
+## Structured-family portfolio
+
+Status: **COMPUTATIONAL EVIDENCE**.  It found no counterexample and does not
+establish a new universal family theorem.
+
+Twenty-eight deterministic simple cubic bridgeless graphs were generated
+from six flower snarks, eleven generalized Petersen graphs, four explicit
+dot products, one order-40 Petersen-\(P_2\) insertion, and six voltage-cover
+controls.  CryptoMiniSat returned SAT for every native-XOR instance.
+Verifier A accepted every model, and independently translated models were
+accepted 28/28 by Verifier B.  On the order-40 oddness-six graph, Verifier
+B's independent ten-label backtracker also constructed a second witness
+after 145,856 nodes.
+
+The strongest boundary specimens were:
+
+- order 40, girth 5, exact oddness 6: SAT;
+- order 130, girth 10, exact oddness 0: SAT.
+
+No connected graph in this original batch simultaneously had girth at least
+10 and oddness at least 6.  The later candidate-domain experiment above
+enters that intersection at one positive graph; neither batch clears the
+domain.
+
+Reproduction:
+
+```sh
+python3 -m unittest search.structured.test_families -v
+python3 -m search.structured.run_portfolio \
+  --output artifacts/structured \
+  --solver-timeout 120 \
+  --oddness-timeout 120
+python3 search/structured/crosscheck_verifier_b.py \
+  --artifacts artifacts/structured
+```
+
+The first command reports six passing tests.  The stored run hashes are:
+
+```text
+primary ledger       a18315521b3aa25d5b57006d41c1a5ff073549fe6e2e2223c7c636410dda00e5
+verifier-B ledger    a0fcb28faebe9159060d066b48a0c4dd13173db1cb960154fe14dfbd4c59bc77
+verifier-A manifest  aaf7028de7f8f96b1949c7000c1caf8f83a756af196f9796433a0b73c08ff8fc
+verifier-B binary    78416436bb35a758841e535fe2aff7b98d0f014f05e3f526a112f9b2b90328fe
+```
+
+Voltage-cover rows are explicitly inheritance controls: a 5-CDC on a base
+pulls back to every graph cover.  Dot products were solved from scratch; no
+preservation rule was assumed.
+
+## Canonical simple-cubic run through order 10
+
+Status: **VERIFIED FINITE CASE / PIPELINE VALIDATION**.  This is below known
+published bounds and proves no new finite frontier.
+
+Constructor A used nauty `geng` 2.9.3 to emit one representative of every
+connected simple cubic isomorphism class at orders 4, 6, 8, and 10.  The
+pipeline independently parsed graph6, rechecked simplicity, cubicity,
+connectivity, bridges, girth, exact 3-edge-colourability, and (within this
+range) oddness.  It then solved both Verifier A's native-XOR instance with
+CryptoMiniSat 5.14.7 and its ordinary CNF with CaDiCaL 3.0.1.  Every returned
+model was checked against the original graph semantics.
+
+| order | generated | bridgeless | SAT by each solver |
+|---:|---:|---:|---:|
+| 4 | 1 | 1 | 1 |
+| 6 | 2 | 2 | 2 |
+| 8 | 5 | 5 | 5 |
+| 10 | 19 | 18 | 18 |
+| **total** | **27** | **26** | **26** |
+
+There were 52 accepted solver models, 25 of the eligible graphs were
+3-edge-colourable, and the Petersen graph was the sole non-3-edge-colourable
+case.  The sourced minimum-counterexample filter
+\(girth\geq10,\ oddness\geq6\) selected zero graphs; that empty filtered
+domain is recorded separately from the raw validation census.
+
+Reproduction:
+
+```sh
+python3 -m unittest search.canonical.test_canonical_search -v
+python3 search/canonical/canonical_search.py \
+  --min-n 4 --max-n 10 \
+  --geng /opt/homebrew/bin/geng \
+  --cryptominisat /opt/homebrew/bin/cryptominisat5 \
+  --cadical /opt/homebrew/bin/cadical \
+  --solver both \
+  --oddness-max-vertices 10 \
+  --cover-canon-max-vertices 10 \
+  --output search/canonical/runs/integration-n10-20260725
+```
+
+The stored run is immutable-by-convention because the generator refuses to
+overwrite an existing output directory.  Key hashes:
+
+```text
+canonical_search.py  f7d7d271356bcd0ae62cd2efaf16bacb080a3b18084d9c19dd64e31d15bbed03
+results.jsonl        4a823ba7276c613df7bf889cd2973f094ffe4c9d4a97becb1cbc16750a52ad34
+summary.json         143f0497588de3bbb264a7cfda607150473687a036c714dbfa2eacfb48d7c2ab
+SHA256SUMS           30d9f41a5cfcc1b247c9fbdb3ff4b0b29b1608dce20c2da7d642517d329a48cf
+```
+
+All 395 entries in the run manifest pass from the run directory.
+
+## Independent-verifier integration controls
+
+Status: **PIPELINE VALIDATION**, not a finite-case theorem.
+
+The integration script `tools/crosscheck_verifiers.py` translated four fixed
+graph objects into both verifier formats, generated both ordinary CNFs, solved
+both with CaDiCaL 3.0.1, and passed every SAT model to both direct semantics
+checkers.
+
+Command:
+
+```sh
+python3 tools/crosscheck_verifiers.py \
+  crosscheck/graphs/k4.json \
+  crosscheck/graphs/petersen.json \
+  crosscheck/graphs/loops-and-parallels.json \
+  crosscheck/graphs/bridge-negative-control.json \
+  --output artifacts/crosscheck-20260725
+```
+
+Results:
+
+| object | premise | verifier-A CNF | verifier-B CNF |
+|---|---|---:|---:|
+| \(K_4\) | bridgeless | SAT | SAT |
+| Petersen graph | bridgeless | SAT | SAT |
+| loops/parallel/disconnected control | bridgeless | SAT | SAT |
+| one-edge bridge control | **not bridgeless** | UNSAT | UNSAT |
+
+The ledger hash is
+`d0d4419615ba1f011847cb30a0d4a52ac197efdb1cba2718f6648516550dc055`.
+The bridge row is deliberately a negative control: its certified UNSAT
+formula can never be a counterexample because it fails the premise.
+
+For that negative control, CaDiCaL emitted LRAT independently for each CNF.
+Both the C `lrat-check` program and the CakeML-generated `cake_lpr` program
+accepted both proofs.  The two CNF/proof hash pairs are:
+
+```text
+Verifier A CNF   02c37f810840205fcfce5e3be75d736a73719276cb498d11829bfe249b5149a2
+Verifier A LRAT  bf109104dc0f487b2a787ee2a5c2f1c16e5c8a4a4f60dd04c5e2d6f5fa213f6d
+Verifier B CNF   142112d3521bf316043334cb4fe02afbfa00248eceb549bc0c5593485f63cad6
+Verifier B LRAT  87f93ea6877a7723b88297eb5890fddbf95edaacf5499a8f02ce6100f819e770
+```
+
+The tracked fixture hashes and full timing/command data are in the generated
+ledger.  `artifacts/` is intentionally ignored because solver output is
+reproducible and can become large.
+
+## Pole-state realizability census
+
+Status: **EXACT FINITE CENSUS / SEEDED DIAGNOSTICS / NO UNIVERSAL
+THEOREM**.
+
+The deterministic package
+`search/pole-state-realizability-20260725/` canonically regenerates
+terminal-distinct simple cubic multipoles and solves every \(D_5\)
+boundary color-orbit.  Its extended ledger contains:
+
+- 5,214 internally bridgeless five-poles through order 13, with state-set
+  sizes \(46,56,57,58,60,61,62\);
+- 298 sharp 46-state poles, every complete relation equal to one ordered
+  \(C_5\)-cap relation;
+- 6,894 gluing-admissible five-poles through order 13 and no disjoint
+  complete pair under any terminal permutation;
+- 19,513 internally bridgeless four-poles through order 14, all with nine
+  or ten boundary types; and
+- seeded larger portfolios, explicitly separated from the exhaustive
+  scopes.
+
+Quick regeneration through five-pole order 11 and four-pole order 12
+takes about 22 seconds on the recorded host:
+
+```sh
+python3 search/pole-state-realizability-20260725/verify.py --quick
+```
+
+The package ledger SHA-256 is
+`c6d483fa89b736dbe8c22f9d693f699a084d050142b87b6a7325c5779def0e5e`.
+Rejected boundary states trust CaDiCaL rather than retained per-query
+UNSAT certificates.  The result is a reproducible finite census, not a
+certified counterexample, a universal pole theorem, or a five-CDC
+resolution.
+
+## Required fields for search runs
+
+Each substantive entry must record the UTC timestamp, git revision (or
+explicit dirty-tree status), verifier hashes, generator and solver versions,
+exact command, random seed (if any), graph domain, result counts, timeouts,
+and artifact checksums.
+
+## \(K_6\) switch-local-minimum certificates
+
+Status: **EXACT FINITE FAILED-LEMMA CERTIFICATES / NO FIVE-CDC
+COUNTEREXAMPLE**.
+
+The branch first froze a 14-vertex Heawood flow with two defects and no
+improving one-step switch in
+`search/k6-defect-switch-20260725/`.  A neutral switch followed by a reducing
+switch reaches zero defects, so the state is a local plateau rather than an
+absorbing reconfiguration component.  Exact complete state audits on
+\(K_{3,3}\) and Petersen are in
+`search/k6-neutral-descent-exact-20260725/`.
+
+Label-preserving 2-edge sums preserve switch-local minimality and add defect
+counts.  The package `search/k6-defect-two-sum-20260725/` freezes the
+connected four-defect instance and proves the factor-additivity lemma,
+yielding connected examples with arbitrarily many even defects; these have
+cyclic 2-cuts.
+
+The stronger retained instance is
+`search/k6-defect-snark-plateau-20260725/`.  It crosses two order-18 snark
+flows to obtain a 36-vertex, 54-edge, girth-five graph with cyclic
+edge-connectivity exactly four and defects
+\(\{3,16,21,34\}\).  The full cycle space has dimension 19.  Exact counts of
+admissible cycles by switch value are:
+
+```text
+t=3: 524288
+t=5,9,12,30: 8192 each
+t=15,18,20,23,27: 32768 each
+t=6,10,17,24,29: 131072 each
+```
+
+For every value the minimum defect change is zero.  The independent
+four-pole verifier reconstructs the full \(15\times8\) transfer table from
+256 affine subsets in each boundary sector.  The graph metadata checker
+finds no cyclic cut of size at most three and verifies the exhibited
+four-cut.  The Tait CNF has 162 variables and 540 clauses; its 16,152-byte
+LRAT is accepted by both retained checkers.  The independent
+perfect-matching proof enumerates 208 matchings in 14,713 recursion nodes.
+The explicit admissible trajectory
+
+```text
+4 -> 4 -> 2 -> 2 -> 0
+```
+
+uses switch values \(3,18,3,17\) and is checked edge by edge.  This
+intermediate flow is certified as a six-coordinate double cover and
+certified not to omit a \(K_6\)-star.  A fifth switch, value \(3\) on
+edges \(8,9,15,16,20,29,47,48,50,53\), eliminates the coordinate-1
+support and gives an explicit standard five-cycle double cover.
+
+Run:
+
+```sh
+sh search/k6-defect-snark-plateau-20260725/verify_package.sh
+```
+
+The package-manifest SHA-256 is
+`0a02548e3d9c70a25d4d02f6b8ca01b98d6ee1126514b3ffd56dec0396039a62`.
+All search and documentation were produced with substantial disclosed
+OpenAI Codex assistance.  The retained witness, proof certificates, and
+independent source are the evidentiary basis.
+
+## Petersen \(K_6\)-star defect barrier
+
+Status: **EXACT FINITE FAILED-LEMMA CERTIFICATE / POSITIVE FIVE-COVER
+ENDPOINT**.
+
+The package `search/k6-petersen-star-barrier-20260725/` classifies all
+\(2^{24}=16,777,216\) abstract Petersen flow states.  Of 6,093,360
+nowhere-zero flows, 37,440 are triangle-only; 36,000 already omit a
+\(K_6\)-star.  The remaining 1,440 split into two components of 720
+under triangle-preserving constant-value cycle switches.
+
+For the retained state, every one of the 15 duads occurs exactly once.
+Its 15 triangle-preserving neighbors are exactly the global
+transpositions of the six \(K_6\)-vertices.  They generate a free
+\(S_6\)-orbit of size 720, which is the entire component and contains no
+star-omitting state.  An independently written Python verifier reconstructs
+the Petersen graph from literal edges, scans all \(2^{15}\) edge subsets
+to recover its 64 binary cycles, checks all 945 nonempty value-cycle
+switches, identifies the 15 transpositions, and generates all 720
+permutations.
+
+The sharp escape is
+
+```text
+0 -> 2 -> 0 defects
+```
+
+using value \(1\) on edge cycle \(0,1,2,3,4\), then value \(10\) on
+edge cycle \(2,3,4,5,7,8\).  The endpoint omits star 5 and is an explicit
+standard five-cycle double cover.  Defect parity proves that any escape
+must reach at least two defects, so the displayed barrier is optimal.
+
+Run:
+
+```sh
+sh search/k6-petersen-star-barrier-20260725/verify_package.sh
+```
+
+The package-manifest SHA-256 is
+`66f20ac1b0e203914a0dc884d74c228e9e11c76db0f32327ee7bddba6983bb26`.
+This is a counterexample to defect-monotone star reconfiguration, not to
+the five-cycle double cover conjecture.
+
+## Infinite Petersen-ring \(K_6\)-star barrier
+
+Status: **INFINITE EXACT RECONFIGURATION THEOREM / POSITIVE FIVE-COVER
+ENDPOINTS**.
+
+The package `search/k6-petersen-ring-barrier-20260725/` deletes the
+same label-\(\{0,1\}\) edge from each of \(n\) Petersen witnesses and
+joins the resulting terminals in a ring with label-\(\{0,1\}\)
+connectors.  The graph \(R_n\) is connected, simple, bridgeless, cubic,
+and has \(10n\) vertices and \(15n\) edges.
+
+For switch value \(t\), the crossing-label even subgraph \(Q_t\) is:
+
+- \(n\) disjoint 8-circuits when \(t=\{0,1\}\) or \(t\) is disjoint
+  from \(\{0,1\}\); and
+- one \(8n\)-circuit when \(t\) meets \(\{0,1\}\) once.
+
+The local triangle lemma proves that these component switches are all the
+triangle-preserving moves.  Component states are uniquely the tuples
+\((\sigma_1,\ldots,\sigma_n)\in S_6^n\) with a common image of the
+connector duad.  Consequently the component has
+
+\[
+15\cdot|\operatorname{Stab}_{S_6}(\{0,1\})|^n
+=15\cdot48^n
+\]
+
+states, every one using all 15 duads.  No state omits a star.  The result
+is unchanged under the standard connected-circuit move convention.
+
+The one-Petersen escape avoids the deleted edge, so it can be applied
+blockwise.  The exact profile is \(0,(2,0)^n\), and the endpoint omits
+star 5.  Defect parity and the trapped zero-defect component prove that
+barrier two is optimal.
+
+The two independent finite backstops completely scan all \(2^{11}=2048\)
+binary cycles of \(R_2\), find exactly 29 nonempty triangle-preserving
+switches at the initial state, generate the complete 34,560-state
+component, and verify the path \(0\to2\to0\to2\to0\) and final standard
+five-cover.
+
+Run:
+
+```sh
+sh search/k6-petersen-ring-barrier-20260725/verify_package.sh
+```
+
+The package-manifest SHA-256 is
+`403a0b6690f53497038ae6d4eb43eb6666b218e80fe65d544a960cd83b0d53fe`.
+This theorem concerns the triangle-only stratum and does not claim that
+the full nowhere-zero flow component is disconnected.
+
+## Cotree-diamond connected-kernel separator
+
+Status: **INFINITE EXACT SEPARATION / STANDARD FIVE-COVERS POSITIVE**.
+
+The package
+`search/connected-kernel-cotree-diamond-separator-20260725/` replaces the
+six edges of a Petersen cotree by diamonds.  The resulting graph is simple,
+bridgeless, cubic, and has 34 vertices and 51 edges.  Its canonical graph6
+encoding is frozen in the package.
+
+The human proof does not use SAT.  In a connected-kernel
+\(\mathbb F_2^3\)-flow, conservation over a diamond makes its two attachment
+values equal, and kernel connectivity forces that value into the selected
+Fano line.  Contracting the diamonds gives a Petersen flow whose
+outside-line support is an even edge-subset of the complementary spanning
+tree, hence empty.  This would be a proper Petersen 3-edge-colouring,
+contradicting its six explicitly listed odd complementary two-factors.
+
+A local duad rule independently lifts a Petersen five-cover through all six
+diamonds.  The retained coordinate sizes are \(30,30,17,16,9\), and both
+frozen target verifiers accept the model.  Two independently structured
+package checkers reconstruct this lift from literal data.
+
+The 153-variable connected-kernel relaxation has 465 clauses: 459 flow
+clauses and six necessary diamond-shore connectivity clauses.  Its
+20,031-byte LRAT is accepted by both `lrat-check` and CakeML `cake_lpr`.
+Run:
+
+```sh
+sh search/connected-kernel-cotree-diamond-separator-20260725/verify_package.sh
+```
+
+The package-manifest SHA-256 is
+`d65e11007860ac98306847915c96c3353932e42e88b4ccb5f92d6487bb6280b7`.
+Iterating the construction gives orders \(10,34,106,322,\ldots\), an
+infinite family with ordinary five-covers and no connected-kernel flow.
+This refutes only the stronger connected-complement normal form and is not
+a counterexample to five-CDC.
+
+## Weighted \(T\)-join minima countermodel
+
+Status: **EXACT INTERMEDIATE FAILED-LEMMA CERTIFICATE / NONMINIMUM
+SUPPORT**.
+
+The package `search/tjoin-weighted-minima-countermodel-20260725/` freezes a
+22-vertex, 33-edge simple connected bridgeless cubic graph with a displayed
+size-three exact-zero matching.  The complement is connected and
+terminal-even, every one of the three color-weighted \(T\)-join minima is
+exactly three, and all three minimum-zero quotient multigraphs are forests.
+Nevertheless, exhaustive enumeration of all 512 \(T\)-joins finds no
+edge-disjoint pair.
+
+The human obstruction is a four-cycle containing exactly three of the six
+marked core edges.  Parity forces it to be an entire component of every
+binary cycle containing all marks, violating the even-marked circuit
+criterion equivalent to two-\(T\)-join packing.  Independently structured
+Python and JavaScript checkers reconstruct the graph, cost matrices,
+quotients, cycle obstruction, and exhaustive join list.  They also exhaust
+all cuts of size at most three and confirm cyclic 4-edge-connectivity.
+
+Run:
+
+```sh
+sh search/tjoin-weighted-minima-countermodel-20260725/verify_package.sh
+```
+
+The package-manifest SHA-256 is
+`f1bebcc0e86530a6d5de9f115b3e3117a88d11821d0d45f5b36a1f243a5a8a5a`.
+An explicit nowhere-zero flow proves that the displayed support is not
+globally minimum, and the graph has girth four.  Thus the package refutes
+only the attempted sufficiency of the two derived minimum-support
+conditions; the actual reduced-domain minimum-support exchange theorem
+remains open.
+
+## Fixed-join preparation trap
+
+Status: **FAILED UNIVERSAL LEMMA / EXACT HUMAN-CHECKABLE COUNTERMODEL**.
+
+The package `search/fixed-join-preparation-trap-20260725/` freezes a
+38-vertex, 57-edge simple connected bridgeless cubic graph obtained by
+replacing two edges of an 18-vertex base with Petersen 2-poles.  Its
+displayed binary cycle has a two-component complement and contains exactly
+125 inclusion-minimal exact \(\mathbb F_2^2\)-flow zero sets.  Their size
+profile is 100 of size three and 25 of size four; every one has preparation
+minimum two.
+
+The primary checker factors the enumeration into the 1,024 base cycles and
+the 4,096 local flows of each restored pole.  The independent checker builds
+the expanded cycle space from scratch and scans all
+\(2^{20}=1,048,576\) cycles.  It independently recovers the 125 supports,
+finds 953,312 cycles containing at least one, and finds no connected
+complement.  Projection of a hypothetical connected spanning odd factor
+through both poles gives the human contradiction described in the package
+README.
+
+Both target verifiers accept the explicit standard five-cover with
+coordinate sizes \(27,27,21,19,20\).  The graph's two nontrivial two-edge
+cuts place it outside the reduced cyclically 4-edge-connected domain.  The
+result refutes the unrestricted preparation lemma only.  The package
+manifest SHA-256 is
+`4d732e47f5e87c35492410228acf1b59e969560e229d47f50461c152db1bb775`.
+
+## Minimum-support strict-switch local plateau
+
+The exact package
+`search/minimum-switch-local-plateau-20260725/` freezes the first
+switch-local nonpacking flow found by the canonical primary census.  Its
+16-vertex graph has graph6 string `O???EA_E@IGcW_c_BO?W_`, 24 edges, cycle
+space size 512, and initial exact zero edges \(\{2,13\}\).  The primary and
+independent verifiers agree on:
+
+- 128 affine \(T\)-joins and zero disjoint pairs;
+- eight binary cycles containing every required terminal-incident edge,
+  none satisfying the even-marked circuit criterion;
+- zero strictly decreasing matching-admissible switches;
+- the neutral-descent profile \(2\to2\to1\); and
+- an explicit final packing cycle of bit mask `972523`.
+
+The exact primary census totals are:
+
+| order | hard graphs | distinct supports | nonpacking supports | local-minimum nonpacking signatures | minimum nonpacking supports |
+|---:|---:|---:|---:|---:|---:|
+| 10 | 1 | 301 | 191 | 0 | 0 |
+| 12 | 1 | 874 | 617 | 0 | 0 |
+| 14 | 5 | 12,569 | 9,285 | 0 | 0 |
+| 16 | 26 | 187,421 | 146,097 | 64 | 0 |
+
+The order-16 local plateaus occur on six graphs.  Their complete ordered
+flow-state graphs restricted to matching supports of size at most two all
+connect to size-one states.  This finite result refutes only strict
+single-switch descent; it does not refute the minimum-support conjecture or
+five-CDC.  The package-manifest SHA-256 is
+`17eb426b9f8311e5af4d8247f1c4025f8fe730f74425cd3242c15dda87895d0f`.
+
+The follow-up exact reconfiguration package
+`search/minimum-switch-neutral-components-n16-20260725/` builds the full
+state graph induced by ordered flows whose matching exact-zero support has
+size one or two on the six plateau hosts.  Primary Python and independent
+JavaScript implementations agree on 33,546 states and 384 strict local
+plateaus.  A multi-source breadth-first search from all size-one states
+reaches the entire sublevel graph, and every plateau has distance exactly
+two.  Its package-manifest SHA-256 is
+`7d0bb2fc8497bde97e4a205d0676e0db9496da61b790d606ad4450ecacb17d02`.
+
+The complete hard order-18 extension is in
+`search/minimum-switch-neutral-components-n18-20260725/`.  Its primary C++
+checker and independent NumPy checker agree on every retained field for all
+179 graphs:
+
+| quantity | exact count |
+|---|---:|
+| ordered support-\(\le2\) states | 1,680,414 |
+| graphs with local plateaus | 56 |
+| strict local nonpacking plateaus | 7,704 |
+| unreachable states | 0 |
+| unreachable plateaus | 0 |
+| plateau distance from size one | 2 |
+
+The state-graph construction uses the proved three-bucket adjacency lemma
+rather than checking all \(3\cdot1024\) switches separately at each state.
+The source graph6 list was previously frozen as the complete hard order-18
+control.  The package-manifest SHA-256 is
+`13ef63605817255cb1e27cd803b832498c98a3a9dd4118cf8a7ec7f74f83096f`.
+
+The complete hard order-20 extension is in
+`search/minimum-switch-neutral-components-n20-20260725/`.  Its primary C++
+and independent NumPy implementations agree on every retained field for all
+1,388 hard graphs:
+
+| quantity | exact count |
+|---|---:|
+| ordered support-\(\le2\) states | 20,161,044 |
+| graphs with local plateaus | 589 |
+| strict local nonpacking plateaus | 118,134 |
+| unreachable states | 21,492 |
+| unreachable nonpacking states | 0 |
+| unreachable plateaus | 0 |
+| plateau distance from size one | 2 |
+
+The unreachable states constitute the entire state space of the unique
+minimum-size-two graph and all pack two \(T\)-joins.  Thus every nonpacking
+state reaches size one on this finite boundary.  The package-manifest
+SHA-256 is
+`9cfc63ef7c4883bf5b18758e800b3b28c6d565cb6a5832c810e92be447174393`.
+
+The next exact package,
+`search/minimum-switch-packing-components-n22-20260725/`, covers the seven
+hard order-22 graphs whose minimum exact-zero matching size is two:
+
+| quantity | exact count |
+|---|---:|
+| ordered minimum states | 190,512 |
+| distinct minimum supports | 1,441 |
+| nonpacking minimum supports | 15 |
+| nonpacking ordered states | 2,808 |
+| unreachable nonpacking states | 0 |
+| maximum distance to packing | 1 |
+
+The 15 supports occur on two graphs and refute “every minimum support
+packs.”  Both implementations find every nonpacking realization one
+neutral switch from a packing state.  The package-manifest SHA-256 is
+`0532c24206dd4fd10aa159227680d6296e707e285a1d09d921591920e7ae299a`.
+
+The minimum-size-three continuation is
+`search/minimum-size-three-packing-components-20260725/`:
+
+| quantity | exact count |
+|---|---:|
+| globally minimum supports | 366 |
+| packing minimum supports | 290 |
+| nonpacking minimum supports | 76 |
+| ordered minimum flow states | 3,670,272 |
+| global-colour orbit states | 611,712 |
+| nonpacking orbit states at distance one | 170,352 |
+| nonpacking orbit states at distance two | 720 |
+| unreachable nonpacking orbit states | 0 |
+
+The graph is the 42-vertex global component-parity countermodel.  Both
+implementations prove that every minimum neutral component contains a
+packing state, but the 720 distance-two orbits refute the stronger
+one-switch claim.  All 720 use support \(\{20,30,53\}\); a separate
+Gaussian-elimination checker exhausts its 8,192 eligible even subgraphs,
+proves their odd-marked-component obstruction, and checks a literal
+two-switch path to packing.  The package-manifest SHA-256 is
+`0a36bd4b1f70cd4288e60a4b677aead723efeef7acc90b5037909d36098b299d`.
+
+## Connected Fano one-switch composition diagnostics
+
+Audit date: **2026-07-26**.
+
+The initially stated Fano one-switch conjecture needs connectedness.  Two
+disjoint copies of the exact ten-vertex bad-flow block remain bad after
+every single circuit switch, because a circuit lies in one component and
+the untouched bad component blocks every value.  This is a semantic
+countermodel to the disconnected formulation only; five-covers combine
+coordinatewise across components.
+
+The first connectedization test is frozen in
+`search/fano-bad-flow-two-sum-20260726/` and produced by
+`scratch/fano_bad_flow_two_sum_search.py`.  It deletes one edge from each
+copy of the bad block, applies every aligning element of
+\(\mathrm{GL}(3,2)\) to the second flow, and reconnects the four ends in
+both possible pairings.  The exact output has:
+
+| quantity | count |
+|---|---:|
+| connected two-edge-sum flows | 10,800 |
+| initially bad | 10,800 |
+| one-circuit repairable | 10,800 |
+| switch-local bad | 0 |
+
+Thus the obvious connected two-sum does not preserve the disconnected
+obstruction.  A thirty-vertex identity three-block chain is also bad and
+one-circuit repairable.  The deterministic seed-20260726 sample in
+`scratch/fano_bad_flow_three_chain_search.py` tests 100 independently
+chosen ordered port quadruples and aligning linear relabellings; all 100
+flows are initially bad and all 100 have a one-circuit repair.  These are
+structured diagnostics, not canonical graph censuses and not universal
+proofs.
+
+The universal connected statement is nevertheless false.  The minimized
+certified composition in
+`search/connected-one-switch-countermodel-40v-20260726/` uses a
+ten-vertex Tait base with three monochromatic edges on no common circuit.
+Replacing those three edges by flow-aligned two-sums with the ten-vertex
+bad block gives:
+
+| quantity | count |
+|---|---:|
+| vertices | 40 |
+| edges | 60 |
+| attached bad blocks | 3 |
+| standard five-cover coordinate sizes | 40; 40; 40; 0; 0 |
+
+The independent checker reconstructs all three two-sums, verifies
+simplicity, connectivity, cubicity, every single-edge deletion, all flow
+equations, all seven bad-block graft obstructions, and the explicit
+positive three-cover.  It enumerates all 30 base circuits and all 6,780
+final circuits, directly confirming that every final circuit leaves a
+bad block untouched.  The short human proof uses two forced-triangle
+arguments.  This is a countermodel to the one-switch lemma only, not to
+five-CDC.  The earlier 2,614-vertex \(H_5\)/LRAT package remains a valid
+superseded construction.
+
+## Fixed-flow Fano pure-merge and one-circuit repair
+
+Audit date: **2026-07-26**.
+
+`tools/fixed_fano_cover_merge_audit.py` now enumerates the affine space of
+Oum-compatible vertex potentials for a supplied fixed
+\(\mathbb F_2^3\)-flow.  It tests both the restrictive merge of three
+disjoint coordinate pairs and the exact broader criterion: proper
+five-colorability of the coordinate co-occurrence graph.
+
+On the old 112-vertex supplied-cover \(K_8\) obstruction, changing the
+compatible cover while retaining the fixed flow makes 380 of the 420
+three-pair merges satisfiable; only 40 are unsatisfiable.  Thus internal
+cover freedom repairs that supplied-cover example.
+
+The complete fixed-flow frontier for connected simple bridgeless cubic
+graphs through order 10 checks 26 graphs and 3,295
+\(\mathrm{GL}(3,2)\)-flow orbits with no fixed-flow obstruction.  At order
+12, graph `K??FEaKR@oE_` has a flow with one gauged potential solution and
+15 used pair types forming \(K_6\).  The port-deleted system has 37 scalar
+equations, rank 36, and the unique gauged potential
+
+```text
+0 5 5 1 5 6 7 4 7 3 7 2.
+```
+
+Its internal labels plus dangling port label 13 are all 15 pairs on
+`0 1 2 3 4 6`.
+
+The restricted one-circuit repair frontiers gave:
+
+| corpus | flow orbits | pure-merge bad | unrepairable |
+|:---|---:|---:|---:|
+| complete order 12 | 73,152 | 351 | 0 |
+| complete order 14 | 2,216,590 | 20,676 under the three-pair criterion | 0 |
+| 26 hard order-16 graphs | 600,440 | 7,385 | 0 |
+| first matching-bad hard order-18 flows | 164 tested | 16 | 0 |
+
+These positive frontiers motivated the composition test but are not
+universal evidence.
+
+The exact 46-vertex composition is frozen in
+`search/fano-pure-merge-one-switch-countermodel-46v-20260726/`.  The
+starting fixed flow has 128 gauged compatible potentials: 32 use 15 pair
+types, 96 use 24, and every co-occurrence graph has clique number at least
+six and is not five-colorable.  A discovery SAT encoding found all seven
+connected switch-value instances UNSAT, with 9,551--9,807 variables and
+89,662--118,558 clauses.  The retained theorem does not rely on those SAT
+answers: potential rigidity plus base-edge noncyclability gives a direct
+human proof.
+
+An arbitrary disconnected binary-cycle switch is stronger than the stated
+one-circuit operation and can repair the composition for switch values
+1, 2, 6, and 7.  The value-1 witness is the union of one six-cycle in each
+rigid cap.  This confirms that connectedness is essential to the exact
+countermodel and that multiple local repairs remain possible.
+
+A first seeded reduced-domain probe uses
+`scratch/fixed_fano_pure_merge_strict_sampler.py`.  It is a random sample,
+not a flow-orbit census.  On all 20 retained strict order-22 snarks it
+accepts 2,000 distinct nowhere-zero flows per graph: 7,444 of 40,000 are
+pure-merge bad, and every one has a legal connected-circuit repair.  On all
+38 retained strict order-24 snarks it accepts 1,000 flows per graph: 8,967
+of 38,000 are pure-merge bad, and again every one is repairable.  The
+frozen outputs are
+`scratch/fixed-fano-pure-merge-strict22-sample2000.json` and
+`scratch/fixed-fano-pure-merge-strict24-sample1000.json`.  These samples
+support only the surviving cyclically 4-edge-connected one-circuit
+formulation; they do not prove it or independently certify source-list
+completeness.
+
+## Order-22 four-mark separation/nonpacking screen
+
+`scratch/tait_all_coloring_mark_separation.cpp` was run on all 7,319,447
+rows of the frozen complete canonical connected simple cubic order-22
+corpus with target four, cyclic edge-connectivity at least four, and the
+nonpacking requirement enabled.  It enumerated 95,360,112 proper
+three-edge-colourings modulo global colour permutation on 7,174,735
+colourable rows.  It found zero hosts with a four-edge matching that is
+simultaneously:
+
+1. separated on every bichromatic circuit in every Tait colouring; and
+2. excluded by the exact even-marked circuit packing criterion.
+
+The input, source, empty witness stream, command, and exact counts are
+bound in
+`scratch/order22-cyclic4-separated4-nonpacking-result.json`.  This is a
+finite negative screen only.  The minimum-counterexample branch already
+has order at least 68, so no universal marked-core conclusion follows.
+
+The host-only cyclic-connectivity proxy in the first version of this
+screen has since been replaced by the exact marked lift condition
+\[
+ |\delta_H(X)|+|S\cap E(H[X])|\ge4
+\]
+for every cyclic shore \(X\).  The proof that this is forced by cyclic
+4-edge-connectivity of the ambient two-component lift is in
+`docs/marked-core-cyclic-lift-condition.md`.  Rerunning the complete
+order-22 corpus with this exact condition again produced zero witnesses.
+
+A 44-vertex four-mark countermodel shows that the marked cut hypothesis
+cannot be dropped: all 5,832 Tait colourings separate its marks and all
+524,288 cycles containing the marks have an odd marked-component profile,
+but three cyclic two-edge cuts each isolate one mark and violate the
+exact inequality by \(2+1<4\).  Its canonical encoding and complete
+profile counts are frozen in
+`scratch/four-mark-lowcut-countermodel-44v-result.json`.
+
+Finally, all 13,824 tested three-edge-sums of two copies of the stable
+order-20 separated-triple core were screened over all retained mark-pair
+choices, allowed deleted vertices, and six boundary bijections.  There
+were 288 universally separated marked instances and no instance
+simultaneously satisfying the exact marked cut condition and the
+nonpacking criterion.  A nine-circuit certificate now proves directly
+that every permitted factor pole has a closed admissible state, so every
+one of these 13,824 three-sums packs irrespective of the marked cut and
+Tait-separation tests.  This is a theorem for the stated construction
+family, not a universal three-cut reduction; the local compatibility
+implication for arbitrary poles remains open.  The exact
+seven-state boundary-signature gluing theorem, frozen generator, command,
+and hashes are in `docs/marked-three-edge-cut-signatures.md` and
+`scratch/marked-three-sums-13824-result.json`.
+
+The same signature analysis now gives a universal low-cut reduction.  A
+bridge-component count proves that any two- or three-pole with distinct
+boundary ends, exactly two internal marks, and the exact marked cut
+inequality has a closed circuit through both marks.  It follows that a
+nonpacking four-mark core satisfying the exact inequality has no cyclic
+two-edge cut.  It also cannot have an unmarked cyclic three-edge cut with
+a \(2+2\) mark distribution.  Complete cubic-cap screens through order
+14 independently found only signatures containing the closed state
+(36,070 eligible marked poles through order 12 and 282,734 at order 14);
+these counts are supporting diagnostics, not the proof.  A second
+bridge-component argument proves that the one-mark shore of an unmarked
+\(1+3\) cyclic three-cut has all three odd open states.  Thus only the
+three-mark shore remained in that isolated local formulation; marked
+boundary cuts were also open at this checkpoint.  Both obligations are
+superseded by the later global proof draft in
+`docs/four-mark-core-closure.md`.
+
+## Exhausted \(H_4\) minimum-support enumeration
+
+Audit date: **2026-07-26**.
+
+The incremental \(H_4\) master solver exhausted after enumerating exactly
+4,931,430 distinct globally minimum size-four supports.  Every support
+admits two edge-disjoint \(T\)-joins; none is nonpacking.  The final
+increment contained 5,794 supports beyond the 4,925,636-row checkpoint.
+Four-field row parsing, global duplicate detection, exact old-prefix
+matching, and witness replay passed.  The retained corpus SHA-256 is
+`a7ede3be51d3b937bacf702d67aa51431192bcdea9b008bf835e25f82967b483`;
+metadata are in
+`scratch/checkpoints/h4-minimum-supports.snapshot.json`.
+
+The terminal exhaustion has now been independently proof-certified.  A
+fresh blocking formula contains 1,697 variables and 4,936,112 clauses:
+4,682 base clauses and 4,931,430 support-blocking clauses.  CaDiCaL 3.0.1
+proved it UNSAT and emitted a 973,056,379-byte textual LRAT.  The
+independent C `lrat-check` reports `c VERIFIED`, and the verified CakeML
+`cake_lpr` reports `s VERIFIED UNSAT`.  The frozen CNF and LRAT are
+`search/h4-all-minimum-support-packing-20260726/all-supports-blocked.cnf`
+and
+`search/h4-all-minimum-support-packing-20260726/all-supports-blocked.lrat`;
+their SHA-256 values are
+`12061f07adc80081c6c329b1882201a734d004445a1e84d493f9bd7cd3743741`
+and
+`6bdeaff7fe3f37dca1c34c6653f0d1f1477490ffdd50f2d954fd88cc2c649934`.
+
+The positive side is now independently frozen as well.
+`packing-witnesses.bin` has 31 bytes per row and 152,874,330 bytes in
+total; its SHA-256 is
+`040fd474e7f3dfae0e530eed5579a4892bafcada1cbf0f85418393e3cbd297c3`.
+Each record is a 243-bit binary cycle through all support endpoints, with
+an even number of endpoints on every circuit component.  The independently
+written, solver-free checker validates the graph, proves every support row
+distinct, and replays the elementary even-marked-circuit criterion on all
+4,931,430 rows.  It reports
+`VERIFIED rows 4931430 distinct 4931430 packing_witnesses 4931430`.
+The complete package is
+`search/h4-all-minimum-support-packing-20260726/`; its manifest SHA-256 is
+`ce247fb04a4a5a02c1d7e872cf3131447b90f568638340584dd5ebeb4a03f385`.
+Thus every minimum exact-zero matching of this fixed \(H_4\) extends to a
+standard five-cycle double cover.  This is a finite fixed-graph theorem,
+not a universal claim.
+
+## One-mark three-pole theorem and order-20 signature audit
+
+Audit date: **2026-07-26**.
+
+The bridge-component argument in
+`docs/marked-three-edge-cut-signatures.md` proves that a one-mark
+three-pole satisfying the exact marked cyclic-cut inequality and having
+three distinct boundary ends realizes all three odd open boundary
+states.  This is a human proof and does not depend on enumeration.
+
+The complete order-20 connected simple cubic corpus has 510,489 rows, of
+which 496,430 are Tait-colourable.  The target-three universal-separation
+screen found 183 host witnesses.  Passing those caps to
+`scratch/analyze_separated_triple_poles.py` produced 427 eligible poles:
+every one had signature size three and there were no incomplete
+signatures.  Together with the order-16 and order-18 audits, all 601
+eligible poles tested have the full three-state odd signature.  This
+finite audit does not prove the remaining universal assertion for the
+three-mark shore of a \(1+3\) cut.
+
+## Cyclically four-edge-connected separated-triple frontier
+
+Audit date: **2026-07-26**.
+
+The exact target-three conflict-graph screen was rerun with ordinary
+cyclic edge connectivity at least four on the complete order-22
+canonical connected simple cubic corpus.  It decoded 7,319,447 rows,
+found 7,174,735 Tait-colourable rows, enumerated 95,360,112 Tait
+colourings modulo global colour permutation, and found no universally
+separated three-edge matching.  Input, source, binary, command, counts,
+and SHA-256 values are frozen in
+`scratch/order22-cyclic4-separated3-result.json`.
+
+At order 20, imposing edge connectivity three leaves exactly two hosts
+with a universally separated triple, and both have a cyclic three-edge
+cut splitting the marks \(1+2\); every remaining order-20 host witness
+has a cyclic two-edge cut.  This motivated a low-cut exposure conjecture,
+which the order-24 construction below now refutes.
+
+A first cyclic-four-cut construction test uses the earliest order-20
+cyclically-4 host with a universally separated pair as one factor and
+\(K_4\) as the other.  It deletes every eligible independent edge pair
+on both sides, tries all retained \(K_4\) mark edges and all 24 boundary
+bijections, and emits 93,888 labelled order-24 graphs.  Every required
+triple is defeated by an explicit Tait colouring; none remains
+universally separated.  The generator, exact stream hash, command, and
+counts are frozen in
+`scratch/separated-pair-k4-four-sums-result.json`.  This rules out only
+that structured four-sum construction.
+
+The factor screen was then completed over **all** 250 cyclically
+four-edge-connected order-20 hosts with a universally separated pair.
+Exact all-colouring enumeration found 934 literal separated pairs, or
+789 marked-host automorphism orbits.  Quotienting eligible host port pairs
+by the marked stabilizer leaves 233,670 orbits; \(K_4\) contributes three
+boundary-bijection orbits.  Thus the factorwise-complete stream has
+701,010 order-24 rows.  Only the inherited pair was fixed, and the checker
+searched every edge as a possible third mark.
+
+There are 144 positive rows: 142 distinct emitted graph6 records, 20
+unmarked graph isomorphism classes, and 46 marked-graph isomorphism
+classes.  The first is the nonplanar graph
+
+```text
+W`??A???A_@_A_cO?S_Gc`_?@O@@?@OO??_????_??H_A?E
+```
+
+with marks \(01,23,20\,23\).  A clean-room standard-library verifier
+independently enumerates all 36 Tait colourings modulo global colour
+permutation, checks every bichromatic component, tests all edge-deletion
+sets of size at most three, and finds a cyclic four-edge cut.  The exact
+construction, complete hit stream, hashes, and verifier are frozen in
+`search/cyclic4-universally-separated-triple-n24-20260726/`.
+
+Consequently the low-cut exposure conjecture is false: a universally
+separated triple can occur in a cyclically \(4\)-edge-connected
+Tait-colourable simple cubic graph.  This affects the structural
+diagnostic only; the later four-mark closure proof bypasses that
+conjecture.  Moreover every one of the 144 hits has girth four and
+marked-subdivision girth five.  Hence zero satisfy the connected-branch
+condition \(|C|+|C\cap S|\ge10\) for every circuit.  The two-count
+difference between 144 hits and 142 literal rows comes from exactly two
+duplicate construction pairs, each producing the same literal graph and
+same marked triple; it is not a verification discrepancy.
+The full 701,010-row stream was independently rerun with the exact
+`--min-subdivided-girth 10` filter and produced zero witnesses, so no
+alternative third mark repairs a displayed \(K_4\) sum.
+
+## Monochromatic-mark girth bound
+
+Audit date: **2026-07-26**.
+
+The mark-precolouring lemma yields a finite-search-independent
+improvement for the size-four extremal branch.  After deleting a
+four-edge matching and suppressing its eight endpoints, precolour all
+eight marked core edges with one Tait colour.  Universal separation
+puts the marks on eight pairwise vertex-disjoint bichromatic even
+circuits, exactly one mark per circuit.  Undoing suppression turns these
+into eight pairwise vertex-disjoint odd circuits in the ambient graph.
+Ambient girth at least ten makes every one have length at least eleven,
+so the ambient graph has at least 88 vertices.  The complete proof and
+scope discussion are in
+`docs/kempe-transversality-and-eight-mark-girth.md`.  No enumeration is
+used in this bound.
+
+## Unrestricted three-pole diagnostic
+
+Audit date: **2026-07-26**.
+
+`scratch/search_unrestricted_triple_poles.py` removes the universal Tait
+separation hypothesis and enumerates every three-edge matching and every
+eligible cap vertex.  It checks the inherited marked cyclic-cut
+inequality and exhausts the binary cycle space for an admissible odd
+open state.
+
+On the complete connected simple cubic corpora it found:
+
+| order | graphs | Tait graphs | eligible poles | empty odd signatures |
+|---:|---:|---:|---:|---:|
+| 8 | 5 | 5 | 360 | 0 |
+| 10 | 19 | 17 | 6,446 | 0 |
+| 12 | 85 | 80 | 86,086 | 0 |
+| 14 | 509 | 475 | 1,109,842 | 0 |
+
+Before the Tait-colourability filter was added, the order-12 graph
+`K?ABCiWFBOKO`, cap vertex 6, and marks
+\((0,5),(3,7),(4,8)\) gave an empty odd signature.  The cap has no Tait
+colouring, so it is outside the marked-core hypotheses.  These counts
+are exploratory finite evidence only; they are not used in the new
+global proof.
+
+## Four-mark core closure theorem
+
+Audit date: **2026-07-26**.
+
+`docs/four-mark-core-closure.md` gives a new human-checkable proof
+of the universal marked-core theorem.  The decisive imported facts are
+Knappe--Pitz \(g(3)=3\), the canonical cubic 3-sum decomposition of
+Nedela--Seifrtová--Škoviera, and the
+Aldred--Ellingham--Hemminger--Holton cycle theorem for four independent
+edges in a quasi \(4\)-connected graph.
+
+The proof reduces marked cyclic three-cuts directly.  In a surviving
+nonpacking graph, every decomposition cut is unmarked and splits the
+four marks \(1+3\).  A weighted-tree argument selects a central
+cyclically \(4\)-edge-connected factor; all other incident components
+are one-mark shores.  Universal separation precolours the four marks
+with one Tait colour.  In the central factor, the internal marks and the
+same-colour cap edge at each one-mark branch form a matching of at most
+four distinct edges: adjacent cap roots can share their selected edge.
+Aldred handles the four-edge case and Knappe--Pitz handles the smaller
+case.  A cycle through the selected set, with the one-mark paths
+substituted at its cap vertices, becomes a circuit through all four
+marks.
+
+An independently prompted Codex referee agent audited the argument and
+reported that the stated binary-cycle theorem is sound.  The audit
+correctly limits the strengthening: an unmarked \(2+2\) cut can yield
+two two-mark circuits, so the theorem does not unconditionally give one
+four-mark circuit.  This remains an AI-agent audit rather than
+independent human verification or peer review.  The theorem eliminates
+the size-four/two-component marked-core branch, not the full
+five-cycle double cover conjecture.
+
+## Connected stable-eight paired-cut clean-room audit
+
+Audit date: **2026-07-26**.
+
+The paired lift formula for a connected eight-mark core was checked by a
+second implementation in
+`scratch/audit_stable8_paired_cuts_cleanroom.py`.  It does not import or
+execute the original checker.  It decodes the graph6 core, enumerates all
+edge-deletion sets of sizes one through three, tests all unions of
+deletion components for cyclic shores, independently generates the 105
+perfect pairings, brute-forces every flexible boundary assignment, and
+directly constructs the lifted cuts.
+
+The audit reports `PASS_EXACT_MATCH`.  The core is simple, connected,
+cubic, and bridgeless, with an eight-edge marked matching.  There are
+exactly 49 cyclic cuts below four: seven of size two and 42 of size three.
+All 105 pairings fail the paired-cut condition.  The minimum-score
+histogram is
+\[
+      2:27,\qquad 3:78.
+\]
+All 777 retained violation records and all 5,355 direct lift checks agree.
+The checker also reconstructs the first expansion exactly and independently
+solves the binary parity system for a 44-edge cycle-space element containing
+all eight marks.
+
+The proof audit confirmed the lift formula, the pairwise boundary
+optimization, the all-one cycle-space argument, and the stated
+decomposition-tree consequence.  It corrected one non-material sentence:
+a cyclic bridge forces at least three strict pairing crossings, not all
+four.  The finite result excludes only this retained core and its
+pairings.
+
+## Eight-mark bichromatic incidence code
+
+Audit date: **2026-07-26**.
+
+`docs/eight-mark-bichromatic-code.md` gives an exact code/flow
+formulation after all eight marks are precoloured \(c\).  Vertices of a
+connected bipartite multigraph \(\Gamma\) are the \(ac\)- and
+\(bc\)-circuits; its edges are the \(c\)-edges.  Universal separation
+makes the eight marks a matching in \(\Gamma\).  Symmetric differences
+of selected bichromatic circuits form an injective linear code, with
+\(c\)-trace equal to a cut of \(\Gamma\), and the all-mark selectors form
+an affine space of dimension \(|V(\Gamma)|-8\).
+
+For a fixed selector, componentwise even marked parity is equivalent to
+balance of the signed selected 2-factor, existence of a binary vertex
+potential, or trivial voltage holonomy.  When the selector is variable,
+the exact joint condition is quadratic.  The displayed order-12
+graph6 example `K??FEagT@WB_` supplies three good all-mark selectors whose
+affine triple sum is bad, proving that no purely linear selector code,
+even after existential linear projection, captures the condition.
+Neutral flow switches are exactly Kempe switches and generally mutate
+the incidence graph rather than act inside one fixed code.  This is an
+algebraic reduction, not a closure of the connected eight-mark branch.

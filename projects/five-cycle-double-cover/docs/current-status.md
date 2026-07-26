@@ -1020,7 +1020,27 @@ cases are evidence, not the missing universal proof.  A complete
 order-22 screen further found no universally separated triple in any
 cyclically \(4\)-edge-connected Tait-colourable connected simple cubic
 graph: 7,319,447 graphs and 95,360,112 Tait colourings modulo global
-colour permutation were covered.
+colour permutation were covered.  This frontier is sharp at the next
+even order.  A systematic \(K_4\) four-sum screen over all 250
+cyclically-four order-20 separated-pair hosts found 144 positive
+order-24 rows, representing 20 unmarked and 46 marked isomorphism
+classes.  The first explicit graph has graph6 record
+shown below and marks \(01,23,20\,23\).
+
+```text
+W`??A???A_@_A_cO?S_Gc`_?@O@@?@OO??_????_??H_A?E
+```
+
+A clean-room verifier checks all 36 normalized Tait
+colourings and every edge-deletion set of size at most three.  Thus the
+provisional low-cut exposure conjecture is false; exact data are in
+`search/cyclic4-universally-separated-triple-n24-20260726/`.  All 144
+hits have girth four and marked-subdivision girth five, so none satisfy
+the actual connected-branch requirement
+\(|C|+|C\cap S|\ge10\) for every core circuit.  Thus this refutes the
+low-cut diagnostic without entering the surviving high-marked-girth
+branch.  A direct rerun of all 701,010 construction rows with the exact
+marked-subdivision-girth-at-least-ten filter produced zero witnesses.
 
 A new human-checkable proof, independently audited by a second Codex
 agent, now bypasses the isolated three-mark
@@ -1218,3 +1238,66 @@ directed Eulerian orientation and the two occurrences of every edge point in
 opposite directions.  Oum states it separately as Conjecture 19.  It implies
 Tutte's nowhere-zero 5-flow conjecture, so orientability is not included in
 the standard SAT/XOR acceptance condition.
+
+## Connected eight-mark paired-cut and incidence-code reduction
+
+Audit date: **2026-07-26**.
+
+In the connected size-four branch, the four zero edges pair the eight
+marked edges of the suppressed Tait-colourable core.  This pairing cannot
+be discarded.  For a cyclic core cut \(X\), let \(p_P(X)\) count pairing
+edges whose two marks lie strictly internally on opposite shores.  The
+exact lift and boundary-optimization lemmas in
+`docs/connected-eight-mark-paired-cut-condition.md` prove the necessary
+condition
+\[
+       |\delta_H(X)|+p_P(X)\ge4.
+\]
+A separately prompted Codex agent audited the proof and wrote an
+independent clean-room checker.  It confirmed all 49 low cyclic cuts and
+all 105 perfect pairings of the retained order-60 stable-eight-mark core.
+No pairing survives: 27 have minimum score two and 78 have minimum score
+three.  Thus the entire previously retained order-68 expansion family is
+excluded structurally.  This is an AI-agent audit, not human peer review,
+and it is not a universal closure theorem.
+
+Universal separation allows all eight marks to be precoloured with one
+Tait colour.  Linear cycle-space duality then guarantees a binary cycle
+containing all eight marks.  The only remaining packing obstruction is
+componentwise mark parity.  The exact algebraic formulation in
+`docs/eight-mark-bichromatic-code.md` encodes selected \(ac\)- and
+\(bc\)-circuits by a connected bipartite incidence multigraph.  The
+all-mark selectors form an affine cut-space slice, while componentwise
+evenness is precisely signed balance, or trivial
+\(\mathbb F_2\)-voltage holonomy, on the selected circuit system.  Jointly
+these conditions form the explicit quadratic system (15).  A checked
+12-vertex example proves that the good selectors are not an affine
+subspace, so the residual topology cannot be replaced by pure XOR in the
+selector variables.
+
+The connected eight-mark branch therefore remains open, but its finite
+search space and exact obstruction have been sharpened: a surviving core
+must satisfy the paired low-cut inequalities, the inherited marked
+circuit-length condition
+\[
+ |C|+|C\cap S|\ge10
+\]
+for every core circuit, universal separation under every Tait colouring,
+and global minimum-support constraints, while every selector in the
+incidence code must have nontrivial signed holonomy on some circuit
+component.  It is the ambient expansion, not necessarily the suppressed
+core itself, which has girth at least ten.
+
+There is also a new direct order bound.  Precolour all eight marks with
+one Tait colour.  Universal separation places them on eight
+vertex-disjoint bichromatic even circuits, one mark per circuit.
+Undoing suppression replaces each unique marked edge by a two-edge path,
+so these become eight vertex-disjoint odd circuits of the ambient graph.
+If the ambient girth is at least ten, every such odd circuit has length
+at least eleven.  Hence every counterexample in the size-four branch has
+\[
+ |V(G)|\ge 8\cdot11=88,
+\]
+improving the earlier bound \(68\).  The human-checkable proof is in
+`docs/kempe-transversality-and-eight-mark-girth.md`; it applies to both
+the connected eight-mark branch and the two-component \(4+4\) branch.

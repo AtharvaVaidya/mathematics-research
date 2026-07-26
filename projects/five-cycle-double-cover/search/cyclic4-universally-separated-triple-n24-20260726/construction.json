@@ -1,0 +1,46 @@
+{
+  "classification": "FINITE_WITNESS_REFUTING_THE_LOW_CUT_EXPOSURE_CONJECTURE",
+  "date": "2026-07-26",
+  "scope_warning": "This is not a proof or counterexample to the five-cycle double cover conjecture.",
+  "search_row": 21360,
+  "graph6": "W`??A???A_@_A_cO?S_Gc`_?@O@@?@OO??_????_??H_A?E",
+  "canonical_unmarked_graph6": "Ws???C@?gG_c?_@?@?GOC?O?G?I?W@?A__A_C?@?_?OG??B",
+  "order": 24,
+  "size": 36,
+  "marks": [[0, 1], [2, 3], [20, 23]],
+  "metadata": {
+    "planar": false,
+    "girth": 4,
+    "marked_subdivision_girth": 5,
+    "satisfies_every_circuit_length_plus_marks_at_least_10": false,
+    "edge_connectivity": 3,
+    "vertex_connectivity": 3,
+    "cyclic_edge_connectivity": 4,
+    "tait_colourings_mod_global_s3": 36
+  },
+  "four_sum": {
+    "host_graph6": "S??????oD?B?HCOaM??q?B_?E_CB??BG?",
+    "host_marks": [[3, 15], [8, 19]],
+    "host_deleted_ports": [[5, 16], [6, 17]],
+    "factor_graph6": "C~",
+    "factor": "K4",
+    "factor_deleted_ports": [[0, 1], [2, 3]],
+    "host_boundary_order": [5, 16, 6, 17],
+    "factor_boundary_order": [0, 2, 3, 1]
+  },
+  "search_scope": {
+    "order20_connected_simple_cubic_rows": 510489,
+    "order20_tait_colourable_rows": 496430,
+    "cyclically_four_hosts_with_separated_pair": 250,
+    "literal_separated_pairs": 934,
+    "marked_host_orbits": 789,
+    "literal_eligible_host_port_pairs": 257214,
+    "marked_stabilizer_host_port_orbits": 233670,
+    "k4_boundary_configuration_orbits": 3,
+    "generated_order24_rows": 701010,
+    "hits": 144,
+    "distinct_emitted_graph6_rows": 142,
+    "unmarked_graph_isomorphism_classes": 20,
+    "marked_graph_isomorphism_classes": 46
+  }
+}

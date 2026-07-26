@@ -464,3 +464,31 @@ Open obligations:
     nontrivial two-edge cuts.  Thus a cyclically 4-edge-connected version
     would still be sufficient for the minimum-counterexample route and is
     the surviving formulation to prove or refute.
+30. **Connected eight-mark branch sharpened; signed-holonomy closure
+    open:** pairing the eight suppressed marks by the four zero edges
+    gives the audited necessary inequality
+    \(|\delta_H(X)|+p_P(X)\ge4\) on every cyclic core shore.  An
+    independently written clean-room checker excludes all 105 pairings of
+    the retained order-60 stable-eight core.  Universal separation and
+    mark precolouring guarantee a binary cycle containing all eight marks,
+    so the residual obstruction is exactly componentwise marked parity.
+    In the bichromatic incidence code this is signed balance, equivalently
+    trivial \(\mathbb F_2\)-voltage holonomy, and the full selector/potential
+    system is quadratic rather than linear.  The remaining obligation is
+    to prove that the paired-cut, girth, universal-separation, and
+    minimum-support hypotheses force a balanced selector, or to produce a
+    core satisfying all those hypotheses whose every selector has
+    nontrivial signed holonomy and then test its expansion with a
+    certificate-producing standard five-CDC solver.
+31. **Size-four branch order bound improved to 88; closure still open:**
+    precolouring all eight suppressed marks alike puts them on eight
+    vertex-disjoint bichromatic circuits, one mark per circuit.  Restoring
+    the suppressed endpoints turns these into eight vertex-disjoint odd
+    circuits in the ambient cubic graph.  Ambient girth at least ten
+    forces each to have length at least eleven, and therefore
+    \(|V(G)|\ge88\).  The proof is elementary and recorded in
+    `docs/kempe-transversality-and-eight-mark-girth.md`.  This is a lower
+    bound, not a resolution: the remaining obligation is still the
+    balanced-selector/signed-holonomy closure for the connected
+    eight-mark core (the \(4+4\) branch is already eliminated by the
+    four-mark closure theorem).

@@ -32,6 +32,33 @@ Both PDFs prominently disclose substantive AI involvement and explicitly
 state their scope.  Their novelty assessments are provisional pending
 independent expert literature review.
 
+## Latest structural branch
+
+The connected eight-mark branch remains open.  The newest notes expose
+its exact remaining constraints without claiming a five-CDC resolution:
+
+- [`docs/kempe-transversality-and-eight-mark-girth.md`](docs/kempe-transversality-and-eight-mark-girth.md)
+  proves human-checkable Kempe and marked-girth lemmas and records the
+  limits of a finite counterexample.
+- [`docs/eight-mark-bichromatic-code.md`](docs/eight-mark-bichromatic-code.md)
+  reduces the fixed-colouring problem to an exact signed-graph component
+  test.
+- [`docs/connected-eight-mark-paired-cut-condition.md`](docs/connected-eight-mark-paired-cut-condition.md)
+  derives the paired cyclic-cut condition that retains the four matching
+  pairs lost by the simpler unpaired inequality.
+- [`docs/cyclic-four-separated-triple-atom-reduction.md`](docs/cyclic-four-separated-triple-atom-reduction.md)
+  explicitly marks the proposed cyclic-four atom lemma as refuted while
+  retaining its sound conditional reductions.
+
+The compact package
+[`search/cyclic4-universally-separated-triple-n24-20260726/`](search/cyclic4-universally-separated-triple-n24-20260726/)
+freezes the refuting order-24 graph, all 144 retained hits, exact search
+scope, canonical records, hashes, and independently structured single-
+and batch-verifiers.  It establishes that a universally separated triple
+can occur in a cyclically four-edge-connected Tait-colourable cubic graph.
+All 144 construction hits have marked-subdivision girth five, however,
+so none satisfies the surviving connected-branch threshold of ten.
+
 ## Human-checkable material
 
 - [`docs/four-mark-core-closure.md`](docs/four-mark-core-closure.md) gives
@@ -60,6 +87,7 @@ python3 search/connected-one-switch-countermodel-40v-20260726/verify_package.py
 python3 search/fano-pure-merge-one-switch-countermodel-46v-20260726/independent_checker.py
 python3 -m tools.test_encode_five_cdc_xor_fast
 python3 search/h4-all-minimum-support-packing-20260726/verify_upper_witness.py
+python3 -B search/cyclic4-universally-separated-triple-n24-20260726/verify_package.py
 ```
 
 The 40-vertex checker optionally uses nauty's `labelg` to recheck the

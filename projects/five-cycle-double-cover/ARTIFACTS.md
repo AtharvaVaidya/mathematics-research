@@ -10,9 +10,15 @@ copied into a separate clean clone; it was not modified or committed.
 - The standalone computer-free four-mark proof.
 - Current status, publication assessment, encoding proof, marked-cut
   reductions, and proof-obligation ledger.
+- The latest connected eight-mark notes: Kempe transversality and marked
+  girth, the bichromatic signed code, the paired cyclic-cut condition,
+  and the explicitly refuted cyclic-four separated-triple atom.
 - Complete compact packages for the 10-, 40-, and 46-vertex
   countermodels, including canonical graph encodings, construction data,
   human proofs, frozen results, and independently structured checkers.
+- The complete compact order-24 separated-triple package, including the
+  144-hit stream, 46 canonical marked isomorphism classes, exact scope
+  report, SHA-256 manifest, and clean-room single and batch verifiers.
 - The frozen \(H_4\) graph, compact CNFs, upper model, generators,
   checker sources, result summaries, and the original SHA-256 ledger.
 - The native-XOR five-CDC encoder and its unit test.

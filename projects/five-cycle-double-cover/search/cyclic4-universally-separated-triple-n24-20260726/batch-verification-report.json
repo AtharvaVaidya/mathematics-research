@@ -1,0 +1,17 @@
+{
+  "checks": "simple connected cubic; three-edge matching; no cyclic cut of size below four; complete normalized Tait-colouring enumeration; universal bichromatic separation",
+  "distinct_literal_graph6_rows": 142,
+  "girth_distribution": {
+    "4": 144
+  },
+  "marked_subdivision_girth_distribution": {
+    "5": 144
+  },
+  "records_satisfying_every_circuit_length_plus_marks_at_least_10": 0,
+  "status": "VERIFIED",
+  "tait_colourings_mod_s3_distribution": {
+    "36": 144
+  },
+  "witness_records": 144,
+  "witness_stream_sha256": "c398bb55aedc213c6ef09169a4dd9501c9f9093988f7285c167b0639cc38c176"
+}
