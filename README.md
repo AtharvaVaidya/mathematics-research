@@ -197,8 +197,8 @@ pole, again giving one-line injectivity, while the arithmetic condition
 constant-fourth-root chart has total degrees at most \(12\) and \(8\)
 and is excluded by the independently established counterexample lower
 bound \(125\).  Thus the full normal-degree \((12,8)\) frontier is
-excluded, but \(JC(2)\) is still open; the next unresolved arithmetic
-frontier is \((12,9)\).  See
+excluded, but \(JC(2)\) is still open; the next frontier treated in
+this archive is \((12,9)\).  See
 [`current_context/NORMAL_DEGREE_128_COUNTEREXAMPLE_CUSP_AND_LIFT_OBSTRUCTION.md`](current_context/NORMAL_DEGREE_128_COUNTEREXAMPLE_CUSP_AND_LIFT_OBSTRUCTION.md),
 [`current_context/KUMMER_CHARACTER_EXACT_DIFFERENTIAL_CLASSIFICATION.md`](current_context/KUMMER_CHARACTER_EXACT_DIFFERENTIAL_CLASSIFICATION.md),
 and
@@ -222,8 +222,23 @@ See
 and
 [`current_context/NORMAL_DEGREE_129_FULL_EXCLUSION.md`](current_context/NORMAL_DEGREE_129_FULL_EXCLUSION.md).
 This remains a finite normal-degree theorem, not a resolution of
-\(JC(2)\); the next unresolved frontier is \((15,6)\), and the active
-route is a uniform treatment of every lower-degree-six frontier.
+\(JC(2)\).
+
+The full normal-degree \((15,6)\) frontier is now excluded too.  On
+the cubic cover, an all-character local theorem proves
+\(\operatorname{pole}(A_5)\ge2\rho\), including the subextremal
+rational supports, the \(s=9/2\) collision, the core Hensel chain, and
+the triple-root restart.  The split nonconstant-cube chart then gives
+one-line injectivity.  In the connected chart, the exact
+inverse-character differential forces a finite pole; the constant-cube
+chart lies below the total-degree bound \(125\).  This is again a
+complete finite-frontier exclusion, not a proof of \(JC(2)\).  Within
+the odd lower-degree-six ladder the next case is \((21,6)\), while
+arbitrary normal degrees remain open.  See
+[`current_context/Q6_ODD_FRONTIERS_UNIFORM_REDUCTION_AND_A_DEPENDENCE.md`](current_context/Q6_ODD_FRONTIERS_UNIFORM_REDUCTION_AND_A_DEPENDENCE.md),
+[`current_context/Q6_ODD_LOCAL_SUBEXTREMAL_AND_156_NODAL_HENSEL_AUDIT.md`](current_context/Q6_ODD_LOCAL_SUBEXTREMAL_AND_156_NODAL_HENSEL_AUDIT.md),
+and
+[`current_context/NORMAL_DEGREE_156_FULL_EXCLUSION.md`](current_context/NORMAL_DEGREE_156_FULL_EXCLUSION.md).
 
 A standalone, conservatively scoped manuscript of the connected-chart
 theorem is available as
