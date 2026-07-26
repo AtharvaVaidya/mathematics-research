@@ -256,6 +256,10 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_standard_system_lifted_endpoint_formal_and_filtered_recurrence.py",
     ROOT / "current_context" / "verify_standard_system_repeated_root_deck_gap_terminal_exclusion.py",
     ROOT / "current_context" / "verify_standard_system_repeated_root_global_deck_budget_countermodel.py",
+    ROOT / "current_context" / "verify_standard_system_repeated_root_intervening_defect_obstruction.py",
+    ROOT / "current_context" / "verify_normal_degree_86_total_degree_closure_and_connected_reduction.py",
+    ROOT / "current_context" / "verify_normal_degree_arithmetic_frontier_and_96_connected_reduction.py",
+    ROOT / "current_context" / "verify_normal_degree_96_cube_laurent_time_reduction.py",
 ]
 
 

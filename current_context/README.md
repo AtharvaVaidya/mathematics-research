@@ -692,6 +692,20 @@ coefficients uncancelled.  Thus the next repeated-root theorem must use
 those intervening homogeneous equations; see
 `STANDARD_SYSTEM_REPEATED_ROOT_GLOBAL_DECK_BUDGET_COUNTERMODEL.md`.
 
+The first such intervening calculation is now exact in a nontrivial
+finite range.  For saturated \((2,3)\) top forms
+\[
+p_0=d^2+ux,\qquad q_0=d^3,\qquad
+d=x^{g-1}(x+\ell),\qquad u\ell\ne0,
+\]
+the bounded reciprocal recurrence has a nonzero defect-three class, or
+on its exceptional hypersurface a nonzero defect-four class, for every
+\(5\le g\le20\).  Arbitrary compatible lower homogeneous coefficients
+are included.  The concrete multiplicities-\((2,3)\) deck countermodel
+fails by \(-8000/9\).  This is deliberately stated only in the exact
+range checked over the relevant rational-function fields; see
+`STANDARD_SYSTEM_REPEATED_ROOT_INTERVENING_DEFECT_OBSTRUCTION.md`.
+
 On the independent bounded-normal-degree route, the complete cubic and
 quartic coefficient systems have been integrated.  Exact bidegree
 \((4,3)\) reduces over \(\mathbb C(x)\) to a one-parameter Hamiltonian
@@ -701,10 +715,25 @@ alternative structural proof, not a priority claim:
 Moskowicz's 2018 one-coordinate degree-at-most-four theorem is repairable
 without its false auxiliary Lemma 2.3 and already subsumes the automorphy
 bound.  See `NONEQUIVARIANT_NODAL_LOW_NORMAL_DEGREE_OBSTRUCTIONS.md` and
-`NONEQUIVARIANT_NORMAL_DEGREE_FOUR_EXCLUSION.md`.  Combining the repaired
-partial-degree criterion with the top leading-coefficient equation shows
-that the first unremoved exact normal pair is \((8,6)\), with even degree
-for its common leading factor.
+`NONEQUIVARIANT_NORMAL_DEGREE_FOUR_EXCLUSION.md`.  The apparent
+\((8,6)\) gap in the one-coordinate criterion is closed by a high source
+shear and the classical \(2P\) total-degree theorem.  Combining all of
+these criteria with the top leading-coefficient equation shows that the
+first minimal-counterexample candidate not certified automorphic is
+\((9,6)\), with the degree of its common leading factor divisible by
+three.  Its connected cubic-cover subchart is now excluded completely:
+four exact approximate-root integrals admit a centered two-branch
+decomposition, the generic cubic levels violate polynomiality at one of
+two target values, and the sole cuspidal level violates finite-map
+integrality and local valuations.  What remains is precisely the
+cube-\(h\) chart, including constant \(h\).  Its full seven-constant
+lower system nevertheless has four canonical Laurent integrals and one
+rational time \(T\), with \(T'=\lambda/r\) for \(h=r^3\).
+Riemann--Hurwitz leaves only constant \(r\), or
+\(r=\gamma(x-a)^{k+1}\) in the nonconstant case.  See
+`NORMAL_DEGREE_86_TOTAL_DEGREE_CLOSURE_AND_CONNECTED_REDUCTION.md` and
+`NORMAL_DEGREE_ARITHMETIC_FRONTIER_AND_96_CONNECTED_REDUCTION.md`, and
+`NORMAL_DEGREE_96_CUBE_LAURENT_TIME_REDUCTION.md`.
 
 The reflection/parity nodal route is globally closed by the
 Moskowicz--Valqui starred-Jacobian theorem, even though its local

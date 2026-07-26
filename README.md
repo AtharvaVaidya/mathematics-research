@@ -65,10 +65,16 @@ global countermodel shows that divisor, multiplicity, reciprocal-degree,
 and endpoint budgets can nevertheless put every root in the deeper band
 \(aG>h\).  Thus those budgets alone cannot close the repeated-root case:
 the missing input must come from the intervening homogeneous Keller
-equations.  See
+equations.  That input now excludes the saturated \((2,3)\) top-form
+family for every \(5\leq g\leq20\), including arbitrary compatible lower
+coefficients: the first filtered cokernel is nonzero at defect three,
+or on its exceptional hypersurface at defect four.  This is an exact
+finite-range theorem, not an all-\(g\) claim.  See
 [`current_context/STANDARD_SYSTEM_REPEATED_ROOT_DECK_GAP_TERMINAL_EXCLUSION.md`](current_context/STANDARD_SYSTEM_REPEATED_ROOT_DECK_GAP_TERMINAL_EXCLUSION.md)
 and
-[`current_context/STANDARD_SYSTEM_REPEATED_ROOT_GLOBAL_DECK_BUDGET_COUNTERMODEL.md`](current_context/STANDARD_SYSTEM_REPEATED_ROOT_GLOBAL_DECK_BUDGET_COUNTERMODEL.md).
+[`current_context/STANDARD_SYSTEM_REPEATED_ROOT_GLOBAL_DECK_BUDGET_COUNTERMODEL.md`](current_context/STANDARD_SYSTEM_REPEATED_ROOT_GLOBAL_DECK_BUDGET_COUNTERMODEL.md),
+and the independently reviewed
+[`current_context/STANDARD_SYSTEM_REPEATED_ROOT_INTERVENING_DEFECT_OBSTRUCTION.md`](current_context/STANDARD_SYSTEM_REPEATED_ROOT_INTERVENING_DEFECT_OBSTRUCTION.md).
 
 A separate coefficient calculation integrates every Keller system of
 exact normal bidegree \((4,3)\) over \(\mathbb C(x)\) and excludes it by
@@ -78,9 +84,25 @@ partial-degree theorem was already stated in 2018 and has a short repair
 despite a false auxiliary number-theoretic lemma.  The calculation and
 prior-art caveat are in
 [`current_context/NONEQUIVARIANT_NORMAL_DEGREE_FOUR_EXCLUSION.md`](current_context/NONEQUIVARIANT_NORMAL_DEGREE_FOUR_EXCLUSION.md).
-The first normal-degree pair not removed by that prior theorem and the
-leading-coefficient relation is \((8,6)\), in its even common-leading-
-factor chart.
+The apparent \((8,6)\) gap in the one-coordinate criterion is also
+closed by a high shear and the classical \(2P\) total-degree theorem.
+After all of those criteria and elementary target shears, the first
+minimal-counterexample candidate not certified automorphic is \((9,6)\),
+in the chart where the common leading factor has degree divisible by
+three.  The connected cubic-cover subchart—equivalently, the case in
+which that common factor is not a cube in \(\mathbb C(x)\)—is now
+excluded completely.  Its four approximate-root integrals split into a
+zero-Jacobian common-cubic branch and a cubic level; the latter is
+excluded by a two-value pole argument and a finite-map integrality
+valuation at its sole cuspidal level.  The cube-leading-factor chart,
+including constant leading factor, remains open, but its seven-constant
+lower system now has a canonical Laurent form: four coefficients are
+conserved and the fifth is a rational time.  Riemann--Hurwitz reduces
+the nonconstant cube \(h=r^3\) case to \(r=\gamma(x-a)^{k+1}\);
+otherwise \(r\) is constant.  See
+[`current_context/NORMAL_DEGREE_ARITHMETIC_FRONTIER_AND_96_CONNECTED_REDUCTION.md`](current_context/NORMAL_DEGREE_ARITHMETIC_FRONTIER_AND_96_CONNECTED_REDUCTION.md)
+and
+[`current_context/NORMAL_DEGREE_96_CUBE_LAURENT_TIME_REDUCTION.md`](current_context/NORMAL_DEGREE_96_CUBE_LAURENT_TIME_REDUCTION.md).
 
 Two tempting shortcuts have also been closed rather than silently
 discarded.  Reflection-equivariant nodal thickenings are already

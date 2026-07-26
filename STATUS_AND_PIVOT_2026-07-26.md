@@ -502,3 +502,57 @@ full-degree cusp monodromy obstruction, and the whole four-puncture
 one-boundary case is excluded by the cubic critical-point theorem.  The
 next counterexample-first Route A target must have six or more punctures,
 positive genus, or the two-boundary zero-deficit profile.
+
+## 7. Later normal-degree and repeated-root checkpoint
+
+The apparent normal-degree \((8,6)\) frontier was an artifact of using
+only the narrow one-coordinate criterion.  A high source shear makes
+the total-degree gcd \(2p\), so the classical total-degree theorem
+closes it.  The first minimal-counterexample candidate left by the
+audited degree criteria is instead
+\[
+(\deg_yF,\deg_yG)=(9,6),
+\]
+with common leading coefficients \(h^3,h^2\) and
+\(\gcd(3,\deg h)=3\).
+
+The connected cubic-cover chart, where \(h\) is not a cube in
+\(\mathbf C(x)\), is now excluded.  Four exact approximate-root
+integrals become triangular after
+\[
+C=c-\frac{a^2}{4},\qquad
+D=d-\frac{ab}{2},\qquad
+Q=q-\frac{b^2}{4}.
+\]
+Their level set splits into a common-cubic branch with zero Jacobian
+and a cubic branch \(C^3=6Q^2+8jQ+8K/3\).  Generic cubic levels force a
+finite pole of the polynomial \(h\).  The sole cuspidal level is
+excluded by a finite weighted-homogeneous map, normality of
+\(\mathbf C[x,y]\), and the valuation equation
+\[
+-189V^6(3hV'-Vh')=\lambda h^3.
+\]
+This theorem has passed hostile mathematical review.  Its novelty
+relative to the older approximate-root literature is still being
+audited, so no priority claim is made here.
+
+For the remaining cube chart \(h=r^3\), all seven upper character
+constants can be retained without losing integrability.  In the formal
+coordinate \(s=g^{1/6}\), the first four negative Laurent coefficients
+of \(f\) are constant and the fifth gives a rational time \(T\) with
+\[
+T'=\frac{\lambda}{r}.
+\]
+Riemann--Hurwitz reduces the nonconstant case to
+\[
+r=\gamma(x-a)^{k+1};
+\]
+otherwise \(r\) is constant.  The pure-power and constant-\(r\) descent
+problems remain open.
+
+On the repeated-root side, the intervening filtered recurrence now
+excludes the saturated \((2,3)\) top-form family for every
+\(5\le g\le20\), including arbitrary compatible lower homogeneous
+coefficients.  The obstruction occurs at defect three, or at defect
+four on its exceptional hypersurface.  A hostile re-review accepted
+this exact finite-range statement; no all-\(g\) claim is made.
