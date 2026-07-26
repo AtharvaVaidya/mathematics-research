@@ -558,9 +558,15 @@ one upper Newton edge,
 27C_0^5=32UD_0^2,
 \]
 and the fifth Laurent coefficient has degree \(12e\), contradicting
-the affine terminal equation.  Constant \(r\) with at least one of the
-six extra constants nonzero, and the nonconstant pure-power descent,
-remain open.
+the affine terminal equation.  The complementary case with at least
+one of the six extra constants nonzero is also excluded.  Its weighted
+boundary is either a cusp with nonzero \(A_5\) or a common-cubic
+resonance.  Exact projective-chart ideals close the nonsingular
+resonance; a rank-two secondary normal map, its extra kernel direction,
+and six nonzero triple-collision terminal coefficients close the
+singular resonance.  Thus the full constant-\(r\) chart is impossible.
+Only the nonconstant single-root pure-power descent remains in normal
+degrees \((9,6)\).
 
 On the repeated-root side, the intervening filtered recurrence now
 excludes the saturated \((2,3)\) top-form family for every
