@@ -1307,3 +1307,114 @@ size-four extremal branch has
 improving the earlier bound \(68\).  The human-checkable proof is in
 `docs/kempe-transversality-and-eight-mark-girth.md`; it applies to both
 the connected eight-mark branch and the two-component \(4+4\) branch.
+
+## Cycle-trace surjectivity and the factor-quotient obstruction
+
+Audit date: **2026-07-26**.
+
+Universal separation has a further exact linear consequence.  Arbitrary
+precolouring of the marks rules out every nonempty cut supported inside
+the marked matching.  Equivalently, deleting the marks leaves the core
+connected, and restriction of the binary cycle space to the eight marked
+coordinates is surjective.  Thus every prescribed marked trace occurs.
+The proof in `docs/universal-separation-cut-surjectivity.md` passed an
+independent line-by-line Codex-agent audit after correcting `dim` to
+affine dimension for nonzero fibres and narrowing one signed-holonomy
+sentence.  Surjectivity does not control marked parity separately on
+each circuit component, so it does not close the branch.
+
+For an all-\(c\) Tait colouring, lift the \(ac\)-factor, contract its
+circuits, and delete the four zero edges.  The resulting quotient is a
+connected Eulerian multigraph with eight distinct marked vertices.
+Every connected Eulerian multigraph has two edge-disjoint joins for any
+even terminal set: construct one in a spanning tree and take its edge
+complement.  However, the two joins must also route edge-disjointly
+through the cyclic order of the ports on every contracted factor
+circuit.  The exact necessary-and-sufficient local transition system is
+proved in `docs/eulerian-factor-quotient-tjoin-reduction.md`.
+
+Eulerianity alone is insufficient.  The four-vertex quotient in
+`docs/two-tjoin-cycle-lift-obstruction.md` has exactly four \(T\)-joins
+and two disjoint pairs, but both pairs fail the marked alternating-gap
+test at the same factor circuit.  This is a human-checkable obstruction
+to the quotient proof, not to five-CDC.
+
+The actual minimum-counterexample hypotheses exclude that literal small
+quotient.  Every factor-quotient degree is at least ten, there are eight
+marked quotient vertices, and every quotient shore obeys the paired-cut
+inequality.  More generally, an unavoidable failure at one marked
+terminal gap is exactly an even-terminal two-edge cut in the quotient.
+The paired-cut inequality promotes it to either a cyclic ambient
+four-edge cut containing two zero edges or a cyclic six-edge cut
+containing all four.  Simultaneous terminal-gap failure has the explicit
+cut-space certificate in
+`docs/size-four-terminal-gap-cut-reduction.md`.  Eliminating these cut
+branches, the other same-parity gap equations, and nonpartitioning join
+pairs remains open.
+
+An exact diagnostic on the excluded order-60 stable-eight core confirms
+that the lift issue is real.  Its quotient has
+\(14\,801\,616\,000\) ordered edge-disjoint quotient-\(T\)-join pairs,
+but none passes every cyclic-port test.  A clean rerun reproduced the
+saved result byte for byte.  Independent enumeration of all \(2^{23}\)
+all-mark core cycles also finds zero with even marked parity on every
+component.  The core fails the paired-cut condition, and its reconstructed
+ambient graphs have standard five-covers, so this is only a diagnostic.
+
+## Order-80 vertex-transitive equality control
+
+Audit date: **2026-07-26**.
+
+The 88-vertex ambient lower bound makes order 80 the equality order for
+the suppressed core.  The complete Potočnik--Spiga--Verret census contains
+33 cubic vertex-transitive graphs of that order.  Exact short-cycle
+incidence counts eliminate 32: graphs of girth at most six fail
+immediately, and each of the seven girth-eight graphs has insufficient
+eight-edge incidence capacity to put at least two marks on every
+eight-cycle.  The sole girth-ten graph has exactly 426,256 normalized Tait
+colourings and no universally separated eight-edge matching.
+
+The script, census commit and hash, exact incidence certificates, input
+encoding, and Tait result are frozen in
+`docs/order80-vertex-transitive-control.md` and
+`scratch/order80-cvt-stable8-marked-girth-result.json`.  The cycle
+enumerator agrees with NetworkX on all 994 connected simple Graph Atlas
+graphs, and a separate MILP agrees with the seven counting
+infeasibilities.  This eliminates the vertex-transitive equality scope
+only; vertex-transitivity is not a minimum-counterexample reduction.
+
+## Equality incidence countermodel and exact CVT selector control
+
+Audit date: **2026-07-26**.
+
+The order-\(88\) equality equations alone do not force a good
+bichromatic selector.  An explicit connected 5-regular bipartite
+incidence multigraph on \(8+8\) factor vertices, with a marked perfect
+matching and compatible cyclic transition data, reconstructs a connected
+simple cubic 80-vertex Tait-coloured core.  Both relevant factors are
+eight 10-cycles with one mark each, but exhaustive enumeration finds zero
+good selectors among all 256.
+
+This is deliberately an abstract route countermodel, not a surviving
+core: its core and marked subdivision have girth three, one Kempe switch
+violates universal separation, and an independently checked SAT witness
+gives two unrestricted edge-disjoint \(T\)-joins.  The construction and
+two independently structured selector checks are in
+`docs/equality88-incidence-rotation-countermodel.md`.
+
+The sole girth-ten vertex-transitive graph behaves oppositely.  Among its
+426,256 normalized Tait colourings, exactly 20 have all three
+bichromatic factors equal to eight 10-cycles.  For every colouring and
+each of three common colours, the incidence multigraph has exactly 1,249
+edge-object perfect transversals.  The resulting 74,940
+colouring/common-colour/mark-set records contain 19,184,640 selectors.
+Every record has a good selector; in fact the count per record lies
+between 94 and 138.  A NetworkX audit verifies that all 60 cases are
+colour-preservingly isomorphic and independently reproduces the
+transversal and selector histograms.  Exact artifacts are in
+`docs/order80-c10-selector-transversal-scan.md`.
+
+Together these computations show that abstract equality incidence is
+too weak, while the natural girth-ten vertex-transitive control is
+strongly positive.  Arbitrary non-vertex-transitive equality cores and
+all larger orders remain open.

@@ -54,6 +54,35 @@ its exact remaining constraints without claiming a five-CDC resolution:
 - [`docs/cyclic-four-separated-triple-atom-reduction.md`](docs/cyclic-four-separated-triple-atom-reduction.md)
   explicitly marks the proposed cyclic-four atom lemma as refuted while
   retaining its sound conditional reductions.
+- [`docs/eulerian-factor-quotient-tjoin-reduction.md`](docs/eulerian-factor-quotient-tjoin-reduction.md),
+  [`docs/two-tjoin-cycle-lift-obstruction.md`](docs/two-tjoin-cycle-lift-obstruction.md),
+  and [`docs/size-four-terminal-gap-cut-reduction.md`](docs/size-four-terminal-gap-cut-reduction.md)
+  prove the exact local lifting criterion, refute automatic quotient
+  lifting, and reduce unavoidable terminal-gap failure to explicit cyclic
+  four- and six-cut interfaces.
+- [`docs/cyclic-four-cut-zero-pair-signature.md`](docs/cyclic-four-cut-zero-pair-signature.md)
+  and [`docs/cyclic-six-cut-four-mark-interface.md`](docs/cyclic-six-cut-four-mark-interface.md)
+  audit those two cut frontiers.  Both notes identify precise remaining
+  obligations; neither eliminates its cut branch.
+- [`docs/equality-complementary-quotient-no-go.md`](docs/equality-complementary-quotient-no-go.md)
+  proves that the canonical complementary quotient-join construction
+  cannot lift in the sharp order-\(88\) equality case.
+
+Two new finite equality diagnostics sharply delimit the selector route:
+
+- [`docs/equality88-incidence-rotation-countermodel.md`](docs/equality88-incidence-rotation-countermodel.md)
+  gives an explicit decorated \(8+8\), 5-regular incidence object whose
+  reconstructed simple cubic 80-vertex core has zero good bichromatic
+  selectors.  It fails girth and universal separation and positively has
+  unrestricted two-\(T\)-join packing, so it is a countermodel only to the
+  incidence-only proof strategy.
+- [`docs/order80-vertex-transitive-control.md`](docs/order80-vertex-transitive-control.md)
+  eliminates the 33 order-80 cubic vertex-transitive census graphs from the
+  surviving equality scope.  Its follow-up
+  [`docs/order80-c10-selector-transversal-scan.md`](docs/order80-c10-selector-transversal-scan.md)
+  checks all 74,940 factor-transversal records in the sole girth-ten graph:
+  every record has between 94 and 138 good selectors.  Vertex-transitivity
+  is not a minimum-counterexample reduction.
 
 The compact package
 [`search/cyclic4-universally-separated-triple-n24-20260726/`](search/cyclic4-universally-separated-triple-n24-20260726/)
@@ -96,6 +125,9 @@ python3 search/fano-pure-merge-one-switch-countermodel-46v-20260726/independent_
 python3 -m tools.test_encode_five_cdc_xor_fast
 python3 search/h4-all-minimum-support-packing-20260726/verify_upper_witness.py
 python3 -B search/cyclic4-universally-separated-triple-n24-20260726/verify_package.py
+python3 -B scratch/verify_equality88_rotation_countermodel.py
+python3 -B scratch/audit_equality88_rotation_countermodel.py
+python3 -B scratch/audit_order80_c10_selector_scan.py
 ```
 
 The 40-vertex checker optionally uses nauty's `labelg` to recheck the

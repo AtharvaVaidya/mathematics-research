@@ -492,3 +492,40 @@ Open obligations:
     balanced-selector/signed-holonomy closure for the connected
     eight-mark core (the \(4+4\) branch is already eliminated by the
     four-mark closure theorem).
+32. **Marked trace containment discharged; component topology open:**
+    universal separation gives arbitrary mark precolouring, which rules
+    out every nonempty cut supported inside the marked matching.  Hence
+    deleting the marks leaves the core connected and the binary
+    cycle-space restriction to all marked coordinates is surjective.
+    Every prescribed trace is attainable.  An independent audit passed
+    the proof after two notation/scope corrections.  This is a complete
+    linear result but does not make each circuit component marked-even.
+33. **Eulerian factor quotient proved; automatic lifting refuted:** the
+    all-\(c\) lifted \(ac\)-factor contracts, after deleting \(M\), to a
+    connected Eulerian multigraph with eight marked vertices.  It always
+    has two edge-disjoint marked joins, but those joins lift precisely
+    when a local three-state routing condition holds on every factor
+    circuit.  A four-vertex Eulerian quotient has only two disjoint join
+    pairs and both fail this condition.  The actual branch excludes the
+    literal example.  An unavoidable single terminal-gap failure in an
+    actual quotient forces a cyclic ambient 4-cut with two zero edges or
+    a cyclic 6-cut with all four.  The remaining obligation is to reduce
+    those cuts and the other gap equations, or find a compliant
+    obstruction.
+34. **Order-80 vertex-transitive equality scope eliminated:** among the
+    33 cubic vertex-transitive order-80 census graphs, short-cycle
+    incidence certificates eliminate 32 from the marked-girth condition.
+    The sole girth-ten graph has 426,256 normalized Tait colourings and no
+    universally separated eight-edge matching.  Exact encodings, hashes,
+    and cross-checks are frozen.  Vertex-transitivity is not a sound
+    reduction for a minimum counterexample, so the arbitrary equality
+    case and all larger orders remain open.
+35. **Equality incidence alone refuted; CVT selector scope positive:** a
+    decorated \(8+8\), 5-regular incidence countermodel has zero good
+    selectors but fails girth, universal separation, and unrestricted
+    nonpacking.  Conversely, every one of the 74,940 all-\(C_{10}\)
+    factor-transversal records on CVT[80,30] has at least 94 good
+    selectors.  Therefore neither plain incidence degree nor the current
+    vertex-transitive control closes the branch.  The live obligation is
+    to combine ambient girth, universal separation, paired cuts, and
+    minimum-support exchange for arbitrary equality cores.

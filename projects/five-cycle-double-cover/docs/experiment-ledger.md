@@ -1638,7 +1638,8 @@ The input, source, empty witness stream, command, and exact counts are
 bound in
 `scratch/order22-cyclic4-separated4-nonpacking-result.json`.  This is a
 finite negative screen only.  The minimum-counterexample branch already
-has order at least 68, so no universal marked-core conclusion follows.
+has order at least 88 by the later monochromatic-mark girth lemma, so no
+universal marked-core conclusion follows.
 
 The host-only cyclic-connectivity proxy in the first version of this
 screen has since been replaced by the exact marked lift condition
@@ -1955,3 +1956,115 @@ even after existential linear projection, captures the condition.
 Neutral flow switches are exactly Kempe switches and generally mutate
 the incidence graph rather than act inside one fixed code.  This is an
 algebraic reduction, not a closure of the connected eight-mark branch.
+
+## Stable-eight factor-quotient diagnostic
+
+Audit date: **2026-07-26**.
+
+`scratch/stable8_factor_quotient_diagnostic.cpp` reconstructs the retained
+order-60 stable-eight core, the first terminal pairing, the all-\(c\)
+colouring, its lifted \(ac\)-factor, and the contracted complementary
+quotient.  The ambient expansion has 68 vertices and 102 edges.  The
+factor has lifted lengths
+\[
+       17,13,5,9,5,5,9,5,
+\]
+and the quotient has eight vertices, 30 edges, and nine loops.
+
+Two exact computations give
+\[
+ 14\,801\,616\,000
+\]
+ordered edge-disjoint quotient-\(T\)-join pairs.  Zero pairs satisfy the
+four-state local lifting test at all eight factors.  Every obstruction
+mask contains factor zero, and all 128 masks containing it occur.  The
+smallest displayed local obstruction is on a lifted 5-cycle with state
+counts \((2,1,1,1)\).
+
+A separate enumeration of all \(2^{23}=8\,388\,608\) core cycles with
+all marks present finds zero having even marked count on every component.
+The quotient-pair and direct-cycle computations therefore agree exactly.
+A clean compilation and rerun produced a byte-identical result with
+SHA-256
+`4a2be7f9455ea3258df2d08055e988eef382b703abd5006888059912a52f41f4`.
+The core fails every one of the 105 paired-cut choices, so it is outside
+the surviving branch.
+
+## Order-80 cubic vertex-transitive control
+
+Audit date: **2026-07-26**.
+
+The graph6/sparse6 conversion of the Potočnik--Spiga--Verret census,
+commit `68c592d4790ab1737f04d86d3102c4999bbc6c09`, contains exactly 33
+cubic vertex-transitive graphs of order 80.  The census file hash is
+`4bac89beec1465265318266117c38a2c1680e73a21efd322411207cef5313088`.
+
+Only eight rows have girth at least seven.  Seven have girth eight.  For
+each, summing the requirement that every eight-cycle contain at least two
+marks exceeds the maximum total incidence contributed by any eight
+edges:
+
+| Index | Eight-cycles | Required | Capacity |
+|---:|---:|---:|---:|
+| 3 | 40 | 80 | 32 |
+| 4 | 40 | 80 | 32 |
+| 20 | 10 | 20 | 8 |
+| 21 | 10 | 20 | 8 |
+| 28 | 20 | 40 | 16 |
+| 32 | 80 | 160 | 48 |
+| 33 | 40 | 80 | 32 |
+
+The remaining index 30 has girth ten.  Exhaustive enumeration of all
+426,256 Tait colourings modulo global colour permutation finds zero
+universally separated eight-edge matchings.  The exact input and
+reproduction commands are in
+`docs/order80-vertex-transitive-control.md`.  This is a finite
+vertex-transitive control, not a complete order-80 census.
+
+## Equality-88 decorated incidence countermodel
+
+Audit date: **2026-07-26**.
+
+An exact rotation search on a connected 5-regular bipartite incidence
+multigraph with eight vertices per side and a marked perfect matching
+found compatible transition data reconstructing a connected simple cubic
+80-vertex Tait-coloured graph.  Its \(ac\)- and \(bc\)-factors are each
+eight 10-cycles with one mark per circuit.  Complete enumeration of all
+256 all-mark selectors finds zero with even marked parity on every
+component.
+
+A separate Python audit forms literal symmetric differences of the
+sixteen factor circuits and reproduces the complete component-profile
+histogram.  The marked subdivision nevertheless has two edge-disjoint
+\(T\)-joins of sizes 32 and 40, checked directly from the returned edge
+sets.  The core has girth three, and one \(ac\)-Kempe switch puts marks 2
+and 3 on one \(bc\)-circuit.  Hence the object refutes only an
+incidence/rotation-only selector theorem and is outside the surviving
+minimum-counterexample branch.
+
+The frozen result and human-checkable note are
+`scratch/equality88-rotation-countermodel-result.json` and
+`docs/equality88-incidence-rotation-countermodel.md`.
+
+## CVT[80,30] all-\(C_{10}\) selector scan
+
+Audit date: **2026-07-26**.
+
+The 20 normalized Tait colourings of CVT[80,30] having three all-\(C_{10}\)
+bichromatic factors give 60 common-colour cases.  Every case has exactly
+1,249 edge-object perfect transversals of the two relevant factors.  The
+complete scan therefore checks 74,940 mark-set records and 19,184,640
+selectors.  There are 74,415 distinct underlying edge sets.
+
+Every mark-set record has a good selector.  The minimum number is 94, the
+maximum is 138, and the total number of good selector records is
+8,208,840.  An independent NetworkX audit verifies all 20 colouring
+words, proves the 60 coloured cases isomorphic up to exchange of the two
+noncommon colours, independently recomputes all 319,744 selectors on a
+representative, and exactly reproduces both global histograms.
+
+The source, result, audit, and narrow scope are frozen in
+`scratch/order80_c10_selector_scan.cpp`,
+`scratch/order80-c10-selector-scan-result.json`,
+`scratch/audit_order80_c10_selector_scan.py`, and
+`docs/order80-c10-selector-transversal-scan.md`.

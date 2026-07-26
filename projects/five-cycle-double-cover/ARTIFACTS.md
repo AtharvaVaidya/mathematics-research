@@ -14,6 +14,15 @@ copied into a separate clean clone; it was not modified or committed.
   girth plus its clean-room scope audit, the bichromatic signed code, the
   paired cyclic-cut condition, and the explicitly refuted cyclic-four
   separated-triple atom.
+- The factor-quotient lifting theorem, literal local obstruction, terminal
+  gap cut reduction, cyclic four- and six-cut frontier audits, and the
+  complementary-quotient no-go theorem at equality.
+- The explicit order-80 abstract incidence/rotation countermodel and two
+  independent selector checkers.  This refutes an incidence-only
+  intermediate implication, not five-CDC.
+- The complete compact order-80 vertex-transitive control and all-\(C_{10}\)
+  selector scan: source, saved result, 20 colouring words, and independent
+  isomorphism audit.  No broad census file or compiled binary is committed.
 - Complete compact packages for the 10-, 40-, and 46-vertex
   countermodels, including canonical graph encodings, construction data,
   human proofs, frozen results, and independently structured checkers.
