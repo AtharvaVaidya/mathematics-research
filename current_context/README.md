@@ -217,8 +217,8 @@ share or precede the chosen boundary order.  Its correction history is
 kept in `WEIGHTED_LIFT_TERNARY_PURE_BOUNDARY_SEPARATION_AUDIT.md`;
 the degree-six full-seed calculation remains a useful special case.
 
-The nonhomogeneous target problem is now closed through total target
-degree eight.  The globally earliest regular vertex is indexed by
+The primitive nonhomogeneous target problem is closed first through
+total target degree eight.  The globally earliest regular vertex is indexed by
 \((\beta,h)\), while the polar face is indexed by \((E,q)\); both maps
 have primitive collision kernel
 \[
@@ -236,9 +236,25 @@ scope when combined with the cases surviving its correction audit.
 See `WEIGHTED_LIFT_NONHOMOGENEOUS_NEWTON_VERTEX_CLOSURE.md`.
 
 The first possible support collision is degree nine,
-\(A^5C^4\sim B^6\).  The known subductions \(T,U\) do not yet give a
-complete SAGBI normal form: the next exact saturation
-\(BT\sim A^5C^3\) produces a new generator outside
+\(A^5C^4\sim B^6\).  Exact replacement by the first cusp subduction
+\(T\) closes arbitrary targets through degree nine.  Through degree ten,
+the four collision pairs are the primitive pair and its multiples by
+\(A,B,C\).  Replacing them triangularly by \(T,AT,W,U\), then removing
+the \(U\)-coefficient modulo the actual first coordinate
+\(U+R_{\le2}\), leaves isolated augmented Newton atoms.  The sole polar
+collision \(W\sim A^2B^3\) has an exact two-term Wronskian that never
+vanishes.  Consequently, for every nonconstant target \(Q\) of degree at
+most ten and every \(R_{\le2}\),
+\[
+J(U+R_{\le2},Q)\notin\mathbb C^\times
+\]
+on every polynomial graph.  See
+`WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_NINE_CUSP_CLOSURE.md` and
+`WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_TEN_NEWTON_BASIS_CLOSURE.md`.
+
+These finite-dimensional theorems do not give a complete SAGBI normal
+form.  The next exact saturation \(BT\sim A^5C^3\) produces a new
+generator outside
 \(\langle A,B,C,T,U\rangle\), with distinct \(L=1\) and \(L\ge2\)
 leading behavior.  See
 `WEIGHTED_LIFT_SAGBI_SATURATION_NEXT_GENERATOR_AUDIT.md`.
@@ -250,7 +266,13 @@ is projected-new for \(L=2\) and \(L\ge4\), but has exactly two reducers
 at \(L=3\).  A subsequent element \(X\) is projected-new relative to
 the displayed seven generators for every \(L\ge2\).  This proves
 additional incompleteness without claiming termination or infinitude.
-See `WEIGHTED_LIFT_SAGBI_AFTER_W_MARKOV_AND_NEXT_GENERATORS.md`.
+The apparent cubic exception is now closed exactly: after the two
+degree-\(139\) reducers, the fixed graph jets force the remainder into
+an unreducible gap at degree \(138\), \(136\), or \(133\), according to
+three explicit coefficient strata.  Thus \(V\) exposes a new projected
+value for every cubic graph as well.  See
+`WEIGHTED_LIFT_SAGBI_AFTER_W_MARKOV_AND_NEXT_GENERATORS.md` and
+`WEIGHTED_LIFT_CUBIC_GRAPH_V_SUBDUCTION_CLOSURE.md`.
 
 On the independent Route A cubic normalization, the residual factor
 \(\tau^2=g(v)\) has also been audited at infinity.  After removing
@@ -347,6 +369,17 @@ unramified boundary curve puncturing both split residual sections.  This
 is not yet a degree-four exclusion; it identifies the exact new
 obstruction.  See
 `ROUTE_A_DEGREE_FOUR_RETAINED_SHEET_AUDIT.md`.
+The survivors now have exact normalization profiles.  In the
+\(3+1\)/self-intersection case, residual ramification is governed by
+intersection parity; with \(n\) two-branch values and \(e\) odd
+contacts, the retained Euler characteristic is \(1-4n\), and a
+connected completion has genus \(e-1\).  In the extra-boundary case,
+the split residual affine lines lose \(k_1,k_2\ge1\) points and have
+equal classes in \(\operatorname {Cl}(S)=\mathbf Z/2\).  Every
+\(r=2,\delta=0\) survivor is Gorenstein with
+\(\omega_Y\simeq\mathcal O_Y(E)\) and Cartier \(E\); the only
+non-Gorenstein \(3+1\) escape forces branch multiplicity at least four.
+See `ROUTE_A_DEGREE_FOUR_SURVIVOR_NORMALIZATION_PROFILE.md`.
 
 For case c, the corrected degree-four outer cover has now been tested
 against every linear jet adjoint through derivative order three.  Both
@@ -389,6 +422,27 @@ while moving the odd class to interior level divisors.  They introduce
 affine poles, so the remaining polynomial question is global
 pole-freeness/termination rather than residue parity.  See
 `FIXED_PLANE_RESIDUE_PARITY_SCALING_NO_GO.md`.
+
+The first-order Hermite--CRT Keller jet in fact lifts through every
+finite normal order along \(E=DK\): \(\{U,E\}\) is a unit modulo \(E\),
+so an explicit Hensel recurrence constructs compatible polynomial
+solutions modulo \(E^N\) for every \(N\).  Thus no finite thickening can
+supply the hoped-for obstruction.  For the fixed lift \(U_0\), a
+squarefree degree-\(14\) eliminant instead exhibits fourteen critical
+points, all off \(E=0\), which forbids any global polynomial
+\(V\) with \(\{U_0,V\}=1\).  The surviving question is whether
+\(U_0+E^2\phi\) can remove this global critical scheme while preserving
+the established boundary jets.  See
+`FIXED_PLANE_ALL_ORDER_HERMITE_CRT_LIFT.md`.
+All fourteen points are Morse and persist uniquely under every formal
+\(U_0+\epsilon E^2\phi\).  For each degree bound, a dense open subset
+of the full coefficient space still contains a finite-étale
+degree-\(14\) critical subscheme, so any successful perturbation must
+be exceptional and nonperturbative.  The scalar test \(U_0+E^2\) has
+exactly \(21\) distinct off-boundary critical points.  The next
+well-posed task is the projective critical-incidence locus, not a random
+coefficient search.  See
+`FIXED_PLANE_CRITICAL_PERSISTENCE_AND_SCALAR_PERTURBATION.md`.
 
 An independent all-degree formulation is recorded in
 `STANDARD_SYSTEM_WEIGHTED_ESCAPE.md`.  In the finite standard system

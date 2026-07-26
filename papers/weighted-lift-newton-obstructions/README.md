@@ -6,7 +6,7 @@ Gallagher weighted lift.
 
 For the exact second-subduction coordinate \(\mathcal U\), every polynomial
 graph, every target polynomial \(R(A,B,C)\) of degree at most two, and every
-nonconstant \(Q(A,B,C)\) of degree at most eight satisfy
+nonconstant \(Q(A,B,C)\) of degree at most ten satisfy
 
 \[
 J_{x,y}(\mathcal U+R,Q)\notin\mathbb C^\times.
@@ -14,14 +14,16 @@ J_{x,y}(\mathcal U+R,Q)\notin\mathbb C^\times.
 
 The same conclusion holds in arbitrary target degree when no two support
 exponents of \(Q\) differ by a nonzero multiple of
-\((5,-6,4)\). The degree-eight cutoff is sharp for this criterion:
+\((5,-6,4)\). Exact triangular replacements by \(T,AT,W,U\) resolve
+the primitive cusp collision and all its multiples through degree ten.
+Degree eight remains sharp only for the collision-free criterion:
 \(B^6\) and \(A^5C^4\) are the primitive colliding pair.
 
 ## Contents
 
 - `main.tex` — self-contained definitions, theorem statements, boundary
   proof, exact-computation interface, scope limitations, and disclosure.
-- `main.pdf` — compiled eight-page manuscript.
+- `main.pdf` — compiled manuscript.
 - Exact symbolic checks remain in `current_context/` so there is one
   canonical implementation of every certificate.
 
@@ -37,19 +39,29 @@ From the repository root:
 .venv/bin/python \
   current_context/verify_weighted_lift_nonhomogeneous_newton_vertex_closure.py
 .venv/bin/python \
+  current_context/verify_weighted_lift_nonhomogeneous_degree_nine_cusp_closure.py
+.venv/bin/python \
+  current_context/verify_weighted_lift_nonhomogeneous_degree_ten_newton_basis_closure.py
+.venv/bin/python \
   current_context/verify_weighted_lift_sagbi_saturation_next_generator_audit.py
 ```
 
 The first verifier checks the three-dimensional Keller identity. The second
 expands the exact seed and checks all 77 terms of the second-subduction
 numerator and the uniform seed gaps. The third checks the Newton-vertex
-identities, endpoint formulas, lattice kernel, degree cutoff, and
-first-coordinate separation. The fourth is a scope audit: it proves that
-the known five boundary generators are not yet a complete SAGBI basis.
+identities, endpoint formulas, lattice kernel, primitive degree cutoff, and
+first-coordinate separation. The fourth checks the exact degree-nine
+\(T\)-replacement. The fifth checks the four degree-ten collision classes,
+triangular basis, augmented regular atoms, and exceptional polar Wronskian.
+The sixth is a scope audit: it proves that the known five boundary
+generators are not yet a complete SAGBI basis.
 
 The immutable repository view for this manuscript is:
 
-<https://github.com/AtharvaVaidya/mathematics-research/tree/weighted-lift-newton-obstructions-v1>
+<https://github.com/AtharvaVaidya/mathematics-research/tree/weighted-lift-newton-obstructions-v2>
+
+The earlier degree-eight version remains archived immutably at
+<https://github.com/AtharvaVaidya/mathematics-research/tree/weighted-lift-newton-obstructions-v1>.
 
 ## Build
 
@@ -80,7 +92,8 @@ The underlying theorem note and the repaired standalone manuscript passed
 adversarial independent proof reviews with no remaining fatal or major
 mathematical issue. A targeted current web/arXiv search found no matching
 polynomial-graph Newton-vertex theorem, but that is not a priority claim.
-The eight-page PDF compiles without errors and passed a page-by-page visual
-inspection; the sole engine warning is a harmless underfull bibliography
-line. Before submission, obtain a human line-by-line proof check and perform
-a broader MathSciNet/zbMATH novelty review.
+The ten-page v2 PDF compiles without errors and passed a fresh
+page-by-page visual inspection; the sole engine warning is a harmless
+underfull bibliography line. Before submission, obtain a human
+line-by-line proof check and perform a broader MathSciNet/zbMATH novelty
+review.

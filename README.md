@@ -52,10 +52,11 @@ Two further audited theorems are now separated from the unresolved global
 claim.  A standalone paper draft proves that no degree-three étale
 morphism \(S(2,2,1)\to\mathbb A^2\) exists.  In the independent
 Gallagher weighted-lift graph family, every nonconstant arbitrary
-nonhomogeneous target \(Q(A,B,C)\) of target degree at most eight is
-excluded with first coordinate \(U+R_{\le2}\).  The latter theorem is
-sharp for its Newton-vertex criterion: the first possible support
-collision is the degree-nine cusp relation \(A^5C^4\sim B^6\).
+nonhomogeneous target \(Q(A,B,C)\) of target degree at most ten is
+excluded with first coordinate \(U+R_{\le2}\).  The primitive
+Newton-vertex criterion alone is sharp at degree eight—the first support
+collision is \(A^5C^4\sim B^6\)—but exact cusp subductions resolve all
+collisions through degree ten.
 Neither theorem is a proof of \(JC(2)\).
 
 This mechanism is genuinely special to transverse degree two.  The tempting
@@ -368,6 +369,19 @@ unibranch collision together with a \(2+2\) self-intersection, or an
 extra unramified boundary curve that punctures both residual sections.
 This is a sharp reduction, not yet a degree-four exclusion.  See
 [`current_context/ROUTE_A_DEGREE_FOUR_RETAINED_SHEET_AUDIT.md`](current_context/ROUTE_A_DEGREE_FOUR_RETAINED_SHEET_AUDIT.md).
+The two survivors now have exact normalization profiles.  In the
+\(3+1\)/self-intersection case, residual ramification is controlled by
+the parity of the two branch-intersection multiplicities; with \(n\)
+two-branch values and \(e\) odd contacts, the retained curve has
+\(\chi=1-4n\), and its connected completion has genus \(e-1\).  In the
+extra-boundary case, the two residual affine lines are punctured
+\(k_1,k_2\ge1\) times and have equal classes in
+\(\operatorname {Cl}(S)=\mathbf Z/2\).  Every \(r=2,\delta=0\)
+survivor is Gorenstein with \(\omega_Y\simeq\mathcal O_Y(E)\) and
+Cartier \(E\); the only non-Gorenstein \(3+1\) escape forces branch
+multiplicity at least four.  These constraints do not yet exclude
+degree four.  See
+[`current_context/ROUTE_A_DEGREE_FOUR_SURVIVOR_NORMALIZATION_PROFILE.md`](current_context/ROUTE_A_DEGREE_FOUR_SURVIVOR_NORMALIZATION_PROFILE.md).
 
 The counterexample-first fixed-source-plane route has a second independently
 audited global theorem.  If a Darboux pair existed in its explicit pinch
@@ -447,6 +461,27 @@ first-order Hermite-CRT model realizes the conductor, a residual sheet,
 the odd normal factor, and the Keller determinant modulo their union,
 while deliberately stopping short of a global Keller pair.  See
 [`current_context/FIXED_PLANE_SHEET_LOSS_AND_FIRST_ORDER_CRT.md`](current_context/FIXED_PLANE_SHEET_LOSS_AND_FIRST_ORDER_CRT.md).
+That first-order jet lifts compatibly through every finite power of the
+disjoint divisor \(E=DK\).  The structural reason is that
+\(\{U,E\}\) is a unit modulo \(E\), so an explicit Hensel recurrence
+removes one normal-order error at a time; the exact second-order
+polynomial has degree \(96\) and \(749\) terms.  Formal lifting therefore
+cannot supply a finite-order contradiction.  For the fixed lift \(U_0\),
+however, a squarefree eliminant exhibits fourteen critical points, all
+away from \(E=0\), and hence rules out every global polynomial
+\(V\) with \(\{U_0,V\}=1\).  The next honest question is whether a
+perturbation \(U_0+E^2\phi\) can remove those critical points while
+preserving the boundary data.  See
+[`current_context/FIXED_PLANE_ALL_ORDER_HERMITE_CRT_LIFT.md`](current_context/FIXED_PLANE_ALL_ORDER_HERMITE_CRT_LIFT.md).
+The first perturbation audit sharply narrows that question.  All fourteen
+points are Morse and persist uniquely under every formal
+\(U_0+\epsilon E^2\phi\); for each degree bound, a dense Zariski-open
+set in the full coefficient space still has a finite-étale
+degree-\(14\) critical subscheme.  Thus any successful perturbation must
+be exceptional and nonperturbative.  The scalar choice
+\(U_0+E^2\) makes matters worse: it has exactly \(21\) distinct
+off-boundary critical points.  See
+[`current_context/FIXED_PLANE_CRITICAL_PERSISTENCE_AND_SCALAR_PERTURBATION.md`](current_context/FIXED_PLANE_CRITICAL_PERSISTENCE_AND_SCALAR_PERTURBATION.md).
 The broader residue-parity conjecture is also false for rational
 descended pairs: endpoint-neutral canonical scalings preserve the
 Darboux equation, conductor data, and endpoint residue while moving the
@@ -616,18 +651,28 @@ case.
 
 The global filtration now extends to a substantial nonhomogeneous
 range.  For every nonconstant target polynomial \(Q(A,B,C)\) of total
-target degree at most eight and every \(R_{\le2}(A,B,C)\),
+target degree at most ten and every \(R_{\le2}(A,B,C)\),
 \[
 J_{x,y}\bigl(U+R_{\le2},Q\bigr)\notin\mathbb C^\times
 \]
-on every polynomial graph.  More generally the conclusion holds in
+on every polynomial graph.  The primitive Newton argument first closes
+degree eight; exact triangular replacement of the degree-nine cusp
+relation and its degree-ten multiples by \(T,AT,W,U\) closes the next
+two layers.  The \(U\)-coefficient must be removed modulo the actual
+first coordinate \(U+R_{\le2}\), and the only remaining polar collision,
+\(W\sim A^2B^3\), has a nonvanishing exact two-term Wronskian.  More
+generally the conclusion holds in
 arbitrary target degree whenever no two support exponents differ by a
 nonzero multiple of the primitive cusp direction \((5,-6,4)\), with
-the same \(R_{\le2}\) scope.  Degree nine is sharp for this criterion:
+the same \(R_{\le2}\) scope.  Degree nine is sharp only for this
+primitive criterion:
 \(A^5C^4\) and \(B^6\) are the first possible colliding pair.  The same
 argument closes all four formerly open lower-tier chains and restores
 the audited quadratic, cubic, and quartic bounded-tier theorems.  See
-[`current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_NEWTON_VERTEX_CLOSURE.md`](current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_NEWTON_VERTEX_CLOSURE.md).
+[`current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_NEWTON_VERTEX_CLOSURE.md`](current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_NEWTON_VERTEX_CLOSURE.md),
+[`current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_NINE_CUSP_CLOSURE.md`](current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_NINE_CUSP_CLOSURE.md),
+and
+[`current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_TEN_NEWTON_BASIS_CLOSURE.md`](current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_TEN_NEWTON_BASIS_CLOSURE.md).
 
 This does not yet give a global normal form.  Exact subduction of the
 next genuine saturation \(BT\sim A^5C^3\) produces a new boundary
@@ -639,10 +684,14 @@ After adjoining that generator \(W\), the formal three-component
 toric kernel has an exact eight-binomial minimal Markov basis.  Restoring
 the actual graph projection separates the next frontier: \(V\) is new
 for \(L=2\) and \(L\ge4\), while at \(L=3\) it has exactly the two
-reducers \(CA^3T\) and \(B^5A^3\).  A later element \(X\) lies outside
+reducers \(CA^3T\) and \(B^5A^3\).  Subducting those two reducers with
+the mandatory cubic graph jets always reaches an unreducible projected
+gap, so \(V\) is genuinely new for \(L=3\) as well.  A later element \(X\) lies outside
 the displayed projected semigroup for every \(L\ge2\).  This proves
 further incompleteness, not termination or an infinite completion.  See
-[`current_context/WEIGHTED_LIFT_SAGBI_AFTER_W_MARKOV_AND_NEXT_GENERATORS.md`](current_context/WEIGHTED_LIFT_SAGBI_AFTER_W_MARKOV_AND_NEXT_GENERATORS.md).
+[`current_context/WEIGHTED_LIFT_SAGBI_AFTER_W_MARKOV_AND_NEXT_GENERATORS.md`](current_context/WEIGHTED_LIFT_SAGBI_AFTER_W_MARKOV_AND_NEXT_GENERATORS.md)
+and
+[`current_context/WEIGHTED_LIFT_CUBIC_GRAPH_V_SUBDUCTION_CLOSURE.md`](current_context/WEIGHTED_LIFT_CUBIC_GRAPH_V_SUBDUCTION_CLOSURE.md).
 Nonlinear first-coordinate perturbations beyond the stated bounds and
 non-graph source surfaces remain open weighted-lift directions.
 
@@ -682,7 +731,7 @@ without a corresponding audited note.
 - `papers/cubic-pseudoplane-exclusion/` — standalone preprint source for
   the degree-three étale-map exclusion on \(S(2,2,1)\).
 - `papers/weighted-lift-newton-obstructions/` — standalone preprint source
-  for the arbitrary nonhomogeneous target-degree-eight theorem and the
+  for the arbitrary nonhomogeneous target-degree-ten theorem and the
   sharp cusp-kernel criterion.
 - `STATUS_AND_PIVOT_2026-07-25.md` — the latest high-level result and
   strategy audit.

@@ -487,6 +487,24 @@ pair.  This isolates higher-order Keller integrability, section
 realization, and minimal-resolution finality as the remaining sources of
 rigidity; see
 `current_context/FIXED_PLANE_SHEET_LOSS_AND_FIRST_ORDER_CRT.md`.
+The higher-order possibility is now settled in the constructive
+direction: because \(\{U,DK\}\) is a unit modulo \(DK\), an explicit
+Hensel recurrence lifts the jet through every finite power
+\((DK)^N\).  No finite normal order can obstruct it.  The fixed
+polynomial \(U_0\) nevertheless has fourteen distinct critical points,
+all away from \(DK=0\), so no global polynomial \(V\) can satisfy
+\(\{U_0,V\}=1\).  The sharper remaining question is critical-point
+removal under \(U_0+(DK)^2\phi\), followed by algebraization; see
+`current_context/FIXED_PLANE_ALL_ORDER_HERMITE_CRT_LIFT.md`.
+That perturbative route is now constrained exactly.  The fourteen
+critical points are Morse and persist uniquely under every formal
+\(U_0+\epsilon(DK)^2\phi\).  For each degree bound, a dense open
+subset of the full coefficient space retains a finite-étale
+degree-\(14\) critical subscheme.  Any successful perturbation is
+therefore exceptional and nonperturbative; the first scalar choice
+\(U_0+(DK)^2\) instead has \(21\) distinct off-boundary critical
+points.  See
+`current_context/FIXED_PLANE_CRITICAL_PERSISTENCE_AND_SCALAR_PERTURBATION.md`.
 
 The proposed rational residue-parity quantization is false as stated.
 Canonical scalings \(U=Af(AB), V=B/f(AB)\) can be chosen to be the
@@ -900,6 +918,16 @@ self-intersection, or an extra unramified boundary curve that punctures
 both residual sections.  Thus degree four is not yet excluded, but its
 failure to retain a homology line is completely localized.  See
 `current_context/ROUTE_A_DEGREE_FOUR_RETAINED_SHEET_AUDIT.md`.
+The two survivors now have exact normalization profiles.  Residual
+ramification in the \(3+1\)/self-intersection survivor is controlled by
+intersection parity; its retained Euler characteristic is \(1-4n\),
+and the connected completion has genus \(e-1\).  In the extra-boundary
+survivor, two punctured affine lines have equal
+\(\mathbf Z/2\)-classes.  Every \(r=2,\delta=0\) survivor is
+Gorenstein with \(\omega_Y\simeq\mathcal O_Y(E)\) and Cartier \(E\);
+the sole non-Gorenstein \(3+1\) escape forces branch multiplicity at
+least four.  These sharpen but do not eliminate the survivors.  See
+`current_context/ROUTE_A_DEGREE_FOUR_SURVIVOR_NORMALIZATION_PROFILE.md`.
 
 The structurally different construction-first target starts from the
 weighted-lift family of genuine three-dimensional Keller maps of every
@@ -915,10 +943,13 @@ pivot must be genuinely nonlinear.  The former lower-tier chains
 \(AC+B\), \(ABC+B^2\), \(AB^2C+B^3\), and
 \(A^2C^2+ABC\) are now closed by a global Newton-vertex argument.
 More strongly, every arbitrary nonhomogeneous target of degree at most
-eight is excluded with a first-coordinate perturbation of degree at
+ten is excluded with a first-coordinate perturbation of degree at
 most two.  The simultaneous regular and polar collision kernel is
-\(\mathbb Z(5,-6,4)\), so the first possible failure is the
-degree-nine cusp relation \(A^5C^4\sim B^6\).  Binary homogeneous targets
+\(\mathbb Z(5,-6,4)\), so the primitive criterion first fails at the
+degree-nine cusp relation \(A^5C^4\sim B^6\).  Exact triangular
+replacement by \(T,AT,W,U\), including reduction modulo the actual
+first coordinate and a two-term polar Wronskian, resolves all collisions
+through degree ten.  Binary homogeneous targets
 are now closed in every degree: the exact maximal-\(x\) filtration
 isolates the top characteristic from all 77 lower \(U\)-support terms
 and all lower \(A/B\) seeds, and the unique \(x^{-1}\) recurrence has
@@ -944,19 +975,30 @@ normal form.  The first step is now exact.  After adjoining \(W\), the
 formal three-component toric ideal has an eight-binomial minimal Markov
 basis.  Under the actual graph projection, its next frontier \(V\) is
 new for \(L=2\) and \(L\ge4\), but at \(L=3\) it has precisely the two
-reducers \(CA^3T\) and \(B^5A^3\).  A later element \(X\) is outside the
+reducers \(CA^3T\) and \(B^5A^3\).  The fixed cubic graph jets close
+that exception: after subduction, \(V\) always reaches an unreducible
+projected gap.  A later element \(X\) is outside the
 displayed projected semigroup for every \(L\ge2\).  This proves further
 incompleteness, but neither infinitude nor termination.
 
 The fixed-plane analogue is:
 
 > Promote the target-determined endpoint charges and Green potential to
-> an actual minimal-resolution section theorem, or derive a second-order
-> obstruction to extending the first-order Hermite-CRT Keller jet.
+> an actual minimal-resolution section theorem, or perturb
+> \(U_0\) by \(E^2\phi\) to remove its global critical scheme while
+> preserving the all-order boundary lift.
 
 The two formulations share the same geometry: all local and divisor-level
-constraints can be satisfied, but finite global realization may fail at
-termination, finality, or higher-order integrability.
+constraints can be satisfied.  In fact the fixed-plane Keller jet lifts
+through every finite normal order because \(\{U,E\}\) is a unit modulo
+\(E\).  The chosen \(U_0\) nevertheless has fourteen off-boundary
+critical points and cannot belong to a global Keller pair.  Those points
+are Morse and persist throughout a dense open set of every full
+bounded-degree coefficient space.  A successful deformation must lie
+outside these open sets; determining whether one exists requires the
+projective critical-incidence analysis.  Finite global realization must
+therefore fail at critical-locus removal, termination, or finality
+rather than finite-order integrability.
 
 The research program should therefore prioritize:
 
@@ -967,13 +1009,12 @@ The research program should therefore prioritize:
    charts, since the first terminal scalar now kills the deepest special
    branch but the abstract residual symbols themselves are maximally
    nondegenerate;
-3. the cubic-graph \(L=3\) SAGBI branch after its two exact reducers,
-   followed by a recurrence theorem for the projected generator
-   sequence rather than further unstructured expansion, and then
-   nonlinear first-coordinate perturbations or a non-graph source
-   surface;
+3. a recurrence theorem for the projected SAGBI generator sequence,
+   now that the cubic \(V\)-exception is closed, followed by nonlinear
+   first-coordinate perturbations or a non-graph source surface;
 4. minimal-resolution finality coupled to actual polynomial sections;
-5. second-order extension of the fixed-source Hermite-CRT Keller jet; and
+5. global critical-point removal for \(U_0+E^2\phi\) and polynomial
+   algebraization of the all-order Hermite--CRT lift; and
 6. exact countermodels whenever a proposed global inequality is too weak.
 
 It should not return to unrestricted coefficient brute force except for
