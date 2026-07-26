@@ -479,33 +479,35 @@ open; see
 [`current_context/WEIGHTED_LIFT_SECOND_SUBDUCTION_RAY_CLOSURE.md`](current_context/WEIGHTED_LIFT_SECOND_SUBDUCTION_RAY_CLOSURE.md)
 and
 [`current_context/WEIGHTED_LIFT_MIXED_LINEAR_PIVOT_CLOSURE.md`](current_context/WEIGHTED_LIFT_MIXED_LINEAR_PIVOT_CLOSURE.md).
-The exclusion now extends to every affine quadratic second coordinate.
+The quadratic homogeneous faces were classified exactly.
 For the binary \(A/B\) face, one characteristic equation classifies the
 \(A^2\), \(AB\), and \(B^2\) rays; the new \(AB\) ray forces
 \(\binom{27k+2}{16k}x y^{11k+2}\), which cannot arise from \(x^2g\).
 On the \(C\)-faces, mixed \(AC/BC\) forces a negative infinity-chart
-power, pure \(AC\) has a fixed Euler defect, \(BC\) has no resonance,
-and \(C^2\) reduces to the closed linear cases.  Affine perturbations
-enter after these defects.  Thus every
-\((U+L,Q(A,B,C))\) with nonzero quadratic part fails on every
-polynomial graph.  See
+power, \(BC\) has no resonance, and \(C^2\) reduces to the linear
+cases.  The former pure-\(AC\) boundary-Euler proof was not exact: a
+lower \(B\) term can enter the same first-lower sector.  Thus the
+arbitrary-lower-tier quadratic theorem remains open on the \(AC+B\)
+chain.  See
 [`current_context/WEIGHTED_LIFT_ALL_QUADRATIC_PIVOT_CLOSURE.md`](current_context/WEIGHTED_LIFT_ALL_QUADRATIC_PIVOT_CLOSURE.md).
-The target-Newton argument now closes degree three as well.  Every
+The target-Newton argument similarly classifies degree three.  For
 \[
 V=Q_3(A,B,C)+Q_{\le2}(A,B,C),\qquad Q_3\ne0,
 \]
-fails on every polynomial graph even after adding an arbitrary
-degree-at-most-two target polynomial to \(U\).  A master
-characteristic formula classifies all binary and \(C\)-divisible cubic
-faces; the new \(A^2B\) ray forces a forbidden \(x^1\)-term, the mixed
-\(ABC/B^2C\) ray forces a negative infinity-chart power or a fixed
-Euler defect, and all remaining \(C\)-faces are nonresonant.  An exact
-Newton staircase prevents lower target tiers from repairing any defect.
+all binary faces, the new \(A^2B\) forbidden-\(x^1\) ray, the mixed
+negative-tail cases, and the nonresonant \(C\)-faces remain closed.
+But a lower \(B^2\) term can enter the same first-lower sector as the
+pure \(ABC\) face, so the arbitrary-lower-tier cubic theorem is open
+on the \(ABC+B^2\) chain and also inherits the lower quadratic
+\(AC+B\) chain.
 See
 [`current_context/WEIGHTED_LIFT_ALL_CUBIC_PIVOT_CLOSURE.md`](current_context/WEIGHTED_LIFT_ALL_CUBIC_PIVOT_CLOSURE.md)
 and
 [`current_context/WEIGHTED_LIFT_C_DIVISIBLE_CUBIC_FACE_CLOSURE.md`](current_context/WEIGHTED_LIFT_C_DIVISIBLE_CUBIC_FACE_CLOSURE.md).
-The quartic layer is now closed in the same uniform form:
+The exact cancellation coefficients and polynomial solvability of both
+open lower-tier chains are recorded in
+[`current_context/WEIGHTED_LIFT_QUADRATIC_CUBIC_LOWER_TIER_CORRECTION_AUDIT.md`](current_context/WEIGHTED_LIFT_QUADRATIC_CUBIC_LOWER_TIER_CORRECTION_AUDIT.md).
+The quartic layer was analyzed in the same uniform form:
 \[
 V=Q_4+Q_{\le3},\qquad U\longmapsto U+R_{\le3}.
 \]
@@ -513,7 +515,14 @@ All binary and \(C\)-divisible faces reduce to nine exact rays.
 Finite coefficient recurrences close the mixed \(C^2Q_2\) face and
 the interleaved \(A/B/C^4\) face; the sole constant-graph toric
 degeneracy, \(AB^3\) at \(z=0\), has an exact nonzero next diagonal.
-See
+An exact correction audit later found two remaining pure rays:
+\(AB^2C\) with a cubic \(B^3\) term and \(A^2C^2\) with a cubic
+\(ABC\) term.  Those coefficients can cancel the first-lower double
+pole, after which that Laurent-sector equation is polynomially
+solvable.  Thus the arbitrary-lower-tier quartic theorem is not yet
+proved on precisely those families.  See
+[`current_context/WEIGHTED_LIFT_ALL_QUARTIC_PURE_FACE_CORRECTION_AUDIT.md`](current_context/WEIGHTED_LIFT_ALL_QUARTIC_PURE_FACE_CORRECTION_AUDIT.md)
+and the original certificate note
 [`current_context/WEIGHTED_LIFT_ALL_QUARTIC_PIVOT_CLOSURE.md`](current_context/WEIGHTED_LIFT_ALL_QUARTIC_PIVOT_CLOSURE.md).
 More generally, every pure binary monomial face is closed in every
 target degree, and every binary target through degree five follows
@@ -543,9 +552,44 @@ every polynomial graph correction remains divisible by \(x^2\).
 Hence no member of this family descends on a polynomial graph in any
 target degree.  See
 [`current_context/WEIGHTED_LIFT_ALL_DEGREE_D1_RECURRENCE_CLOSURE.md`](current_context/WEIGHTED_LIFT_ALL_DEGREE_D1_RECURRENCE_CLOSURE.md).
-Quintic \(C\)-divisible faces and non-graph source surfaces are now the
-first unresolved full layers; among binary faces, the next unresolved
-characteristic class has Newton degree at least two.
+The binary restriction is now closed completely, in every target
+degree.  Writing the maximal Laurent-\(x\) graph sector as
+\(x^I\psi_I(t)\), the exact 77-term support shows that every lower seed
+has strictly smaller \(x\)-valuation.  Thus the top characteristic must
+itself be polynomial; a delayed negative tail cannot mix with the
+first-lower forcing.  Every mixed polynomial completion then has an
+unavoidable double pole at \(t=0\) or at a nonzero root of its
+characteristic polynomial, while polynomial graph corrections supply
+only simple poles.  Pure faces and the sole constant-graph toric
+degeneracy are closed separately.  Consequently every homogeneous
+\(Q_n(A,B)\), for every \(n\ge1\), fails as a second target on every
+polynomial graph, even with affine target corrections.  See
+[`current_context/WEIGHTED_LIFT_ALL_DEGREE_BINARY_TARGET_CLOSURE.md`](current_context/WEIGHTED_LIFT_ALL_DEGREE_BINARY_TARGET_CLOSURE.md).
+The homogeneous ternary problem is now closed in every target degree.
+For each nonzero homogeneous \(Q_n(A,B,C)\), the proof selects the
+globally earliest source-boundary face of the entire target rather than
+an isolated least-\(C\) monomial.  If the graph is regular on that
+boundary, exact full-seed degree gaps isolate a nonzero Wronskian
+coefficient.  If the graph has a boundary pole, the two endpoints
+\(u=1\) and \(u=\infty\) give incompatible cancellation equations.
+Thus
+\[
+\left(U+R_{\le1}(A,B,C),\,Q_n(A,B,C)+c\right)
+\]
+cannot have nonzero constant restricted Jacobian on any polynomial
+graph, for affine \(R_{\le1}\) and constant \(c\).  See
+[`current_context/WEIGHTED_LIFT_GLOBAL_MINIMAL_BOUNDARY_FACE_CLOSURE.md`](current_context/WEIGHTED_LIFT_GLOBAL_MINIMAL_BOUNDARY_FACE_CLOSURE.md).
+
+This proof was obtained only after an adversarial audit invalidated the
+earlier facewise Euler argument: after \(t=u/x\), all exact seed layers
+can coalesce, and a higher-\(C\) monomial may share or precede the
+selected boundary order.  The failed argument and its exact
+counterterms remain documented in
+[`current_context/WEIGHTED_LIFT_TERNARY_PURE_BOUNDARY_SEPARATION_AUDIT.md`](current_context/WEIGHTED_LIFT_TERNARY_PURE_BOUNDARY_SEPARATION_AUDIT.md).
+The degree-six Wronskian calculation is retained as a concrete special
+case.  Arbitrary nonhomogeneous lower second-coordinate tiers, nonlinear
+first-coordinate perturbations, and non-graph source surfaces remain
+open weighted-lift directions.
 
 ## Reproduction
 
@@ -580,6 +624,8 @@ without a corresponding audited note.
   derivations.
 - `papers/degree-125-bound/` — preprint source and publication replay
   instructions for the bounded theorem.
+- `papers/cubic-pseudoplane-exclusion/` — standalone preprint source for
+  the degree-three étale-map exclusion on \(S(2,2,1)\).
 - `STATUS_AND_PIVOT_2026-07-25.md` — the latest high-level result and
   strategy audit.
 - `verify_all.py` — bundled deterministic regression suite.

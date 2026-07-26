@@ -2,6 +2,15 @@
 
 Date: 25 July 2026
 
+> **Correction.**  The pure-face boundary-Euler subargument used below
+> is not the full exact source-boundary equation after \(t=u/x\).
+> Moreover, in the arbitrary-lower-tier theorem a lower \(B^2\) term
+> can enter the same first-lower sector as the pure \(ABC\) face.  The
+> full cubic conclusion stated below is therefore not currently proved
+> on the \(ABC+B^2\) chain; it also inherits the unresolved lower
+> quadratic \(AC+B\) chain.  The descending, mixed negative-tail,
+> nonresonance, and constant-graph certificates remain valid.
+
 ## Outcome
 
 Let \(F=(A,B,C)\) be the generic-degree-six Gallagher weighted lift,

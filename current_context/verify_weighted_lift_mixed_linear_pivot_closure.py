@@ -229,9 +229,9 @@ def main() -> None:
     print("verified: exact coupled A/B weighted-Euler operator")
     print("verified: characteristic solution on every mixed A-ray")
     print("verified: the forced x^1 coefficient is rho-independent")
-    print("verified: C and linear corrections enter after both defects")
+    print("verified: C and linear corrections enter after the A-ray defect")
     print("verified: constant graphs have separated nonzero top forms")
-    print("RESULT: every nonzero mixed linear pivot is closed")
+    print("RESULT: use the final binary verifier for the corrected B/C proof")
 
 
 if __name__ == "__main__":

@@ -2,6 +2,13 @@
 
 Date: 25 July 2026
 
+> **Correction.**  The \(B\)-ray boundary-Euler proof below is
+> superseded because it omits exact seed layers on \(t=u/x\).  The
+> stated \(B\)-pivot conclusion is repaired by the exact first-lower
+> double pole in
+> `WEIGHTED_LIFT_ALL_DEGREE_BINARY_TARGET_CLOSURE.md`; the forbidden
+> \(x^1\)-descent for the \(A\)-ray is unaffected.
+
 ## Outcome
 
 Continue with the target polynomial \(U(A,B,C)\) constructed in

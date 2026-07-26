@@ -2,6 +2,14 @@
 
 Date: 25 July 2026
 
+> **Correction.**  The pure-face boundary-Euler subargument used below
+> is not the full exact source-boundary equation after \(t=u/x\).
+> Moreover, in the arbitrary-lower-tier theorem a lower \(B\) term can
+> enter the same first-lower sector as the pure \(AC\) face.  The full
+> quadratic conclusion stated below is therefore not currently proved
+> on the \(AC+B\) chain.  The descending, mixed negative-tail,
+> nonresonance, and constant-graph certificates remain valid.
+
 ## Outcome
 
 Let \(F=(A,B,C)\) be the generic-degree-six Gallagher weighted lift

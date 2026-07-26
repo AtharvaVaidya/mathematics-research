@@ -2,6 +2,13 @@
 
 Date: 25 July 2026
 
+> **Correction.**  The inherited \(B\)-ray boundary-Euler proof is
+> superseded because it omits exact seed layers on \(t=u/x\).  The
+> \(B/C\) conclusion is repaired by the exact binary first-lower
+> double pole, which occurs before the lower \(C\)-sector; the
+> independent mixed \(A/B\) forbidden-\(x^1\) argument is unaffected.
+> See `WEIGHTED_LIFT_ALL_DEGREE_BINARY_TARGET_CLOSURE.md`.
+
 ## Outcome
 
 Let \(F=(A,B,C):\mathbb A^3\to\mathbb A^3\) be the

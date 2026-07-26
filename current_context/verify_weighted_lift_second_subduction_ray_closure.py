@@ -200,12 +200,11 @@ def main() -> None:
     verify_b_ray()
     verify_a_ray()
     verify_exact_seed_gap()
-    print("verified: exact B- and A-pivot weighted-Euler operators")
-    print("verified: B-ray completes to x^(3k+4)*(1+xy)^(5k+5)")
-    print("verified: a=-57/34 leaves an unavoidable B-ray xy defect")
+    print("verified: exact legacy B- and A-pivot top-Euler operators")
+    print("verified: B-ray top model (not the full boundary equation)")
     print("verified: A-ray requires a forbidden x^1 graph contribution")
-    print("verified: both defects precede every lower seed sector")
-    print("RESULT: both second-subduction Newton rays are closed")
+    print("verified: the A-ray defect precedes every lower seed sector")
+    print("RESULT: use the final binary verifier for the corrected B-ray proof")
 
 
 if __name__ == "__main__":

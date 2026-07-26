@@ -265,7 +265,7 @@ def main() -> None:
     verify_second_characteristic_block()
     verify_degree_separation()
     verify_constant_graphs()
-    print("weighted-lift C-divisible cubic-face closure: exact checks passed")
+    print("C-divisible cubic certificates pass; use the correction audit for pure faces")
 
 
 if __name__ == "__main__":

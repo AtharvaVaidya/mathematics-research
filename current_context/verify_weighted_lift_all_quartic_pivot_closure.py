@@ -510,11 +510,11 @@ def main() -> None:
     verify_constant_graphs()
     print("verified: every quartic Newton-face characteristic")
     print("verified: all binary and C*binary quartic resonance rays")
-    print("verified: descending, pole, and boundary-jet obstructions")
+    print("verified: descending/pole certificates and legacy Euler coefficients")
     print("verified: the mixed A/B versus C^4 face has a short tail")
     print("verified: exact quartic-to-affine Newton staircase")
     print("verified: fourteen constant tops and the exact AB^3 next diagonal")
-    print("RESULT: every quartic second target pivot is closed")
+    print("RESULT: quartic certificates pass; use the correction audit for pure faces")
 
 
 if __name__ == "__main__":

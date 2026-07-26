@@ -2,6 +2,16 @@
 
 Date: 25 July 2026
 
+> **Correction.**  The source-boundary Euler argument in
+> Section 2.3 is not an exact boundary equation: after
+> \(t=u/x\), all seed layers have the same boundary \(x\)-order.
+> Do not cite that section as a proof of the pure-face claim.  The
+> all-degree binary conclusion is repaired independently, using the
+> exact first-lower numerator and a unique forbidden descent, in
+> `WEIGHTED_LIFT_ALL_DEGREE_BINARY_TARGET_CLOSURE.md`.  The
+> characteristic reduction and mixed-face frontier calculations in
+> this note remain useful.
+
 ## Outcome
 
 Let \(F=(A,B,C)\) be the generic-degree-six Gallagher weighted lift,

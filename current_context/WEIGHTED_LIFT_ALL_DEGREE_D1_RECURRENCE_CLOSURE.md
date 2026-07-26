@@ -2,6 +2,14 @@
 
 Date: 25 July 2026
 
+> **Correction.**  References here to the older pure-face
+> source-boundary Euler lemma are superseded.  That boundary equation
+> omitted exact seed layers after the change \(t=u/x\).  The mixed
+> Newton-degree-one recurrence below remains valid; the pure binary
+> cases are now proved by the exact first-lower numerator and forbidden
+> descent in
+> `WEIGHTED_LIFT_ALL_DEGREE_BINARY_TARGET_CLOSURE.md`.
+
 ## Outcome
 
 Let \(F=(A,B,C)\) be the generic-degree-six Gallagher weighted lift

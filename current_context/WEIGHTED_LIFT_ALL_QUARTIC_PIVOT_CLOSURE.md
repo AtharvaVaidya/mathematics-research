@@ -2,6 +2,19 @@
 
 Date: 25 July 2026
 
+> **Correction (25 July 2026).**  Section 2.2 uses an invalid
+> boundary-Euler separation.  The corrected exact first-lower
+> calculation re-closes the pure \(B^4\) and pure linear \(B\) rays,
+> but not the \(AB^2C\) and \(A^2C^2\) rays with arbitrary cubic
+> lower target terms.  In those two families, normalized \(B^3\) and
+> \(ABC\) coefficients respectively can cancel the first-lower double
+> pole, and the remaining normalized \(x^{-1}\)-equation admits a
+> polynomial coefficient solution.  Therefore the all-quartic
+> conclusion, as stated for arbitrary \(Q_{\le3}\), is not currently
+> proved.  All descending, negative-tail, nonresonance, interleaving,
+> and constant-graph certificates remain valid.  See
+> `WEIGHTED_LIFT_ALL_QUARTIC_PURE_FACE_CORRECTION_AUDIT.md`.
+
 ## Outcome
 
 Let \(F=(A,B,C)\) be the generic-degree-six Gallagher weighted lift,

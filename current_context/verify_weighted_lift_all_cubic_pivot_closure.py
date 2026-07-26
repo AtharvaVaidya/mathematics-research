@@ -400,7 +400,7 @@ def main() -> None:
     print("verified: mixed ABC/B^2C forces a negative t-power")
     print("verified: the full cubic-to-affine Newton staircase and gaps")
     print("verified: every constant-graph cubic top is nonzero")
-    print("RESULT: every cubic second target pivot is closed")
+    print("RESULT: cubic certificates pass; ABC+B^2 remains under correction")
 
 
 if __name__ == "__main__":

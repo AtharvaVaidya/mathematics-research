@@ -229,7 +229,7 @@ def verify_degrees_through_first_exception() -> None:
     ]
 
 
-def verify_pure_monomial_fixed_defect() -> None:
+def verify_legacy_pure_euler_coefficients() -> None:
     n, d = sp.symbols("n d", integer=True, positive=True)
     a = -sp.Rational(57, 34)
     coefficient_x = 5 * n + 17 * d
@@ -261,9 +261,9 @@ def verify_pure_monomial_fixed_defect() -> None:
         coefficient_zero.subs(n, sp.Rational(17, 3) * d)
     ) == -sp.Rational(40, 3) * d
 
-    # A nonzero polynomial solution of
-    # coefficient_u*u*f'+coefficient_zero*f=0 is c*u^N.
-    # The graph boundary jets force c=1 and N=a, impossible.
+    # These are the coefficients of the legacy top-Euler model only.
+    # They are not the full exact source-boundary equation after
+    # t=u/x; pure faces are proved in the final all-degree verifier.
     assert a == -sp.Rational(57, 34)
     assert a.is_integer is False
 
@@ -276,13 +276,14 @@ def main() -> None:
     verify_first_exceptional_polynomial_completion()
     verify_sampled_resonance_classification()
     verify_degrees_through_first_exception()
-    verify_pure_monomial_fixed_defect()
+    verify_legacy_pure_euler_coefficients()
     print("verified: all-n binary characteristic and resonance relation")
     print("verified: universal x-adic residual is (n-459*d)/34")
     print("verified: the zero-residual ratio has no integer resonance")
-    print("verified: every binary face through n=5 is structurally closed")
+    print("verified: low-degree resonance classification")
     print("verified: n=6,d=1 has graph-compatible polynomial completions")
     print("verified: its x-adic residual collides with the lower seed")
+    print("notice: legacy pure-Euler coefficients are not a boundary proof")
     print("RESULT: first exceptional family is exactly n=6,d=1,k>=1")
 
 

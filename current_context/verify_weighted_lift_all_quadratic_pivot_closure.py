@@ -463,7 +463,7 @@ def main() -> None:
     print("verified: the mixed AC/BC face forces a negative t-power")
     print("verified: affine and lower seed sectors enter after each defect")
     print("verified: constant graphs have separated nonzero quadratic tops")
-    print("RESULT: every affine quadratic second pivot is closed")
+    print("RESULT: quadratic certificates pass; AC+B remains under correction")
 
 
 if __name__ == "__main__":
