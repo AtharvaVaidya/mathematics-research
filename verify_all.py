@@ -245,6 +245,17 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_standard_system_repeated_root_kummer_nonlinear_audit.py",
     ROOT / "current_context" / "verify_standard_system_repeated_root_zero_residual_secondary_face_no_go.py",
     ROOT / "current_context" / "verify_standard_system_power_index_principal_face_bridge_audit.py",
+    ROOT / "current_context" / "verify_nodal_45_squarefree_root_no_go.py",
+    ROOT / "current_context" / "verify_nodal_parity_keller_thickening_obstructions.py",
+    ROOT / "current_context" / "verify_nonequivariant_nodal_low_normal_degree_obstructions.py",
+    ROOT / "current_context" / "verify_nonequivariant_nodal_pullback_structure_and_local_model.py",
+    ROOT / "current_context" / "verify_nonequivariant_normal_degree_four_exclusion.py",
+    ROOT / "current_context" / "verify_reflection_equivariant_keller_map_literature_audit.py",
+    ROOT / "current_context" / "verify_route_a_pfaff_algebraic_derivation_no_go.py",
+    ROOT / "current_context" / "verify_standard_system_global_cubic_residue_moment_audit.py",
+    ROOT / "current_context" / "verify_standard_system_lifted_endpoint_formal_and_filtered_recurrence.py",
+    ROOT / "current_context" / "verify_standard_system_repeated_root_deck_gap_terminal_exclusion.py",
+    ROOT / "current_context" / "verify_standard_system_repeated_root_global_deck_budget_countermodel.py",
 ]
 
 

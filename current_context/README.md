@@ -667,6 +667,67 @@ Thus power-index descent is a route to the lifted endpoint, not an
 obstruction to it.  See
 `STANDARD_SYSTEM_POWER_INDEX_PRINCIPAL_FACE_BRIDGE_AUDIT.md`.
 
+The terminal support itself is now classified.  Every nonzero scalar
+pairing in the first repeated-root Rees chart comes from the two original
+affine defect-one coefficients and has one of the two exact order pairs
+\[
+(aG-h,bG-h+d),\qquad(aG-h+d,bG-h).
+\]
+Consequently a residual-zero chart requires \(bG>h\).  In the intermediate
+band \(aG\le h<bG\), only one orientation survives and it forces a zero of
+the affine coefficient \(P_{n-1}\), so at most one global repeated root
+can lie there.  See
+`STANDARD_SYSTEM_REPEATED_ROOT_DECK_GAP_TERMINAL_EXCLUSION.md`.
+
+This local theorem cannot be globalized from degree and divisor budgets
+alone.  The exact family
+\[
+R=\prod_i(X-\alpha_i)^{e_i},\qquad
+L=\prod_i(X-\alpha_i)^{e_i-1}H,\qquad D=R+\tau L
+\]
+puts every repeated root in the deep band \(aG>h\), while satisfying all
+first-layer divisibility, multiplicity, reciprocal coefficient, and
+affine endpoint constraints.  It deliberately leaves intermediate Keller
+coefficients uncancelled.  Thus the next repeated-root theorem must use
+those intervening homogeneous equations; see
+`STANDARD_SYSTEM_REPEATED_ROOT_GLOBAL_DECK_BUDGET_COUNTERMODEL.md`.
+
+On the independent bounded-normal-degree route, the complete cubic and
+quartic coefficient systems have been integrated.  Exact bidegree
+\((4,3)\) reduces over \(\mathbb C(x)\) to a one-parameter Hamiltonian
+ODE, and restoration of the polynomial boundary coefficients excludes
+every pole, zero, and unit chart of the common leading factor.  This is an
+alternative structural proof, not a priority claim:
+Moskowicz's 2018 one-coordinate degree-at-most-four theorem is repairable
+without its false auxiliary Lemma 2.3 and already subsumes the automorphy
+bound.  See `NONEQUIVARIANT_NODAL_LOW_NORMAL_DEGREE_OBSTRUCTIONS.md` and
+`NONEQUIVARIANT_NORMAL_DEGREE_FOUR_EXCLUSION.md`.  Combining the repaired
+partial-degree criterion with the top leading-coefficient equation shows
+that the first unremoved exact normal pair is \((8,6)\), with even degree
+for its common leading factor.
+
+The reflection/parity nodal route is globally closed by the
+Moskowicz--Valqui starred-Jacobian theorem, even though its local
+coefficient obstructions remain correct.  The non-equivariant nodal
+fiber-product geometry is also insufficient by itself: an exact polynomial
+local model realizes the node, the diagonal/residual splitting, and the
+first-order Jacobian condition while failing only at the global
+constant-Jacobian equation.  See
+`REFLECTION_EQUIVARIANT_KELLER_MAP_LITERATURE_AUDIT.md`,
+`NODAL_PARITY_KELLER_THICKENING_OBSTRUCTIONS.md`,
+`NODAL_45_SQUAREFREE_ROOT_NO_GO.md`, and
+`NONEQUIVARIANT_NODAL_PULLBACK_STRUCTURE_AND_LOCAL_MODEL.md`.
+
+Finally, the proposed Pfaff-algebraic shortcut cannot be made locally
+finite: a hypothetical Darboux pair would force a semisimple
+weight-\((-1,0)\) bracket incompatible with the torus classification.
+Formal endpoint lifting is unobstructed, but its finite filtered
+recurrence has the expected growing cokernel, while the first cubic
+global residue trace cancels.  See
+`ROUTE_A_PFAFF_ALGEBRAIC_DERIVATION_NO_GO.md`,
+`STANDARD_SYSTEM_LIFTED_ENDPOINT_FORMAL_AND_FILTERED_RECURRENCE.md`, and
+`STANDARD_SYSTEM_GLOBAL_CUBIC_RESIDUE_MOMENT_AUDIT.md`.
+
 On Route A, each of the three explicit degree-\(4,5,6\) branch curves
 has a full-degree \((3,2)\) cusp for the trigonal projection.  A small
 generic vertical fiber lies entirely in the cusp Milnor ball, so its

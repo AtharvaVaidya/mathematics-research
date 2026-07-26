@@ -57,6 +57,39 @@ The [source and reproduction notes](papers/squarefree-common-root-exclusion/)
 are included beside the checked PDF.  Repeated-root boundaries remain
 outside the theorem, so this does not resolve \(JC(2)\).
 
+The next repeated-root step is now sharply delimited.  An exact
+terminal-pairing theorem shows that a repeated-root chart can reach the
+Keller scalar only in the deck gap \(bG>h\); in the intermediate band it
+must spend the unique zero of an affine endpoint coefficient.  A matching
+global countermodel shows that divisor, multiplicity, reciprocal-degree,
+and endpoint budgets can nevertheless put every root in the deeper band
+\(aG>h\).  Thus those budgets alone cannot close the repeated-root case:
+the missing input must come from the intervening homogeneous Keller
+equations.  See
+[`current_context/STANDARD_SYSTEM_REPEATED_ROOT_DECK_GAP_TERMINAL_EXCLUSION.md`](current_context/STANDARD_SYSTEM_REPEATED_ROOT_DECK_GAP_TERMINAL_EXCLUSION.md)
+and
+[`current_context/STANDARD_SYSTEM_REPEATED_ROOT_GLOBAL_DECK_BUDGET_COUNTERMODEL.md`](current_context/STANDARD_SYSTEM_REPEATED_ROOT_GLOBAL_DECK_BUDGET_COUNTERMODEL.md).
+
+A separate coefficient calculation integrates every Keller system of
+exact normal bidegree \((4,3)\) over \(\mathbb C(x)\) and excludes it by
+local valuation theory.  This is an independently checked structural
+proof, not a new automorphy bound: Moskowicz's stronger one-coordinate
+partial-degree theorem was already stated in 2018 and has a short repair
+despite a false auxiliary number-theoretic lemma.  The calculation and
+prior-art caveat are in
+[`current_context/NONEQUIVARIANT_NORMAL_DEGREE_FOUR_EXCLUSION.md`](current_context/NONEQUIVARIANT_NORMAL_DEGREE_FOUR_EXCLUSION.md).
+The first normal-degree pair not removed by that prior theorem and the
+leading-coefficient relation is \((8,6)\), in its even common-leading-
+factor chart.
+
+Two tempting shortcuts have also been closed rather than silently
+discarded.  Reflection-equivariant nodal thickenings are already
+triangular by the starred-Jacobian theorem of Moskowicz--Valqui, and the
+proposed locally finite Pfaff derivation cannot exist; see
+[`current_context/REFLECTION_EQUIVARIANT_KELLER_MAP_LITERATURE_AUDIT.md`](current_context/REFLECTION_EQUIVARIANT_KELLER_MAP_LITERATURE_AUDIT.md)
+and
+[`current_context/ROUTE_A_PFAFF_ALGEBRAIC_DERIVATION_NO_GO.md`](current_context/ROUTE_A_PFAFF_ALGEBRAIC_DERIVATION_NO_GO.md).
+
 Two further audited theorems are now separated from the unresolved global
 claim.  A standalone paper draft proves that no degree-three étale
 morphism \(S(2,2,1)\to\mathbb A^2\) exists.  In the independent
