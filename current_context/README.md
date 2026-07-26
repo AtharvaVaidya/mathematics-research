@@ -251,6 +251,22 @@ J(U+R_{\le2},Q)\notin\mathbb C^\times
 on every polynomial graph.  See
 `WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_NINE_CUSP_CLOSURE.md` and
 `WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_TEN_NEWTON_BASIS_CLOSURE.md`.
+Through degree eleven there are ten cusp collisions, triangularly
+replaced by products of \(T,W,U\).  Nine augmented atoms remain after
+the same first-coordinate reduction.  All regular boundaries are
+separated, including four exact \(L=1\) two-dimensional groups.  At a
+pole, four of the six repeated groups are nonresonant.  The two
+remaining characteristic rays are closed at their first lower
+total-\(\gamma\) layer by local Laurent-jet determinants
+\[
+\Delta_{BW/AT}\doteq(17k-5)(105k-32),\qquad
+\Delta_{AU/W}\doteq(17k-13)^2.
+\]
+These depend only on the graph's forced 1-jet and are independent of
+every higher zero-sector coefficient.  Consequently the same
+nonconstant-target obstruction holds through target degree eleven.
+See
+`WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_ELEVEN_NEWTON_BASIS_CLOSURE.md`.
 
 These finite-dimensional theorems do not give a complete SAGBI normal
 form.  The next exact saturation \(BT\sim A^5C^3\) produces a new
@@ -380,6 +396,13 @@ equal classes in \(\operatorname {Cl}(S)=\mathbf Z/2\).  Every
 \(\omega_Y\simeq\mathcal O_Y(E)\) and Cartier \(E\); the only
 non-Gorenstein \(3+1\) escape forces branch multiplicity at least four.
 See `ROUTE_A_DEGREE_FOUR_SURVIVOR_NORMALIZATION_PROFILE.md`.
+The remaining canonical and log-adjunction identities have now been
+tested against both profiles.  Exact local curve and finite-cover models
+realize every required degree, conductor, ramification, and deleted-divisor
+ledger; in particular the adjunction divisor is distinct from the
+log-puncture divisor.  These identities therefore do not eliminate either
+survivor.  This is a scoped feasibility result, not a global Keller model.
+See `ROUTE_A_DEGREE_FOUR_LOG_ADJUNCTION_FEASIBILITY.md`.
 
 For case c, the corrected degree-four outer cover has now been tested
 against every linear jet adjoint through derivative order three.  Both
@@ -443,6 +466,17 @@ exactly \(21\) distinct off-boundary critical points.  The next
 well-posed task is the projective critical-incidence locus, not a random
 coefficient search.  See
 `FIXED_PLANE_CRITICAL_PERSISTENCE_AND_SCALAR_PERTURBATION.md`.
+That projective analysis is now exact on the two natural scalar rays.
+For \(U_0+\lambda E^2\), the affine critical length is generically \(21\)
+and drops to \(20\) at
+\(\lambda=(-71\pm17\sqrt{17})/2592\), with one point escaping to
+infinity.  For \(U_0+\lambda tE^2\), the exceptional lengths are
+\(19\) at \(9/8\) and \(20\) at \(-1/972\); at \(-1/24\) the length
+remains \(21\), including two explicit simple points on \(c=0\).
+Neither ray contains a polynomial submersion.  The calculation also
+shows why leading homogeneous support alone cannot control projective
+intersection multiplicity.  See
+`FIXED_PLANE_PROJECTIVE_CRITICAL_SCALAR_RAYS.md`.
 
 An independent all-degree formulation is recorded in
 `STANDARD_SYSTEM_WEIGHTED_ESCAPE.md`.  In the finite standard system
@@ -451,6 +485,20 @@ equivalent to a counterexample, the equation-Jacobian has exact weight
 natural degeneration forces that section to escape to weighted infinity,
 so the missing theorem is a classification of boundary arcs rather than
 an affine monodromy or larger Groebner calculation.
+The first normal-form step has now been corrected.  For
+\(P=R^aA(z)\), \(Q=R^bB(z)\), an honest approximate-root change can
+normalize one of \(A,B\), but the relative unit
+\[
+\mathcal I=B^a/A^b=Q^a/P^b
+\]
+survives up to tangent-to-the-identity composition.  Its first nonzero
+jet is quotient-invariant, and exact degree-bound-compatible examples
+show it need not vanish.  The relative logarithm satisfies an exact
+linear transport equation; lower \(g\)-multiple relative jets decouple
+from the final \((-2\bmod g)\) forcing.  The actual unresolved mixing is
+the non-\(g\)-multiple \(Z=0\) nilpotent cascade, together with the
+affine endpoint pairing.  See
+`STANDARD_SYSTEM_G_MULTIPLE_REPARAMETRIZATION_QUOTIENT.md`.
 
 On the independent Danielewski-surface route, changing the affine-plane
 chart cannot rescue a Chebyshev étale endomorphism.  A preserved boundary

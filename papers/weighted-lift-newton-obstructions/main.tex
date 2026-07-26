@@ -24,7 +24,7 @@
 \title{Newton-Vertex Obstructions for Polynomial-Graph Descents\\
 of the Gallagher Weighted Lift}
 \author{Atharva Vaidya}
-\date{25 July 2026}
+\date{26 July 2026}
 
 \begin{document}
 \maketitle
@@ -39,11 +39,11 @@ second-subduction coordinate.  We prove that, on every polynomial graph
 \]
 for every target polynomial \(R(A,B,C)\) of degree at most two and every
 nonconstant, not necessarily homogeneous, \(Q(A,B,C)\) of degree at most
-ten.  More generally the conclusion holds in arbitrary target degree
+eleven.  More generally the conclusion holds in arbitrary target degree
 provided no two support exponents of \(Q\) differ by a nonzero multiple of
 \((5,-6,4)\).  Its primitive positive and negative parts give the first
 possible collision, \(A^5C^4\) and \(B^6\), in degrees nine and six.
-We resolve this collision and all its multiples through degree ten by an
+We resolve this collision and all its multiples through degree eleven by an
 exact triangular basis change through three cusp subductions.
 
 The proof uses the globally earliest Newton vertex, rather than an
@@ -51,10 +51,13 @@ isolated homogeneous face.  At a regular source boundary an exact
 seed gap protects either the leading Wronskian or its first
 nonmonomial deviation.  At a pole boundary, cancellation at
 \(u=1\) is incompatible with the leading coefficient at
-\(u=\infty\).  In the degree-ten basis the sole remaining polar collision
-has a two-term boundary polynomial whose Wronskian is nonzero at
-\(u=1\).  The finite seed-support assertions are checked by exact rational
-arithmetic in the accompanying code.
+\(u=\infty\).  At degree eleven six two-dimensional polar groups remain.
+Four are immediately nonresonant; the two resonant characteristic rays
+are eliminated by exact local Laurent-jet determinants at \(u=1\).
+The determinants depend only on the graph's forced 1-jet and are
+independent of every higher zero-sector coefficient.  The finite
+seed-support assertions are checked by exact rational arithmetic in the
+accompanying code.
 
 This result excludes a broad descent architecture for a
 three-dimensional Keller counterexample.  It neither proves nor
@@ -185,6 +188,13 @@ target degree at most ten,
 \[
 \Jac_{x,y}\bigl(\cU+R,Q\bigr)\notin\C^\times .
 \]
+\end{theorem}
+
+\begin{theorem}[Arbitrary targets through degree eleven]
+\label{thm:eleven}
+Under the hypotheses of Theorem~\ref{thm:ten}, the same conclusion holds
+for every nonconstant \(Q\in\C[A,B,C]\) of total target degree at most
+eleven.
 \end{theorem}
 
 \begin{corollary}[Homogeneous targets]
@@ -756,6 +766,274 @@ finite vector space through degree ten; it asserts neither finite
 termination nor infinitude of the full SAGBI completion.
 \end{remark}
 
+\section{Exact closure through degree eleven}
+
+Degree eleven contains ten copies of the primitive collision (33), one
+for each monomial of degree at most two:
+\[
+B^6M\sim A^5C^4M,\qquad \deg M\le2.
+\tag{55}
+\]
+The four degree-ten replacements extend without a new subduction
+generator.
+
+\begin{lemma}[Exact degree-eleven basis]
+\label{lem:basis-eleven}
+Remove \(A^5C^4M\), for all monomials \(M\) of degree at most two, from
+the ordinary monomial basis of target degree at most eleven.  The ten
+polynomials
+\[
+T,\ AT,\ W,\ \cU,\ A^2T,\ AW,\ A\cU,\ BW,\ B\cU,\ C\cU
+\tag{56}
+\]
+replace them and give a basis of the same vector space.
+\end{lemma}
+
+\begin{proof}
+The collision kernel is \(\Z(5,-6,4)\), so (55) is the complete list.
+Multiplication of \(T\) by
+\[
+1,\ A,\ B,\ C,\ A^2,\ AB,\ AC,\ B^2,\ BC,\ C^2
+\]
+first gives a triangular replacement.  Equations (3) and (35) then
+replace the corresponding \(CT\) and \(BT\) multiples by the entries
+of (56).  The exact coefficient matrix on the ten removed monomials has
+nonzero determinant.  The accompanying verifier constructs this matrix
+over \(\mathbb Q\).
+\end{proof}
+
+As before, write \(P=\cU+R_{\le2}\).  Subtracting the scalar
+\(\cU\)-coefficient of a target modulo \(P\) changes only ordinary
+coefficients of degree at most two and preserves the Jacobian.  The
+remaining augmented atoms are
+\[
+\mathcal A_{11}=
+\{T,AT,A^2T,W,AW,BW,A\cU,B\cU,C\cU\}.
+\tag{57}
+\]
+Their exact Pareto frontiers, recorded as \((\beta,h,q)\), are
+\[
+\begin{array}{c|c}
+\text{atom}&\text{frontier}\\ \hline
+T&(-6,25,19)\\
+AT&(-8,31,23)\\
+A^2T&(-10,37,27)\\
+W&(-7,26,19),\ (-7,25,20)\\
+AW&(-9,32,23),\ (-9,31,24)\\
+BW&(-8,31,23),\ (-8,30,24)\\
+A\cU&(-7,26,21)\\
+B\cU&(-6,25,21)\\
+C\cU&(-4,20,18).
+\end{array}
+\tag{58}
+\]
+
+\begin{lemma}[Regular degree-eleven boundary]
+\label{lem:regular-eleven}
+At every regular graph boundary, the earliest nonzero coefficient of
+\(\Jac(\cU,Q^\flat)\), for a nonconstant degree-eleven normal form
+\(Q^\flat\), is not a scalar.
+\end{lemma}
+
+\begin{proof}
+For \(L\ge2\), the larger \(q\)-entry dominates in each two-frontier
+row of (58).  The resulting \((\beta,h+Lq)\)-labels are pairwise
+distinct and distinct from every retained ordinary label.  Their
+Wronskian characteristics are
+\[
+\begin{array}{c|c@{\qquad}c|c}
+T&7L-5&AT&21L+5\\
+A^2T&35L+15&W&19L+15\\
+AW&33L+25&BW&16L+10\\
+A\cU&14L+10&B\cU&-3L-5\\
+C\cU&-22L-20&&
+\end{array}
+\tag{59}
+\]
+and none vanishes.  An exact gap audit of the retained ordinary atoms
+finds seven possible vanishing characteristics.  In every case the
+first nonmonomial deviation loses at most \(L\), while the next lower
+label is separated by more than \(L\).
+
+For \(L=1\), the fixed polynomial (40) leaves exactly four repeated
+labels:
+\[
+\begin{array}{c|c}
+(-4,38)&C\cU,\ AB^3C\\
+(-6,46)&B\cU,\ AB^4\\
+(-7,47)&A\cU,\ A^2B^3\\
+(-8,54)&AT,\ BW.
+\end{array}
+\tag{60}
+\]
+For a row of \(x\)-order \(\beta\), apply
+\[
+\mathcal W_\beta(V)=-5H V'-\beta H'V,
+\qquad H=\mathsf H(u,f(u)).
+\tag{61}
+\]
+The differences of the normalized next-to-leading coefficients of the
+two outputs in the four rows are, respectively,
+\[
+-\frac{481}{342},\quad
+-\frac{91}{152},\quad
+-\frac{2639}{1368},\quad
+\frac{8968203125}{121057727177}.
+\tag{62}
+\]
+Thus every two-dimensional map is injective, and a nonzero combination
+loses at most one \(u\)-degree.  The next lower target label on each of
+the four \(\beta\)-faces is at gap exactly two, so it cannot cancel the
+surviving coefficient.  The two remaining singleton ordinary resonances
+have first deviations of degree loss one and next-label gaps six and two.
+\end{proof}
+
+At a pole, the retained ordinary atoms and (57) have six and only six
+repeated \((\beta,q)\)-labels:
+\[
+\begin{array}{c|c|c|c}
+\text{group}&(\beta,q)&P(u)\text{ in }f^qP(u)&
+B=-5q-17\beta\\ \hline
+W/A^2B^3&(-7,20)&a u^{27}+b u^{25}&19\\
+C\cU/A^2B^2C^2&(-4,18)&a u^{22}+b u^{20}&-22\\
+B\cU/A^2B^3C&(-6,21)&a u^{27}+b u^{25}&-3\\
+BW/A^2B^4&(-8,24)&a u^{32}+b u^{30}&16\\
+A\cU/A^3B^2C&(-7,21)&a u^{28}+b u^{26}&14\\
+AW/A^3B^3&(-9,24)&a u^{33}+b u^{31}&33.
+\end{array}
+\tag{63}
+\]
+After a nonzero monomial factor is removed, the Wronskian of a row is
+\[
+B\,u f'P+f\bigl(\alpha uP'-20EP\bigr).
+\tag{64}
+\]
+If \(P(1)\ne0\), the first coefficient is nonzero because every \(B\)
+in (63) is nonzero.  If \(P(1)=0\), then
+\(P\) is a multiple of \(u^r(u^2-1)\), and the next coefficient is
+proportional to
+\[
+(B\nu+\alpha)P'(1).
+\tag{65}
+\]
+Four rows are immediately nonresonant under
+\(\rho<0,\ \nu\ge2-\rho\).  The remaining equations have exactly the
+two graph-compatible families
+\[
+\begin{aligned}
+BW:\quad&
+\rho=5-16k,\quad \nu=17k-5,\quad
+f=c\,u^{30k-10}(u^2-1)^{17k-5},\\
+A\cU:\quad&
+\rho=11-14k,\quad \nu=17k-13,\quad
+f=c\,u^{22k-18}(u^2-1)^{17k-13},
+\end{aligned}
+\qquad k\ge2,\quad c\in\C^\times.
+\tag{66}
+\]
+Indeed, reduction of the two resonance equations modulo \(16\) and
+\(14\) forces \(\rho\equiv5\pmod {16}\) and
+\(\rho\equiv11\pmod {14}\), respectively; the graph inequality then
+gives \(k\ge2\).  The scalar \(c\) does not change the logarithmic
+derivative.
+
+\begin{lemma}[Resonant local-jet obstruction]
+\label{lem:resonant-eleven}
+Neither family in (66) can cancel the first lower total-\(\gamma\)
+coefficient of the exact Jacobian.
+\end{lemma}
+
+\begin{proof}
+Write the top terms as
+\[
+x^{-5}h(u)\gamma^{17},\qquad x^\beta b(u)\gamma^n,
+\qquad h(u)=\theta u^{20}.
+\]
+Their top-total-\(\gamma\) Jacobian is, up to a fixed nonzero monomial
+factor,
+\[
+x^{-5+\beta}\gamma^{16+n}\mathcal L(\gamma),
+\tag{67}
+\]
+where
+\[
+\begin{aligned}
+\mathcal L(\gamma)={}&
+hb(-5n-17\beta)\,u\gamma_u\\
+&+u(17hb'-nh'b)x\gamma_x
++u(-5hb'-\beta h'b)\gamma .
+\end{aligned}
+\tag{68}
+\]
+On an \(x^I\)-sector this is a one-variable Euler equation.  Its
+polynomial negative-sector solutions are exactly (66).  Linearity of
+\(\mathcal L\) kills any sum of resonant intermediate sectors; a
+nonresonant intermediate sector would already give an earlier isolated
+coefficient.
+
+An exact \(E=\beta+\rho q\) audit is needed here.  On the \(BW\) ray,
+the complete resonant face is \(BW/A^2B^4\); on the \(A\cU\) ray it is
+\(A\cU/A^3B^2C\).  No different \(q\)-group shares either face for
+any \(k\ge2\).  Between that face and the first lower-total-\(\gamma\)
+order, the \(BW\) ray has only the seven singleton \(q=24\) labels
+\(\beta=-7,\ldots,-1\).  The \(A\cU\) ray has the three singleton
+\(q=20\) labels \(\beta=-10,-9,-8\), the \(q=21\) labels
+\(\beta=-6,\ldots,1\), and the duplicate \(B\cU\) atom at
+\(\beta=-6\).  The singleton lemma of Section~4 closes the former
+faces; the sole repeated intervening group is nonresonant because
+\[
+(-3)\nu+\alpha=-289k+221\ne0.
+\]
+Consequently a nonzero target coefficient at an intervening order would
+itself be an earlier obstruction.
+
+The first remaining sector is the \(x^0\)-sector.  With \(z=u-1\), the
+graph normalization fixes its 1-jet but not its higher coefficients:
+\[
+f_0(u)=1-\frac{57}{34}z+z^2h_0(u).
+\tag{69}
+\]
+At the same \(x\)-order the first lower total-\(\gamma\) seed layer
+enters.  Intermediate sectors cannot enter this coefficient: replacing
+a leading \(x^\rho f\) factor by one of them strictly raises its
+\(x\)-order.
+
+For the \(BW\) family, the only lower target atom at this order is
+\(AT\).  The \(z^{-1},z^0\) Laurent coefficients of the normalized
+residue and the leading \(AT\)-Wronskian have determinant
+\[
+\Delta_{BW/AT}\doteq(17k-5)(105k-32).
+\tag{70}
+\]
+The coefficient \(h_0(1)\) cancels identically.  For the \(A\cU\)
+family, the lower target space is the two-dimensional
+\(W/A^2B^3\) group.  The \(z^{-1},z^0,z^1\) coefficients of the
+residue and its two leading Wronskians have determinant
+\[
+\Delta_{A\cU/W}\doteq(17k-13)^2.
+\tag{71}
+\]
+Both \(h_0(1)\) and \(h_0'(1)\) cancel identically.  Here \(\doteq\)
+denotes equality up to a fixed nonzero rational scalar.  The two
+determinants are nonzero for every \(k\ge2\), independently of every
+higher coefficient in (69).
+
+The exact polar-label audit shows that the displayed lower atoms are the
+only possible interferences at these orders.  Every nonconstant monomial
+of \(R_{\le2}\) starts strictly later.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:eleven}]
+Use Lemma~\ref{lem:basis-eleven} and subtract the \(\cU\)-coefficient
+modulo \(P=\cU+R_{\le2}\).  If the resulting \(Q^\flat\) is constant,
+the Jacobian is zero.  Otherwise Lemma~\ref{lem:regular-eleven} handles
+every regular boundary.  At a pole, (63)--(65) handle all
+nonresonant groups and Lemma~\ref{lem:resonant-eleven} handles the two
+families (66).  The degree-two perturbation is later in each filtration.
+The isolated coefficient is either at nonzero \(x\)-order or has
+nonconstant \(u\)-dependence, so the Jacobian cannot be a nonzero scalar.
+\end{proof}
+
 \section{Computational reproducibility and scope}
 
 All exact computations use rational arithmetic.  From the repository
@@ -774,6 +1052,8 @@ root, the principal checks are
 .venv/bin/python \
   current_context/verify_weighted_lift_nonhomogeneous_degree_ten_newton_basis_closure.py
 .venv/bin/python \
+  current_context/verify_weighted_lift_nonhomogeneous_degree_eleven_newton_basis_closure.py
+.venv/bin/python \
   current_context/verify_weighted_lift_sagbi_saturation_next_generator_audit.py
 \end{verbatim}
 \endgroup
@@ -785,11 +1065,15 @@ endpoint, lattice, cutoff, and perturbation identities.  The fourth
 checks the exact degree-nine \(T\)-replacement.  The fifth checks all
 four collision classes, the triangular degree-ten basis, the exact
 frontiers of \(T,AT,W\), regular separation, and the exceptional polar
-Wronskian.  The sixth checks the cautionary next saturation.
+Wronskian.  The sixth checks all ten degree-eleven collision classes,
+the augmented basis and exact frontiers, all regular and polar groups,
+the exhaustive resonance parametrization, the filtration gaps, and the
+two generic-zero-sector Laurent determinants.  The seventh checks the
+cautionary next saturation.
 
 The archived code version for this manuscript is
 \begin{center}
-\url{https://github.com/AtharvaVaidya/mathematics-research/tree/weighted-lift-newton-obstructions-v2}.
+\url{https://github.com/AtharvaVaidya/mathematics-research/tree/weighted-lift-newton-obstructions-v3}.
 \end{center}
 
 The theorem concerns polynomial graph embeddings into one specific

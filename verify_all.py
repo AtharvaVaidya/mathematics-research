@@ -49,6 +49,7 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_route_a_contractible_retained_sheet_cubic_exclusion.py",
     ROOT / "current_context" / "verify_route_a_degree_four_retained_sheet_audit.py",
     ROOT / "current_context" / "verify_route_a_degree_four_survivor_normalization_profile.py",
+    ROOT / "current_context" / "verify_route_a_degree_four_log_adjunction_feasibility.py",
     ROOT / "route_a" / "equivariant_hensel.py",
     ROOT / "route_bd_verify.py",
     ROOT / "route_bd_ab_hurwitz_count.py",
@@ -165,6 +166,7 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_weighted_lift_nonhomogeneous_newton_vertex_closure.py",
     ROOT / "current_context" / "verify_weighted_lift_nonhomogeneous_degree_nine_cusp_closure.py",
     ROOT / "current_context" / "verify_weighted_lift_nonhomogeneous_degree_ten_newton_basis_closure.py",
+    ROOT / "current_context" / "verify_weighted_lift_nonhomogeneous_degree_eleven_newton_basis_closure.py",
     ROOT / "current_context" / "verify_weighted_lift_sagbi_saturation_next_generator_audit.py",
     ROOT / "current_context" / "verify_weighted_lift_sagbi_after_w_markov_and_next_generators.py",
     ROOT / "current_context" / "verify_weighted_lift_cubic_graph_v_subduction_closure.py",
@@ -198,6 +200,7 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_fixed_plane_sheet_loss_first_order_crt.py",
     ROOT / "current_context" / "verify_fixed_plane_all_order_hermite_crt_lift.py",
     ROOT / "current_context" / "verify_fixed_plane_critical_persistence_and_scalar_perturbation.py",
+    ROOT / "current_context" / "verify_fixed_plane_projective_critical_scalar_rays.py",
     ROOT / "current_context" / "verify_fixed_plane_ab_boundary.py",
     ROOT / "current_context" / "verify_fixed_plane_affine_tail_critical.py",
     ROOT / "current_context" / "verify_fixed_plane_constant_tail_critical.py",
@@ -225,6 +228,7 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_no_constant_direction.py",
     ROOT / "current_context" / "verify_discriminant_fiber.py",
     ROOT / "current_context" / "verify_standard_system_weights.py",
+    ROOT / "current_context" / "verify_standard_system_g_multiple_reparametrization_quotient.py",
 ]
 
 

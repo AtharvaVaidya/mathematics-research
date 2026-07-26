@@ -6,7 +6,7 @@ Gallagher weighted lift.
 
 For the exact second-subduction coordinate \(\mathcal U\), every polynomial
 graph, every target polynomial \(R(A,B,C)\) of degree at most two, and every
-nonconstant \(Q(A,B,C)\) of degree at most ten satisfy
+nonconstant \(Q(A,B,C)\) of degree at most eleven satisfy
 
 \[
 J_{x,y}(\mathcal U+R,Q)\notin\mathbb C^\times.
@@ -14,8 +14,9 @@ J_{x,y}(\mathcal U+R,Q)\notin\mathbb C^\times.
 
 The same conclusion holds in arbitrary target degree when no two support
 exponents of \(Q\) differ by a nonzero multiple of
-\((5,-6,4)\). Exact triangular replacements by \(T,AT,W,U\) resolve
-the primitive cusp collision and all its multiples through degree ten.
+\((5,-6,4)\). Exact triangular replacements by products of \(T,W,U\)
+resolve the primitive cusp collision and all its multiples through degree
+eleven.
 Degree eight remains sharp only for the collision-free criterion:
 \(B^6\) and \(A^5C^4\) are the primitive colliding pair.
 
@@ -43,6 +44,8 @@ From the repository root:
 .venv/bin/python \
   current_context/verify_weighted_lift_nonhomogeneous_degree_ten_newton_basis_closure.py
 .venv/bin/python \
+  current_context/verify_weighted_lift_nonhomogeneous_degree_eleven_newton_basis_closure.py
+.venv/bin/python \
   current_context/verify_weighted_lift_sagbi_saturation_next_generator_audit.py
 ```
 
@@ -53,15 +56,20 @@ identities, endpoint formulas, lattice kernel, primitive degree cutoff, and
 first-coordinate separation. The fourth checks the exact degree-nine
 \(T\)-replacement. The fifth checks the four degree-ten collision classes,
 triangular basis, augmented regular atoms, and exceptional polar Wronskian.
-The sixth is a scope audit: it proves that the known five boundary
+The sixth checks all ten degree-eleven collision classes, the exact
+augmented basis, regular \(L=1\) gaps, polar-face exhaustion, both
+resonant rays, and their local Laurent-jet determinants. The seventh is
+a scope audit: it proves that the known five boundary
 generators are not yet a complete SAGBI basis.
 
 The immutable repository view for this manuscript is:
 
-<https://github.com/AtharvaVaidya/mathematics-research/tree/weighted-lift-newton-obstructions-v2>
+<https://github.com/AtharvaVaidya/mathematics-research/tree/weighted-lift-newton-obstructions-v3>
 
-The earlier degree-eight version remains archived immutably at
-<https://github.com/AtharvaVaidya/mathematics-research/tree/weighted-lift-newton-obstructions-v1>.
+The degree-eight and degree-ten versions remain archived immutably at
+<https://github.com/AtharvaVaidya/mathematics-research/tree/weighted-lift-newton-obstructions-v1>
+and
+<https://github.com/AtharvaVaidya/mathematics-research/tree/weighted-lift-newton-obstructions-v2>.
 
 ## Build
 
@@ -92,8 +100,6 @@ The underlying theorem note and the repaired standalone manuscript passed
 adversarial independent proof reviews with no remaining fatal or major
 mathematical issue. A targeted current web/arXiv search found no matching
 polynomial-graph Newton-vertex theorem, but that is not a priority claim.
-The ten-page v2 PDF compiles without errors and passed a fresh
-page-by-page visual inspection; the sole engine warning is a harmless
-underfull bibliography line. Before submission, obtain a human
-line-by-line proof check and perform a broader MathSciNet/zbMATH novelty
-review.
+The v3 PDF compiles without errors and passed a fresh page-by-page visual
+inspection. Before submission, obtain a human line-by-line proof check
+and perform a broader MathSciNet/zbMATH novelty review.

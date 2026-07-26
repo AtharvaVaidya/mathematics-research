@@ -52,11 +52,11 @@ Two further audited theorems are now separated from the unresolved global
 claim.  A standalone paper draft proves that no degree-three étale
 morphism \(S(2,2,1)\to\mathbb A^2\) exists.  In the independent
 Gallagher weighted-lift graph family, every nonconstant arbitrary
-nonhomogeneous target \(Q(A,B,C)\) of target degree at most ten is
+nonhomogeneous target \(Q(A,B,C)\) of target degree at most eleven is
 excluded with first coordinate \(U+R_{\le2}\).  The primitive
 Newton-vertex criterion alone is sharp at degree eight—the first support
 collision is \(A^5C^4\sim B^6\)—but exact cusp subductions resolve all
-collisions through degree ten.
+collisions through degree eleven.
 Neither theorem is a proof of \(JC(2)\).
 
 This mechanism is genuinely special to transverse degree two.  The tempting
@@ -382,6 +382,12 @@ Cartier \(E\); the only non-Gorenstein \(3+1\) escape forces branch
 multiplicity at least four.  These constraints do not yet exclude
 degree four.  See
 [`current_context/ROUTE_A_DEGREE_FOUR_SURVIVOR_NORMALIZATION_PROFILE.md`](current_context/ROUTE_A_DEGREE_FOUR_SURVIVOR_NORMALIZATION_PROFILE.md).
+The remaining log-canonical and conductor-adjunction ledgers are also
+feasible for both survivors: explicit local curve and finite-cover models
+realize the required data once the adjunction divisor is kept distinct
+from the deleted log divisor.  This rules out that ledger as a standalone
+degree-four obstruction; it does not construct a global Keller cover.  See
+[`current_context/ROUTE_A_DEGREE_FOUR_LOG_ADJUNCTION_FEASIBILITY.md`](current_context/ROUTE_A_DEGREE_FOUR_LOG_ADJUNCTION_FEASIBILITY.md).
 
 The counterexample-first fixed-source-plane route has a second independently
 audited global theorem.  If a Darboux pair existed in its explicit pinch
@@ -482,6 +488,15 @@ be exceptional and nonperturbative.  The scalar choice
 \(U_0+E^2\) makes matters worse: it has exactly \(21\) distinct
 off-boundary critical points.  See
 [`current_context/FIXED_PLANE_CRITICAL_PERSISTENCE_AND_SCALAR_PERTURBATION.md`](current_context/FIXED_PLANE_CRITICAL_PERSISTENCE_AND_SCALAR_PERTURBATION.md).
+The projective closures of the two natural scalar rays are now classified
+exactly.  The \(E^2\)-ray has affine critical length \(21\) generically
+and \(20\) at
+\(\lambda=(-71\pm17\sqrt{17})/2592\); the \(tE^2\)-ray has exceptional
+lengths \(19\) at \(9/8\) and \(20\) at \(-1/972\), while the apparent
+endpoint \(-1/24\) retains length \(21\) through two finite simple
+points.  Every member of both rays has an affine critical point, and the
+lost length is accounted for at projective infinity.  See
+[`current_context/FIXED_PLANE_PROJECTIVE_CRITICAL_SCALAR_RAYS.md`](current_context/FIXED_PLANE_PROJECTIVE_CRITICAL_SCALAR_RAYS.md).
 The broader residue-parity conjecture is also false for rational
 descended pairs: endpoint-neutral canonical scalings preserve the
 Darboux equation, conductor data, and endpoint residue while moving the
@@ -651,16 +666,18 @@ case.
 
 The global filtration now extends to a substantial nonhomogeneous
 range.  For every nonconstant target polynomial \(Q(A,B,C)\) of total
-target degree at most ten and every \(R_{\le2}(A,B,C)\),
+target degree at most eleven and every \(R_{\le2}(A,B,C)\),
 \[
 J_{x,y}\bigl(U+R_{\le2},Q\bigr)\notin\mathbb C^\times
 \]
 on every polynomial graph.  The primitive Newton argument first closes
 degree eight; exact triangular replacement of the degree-nine cusp
-relation and its degree-ten multiples by \(T,AT,W,U\) closes the next
-two layers.  The \(U\)-coefficient must be removed modulo the actual
-first coordinate \(U+R_{\le2}\), and the only remaining polar collision,
-\(W\sim A^2B^3\), has a nonvanishing exact two-term Wronskian.  More
+relation and its multiples by products of \(T,W,U\) closes the next
+three layers.  The \(U\)-coefficient must be removed modulo the actual
+first coordinate \(U+R_{\le2}\).  At degree eleven, six exact polar
+groups remain.  Four are nonresonant, and the two resonant rays are
+eliminated by local Laurent-jet determinants independent of every
+unconstrained higher graph coefficient.  More
 generally the conclusion holds in
 arbitrary target degree whenever no two support exponents differ by a
 nonzero multiple of the primitive cusp direction \((5,-6,4)\), with
@@ -671,8 +688,9 @@ argument closes all four formerly open lower-tier chains and restores
 the audited quadratic, cubic, and quartic bounded-tier theorems.  See
 [`current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_NEWTON_VERTEX_CLOSURE.md`](current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_NEWTON_VERTEX_CLOSURE.md),
 [`current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_NINE_CUSP_CLOSURE.md`](current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_NINE_CUSP_CLOSURE.md),
+[`current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_TEN_NEWTON_BASIS_CLOSURE.md`](current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_TEN_NEWTON_BASIS_CLOSURE.md),
 and
-[`current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_TEN_NEWTON_BASIS_CLOSURE.md`](current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_TEN_NEWTON_BASIS_CLOSURE.md).
+[`current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_ELEVEN_NEWTON_BASIS_CLOSURE.md`](current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_ELEVEN_NEWTON_BASIS_CLOSURE.md).
 
 This does not yet give a global normal form.  Exact subduction of the
 next genuine saturation \(BT\sim A^5C^3\) produces a new boundary
@@ -731,10 +749,11 @@ without a corresponding audited note.
 - `papers/cubic-pseudoplane-exclusion/` — standalone preprint source for
   the degree-three étale-map exclusion on \(S(2,2,1)\).
 - `papers/weighted-lift-newton-obstructions/` — standalone preprint source
-  for the arbitrary nonhomogeneous target-degree-ten theorem and the
+  for the arbitrary nonhomogeneous target-degree-eleven theorem and the
   sharp cusp-kernel criterion.
-- `STATUS_AND_PIVOT_2026-07-25.md` — the latest high-level result and
-  strategy audit.
+- `STATUS_AND_PIVOT_2026-07-26.md` — the latest high-level result,
+  publication, and strategy audit.
+- `STATUS_AND_PIVOT_2026-07-25.md` — the preceding checkpoint.
 - `verify_all.py` — bundled deterministic regression suite.
 
 ## Standards used in this archive

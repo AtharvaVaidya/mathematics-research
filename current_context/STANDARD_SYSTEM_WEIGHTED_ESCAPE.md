@@ -681,12 +681,29 @@ the approximate root \(D\).
 Consequently even a translation-normalized, squarefree-\(R\)
 approximate-root induction is false if it tries to eliminate all
 normal coefficients before the forcing order.  The full
-\(g\)-multiple parameter sector is a reparametrization gauge large
-enough to hide the genuine homogeneous deformations (43).  Like the
-constant model, it still cannot supply the final
+\(g\)-multiple parameter sector is large enough to hide the genuine
+homogeneous deformations (43), but it is not all coordinate gauge.
+For a fixed pair
+\[
+P=R^aA(z),\qquad Q=R^bB(z),
+\]
+an honest change \(R\mapsto R\phi(z)\) can normalize one of \(A,B\),
+while the relative unit
+\[
+\mathcal I=\frac{B^a}{A^b}=\frac{Q^a}{P^b}
+\]
+survives up to tangent-to-the-identity composition.  Its order and
+leading coefficient are quotient invariants.  Thus (43) with \(c<a\)
+is physical relative \(g\)-sector data, not the orbit of the pure-power
+pair.  The exact quotient and a degree-bound-compatible countermodel
+are proved in
+`STANDARD_SYSTEM_G_MULTIPLE_REPARAMETRIZATION_QUOTIENT.md`.
+
+Like the constant model, (43) still cannot supply the final
 \(\tau^Nx^{1-n}\) term.  This shifts attention from divisibility of
-individual normal coefficients to the nonzero residue classes of
-\(\tau\)-order modulo \(g\).
+individual normal coefficients to the interaction between the retained
+relative unit and the nonzero residue classes of \(\tau\)-order modulo
+\(g\).
 
 ## 8. The mod-\(g\) normal equation and branch residues
 
@@ -702,7 +719,7 @@ then
 \sum_{k=0}^N\lambda_k\tau^kC^{m-k}
 =\sum_{r=0}^{g-1}\tau^rC^{-r}D^bA_r(w). \tag{49}
 \]
-Every reparametrization countermodel above lies in the \(r=0\)
+Every \(g\)-sector countermodel above lies in the \(r=0\)
 sector.  On the other hand,
 \[
 N=g(a+b)-2\equiv-2\pmod g. \tag{50}
@@ -773,6 +790,26 @@ Then \(Z=0\), although \(T\) need not be divisible by
 \(R^{a-1}\) and hence need not be tangent to the reduced common-root
 cone.  This is the precise reason that the linearized Keller identity,
 by itself, does not prove approximate-root induction.
+
+The all-order invariant form is also linear.  Work \(\tau\)-adically
+over \(k(X)\); after the common powers of \(R\) are removed, the
+relative ratio has constant term one.  Put
+\[
+\ell=\log(Q^a/P^b).
+\]
+Then (51) is equivalent to
+\[
+\tau\left(
+\frac{P_X}{P}\ell_\tau-\frac{P_\tau}{P}\ell_X
+\right)+ag\,\ell_X
+=-\frac{ac\tau^N}{PQ}.
+\]
+If the lower \(P\)- and \(\ell\)-orders are all divisible by \(g\),
+the residue classes in this equation decouple.  For \(g>2\), its
+order-\(N\) equation is exactly (63), even when the relative
+\(g\)-sector unit is nontrivial.  The unresolved mixing is therefore
+the non-\(g\)-multiple \(Z=0\) nilpotent cascade in the coefficients of
+the transport operator, not the relative unit by itself.
 
 There is a second consequence of (51) that is exact to all orders.
 Let \(\gamma\) be a normalization branch of the curve \(P=0\), and
@@ -858,16 +895,16 @@ branch of the pure \(g\)-sector model (43),
 \]
 For \(g=2\), (62) is the forbidden \(m\)-th coefficient, so each
 branch already violates (56).  For \(g>2\), it starts strictly after
-\(\tau^m\), and the pure \(g\)-sector gauge is invisible to this
-residue, as it should be.
+\(\tau^m\), and the pure \(g\)-sector family is invisible to this
+residue.
 
 The best remaining local statement is now quite concrete:
 
-> **Branch-resonance lemma.**  After quotienting the \(g\)-multiple
-> approximate-root reparametrizations, the standard equations through
-> order \(N\), including the final inhomogeneous equation, force on at
-> least one normalization branch a nonzero \(t^{em}\)-coefficient in
-> \(\tau^N/P_X\).
+> **Branch-resonance lemma.**  After choosing an honest
+> approximate-root slice while retaining the relative unit
+> \(Q^a/P^b\), the standard equations through order \(N\), including
+> the final inhomogeneous equation, force on at least one normalization
+> branch a nonzero \(t^{em}\)-coefficient in \(\tau^N/P_X\).
 
 Equations (54)--(56) would contradict this immediately.  The model
 (58) shows that the lemma has exactly the right residue class and that
@@ -1010,9 +1047,9 @@ Heitmann's equivalence:
 
 > **Pole-filtered monodromy lemma.**  In the trace-zero
 > \(A_{a-1}\) local system of the finite cover
-> \(\Phi(z)=u\), quotient the invariant \(g\)-sector
-> reparametrizations and the endpoint pairing (70).  Then the
-> \(\zeta^{-2}\) forcing class cannot extend as a polynomial,
+> \(\Phi(z)=u\), choose a common approximate-root slice, retain the
+> relative \(g\)-sector unit, and quotient the endpoint pairing (70).
+> Then the \(\zeta^{-2}\) forcing class cannot extend as a polynomial,
 > single-valued section compatible with all boundary clusters.
 
 This is the first formulation that uses the new standard-system
