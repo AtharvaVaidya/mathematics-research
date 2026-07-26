@@ -136,18 +136,43 @@ of the full case-c system; see
 [`current_context/CASE_C_CONORMAL_TRUNCATION_NO_GO.md`](current_context/CASE_C_CONORMAL_TRUNCATION_NO_GO.md).
 The associated outer quartic is instead the four-point unramified
 residual part of the degree-\(21\) fiber with monodromy
-\((17)(1^4)\).  It yields a sharp conditional obstruction—there is no
-invariant subset of \(8\) or \(12\) sheets—but an equivariant injection
-from cap leaves to outer sheets has not been proved.  Exact formal caps
-over the quartic incidence algebra show that valuations and completed
-local jets alone remain compatible; see
+\((17)(1^4)\).  The natural cap incidence does not produce the
+previously contemplated \(8\)- or \(12\)-sheet subset: the common
+normalization of the \((8,12)\) face has degree
+\(\gcd(8,12)=4\), exactly matching the four residual outer sheets.
+Moreover, its Kummer four-point divisor has binary-quartic invariant
+\(J=0\), whereas all five certified outer quartics have \(J\ne0\)
+modulo \(32003\).  Thus neither projective identification nor an
+arbitrary labeling supplies a canonical correspondence.  Exact formal
+caps over the quartic incidence algebra show that valuations and
+completed local jets alone remain compatible; see
 [`current_context/CASE_C_OUTER_QUARTIC_INCIDENCE_NO_GO.md`](current_context/CASE_C_OUTER_QUARTIC_INCIDENCE_NO_GO.md).
+The corrected common-cover audit is in
+[`current_context/CASE_C_DEGREE_FOUR_INCIDENCE_AUDIT.md`](current_context/CASE_C_DEGREE_FOUR_INCIDENCE_AUDIT.md).
 At the full deficit-\(4\) and deficit-\(5\) linear quotients, the
 new-block operators are surjective modulo the quartic and its square on
 all three outer Hurwitz factors.  Thus even raw \(E\)- or \(E^2\)-remainder
-is not a cokernel invariant; any surviving quartic construction must use
-a nontrivial adjoint or transvectant.  See
-[`current_context/CASE_C_OUTER_QUARTIC_COKERNEL_NO_GO.md`](current_context/CASE_C_OUTER_QUARTIC_COKERNEL_NO_GO.md).
+is not a cokernel invariant.  The full linear-adjoint audit extends this
+surjectivity through \(E^4\), exhausting all distributions on the four
+roots through derivative order three.  At order four the quartic jets
+merely re-coordinate the original bounded rows; the unique adjoint common
+to both new-block images is the ordinary support ceiling
+\([h^{19}]\), independent of \(E\).  Thus no scalar linear adjoint or
+fixed-\(E\) transvectant couples the caps; a surviving construction must
+be nonlinear in existing cokernel values.  See
+[`current_context/CASE_C_OUTER_QUARTIC_COKERNEL_NO_GO.md`](current_context/CASE_C_OUTER_QUARTIC_COKERNEL_NO_GO.md)
+and
+[`current_context/CASE_C_OUTER_QUARTIC_ADJOINT_NO_GO.md`](current_context/CASE_C_OUTER_QUARTIC_ADJOINT_NO_GO.md).
+The smallest nonlinear continuation is nondegenerate as well.  Canonical
+Frobenius representatives for the two residual cokernel lines have
+nonzero norms, nonzero trace-Gram determinant, and nonzero Wronskian
+norm at all five outer points.  Their weight-nine source determinant is
+an explicit nonzero 76-term polynomial, not a universal compatibility
+identity.  Resultant, norm, bilinear, and first tangency constructions
+from only these two cokernel planes therefore add no obstruction; a
+successful case-c invariant must import a later finite-support row or a
+multistage identity.  See
+[`current_context/CASE_C_COKERNEL_NONLINEAR_PAIRING_NO_GO.md`](current_context/CASE_C_COKERNEL_NONLINEAR_PAIRING_NO_GO.md).
 
 The pseudo-plane construction route has a new degree-independent
 function-field restriction.  For any étale map from a normal affine
@@ -159,10 +184,90 @@ excludes generic degree \(2\).  A surviving cubic must have \(S_3\)
 closure and, over each branch component, retain a principal unramified
 sheet while omitting a ramified double sheet.  The two nonprincipal
 boundary curves cannot be retained sheets, but an exact cubic model shows
-that the \(2+1\) branch geometry itself is consistent.  See
+that the \(2+1\) branch geometry itself is consistent.
+
+The cubic normalization has now been audited through its topology,
+triple-cover algebra, collision curve, and extreme weights.  It is finite
+flat of rank three.  Non-Gorenstein fibers, when present, are holes in
+the étale image, and the entire distinguished curve \(\Gamma_D\) avoids
+them.  At any self-identification of its normalization \(D\simeq\mathbb
+A^1\), the cubic fiber is completely étale and has at most three retained
+points.  After base change to \(D\), the algebra splits globally as
+\[
+\mathbb C[v]\times
+\mathbb C[v,\tau]/(\tau^2-g(v)),
+\]
+and the restricted cubic discriminant is a nonzero constant times
+\(g(v)\).  Exact nodal and normal \(S_3\) countermodels show why these
+facts do not yet contradict cubicity.  The surviving algebraic target is
+therefore a boundary or intersection theorem for this residual quadratic
+cover, together with the triangularly irreducible extreme-weight cusp.
+See
 [`current_context/ROUTE_A_QUADRATIC_DEGREE_EXCLUSION.md`](current_context/ROUTE_A_QUADRATIC_DEGREE_EXCLUSION.md)
 and
-[`current_context/ROUTE_A_CUBIC_BRANCH_SECTION_AUDIT.md`](current_context/ROUTE_A_CUBIC_BRANCH_SECTION_AUDIT.md).
+[`current_context/ROUTE_A_CUBIC_BRANCH_SECTION_AUDIT.md`](current_context/ROUTE_A_CUBIC_BRANCH_SECTION_AUDIT.md),
+[`current_context/ROUTE_A_NON_GORENSTEIN_GAMMA_D_INCIDENCE.md`](current_context/ROUTE_A_NON_GORENSTEIN_GAMMA_D_INCIDENCE.md),
+and
+[`current_context/ROUTE_A_CUBIC_EXTREME_WEIGHT_VALUATION_AUDIT.md`](current_context/ROUTE_A_CUBIC_EXTREME_WEIGHT_VALUATION_AUDIT.md).
+For the associated degree-six plane lift, the distinguished line image
+is indeed a component of the nonproper-value curve, but its exact
+Newton--Puiseux index is \(1\), not \(2\).  Chau's ratio theorem and the
+invariant filtration give \(d_1/d_2=m_1/m_2\) and \(d_i\ge4m_i\);
+these are total coordinate degrees and do not contradict geometric
+degree six.  Orevkov's exact defect formula assigns this class
+contribution \(1\) and leaves residual defect \(4\), sharply compatible
+with \(6-1=(2-1)+2(3-1)\).  An explicit polynomial dicritical chart is
+étale even at the forced node, closing that shortcut; see
+[`current_context/ROUTE_A_SINGULAR_DICRITICAL_INDEX_AUDIT.md`](current_context/ROUTE_A_SINGULAR_DICRITICAL_INDEX_AUDIT.md).
+The associated invariant degree filtration is sharp:
+\(\deg\phi(F)\ge4\deg_b\phi(F)(0,b)\), with equality block exactly a
+multiple of \(v^m\).  The top homogeneous Keller relation, boundary
+Bézout identity, geometric degree six, and standard nonproperness/degree
+bounds all remain compatible.  A nodal first-neighborhood model realizes
+the equality architecture while failing the global Jacobian equation;
+see
+[`current_context/ROUTE_A_INVARIANT_DEGREE_FILTRATION_SHARPNESS.md`](current_context/ROUTE_A_INVARIANT_DEGREE_FILTRATION_SHARPNESS.md).
+The residual quadratic cover itself has now been normalized explicitly:
+if \(g=c h^2s\) with \(s\) squarefree, it has function field
+\(\mathbb C(v)(\sqrt{s})\), finite ramification at the odd-order roots
+of \(g\), and ramification at infinity exactly when \(\deg g\) is odd.
+The two canonical boundary valuations instead split the distinguished
+cubic sheet and do not control this longitudinal residual monodromy.
+More strongly, an exact connected finite-flat cubic family realizes
+every squarefree \(g\), of arbitrary degree and parity, with an
+everywhere-étale distinguished section and a smooth normal total
+surface.  Thus finite flatness, normality, the section, and the deck
+involution do not provide the missing parity or degree bound.  See
+[`current_context/ROUTE_A_RESIDUAL_QUADRATIC_INFINITY_AUDIT.md`](current_context/ROUTE_A_RESIDUAL_QUADRATIC_INFINITY_AUDIT.md).
+The actual finite degree-six compactification closes the next proposed
+bridge as well.  A finite odd place of \(g\) is a point where the
+residual curve meets the already-existing cubic boundary; its
+distinguished lift lies on the one fixed divisor \(D_-\), where the
+local degree remains one.  It creates no new dicritical component and
+no additional Orevkov summand.  The deck involution exchanges omitted
+\(D_-\) with retained \(D_+\), while its action over cubic boundary
+primes depends on a divisorial valuation and residue square class, not
+on root parity.  An exact transverse model places arbitrarily many odd
+residual roots on one ramification component.  The surviving Route A
+target is therefore an intersection bound for the fixed projective
+boundary curves, not a root-to-component count; see
+[`current_context/ROUTE_A_GLOBAL_MONODROMY_DICRITICAL_BRIDGE_NO_GO.md`](current_context/ROUTE_A_GLOBAL_MONODROMY_DICRITICAL_BRIDGE_NO_GO.md).
+Projective intersection theory supplies the exact identity
+\[
+\deg g+I_\infty=M\delta,
+\]
+where \(M=\deg\overline\Gamma\), \(\delta\) is the cubic discriminant
+degree, and the nonnegative remainder is carried at the unique end of
+\(\Gamma\).  It does not bound either term separately.  In the affine
+degree-six normalization, localization from the plane open shows that
+the class group is freely generated by all boundary primes, so
+\(D_-\) and the primes above the omitted cubic boundary have no affine
+class relation.  Adjunction varies under harmless infinity blowups, and
+exact smooth branch and connected cubic families realize arbitrary
+finite/infinite allocations.  The surviving input would have to be a
+canonical-minimal infinity-tree theorem controlling \(I_\infty\) and
+\(\delta\) simultaneously; see
+[`current_context/ROUTE_A_PROJECTIVE_INTERSECTION_BOUND_NO_GO.md`](current_context/ROUTE_A_PROJECTIVE_INTERSECTION_BOUND_NO_GO.md).
 
 The counterexample-first fixed-source-plane route has a second independently
 audited global theorem.  If a Darboux pair existed in its explicit pinch
@@ -242,6 +347,75 @@ first-order Hermite-CRT model realizes the conductor, a residual sheet,
 the odd normal factor, and the Keller determinant modulo their union,
 while deliberately stopping short of a global Keller pair.  See
 [`current_context/FIXED_PLANE_SHEET_LOSS_AND_FIRST_ORDER_CRT.md`](current_context/FIXED_PLANE_SHEET_LOSS_AND_FIRST_ORDER_CRT.md).
+The broader residue-parity conjecture is also false for rational
+descended pairs: endpoint-neutral canonical scalings preserve the
+Darboux equation, conductor data, and endpoint residue while moving the
+odd class onto arbitrary interior level divisors.  These scalings
+introduce affine poles and therefore do not produce polynomial pairs.
+Consequently any valid replacement must use global pole-freeness or
+finite polynomial termination; see
+[`current_context/FIXED_PLANE_RESIDUE_PARITY_SCALING_NO_GO.md`](current_context/FIXED_PLANE_RESIDUE_PARITY_SCALING_NO_GO.md).
+
+Finally, the new three-dimensional counterexample does not descend to a
+plane counterexample through a common source/target coordinate.  Such a
+coordinate would give generic plane slices of geometric degree three,
+contradicting Orevkov's theorem that a two- or three-sheeted polynomial
+map of \(\mathbb C^2\) cannot have nonzero constant Jacobian.  This
+closes arbitrary, including wild, common-coordinate descent, but not
+nonlinear source surfaces or nonlinear target projections; see
+[`current_context/THREE_DIMENSIONAL_COORDINATE_SLICE_OREVKOV_NO_GO.md`](current_context/THREE_DIMENSIONAL_COORDINATE_SLICE_OREVKOV_NO_GO.md).
+For the independent generic-degree-six weighted lift, a second theorem
+closes every polynomial graph source \(z=g(x,y)\) followed by a rank-two
+linear target projection.  The three target-minor Jacobians have
+nonzero, strictly separated leading degrees, so no nonzero linear
+combination is constant.  The result includes a graph interpolating all
+six known colliding points and extends to every nonconstant graph in the
+full weighted-lift family.  See
+[`current_context/WEIGHTED_LIFT_DEGREE_SIX_GRAPH_PROJECTION_NO_GO.md`](current_context/WEIGHTED_LIFT_DEGREE_SIX_GRAPH_PROJECTION_NO_GO.md).
+The first nonlinear cusp cancellation has also been subducted exactly.
+Its primitive relation is \(p_5^6A^5C^4-q_6^5B^6\), not
+\(A^5-\lambda B^6\).  Two SAGBI-style subductions leave only two sparse
+Newton rays on which a top Jacobian with \(A\) or \(B\) can vanish:
+\[
+\begin{aligned}
+g_m&=c x^{8k+7}y^{5k+5},&m&=13k+12,\\
+g_m&=c x^{4k-1}y^{11k+4},&m&=15k+3,\quad k\ge1.
+\end{aligned}
+\]
+Every graph is excluded for the \(C\)-pivot, and every graph outside
+these rays is excluded for the other original pivots.  The first ray is
+governed by an explicit weighted-Euler equation, giving a focused
+lower-order recursion rather than an unrestricted search; see
+[`current_context/WEIGHTED_LIFT_FIRST_NONLINEAR_CUSP_SUBDUCTION.md`](current_context/WEIGHTED_LIFT_FIRST_NONLINEAR_CUSP_SUBDUCTION.md).
+That recursion is now closed on both rays.  On the \(B\)-ray, the fixed
+coefficient \(a=-57/34\) leaves an unavoidable
+\((228/17)xy+1/34\) weighted-Euler defect before any lower seed sector
+can enter.  On the \(A\)-ray, binomial completion requires a monomial
+with only one factor of \(x\), impossible because graph terms enter
+through \(x^2g\).  Hence, for every linear target correction \(L\),
+none of \((U+L,A)\), \((U+L,B)\), or \((U+L,C)\) descends on a
+nonconstant polynomial graph.  The mixed linear pivot is now closed too:
+for every nonzero \(\alpha A+\beta B+\delta C\), the coupled \(A/B\)
+characteristic equation forces the same forbidden \(x^1\)-term,
+independently of the mixing ratio; in the \(B/C\) case the \(B\)-defect
+appears before \(C\) can enter.  Constant graphs are excluded by exact
+separated top forms.  Genuinely nonlinear second coordinates remain
+open; see
+[`current_context/WEIGHTED_LIFT_SECOND_SUBDUCTION_RAY_CLOSURE.md`](current_context/WEIGHTED_LIFT_SECOND_SUBDUCTION_RAY_CLOSURE.md)
+and
+[`current_context/WEIGHTED_LIFT_MIXED_LINEAR_PIVOT_CLOSURE.md`](current_context/WEIGHTED_LIFT_MIXED_LINEAR_PIVOT_CLOSURE.md).
+The exclusion now extends to every affine quadratic second coordinate.
+For the binary \(A/B\) face, one characteristic equation classifies the
+\(A^2\), \(AB\), and \(B^2\) rays; the new \(AB\) ray forces
+\(\binom{27k+2}{16k}x y^{11k+2}\), which cannot arise from \(x^2g\).
+On the \(C\)-faces, mixed \(AC/BC\) forces a negative infinity-chart
+power, pure \(AC\) has a fixed Euler defect, \(BC\) has no resonance,
+and \(C^2\) reduces to the closed linear cases.  Affine perturbations
+enter after these defects.  Thus every
+\((U+L,Q(A,B,C))\) with nonzero quadratic part fails on every
+polynomial graph.  Cubic second coordinates and non-graph source
+surfaces remain open; see
+[`current_context/WEIGHTED_LIFT_ALL_QUADRATIC_PIVOT_CLOSURE.md`](current_context/WEIGHTED_LIFT_ALL_QUADRATIC_PIVOT_CLOSURE.md).
 
 ## Reproduction
 
@@ -300,6 +474,17 @@ without a corresponding audited note.
 - A. Dubouloz and K. Palka, “The Jacobian Conjecture fails for
   pseudo-planes,”
   [arXiv:1701.01425](https://arxiv.org/abs/1701.01425).
+- S. Yu. Orevkov, “On three-sheeted polynomial mappings of
+  \(\mathbb C^2\),” Math. USSR-Izv. **29** (1987), 587--596,
+  [DOI 10.1070/IM1987v029n03ABEH000984](https://doi.org/10.1070/IM1987v029n03ABEH000984).
+- T. Shaska, “Graded Keller maps and the Jacobian Conjecture,”
+  [arXiv:2607.20210](https://arxiv.org/abs/2607.20210).
+- A. Gallagher, “The Jacobian counterexample, explained,” including the
+  weighted-lift family and exact supporting code,
+  [jacobianfun.org](https://jacobianfun.org/jacobian-explained).
+- N. V. Chau, “Non-zero constant Jacobian polynomial maps of
+  \(\mathbb C^2\),” Ann. Polon. Math. **71** (1999), 287--310,
+  [journal PDF](https://matwbn.icm.edu.pl/ksiazki/apm/apm71/apm7135.pdf).
 
 ## Attribution
 

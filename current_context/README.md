@@ -100,6 +100,103 @@ irreducible, but an exact two-sheeted projection calculation gives Euler
 characteristic \(3\), so it is not \(\mathbb A^2\).  See
 `DISCRIMINANT_FIBER_NO_GO.md`.
 
+A substantially broader common-coordinate descent is impossible.  If a
+target coordinate \(R\) has \(R\circ F\) as a source coordinate, source
+and target automorphisms rectify the threefold map to \((t,p,q)\).
+Generic \(t=c\) slices are then plane polynomial maps with constant
+Jacobian and geometric degree three, contradicting Orevkov's theorem on
+three-sheeted polynomial maps of \(\mathbb C^2\).  This includes wild
+nonlinear coordinates.  See
+`THREE_DIMENSIONAL_COORDINATE_SLICE_OREVKOV_NO_GO.md`.
+
+For the generic-degree-six weighted lift, every polynomial graph source
+followed by every rank-two linear target projection is excluded as well.
+The three possible target-minor Jacobians have distinct nonzero leading
+degrees, including on a graph containing all six displayed collision
+points.  Thus any surviving descent from the weighted-lift family must
+use a nonlinear target projection or a non-graph affine-plane embedding.
+See `WEIGHTED_LIFT_DEGREE_SIX_GRAPH_PROJECTION_NO_GO.md`.
+
+The primitive nonlinear cancellation \(p_5^6A^5C^4-q_6^5B^6\) has now
+been subducted through two exact SAGBI stages.  All graph-leading forms
+are excluded except two sparse Newton rays for the \(A\)- and
+\(B\)-pivots; the \(C\)-pivot is excluded uniformly.  See
+`WEIGHTED_LIFT_FIRST_NONLINEAR_CUSP_SUBDUCTION.md`.
+Both rays are subsequently excluded for every parameter: one has an
+unavoidable weighted-Euler defect and the other requires a forbidden
+\(x^1\) graph term.  See
+`WEIGHTED_LIFT_SECOND_SUBDUCTION_RAY_CLOSURE.md`.
+The general mixed linear pivot is now excluded too.  The coupled
+\(A/B\) characteristic solution has a highest-\(y\), \(x^1\) coefficient
+independent of the mixing ratio; in a \(B/C\) mixture, \(C\) enters only
+after the already nonzero \(B\)-defect.  Constant graphs have separated
+nonzero top forms.  Hence every
+\((U+L,\alpha A+\beta B+\delta C)\) fails on every polynomial graph, and
+the next honest target must have a genuinely nonlinear second
+coordinate.  See `WEIGHTED_LIFT_MIXED_LINEAR_PIVOT_CLOSURE.md`.
+That next layer is now closed through target degree two.  One
+characteristic equation classifies the \(A^2\), \(AB\), and \(B^2\)
+Newton faces; the new \(AB\) ray forces a forbidden \(x^1\) graph term.
+Mixed \(AC/BC\) forces a negative infinity-chart power, pure \(AC\)
+has a fixed Euler defect, \(BC\) has no resonance, and \(C^2\) reduces
+to the linear theorem.  Hence every affine quadratic second coordinate
+fails on every polynomial graph.  Cubic target faces and non-graph
+source surfaces remain open.  See
+`WEIGHTED_LIFT_ALL_QUADRATIC_PIVOT_CLOSURE.md`.
+
+On the independent Route A cubic normalization, the residual factor
+\(\tau^2=g(v)\) has also been audited at infinity.  After removing
+squares it is \(\mathbb C(v)(\sqrt{s})\), ramified at infinity exactly
+when \(\deg g\) is odd.  The two canonical quadratic-pseudoplane
+valuations instead split the distinguished cubic sheet, so their deck
+pairing imposes no parity on the residual two sheets.  An explicit
+Miranda family realizes every squarefree degree and parity with a
+connected finite-flat cubic cover, an everywhere-étale distinguished
+section, and a smooth normal total surface.  Any contradiction therefore
+needs a genuinely global theorem coupling residual monodromy to the
+non-distinguished dicritical defect.  See
+`ROUTE_A_RESIDUAL_QUADRATIC_INFINITY_AUDIT.md`.
+The canonical finite degree-six compactification shows that even this
+point-to-defect bridge is unavailable.  Finite odd residual places are
+points on already-existing cubic boundary components; the distinguished
+lift stays on the single divisor \(D_-\) with local degree one, and the
+four missing residual sheets are reused at each intersection.  The deck
+involution exchanges omitted \(D_-\) with retained \(D_+\), while its
+behavior over cubic boundary primes is controlled by divisorial
+valuation data rather than root parity.  An exact model places
+arbitrarily many odd roots on one ramification component.  The viable
+next input is a projective intersection bound for the fixed boundary
+curves.  See
+`ROUTE_A_GLOBAL_MONODROMY_DICRITICAL_BRIDGE_NO_GO.md`.
+The corresponding projective intersection ledger is exact but still
+nonrestrictive:
+\(\deg g+I_\infty=M\delta\).  Localization from the plane open makes
+the affine class group free on all boundary primes, while repeated
+blowups at the unique infinity end vary the raw adjunction labels
+without changing any affine datum.  Smooth branch curves and connected
+cubic families realize the resulting freedom.  Route A now requires a
+canonical-minimal infinity-tree theorem controlling \(I_\infty\) and
+\(\delta\) together.  See
+`ROUTE_A_PROJECTIVE_INTERSECTION_BOUND_NO_GO.md`.
+
+For case c, the corrected degree-four outer cover has now been tested
+against every linear jet adjoint through derivative order three.  Both
+capped new-block maps are surjective modulo \(E^j\) for
+\(j=1,2,3,4\); at \(E^5\), Hermite coordinates merely recover the old
+bounded row cokernels.  Their unique common linear adjoint is the
+outer-independent support coefficient \([h^{19}]\).  Consequently no
+scalar transvectant with the outer quartic can couple the caps; the next
+finite-support invariant must be nonlinear in existing cokernel values.
+See `CASE_C_OUTER_QUARTIC_ADJOINT_NO_GO.md`.
+The first such nonlinear tests are nondegenerate: the two canonical
+residual adjoint lines have nonzero norms, trace-Gram determinant, and
+Wronskian norm at all five outer points, while the weight-nine
+determinant of their source cokernel vectors is a nonzero polynomial
+rather than an identity.  The next case-c target must therefore use a
+later bounded row or a multistage relation, not only the first two
+cokernel planes.  See
+`CASE_C_COKERNEL_NONLINEAR_PAIRING_NO_GO.md`.
+
 The fixed source plane now has a sharper global obstruction candidate.
 Its conductor completion admits an exact formal Darboux pair, so local
 parity and completion arguments alone cannot work.  Rational descended
@@ -108,9 +205,13 @@ charts instead retain a logarithmic class in the one-dimensional kernel
 \ker\bigl(H^1_{\rm dR}(X^\circ)\to H^1_{\rm dR}(C^\circ)\bigr)
 =\mathbf Q\,d\log(x/c).
 \]
-Both natural monomial orientations land in a nonzero odd residue coset.
-The remaining question is whether every nonmonomial descended chart has
-the same parity.  See `FIXED_SOURCE_PLANE_ROUTE.md`, Sections 1.3--1.5.
+Both natural monomial orientations land in a nonzero odd residue coset,
+but the corresponding rational parity conjecture is false.  Exact
+endpoint-neutral canonical scalings preserve conductor and Darboux data
+while moving the odd class to interior level divisors.  They introduce
+affine poles, so the remaining polynomial question is global
+pole-freeness/termination rather than residue parity.  See
+`FIXED_PLANE_RESIDUE_PARITY_SCALING_NO_GO.md`.
 
 An independent all-degree formulation is recorded in
 `STANDARD_SYSTEM_WEIGHTED_ESCAPE.md`.  In the finite standard system
