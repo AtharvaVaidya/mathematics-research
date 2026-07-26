@@ -642,6 +642,31 @@ outside \(\mathbb C[x^\kappa]\).  This is a necessary escape theorem,
 not an exclusion of repeated roots; see
 `STANDARD_SYSTEM_REPEATED_ROOT_KUMMER_NONLINEAR_AUDIT.md`.
 
+The first secondary Rees chart is now exact at the residual zero root.
+At every strict secondary slope the lowest \(Q\)-face is automatically
+matched, and its scalar term is impossible.  A matched resonant face has
+zero bracket, an isolated matched super-slope face violates the reciprocal
+degree bound, and a direct super-face/Kummer scalar is impossible as well.
+For arbitrary anchored faces, every nonzero terminal scalar pulls back to
+the original affine defect-one coefficient pair.  This is not yet a
+repeated-root exclusion: an unmatched chain may cancel successive
+non-scalar terms before reaching that terminal.  The occupied-support
+convention and exact arbitrary-anchor operator are recorded in
+`STANDARD_SYSTEM_REPEATED_ROOT_ZERO_RESIDUAL_SECONDARY_FACE_NO_GO.md`.
+
+The proper-divisor descent in Makar-Limanov--Trakhtenberg does not close
+that chain.  Even assuming the Rees cancellations embed into their Newton
+resolution, it only makes the nonprincipal power stages finite before a
+principal edge.  The principal category is genuinely populated by an
+explicit Laurent face with Jacobian one, and its reciprocal terminal is
+the ordinary defect-one Bezout equation
+\[
+p_0'q_1-p_1q_0'=c.
+\]
+Thus power-index descent is a route to the lifted endpoint, not an
+obstruction to it.  See
+`STANDARD_SYSTEM_POWER_INDEX_PRINCIPAL_FACE_BRIDGE_AUDIT.md`.
+
 On Route A, each of the three explicit degree-\(4,5,6\) branch curves
 has a full-degree \((3,2)\) cusp for the trigonal projection.  A small
 generic vertical fiber lies entirely in the cusp Milnor ball, so its

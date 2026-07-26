@@ -408,6 +408,33 @@ Keller candidate must escape \(\mathbb C[x^\kappa]\).  When
 defect recurrence is exactly the full constant-Jacobian recurrence;
 the Kummer calculation does not reduce it to a smaller system.
 
+The zero residual root after the first repeated-root Rees chart now has a
+conditional secondary-face theorem.  Strict secondary slopes force the
+actual lowest \(Q\)-face to be matched and cannot produce the scalar.
+Matched resonant faces have zero bracket.  Isolated matched super slopes
+and direct super-face/Kummer scalar terms violate the original reciprocal
+degree bounds.  More generally, every nonzero scalar terminal of an
+arbitrary anchored chain pulls back to the affine defect-one coefficient
+pair \(I=n-1,\ J=m-1\).  What remains is not another isolated face: it is
+the possibility of an unmatched compensating chain whose intermediate
+non-scalar brackets cancel successively.  See
+`current_context/STANDARD_SYSTEM_REPEATED_ROOT_ZERO_RESIDUAL_SECONDARY_FACE_NO_GO.md`.
+
+The Makar-Limanov--Trakhtenberg proper-divisor descent has also been
+checked against this exact gap.  Even if the compensating chain embeds in
+their chosen Newton resolution, the descent only proves finitely many
+nonprincipal power stages before a principal edge.  That principal
+category is nonempty: an exact Laurent face with slope \(3/2\) and positive
+intercept already has Jacobian one.  In reciprocal coordinates the
+surviving terminal is precisely
+\[
+p_0'q_1-p_1q_0'=c,
+\]
+with \(\gcd(p_0',q_0')=1\) the sharp first-layer condition.  Therefore
+power-index descent cannot supply the missing contradiction; the question
+is whether the full later homogeneous equations obstruct a lift.  See
+`current_context/STANDARD_SYSTEM_POWER_INDEX_PRINCIPAL_FACE_BRIDGE_AUDIT.md`.
+
 The next work should use the finite algebra of the deforming root scheme
 rather than another bounded coefficient sweep:
 
@@ -417,7 +444,8 @@ rather than another bounded coefficient sweep:
    branches, replacing the lost local coordinate \(S\);
 3. identify Kummer modes as descent data for branch orbits and determine
    whether nonlinear Keller equations kill or propagate them;
-4. prove a secondary Newton/Rees lemma across a factor-splitting event;
+4. test the lifted defect-one endpoint against every later homogeneous
+   equation, first deciding whether formal completion is obstructed at all;
 5. if a non-common residual survives, use its exact orbit and support as
    a construction ansatz rather than enlarging a blind search.
 
@@ -465,8 +493,10 @@ The project has produced a publishable squarefree-boundary exclusion
 theorem and several exact route audits, but not the requested proof or
 counterexample.  The squarefree common-root architecture is closed.
 The primary unresolved standard-system architecture has repeated
-boundary factors; its first layer and Kummer kernel are exact, while a
-secondary Newton/Rees theorem across factor splitting is missing.
+boundary factors.  Its first layer, Kummer kernel, and zero-residual
+secondary matched-face analysis are exact; the remaining local gap is an
+unmatched compensating chain, now pinned to the affine defect-one terminal.
+The power-index descent reaches but does not exclude that terminal.
 Route A's three explicit quartic branch candidates are also closed by a
 full-degree cusp monodromy obstruction, and the whole four-puncture
 one-boundary case is excluded by the cubic critical-point theorem.  The

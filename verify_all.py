@@ -243,6 +243,8 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_standard_system_repeated_root_compact_face.py",
     ROOT / "current_context" / "verify_standard_system_repeated_root_global_first_layer.py",
     ROOT / "current_context" / "verify_standard_system_repeated_root_kummer_nonlinear_audit.py",
+    ROOT / "current_context" / "verify_standard_system_repeated_root_zero_residual_secondary_face_no_go.py",
+    ROOT / "current_context" / "verify_standard_system_power_index_principal_face_bridge_audit.py",
 ]
 
 

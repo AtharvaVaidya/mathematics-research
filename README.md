@@ -48,6 +48,15 @@ chain and reproduction protocol are in
 An independent announcement of the same bound exists, so no priority or
 uniqueness claim is made here.
 
+The first standalone paper on the complementary reciprocal-boundary route
+is now included:
+[*Squarefree Common-Root Boundaries for Reciprocal Keller Pairs*](papers/squarefree-common-root-exclusion/main.pdf).
+It proves that a reciprocal Keller pair with
+\(P(X,0)=R(X)^a,\ Q(X,0)=R(X)^b\) cannot have squarefree \(R\).
+The [source and reproduction notes](papers/squarefree-common-root-exclusion/)
+are included beside the checked PDF.  Repeated-root boundaries remain
+outside the theorem, so this does not resolve \(JC(2)\).
+
 Two further audited theorems are now separated from the unresolved global
 claim.  A standalone paper draft proves that no degree-three étale
 morphism \(S(2,2,1)\to\mathbb A^2\) exists.  In the independent
