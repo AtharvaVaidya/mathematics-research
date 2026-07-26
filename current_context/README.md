@@ -404,6 +404,28 @@ log-puncture divisor.  These identities therefore do not eliminate either
 survivor.  This is a scoped feasibility result, not a global Keller model.
 See `ROUTE_A_DEGREE_FOUR_LOG_ADJUNCTION_FEASIBILITY.md`.
 
+A new generic-fiber theorem gives a structural restriction in every
+degree.  A Darboux coordinate on the quadratic pseudoplane cannot have
+split generic fiber \(\mathbb A^1\) or \(\mathbb G_m\): the Hamiltonian
+slice makes the first case birational and the second a cyclic Galois
+extension, while units, purity, and the nontrivial class group exclude
+both.  The Galois pseudo-covering ingredient is prior work of Miyanishi;
+the new synthesis is its coupling to the slice equation and the quartic
+inertia profiles.  In either quartic survivor, a geometrically rational
+generic fiber has at least four punctures.  In the one-boundary survivor,
+if both coordinate fibers are rational, at least one has at least six
+punctures and the projective branch curve has degree \(4\), \(5\), or
+\(6\).  See
+`ROUTE_A_LOW_LOG_COMPLEXITY_FIBER_OBSTRUCTION.md`.
+
+Those three remaining branch degrees cannot be eliminated by finite
+curve geometry alone.  Explicit polynomial normalizations in degrees
+\(4,5,6\) realize the required cusp, node, one-place-at-infinity,
+delta, puncture, and local \(S_4\)-permutation ledgers.  They do not
+construct a finite surface cover: the unresolved invariant is the
+global braid-monodromy representation of the curve complement.  See
+`ROUTE_A_QUARTIC_BRANCH_DEGREES_FOUR_TO_SIX_FEASIBILITY.md`.
+
 For case c, the corrected degree-four outer cover has now been tested
 against every linear jet adjoint through derivative order three.  Both
 capped new-block maps are surjective modulo \(E^j\) for
@@ -536,6 +558,45 @@ gives, on a natural Zariski-open set,
 Thus the first Laurent pole and the derivative-resultant remainder
 belong to different filtrations.  See
 `STANDARD_SYSTEM_SYLVESTER_REMAINDER_CORRECTION_AUDIT.md`.
+
+That corrected remainder is not itself a lifted obstruction.  For every
+allowed two-jet \(P=R^a+\tau^dT+\tau^{2d}S\), its entire
+division-free remainder has a polynomial primitive satisfying the
+reciprocal \(Q\)-degree bounds.  Adding the ambient
+\(\tau^{m-1}X\) direction then gives exact maximal derivative-resultant
+contact.  The construction is not a standard-system or Keller solution:
+the primitive is a free physical relative correction, not necessarily
+one of the scalar \(\lambda_k\tau^kC^{m-k}\) combinations.  It proves
+that the next obstruction must use that narrower presentation or the
+Keller bracket itself.  See
+`STANDARD_SYSTEM_TWO_JET_DERIVATIVE_LIFT_COUNTERMODEL.md`.
+
+The Keller bracket does give a positive face theorem.  A single
+root-vanishing binomial face has an uncancellable terminal unless it is
+the already known \(g\)-sector monomial
+\[
+T=cR^\sigma,\qquad d=g(a-\sigma).
+\]
+For an entire isolated compact matched face, including all interior
+monomials, every strict-slope kernel is instead a reduced common-root
+shift; equality of slopes is precisely the physical \(g\)-sector
+resonance.  This is a rigorous face classification, but it does not yet
+control post-resonant cascades or repeated common roots.  See
+`STANDARD_SYSTEM_SINGLE_BINOMIAL_FACE_NO_SCALAR.md`.
+
+For an actual polynomial Keller pair with squarefree common root, the
+matched-\(Q\)-face hypothesis is automatic at every strict first local
+\(P\)-slope.  The Euler defect excludes all lower \(Q\)-faces, and the
+weight lattice leaves a unique matched residue coset.  The resulting
+local reduced shifts glue simultaneously in \(P\) and \(Q\) to a
+degree-compatible global change
+\[
+R\longmapsto R+\tau^E\dot R(X).
+\]
+This closes the pre-resonant matching and gluing gap.  It does not yet
+classify non-\(g\)-multiple jets appearing after a physical slope-\(g\)
+sector, nor repeated roots.  See
+`STANDARD_SYSTEM_STRICT_COMPACT_FACE_BRIDGE.md`.
 
 On the independent Danielewski-surface route, changing the affine-plane
 chart cannot rescue a Chebyshev étale endomorphism.  A preserved boundary

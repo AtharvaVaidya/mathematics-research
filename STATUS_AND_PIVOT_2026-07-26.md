@@ -28,6 +28,14 @@ were repaired.  The 14-page PDF was rebuilt and inspected page by page.
 These are publishable scoped results, not a resolution of the
 two-dimensional conjecture.
 
+Subsequent theory-first work added four corrective or structural
+results: the generic standard-system resultant contact was corrected;
+the naive endpoint quotient was proved to collapse; isolated
+standard-system Newton faces were classified; and low-log-complexity
+generic Darboux fibers were excluded on the quadratic pseudoplane.  The
+details and strict limitations are recorded in Section 5 below and in
+the corresponding exact theorem notes.
+
 ## 1. Degree-eleven weighted-lift theorem
 
 Let \(F=(A,B,C)\) be the exact Gallagher weighted lift, let \(U\) be its
@@ -304,30 +312,79 @@ not help: no nonzero pure affine tail is such a cycle, because it has a
 nonzero earlier cross term with \(R^a,R^b\).  Whether an endpoint term
 is removable depends on a full lift through the nilpotent cascade.
 
+The first attempt at that lift gives another useful negative result.
+For every allowed two-jet
+\[
+P=R^a+\tau^dT+\tau^{2d}S,
+\]
+the entire division-free derivative remainder has a polynomial
+primitive satisfying the reciprocal \(Q\)-degree bounds.  A free
+\(\tau^{m-1}X\) correction then saturates the derivative-resultant
+contact exactly.  This is only an ambient polynomial-\(Q\)
+countermodel: the primitive need not be realizable by the scalar
+standard parameters and does not solve the Keller bracket.  It proves
+that the resultant and coefficient bounds alone cannot supply the
+lifted-endpoint lemma.
+
+The Keller bracket is more rigid.  For a root-vanishing isolated
+binomial face, all strict cases have an uncancellable terminal; the
+only global single-face survivors are
+\[
+T=cR^\sigma,\qquad d=g(a-\sigma),
+\]
+the known physical \(g\)-sector monomials.  For a complete isolated
+matched compact face with arbitrary interior terms, direct
+differentiation gives
+\[
+\mathscr K_{\rm face}
+=(d'-gh')s^{a+b-1}z(aAB'-bA'B).
+\]
+Every strict-slope kernel is a reduced common-root shift, while equality
+is exactly the \(g\)-sector resonance.  For an actual polynomial Keller
+pair with squarefree common root, the local Keller identity makes the
+matched \(Q\)-face automatic: an Euler defect excludes every lower
+\(Q\)-face.  The resulting reduced shifts glue simultaneously in \(P\)
+and \(Q\) to a degree-compatible global change of \(R\).  What remains
+is to extend this normal form through an already-present slope-\(g\)
+relative unit and through repeated common roots.
+
 This rules out the endpoint-only pole-filtered monodromy lemma as the
 next standalone obstruction.  The resolution-directed target is now:
 
-> **Lifted endpoint lemma.**  Classify the order-\(N\) obstruction
-> values of all lower \(Z=0\) nilpotent lifts with fixed reduced
-> common-root data, and prove either that the Keller scalar is absent
-> or construct a compatible lift realizing it.
+> **Post-resonant lifting lemma.**  After the automatic strict-face
+> shifts have been removed and a physical slope-\(g\) relative unit is
+> retained, every later non-\(g\)-multiple common jet is either another
+> degree-compatible root reparametrization or forces a nonzero
+> pre-endpoint Keller-bracket face.
 
 The next work should be deformation-theoretic, not a larger coefficient
 sweep:
 
-1. use the division-free Sylvester identity to describe the first
-   obstruction ideal and its root/critical-point factors;
-2. organize successive \(Z=0\) lifts by the Rees or normal-cone
-   filtration, keeping the relative unit \(Q^a/P^b\);
-3. compute how a lift changes the endpoint obstruction, rather than
-   quotienting the raw affine determinant;
-4. test whether the resulting obstruction map has a conserved
-   rootwise valuation or trace class;
-5. if it does, prove that the scalar Keller forcing misses its image;
-   if it does not, use the first exact compatible formal lift as a
-   counterexample-construction lead;
-6. bring global monodromy back only after this liftability problem has
-   been solved.
+1. pass to the weighted blowup of the first slope-\(g\) face while
+   retaining the physical relative unit \(Q^a/P^b\);
+2. classify the first non-\(g\)-multiple jet against that resonant
+   background;
+3. extend the compact-face calculation to repeated roots of \(R\);
+4. compute the nonlinear endpoint value only after those normalizations;
+5. if an interacting face survives, use its exact support as a
+   counterexample-construction lead rather than enlarging a blind search;
+6. bring global monodromy back only after liftability has been resolved.
+
+Route A now supplies an independent finite geometric target.  The
+Hamiltonian slice on a split \(\mathbb A^1\) generic fiber forces
+birationality, while on a split \(\mathbb G_m\) fiber it forces a cyclic
+Galois extension; both are impossible on the quadratic pseudoplane.
+With the accepted transposition-only quartic inertia, every rational
+generic coordinate fiber has at least four punctures.  In the
+one-boundary survivor, if both coordinate fibers are rational, one has
+at least six punctures and the branch curve has degree \(4\), \(5\), or
+\(6\).  The Galois pseudo-covering ingredient is prior work of
+Miyanishi; the new finite target is the simultaneous
+\(3+1\)-unibranch/\(2+2\)-multibranch classification in those three
+degrees.  Exact polynomial normalizations show that degrees \(4,5,6\)
+all survive the finite genus, delta, semigroup, puncture, and local
+permutation tests.  The next Route A obstruction is therefore global
+braid monodromy of the branch complement.
 
 Small \((g,a,b)\) computations should be used only to discover and test
 the normal form and to search for countermodels.  They should not be
@@ -337,8 +394,11 @@ mistaken for a proof by bounded enumeration.
 
 The project has produced another publishable theorem and several exact
 route audits, but not the requested proof or counterexample.  The
-pole-filtered endpoint idea has now been narrowed enough to expose its
-missing premise: liftability through the nonreduced normal cone.  The
-current primary direction is the lifted-endpoint obstruction map in the
-finite standard system, with Route A boundary-regular Darboux
-classification as an independent counterexample-first track.
+pole-filtered endpoint idea has now been narrowed to its missing premise:
+post-resonant liftability through the nonreduced normal cone.  The
+pre-resonant strict compact face is automatic and globally removable
+for squarefree common roots.  The current primary direction is the
+first non-\(g\)-multiple jet after a resonant sector, with the
+repeated-root extension in parallel.  Global braid monodromy for the
+Route A degree-\(4,5,6\) branch curves is the independent
+counterexample-first track.

@@ -50,6 +50,8 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_route_a_degree_four_retained_sheet_audit.py",
     ROOT / "current_context" / "verify_route_a_degree_four_survivor_normalization_profile.py",
     ROOT / "current_context" / "verify_route_a_degree_four_log_adjunction_feasibility.py",
+    ROOT / "current_context" / "verify_route_a_low_log_complexity_fiber_obstruction.py",
+    ROOT / "current_context" / "verify_route_a_quartic_branch_degrees_four_to_six_feasibility.py",
     ROOT / "route_a" / "equivariant_hensel.py",
     ROOT / "route_bd_verify.py",
     ROOT / "route_bd_ab_hurwitz_count.py",
@@ -232,6 +234,9 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_standard_system_endpoint_pairing_branch_invisibility.py",
     ROOT / "current_context" / "verify_standard_system_endpoint_quotient_no_go.py",
     ROOT / "current_context" / "verify_standard_system_sylvester_remainder_correction_audit.py",
+    ROOT / "current_context" / "verify_standard_system_two_jet_derivative_lift_countermodel.py",
+    ROOT / "current_context" / "verify_standard_system_single_binomial_face_no_scalar.py",
+    ROOT / "current_context" / "verify_standard_system_strict_compact_face_bridge.py",
 ]
 
 
