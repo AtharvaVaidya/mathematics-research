@@ -114,6 +114,30 @@ problem needs an all-order recurrence or new global rigidity rather
 than any bounded list of defect calculations.  See
 [`current_context/GENERAL_TWO_BLOCK_CYCLIC_DEFECT_DELAY.md`](current_context/GENERAL_TWO_BLOCK_CYCLIC_DEFECT_DELAY.md).
 
+The unrestricted formal recurrence now has an intrinsic geometric
+description for every monic \(d\).  For
+\[
+\gamma(x)=(d(x)^2+ux,d(x)^3)
+\]
+and any polynomial Bézout normal \(v\) with
+\(\det(\gamma',v)=1\), the straight-normal symplectic extension is
+\[
+(P,Q)=\gamma+\theta v,\qquad
+y=\theta+\tfrac12\det(v',v)\theta^2.
+\]
+Its Catalan expansion is exact and never terminates in this gauge.
+Moreover, every such boundary curve has explicit self-collisions.
+Consequently, any polynomial Keller completion of the boundary would
+already be a genuine counterexample to \(JC(2)\).  A direct coefficient
+classification, combined with the repaired partial-degree theorem,
+shows that such a completion must have transverse degree at least six.
+This is a counterexample criterion and a lower bound, not a construction;
+higher-order symplectic reparametrizations remain unresolved.  The
+hostile-audited proof and exact verifier are in
+[`current_context/ARBITRARY_D_CANONICAL_SYMPLECTIC_EXTENSION_AND_COLLISION_CRITERION.md`](current_context/ARBITRARY_D_CANONICAL_SYMPLECTIC_EXTENSION_AND_COLLISION_CRITERION.md)
+and
+[`current_context/verify_arbitrary_d_canonical_symplectic_extension_and_collision.py`](current_context/verify_arbitrary_d_canonical_symplectic_extension_and_collision.py).
+
 A separate coefficient calculation integrates every Keller system of
 exact normal bidegree \((4,3)\) over \(\mathbb C(x)\) and excludes it by
 local valuation theory.  This is an independently checked structural
