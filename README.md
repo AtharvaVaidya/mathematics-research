@@ -136,15 +136,25 @@ y=\theta+\tfrac12\det(v',v)\theta^2.
 Its Catalan expansion is exact and never terminates in this gauge.
 Moreover, every such boundary curve has explicit self-collisions.
 Consequently, any polynomial Keller completion of the boundary would
-already be a genuine counterexample to \(JC(2)\).  A direct coefficient
-classification, combined with the repaired partial-degree theorem,
-shows that such a completion must have transverse degree at least six.
+already be a genuine counterexample to \(JC(2)\).  The initial direct
+coefficient classification excludes transverse degree at most five.
+A subsequent high-shear arithmetic synthesis, combined with the full
+\((9,6)\), \((12,8)\), \((12,9)\), and \((15,6)\) exclusions, raises
+the bound to
+\[
+\max(\deg_yP,\deg_yQ)\ge15.
+\]
+At equality only \((15,9)\), \((15,10)\), and \((15,12)\) remain.
 This is a counterexample criterion and a lower bound, not a construction;
 higher-order symplectic reparametrizations remain unresolved.  The
-hostile-audited proof and exact verifier are in
+hostile-audited canonical proof and exact verifier are in
 [`current_context/ARBITRARY_D_CANONICAL_SYMPLECTIC_EXTENSION_AND_COLLISION_CRITERION.md`](current_context/ARBITRARY_D_CANONICAL_SYMPLECTIC_EXTENSION_AND_COLLISION_CRITERION.md)
 and
 [`current_context/verify_arbitrary_d_canonical_symplectic_extension_and_collision.py`](current_context/verify_arbitrary_d_canonical_symplectic_extension_and_collision.py).
+The degree-fifteen synthesis and its survivor-ledger verifier are in
+[`current_context/ARBITRARY_D_TRANSVERSE_DEGREE_FIFTEEN_ARITHMETIC_BOUND.md`](current_context/ARBITRARY_D_TRANSVERSE_DEGREE_FIFTEEN_ARITHMETIC_BOUND.md)
+and
+[`current_context/verify_arbitrary_d_transverse_degree_fifteen_arithmetic_bound.py`](current_context/verify_arbitrary_d_transverse_degree_fifteen_arithmetic_bound.py).
 
 The collision divisor itself is now understood scheme-theoretically.
 If \(H\) is the implicit equation of the boundary image, then every
