@@ -46,6 +46,15 @@ factor splitting currently prevents iteration.  Independently, a
 full-degree cusp obstruction eliminates the three explicit Route A
 degree-\(4,5,6\) branch curves from transitive quartic monodromy.
 
+Two reviewed follow-ups sharpen the remaining cases.  The pure
+fixed-base Kummer modes close to an exact zero-bracket cone, and for
+Kummer period \(\kappa>1\) a derivative-gcd obstruction forces any
+candidate to leave that cone in at least one top homogeneous form.
+On Route A, the cubic critical-point dichotomy excludes the entire
+four-puncture equality case in the one-boundary quartic survivor, so
+every rational generic coordinate fiber there has at least six
+punctures.
+
 ## 1. Degree-eleven weighted-lift theorem
 
 Let \(F=(A,B,C)\) be the exact Gallagher weighted lift, let \(U\) be its
@@ -386,6 +395,19 @@ where the Kummer term exists precisely when \(g\mid e_iE\) for every
 \(R\mapsto R+\tau^EL\), repeated factors may split and \(S_X\) is not a
 formal unit at the original multiple root.
 
+The Kummer kernel has a complete pure-mode description.  Put
+\[
+d=\gcd(g,e_1,\ldots,e_r),\qquad \kappa=g/d,\qquad R=H^d.
+\]
+All fixed-base Kummer monomials lie in an exact zero-bracket cone built
+from \(\tau^\kappa\) and \(H\).  If \(\kappa>1\), however, both top
+derivatives inside that cone contain \(x^{\kappa-1}\), contradicting
+the first scalar Bezout equation.  Hence at least one top form of any
+Keller candidate must escape \(\mathbb C[x^\kappa]\).  When
+\(\kappa=1\), this universal factor disappears but the remaining
+defect recurrence is exactly the full constant-Jacobian recurrence;
+the Kummer calculation does not reduce it to a smaller system.
+
 The next work should use the finite algebra of the deforming root scheme
 rather than another bounded coefficient sweep:
 
@@ -422,6 +444,17 @@ independently certified.  The next Route A question is whether every
 remaining minimal-puncture branch curve admits such a full-degree cusp,
 or whether a different projection can have a larger transitive image.
 
+That question is now answered for the entire four-puncture equality
+case in the one-boundary survivor.  Four punctures force the branch
+normalization map to the coordinate line to have degree three.  Its
+critical divisor either gives one full-degree deficient point or a
+second critical point.  The latter is smooth, nondeficient unibranch,
+or multibranch; in all three cases the global quartic image is generated
+by at most two transpositions or is a quotient of a nontransitive
+\(2+2\) local image.  Therefore a rational generic coordinate fiber
+has at least six punctures.  Six-or-more-puncture rational fibers,
+positive-genus fibers, and the two-boundary survivor remain open.
+
 Small \((g,a,b)\) computations should be used only to discover and test
 the normal form and to search for countermodels.  They should not be
 mistaken for a proof by bounded enumeration.
@@ -435,6 +468,7 @@ The primary unresolved standard-system architecture has repeated
 boundary factors; its first layer and Kummer kernel are exact, while a
 secondary Newton/Rees theorem across factor splitting is missing.
 Route A's three explicit quartic branch candidates are also closed by a
-full-degree cusp monodromy obstruction.  The next counterexample-first
-Route A target must use a branch curve whose local projection does not
-already generate only a three-letter transposition group.
+full-degree cusp monodromy obstruction, and the whole four-puncture
+one-boundary case is excluded by the cubic critical-point theorem.  The
+next counterexample-first Route A target must have six or more punctures,
+positive genus, or the two-boundary zero-deficit profile.

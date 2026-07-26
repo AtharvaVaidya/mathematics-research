@@ -625,6 +625,23 @@ the argument cannot yet be iterated.  See
 `STANDARD_SYSTEM_REPEATED_ROOT_COMPACT_FACE.md` and
 `STANDARD_SYSTEM_REPEATED_ROOT_GLOBAL_FIRST_LAYER.md`.
 
+The polynomial Kummer modes themselves have now been followed through
+all mutual nonlinear interactions.  If
+\[
+d=\gcd(g,e_1,\ldots,e_r),\qquad \kappa=g/d,\qquad R=H^d,
+\]
+then the pure fixed-base modes span the exact zero-bracket cone
+\[
+P=\sum A_j\tau^{\kappa j}H^{da-j},\qquad
+Q=\sum B_j\tau^{\kappa j}H^{db-j}.
+\]
+For \(\kappa>1\), both dehomogenized top derivatives in this cone share
+\(x^{\kappa-1}\), so they cannot satisfy the first scalar Bezout
+equation.  Any Keller candidate must therefore introduce a top form
+outside \(\mathbb C[x^\kappa]\).  This is a necessary escape theorem,
+not an exclusion of repeated roots; see
+`STANDARD_SYSTEM_REPEATED_ROOT_KUMMER_NONLINEAR_AUDIT.md`.
+
 On Route A, each of the three explicit degree-\(4,5,6\) branch curves
 has a full-degree \((3,2)\) cusp for the trigonal projection.  A small
 generic vertical fiber lies entirely in the cusp Milnor ball, so its
@@ -634,6 +651,18 @@ at most an \(S_3\) fixing one of four letters.  Hence none of these
 three curves supports the required transitive \(S_4\) monodromy.  No
 claim about the full complement fundamental group is made; see
 `ROUTE_A_TRIGONAL_CUSP_GLOBAL_MONODROMY_OBSTRUCTION.md`.
+
+The same monodromy idea closes the complete four-puncture equality case,
+not just those three examples.  In the one-boundary quartic survivor,
+four punctures would make the branch normalization map to either
+coordinate line with degree three.  The cubic has either one totally
+ramified critical point, whose local nontransitive image generates
+globally, or a second critical point that reduces the global image to at
+most two transpositions or a local \(2+2\) image.  Thus every rational
+generic \(P\)- or \(Q\)-fiber in this profile has at least six punctures.
+Six-or-more punctures, positive genus, and the two-boundary survivor
+remain open; see
+`ROUTE_A_QUARTIC_MINIMAL_PUNCTURE_MONODROMY_OBSTRUCTION.md`.
 
 On the independent Danielewski-surface route, changing the affine-plane
 chart cannot rescue a Chebyshev étale endomorphism.  A preserved boundary

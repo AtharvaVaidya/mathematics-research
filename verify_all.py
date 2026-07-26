@@ -53,6 +53,7 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_route_a_low_log_complexity_fiber_obstruction.py",
     ROOT / "current_context" / "verify_route_a_quartic_branch_degrees_four_to_six_feasibility.py",
     ROOT / "current_context" / "verify_route_a_trigonal_cusp_global_monodromy_obstruction.py",
+    ROOT / "current_context" / "verify_route_a_quartic_minimal_puncture_monodromy_obstruction.py",
     ROOT / "route_a" / "equivariant_hensel.py",
     ROOT / "route_bd_verify.py",
     ROOT / "route_bd_ab_hurwitz_count.py",
@@ -241,6 +242,7 @@ SCRIPTS = [
     ROOT / "current_context" / "verify_standard_system_squarefree_common_root_exclusion.py",
     ROOT / "current_context" / "verify_standard_system_repeated_root_compact_face.py",
     ROOT / "current_context" / "verify_standard_system_repeated_root_global_first_layer.py",
+    ROOT / "current_context" / "verify_standard_system_repeated_root_kummer_nonlinear_audit.py",
 ]
 
 
