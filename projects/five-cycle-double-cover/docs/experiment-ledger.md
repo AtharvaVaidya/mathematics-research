@@ -2021,50 +2021,104 @@ reproduction commands are in
 `docs/order80-vertex-transitive-control.md`.  This is a finite
 vertex-transitive control, not a complete order-80 census.
 
-## Equality-88 decorated incidence countermodel
+The same graph has 20 normalized Tait colourings in which all three
+bichromatic factors consist entirely of \(C_{10}\)'s.  For each of the
+60 choices of common factor colour, there are exactly 1,249
+factor-transversal eight-edge mark sets.  The exhaustive scan therefore
+checks 74,940 records and 19,184,640 selectors.  Every record has a good
+selector; the number ranges from 94 to 138, with 8,208,840 good
+selectors in total.  A clean rerun is byte-identical and an independent
+isomorphism-based implementation reproduces all 60 cases and the full
+profile histogram.
+
+## Equality incidence rotation countermodel and rooted cap control
 
 Audit date: **2026-07-26**.
 
-An exact rotation search on a connected 5-regular bipartite incidence
-multigraph with eight vertices per side and a marked perfect matching
-found compatible transition data reconstructing a connected simple cubic
-80-vertex Tait-coloured graph.  Its \(ac\)- and \(bc\)-factors are each
-eight 10-cycles with one mark per circuit.  Complete enumeration of all
-256 all-mark selectors finds zero with even marked parity on every
-component.
+The decorated incidence certificate in
+`scratch/equality88-rotation-countermodel-result.json` reconstructs a
+simple connected order-80 Tait core with eight marked \(C_{10}\)'s in
+each of two factors and zero good factor selectors among all 256.
+Independent C++ and Python implementations agree.  The core has girth
+three, fails universal separation after an explicit Kempe switch, and
+its marked subdivision has checked edge-disjoint terminal joins of sizes
+32 and 40.  It excludes the incidence-only implication, not the
+five-CDC conclusion or the equality branch under its full hypotheses.
 
-A separate Python audit forms literal symmetric differences of the
-sixteen factor circuits and reproduces the complete component-profile
-histogram.  The marked subdivision nevertheless has two edge-disjoint
-\(T\)-joins of sizes 32 and 40, checked directly from the returned edge
-sets.  The core has girth three, and one \(ac\)-Kempe switch puts marks 2
-and 3 on one \(bc\)-circuit.  Hence the object refutes only an
-incidence/rotation-only selector theorem and is outside the surviving
-minimum-counterexample branch.
+The rooted countermodel frozen in
+`scratch/rooted-four-mark-countermodel-result.json` has order 28,
+162 normalized Tait colourings, 2,048 all-mark binary cycles, 1,024
+root-avoiding all-mark cycles, 360 componentwise-even all-mark cycles,
+and zero cycles satisfying both conditions.  Its exact \(3+1\) cyclic
+2-cut explains the obstruction.  It fails the marked-cut inequality
+with value \(2+1=3\) and has marked-subdivision girth five.  A complete
+simple-cubic screen through order 20 found no universally separated
+four-mark instance satisfying the standard marked-cut hypothesis.
 
-The frozen result and human-checkable note are
-`scratch/equality88-rotation-countermodel-result.json` and
-`docs/equality88-incidence-rotation-countermodel.md`.
-
-## CVT[80,30] all-\(C_{10}\) selector scan
+## Low-surplus Kempe frontier through ambient order 96
 
 Audit date: **2026-07-26**.
 
-The 20 normalized Tait colourings of CVT[80,30] having three all-\(C_{10}\)
-bichromatic factors give 60 common-colour cases.  Every case has exactly
-1,249 edge-object perfect transversals of the two relevant factors.  The
-complete scan therefore checks 74,940 mark-set records and 19,184,640
-selectors.  There are 74,415 distinct underlying edge sets.
+The independently reconstructed human proof excludes ambient orders
+\(88,90,92,94\) in the connected extremal exact-zero size-four branch.
+Its arbitrary-surplus form proves \(2p+u\le d+2\), the corresponding
+simultaneous-switch inequality, and sharp girth overlap bounds.
 
-Every mark-set record has a good selector.  The minimum number is 94, the
-maximum is 138, and the total number of good selector records is
-8,208,840.  An independent NetworkX audit verifies all 20 colouring
-words, proves the 60 coloured cases isomorphic up to exchange of the two
-noncommon colours, independently recomputes all 319,744 selectors on a
-representative, and exactly reproduces both global histograms.
+The transparent frontier checker
+`scratch/verify_order96_kempe_incidence_frontier.py` verifies the
+displayed \(8\)-by-\(8\) order-\(96\) incidence matrix against row and
+column capacities, diagonal constraints, pairwise overlap bounds,
+single switches, and all \(255\) nonempty simultaneous switches from
+each shore.  It reports PASS with minimum slack one on both shores.
+This is an abstract necessary-condition skeleton, not a graph
+realization.
 
-The source, result, audit, and narrow scope are frozen in
-`scratch/order80_c10_selector_scan.cpp`,
-`scratch/order80-c10-selector-scan-result.json`,
-`scratch/audit_order80_c10_selector_scan.py`, and
-`docs/order80-c10-selector-transversal-scan.md`.
+SHA-256:
+
+```text
+audit/generalization  0d2dda5d69b48941c3d365071696ed7407680adc5e325bbe1a5a32f73a862e7d
+order-94 proof         2c1ce21aa9045ad203a6d65d8ac31f601e1a2d366f61295ceb0d985611d89a5d
+frontier checker       6a84b0ffc9ccaa96f375e83654a64c064f2d17645bd520526c630faa25f6562d
+```
+
+## Rooted marked-cut bridge reduction
+
+Audit date: **2026-07-26**.
+
+The exact bridge reduction in
+`docs/rooted-four-mark-bridgeless-reduction.md` eliminates the \(3+1\)
+two-cut mechanism under the inherited marked-cut inequality.  On the
+existing \(13\,824\)-row structured family, 240 instances satisfy both
+universal separation and the marked cyclic-cut inequality.  Independent
+cycle-space enumeration checks \(3\,818\,240\) componentwise-even
+all-mark cycles and finds zero instances with any forced unmarked edge.
+This is a finite diagnostic supporting the scoped reduction, not a
+universal rooted theorem.
+
+## Exceptional four-pole two-plus-two algebra
+
+Audit date: **2026-07-26**.
+
+The producer and independently written JavaScript verifier enumerate all
+640 ordered xor-zero \(D_5\) boundary words.  Their ten \(S_5\)-orbit
+sizes agree exactly:
+\[
+10,60,30,60,60,120,120,30,120,30.
+\]
+Both reconstruct the complete \(10\)-by-\(10\) singleton composition
+table, exactly 259 nonempty masks satisfying the published necessary
+switching lemmas, and the same exceptional factorization counts.
+
+The computation supports the human factorization theorem in
+`docs/four-pole-exception-rooted-packing-algebra.md`; it does not assert
+that the 259 masks are graph-realizable or settle the published
+exceptional-signature conjecture.
+
+SHA-256:
+
+```text
+human note            de05a42e5868db0b97b7a3880c74873e33892626afa4c584825a45562e45b9be
+Python producer       9469b35d5034b9196d37092a8c701132046d68aee04854deee5f4947f8455661
+frozen JSON           e12307cad9a7176dfc8072f9d4052edd148cea5b4d9e11be8617c936a00d65c9
+independent JS        09c36ddf3ec5901e9b8a6a6a051b745bd31b7420fe811b6a098a263503e3faa5
+```

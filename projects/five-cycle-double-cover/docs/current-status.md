@@ -1383,38 +1383,148 @@ graphs, and a separate MILP agrees with the seven counting
 infeasibilities.  This eliminates the vertex-transitive equality scope
 only; vertex-transitivity is not a minimum-counterexample reduction.
 
-## Equality incidence countermodel and exact CVT selector control
+## Equality incidence, rooted interfaces, and the order-88 exclusion
 
 Audit date: **2026-07-26**.
 
-The order-\(88\) equality equations alone do not force a good
-bichromatic selector.  An explicit connected 5-regular bipartite
-incidence multigraph on \(8+8\) factor vertices, with a marked perfect
-matching and compatible cyclic transition data, reconstructs a connected
-simple cubic 80-vertex Tait-coloured core.  Both relevant factors are
-eight 10-cycles with one mark each, but exhaustive enumeration finds zero
-good selectors among all 256.
+The bare equality incidence data are not enough to force a good
+bichromatic selector.  The explicit decorated \(8+8\), 5-regular
+incidence object in `docs/equality88-incidence-rotation-countermodel.md`
+reconstructs a simple connected order-80 Tait core for which all 256
+factor selectors fail componentwise mark parity.  Two independent
+programs reproduce the exact profile histogram.  The object has girth
+three, is not universally separated, and has an unrestricted pair of
+edge-disjoint terminal joins, so it is a countermodel only to the
+incidence-only proof shortcut.
 
-This is deliberately an abstract route countermodel, not a surviving
-core: its core and marked subdivision have girth three, one Kempe switch
-violates universal separation, and an independently checked SAT witness
-gives two unrestricted edge-disjoint \(T\)-joins.  The construction and
-two independently structured selector checks are in
-`docs/equality88-incidence-rotation-countermodel.md`.
+The rooted four-mark analysis in
+`docs/rooted-four-mark-cap-avoidance.md` proves, by cycle/cut
+orthogonality, that an inherited cap with four common-colour marks and a
+differently coloured cap edge always has an all-mark binary cycle
+avoiding the cap.  The remaining issue is componentwise mark parity.
+An exact order-28 countermodel shows that universal separation and the
+colour pattern alone do not force rooted componentwise parity; its
+cyclic 2-cut has a \(3+1\) mark split and it fails the required marked
+cut inequality.
 
-The sole girth-ten vertex-transitive graph behaves oppositely.  Among its
-426,256 normalized Tait colourings, exactly 20 have all three
-bichromatic factors equal to eight 10-cycles.  For every colouring and
-each of three common colours, the incidence multigraph has exactly 1,249
-edge-object perfect transversals.  The resulting 74,940
-colouring/common-colour/mark-set records contain 19,184,640 selectors.
-Every record has a good selector; in fact the count per record lies
-between 94 and 138.  A NetworkX audit verifies that all 60 cases are
-colour-preservingly isomorphic and independently reproduces the
-transversal and selector histograms.  Exact artifacts are in
-`docs/order80-c10-selector-transversal-scan.md`.
+The equality case itself is nevertheless impossible.  The solver-free
+argument in `docs/equality88-kempe-girth-contradiction.md` shows that two
+lifted marked \(C_{10}\) factor circuits cannot share a second
+\(c\)-edge in an ambient graph of girth at least ten.  The delicate
+two-overlap case is a \(C_{18}\) with two chords and yields the parity
+contradiction \(2\alpha=9\).  Thus the equality incidence multigraph is
+simple.  Switching one \(ac\)-\(C_{10}\) then splices five opposite
+factor \(P_9\)'s into a single \(C_{50}\) containing four marks,
+contradicting universal separation.  In the \(4+4\) branch, simplicity
+would require a 5-regular simple bipartite graph on \(4+4\) vertices,
+which is impossible.
 
-Together these computations show that abstract equality incidence is
-too weak, while the natural girth-ten vertex-transitive control is
-strongly positive.  Arbitrary non-vertex-transitive equality cores and
-all larger orders remain open.
+A separately prompted blind agent reconstructed the full proof and
+issued a pass after one exposition correction, recorded in
+`docs/equality88-overlap-audit.md`.  The equality proof alone implies
+\[
+                         |V(G)|\ge90.
+\]
+The stronger low-surplus result below supersedes this numerical bound.
+
+For the sole girth-ten order-80 vertex-transitive graph, a further exact
+diagnostic enumerated the 20 Tait colourings whose three bichromatic
+factors are all \(C_{10}\)'s.  Across 60 common-colour cases and 74,940
+factor-transversal mark records, every record has a good selector
+(minimum 94 of 256).  An independent isomorphism audit reproduces the
+totals.  This finite result is consistent with, but not used by, the
+general order-88 exclusion proof.
+
+## Low-surplus Kempe bound through order 94
+
+Audit date: **2026-07-26**.
+
+The equality argument extends to all ambient orders through \(94\).
+For a marked bichromatic factor circuit with \(d\) common-colour edges,
+let \(p\) and \(u\) be the numbers of marked and unmarked circuits of
+the opposite factor that it meets.  Cutting the common-colour edges
+produces three perfect matchings on \(2d\) endpoints.  Their cycle-space
+rank, followed by universal separation after the Kempe switch, gives
+the human-checkable inequality
+\[
+                         2p+u\le d+2.
+\]
+Ambient girth at least ten also gives sharp marked--marked and
+marked--unmarked overlap bounds.  Exact surplus capacity then excludes
+\(t=0,1,2,3\) in \(|V(G)|=88+2t\).  Therefore the connected extremal
+exact-zero size-four branch satisfies
+\[
+                         |V(G)|\ge96.
+\]
+
+An independently prompted agent reconstructed the proof, generalized
+the one-switch inequality to simultaneous switches, and passed every
+arithmetic step.  A transparent checker verifies an explicit abstract
+order-\(96\) incidence matrix against all proved pairwise, single-switch,
+and \(255+255\) nonempty multi-switch constraints.  It passes with
+minimum slack one.  Thus this local method has reached its exact
+frontier; the matrix is not asserted to be graph-realizable.
+
+The proof, audit, and checker are
+`docs/order94-kempe-surplus-bound.md`,
+`docs/audit-and-generalization-order94-kempe.md`, and
+`scratch/verify_order96_kempe_incidence_frontier.py`.  This is a
+branch-specific theorem and does not resolve five-CDC.
+
+## Rooted bridge elimination
+
+Audit date: **2026-07-26**.
+
+The marked cyclic-cut inequality excludes the \(3+1\) bridge mechanism
+of the rooted order-\(28\) countermodel uniformly.  If deletion of the
+forbidden cap \(f\) leaves a bridge \(h\), then
+\(\{f,h\}\) is an unmarked 2-cut with two cyclic shores.  The marked-cut
+inequality forces a \(2+2\) mark split, and the audited two-mark shore
+lemma supplies one two-mark circuit on each shore, both avoiding the
+cap.  The same proof uses only the weaker inequality already inherited
+on the opposite shore of the cyclic six-cut reduction.
+
+Consequently any surviving rooted failure has a connected bridgeless,
+hence 2-connected, subcubic deleted-root graph.  Every mark pair is
+cyclable, no circuit contains all four marks, and for each of the three
+pairings the two complementary pair-cycle families are cross-intersecting.
+The remaining problem is therefore a genuine four-way linkage
+obstruction, not trace feasibility or a hidden bridge.  The proof and a
+240-instance structured finite screen are recorded in
+`docs/rooted-four-mark-bridgeless-reduction.md`.
+
+## Exceptional four-pole rooted-packing algebra
+
+Audit date: **2026-07-26**.
+
+The two exceptional four-pole signatures isolated by
+Máčajová--Mazzuoccolo--Tabarelli have an exact interpretation in the
+project's distinguished quotient.  A projection-coherent
+five-coordinate lift is equivalent to an ordered pair of edge-disjoint
+terminal joins.  For the nonzero cap \(f\), boundary type
+\(T_\pi T_\pi\) means that both joins avoid \(f\), whereas
+\(AT_\pi\) means that exactly one uses it.  The published exceptional
+pair therefore has opposite rooted-packing polarities.
+
+In the actual cyclic-four-cut branch, a connected shore with no internal
+zero edge has two edge-disjoint paths between the zero terminals which
+both avoid the nonzero cap.  Hence an exceptional four-type shore must
+contain at least one internal zero edge.  Since there are two proper
+zero edges in total, only the distributions \((1,1)\) and \((2,0)\),
+with the four-type shore first, remain.
+
+An exact ten-state two-plus-two composition table gives a further
+minimality reduction: an exceptional four-type signature cannot be
+created without an exceptional four-type factor.  The five-type
+signature has the analogous conclusion except for one explicitly listed
+looped-edge/looped-path auxiliary factorization.  Independent Python and
+JavaScript implementations agree on all 640 boundary words, ten orbit
+classes, 259 published-lemma-admissible masks, and all exceptional
+factorizations.
+
+The human proof, table, frozen result, and independent verifier are in
+`docs/four-pole-exception-rooted-packing-algebra.md` and the corresponding
+`scratch/four_pole_two_plus_two_algebra.py`,
+`scratch/four-pole-two-plus-two-algebra-result.json`, and
+`scratch/verify_four_pole_two_plus_two_algebra.mjs`.  The full published
+exceptional-signature conjecture remains neither realized nor refuted.

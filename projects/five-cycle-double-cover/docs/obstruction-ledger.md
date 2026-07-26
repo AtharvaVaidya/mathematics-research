@@ -634,27 +634,57 @@ cyclic 6-cut containing all four.  Thus O29 refutes automatic quotient
 lifting but leaves a sharply reduced cut and simultaneous-gap obligation;
 it is not a graph-level five-CDC obstruction.
 
-## O30 — Equality incidence/rotation forces a good selector
+## O30 — Equality incidence and transition data alone
 
-Status: **FAILED APPROACH**, proved by exact finite countermodel.
+Status: **REFUTED AS A SUFFICIENT CONDITION / EXACT ORDER-80
+COUNTERMODEL**.
 
-At ambient equality \(|V(G)|=88\), an all-mark-colour Tait colouring of
-the suppressed core gives a connected 5-regular bipartite incidence
-multigraph on eight \(ac\)- and eight \(bc\)-circuits, with the eight
-marks forming a perfect matching.  Retaining cyclic port orders and twist
-bits reconstructs the complete coloured core, so one might hope that
-these equality data alone force a componentwise marked-even selector.
+The decorated \(8+8\), 5-regular incidence object in
+`docs/equality88-incidence-rotation-countermodel.md` reconstructs a
+simple connected order-80 Tait core with the two required \(C_{10}\)
+factor decompositions, but all 256 factor selectors have an
+odd-marked component.  Independent implementations reproduce the
+complete histogram.
 
-The explicit decorated incidence object in
-`docs/equality88-incidence-rotation-countermodel.md` disproves that
-inference.  It reconstructs a connected simple cubic 80-vertex core with
-the required eight 10-cycles in both factors, but two independent
-implementations enumerate all 256 selectors and find zero good.
+This does not survive the minimum-counterexample hypotheses: the core
+has girth three, an explicit Kempe switch violates universal separation,
+and unrestricted terminal joins pack.  The learned constraint is exact:
+any equality proof must use girth or universal separation, not merely
+the 5-regular incidence degrees and cyclic transition data.  The
+subsequent overlap/Kempe theorem does exactly this and rules out equality.
 
-This does not obstruct five-CDC.  The marked subdivision has an explicit
-pair of edge-disjoint \(T\)-joins, while the core has girth three and
-fails universal separation after one Kempe switch.  Any closure theorem
-must genuinely use the remaining minimum-counterexample hypotheses rather
-than incidence regularity and rotation data alone.  The separate
-CVT[80,30] scan reinforces the distinction: all 74,940 of its eligible
-factor-transversal records have at least 94 good selectors.
+## O31 — Naive rooted four-mark cap avoidance
+
+Status: **REFUTED WITHOUT THE MARKED-CUT HYPOTHESIS / EXACT
+ORDER-28 COUNTERMODEL**.
+
+The graph in `scratch/rooted-four-mark-countermodel-result.json` is
+Tait-colourable and its four-edge matching is universally separated.
+With the marks one colour and the root a second colour, every
+componentwise-even all-mark binary cycle uses the root.  A cyclic
+two-edge cut separates the marks \(3+1\), giving the direct human
+obstruction.
+
+The same shore has marked-cut score \(2+1=3\) and marked-subdivision
+girth five, so it lies outside the inherited six-cut interface.  The
+countermodel refutes only the naive rooted theorem; the full rooted
+component-parity statement under the marked-cut, girth, paired-cut, and
+minimum-support hypotheses remains open.
+
+## O32 — Local Kempe incidence inequalities at order 96
+
+Status: **REFUTED AS A COMPLETE CLOSURE METHOD / EXACT ABSTRACT
+NECESSARY-CONDITION COUNTERMODEL**.
+
+The \(8\)-by-\(8\) incidence matrix displayed in
+`docs/audit-and-generalization-order94-kempe.md` has the exact
+order-\(96\) row and column length profiles.  It satisfies every sharp
+pairwise overlap bound, every single-switch inequality, and the exact
+simultaneous-switch inequality for all 255 nonempty subsets on either
+shore.  The independent checker reports minimum slack one.
+
+No compatible cyclic orders, Tait core, girth-ten realization, universal
+separation, or five-CDC obstruction is asserted.  O32 refutes only the
+claim that the proved local incidence inequalities by themselves can
+push the connected size-four lower bound past 96.  New graph-realization,
+cyclic-order, multi-factor, or cut-interface information is required.

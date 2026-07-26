@@ -20,6 +20,17 @@ copied into a separate clean clone; it was not modified or committed.
 - The explicit order-80 abstract incidence/rotation countermodel and two
   independent selector checkers.  This refutes an incidence-only
   intermediate implication, not five-CDC.
+- The solver-free equality-\(88\) contradiction, the positive-surplus
+  order-\(94\) bound and audits, and the abstract order-\(96\) incidence
+  frontier checker.  Their exact conclusion is only the
+  \(|V(G)|\ge96\) bound in the connected eight-mark extremal exact-zero
+  size-four minimum-counterexample branch.
+- The rooted four-mark cap-avoidance and bridge-elimination reductions,
+  exact order-28 countermodel, frozen finite-screen summaries, and compact
+  checkers.  The rooted theorem remains open.
+- The exact exceptional four-pole rooted-packing algebra, frozen 640-word
+  table, independent JavaScript verifier, and human-checkable reduction.
+  Máčajová--Mazzuoccolo--Tabarelli Conjecture 3.7 remains open.
 - The complete compact order-80 vertex-transitive control and all-\(C_{10}\)
   selector scan: source, saved result, 20 colouring words, and independent
   isomorphism audit.  No broad census file or compiled binary is committed.
@@ -83,5 +94,14 @@ standalone replay of the complete \(H_4\) theorem.
 The countermodel certificates refute intermediate strategies, not
 five-CDC.  The \(H_4\) result concerns one fixed graph.  The four-mark
 theorem closes one marked-core branch under additional hypotheses.
-Together they are research progress, not a resolution of the standard or
-orientable five-cycle double cover conjecture.
+The retained 240-row rooted screen is a frozen result; this bundle does
+not claim a fresh full replay of its consumer analysis.  A fresh replay
+did regenerate all 13,824 producer rows and 240 target witnesses.  The
+repair diagnostic in that frozen record names the historical generator
+hash `637b2590...`, while the included source has hash `f81ab01c...`
+after a later `--json` output option was added.  This is an explicit
+source-hash mismatch, not a bit-for-bit replay claim.  A fresh run of the
+current repair generator nevertheless reproduced the semantic result:
+512 rows and no universally separated required-mark witness.  Together
+these artifacts are research progress, not a resolution of the standard
+or orientable five-cycle double cover conjecture.

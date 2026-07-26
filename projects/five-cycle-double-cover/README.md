@@ -84,6 +84,60 @@ Two new finite equality diagnostics sharply delimit the selector route:
   every record has between 94 and 138 good selectors.  Vertex-transitivity
   is not a minimum-counterexample reduction.
 
+The finite diagnostics are now complemented by a solver-free
+low-surplus theorem.  The equality proof in
+[`docs/equality88-kempe-girth-contradiction.md`](docs/equality88-kempe-girth-contradiction.md)
+and its blind audit
+[`docs/equality88-overlap-audit.md`](docs/equality88-overlap-audit.md)
+use ambient girth and a literal Kempe splice to exclude order \(88\).
+The general argument in
+[`docs/order94-kempe-surplus-bound.md`](docs/order94-kempe-surplus-bound.md),
+independently reconstructed and generalized in
+[`docs/audit-and-generalization-order94-kempe.md`](docs/audit-and-generalization-order94-kempe.md),
+also excludes orders \(90,92,94\).  Its exact scoped conclusion is:
+\[
+  |V(G)|\ge96
+\]
+in the connected eight-mark extremal exact-zero size-four
+minimum-counterexample branch.  It is not a bound for arbitrary cubic
+graphs and does not resolve five-CDC.
+
+The transparent checker
+[`scratch/verify_order96_kempe_incidence_frontier.py`](scratch/verify_order96_kempe_incidence_frontier.py)
+verifies an explicit abstract order-\(96\) incidence matrix against all
+proved pairwise, single-switch, and nonempty simultaneous-switch
+inequalities.  The matrix passes with minimum slack one.  It is a
+method-frontier certificate, not a graph realization or a conjecture
+counterexample.
+
+The cyclic six-cut branch has also been reduced more sharply:
+
+- [`docs/rooted-four-mark-cap-avoidance.md`](docs/rooted-four-mark-cap-avoidance.md)
+  proves that the all-mark trace can always avoid the cap edge, and gives
+  an exact order-28 countermodel showing that universal separation alone
+  does not force componentwise marked parity.
+- [`docs/rooted-four-mark-bridgeless-reduction.md`](docs/rooted-four-mark-bridgeless-reduction.md)
+  proves that the marked-cut hypothesis eliminates the countermodel's
+  odd-shore bridge mechanism.  Any surviving deleted-root graph is
+  2-connected and its complementary mark-pair circuit families form a
+  genuine cross-intersecting four-way linkage obstruction.
+
+The rooted theorem remains open.  The attached finite rooted screens are
+diagnostics within their stated scopes, not substitutes for a universal
+proof.
+
+The adjacent cyclic four-cut branch now has an exact rooted-packing
+interpretation.  The human-checkable note
+[`docs/four-pole-exception-rooted-packing-algebra.md`](docs/four-pole-exception-rooted-packing-algebra.md)
+identifies projection-coherent lifts with ordered pairs of edge-disjoint
+terminal joins, excludes a zero-free exceptional shore, and proves an
+exact two-plus-two minimal-factor reduction.  Its independent JavaScript
+checker reconstructs all 640 boundary words, ten symmetry orbits, 259
+admissible masks, and the exceptional factorizations.  This finite
+algebra neither proves graph realizability of an exceptional signature
+nor resolves Máčajová--Mazzuoccolo--Tabarelli Conjecture 3.7, which
+remains open.
+
 The compact package
 [`search/cyclic4-universally-separated-triple-n24-20260726/`](search/cyclic4-universally-separated-triple-n24-20260726/)
 freezes the refuting order-24 graph, all 144 retained hits, exact search
@@ -128,6 +182,10 @@ python3 -B search/cyclic4-universally-separated-triple-n24-20260726/verify_packa
 python3 -B scratch/verify_equality88_rotation_countermodel.py
 python3 -B scratch/audit_equality88_rotation_countermodel.py
 python3 -B scratch/audit_order80_c10_selector_scan.py
+python3 -B scratch/verify_order96_kempe_incidence_frontier.py
+python3 -B scratch/verify_rooted_four_mark_countermodel.py
+python3 -B scratch/four_pole_two_plus_two_algebra.py
+node scratch/verify_four_pole_two_plus_two_algebra.mjs
 ```
 
 The 40-vertex checker optionally uses nauty's `labelg` to recheck the

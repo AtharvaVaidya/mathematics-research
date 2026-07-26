@@ -520,12 +520,55 @@ Open obligations:
     and cross-checks are frozen.  Vertex-transitivity is not a sound
     reduction for a minimum counterexample, so the arbitrary equality
     case and all larger orders remain open.
-35. **Equality incidence alone refuted; CVT selector scope positive:** a
-    decorated \(8+8\), 5-regular incidence countermodel has zero good
-    selectors but fails girth, universal separation, and unrestricted
-    nonpacking.  Conversely, every one of the 74,940 all-\(C_{10}\)
-    factor-transversal records on CVT[80,30] has at least 94 good
-    selectors.  Therefore neither plain incidence degree nor the current
-    vertex-transitive control closes the branch.  The live obligation is
-    to combine ambient girth, universal separation, paired cuts, and
-    minimum-support exchange for arbitrary equality cores.
+35. **Complementary quotient construction excluded at equality:** when
+    all eight \(ac\)-factor circuits are marked, the local lift equations
+    for a quotient join and its full complement sum to \(0=1\) around a
+    marked \(bc\)-circuit.  Hence any successful quotient pair at
+    equality must leave some quotient edge unused.  This is a no-go
+    theorem for the canonical quotient construction, not a nonpacking
+    theorem.
+36. **Cyclic four- and six-cut interfaces remain exact bottlenecks:** the
+    four-cut word \(0,0,b,b\) projects both sides of the published
+    exceptional four-pole signature pair, so boundary parity and minimum
+    support alone do not reduce it.  In the six-cut branch, a global
+    balanced all-eight cycle exists exactly when both four-mark shores
+    have componentwise-even closed certificates.  Root-avoiding trace
+    feasibility is proved, but root-avoiding component parity under the
+    full inherited cut and girth hypotheses remains open.
+37. **Order-88 equality case eliminated; larger size-four branch open:**
+    ambient girth makes the equality \(ac/bc\) incidence multigraph
+    simple.  A Kempe switch then creates a bichromatic \(C_{50}\)
+    containing four marks; the \(4+4\) version would require an impossible
+    simple 5-regular \(4\)-by-\(4\) incidence graph.  A blind independent
+    audit passed the human proof.  Thus the extremal exact-zero size-four
+    branch first advanced to \(|V(G)|\ge90\).  Obligation 38 records the
+    subsequent low-surplus improvement.
+38. **Orders through 94 eliminated in the connected size-four branch:**
+    the three-matching cycle-rank argument gives the general Kempe
+    incidence inequality \(2p+u\le d+2\).  Girth gives matching
+    marked--marked and marked--unmarked overlap bounds, and exact surplus
+    capacity excludes ambient orders \(88,90,92,94\).  An independent
+    reconstruction passed the proof, so this branch has
+    \(|V(G)|\ge96\).  An explicit abstract order-96 incidence matrix
+    passes every proved pairwise and simultaneous-switch constraint,
+    showing that this method alone cannot improve the bound.
+39. **Rooted bridge mechanism eliminated; four-way linkage open:** under
+    the marked cyclic-cut inequality, a bridge after deleting the
+    forbidden cap creates an unmarked 2-cut whose shores must contain
+    two marks each.  The two-mark shore theorem then supplies a closed
+    cap-avoiding certificate.  The proof also applies under the weaker
+    inequality inherited by the opposite cyclic-six-cut cap.  Every
+    surviving rooted failure is therefore 2-connected after cap
+    deletion and has three cross-intersecting complementary pair-cycle
+    systems.  Excluding that simultaneous four-way linkage, or finding
+    a fully compliant realization of it, remains open.
+40. **Exceptional four-pole pair converted to rooted packing:** the
+    canonical \(D_5\) quotient lift is exactly an ordered pair of
+    edge-disjoint terminal joins, and the exceptional \(AT_\pi\) versus
+    \(T_\pi T_\pi\) boundary types record use versus avoidance of the
+    nonzero cap.  A zero-free cyclic-four-cut shore always has the
+    avoiding state, so only internal-zero distributions \((1,1)\) and
+    \((2,0)\) survive.  Exact ten-state composition forces a smaller
+    exceptional four-type factor; the five-type case has one auxiliary
+    escape.  The remaining obligation is the resulting rooted four-way
+    linkage/exceptional-signature atom, not boundary-orbit ambiguity.

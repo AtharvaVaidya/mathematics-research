@@ -32,13 +32,39 @@ vertex-disjoint bichromatic circuits.  Restoring the suppressed vertices
 makes them eight vertex-disjoint odd circuits in the ambient graph.
 Ambient girth at least ten therefore forces order at least
 \(8\cdot11=88\), improving the project's earlier bound \(68\).  The
-proof is in `docs/kempe-transversality-and-eight-mark-girth.md`, with a
-clean-room scope audit in `docs/audit-eight-mark-girth-bound.md`.  The
-distinct-mark suppression hypotheses are essential and are supplied by
-the intended extremal reduction; they do not follow from an arbitrary
-matching.  Novelty is provisional: the argument is elementary, and an
-expert must check whether the same bound is implicit in the
+proof is in `docs/kempe-transversality-and-eight-mark-girth.md`.  Its
+novelty is also provisional: the argument is elementary, and an expert
+must check whether the same bound is implicit in the
 resistance/oddness literature.
+
+That corollary has since been strengthened.  A solver-free
+three-matching/Kempe argument and sharp girth overlap bounds exclude
+ambient orders \(88,90,92,94\) in the connected extremal exact-zero
+size-four branch, giving \(|V(G)|\ge96\).  A separately prompted agent
+reconstructed the proof and generalized its local inequalities.  This
+appears original to the project, but it is not yet a good standalone
+headline: the statement depends on the project's full branch reduction,
+and an explicit abstract order-\(96\) incidence matrix shows that the
+method stops there.  It belongs as a substantial section or companion
+note after a human specialist verifies both the reduction chain and the
+overlap proof.
+
+The rooted cap analysis also now has a clean computer-free lemma:
+the inherited marked-cut inequality rules out every bridge after
+deleting the forbidden cap.  A surviving failure is a 2-connected
+subcubic four-way linkage obstruction whose three complementary
+pair-cycle systems are cross-intersecting.  This is a useful sharpening
+and may be new in this exact marked setting, but it remains a reduction
+rather than closure of the rooted theorem.
+
+The exact exceptional four-pole algebra is also potentially publishable
+as part of the structural note.  Its most useful new claim is not the
+ten boundary types, which are published, but the rooted terminal-join
+interpretation and zero-free-shore exclusion in the project's
+\(0,0,b,b\) branch.  The finite two-plus-two table is independently
+replayed and supports a minimal-factor theorem.  This material should be
+presented as progress toward, not a proof of, the published exceptional-
+signature conjecture.
 
 The strongest submission-ready mathematical core is the pair of explicit
 connected countermodels in
@@ -115,6 +141,12 @@ not to have been recorded are:
 - the exact paired cyclic-cut formula and signed-holonomy formulation for
   the connected eight-mark branch;
 - the order-\(88\) lower bound within the extremal size-four branch; and
+- the low-surplus strengthening of that branch bound to order \(96\);
+- the rooted bridge-elimination and cross-intersecting four-way linkage
+  reduction under the inherited marked-cut inequality; and
+- the rooted terminal-join interpretation, zero-free-shore exclusion,
+  and exact two-plus-two minimal-factor theorem for the published
+  exceptional four-pole pair; and
 - the exact computations reported in the draft.
 
 This is a strong provisional novelty assessment, not proof of priority.
@@ -140,8 +172,12 @@ The independent checker enumerates 128 compatible potentials and reports
 zero five-colourable co-occurrence graphs.  It is a useful replay, but it
 is also AI-written and is not independent human verification.
 
-The four-mark theorem and conditional order-\(88\) corollary are fully
+The four-mark theorem, order-\(88\) equality exclusion, low-surplus
+order-\(96\) branch bound, and rooted bridge reduction are fully
 human-checkable line by line and use no finite computation.  The
+order-\(96\) abstract frontier matrix has a transparent 255-subset-per-
+shore checker, but the matrix is only a limitation of the current
+method.  The
 24-vertex example has a small exhaustive checker and frozen hashes; a
 human-readable colouring/cut certificate should accompany any paper
 that makes it a headline result.
@@ -169,8 +205,7 @@ claimed.
 
 1. Release the current manuscript as a clearly labeled research draft
    only after a human author checks every proof, including the new
-   order-\(88\) argument and its suppression hypotheses, and assumes
-   authorship responsibility.
+   order-\(88\) argument, and assumes authorship responsibility.
 2. Ask at least one specialist in flows/cycle covers to verify novelty and
    the two-sum arguments.
 3. Have a human independently reconstruct the 40- and 46-vertex graphs
