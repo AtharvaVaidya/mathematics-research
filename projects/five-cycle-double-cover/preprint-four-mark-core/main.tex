@@ -1,0 +1,493 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\cut}{\delta}
+
+\title{Four universally separated marks in\\
+Tait-colourable cubic graphs}
+\author{AI-assisted research draft for independent human verification\\
+\small Human author attribution to be supplied before submission}
+\date{26 July 2026}
+
+\begin{document}
+\maketitle
+
+\noindent
+\colorbox{yellow!22}{%
+  \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+  \textbf{AI-assistance disclosure.}
+  OpenAI Codex agents (GPT-5-series models, accessed 26 July 2026)
+  formulated the marked theorem, found the proof architecture, supplied
+  the cut and decomposition arguments, checked the cited source
+  statements, and drafted this manuscript under human direction.
+  An additional Codex agent performed the publication audit, but that is
+  not independent human verification or peer review.  No human author or
+  referee is represented as having certified the theorem, proof, or
+  novelty search.  This is a research draft, not a submission-ready
+  paper.  A human author must check every reduction and source, conduct
+  an independent literature review, and accept ordinary scholarly
+  responsibility before public submission.}}
+
+\begin{abstract}
+Let \(H\) be a connected simple cubic graph admitting a proper
+three-edge-colouring, and let \(S\) be a matching of four edges.
+Suppose that in every proper three-edge-colouring, no bichromatic cycle
+contains two members of \(S\).  Suppose also that every vertex set
+\(X\) for which \(H[X]\) contains a cycle satisfies
+\[
+ |\cut_H(X)|+|S\cap E(H[X])|\ge4.
+\]
+We prove that \(H\) has an even edge-subgraph containing \(S\) such that
+every cycle component contains an even number of members of \(S\).
+More precisely, the proof produces either one cycle through all four
+marks or two disjoint cycles containing two marks each.
+
+The proof first resolves cyclic cuts of size two and all marked cyclic
+cuts of size three.  In the remaining case, a self-contained cubic
+three-cut decomposition yields cyclically \(4\)-edge-connected atoms.
+A central atom is selected by the distribution of the four marks.
+Kempe switching gives a Tait colouring in which all marks have one
+colour.  The prescribed-edge theorems of Aldred, Ellingham, Hemminger,
+and Holton and of Knappe and Pitz supply the central cycle, according
+to whether the four selected edges remain distinct.  One-mark paths
+lift it through the branches.
+
+The argument is computer-free.  It proves the stated marked-graph
+theorem only; it neither proves nor refutes the five-cycle double cover
+conjecture.  The exact novelty claim is provisional pending independent
+expert review.
+\end{abstract}
+
+\section{Introduction}
+
+A \emph{Tait colouring} of a cubic graph is a proper edge-colouring with
+three colours.  For a fixed Tait colouring, each pair of colours induces
+a disjoint union of cycles.  We call a matching \(S\)
+\emph{universally separated} when, in every Tait colouring, each such
+bichromatic cycle contains at most one edge of \(S\).
+
+The theorem below arose in a reduction related to five-cycle double
+covers.  That motivation is not used in the proof.  In particular, the
+standard five-cycle double cover conjecture remains a separate open
+problem; see Oum's formulation as Conjecture~18
+\cite[Section~9.1]{oum2026}.
+
+\begin{theorem}[four-mark theorem]\label{thm:main}
+Let \(H\) be a connected simple Tait-colourable cubic graph, and let
+\(S\subseteq E(H)\) be a universally separated matching of size four.
+Assume that
+\begin{equation}
+ |\cut_H(X)|+|S\cap E(H[X])|\ge4                 \tag{M}
+\end{equation}
+whenever \(H[X]\) contains a cycle.  Then \(H\) has a binary cycle
+\(Q\subseteq E(H)\) such that
+\begin{enumerate}
+  \item \(S\subseteq Q\); and
+  \item every component of \(Q\) contains an even number of edges of
+        \(S\).
+\end{enumerate}
+More precisely, \(Q\) can be chosen either as one cycle containing all
+four marks or as the union of two disjoint cycles, each containing two
+marks.
+\end{theorem}
+
+Here a \emph{binary cycle} means an edge-subset of even degree at every
+vertex.  In a cubic graph its nonempty components are cycles.
+
+The two external cycle results used below are exact and classical.
+Knappe and Pitz prove, in particular, that in a \(3\)-edge-connected
+graph a set of at most three edges lies in a circuit if and only if it
+contains no odd edge cut \cite[Fact~5.4]{knappe2020}.  Aldred,
+Ellingham, Hemminger, and Holton prove that four independent edges of a
+quasi \(4\)-connected graph lie on a common cycle
+\cite[Theorem~3.3]{aldred1997}.  They also record that cyclically
+\(4\)-edge-connected cubic graphs are quasi \(4\)-connected.
+
+Related general tree decompositions of \(3\)-connected graphs into
+cyclically \(4\)-edge-connected components were developed by Pastor
+\cite{pastor2018}; the exact cubic construction also appears in
+Nedela, Seifrtov\'a, and \v Skoviera \cite[Section~6]{nedela2024}.
+To avoid any convention or hypothesis gap, we prove the elementary
+cubic specialization needed here.
+
+We found no prior statement of Theorem~\ref{thm:main} in the sources
+above or in targeted searches using its marked-colouring and cut
+hypotheses.  This is only a provisional novelty assessment.  The
+prescribed-edge cycle theorems, Kempe switching, cut parity, and
+three-cut decomposition are not claimed as new.
+
+\section{Colour flexibility and pole lemmas}
+
+\begin{lemma}[mark precolouring]\label{lem:precolour}
+Let \(S\) be universally separated in a Tait-colourable cubic graph.
+Every map from \(S\) to the three colours extends to a Tait colouring.
+\end{lemma}
+
+\begin{proof}
+Start with any Tait colouring.  Suppose that a mark \(e\) currently has
+colour \(p\) and is prescribed colour \(q\ne p\).  The unique
+\(pq\)-bichromatic cycle through \(e\) contains no other mark.
+Interchanging \(p\) and \(q\) on that cycle changes the colour of \(e\)
+without changing another member of \(S\).  Process the marks one at a
+time.  Universal separation applies after every switch, so a later
+switch does not disturb a mark already processed.
+\end{proof}
+
+\begin{lemma}[cut and cap facts]\label{lem:capfacts}
+Let \(G\) be a simple Tait-colourable cubic graph.
+\begin{enumerate}
+  \item \(G\) is bridgeless.
+  \item In a Tait colouring, the three edges of a three-edge cut have
+        three distinct colours.
+  \item If \(G\) has no edge cut of size at most two and \(B\) is a
+        cyclic three-edge cut, then the three edges of \(B\) have
+        distinct ends on each shore.
+  \item Capping either shore of \(B\) by one new vertex adjacent to its
+        three boundary ends produces a simple cubic
+        \(3\)-edge-connected graph.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Every edge lies on either of the two bichromatic cycles using its colour,
+which proves (1).  For (2), if \(X\) is a shore, then the number of
+edges of each colour in \(\cut_G(X)\) has the same parity as \(|X|\).
+A cubic shore of a three-edge cut has odd order, so each colour occurs
+oddly; all three therefore occur once.
+
+For (3), suppose two cut edges have a common end \(v\) on a shore \(A\).
+The sole edge from \(v\) into \(A-v\), together with the third cut edge,
+separates \(A-v\).  Every cycle of \(G[A]\) avoids \(v\), since \(v\)
+has only one neighbour in \(A\).  This gives a cyclic cut of size at
+most two, a contradiction.
+
+The cap is simple by (3).  If a set \(Y\) defines a cut of size at most
+two in the cap, choose the shore not containing the new cap vertex.
+Replacing cap edges by the corresponding members of \(B\) gives an
+edge cut of the same size in \(G\).  This proves (4).
+\end{proof}
+
+We use a \emph{\(k\)-pole} only as shorthand for a connected induced
+shore of a \(k\)-edge cut, with the cut edges regarded as boundary
+semiedges.  The boundary ends below are distinct.
+
+\begin{lemma}[two-mark shore]\label{lem:twomark}
+Let \(P=H[A]\) be a connected two- or three-pole of minimum degree two.
+Suppose exactly two marks lie internally in \(P\), and (M) holds for
+every cyclic vertex set contained in \(A\).  Then one cycle of \(P\)
+contains both marks.
+\end{lemma}
+
+\begin{proof}
+Delete the bridges of \(P\), and form the tree of bridge-components.
+If \(P\) has no bridge, then it is \(2\)-edge-connected.  A
+\(2\)-edge-connected subcubic graph of minimum degree two has no
+cutvertex: two components behind a cutvertex would each require at
+least two incident edges at that vertex.  Thus \(P\) is
+\(2\)-connected.  Subdivide the two marks.  Two vertices of a
+\(2\)-connected graph lie on a common cycle, which gives the required
+cycle after undoing the subdivisions.
+
+Now suppose the bridge-component tree is nontrivial.  Every leaf
+component \(K\) is cyclic.  It cannot be an isolated vertex, since it
+has one incident bridge but every vertex of \(P\) has degree at least
+two.  Let \(p(K)\) count pole boundary edges incident with \(K\), and
+let \(s(K)\) count its internal marks.  Exactly one bridge leaves \(K\),
+so (M) gives
+\[
+ 1+p(K)+s(K)\ge4.
+\]
+If \(K\) does not contain both marks, then \(s(K)\le1\), and hence
+\(p(K)\ge2\).  Two such leaves would consume at least four boundary
+edges, impossible for a two- or three-pole.  Some leaf component
+therefore contains both marks.  It is \(2\)-connected by the preceding
+argument and has a cycle through them.
+\end{proof}
+
+\begin{lemma}[one-mark shore]\label{lem:onemark}
+Let \(P=H[A]\) be a connected three-pole of minimum degree two with
+boundary ends \(u_1,u_2,u_3\).  Suppose exactly one mark \(e\) lies
+internally in \(P\), and (M) holds for cyclic vertex sets contained in
+\(A\).  For every pair \(i\ne j\), \(P\) has a
+\(u_i\)-to-\(u_j\) path containing \(e\).
+\end{lemma}
+
+\begin{proof}
+The pole has no bridge.  Otherwise, a leaf \(K\) of its
+bridge-component tree is cyclic as in Lemma~\ref{lem:twomark}.  The
+inequality
+\[
+ 1+p(K)+s(K)\ge4
+\]
+says that an unmarked leaf consumes all three boundary edges and a
+marked leaf consumes at least two.  Any two leaves therefore consume
+more than the three available boundary edges.
+
+Thus \(P\) is \(2\)-edge-connected and hence \(2\)-connected by the
+subcubic cutvertex argument.  Add a new edge \(u_i u_j\), allowing a
+parallel edge temporarily if necessary.  In a \(2\)-connected graph,
+any two edges lie on a common cycle.  A cycle through the new edge and
+\(e\), with the new edge removed, is the required path.
+\end{proof}
+
+\section{Low cyclic cuts}
+
+\begin{lemma}[cyclic two-cuts]\label{lem:twocut}
+If \(H\) satisfies the hypotheses of Theorem~\ref{thm:main} and has a
+cyclic two-edge cut, then the conclusion of the theorem holds.
+\end{lemma}
+
+\begin{proof}
+Apply (M) to both shores.  Each shore contains at least two internal
+marks.  Since there are only four marks, the cut is unmarked and each
+shore contains exactly two.  Lemma~\ref{lem:twomark} gives a cycle
+through the two marks on each shore.  Their disjoint union is the
+required binary cycle.
+\end{proof}
+
+\begin{lemma}[cyclic three-cuts]\label{lem:threecut}
+Let \(H\) satisfy the hypotheses of Theorem~\ref{thm:main}, have no
+cyclic two-edge cut, and let \(B\) be a cyclic three-edge cut.
+Unless \(B\) is unmarked and splits the internal marks \(1+3\), the
+conclusion of Theorem~\ref{thm:main} holds.
+\end{lemma}
+
+\begin{proof}
+Let \(r=|B\cap S|\), and let \(s_A,s_D\) count internal marks on the two
+shores.  Inequality (M) gives \(s_A,s_D\ge1\), while
+\[
+ r+s_A+s_D=4.
+\]
+Hence \(r\le2\).
+
+If \(r=2\), each shore contains one internal mark.  The two marked
+members of \(B\) determine the same boundary pair on both shores.
+Lemma~\ref{lem:onemark} supplies a path through the internal mark on
+each side for that pair.  The paths and the two marked cut edges glue
+to a cycle through all four marks.
+
+Suppose \(r=1\), with two internal marks on \(A\) and one on \(D\).
+Cap \(A\) by a new vertex \(z\).  The cap is simple and
+\(3\)-edge-connected by Lemma~\ref{lem:capfacts}.  Let \(F\) consist of
+the cap edge corresponding to the marked member of \(B\), together
+with the two internal marks of \(A\).  These are three independent
+edges.
+
+The set \(F\) contains no odd edge cut of the cap.  Indeed, edge
+connectivity leaves only the possibility that \(F\) itself is a
+three-edge cut.  Since \(F\) is independent, this cut is nontrivial and
+both shores are cyclic: a connected shore of order \(n>1\) has
+\((n-1)/2\ge1\) independent cycles by the cubic degree sum.  Choose its
+shore \(X\) not containing \(z\).
+Viewed in \(H\), it has \(|\cut_H(X)|=3\), while both internal marks of
+\(A\) cross the cut and no mark lies internally in \(X\).  This
+contradicts (M).
+
+Knappe and Pitz's \(g(3)=3\) result
+\cite[Fact~5.4]{knappe2020} now gives a circuit through \(F\).
+Because the cap is cubic, the circuit is a cycle.  At \(z\) it uses the
+marked cap edge and one other cap edge.  Deleting \(z\) leaves a path
+through the two internal marks for that boundary pair.
+Lemma~\ref{lem:onemark} supplies a path through the sole internal mark
+of \(D\) for the same pair.  Gluing the paths through the corresponding
+two members of \(B\) gives a cycle containing all four marks.
+
+It remains that \(r=0\).  The internal split is \(1+3\) or \(2+2\).  In
+the \(2+2\) case, Lemma~\ref{lem:twomark} on both shores gives two
+closed cycles whose union proves the theorem.  The only unresolved
+local case is therefore an unmarked \(1+3\) cut.
+\end{proof}
+
+\section{A cubic atom tree}
+
+For a cyclic three-edge cut, \emph{capping a shore} means adjoining one
+new cubic vertex at its three boundary ends.  Conversely, two capped
+graphs with specified cap vertices can be joined by deleting the cap
+vertices and matching their three incident ports.  We call this a
+\emph{three-sum}.  The matching of ports is retained as part of the
+data.
+
+\begin{lemma}[cubic atom tree]\label{lem:atoms}
+Let \(G\) be a simple cubic graph with no edge cut of size at most two.
+There is a finite tree \(T\) with a simple cubic graph \(G_t\) at every
+node \(t\) such that:
+\begin{enumerate}
+  \item each \(G_t\) is \(3\)-edge-connected and has no cyclic
+        three-edge cut;
+  \item \(G\) is recovered by iterated three-sums along the edges of
+        \(T\); and
+  \item each edge of \(T\) corresponds, after expanding all other
+        factors, to a cyclic three-edge cut of \(G\).
+\end{enumerate}
+Every \(G_t\) is a cyclically \(4\)-edge-connected cubic graph and hence
+is quasi \(4\)-connected.
+\end{lemma}
+
+\begin{proof}
+Proceed recursively.  If \(G\) has no cyclic three-edge cut, use the
+one-node tree.  Otherwise choose such a cut, cap its two shores, and
+recurse on the two capped graphs.  Lemma~\ref{lem:capfacts} shows that
+both are simple, cubic, and \(3\)-edge-connected.  Each has fewer
+vertices than \(G\), so the recursion terminates.
+
+In each recursive tree, the cap vertex introduced by the chosen cut
+belongs to one terminal factor.  Join those two factor nodes by a new
+tree edge and remember the port matching.  Reversing this operation
+recovers \(G\), proving (2).
+
+For (3), expand the caps on either side of a recursive cut.  Put an
+expanded branch on the same side as its cap vertex.  Every cap edge in
+the cut is replaced by exactly one original edge, and all other port
+edges remain internal.  Thus the boundary still has size three.
+A cycle using a cap vertex lifts through a path in the connected
+expanded branch between the two used ports; a cycle avoiding the cap
+is unchanged.  Cyclicity of both shores is therefore preserved.
+
+It remains only to justify the last sentence.  A simple
+\(3\)-edge-connected cubic graph with no cyclic three-edge cut is
+\(3\)-vertex-connected.  A cutvertex would force two components each
+to use at least two of its three incident edges.  If \(\{u,v\}\) were
+a two-vertex cut, then \(u\) and \(v\) could not be adjacent; the six
+edges from them would split into two three-edge boundaries.  Simplicity
+forces both corresponding shores to contain cycles, contrary to the
+absence of a cyclic three-edge cut.  The factor is consequently
+cyclically \(4\)-edge-connected in the standard cubic sense.  Aldred
+et al.\ observe that every such cubic graph is quasi
+\(4\)-connected \cite{aldred1997}.
+\end{proof}
+
+\begin{lemma}[central node]\label{lem:central}
+Let nonnegative integer weights of total four be assigned to the
+vertices of a finite tree \(T\).  Suppose every tree edge separates the
+total weight as \(1+3\).  Then \(T\) has a vertex \(a\) such that every
+component of \(T-a\) has weight one.  If \(a\) has weight \(r\) and
+degree \(q\), then \(r+q=4\).
+\end{lemma}
+
+\begin{proof}
+Orient every edge toward its side of weight three.  A finite directed
+tree has a sink \(a\).  The side away from \(a\) across each incident
+edge has weight one.  These are exactly the components of \(T-a\), so
+their number is \(q\) and \(r+q=4\).
+\end{proof}
+
+\section{Proof of the four-mark theorem}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Suppose for a contradiction that the required binary cycle does not
+exist.  Lemma~\ref{lem:twocut} eliminates cyclic two-edge cuts.  A
+Tait-colourable cubic graph is bridgeless, and every two-edge cut in a
+simple bridgeless cubic graph is cyclic.  Indeed, a minimal two-edge cut
+has connected shores, and a shore of order \(n\) has
+\[
+ |E(H[X])|-|X|+1=n/2>0
+\]
+by the cubic degree sum; the same holds on the other shore.  Hence
+\(H\) has no edge cut of size at most two.
+
+Apply Lemma~\ref{lem:atoms}.  Every tree edge expands to a cyclic
+three-edge cut of \(H\).  By Lemma~\ref{lem:threecut}, each such cut is
+unmarked and splits the four marks \(1+3\).  Since no decomposing cut is
+marked, every mark belongs internally to a unique atom.  Weight each
+atom by its number of marks.  Lemma~\ref{lem:central} gives a central
+atom \(A\), containing \(r\) internal marks and incident with
+\(q=4-r\) branches, each containing exactly one mark.
+
+By Lemma~\ref{lem:precolour}, choose a Tait colouring of \(H\) in which
+all four marks have one colour, say \(c\).  The three edges of every
+decomposing cut have distinct colours.  The colouring therefore induces
+a Tait colouring on every capped atom by retaining those colours on the
+three cap edges.
+
+In \(A\), select its \(r\) internal marked edges and, at each of its
+\(q\) cap vertices, select the unique incident edge of colour \(c\).
+Let \(F\) be the set of distinct selected edges.  Because all members of
+\(F\) have colour \(c\), \(F\) is a matching; it contains every internal
+mark, meets every cap vertex, and has size at most four.
+Two cap vertices can be adjacent.  In that case their unique incident
+\(c\)-edge may be the same edge, which is why \(F\) is defined as a set
+of distinct edges and may have size less than four.  A cycle containing
+that shared edge nevertheless visits both cap vertices.
+
+There is a cycle \(C\) of \(A\) containing \(F\).  If \(|F|=4\), this
+is the independent-edge theorem of Aldred, Ellingham, Hemminger, and
+Holton for quasi \(4\)-connected graphs
+\cite[Theorem~3.3]{aldred1997}.  If
+\(|F|\le3\), then \(F\) contains no odd cut: a one-edge cut is excluded
+by \(3\)-edge-connectivity, and a three-edge cut contained in a
+matching would be nontrivial and cyclic, which does not occur in an
+atom.  Knappe and Pitz's \(g(3)=3\) theorem
+\cite[Fact~5.4]{knappe2020} gives a circuit through \(F\), and in
+the cubic graph \(A\) its edge set is a cycle.
+
+The cycle \(C\) visits every cap vertex, since it contains a selected
+edge incident with that vertex.  At a cap vertex it uses exactly two
+ports.  Expand the corresponding component of the atom tree.  In the
+original graph this component is a connected three-pole containing
+exactly one mark.  It satisfies (M) on every cyclic subset, so
+Lemma~\ref{lem:onemark} gives a path through its mark between the two
+ports used by \(C\).  Replace the two-edge passage through the cap
+vertex by that path and the corresponding boundary edges.
+
+Perform this replacement for all \(q\) branches.  Formally, first
+reconstruct each component of \(T-A\) internally while retaining its
+root cap, and then attach those branch composites to \(A\) one at a
+time.  If two cap vertices of \(A\) are adjacent, expanding the
+first deletes their shared cycle edge and reconnects its dangling end
+to the inserted branch.  The resulting edge is still the same port of
+the lifted cycle at the second cap vertex; that vertex remains cubic and
+on the cycle.  Expanding the second cap later replaces its two current
+ports in exactly the same way.  Thus adjacency of cap vertices causes
+no ambiguity and no splitting of the cycle.
+
+Each sequential replacement of a cap passage by the corresponding
+one-mark path preserves a single cycle.  The final cycle lies in \(H\)
+and contains the \(r\) central marks and the one mark from each of the
+\(q\) branches, hence all four members of \(S\).  This contradicts the
+assumed failure and proves the theorem.
+\end{proof}
+
+\begin{remark}[scope of the one-cycle conclusion]\label{rem:onecycle}
+The central-atom argument and the marked three-cut cases construct one
+cycle through all four marks.  The proof may instead terminate at an
+unmarked cyclic three-cut with a \(2+2\) mark split, where
+Lemma~\ref{lem:threecut} produces a binary cycle with two components.
+Thus this manuscript does \emph{not} claim the stronger statement that
+one cycle always contains all four marks.  The precise alternative
+proved is one four-mark cycle or two disjoint two-mark cycles.
+\end{remark}
+
+\section*{AI-use statement}
+
+The page-one disclosure is part of this draft and should remain in every
+derivative version.  Codex agents materially contributed to the theorem
+statement, proof search, low-cut lemmas, atom-tree proof, source audit,
+and exposition.  The proof is written for direct human checking and
+uses no finite computation, SAT solver, or unverifiable certificate.
+That makes it human-checkable; it does not mean a human has checked it.
+No independent human verification is asserted.
+
+The precise source-dependent inputs are the prescribed-circuit result
+of Knappe and Pitz \cite{knappe2020}, the quasi-\(4\)-connected
+prescribed-cycle result of Aldred, Ellingham, Hemminger, and Holton
+\cite{aldred1997}, and, for context only, the broader decomposition
+theory \cite{pastor2018,nedela2024}.  Any prospective human author should verify
+those applications against the published papers and repeat the novelty
+search before submission.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

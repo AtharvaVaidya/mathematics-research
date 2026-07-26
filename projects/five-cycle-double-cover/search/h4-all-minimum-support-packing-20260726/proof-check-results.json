@@ -1,0 +1,43 @@
+{
+  "schema": "h4-all-minimum-support-packing-proof-check-v1",
+  "completeness": {
+    "cnf": {
+      "path": "all-supports-blocked.cnf",
+      "sha256": "12061f07adc80081c6c329b1882201a734d004445a1e84d493f9bd7cd3743741",
+      "variables": 1697,
+      "clauses": 4936112
+    },
+    "lrat": {
+      "path": "all-supports-blocked.lrat",
+      "sha256": "6bdeaff7fe3f37dca1c34c6653f0d1f1477490ffdd50f2d954fd88cc2c649934",
+      "bytes": 973056379
+    },
+    "producer": {
+      "program": "CaDiCaL",
+      "version": "3.0.1",
+      "result": "UNSATISFIABLE",
+      "process_seconds": 122.73
+    },
+    "checkers": [
+      {
+        "program": "lrat-check",
+        "binary_sha256": "bd7eb8052623525814a0a37502b47f05375d9d9dfaf96ddc2fcd858958517cea",
+        "result": "c VERIFIED",
+        "verification_seconds": 8.75
+      },
+      {
+        "program": "CakeML cake_lpr",
+        "binary_sha256": "2fee767af4478ed817f8bdf6feea5866e5e59f1f67c2a4477e98ee961612881d",
+        "result": "s VERIFIED UNSAT"
+      }
+    ]
+  },
+  "minimum_lower_bound": {
+    "cnf": "flow-at-most-three-zero.cnf",
+    "cnf_sha256": "c0598aab1ab2cbbf4022c0de823569750e2a5feccb06d3a4dbda8da2b1bc1dfe",
+    "lrat": "flow-at-most-three-zero.lrat",
+    "lrat_sha256": "10b5805e94ad9731bcd8abf7b4ed83964b583acfbd8e2a5f8f177ba83809f235",
+    "lrat_check": "VERIFIED",
+    "cake_lpr": "VERIFIED UNSAT"
+  }
+}

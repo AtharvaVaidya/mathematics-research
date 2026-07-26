@@ -1,0 +1,762 @@
+{
+  "first_bad_flow": {
+    "canonical_index": 15,
+    "coordinate_cycle_edges": [
+      [
+        0,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        11
+      ],
+      [
+        0,
+        1,
+        3,
+        4,
+        6,
+        8,
+        10,
+        12,
+        13
+      ],
+      [
+        0,
+        1,
+        3,
+        5,
+        6,
+        7,
+        9,
+        12,
+        14
+      ]
+    ],
+    "coordinate_cycle_masks": [
+      2973,
+      13659,
+      21227
+    ],
+    "edges": [
+      {
+        "id": 0,
+        "u": 0,
+        "v": 3
+      },
+      {
+        "id": 1,
+        "u": 0,
+        "v": 6
+      },
+      {
+        "id": 2,
+        "u": 0,
+        "v": 7
+      },
+      {
+        "id": 3,
+        "u": 1,
+        "v": 4
+      },
+      {
+        "id": 4,
+        "u": 1,
+        "v": 6
+      },
+      {
+        "id": 5,
+        "u": 1,
+        "v": 7
+      },
+      {
+        "id": 6,
+        "u": 2,
+        "v": 5
+      },
+      {
+        "id": 7,
+        "u": 2,
+        "v": 7
+      },
+      {
+        "id": 8,
+        "u": 2,
+        "v": 8
+      },
+      {
+        "id": 9,
+        "u": 3,
+        "v": 6
+      },
+      {
+        "id": 10,
+        "u": 3,
+        "v": 9
+      },
+      {
+        "id": 11,
+        "u": 4,
+        "v": 8
+      },
+      {
+        "id": 12,
+        "u": 4,
+        "v": 9
+      },
+      {
+        "id": 13,
+        "u": 5,
+        "v": 8
+      },
+      {
+        "id": 14,
+        "u": 5,
+        "v": 9
+      }
+    ],
+    "flow_values_by_edge": [
+      7,
+      6,
+      1,
+      7,
+      3,
+      4,
+      6,
+      5,
+      3,
+      5,
+      2,
+      1,
+      6,
+      2,
+      4
+    ],
+    "graph6": "ICOef?kF?",
+    "order": 10,
+    "packing_decisions": [
+      {
+        "even_marked_cycle": null,
+        "packs_two_t_joins": false,
+        "value": 1
+      },
+      {
+        "even_marked_cycle": null,
+        "packs_two_t_joins": false,
+        "value": 2
+      },
+      {
+        "even_marked_cycle": null,
+        "packs_two_t_joins": false,
+        "value": 3
+      },
+      {
+        "even_marked_cycle": null,
+        "packs_two_t_joins": false,
+        "value": 4
+      },
+      {
+        "even_marked_cycle": null,
+        "packs_two_t_joins": false,
+        "value": 5
+      },
+      {
+        "even_marked_cycle": null,
+        "packs_two_t_joins": false,
+        "value": 6
+      },
+      {
+        "even_marked_cycle": null,
+        "packs_two_t_joins": false,
+        "value": 7
+      }
+    ],
+    "value_class_edges": [
+      [
+        2,
+        11
+      ],
+      [
+        10,
+        13
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        5,
+        14
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        1,
+        6,
+        12
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "value_class_masks": [
+      2052,
+      9216,
+      272,
+      16416,
+      640,
+      4162,
+      9
+    ],
+    "vertices": 10
+  },
+  "five_cdc_counterexample": false,
+  "graph_rows": [
+    {
+      "bridgeless": true,
+      "canonical_index": 1,
+      "cycle_space_size": 8,
+      "distinct_value_classes_decided": 10,
+      "first_bad_flow": null,
+      "graph6": "C~",
+      "order": 4,
+      "totals": {
+        "coordinate_triples": 512,
+        "flows_with_successful_value": 210,
+        "nowhere_zero_flows": 210
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 1,
+      "cycle_space_size": 16,
+      "distinct_value_classes_decided": 34,
+      "first_bad_flow": null,
+      "graph6": "EFz_",
+      "order": 6,
+      "totals": {
+        "coordinate_triples": 4096,
+        "flows_with_successful_value": 1092,
+        "nowhere_zero_flows": 1092
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 2,
+      "cycle_space_size": 16,
+      "distinct_value_classes_decided": 28,
+      "first_bad_flow": null,
+      "graph6": "EUxo",
+      "order": 6,
+      "totals": {
+        "coordinate_triples": 4096,
+        "flows_with_successful_value": 1050,
+        "nowhere_zero_flows": 1050
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 1,
+      "cycle_space_size": 32,
+      "distinct_value_classes_decided": 96,
+      "first_bad_flow": null,
+      "graph6": "G?zTb_",
+      "order": 8,
+      "totals": {
+        "coordinate_triples": 32768,
+        "flows_with_successful_value": 5712,
+        "nowhere_zero_flows": 5712
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 2,
+      "cycle_space_size": 32,
+      "distinct_value_classes_decided": 98,
+      "first_bad_flow": null,
+      "graph6": "GCrb`o",
+      "order": 8,
+      "totals": {
+        "coordinate_triples": 32768,
+        "flows_with_successful_value": 5670,
+        "nowhere_zero_flows": 5670
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 3,
+      "cycle_space_size": 32,
+      "distinct_value_classes_decided": 80,
+      "first_bad_flow": null,
+      "graph6": "GCZJd_",
+      "order": 8,
+      "totals": {
+        "coordinate_triples": 32768,
+        "flows_with_successful_value": 5250,
+        "nowhere_zero_flows": 5250
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 4,
+      "cycle_space_size": 32,
+      "distinct_value_classes_decided": 68,
+      "first_bad_flow": null,
+      "graph6": "GCXmd_",
+      "order": 8,
+      "totals": {
+        "coordinate_triples": 32768,
+        "flows_with_successful_value": 6300,
+        "nowhere_zero_flows": 6300
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 5,
+      "cycle_space_size": 32,
+      "distinct_value_classes_decided": 94,
+      "first_bad_flow": null,
+      "graph6": "GCY^B_",
+      "order": 8,
+      "totals": {
+        "coordinate_triples": 32768,
+        "flows_with_successful_value": 5460,
+        "nowhere_zero_flows": 5460
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 1,
+      "cycle_space_size": 64,
+      "distinct_value_classes_decided": 316,
+      "first_bad_flow": null,
+      "graph6": "I?BeeOwM?",
+      "order": 10,
+      "totals": {
+        "coordinate_triples": 262144,
+        "flows_with_successful_value": 28392,
+        "nowhere_zero_flows": 28392
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 2,
+      "cycle_space_size": 64,
+      "distinct_value_classes_decided": 294,
+      "first_bad_flow": null,
+      "graph6": "I?Bcu`gM?",
+      "order": 10,
+      "totals": {
+        "coordinate_triples": 262144,
+        "flows_with_successful_value": 29652,
+        "nowhere_zero_flows": 29652
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 3,
+      "cycle_space_size": 64,
+      "distinct_value_classes_decided": 286,
+      "first_bad_flow": null,
+      "graph6": "I?bFB_wF?",
+      "order": 10,
+      "totals": {
+        "coordinate_triples": 262144,
+        "flows_with_successful_value": 29610,
+        "nowhere_zero_flows": 29610
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 4,
+      "cycle_space_size": 64,
+      "distinct_value_classes_decided": 230,
+      "first_bad_flow": null,
+      "graph6": "I?bEHow[?",
+      "order": 10,
+      "totals": {
+        "coordinate_triples": 262144,
+        "flows_with_successful_value": 32760,
+        "nowhere_zero_flows": 32760
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 5,
+      "cycle_space_size": 64,
+      "distinct_value_classes_decided": 268,
+      "first_bad_flow": null,
+      "graph6": "I?`bfAWF?",
+      "order": 10,
+      "totals": {
+        "coordinate_triples": 262144,
+        "flows_with_successful_value": 27300,
+        "nowhere_zero_flows": 27300
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 6,
+      "cycle_space_size": 64,
+      "distinct_value_classes_decided": 232,
+      "first_bad_flow": null,
+      "graph6": "I?`cu`oJ?",
+      "order": 10,
+      "totals": {
+        "coordinate_triples": 262144,
+        "flows_with_successful_value": 26250,
+        "nowhere_zero_flows": 26250
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 8,
+      "cycle_space_size": 64,
+      "distinct_value_classes_decided": 188,
+      "first_bad_flow": null,
+      "graph6": "I?`bM_we?",
+      "order": 10,
+      "totals": {
+        "coordinate_triples": 262144,
+        "flows_with_successful_value": 31500,
+        "nowhere_zero_flows": 31500
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 9,
+      "cycle_space_size": 64,
+      "distinct_value_classes_decided": 304,
+      "first_bad_flow": null,
+      "graph6": "I?`cm`gM?",
+      "order": 10,
+      "totals": {
+        "coordinate_triples": 262144,
+        "flows_with_successful_value": 29190,
+        "nowhere_zero_flows": 29190
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 10,
+      "cycle_space_size": 64,
+      "distinct_value_classes_decided": 276,
+      "first_bad_flow": null,
+      "graph6": "I?`cmPoM?",
+      "order": 10,
+      "totals": {
+        "coordinate_triples": 262144,
+        "flows_with_successful_value": 28350,
+        "nowhere_zero_flows": 28350
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 11,
+      "cycle_space_size": 64,
+      "distinct_value_classes_decided": 268,
+      "first_bad_flow": null,
+      "graph6": "I?`amQoM?",
+      "order": 10,
+      "totals": {
+        "coordinate_triples": 262144,
+        "flows_with_successful_value": 27300,
+        "nowhere_zero_flows": 27300
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 12,
+      "cycle_space_size": 64,
+      "distinct_value_classes_decided": 270,
+      "first_bad_flow": null,
+      "graph6": "I?`c]`oM?",
+      "order": 10,
+      "totals": {
+        "coordinate_triples": 262144,
+        "flows_with_successful_value": 28560,
+        "nowhere_zero_flows": 28560
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 13,
+      "cycle_space_size": 64,
+      "distinct_value_classes_decided": 306,
+      "first_bad_flow": null,
+      "graph6": "ICOfBaKF?",
+      "order": 10,
+      "totals": {
+        "coordinate_triples": 262144,
+        "flows_with_successful_value": 28980,
+        "nowhere_zero_flows": 28980
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 14,
+      "cycle_space_size": 64,
+      "distinct_value_classes_decided": 295,
+      "first_bad_flow": null,
+      "graph6": "ICOf@pSb?",
+      "order": 10,
+      "totals": {
+        "coordinate_triples": 262144,
+        "flows_with_successful_value": 28560,
+        "nowhere_zero_flows": 28560
+      }
+    },
+    {
+      "bridgeless": true,
+      "canonical_index": 15,
+      "cycle_space_size": 64,
+      "distinct_value_classes_decided": 60,
+      "first_bad_flow": {
+        "coordinate_cycle_edges": [
+          [
+            0,
+            2,
+            3,
+            4,
+            7,
+            8,
+            9,
+            11
+          ],
+          [
+            0,
+            1,
+            3,
+            4,
+            6,
+            8,
+            10,
+            12,
+            13
+          ],
+          [
+            0,
+            1,
+            3,
+            5,
+            6,
+            7,
+            9,
+            12,
+            14
+          ]
+        ],
+        "coordinate_cycle_masks": [
+          2973,
+          13659,
+          21227
+        ],
+        "edges": [
+          {
+            "id": 0,
+            "u": 0,
+            "v": 3
+          },
+          {
+            "id": 1,
+            "u": 0,
+            "v": 6
+          },
+          {
+            "id": 2,
+            "u": 0,
+            "v": 7
+          },
+          {
+            "id": 3,
+            "u": 1,
+            "v": 4
+          },
+          {
+            "id": 4,
+            "u": 1,
+            "v": 6
+          },
+          {
+            "id": 5,
+            "u": 1,
+            "v": 7
+          },
+          {
+            "id": 6,
+            "u": 2,
+            "v": 5
+          },
+          {
+            "id": 7,
+            "u": 2,
+            "v": 7
+          },
+          {
+            "id": 8,
+            "u": 2,
+            "v": 8
+          },
+          {
+            "id": 9,
+            "u": 3,
+            "v": 6
+          },
+          {
+            "id": 10,
+            "u": 3,
+            "v": 9
+          },
+          {
+            "id": 11,
+            "u": 4,
+            "v": 8
+          },
+          {
+            "id": 12,
+            "u": 4,
+            "v": 9
+          },
+          {
+            "id": 13,
+            "u": 5,
+            "v": 8
+          },
+          {
+            "id": 14,
+            "u": 5,
+            "v": 9
+          }
+        ],
+        "flow_values_by_edge": [
+          7,
+          6,
+          1,
+          7,
+          3,
+          4,
+          6,
+          5,
+          3,
+          5,
+          2,
+          1,
+          6,
+          2,
+          4
+        ],
+        "graph6": "ICOef?kF?",
+        "packing_decisions": [
+          {
+            "even_marked_cycle": null,
+            "packs_two_t_joins": false,
+            "value": 1
+          },
+          {
+            "even_marked_cycle": null,
+            "packs_two_t_joins": false,
+            "value": 2
+          },
+          {
+            "even_marked_cycle": null,
+            "packs_two_t_joins": false,
+            "value": 3
+          },
+          {
+            "even_marked_cycle": null,
+            "packs_two_t_joins": false,
+            "value": 4
+          },
+          {
+            "even_marked_cycle": null,
+            "packs_two_t_joins": false,
+            "value": 5
+          },
+          {
+            "even_marked_cycle": null,
+            "packs_two_t_joins": false,
+            "value": 6
+          },
+          {
+            "even_marked_cycle": null,
+            "packs_two_t_joins": false,
+            "value": 7
+          }
+        ],
+        "value_class_edges": [
+          [
+            2,
+            11
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            5,
+            14
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            1,
+            6,
+            12
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "value_class_masks": [
+          2052,
+          9216,
+          272,
+          16416,
+          640,
+          4162,
+          9
+        ],
+        "vertices": 10
+      },
+      "graph6": "ICOef?kF?",
+      "order": 10,
+      "totals": {
+        "coordinate_triples": 26156,
+        "flows_with_no_successful_value": 1,
+        "flows_with_successful_value": 539,
+        "nowhere_zero_flows": 540
+      }
+    }
+  ],
+  "schema": "fano-value-class-tjoin-audit-v1",
+  "scope": {
+    "all_fixed_basis_f2_3_flows": true,
+    "bridgeless_only": true,
+    "connected_simple_cubic": true,
+    "maximum_order": 10,
+    "minimum_order": 4
+  },
+  "status": "COUNTERMODEL_FOUND",
+  "totals": {
+    "audited_graphs": 22,
+    "coordinate_triples": 3606572,
+    "flows_with_no_successful_value": 1,
+    "flows_with_successful_value": 407687,
+    "generated_graphs": 23,
+    "nowhere_zero_flows": 407688,
+    "skipped_nonbridgeless_graphs": 1
+  },
+  "universal_lemma": "every nowhere-zero F2^3-flow has a value class packing two T-joins"
+}
