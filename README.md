@@ -141,6 +141,28 @@ frontier is \((12,9)\).  See
 [`current_context/KUMMER_CHARACTER_EXACT_DIFFERENTIAL_CLASSIFICATION.md`](current_context/KUMMER_CHARACTER_EXACT_DIFFERENTIAL_CLASSIFICATION.md),
 and
 [`current_context/NORMAL_DEGREE_128_FULL_EXCLUSION.md`](current_context/NORMAL_DEGREE_128_FULL_EXCLUSION.md).
+
+The next arithmetic frontier, normal degree \((12,9)\), is now
+excluded as well.  Its local threshold
+\(\operatorname{pole}(A_8)\ge 7\rho/2\) requires an honest ramified
+grading: a genuine half-order resonance survives its first lift, and
+the primitive integer calculation alone misses it.  Exact
+all-character recurrences classify all eight Hensel branches, retain
+the delayed \(P\)-multiple and upper-constant corrections, and
+obstruct the remaining branches at orders \(47\), \(51\), \(53\), or
+\(68\).  A rational-support filtration proves that no finer
+denominator escapes those cases.  The split and connected cubic
+Kummer charts then reduce to injectivity on one line; the constant
+cube chart has normalized total degrees at most \(12\) and \(9\).
+See
+[`current_context/NORMAL_DEGREE_129_LOCAL_POLE_THRESHOLD.md`](current_context/NORMAL_DEGREE_129_LOCAL_POLE_THRESHOLD.md),
+[`current_context/NORMAL_DEGREE_129_HALF_ORDER_HOSTILE_AUDIT.md`](current_context/NORMAL_DEGREE_129_HALF_ORDER_HOSTILE_AUDIT.md),
+and
+[`current_context/NORMAL_DEGREE_129_FULL_EXCLUSION.md`](current_context/NORMAL_DEGREE_129_FULL_EXCLUSION.md).
+This remains a finite normal-degree theorem, not a resolution of
+\(JC(2)\); the next unresolved frontier is \((15,6)\), and the active
+route is a uniform treatment of every lower-degree-six frontier.
+
 A standalone, conservatively scoped manuscript of the connected-chart
 theorem is available as
 [`papers/normal-degree-96-connected-exclusion/main.pdf`](papers/normal-degree-96-connected-exclusion/main.pdf),
