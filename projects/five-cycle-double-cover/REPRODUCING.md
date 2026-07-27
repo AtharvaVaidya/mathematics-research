@@ -839,6 +839,137 @@ row count and SHA-256 of the current incomplete \(H_4\) prefix.  Its
 master had not reached UNSAT, so the rows prove only that the listed
 4,425,636 distinct minimum supports pack.
 
+## Order-100 connected eight-mark profile closure
+
+Run these commands from `projects/five-cycle-double-cover/`.  The primary
+censuses use Python's standard library:
+
+```sh
+shasum -a 256 -c ORDER100_SHA256SUMS
+
+python3 -B scratch/enumerate_order100_incidence_relaxation.py \
+  > /tmp/order100-incidence.out
+diff -u scratch/order100-incidence-relaxation-result.txt \
+  /tmp/order100-incidence.out
+
+python3 -B scratch/enumerate_order100_exact_row_star_relaxation.py \
+  --baseline-json scratch/order100-incidence-relaxation-survivors.json \
+  > /tmp/order100-row-star.out
+diff -u scratch/order100-exact-row-star-result.txt \
+  /tmp/order100-row-star.out
+
+python3 -B scratch/check_order100_row_star_patterns.py
+
+python3 -B scratch/enumerate_order100_row_star_matrix_orbits.py \
+  > /tmp/order100-matrix-orbits.out
+diff -u scratch/order100-row-star-matrix-orbits-result.txt \
+  /tmp/order100-matrix-orbits.out
+shasum -a 256 -c ORDER100_SHA256SUMS
+```
+
+The independent replays require a `z3` executable on `PATH`:
+
+```sh
+python3 -B scratch/check_order100_incidence_relaxation_z3.py \
+  > /tmp/order100-incidence-z3.out
+
+python3 -B scratch/check_order100_exact_row_star_z3.py \
+  --baseline-json scratch/order100-incidence-relaxation-survivors.json \
+  > /tmp/order100-row-star-z3.out
+diff -u scratch/order100-exact-row-star-z3-result.txt \
+  /tmp/order100-row-star-z3.out
+```
+
+The local overlap table has a separate C++20 implementation:
+
+```sh
+clang++ -std=c++20 -O3 \
+  scratch/verify_marked_two_factor_overlap_caps.cpp \
+  -o /tmp/verify_marked_two_factor_overlap_caps
+/tmp/verify_marked_two_factor_overlap_caps
+```
+
+The earlier `order100-global-word-profile*-final.cnf` instances concern
+one retained primary incidence matrix in each surviving profile.  They
+remain useful controls but are not certificates for all \(827\) matrix
+orbits.
+
+```sh
+for profile in 0 1 2; do
+  lrat-check \
+    scratch/order100-global-word-profile${profile}-final.cnf \
+    scratch/order100-global-word-profile${profile}-final.lrat
+  cake_lpr \
+    scratch/order100-global-word-profile${profile}-final.cnf \
+    scratch/order100-global-word-profile${profile}-final.lrat
+done
+```
+
+The newer `order100-global-profile*-final.cnf` instances induce the
+incidence matrix from exact position covers.  Together they cover every
+labelled matrix and rotation in all three survivor profiles.  First run
+the producer-free semantic checker; it reconstructs the base CNF and
+accepts every learned clause only after finding a forced short circuit:
+
+```sh
+for profile in 0 1 2; do
+  python3 -B scratch/check_order100_global_profile_cnf.py \
+    --profile "$profile" \
+    --cnf "scratch/order100-global-profile${profile}-final.cnf" \
+    --output "/tmp/order100-profile${profile}-semantic.json"
+  diff -u \
+    "scratch/order100-global-profile${profile}-semantic-check.json" \
+    "/tmp/order100-profile${profile}-semantic.json"
+done
+```
+
+The three LRATs total approximately 6.5 GB and are not committed.  With
+CaDiCaL 3.0.1 and the pinned C checker, regenerate and check them as
+follows:
+
+```sh
+for profile in 0 1 2; do
+  cadical --no-binary --lrat \
+    "scratch/order100-global-profile${profile}-final.cnf" \
+    "/tmp/order100-global-profile${profile}-final.lrat"
+  lrat-check \
+    "scratch/order100-global-profile${profile}-final.cnf" \
+    "/tmp/order100-global-profile${profile}-final.lrat"
+done
+```
+
+The expected LRAT hashes, exact byte sizes, formula counts, semantic
+clause hashes, checker hashes, and proof/check transcripts are in
+`scratch/order100-global-profile-closure-manifest.json`.  The committed
+CNFs and compact transcripts are frozen by `ORDER100_SHA256SUMS`.
+
+The human proof excluding an unmarked factor, completeness proof for the
+profile encoding, symmetry normalization, and exact scope are in
+`docs/order100-unmarked-exclusion-and-row-star-frontier.md`.
+
+## Current open reductions
+
+The canonical Fano cut-certificate transcription has a compact independent
+audit:
+
+```sh
+python3 -B scratch/audit_fano_canonical_cut_certificates.py
+```
+
+Its theorem gives necessary conditions for a switch-local bad flow.  The
+uncrossing step remains open.
+
+The retained rooted \(P_4\) result is
+`scratch/rooted-p4-structured-endpoint-screen-result.json`.  The producer
+pipeline recorded there scanned 240 structured order-38 rows and 101,760
+endpoint-path instances without finding a failure.  Replaying the complete
+pipeline additionally requires the separately built
+`tait_all_coloring_mark_separation` producer.  The included
+`scratch/search_full_hypothesis_p4_residual.py` is the consumer and
+`scratch/search_rooted_subcubic_linkage_counterexample.py` supplies its
+path/linkage primitives.  This is exact finite evidence on the recorded
+rows, not a universal rooted theorem or a five-CDC result.
+
 ## Repository and generated-file state
 
 At audit time the Git branch was `main` with an unborn `HEAD`: the repository

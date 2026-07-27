@@ -5,7 +5,7 @@ conjecture remains open.  Nothing in this directory is a proof or a
 counterexample to that conjecture.
 
 This is a curated, reproducible publication bundle from an autonomous
-conjecture-resolution laboratory.  It contains two research drafts, a
+conjecture-resolution laboratory.  It contains three research drafts, a
 computer-free marked-graph theorem, explicit human-checkable
 countermodels to two intermediate proof strategies, exact SAT/XOR
 documentation, and compact checker sources.  Temporary search output and
@@ -27,10 +27,42 @@ multi-gigabyte certificates are deliberately not committed.
   five-cycle double covers, so they are not counterexamples to five-CDC.
   Its source is
   [`preprint-fano-one-switch/main.tex`](preprint-fano-one-switch/main.tex).
+- [`preprint-fano-combined-span/main.pdf`](preprint-fano-combined-span/main.pdf)
+  proves a universal combined-image identity and exact quadratic normal
+  form for fixed-projection Fano-flow cleaning, then gives a
+  human-checkable Petersen obstruction to one prescribed-line
+  strengthening.  The Petersen graph positively has a five-cycle double
+  cover, so this is not a counterexample to five-CDC.  Source and the
+  cautious novelty audit are in
+  [`preprint-fano-combined-span/`](preprint-fano-combined-span/).
 
-Both PDFs prominently disclose substantive AI involvement and explicitly
-state their scope.  Their novelty assessments are provisional pending
-independent expert literature review.
+All three PDFs prominently disclose substantive AI involvement and
+explicitly state their scope.  Their novelty assessments are provisional
+pending independent expert literature review.
+
+## Fixed-line Fano branch
+
+The standard five-cycle double cover conjecture remains unresolved.  The
+new fixed-line package has plausible, moderate, and specific novelty, but
+every theorem and priority claim still requires independent human
+verification:
+
+- [`docs/fano-combined-line-span.md`](docs/fano-combined-line-span.md)
+  contains the universal linear identity and exact nonlinear normal form;
+  [`docs/fano-triangle-expansion-invariance.md`](docs/fano-triangle-expansion-invariance.md)
+  proves that triangle expansion cannot create the first all-seven
+  fixed-projection obstruction.
+- [`search/fano-two-cycle-petersen-countermodel-20260726/`](search/fano-two-cycle-petersen-countermodel-20260726/)
+  freezes the Petersen proof, semantic checker, CNFs, and verified DRAT
+  certificates for two failed prescribed lines.
+- [`search/fano-some-good-line-census-20260726/`](search/fano-some-good-line-census-20260726/)
+  is an exact negative census through every connected simple bridgeless
+  cubic graph of order \(18\), plus retained strict snarks at orders
+  \(20,22,24\) and ten targeted cyclically-5-connected order-\(26\)
+  snarks.  It finds no all-seven obstruction in that stated scope.
+- [`docs/aligned-nice-borrower-frontier.md`](docs/aligned-nice-borrower-frontier.md)
+  records that the aligned rooted branch remains open at one
+  \(b_3\)-tight equality atom.
 
 ## Latest structural branch
 
@@ -110,6 +142,45 @@ inequalities.  The matrix passes with minimum slack one.  It is a
 method-frontier certificate, not a graph realization or a conjecture
 counterexample.
 
+The next ambient order, \(100\), now has a certified but still scoped
+exclusion in
+[`docs/order100-unmarked-exclusion-and-row-star-frontier.md`](docs/order100-unmarked-exclusion-and-row-star-frontier.md).
+A short human-checkable Kempe-incidence proof excludes unmarked
+bichromatic factor circuits.  In the all-marked case, a solver-free
+enumeration reduces all \(1002\) simultaneous profile orbits first to
+\(155\), then an exact weighted-kernel row-and-column-star census reduces
+them to three abstract profile orbits.  An independently written Z3
+replay agrees on the three survivors.  The complete star-compatible
+incidence space contains \(827\) matrix orbits.
+
+A profile-level gluing formula then ranges over every labelled matrix,
+cyclic position assignment, common-edge bijection, and endpoint
+orientation in each of those three profiles; it does not select one
+representative matrix.  All three profile formulas are UNSAT already in
+\(G-M\).  Their committed CNFs have independently verified LRAT hashes,
+and a separate producer-free semantic checker reconstructs the complete
+base formulas and verifies all \(996{,}904\) dynamically learned clauses
+from forced short circuits.  The exact scoped consequence is
+\[
+  |V(G)|\ge102
+\]
+in the connected eight-mark extremal exact-zero size-four branch.  This
+does **not** cover other matching sizes or exchange branches and is not a
+resolution of five-CDC.
+
+Two adjacent reductions are also current but remain open:
+
+- [`docs/fano-canonical-join-cut-certificates.md`](docs/fano-canonical-join-cut-certificates.md)
+  converts failure of the seven canonical Fano packing tests into exact
+  binary cut certificates and a checkerboard obstruction.  These are
+  human-checkable necessary conditions; the required uncrossing step is
+  open.
+- [`scratch/rooted-p4-structured-endpoint-screen-result.json`](scratch/rooted-p4-structured-endpoint-screen-result.json)
+  records an exact negative screen on 240 structured order-38 rows:
+  101,760 endpoint-path tests and no rooted \(P_4\) failure.  This is
+  finite evidence on one labelled construction family, not a universal
+  rooted theorem and not five-CDC.
+
 The cyclic six-cut branch has also been reduced more sharply:
 
 - [`docs/rooted-four-mark-cap-avoidance.md`](docs/rooted-four-mark-cap-avoidance.md)
@@ -161,6 +232,10 @@ so none satisfies the surviving connected-branch threshold of ten.
 - [`docs/encoding.md`](docs/encoding.md) proves the equivalence between
   five Eulerian edge-subsets and the exact SAT/XOR edge-label formula,
   including graph-convention cautions.
+- [`docs/order100-unmarked-exclusion-and-row-star-frontier.md`](docs/order100-unmarked-exclusion-and-row-star-frontier.md)
+  gives the complete human proof excluding unmarked factors at order
+  \(100\), proves completeness of the profile-level finite encoding, and
+  clearly separates the scoped order-\(100\) exclusion from five-CDC.
 - [`docs/publication-assessment-20260726.md`](docs/publication-assessment-20260726.md)
   separates apparently new statements from known ingredients.
 - [`docs/current-status.md`](docs/current-status.md) and
@@ -183,6 +258,17 @@ python3 -B scratch/verify_equality88_rotation_countermodel.py
 python3 -B scratch/audit_equality88_rotation_countermodel.py
 python3 -B scratch/audit_order80_c10_selector_scan.py
 python3 -B scratch/verify_order96_kempe_incidence_frontier.py
+python3 -B scratch/check_order100_row_star_patterns.py
+python3 -B scratch/enumerate_order100_incidence_relaxation.py
+python3 -B scratch/enumerate_order100_exact_row_star_relaxation.py \
+  --baseline-json scratch/order100-incidence-relaxation-survivors.json
+python3 -B scratch/enumerate_order100_row_star_matrix_orbits.py
+for profile in 0 1 2; do
+  python3 -B scratch/check_order100_global_profile_cnf.py \
+    --profile "$profile" \
+    --cnf "scratch/order100-global-profile${profile}-final.cnf"
+done
+python3 -B scratch/audit_fano_canonical_cut_certificates.py
 python3 -B scratch/verify_rooted_four_mark_countermodel.py
 python3 -B scratch/four_pole_two_plus_two_algebra.py
 node scratch/verify_four_pole_two_plus_two_algebra.mjs

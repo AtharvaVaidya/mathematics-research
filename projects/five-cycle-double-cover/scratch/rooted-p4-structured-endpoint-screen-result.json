@@ -1,0 +1,39 @@
+{
+  "schema": "rooted-p4-structured-endpoint-screen-v1",
+  "date": "2026-07-26",
+  "classification": "EXACT_STRUCTURED_FINITE_NEGATIVE_SCREEN_NOT_A_UNIVERSAL_THEOREM",
+  "scope": {
+    "source_family": "the 240 marked-cut-compliant universally separated rows retained from generate_marked_three_sums.py",
+    "order": 38,
+    "rows": 240,
+    "unmarked_roots_per_row": 53,
+    "marked_endpoints_per_root": 8
+  },
+  "command": "python3 scratch/generate_marked_three_sums.py 2>/dev/null | scratch/tait_all_coloring_mark_separation --target 4 --required-edge-ends 0-1,2-3,4-5,6-7 --marked-cyclic-connectivity 4 --progress 0 2>/dev/null | python3 scratch/search_full_hypothesis_p4_residual.py",
+  "result": {
+    "classification": "NO_P4_FAILURE_IN_SCANNED_ROWS",
+    "rows": 240,
+    "eligible_bridgeless_colour_compatible_roots": 12720,
+    "singleton_endpoint_path_tests": 101760,
+    "failures": 0
+  },
+  "controls": {
+    "known_boundary_graph_deleted_vertex_0_fast_search": "UNSAT_BY_EXHAUSTIVE_DFS",
+    "known_boundary_graph_deleted_vertex_0_cadical_cnf": "UNSAT",
+    "known_boundary_cnf_variables": 552,
+    "known_boundary_cnf_clauses": 12724,
+    "known_positive_deleted_vertices_1_and_2": "SAT"
+  },
+  "hashes": {
+    "searcher_sha256": "c66d077b90f8bdf8515fc7c6803696ed3b6e195ff6fad8380995e2cf1d288a82",
+    "generator_sha256": "255fb20b25ccf4275868dd7228899373df1a65100f77b7bee3afdd6cd23bd56c",
+    "producer_source_sha256": "a00c2f53a3b95a06a7e8767aae2eb2bfa794fc95eeeba18bcac34aea6a12072a",
+    "producer_binary_sha256": "2e9d51a213f91d176112acf8a63f12149d3f55f7574a8c187de5fa0bf3105025"
+  },
+  "limitations": [
+    "The 240 rows are one labelled construction family, not all admissible graphs.",
+    "The searcher trusts the producer for universal separation and the marked cyclic-cut filter.",
+    "The main screen found explicit simple paths by DFS in every case; CaDiCaL is an exact fallback for hard or negative path instances.",
+    "This is evidence about Ozeki P4 at marked-edge endpoints, not a proof of the rooted theorem or the five-cycle double cover conjecture."
+  ]
+}

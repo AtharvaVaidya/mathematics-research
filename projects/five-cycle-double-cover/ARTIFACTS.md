@@ -6,7 +6,9 @@ copied into a separate clean clone; it was not modified or committed.
 
 ## Included
 
-- Both compiled research drafts and their complete LaTeX/BibTeX sources.
+- Three compiled research drafts and their complete LaTeX/BibTeX sources,
+  including the fixed-line Fano-flow span/obstruction note and its
+  provisional novelty assessment.
 - The standalone computer-free four-mark proof.
 - Current status, publication assessment, encoding proof, marked-cut
   reductions, and proof-obligation ledger.
@@ -25,9 +27,33 @@ copied into a separate clean clone; it was not modified or committed.
   frontier checker.  Their exact conclusion is only the
   \(|V(G)|\ge96\) bound in the connected eight-mark extremal exact-zero
   size-four minimum-counterexample branch.
+- The order-\(100\) human unmarked-factor exclusion, exact local overlap
+  tables, complete \(1002\)-profile cap and row-star censuses, independent
+  Z3 replay, all \(827\) canonical row-star-compatible incidence matrices,
+  and three profile-level CNFs covering every labelled matrix and rotation
+  in the three survivor profiles.  The independent semantic checker,
+  exact closure manifest, proof-producer transcripts, and C
+  `lrat-check` transcripts are included.  The multi-gigabyte LRAT files
+  are hash-frozen but omitted.
 - The rooted four-mark cap-avoidance and bridge-elimination reductions,
   exact order-28 countermodel, frozen finite-screen summaries, and compact
   checkers.  The rooted theorem remains open.
+- The canonical Fano join/cut-certificate note and finite transcription
+  audit.  They prove necessary switch-local conditions; their uncrossing
+  step remains open.  Also included is the structured order-38 rooted
+  \(P_4\) screen source and its 240-row, 101,760-test negative result.
+  This screen is finite evidence on one construction family, not a
+  universal theorem.
+- The universal combined-line span identity, exact two-cycle quadratic
+  normal form, triangle-expansion invariance theorem, and the complete
+  Petersen prescribed-line countermodel package.  These are
+  human-checkable partial results and do not resolve five-CDC.
+- The exact some-good-line census through all connected simple bridgeless
+  cubic graphs of order \(18\), together with retained strict snarks at
+  orders \(20,22,24\) and ten targeted cyclically-5-connected order-\(26\)
+  snarks.  No all-seven obstruction occurs in that stated scope.
+- The aligned nice-borrower reduction and its compact checkers.  Its
+  rooted branch remains open at one \(b_3\)-tight equality atom.
 - The exact exceptional four-pole rooted-packing algebra, frozen 640-word
   table, independent JavaScript verifier, and human-checkable reduction.
   Máčajová--Mazzuoccolo--Tabarelli Conjecture 3.7 remains open.
@@ -44,11 +70,12 @@ copied into a separate clean clone; it was not modified or committed.
   checker sources, result summaries, and the original SHA-256 ledger.
 - The native-XOR five-CDC encoder and its unit test.
 
-The two compiled PDFs have SHA-256 digests:
+The three compiled PDFs have SHA-256 digests:
 
 ```text
 863f24bcad7780067e5c264e2253e673ea4b9d50e94f28a6cf6cf389cc20bcb0  output/pdf/two-connected-countermodels-five-cdc-preprint.pdf
 7a88cd04139344babf371c6b949d26b50e6733ac8db5a6a495f842e4e706dafc  output/pdf/four-universally-separated-marks-preprint-20260726.pdf
+9612a080fa5eca945c82d0c266cc94d62adeea6493ee6d10e7aa03805687e5e0  preprint-fano-combined-span/main.pdf
 ```
 
 The original source files for those PDFs have SHA-256 digests:
@@ -59,9 +86,12 @@ f244876a123a0c0fe3ead39805ddd7c3aa18c7b7ed1e4762484f008052564ddc  preprint-fano-
 ```
 
 Package-local `SHA256SUMS` files freeze the countermodel and \(H_4\)
-records.  The manifests are retained even when a large artifact named in
-them is intentionally absent, so that a separately obtained artifact can
-be authenticated.
+records.  [`ORDER100_SHA256SUMS`](ORDER100_SHA256SUMS) freezes the
+order-\(100\) notes, complete survivor streams, matrix-orbit census, and
+the fixed-matrix controls and profile-level closure package.  The
+manifests are retained even when a large artifact named in them is
+intentionally absent, so that a regenerated or separately obtained
+artifact can be authenticated.
 
 ## Deliberately omitted
 
@@ -82,6 +112,14 @@ The following were excluded from ordinary Git:
 | `search/h4-all-minimum-support-packing-20260726/all-supports-blocked.lrat` | 973,056,379 | `6bdeaff7fe3f37dca1c34c6653f0d1f1477490ffdd50f2d954fd88cc2c649934` |
 | `search/h4-all-minimum-support-packing-20260726/flow-at-most-three-zero.lrat` | 12,538,449 | `10b5805e94ad9731bcd8abf7b4ed83964b583acfbd8e2a5f8f177ba83809f235` |
 
+The profile-level order-\(100\) LRATs are also deliberately omitted:
+
+| Local file | Size (bytes) | SHA-256 |
+|---|---:|---|
+| `scratch/order100-global-profile0-final.lrat` | 1,975,251,213 | `a34d8d9170f596e43d02779f6ac7d9271ba1bf1b08ea2ecf862cf59a2230e4c8` |
+| `scratch/order100-global-profile1-final.lrat` | 2,217,270,938 | `265a74e8e9a3fc7606fba45734e7180d9137e1dbbdde7e95cae08f469f2047d5` |
+| `scratch/order100-global-profile2-final.lrat` | 2,360,474,153 | `f96d88f051b2a00613265207118bc460102f34c69698a89143b2c971b0fc11cb` |
+
 Those files remain in the source laboratory under the absolute local
 paths shown above.  The frozen result summaries report successful
 verification with C `lrat-check`, verified CakeML `cake_lpr`, and the
@@ -94,6 +132,18 @@ standalone replay of the complete \(H_4\) theorem.
 The countermodel certificates refute intermediate strategies, not
 five-CDC.  The \(H_4\) result concerns one fixed graph.  The four-mark
 theorem closes one marked-core branch under additional hypotheses.
+The fixed-line Fano-flow preprint has plausible, moderate, and specific
+novelty pending independent human verification; its Petersen graph
+positively has a 5-CDC.  The exact some-good-line census is complete only
+through order \(18\), with the larger order-\(26\) scope targeted as
+listed above.  The aligned rooted branch still has one \(b_3\)-tight
+equality atom.
+The earlier `order100-global-word-profile*` LRATs prove UNSAT only for one
+retained primary matrix in each survivor profile.  The newer
+`order100-global-profile*` formulas induce the incidence matrix and cover
+all labelled matrices and rotations in all three profiles.  Their checked
+UNSAT result excludes order \(100\) only in the connected eight-mark
+extremal exact-zero size-four branch.  It does not prove five-CDC.
 The retained 240-row rooted screen is a frozen result; this bundle does
 not claim a fresh full replay of its consumer analysis.  A fresh replay
 did regenerate all 13,824 producer rows and 240 target witnesses.  The

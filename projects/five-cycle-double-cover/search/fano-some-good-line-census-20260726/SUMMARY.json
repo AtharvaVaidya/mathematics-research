@@ -1,0 +1,123 @@
+{
+  "claim_scope": "Exact negative search for a nowhere-zero three-dimensional binary cycle subspace whose seven nonzero projections are all uncleanable; not a proof of the five-cycle double cover conjecture beyond the enumerated graphs",
+  "complete_connected_simple_cubic_census": [
+    {
+      "all_seven_obstructions": 0,
+      "bridgeless_graphs": 1,
+      "connected_cubic_graphs": 1,
+      "order": 4,
+      "profiles": [
+        {"bad": 0, "graphs": 1, "liftable_bad": 0, "liftable_bad_rank": 0}
+      ]
+    },
+    {
+      "all_seven_obstructions": 0,
+      "bridgeless_graphs": 2,
+      "connected_cubic_graphs": 2,
+      "order": 6,
+      "profiles": [
+        {"bad": 0, "graphs": 2, "liftable_bad": 0, "liftable_bad_rank": 0}
+      ]
+    },
+    {
+      "all_seven_obstructions": 0,
+      "bridgeless_graphs": 5,
+      "connected_cubic_graphs": 5,
+      "order": 8,
+      "profiles": [
+        {"bad": 0, "graphs": 5, "liftable_bad": 0, "liftable_bad_rank": 0}
+      ]
+    },
+    {
+      "all_seven_obstructions": 0,
+      "bridgeless_graphs": 18,
+      "connected_cubic_graphs": 19,
+      "order": 10,
+      "profiles": [
+        {"bad": 0, "graphs": 17, "liftable_bad": 0, "liftable_bad_rank": 0},
+        {"bad": 7, "graphs": 1, "liftable_bad": 6, "liftable_bad_rank": 5}
+      ]
+    },
+    {
+      "all_seven_obstructions": 0,
+      "bridgeless_graphs": 81,
+      "connected_cubic_graphs": 85,
+      "order": 12,
+      "profiles": [
+        {"bad": 0, "graphs": 80, "liftable_bad": 0, "liftable_bad_rank": 0},
+        {"bad": 14, "graphs": 1, "liftable_bad": 12, "liftable_bad_rank": 6}
+      ]
+    },
+    {
+      "all_seven_obstructions": 0,
+      "bridgeless_graphs": 480,
+      "connected_cubic_graphs": 509,
+      "order": 14,
+      "profiles": [
+        {"bad": 0, "graphs": 475, "liftable_bad": 0, "liftable_bad_rank": 0},
+        {"bad": 28, "graphs": 5, "liftable_bad": 24, "liftable_bad_rank": 7}
+      ]
+    },
+    {
+      "all_seven_obstructions": 0,
+      "bridgeless_graphs": 3874,
+      "connected_cubic_graphs": 4060,
+      "order": 16,
+      "profiles": [
+        {"bad": 0, "graphs": 3848, "liftable_bad": 0, "liftable_bad_rank": 0},
+        {"bad": 56, "graphs": 26, "liftable_bad": 48, "liftable_bad_rank": 8}
+      ]
+    },
+    {
+      "all_seven_obstructions": 0,
+      "bridgeless_graphs": 39866,
+      "connected_cubic_graphs": 41301,
+      "order": 18,
+      "profiles": [
+        {"bad": 0, "graphs": 39687, "liftable_bad": 0, "liftable_bad_rank": 0},
+        {"bad": 5, "graphs": 1, "liftable_bad": 4, "liftable_bad_rank": 3},
+        {"bad": 9, "graphs": 1, "liftable_bad": 8, "liftable_bad_rank": 5},
+        {"bad": 112, "graphs": 176, "liftable_bad": 96, "liftable_bad_rank": 9},
+        {"bad": 211, "graphs": 1, "liftable_bad": 180, "liftable_bad_rank": 10}
+      ]
+    }
+  ],
+  "exact_targeted_census": [
+    {
+      "all_seven_obstructions": 0,
+      "graphs": 6,
+      "name": "retained strict snarks order 20",
+      "order": 20
+    },
+    {
+      "all_seven_obstructions": 0,
+      "graphs": 20,
+      "name": "retained strict snarks order 22",
+      "order": 22
+    },
+    {
+      "all_seven_obstructions": 0,
+      "graphs": 38,
+      "name": "retained strict snarks order 24",
+      "order": 24
+    },
+    {
+      "all_seven_obstructions": 0,
+      "graphs": 10,
+      "name": "retained cyclically-5-connected snarks order 26",
+      "order": 26
+    }
+  ],
+  "independent_crosschecks": {
+    "complete_python_replay_through_order": 16,
+    "order_18_python_representative_profiles": [
+      {"bad": 112, "geng_row": 7890, "liftable_bad": 96, "liftable_bad_rank": 9},
+      {"bad": 5, "geng_row": 14491, "liftable_bad": 4, "liftable_bad_rank": 3},
+      {"bad": 211, "geng_row": 27299, "liftable_bad": 180, "liftable_bad_rank": 10},
+      {"bad": 9, "geng_row": 34005, "liftable_bad": 8, "liftable_bad_rank": 5}
+    ],
+    "strict_snarks_through_order_18_python_replayed": 3
+  },
+  "schema": "fano-some-good-line-exact-census-v1",
+  "status": "NO_ALL_SEVEN_OBSTRUCTION_FOUND"
+}
