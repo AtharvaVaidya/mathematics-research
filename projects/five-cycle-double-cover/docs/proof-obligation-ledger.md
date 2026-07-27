@@ -1055,8 +1055,8 @@ Open obligations:
     eliminate the mixed relation by the original one-sided argument; item
     67 supplies the missing fork transport.  See
     `search/rooted-three-pole-nontait-endpoint-frontier-20260727/`.
-66. **The mixed cyclic-three branch has a path-rooted triangle
-    induction, conditional on one pending finite premise:** connector-end
+66. **The mixed cyclic-three branch has a completed path-rooted triangle
+    induction through cap order 26:** connector-end
     \(K_4\) contraction preserves the class of fork triples
     \(\{qr,ps,pt\}\), while a root-end triangle forces exactly such a
     triple.  Hence every nonempty path-rooted cap signature contains a
@@ -1064,10 +1064,15 @@ Open obligations:
     closure.  In a relation with no disjoint pair, the common
     intersectors of a fork are exactly \(\{pq,pr\}\), so the opposite
     signature has size at most two and cannot contain its own fork.
-    At cap order at most 26 both capped shores have order at most 24, so
-    a complete triangle-free 3-connected screen through order 24 would
-    close this finite branch.  That screen is running and not yet claimed.
-    See `docs/rooted-cap-triangle-induction.md`.
+    At cap order at most 26 both capped shores have order at most 24.
+    Two exact implementations now classify every one of the 10,824,084
+    proper roots in the 330,790 vertex-deleted cores from all 13,901
+    retained triangle-free 3-connected non-Tait caps at orders 20, 22,
+    and 24. Every signature is nonempty and base-pair closed, and the
+    complete transcripts agree byte-for-byte. Thus the finite branch is
+    closed independently of item 67. See
+    `docs/rooted-cap-triangle-induction.md` and
+    `search/rooted-three-pole-c3-cap-frontier-through24-20260727/`.
 67. **A root-end base pair lifts through an arbitrary factor path as a
     fork, restoring the simple terminal-distinct order-28 lower bound:**
     fix one labelling of the rest of a rooted shore and normalize the

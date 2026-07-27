@@ -2098,14 +2098,18 @@ every label on the other side must meet all three fork labels, and the
 only possibilities are the two labels \(\{pq,pr\}\).  The other shore's
 own fork triple cannot fit in a two-element set.  For a cap of order at
 most 26, both capped shores of one principal cut have order at most 24.
-Therefore a complete triangle-free 3-connected cap screen through order
-24 would prove a stronger whole-shore statement through that frontier.
-That two-implementation screen is currently running and is not yet
-claimed.  The endpoint-fork lift in the next section now eliminates the
-finite mixed branch without this pending premise.  The conditional human
-proof and an exhaustive replay of its local coordinate and
-common-intersector tables are in
-`docs/rooted-cap-triangle-induction.md`.
+The triangle-free screen is now complete: two exact implementations
+classify every one of the 10,824,084 proper roots in all 330,790
+vertex-deleted cores from the 13,901 retained caps at orders 20, 22, and
+24. Every signature is nonempty and contains a base pair, and the
+complete transcripts agree byte-for-byte. The triangle induction
+therefore proves the stronger whole-shore statement and eliminates the
+mixed cyclic-three branch through cap order 26. The endpoint-fork lift
+in the next section remains stronger, since it combines with the
+order-28 cyclically-four census to give the current lower bound 30.
+The human proof, local table replay, and finite package are in
+`docs/rooted-cap-triangle-induction.md` and
+`search/rooted-three-pole-c3-cap-frontier-through24-20260727/`.
 
 ## Root-end fork lift and restored order-28 bound
 

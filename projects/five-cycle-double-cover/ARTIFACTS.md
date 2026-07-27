@@ -14,6 +14,17 @@ copied into a separate clean clone; it was not modified or committed.
   line-by-line AI audit, cautious novelty assessment, build instructions,
   and a checksum ledger.  The front-matter AI-use disclosure and unresolved
   five-CDC status are part of both the source and PDF.
+- The prescribed-root matching frontier indexed by
+  `MATCHING_FRONTIER_20260727.md`: a human proof of the universal
+  deficiency-two bound, the exact boundary-eight Gallai--Edmonds
+  reduction, the disconnected singleton-case Tait theorem, checked
+  countermodels to weaker rotation claims, and the connected singleton
+  case left explicitly open.
+- The complete compact focused theta-choice census through order 28:
+  retained graph6 inputs and generator logs, source identities, two
+  independently written classifiers, frozen result streams, aggregate
+  checker, and exact scope statement. Its zero all-dumbbell count is a
+  finite result over the recorded corpora, not a universal theorem.
 - The complete compact order-17 rooted three-pole base-pair package and the
   completed cyclically-four order-22 cap-slice package, with two solver
   implementations, retained transcript digests, compressed transcripts,
@@ -45,9 +56,14 @@ copied into a separate clean clone; it was not modified or committed.
   Tait-cap closure and cap-connectivity theorem.  The frozen endpoint
   package classifies 1,360,452 roots through factor order 26 and derives
   the pure-relation cap bound 54.  The fork-triple triangle induction and
-  its exhaustive local-table replay are also included.  A separate
+  its exhaustive local-table replay are also included. Its formerly
+  pending triangle-free premise is now a complete two-implementation
+  finite screen of 10,824,084 roots through cap order 24. The compact Git
+  package omits two byte-identical 34,355,648-byte transcripts while
+  retaining their hashes, source corpora, logs, statuses, verifier,
+  report, and regeneration instructions. A separate
   human-checkable root-end fork lift, backed by a complete 900-pair replay,
-  bypasses the pending triangle-free screen and restores the scoped
+  bypasses this screen and restores the scoped
   order-28 exceptional-pole bound.  The complete retained order-28
   two-witness classification then raises that scoped bound to 30.  Its
   large generated certificate streams are hash-frozen but omitted from

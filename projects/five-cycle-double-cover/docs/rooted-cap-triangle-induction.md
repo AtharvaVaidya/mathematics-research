@@ -3,8 +3,8 @@
 Date: **2026-07-27**.
 
 Status: **HUMAN-CHECKABLE REDUCTION / FINITE TRIANGLE-FREE PREMISE
-CURRENTLY BEING CHECKED / END-FACTOR LIFT NOW BYPASSES THIS PREMISE FOR
-THE ORDER-28 BOUND / NOT FIVE-CDC**.
+THROUGH ORDER 24 COMPLETED BY TWO EXACT IMPLEMENTATIONS / END-FACTOR
+LIFT GIVES THE STRONGER ORDER-30 BOUND / NOT FIVE-CDC**.
 
 Fix a simple 3-connected cubic graph \(H\), a vertex \(z\), and a
 proper root \(r\) of the three-pole \(H-z\).  Normalize the three
@@ -228,17 +228,21 @@ both shores is impossible: whichever shore supplies its fork restricts
 the other to at most two labels, while (3) puts three distinct labels
 there.
 
-Once the pending triangle-free 3-connected screen through order 24 is
-complete and independently replayed, this will eliminate the mixed
-cyclic-three branch through cap order 26.  Together with the already
-complete cyclically-four cap census through order 26, it would restore
-the simple terminal-distinct exceptional-pole lower bound of order 28.
-Until that finite premise is frozen, this paragraph remains a conditional
-whole-shore consequence.  The later human endpoint-fork transport in
-`rooted-cap-end-factor-fork-lift.md` obtains the required fork directly
-from each root-end factor and therefore restores the order-28 bound
-without using this pending screen.  The present screen remains useful as
-a stronger independent whole-shore check.
+The triangle-free 3-connected screen through order 24 is now complete.
+Two exact implementations classified all 10,824,084 proper roots in all
+330,790 vertex-deleted cores from the 13,901 retained caps at orders 20,
+22, and 24.  Every signature is nonempty and contains a base pair; the
+complete transcripts are byte-for-byte identical.  Consequently the
+preceding argument unconditionally eliminates the mixed cyclic-three
+branch through cap order 26.
+
+Together with the cyclically-four cap census through order 26, this gives
+an independent finite proof of the former simple terminal-distinct
+exceptional-pole lower bound 28.  The later human endpoint-fork transport
+in `rooted-cap-end-factor-fork-lift.md`, combined with the order-28
+cyclically-four census, gives the stronger current lower bound 30 without
+using this screen.  The completed package is
+`../search/rooted-three-pole-c3-cap-frontier-through24-20260727/`.
 
 For error detection, the standard-library replay
 `scratch/verify_rooted_cap_triangle_table.py` exhaustively reconstructs
@@ -256,5 +260,6 @@ It returns `PASS`.  Frozen SHA-256 values are:
 OpenAI Codex, under human direction, found the three triangle cases and
 the connector-expansion table (8), and drafted this proof.  The argument
 is displayed for line-by-line checking.  The finite premise in Section
-5 is explicitly marked pending, and this note does not resolve
+5 is now supported by two complete exact implementations and a
+solver-independent package verifier.  This note does not resolve
 Five-CDC.

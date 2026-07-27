@@ -114,14 +114,16 @@ relations.  The package alone does not eliminate the mixed relation.
 
 The human-checkable
 [`docs/rooted-cap-triangle-induction.md`](docs/rooted-cap-triangle-induction.md)
-reduces that mixed branch through cap order 26 to a pending triangle-free
-3-connected shore screen through order 24.  Its local fork-triple tables
-have an exhaustive standard-library checker, but the finite screen is still
-running and is not claimed.
+reduces that mixed branch through cap order 26 to a triangle-free
+3-connected shore screen through order 24. The screen is now frozen in
+[`search/rooted-three-pole-c3-cap-frontier-through24-20260727/`](search/rooted-three-pole-c3-cap-frontier-through24-20260727/):
+two exact implementations classify all 10,824,084 proper roots, with no
+empty signature or base-pair violation. This is a bounded result, not a
+universal rooted-closure theorem.
 
 The independent human argument in
 [`docs/rooted-cap-end-factor-fork-lift.md`](docs/rooted-cap-end-factor-fork-lift.md)
-bypasses that pending screen for the finite lower bound.  A base pair in
+bypasses that screen for the stronger finite lower bound.  A base pair in
 each root-end factor transports through its three-sum path as a fork
 triple; any two forks force both an unequal-intersection and a disjoint
 cross-pair.  With the completed endpoint and cyclically-four cap
@@ -318,6 +320,12 @@ so none satisfies the surviving connected-branch threshold of ten.
 
 ## Human-checkable material
 
+- [`MATCHING_FRONTIER_20260727.md`](MATCHING_FRONTIER_20260727.md)
+  indexes the prescribed-root matching branch. It separates the universal
+  deficiency theorem, boundary-eight and singleton Gallai--Edmonds
+  reductions, exact finite census through order 28, checked
+  countermodels to weaker lemmas, and the connected case that remains
+  open.
 - [`docs/four-mark-core-closure.md`](docs/four-mark-core-closure.md) gives
   the full computer-free four-mark proof.
 - [`docs/audit-eight-mark-girth-bound.md`](docs/audit-eight-mark-girth-bound.md)
@@ -356,6 +364,11 @@ python3 -B scratch/verify_equality88_rotation_countermodel.py
 python3 -B scratch/audit_equality88_rotation_countermodel.py
 python3 -B scratch/audit_order80_c10_selector_scan.py
 python3 -B scratch/verify_order96_kempe_incidence_frontier.py
+python3 -B scratch/prescribed-root-matching-deficiency-checker.py
+python3 -B scratch/rotation-closure-countermodel-checker.py
+(cd search/focused-theta-choice-through28-20260727 && python3 verify.py)
+(cd search/rooted-three-pole-c3-cap-frontier-through24-20260727 && \
+  shasum -a 256 -c CHECKSUMS-PUBLISHED.sha256)
 python3 -B scratch/check_order100_row_star_patterns.py
 python3 -B scratch/enumerate_order100_incidence_relaxation.py
 python3 -B scratch/enumerate_order100_exact_row_star_relaxation.py \

@@ -5,11 +5,33 @@ Date: **2026-07-27**
 Status: **AI-assisted research draft; the Five-Cycle Double Cover
 Conjecture remains unresolved.**
 
-This manifest records the material added on the
-`codex/five-cdc-marked-circuits-20260727` branch.  OpenAI Codex agents,
-directed by Atharva Vaidya, generated or revised the arguments, programs,
-computations, audits, and prose.  Agent cross-checks are not independent
-human verification or peer review.
+This manifest records the material included through the
+`codex/fivecdc-matching-frontier-20260727` branch, which extends the
+earlier `codex/five-cdc-marked-circuits-20260727` publication branch.
+OpenAI Codex agents, directed by Atharva Vaidya, generated or revised the
+arguments, programs, computations, audits, and prose. Agent cross-checks
+are not independent human verification or peer review.
+
+## Prescribed-root matching frontier
+
+`MATCHING_FRONTIER_20260727.md` indexes the added matching branch:
+
+- `docs/prescribed-root-matching-deficiency-frontier.md`
+- `docs/focused-theta-choice-census-frontier.md`
+- `docs/boundary-eight-rotation-closure-frontier.md`
+- `docs/singleton-ge-tait-frontier.md`
+- `scratch/prescribed-root-matching-deficiency-checker.py`
+- `scratch/rotation-closure-countermodel-checker.py`
+- `scratch/focused-theta-choice-census.cpp`
+- `scratch/verify-focused-theta-choice-census.py`
+- `scratch/focused-theta-choice-census-result.json`
+- `search/focused-theta-choice-through28-20260727/`
+
+The universal deficiency-two theorem, boundary-eight incidence theorem,
+and disconnected singleton-case Tait theorem have complete displayed
+proofs. The connected singleton case remains open. The focused census
+through order 28 is exact over the retained corpora but is not promoted
+to a universal statement.
 
 ## Preprint
 
@@ -114,12 +136,21 @@ The branch includes all non-cache files in:
   logs, statuses, hashes, compact reports, and checker.  The full local
   package has two independently replayed positive labellings for each of
   9,725,709 poles and proves the scoped order-30 bound.
+- `search/focused-theta-choice-through28-20260727/` — compact complete
+  retained source corpus, generator logs, two classifier sources, frozen
+  result streams, and aggregate verifier for 14,009 graphs and 10,689,351
+  independent root pairs.
+- `search/rooted-three-pole-c3-cap-frontier-through24-20260727/` —
+  compact publication subset of the complete 10,824,084-root
+  triangle-free cap screen: source corpora, expanded cores, logs,
+  statuses, hashes, summaries, report, verifier, and regeneration notes.
 
 Excluded deliberately: `__pycache__`, `.DS_Store`, private attachments,
 temporary `/private/tmp` output, compiled checker binaries, unrelated dirty
-files, broad 294 MB graph streams, multi-gigabyte proof files, and the
-running `search/rooted-three-pole-c3-cap-frontier-through24-20260727/`
-screen or other placeholder material.  The order-28 witness stream
+files, broad 294 MB graph streams, multi-gigabyte proof files, and
+placeholder material. The two byte-identical 34,355,648-byte C3-cap
+transcripts are omitted with compressed and uncompressed hashes and exact
+regeneration instructions retained. The order-28 witness stream
 (363,463,166 compressed bytes) and generated pole stream (40,210,290
 compressed bytes) are also omitted; their compressed and uncompressed
 hashes and regeneration commands are retained.
@@ -162,13 +193,15 @@ hashes and regeneration commands are retained.
   independent semantic replay over 1,360,452 roots in 38,244 cores; it
   reproduced `report.json` byte for byte.
 - The fork-triple checker reproduced
-  `scratch/rooted-cap-triangle-table-v2.json` byte for byte.  Its stronger
-  whole-shore consequence remains conditional on the explicitly excluded
-  running triangle-free screen.
+  `scratch/rooted-cap-triangle-table-v2.json` byte for byte. The complete
+  two-implementation triangle-free screen now classifies 10,824,084 roots
+  with no empty signature or base-pair violation. The compact Git subset's
+  present-artifact checksums and source manifest pass; the full row replay
+  requires the two hash-frozen omitted transcripts.
 - The endpoint-fork checker reproduced
   `scratch/rooted-end-factor-fork-lift-replay.json` byte for byte,
   enumerating all 60 ordered connector triangles, 30 forks, and 900 ordered
-  fork pairs.  The human lift bypasses the pending screen and restores the
+  fork pairs.  The human lift bypasses that screen and restores the
   stated bridge-free simple terminal-distinct fixed-five lower bound 28.
 - The full order-28 package passed both semantic replays over 9,725,709
   rows and 19,451,418 displayed labellings.  Its two positive boundary
@@ -177,6 +210,10 @@ hashes and regeneration commands are retained.
   publication and reproduced its compact JSON byte for byte.
 - The Python and JavaScript five-point checkers independently agree on all
   392 five-set/line cases.
+- The two small prescribed-root countermodel checkers pass using only the
+  Python standard library. The focused-theta package checksum ledger and
+  aggregate verifier pass; the retained result classifies 14,009 graphs
+  and 10,689,351 root pairs with zero all-dumbbell cases through order 28.
 
 No fresh full order-22 census is claimed by this publication preparation.
 The frozen reports state their exact scope and provenance.

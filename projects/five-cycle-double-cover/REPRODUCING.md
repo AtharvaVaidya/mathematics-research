@@ -123,9 +123,24 @@ cmp /tmp/rooted-cap-triangle-table-v2.json \
   scratch/rooted-cap-triangle-table-v2.json
 ```
 
-That human reduction leaves a triangle-free 3-connected finite screen
-running and is not claimed.  Replay the independent endpoint-fork lift
-table with:
+The triangle-free 3-connected finite screen is now complete through cap
+order 24. Its compact Git package omits two byte-identical 34,355,648-byte
+transcripts but retains their hashes and regeneration instructions. Check
+every present frozen artifact and the source manifest with:
+
+```sh
+(
+  cd search/rooted-three-pole-c3-cap-frontier-through24-20260727
+  shasum -a 256 -c CHECKSUMS-PUBLISHED.sha256
+  shasum -a 256 -c SOURCES.sha256
+  python3 -m py_compile verify.py
+  python3 -m json.tool report.json >/dev/null
+)
+```
+
+The full 10,824,084-row semantic replay requires the omitted transcripts;
+see that package's `PUBLICATION-OMISSIONS.md`. Replay the independent
+endpoint-fork lift table with:
 
 ```sh
 python3 scratch/verify_rooted_end_factor_fork_lift.py \
@@ -134,7 +149,7 @@ cmp /tmp/rooted-end-factor-fork-lift-replay.json \
   scratch/rooted-end-factor-fork-lift-replay.json
 ```
 
-The human endpoint-fork proof bypasses the pending screen and, together
+The human endpoint-fork proof bypasses that screen and, together
 with the completed finite endpoint and cap classifications, restores the
 bridge-free simple terminal-distinct fixed-five lower bound of order 28.
 The complete retained order-28 two-witness classification raises that
@@ -144,6 +159,27 @@ generation commands, source corpus, compact reports, and checker sources;
 records the two excluded generated streams and the original-layout scope
 of its source-provenance ledger.
 None of these results resolves five-CDC.
+
+## Prescribed-root matching frontier
+
+The shortest complete integrity replay for the matching-frontier update
+uses only the Python standard library and the system SHA-256 utility:
+
+```sh
+python3 -B scratch/prescribed-root-matching-deficiency-checker.py
+python3 -B scratch/rotation-closure-countermodel-checker.py
+(
+  cd search/focused-theta-choice-through28-20260727
+  shasum -a 256 -c SHA256SUMS
+  python3 verify.py > /tmp/focused-theta-report.json
+  cmp /tmp/focused-theta-report.json report.json
+)
+```
+
+These commands check the finite countermodels and the frozen census
+records. They do not prove the open connected singleton case. Complete
+re-execution of both census classifiers is documented in
+`search/focused-theta-choice-through28-20260727/REPRODUCING.md`.
 
 Replay the five-point local theorem with:
 
