@@ -2552,6 +2552,49 @@ raw solver table    07c466b2c0839098b534f2a1bb1e894b973a619bb3eccd3118a69edfed8a
 result report       a1a1d7bd6b9cf03dbda75543a6ce9a53f2f9c57cb39dca27626027d15af7c0a1
 ```
 
+## Complete cyclically-four order-26 cap classification
+
+Audit date: **2026-07-27**.
+
+The complete Snarkhunter girth-four run contains 1,297 cyclically
+4-edge-connected non-Tait simple cubic caps of order 26.  Triangle
+exclusion makes this the complete intended cyclically-four cap scope,
+subject to the generator and its option semantics.  Expanding all
+independent edge pairs gives:
+
+```text
+source caps                        1,297
+deletion poles                   859,911
+queries per implementation     8,599,110
+satisfiable answers            8,599,110
+rows with full mask 0x3ff        859,911
+exceptional hits                       0
+```
+
+The CaDiCaL and independently written direct finite-domain tables agree
+byte-for-byte.  A third implementation checks all graph premises,
+reconstructs the complete deletion stream, validates every table row and
+all sixteen shard logs, and reproduces the committed report.
+
+Together with the human atom, cyclic-three, and simple-cap reductions and
+the earlier complete finite exclusions, this rules out the two exceptional
+fixed-five signatures for every bridge-free connected simple
+terminal-distinct four-pole through order 26.  The next possible even order
+is 28.
+
+Frozen package:
+`search/four-pole-order26-cyclic4-cap-20260727/`.
+
+SHA-256:
+
+```text
+source graph stream 1d2b95b9d412f5f6b8ccb788779bd685df23b3239bda8c7e9557266375519760
+raw pole stream     8e346b040fb4c69bef5ab6b21b30c30635a22ba4086a9b5ea567cdf3d10378e4
+raw solver table    abc46bc0af6f94596ae11c68af95acc55cf8d73d82f81aea4a06ab8614a14da2
+result report       69d8eb39b70df89906a9c3be28dc323231ef0bd173f7dbffee8311ce0156de71
+independent audit   e78d88124b2f75a4c6a7c3514017aece816834106d26595e56166ce84532380e
+```
+
 ## Certified low-arity \(D_5\)-polymorphism no-go
 
 Audit date: **2026-07-27**.

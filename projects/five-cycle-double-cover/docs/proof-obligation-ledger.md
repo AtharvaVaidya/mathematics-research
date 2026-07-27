@@ -938,7 +938,7 @@ Open obligations:
     of existence and does not add orientability.  See
     `docs/five-cdc-elliptic-quadratic-flow-model.md`.
 59. **The simple terminal-distinct exceptional-pole lower bound reaches
-    order 26:** the simple-cap theorem reduces each even order to all
+    order 28:** the simple-cap theorem reduces each even order to all
     independent-edge deletions from bridgeless non-Tait cubic caps.
     At order 22, two independent filters select the same \(12\,892\)
     caps from the complete \(7\,319\,447\)-graph canonical source.  Their
@@ -948,14 +948,17 @@ Open obligations:
     canonical identities, cap premises, the entire deletion stream, and
     both decision ledgers.  The exceptional-atom descent and rooted
     base-pair theorem further show that any first exception through order
-    24 has a cyclically 4-edge-connected cap.  Snarkhunter generates 155
-    such non-Tait caps at order 24; both exact classifiers give full mask
-    `0x3ff` on all \(86\,490\) deletion poles.  Therefore no bridge-free
-    connected simple terminal-distinct four-pole through order 24 has an
-    exceptional exact five-colour \(D_5\) signature; any such simple pole
-    has even order at least 26.  This does not cover repeated terminals,
-    nonsimple cores, unbounded-colour CDC signatures, or order 26.
-    See `search/four-pole-order24-cyclic4-cap-20260727/`.
+    36 has a cyclically 4-edge-connected cap.  Snarkhunter generates 155
+    such non-Tait caps at order 24 and 1,297 at order 26.  Both exact
+    classifiers give full mask `0x3ff` on all \(86\,490\) order-24 and
+    \(859\,911\) order-26 deletion poles.  A solver-independent verifier
+    reconstructs the latter stream and checks both complete tables and all
+    shard logs.  Therefore no bridge-free connected simple
+    terminal-distinct four-pole through order 26 has an exceptional exact
+    five-colour \(D_5\) signature; any such simple pole has even order at
+    least 28.  This does not cover repeated terminals, nonsimple cores,
+    unbounded-colour CDC signatures, or order 28.
+    See `search/four-pole-order26-cyclic4-cap-20260727/`.
 60. **The quotient-lift theorem has an exact one-cycle
     component-parity normal form:**
     in the elliptic normal form

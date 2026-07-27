@@ -84,6 +84,7 @@ verifiers and checksum ledgers:
 ```sh
 for package in \
   search/four-pole-order24-cyclic4-cap-20260727 \
+  search/four-pole-order26-cyclic4-cap-20260727 \
   search/four-pole-order26-strict-cap-probe-20260727 \
   search/mnp-h2-h5-aa-deletion-probe-20260727
 do
@@ -96,11 +97,14 @@ do
 done
 ```
 
-The order-24 package is complete for its documented cyclically-four source.
-The order-26 package is only a finite retained strict-snark probe; it is not
-the still-pending complete order-26 classification.  The \(H_2,\ldots,H_5\)
+The order-24 and order-26 cyclically-four packages are complete for their
+documented retained sources.  Together with the separately proved
+reductions, the latter raises only the scoped simple terminal-distinct
+exceptional-pole lower bound to 28.  The separate strict-snark order-26
+package remains a finite retained-source control.  The \(H_2,\ldots,H_5\)
 package uses explicit positive edge labellings, so its \(AA\) certificates
-can be checked without trusting a SAT solver.
+can be checked without trusting a SAT solver.  None of these computations
+resolves five-CDC.
 
 ## Required recorded environment
 

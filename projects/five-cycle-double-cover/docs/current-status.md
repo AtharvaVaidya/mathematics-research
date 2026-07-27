@@ -1932,6 +1932,41 @@ semantics; this is not a census of all order-26 non-Tait caps or a universal
 full-signature theorem.  The frozen package is
 `search/four-pole-order26-strict-cap-probe-20260727/`.
 
+## Complete cyclically-four order-26 cap classification
+
+Audit date: **2026-07-27**.
+
+The order-26 search has now been enlarged from the 280 girth-five strict
+snarks to all 1,297 cyclically 4-edge-connected class-2 simple cubic graphs
+produced by the documented Snarkhunter girth-four run.  As at order 24,
+this is the complete intended cap class subject to Snarkhunter: a triangle
+and its cyclic complement would form a cyclic three-edge cut.
+
+Deleting every independent edge pair gives 859,911 terminal-distinct
+four-poles.  The independent CaDiCaL and direct finite-domain classifiers
+each make 8,599,110 exact boundary queries.  Their complete tables agree
+byte-for-byte, every query is satisfiable, every pole has mask `0x3ff`,
+and there are no exceptional hits.
+
+A solver-independent verifier checks all 1,297 source records for order,
+distinctness, cubicity, connectedness, triangle-freeness, cyclic
+4-edge-connectivity, and non-Taitness.  It reconstructs all 859,911
+deletion poles byte-for-byte and checks both tables and all sixteen shard
+logs.  The replay reproduces the committed report exactly.
+
+Combining this classification with the exceptional-atom descent, the
+cyclic-three cap elimination through order 36, the simple-cap theorem, and
+the earlier complete order-22 and order-24 exclusions proves:
+
+> No bridge-free connected simple terminal-distinct four-pole of order at
+> most 26 has either exceptional exact fixed-five signature.
+
+Consequently any such pole has even order at least 28.  The complete
+package is `search/four-pole-order26-cyclic4-cap-20260727/`.  Canonical
+source completeness still relies on Snarkhunter and its option semantics.
+This is not a universal exceptional-signature theorem and does not resolve
+Five-CDC.
+
 ## Rooted three-pole base-pair frontier through order 17
 
 Audit date: **2026-07-27**.
@@ -2068,10 +2103,9 @@ even number of attachments.  This removes the elementary scalar obstruction
 to \(AA\).  The simultaneous lift remains exact and open: \(AA\) is
 equivalent to an \(\mathbb F_2^2\)-flow whose zero set contains the
 prescribed edge pair and whose complement packs two edge-disjoint boundary
-joins.  The complete order-22 and complete cyclically-four order-24 cap
-computations, together with the retained strict order-26 probe, are
-positive, but they do not prove this universal prescribed-zero packing
-statement.  Details are in
+joins.  The complete order-22, order-24, and cyclically-four order-26 cap
+computations are positive, but they do not prove this universal
+prescribed-zero packing statement.  Details are in
 `scratch/fixed-five-d5-four-pole-full-signature-frontier.md`.
 
 ## High-flow-resistance prescribed-\(AA\) theorem

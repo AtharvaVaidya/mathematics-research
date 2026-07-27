@@ -27,13 +27,16 @@ copied into a separate clean clone; it was not modified or committed.
   gate, rooted toggle lemma, bridge and linkage reductions, and current
   status/proof/experiment ledgers.
 - The compact complete cyclically-four order-24 cap package (155 source
-  graphs and 86,490 deletion poles), the retained strict-snark order-26
-  probe (280 source graphs and 185,640 deletion poles), and the explicit
+  graphs and 86,490 deletion poles), the complete cyclically-four order-26
+  cap package (1,297 source graphs and 859,911 deletion poles), the
+  retained strict-snark order-26 probe (280 source graphs and 185,640
+  deletion poles), and the explicit
   \(H_2,\ldots,H_5\) prescribed-\(AA\) certificate package (97,608
   independent edge pairs covered by 394 displayed labellings).  Each
   package includes a checksum ledger and independent semantic verifier.
-  The order-26 result is labelled as a finite strict-source probe, not a
-  complete order-26 classification.
+  The complete order-26 result raises only the scoped simple
+  terminal-distinct exceptional-pole lower bound to 28; it is not a
+  universal exceptional-signature theorem or a five-CDC resolution.
 - The standalone computer-free four-mark proof.
 - Current status, publication assessment, encoding proof, marked-cut
   reductions, and proof-obligation ledger.
