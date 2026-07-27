@@ -1,0 +1,161 @@
+{
+  "schema": "order100-global-profile-closure-v1",
+  "scope": {
+    "theorem": "No order-100 realization exists in the connected eight-mark extremal exact-zero size-four branch.",
+    "consequence": "Within this branch only, the ambient-order lower bound is at least 102.",
+    "not_claimed": [
+      "the Five-Cycle Double Cover Conjecture",
+      "the orientable Five-Cycle Double Cover Conjecture",
+      "other exact-zero matching sizes or exchange branches"
+    ]
+  },
+  "coverage": {
+    "canonical_excess_profile_pairs": 1002,
+    "row_star_survivor_profiles": 3,
+    "survivor_profiles": [
+      {
+        "x": [2, 2, 1, 1, 0, 0, 0, 0],
+        "y": [0, 0, 0, 0, 2, 2, 1, 1]
+      },
+      {
+        "x": [2, 2, 1, 1, 0, 0, 0, 0],
+        "y": [0, 0, 1, 0, 2, 2, 1, 0]
+      },
+      {
+        "x": [2, 2, 1, 1, 0, 0, 0, 0],
+        "y": [0, 0, 1, 1, 2, 2, 0, 0]
+      }
+    ],
+    "labelled_row_star_matrices": [1864, 1680, 1984],
+    "canonical_matrix_orbits": [128, 427, 272],
+    "canonical_matrix_orbits_total": 827,
+    "profile_formula_scope": "Every labelled incidence matrix, cyclic position assignment, common-edge bijection, and endpoint orientation in the corresponding profile; no matrix-orbit quotient is used by the SAT formulas."
+  },
+  "graph_dimensions": {
+    "c_edge_tokens": 46,
+    "core_order": 92,
+    "marked_subdivision_vertices": 8,
+    "ambient_order": 100,
+    "offset_policy": "Derived from the eight A-circuit half-lengths 5+x_i; no literal graph offset is used by the audited reconstruction."
+  },
+  "symmetry": {
+    "marked_position": "The diagonal marked connection anchors position 0 on every A and B circuit.",
+    "normalized_twist": "Each undirected B circuit may be traversed in either direction. Reversing its traversal complements every incidence orientation on that circuit and preserves the undirected graph, so its unique marked diagonal orientation bit is fixed to 0 without loss."
+  },
+  "profiles": [
+    {
+      "profile": 0,
+      "variables": 36388,
+      "clauses": 190207,
+      "base_clauses": 96072,
+      "semantic_lazy_clauses": 94135,
+      "terminal_pairing_clauses": 0,
+      "models_checked_by_discovery": 3398,
+      "cnf": {
+        "path": "scratch/order100-global-profile0-final.cnf",
+        "bytes": 4461514,
+        "sha256": "4e53fb27d42318aab96014ed1319f0e98398260e731176a186d0029285bb4d25"
+      },
+      "lrat": {
+        "path": "scratch/order100-global-profile0-final.lrat",
+        "bytes": 1975251213,
+        "sha256": "a34d8d9170f596e43d02779f6ac7d9271ba1bf1b08ea2ecf862cf59a2230e4c8",
+        "c_lrat_check": "VERIFIED",
+        "producer_log_path": "scratch/order100-global-profile0-cadical-check.txt",
+        "producer_log_sha256": "e86a5fccc9506518330e32677e515fb1d952734c15e1eefeb0bb7831961fda1f",
+        "checker_log_path": "scratch/order100-global-profile0-lrat-check.txt",
+        "checker_log_sha256": "f595dfaefc0b3c83c8b1a84701cbd65ca59dbef002a64aa59ea09640c0b87f9d"
+      },
+      "semantic_check": {
+        "path": "scratch/order100-global-profile0-semantic-check.json",
+        "sha256": "d6c4f159aaab92fb1e1f7a579f5df9c64ca7145e6a64bb68fda6fedd42db1917",
+        "lazy_clause_sha256": "54d5359811fe83c002d594dab085b7bd08ac087ddf03c45f828573b66d85993c"
+      }
+    },
+    {
+      "profile": 1,
+      "variables": 36188,
+      "clauses": 210922,
+      "base_clauses": 95537,
+      "semantic_lazy_clauses": 115385,
+      "terminal_pairing_clauses": 0,
+      "models_checked_by_discovery": 4599,
+      "cnf": {
+        "path": "scratch/order100-global-profile1-final.cnf",
+        "bytes": 5193027,
+        "sha256": "e3b3e7691f0c8b05193c9ea02055985fb6cf8fac0621c2a87371951a307b7741"
+      },
+      "lrat": {
+        "path": "scratch/order100-global-profile1-final.lrat",
+        "bytes": 2217270938,
+        "sha256": "265a74e8e9a3fc7606fba45734e7180d9137e1dbbdde7e95cae08f469f2047d5",
+        "c_lrat_check": "VERIFIED",
+        "producer_log_path": "scratch/order100-global-profile1-cadical-check.txt",
+        "producer_log_sha256": "0472756b0eaaf7b6d9a78f78ea1d25e684a82f8ebb1980f7070583828c3abebc",
+        "checker_log_path": "scratch/order100-global-profile1-lrat-check.txt",
+        "checker_log_sha256": "719e4a1274cb4d5db6cf9e31531ee53f8371c82146c8178e9b2d3c15905d8e2a"
+      },
+      "semantic_check": {
+        "path": "scratch/order100-global-profile1-semantic-check.json",
+        "sha256": "4e581f185b5a0c8533873add114307efc18c233ac52a73f4f47515dcff326b21",
+        "lazy_clause_sha256": "209f36a70f4b75bc9245a4e66650276438deff511f2ae8e0b97eb10cae217897"
+      }
+    },
+    {
+      "profile": 2,
+      "variables": 35988,
+      "clauses": 882386,
+      "base_clauses": 95002,
+      "semantic_lazy_clauses": 787384,
+      "terminal_pairing_clauses": 0,
+      "models_checked_by_discovery": 33585,
+      "cnf": {
+        "path": "scratch/order100-global-profile2-final.cnf",
+        "bytes": 27177235,
+        "sha256": "120fa2c89cb13dd7d706a58cadd290b805dec4a7aca3b92c97d68477c0849ac0"
+      },
+      "lrat": {
+        "path": "scratch/order100-global-profile2-final.lrat",
+        "bytes": 2360474153,
+        "sha256": "f96d88f051b2a00613265207118bc460102f34c69698a89143b2c971b0fc11cb",
+        "c_lrat_check": "VERIFIED",
+        "producer_log_path": "scratch/order100-global-profile2-cadical-check.txt",
+        "producer_log_sha256": "3cf065d2542b6f11672b110414388bc3f5868042215568d554c029d964f36135",
+        "checker_log_path": "scratch/order100-global-profile2-lrat-check.txt",
+        "checker_log_sha256": "955b7d6fc2b91033e11d269c1dda485dfea5bd4fa0576ae8b46242a147023c8b"
+      },
+      "semantic_check": {
+        "path": "scratch/order100-global-profile2-semantic-check.json",
+        "sha256": "f9f69ec7bff976d3df50f0bf32ed72cc62bdb2682b7ad733143d6d5417a39250",
+        "lazy_clause_sha256": "19c6d01d230174a0cb2fb88c17c05fc29fbda02dcaf39597c85a8e811b2fed6d"
+      }
+    }
+  ],
+  "implementation": {
+    "producer": {
+      "path": "scratch/solve_order100_global_profile_sat.py",
+      "sha256": "a45d3864bc7a4f678e12a7f0dee73ea4707c65f66990d7ddeac25b9bf381fbbc"
+    },
+    "independent_semantic_checker": {
+      "path": "scratch/check_order100_global_profile_cnf.py",
+      "sha256": "8ba14a482264cae2800a999f30b88802bda54c572e531a6dbf4e15d17cda7c0b"
+    },
+    "independent_geometry_library": {
+      "path": "scratch/check_order100_global_orbit_cnf.py",
+      "sha256": "a0e72e6879f5e8eadadb918209108a34b7b90d54e43b2a98f992a53aa6171c0d"
+    },
+    "lrat_checker": {
+      "path": ".tools/cert-checkers/drat-trim/lrat-check",
+      "sha256": "bd7eb8052623525814a0a37502b47f05375d9d9dfaf96ddc2fcd858958517cea"
+    },
+    "row_star_survivors": {
+      "path": "scratch/order100-exact-row-star-survivors.json",
+      "sha256": "bc3bfc17b098fcf2c8203a21da4e59dbce6ea4e5b2e391a28094671fc1a381c8"
+    },
+    "matrix_orbits": {
+      "path": "scratch/order100-row-star-matrix-orbits.json",
+      "sha256": "75f5706a4bc69069816a0c24bbbd26aade54d564141239976f64b9ce7a347eb8"
+    }
+  },
+  "certificate_statement": "For each profile, the independent semantic checker first matches every base CNF clause exactly, then verifies every appended clause from its forced partial graph. The independent C LRAT checker verifies that the resulting complete CNF is UNSAT."
+}

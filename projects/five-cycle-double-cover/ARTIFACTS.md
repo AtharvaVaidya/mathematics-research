@@ -28,12 +28,20 @@ copied into a separate clean clone; it was not modified or committed.
 - The order-\(100\) human unmarked-factor exclusion, exact local overlap
   tables, complete \(1002\)-profile cap and row-star censuses, independent
   Z3 replay, all \(827\) canonical row-star-compatible incidence matrices,
-  and three fixed-primary-matrix CNF/LRAT controls.  The controls do not
-  eliminate all \(827\) matrices; the order-\(100\) branch remains open in
-  this published bundle.
+  and three profile-level CNFs covering every labelled matrix and rotation
+  in the three survivor profiles.  The independent semantic checker,
+  exact closure manifest, proof-producer transcripts, and C
+  `lrat-check` transcripts are included.  The multi-gigabyte LRAT files
+  are hash-frozen but omitted.
 - The rooted four-mark cap-avoidance and bridge-elimination reductions,
   exact order-28 countermodel, frozen finite-screen summaries, and compact
   checkers.  The rooted theorem remains open.
+- The canonical Fano join/cut-certificate note and finite transcription
+  audit.  They prove necessary switch-local conditions; their uncrossing
+  step remains open.  Also included is the structured order-38 rooted
+  \(P_4\) screen source and its 240-row, 101,760-test negative result.
+  This screen is finite evidence on one construction family, not a
+  universal theorem.
 - The exact exceptional four-pole rooted-packing algebra, frozen 640-word
   table, independent JavaScript verifier, and human-checkable reduction.
   Máčajová--Mazzuoccolo--Tabarelli Conjecture 3.7 remains open.
@@ -67,9 +75,10 @@ f244876a123a0c0fe3ead39805ddd7c3aa18c7b7ed1e4762484f008052564ddc  preprint-fano-
 Package-local `SHA256SUMS` files freeze the countermodel and \(H_4\)
 records.  [`ORDER100_SHA256SUMS`](ORDER100_SHA256SUMS) freezes the
 order-\(100\) notes, complete survivor streams, matrix-orbit census, and
-the three fixed-matrix CNF/LRAT pairs.  The manifests are retained even
-when a large artifact named in them is intentionally absent, so that a
-separately obtained artifact can be authenticated.
+the fixed-matrix controls and profile-level closure package.  The
+manifests are retained even when a large artifact named in them is
+intentionally absent, so that a regenerated or separately obtained
+artifact can be authenticated.
 
 ## Deliberately omitted
 
@@ -90,6 +99,14 @@ The following were excluded from ordinary Git:
 | `search/h4-all-minimum-support-packing-20260726/all-supports-blocked.lrat` | 973,056,379 | `6bdeaff7fe3f37dca1c34c6653f0d1f1477490ffdd50f2d954fd88cc2c649934` |
 | `search/h4-all-minimum-support-packing-20260726/flow-at-most-three-zero.lrat` | 12,538,449 | `10b5805e94ad9731bcd8abf7b4ed83964b583acfbd8e2a5f8f177ba83809f235` |
 
+The profile-level order-\(100\) LRATs are also deliberately omitted:
+
+| Local file | Size (bytes) | SHA-256 |
+|---|---:|---|
+| `scratch/order100-global-profile0-final.lrat` | 1,975,251,213 | `a34d8d9170f596e43d02779f6ac7d9271ba1bf1b08ea2ecf862cf59a2230e4c8` |
+| `scratch/order100-global-profile1-final.lrat` | 2,217,270,938 | `265a74e8e9a3fc7606fba45734e7180d9137e1dbbdde7e95cae08f469f2047d5` |
+| `scratch/order100-global-profile2-final.lrat` | 2,360,474,153 | `f96d88f051b2a00613265207118bc460102f34c69698a89143b2c971b0fc11cb` |
+
 Those files remain in the source laboratory under the absolute local
 paths shown above.  The frozen result summaries report successful
 verification with C `lrat-check`, verified CakeML `cake_lpr`, and the
@@ -102,9 +119,12 @@ standalone replay of the complete \(H_4\) theorem.
 The countermodel certificates refute intermediate strategies, not
 five-CDC.  The \(H_4\) result concerns one fixed graph.  The four-mark
 theorem closes one marked-core branch under additional hypotheses.
-The order-\(100\) LRAT files prove UNSAT only for one retained primary
-matrix in each of three surviving profile orbits; they do not prove
-UNSAT for every matrix in those profiles.
+The earlier `order100-global-word-profile*` LRATs prove UNSAT only for one
+retained primary matrix in each survivor profile.  The newer
+`order100-global-profile*` formulas induce the incidence matrix and cover
+all labelled matrices and rotations in all three profiles.  Their checked
+UNSAT result excludes order \(100\) only in the connected eight-mark
+extremal exact-zero size-four branch.  It does not prove five-CDC.
 The retained 240-row rooted screen is a frozen result; this bundle does
 not claim a fresh full replay of its consumer analysis.  A fresh replay
 did regenerate all 13,824 producer rows and 240 target witnesses.  The

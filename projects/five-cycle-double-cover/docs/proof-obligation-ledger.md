@@ -448,7 +448,16 @@ Open obligations:
     order-24 extension adds 617,079,260 flow orbits and 5,161,169 bad
     flows, again with zero switch-local bad flows.  Its identities and
     premises are independently checked; completeness relies on the retained
-    Snarkhunter run.
+    Snarkhunter run.  The exact cut reduction in
+    `docs/fano-canonical-join-cut-certificates.md` now shows that failure of
+    all seven value-class packing tests forces a rainbow-odd component for
+    every nonzero functional.  For a fixed functional and line value,
+    failure of all line-preserving switches is equivalent to a split cut in
+    \(G-M_t\), with a four-shore checkerboard whose two diagonal systems
+    carry the two affine translation pairs.  This is a human-checkable
+    necessary condition, not yet an uncrossing proof: cyclic
+    4-edge-connectivity does not by itself exclude the split cut after
+    deleting \(M_t\).
 29. **Oum-potential pure-merge one-circuit route refuted; reduced branch
     open:** the exact 12-vertex cap in
     `search/fano-pure-merge-one-switch-countermodel-46v-20260726/` has a
@@ -543,15 +552,33 @@ Open obligations:
     audit passed the human proof.  Thus the extremal exact-zero size-four
     branch first advanced to \(|V(G)|\ge90\).  Obligation 38 records the
     subsequent low-surplus improvement.
-38. **Orders through 94 eliminated in the connected size-four branch:**
+38. **Orders through 100 eliminated in the connected size-four branch:**
     the three-matching cycle-rank argument gives the general Kempe
     incidence inequality \(2p+u\le d+2\).  Girth gives matching
     marked--marked and marked--unmarked overlap bounds, and exact surplus
     capacity excludes ambient orders \(88,90,92,94\).  An independent
-    reconstruction passed the proof, so this branch has
-    \(|V(G)|\ge96\).  An explicit abstract order-96 incidence matrix
-    passes every proved pairwise and simultaneous-switch constraint,
-    showing that this method alone cannot improve the bound.
+    reconstruction passed the proof.  Three later local girth lemmas
+    eliminate the displayed abstract survivor and impose a doubled-neighbour
+    spacing constraint.  A solver-free census exhausts all 109 canonical
+    order-96 profile pairs with zero matrices, and an independent QF_LIA
+    encoding returns 109/109 UNSAT.  A separate audit normalized all
+    108,900 labelled profile pairs and repeated the search without the
+    forward prune.  At order 98, the general incidence inequality first
+    excludes the arithmetically possible unmarked circuit.  A
+    human-checkable weighted-prism/\(K_{3,3}\) lemma supplies the missing
+    diagonal overlap cap.  A solver-free census then exhausts all 335
+    canonical profile pairs with zero matrices; independent Z3 and HiGHS
+    formulations agree, and a prune-free replay remains empty after
+    9,193,235 nodes.  At order 100, a human argument excludes unmarked
+    factor circuits.  Exact weighted row/column stars reduce 1,002
+    all-marked profile pairs first to 155 and then to three.  Three
+    profile-level CNFs choose every incidence matrix, cyclic position
+    set, bijection, and twist inside those alignments; independently
+    checked LRATs prove all three UNSAT already in the deleted-matching
+    core.  A producer-free semantic checker regenerates the base formulas
+    and verifies all 996,904 lazy clauses as forced short circuits.
+    Hence this branch now has \(|V(G)|\ge102\).  This remains a branch
+    bound, not a five-CDC resolution.
 39. **Rooted bridge mechanism eliminated; four-way linkage open:** under
     the marked cyclic-cut inequality, a bridge after deleting the
     forbidden cap creates an unmarked 2-cut whose shores must contain
@@ -572,3 +599,33 @@ Open obligations:
     exceptional four-type factor; the five-type case has one auxiliary
     escape.  The remaining obligation is the resulting rooted four-way
     linkage/exceptional-signature atom, not boundary-orbit ambiguity.
+41. **Ozeki four-terminal gate reduced to low separator interfaces:**
+    after certificate-safe irreducibility reductions, Ozeki's \(V_8\)
+    outcome contains two explicitly displayed vertex-disjoint
+    pair-circuits and cannot be a rooted failure.  Before any nontrivial
+    one-terminal reduction, the four private factor-circuits also prove
+    triple cyclability and exclude the nice decomposition.  A failure of
+    the remaining forbidden-vertex path hypothesis has one of two exact
+    forms.  If deletion of the forbidden vertex is not 2-connected, a
+    two-cut has terminal split \(2+2\), or split \(1+3\) with a singleton
+    one-terminal side.  Directly splicing two triple-circuits eliminates
+    the \(2+2\) split.  If deletion remains 2-connected, three stable
+    vertices separate the four terminals into exactly four components
+    with boundary profile \(2222\) or \(2223\).  Triple cyclability
+    eliminates \(2222\) and forces the unique incidence graph
+    \(K_{4,3}\) minus a three-edge matching.  Irreducibility makes all
+    three boundary-two components singleton terminals.  Any two such
+    rows share a separator neighbour, so their private circuits cannot
+    be vertex-disjoint.  This eliminates the three-vertex row star.
+    Independently, its counterfactual triangular-prism quotient would
+    force the marked and root edges to have the same Tait colour by a
+    per-colour cross-edge count.  Only the \(1+3\) singleton two-cut
+    interface, and preservation through arbitrary one-terminal
+    reductions, remain open.
+42. **Exceptional split atoms isolated, not eliminated:** the surviving
+    \((1,1)\) and \((2,0)\) internal-zero distributions split by whether
+    the exceptional shore has a simple opposite cap or a terminal-flanked
+    cap.  Smoothing the latter is exact.  In the simple six-mark case a
+    \(2+4\) bridge descends to a closed four-mark atom, while a \(3+3\)
+    bridge exposes a cyclic five-cut of type \(000bb\).  These sharper
+    atoms remain open.

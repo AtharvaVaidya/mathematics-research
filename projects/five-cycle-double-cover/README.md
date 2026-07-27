@@ -110,8 +110,8 @@ inequalities.  The matrix passes with minimum slack one.  It is a
 method-frontier certificate, not a graph realization or a conjecture
 counterexample.
 
-The next ambient order, \(100\), now has a sharper but still scoped
-analysis in
+The next ambient order, \(100\), now has a certified but still scoped
+exclusion in
 [`docs/order100-unmarked-exclusion-and-row-star-frontier.md`](docs/order100-unmarked-exclusion-and-row-star-frontier.md).
 A short human-checkable Kempe-incidence proof excludes unmarked
 bichromatic factor circuits.  In the all-marked case, a solver-free
@@ -121,13 +121,33 @@ them to three abstract profile orbits.  An independently written Z3
 replay agrees on the three survivors.  The complete star-compatible
 incidence space contains \(827\) matrix orbits.
 
-The three particular primary matrices retained by the census have been
-globally glued and proved UNSAT, with replayable CNF and LRAT artifacts
-accepted by two proof checkers.  This does **not** eliminate the other
-matrices in the \(827\)-orbit frontier.  Therefore the rigorous
-order-\(100\) conclusion currently published here is a human
-unmarked-factor exclusion plus an exact finite local frontier, not an
-order-\(100\) branch exclusion and not a resolution of five-CDC.
+A profile-level gluing formula then ranges over every labelled matrix,
+cyclic position assignment, common-edge bijection, and endpoint
+orientation in each of those three profiles; it does not select one
+representative matrix.  All three profile formulas are UNSAT already in
+\(G-M\).  Their committed CNFs have independently verified LRAT hashes,
+and a separate producer-free semantic checker reconstructs the complete
+base formulas and verifies all \(996{,}904\) dynamically learned clauses
+from forced short circuits.  The exact scoped consequence is
+\[
+  |V(G)|\ge102
+\]
+in the connected eight-mark extremal exact-zero size-four branch.  This
+does **not** cover other matching sizes or exchange branches and is not a
+resolution of five-CDC.
+
+Two adjacent reductions are also current but remain open:
+
+- [`docs/fano-canonical-join-cut-certificates.md`](docs/fano-canonical-join-cut-certificates.md)
+  converts failure of the seven canonical Fano packing tests into exact
+  binary cut certificates and a checkerboard obstruction.  These are
+  human-checkable necessary conditions; the required uncrossing step is
+  open.
+- [`scratch/rooted-p4-structured-endpoint-screen-result.json`](scratch/rooted-p4-structured-endpoint-screen-result.json)
+  records an exact negative screen on 240 structured order-38 rows:
+  101,760 endpoint-path tests and no rooted \(P_4\) failure.  This is
+  finite evidence on one labelled construction family, not a universal
+  rooted theorem and not five-CDC.
 
 The cyclic six-cut branch has also been reduced more sharply:
 
@@ -182,8 +202,8 @@ so none satisfies the surviving connected-branch threshold of ten.
   including graph-convention cautions.
 - [`docs/order100-unmarked-exclusion-and-row-star-frontier.md`](docs/order100-unmarked-exclusion-and-row-star-frontier.md)
   gives the complete human proof excluding unmarked factors at order
-  \(100\), then clearly separates it from the finite row-star census and
-  fixed-matrix SAT certificates.
+  \(100\), proves completeness of the profile-level finite encoding, and
+  clearly separates the scoped order-\(100\) exclusion from five-CDC.
 - [`docs/publication-assessment-20260726.md`](docs/publication-assessment-20260726.md)
   separates apparently new statements from known ingredients.
 - [`docs/current-status.md`](docs/current-status.md) and
@@ -211,6 +231,12 @@ python3 -B scratch/enumerate_order100_incidence_relaxation.py
 python3 -B scratch/enumerate_order100_exact_row_star_relaxation.py \
   --baseline-json scratch/order100-incidence-relaxation-survivors.json
 python3 -B scratch/enumerate_order100_row_star_matrix_orbits.py
+for profile in 0 1 2; do
+  python3 -B scratch/check_order100_global_profile_cnf.py \
+    --profile "$profile" \
+    --cnf "scratch/order100-global-profile${profile}-final.cnf"
+done
+python3 -B scratch/audit_fano_canonical_cut_certificates.py
 python3 -B scratch/verify_rooted_four_mark_countermodel.py
 python3 -B scratch/four_pole_two_plus_two_algebra.py
 node scratch/verify_four_pole_two_plus_two_algebra.mjs

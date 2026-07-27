@@ -1435,7 +1435,7 @@ factor-transversal mark records, every record has a good selector
 totals.  This finite result is consistent with, but not used by, the
 general order-88 exclusion proof.
 
-## Low-surplus Kempe bound through order 94
+## Low-surplus Kempe bound and certified order-100 global-profile closure
 
 Audit date: **2026-07-26**.
 
@@ -1450,25 +1450,81 @@ the human-checkable inequality
                          2p+u\le d+2.
 \]
 Ambient girth at least ten also gives sharp marked--marked and
-marked--unmarked overlap bounds.  Exact surplus capacity then excludes
-\(t=0,1,2,3\) in \(|V(G)|=88+2t\).  Therefore the connected extremal
+marked--unmarked overlap bounds.  Exact surplus capacity first excludes
+\(t=0,1,2,3\) in \(|V(G)|=88+2t\), giving \(|V(G)|\ge96\).
+
+Three further human local lemmas sharpen the order-\(96\) boundary:
+a sum-\(26\) triple-overlap obstruction, a diagonal mixed-parity
+obstruction, and a spacing theorem saying that a marked core \(C_{10}\)
+can double-overlap with at most one opposite marked core \(C_{12}\).
+After those lemmas are imposed, a solver-free canonical backtracker
+exhausts all \(109\) simultaneous-\(S_8\) profile-pair orbits in \(3,266\)
+nodes and finds no incidence matrix.  A separately implemented
+quantifier-free integer encoding returns UNSAT on all \(109\) instances.
+An independent audit additionally normalized all \(108,900\) labelled
+profile pairs and reran a prune-free DFS with the same empty result.
+At ambient order \(98\), the factor-size equation first permits an
+unmarked circuit.  A direct application of the same incidence inequality
+excludes that possibility, leaving \(335\) simultaneous-\(S_8\)
+all-marked profile-pair orbits.  A further human local lemma shows that
+a same-mark pair with total excess two cannot share three common-colour
+edges: after taking the symmetric difference, contraction gives either
+the triangular prism or \(K_{3,3}\), and a weighted short circuit
+contradicts girth ten.
+
+The strengthened solver-free census exhausts all \(335\) orbits in
+\(32,327\) nodes and finds no matrix.  A separately generated Z3
+encoding returns \(335/335\) UNSAT.  A third audit independently
+normalizes all \(792^2=627,264\) labelled profile pairs, reruns the
+primary search without its forward prune for \(9,193,235\) nodes, and
+finds all \(335\) independently generated HiGHS models infeasible.
+Deleting only the new diagonal cap leaves exactly two survivors.
+
+At order \(100\), a human Kempe-incidence argument first excludes every
+factor with an unmarked circuit.  The all-marked cap-table census has
+\(1002\) canonical excess-profile pairs, of which \(155\) survive.  Exact
+weighted two-circuit row-and-column stars reduce these to three relative
+alignments of the partition
+\((2,2,1,1,0,0,0,0)\).  A profile-level Boolean encoding then chooses,
+rather than fixes, every incidence cell, cyclic position set, bijection,
+and endpoint twist.  It reconstructs the complete \(92\)-vertex
+suppressed core and rejects precisely forced circuits of length below ten.
+
+The three final formulas have respectively
+\[
+\begin{array}{c|r|r|r}
+\text{profile}&\text{variables}&\text{base clauses}&\text{sound lazy clauses}\\
+\hline
+0&36\,388&96\,072&94\,135\\
+1&36\,188&95\,537&115\,385\\
+2&35\,988&95\,002&787\,384
+\end{array}
+\]
+and are all UNSAT before any of the \(105\) terminal pairings is reached.
+CaDiCaL emitted LRAT proofs, and the independent C `lrat-check` accepted
+all three.  A separately written producer-free checker regenerates the
+local option domains and base CNFs and verifies, clause by clause, that
+every one of the \(996\,904\) appended clauses forces an actual short
+circuit.  It also checks that the three formulas exactly match the three
+surviving row-star profiles.  Consequently the connected extremal
 exact-zero size-four branch satisfies
 \[
-                         |V(G)|\ge96.
+                         |V(G)|\ge102.
 \]
 
-An independently prompted agent reconstructed the proof, generalized
-the one-switch inequality to simultaneous switches, and passed every
-arithmetic step.  A transparent checker verifies an explicit abstract
-order-\(96\) incidence matrix against all proved pairwise, single-switch,
-and \(255+255\) nonempty multi-switch constraints.  It passes with
-minimum slack one.  Thus this local method has reached its exact
-frontier; the matrix is not asserted to be graph-realizable.
-
-The proof, audit, and checker are
+The proof, audits, and checkers are
 `docs/order94-kempe-surplus-bound.md`,
-`docs/audit-and-generalization-order94-kempe.md`, and
-`scratch/verify_order96_kempe_incidence_frontier.py`.  This is a
+`docs/audit-and-generalization-order94-kempe.md`,
+`docs/order96-incidence-skeleton-nonrealizability.md`,
+`docs/order96-complete-incidence-census.md`,
+`docs/diagonal-c14-c10-triple-overlap.md`,
+`docs/order98-complete-incidence-census.md`,
+`docs/order98-independent-incidence-audit.md`,
+`docs/order100-unmarked-exclusion-and-row-star-frontier.md`,
+`scratch/enumerate_order96_incidence_system.py`, and
+`scratch/check_order96_incidence_system_z3.py`, together with their
+order-\(98\) counterparts, plus
+`scratch/check_order100_global_profile_cnf.py`.  This is a
 branch-specific theorem and does not resolve five-CDC.
 
 ## Rooted bridge elimination
@@ -1493,6 +1549,37 @@ obstruction, not trace feasibility or a hidden bridge.  The proof and a
 240-instance structured finite screen are recorded in
 `docs/rooted-four-mark-bridgeless-reduction.md`.
 
+Subdividing the four marks converts this obstruction to a four-terminal
+linkage problem.  Ozeki's four-terminal theorem has two structural
+outcomes after its prerequisite reductions.  The \(V_8\)-subdivision
+outcome is impossible here: its four spoke paths and four alternating rim
+segments explicitly form two vertex-disjoint pair-circuits.  The private
+factor-circuits also settle triple cyclability and exclude the nice
+decomposition when the original subdivided graph is already irreducible;
+see `docs/rooted-four-mark-ozeki-linkage-gate.md`.
+
+The remaining forbidden-vertex path failure has now been localized.  If
+deletion of the forbidden vertex is not 2-connected, an articulation
+initially gives a \(2+2\) terminal split or a \(1+3\) split with a
+singleton one-terminal side.  Triple-circuit splicing eliminates the
+\(2+2\) split.  If deletion remains 2-connected, Ozeki's
+four-terminal path corollary and a subcubic degree count give a stable
+three-vertex separator, exactly four terminal components, and boundary
+profile \(2222\) or \(2223\).  Triple cyclability eliminates \(2222\)
+and forces the \(2223\) incidence graph to be \(K_{4,3}\) minus a
+three-edge matching.  One-terminal irreducibility makes each of its
+three boundary-two components a singleton.  The corresponding private
+circuits must use both separator neighbours, but any two boundary-two
+rows share a neighbour, contradicting their vertex-disjointness.  Thus
+the entire three-vertex row star is impossible.  As an independent
+check, the counterfactual triangular-prism quotient forces its marked
+and root edges to have the same Tait colour by counting cross edges of
+each colour from its two triangles, contrary to the inherited
+precolouring.  The sole P4 residual is now the \(1+3\) singleton
+two-vertex interface, together with the problem of preserving the
+private circuits through one-terminal reductions.  The proof is in
+`docs/rooted-four-mark-p4-row-star-reduction.md`.
+
 ## Exceptional four-pole rooted-packing algebra
 
 Audit date: **2026-07-26**.
@@ -1512,6 +1599,15 @@ both avoid the nonzero cap.  Hence an exceptional four-type shore must
 contain at least one internal zero edge.  Since there are two proper
 zero edges in total, only the distributions \((1,1)\) and \((2,0)\),
 with the four-type shore first, remain.
+
+The cap geometry has now been separated correctly.  A simple opposite cap
+produces rooted four- or six-mark atoms; a terminal-flanked cap smooths
+exactly to a simple 2-connected unrooted atom.  In the six-mark simple-cap
+case, a bridge gives either a smaller closed four-mark atom or a cyclic
+five-cut with exact boundary word \(000bb\).  Repeated nontrivial
+two-plus-two pole decompositions descend to a smaller exceptional shore.
+These are reductions, not eliminations; the surviving obligations are
+listed in `docs/exceptional-four-cut-surviving-split-atoms.md`.
 
 An exact ten-state two-plus-two composition table gives a further
 minimality reduction: an exceptional four-type signature cannot be

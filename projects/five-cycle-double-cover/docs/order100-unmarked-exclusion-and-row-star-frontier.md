@@ -1,11 +1,12 @@
-# Order 100: unmarked-factor exclusion and the exact row-star frontier
+# Order 100: unmarked-factor exclusion and certified profile-level closure
 
 Date: **2026-07-26**.
 
 Status: **HUMAN-CHECKABLE UNMARKED EXCLUSION / SOLVER-FREE FINITE
-ROW-STAR CENSUS / INDEPENDENT EXACT-SMT REPLAY / THREE ABSTRACT PROFILE
-ORBITS REMAIN / CONNECTED EIGHT-MARK SIZE-FOUR BRANCH ONLY / FIVE-CDC
-STILL OPEN**.
+ROW-STAR CENSUS / INDEPENDENT EXACT-SMT REPLAY / SEMANTICALLY CHECKED
+PROFILE CNFS AND VERIFIED LRATS / ORDER 100 EXCLUDED IN THE CONNECTED
+EIGHT-MARK EXTREMAL EXACT-ZERO SIZE-FOUR BRANCH ONLY / FIVE-CDC STILL
+OPEN**.
 
 This note advances the connected eight-mark extremal exact-zero
 size-four branch from the order-\(98\) exclusion.  At ambient order
@@ -15,9 +16,12 @@ Kempe-incidence argument.
 
 The resulting all-marked problem has \(1002\) excess-profile orbits.  The
 proved local overlap caps leave \(155\).  An exact weighted-kernel
-row-and-column-star census leaves only three.  These are still abstract
-local incidence objects: the independently chosen stars have not yet been
-glued to one global cubic rotation system.
+row-and-column-star census leaves only three.  A profile-level gluing
+formula covers every labelled incidence matrix and rotation system in all
+three profiles.  Independently checked lazy clauses and verified LRATs
+show all three formulas UNSAT already before the eight marked terminals
+are paired.  Thus order \(100\) is excluded in this branch, raising its
+scoped ambient-order lower bound to \(102\).
 
 Nothing here resolves the five-cycle double cover conjecture or makes an
 orientable claim.
@@ -386,7 +390,7 @@ M=\begin{pmatrix}
 The JSON artifact includes an explicit feasible position partition for
 every row and every column.
 
-## 7. Global gluing: certified fixed-matrix controls
+## 7. Global gluing: certified profile-level closure
 
 The phrase "three profile orbits" in Section 6 must not be confused with
 three incidence matrices.  The exact row/column-star domain join contains,
@@ -406,69 +410,118 @@ the matrices under these simultaneous permutations and obtains
 matrix orbits, for \(827\) in total.  The complete artifact is
 `scratch/order100-row-star-matrix-orbits.json`.
 
-For the one primary matrix retained in each profile by Section 5, the
-global gluing problem has also been decided.  The finite variables choose:
+The profile-level formula
+`scratch/solve_order100_global_profile_sat.py` does not fix any one of
+these matrices.  For every ordered pair \((i,j)\), one Boolean option
+chooses
+\[
+       (S^A_{ij},S^B_{ij},\pi_{ij},\epsilon_{ij}),    \tag{17}
+\]
+where the two subsets have equal size, \(\pi_{ij}\) bijects their common
+\(c\)-edges, and \(\epsilon_{ij}\) chooses the endpoint orientations.
+An off-diagonal option may be empty.  A diagonal option is nonempty and
+contains position zero on both shores.
 
-1. one complete cyclic neighbour word for each of the sixteen factor
-   circuits;
-2. in every nonempty incidence cell, a bijection between its row and
-   column positions and an orientation bit for every shared edge; and
-3. after a girth-ten expansion of \(G-M\) is found, one of the \(105\)
-   pairings of the eight marked subdivision vertices.
+Exactly-one constraints cover every \(A\)-position and every \(B\)-position
+once.  Thus the selected subsets induce the incidence matrix rather than
+receiving one as input.  Equal subset sizes give the same entry from both
+shores.  The option domains impose the exact two-circuit weighted-kernel
+test, while separate support variables impose the marked Kempe bound.
+Consequently every selected assignment reconstructs all \(46\) labelled
+\(c\)-edges and every \(B\)-edge of \(G-M\).
 
-Every cell option is first checked against the exact two-circuit weighted
-kernel.  The selected options reconstruct one labelled graph, with no
-geometric information discarded.  A short circuit yields a clause
-forbidding precisely the chosen cell options which determine its
-\(B\)-edges.
+There are two harmless normalizations.  The private marked connection
+anchors cyclic position zero on every circuit.  Also, each undirected
+\(B_j\)-circuit has two traversal descriptions.  Reversing that traversal
+complements all of its orientation bits but leaves the undirected graph
+unchanged.  Since \(B_j\) has one diagonal marked connection, its
+orientation bit there may therefore be fixed to zero without loss.
 
-The incremental propositional solver
-`scratch/solve_order100_global_word_gluing_sat.py` found all three primary
-matrices UNSAT already in \(G-M\):
+Conversely, any graph in one of the three profiles supplies exactly such
+an assignment: read its common positions, their edge identification, and
+their endpoint orientations.  The exact position covers are automatic,
+the support bound follows from the marked Kempe inequality, and every
+two-circuit option passes because the whole graph has girth at least ten.
+This proves that the three formulas cover every labelled matrix in (15),
+and hence every one of the \(827\) canonical matrix orbits in (16).  No
+matrix quotient is used inside the formulas.
 
-| primary profile | variables | final clauses | lazy models |
-|---:|---:|---:|---:|
-| 0 | 1320 | 98478 | 1903 |
-| 1 | 1520 | 144354 | 2419 |
-| 2 | 1710 | 128696 | 2314 |
+For a complete option assignment, the program derives the token, core,
+and ambient orders
+\[
+                       46,\qquad92,\qquad100           \tag{18}
+\]
+from the eight half-lengths \(5+x_i\).  A short circuit in the reconstructed
+partial graph yields a clause containing precisely the selected cell
+options which force its \(B\)-edges.  If \(G-M\) reached girth ten, the
+program would test all \(105\) pairings of the eight marked subdivision
+vertices.
 
-For each row, the final CNF was replayed by CaDiCaL and CryptoMiniSat.
-CaDiCaL emitted a DRAT proof, `drat-trim` converted it to LRAT, and both
-the independent C `lrat-check` program and the CakeML-generated
-`cake_lpr` program accepted the LRAT.  The CNF hashes are
+The three final formulas are UNSAT:
 
-```text
-profile 0  04ed5bd9edd2a32eb77f4a3dd6373d5551500312c9e2c0da2b74d7eca9b5c61e
-profile 1  f05546373b4f16f78bdac228b115bbbcb9285e7efc27a5e3a85e41283b083cfe
-profile 2  9b08d985a4b6a447163af0788e0099ab1094e903e1512fc5bbda471320a510be
-```
+| profile | variables | base clauses | checked lazy clauses | final clauses | discovery models | terminal clauses |
+|---:|---:|---:|---:|---:|---:|---:|
+| 0 | 36388 | 96072 | 94135 | 190207 | 3398 | 0 |
+| 1 | 36188 | 95537 | 115385 | 210922 | 4599 | 0 |
+| 2 | 35988 | 95002 | 787384 | 882386 | 33585 | 0 |
 
-Their LRAT hashes are
+The zeroes in the last column mean that every profile is already
+impossible in \(G-M\); the terminal-pairing fallback was never used.
 
-```text
-profile 0  9f38e77f994012d5207644eec262be88a156a53d9c3d4768c02fed232499ba18
-profile 1  10aeb13e30a24df57a1541031744180845925f68c973e750b19a6c1f56a9fa99
-profile 2  31fa3c659e80fa6997f6748bbdcc22494b4c27febb4ee993f33ec34907e90669
-```
+### 7.1 Independent semantic and proof checking
 
-This certified control is stronger than pairwise star compatibility: a
-separate exact checker finds that all three primary matrices do admit
-pairwise-compatible row and column rotations, but their first glued
-expansions have girths \(5,4,6\).  The certified obstruction therefore
-uses circuits traversing multiple factor circuits.
+An UNSAT certificate for an unsoundly strengthened formula would prove
+nothing, so the dynamically learned clauses are checked separately.
+`scratch/check_order100_global_profile_cnf.py` does not import the
+producer.  It independently regenerates:
 
-Most importantly, three fixed-matrix UNSAT results do **not** exclude the
-complete set of \(827\) canonical matrix cases in (16).  The next exact question is
-global gluing over that complete matrix-orbit artifact.  A SAT realization
-would only show that this incidence frontier is geometrically nonempty; a
-checked UNSAT result for every matrix orbit would exclude order \(100\) in
-this branch.
+1. all cell position subsets, bijections, and orientation choices;
+2. the fixed-position weighted-kernel decision;
+3. every sequential exactly-one encoding, position cover, support link,
+   and Kempe support clause; and
+4. the graph forced by each learned negative option clause.
+
+For each CNF it first matches the entire base-clause prefix exactly.  It
+then accepts a learned clause only after finding a parallel pair or a
+circuit shorter than ten in the corresponding forced partial graph.  The
+checker found \(94135,115385,787384\) such sound clauses, respectively,
+and no terminal-pairing clause.  It independently derives (18) and checks
+that the three profile pairs agree exactly with
+`scratch/order100-exact-row-star-survivors.json`.
+
+CaDiCaL produced a direct LRAT for each final CNF.  The independent C
+`lrat-check` program reports `VERIFIED` on all three.  The frozen hashes
+are:
+
+| profile | CNF SHA-256 | LRAT SHA-256 |
+|---:|:---|:---|
+| 0 | `4e53fb27d42318aab96014ed1319f0e98398260e731176a186d0029285bb4d25` | `a34d8d9170f596e43d02779f6ac7d9271ba1bf1b08ea2ecf862cf59a2230e4c8` |
+| 1 | `e3b3e7691f0c8b05193c9ea02055985fb6cf8fac0621c2a87371951a307b7741` | `265a74e8e9a3fc7606fba45734e7180d9137e1dbbdde7e95cae08f469f2047d5` |
+| 2 | `120fa2c89cb13dd7d706a58cadd290b805dec4a7aca3b92c97d68477c0849ac0` | `f96d88f051b2a00613265207118bc460102f34c69698a89143b2c971b0fc11cb` |
+
+The full paths, byte sizes, checker hashes, semantic-clause hashes, and
+scope statement are frozen in
+`scratch/order100-global-profile-closure-manifest.json`.
+
+Combining Section 2, the exact profile reduction of Sections 3--6, the
+semantic checker, and the three LRATs gives the scoped conclusion:
+
+> **Order-\(100\) profile-level exclusion.**
+> No order-\(100\) realization exists in the connected eight-mark
+> extremal exact-zero size-four branch.  Together with the earlier
+> lower-order exclusions in this same branch, its ambient-order lower
+> bound is therefore \(\lvert V(G)\rvert\ge102\).
+
+This is not a proof of the Five-Cycle Double Cover Conjecture.  It does not
+cover other exact-zero matching sizes, other exchange branches, or the
+orientable conjecture.
 
 ## AI-use disclosure
 
 OpenAI Codex agents, under human direction, discovered and checked the
 unmarked-factor argument, formulated the fixed-position weighted-kernel
-model, wrote the two primary enumerators and the independent replay, and
-prepared this note.  The human arguments, exact finite domains, complete
-survivor artifacts, and executable checks are supplied for inspection.
-This is not independent human peer review.
+and profile-level SAT models, wrote the enumerators and independent
+semantic replay, and prepared this note.  The human arguments, exact
+finite domains, complete survivor artifacts, CNFs, LRATs, and executable
+checks are supplied for inspection.  This is not independent human peer
+review.
