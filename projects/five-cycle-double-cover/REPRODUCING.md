@@ -21,6 +21,143 @@ temporary directory is removed after success or failure.
 The frontier statement concerns one explicit positive instance.  It is not a
 census or clearance of the full reduced minimum-counterexample domain.
 
+## Marked-circuits preprint and companion checks
+
+The 29-page publication draft is
+`preprint-rooted-four-cut/output/pdf/main.pdf`.  Its checksum ledger covers
+the source, PDF, human-audit files, order-22 separation checkers, selected
+rooted-interface notes, and the key order-17/order-22 frozen artifacts:
+
+```sh
+(cd preprint-rooted-four-cut && shasum -a 256 -c CHECKSUMS-PUBLISHED.sha256)
+```
+
+`CHECKSUMS.sha256` freezes the full laboratory package, including the two
+large order-28 streams omitted from ordinary Git.
+
+Build the manuscript with:
+
+```sh
+(cd preprint-rooted-four-cut && tectonic main.tex --outdir output/pdf)
+```
+
+The two order-22 separation implementations can be compiled and exercised
+on the complete order-12 control corpus without rerunning the much larger
+order-22 census:
+
+```sh
+clang++ -O3 -std=c++20 \
+  scratch/tait_all_coloring_mark_separation.cpp \
+  -o /tmp/tait_all_coloring_mark_separation
+clang++ -O3 -std=c++20 \
+  scratch/verify_order22_separation_via_matchings.cpp \
+  -o /tmp/verify_order22_separation_via_matchings
+
+/opt/homebrew/bin/geng -cq -d3 -D3 12 |
+  /tmp/tait_all_coloring_mark_separation \
+    --target 4 --stop-after-first
+/opt/homebrew/bin/geng -cq -d3 -D3 12 |
+  /tmp/verify_order22_separation_via_matchings \
+    --target 4 --stop-after-first
+```
+
+Both should report 85 rows, 80 Tait-colourable graphs, 307 normalized
+colourings, and zero target-four witnesses; the independent implementation
+also reports 902 perfect matchings.
+
+Verify the retained rooted order-17 theorem and its independent summary:
+
+```sh
+python3 search/rooted-three-pole-frontier-20260727/verify_order17_base_pair_run.py \
+  search/rooted-three-pole-frontier-20260727/artifacts/order17-base-pair
+python3 search/rooted-three-pole-frontier-20260727/verify_report.py
+```
+
+The full order-22 universal-separation and cap-slice computations are
+expensive frozen censuses.  Their exact commands, environment, scope
+warnings, counts, source hashes, and transcript identities are recorded in
+`scratch/order22-universal-four-separation-result.json`,
+`docs/order22-universal-four-separation-screen.md`, and
+`search/four-pole-order22-cap-20260727/`.  This publication preparation did
+not claim a fresh independent full replay.
+
+The newer compact rooted and four-pole packages have self-contained semantic
+verifiers and checksum ledgers:
+
+```sh
+for package in \
+  search/four-pole-order24-cyclic4-cap-20260727 \
+  search/four-pole-order26-cyclic4-cap-20260727 \
+  search/four-pole-order26-strict-cap-probe-20260727 \
+  search/rooted-three-pole-nontait-endpoint-frontier-20260727 \
+  search/mnp-h2-h5-aa-deletion-probe-20260727
+do
+  (
+    cd "$package"
+    python3 verify.py > /tmp/"$(basename "$package")"-report.json
+    cmp /tmp/"$(basename "$package")"-report.json report.json
+    shasum -a 256 -c SHA256SUMS
+  )
+done
+```
+
+The order-24 and order-26 cyclically-four packages are complete for their
+documented retained sources.  They do not imply a lower bound by
+themselves: an earlier reduction of the mixed cyclic-three relation to this
+cap class used an invalid one-sided base-pair inference.  The later
+endpoint-fork lift gives a separate sound two-sided reduction.  The
+strict-snark order-26 package remains a finite retained-source control.
+The \(H_2,\ldots,H_5\) package uses explicit positive edge labellings, so
+its \(AA\) certificates can be checked without trusting a SAT solver.
+The corrected Tait-cap and cap-connectivity theorem is human-checkable in
+`docs/rooted-three-pole-tait-cap-closure.md`.  The endpoint package extends
+base-pair closure through factor order 26 and gives cap order at least 54
+only for the pure equality-only and disjointness-only relations.
+
+Replay the fork-triple local tables with:
+
+```sh
+python3 scratch/verify_rooted_cap_triangle_table.py \
+  > /tmp/rooted-cap-triangle-table-v2.json
+cmp /tmp/rooted-cap-triangle-table-v2.json \
+  scratch/rooted-cap-triangle-table-v2.json
+```
+
+That human reduction leaves a triangle-free 3-connected finite screen
+running and is not claimed.  Replay the independent endpoint-fork lift
+table with:
+
+```sh
+python3 scratch/verify_rooted_end_factor_fork_lift.py \
+  > /tmp/rooted-end-factor-fork-lift-replay.json
+cmp /tmp/rooted-end-factor-fork-lift-replay.json \
+  scratch/rooted-end-factor-fork-lift-replay.json
+```
+
+The human endpoint-fork proof bypasses the pending screen and, together
+with the completed finite endpoint and cap classifications, restores the
+bridge-free simple terminal-distinct fixed-five lower bound of order 28.
+The complete retained order-28 two-witness classification raises that
+scoped bound to 30.  Its package preserves the full checksum ledger,
+generation commands, source corpus, compact reports, and checker sources;
+`search/four-pole-order28-cyclic4-cap-20260727/PUBLICATION-OMISSIONS.md`
+records the two excluded generated streams and the original-layout scope
+of its source-provenance ledger.
+None of these results resolves five-CDC.
+
+Replay the five-point local theorem with:
+
+```sh
+python3 scratch/verify_five_point_triangle_list_lift.py \
+  > /tmp/five-point-triangle-list-lift-result.json
+cmp /tmp/five-point-triangle-list-lift-result.json \
+  scratch/five-point-triangle-list-lift-result.json
+node scratch/verify_five_point_triangle_list_lift.mjs \
+  > /tmp/five-point-triangle-list-lift-independent.json
+cmp /tmp/five-point-triangle-list-lift-independent.json \
+  scratch/five-point-triangle-list-lift-independent.json
+```
+
 ## Required recorded environment
 
 The byte-level audit was made on macOS arm64 with:

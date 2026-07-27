@@ -1,0 +1,2210 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{navy}{HTML}{17324D}
+\definecolor{slate}{HTML}{435466}
+\definecolor{paperblue}{HTML}{EAF2F8}
+\definecolor{paperamber}{HTML}{FFF5D6}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=navy,
+  citecolor=navy,
+  urlcolor=navy,
+  pdftitle={Marked circuits and fixed-five rooted interfaces in cubic graphs},
+  pdfauthor={Atharva Vaidya}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{slate}Marked circuits and rooted interfaces}
+\fancyhead[R]{\small\color{slate}Research draft}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\cT}{\mathcal T}
+\newcommand{\dotcupop}{\mathbin{\dot\cup}}
+
+\title{\vspace{-1.4cm}\textbf{\color{navy}
+Marked circuits and fixed-five rooted interfaces in cubic graphs}\\[0.35em]
+\large Structural reductions and finite censuses}
+\author{Atharva Vaidya}
+\date{Research draft, 27 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let \(H\) be a finite simple cubic graph and let \(S\) be a
+four-edge matching.  As algebraic setup, we first identify five
+Eulerian edge sets covering every edge twice with an
+everywhere-anisotropic flow in a four-dimensional quadratic space over
+\(\mathbb F_2\), including the exact convention for loops.  We then
+record eight narrowly scoped results.
+First, if \(H\) has a Tait colouring in which the four marks have one
+common colour, and
+\[
+  |\delta_H(X)|+|S\cap E(H[X])|\geq 4
+\]
+whenever \(H[X]\) contains a cycle, then \(S\) is contained in an even
+edge set whose every circuit component contains an even number of marks.
+The proof combines elementary shore lemmas with three published
+prescribed-cycle and decomposition results.  It does not require
+universal separation after the common-colour Tait colouring has been
+obtained.
+
+Second, suppose \(H\) is cyclically \(4\)-edge-connected, the marks are
+separated in a fixed common-colour Tait colouring, and a differently
+coloured edge \(f\notin S\) is forbidden.  If no cycle of \(H-f\)
+contains all four marks, then \(f\) belongs to an independent cyclic
+four-edge cut.  Hence a cycle through all four marks and avoiding \(f\)
+always exists when \(H\) is cyclically \(5\)-edge-connected.
+
+Third, for the surviving exceptional rooted three-pole interface in a
+separate \(D_5=\binom{[5]}2\) flow model, we prove a necessary
+cycle-support obstruction.  If a nonbridge root has only one possible
+label after the connector triangle is fixed, every cycle through that
+root has a label support which spans all five coordinates and is either
+non-bipartite or the star \(K_{1,4}\).  An exact gluing factorization
+shows how this condition arises when a fixed-five boundary signature
+equals one of the exceptional type patterns in the literature.  Missing
+root base pairs also force explicit odd proper-core cuts.  These are
+necessary restrictions, not eliminations.
+
+Fourth, we prove that a nonbridge root has one of the three base pairs
+whenever capping its three connectors by one vertex gives a
+Tait-colourable cubic graph.  One such Tait cap excludes the
+equality-only and disjointness-only exceptional root relations; two
+Tait caps exclude all three exceptional relations.  The mixed
+equality-plus-intersection relation is not excluded one-sidedly.
+
+Fifth, two exact solvers show that every nonempty nonbridge rooted
+three-pole signature through order 17 contains one of three base pairs:
+\(15\,645\,623\) roots in \(654\,676\) canonical cores are checked.
+Sixth, a root-end factor base pair lifts through an arbitrary cubic
+three-sum path as a three-label fork.  Two such forks force both an
+unequal-intersection and a disjoint cross-pair.  Together with two
+exact endpoint classifiers through factor order 26 and complete
+cyclically four-connected cap classifiers through cap order 26, this
+first gives a finite lower bound 28 for a bridge-free connected simple
+terminal-distinct fixed-five exceptional pole.  An explicit-witness
+classification of all \(9\,725\,709\) independent-edge deletions from
+the \(12\,517\) retained cyclically four-connected order-28 caps then
+raises the bound to 30.  The argument is human-checkable except for the
+explicitly finite classifications.
+
+Seventh, on the 31 cyclically \(4\)-edge-connected bridgeless non-Tait
+cubic graphs of order 22, all \(14\,322\) independent-edge deletion
+poles have the full ten-type fixed-five boundary signature.  The
+larger all-cap order-22 computation also checks all \(5\,956\,104\)
+independent-edge deletion poles and finds no exceptional signature.
+
+Eighth, an exhaustive canonical computation finds no
+\emph{Tait-colourable} connected simple cubic graph on 22 vertices
+having a universally separated four-edge matching.  Two separately
+written enumeration methods agree on \(7\,174\,735\) colourable graphs
+and \(95\,360\,112\) Tait colourings modulo global colour permutation.
+This manuscript neither proves nor disproves the Five-Cycle Double Cover
+Conjecture.
+\end{abstract}
+
+\noindent
+\colorbox{paperamber}{%
+\parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
+\textbf{AI-use disclosure.}
+OpenAI Codex agents, under the direction of Atharva Vaidya, generated
+the initial arguments, wrote the census programs, executed and audited
+the computations, and drafted this manuscript.  Other Codex agents
+independently rechecked selected proofs and enumerations; those are
+AI-agent checks, not independent human verification or peer review.
+All mathematical arguments used here are displayed for line-by-line
+human checking, and the computational claims are separated from them.
+The human author should independently verify the paper and establish
+priority before submission.}}
+
+\section{Introduction and exact scope}
+
+A binary cycle of a graph is an edge set with even degree at every
+vertex.  In a cubic graph its nonempty connected components are cycles.
+The first part of this paper asks when four marked edges lie in a binary
+cycle whose components each contain an even number of marks.  This
+marked parity question arose in a larger investigation of the
+Five-Cycle Double Cover Conjecture, but the results below do not resolve
+that conjecture.
+
+For clarity, the standard conjecture asks for at most five Eulerian
+edge subsets whose incidence multiplicities cover each edge exactly
+twice~\cite{Zhang2012,Oum2026}.  The orientable variant imposes additional directional
+conditions and is a different problem.  Neither version is proved here.
+In particular, our unrooted theorem has a marked-cut hypothesis, our
+rooted theorem leaves a cyclic four-cut interface, and the census is
+restricted to one order, simple graphs, and Tait-colourable inputs.
+All \(D_5\) boundary signatures below use one fixed five-coordinate
+universe.  They are not the unbounded-colour relation of
+M\'a\v cajov\'a, Mazzuoccolo, and Tabarelli; our finite computations do
+not classify colourings needing more than five coordinates.
+
+\subsection*{The contributions}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash\bfseries}p{0.18\textwidth}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{0.25\textwidth}@{}}
+\toprule
+Result & Content & Nature of evidence\\
+\midrule
+Theorem~\ref{thm:core}
+  & Four common-colour marks satisfying the marked cyclic-cut
+    inequality admit an even-marked binary cycle.
+  & Human proof using explicitly identified imported theorems.\\
+Theorem~\ref{thm:gate}
+  & A failed forbidden-edge reduction is localized to an independent
+    cyclic four-cut; cyclic connectivity five closes the rooted case.
+  & Human proof; only the four-independent-edge cycle theorem is
+    imported.\\
+Theorem~\ref{thm:translation-obstruction}
+  & A nonbridge singleton root in the normalized \(D_5\) three-pole
+    interface forces every root cycle to have a spanning translation
+    blocker.
+  & Human algebraic and graph-cut proof; a necessary obstruction only.\\
+Theorem~\ref{thm:base-pair-certificate}
+  & Failure of three rooted base pairs forces an odd proper-core cut
+    carrying one common coordinate.
+  & Elementary human proof; a necessary certificate only.\\
+Theorem~\ref{thm:tait-cap-closure}
+  & A Tait-colourable one-vertex cap forces one rooted base pair; the
+    exceptional consequence distinguishes one-sided from two-sided
+    closure.
+  & Elementary human proof with an explicit counterexample to the
+    overstrong one-sided inference.\\
+Theorem~\ref{thm:order17-base-pair}
+  & Every nonempty nonbridge rooted three-pole signature through order
+    17 contains a base pair.
+  & Two exact solvers with matching per-shard transcript digests.\\
+Theorem~\ref{thm:endpoint-fork-lift}
+  & A base pair at an endpoint factor lifts through the entire
+    three-sum path as a fork; two forks force intersection and
+    disjointness.
+  & Human proof, with an exhaustive \(30^2\) set-system replay.\\
+Theorems~\ref{thm:endpoint-through26} and
+\ref{thm:exceptional-order30}
+  & Endpoint factors through order 26 contain a base pair; combined
+    with explicit order-28 cap witnesses this gives the scoped lower
+    bound 30.
+  & Two exact rooted classifiers, two exact cap classifiers, and a
+    human reduction.\\
+Theorem~\ref{thm:cyclic4-order28}
+  & Every retained cyclically four-connected order-28 cap deletion
+    realizes two boundary orbits which jointly exclude all six
+    exceptional masks.
+  & \(19\,451\,418\) explicit \(D_5\) labellings checked by independent
+    Python and C++ replays.\\
+Theorem~\ref{thm:cyclic4-cap-census}
+  & Every order-22 independent-edge deletion in the cyclically
+    four-connected non-Tait cap corpus has the full fixed-five signature;
+    the complete all-cap corpus has no exceptional row.
+  & Two full boundary classifiers plus the complete two-classifier
+    exceptional-signature census.\\
+Theorem~\ref{thm:census}
+  & No Tait-colourable connected simple cubic graph of order 22 has a
+    universally separated four-edge matching.
+  & Exhaustive computation with two algorithmically different
+    enumerators.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The human arguments appear to be useful deductions from known cycle and
+boundary-signature machinery.  The rooted factorizations and finite
+frontiers appear new to the authors, but the priority search performed
+for this draft was targeted rather than exhaustive.
+
+\subsection*{A scope correction discovered during audit}
+
+An earlier project note stated the computational result over all
+connected simple cubic graphs of order 22.  The programs, correctly for
+the motivating application, search only graphs having at least one Tait
+colouring.  This qualifier is logically essential.  If a graph has no
+Tait colouring, the assertion ``separated in every Tait colouring'' is
+vacuously true under the literal universal quantifier.  Moreover, every
+cubic graph on 22 vertices has a matching of size at least four: a
+maximal matching of size \(m\) has endpoints dominating at most \(6m\)
+vertices, so \(m\geq\lceil22/6\rceil=4\).  Theorem~\ref{thm:census}
+therefore states exactly the nonvacuous result established by the
+programs.
+
+\section{Definitions and imported results}
+
+All graphs are finite.  Unless stated otherwise, they are simple.  For
+\(X\subseteq V(G)\), let \(\delta_G(X)\) be the set of edges with exactly
+one end in \(X\), and let \(G[X]\) be the induced subgraph.  A
+\emph{cycle} is a connected 2-regular subgraph.  A \emph{binary cycle}
+is an edge subset \(Q\subseteq E(G)\) such that every vertex has even
+degree in \(Q\).
+
+A graph is \emph{cyclically \(k\)-edge-connected} if it has no edge cut
+of size less than \(k\) with a cycle on both shores.  A
+\emph{Tait colouring} of a cubic graph is a proper edge-colouring with
+three colours \(a,b,c\).  Every two colour classes induce a spanning
+2-regular subgraph, called a \emph{bichromatic factor}; its components
+are even cycles.
+
+\subsection*{An exact elliptic-flow reformulation}
+
+For later use, put
+\[
+ \Gamma=\left\{x\in\mathbb F_2^5:\sum_{i=0}^4x_i=0\right\},
+ \qquad
+ q(x)=\sum_{0\leq i<j\leq4}x_ix_j.                    \tag{2.1}
+ \label{eq:quadratic-space}
+\]
+If \(x\in\Gamma\), then
+\[
+ q(x)=\binom{\operatorname{wt}(x)}2\pmod2.
+\]
+Thus \(q(x)=1\) exactly for the ten vectors of weight two, which we
+identify with
+\[
+ D_5=\binom{\{0,1,2,3,4\}}2.                          \tag{2.2}
+ \label{eq:d5}
+\]
+The polar form is
+\[
+ B(x,y)=q(x+y)+q(x)+q(y)=\sum_{i=0}^4x_iy_i
+ \qquad(x,y\in\Gamma).                                \tag{2.3}
+\]
+It is nondegenerate: a vector orthogonal to every \(e_i+e_j\) has all
+coordinates equal, and the all-one vector is not in \(\Gamma\).
+The five nonzero singular vectors are
+\(\mathbf1+e_i\), \(0\leq i<5\).  They span \(\Gamma\), with their sum
+as their only dependence.  Hence every isometry permutes them
+faithfully.  Coordinate permutations already realize all five
+permutations, so
+\[
+ O(\Gamma,q)\cong S_5.                                 \tag{2.4}
+\]
+
+\begin{proposition}[Elliptic-flow equivalence]
+\label{prop:elliptic-flow}
+Let \(G\) be a finite multigraph.  Five Eulerian edge subsets
+\(C_0,\ldots,C_4\) cover each edge exactly twice if and only if there is
+a map \(\phi:E(G)\to\Gamma\) such that
+\[
+ q(\phi(e))=1\quad(e\in E(G)),\qquad
+ \sum_{\substack{\text{edge-ends}\\\text{incident with }v}}\phi(e)=0
+ \quad(v\in V(G)).                                     \tag{2.5}
+ \label{eq:anisotropic-flow}
+\]
+A loop is counted by its two edge-ends in the second sum.
+\end{proposition}
+
+\begin{proof}
+Given the five edge subsets, let coordinate \(i\) of \(\phi(e)\) be
+one exactly when \(e\in C_i\).  Exact double coverage makes
+\(\phi(e)\) a weight-two vector, hence an element of \(q^{-1}(1)\).
+Coordinate \(i\) of the vertex equation is precisely the degree in
+\(C_i\) modulo two.  Conversely, \(q(\phi(e))=1\) forces
+\(\phi(e)\) to have exactly two nonzero coordinates.  Defining
+\(C_i=\{e:\phi(e)_i=1\}\) therefore gives exact double coverage, and
+the five coordinate equations give the five even-degree conditions.
+The two constructions are inverse.
+\end{proof}
+
+Parallel edges are distinct edge variables.  A loop contributes twice
+to each selected degree, so it cancels in the characteristic-two
+vertex equation; counting a loop only once in a SAT/XOR incidence row
+would be an incorrect encoding.  Empty \(C_i\) are allowed, so this
+five-coordinate formulation means ``at most five'' in the standard
+sense~\cite{Zhang2012,Oum2026}.  It imposes no orientation condition.
+The underlying two-subset encoding also appears as a
+\emph{CDC-colouring} in M\'a\v cajov\'a, Mazzuoccolo, and
+Tabarelli~\cite[Definition 3.1]{MacajovaEtAl2026}.
+Proposition~\ref{prop:elliptic-flow} is an exact elementary
+reformulation, not a resolution or a priority claim; priority for the
+quadratic packaging has not been established.
+
+\begin{definition}[Separation]
+Let \(S\) be a matching in a Tait-coloured cubic graph.  The marks are
+\emph{separated in that colouring} if every bichromatic factor cycle
+contains at most one member of \(S\).  If the graph is Tait-colourable,
+then \(S\) is \emph{universally separated} if it is separated in every
+Tait colouring.
+\end{definition}
+
+We use the following three published results.  They are the only
+non-elementary imported ingredients in the proof of
+Theorem~\ref{thm:core}.
+
+\begin{enumerate}[label=(I\arabic*),leftmargin=2.8em]
+\item\label{imp:kp}
+  Knappe and Pitz~\cite[Fact 5.4]{KnappePitz2020} prove \(g(3)=3\).
+  In the form used here: if \(G\) is 3-edge-connected and
+  \(F\subseteq E(G)\) has at most three edges, then a circuit contains
+  \(F\) if and only if \(F\) contains no odd edge cut of \(G\).
+\item\label{imp:aeeh}
+  Aldred, Ellingham, Hemminger, and Holton
+  \cite[Theorem 3.3]{AldredEtAl1997} prove that a free edge system of
+  size at most four in a quasi \(4\)-connected graph lies on a cycle.
+  In particular, four independent edges lie on a cycle.  They also
+  note that cyclically \(4\)-edge-connected cubic graphs are quasi
+  \(4\)-connected.
+\item\label{imp:decomp}
+  Every 3-connected cubic graph is obtained by repeated vertex
+  3-sums of cyclically \(4\)-edge-connected cubic graphs.  This is
+  Theorem 6.1 of Nedela, Seifrtova, and Skoviera
+  \cite{NedelaEtAl2024}; see also Pastor's component-tree theorem
+  \cite{Pastor2018}.
+\end{enumerate}
+
+Here a circuit in \ref{imp:kp} is a connected closed trail.  In a cubic
+graph its edge-induced degrees are positive and even, hence equal to
+two, so its edge set is a cycle.
+
+\begin{lemma}[Tait cut parity]\label{lem:parity}
+In a Tait-coloured cubic graph, the numbers of cut edges of colours
+\(a,b,c\) have the same parity.  In particular, the three edges of a
+three-edge cut have three distinct colours, and a Tait-colourable cubic
+graph has no bridge.
+\end{lemma}
+
+\begin{proof}
+For a colour \(p\), counting incidences of the \(p\)-coloured perfect
+matching with \(X\) gives
+\[
+  |X|\equiv |\delta_G(X)\cap E_p|\pmod 2.
+\]
+This holds for all three colours.  If the cut has size three, all three
+counts are odd and sum to three, so each is one.  If a single edge were
+a cut, its colour count would have parity different from the other two.
+\end{proof}
+
+\begin{lemma}[Precolouring separated marks]\label{lem:precolour}
+Let \(H\) be Tait-colourable and let \(S\) be universally separated.
+Every map \(S\to\{a,b,c\}\) extends to a Tait colouring.  In particular,
+there is a Tait colouring in which all marks have one common colour.
+\end{lemma}
+
+\begin{proof}
+Start with any Tait colouring.  If a mark \(e\) currently has colour
+\(p\) and is requested to have colour \(q\), interchange \(p\) and
+\(q\) on the unique \(pq\)-factor cycle through \(e\).  Universal
+separation says that this cycle contains no other mark, so all previously
+fixed marks keep their colours.  Process the marks one at a time.
+\end{proof}
+
+\section{Two elementary shore lemmas}
+
+The marked hypothesis used throughout the first theorem is
+\begin{equation}
+ |\delta_H(X)|+|S\cap E(H[X])|\geq4
+ \quad\text{whenever \(H[X]\) contains a cycle.}
+ \tag{MC}\label{eq:mc}
+\end{equation}
+
+\begin{lemma}[Two-mark shore]\label{lem:two-shore}
+Let \(A\subsetneq V(H)\), put \(P=H[A]\), and suppose that \(P\) is
+connected and subcubic with minimum degree two.  Suppose
+\(|\delta_H(A)|\in\{2,3\}\), the boundary edges have distinct ends in
+\(A\), and exactly two marks lie in \(E(P)\).  If
+\eqref{eq:mc} holds for every cyclic \(X\subseteq A\), then one cycle of
+\(P\) contains both marks.
+\end{lemma}
+
+\begin{proof}
+Delete the bridges of \(P\) and form the tree of bridge-components.  If
+\(P\) has no bridge, it is 2-edge-connected.  A 2-edge-connected
+subcubic graph of minimum degree two has no cutvertex: two components
+behind a cutvertex would each require at least two incident edges at
+that vertex, giving degree at least four.  Thus \(P\) is 2-connected.
+Subdivide the two marked edges.  Any two vertices of a 2-connected graph
+lie on a common cycle, and suppressing the subdivisions gives a cycle
+through both marks.
+
+Now suppose the bridge-component tree is nontrivial.  Every leaf
+component \(K\) is cyclic; a single isolated vertex would have only one
+incident bridge but degree at least two in \(P\).  Let \(p(K)\) count
+the pole-boundary edges incident with \(K\), and let \(s(K)\) count its
+internal marks.  Exactly one bridge leaves \(K\), so \eqref{eq:mc} gives
+\[
+  1+p(K)+s(K)\geq4.
+\]
+If \(K\) does not contain both marks, then \(s(K)\leq1\), hence
+\(p(K)\geq2\).  Two such leaves would consume at least four distinct
+pole-boundary edges, impossible because there are at most three.
+Therefore a leaf contains both marks.  That bridge-component is
+2-edge-connected, subcubic, and of minimum degree two, so the preceding
+argument supplies the desired cycle.
+\end{proof}
+
+\begin{lemma}[One-mark shore]\label{lem:one-shore}
+Under the setup of Lemma~\ref{lem:two-shore}, suppose instead that
+\(|\delta_H(A)|=3\), its ends in \(A\) are \(u_1,u_2,u_3\), and exactly
+one mark \(e\) lies in \(E(P)\).  If \eqref{eq:mc} holds on every cyclic
+\(X\subseteq A\), then for every pair \(i\neq j\) there is a
+\(u_i\)-\(u_j\) path in \(P\) containing \(e\).
+\end{lemma}
+
+\begin{proof}
+If \(P\) had a bridge, a leaf \(K\) of its bridge-component tree would
+be cyclic.  With \(p(K)\) and \(s(K)\in\{0,1\}\) as above,
+\[
+  1+p(K)+s(K)\geq4.
+\]
+An unmarked leaf consumes all three pole-boundary edges, while a marked
+leaf consumes at least two.  Two leaves cannot do so using only three
+boundary edges.  Hence \(P\) is 2-edge-connected and, by the subcubic
+cutvertex argument, 2-connected.
+
+Fix \(i\neq j\), add an auxiliary edge \(u_i u_j\), and use the standard
+fact that any two edges of a 2-connected graph lie on a common cycle.
+The assertion remains valid if the auxiliary edge is parallel to an
+existing edge.  A cycle containing the auxiliary edge and \(e\), with
+the auxiliary edge deleted, is the required path.
+\end{proof}
+
+\begin{corollary}[Low-cut reductions]\label{cor:lowcut}
+If a graph satisfying \eqref{eq:mc} has no binary cycle containing all
+four marks with an even number of marks in each component, then it has
+no cyclic two-edge cut.  Moreover, an unmarked cyclic three-edge cut
+cannot split the marks \(2+2\).
+\end{corollary}
+
+\begin{proof}
+For a cyclic two-cut, \eqref{eq:mc} puts at least two internal marks on
+each shore.  Since there are four marks in total, the cut is unmarked
+and each shore has exactly two.  Lemma~\ref{lem:two-shore} gives one
+two-mark cycle on each shore, whose union is a valid binary cycle.  The
+same argument applies to the two shores of an unmarked \(2+2\) cyclic
+three-cut.
+\end{proof}
+
+\section{The four-mark core theorem}
+
+\begin{theorem}[Four-mark core closure]\label{thm:core}
+Let \(H\) be a connected simple cubic graph and let \(S\) be a
+four-edge matching.  Assume:
+\begin{enumerate}[label=(\roman*),leftmargin=2.4em]
+\item \(H\) has a Tait colouring in which every member of \(S\) has one
+      common colour \(c\); and
+\item the marked cyclic-cut inequality \eqref{eq:mc} holds.
+\end{enumerate}
+Then there is a binary cycle \(Q\subseteq E(H)\) containing \(S\) such
+that every nonempty component of \(Q\) contains an even number of marks.
+\end{theorem}
+
+\begin{remark}
+Universal separation is not a hypothesis of
+Theorem~\ref{thm:core}.  By Lemma~\ref{lem:precolour}, it is one
+sufficient way to obtain hypothesis (i).  The proof below uses only the
+one fixed common-colour Tait colouring.
+\end{remark}
+
+\begin{proof}
+Suppose that no such \(Q\) exists.  By
+Corollary~\ref{cor:lowcut}, \(H\) has no cyclic two-edge cut.
+
+\smallskip
+\noindent\emph{Step 1: \(H\) is 3-connected.}
+Lemma~\ref{lem:parity} excludes bridges.  A cutvertex in a bridgeless
+cubic graph is impossible, because one component behind the cutvertex
+would receive only one of its three incident edges, making that edge a
+bridge.
+
+Suppose \(\{u,v\}\) is a two-vertex cut.  Every component \(D\) of
+\(H-\{u,v\}\) has at least three boundary edges; otherwise the cubic
+degree sum makes both shores of \(\delta_H(D)\) cyclic, contrary to the
+absence of a cyclic cut of size at most two.  There are at least two
+components and at most six boundary incidences at \(u,v\).  Hence
+\(uv\notin E(H)\), there are exactly two components \(D_1,D_2\), and
+each has three boundary edges.  Neither component sends all three edges
+to only one of \(u,v\), since the other would then be a cutvertex.
+Relabel so that \(D_1\) sends two edges to \(u\) and one to \(v\).
+Then
+\(\delta_H(D_1\cup\{u\})\) has size two.  Both shores are cyclic by the
+cubic degree count and simplicity, a contradiction.  Thus \(H\) is
+3-connected.
+
+\smallskip
+\noindent\emph{Step 2: eliminate marked cyclic three-cuts.}
+Let \(B=\delta_H(A)\) be a cyclic three-edge cut and write
+\[
+ r=|B\cap S|,\quad
+ a=|S\cap E(H[A])|,\quad
+ d=|S\cap E(H[V(H)\setminus A])|.
+\]
+The inequality \eqref{eq:mc} on the two shores gives \(a,d\geq1\), and
+\[
+ a+d+r=4. \tag{4.1}\label{eq:marks-split}
+\]
+In particular, \(r\leq2\).  Since a shared boundary end would expose a
+cyclic cut of size at most two, the three cut edges have distinct ends
+on each shore.
+
+If \(r=2\), then \(a=d=1\).  On each shore,
+Lemma~\ref{lem:one-shore} gives a path through its unique internal mark
+between the ends of the two marked cut edges.  The two paths and those
+two cut edges form one cycle containing all four marks.
+
+Suppose \(r=1\).  Up to exchanging shores, \(a=1\) and \(d=2\).  Cap
+the two-mark shore by adjoining a new cubic vertex \(z\) at its three
+boundary ends; call the resulting cubic graph \(\widehat D\).
+Lemma~\ref{lem:parity} shows that the fixed Tait colouring caps
+properly.  The cap is 3-edge-connected.  Indeed, it has no bridge, and
+a two-edge cut in a cubic graph has two cyclic shores; the shore
+avoiding \(z\) would induce a cyclic two-cut of \(H\).
+
+Let \(F\) consist of the cap edge corresponding to the marked member of
+\(B\) and the two internal marks.  These three edges are independent.
+They contain no odd cut.  A one-edge cut is absent.  If the three edges
+formed a three-edge cut, that cut could not be a vertex star because
+\(F\) is independent.  For a nontrivial three-cut, take the cyclic
+shore avoiding \(z\).  Both internal marks would be boundary edges and
+there would be no internal mark, contradicting \(3+0\geq4\) in
+\eqref{eq:mc}.  Imported result \ref{imp:kp} therefore gives a cycle
+through \(F\).
+
+At \(z\), that cycle uses the marked cap edge and one other cap edge.
+Deleting \(z\) leaves a path through both internal marks between the
+corresponding boundary positions.  On the one-mark shore,
+Lemma~\ref{lem:one-shore} supplies a path through its mark for the same
+boundary pair.  Gluing with the two selected cut edges gives one
+four-mark cycle.  Both cases contradict the assumed failure.  Hence
+every cyclic three-cut that remains is unmarked.
+
+By Corollary~\ref{cor:lowcut}, an unmarked cyclic three-cut cannot split
+the marks \(2+2\).  Equation~\eqref{eq:marks-split} shows that every
+such cut splits them \(1+3\).
+
+\smallskip
+\noindent\emph{Step 3: organize all remaining cuts at once.}
+Apply imported result \ref{imp:decomp}.  Split along cyclic three-cuts,
+cap each shore by a root vertex, and continue until the factors are
+cyclically \(4\)-edge-connected.  Reverse reconstruction gives a tree
+\(\mathcal T\): its nodes are the final factors and its edges record
+the vertex 3-sums.  Each tree edge corresponds to a principal cyclic
+three-cut of \(H\).
+
+All principal cuts are unmarked, so every marked edge belongs to one
+factor.  Give a node weight equal to its number of marks.  Deleting any
+tree edge splits the total weight four as \(1+3\).  There is a node
+\(K\) for which every component of \(\mathcal T-K\) has weight one.
+To prove this, begin at any node and move into a component of weight
+three whenever one exists.  The walk never backtracks and must stop.
+At the stopping node no component has weight three; weights two and
+zero are excluded respectively by the \(1+3\) rule and by positivity
+on both sides of every tree edge.
+
+Let \(K\) contain \(r\) marked edges.  It has
+\(q=4-r\) incident one-mark branches, represented in the capped factor
+by root vertices \(z_1,\ldots,z_q\).  Transfer the fixed Tait colouring
+to the cap.  The \(r\) central marks have colour \(c\); at each \(z_j\),
+let \(f_j\) be the unique incident edge of colour \(c\).  Let
+\[
+ F=(S\cap E(K))\cup\{f_1,\ldots,f_q\},
+\]
+interpreted as a set, so a shared edge between adjacent cap roots is
+included once.  The set \(F\) is a matching, \(1\leq |F|\leq4\), it
+contains every central mark, and an edge of \(F\) is incident with each
+\(z_j\).
+
+If \(|F|=4\), imported result \ref{imp:aeeh} supplies a cycle through
+\(F\).  If \(|F|\leq3\), then \(F\) contains no odd cut: a one-cut is
+excluded by 3-edge-connectivity, a trivial three-cut is not a matching,
+and a nontrivial three-cut is excluded by cyclic
+\(4\)-edge-connectivity.  Imported result \ref{imp:kp} again supplies a
+cycle through \(F\).  Denote the resulting central cycle by \(Z\).
+
+For every \(j\), the cycle \(Z\) passes through \(z_j\) and selects two
+of its three boundary positions.  The corresponding entire branch of
+\(\mathcal T-K\) is a shore with exactly one mark.
+Lemma~\ref{lem:one-shore} gives a path through that mark for the selected
+boundary pair.  Substitute these paths while reversing the 3-sums.
+Each substitution preserves a single cycle.  If two adjacent cap roots
+share the selected edge \(z_i z_j\), reversing both sums turns that
+single edge into the single boundary edge between the two expanded
+shores; it is not duplicated.  The final cycle contains the \(r\)
+central marks and one mark from each of the \(q\) branches, hence all
+four marks.  This final contradiction proves the theorem.
+\end{proof}
+
+\begin{remark}[Why the conclusion allows two components]
+An unmarked cyclic three-cut with a \(2+2\) mark split can be closed by
+one two-mark cycle on each shore.  Nothing in the hypotheses forces
+those two cycles to merge.  Thus the binary-cycle conclusion is the
+proved statement; an unconditional one-cycle strengthening is not
+claimed.
+\end{remark}
+
+\section{A forbidden root edge and the four-cut gate}
+
+We now use a stronger fixed-colouring hypothesis and obtain a rooted
+conclusion in a more highly connected class.
+
+\begin{theorem}[Independent four-cut gate]\label{thm:gate}
+Let \(H\) be a finite simple cyclically \(4\)-edge-connected cubic graph.
+Let \(S=\{s_1,s_2,s_3,s_4\}\) be a matching and let \(f\notin S\).
+Assume that \(H\) has a Tait colouring in which
+\begin{enumerate}[label=(\roman*),leftmargin=2.4em]
+\item all members of \(S\) have one common colour \(c\);
+\item \(f\) has a different colour; and
+\item \(S\) is separated in this fixed colouring.
+\end{enumerate}
+If no cycle of \(H-f\) contains all four members of \(S\), then \(f\)
+belongs to an independent cyclic four-edge cut of \(H\).
+\end{theorem}
+
+\begin{proof}
+Write \(f=uv\),
+\[
+ N_H(u)-\{v\}=\{u_1,u_2\},\qquad
+ N_H(v)-\{u\}=\{v_1,v_2\},
+\]
+and form the root-edge reduction
+\[
+ R=H\mathbin{\ominus}f
+   :=H-\{u,v\}+\{\,\bar u=u_1u_2,\ \bar v=v_1v_2\,\}.
+ \tag{5.1}\label{eq:reduction}
+\]
+The graph \(H\) has at least eight vertices because \(S\) is a
+four-edge matching.  It has no triangle: the triangle boundary has size
+three and its complementary shore is cyclic by the cubic degree count,
+contrary to cyclic \(4\)-edge-connectivity.  Consequently the four
+neighbours appearing in \eqref{eq:reduction} do not create loops,
+parallel edges, or coincident new edge objects.  Also \(H\) is
+3-connected (for cubic graphs, cyclic connectivity and ordinary
+connectivity agree through order three), so deleting the adjacent pair
+\(u,v\) leaves a connected graph.  Thus \(R\) is connected, simple, and
+cubic.
+
+Map every mark \(s\in S\) to an edge \(\bar s\in E(R)\) by
+\[
+ \bar s=
+ \begin{cases}
+  \bar u,&\text{if \(s\) is incident with \(u\)},\\
+  \bar v,&\text{if \(s\) is incident with \(v\)},\\
+  s,&\text{otherwise}.
+ \end{cases}
+ \tag{5.2}\label{eq:mark-image}
+\]
+The four images are distinct.  We claim that they form a matching.
+Only adjacency between a new image and an unchanged image needs proof.
+Suppose, without loss of generality, that \(s=uu_1\) is a mark of
+colour \(c\), while \(f\) has colour \(a\).  Then \(uu_2\) has the
+third colour \(b\).  An unchanged mark incident with \(u_2\) would lie
+with \(s\) on the \(bc\)-factor cycle, contradicting fixed-colouring
+separation.  A mark incident with \(u_1\) would already be adjacent to
+\(s\).  The other cases are symmetric.
+
+If \(R\) were cyclically \(4\)-edge-connected, imported result
+\ref{imp:aeeh} would give a cycle through the four independent images.
+Replace \(\bar u\), when used, by \(u_1uu_2\), and similarly replace
+\(\bar v\).  The lifted cycle lies in \(H-f\) and contains every
+original mark, contrary to hypothesis.  Hence \(R\) has a cyclic cut
+\(\delta_R(X)\) of size \(k\leq3\).
+
+We pull this cut back to \(H\).  If \(u_1,u_2\) lie on opposite shores,
+then \(\bar u\) is a cut edge; placing \(u\) on either shore replaces
+\(\bar u\) by exactly one crossing edge.  If \(u_1,u_2\) lie on one
+shore, place \(u\) there and create no crossing edge.  The same choices
+apply to \(v\).  Unless both neighbour pairs are unsplit and lie on
+opposite shores, choose \(u,v\) on the same shore.  Then \(f\) is
+internal, the cut size remains \(k\leq3\), and both shore cycles lift:
+an internal new edge is replaced by its two-edge path, while a crossing
+new edge was not part of either shore cycle.  This contradicts cyclic
+\(4\)-edge-connectivity of \(H\).
+
+Therefore \(u_1,u_2\) lie together on one shore and \(v_1,v_2\) lie
+together on the other.  Restoring \(u,v\) on those forced shores gives
+\[
+ \delta_H(X^\uparrow)=\delta_R(X)\dotcupop\{f\}.
+ \tag{5.3}\label{eq:pullback}
+\]
+Both shores remain cyclic, so \(k+1\geq4\).  Since \(k\leq3\), we have
+\(k=3\).
+
+It remains to prove independence.  If two edges of the cyclic
+three-cut \(\delta_R(X)\) shared an endpoint \(w\) on one shore, then
+only one edge at \(w\) would remain internal.  No cycle of that shore
+uses \(w\).  Moving \(w\) to the other shore replaces two crossing
+edges by one and preserves cycles on both shores, producing a cyclic
+two-cut of \(R\).  The pullback argument just given excludes such a
+cut, since it would produce a cyclic cut of size at most three in
+\(H\).  Thus the three edges of \(\delta_R(X)\) are independent.  In
+the forced configuration they avoid the new edges and hence avoid
+\(u,v\).  Together with \(f\), they form an independent cyclic
+four-edge cut of \(H\).
+\end{proof}
+
+\begin{corollary}[Rooted closure at cyclic connectivity five]
+\label{cor:cyclic5}
+Under the hypotheses of Theorem~\ref{thm:gate}, if \(H\) is cyclically
+\(5\)-edge-connected, then \(H-f\) has a cycle containing all four
+marks.
+\end{corollary}
+
+\begin{proof}
+Otherwise Theorem~\ref{thm:gate} produces a cyclic four-edge cut.
+\end{proof}
+
+\begin{remark}[What remains at cyclic connectivity four]
+Theorem~\ref{thm:gate} is a one-way obstruction localization, not a
+characterization: a root-containing independent four-cut need not
+prevent an avoiding cycle.  The unresolved case is the corresponding
+four-pole interface.  No unrestricted rooted theorem follows from the
+gate alone.
+\end{remark}
+
+\section{Cycle translations in an exceptional rooted interface}
+
+This section records a second, algebraic restriction on a rooted
+interface.  Its ``root'' is a distinguished cap edge whose possible
+\(D_5\)-labels are studied; it is not the forbidden edge of
+Theorem~\ref{thm:gate}.  The conclusion is a necessary obstruction, not
+a proof that the exceptional interface is impossible.  Throughout this
+section, \(\mathcal R_5\) and \(\mathcal C_5\) denote exact signatures
+inside one fixed five-coordinate \(D_5\) universe.  This is narrower
+than the published unbounded-colour relation.
+
+\subsection{The \texorpdfstring{\(D_5\)}{D5} model}
+
+Recall \(\Gamma\), \(q\), and \(D_5=q^{-1}(1)\) from
+\eqref{eq:quadratic-space}--\eqref{eq:d5}.  We identify a member of
+\(D_5\) with its weight-two incidence vector and write addition in
+\(\Gamma\) as symmetric difference.  A
+\(D_5\)-labelling of a cubic multipole assigns a member of \(D_5\) to
+every proper edge and semiedge so that the three incident labels sum to
+zero at each internal vertex.  Such a local triple is exactly the
+three-edge set of a triangle in \(K_5\).
+
+Let \(Q\) be a cubic three-pole whose ordered connector word has been
+normalized to
+\[
+ \tau=(01,02,12),                                      \tag{6.1}
+ \label{eq:tau}
+\]
+and let \(r\) be a distinguished proper edge.  Its exact root signature
+is
+\[
+ \mathcal R_5(Q,r)=
+ \{A\in D_5:\text{\(Q\) has a \(D_5\)-labelling with word
+ \(\tau\) and root label \(A\)}\}.                       \tag{6.2}
+\]
+The stabilizer of the ordered word \(\tau\) fixes \(0,1,2\) and may
+swap \(3,4\).  Therefore \(\mathcal R_5(Q,r)\) is a union of the seven
+orbits
+\[
+ \{01\},\ \{02\},\ \{12\},\
+ \{03,04\},\ \{13,14\},\ \{23,24\},\ \{34\}.           \tag{6.3}
+\]
+
+\begin{lemma}[Cycle translation]\label{lem:cycle-translation}
+Let \(\lambda\) be a normalized root labelling of \(Q\), let \(C\) be
+a cycle of proper edges, and let \(h\in\Gamma\).  If
+\[
+ \lambda(e)+h\in D_5\qquad(e\in E(C)),                  \tag{6.4}
+ \label{eq:translation-condition}
+\]
+then adding \(h\) to every label on \(C\), and changing no other label,
+gives another normalized root labelling.
+\end{lemma}
+
+\begin{proof}
+Every vertex of \(C\) is incident with exactly two translated edges, so
+the change in its incident-label sum is \(h+h=0\).  All other vertices
+are unchanged.  A proper cycle contains no connector semiedge, so the
+word \(\tau\) in \eqref{eq:tau} remains fixed.  Condition
+\eqref{eq:translation-condition} says that all translated values remain
+in the allowed label set.
+\end{proof}
+
+\begin{lemma}[Translation blockers]\label{lem:blockers}
+Let \(L\subseteq E(K_5)=D_5\) be nonempty, with its edges connected
+under edge adjacency.  The only
+\(h\in\Gamma\) for which
+\[
+ A+h\in D_5\qquad(A\in L)                              \tag{6.5}
+ \label{eq:blocker-translation}
+\]
+is \(h=0\) if and only if the graph
+\((\{0,1,2,3,4\},L)\)
+\begin{enumerate}[label=(\roman*),leftmargin=2.4em]
+\item spans all five coordinate vertices; and
+\item is either non-bipartite or is the four-edge star \(K_{1,4}\).
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Every nonzero element of \(\Gamma\) has weight two or four.  First let
+\(h\) have weight four, say
+\(h=\{0,1,2,3,4\}\setminus\{v\}\).  For \(A\in D_5\), the symmetric
+difference \(A+h\) has weight two exactly when \(A\) avoids \(v\).
+Thus all weight-four translations are blocked exactly when \(L\)
+spans all five vertices.
+
+Now let \(h=B\) have weight two.  For \(A\in D_5\),
+\[
+ |A\mathbin\triangle B|=2
+ \quad\Longleftrightarrow\quad |A\cap B|=1.
+\]
+Consequently \(B\) translates every member of \(L\) within \(D_5\)
+exactly when every edge of \(L\) crosses the cut
+\[
+ B\mid(\{0,1,2,3,4\}\setminus B).                       \tag{6.6}
+\]
+If \(L\) spans and is non-bipartite, it is contained in no such cut.
+If \(L\) is spanning and bipartite, edge-adjacency connectedness makes
+it connected, so its bipartition is
+unique.  A \(2+3\) bipartition gives a weight-two translation.  A
+\(1+4\) bipartition has no side of size two; connectedness and spanning
+force all four incident edges, namely \(K_{1,4}\).
+The weight-two and weight-four cases prove the equivalence.
+\end{proof}
+
+\begin{remark}
+Up to coordinate permutation, the inclusion-minimal connected blockers
+are \(K_{1,4}\), the bull graph, and \(C_5\).  This follows directly:
+a minimal spanning non-bipartite graph contains a triangle or a
+five-cycle.  Minimality gives \(C_5\) in the latter case.  Starting
+from a triangle, the unused vertices must attach at distinct triangle
+vertices: attaching both to one vertex contains a star blocker, while a
+pendant path leaves a triangle plus a disjoint edge after its joining
+edge is deleted.  The remaining case is the bull.
+\end{remark}
+
+\begin{theorem}[Cycle-support obstruction]
+\label{thm:translation-obstruction}
+Suppose
+\[
+ \mathcal R_5(Q,r)=\{A\},\qquad
+ A\in\{01,02,12,34\},
+\]
+and \(r\) is a nonbridge of the proper graph of \(Q\).  In every
+normalized root labelling and on every proper cycle \(C\) containing
+\(r\), the set of distinct labels
+\[
+ L_C=\{\lambda(e):e\in E(C)\}
+\]
+spans all five coordinates and is either non-bipartite or \(K_{1,4}\).
+\end{theorem}
+
+\begin{proof}
+Consecutive cycle labels share one coordinate because they are two
+edges of the local label triangle.  Thus \(L_C\) is nonempty and
+connected under edge adjacency.  If it were not a blocker,
+Lemma~\ref{lem:blockers} would give a nonzero \(h\) satisfying
+\eqref{eq:translation-condition}.  By
+Lemma~\ref{lem:cycle-translation}, translation on \(C\) gives another
+normalized labelling whose root label is \(A+h\in D_5\).  Since
+\(h\neq0\), this differs from \(A\), contradicting the singleton
+signature.  Lemma~\ref{lem:blockers} gives the stated classification.
+\end{proof}
+
+\subsection{Exact factorization across the cyclic three-cut}
+
+We now state the precise setting in which the singleton arises.  Let
+\(G=P+\{e,f\}\) be a bridgeless cubic cap with no cyclic two-edge cut.
+Assume that a cyclic three-edge cut, disjoint from \(e,f\), has connected
+shores, splits the four terminals of \(P\) as \(2+2\), and contains one
+whole cap edge on each shore.  Cutting the three cut edges gives rooted
+three-poles \((Q_1,e)\) and \((Q_2,f)\).  Order corresponding connectors,
+normalize them to \(\tau\), and write
+\[
+ R=\mathcal R_5(Q_1,e),\qquad S=\mathcal R_5(Q_2,f).
+\]
+
+For nonempty \(R,S\subseteq D_5\), let
+\[
+ \operatorname{rel}(R,S)\subseteq
+ \{\mathsf E,\mathsf I,\mathsf D\}
+\]
+record which of equality, one-point intersection, and disjointness
+occur among cross-pairs \((A,B)\in R\times S\).  Let \(\pi\) denote the
+pairing of the four boundary semiedges induced by the deleted cap
+edges.  In the standard four-pole notation, a doubled boundary word
+\((A,A,B,B)\) has type
+\[
+ AA,\quad AT_\pi,\quad\text{or}\quad T_\pi T_\pi
+\]
+according as \(A=B\), \(|A\cap B|=1\), or \(A\cap B=\varnothing\).
+
+\begin{proposition}[Exact rooted factorization]\label{prop:factorization}
+The doubled part of the fixed-five boundary signature
+\(\mathcal C_5(P)\) is
+\[
+\begin{split}
+\mathcal C_5(P)\cap\{AA,AT_\pi,T_\pi T_\pi\}
+ =\{&AA:\mathsf E\in\operatorname{rel}(R,S)\}\\
+ {}\cup\{&AT_\pi:\mathsf I\in\operatorname{rel}(R,S)\}\\
+ {}\cup\{&T_\pi T_\pi:
+           \mathsf D\in\operatorname{rel}(R,S)\}.
+\end{split}                                                \tag{6.7}
+\]
+\end{proposition}
+
+\begin{proof}
+Given a labelling of \(P\) with doubled word \((A,A,B,B)\), restore
+\(e\) with label \(A\) and \(f\) with label \(B\).  Cutting the
+three-edge cut gives two rooted labellings with a common ordered
+connector triangle.  One global coordinate permutation normalizes it
+to \(\tau\), placing the transformed root labels in \(R,S\); equality,
+intersection size, and disjointness are invariant under that
+permutation.
+
+Conversely, take defining labellings for any \(A\in R\) and \(B\in S\).
+Their connector words are identically \(\tau\), so corresponding
+semiedges glue.  Delete the two roots while retaining their labels on
+the four boundary semiedges.  The resulting word is
+\((A,A,B,B)\), with the type determined by the cross-relation.  Both
+inclusions follow.
+\end{proof}
+
+\begin{lemma}[Sparse cross-relations]\label{lem:sparse-relations}
+Let \(R,S\) be nonempty and invariant under the stabilizer of \(\tau\).
+\begin{enumerate}[label=(\alph*),leftmargin=2.4em]
+\item
+\(\operatorname{rel}(R,S)=\{\mathsf E\}\) if and only if
+\[
+ R=S=\{A\}\quad\text{for some }
+ A\in\{01,02,12,34\}.                                  \tag{6.8}
+ \label{eq:singleton-root}
+\]
+\item
+\(\operatorname{rel}(R,S)=\{\mathsf D\}\) if and only if, after
+possibly swapping \(R,S\),
+\[
+ \varnothing\neq R\subseteq\{01,02,12\},\qquad
+ \varnothing\neq S\subseteq
+ \{d\in D_5:d\cap a=\varnothing\text{ for every }a\in R\},
+                                                               \tag{6.9}
+ \label{eq:disjoint-pattern}
+\]
+where \(S\) is stabilizer-invariant.  There are thirteen unordered
+patterns in \eqref{eq:disjoint-pattern}.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+If every cross-pair is equal, choosing one member on either side forces
+both sets to be the same singleton.  The singleton is
+stabilizer-invariant exactly for the four fixed labels in
+\eqref{eq:singleton-root}, proving (a).
+
+For (b), every pair described in \eqref{eq:disjoint-pattern} is
+disjoint.
+Conversely, suppose every cross-pair is disjoint.  If one side contains
+\(34\), the other side consists of triangle edges.  If one side
+contains a mixed edge \(u3\), invariance also puts \(u4\) there, and
+the only edge disjoint from both is the triangle edge on
+\(\{0,1,2\}\setminus\{u\}\).  Thus, after swapping, one side is a
+nonempty subset of \(\{01,02,12\}\), and the other is exactly restricted
+as in \eqref{eq:disjoint-pattern}.  For a one-edge triangle subset the common
+disjoint neighbourhood has two stabilizer orbits, giving three nonempty
+invariant choices; this contributes \(3\cdot3=9\).  A two-edge subset
+has neighbourhood \(\{34\}\), contributing three, and the three-edge
+subset contributes one.  Hence \(9+3+1=13\).
+\end{proof}
+
+\begin{lemma}[Cap roots are nonbridges]\label{lem:cap-nonbridge}
+In the cap geometry preceding Proposition~\ref{prop:factorization},
+neither \(e\) nor \(f\) is a bridge of its rooted shore.
+\end{lemma}
+
+\begin{proof}
+Suppose \(e\) is a bridge of \(Q_1\), splitting its proper graph into
+connected vertex sets \(X,Y\).  Let \(k\) of the three cut connectors
+be incident with \(X\).  If \(k=0\) or \(3\), then \(e\) is a bridge of
+\(G\), contrary to bridgelessness.  Thus \(k\in\{1,2\}\).  Choose
+\(Z=X\) for \(k=1\), and \(Z=Y\) for \(k=2\).  Exactly two edges of
+\(G\) leave \(Z\): \(e\) and one connector.
+
+If \(Z\) has \(n\) vertices and \(m\) internal edges, cubic degree
+counting gives \(3n=2m+2\), so
+\[
+ m-n+1=n/2>0.
+\]
+Hence \(Z\) contains a cycle.  Its complement is connected: the other
+bridge component of \(Q_1\) connects through the two remaining
+connectors to the connected opposite shore \(Q_2\).  Applying the same
+degree count to the complement gives a cycle there as well.  The two
+leaving edges form a cyclic two-edge cut of \(G\), a contradiction.
+The argument for \(f\) is symmetric.
+\end{proof}
+
+M\'a\v cajov\'a, Mazzuoccolo, and Tabarelli
+\cite{MacajovaEtAl2026} isolate the following two exceptional type sets
+in their unbounded-colour signature relation:
+\begin{equation}
+\begin{aligned}
+\mathcal E_4(i;j,k)&=\{AA,AT_j,AT_k,T_jT_k\},\\
+\mathcal E_5(i;j,k)&=\{T_iT_i,T_jT_j,T_kT_k,T_iT_j,T_iT_k\},
+ \qquad\{i,j,k\}=\{2,3,4\}.
+\end{aligned}
+\tag{6.10}
+\end{equation}
+Below, the statements ``\(\mathcal C_5(P)=\mathcal E_4\)'' and
+``\(\mathcal C_5(P)=\mathcal E_5\)'' use the same type masks as
+conditional targets in the fixed-five model.  They do not identify
+\(\mathcal C_5(P)\) with the full published relation.
+Intersecting these displayed sets with the three types in
+Proposition~\ref{prop:factorization} gives the following literal
+consequence.
+
+\begin{corollary}[Exceptional rooted obligations]
+\label{cor:exceptional-rooted}
+\begin{enumerate}[label=(\roman*),leftmargin=2.4em]
+\item If \(\mathcal C_5(P)=\mathcal E_4(i;j,k)\) and
+\(\pi=i\), then
+\(\operatorname{rel}(R,S)=\{\mathsf E\}\).  Thus
+\(R=S=\{A\}\) for one fixed label
+\(A\in\{01,02,12,34\}\), both roots are nonbridges, and every cycle
+through either root has a support classified by
+Theorem~\ref{thm:translation-obstruction}.
+\item If \(\mathcal C_5(P)=\mathcal E_4(i;j,k)\) and
+\(\pi\in\{j,k\}\), then
+\(\operatorname{rel}(R,S)=\{\mathsf E,\mathsf I\}\).
+\item If \(\mathcal C_5(P)=\mathcal E_5(i;j,k)\), then the
+cross-relations are disjointness only:
+\[
+ \operatorname{rel}(R,S)=\{\mathsf D\}.
+\]
+Hence one of the thirteen patterns in
+Lemma~\ref{lem:sparse-relations}(b) occurs.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+For \(\mathcal E_4\), the intersection with
+\(\{AA,AT_\pi,T_\pi T_\pi\}\) is \(\{AA\}\) when \(\pi=i\), and
+\(\{AA,AT_\pi\}\) when \(\pi=j\) or \(k\).  For
+\(\mathcal E_5\), it is \(\{T_\pi T_\pi\}\) for every \(\pi\).
+Proposition~\ref{prop:factorization}, Lemmas
+\ref{lem:sparse-relations} and \ref{lem:cap-nonbridge}, and
+Theorem~\ref{thm:translation-obstruction} give the assertions.
+\end{proof}
+
+\subsection{Missing base pairs force proper-core cuts}
+
+For a normalized labelling \(\phi\) and a coordinate \(a\), let
+\[
+ E_{\bar a}(\phi)=
+ \{e\text{ a proper edge of }Q:a\notin\phi(e)\},
+ \qquad
+ h_a=\{0,1,2,3,4\}\setminus\{a\}.
+\]
+
+\begin{lemma}[Complement-cycle switch]\label{lem:complement-switch}
+Suppose \(a\notin\phi(r)\).  If \(r\) lies on a proper cycle
+\(C\subseteq E_{\bar a}(\phi)\), then replacing every label
+\(\phi(e)\), \(e\in C\), by \(\phi(e)\mathbin\triangle h_a\) gives
+another normalized labelling.  Consequently, if
+\(\phi(r)\mathbin\triangle h_a\notin\mathcal R_5(Q,r)\), then \(r\)
+is a bridge of \(E_{\bar a}(\phi)\).
+\end{lemma}
+
+\begin{proof}
+Every label on \(C\) is a two-subset of the four-set \(h_a\);
+symmetric difference with \(h_a\) is its complementary two-subset and
+therefore remains in \(D_5\).  At a cycle vertex the same vector
+\(h_a\) is added twice, so the vertex equation is unchanged.  No
+boundary semiedge is changed.  The last assertion uses the elementary
+fact that an edge of a finite graph is a nonbridge exactly when it lies
+on a cycle.
+\end{proof}
+
+Define the three base pairs
+\[
+ \mathcal P_0=\{12,03,04\},\qquad
+ \mathcal P_1=\{02,13,14\},\qquad
+ \mathcal P_2=\{01,23,24\}.
+\]
+
+\begin{theorem}[Base-pair cut certificate]
+\label{thm:base-pair-certificate}
+Suppose \(\mathcal R_5(Q,r)\) is nonempty, contains a label other than
+\(34\), and contains none of
+\(\mathcal P_0,\mathcal P_1,\mathcal P_2\) as a subset.  Then some
+realizing labelling \(\phi\) and \(a\in\{3,4\}\) make \(r\) a bridge of
+\(E_{\bar a}(\phi)\).
+
+More precisely, an inner root label \(12,02,\) or \(01\) forces this
+bridge for both \(a=3\) and \(a=4\); an outer orbit without its inner
+mate supplies one bridge for each coordinate after applying the
+symmetry \(3\leftrightarrow4\).
+\end{theorem}
+
+\begin{proof}
+The fixed boundary word \((01,02,12)\) is invariant under
+\(3\leftrightarrow4\), so the exact root signature is invariant as
+well.  Complementation in the four-set avoiding \(4\) pairs
+\[
+ 12\leftrightarrow03,\qquad
+ 02\leftrightarrow13,\qquad
+ 01\leftrightarrow23,
+\]
+and complementation in the four-set avoiding \(3\) gives the same
+three pairs with \(3,4\) interchanged.  If an inner label occurs,
+failure of its base pair and signature invariance exclude both outer
+mates.  If an outer orbit occurs, failure of its base pair excludes
+the inner mate.  Lemma~\ref{lem:complement-switch} gives the claimed
+bridges.
+\end{proof}
+
+Here is the promised ordinary cut certificate.  Let
+\(\delta_Q^{\mathrm p}(X)\) denote the edge cut in the proper core of
+\(Q\), explicitly excluding its three boundary semiedges.  If \(X\)
+is one component of \(E_{\bar a}(\phi)-r\), then
+\[
+ \delta_Q^{\mathrm p}(X)=\{r\}\mathbin{\dot\cup}F_a,
+ \qquad F_a\subseteq\{e:a\in\phi(e)\}.
+\]
+For \(a=3,4\), no boundary label uses \(a\).  The coordinate-\(a\)
+support on proper edges is therefore Eulerian, so \(|F_a|\) is even.
+If \(r\) is a nonbridge of the unlabelled proper core, then
+\(F_a\ne\varnothing\).  Thus Theorem
+\ref{thm:base-pair-certificate} supplies such a nonbridge root with an
+odd proper-core cut of size at least three, containing \(r\), whose
+other edges carry one common outer coordinate.
+
+For completeness, if \(\mathcal R_5(Q,r)=\{34\}\), complementation in
+the four-sets avoiding \(0,1,2\) shows that \(r\) is simultaneously a
+bridge of \(E_{\bar0}(\phi)\), \(E_{\bar1}(\phi)\), and
+\(E_{\bar2}(\phi)\).  Boundary semiedges use these coordinates, so the
+even-\(|F_a|\) conclusion is not asserted in this case.
+
+\begin{remark}[Exact limitation]
+Corollary~\ref{cor:exceptional-rooted} neither realizes nor excludes any
+of the remaining root signatures.  In particular,
+Theorem~\ref{thm:translation-obstruction} does not prove that a
+nonbridge root has two possible labels: it only classifies what every
+root cycle must look like if the label remains unique.  The cut
+certificate above is likewise necessary, not contradictory.  The
+\(\{\mathsf E,\mathsf I\}\) and thirteen disjoint cases receive no
+further elimination here.
+\end{remark}
+
+\subsection{Tait-cap base-pair closure}
+
+Adjoin one new vertex to the three connector ends of a rooted
+three-pole \(Q\), producing a cubic graph \(\widehat Q\).
+
+\begin{theorem}[Tait-cap closure]
+\label{thm:tait-cap-closure}
+Let \((Q,r)\) be normalized by the connector word \(\tau\) in
+\eqref{eq:tau}.  If \(\widehat Q\) is Tait-colourable and \(r\) is a
+nonbridge of the proper graph of \(Q\), then
+\[
+ \mathcal P_i\subseteq\mathcal R_5(Q,r)
+ \qquad\text{for some }i\in\{0,1,2\}.                 \tag{6.11}
+\]
+\end{theorem}
+
+\begin{proof}
+Fix a Tait colouring of \(\widehat Q\).  The three cap edges have
+distinct colours.  Map their colours, in physical connector order, to
+\[
+                         01,\qquad02,\qquad12.
+\]
+Give every edge of \(\widehat Q\) the \(D_5\)-label assigned to its
+colour.  Every cubic vertex sees all three labels, whose symmetric
+difference is zero.  Deleting the cap vertex therefore gives a
+normalized root labelling of \(Q\).
+
+The root \(r\) receives one of \(01,02,12\).  Since it is a nonbridge,
+the elementary bridge--cycle equivalence gives a cycle \(C\) of proper
+edges containing \(r\).  Translate every label on \(C\), first by
+\[
+                         h_3=0123
+\]
+and, in a separate copy of the original labelling, by
+\[
+                         h_4=0124.
+\]
+The only labels initially occurring on \(C\) are \(01,02,12\), and
+\[
+\begin{array}{c|ccc}
+ &01&02&12\\ \hline
+{}+h_3&23&13&03\\
+{}+h_4&24&14&04.
+\end{array}                                                    \tag{6.12}
+\]
+All six outputs remain in \(D_5\).  At a cycle vertex the same
+translation is added on two incident edge-ends, so parity is unchanged;
+the proper cycle contains no connector semiedge.  Thus both translations
+are normalized root labellings by
+Lemma~\ref{lem:cycle-translation}.  According as the original root
+label is \(12,02,\) or \(01\), its three displayed values are exactly
+\(\mathcal P_0,\mathcal P_1,\) or \(\mathcal P_2\).
+\end{proof}
+
+The one-sided exceptional consequence requires care.  Let
+\[
+\begin{array}{c|ccccccc}
+ &\{01\}&\{02\}&\{12\}&\{03,04\}&\{13,14\}&\{23,24\}&\{34\}\\ \hline
+\mathcal P_0&I&I&DE&DEI&DI&DI&DI\\
+\mathcal P_1&I&DE&I&DI&DEI&DI&DI\\
+\mathcal P_2&DE&I&I&DI&DI&DEI&DI
+\end{array}                                                    \tag{6.13}
+\label{eq:tait-relation-table}
+\]
+record the cross-relations between a base pair and each stabilizer
+orbit; concatenated letters denote sets of relations.
+
+\begin{corollary}[Corrected Tait-shore consequence]
+\label{cor:tait-shore}
+In the cap geometry of Proposition~\ref{prop:factorization}, assume
+that \(R\) and \(S\) are nonempty:
+\begin{enumerate}[label=(\roman*),leftmargin=2.4em]
+\item if either \(\widehat Q_1\) or \(\widehat Q_2\) is
+  Tait-colourable, then
+  \[
+  \operatorname{rel}(R,S)\notin
+                \bigl\{\{\mathsf E\},\{\mathsf D\}\bigr\};
+  \]
+\item if both shore caps are Tait-colourable, then
+  \[
+  \operatorname{rel}(R,S)\notin
+  \bigl\{\{\mathsf E\},\{\mathsf E,\mathsf I\},
+                         \{\mathsf D\}\bigr\}.
+  \]
+\end{enumerate}
+Consequently one Tait shore excludes \(\mathcal E_5\) and the
+equality-only orientation of \(\mathcal E_4\); two Tait shores exclude
+both exceptional fixed-five signatures.
+\end{corollary}
+
+\begin{proof}
+Suppose first that \(\widehat Q_1\) is Tait-colourable.
+Lemma~\ref{lem:cap-nonbridge} and
+Theorem~\ref{thm:tait-cap-closure} give
+\(\mathcal P_i\subseteq R\).  The other signature \(S\) is nonempty and
+is a union of columns in \eqref{eq:tait-relation-table}.  Every nonempty union contains a
+relation other than \(\mathsf E\), and a relation other than
+\(\mathsf D\).  Since
+\(\operatorname{rel}(\mathcal P_i,S)\subseteq
+\operatorname{rel}(R,S)\), equality-only and disjointness-only are
+impossible.
+
+If both caps are Tait-colourable, there are base pairs
+\(\mathcal P_i\subseteq R\) and \(\mathcal P_j\subseteq S\).
+For \(i=j=0\), the pairs \(12,03\) and \(03,04\) exhibit
+\(\mathsf D\) and \(\mathsf I\), respectively; coordinate permutations
+give the other diagonal cases.  For \(i=0,j=1\), the pairs \(12,02\)
+and \(03,14\) exhibit \(\mathsf I\) and \(\mathsf D\); cyclic
+permutations of \(0,1,2\), and swapping the factors, give all
+off-diagonal cases.  Hence both \(\mathsf I\) and \(\mathsf D\) occur
+in \(\operatorname{rel}(R,S)\), excluding all three sparse exceptional
+sets.  Corollary~\ref{cor:exceptional-rooted} identifies those sets
+with the stated exceptional orientations.
+\end{proof}
+
+\begin{remark}[The mixed relation survives one-sidedly]
+The stronger one-sided claim is false.  The invariant sets
+\[
+ R=\mathcal P_0\cup\{01\},\qquad S=\{01\}
+\]
+satisfy \(\mathcal P_0\subseteq R\) but
+\[
+                    \operatorname{rel}(R,S)
+                    =\{\mathsf E,\mathsf I\}.            \tag{6.14}
+\]
+More precisely, put
+\[
+ U_0=\{01,02\},\qquad U_1=\{01,12\},\qquad
+ U_2=\{02,12\}.
+\]
+If \(\mathcal P_i\subseteq R\) and the cross-relation is exactly
+\(\{\mathsf E,\mathsf I\}\), Table~\eqref{eq:tait-relation-table} forces
+\[
+                      \varnothing\ne S\subseteq U_i,
+ \qquad R\cap S\ne\varnothing.                         \tag{6.15}
+\label{eq:tait-mixed-constraint}
+\]
+These are necessary restrictions, not an exclusion.
+\end{remark}
+
+\begin{corollary}[Conditional three-sum path consequence]
+\label{cor:tait-path}
+Suppose a 3-connected simple cap \(G=P+\{e,f\}\) satisfies the
+cyclic-three factorization hypotheses above and has a cubic
+three-sum factor tree in which every principal cyclic three-edge cut
+separates \(e\) from \(f\).  Then the factor tree is a path between
+the factors containing \(e\) and \(f\).
+
+If \(\mathcal C_5(P)=\mathcal E_5\), both endpoint factors are
+non-Tait.  If
+\(\mathcal C_5(P)=\mathcal E_4(i;j,k)\), an endpoint factor is
+non-Tait whenever its adjacent cut has pairing \(i\); a Tait endpoint
+is possible only for pairing \(j\) or \(k\), and then the opposite
+root signature satisfies \eqref{eq:tait-mixed-constraint}.  If the tree has one node,
+that node is the non-Tait cap supplied by
+Theorem~\ref{thm:simple-cap-reduction}.
+\end{corollary}
+
+\begin{proof}
+Let \(u,v\) be the factor-tree nodes containing \(e,f\).  In a tree,
+the edges whose deletion separates \(u\) and \(v\) are exactly the
+edges of the \(u\)-\(v\) path.  By hypothesis every tree edge has this
+property, so there is no off-path edge and the tree is a path.
+
+For a nontrivial path, the shore cap at an end cut is precisely the
+endpoint factor.  Corollary~\ref{cor:tait-shore} excludes a Tait
+endpoint when the corresponding relation is
+\(\{\mathsf D\}\) or \(\{\mathsf E\}\).
+Corollary~\ref{cor:exceptional-rooted} gives disjointness-only for
+\(\mathcal E_5\), equality-only for the \(\pi=i\) orientation of
+\(\mathcal E_4\), and the mixed relation for
+\(\pi\in\{j,k\}\).  The last case is restricted by
+\eqref{eq:tait-mixed-constraint}, as claimed.
+\end{proof}
+
+\begin{remark}[Premise supplied by the minimal simple-cap fork]
+In the vertex-minimal, two-cut-reduced simple-cap fork, the elementary
+cut analysis shows that every nontrivial cyclic three-edge cut
+separates \(e\) from \(f\): cuts meeting one or both cap edges leave a
+forbidden proper one- or two-edge cut, while a terminal-free shore of
+a cut disjoint from the cap edges can be replaced by one cubic vertex
+without changing the exact fixed-five signature.  The published
+decomposition theorem imported as \ref{imp:decomp} assumes
+3-connectivity, and that premise follows here as well.  The cap is
+simple, bridgeless, cubic, and has no cyclic two-edge cut.  A cutvertex
+in a bridgeless cubic graph would leave one component attached by a
+single edge.  If \(\{u,v\}\) were a two-vertex cut, every component of
+\(G-\{u,v\}\) would have at least three boundary edges; a smaller
+boundary is a bridge or, by cubic degree counting and simplicity, a
+cyclic two-edge cut.  The six incidences at \(u,v\) then force
+\(uv\notin E(G)\), exactly two components with three boundary edges
+each, and a \(2+1\) attachment to \(u,v\).  Adding to one component the
+vertex receiving two attachments produces a cyclic two-edge cut, a
+contradiction.  Hence the minimal simple cap is 3-connected and
+Corollary~\ref{cor:tait-path} applies without an extra connectivity
+assumption.
+\end{remark}
+
+\subsection{Fork transport through an end factor}
+
+For five distinct coordinates \(p,q,r,s,t\), define
+\[
+                 Q(p;q,r;s,t)=\{qr,ps,pt\}\subseteq D_5.       \tag{6.16}
+\]
+We call every set of this form a \emph{fork}.  The three base pairs
+\[
+ \mathcal P_0=\{12,03,04\},\quad
+ \mathcal P_1=\{02,13,14\},\quad
+ \mathcal P_2=\{01,23,24\}                                  \tag{6.17}
+\label{eq:fork-base-pairs}
+\]
+are forks, and coordinate permutations preserve the class of forks.
+
+\begin{theorem}[Endpoint-fork lift]
+\label{thm:endpoint-fork-lift}
+Let a simple 3-connected cubic graph \(H\) be reconstructed as a path
+of vertex three-sums
+\[
+                         F_1,F_2,\ldots,F_k.
+\]
+Suppose a distinguished proper root edge \(r\) lies in \(F_1\), while
+the deleted vertex supplying the three external connectors lies in
+\(F_k\).  Let \(w\) be the virtual vertex of \(F_1\) at its first
+principal cut.  Normalize the ordered external connector word to
+\(\tau=(01,02,12)\).
+
+If the normalized whole-shore root signature \(R(H,r)\) is nonempty
+and the endpoint signature \(R(F_1,w,r)\) contains one of the base
+pairs in \eqref{eq:fork-base-pairs}, then \(R(H,r)\) contains a fork.
+\end{theorem}
+
+\begin{proof}
+Choose one labelling of \(H\).  The labels on the first principal
+three-cut form an ordered triangle
+\(\alpha=(a,b,c)\): their xor is zero and each lies in \(D_5\).
+There is a coordinate permutation \(\sigma\in S_5\) taking \(\alpha\),
+in its physical order, to \(\tau\), since both words are ordered edge
+sets of triangles in \(K_5\).
+
+Restrict the chosen labelling to the fixed remainder
+\(F_2,\ldots,F_k\), retaining \(\alpha\) at its \(F_1\)-interface and
+the already normalized external word at the far end.  If
+\(\mathcal P_i\subseteq R(F_1,w,r)\), choose the three endpoint
+labellings with connector word \(\tau\) and root values in
+\(\mathcal P_i\).  Apply the same permutation \(\sigma^{-1}\) to all
+three endpoint labellings.  Their connector word becomes \(\alpha\),
+so every one glues to the same fixed remainder.  The resulting whole
+shore root values are exactly
+\(\sigma^{-1}(\mathcal P_i)\), which is a fork.
+\end{proof}
+
+Notice that nonemptiness also transports in the needed direction:
+restricting one whole-shore labelling to \(F_1\) and normalizing its
+interface triangle proves that the endpoint signature is nonempty.
+In the application below the endpoint root is a nonbridge.  A
+cyclically four-edge-connected simple cubic factor (and \(K_4\)) is
+3-connected; deleting its virtual vertex leaves a 2-connected graph.
+
+\begin{lemma}[Fork crossing]\label{lem:fork-crossing}
+If nonempty \(R,S\subseteq D_5\) each contain a fork, then
+\[
+              \{\mathsf I,\mathsf D\}
+                 \subseteq\operatorname{rel}(R,S).              \tag{6.18}
+\label{eq:fork-crossing}
+\]
+Moreover, one fork-containing side and any nonempty opposite side
+cannot have an equality-only or a disjointness-only relation.
+\end{lemma}
+
+\begin{proof}
+It suffices first to compare forks \(P\subseteq R\) and \(Q\subseteq S\).
+Write \(P=\{qr,ps,pt\}\).
+
+Suppose no member of \(Q\) is disjoint from a member of \(P\).
+A two-set meeting both \(ps\) and \(pt\) either contains \(p\) or is
+\(st\); the latter misses \(qr\).  In the former case, also meeting
+\(qr\) leaves only \(pq\) or \(pr\).  Thus the three distinct members
+of the fork \(Q\) would lie in a two-element set, a contradiction.
+Hence a disjoint cross-pair exists.
+
+Now suppose there is no unequal intersecting cross-pair.  Neither
+\(ps\) nor \(pt\) can belong to \(Q\), since they intersect one another
+unequally.  A label not equal to a member of \(P\) would have to be
+disjoint from all three members of \(P\), but their union contains all
+five coordinates.  Every member of \(Q\) would therefore equal \(qr\),
+again contradicting that a fork has three distinct members.  This
+proves \eqref{eq:fork-crossing}.
+
+For the one-sided statements, equality-only would force both sides to
+be the same singleton, while a fork has three members.  Disjointness-only
+would require an opposite label disjoint from all three fork members,
+which is impossible by the preceding all-five-coordinate observation.
+\end{proof}
+
+The \(30^2=900\) ordered fork pairs split into 330 with cross-relation
+\(\{\mathsf I,\mathsf D\}\) and 570 with
+\(\{\mathsf E,\mathsf I,\mathsf D\}\).  This literal table is only an
+error check; the displayed proof is independent of it.
+
+\section{Fixed-five rooted finite frontiers}
+
+\subsection{A human-checkable cap reduction}
+
+Let \(P\) be a connected simple proper core with four specified
+terminals \(T=\{t_1,t_2,t_3,t_4\}\), each of proper degree two, and all
+other vertices of proper degree three.  Attaching one semiedge at each
+terminal gives a terminal-distinct cubic four-pole.  A perfect matching
+of \(T\) is \emph{simple for \(P\)} if neither of its pairs is already
+an edge of \(P\).
+
+\begin{lemma}[Simple cap matching]\label{lem:simple-cap-matching}
+At least one of the three perfect matchings of \(T\) is simple for
+\(P\).
+\end{lemma}
+
+\begin{proof}
+Suppose each perfect matching contains an edge of \(P[T]\), and choose
+one such edge from each of the three matching classes of \(K_4\).  The
+three chosen edges form either a three-edge star or a triangle.  A star
+would give its terminal centre three proper neighbours, although that
+terminal has degree two.  In the triangle case, all three triangle
+vertices have both proper incident edges inside the triangle, making
+it a component of \(P\) disjoint from the fourth terminal.  Both
+possibilities contradict the setup.
+\end{proof}
+
+The non-Tait consequence used next retains the fixed-five scope.
+M\'a\v cajov\'a, Mazzuoccolo, and
+Tabarelli~\cite[Lemma 3.8]{MacajovaEtAl2026} prove that a
+Tait-colourable pole has no isolated vertex in its signature graph.  The \(T_i\) vertex is
+isolated in \(\mathcal E_4\), and \(A\) is isolated in
+\(\mathcal E_5\).  Moreover, the cited construction uses at most four
+colours, so the same exclusion holds when the exact signature is
+restricted to one fixed five-set.
+
+\begin{theorem}[Simple-cap enumeration reduction]
+\label{thm:simple-cap-reduction}
+Suppose no proper edge of \(P\) is a bridge and
+\(\mathcal C_5(P)\) is one of the fixed-five target masks
+\(\mathcal E_4,\mathcal E_5\) in \((6.10)\).  Some simple matching on
+\(T\) adds two independent edges \(e,f\) to produce a connected simple
+bridgeless cubic graph \(G=P+\{e,f\}\) which is not Tait-colourable.
+Deleting \(e,f\) recovers \(P\).
+\end{theorem}
+
+\begin{proof}
+Choose the matching by Lemma~\ref{lem:simple-cap-matching}.  Its pairs
+are nonedges with four distinct endpoints, so adding them preserves
+simplicity and makes every terminal cubic.  The graph remains
+connected.  Every old edge lies on a cycle because the proper core has
+no bridge.  Each new edge lies on a cycle because its endpoints are
+joined by a path in connected \(P\).  Thus \(G\) is bridgeless.
+
+If \(G\) had a Tait colouring, deleting \(e,f\) and retaining their
+colours on the four resulting semiedges would Tait-colour \(P\),
+contrary to the fixed-five consequence of the cited lemma.
+\end{proof}
+
+\subsection{Root base pairs through order 17}
+
+A rooted three-pole core of order \(n\) here is a connected simple
+graph with exactly three degree-two terminals, all other vertices
+cubic, and one distinguished proper edge.  Its three boundary
+semiedges are ordered and normalized to \((01,02,12)\).
+
+\begin{theorem}[Finite rooted base-pair theorem]
+\label{thm:order17-base-pair}
+For every odd \(n\leq17\), every nonempty fixed-five root signature of
+a nonbridge root in such an order-\(n\) core contains at least one of
+\(\mathcal P_0,\mathcal P_1,\mathcal P_2\).
+\end{theorem}
+
+This is a computer-assisted finite theorem.  Canonical input was
+generated by
+\[
+ \texttt{geng -cq -d2 -D3 \(n\) \(m\):\(m\)},\qquad
+ m=(3n-3)/2,
+\]
+which forces exactly three degree-two vertices.  At order 17, eight
+canonical shards contain \(654\,676\) cores and \(15\,645\,623\)
+nonbridge roots.  Two separately written engines were used: a direct
+finite-domain propagator and an incremental SAT encoding with a
+one-hot ten-label domain and the complete local support table.  Each
+reports
+\[
+\begin{array}{lr}
+\text{empty signatures}&337\,059,\\
+\text{signatures containing a base pair}&15\,308\,564,\\
+\text{violations}&0,\\
+\text{solver calls}&52\,216\,251.
+\end{array}
+\]
+Their deterministic transcript digests agree separately on all eight
+shards.  The retained verifier checks generator status, row accounting,
+both implementation summaries, and every digest equality.  Lower odd
+orders are included in the archived report.
+
+Theorem~\ref{thm:order17-base-pair} is not an induction and supplies no
+universal root-signature theorem.  Combined with Theorem
+\ref{thm:base-pair-certificate}, it says that the ordinary cut
+certificate does not occur among nonempty nonbridge roots in this
+finite simple-core range because a base pair is always present.
+
+\subsection{Endpoint factors through order 26}
+
+\begin{theorem}[Finite endpoint base-pair theorem]
+\label{thm:endpoint-through26}
+Let \(F\) be a cyclically \(4\)-edge-connected simple cubic graph of
+even order at most \(26\).  Delete any vertex \(z\), order and normalize
+its three former incident edges to \((01,02,12)\), and distinguish any
+nonbridge proper edge \(r\) of \(F-z\).  If the resulting fixed-five
+root signature is nonempty, it contains one of the three base pairs
+in \eqref{eq:fork-base-pairs}.
+\end{theorem}
+
+For factor order at most 18 this is
+Theorem~\ref{thm:order17-base-pair}, applied to the vertex-deleted
+core.  At factor orders \(20,22,24,26\), a Tait-colourable \(F\) is
+covered constructively by Theorem~\ref{thm:tait-cap-closure}.  The
+remaining complete cyclically four-edge-connected non-Tait sources
+contain respectively
+\[
+                         6,\quad31,\quad155,\quad1297
+\]
+graphs.  Deleting every vertex gives \(38\,244\) rooted cores.
+Independent incremental-CaDiCaL and direct finite-domain classifiers
+each test \(1\,360\,452\) nonbridge roots in \(4\,157\,844\) adaptive
+solver calls.  They report no empty row and no violation.  Their
+complete uncompressed transcripts are byte-identical, with SHA-256
+\[
+\texttt{bfb90fd89b43e66f02ada87abcb87ab643d87a4b36dba616cd1f3e5d603b7364}.
+\]
+An independently written verifier reconstructs the sources and all
+vertex deletions, checks the graph premises and every nonbridge root,
+and reproduces the report.  Source completeness for orders
+\(20,22,24,26\) relies on Snarkhunter 2.0b and its documented option
+semantics.
+
+\subsection{The cyclically four-connected order-22 cap corpus}
+
+\begin{theorem}[Finite full-signature cap census]
+\label{thm:cyclic4-cap-census}
+Let \(G\) be a cyclically \(4\)-edge-connected, bridgeless, non-Tait,
+connected simple cubic graph on 22 vertices, and let \(e,f\) be
+independent edges.  Then the deletion pole \(G-\{e,f\}\) has all ten
+parity-permitted boundary types in its fixed-five signature:
+\[
+                         \mathcal C_5(G-\{e,f\})
+                         \text{ has mask }\texttt{0x3ff}.
+\]
+\end{theorem}
+
+The quantifier is finite and exhaustive.  Of \(7\,319\,447\) canonical
+connected simple cubic graphs on 22 vertices, \(7\,187\,627\) are
+bridgeless.  Independent direct edge-colouring and perfect-matching
+filters agree on exactly \(12\,892\) non-Tait graphs and on the hard
+corpus digest
+\[
+\texttt{230f2cd88e72011d73a40c5f3d7d5f9fb0fca6110de2ec2541581bc50982037c}.
+\]
+Exact cut classification leaves 31 cyclically \(4\)-edge-connected
+graphs.  Deleting every independent edge pair gives \(14\,322\)
+ordered pole records.
+
+Two classifiers ask ten questions for each record.  One uses CaDiCaL;
+the other is independently written finite-domain code.  Both return
+\[
+\begin{aligned}
+ \text{rows}&=14\,322,\\
+ \text{queries}&=\text{SAT answers}=143\,220,\\
+ \text{nonfull rows}&=0.
+\end{aligned}
+\]
+Their uncompressed output streams are byte-identical, with SHA-256
+\[
+\texttt{52edd8a189012acefd3565a79d5c58b6f209bbe40156560eb57e2c569fd7c091}.
+\]
+These checks prove Theorem~\ref{thm:cyclic4-cap-census} conditional on
+the generator and two implementations.
+
+\begin{corollary}[Complete order-22 cap consequence]
+\label{cor:order22-all-cap}
+No bridge-free connected simple terminal-distinct order-22 four-pole
+has fixed-five signature \(\mathcal E_4\) or \(\mathcal E_5\).
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:simple-cap-reduction} places some simple cap in the
+complete corpus of \(12\,892\) bridgeless non-Tait order-22 graphs.
+Deleting all independent edge pairs gives \(5\,956\,104\) pole rows.
+Independent CaDiCaL and direct finite-domain classifiers make
+\(23\,747\,129\) exact signature queries per implementation and agree
+that none of the rows is exceptional.  The complete replay
+reconstructs the canonical source, every deletion row, every shard
+digest, and both implementation summaries.
+\end{proof}
+
+\subsection{Cyclically four-connected caps through order 26}
+
+\begin{theorem}[Finite cap classifications at orders 24 and 26]
+\label{thm:cyclic4-through26}
+Let \(G\) be a cyclically \(4\)-edge-connected, bridgeless, non-Tait,
+connected simple cubic graph of order \(24\) or \(26\), and let \(e,f\)
+be independent edges.  Then
+\[
+                         \mathcal C_5(G-\{e,f\})
+                         \text{ has mask }\texttt{0x3ff}.
+\]
+\end{theorem}
+
+At order 24 the retained Snarkhunter source has 155 caps.  Its
+\(86\,490\) independent-edge deletions require \(864\,900\) exact
+boundary queries per implementation; every query is satisfiable and
+the classification digest is
+\[
+\texttt{23298cb8c6abf989052a249db8ce48c9d73b233ef1c5b07d73054d4a130913d4}.
+\]
+At order 26 the source has 1,297 caps and \(859\,911\) deletion poles.
+Both implementations answer all \(8\,599\,110\) boundary queries
+satisfiably, with classification digest
+\[
+\texttt{abc46bc0af6f94596ae11c68af95acc55cf8d73d82f81aea4a06ab8614a14da2}.
+\]
+For each order an independent verifier checks every graph premise,
+reconstructs every independent-edge deletion, and compares the two
+complete tables.  Canonical source completeness again relies on
+Snarkhunter 2.0b.
+
+\subsection{Two explicit boundary witnesses at order 28}
+
+\begin{theorem}[Order-28 two-orbit classification]
+\label{thm:cyclic4-order28}
+Every independent-edge deletion from every graph in the retained
+cyclically \(4\)-edge-connected non-Tait simple cubic order-28 source
+realizes both fixed-five boundary words
+\[
+                       (01,01,01,01)
+             \quad\text{and}\quad
+                       (01,01,23,23),                         \tag{7.1}
+\label{eq:order28-two-orbits}
+\]
+up to coordinate permutation.  Consequently no such deletion pole has
+one of the six ordered exceptional exact fixed-five signatures.
+\end{theorem}
+
+\begin{proof}
+In the frozen canonical ordering of the ten boundary orbits, the two
+words in \eqref{eq:order28-two-orbits} are orbits 0 and 2.  The six
+exceptional masks---the three terminal-pairing orientations of each
+family in \((6.10)\)---have the following literal membership table:
+\[
+\begin{array}{c|cc|c}
+\text{exact mask}&\text{orbit 0}&\text{orbit 2}&\text{excluded by}\\ \hline
+\texttt{0x02b}&\checkmark&-&\text{orbit 2}\\
+\texttt{0x053}&\checkmark&-&\text{orbit 2}\\
+\texttt{0x119}&\checkmark&-&\text{orbit 2}\\
+\texttt{0x2e4}&-&\checkmark&\text{orbit 0}\\
+\texttt{0x3a4}&-&\checkmark&\text{orbit 0}\\
+\texttt{0x3c4}&-&\checkmark&\text{orbit 0}
+\end{array}                                                   \tag{7.2}
+\]
+An exact signature cannot equal a mask which omits a realized orbit.
+Thus the two positive witnesses exclude all six masks.  This step uses
+no UNSAT inference.
+\end{proof}
+
+The retained source was produced by
+\[
+                 \texttt{snarkhunter 28 4 S s C4 o g}
+\]
+and contains \(12\,517\) graphs.  This is complete for the needed
+cyclically four-connected cap class subject to Snarkhunter 2.0b and its
+documented option semantics.  To see why the girth-four source loses
+nothing, a triangle in a simple cubic order-28 graph has three leaving
+edges, while its 25-vertex complement has 36 internal edges and hence
+contains a cycle.  It would therefore expose a cyclic three-edge cut.
+
+Every cubic order-28 source graph has 42 edges.  The number of
+independent edge pairs in each is
+\[
+       \binom{42}{2}-28\binom32=861-84=777,
+\]
+so the complete deletion corpus has
+\[
+                         12\,517\cdot777=9\,725\,709
+\]
+rows.  A CaDiCaL-backed producer emitted a complete \(D_5\)-labelling
+for each of the two words in \eqref{eq:order28-two-orbits} on every
+row: \(19\,451\,418\) explicit labellings and zero missing witnesses.
+Each certificate assigns a weight-two vector to every proper edge and
+semiedge.  Its verification is simply the xor-zero equation at every
+cubic vertex plus the displayed boundary word.
+
+The standard-library verifier reconstructs every deletion from the
+retained cap, checks each source for order, cubicity, connectedness,
+bridgelessness, triangle-freeness and non-Taitness, and verifies every
+displayed labelling.  Its independently written zlib/C++ companion
+instead treats the pole and witness streams as primary input and
+reconstructs their incidence semantics.  Both full replays pass on all
+\(9\,725\,709\) rows.  The uncompressed pole and witness stream
+SHA-256 values are respectively
+\[
+\begin{aligned}
+&\texttt{f42168e2786bdee409304e9e7b167ae0a0e250c78e7c2413e55ee56f5627a839},\\
+&\texttt{658374b00418fa626da704670689f4dfad25cf740121509a725da4158491ef7d}.
+\end{aligned}
+\]
+Neither verifier independently regenerates the canonical source or
+rechecks cyclic four-connectivity; those provenance claims rest on the
+retained Snarkhunter run.
+
+\begin{theorem}[Scoped exceptional-pole lower bound]
+\label{thm:exceptional-order30}
+There is no bridge-free connected simple terminal-distinct cubic
+four-pole on at most \(28\) internal vertices whose exact fixed-five
+signature is one of the six ordered exceptional signatures.  Hence
+every such pole has even order at least \(30\).
+
+In the cyclic-three branch of a reduced exceptional simple cap, the
+cap has order at least \(30\).  For the equality-only and
+disjointness-only relations separately, it has order at least \(54\).
+\end{theorem}
+
+\begin{proof}
+The degree sum of a terminal-distinct cubic four-pole of order \(n\)
+is \(3n-4\), so \(n\) is even.  The complete finite cap censuses through
+order 22 exclude every pole in the stated scope there.  Suppose an
+exception of order 24, 26, or 28 exists.  The exact two-cut descent replaces
+a zero-terminal shore by one edge and a one-terminal shore by one
+cubic vertex; a two-plus-two composition contains a strictly smaller
+factor in the same exceptional family.  Iterating gives, without
+increasing order, a vertex-minimal two-cut-reduced exceptional atom.
+The simple-cap reduction gives it a simple bridgeless non-Tait cubic
+cap \(G=P+\{e,f\}\).
+
+If \(G\) is cyclically four-edge-connected, Theorem
+\ref{thm:cyclic4-through26} excludes atom orders 24 and 26, while
+Theorem~\ref{thm:cyclic4-order28} excludes order 28.  Otherwise the structural fork
+proved above makes its cubic three-sum factor tree a path
+\[
+                            F_1,\ldots,F_k,\qquad k\ge2,
+\]
+with \(e\) and \(f\) in the endpoint factors.  Every principal cut
+separates the two cap edges.  The rooted signatures of either shore
+are nonempty, and restriction to its root-end factor shows the
+corresponding endpoint signature is nonempty.  The root survives the
+deleted virtual vertex and is a nonbridge.  Thus an endpoint factor of
+order at most 26 contains a base pair by Theorem
+\ref{thm:endpoint-through26}; Theorem
+\ref{thm:endpoint-fork-lift} lifts it to a fork on the whole shore.
+
+If both endpoint factors had order at most 26, applying this at the
+two sides of any principal cut would put a fork in both shore
+signatures.  Lemma~\ref{lem:fork-crossing} forces both
+\(\mathsf I\) and \(\mathsf D\), contradicting each exceptional
+cross-relation
+\[
+            \{\mathsf E\},\qquad
+            \{\mathsf E,\mathsf I\},\qquad
+            \{\mathsf D\}.
+\]
+Hence one endpoint factor has order at least 28.  Every cubic factor
+has order at least four, and reversing the \(k-1\) vertex three-sums
+gives
+\[
+\begin{aligned}
+ |V(G)|
+   &=\sum_{i=1}^k|V(F_i)|-2(k-1)\\
+   &\ge28+4+4(k-2)-2(k-1)
+    =2k+26\ge30.
+\end{aligned}
+\]
+This contradicts the assumed cap order at most 28.
+
+For relation \(\{\mathsf E\}\) or \(\{\mathsf D\}\), the one-sided
+part of Lemma~\ref{lem:fork-crossing} applies at either end separately.
+Both endpoint factors therefore have order at least 28, and
+\[
+ |V(G)|\ge28+28+4(k-2)-2(k-1)=2k+50\ge54.
+\]
+The lower bound 30 now follows from parity.
+\end{proof}
+
+Order 30 remains open and may occur in either cap branch; no stronger
+finite lower bound is claimed.
+The theorem does not cover bridge-bearing poles, repeated terminals,
+nonsimple cores, arbitrary-colour signatures, or orientability.
+
+\section{The order-22 computational census}
+
+\subsection{The exact property}
+
+For a Tait-colourable cubic graph \(H\), define a conflict graph
+\(\Omega(H)\) whose vertices are the edge objects of \(H\).  Join two
+edge objects when they are adjacent in \(H\), or when some Tait
+colouring places them on the same bichromatic factor cycle.
+
+\begin{lemma}[Conflict-graph equivalence]\label{lem:conflict}
+A four-edge set \(S\) is a universally separated matching if and only if
+it is an independent set of size four in \(\Omega(H)\).
+\end{lemma}
+
+\begin{proof}
+Adjacency conflicts are exactly the negation of the matching condition.
+Every other conflict records one colouring and one bichromatic cycle
+containing two selected edges.  Absence of all such conflicts is exactly
+separation in every Tait colouring.
+\end{proof}
+
+\begin{theorem}[Order-22 census]\label{thm:census}
+No Tait-colourable connected simple cubic graph on 22 vertices has a
+universally separated four-edge matching.
+\end{theorem}
+
+\subsection{Canonical generation}
+
+The program \texttt{geng} from nauty and Traces 2.9.3
+\cite{McKayPiperno2014} was run in four modular shards:
+\begin{verbatim}
+geng -cq -d3 -D3 22 0/4
+geng -cq -d3 -D3 22 1/4
+geng -cq -d3 -D3 22 2/4
+geng -cq -d3 -D3 22 3/4
+\end{verbatim}
+Here \texttt{-c} requires connectedness, \texttt{-d3 -D3} requires
+degree three, and \texttt{geng} canonically generates simple graphs.
+The four disjoint shards contain respectively
+\[
+ 1\,376\,411,\quad 2\,078\,782,\quad
+ 1\,716\,645,\quad 2\,147\,609
+\]
+graphs, for a total of \(7\,319\,447\).
+
+\subsection{Two enumeration methods}
+
+The primary program fixes the three colours at one vertex, thereby
+quotienting the six global colour permutations.  It recursively
+enumerates every remaining Tait colouring, records each bichromatic
+factor cycle, builds \(\Omega(H)\), and performs exact backtracking for
+an independent four-set.
+
+The replay program does not use the primary colouring recursion.  It
+enumerates every perfect matching \(M\), retains \(M\) exactly when its
+complement is a union of even cycles, and chooses independently one of
+the two alternating colourings on every complementary cycle.  It then
+records the three bichromatic factor partitions and builds the same
+semantic conflict graph.  Each Tait colouring modulo global colour
+permutation is visited six times: three choices of distinguished colour
+matching and two orders for the other two colours.
+
+Both methods skip a graph only after establishing that it has no Tait
+colouring.  On every shard they agree on the graph count, the number of
+Tait-colourable graphs, the number of normalized Tait colourings, and
+the zero witness count:
+
+\begin{center}
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+Shard & Graphs & Tait-colourable & Normalized colourings & Witnesses\\
+\midrule
+0 & 1,376,411 & 1,338,944 & 17,481,016 & 0\\
+1 & 2,078,782 & 2,029,518 & 28,040,733 & 0\\
+2 & 1,716,645 & 1,686,315 & 22,708,101 & 0\\
+3 & 2,147,609 & 2,119,958 & 27,130,262 & 0\\
+\midrule
+Total & 7,319,447 & 7,174,735 & 95,360,112 & 0\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The replay additionally visits \(312\,583\,931\) perfect matchings.
+By Lemma~\ref{lem:conflict}, the exhaustive zero-witness output on all
+\(7\,174\,735\) eligible graphs proves Theorem~\ref{thm:census},
+conditional on the correctness of the generator and implementations.
+
+\subsection{Controls and limitations}
+
+The two implementations agree on complete lower-order corpora:
+\begin{center}
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+Order & Graphs & Tait-colourable & Colourings & Perfect matchings
+  & Witnesses\\
+\midrule
+12 & 85 & 80 & 307 & 902 & 0\\
+16 & 4,060 & 3,848 & 23,420 & 73,929 & 0\\
+18 & 41,301 & 39,687 & 307,606 & 995,256 & 0\\
+\bottomrule
+\end{tabular}
+\end{center}
+These three controls were rerun from the present source during the
+manuscript audit.
+
+A positive target-three control at order 24 has graph6 encoding
+\begin{verbatim}
+W`??A???A_@_A_cO?S_Gc`_?@O@@?@OO??_????_??H_A?E
+\end{verbatim}
+Both programs enumerate 36 normalized Tait colourings, return the same
+first separated triple (edge identifiers \(0,1,34\)), and reject a
+separated four-set.  This exercises the positive witness path, although
+it is not a positive four-mark control.
+
+The computation does not address multigraphs, orders 24 and above, or
+the rooted avoiding-cycle property.  The two programs share the
+mathematical conflict-graph specification and the graph6 input format;
+their enumeration engines are different, but they are not formal
+proof-producing verifiers.  Reproduction of the full census is the
+available check of the finite claim.
+
+\section{Reproducibility}
+
+The source distribution containing this manuscript stores the two
+programs at
+\begin{verbatim}
+scratch/tait_all_coloring_mark_separation.cpp
+scratch/verify_order22_separation_via_matchings.cpp
+\end{verbatim}
+and the machine-readable run record at
+\begin{verbatim}
+scratch/order22-universal-four-separation-result.json
+\end{verbatim}
+Paths are relative to the project root, one directory above this
+preprint directory.
+
+The finite truth-table checks supporting the rooted algebra, though not
+needed by its displayed proofs, are stored at
+\begin{verbatim}
+scratch/rooted_cycle_translation_blockers.py
+scratch/verify_rooted_cycle_translation_blockers.mjs
+scratch/rooted-cycle-translation-blockers-result.json
+scratch/rooted_three_pole_signature_factorization.py
+scratch/verify_rooted_three_pole_signature_factorization.mjs
+scratch/rooted-three-pole-signature-factorization-result.json
+\end{verbatim}
+The first replay checks all \(2^{10}-1\) nonempty \(K_5\) edge
+supports.  The second enumerates all nonempty pairs of stabilizer-orbit
+unions and confirms the four equality-only, 26 ordered disjoint-only,
+and thirteen unordered disjoint-only cases.
+
+The rooted order-17 package, the endpoint-factor package through order
+26, and the completed cap packages are stored at
+\begin{verbatim}
+search/rooted-three-pole-frontier-20260727/
+  order17-base-pair-report.json
+  artifacts/order17-base-pair/
+  verify_order17_base_pair_run.py
+search/rooted-three-pole-nontait-endpoint-frontier-20260727/
+  report.json
+  artifacts/
+  verify.py
+search/four-pole-order22-cap-20260727/
+  report.json
+  artifacts/order22-all-cap-poles.g6.gz
+  artifacts/full-run/
+  verify_completed_run.py
+search/four-pole-order24-cyclic4-cap-20260727/
+search/four-pole-order26-cyclic4-cap-20260727/
+search/four-pole-order28-cyclic4-cap-20260727/
+  report.json
+  artifacts/cyclic4-nontait-order28.g6
+  artifacts/cyclic4-nontait-order28-poles.g6.gz
+  artifacts/cadical-two-orbit-witness.tsv.gz
+  verify.py
+  independent-fast-replay.json
+scratch/verify_boundary_two_orbit_witness_fast.cpp
+\end{verbatim}
+The complete order-22 all-cap phase is included: its two classifiers
+agree on all eight shard digests and find zero exceptional rows among
+\(5\,956\,104\) deletion poles.
+The order-28 package retains two positive certificates per deletion
+row.  The Python replay reconstructs all rows from the cap source; the
+separately written C++ replay reads the two compressed certificate
+streams directly.  Both check every one of the \(19\,451\,418\)
+labellings.
+
+The fork-crossing replay and its retained result are
+\begin{verbatim}
+scratch/verify_rooted_end_factor_fork_lift.py
+scratch/rooted-end-factor-fork-lift-replay.json
+\end{verbatim}
+with SHA-256 values
+\[
+\begin{aligned}
+\text{verifier: }&
+\texttt{2474c8869be64e3386b23a58e1b929e5e0f56227d19033e3d4316fbb17e1f136},\\
+\text{result: }&
+\texttt{738cbf30b1361b6de5bc18a13e4dfbafa9878a8bfdd9755e21b98afcda6dd513}.
+\end{aligned}
+\]
+
+The semantic build and run commands are:
+\begin{verbatim}
+clang++ -O3 -std=c++20 \
+  scratch/tait_all_coloring_mark_separation.cpp \
+  -o /tmp/tait_all_coloring_mark_separation
+
+geng -cq -d3 -D3 22 SHARD/4 |
+  /tmp/tait_all_coloring_mark_separation \
+    --target 4 --stop-after-first --progress 250000
+
+clang++ -O3 -std=c++20 \
+  scratch/verify_order22_separation_via_matchings.cpp \
+  -o /tmp/verify_order22_separation_via_matchings
+
+geng -cq -d3 -D3 22 SHARD/4 |
+  /tmp/verify_order22_separation_via_matchings \
+    --target 4 --stop-after-first --progress 250000
+\end{verbatim}
+
+The frozen SHA-256 identifiers are:
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Artifact & SHA-256\\
+\midrule
+Primary source &
+\texttt{a00c2f53a3b95a06a7e8767aae2eb2bfa794fc95eeeba18bcac34aea6a12072a}\\
+Replay source &
+\texttt{104dca4ac143581a9b306172354428a96913f3fe1701c60b2a018510990ecead}\\
+\texttt{geng} 2.9.3 binary &
+\texttt{ad2f68adf733dbed7cad543841cfa329740596ee5cd136f17a0a17f6e744f5ad}\\
+Primary run binary &
+\texttt{a63d8048528e3dfa751049fbad6aec3b4909d1f7508f9e56859edbb5af9a6aa0}\\
+Replay run binary &
+\texttt{3de46d3c343fb3b23679334f1058104488077386f49b4a2541273aa1e5d7d703}\\
+Corrected census report &
+\texttt{53faa21acfaf75e6bf1d54d6c7d73150a57207067be4f44e20c55be220c322a2}\\
+Corrected run JSON &
+\texttt{59d8e99cffb573de6ffa8a4df122099db3fd856d8e87803920e9cf69d6946ca8}\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The recorded environment was macOS 26.5.2 on arm64 with Apple clang
+21.0.0.  Mach-O linker UUIDs can make recompilations byte-distinct, so
+the source hashes and semantic counts are the portable anchors; the
+binary hashes identify the executables used in the archived runs.
+The JSON record includes all shard counts, commands, controls, and scope
+warnings.  Its arithmetic totals were independently recomputed during
+this manuscript audit.
+
+\section{Relationship among the results and open boundary}
+
+Theorem~\ref{thm:core} is unrooted: its binary cycle may contain a
+prescribed edge \(f\).  Theorem~\ref{thm:gate} is rooted but assumes the
+marks are separated in one fixed common-colour Tait colouring and leaves
+a cyclic four-cut interface.  Neither theorem implies the other.
+Proposition~\ref{prop:elliptic-flow} supplies the exact algebraic
+language for the later rooted interface.  Theorem
+\ref{thm:translation-obstruction} then restricts a different,
+exceptional three-pole interface, but only conditionally on a singleton
+root signature; Theorem~\ref{thm:base-pair-certificate} turns a wider
+failure into an ordinary cut certificate.  Neither is an elimination.
+Theorem~\ref{thm:tait-cap-closure} proves base-pair closure for the
+unbounded class of rooted poles whose one-vertex cap is Tait-colourable.
+Corollary~\ref{cor:tait-shore} deliberately distinguishes the valid
+one-sided exclusions from the false claim that one Tait shore removes
+the mixed \(\{\mathsf E,\mathsf I\}\) relation.
+Theorems~\ref{thm:order17-base-pair} and
+\ref{thm:endpoint-through26} establish exact finite rooted frontiers,
+while Theorems~\ref{thm:cyclic4-cap-census} and
+\ref{thm:cyclic4-through26} establish full-signature cap frontiers and
+Theorem~\ref{thm:cyclic4-order28} supplies the two positive orbits
+needed at order 28.  They are not universal signature theorems.  The
+human endpoint-fork lift and fork-crossing lemma combine these finite
+inputs to prove Theorem~\ref{thm:exceptional-order30}; that theorem is
+still only a finite scoped exceptional-pole result.
+Theorem~\ref{thm:census} says only that a particularly strong
+four-mark hypothesis cannot occur at order 22 in a Tait-colourable
+simple cubic graph.  It is diagnostic evidence, not a substitute for
+the missing four-cut argument.
+
+The marked-cycle human-proof frontier left by this paper is:
+\begin{quote}
+Analyze the rooted four-pole obtained when the forbidden edge belongs
+to an independent cyclic four-edge cut, while preserving the inherited
+mark-parity and fixed-colouring constraints.
+\end{quote}
+The distinct fixed-five signature frontier is to prove universal
+base-pair closure or reduce the coordinate-cut certificates beyond the
+completed factor order 26, and to treat cap order 30 in both the
+cyclic-three and cyclically four-connected branches.  Nothing here
+classifies the published arbitrary-colour relation.
+The endpoint-lift proof avoids the earlier pending triangle-screen
+route: it fixes one labelling of the path remainder and transports all
+three endpoint labels by one inverse coordinate normalization.  The
+order-28 positive witnesses then raise the scoped lower bound to 30.
+Even a universal resolution of the exceptional-signature problem
+would still leave the remaining global reductions in a Five-Cycle
+Double Cover proof.  No claim about the orientable conjecture is made.
+
+\section*{Acknowledgements}
+
+The author thanks the authors of the cited structural and
+prescribed-cycle theorems.  The substantial OpenAI Codex contribution
+is described in the disclosure on the first page and is repeated here
+to avoid ambiguity: the present text and the underlying project are
+AI-assisted research artifacts awaiting independent human review.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

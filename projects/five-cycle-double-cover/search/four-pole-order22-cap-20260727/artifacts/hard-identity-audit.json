@@ -1,0 +1,17 @@
+{
+  "canonical_stream": {
+    "rows": 7319447,
+    "sha256": "6d90b02cab31dcd40bbf1de18e36bdc7b4b8515e626bfcb5f2d721b90bf2a41b"
+  },
+  "filter_report": {
+    "hard_rows": 12892,
+    "sha256": "bceb0145309b9b0237231a271e74804db2197628ccccf70ac1f51ee8b6c9beb6"
+  },
+  "hard_corpus": {
+    "path": "/private/tmp/order22-hard.g6",
+    "rows": 12892,
+    "sha256": "230f2cd88e72011d73a40c5f3d7d5f9fb0fca6110de2ec2541581bc50982037c"
+  },
+  "identity_failures": 0,
+  "schema": "order22-hard-corpus-identity-audit-v1"
+}

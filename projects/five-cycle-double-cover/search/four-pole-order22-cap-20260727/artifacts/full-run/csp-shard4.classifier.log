@@ -1,0 +1,8 @@
+progress rows=100000 queries=399217 hits=0
+progress rows=200000 queries=798154 hits=0
+progress rows=300000 queries=1197049 hits=0
+progress rows=400000 queries=1595574 hits=0
+progress rows=500000 queries=1994268 hits=0
+progress rows=600000 queries=2392846 hits=0
+progress rows=700000 queries=2791563 hits=0
+SUMMARY implementation=csp mode=exceptional rows=744513 queries=2968603 sat=2847100 hits=0

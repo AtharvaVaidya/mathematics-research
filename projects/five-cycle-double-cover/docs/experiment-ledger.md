@@ -2055,7 +2055,7 @@ with value \(2+1=3\) and has marked-subdivision girth five.  A complete
 simple-cubic screen through order 20 found no universally separated
 four-mark instance satisfying the standard marked-cut hypothesis.
 
-## Low-surplus Kempe frontier through ambient order 96
+## Low-surplus Kempe frontier and complete ambient-order-98 census
 
 Audit date: **2026-07-26**.
 
@@ -2072,6 +2072,109 @@ single switches, and all \(255\) nonempty simultaneous switches from
 each shore.  It reports PASS with minimum slack one on both shores.
 This is an abstract necessary-condition skeleton, not a graph
 realization.
+
+Three later local girth constraints exclude that skeleton and two
+all-multiplicity-at-most-two replacements.  The complete strengthened
+incidence census then enumerates all 109 canonical excess-profile pairs
+and finds zero matrices:
+
+```text
+order-96 strengthened incidence census: PASS
+canonical_profile_pairs=109
+surviving_profiles=0
+surviving_matrices=0
+total_search_nodes=3266
+census_sha256=6b754326a9490ec51788965ccc4caea257031b7cb8180bea22a71477bcd94529
+```
+
+An independent QF_LIA implementation returns 109/109 UNSAT with status
+digest
+`36307d048a74da4f6c7ba93bcb0def2535747cc142c98a73cc39d814563e4093`.
+A separate audit checked the 109 orbits against all 108,900 labelled
+profile pairs and reran a prune-free 11,762-node DFS.
+
+At order \(98\), the general factor-size and Kempe-incidence argument
+excludes the newly possible unmarked circuit.  The resulting all-marked
+system has 335 simultaneous-\(S_8\) profile-pair orbits.  The new
+diagonal total-excess-two overlap lemma, proved by a weighted
+triangular-prism/\(K_{3,3}\) argument, closes the last local gap.  The
+complete output is:
+
+```text
+order-98 strengthened incidence census: PASS
+canonical_profile_pairs=335
+surviving_profiles=0
+surviving_matrices=0
+total_search_nodes=32327
+census_sha256=7341775b73eedeaa51e72aa1abf0ef277c58651de01c42f982850828f402836c
+```
+
+An independently generated QF_LIA implementation returns 335/335 UNSAT
+with status digest
+`d25fc082531d63325351ef8bbb29234ffc90e164fdfe6d184fe79af0b0d1d2d1`.
+A separate audit normalizes all \(792^2=627,264\) labelled profile pairs
+to the same 335 orbits, obtains zero survivors with the forward prune
+disabled after 9,193,235 nodes, and finds all 335 independently generated
+HiGHS MILP instances infeasible.  Omitting only the new diagonal cap
+leaves exactly two survivors.
+
+The independent audit note and checker are
+`docs/order98-independent-incidence-audit.md` and
+`scratch/audit_order98_incidence_system_independent.py`.  The frozen
+audit result has SHA-256
+`42752bef8ece3d62fa7437743cb20be216d49f28374711c91d310bceeed324cc`.
+
+This raises the connected eight-mark size-four branch bound to ambient
+order 100; it is not a general graph census or a five-CDC proof.
+
+## Certified ambient-order-100 global-profile closure
+
+Audit date: **2026-07-26**.
+
+The human unmarked-factor argument in
+`docs/order100-unmarked-exclusion-and-row-star-frontier.md` reduces order
+100 to the all-marked case.  The cap-table census leaves 155 of 1,002
+canonical profile pairs, and the exact weighted row/column-star replay
+leaves exactly three relative alignments of
+\((2,2,1,1,0,0,0,0)\).
+
+`scratch/solve_order100_global_profile_sat.py` does not fix one of the
+1,864, 1,680, or 1,984 labelled incidence matrices.  For each of the
+three profile alignments it chooses all 64 cell geometries, enforces exact
+position covers and Kempe support caps, and reconstructs all \(46\)
+common-colour tokens of the \(92\)-vertex core.  The final results are:
+
+```text
+profile  variables  base clauses  semantic lazy clauses  terminal clauses
+0        36388      96072         94135                  0
+1        36188      95537         115385                 0
+2        35988      95002         787384                 0
+```
+
+All three formulas are UNSAT already in \(G-M\).  CaDiCaL generated LRAT
+proofs and the independent C `lrat-check` reported `VERIFIED` on every
+one.  The producer-free
+`scratch/check_order100_global_profile_cnf.py` independently regenerates
+the local domains, Sinz encodings, exact position covers, support links,
+and support caps.  It then decodes every appended negative-option clause
+and reconstructs its forced partial graph.  All \(996,904\) lazy clauses
+contain an actual circuit of length below ten; none uses the terminal
+pairing fallback.  The checker also requires its three profiles to agree
+exactly with the independent row-star survivor artifact.
+
+```text
+CNF p0   4e53fb27d42318aab96014ed1319f0e98398260e731176a186d0029285bb4d25
+CNF p1   e3b3e7691f0c8b05193c9ea02055985fb6cf8fac0621c2a87371951a307b7741
+CNF p2   120fa2c89cb13dd7d706a58cadd290b805dec4a7aca3b92c97d68477c0849ac0
+LRAT p0  a34d8d9170f596e43d02779f6ac7d9271ba1bf1b08ea2ecf862cf59a2230e4c8
+LRAT p1  265a74e8e9a3fc7606fba45734e7180d9137e1dbbdde7e95cae08f469f2047d5
+LRAT p2  f96d88f051b2a00613265207118bc460102f34c69698a89143b2c971b0fc11cb
+checker  217ddb77675e9e1484e25de9d84feadcce132542af6b07f60c7543c3bcdc1032
+```
+
+This closes ambient order 100 only in the connected eight-mark extremal
+exact-zero size-four branch and raises its bound to \(102\).  It is not a
+general graph census and not a proof of five-CDC.
 
 SHA-256:
 
@@ -2122,3 +2225,567 @@ Python producer       9469b35d5034b9196d37092a8c701132046d68aee04854deee5f4947f8
 frozen JSON           e12307cad9a7176dfc8072f9d4052edd148cea5b4d9e11be8617c936a00d65c9
 independent JS        09c36ddf3ec5901e9b8a6a6a051b745bd31b7420fe811b6a098a263503e3faa5
 ```
+
+## Complete order-22 universal four-separation census
+
+Audit date: **2026-07-27**.
+
+Four canonical `geng` shards exhaust all \(7\,319\,447\) connected
+simple cubic graphs on 22 vertices.  The primary direct-colouring
+implementation and a separately written perfect-matching/even-two-factor
+replay agree on every shard:
+
+```text
+shard  graphs     Tait graphs  normalized colourings  witnesses
+0      1376411    1338944      17481016                0
+1      2078782    2029518      28040733                0
+2      1716645    1686315      22708101                0
+3      2147609    2119958      27130262                0
+total  7319447    7174735      95360112                0
+```
+
+The independent replay visits \(312\,583\,931\) perfect matchings and
+derives every normalized Tait colouring six times, from the three
+choices of distinguished colour matching and two orders of the
+complementary colours.  Complete order-12, order-16, and order-18
+controls agree exactly.  On a positive order-24 target-three control,
+both implementations return the same first marked edge IDs
+\(0,1,34\), while both correctly reject target four.
+
+The result proves only that no Tait-colourable connected simple cubic
+order-22 graph has a universally bichromatic-factor-separated four-edge
+matching.  Uncolourable rows are outside the theorem because both
+implementations skip their vacuous no-colouring case.  It is not a
+multigraph theorem and does not settle orders 24 or higher.
+Details, hashes, and commands are in
+`docs/order22-universal-four-separation-screen.md` and
+`scratch/order22-universal-four-separation-result.json`.
+
+SHA-256:
+
+```text
+primary source       a00c2f53a3b95a06a7e8767aae2eb2bfa794fc95eeeba18bcac34aea6a12072a
+independent source   104dca4ac143581a9b306172354428a96913f3fe1701c60b2a018510990ecead
+geng binary          ad2f68adf733dbed7cad543841cfa329740596ee5cd136f17a0a17f6e744f5ad
+```
+
+## Complete order-18 exceptional-signature census
+
+Audit date: **2026-07-27**.
+
+The exact command
+
+```text
+geng -cq -d2 -D3 18 25:25
+```
+
+has \(4\,159\,098\) canonical rows.  Each row was classified by both an
+incremental-SAT implementation and an independently written direct
+finite-domain implementation.  Their aggregate counts per
+implementation are:
+
+```text
+rows          4,159,098
+queries      16,453,323
+satisfiable  15,295,709
+exceptional           0
+```
+
+Every complete decision transcript was streamed through a third parser
+and hashed.  SAT and CSP transcript digests agree on each of eight
+shards.  The exact finite conclusion is that none of these order-18
+degree-\((2,3)\) cores realizes any of the six ordered exceptional
+boundary masks in the fixed five-colour \(D_5\) model.  It is not a
+universal absence theorem or a classification with unboundedly many
+colours.
+
+Frozen package:
+`search/four-pole-order18-exceptional-20260727/`.
+
+SHA-256:
+
+```text
+SAT source       37d5a07702260522d722867929843fadc099cf28e4a511a9b45399383d855ce4
+CSP source       3f4fbb38ed3a085fb596a858598a157681b325112dafa7728069a3933a097893
+stream auditor   d79f17ec8147822510c6201bfb0a303dc5a8245b74829384ee37e059ef3b158a
+run verifier     a54ed8df84bd3d0dfeef177c2b9fa74c89322d42bac666ca4d77f256563686cd
+result report    ca6f3c93bf78f496447451c698b2698807b39313ead1450445003e59d6f34d38
+```
+
+## Rooted base-pair closure screen through order 17
+
+Audit date: **2026-07-27**.
+
+For every nonbridge root of every connected simple cubic three-pole
+core through order 17, the targeted screen asks whether the exact
+seven-orbit root signature is empty or contains one of masks
+`0x0c`, `0x12`, `0x21`.  On the 654,676 order-17 cores:
+
+```text
+nonbridge roots         15,645,623
+empty                      337,059
+base-pair closed         15,308,564
+violations                        0
+solver calls per engine  52,216,251
+```
+
+The direct finite-domain and independent incremental-SAT programs have
+the same complete streamed transcript digest on each of eight canonical
+shards.
+
+The result is a finite theorem through order 17, not an induction.
+The complete-signature corpus through order 13 realizes 22 nonempty
+nonbridge masks, whose only inclusion-minimal elements are the three
+base pairs; its \(22^2\) cross-relations are only `DI` and `DEI`.
+A separate exhaustive \(3\times127\) check shows that the base pair
+itself against any nonempty stabilizer-invariant signature never has
+relation `E`, `EI`, or `D`.  It does not justify replacing the base
+pair by a containing signature: `R={12,03,04,01}` and `S={01}` give
+`EI`.  With the simple-cap fork, one order-17 shore therefore excludes
+the `E` and `D` cyclic-three branches through total order 36, but the
+mixed `EI` branch remains.  Artifacts and the independent replay are in
+`search/rooted-three-pole-frontier-20260727/`.
+
+## Complete order-20 exceptional cap census
+
+Audit date: **2026-07-27**.
+
+The canonical order-20 cubic corpus and the proved simple-cap reduction
+give:
+
+```text
+connected simple cubic graphs       510,489
+bridgeless graphs                    497,818
+bridgeless non-Tait caps               1,388
+independent-edge deletions            520,500
+```
+
+The direct edge-colouring filter and an independent
+perfect-matching/even-complement filter produce the same cap stream.
+The independently retained pole expansion was then checked by both
+boundary classifiers:
+
+```text
+queries per implementation        2,074,239
+satisfiable answers               1,978,630
+exceptional hits                          0
+```
+
+A separate standard-library verifier reconstructs the cap properties
+and every deletion rather than trusting the producer.  Hence no
+bridge-free connected simple terminal-distinct four-pole of order 20
+has either exceptional exact five-colour \(D_5\) signature.  This is
+finite and scoped.
+
+Frozen package: `search/four-pole-order20-cap-20260727/`.
+
+SHA-256:
+
+```text
+cap stream        e29e65288c1b158afafaafe4c6d2d7862ed64ed4e48e15c49d7b06a221607020
+pole stream       9618a6b119ee21d73edab67372991d5abf12df240605c67151a5e308aa0c58ad
+result report     d50e21fcb8c977cb036eafb4e9d7c03ddc3e37494a07438d751636711bdfc24d
+independent audit a9ee46eba77186102d886c4a30046ad6aa3badbe74647bb1b01b253d7035f7f0
+```
+
+## Complete order-22 exceptional cap census
+
+Audit date: **2026-07-27**.
+
+The canonical order-22 source and simple-cap reduction give:
+
+```text
+connected simple cubic graphs          7,319,447
+bridgeless graphs                       7,187,627
+bridgeless non-Tait caps                   12,892
+independent-edge deletion poles         5,956,104
+```
+
+The direct Tait-colouring filter and an independent
+perfect-matching/even-complement filter select the same hard corpus
+byte-for-byte.  The pole stream was distributed over eight deterministic
+shards and checked by both boundary implementations:
+
+```text
+queries per implementation             23,747,129
+satisfiable answers per implementation 22,764,574
+exceptional hits                                0
+```
+
+The two implementations agree on every complete streamed transcript
+digest.  A separate verifier checks the canonical-source identities, the
+two hard-cap streams, every retained graph premise, the entire pole
+expansion byte-for-byte, and all sixteen classifier/auditor records.
+Combined with the cap reduction, this excludes both exceptional exact
+fixed-five \(D_5\) signatures for every bridge-free connected simple
+terminal-distinct order-22 four-pole.
+
+This advances the even-order lower bound in that scope to 24.  It is not a
+universal exceptional-signature theorem and not a Five-CDC resolution.
+
+Frozen package: `search/four-pole-order22-cap-20260727/`.
+
+SHA-256:
+
+```text
+hard cap stream 230f2cd88e72011d73a40c5f3d7d5f9fb0fca6110de2ec2541581bc50982037c
+raw pole stream cf7a19244912c746c1ef1247a4b45e6ad1df647feaa4251e59db381351b5db46
+result report   4f1c8e73be167facd2cc378d3087a5196e841d0f282ab242a4de32ade146b746
+verifier source f7d234b504034cd7b3528ed6820279bdc769a4c3c1292dbffaa40e423b60a501
+```
+
+## Order-24 strict-snark full-signature probe
+
+Audit date: **2026-07-27**.
+
+The retained Snarkhunter 2.0b source has 38 distinct strict snarks of
+order 24.  Its graph identities and the strict-snark premises are checked
+independently, while completeness of the canonical list continues to rely
+on the generator and its option semantics.  Expanding every independent
+edge pair gives 21,204 terminal-distinct deletion poles.
+
+Both exact boundary implementations classify the complete retained pole
+stream in full-signature mode:
+
+```text
+rows per implementation          21,204
+queries per implementation      212,040
+satisfiable answers             212,040
+rows with full mask 0x3ff        21,204
+exceptional hits                      0
+```
+
+Their TSV outputs are byte-identical.  A third implementation decodes and
+checks every cap, reconstructs all deletion poles, and compares the two
+tables row by row.  Hence every retained pole realizes all ten boundary
+types in the fixed-five \(D_5\) model.
+
+This is not a census of every order-24 non-Tait cap and not a proof that
+cyclically-four-connected caps universally have full signature.
+
+Frozen package:
+`search/four-pole-order24-strict-cap-probe-20260727/`.
+
+SHA-256:
+
+```text
+source graph stream e981f9b6953628bb03077f228c5373992430369adc13dd6cde02d330a730c313
+raw pole stream     31231a552a4e713b58b915032a1a9f575d19aaa379ad074eca9ed3c105ab5400
+raw solver table    fbc25fd53702e7ea6cff44b18a62563ba1b45cfeea9298177d38ff87fba227b6
+result report       0cf2cc6575faf5dea0cac4f2d5e71bb3fd00e692fb20f6ff444bc7222e801010
+independent audit   7e52f0ea194fe0344b7f602d929de14fe01382da94a5aac6911a4912a31090a6
+```
+
+## Complete cyclically-four order-24 cap classification
+
+Audit date: **2026-07-27**.
+
+Running Snarkhunter at girth four rather than five produces 155
+cyclically 4-edge-connected non-Tait simple cubic caps of order 24.  This
+is the complete intended cap scope, subject to the generator's
+completeness: a triangle would itself form the cyclic shore of a
+three-edge cut, so no additional girth-three cap can occur.
+
+Every independent edge pair gives:
+
+```text
+source caps                          155
+deletion poles                    86,490
+queries per implementation       864,900
+satisfiable answers              864,900
+rows with full mask 0x3ff         86,490
+exceptional hits                       0
+```
+
+The two full tables agree byte-for-byte.  A separate verifier checks the
+155 graph premises, reconstructs every deletion pole, and validates both
+sharded tables.  A later audit found that the attempted reduction from all
+small exceptional poles to this cap class used a false one-sided base-pair
+inference.  The finite classification remains exact, but the former global
+lower-bound conclusion is withdrawn.
+
+Frozen package:
+`search/four-pole-order24-cyclic4-cap-20260727/`.
+
+SHA-256:
+
+```text
+source graph stream 37ef068ab597c6cc882eb2121d9743464b0717bc4beefab4348ef4221b6a7456
+raw pole stream     4c79b5caa25f331c94cd1c458ad1b0a9bccc9d89328e3c3fe4c25a3e8ec0d5fc
+raw solver table    23298cb8c6abf989052a249db8ce48c9d73b233ef1c5b07d73054d4a130913d4
+result report       2ce165e81478efe41df19d129aaeaa2f8938ef683131c1b5c49b3c45fd3f301b
+independent audit   b61c66c713a3832b49a2fe1a7244d915187817fafaa5238a8e01d7af32232ca7
+```
+
+## Order-26 strict-snark full-signature probe
+
+Audit date: **2026-07-27**.
+
+The documented Snarkhunter 2.0b source contains 280 strict snarks of order
+26.  Its graph identities and strict-snark premises are checked by a
+separate standard-library verifier, while completeness of the canonical
+list relies on the generator.  Expanding every independent edge pair gives
+185,640 four-poles.
+
+The CaDiCaL and direct finite-domain classifiers agree byte-for-byte on the
+complete full-signature table:
+
+```text
+rows per implementation          185,640
+queries per implementation     1,856,400
+satisfiable answers            1,856,400
+rows with full mask 0x3ff        185,640
+exceptional hits                       0
+```
+
+The direct implementation was split into eight equal consecutive shards;
+the independent verifier sums their logs and checks the concatenated table
+row-by-row.  This is finite evidence on the retained source, not a complete
+order-26 non-Tait census.
+
+Frozen package:
+`search/four-pole-order26-strict-cap-probe-20260727/`.
+
+SHA-256:
+
+```text
+source graph stream 5ce072d86e9fa639f34d1a9ec916b69c62a46816f5486a0d813e56279320e35d
+raw pole stream     9073b2390f68070a121ae0523d5000acc0e5e2ad8ec8d6214a65a6d23ef106dc
+raw solver table    07c466b2c0839098b534f2a1bb1e894b973a619bb3eccd3118a69edfed8a1f68
+result report       a1a1d7bd6b9cf03dbda75543a6ce9a53f2f9c57cb39dca27626027d15af7c0a1
+```
+
+## Complete cyclically-four order-26 cap classification
+
+Audit date: **2026-07-27**.
+
+The complete Snarkhunter girth-four run contains 1,297 cyclically
+4-edge-connected non-Tait simple cubic caps of order 26.  Triangle
+exclusion makes this the complete intended cyclically-four cap scope,
+subject to the generator and its option semantics.  Expanding all
+independent edge pairs gives:
+
+```text
+source caps                        1,297
+deletion poles                   859,911
+queries per implementation     8,599,110
+satisfiable answers            8,599,110
+rows with full mask 0x3ff        859,911
+exceptional hits                       0
+```
+
+The CaDiCaL and independently written direct finite-domain tables agree
+byte-for-byte.  A third implementation checks all graph premises,
+reconstructs the complete deletion stream, validates every table row and
+all sixteen shard logs, and reproduces the committed report.
+
+The finite conclusion is exactly the displayed cyclically-four cap
+classification.  A later hostile audit found that the attempted reduction
+of every cyclic-three cap to this corpus used a false one-sided base-pair
+inference: the mixed equality/intersection relation can survive one-sidedly.
+Therefore this package alone does **not** rule out all exceptional
+terminal-distinct four-poles through order 26 and does not establish a
+global lower bound of 28.  The unaffected cyclically-four theorem and the
+withdrawal are both retained.
+
+Frozen package:
+`search/four-pole-order26-cyclic4-cap-20260727/`.
+
+SHA-256:
+
+```text
+source graph stream 1d2b95b9d412f5f6b8ccb788779bd685df23b3239bda8c7e9557266375519760
+raw pole stream     8e346b040fb4c69bef5ab6b21b30c30635a22ba4086a9b5ea567cdf3d10378e4
+raw solver table    abc46bc0af6f94596ae11c68af95acc55cf8d73d82f81aea4a06ab8614a14da2
+result report       69d8eb39b70df89906a9c3be28dc323231ef0bd173f7dbffee8311ce0156de71
+independent audit   e78d88124b2f75a4c6a7c3514017aece816834106d26595e56166ce84532380e
+```
+
+## Certified low-arity \(D_5\)-polymorphism no-go
+
+Audit date: **2026-07-27**.
+
+Treating the cubic \(D_5\) vertex constraint as the ordered triangle
+relation on the ten edges of \(K_5\), four deterministic CNFs search for
+standard closure operations.  Independently checked LRAT certificates
+exclude:
+
+```text
+nonprojection idempotent binary polymorphisms
+ternary majority polymorphisms
+ternary minority polymorphisms
+idempotent cyclic ternary polymorphisms
+```
+
+This certifies a failed proof strategy, not a Five-CDC theorem.  It does
+not classify every higher-arity polymorphism or decide realizability of
+the exceptional four-pole signatures.  Frozen package:
+`search/d5-triangle-polymorphism-no-go-20260727/`.
+
+## Multi-switch Fano lower-bound family
+
+Audit date: **2026-07-27**.
+
+The memo
+`scratch/fano-multistep-reconfiguration-audit-20260727.md` audits the two
+current nowhere-zero-flow reconfiguration papers and proves a recursive
+lower-bound family.  Its essential exact data are:
+
+```text
+host leaf ports at depth d                  3^d
+maximum ports met by one connected circuit 2^d
+final graph order                           15*3^d - 5
+switch-distance lower bound                 ceil((3/2)^d)
+Five-CDC counterexample                     no
+explicit three-cycle double cover           yes
+```
+
+The ten-vertex host has three displayed value-two port edges on no common
+connected circuit.  Replacing each recursively by a fresh rooted host
+multiplies the port count by three and the circuit capacity by at most two.
+Grafting a certified all-seven-bad block at every leaf makes every shorter
+switch sequence leave one complete bad footprint untouched.  The proof is
+by projection through the aligned two-edge sums and is displayed without
+relying on a solver.
+
+The first member is the frozen 40-vertex one-switch countermodel.  It
+repairs in exactly two value-four circuit switches.  The new independent
+checker
+
+```sh
+python3 scratch/verify_fano_multistep_two_switch.py
+```
+
+reconstructs the graph and both switches and returns:
+
+```text
+defect rows:
+10 6 6 12 12 6 6
+ 8 2 6  8 12 8 4
+ 6 0 8  6 10 8 4
+final unique good line: 145
+status: PASS
+```
+
+This closes every constant-step exchange lemma.  The component-domination
+assertion with an unbounded path remains open.
+
+## Cyclically-four pole/full-signature structural probe
+
+Audit date: **2026-07-27**.
+
+The audit
+`scratch/fixed-five-d5-four-pole-full-signature-frontier.md` separates two
+claims that the earlier positive cap censuses did not distinguish.
+
+The broad statement for internally cyclically-four proper poles is false.
+The explicit order-16 graph6 record
+
+```text
+O????A?[BOI_g_Ao?kCo?
+```
+
+with terminals \(5,6,7,8\) has exact fixed-five mask `0x3fe`.  An explicit
+edge list and complete small-cut shore table verify its graph premises, and
+a three-line linear parity argument excludes \(AA\).  CaDiCaL and a direct
+finite-domain implementation independently classify the remaining states.
+
+The focused statement for deletion poles of cyclically-four-connected
+non-Tait caps remains open.  A human lemma now proves that, for two
+independent cap edges, every component outside their four endpoints has
+even attachment number.  This constructs the required one-bit projection
+of an \(AA\) state.  It does not construct a simultaneous \(D_5\) label.
+The missing condition has the exact form:
+
+```text
+an F2^2-flow whose zero set contains the prescribed pair
+and whose complement has two edge-disjoint boundary T-joins.
+```
+
+All 14,322 complete order-22 cyclically-four deletion poles and all 21,204
+retained strict order-24 deletion poles have full mask `0x3ff` under two
+classifiers.  These finite results support but do not prove the focused
+claim.
+
+## Prescribed-\(AA\) certificates for \(H_2,\ldots,H_5\)
+
+Audit date: **2026-07-27**.
+
+The reconstructed high-flow-resistance graphs \(H_2,H_3,H_4,H_5\) have
+orders 82, 122, 162, and 202 and certified flow resistances \(2,3,4,5\).
+Every independent edge pair was tested in the equivalent cap form: require
+a fixed-five \(D_5\)-labelling that assigns the two prescribed edges one
+common label.
+
+```text
+graph  independent pairs  explicit labellings
+H2                 7,257                   79
+H3                16,287                   92
+H4                28,917                  103
+H5                45,147                  120
+total             97,608                  394
+```
+
+The 394 complete edge labellings form a greedy cover of all 97,608 pairs.
+A solver-independent verifier checks every graph identity, cubic and
+bridgeless premise, every \(D_5\) label, every vertex xor equation, every
+pivot assumption, and the complete pair coverage.  Hence every associated
+deletion four-pole realizes boundary type \(AA\).
+
+This is a finite positive theorem, not a universal prescribed-pair result.
+Frozen package:
+`search/mnp-h2-h5-aa-deletion-probe-20260727/`.
+
+SHA-256:
+
+```text
+certificate table ad2192ff178482a97d5a905d71bcfe47f3b4e96879cb41ad7bb5ae6099d2f8e7
+result report     c92f338124fa57347d041fdc109f07ae24b0916787f4b904ed62fc41a611a854
+independent audit e76003fa7ec5aefb51d0e7aa19e3c37f938995c1313c20c752074263747ab03d
+```
+
+## Cyclically-four endpoint root screen through factor order 26
+
+Audit date: **2026-07-27**.
+
+The complete retained cyclically 4-edge-connected non-Tait factor sources
+of orders \(20,22,24,26\) contain:
+
+```text
+factor order                  20       22       24        26
+source factors                 6       31      155     1,297
+vertex-deleted cores         120      682    3,720    33,722
+```
+
+Independent incremental-CaDiCaL and direct finite-domain classifiers
+screen every nonbridge root:
+
+```text
+source factors                         1,489
+vertex-deleted cores                  38,244
+nonbridge roots                    1,360,452
+solver calls per implementation    4,157,844
+empty signatures                           0
+base-pair-closed roots             1,360,452
+violations                                 0
+```
+
+The two complete uncompressed transcripts are byte-identical with SHA-256
+
+```text
+bfb90fd89b43e66f02ada87abcb87ab643d87a4b36dba616cd1f3e5d603b7364
+```
+
+A third implementation reconstructs every source graph and vertex
+deletion, checks triangle-freeness, cyclic four-edge-connectivity and
+non-Taitness, identifies each nonbridge root, verifies every adaptive
+decision, and aggregates all twelve shard logs and statuses.  It reproduced
+the frozen report twice.
+
+The finite theorem supplies base-pair closure for endpoint factors through
+order 26.  It yields cap order at least 54 for equality-only or
+disjointness-only cyclic-three relations.  It does not eliminate the mixed
+equality/intersection relation.
+
+Frozen package:
+`search/rooted-three-pole-nontait-endpoint-frontier-20260727/`.

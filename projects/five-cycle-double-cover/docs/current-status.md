@@ -1575,10 +1575,57 @@ the entire three-vertex row star is impossible.  As an independent
 check, the counterfactual triangular-prism quotient forces its marked
 and root edges to have the same Tait colour by counting cross edges of
 each colour from its two triangles, contrary to the inherited
-precolouring.  The sole P4 residual is now the \(1+3\) singleton
-two-vertex interface, together with the problem of preserving the
-private circuits through one-terminal reductions.  The proof is in
+precolouring.  The separator analysis's sole P4 residual was the
+\(1+3\) singleton two-vertex interface; it is closed below under the
+same simultaneous irreducibility/private-circuit premises.  The separator proof is in
 `docs/rooted-four-mark-p4-row-star-reduction.md`.
+
+The one-terminal reductions preserve triple cyclability once it has
+been established: a terminal-triple circuit has a unique segment through
+the reduced side, and replacing that segment either preserves the triple
+or creates a four-terminal circuit which lifts back immediately.
+Separator terminals cause no exception, and a parallel edge seen only
+after suppressing the replacement terminal is a representation issue,
+not a failure of certificate lifting.  This does not yet establish T3
+before the first reduction when the original graph is reducible.
+
+In the last \(1+3\) interface, suppressing the singleton terminal gives
+a marked edge \(s_1=wu\).  P4 is exactly the assertion that, after
+deleting \(w\), there is a path starting at \(u\) through the other
+three subdivided marks.  This assertion now has a human-checkable proof.
+Put \(K=H-\{w,z_1\}\).  If \(K\) had a cut vertex \(x\), the components
+behind \(\{w,x\}\) would either violate irreducibility, force a private
+circuit to meet \(R_1\) at \(w\), or give a \(2+2\) terminal split which
+triple-circuit splicing turns into a four-terminal circuit.  Hence \(K\)
+is 2-connected, and \(u,z_2,z_3,z_4\) all have degree two.
+
+The needed endpoint statement is general: in a 2-connected subcubic
+graph, a path can start at any one of four specified degree-two vertices
+and pass through the other three.  Add a leaf at the prescribed start,
+make the endpoint-safe one-terminal reductions, and use Ozeki's
+Section 4.9 path-obstruction description.  Its two irreducible
+obstructions require either at least seven cut incidences at two
+subcubic vertices or one vertex adjacent to all four terminals.  Both
+are impossible.  The complete lifting details are in
+`docs/rooted-four-mark-singleton-endpoint-closure.md`.  An independent
+finite audit checks 1,100,688 subdivided cubic endpoint instances through
+base order twelve; it is not used in the proof.
+
+Thus P4 now holds in the exact simultaneous irreducible/private-circuit
+state.  Literal four-private-circuit preservation through arbitrary
+one-terminal preprocessing is false.  The exact replacement frontier is
+now known.  If another terminal lies on the separator, triple
+cyclability directly splices a four-terminal circuit, so that case
+closes without preservation.  With a terminal-free separator, the only
+marked borrower \(R^\ast=R_j\) leaves a pairwise disjoint \(2+1+1\)
+circuit packet: one circuit through the reduced and borrowed terminals,
+plus the other two private circuits.  Full universal separation and the
+marked cyclic-cut inequality do not exclude this state; an audited
+order-56 compliant graph realizes it and has a displayed root-avoiding
+four-mark circuit.  The remaining rooted obligation is to use that
+\(2+1+1\) packet in the two projected outer interfaces N and E described
+in `docs/one-terminal-trace-lift-frontier.md`, not an augmented
+\(K_{3,2}\) attachment obstruction.
 
 ## Exceptional four-pole rooted-packing algebra
 
@@ -1624,3 +1671,676 @@ The human proof, table, frozen result, and independent verifier are in
 `scratch/four-pole-two-plus-two-algebra-result.json`, and
 `scratch/verify_four_pole_two_plus_two_algebra.mjs`.  The full published
 exceptional-signature conjecture remains neither realized nor refuted.
+
+## Root reduction localizes forbidden-cycle failure to a four-cut
+
+Audit date: **2026-07-27**.
+
+There is now a direct human-checkable rooted theorem for the highly
+connected case.  Let \(H\) be simple and cyclically
+\(4\)-edge-connected, let four matching edges be separated in one Tait
+colouring and have one common colour, and let a forbidden root \(f\)
+have a different colour.  Delete the two ends of \(f\) and join their
+two remaining neighbour pairs.  Fixed-colouring separation guarantees
+that the four marked images are still a matching: any new adjacency
+would put two marks on one bichromatic factor circuit.
+
+If the reduced graph is cyclically \(4\)-edge-connected, the
+Aldred--Ellingham--Hemminger--Holton four-independent-edge theorem gives
+a cycle through the four images.  Expanding the two new edges lifts it
+to one all-four circuit avoiding \(f\).  If the reduction is not
+cyclically \(4\)-edge-connected, a direct shore-placement argument
+pulls a small cyclic cut back and proves that \(f\) belongs to an
+independent cyclic four-edge cut of \(H\).
+
+Consequently the rooted four-mark circuit assertion is proved outright
+for cyclically \(5\)-edge-connected factors.  At cyclic connectivity
+four, every surviving failure is localized to a root-containing
+independent four-cut; the remaining four-pole interface is still open.
+The full proof is
+`docs/root-edge-reduction-four-cut-gate.md`.
+
+## Order-22 universal four-separation census
+
+Audit date: **2026-07-27**.
+
+Canonical generation and two algorithmically different checkers now
+exclude a universally separated four-edge matching from every
+Tait-colourable connected simple cubic graph on 22 vertices.  The
+complete corpus has \(7\,319\,447\) graphs, of which \(7\,174\,735\)
+are Tait-colourable; the remaining graphs are outside this theorem
+because the implementations skip the vacuous no-colouring case.
+Both the direct colouring recursion and the independent
+perfect-matching/even-two-factor replay enumerate exactly
+\(95\,360\,112\) normalized Tait colourings and find zero witnesses.
+The independent replay visits \(312\,583\,931\) perfect matchings.
+
+Together with the separately frozen complete standard-hypothesis screen
+through order 20, this raises the minimum possible order of a simple
+cubic standard rooted four-mark atom to 24.  It is a finite lower bound,
+not a universal rooted theorem.  The report and machine-readable
+metadata are
+`docs/order22-universal-four-separation-screen.md` and
+`scratch/order22-universal-four-separation-result.json`.
+
+## Simple-cap reduction for exceptional four-poles
+
+Audit date: **2026-07-27**.
+
+The finite search scope for the remaining exceptional four-pole branch
+now has a human-checkable completeness proof.  Every connected simple
+terminal-distinct four-pole core admits a perfect matching of its four
+degree-two terminals using two nonedges.  Adding those two independent
+edges creates a simple cubic cap.  When the pole is bridge-free and has
+one of the two exact exceptional signatures, the cap is bridgeless and
+non-3-edge-colourable.  Hence a canonical census of bridgeless non-Tait
+cubic graphs followed by every independent-edge deletion exhausts this
+entire pole scope; it is not merely a hard-family sample.
+
+For a vertex-minimal two-cut-reduced exceptional pole, every such cap
+has a sharper fork.  It is either cyclically \(4\)-edge-connected, or
+it has a cyclic three-edge cut disjoint from the two cap edges which
+splits the original terminals \(2+2\), with one whole cap edge on each
+shore.  A terminal-free three-cut shore is replaceable by one cubic
+vertex and therefore cannot occur in a minimum atom.  The surviving
+\(2+2\) cyclic-three-cut outcome is a five-pole interface and remains
+open.  The complete proof is
+`docs/exceptional-four-pole-simple-cap-enumeration-reduction.md`.
+
+The surviving \(2+2\) cyclic-three-cut fork now has an exact
+seven-state rooted description.  Fixing the three connector labels to
+the ordered triangle \((01,02,12)\) leaves seven stabilizer orbits for
+the label of the distinguished cap edge on either shore.  Gluing the
+two rooted three-poles converts equality, one-point intersection, and
+disjointness of their root-label sets exactly into
+\(AA,AT_\pi,T_\pi T_\pi\).
+
+Consequently the exceptional four-type signature in its missing
+\(AT_i\) orientation forces both shore root signatures to be the same
+singleton, one of \(\{01,02,12,34\}\).  Its other two orientations
+force a precise cross-intersection relation.  The exceptional five-type
+signature forces one of only thirteen unordered disjoint root-signature
+patterns.  A literal \(127^2\)-pair enumeration and an independently
+written JavaScript replay agree with the human classification.  This
+reduces the five-pole interface but does not eliminate the surviving
+rooted three-pole signatures.  See
+`docs/exceptional-cyclic-three-root-signature-factorization.md`.
+
+## Independent order-18 exceptional four-pole census
+
+Audit date: **2026-07-27**.
+
+Two algorithmically independent classifiers have now exhausted all
+\(4\,159\,098\) connected simple order-18 graphs with exactly four
+degree-two vertices and all remaining vertices cubic.  One classifier
+uses incremental CaDiCaL; the other is a direct finite-domain solver
+with generalized arc consistency and recursive branching.  Per
+implementation they made \(16\,453\,323\) exact signature queries,
+obtained \(15\,295\,709\) satisfiable answers, and found no boundary
+signature in the fixed five-colour \(D_5\) model equal to any of the
+six ordered exceptional masks.
+
+A third streaming checker validated every transcript row and rejected
+observed-but-unqueried masks or any exceptional flag.  The SAT and
+non-SAT transcript SHA-256 digests agree separately on all eight
+canonical `geng` shards.  An earlier preparatory run was discarded
+without a conclusion after audit found that transcript mode did not
+increment the classifier's auxiliary hit counter; the retained sources
+fix that issue and add an independent streaming guard.  The complete
+finite statement, hashes, artifacts, and replay are in
+`search/four-pole-order18-exceptional-20260727/`.
+
+This excludes exceptional signatures only in the stated finite simple
+scope.  It neither proves the universal exceptional-signature
+conjecture nor resolves Five-CDC.
+
+## Complete order-20 exceptional cap census
+
+Audit date: **2026-07-27**.
+
+The simple-cap reduction makes a much smaller complete order-20 search
+possible.  Two independent filters agree byte-for-byte on all \(1\,388\)
+bridgeless non-Tait connected simple cubic caps among the \(510\,489\)
+canonical cubic graphs.  Deleting every independent edge pair gives
+\(520\,500\) four-pole rows.  Independent SAT and direct finite-domain
+classifiers make \(2\,074\,239\) exact mask queries apiece, agree on
+every per-pole decision transcript, and find zero exceptional
+signatures.
+
+A third verifier decodes all retained caps, checks connectedness,
+cubicity, every single-edge deletion, and non-Taitness by
+perfect-matching complements; reconstructs all independent-edge
+deletions byte-for-byte; rebuilds the input shards; and verifies both
+classifier streams.  Combined with the proved cap reduction, this gives
+the finite theorem that no bridge-free connected simple
+terminal-distinct order-20 four-pole has either exceptional exact
+five-colour \(D_5\) signature.  The package is
+`search/four-pole-order20-cap-20260727/`.
+
+This order-20 statement alone says nothing about order 22 or higher,
+repeated terminals, nonsimple cores, or multigraphs, and it is not a
+Five-CDC resolution.
+
+## Complete order-22 exceptional cap census
+
+Audit date: **2026-07-27**.
+
+The cap-reduction frontier has now been extended by one complete order.
+The canonical source contains all \(7\,319\,447\) connected simple cubic
+graphs of order 22.  Independent direct-colouring and
+perfect-matching/even-complement filters agree byte-for-byte on the
+\(12\,892\) bridgeless non-Tait caps among the \(7\,187\,627\)
+bridgeless graphs.  Deleting every independent edge pair gives exactly
+\(5\,956\,104\) terminal-distinct four-poles.
+
+Independent CaDiCaL and direct finite-domain classifiers make
+\(23\,747\,129\) exact-signature queries apiece, obtain
+\(22\,764\,574\) satisfiable answers apiece, agree on every one of eight
+streamed transcript digests, and find zero exceptional signatures.
+The retained full pole stream has SHA-256
+`cf7a19244912c746c1ef1247a4b45e6ad1df647feaa4251e59db381351b5db46`.
+
+A separate standard-library verifier checks the canonical-source
+identity and source indices, both filter outputs, every retained cap,
+the complete \(5\,956\,104\)-row pole expansion byte-for-byte, all
+eight shard digests, and both decision ledgers.  Together with the
+proved simple-cap reduction, this proves:
+
+> No bridge-free connected simple terminal-distinct order-22 four-pole
+> has either exceptional exact boundary signature in the fixed
+> five-colour \(D_5\) model.
+
+Thus any exceptional pole in this simple terminal-distinct scope has
+even order at least 24.  The theorem does not cover repeated terminals,
+nonsimple or multigraph cores, arbitrary-colour signatures, or higher
+orders, and it does not resolve Five-CDC.  The frozen package is
+`search/four-pole-order22-cap-20260727/`.
+
+## Order-24 strict-snark full-signature probe
+
+Audit date: **2026-07-27**.
+
+The retained Snarkhunter 2.0b source contains 38 distinct strict snarks
+of order 24.  An independent standard-library checker verifies their
+connected simple cubic, girth-five, cyclically-four-edge-connected, and
+non-Tait premises, but does not independently regenerate the canonical
+source list.  Deleting every independent edge pair produces 21,204
+terminal-distinct four-poles.
+
+The independent CaDiCaL and direct finite-domain boundary classifiers
+made all 212,040 exact-boundary queries on this stream.  Their full
+classification tables agree byte-for-byte, and every row has mask
+`0x3ff`: all ten fixed-five \(D_5\) boundary types are realizable.
+The verifier reconstructs every deletion pole and checks both tables
+row by row.  The frozen package is
+`search/four-pole-order24-strict-cap-probe-20260727/`.
+
+This is exact finite evidence on the retained strict-snark source, not
+a complete census of all order-24 non-Tait caps.  Source completeness
+still relies on the documented Snarkhunter run.  In particular, the
+result does not prove that cyclically-four-connected caps universally
+have full signature and does not resolve Five-CDC.
+
+## Complete cyclically-four order-24 cap classification
+
+Audit date: **2026-07-27**.
+
+The order-24 search has now been enlarged from the 38 girth-five strict
+snarks to all 155 cyclically 4-edge-connected class-2 simple cubic graphs
+produced by the documented Snarkhunter girth-four run.  The girth-four
+scope is complete for this cap class: a cyclically 4-edge-connected simple
+cubic graph of order 24 cannot contain a triangle, since the triangle and
+the cyclic complement would form a cyclic three-cut.
+
+Deleting every independent edge pair gives 86,490 poles.  Independent
+CaDiCaL and direct finite-domain classifiers agree byte-for-byte on all
+864,900 exact queries per implementation, and every pole has full mask
+`0x3ff`.  A separate verifier checks all graph premises, reconstructs every
+deletion, and checks both tables row-by-row.  Source completeness relies on
+Snarkhunter and its option semantics.
+
+Combining this complete cyclically-four cap classification with the proved
+exceptional-atom descent, the simple-cap theorem, the endpoint-fork lift
+through factor order 26 recorded below, and the complete order-22 census
+yields a finite theorem: no bridge-free connected simple
+terminal-distinct four-pole of order at most 24 has either exceptional
+exact fixed-five signature.  Any such pole has even order at least 26.
+This conclusion is restored by the later sound two-sided fork transport,
+not by the withdrawn one-sided base-pair inference.  The finite
+cyclically-four artifacts are in
+`search/four-pole-order24-cyclic4-cap-20260727/`.
+
+This advances only the finite exceptional-pole frontier.  It does not prove
+the universal exceptional-signature conjecture or Five-CDC.
+
+## Order-26 strict-snark full-signature probe
+
+Audit date: **2026-07-27**.
+
+The same two-implementation stress test has now been extended to the 280
+strict snarks of order 26 produced by the documented Snarkhunter 2.0b
+command.  Deleting every independent edge pair gives 185,640
+terminal-distinct four-poles.  The CaDiCaL implementation classified the
+whole stream, while the independently written direct finite-domain
+implementation classified eight consecutive 23,205-row shards.
+
+Their concatenated TSV tables agree byte-for-byte.  All 1,856,400 exact
+boundary queries per implementation are satisfiable, so every retained
+pole again has the full fixed-five mask `0x3ff`.  A separate
+standard-library verifier checks the 280 graph premises, reconstructs all
+185,640 poles, and validates both tables row-by-row.
+
+Completeness of the 280-graph source relies on Snarkhunter and its option
+semantics; this is not a census of all order-26 non-Tait caps or a universal
+full-signature theorem.  The frozen package is
+`search/four-pole-order26-strict-cap-probe-20260727/`.
+
+## Complete cyclically-four order-26 cap classification
+
+Audit date: **2026-07-27**.
+
+The order-26 search has now been enlarged from the 280 girth-five strict
+snarks to all 1,297 cyclically 4-edge-connected class-2 simple cubic graphs
+produced by the documented Snarkhunter girth-four run.  As at order 24,
+this is the complete intended cap class subject to Snarkhunter: a triangle
+and its cyclic complement would form a cyclic three-edge cut.
+
+Deleting every independent edge pair gives 859,911 terminal-distinct
+four-poles.  The independent CaDiCaL and direct finite-domain classifiers
+each make 8,599,110 exact boundary queries.  Their complete tables agree
+byte-for-byte, every query is satisfiable, every pole has mask `0x3ff`,
+and there are no exceptional hits.
+
+A solver-independent verifier checks all 1,297 source records for order,
+distinctness, cubicity, connectedness, triangle-freeness, cyclic
+4-edge-connectivity, and non-Taitness.  It reconstructs all 859,911
+deletion poles byte-for-byte and checks both tables and all sixteen shard
+logs.  The replay reproduces the committed report exactly.
+
+This proves the complete intended classification of cyclically
+4-edge-connected non-Tait caps at order 26.  A later audit found that the
+then-claimed reduction from every exceptional pole through order 26 to
+this cap class used an invalid one-sided base-pair inference: a containing
+root signature can add equality to a base-pair-versus-shore relation that
+was intersection-only.  That proof of the order-28 lower bound was
+withdrawn.  The still later two-sided endpoint-fork lift below supplies a
+different sound proof in the stated simple terminal-distinct scope.  The
+complete finite package remains
+`search/four-pole-order26-cyclic4-cap-20260727/`; its cap classification
+and verifier are unaffected.  Canonical source completeness still relies
+on Snarkhunter and its option semantics.  This is not a universal
+exceptional-signature theorem and does not resolve Five-CDC.
+
+## Rooted three-pole base-pair frontier through order 17
+
+Audit date: **2026-07-27**.
+
+For a rooted cubic three-pole with connector triangle
+\((01,02,12)\), define the three base pairs
+\[
+ \{12,03,04\},\qquad \{02,13,14\},\qquad \{01,23,24\}.
+\]
+Complete exact signatures through rooted order 13 show that these are
+the three inclusion-minimal nonempty nonbridge masks.  Dedicated
+adaptive screens have now extended the containment statement through
+order 17.  On all \(654\,676\) canonical order-17 cores, independent
+direct-CSP and incremental-SAT implementations test all
+\(15\,645\,623\) nonbridge roots and report \(337\,059\) empty
+signatures, \(15\,308\,564\) signatures containing a base pair, and
+zero violations.  The corresponding streamed transcript digests agree
+on all eight shards, with \(52\,216\,251\) solver calls per
+implementation.
+
+Thus base-pair closure is a finite theorem through rooted order 17.
+A complete \(3\times7\) orbit table shows that the base pair itself
+against any nonempty invariant signature never has any of the three
+exceptional relations.  This does not remain true after replacing the
+base pair by an arbitrary containing root signature.  Explicitly,
+\[
+ R=\{12,03,04,01\},\qquad S=\{01\}
+\]
+are invariant, \(R\) contains a base pair, and
+\(\operatorname{rel}(R,S)=\{\mathsf E,\mathsf I\}\).
+Consequently the order-17 theorem on one shore excludes the
+equality-only and disjointness-only cyclic-three relations through total
+order 36, but not the mixed \(\{\mathsf E,\mathsf I\}\) orientation of
+\({\cal E}_4\).  If both shores are within the finite frontier, their two
+base pairs do exclude all exceptional relations.  The corrected
+conditional proof and finite artifacts are
+`docs/rooted-three-pole-base-pair-closure-target.md` and
+`search/rooted-three-pole-frontier-20260727/`.
+
+## Tait-cap closure of the rooted three-pole target
+
+Audit date: **2026-07-27**.
+
+The rooted base-pair target now has an unbounded human-checkable positive
+class.  If capping the three connectors by one vertex gives a
+three-edge-colourable cubic graph, map its three Tait colours to
+\(01,02,12\).  For any proper cycle through the nonbridge root, translating
+the cycle labels by \(0123\) and \(0124\) preserves the \(D_5\) constraint
+and realizes the two mixed labels aligned with the root's original
+triangle label.  These three root values are exactly one base pair.
+
+One Tait cap therefore excludes the equality-only and disjointness-only
+root relations; two Tait caps exclude all three exceptional relations.
+The mixed \(\{\mathsf E,\mathsf I\}\) relation is not excluded
+one-sidedly.  Under the minimal simple-cap hypotheses, the cap is simple,
+bridgeless, and has no cyclic two-edge cut.  An elementary cubic cut
+argument therefore makes it 3-connected, so the published three-sum
+decomposition applies and its factor tree is a path between the two cap
+edges.  Both endpoint
+factors are non-three-edge-colourable for \({\cal E}_5\); for
+\({\cal E}_4\), a Tait endpoint can survive only at a mixed-orientation
+end cut and forces a two-label restriction on the opposite root
+signature.  The corrected proof is in
+`docs/rooted-three-pole-tait-cap-closure.md`.
+
+This is a universal structural reduction, not the full base-pair theorem:
+the case of non-Tait shore caps remains open.
+
+## Cyclically-four endpoint base-pair frontier through factor order 26
+
+Audit date: **2026-07-27**.
+
+The non-Tait endpoint case is now classified through factor order 26.
+Snarkhunter supplies respectively \(6,31,155,1297\) triangle-free
+cyclically 4-edge-connected non-Tait simple cubic factors of orders
+\(20,22,24,26\).  Deleting every vertex gives 38,244 rooted cores.
+Independent incremental-CaDiCaL and direct finite-domain implementations
+test all 1,360,452 nonbridge roots in 4,157,844 solver calls each.  Their
+complete transcripts agree byte-for-byte; every row contains a base pair
+and there are no empty rows or violations.  The independent verifier
+reconstructs all source premises, cores, roots, decisions, shard logs, and
+the committed report.
+
+Together with the rooted-order-17 theorem and the human Tait-cap theorem,
+every endpoint factor of order at most 26 has base-pair closure.  For the
+equality-only and disjointness-only cyclic-three relations, one endpoint
+base pair is already impossible, so both endpoint factors have order at
+least 28 and the cap has order at least 54.
+
+The original one-sided inference did **not** eliminate the mixed
+equality/intersection relation.  Base pairs in endpoint factors need not
+remain the three distinguished base pairs after transport through a path.
+The later endpoint-fork lift below preserves their fork shape and supplies
+the missing two-sided argument.  The endpoint theorem and full finite
+package are in
+`search/rooted-three-pole-nontait-endpoint-frontier-20260727/`.
+
+## Triangle induction for the mixed cyclic-three branch
+
+Audit date: **2026-07-27**.
+
+A new human reduction narrows the mixed branch to triangle-free
+3-connected shore caps.  Along a three-sum factor path, an exposed
+triangle is an endpoint \(K_4\) factor.  Contracting one at the connector
+end maps the three base pairs by the explicit table
+\[
+                       P_0\mapsto P_0,\qquad
+                       P_1\mapsto P_2,\qquad
+                       P_2\mapsto P_1.
+\]
+A triangle through the root permits three distinct root labels.  Thus,
+assuming base-pair closure for triangle-free caps through order \(N\),
+every nonempty path-rooted cap signature through \(N\) contains a
+**fork triple**
+\[
+                         \{qr,ps,pt\},
+\]
+where \(p,q,r,s,t\) are the five distinct coordinates.  Coordinate
+permutations preserve this shape.  This strengthened conclusion is
+necessary: cardinality three alone is insufficient, since two copies of
+\(\{01,02,12\}\) have the mixed equality/intersection relation.
+
+If a fork triple lies on one side of a relation with no disjoint pair,
+every label on the other side must meet all three fork labels, and the
+only possibilities are the two labels \(\{pq,pr\}\).  The other shore's
+own fork triple cannot fit in a two-element set.  For a cap of order at
+most 26, both capped shores of one principal cut have order at most 24.
+Therefore a complete triangle-free 3-connected cap screen through order
+24 would prove a stronger whole-shore statement through that frontier.
+That two-implementation screen is currently running and is not yet
+claimed.  The endpoint-fork lift in the next section now eliminates the
+finite mixed branch without this pending premise.  The conditional human
+proof and an exhaustive replay of its local coordinate and
+common-intersector tables are in
+`docs/rooted-cap-triangle-induction.md`.
+
+## Root-end fork lift and restored order-28 bound
+
+Audit date: **2026-07-27**.
+
+A base pair in a root-end factor transports through an arbitrary
+three-sum path as a fork triple.  Fix one labelling of the rest of the
+shore and let \(\alpha\) be its ordered triangle at the endpoint-factor
+interface.  Normalize \(\alpha\) to \(01,02,12\).  Each of the three
+endpoint base-pair labellings can then be inverse-normalized and glued to
+the same fixed remainder.  The resulting whole-shore root labels are one
+coordinate image of a base pair, hence a fork
+\[
+                              \{qr,ps,pt\}.
+\]
+
+Any two forks have an unequal intersecting cross-pair and a disjoint
+cross-pair.  The human proof is short: the labels meeting all three members
+of one fork form a two-element set, while the fork itself has three
+members; and the only label having no unequal intersection with all three
+members is the fork's distinguished independent edge.  A standard-library
+replay checks all 30 forks and all 900 ordered fork pairs, obtaining 330
+relations \(\{\mathsf I,\mathsf D\}\) and 570 relations
+\(\{\mathsf E,\mathsf I,\mathsf D\}\).
+
+The completed endpoint base-pair theorem through factor order 26 therefore
+excludes the mixed cyclic-three relation whenever both cap-edge endpoint
+factors have order at most 26.  A surviving mixed branch has at least one
+endpoint factor of order 28 and cap order at least 30.  Equality-only and
+disjointness-only still force both endpoint factors above 26 and cap order
+at least 54.
+
+Together with the complete cyclically-four cap census through order 26,
+this soundly restores the simple terminal-distinct exceptional-pole lower
+bound of order 28.  Any first order-28 exception must have a cyclically
+4-edge-connected cap.  The complete proof and literal replay are in
+`docs/rooted-cap-end-factor-fork-lift.md`.  This is a fixed-five
+exceptional-signature result, not a resolution of Five-CDC.
+
+## Order-28 cyclically-four classification and scoped order-30 bound
+
+Audit date: **2026-07-27**.
+
+The retained Snarkhunter source contains all 12,517 documented
+cyclically 4-edge-connected non-Tait simple cubic caps of order 28.
+Deleting every independent edge pair gives 9,725,709 terminal-distinct
+four-poles.  For every pole, a certificate-producing CaDiCaL run emits
+two complete \(D_5\)-labellings: boundary orbit 0,
+\((01,01,01,01)\), and boundary orbit 2,
+\((01,01,23,23)\).  All eight shards finished with status zero and
+zero missing witnesses, for 19,451,418 displayed labellings.
+
+These two positive witnesses exclude all six exceptional exact masks
+without any UNSAT inference.  Masks `0x02b`, `0x053`, and `0x119` omit
+orbit 2; masks `0x2e4`, `0x3a4`, and `0x3c4` omit orbit 0.  The package
+verifier reconstructs every cap deletion and checks every displayed
+label at every vertex.  A separately written C++/zlib checker reads the
+two compressed streams directly and independently rechecks all
+19,451,418 labellings.
+
+The root-end fork theorem already puts every cyclic-three exceptional
+cap at order at least 30.  The earlier exact classifications eliminate
+the cyclically-four cases through order 26, and this computation
+eliminates order 28.  A terminal-distinct cubic four-pole has
+\(3n-4=2m\), hence even order.  Therefore the scoped vertex-minimal,
+two-cut-reduced, bridge-free, connected, simple, terminal-distinct
+fixed-five exceptional-pole lower bound is now order 30.
+
+The finite theorem, human mask table, replay, and certificate hashes are
+in `search/four-pole-order28-cyclic4-cap-20260727/`.  The ordinary Git
+archive omits the 363 MB witness stream and its 40 MB generated pole
+stream, but preserves their compressed and uncompressed hashes,
+generation commands, checkers, source cap corpus, and compact replay
+reports.  Canonical source completeness and cyclic-four provenance rely
+on the retained Snarkhunter run.  This does not prove that exceptional
+poles never exist, does not cover multigraph or repeated-terminal poles,
+and does not resolve Five-CDC.
+
+## Elliptic quadratic-flow reformulation
+
+Audit date: **2026-07-27**.
+
+Let \(V\) be the even-weight subspace of \(\mathbb F_2^5\), and put
+\[
+ q(x)=\sum_{i<j}x_ix_j .
+\]
+On \(V\), the anisotropic vectors \(q(x)=1\) are exactly the ten
+weight-two vectors.  Therefore the standard Five-Cycle Double Cover
+problem is exactly the existence of a \(V\)-flow taking only
+anisotropic values.  Equivalently, it asks for a nowhere-zero
+\(\mathbb F_2^4\)-flow whose avoided nonzero values contain a binary
+five-circuit.  This is a human-checkable change of language, not a
+solution and not an orientability statement.  The exact proof,
+including loops and parallel edges, is
+`docs/five-cdc-elliptic-quadratic-flow-model.md`.
+
+## Fano component-parity lift
+
+Audit date: **2026-07-27**.
+
+The existing quotient-lift theorem admits a particularly concrete
+elliptic normal form.  In
+coordinates
+\[
+             q(x,y,t,z)=x+y+xy+tz,
+\]
+let \(L\) be the three nonzero vectors with \(t=0\), and let
+\(r=(0,0,1)\).  For a nowhere-zero \(\mathbb F_2^3\)-flow \(f\), a
+binary cycle \(C\) lifts \(f\) to an anisotropic four-flow exactly when
+\[
+             M_r\subseteq C\subseteq M_r\cup M_L.
+\]
+Such a cycle exists exactly when every component of the \(L\)-valued
+subgraph contains an even number of vertices of \(\partial M_r\).
+Conversely, quotienting any anisotropic four-flow by a nonzero singular
+vector yields this form.  Hence this component-parity condition, for
+some \(f,L,r\), is equivalent to standard Five-CDC.  It is the
+one-forced-value version of Section 6 of
+`docs/proof-agent-audit.md`, not a logically new characterization.
+
+The universal fixed-flow and one-switch versions were already known
+inside this project to be false.  The eight-vertex fixed-flow example
+in `docs/proof-agent-audit.md` fails every line, and the ten-vertex
+example in `docs/flow-switch-audit.md` remains bad after every one
+elementary circuit switch but has an explicit two-switch repair.  The
+normal-form proof is
+`docs/five-cdc-fano-component-parity-lift.md`.
+
+This is an exact reformulation and a narrowing of the flow-selection
+obligation, not a resolution.
+
+## Five-point restriction of the eight-coordinate lift
+
+Audit date: **2026-07-27**.
+
+The new eight-coordinate triangle construction can be restricted to five
+coordinate points without leaving any unclassified local cases.  After a
+translation, every five-set in \(\mathbb F_2^3\) has the form
+\[
+                         \{0\}\dot\cup(a+L)
+\]
+for one uniquely determined Fano line \(L\).  At a cubic vertex whose
+three incident flow values form \(L\), four local coordinate triangles fit
+inside this five-set.  For each of the other six possible local Fano
+lines, exactly one triangle fits.
+
+The resulting pair shapes are forced: an \(L\)-valued edge has both
+coordinate labels in \(a+L\), while an outside-valued edge has pair
+\(\{0,f(e)\}\).  Summing coordinate parity over an \(L\)-component gives
+exactly the component-parity test above.  Conversely, that test constructs
+the compatible restricted triangles.  Thus coordinated eight-to-five
+compression is precisely the existing flow-and-line selection problem;
+there is no additional local merge choice that could evade it.
+
+The human proof is
+`docs/five-cdc-five-point-triangle-list-lift.md`.  Independent Python and
+JavaScript checkers enumerate all \(56\cdot7=392\) five-set/line cases and
+agree on 56 four-choice cases and 336 unique-choice cases.  This sharpens
+the interface with the eight-coordinate proof but does not establish that
+a suitable flow and line always exist.
+
+## Unbounded Fano-switch distance
+
+Audit date: **2026-07-27**.
+
+Recent nowhere-zero-flow reconfiguration theorems do not presently supply
+the missing Fano component-parity step: the universal connectivity theorem
+is for \(\mathbb F_2^8\), not the eight-element group
+\(\mathbb F_2^3\), while the applicable \(\mathbb F_2^3\) theorem excludes
+only frozen flows.
+
+A new recursive family also proves that no constant number of connected
+circuit switches can suffice.  At depth \(d\), a host has \(3^d\) protected
+ports and every connected circuit meets at most \(2^d\) of them.  Grafting
+the certified all-seven-bad block at each port gives a connected simple
+bridgeless cubic graph of order \(15\cdot3^d-5\) whose displayed flow has
+switch distance at least \(\lceil(3/2)^d\rceil\) from the Fano-good set, if
+that set is reachable at all.  Every graph in the family is
+three-edge-colourable and has an explicit three-cycle double cover.
+
+The first 40-vertex member has exact distance two; an independently written
+checker verifies both displayed switches and all component-parity rows.
+This refutes bounded-radius domination only.  It does not refute eventual
+good-flow domination inside every reconfiguration component and does not
+refute Five-CDC.  The human proof and literature audit are in
+`scratch/fano-multistep-reconfiguration-audit-20260727.md`.
+
+## Full-signature cap hypothesis: scalar frontier
+
+Audit date: **2026-07-27**.
+
+Internal cyclic four-edge-connectivity of a proper terminal-distinct
+four-pole does not force full fixed-five signature.  The explicit order-16
+pole
+
+```text
+O????A?[BOI_g_Ao?kCo?
+```
+
+has exact mask `0x3fe`.  Its missing \(AA\) state has a short parity proof:
+three terminals have one common neighbour, forcing three odd scalar
+projections at that cubic vertex.  Every simple cap of this pole creates a
+cyclic triangle cut, so the example does not refute the focused hypothesis
+for deletion poles of cyclically-four-connected non-Tait caps.
+
+For that focused geometry, a human lemma now proves that every component
+outside the four endpoints of the prescribed independent cap edges has an
+even number of attachments.  This removes the elementary scalar obstruction
+to \(AA\).  The simultaneous lift remains exact and open: \(AA\) is
+equivalent to an \(\mathbb F_2^2\)-flow whose zero set contains the
+prescribed edge pair and whose complement packs two edge-disjoint boundary
+joins.  The complete order-22, order-24, and cyclically-four order-26 cap
+computations are positive, but they do not prove this universal
+prescribed-zero packing statement.  Details are in
+`scratch/fixed-five-d5-four-pole-full-signature-frontier.md`.
+
+## High-flow-resistance prescribed-\(AA\) theorem
+
+Audit date: **2026-07-27**.
+
+The focused prescribed-equal-label test has now been completed for every
+independent edge pair of the reconstructed Mattiolo--Negrini--Pagani graphs
+\(H_2,H_3,H_4,H_5\), whose certified flow resistances are \(2,3,4,5\).
+Across orders 82, 122, 162, and 202 there are exactly 97,608 independent
+pairs.
+
+For every pair \(e,f\), an explicit fixed-five \(D_5\)-labelling assigns
+the same label to \(e\) and \(f\).  Equivalently, every corresponding
+deletion four-pole realizes boundary type \(AA\).  A greedy certificate
+cover needs only 394 complete labellings: 79, 92, 103, and 120 for the four
+graphs.  The independent verifier imports no SAT code; it checks every
+vertex xor equation and reconstructs coverage of all 97,608 pairs.
+
+Thus increasing flow resistance through five does not obstruct even the
+strong prescribed-\(AA\) property on this family.  This is a finite theorem
+for four retained graphs, not a universal cap theorem and not a Five-CDC
+resolution.  The explicit certificates are in
+`search/mnp-h2-h5-aa-deletion-probe-20260727/`.

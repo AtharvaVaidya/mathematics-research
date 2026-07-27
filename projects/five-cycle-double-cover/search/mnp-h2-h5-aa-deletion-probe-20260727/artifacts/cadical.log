@@ -1,0 +1,7 @@
+GRAPH graph=1 vertices=82 edges=123 pairs=7257 certificates=79
+GRAPH graph=2 vertices=122 edges=183 pairs=16287 certificates=92
+progress graph=3 certificates=100 covered=28914 pairs=28917
+GRAPH graph=3 vertices=162 edges=243 pairs=28917 certificates=103
+progress graph=4 certificates=100 covered=45113 pairs=45147
+GRAPH graph=4 vertices=202 edges=303 pairs=45147 certificates=120
+SUMMARY implementation=cadical mode=cap-equal-label graphs=4 queries=394 sat=394 unsat=0 pairs=97608

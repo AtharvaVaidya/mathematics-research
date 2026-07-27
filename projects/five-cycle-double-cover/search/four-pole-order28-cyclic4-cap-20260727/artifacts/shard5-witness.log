@@ -1,0 +1,13 @@
+progress rows=100000 witnesses=200000 missing=0
+progress rows=200000 witnesses=400000 missing=0
+progress rows=300000 witnesses=600000 missing=0
+progress rows=400000 witnesses=800000 missing=0
+progress rows=500000 witnesses=1000000 missing=0
+progress rows=600000 witnesses=1200000 missing=0
+progress rows=700000 witnesses=1400000 missing=0
+progress rows=800000 witnesses=1600000 missing=0
+progress rows=900000 witnesses=1800000 missing=0
+progress rows=1000000 witnesses=2000000 missing=0
+progress rows=1100000 witnesses=2200000 missing=0
+progress rows=1200000 witnesses=2400000 missing=0
+SUMMARY implementation=cadical mode=two-orbit-witness rows=1215228 queries=2430456 witnesses=2430456 missing=0

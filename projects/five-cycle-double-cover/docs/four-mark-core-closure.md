@@ -2,8 +2,8 @@
 
 Date: **2026-07-26**.
 
-Status: **HUMAN-CHECKABLE PROOF / INDEPENDENT CODEX-AGENT AUDIT
-PASSED**.
+Status: **HUMAN-CHECKABLE PROOF / COMMON-COLOUR HYPOTHESIS
+SHARPENING / INDEPENDENT CODEX-AGENT AUDIT PASSED**.
 
 This note proves the marked-core statement left open in
 `marked-core-cyclic-lift-condition.md`, subject only to the standard
@@ -41,14 +41,13 @@ checked against the earlier four-edge and decomposition literature.
 
 Let \(H\) be a connected simple cubic graph, and let \(S\) be a
 four-edge matching.  A proper three-edge-colouring of \(H\) is called a
-Tait colouring.  Say that \(S\) is **universally separated** if no
-bichromatic circuit in any Tait colouring contains two edges of \(S\).
+Tait colouring.
 
 Assume:
 
-1. \(H\) is Tait-colourable;
-2. \(S\) is universally separated; and
-3. for every \(X\subseteq V(H)\) for which \(H[X]\) contains a circuit,
+1. \(H\) has a Tait colouring in which all four members of \(S\) have
+   one common colour; and
+2. for every \(X\subseteq V(H)\) for which \(H[X]\) contains a circuit,
    \[
       |\delta_H(X)|+|S\cap E(H[X])|\ge4.                 \tag{1}
    \]
@@ -65,11 +64,19 @@ one-circuit strengthening.
 The already proved even-marked circuit criterion then says that the
 four corresponding terminals pack two edge-disjoint \(T\)-joins.
 
+The common-colour hypothesis is all that the proof below uses.  The
+formerly stated assumptions that \(H\) is Tait-colourable and \(S\) is
+universally separated imply it: universal separation permits the four
+marks to be precoloured independently, as recalled in Section 2.1.
+They are therefore a useful sufficient condition, not part of the
+sharpened theorem.
+
 ## 2. Preliminary facts
 
-### 2.1 Mark precolouring
+### 2.1 Why universal separation is one sufficient source
 
-Every map \(S\to\{a,b,c\}\) extends to a Tait colouring of \(H\).
+If \(H\) is Tait-colourable and \(S\) is universally separated, every
+map \(S\to\{a,b,c\}\) extends to a Tait colouring of \(H\).
 
 Indeed, begin with any Tait colouring.  If a marked edge \(e\) has
 colour \(p\) and is requested to have colour \(q\), switch \(p\) and
@@ -79,6 +86,10 @@ Processing the marks one at a time proves the assertion.
 
 In particular, there is a Tait colouring in which all four marks have
 one common colour \(c\).
+
+This paragraph is a corollary mechanism only.  From this point onward,
+fix the common-colour Tait colouring supplied directly by hypothesis 1.
+No later step invokes universal separation or any other Tait colouring.
 
 ### 2.2 No cyclic two-edge cut
 
@@ -227,8 +238,8 @@ corresponding to \(K\), denote the cap vertices of those branches by
 
 ## 5. One Aldred cycle closes the tree
 
-Choose, by Section 2.1, a Tait colouring of \(H\) in which all four marks
-have colour \(c\).  Restrict it to the capped central component \(K\).
+Choose the Tait colouring in hypothesis 1, in which all four marks have
+colour \(c\).  Restrict it to the capped central component \(K\).
 The \(r\) internal marks of \(K\) have colour \(c\).  At each cap vertex
 \(z_j\), select the unique incident edge \(f_j\) of colour \(c\).
 
@@ -273,11 +284,19 @@ nonpacking.
 
 ## 6. Scope and remaining five-CDC work
 
-The theorem closes the **four-mark, two-component marked-core branch**
+The sharpened theorem closes the **four-mark, two-component
+marked-core branch**
 of the minimum exact-zero matching reduction.  It does not resolve the
 five-cycle double cover conjecture.  In particular, the connected
 eight-mark core branch and the global existence/exchange step for a
 suitable minimum exact-zero matching remain.
+
+The hypothesis audit is literal: searching this proof for universal
+separation finds it only in Section 2.1, where it derives the
+common-colour colouring.  Sections 2.2--5 use the fixed colouring,
+Tait cut parity, the marked cyclic-cut inequality, and the three cited
+structural/circuit theorems.  Thus the common-colour reformulation
+changes no construction or imported result.
 
 The proof is predominantly elementary.  A human audit should focus on
 the transfer of marks and Tait colours through the repeated 3-sum
@@ -295,6 +314,7 @@ verification or peer review.
 OpenAI Codex agents, under human direction, found the combination of the
 marked shore lemmas, the Knappe--Pitz three-edge circuit theorem, the
 cyclic component tree, and the Aldred--Ellingham--Hemminger--Holton
-four-edge cycle theorem; wrote the proof; and ran the finite diagnostics
-that motivated it.  The argument is displayed for line-by-line human
+four-edge cycle theorem; wrote the proof; audited away the unnecessary
+universal-separation hypothesis; and ran the finite diagnostics that
+motivated it.  The argument is displayed for line-by-line human
 checking.  The finite searches are not used as proof.
