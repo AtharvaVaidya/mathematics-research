@@ -14,10 +14,18 @@ This directory contains a narrowly scoped research preprint. It records:
 6. a human-checkable Tait-cap closure theorem: a nonbridge rooted shore
    with a Tait-colourable one-vertex cap contains a base pair, with the
    exact one-sided and two-sided exceptional consequences;
-7. a two-solver rooted base-pair theorem through order 17 and a two-solver
-   full-signature theorem for the cyclically 4-edge-connected order-22 cap
-   slice; and
-8. a corrected computer-assisted order-22 theorem restricted explicitly to
+7. a human-checkable root-end factor lift: endpoint base pairs become fork
+   triples through an arbitrary cubic three-sum path, and two forks force
+   both an intersecting and a disjoint cross-pair;
+8. a two-solver endpoint base-pair theorem through factor order 26, complete
+   cyclically 4-edge-connected cap classifications through order 26, and
+   the resulting bridge-free simple terminal-distinct fixed-five
+   exceptional-pole lower bound of order 28;
+9. an explicit-witness classification of all 9,725,709 deletions from the
+   retained cyclically 4-edge-connected order-28 caps, raising that scoped
+   lower bound to order 30;
+10. a complete all-cap order-22 exceptional-signature exclusion; and
+11. a corrected computer-assisted order-22 theorem restricted explicitly to
    Tait-colourable connected simple cubic graphs.
 
 It does **not** claim a resolution of the Five-Cycle Double Cover Conjecture
@@ -54,11 +62,18 @@ The companion programs and frozen census metadata are in the project root:
 ../scratch/verify_order22_separation_via_matchings.cpp
 ../scratch/order22-universal-four-separation-result.json
 ../search/rooted-three-pole-frontier-20260727/
+../search/rooted-three-pole-nontait-endpoint-frontier-20260727/
 ../search/four-pole-order22-cap-20260727/
+../search/four-pole-order24-cyclic4-cap-20260727/
+../search/four-pole-order26-cyclic4-cap-20260727/
+../search/four-pole-order28-cyclic4-cap-20260727/
+../scratch/verify_boundary_two_orbit_witness_fast.cpp
 ```
 
-The completed claims use only the order-17 package and the cyclically-four
-order-22 cap slice. The larger all-cap order-22 run is not claimed.
+The completed claims include the full order-22 all-cap run and the
+cyclically-four order-24 and order-26 full-signature runs. At order 28,
+two explicit boundary witnesses per deletion row suffice to exclude every
+exceptional mask. Order 30 is not classified.
 
 ## Audit correction
 
@@ -74,17 +89,22 @@ disjointness-only relations, but the mixed equality/intersection relation can
 survive. The paper gives the exact invariant-signature counterexample and
 discharges the 3-connectivity premise required by the cited decomposition
 theorem: a simple bridgeless cubic cap with no cyclic two-edge cut has no
-one- or two-vertex cut. A dependent project-level claim of a global order-28
-lower bound was withdrawn; that claim is not made here.
+one- or two-vertex cut.
 
-A companion human reduction for the remaining mixed relation has also
-survived hostile audit in conditional form. It tracks a three-label
-**fork triple** \(\{qr,ps,pt\}\), not cardinality alone, while contracting
-endpoint \(K_4\) factors. Any label meeting all three fork edges is one of
-\(\{pq,pr\}\), so two path-rooted shores with fork triples cannot have a
-relation without a disjoint pair. The required triangle-free
-3-connected finite screen through order 24 is still running. It is not
-claimed here, and the order-28 lower bound remains withdrawn.
+A later hostile audit replaced the conditional triangle-contraction route
+with a direct endpoint-factor lift. Fix one labelling of the rest of the
+three-sum path. The three endpoint base-pair labellings are all transported
+by the same inverse coordinate normalization and glue to that fixed
+remainder, so the whole-shore signature contains a fork
+\(\{qr,ps,pt\}\). Two forks always exhibit both unequal intersection and
+disjointness. Combined with the completed endpoint theorem through factor
+order 26 and cyclically-four cap classifications through order 26, this
+soundly restores the scoped simple terminal-distinct lower bound 28.
+The subsequent order-28 package supplies explicit orbit-0 and orbit-2
+\(D_5\) labellings for all \(9\,725\,709\) deletion poles. Since those two
+orbits jointly exclude all six exceptional masks, parity raises the scoped
+lower bound to 30. It does not prove Five-CDC, and no stronger bound is
+claimed.
 
 Before public submission:
 

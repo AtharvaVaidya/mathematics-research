@@ -3,7 +3,8 @@
 Date: **2026-07-27**.
 
 Status: **HUMAN-CHECKABLE REDUCTION / FINITE TRIANGLE-FREE PREMISE
-CURRENTLY BEING CHECKED / NOT FIVE-CDC**.
+CURRENTLY BEING CHECKED / END-FACTOR LIFT NOW BYPASSES THIS PREMISE FOR
+THE ORDER-28 BOUND / NOT FIVE-CDC**.
 
 Fix a simple 3-connected cubic graph \(H\), a vertex \(z\), and a
 proper root \(r\) of the three-pole \(H-z\).  Normalize the three
@@ -232,8 +233,12 @@ complete and independently replayed, this will eliminate the mixed
 cyclic-three branch through cap order 26.  Together with the already
 complete cyclically-four cap census through order 26, it would restore
 the simple terminal-distinct exceptional-pole lower bound of order 28.
-Until that finite premise is frozen, this paragraph is a conditional
-consequence, not a theorem.
+Until that finite premise is frozen, this paragraph remains a conditional
+whole-shore consequence.  The later human endpoint-fork transport in
+`rooted-cap-end-factor-fork-lift.md` obtains the required fork directly
+from each root-end factor and therefore restores the order-28 bound
+without using this pending screen.  The present screen remains useful as
+a stronger independent whole-shore check.
 
 For error detection, the standard-library replay
 `scratch/verify_rooted_cap_triangle_table.py` exhaustively reconstructs

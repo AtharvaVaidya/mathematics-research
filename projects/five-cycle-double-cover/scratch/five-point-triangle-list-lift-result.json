@@ -1,0 +1,1 @@
+{"allowed_local_triangles":560,"fano_lines":7,"five_point_sets":56,"line_cases":392,"nonspecial_line_cases":336,"result":"For every five-point subset of F2^3, exactly one Fano line has four admitted local coordinate triangles and each of the other six lines has exactly one.","schema":"five-cdc-five-point-triangle-list-v1","special_line_cases":56}

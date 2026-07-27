@@ -24,11 +24,12 @@ submission.
 ## Main research drafts
 
 - [`preprint-rooted-four-cut/output/pdf/main.pdf`](preprint-rooted-four-cut/output/pdf/main.pdf)
-  is a 24-page structural and computer-assisted research report on marked
+  is a 29-page structural and computer-assisted research report on marked
   circuits and fixed-five rooted interfaces.  It includes human-checkable
   proofs of the exact elliptic-flow reformulation, a four-mark closure
-  theorem, a forbidden-root cut gate, and the corrected Tait-cap closure;
-  it separately labels the order-17 and order-22 finite censuses.  Its
+  theorem, a forbidden-root cut gate, the corrected Tait-cap closure, and
+  the root-end fork lift; it separately labels every finite census used
+  in the scoped exceptional-pole lower bound.  Its
   source, audit, novelty assessment, and checksum ledger are in
   [`preprint-rooted-four-cut/`](preprint-rooted-four-cut/).  The paper
   explicitly says that it neither proves nor disproves five-CDC.
@@ -61,7 +62,7 @@ pending independent expert literature review.
 
 ## Current compact four-pole frontier
 
-Four compact finite packages sharpen the fixed-five four-pole boundary
+Five compact finite packages sharpen the fixed-five four-pole boundary
 without claiming a universal theorem:
 
 - [`search/four-pole-order24-cyclic4-cap-20260727/`](search/four-pole-order24-cyclic4-cap-20260727/)
@@ -77,6 +78,13 @@ without claiming a universal theorem:
   checks all 185,640 deletion poles from a retained 280-graph strict-snark
   source.  Every row again has full signature.  This earlier finite probe
   is retained as an independently frozen strict-source control.
+- [`search/four-pole-order28-cyclic4-cap-20260727/`](search/four-pole-order28-cyclic4-cap-20260727/)
+  records the complete retained 12,517-graph order-28 source and compact
+  reports for 9,725,709 deletion poles.  Two positive boundary witnesses
+  per pole exclude all six exceptional masks.  The ordinary Git archive
+  omits the 363 MB witness stream and its 40 MB generated pole stream but
+  preserves their hashes, generation commands, checker sources, logs, and
+  independently reproduced summary.
 - [`search/mnp-h2-h5-aa-deletion-probe-20260727/`](search/mnp-h2-h5-aa-deletion-probe-20260727/)
   supplies 394 explicit edge-labelling certificates covering all 97,608
   independent edge pairs in the reconstructed \(H_2,\ldots,H_5\) family.
@@ -84,10 +92,11 @@ without claiming a universal theorem:
 
 Each package has a solver-independent verifier, frozen checksums, precise
 source limitations, and an AI-use disclosure.  None resolves five-CDC.
-The finite cap classifications remain valid, but a later audit found that
-the attempted reduction from all small exceptional poles to this cap class
-used a false one-sided base-pair inference.  The former global order-26 and
-order-28 lower-bound conclusions are therefore withdrawn.
+The finite cap classifications remain valid.  A hostile audit withdrew an
+earlier reduction from all small exceptional poles because it used a false
+one-sided base-pair inference.  The later two-sided endpoint-fork lift
+below supplies a different sound reduction and restores only the stated
+bridge-free simple terminal-distinct fixed-five lower bound of order 28.
 
 The corrected human proof
 [`docs/rooted-three-pole-tait-cap-closure.md`](docs/rooted-three-pole-tait-cap-closure.md)
@@ -101,14 +110,33 @@ The frozen
 package extends endpoint base-pair closure through factor order 26 using
 two independent classifiers and a solver-independent replay.  It gives cap
 order at least 54 for equality-only or disjointness-only cyclic-three
-relations.  The mixed relation remains open.
+relations.  The package alone does not eliminate the mixed relation.
 
 The human-checkable
 [`docs/rooted-cap-triangle-induction.md`](docs/rooted-cap-triangle-induction.md)
 reduces that mixed branch through cap order 26 to a pending triangle-free
 3-connected shore screen through order 24.  Its local fork-triple tables
 have an exhaustive standard-library checker, but the finite screen is still
-running and no order-28 lower bound is claimed.
+running and is not claimed.
+
+The independent human argument in
+[`docs/rooted-cap-end-factor-fork-lift.md`](docs/rooted-cap-end-factor-fork-lift.md)
+bypasses that pending screen for the finite lower bound.  A base pair in
+each root-end factor transports through its three-sum path as a fork
+triple; any two forks force both an unequal-intersection and a disjoint
+cross-pair.  With the completed endpoint and cyclically-four cap
+classifications through order 26, this first restores the scoped simple
+terminal-distinct exceptional-pole lower bound of order 28.  The complete
+order-28 two-witness classification then raises that scoped bound to 30.
+This is not a universal exceptional-pole theorem, and Five-CDC remains
+unresolved.
+
+The exact five-point restriction theorem in
+[`docs/five-cdc-five-point-triangle-list-lift.md`](docs/five-cdc-five-point-triangle-list-lift.md)
+classifies all local ways to compress the eight-coordinate triangle lift
+to five coordinate points.  Independent Python and JavaScript checkers
+agree on all 392 five-set/line cases.  The remaining global flow-and-line
+selection problem is still open.
 
 ## Fixed-line Fano branch
 

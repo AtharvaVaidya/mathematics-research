@@ -938,8 +938,8 @@ Open obligations:
     reformulation includes loops and parallel edges but is not a proof
     of existence and does not add orientability.  See
     `docs/five-cdc-elliptic-quadratic-flow-model.md`.
-59. **The claimed simple terminal-distinct lower bound of order 28 is
-    withdrawn; the cyclically-four cap censuses remain valid:** the
+59. **The first claimed simple terminal-distinct lower bound of order 28
+    was withdrawn; the cyclically-four cap censuses remain valid:** the
     simple-cap theorem reduces the cyclically-four branch at each even
     order to all
     independent-edge deletions from bridgeless non-Tait cubic caps.
@@ -959,7 +959,9 @@ Open obligations:
     shard logs.  Therefore every retained cyclically-four cap deletion
     has full signature, but a mixed-orientation cyclic-three atom is not
     reduced to that corpus.  No global lower bound for all bridge-free
-    connected simple terminal-distinct poles follows.  This also does not
+    connected simple terminal-distinct poles follows from these censuses
+    alone.  Item 67 records the later independent two-sided fork transport
+    which soundly restores the scoped order-28 bound.  This also does not
     cover repeated terminals, nonsimple cores, or unbounded-colour CDC
     signatures.
     See `search/four-pole-order26-cyclic4-cap-20260727/`.
@@ -1050,7 +1052,8 @@ Open obligations:
     the Tait-cap and rooted-order-17 theorems this forces both endpoint
     factors above order 26 for equality-only or disjointness-only
     cyclic-three relations, giving cap order at least 54.  It does not
-    eliminate the mixed relation.  See
+    eliminate the mixed relation by the original one-sided argument; item
+    67 supplies the missing fork transport.  See
     `search/rooted-three-pole-nontait-endpoint-frontier-20260727/`.
 66. **The mixed cyclic-three branch has a path-rooted triangle
     induction, conditional on one pending finite premise:** connector-end
@@ -1065,3 +1068,57 @@ Open obligations:
     a complete triangle-free 3-connected screen through order 24 would
     close this finite branch.  That screen is running and not yet claimed.
     See `docs/rooted-cap-triangle-induction.md`.
+67. **A root-end base pair lifts through an arbitrary factor path as a
+    fork, restoring the simple terminal-distinct order-28 lower bound:**
+    fix one labelling of the rest of a rooted shore and normalize the
+    ordered triangle at its root-end factor interface.  All three
+    endpoint base-pair labellings can be inverse-normalized and glued to
+    that same fixed remainder.  The whole shore signature therefore
+    contains a coordinate image of a base pair, namely a fork
+    \(\{qr,ps,pt\}\).  Any two forks have both an unequal intersecting
+    cross-pair and a disjoint cross-pair; a direct proof and the complete
+    \(30^2\) table are retained.  Hence the completed endpoint theorem
+    through factor order 26 excludes the mixed cyclic-three relation
+    whenever both endpoint factors have order at most 26.  A surviving
+    mixed branch has one endpoint factor of order at least 28 and cap
+    order at least 30; the pure relations still force both endpoints
+    above 26 and cap order at least 54.  Together with the cyclically-four
+    cap census through order 26, this soundly restores the global
+    simple terminal-distinct exceptional-pole lower bound of order 28.
+    A first order-28 exception must have a cyclically four-edge-connected
+    cap.  This is a fixed-five structural result, not Five-CDC.
+    See `docs/rooted-cap-end-factor-fork-lift.md`.
+68. **Restricting the eight-coordinate triangle lift to five points has
+    exactly one local source of freedom:** every five-point subset
+    \(S\subseteq\mathbb F_2^3\) has the form
+    \(\{0\}\dot\cup(a+H)\) after translation, for a unique Fano line
+    \(H\).  A vertex whose incident flow values form \(H\) has four local
+    coordinate triangles contained in \(S\); each of the other six local
+    Fano lines has exactly one.  Line-valued edges receive two labels in
+    \(a+H\), while every outside-valued edge receives \(\{0,f(e)\}\).
+    Componentwise coordinate parity is therefore exactly the existing
+    Fano component-parity lift, with no hidden local compression cases.
+    Independent Python and JavaScript enumerations agree on all
+    \(56\cdot7=392\) five-set/line cases.  The unresolved obligation
+    remains global selection of the flow and special line, not local
+    triangle choice.  See
+    `docs/five-cdc-five-point-triangle-list-lift.md`.
+69. **The complete retained order-28 cyclically-four cap class has no
+    exceptional deletion pole, raising the scoped lower bound to
+    order 30:** Snarkhunter supplies 12,517 documented cyclically
+    4-edge-connected non-Tait simple cubic caps.  Their 9,725,709
+    independent-edge deletions have 19,451,418 retained positive
+    \(D_5\)-labellings: every pole realizes both orbit 0,
+    \((01,01,01,01)\), and orbit 2,
+    \((01,01,23,23)\).  The first three exceptional exact masks omit
+    orbit 2 and the last three omit orbit 0, so the two witnesses
+    exclude all six masks.  The package verifier and a separately
+    written C++/zlib checker replay every displayed vertex equation.
+    Combined with the human cyclic-three endpoint-fork bound of 30, the
+    previous cyclically-four classifications through 26, and the parity
+    identity \(3n-4=2m\) for a terminal-distinct cubic four-pole, this
+    proves the stated order-30 lower bound in the vertex-minimal,
+    two-cut-reduced, bridge-free, connected, simple, terminal-distinct
+    fixed-five scope.  It is not a universal full-signature theorem and
+    not Five-CDC.  See
+    `search/four-pole-order28-cyclic4-cap-20260727/`.

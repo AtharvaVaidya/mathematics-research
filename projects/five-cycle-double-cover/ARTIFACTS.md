@@ -9,7 +9,7 @@ copied into a separate clean clone; it was not modified or committed.
 - Three compiled research drafts and their complete LaTeX/BibTeX sources,
   including the fixed-line Fano-flow span/obstruction note and its
   provisional novelty assessment.
-- The 24-page marked-circuits and fixed-five rooted-interfaces report in
+- The 29-page marked-circuits and fixed-five rooted-interfaces report in
   `preprint-rooted-four-cut/`, including LaTeX/BibTeX source, compiled PDF,
   line-by-line AI audit, cautious novelty assessment, build instructions,
   and a checksum ledger.  The front-matter AI-use disclosure and unresolved
@@ -29,21 +29,32 @@ copied into a separate clean clone; it was not modified or committed.
 - The compact complete cyclically-four order-24 cap package (155 source
   graphs and 86,490 deletion poles), the complete cyclically-four order-26
   cap package (1,297 source graphs and 859,911 deletion poles), the
+  compact publication subset of the complete cyclically-four order-28
+  two-witness package (12,517 source graphs and 9,725,709 deletion poles),
+  the
   retained strict-snark order-26 probe (280 source graphs and 185,640
   deletion poles), and the explicit
   \(H_2,\ldots,H_5\) prescribed-\(AA\) certificate package (97,608
   independent edge pairs covered by 394 displayed labellings).  Each
   package includes a checksum ledger and independent semantic verifier.
-  The order-24 and order-26 cap classifications remain exact, but the
-  former global lower-bound consequences are withdrawn because they used
-  an invalid one-sided base-pair inference.
+  The order-24 and order-26 cap classifications remain exact.  A former
+  lower-bound proof was withdrawn because it used an invalid one-sided
+  base-pair inference; the later two-sided endpoint-fork lift restores only
+  the stated simple terminal-distinct fixed-five lower bound.
 - The corrected rooted base-pair relation note and the human-checkable
   Tait-cap closure and cap-connectivity theorem.  The frozen endpoint
   package classifies 1,360,452 roots through factor order 26 and derives
   the pure-relation cap bound 54.  The fork-triple triangle induction and
-  its exhaustive local-table replay are also included.  The mixed branch's
-  triangle-free finite premise remains open, so this is not a universal
+  its exhaustive local-table replay are also included.  A separate
+  human-checkable root-end fork lift, backed by a complete 900-pair replay,
+  bypasses the pending triangle-free screen and restores the scoped
+  order-28 exceptional-pole bound.  The complete retained order-28
+  two-witness classification then raises that scoped bound to 30.  Its
+  large generated certificate streams are hash-frozen but omitted from
+  ordinary Git.  This is not a universal
   exceptional-signature theorem or a five-CDC resolution.
+- The human-checkable five-point restriction of the eight-coordinate
+  triangle lift and two independent exhaustive local-table checkers.
 - The standalone computer-free four-mark proof.
 - Current status, publication assessment, encoding proof, marked-cut
   reductions, and proof-obligation ledger.
@@ -111,7 +122,7 @@ The four compiled PDFs have SHA-256 digests:
 863f24bcad7780067e5c264e2253e673ea4b9d50e94f28a6cf6cf389cc20bcb0  output/pdf/two-connected-countermodels-five-cdc-preprint.pdf
 7a88cd04139344babf371c6b949d26b50e6733ac8db5a6a495f842e4e706dafc  output/pdf/four-universally-separated-marks-preprint-20260726.pdf
 9612a080fa5eca945c82d0c266cc94d62adeea6493ee6d10e7aa03805687e5e0  preprint-fano-combined-span/main.pdf
-cdeeef2049fb4cb267b1b01328f412bcd9293f0e93a403754edccebbf0f2c9c4  preprint-rooted-four-cut/output/pdf/main.pdf
+8d0da87f5e07abf1dc5cc25e05f16faeb442a7dead8754f7b8bb4b88596f9b95  preprint-rooted-four-cut/output/pdf/main.pdf
 ```
 
 The original source files for those PDFs have SHA-256 digests:
@@ -119,7 +130,7 @@ The original source files for those PDFs have SHA-256 digests:
 ```text
 f244876a123a0c0fe3ead39805ddd7c3aa18c7b7ed1e4762484f008052564ddc  preprint-fano-one-switch/main.tex
 3c30aff3bc44a1163646eab8a41461d0859a44db04972be4a8810e0e0e2fa3dd  preprint-four-mark-core/main.tex
-dda5209d48975f4a5f49148aca9da789cdb20451816b7284fb7e54330c7270aa  preprint-rooted-four-cut/main.tex
+0ad35791c7fbdafe67b6d28958372f8b3b3ac4d1fddd2146e5280ff6384789fa  preprint-rooted-four-cut/main.tex
 ```
 
 Package-local `SHA256SUMS` files freeze the countermodel and \(H_4\)

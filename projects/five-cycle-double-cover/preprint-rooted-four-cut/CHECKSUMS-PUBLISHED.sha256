@@ -29,9 +29,9 @@ e2ce0dd4a6c98eb7a83b27fa7614519e61f7f04c1b5270c7e64ee0d42cafdae9  ../search/four
 f7d234b504034cd7b3528ed6820279bdc769a4c3c1292dbffaa40e423b60a501  ../search/four-pole-order22-cap-20260727/verify_completed_run.py
 8c4f5f050cd9106ce23d75ffed446132affff4932244529103eef3a85d731b1a  ../search/rooted-three-pole-frontier-20260727/README.md
 28bacc69e5764cbb754ef38c1a793df475bff7f499f8c728cd873276978274f9  ../search/rooted-three-pole-frontier-20260727/SHA256SUMS
-590de088ae57e3693f3e158704cd23e3275562cb4f7fe2e45ff671e2a90010d8  ../search/four-pole-order26-cyclic4-cap-20260727/README.md
-28978b5cac3ce172341aaa0ec6ef77ee3d40e53bcba8fa726080c62bdabfb452  ../search/four-pole-order26-cyclic4-cap-20260727/THEOREM.md
-04bb109ad70616c817d7174963476c33949f40e7201bf7fb6759e9e7a3645843  ../search/four-pole-order26-cyclic4-cap-20260727/SHA256SUMS
+d2e665a257573917dc18504f5d140909b3a46d9f54148e5f11dcfa9085a0b70f  ../search/four-pole-order26-cyclic4-cap-20260727/README.md
+140630312314fb5fe0ea9338039bcf51a9c2f92f570dfc96db5e7795077cba58  ../search/four-pole-order26-cyclic4-cap-20260727/THEOREM.md
+1a178b370891b9394b47ae640fad04d7dda19c2334521e1503535297410819dd  ../search/four-pole-order26-cyclic4-cap-20260727/SHA256SUMS
 c1ad7aa9f17449f7eca32995462e70206c116113349df46e96e38becd78103ff  ../search/rooted-three-pole-nontait-endpoint-frontier-20260727/THEOREM.md
 7a93b75f8e8ce19c1c9822c190424bb0b02e331cd320351d186b7b764c8b3a2d  ../search/rooted-three-pole-nontait-endpoint-frontier-20260727/SHA256SUMS
 cad26f151186adc7efa3462d265cf7d25c24b3f6a46ab184ca6b03f60175d553  ../docs/rooted-cap-end-factor-fork-lift.md
@@ -40,10 +40,10 @@ cad26f151186adc7efa3462d265cf7d25c24b3f6a46ab184ca6b03f60175d553  ../docs/rooted
 777240a1d8a36db5c027ef87ff65d9224ba35b40ed6e0d0a4b3bd07601b2145c  ../search/rooted-three-pole-nontait-endpoint-frontier-20260727/report.json
 8dc75da5f7a53e186f7f6b78d9beccde32e2694c17bdd06810fc369fbaef53a3  ../search/rooted-three-pole-nontait-endpoint-frontier-20260727/verify.py
 4f1c8e73be167facd2cc378d3087a5196e841d0f282ab242a4de32ade146b746  ../search/four-pole-order22-cap-20260727/report.json
-2ce165e81478efe41df19d129aaeaa2f8938ef683131c1b5c49b3c45fd3f301b  ../search/four-pole-order24-cyclic4-cap-20260727/report.json
-b61c66c713a3832b49a2fe1a7244d915187817fafaa5238a8e01d7af32232ca7  ../search/four-pole-order24-cyclic4-cap-20260727/verify.py
-69d8eb39b70df89906a9c3be28dc323231ef0bd173f7dbffee8311ce0156de71  ../search/four-pole-order26-cyclic4-cap-20260727/report.json
-e78d88124b2f75a4c6a7c3514017aece816834106d26595e56166ce84532380e  ../search/four-pole-order26-cyclic4-cap-20260727/verify.py
+010e3725c5ead5d87d4a07ed7d5b9ff41953dbf5e4fad0ac277113ed6f9cb5d7  ../search/four-pole-order24-cyclic4-cap-20260727/report.json
+3795006718a74bfc007834f78a1be06ad181ac4a08231324e82a30e5e958da0b  ../search/four-pole-order24-cyclic4-cap-20260727/verify.py
+f799b8911dff7025299eb32b20f842d8eb68acd112feab32630f4253f368d864  ../search/four-pole-order26-cyclic4-cap-20260727/report.json
+3ebc6688cf8a65398ef0978ee8e78bd8c3835188399634e6cfae21b71afd383b  ../search/four-pole-order26-cyclic4-cap-20260727/verify.py
 282a11a8876a75a940879661a1ae59484c9309a8e83b80cbd75c78ff8b2252c6  ../search/four-pole-order28-cyclic4-cap-20260727/README.md
 514c1ebe945ecde75db10fac1f5adfdffd0198054839943a0f3fed54a9688017  ../search/four-pole-order28-cyclic4-cap-20260727/REPRODUCING.md
 4c7dde497bc6d88a3ba6cff6746add74c375ccb8bf2ca1bc2157b59dd981e376  ../search/four-pole-order28-cyclic4-cap-20260727/SOURCES.sha256
@@ -52,8 +52,6 @@ b0fab10656eb480791452d0151cb0484b10a67950b2c0a7b406663d912c9c4ed  ../search/four
 a9bcefae78d3a45ec482f2aba57980822d77780ceb92f1753d96f5fa702e175c  ../search/four-pole-order28-cyclic4-cap-20260727/verify.py
 e19c558a0e08f4260eb2a07d1d717e9ddbcd6ac37e940c83716936a81fa7d261  ../search/four-pole-order28-cyclic4-cap-20260727/independent-fast-replay.json
 b4f6494c23793a40158a03ccd7c0943ae2e397c90a1467e27814bd007789be1f  ../search/four-pole-order28-cyclic4-cap-20260727/artifacts/cyclic4-nontait-order28.g6
-eaaf47ce074008b1b7da9ca438a38b36e4a838af400989e9189519034643b7b4  ../search/four-pole-order28-cyclic4-cap-20260727/artifacts/cyclic4-nontait-order28-poles.g6.gz
-169a574788259d92c58bbee35898d4af4d51091b860e3bdd9fdb4dcd4a3a06b6  ../search/four-pole-order28-cyclic4-cap-20260727/artifacts/cadical-two-orbit-witness.tsv.gz
 d7c11655b433be86d8c1c94b6cbd3f093ccad0d5a2f1a75dfd4b0498412047fa  ../search/four-pole-order28-cyclic4-cap-20260727/artifacts/snarkhunter.log
 0fec1f10f519ae88d179f1919ca3cbaa04b2ab650d7e1394e09974c6e1b214a6  ../scratch/boundary_two_orbit_witness_cadical.cpp
 959527ac3a786717c2ac13da58347e8efd448fa49141207f47617326e81a84d8  ../scratch/verify_boundary_two_orbit_witness_fast.cpp

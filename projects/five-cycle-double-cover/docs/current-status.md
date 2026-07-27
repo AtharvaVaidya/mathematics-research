@@ -1899,13 +1899,19 @@ CaDiCaL and direct finite-domain classifiers agree byte-for-byte on all
 deletion, and checks both tables row-by-row.  Source completeness relies on
 Snarkhunter and its option semantics.
 
-This is an exact classification of the retained cyclically-four cap class.
-A later audit found that the claimed reduction from all exceptional poles
-through order 24 used the false one-sided base-pair inference corrected
-below.  The former global lower bound of 26 is therefore withdrawn.  The
-finite tables and verifier in
-`search/four-pole-order24-cyclic4-cap-20260727/` are unaffected.  This does
-not prove the universal exceptional-signature conjecture or Five-CDC.
+Combining this complete cyclically-four cap classification with the proved
+exceptional-atom descent, the simple-cap theorem, the endpoint-fork lift
+through factor order 26 recorded below, and the complete order-22 census
+yields a finite theorem: no bridge-free connected simple
+terminal-distinct four-pole of order at most 24 has either exceptional
+exact fixed-five signature.  Any such pole has even order at least 26.
+This conclusion is restored by the later sound two-sided fork transport,
+not by the withdrawn one-sided base-pair inference.  The finite
+cyclically-four artifacts are in
+`search/four-pole-order24-cyclic4-cap-20260727/`.
+
+This advances only the finite exceptional-pole frontier.  It does not prove
+the universal exceptional-signature conjecture or Five-CDC.
 
 ## Order-26 strict-snark full-signature probe
 
@@ -1953,11 +1959,13 @@ logs.  The replay reproduces the committed report exactly.
 
 This proves the complete intended classification of cyclically
 4-edge-connected non-Tait caps at order 26.  A later audit found that the
-claimed reduction from every exceptional pole through order 26 to this cap
-class used an invalid one-sided base-pair inference: a containing root
-signature can add equality to a base-pair-versus-shore relation that was
-intersection-only.  Therefore the former global exceptional-pole
-lower bound of 28 is withdrawn.  The complete finite package remains
+then-claimed reduction from every exceptional pole through order 26 to
+this cap class used an invalid one-sided base-pair inference: a containing
+root signature can add equality to a base-pair-versus-shore relation that
+was intersection-only.  That proof of the order-28 lower bound was
+withdrawn.  The still later two-sided endpoint-fork lift below supplies a
+different sound proof in the stated simple terminal-distinct scope.  The
+complete finite package remains
 `search/four-pole-order26-cyclic4-cap-20260727/`; its cap classification
 and verifier are unaffected.  Canonical source completeness still relies
 on Snarkhunter and its option semantics.  This is not a universal
@@ -2052,9 +2060,11 @@ equality-only and disjointness-only cyclic-three relations, one endpoint
 base pair is already impossible, so both endpoint factors have order at
 least 28 and the cap has order at least 54.
 
-This does **not** eliminate the mixed equality/intersection relation.
-Base pairs in two different endpoint factors of a path are not base pairs
-on the two shores of one cut.  The corrected theorem and full finite
+The original one-sided inference did **not** eliminate the mixed
+equality/intersection relation.  Base pairs in endpoint factors need not
+remain the three distinguished base pairs after transport through a path.
+The later endpoint-fork lift below preserves their fork shape and supplies
+the missing two-sided argument.  The endpoint theorem and full finite
 package are in
 `search/rooted-three-pole-nontait-endpoint-frontier-20260727/`.
 
@@ -2089,11 +2099,90 @@ only possibilities are the two labels \(\{pq,pr\}\).  The other shore's
 own fork triple cannot fit in a two-element set.  For a cap of order at
 most 26, both capped shores of one principal cut have order at most 24.
 Therefore a complete triangle-free 3-connected cap screen through order
-24 would eliminate the mixed branch through order 26.  That
-two-implementation screen is currently running and is not yet claimed.
-The conditional human proof and an exhaustive replay of its local
-coordinate and common-intersector tables are in
+24 would prove a stronger whole-shore statement through that frontier.
+That two-implementation screen is currently running and is not yet
+claimed.  The endpoint-fork lift in the next section now eliminates the
+finite mixed branch without this pending premise.  The conditional human
+proof and an exhaustive replay of its local coordinate and
+common-intersector tables are in
 `docs/rooted-cap-triangle-induction.md`.
+
+## Root-end fork lift and restored order-28 bound
+
+Audit date: **2026-07-27**.
+
+A base pair in a root-end factor transports through an arbitrary
+three-sum path as a fork triple.  Fix one labelling of the rest of the
+shore and let \(\alpha\) be its ordered triangle at the endpoint-factor
+interface.  Normalize \(\alpha\) to \(01,02,12\).  Each of the three
+endpoint base-pair labellings can then be inverse-normalized and glued to
+the same fixed remainder.  The resulting whole-shore root labels are one
+coordinate image of a base pair, hence a fork
+\[
+                              \{qr,ps,pt\}.
+\]
+
+Any two forks have an unequal intersecting cross-pair and a disjoint
+cross-pair.  The human proof is short: the labels meeting all three members
+of one fork form a two-element set, while the fork itself has three
+members; and the only label having no unequal intersection with all three
+members is the fork's distinguished independent edge.  A standard-library
+replay checks all 30 forks and all 900 ordered fork pairs, obtaining 330
+relations \(\{\mathsf I,\mathsf D\}\) and 570 relations
+\(\{\mathsf E,\mathsf I,\mathsf D\}\).
+
+The completed endpoint base-pair theorem through factor order 26 therefore
+excludes the mixed cyclic-three relation whenever both cap-edge endpoint
+factors have order at most 26.  A surviving mixed branch has at least one
+endpoint factor of order 28 and cap order at least 30.  Equality-only and
+disjointness-only still force both endpoint factors above 26 and cap order
+at least 54.
+
+Together with the complete cyclically-four cap census through order 26,
+this soundly restores the simple terminal-distinct exceptional-pole lower
+bound of order 28.  Any first order-28 exception must have a cyclically
+4-edge-connected cap.  The complete proof and literal replay are in
+`docs/rooted-cap-end-factor-fork-lift.md`.  This is a fixed-five
+exceptional-signature result, not a resolution of Five-CDC.
+
+## Order-28 cyclically-four classification and scoped order-30 bound
+
+Audit date: **2026-07-27**.
+
+The retained Snarkhunter source contains all 12,517 documented
+cyclically 4-edge-connected non-Tait simple cubic caps of order 28.
+Deleting every independent edge pair gives 9,725,709 terminal-distinct
+four-poles.  For every pole, a certificate-producing CaDiCaL run emits
+two complete \(D_5\)-labellings: boundary orbit 0,
+\((01,01,01,01)\), and boundary orbit 2,
+\((01,01,23,23)\).  All eight shards finished with status zero and
+zero missing witnesses, for 19,451,418 displayed labellings.
+
+These two positive witnesses exclude all six exceptional exact masks
+without any UNSAT inference.  Masks `0x02b`, `0x053`, and `0x119` omit
+orbit 2; masks `0x2e4`, `0x3a4`, and `0x3c4` omit orbit 0.  The package
+verifier reconstructs every cap deletion and checks every displayed
+label at every vertex.  A separately written C++/zlib checker reads the
+two compressed streams directly and independently rechecks all
+19,451,418 labellings.
+
+The root-end fork theorem already puts every cyclic-three exceptional
+cap at order at least 30.  The earlier exact classifications eliminate
+the cyclically-four cases through order 26, and this computation
+eliminates order 28.  A terminal-distinct cubic four-pole has
+\(3n-4=2m\), hence even order.  Therefore the scoped vertex-minimal,
+two-cut-reduced, bridge-free, connected, simple, terminal-distinct
+fixed-five exceptional-pole lower bound is now order 30.
+
+The finite theorem, human mask table, replay, and certificate hashes are
+in `search/four-pole-order28-cyclic4-cap-20260727/`.  The ordinary Git
+archive omits the 363 MB witness stream and its 40 MB generated pole
+stream, but preserves their compressed and uncompressed hashes,
+generation commands, checkers, source cap corpus, and compact replay
+reports.  Canonical source completeness and cyclic-four provenance rely
+on the retained Snarkhunter run.  This does not prove that exceptional
+poles never exist, does not cover multigraph or repeated-terminal poles,
+and does not resolve Five-CDC.
 
 ## Elliptic quadratic-flow reformulation
 
@@ -2147,6 +2236,36 @@ normal-form proof is
 
 This is an exact reformulation and a narrowing of the flow-selection
 obligation, not a resolution.
+
+## Five-point restriction of the eight-coordinate lift
+
+Audit date: **2026-07-27**.
+
+The new eight-coordinate triangle construction can be restricted to five
+coordinate points without leaving any unclassified local cases.  After a
+translation, every five-set in \(\mathbb F_2^3\) has the form
+\[
+                         \{0\}\dot\cup(a+L)
+\]
+for one uniquely determined Fano line \(L\).  At a cubic vertex whose
+three incident flow values form \(L\), four local coordinate triangles fit
+inside this five-set.  For each of the other six possible local Fano
+lines, exactly one triangle fits.
+
+The resulting pair shapes are forced: an \(L\)-valued edge has both
+coordinate labels in \(a+L\), while an outside-valued edge has pair
+\(\{0,f(e)\}\).  Summing coordinate parity over an \(L\)-component gives
+exactly the component-parity test above.  Conversely, that test constructs
+the compatible restricted triangles.  Thus coordinated eight-to-five
+compression is precisely the existing flow-and-line selection problem;
+there is no additional local merge choice that could evade it.
+
+The human proof is
+`docs/five-cdc-five-point-triangle-list-lift.md`.  Independent Python and
+JavaScript checkers enumerate all \(56\cdot7=392\) five-set/line cases and
+agree on 56 four-choice cases and 336 unique-choice cases.  This sharpens
+the interface with the eight-coordinate proof but does not establish that
+a suitable flow and line always exist.
 
 ## Unbounded Fano-switch distance
 

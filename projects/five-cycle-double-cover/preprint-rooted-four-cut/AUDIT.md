@@ -237,9 +237,11 @@ factor tree is a path.
 Both endpoints are non-Tait in the disjointness-only case. In the mixed
 \(\mathcal E_4\) case, only an equality-only endpoint is forced non-Tait.
 
-This audit also withdrew a dependent project-level global order-28 lower
-bound. The finite cyclically-four order-26 classification remains valid, but
-it does not by itself reduce arbitrary exceptional poles to that class.
+At this audit stage a dependent project-level order-28 lower bound was
+withdrawn. The finite cyclically-four order-26 classification remained
+valid, but it did not by itself reduce arbitrary exceptional poles to that
+class. The later endpoint-factor audit below supplies a different sound
+reduction and restores the scoped bound.
 
 ## Cap connectivity and fork-triple induction
 
@@ -319,8 +321,147 @@ have total order at most 28 and each has order at least four, hence each
 has order at most 24. The resulting mixed-branch elimination remains
 conditional on the triangle-free 3-connected screen through order 24.
 That screen was still running at this audit and was not treated as passed.
-No order-28 lower bound or Five-CDC resolution is restored by the human
-argument alone.
+No order-28 lower bound was restored by that triangle-contraction argument
+alone.
+
+## Root-end factor lift and restored finite bound
+
+The replacement proof in `docs/rooted-cap-end-factor-fork-lift.md` was
+hostile-audited independently of the pending triangle-screen route.
+
+- In a minimal simple cap, absence of cyclic two-cuts gives
+  3-connectivity. Every cyclic three-cut separates the two cap edges, so
+  the factor-incidence tree is the path \(F_1,\ldots,F_k\).
+- Choose one whole-shore labelling. Its first principal cut has an ordered
+  connector triangle \(\alpha\). Restrict and permanently fix the
+  labelling of \(F_2,\ldots,F_k\), including \(\alpha\) and the far
+  external word.
+- A single coordinate permutation \(\sigma\) takes \(\alpha\) to the
+  normalized word \((01,02,12)\). Apply the same \(\sigma^{-1}\) to all
+  three endpoint labellings in a base pair. Each now has connector word
+  \(\alpha\), hence all three glue to the same fixed remainder.
+- Their root values are one coordinate image of the base pair, therefore
+  a fork \(\{qr,ps,pt\}\). Restricting the original whole-shore labelling
+  also proves endpoint-signature nonemptiness.
+- The root is a nonbridge in the endpoint factor: the factor is
+  3-connected (or \(K_4\)), and deleting the virtual vertex leaves a
+  2-connected graph.
+
+The fork-crossing lemma was checked line by line. If a two-set meets all
+three members of \(\{qr,ps,pt\}\), it is one of \(\{pq,pr\}\); hence a
+second three-member fork cannot avoid a disjoint cross-pair. If no unequal
+intersecting cross-pair existed, the second fork would collapse to the
+singleton \(\{qr\}\). Thus any two forks force both \(\mathsf I\) and
+\(\mathsf D\). The one-sided equality-only and disjointness-only exclusions
+also follow immediately.
+
+An independent standard-library replay constructs all 60 ordered connector
+triangles, verifies their two normalizations, enumerates all 30 forks, and
+checks all \(30^2=900\) ordered fork pairs. The relation counts are:
+
+```text
+{I,D}       330
+{E,I,D}     570
+```
+
+Frozen hashes:
+
+```text
+checker 2474c8869be64e3386b23a58e1b929e5e0f56227d19033e3d4316fbb17e1f136
+result  738cbf30b1361b6de5bc18a13e4dfbafa9878a8bfdd9755e21b98afcda6dd513
+```
+
+The complete endpoint package proves base-pair closure through factor
+order 26. Therefore the mixed cyclic-three branch has at least one endpoint
+factor of order 28 or more. Reversing the vertex three-sums gives
+\[
+ |V(G)|\ge28+4+4(k-2)-2(k-1)=2k+26\ge30.
+\]
+For equality-only or disjointness-only, both endpoints have order at least
+28 and
+\[
+ |V(G)|\ge28+28+4(k-2)-2(k-1)=2k+50\ge54.
+\]
+Together with the completed cyclically-four cap classifications through
+order 26, this restores the bridge-free connected simple
+terminal-distinct fixed-five exceptional-pole lower bound 28. At this
+stage a first order-28 exception would have needed a cyclically
+four-edge-connected cap.
+
+The endpoint package's independently written `verify.py` was rerun after
+the manuscript edit. It reconstructed all 38,244 cores and 1,360,452
+nonbridge roots and reproduced `report.json` byte for byte.
+
+## Order-28 two-orbit certificates and the scoped order-30 bound
+
+The package `search/four-pole-order28-cyclic4-cap-20260727/` was audited
+against its theorem, source stream, witness format, Python verifier, and
+the independently written zlib/C++ checker.
+
+The human mask gate is exact. In the frozen ten-orbit ordering, orbit 0 is
+\((01,01,01,01)\) and orbit 2 is \((01,01,23,23)\). Directly reading the
+six mask bits gives:
+
+```text
+mask     bit 0   bit 2
+0x02b      1       0
+0x053      1       0
+0x119      1       0
+0x2e4      0       1
+0x3a4      0       1
+0x3c4      0       1
+```
+
+Thus a positive orbit-2 witness excludes each first-family mask, and a
+positive orbit-0 witness excludes each second-family mask. No negative
+solver answer or UNSAT certificate is involved.
+
+The corpus arithmetic is independently transparent. Every cubic order-28
+cap has 42 edges. Simplicity makes the 84 adjacent edge pairs counted by
+the 28 vertices disjoint as pairs, so each cap has
+\[
+ \binom{42}{2}-28\binom32=777
+\]
+independent edge pairs. Hence \(12\,517\cdot777=9\,725\,709\) deletion
+rows and twice that number, \(19\,451\,418\), displayed labellings.
+
+Both certificate checkers enumerate \(D_5\) independently, recover the
+canonical boundary-orbit representatives, require the prescribed boundary
+word, and xor the three incident labels at every completed cubic vertex.
+The Python verifier additionally reconstructs every deletion from the cap
+source and checks order, cubicity, connectedness, bridgelessness,
+triangle-freeness, and non-Taitness. The C++ checker treats the compressed
+pole stream as primary input and reconstructs incidence independently of
+the producer and Python verifier. Both full replays were rerun for this
+manuscript audit. The Python verifier reproduced `report.json` byte for
+byte, and the C++ replay reproduced `independent-fast-replay.json`
+exactly:
+
+```text
+rows       9,725,709
+witnesses 19,451,418
+missing            0
+```
+
+Canonical source completeness and cyclic four-connectivity are not
+independently regenerated by either checker; as the theorem states, those
+claims rely on Snarkhunter 2.0b and its documented command semantics. A
+triangle cannot occur in a cyclically four-connected order-28 cap: its
+three leaving edges separate it from a 25-vertex complement with 36
+internal edges and hence a cycle. The retained girth-four source therefore
+has the right mathematical scope, conditional on the generator provenance.
+
+Combining the order-28 exclusion with the endpoint-fork lower bound 30 for
+the cyclic-three branch leaves no scoped exception through order 28. Since
+\(3n-4=2m\), \(n\) is even and the next possible order is 30. This proves
+the bridge-free connected simple terminal-distinct fixed-five lower bound
+30. Order 30 remains open, and Five-CDC remains unresolved.
+
+The package documentation now has both intended checksum ledgers:
+`SHA256SUMS` covers the retained package artifacts, while
+`SOURCES.sha256` freezes the external source dependencies.  The integrity
+command in `REPRODUCING.md` was replayed successfully, as were both full
+semantic checks.
 
 ## Finite rooted frontiers
 
@@ -356,9 +497,11 @@ uncompressed SHA-256 is
 `52edd8a189012acefd3565a79d5c58b6f209bbe40156560eb57e2c569fd7c091`,
 and every row has mask `0x3ff`.
 
-The verifier's later all-cap phase was not run because its 5.9-million-row
-artifact was still pending. The manuscript claims only the completed
-cyclically-four slice and says so explicitly.
+The later all-cap phase is now complete. Both classifiers agree across all
+eight shards on \(5\,956\,104\) deletion poles and
+\(23\,747\,129\) exact signature queries per implementation, with zero
+exceptional hits. The independent verifier reconstructs the source,
+deletion stream, shard digests, and summaries.
 
 ## Fano component-parity normal form
 
@@ -403,6 +546,23 @@ JSON    59d8e99cffb573de6ffa8a4df122099db3fd856d8e87803920e9cf69d6946ca8
 Current source hashes agree with the frozen JSON. JSON shard totals were
 recomputed. Complete order-12, order-16, and order-18 controls were rerun
 with both current executables and matched the recorded counts.
+
+## Final manuscript build
+
+`tectonic main.tex --outdir output/pdf` completed without errors. The
+resulting PDF has 29 letter-size pages and SHA-256
+
+```text
+8d0da87f5e07abf1dc5cc25e05f16faeb442a7dead8754f7b8bb4b88596f9b95
+```
+
+All 29 pages were rasterized with Poppler and inspected as a contact sheet;
+the new theorem pages 22--24 and the first page were also inspected
+individually at full rendered resolution. No clipping, overflow, missing
+glyph, broken equation, or obvious layout defect was found. `pdftotext`
+confirms that the endpoint-fork lift, order-28 two-orbit theorem, scoped
+order-30 lower-bound theorem, Five-CDC disclaimer, and AI-use disclosure
+are present. Every entry in `CHECKSUMS.sha256` verifies.
 
 ## Overall status
 
