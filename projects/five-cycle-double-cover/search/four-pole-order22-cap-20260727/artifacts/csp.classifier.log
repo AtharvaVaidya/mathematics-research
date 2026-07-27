@@ -1,0 +1,3 @@
+progress rows=5000 queries=20000 hits=0
+progress rows=10000 queries=40000 hits=0
+SUMMARY implementation=csp mode=exceptional rows=14322 queries=57288 sat=57288 hits=0

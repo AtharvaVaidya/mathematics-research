@@ -457,7 +457,64 @@ Open obligations:
     carry the two affine translation pairs.  This is a human-checkable
     necessary condition, not yet an uncrossing proof: cyclic
     4-edge-connectivity does not by itself exclude the split cut after
-    deleting \(M_t\).
+    deleting \(M_t\).  The stronger common-dual argument in
+    `docs/fano-combined-line-span.md` proves universally that, for a fixed
+    Fano line, the sum of the three initially valid switch images contains
+    the full rainbow-defect vector.  Its explicit telescoping potential
+    rules out a common odd split-cut dual without any girth or connectivity
+    hypothesis.  This remains a linearized result: simultaneous affine-edge
+    overlaps contribute a quadratic correction.  The exact residual
+    formulation is now two binary cycles \(p,q\) which cover the line
+    factor and for which \(\{e:p_e=q_e=1\}\) has even degree after every
+    factor component is contracted.  Universal feasibility for a
+    prescribed line is now refuted by the certified Petersen package
+    `search/fano-two-cycle-petersen-countermodel-20260726/`.  Two lines
+    of its displayed flow have perfect-matching factors whose contractions
+    are \(K_5\).  A clean lift would partition \(E(K_5)\) into four even
+    color classes; the \(3+3+3+3>10\) count forces an absent class and
+    hence a nowhere-zero \(\mathbb F_2^2\)-flow, contradicting the
+    Petersen graph's lack of a Tait coloring.  Ordinary CNFs, DRAT proofs,
+    and an independent 64-by-64 cycle-pair enumeration certify both failed
+    lines.  The same flow has five cleanable lines and the graph has an
+    explicit five-CDC, so the then-surviving obligation was the assertion
+    that every fixed three-bit flow has **some** cleanable line, not
+    prescribed-line cleaning.  That assertion is now refuted by
+    `docs/fano-all-seven-petersen-sum-obstruction.md` and
+    `search/fano-all-seven-petersen-sums-20260727/`.  The first targeted
+    Petersen three-sum gives an order-26 flow whose seven projection
+    formulas are all UNSAT; seven textual DRATs and an independent
+    exhaustive cycle-space classifier agree.  A 34-vertex tree of four
+    Petersen factors gives a SAT-free human proof: three leaf factors have
+    perfect-matching obstruction sets \(\{4,5,6\}\), \(\{1,2\}\), and
+    \(\{3,7\}\), and the leaf-localization lemma pulls any hypothetical
+    global clean pair back to the corresponding Petersen factor.  Both
+    graphs have explicit positive five-covers.  Thus only a theorem that
+    first selects a suitable flow, or a different route, can survive.
+    One exact
+    positive boundary is also proved:
+    because every switch image has even weight on the factor components,
+    the common-span theorem implies that any line factor with at most two
+    components is good already or is cleaned by one valid switch.  Ordinary
+    CNFs plus direct semantic checking also find the quadratic system SAT
+    on all fourteen lines of the retained 40- and 46-vertex connected
+    local countermodels; those models are evidence, not a universal proof.
+    Two further reductions now sharpen the surviving existential branch.
+    A fixed nowhere-zero \(\mathbb F_2^2\)-flow cleans every binary
+    projection, so an all-seven search may be restricted soundly to snarks.
+    The explicit \(D_5\) extension table in
+    `docs/fano-triangle-expansion-invariance.md` proves that
+    fixed-projection cleanability is invariant under vertex-to-triangle
+    expansion and that such an expansion cannot create the first covering
+    three-dimensional all-bad subspace.  Finally, the exact two-checker
+    census in `search/fano-some-good-line-census-20260726/` finds no
+    all-seven obstruction in every connected simple bridgeless cubic graph
+    through order 18, the retained strict snarks at orders 20--24, or ten
+    retained cyclically 5-connected order-26 snarks.  This is a finite
+    boundary.  The new order-26 countermodel has a cyclic three-edge cut and
+    was not among the ten cyclically 5-connected order-26 controls, so the
+    two computations are consistent.  A cyclically 4-edge-connected
+    every-flow version remains logically separate but is no longer needed
+    as an unqualified claim.
 29. **Oum-potential pure-merge one-circuit route refuted; reduced branch
     open:** the exact 12-vertex cap in
     `search/fano-pure-merge-one-switch-countermodel-46v-20260726/` has a
@@ -619,9 +676,38 @@ Open obligations:
     be vertex-disjoint.  This eliminates the three-vertex row star.
     Independently, its counterfactual triangular-prism quotient would
     force the marked and root edges to have the same Tait colour by a
-    per-colour cross-edge count.  Only the \(1+3\) singleton two-cut
-    interface, and preservation through arbitrary one-terminal
-    reductions, remain open.
+    per-colour cross-edge count.  The \(1+3\) singleton two-cut is now
+    also closed under the same simultaneous premises.  If its singleton
+    is \(z_1\), adjacent to separator vertices \(w,u\), then
+    \(K=H-\{w,z_1\}\) is 2-connected: a cut vertex would induce a
+    terminal-free, one-terminal, or \(2+2\) side behind
+    \(\{w,x\}\), contradicted respectively by irreducibility, private
+    circuit disjointness, or triple-circuit splicing.  The four vertices
+    \(u,z_2,z_3,z_4\) all have degree two in \(K\).  A general endpoint
+    lemma, obtained from Ozeki's Section 4.9 path-obstruction
+    description with endpoint-safe one-terminal lifting, says that a
+    2-connected subcubic graph has a path starting at any one of four
+    specified degree-two vertices and passing through the other three.
+    The two obstruction outcomes would require either at least seven
+    incidences at two subcubic separator vertices or one vertex adjacent
+    to four terminals.  This supplies P4 in the exact
+    irreducible/private-circuit state.  Literal preservation through
+    arbitrary one-terminal reductions is now refuted and replaced by an
+    exact trace table.  A separator containing another terminal is
+    certificate-producing under triple cyclability.  For a
+    terminal-free separator, the sole marked-borrower state
+    \(R^\ast=R_j\) leaves a pairwise disjoint \(2+1+1\) circuit packet.
+    The full marked-cut and universal-separation hypotheses permit that
+    borrower: an audited order-56 graph realizes it and has an explicit
+    root-avoiding four-mark circuit.  What remains open is using the
+    \(2+1+1\) packet to close the two projected outer interfaces N
+    (expanded singleton of a nice decomposition) and E (nested expanded
+    \(1+3\) endpoint interface), not an augmented \(K_{3,2}\) attachment
+    case.  The exact simultaneous-state proof is in
+    `docs/rooted-four-mark-singleton-endpoint-closure.md`; a finite audit
+    checks 1,100,688 subdivided cubic endpoint instances through base
+    order twelve.  The trace table, packet lemma, and borrower certificate
+    are in `docs/one-terminal-trace-lift-frontier.md`.
 42. **Exceptional split atoms isolated, not eliminated:** the surviving
     \((1,1)\) and \((2,0)\) internal-zero distributions split by whether
     the exceptional shore has a simple opposite cap or a terminal-flanked
@@ -629,3 +715,303 @@ Open obligations:
     \(2+4\) bridge descends to a closed four-mark atom, while a \(3+3\)
     bridge exposes a cyclic five-cut of type \(000bb\).  These sharper
     atoms remain open.
+43. **Factor-signature closure refuted; binary rooted state remains:**
+    the aligned unmarked-crossing equality atom cannot be closed by
+    forcing a bichromatic cap circuit.  At order 20, the one-sided
+    three-mark signature-cover claim first fails; its witness also
+    exposed that the global marked-cut screen must test the complementary
+    one-mark shore.  A second order-20 cap then refutes even the corrected
+    two-sided version.  It has 36 normalized Tait colourings, three
+    universally separated marks, paired cyclic two-cut mark counts
+    \(2,2\), and signatures
+    \(\varnothing,\varnothing,\{01,12\}\).  Independent C++ and
+    standard-library Python checkers are frozen in
+    `search/cap-signature-order20-two-sided-20260727/`.  This is not a
+    rooted counterexample: gluing the singleton cap at the missing pair
+    gives two order-26 marked graphs with 480 componentwise-even
+    all-mark cycles and no forced unmarked edge.  The three-mark cap has
+    every binary odd open state.  The remaining obligation is therefore
+    the genuine root-avoiding component-parity state under the full
+    \(2+1+1\) packet, T3, P4, and global marked-cut hypotheses; no
+    factor-signature surrogate remains valid.
+44. **Rooted failure reduced to an odd-\(K_{2,3}\) graft minor:** after
+    deleting the forbidden root and subdividing the four marks, the
+    bridge-elimination lemma gives a 2-connected subcubic graph with four
+    degree-two terminals.  A closed rooted certificate is exactly a pair
+    of edge-disjoint terminal joins, and the minimum terminal-cut is two.
+    The Codato--Conforti--Serafini packing theorem therefore makes an
+    odd-\(K_{2,3}\) graft minor necessary for every surviving rooted
+    failure.  The elementary proof is in
+    `docs/rooted-four-mark-odd-k23-reduction.md`.  Excluding this minor
+    using the simultaneous private-circuit, T3, P4, marked-cut, and
+    root-colour data remains open.
+45. **Prescribed rooted cap atom absent through order 20:** the corrected
+    physical-port classifier exhausts every connected simple cubic cap
+    through order 20.  There are eight aligned packet states at order 18
+    and 132 at order 20; every one has the prescribed odd state, and no
+    state forces an internal edge of the required root colour.  A separate
+    all-pairs intersection checks all 3,396 order-20 paired-cut cap triples
+    and likewise finds no eligible forced root.  Counts, hashes, commands,
+    and scope limitations are frozen in
+    `scratch/rooted-cap-order20-result.json`.  This is a finite exclusion,
+    not the universal rooted theorem.
+46. **Cycle-transparent odd-\(K_{2,3}\) models excluded:** replacing the
+    four terminal branch vertices of the critical graft by private cycles,
+    then adding the retained edge and deleted root required by the
+    one-mark boundary count, gives 3,888 cyclic-order rows when the fifth
+    branch is a vertex and 5,346 when it is also a cycle.  Respectively
+    3,726 and 5,184 have a rooted certificate.  Each mode leaves 162
+    Tait-colourable failures, but only six colourings make all marks
+    common-colour, and a direct three-cut parity argument makes the root
+    that same colour in all twelve controls.  Hence none satisfies the
+    inherited different-colour root premise.
+    The exact generator and result are
+    `scratch/search_odd_k23_cycle_expansions.py` and
+    `scratch/odd-k23-cycle-expansion-result.json`.  General graft-minor
+    branch sets are not yet reduced to this cycle-transparent form.
+47. **A first nontransparent odd-\(K_{2,3}\) branch move is
+    certificate-producing:** applying the canonical two-attachment
+    chord relocation to all 324 transparent certificate-free bases gives
+    3,240 distinct marked rooted cubic graphs, all in the \(X\)-branch.
+    Every graph has an explicit closed rooted certificate; a
+    standard-library checker independently verifies the complete
+    3,240-certificate bundle.  The screen excludes only this declared
+    one-chord move, not arbitrary branch sets.  Counts, hashes, commands,
+    and the scope warning are frozen in
+    `scratch/odd-k23-one-chord-result.json`.
+48. **Two chord moves expose both global rooted premises:** two
+    successive canonical relocations give 396,360
+    distinct second-layer graphs.  Of 20,306 graphs with a compatible
+    common-mark/different-root Tait colouring, 20,194 have a closed
+    rooted certificate.  The remaining 112 are genuine rooted failures,
+    but all violate both universal factor separation and the marked
+    cyclic-cut inequality; in fact all six marked pairs are bad across
+    their two normalized colourings, and every row has a one-mark cyclic
+    two-cut plus at least one unmarked cyclic three-cut.  A separate
+    standard-library checker independently verifies all 112 controls.
+    The exact construction and scope are frozen in
+    `scratch/odd-k23-two-chord-result.json`.  The next model must repair
+    the low one-mark cut before it can distinguish the two global gates.
+49. **Every direct cubic repair of the two-chord failures is
+    certificate-producing:** all 15,008 internal-edge 2-switches that
+    raise the unique one-mark cyclic two-cut boundary from two to four
+    were checked.  Exactly 7,896 retain a common-mark/different-root
+    Tait colouring, and every one has an explicit closed rooted
+    certificate.  A project-independent checker validates the complete
+    certificate bundle.  This is a finite repair theorem for the
+    declared 112 controls, not a universal cut-repair lemma.  The frozen
+    result is `scratch/odd-k23-two-cut-repair-result.json`.
+50. **Four-mark core closure needs only one common-colour colouring:**
+    a literal hypothesis audit of `four-mark-core-closure.md` shows that
+    universal separation is used only to obtain a Tait colouring in
+    which the four marks have one common colour.  The rest of the human
+    proof uses only that fixed colouring, Tait cut parity, the marked
+    cyclic-cut inequality, and the cited decomposition and
+    prescribed-cycle theorems.  The theorem is therefore valid under
+    the strictly weaker hypotheses “one common-colour Tait colouring +
+    marked cyclic-cut inequality.”  This strengthens the unrooted
+    closure but does not make its certificate avoid a prescribed root
+    edge; the rooted \(2+1+1\) cap atom remains open.
+51. **Root avoidance fails only through a multi-contact toggle
+    obstruction:** in a common-colour Tait colouring, the factor circuit
+    through a differently coloured root avoids all four marks.  If its
+    intersection with every component of an unrooted marked-even
+    certificate is empty or one path, symmetric difference removes the
+    root and only merges marked-even components, yielding a rooted
+    certificate.  Therefore every rooted failure forces at least two
+    separated contacts with one certificate component, for every
+    mark-free root circuit.  The complete elementary proof is in
+    `docs/rooted-four-mark-unmarked-toggle.md`.  This adds a sound filter
+    to the odd-\(K_{2,3}\)/\(2+1+1\) frontier but does not yet exclude
+    multiple contacts.
+52. **Forbidden-root edge reduction gives an exact independent
+    four-cut gate:** in a simple cyclically \(4\)-edge-connected cubic
+    factor, reduce the forbidden edge \(f=uv\) by deleting \(u,v\) and
+    joining their two remaining neighbour pairs.  A fixed
+    common-colour Tait colouring in which the four marks are separated
+    makes their four reduced images a matching: any new adjacency
+    would put two marks on one bichromatic factor circuit.  If the
+    reduced graph is cyclically \(4\)-edge-connected, the
+    Aldred--Ellingham--Hemminger--Holton four-edge theorem gives a cycle
+    through the reduced marks, which lifts to an all-four circuit
+    avoiding \(f\).  Pulling back a smallest cyclic cut when the
+    reduction fails shows exactly that \(f\) lies in an independent
+    cyclic four-edge cut.  Hence the rooted theorem is proved outright
+    for cyclically \(5\)-edge-connected factors; only the root-containing
+    four-cut interface survives at cyclic connectivity four.  See
+    `docs/root-edge-reduction-four-cut-gate.md`.  This is a universal
+    human-checkable rooted reduction, not the remaining four-cut
+    closure or a five-CDC proof.
+53. **Universally separated four-edge matchings are absent from the
+    Tait-colourable order-22 domain:** canonical `geng` generation
+    exhausts all \(7\,319\,447\) connected simple cubic graphs on 22
+    vertices.  The direct
+    edge-colouring checker and an independently written
+    perfect-matching/even-two-factor replay agree shard by shard on
+    \(7\,174\,735\) Tait-colourable graphs and \(95\,360\,112\)
+    normalized Tait colourings; both find zero universally separated
+    four-edge matchings among those Tait-colourable graphs.  Graphs
+    without a Tait colouring are outside the theorem because both
+    programs skip the otherwise vacuous universal-quantifier case.
+    The replay additionally visits
+    \(312\,583\,931\) perfect matchings.  Complete lower-order controls
+    and one positive order-24 target-three control exercise both the
+    zero- and positive-witness paths.  See
+    `docs/order22-universal-four-separation-screen.md` and
+    `scratch/order22-universal-four-separation-result.json`.  This is a
+    complete finite theorem at order 22, not a universal separation
+    theorem or a five-CDC proof.
+54. **Terminal-distinct exceptional poles admit complete simple-cap
+    enumeration:** a connected simple proper core with four distinct
+    degree-two terminals always has a perfect matching of its terminals
+    consisting of two nonedges.  Adding those edges gives a simple cubic
+    cap.  If the pole is bridge-free and has either published
+    exceptional exact signature, the cap is bridgeless and non-Tait:
+    a cap Tait colouring would restrict to the pole, while
+    Máčajová--Mazzuoccolo--Tabarelli Lemma 3.8 excludes a connected
+    Tait-colourable pole with either exceptional signature graph.
+    Therefore enumerating bridgeless non-Tait cubic graphs and deleting
+    every independent edge pair is complete for this pole scope.
+    Moreover, for a vertex-minimal two-cut-reduced exceptional pole,
+    every simple cap is either cyclically \(4\)-edge-connected or has a
+    cyclic three-cut disjoint from the cap edges, splitting the four
+    terminals \(2+2\).  The latter is an exact five-pole interface, not
+    an elimination.  See
+    `docs/exceptional-four-pole-simple-cap-enumeration-reduction.md`.
+55. **The exceptional cyclic-three cap fork has a seven-state exact
+    rooted factorization:** cutting the surviving \(2+2\) cyclic
+    three-cut gives two rooted cubic three-poles.  Normalizing their
+    three connector labels to the ordered triangle
+    \((01,02,12)\) leaves seven stabilizer orbits for each root label.
+    Exact gluing says that equality, intersection, or disjointness of
+    the two root-label sets is respectively equivalent to the doubled
+    boundary types \(AA,AT_\pi,T_\pi T_\pi\).  In the exceptional
+    four-type family, the missing-\(AT_i\) orientation forces both
+    rooted signatures to be the same singleton among
+    \(\{01,02,12,34\}\); the other orientations force exact
+    cross-intersection.  The exceptional five-type family forces one
+    of exactly thirteen unordered disjoint rooted-signature patterns.
+    A human proof and independent Python/JavaScript finite replay are
+    in
+    `docs/exceptional-cyclic-three-root-signature-factorization.md`.
+    The rooted signatures themselves remain neither excluded nor
+    realized.
+56. **No order-18 simple four-pole core has an exceptional exact
+    signature:** all \(4\,159\,098\) connected simple graphs with four
+    degree-two terminals and every other vertex cubic have been
+    classified by independent incremental-SAT and direct finite-domain
+    implementations.  The programs make \(16\,453\,323\) exact mask
+    queries apiece, agree on every streamed decision digest shard by
+    shard, and find zero instances of the six exceptional ordered
+    masks in the fixed five-colour \(D_5\) model.  A third parser
+    independently checks transcript syntax and the exceptional flag.
+    This is a complete finite theorem at order 18 only; it is not a
+    universal four-pole theorem or an unbounded-colour classification.
+    The frozen replay
+    is `search/four-pole-order18-exceptional-20260727/`.
+57. **Three-base-pair closure holds for rooted simple three-poles
+    through order 17:** fixing connector triangle \((01,02,12)\), every
+    nonempty exact signature of a nonbridge root contains one of
+    \(\{12,03,04\}\), \(\{02,13,14\}\), or
+    \(\{01,23,24\}\).  Independent direct-CSP and incremental-SAT
+    screens test all \(15\,645\,623\) nonbridge roots on the
+    \(654\,676\) canonical order-17 cores.  Their eight complete
+    streamed transcript digests agree shard by shard, and both find
+    zero violations.
+    A complete \(3\times7\) relation table further proves that one base
+    pair against any nonempty invariant signature avoids all three
+    exceptional relations.  Therefore the finite order-17 theorem
+    eliminates the cyclic-three cap fork for a two-cut-reduced atom
+    through total order 36,
+    although universal closure remains open and
+    cyclically-four-connected caps survive.  See
+    `docs/rooted-three-pole-base-pair-closure-target.md`.
+58. **Five-CDC is exactly an anisotropic-flow problem in the elliptic
+    four-space:** on the even-weight subspace \(V\leq\mathbb F_2^5\),
+    the quadratic form \(q(x)=\sum_{i<j}x_ix_j\) has precisely the ten
+    weight-two vectors as its anisotropic points.  The five Eulerian
+    incidence coordinates are therefore equivalent, edge by edge and
+    vertex by vertex, to a \(V\)-flow with \(q(\phi(e))=1\).  Equivalently
+    it is a nowhere-zero binary four-flow avoiding a binary
+    five-circuit in the nonzero value set.  This human-checkable
+    reformulation includes loops and parallel edges but is not a proof
+    of existence and does not add orientability.  See
+    `docs/five-cdc-elliptic-quadratic-flow-model.md`.
+59. **The simple terminal-distinct exceptional-pole lower bound reaches
+    order 26:** the simple-cap theorem reduces each even order to all
+    independent-edge deletions from bridgeless non-Tait cubic caps.
+    At order 22, two independent filters select the same \(12\,892\)
+    caps from the complete \(7\,319\,447\)-graph canonical source.  Their
+    \(5\,956\,104\) deletions have been classified by independent SAT and
+    direct finite-domain solvers with matching complete transcript
+    digests and zero exceptional hits.  A third verifier checks the
+    canonical identities, cap premises, the entire deletion stream, and
+    both decision ledgers.  The exceptional-atom descent and rooted
+    base-pair theorem further show that any first exception through order
+    24 has a cyclically 4-edge-connected cap.  Snarkhunter generates 155
+    such non-Tait caps at order 24; both exact classifiers give full mask
+    `0x3ff` on all \(86\,490\) deletion poles.  Therefore no bridge-free
+    connected simple terminal-distinct four-pole through order 24 has an
+    exceptional exact five-colour \(D_5\) signature; any such simple pole
+    has even order at least 26.  This does not cover repeated terminals,
+    nonsimple cores, unbounded-colour CDC signatures, or order 26.
+    See `search/four-pole-order24-cyclic4-cap-20260727/`.
+60. **The quotient-lift theorem has an exact one-cycle
+    component-parity normal form:**
+    in the elliptic normal form
+    \(q(x,y,t,z)=x+y+xy+tz\), the first three coordinates give a
+    nowhere-zero \(\mathbb F_2^3\)-flow \(f\).  For the Fano line
+    \(L=\{t=0\}\setminus\{0\}\) and \(r=(0,0,1)\), the last coordinate
+    is a binary cycle \(C\) and edgewise anisotropy is exactly
+    \(M_r\subseteq C\subseteq M_r\cup M_L\).  This cycle exists exactly
+    when every component of \(G[M_L]\) contains an even number of
+    vertices of \(\partial M_r\).  A singular-vector quotient proves
+    the converse from every five-cover.  Thus existence of some
+    \(f,L,r\) with this parity property is equivalent to Five-CDC.
+    This repackages the earlier all-four-outside-values boundary
+    criterion in `docs/proof-agent-audit.md`; flow conservation shows
+    that either every \(r\notin L\) passes on a line component or all
+    four fail.
+    Fixed-flow and one-connected-circuit-switch versions are refuted by
+    the already retained eight- and ten-vertex examples, respectively;
+    the latter has an explicit two-switch repair.
+    Flow selection or a genuinely multi-step transformation remains
+    open.  See `docs/five-cdc-fano-component-parity-lift.md`.
+61. **Every constant-step Fano reconfiguration theorem is refuted, but
+    component domination remains open:** a recursive connected simple
+    bridgeless cubic family has \(3^d\) certified bad-block ports while
+    every connected circuit meets at most \(2^d\) ports.  Hence the
+    displayed flow has distance at least
+    \(\lceil(3/2)^d\rceil\) from the Fano-good set, if that set is
+    reachable.  Every member is Tait-colourable and has an explicit
+    three-cycle double cover, so this is not a Five-CDC obstruction.
+    The 40-vertex first member has exact distance two, with the two
+    switches and all parity rows independently replayed by
+    `scratch/verify_fano_multistep_two_switch.py`.  The remaining
+    resolution obligation is unbounded global flow selection or proof
+    that every relevant reconfiguration component meets the good-flow
+    set.  See
+    `scratch/fano-multistep-reconfiguration-audit-20260727.md`.
+62. **Internal cyclic four-edge-connectivity of a pole does not force a
+    full fixed-five signature; the focused cap lift remains open:** the
+    explicit order-16 terminal-distinct pole
+    `O????A?[BOI_g_Ao?kCo?` has exact mask `0x3fe`, with a direct scalar
+    parity proof excluding \(AA\).  Every simple cap creates a cyclic
+    triangle cut, so it does not refute the deletion-pole claim for
+    cyclically-four-connected non-Tait caps.  In that focused geometry,
+    every component outside the four prescribed endpoints has even
+    attachment number, eliminating the scalar obstruction.  The exact
+    unresolved lift asks for an \(\mathbb F_2^2\)-flow whose zero set
+    contains the prescribed independent pair and whose complement
+    packs two edge-disjoint boundary joins.  See
+    `scratch/fixed-five-d5-four-pole-full-signature-frontier.md`.
+63. **Flow resistance through five does not obstruct prescribed
+    \(AA\) on the reconstructed \(H_n\) family:** for every one of the
+    \(97\,608\) independent edge pairs across \(H_2,H_3,H_4,H_5\), an
+    explicit fixed-five \(D_5\)-labelling assigns the same label to the
+    prescribed edges.  Cutting those edges gives boundary type \(AA\).
+    A greedy set of 394 complete labellings covers every pair, and a
+    solver-independent verifier checks all vertex equations and recomputes
+    the coverage.  This is finite evidence for the focused cap lift, not
+    its universal proof.  See
+    `search/mnp-h2-h5-aa-deletion-probe-20260727/`.

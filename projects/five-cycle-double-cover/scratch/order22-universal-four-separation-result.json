@@ -1,0 +1,181 @@
+{
+  "schema": "connected-simple-cubic-order22-universal-four-separation-v1",
+  "date": "2026-07-27",
+  "classification": "COMPLETE_ORDER22_NEGATIVE_SCREEN_WITH_INDEPENDENT_REPLAY",
+  "scope_warning": "This is an exact finite theorem for Tait-colourable connected simple cubic graphs on 22 vertices. Graphs with no Tait colouring are outside the theorem because the implementations deliberately skip their otherwise vacuous universal quantifier. It is not a universal graph theorem, a multigraph theorem, or a resolution of the Five-Cycle Double Cover Conjecture.",
+  "question": "Does any Tait-colourable connected simple cubic graph on 22 vertices have a four-edge matching such that every bichromatic circuit in every proper three-edge-colouring contains at most one selected edge?",
+  "canonical_generation": {
+    "generator": "nauty geng 2.9.3",
+    "generator_path": "/opt/homebrew/bin/geng",
+    "generator_sha256": "ad2f68adf733dbed7cad543841cfa329740596ee5cd136f17a0a17f6e744f5ad",
+    "commands": [
+      "/opt/homebrew/bin/geng -cq -d3 -D3 22 0/4",
+      "/opt/homebrew/bin/geng -cq -d3 -D3 22 1/4",
+      "/opt/homebrew/bin/geng -cq -d3 -D3 22 2/4",
+      "/opt/homebrew/bin/geng -cq -d3 -D3 22 3/4"
+    ],
+    "interpretation": "geng generates each connected simple cubic graph canonically once; the four modular shards are disjoint and their union is the complete order-22 corpus.",
+    "shard_rows": [
+      1376411,
+      2078782,
+      1716645,
+      2147609
+    ],
+    "total_rows": 7319447
+  },
+  "environment": {
+    "operating_system": "macOS 26.5.2 build 25F84",
+    "architecture": "arm64",
+    "compiler": "Apple clang 21.0.0 (clang-2100.1.1.101)"
+  },
+  "primary": {
+    "algorithm": "Direct normalized Tait-colouring recursion; add conflicts for adjacent edge objects and for every pair on one bichromatic factor circuit; search the accumulated conflict graph for an independent set of size four.",
+    "source_path": "scratch/tait_all_coloring_mark_separation.cpp",
+    "source_sha256": "a00c2f53a3b95a06a7e8767aae2eb2bfa794fc95eeeba18bcac34aea6a12072a",
+    "run_binary_path": "/tmp/tait_all_coloring_mark_separation",
+    "run_binary_sha256": "a63d8048528e3dfa751049fbad6aec3b4909d1f7508f9e56859edbb5af9a6aa0",
+    "semantic_build_command": "clang++ -O3 -std=c++20 scratch/tait_all_coloring_mark_separation.cpp -o /tmp/tait_all_coloring_mark_separation",
+    "shard_command_suffix": "| /tmp/tait_all_coloring_mark_separation --target 4 --stop-after-first --progress 250000",
+    "shards": [
+      {
+        "index": 0,
+        "rows": 1376411,
+        "tait_colourable_rows": 1338944,
+        "normalised_tait_colourings": 17481016,
+        "witnesses": 0
+      },
+      {
+        "index": 1,
+        "rows": 2078782,
+        "tait_colourable_rows": 2029518,
+        "normalised_tait_colourings": 28040733,
+        "witnesses": 0
+      },
+      {
+        "index": 2,
+        "rows": 1716645,
+        "tait_colourable_rows": 1686315,
+        "normalised_tait_colourings": 22708101,
+        "witnesses": 0
+      },
+      {
+        "index": 3,
+        "rows": 2147609,
+        "tait_colourable_rows": 2119958,
+        "normalised_tait_colourings": 27130262,
+        "witnesses": 0
+      }
+    ],
+    "totals": {
+      "rows": 7319447,
+      "tait_colourable_rows": 7174735,
+      "normalised_tait_colourings": 95360112,
+      "witnesses": 0
+    }
+  },
+  "independent_replay": {
+    "algorithm": "Enumerate perfect matchings; retain those whose complementary two-factor is even; enumerate every independent alternation on its even circuits; accumulate all three bichromatic conflict relations; search the conflict graph for an independent set of size four.",
+    "independence_from_primary": "The replay does not call or reuse the primary edge-colouring recursion. Each normalized Tait colouring is visited exactly six times: three choices of distinguished perfect matching and two orders of the complementary colours.",
+    "source_path": "scratch/verify_order22_separation_via_matchings.cpp",
+    "source_sha256": "104dca4ac143581a9b306172354428a96913f3fe1701c60b2a018510990ecead",
+    "run_binary_path": "/tmp/verify_order22_separation_via_matchings",
+    "run_binary_sha256": "3de46d3c343fb3b23679334f1058104488077386f49b4a2541273aa1e5d7d703",
+    "semantic_build_command": "clang++ -O3 -std=c++20 scratch/verify_order22_separation_via_matchings.cpp -o /tmp/verify_order22_separation_via_matchings",
+    "shard_command_suffix": "| /tmp/verify_order22_separation_via_matchings --target 4 --stop-after-first --progress 250000",
+    "shards": [
+      {
+        "index": 0,
+        "rows": 1376411,
+        "tait_colourable_rows": 1338944,
+        "normalised_tait_colourings": 17481016,
+        "perfect_matchings": 57726499,
+        "witnesses": 0
+      },
+      {
+        "index": 1,
+        "rows": 2078782,
+        "tait_colourable_rows": 2029518,
+        "normalised_tait_colourings": 28040733,
+        "perfect_matchings": 89547132,
+        "witnesses": 0
+      },
+      {
+        "index": 2,
+        "rows": 1716645,
+        "tait_colourable_rows": 1686315,
+        "normalised_tait_colourings": 22708101,
+        "perfect_matchings": 74614913,
+        "witnesses": 0
+      },
+      {
+        "index": 3,
+        "rows": 2147609,
+        "tait_colourable_rows": 2119958,
+        "normalised_tait_colourings": 27130262,
+        "perfect_matchings": 90695387,
+        "witnesses": 0
+      }
+    ],
+    "totals": {
+      "rows": 7319447,
+      "tait_colourable_rows": 7174735,
+      "normalised_tait_colourings": 95360112,
+      "perfect_matchings": 312583931,
+      "witnesses": 0
+    }
+  },
+  "cross_checks": {
+    "lower_order_exact_agreement": [
+      {
+        "order": 12,
+        "rows": 85,
+        "tait_colourable_rows": 80,
+        "normalised_tait_colourings": 307,
+        "independent_perfect_matchings": 902,
+        "witnesses": 0
+      },
+      {
+        "order": 16,
+        "rows": 4060,
+        "tait_colourable_rows": 3848,
+        "normalised_tait_colourings": 23420,
+        "independent_perfect_matchings": 73929,
+        "witnesses": 0
+      },
+      {
+        "order": 18,
+        "rows": 41301,
+        "tait_colourable_rows": 39687,
+        "normalised_tait_colourings": 307606,
+        "independent_perfect_matchings": 995256,
+        "witnesses": 0
+      }
+    ],
+    "positive_target_three_control": {
+      "graph6": "W`??A???A_@_A_cO?S_Gc`_?@O@@?@OO??_????_??H_A?E",
+      "order": 24,
+      "normalised_tait_colourings": 36,
+      "independent_perfect_matchings": 64,
+      "primary_first_mark_edge_ids": [
+        0,
+        1,
+        34
+      ],
+      "independent_first_mark_edge_ids": [
+        0,
+        1,
+        34
+      ],
+      "target_three_witnesses": 1,
+      "target_four_witnesses": 0
+    }
+  },
+  "conclusion": "No Tait-colourable connected simple cubic graph on exactly 22 vertices has a universally bichromatic-factor-separated four-edge matching. Combined with the separately frozen complete standard-hypothesis screen through order 20, any Tait-colourable simple cubic standard rooted four-mark atom has at least 24 vertices.",
+  "not_proved": [
+    "nonexistence at orders 24 and above",
+    "the rooted four-mark assertion",
+    "the connected eight-mark closure",
+    "the Five-Cycle Double Cover Conjecture",
+    "any statement for cubic multigraphs"
+  ]
+}

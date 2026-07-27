@@ -21,6 +21,63 @@ temporary directory is removed after success or failure.
 The frontier statement concerns one explicit positive instance.  It is not a
 census or clearance of the full reduced minimum-counterexample domain.
 
+## Marked-circuits preprint and companion checks
+
+The 21-page publication draft is
+`preprint-rooted-four-cut/output/pdf/main.pdf`.  Its checksum ledger covers
+the source, PDF, human-audit files, order-22 separation checkers, selected
+rooted-interface notes, and the key order-17/order-22 frozen artifacts:
+
+```sh
+(cd preprint-rooted-four-cut && shasum -a 256 -c CHECKSUMS.sha256)
+```
+
+Build the manuscript with:
+
+```sh
+(cd preprint-rooted-four-cut && tectonic main.tex --outdir output/pdf)
+```
+
+The two order-22 separation implementations can be compiled and exercised
+on the complete order-12 control corpus without rerunning the much larger
+order-22 census:
+
+```sh
+clang++ -O3 -std=c++20 \
+  scratch/tait_all_coloring_mark_separation.cpp \
+  -o /tmp/tait_all_coloring_mark_separation
+clang++ -O3 -std=c++20 \
+  scratch/verify_order22_separation_via_matchings.cpp \
+  -o /tmp/verify_order22_separation_via_matchings
+
+/opt/homebrew/bin/geng -cq -d3 -D3 12 |
+  /tmp/tait_all_coloring_mark_separation \
+    --target 4 --stop-after-first
+/opt/homebrew/bin/geng -cq -d3 -D3 12 |
+  /tmp/verify_order22_separation_via_matchings \
+    --target 4 --stop-after-first
+```
+
+Both should report 85 rows, 80 Tait-colourable graphs, 307 normalized
+colourings, and zero target-four witnesses; the independent implementation
+also reports 902 perfect matchings.
+
+Verify the retained rooted order-17 theorem and its independent summary:
+
+```sh
+python3 search/rooted-three-pole-frontier-20260727/verify_order17_base_pair_run.py \
+  search/rooted-three-pole-frontier-20260727/artifacts/order17-base-pair
+python3 search/rooted-three-pole-frontier-20260727/verify_report.py
+```
+
+The full order-22 universal-separation and cap-slice computations are
+expensive frozen censuses.  Their exact commands, environment, scope
+warnings, counts, source hashes, and transcript identities are recorded in
+`scratch/order22-universal-four-separation-result.json`,
+`docs/order22-universal-four-separation-screen.md`, and
+`search/four-pole-order22-cap-20260727/`.  This publication preparation did
+not claim a fresh independent full replay.
+
 ## Required recorded environment
 
 The byte-level audit was made on macOS arm64 with:

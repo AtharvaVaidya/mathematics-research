@@ -1,6 +1,6 @@
 # Curated artifact inventory
 
-This bundle was assembled on **2026-07-26** from the local laboratory at
+This bundle was assembled on **2026-07-27** from the local laboratory at
 `/Users/atharvavaidya/Documents/conjectures`.  The source workspace was
 copied into a separate clean clone; it was not modified or committed.
 
@@ -9,6 +9,23 @@ copied into a separate clean clone; it was not modified or committed.
 - Three compiled research drafts and their complete LaTeX/BibTeX sources,
   including the fixed-line Fano-flow span/obstruction note and its
   provisional novelty assessment.
+- The 21-page marked-circuits and fixed-five rooted-interfaces report in
+  `preprint-rooted-four-cut/`, including LaTeX/BibTeX source, compiled PDF,
+  line-by-line AI audit, cautious novelty assessment, build instructions,
+  and a checksum ledger.  The page-one AI-use disclosure and unresolved
+  five-CDC status are part of both the source and PDF.
+- The complete compact order-17 rooted three-pole base-pair package and the
+  completed cyclically-four order-22 cap-slice package, with two solver
+  implementations, retained transcript digests, compressed transcripts,
+  corpus identities, result records, and replay scripts.  Python caches
+  and transient binaries are excluded.
+- The order-22 universal four-separation report, primary direct-colouring
+  checker, independently structured perfect-matching checker, and
+  machine-readable frozen result.  The exact theorem is restricted to
+  Tait-colourable connected simple cubic graphs on 22 vertices.
+- The strengthened human-checkable four-mark proof notes, forbidden-root
+  gate, rooted toggle lemma, bridge and linkage reductions, and current
+  status/proof/experiment ledgers.
 - The standalone computer-free four-mark proof.
 - Current status, publication assessment, encoding proof, marked-cut
   reductions, and proof-obligation ledger.
@@ -70,12 +87,13 @@ copied into a separate clean clone; it was not modified or committed.
   checker sources, result summaries, and the original SHA-256 ledger.
 - The native-XOR five-CDC encoder and its unit test.
 
-The three compiled PDFs have SHA-256 digests:
+The four compiled PDFs have SHA-256 digests:
 
 ```text
 863f24bcad7780067e5c264e2253e673ea4b9d50e94f28a6cf6cf389cc20bcb0  output/pdf/two-connected-countermodels-five-cdc-preprint.pdf
 7a88cd04139344babf371c6b949d26b50e6733ac8db5a6a495f842e4e706dafc  output/pdf/four-universally-separated-marks-preprint-20260726.pdf
 9612a080fa5eca945c82d0c266cc94d62adeea6493ee6d10e7aa03805687e5e0  preprint-fano-combined-span/main.pdf
+8cd2059c9093d81111aacd6dd549ccaf81e488d4e50aef317e3338de9bd9b2f0  preprint-rooted-four-cut/output/pdf/main.pdf
 ```
 
 The original source files for those PDFs have SHA-256 digests:
@@ -83,6 +101,7 @@ The original source files for those PDFs have SHA-256 digests:
 ```text
 f244876a123a0c0fe3ead39805ddd7c3aa18c7b7ed1e4762484f008052564ddc  preprint-fano-one-switch/main.tex
 3c30aff3bc44a1163646eab8a41461d0859a44db04972be4a8810e0e0e2fa3dd  preprint-four-mark-core/main.tex
+5474abc2662966387cc7914efba8c365ed8f6a4e7b895017edca6b3ba44149b0  preprint-rooted-four-cut/main.tex
 ```
 
 Package-local `SHA256SUMS` files freeze the countermodel and \(H_4\)

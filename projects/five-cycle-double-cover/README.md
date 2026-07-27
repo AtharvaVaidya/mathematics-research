@@ -1,18 +1,37 @@
 # Five-cycle double cover research archive
 
-Status as of **2026-07-26**: the standard five-cycle double cover
+Status as of **2026-07-27**: the standard five-cycle double cover
 conjecture remains open.  Nothing in this directory is a proof or a
 counterexample to that conjecture.
 
 This is a curated, reproducible publication bundle from an autonomous
-conjecture-resolution laboratory.  It contains three research drafts, a
+conjecture-resolution laboratory.  It contains four research drafts, a
 computer-free marked-graph theorem, explicit human-checkable
 countermodels to two intermediate proof strategies, exact SAT/XOR
 documentation, and compact checker sources.  Temporary search output and
 multi-gigabyte certificates are deliberately not committed.
 
+## AI-use disclosure
+
+OpenAI Codex agents, directed by Atharva Vaidya, generated and revised
+arguments, programs, audits, computations, and manuscript text in this
+research archive.  Agent-to-agent checks are not independent human
+verification or peer review.  The papers display their mathematical
+arguments for line-by-line human checking, separate computational claims
+from human proofs, and require independent specialist review before
+submission.
+
 ## Main research drafts
 
+- [`preprint-rooted-four-cut/output/pdf/main.pdf`](preprint-rooted-four-cut/output/pdf/main.pdf)
+  is a 21-page structural and computer-assisted research report on marked
+  circuits and fixed-five rooted interfaces.  It includes human-checkable
+  proofs of the exact elliptic-flow reformulation, a four-mark closure
+  theorem, and a forbidden-root cut gate; it separately labels the
+  order-17 and order-22 finite censuses.  Its source, audit, novelty
+  assessment, and checksum ledger are in
+  [`preprint-rooted-four-cut/`](preprint-rooted-four-cut/).  The paper
+  explicitly says that it neither proves nor disproves five-CDC.
 - [`output/pdf/four-universally-separated-marks-preprint-20260726.pdf`](output/pdf/four-universally-separated-marks-preprint-20260726.pdf)
   proves a marked cubic-graph theorem.  Under universal Tait separation
   and a precise cyclic-cut inequality, four marked edges lie in one
@@ -36,7 +55,7 @@ multi-gigabyte certificates are deliberately not committed.
   cautious novelty audit are in
   [`preprint-fano-combined-span/`](preprint-fano-combined-span/).
 
-All three PDFs prominently disclose substantive AI involvement and
+All four PDFs prominently disclose substantive AI involvement and
 explicitly state their scope.  Their novelty assessments are provisional
 pending independent expert literature review.
 
