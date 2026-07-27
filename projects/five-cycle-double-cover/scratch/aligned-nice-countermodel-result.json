@@ -1,0 +1,21 @@
+{
+  "schema": "aligned-nice-countermodel-v1",
+  "graph6": "O?AA@qoPaW??C@??o?_OA",
+  "order": 16,
+  "size": 21,
+  "node_connectivity": 2,
+  "terminals": [2, 6, 14, 15],
+  "packet": {
+    "D12": [0, 14, 11, 12, 13, 15, 4, 10, 5, 0],
+    "Rk": [2, 7, 3, 8, 2],
+    "Rl": [6, 1, 9, 6]
+  },
+  "cycle_space_rank": 6,
+  "terminal_covering_binary_cycles": 4,
+  "admissible_certificates": 0,
+  "p4_at_b3": true,
+  "p4_failures": [0, 4, 12],
+  "B_cap_graph6": "K?AA@qoPaWP?",
+  "interpretation": "This is a local aligned-N control, not a rooted counterexample. It satisfies 2-connectivity, T3, four-terminal acyclicity, the aligned 2+1+1 packet, and P4 after deleting b3, but it fails full P4 and the marked cyclic-cut inequality.",
+  "checker": "python3 scratch/verify_aligned_nice_countermodel.py"
+}

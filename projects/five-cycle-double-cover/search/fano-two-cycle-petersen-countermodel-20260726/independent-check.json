@@ -1,0 +1,76 @@
+{
+  "binary_cycles": 64,
+  "bridgeless_edge_deletions": 15,
+  "cyclic_edge_connectivity": 5,
+  "failed_lines": [
+    [1, 2, 3],
+    [1, 6, 7]
+  ],
+  "five_cdc_verified": true,
+  "girth": 5,
+  "line_results": [
+    {
+      "covering_pairs": 960,
+      "factor_components": 5,
+      "line": [1, 2, 3],
+      "status": "UNSAT",
+      "zero_defect_pairs": 0
+    },
+    {
+      "covering_pairs": 432,
+      "factor_components": 3,
+      "line": [1, 4, 5],
+      "status": "SAT",
+      "zero_defect_pairs": 48
+    },
+    {
+      "covering_pairs": 960,
+      "factor_components": 5,
+      "line": [1, 6, 7],
+      "status": "UNSAT",
+      "zero_defect_pairs": 0
+    },
+    {
+      "covering_pairs": 648,
+      "factor_components": 4,
+      "line": [2, 4, 6],
+      "status": "SAT",
+      "zero_defect_pairs": 24
+    },
+    {
+      "covering_pairs": 648,
+      "factor_components": 4,
+      "line": [2, 5, 7],
+      "status": "SAT",
+      "zero_defect_pairs": 24
+    },
+    {
+      "covering_pairs": 648,
+      "factor_components": 4,
+      "line": [3, 4, 7],
+      "status": "SAT",
+      "zero_defect_pairs": 24
+    },
+    {
+      "covering_pairs": 120,
+      "factor_components": 1,
+      "line": [3, 5, 6],
+      "status": "SAT",
+      "zero_defect_pairs": 120
+    }
+  ],
+  "possible_functional_projections": 64,
+  "projection_clean_count": 57,
+  "projection_failure_count": 7,
+  "projection_nonzero_failure_rank": 5,
+  "perfect_matchings": [
+    [0, 3, 8, 12, 14],
+    [0, 4, 9, 10, 13],
+    [1, 4, 6, 11, 12],
+    [1, 5, 7, 8, 13],
+    [2, 3, 7, 9, 11],
+    [2, 5, 6, 10, 14]
+  ],
+  "schema": "fano-two-cycle-petersen-independent-check-v1",
+  "status": "PASS"
+}

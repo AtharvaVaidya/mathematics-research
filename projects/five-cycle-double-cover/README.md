@@ -5,7 +5,7 @@ conjecture remains open.  Nothing in this directory is a proof or a
 counterexample to that conjecture.
 
 This is a curated, reproducible publication bundle from an autonomous
-conjecture-resolution laboratory.  It contains two research drafts, a
+conjecture-resolution laboratory.  It contains three research drafts, a
 computer-free marked-graph theorem, explicit human-checkable
 countermodels to two intermediate proof strategies, exact SAT/XOR
 documentation, and compact checker sources.  Temporary search output and
@@ -27,10 +27,42 @@ multi-gigabyte certificates are deliberately not committed.
   five-cycle double covers, so they are not counterexamples to five-CDC.
   Its source is
   [`preprint-fano-one-switch/main.tex`](preprint-fano-one-switch/main.tex).
+- [`preprint-fano-combined-span/main.pdf`](preprint-fano-combined-span/main.pdf)
+  proves a universal combined-image identity and exact quadratic normal
+  form for fixed-projection Fano-flow cleaning, then gives a
+  human-checkable Petersen obstruction to one prescribed-line
+  strengthening.  The Petersen graph positively has a five-cycle double
+  cover, so this is not a counterexample to five-CDC.  Source and the
+  cautious novelty audit are in
+  [`preprint-fano-combined-span/`](preprint-fano-combined-span/).
 
-Both PDFs prominently disclose substantive AI involvement and explicitly
-state their scope.  Their novelty assessments are provisional pending
-independent expert literature review.
+All three PDFs prominently disclose substantive AI involvement and
+explicitly state their scope.  Their novelty assessments are provisional
+pending independent expert literature review.
+
+## Fixed-line Fano branch
+
+The standard five-cycle double cover conjecture remains unresolved.  The
+new fixed-line package has plausible, moderate, and specific novelty, but
+every theorem and priority claim still requires independent human
+verification:
+
+- [`docs/fano-combined-line-span.md`](docs/fano-combined-line-span.md)
+  contains the universal linear identity and exact nonlinear normal form;
+  [`docs/fano-triangle-expansion-invariance.md`](docs/fano-triangle-expansion-invariance.md)
+  proves that triangle expansion cannot create the first all-seven
+  fixed-projection obstruction.
+- [`search/fano-two-cycle-petersen-countermodel-20260726/`](search/fano-two-cycle-petersen-countermodel-20260726/)
+  freezes the Petersen proof, semantic checker, CNFs, and verified DRAT
+  certificates for two failed prescribed lines.
+- [`search/fano-some-good-line-census-20260726/`](search/fano-some-good-line-census-20260726/)
+  is an exact negative census through every connected simple bridgeless
+  cubic graph of order \(18\), plus retained strict snarks at orders
+  \(20,22,24\) and ten targeted cyclically-5-connected order-\(26\)
+  snarks.  It finds no all-seven obstruction in that stated scope.
+- [`docs/aligned-nice-borrower-frontier.md`](docs/aligned-nice-borrower-frontier.md)
+  records that the aligned rooted branch remains open at one
+  \(b_3\)-tight equality atom.
 
 ## Latest structural branch
 

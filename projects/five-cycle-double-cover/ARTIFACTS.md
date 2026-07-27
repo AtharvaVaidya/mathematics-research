@@ -6,7 +6,9 @@ copied into a separate clean clone; it was not modified or committed.
 
 ## Included
 
-- Both compiled research drafts and their complete LaTeX/BibTeX sources.
+- Three compiled research drafts and their complete LaTeX/BibTeX sources,
+  including the fixed-line Fano-flow span/obstruction note and its
+  provisional novelty assessment.
 - The standalone computer-free four-mark proof.
 - Current status, publication assessment, encoding proof, marked-cut
   reductions, and proof-obligation ledger.
@@ -42,6 +44,16 @@ copied into a separate clean clone; it was not modified or committed.
   \(P_4\) screen source and its 240-row, 101,760-test negative result.
   This screen is finite evidence on one construction family, not a
   universal theorem.
+- The universal combined-line span identity, exact two-cycle quadratic
+  normal form, triangle-expansion invariance theorem, and the complete
+  Petersen prescribed-line countermodel package.  These are
+  human-checkable partial results and do not resolve five-CDC.
+- The exact some-good-line census through all connected simple bridgeless
+  cubic graphs of order \(18\), together with retained strict snarks at
+  orders \(20,22,24\) and ten targeted cyclically-5-connected order-\(26\)
+  snarks.  No all-seven obstruction occurs in that stated scope.
+- The aligned nice-borrower reduction and its compact checkers.  Its
+  rooted branch remains open at one \(b_3\)-tight equality atom.
 - The exact exceptional four-pole rooted-packing algebra, frozen 640-word
   table, independent JavaScript verifier, and human-checkable reduction.
   Máčajová--Mazzuoccolo--Tabarelli Conjecture 3.7 remains open.
@@ -58,11 +70,12 @@ copied into a separate clean clone; it was not modified or committed.
   checker sources, result summaries, and the original SHA-256 ledger.
 - The native-XOR five-CDC encoder and its unit test.
 
-The two compiled PDFs have SHA-256 digests:
+The three compiled PDFs have SHA-256 digests:
 
 ```text
 863f24bcad7780067e5c264e2253e673ea4b9d50e94f28a6cf6cf389cc20bcb0  output/pdf/two-connected-countermodels-five-cdc-preprint.pdf
 7a88cd04139344babf371c6b949d26b50e6733ac8db5a6a495f842e4e706dafc  output/pdf/four-universally-separated-marks-preprint-20260726.pdf
+9612a080fa5eca945c82d0c266cc94d62adeea6493ee6d10e7aa03805687e5e0  preprint-fano-combined-span/main.pdf
 ```
 
 The original source files for those PDFs have SHA-256 digests:
@@ -119,6 +132,12 @@ standalone replay of the complete \(H_4\) theorem.
 The countermodel certificates refute intermediate strategies, not
 five-CDC.  The \(H_4\) result concerns one fixed graph.  The four-mark
 theorem closes one marked-core branch under additional hypotheses.
+The fixed-line Fano-flow preprint has plausible, moderate, and specific
+novelty pending independent human verification; its Petersen graph
+positively has a 5-CDC.  The exact some-good-line census is complete only
+through order \(18\), with the larger order-\(26\) scope targeted as
+listed above.  The aligned rooted branch still has one \(b_3\)-tight
+equality atom.
 The earlier `order100-global-word-profile*` LRATs prove UNSAT only for one
 retained primary matrix in each survivor profile.  The newer
 `order100-global-profile*` formulas induce the incidence matrix and cover

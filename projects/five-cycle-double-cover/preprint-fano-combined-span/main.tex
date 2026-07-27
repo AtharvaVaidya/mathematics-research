@@ -1,0 +1,673 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,array}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\Kcal}{\mathcal K}
+\newcommand{\Wcal}{\mathcal W}
+\newcommand{\Zcal}{\mathcal Z}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\im}{\operatorname{im}}
+
+\title{Line-preserving deformations of Fano flows:\\
+a universal span identity and a Petersen obstruction}
+\author{AI-assisted research draft for independent human verification\\
+\small Human author attribution to be supplied before submission}
+\date{26 July 2026}
+
+\begin{document}
+\maketitle
+
+\noindent
+\colorbox{yellow!22}{%
+  \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+  \textbf{AI-assistance disclosure.}
+  OpenAI Codex agents (GPT-5-series models, accessed in July 2026)
+  developed the fixed-line formulation, found the telescoping potential,
+  derived the two-cycle normal form and the Petersen example, wrote the
+  search and checking programs, and drafted this manuscript under human
+  direction.  The checkers and the present proof exposition are themselves
+  AI-assisted; ``independent'' below means logically separate code, not
+  independent human verification.  No human author or referee is represented
+  as having certified the results.  This draft must not be submitted until a
+  human author has checked every proof and computation, verified the
+  literature search, and accepted ordinary scholarly responsibility.  The
+  results are partial structural statements and do not prove or disprove the
+  five-cycle double cover conjecture.}}
+
+\begin{abstract}
+Let \(f\) be a nowhere-zero \(\F_2^3\)-flow on a finite loopless cubic
+graph and fix a nonzero functional \(\mu\).  Its kernel determines a Fano
+line \(L\), a spanning factor \(F_L\), and a binary vector recording the
+components of \(F_L\) whose four affine boundary colours all occur oddly.
+For each of the three nonzero values \(t\in L\), binary cycles avoiding
+the value class \(f^{-1}(t)\) give an initially valid line-preserving
+switch map.  We prove that the sum of the images of these three linear
+maps always contains the defect vector.  The proof is a short
+cut--cycle duality argument closed by an explicit quadratic potential
+which telescopes against flow conservation.
+
+The span identity is only a first-order statement.  We give an exact
+nonlinear normal form: flows with the same \(\mu\)-projection are
+parametrised by two binary cycles \(p,q\), and line cleaning is equivalent
+to their covering the kernel factor together with quadratic
+product-parity equations on its components.  This yields a general
+obstruction when the kernel factor is a perfect matching whose simple
+contraction \(Q\) satisfies
+\(|E(Q)|<4\,\operatorname{girth}(Q)\).
+
+Finally, we display a nowhere-zero \(\F_2^3\)-flow on the Petersen graph
+with two prescribed lines that cannot be cleaned while their functional
+projections are fixed.  The obstruction has a finite human-checkable
+proof: in both cases the matching contraction is \(K_5\), and a clean
+lift would force a Tait colouring of the Petersen graph.  The same graph
+has an explicit five-cycle double cover, so the example is not a
+counterexample to that conjecture.  The manuscript and all calculations
+are AI-assisted and await independent human review.
+\end{abstract}
+
+\section{Scope and background}
+
+All graphs in the main results are finite, undirected, loopless, and
+cubic; parallel edges are allowed unless simplicity is stated.  Since
+the coefficient groups have exponent two, orientations play no role.
+An \(\F_2^k\)-flow is a map \(f:E(G)\to\F_2^k\) satisfying
+\[
+                  \bigoplus_{e\ni v}f(e)=0
+                  \qquad(v\in V(G)).
+\]
+It is \emph{nowhere-zero} if \(f(e)\ne0\) on every edge.  At a cubic
+vertex the three values of a nowhere-zero \(\F_2^3\)-flow are the three
+points of a line of the Fano plane.
+
+Fano colourings of cubic graphs and their relation to bridgelessness,
+perfect matchings, and the Fulkerson and Fan--Raspaud conjectures are
+well established
+\cite{holroyd2004,macajova2005,kral2009,jin2018,karabas2024}.
+In particular, the existence of nowhere-zero \(\F_2^3\)-flows on
+bridgeless graphs follows from Jaeger's 8-flow theorem
+\cite{jaeger1979}.  This paper does not claim any of that background as
+new.
+
+Our question is narrower.  We fix one nonzero functional
+\(\mu:\F_2^3\to\F_2\), preserve the binary flow \(\mu\circ f\), and ask
+whether the corresponding kernel line can be made \emph{clean}, in the
+sense defined below.  This is not the established \(k\)-line Fano-flow
+problem, which counts the vertex lines used by a flow.  It is also
+different from recent work on reconfiguring arbitrary nowhere-zero
+flows by cycle-supported steps \cite{cranston2026}.
+
+There is a relevant recent neighbour.  Mkrtchyan studies
+non-conflicting \(\F_2^2\)-flows on contractions of complementary
+2-factors and proves that the Petersen graph is an obstruction
+\cite[Proposition~2.21]{mkrtchyan2025}.  Our clean-lift condition,
+fixed functional projection, combined-image identity, and quadratic
+normal form are different.  Thus the general fact that ``Petersen is an
+obstruction to a constrained flow extension'' is not new; only the
+specific statements proved here are provisionally claimed as new.
+
+For further separation from the motivating conjecture, a five-cycle
+double cover (5-CDC) is a list of five even edge-subsets in which every
+edge appears exactly twice.  Kr\'al' et al.\ give the equivalent
+Desargues-configuration colouring formulation
+\cite[Theorem~7.1]{kral2009}.  Nothing below proves that every bridgeless
+graph has such a cover.  Section~\ref{sec:petersen} gives a 5-CDC of our
+Petersen example explicitly.
+
+\section{A fixed line and its switch images}
+\label{sec:setup}
+
+Let \(f:E(G)\to\F_2^3-\{0\}\) be a flow and fix a nonzero functional
+\(\mu\).  Write
+\[
+ K=\ker\mu,\qquad L=K-\{0\},\qquad
+ A=\{a\in\F_2^3:\mu(a)=1\}.
+\]
+The three-element set \(L\) is a Fano line and \(A\) is its affine
+complement.  Put
+\[
+                    F_L=f^{-1}(L).
+\]
+At each cubic vertex, an even number of incident values lie in \(A\).
+Consequently every vertex has degree one or three in the spanning
+subgraph \(F_L\).  Let \(\Kcal\) be its set of connected components.
+
+For a component \(W\in\Kcal\), flow conservation across its shore gives
+\[
+                     \bigoplus_{e\in\delta(W)} f(e)=0.
+\]
+The boundary edges all have values in \(A\).  The parities of the four
+affine value multiplicities on \(\delta(W)\) are equal.  One quick proof
+is to write \(A=b+K\): the kernel of the \(3\times4\) matrix whose
+columns are \((1,k)\), \(k\in K\), is generated by the all-one vector.
+Define the \emph{rainbow-defect vector}
+\[
+ r\in\F_2^{\Kcal},\qquad
+ r_W=1
+\quad\Longleftrightarrow\quad
+\text{each of the four values in \(A\) occurs oddly on \(\delta(W)\)}.
+\]
+We call \(L\) \emph{clean} if \(r=0\).
+
+For \(t\in L\), translation by \(t\) partitions \(A\) into two
+two-element orbits.  Choose one orbit \(P_t\), and put
+\[
+ M_t=f^{-1}(t),\qquad
+ Z_t=Z_1(G-M_t;\F_2).
+\]
+Thus \(Z_t\) is the binary cycle space of the graph obtained by deleting
+the \(t\)-valued edges.  For \(C\in Z_t\), set
+\[
+ \tau_t(C)_W
+   =\bigl|C\cap\delta(W)\cap f^{-1}(P_t)\bigr|\pmod2.
+                                                        \tag{2.1}
+\]
+The complementary orbit gives the same bit, because a binary cycle
+crosses every cut evenly.
+
+Adding \(t\) to the values on \(C\) preserves flow conservation.
+Because \(C\cap M_t=\varnothing\), it creates no zero edge.  Formula
+(2.1) is the exact defect update for this single switch, computed at the
+displayed initial flow.  Define the combined image
+\[
+                  \Wcal_L=\sum_{t\in L}\im\tau_t.
+                                                        \tag{2.2}
+\]
+
+\section{The combined-image theorem}
+\label{sec:span}
+
+\begin{theorem}[combined-line span]\label{thm:span}
+For every finite loopless cubic \(G\), every nowhere-zero
+\(\F_2^3\)-flow \(f\), and every nonzero functional \(\mu\),
+\[
+                              r\in\Wcal_L.
+                                                        \tag{3.1}
+\]
+\end{theorem}
+
+\begin{proof}
+Suppose that (3.1) fails.  By finite-dimensional linear duality there
+is \(y\in\F_2^{\Kcal}\) such that
+\[
+ y\cdot r=1,\qquad
+ y\cdot\tau_t(C)=0
+       \quad(t\in L,\ C\in Z_t).                        \tag{3.2}
+\]
+Let \(\mathcal Y=\supp y\) and
+\[
+                 U=\bigcup_{W\in\mathcal Y}V(W).
+\]
+For each \(t\), equation (2.1) gives
+\[
+ y\cdot\tau_t(C)
+  =\bigl|C\cap\delta(U)\cap f^{-1}(P_t)\bigr|\pmod2.
+                                                        \tag{3.3}
+\]
+In any graph, the cut space is the orthogonal complement of the cycle
+space.  Hence
+\[
+ R_t=\delta(U)\cap f^{-1}(P_t)
+                                                        \tag{3.4}
+\]
+is a cut of \(G-M_t\).  Choose a vertex indicator
+\(x_t:V(G)\to\F_2\) for this cut.
+
+Apply an invertible change of coordinates in \(\F_2^3\) and label
+vectors by binary integers with
+\[
+ 1=(1,0,0),\quad2=(0,1,0),\quad4=(0,0,1).
+\]
+We may assume
+\[
+ L=\{1,2,3\},\qquad A=\{4,5,6,7\},\qquad
+ P_t=\{4,4+t\}.
+                                                        \tag{3.5}
+\]
+Let \(u\) be the indicator of \(U\), and at each vertex put
+\[
+                         q=(u,x_1,x_2,x_3).
+                                                        \tag{3.6}
+\]
+Across an edge, (3.4)--(3.5) allow the zero difference and the following
+single nonzero difference:
+\[
+\begin{array}{c|c}
+f(e)&q_v+q_w\\ \hline
+1&(0;100)\\
+2&(0;010)\\
+3&(0;001)\\
+4&(1;111)\\
+5&(1;100)\\
+6&(1;010)\\
+7&(1;001)
+\end{array}                                             \tag{3.7}
+\]
+For example, a line-valued edge has both ends in the same component of
+\(F_L\), so its \(u\)-difference is zero.  If its value is \(t\), only
+the cut \(x_t\) is unconstrained because that edge was deleted from
+\(G-M_t\).  On an affine edge, (3.4) says that the \(x_t\)-difference
+is the \(u\)-difference precisely when its colour lies in \(P_t\).
+This proves every row of (3.7).
+
+Define the potential
+\[
+ \mathcal A(u,x_1,x_2,x_3)=
+ \bigl(
+ u(x_2+x_3),\
+ u(x_1+x_3),\
+ x_1x_2+x_1x_3+x_2x_3
+ \bigr).
+                                                        \tag{3.8}
+\]
+All operations are in \(\F_2\).  Direct substitution in the seven
+rows of (3.7) gives
+\[
+ \bigl(\mathcal A(q_v)+\mathcal A(q_w)\bigr)\cdot f(vw)
+ =
+ \begin{cases}
+ 1,&f(vw)=4\text{ and }u(v)+u(w)=1,\\
+ 0,&\text{otherwise}.
+ \end{cases}                                            \tag{3.9}
+\]
+For transparency, the seven nonzero cases reduce as follows:
+\[
+\begin{array}{c|c|c}
+f(e)&q_v+q_w&
+(\mathcal A(q_v)+\mathcal A(q_w))\cdot f(e)\\ \hline
+1&(0;100)&0\\
+2&(0;010)&0\\
+3&(0;001)&0\\
+4&(1;111)&1\\
+5&(1;100)&0\\
+6&(1;010)&0\\
+7&(1;001)&0
+\end{array}
+\]
+The zero-difference cases are immediate.  As one sample expansion, in
+the colour-4 row all three \(x_i\) and \(u\) toggle; the change of
+\(x_1x_2+x_1x_3+x_2x_3\) is \(1\), and
+\(4=(0,0,1)\).  In the colour-5 row the changes of the first and third
+coordinates of \(\mathcal A\) are both \(x_2+x_3\), and
+\(5=(1,0,1)\), so they cancel.  The remaining rows follow by the same
+two-line expansion.
+
+Sum (3.9) over all edges and regroup the left side at vertices:
+\[
+\begin{aligned}
+\sum_{vw\in E(G)}
+ (\mathcal A(q_v)+\mathcal A(q_w))\cdot f(vw)
+ &=
+\sum_{v\in V(G)}
+ \mathcal A(q_v)\cdot
+ \left(\bigoplus_{e\ni v}f(e)\right)\\
+ &=0
+\end{aligned}                                           \tag{3.10}
+\]
+by flow conservation.  The right side of (3.9) sums to
+\[
+                    |\delta(U)\cap f^{-1}(4)|\pmod2.
+                                                        \tag{3.11}
+\]
+On the other hand, summing the colour-4 boundary parity over the
+components selected by \(y\) cancels affine edges joining two selected
+components and leaves exactly (3.11).  By the definition of \(r\), this
+is \(y\cdot r=1\), contradicting (3.10).
+\end{proof}
+
+\begin{corollary}[at most two components]\label{cor:two}
+If \(F_L\) has at most two components, then \(L\) is clean or one valid
+line-preserving binary-cycle switch makes it clean.
+\end{corollary}
+
+\begin{proof}
+Every vector in every \(\im\tau_t\) has even Hamming weight: after
+summing (2.1) over all components, every counted affine edge is counted
+at both ends.  If \(F_L\) has one component, its even-weight subspace is
+zero, so Theorem~\ref{thm:span} gives \(r=0\).  If it has two
+components, that subspace is one-dimensional.  When \(r\ne0\), some
+\(\im\tau_t\) in (2.2) must be nonzero and therefore contains \(r\).
+One cycle producing \(r\) cleans the line.  A single cycle has no
+overlap correction and avoids \(M_t\), so the switch remains
+nowhere-zero.
+\end{proof}
+
+\section{The exact quadratic normal form}
+\label{sec:normal}
+
+Theorem~\ref{thm:span} combines three maps computed at the initial flow.
+It does not assert that the corresponding three switches can be
+performed simultaneously.  An affine edge used by two switches has a
+quadratic correction, and two switches may also turn a line-valued edge
+into zero.  We now describe the exact problem without switch-order
+ambiguity.
+
+Let
+\[
+                      h=\mu\circ f,\qquad F_\mu=h^{-1}(0).
+\]
+Thus \(F_\mu=F_L\).  Choose \(b\in\F_2^3\) with \(\mu(b)=1\) and
+identify \(K=\ker\mu\) with \(\F_2^2\).
+
+\begin{proposition}[two-cycle normal form]\label{prop:normal}
+The flows \(f'\) satisfying \(\mu\circ f'=h\) are exactly
+\[
+                    f'_e=b\,h_e+(p_e,q_e),              \tag{4.1}
+\]
+where \(p,q\in Z_1(G;\F_2)\).  Such a flow is nowhere-zero exactly when
+\[
+                    p_e\lor q_e=1\qquad(e\in F_\mu).
+                                                        \tag{4.2}
+\]
+It is clean on every component \(W\) of \(F_\mu\) exactly when
+\[
+              \sum_{e\in\delta(W)}p_eq_e=0
+              \qquad(W\in\Kcal).                        \tag{4.3}
+\]
+\end{proposition}
+
+\begin{proof}
+If \(\mu\circ f'=h\), then
+\[
+                        s=f'+b\,h
+\]
+is a \(K\)-valued flow.  Its two coordinates are binary cycles \(p,q\),
+which proves existence and uniqueness in (4.1).  Conversely, any two
+binary cycles in (4.1) give a flow with projection \(h\).
+
+On an edge with \(h_e=1\), the value \(b+(p_e,q_e)\) is automatically
+nonzero because it lies outside \(K\).  On an edge of \(F_\mu\), it is
+\((p_e,q_e)\), proving (4.2).
+
+The boundary of a component \(W\) consists of affine edges.  Its size is
+even, and each binary cycle has even intersection with its cut.  The
+parity of the affine colour \(b\), whose residual coordinate is
+\((0,0)\), is
+\[
+\begin{aligned}
+\sum_{e\in\delta(W)}(1+p_e)(1+q_e)
+ &=|\delta(W)|+\sum_{\delta(W)}p_e+\sum_{\delta(W)}q_e
+      +\sum_{\delta(W)}p_eq_e\\
+ &=\sum_{e\in\delta(W)}p_eq_e.
+\end{aligned}                                           \tag{4.4}
+\]
+As in Section~\ref{sec:setup}, flow conservation makes the four affine
+colour parities equal.  Thus they are all even exactly when (4.3)
+holds.
+\end{proof}
+
+\begin{remark}
+Equations (4.2)--(4.3) say that \(p,q\) cover the kernel factor and
+that, after its components are contracted, the affine edge set
+\(\{e:p_e=q_e=1\}\) has even degree at every contracted vertex.
+The cover clauses are monotone, but the boundary clauses contain the
+quadratic products \(p_eq_e\).  Theorem~\ref{thm:span} removes the
+corresponding first-order obstruction; it does not solve these quadratic
+equations.
+\end{remark}
+
+\begin{corollary}[Tait graphs have no fixed-projection obstruction]
+\label{cor:tait}
+Let \(G\) be a Tait-colourable cubic graph.  For every binary cycle
+\(h\in Z_1(G;\F_2)\), the two-cycle conditions
+\((4.2)\)--\((4.3)\) are feasible for \(F_\mu=h^{-1}(0)\).
+Consequently every functional projection has a clean nowhere-zero
+\(\F_2^3\)-lift.
+\end{corollary}
+
+\begin{proof}
+Fix a nowhere-zero \(\F_2^2\)-flow \(s=(p,q)\) supplied by a Tait
+colouring.  Since \(s\) is nowhere-zero on every edge, \(p,q\) cover
+\(F_\mu\), proving (4.2).
+
+Let \(W\) be a component of \(F_\mu\).  Every edge of \(\delta(W)\) has
+\(h_e=1\), and the binary cycle \(h\) crosses the cut evenly, so
+\(|\delta(W)|\) is even.  Let \(a,b,c\) be the parities on this cut of
+the three nonzero \(s\)-values \((1,0),(0,1),(1,1)\), respectively.
+Flow conservation across the cut gives
+\[
+                          a+c=0,\qquad b+c=0,
+\]
+so \(a=b=c\).  But
+\[
+                      0=|\delta(W)|=a+b+c=c
+                      \qquad\text{in }\F_2.
+\]
+Thus the \((1,1)\)-colour occurs evenly on \(\delta(W)\), which is
+exactly
+\(\sum_{e\in\delta(W)}p_eq_e=0\).  This proves (4.3), and
+Proposition~\ref{prop:normal} supplies the clean lift.
+\end{proof}
+
+\section{A structural matching-contraction obstruction}
+\label{sec:obstruction}
+
+Recall that a cubic graph is \emph{Tait-colourable} if it has a proper
+three-edge-colouring.  Equivalently, it admits a nowhere-zero
+\(\F_2^2\)-flow.
+
+\begin{theorem}[simple-contraction obstruction]\label{thm:obstruction}
+Suppose \(F_\mu\) is a perfect matching of a cubic graph \(G\), and let
+\(Q=G/F_\mu\).  If
+\[
+ Q\text{ is simple},\qquad
+ |E(Q)|<4\,\operatorname{girth}(Q),\qquad
+ G\text{ is not Tait-colourable},                       \tag{5.1}
+\]
+then no clean nowhere-zero flow \(f'\) can have
+\(\mu\circ f'=\mu\circ f\).
+\end{theorem}
+
+\begin{proof}
+Assume that a clean lift \(f'\) exists.  The edges outside \(F_\mu\)
+become the edges of \(Q\).  Their four affine colours partition
+\(E(Q)\).  Cleanliness says that every colour class has even degree at
+each vertex of \(Q\), so each is an even subgraph.
+
+Every nonempty even subgraph of a finite simple graph contains a cycle,
+and therefore has at least \(\operatorname{girth}(Q)\) edges.  The strict
+inequality in (5.1) implies that one of the four affine colours is absent.
+Choose this absent colour as the base \(b\) in (4.1), and write
+\[
+                         f'=b\,h+s,\qquad s:E(G)\to K.
+\]
+On an affine edge, \(s\ne0\), since \(f'\ne b\).  On an edge of
+\(F_\mu\), \(h=0\) and \(s=f'\ne0\).  Hence \(s\) is a nowhere-zero
+\(K\cong\F_2^2\)-flow on all of \(G\), which is a Tait colouring.  This
+contradicts (5.1).
+\end{proof}
+
+\section{The Petersen fixed-line obstruction}
+\label{sec:petersen}
+
+We now give all data needed for a finite example.  The graph has vertices
+\(0,\ldots,9\); its edges, edge identifiers, and flow values are:
+\[
+\begin{array}{c|c|c@{\qquad}c|c|c}
+\text{id}&\text{edge}&f(e)&\text{id}&\text{edge}&f(e)\\ \hline
+0&0\!-\!2&6&8&3\!-\!5&5\\
+1&0\!-\!4&3&9&3\!-\!8&7\\
+2&0\!-\!6&5&10&4\!-\!5&6\\
+3&1\!-\!4&5&11&5\!-\!9&3\\
+4&1\!-\!7&1&12&6\!-\!8&3\\
+5&1\!-\!8&4&13&6\!-\!9&6\\
+6&2\!-\!3&2&14&7\!-\!9&5\\
+7&2\!-\!7&4&&&
+\end{array}                                             \tag{6.1}
+\]
+The three incident values at vertices \(0,\ldots,9\) are, respectively,
+\[
+\begin{gathered}
+(6,3,5),(5,1,4),(6,2,4),(2,5,7),(3,5,6),\\
+(5,6,3),(5,3,6),(1,4,5),(4,7,3),(3,6,5).
+\end{gathered}                                           \tag{6.2}
+\]
+Each triple has XOR zero, so (6.1) is a nowhere-zero
+\(\F_2^3\)-flow.  The edge list is a labelling of the Petersen graph;
+its nauty-canonical graph6 encoding is
+\[
+                            \texttt{IsP@OkWHG}.
+\]
+
+\begin{theorem}[two failed prescribed lines]\label{thm:petersen}
+For the flow (6.1), neither \(L=\{1,2,3\}\) nor
+\(L=\{1,6,7\}\) can be made clean by a nowhere-zero
+\(\F_2^3\)-flow having the same corresponding functional projection.
+\end{theorem}
+
+\begin{proof}
+For \(L=\{1,2,3\}\), the kernel factor consists of edge identifiers
+\[
+                         \{1,4,6,11,12\};
+                                                        \tag{6.3}
+\]
+for \(L=\{1,6,7\}\), it consists of
+\[
+                         \{0,4,9,10,13\}.               \tag{6.4}
+\]
+In each case the five edges are pairwise disjoint and cover all ten
+vertices.  Contracting them in the graph (6.1), the remaining ten edges
+join every pair of contracted vertices exactly once.  Thus \(Q=K_5\).
+
+The Petersen graph is not Tait-colourable.  For a self-contained finite
+check, its perfect matchings in the edge indexing (6.1) are exactly
+\[
+\begin{gathered}
+(0,3,8,12,14),\quad (0,4,9,10,13),\\
+(1,4,6,11,12),\quad (1,5,7,8,13),\\
+(2,3,7,9,11),\quad (2,5,6,10,14).
+                                                        \tag{6.5}
+\end{gathered}
+\]
+Exhaustiveness follows by branching on the three edges incident with
+vertex \(0\); each initial choice has the two completions displayed in
+(6.5).  Direct deletion shows that the complement of every matching in
+(6.5) is two 5-cycles.  In a Tait colouring, one colour class is a
+perfect matching and its complement alternates the other two colours on
+even cycles, a contradiction.
+
+Now \(K_5\) is simple, has ten edges, and has girth three, so
+\[
+                            10<4\cdot3.
+\]
+Theorem~\ref{thm:obstruction} applied to (6.3) and (6.4) proves both
+claims.
+\end{proof}
+
+\begin{remark}[not a 5-CDC counterexample]
+The following five Eulerian edge-id sets cover every edge of (6.1)
+exactly twice:
+\[
+\begin{aligned}
+&\{0,1,3,4,7\},\\
+&\{3,5,8,9,10\},\\
+&\{0,2,6,8,11,13\},\\
+&\{1,2,4,5,10,11,12,14\},\\
+&\{6,7,9,12,13,14\}.
+\end{aligned}                                           \tag{6.6}
+\]
+Even degree at every vertex and double coverage can both be checked
+directly from (6.1).  Thus (6.6) is a positive 5-CDC of the example.
+\end{remark}
+
+\begin{remark}[the surviving existential branch]
+The other five lines of the displayed flow have clean lifts with fixed
+functional projection.  A complete classification of the 64 possible
+binary projections on the Petersen graph finds 57 feasible projections;
+the failures are the zero cycle and the six ten-edge complements of the
+perfect matchings in (6.5).  The six nonzero failures have rank five and
+their only dependence is their total XOR.  Consequently, the
+three-dimensional projection space of any nowhere-zero
+\(\F_2^3\)-flow on the Petersen graph contains at most three of them, so
+at least four of its seven lines are cleanable.  This finite
+classification is supplied as a reproducible computational audit, not
+needed for Theorem~\ref{thm:petersen}.
+\end{remark}
+
+\section{Reproducibility and logical status}
+
+The companion directory
+\begin{center}
+\texttt{search/fano-two-cycle-petersen-countermodel-20260726/}
+\end{center}
+contains the canonical graph, the construction table, a semantic
+checker, two ordinary CNF instances, and DRAT proofs.  From the repository
+root, run
+\begin{verbatim}
+python3 search/fano-two-cycle-petersen-countermodel-20260726/\
+  independent_checker.py
+python3 search/fano-two-cycle-petersen-countermodel-20260726/\
+  verify_package.py
+\end{verbatim}
+The first program independently enumerates the \(64\) binary cycles and
+all \(4096\) ordered pairs \((p,q)\) for each line.  For each failed line,
+\(960\) pairs cover the five matching edges and none satisfies all five
+product-parity equations.  The second program reconstructs two
+65-variable, 210-clause CNFs and checks their DRAT certificates when
+\texttt{drat-trim} is available.
+
+These computations are redundant for the mathematical nonexistence proof:
+Theorem~\ref{thm:petersen} follows from the displayed flow, the two
+matching contractions, the elementary edge-count in \(K_5\), and the
+six-matchings proof that Petersen is non-Tait.  The computational package
+serves to catch transcription errors and to support the broader
+classification in the last remark.
+
+\section{What is and is not new}
+
+The literature search for this draft covered the primary sources cited
+above and keyword/full-text searches through 26 July 2026.  We did not
+find the combined-image theorem, the potential (3.8), the exact
+fixed-projection normal form (4.1)--(4.3), or the simple-contraction
+obstruction in those sources.  We therefore regard these as
+\emph{plausibly new}, not as established priority claims.
+
+The broader setting is not new: Fano colourings, line counts, their
+matching interpretations, and constrained \(\F_2^2\)-flows on
+contractions all have substantial prior literature.  Most importantly,
+Mkrtchyan's distinct Petersen obstruction means that the appearance of
+the Petersen graph itself carries little novelty.  The potentially
+publishable unit is instead the following coherent package:
+\begin{enumerate}
+  \item a universal first-order span identity with an explicit
+        telescoping certificate;
+  \item an exact quadratic formulation explaining why that identity
+        does not automatically integrate to a valid switch sequence; and
+  \item a structural contraction obstruction, instantiated by a small
+        fully checkable fixed-projection counterexample.
+\end{enumerate}
+
+This is suitable at most as a short technical note until expert review
+confirms the literature boundary and a human author independently
+verifies the proofs.  It is not a resolution, a claimed breakthrough on
+5-CDC, or evidence against 5-CDC: the example positively satisfies the
+conjectured conclusion.
+
+\section*{Acknowledgement and responsible authorship note}
+
+This draft was produced in an autonomous-conjecture-resolution project
+directed by the user.  AI assistance was substantive at every stage,
+including conjecture formation, proof discovery, computation, literature
+triage, and writing.  Before any public submission, a human author should
+rederive the arguments, check the primary literature directly, rerun the
+artifacts in a clean environment, decide whether the contribution merits
+dissemination, and take responsibility for the final text.  The model
+provider and model are tools, not authors.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,27 @@
+{
+  "schema": "aligned-nice-fixed-star-screen-v1",
+  "command": "python3 scratch/search_aligned_nice_full_p4.py --minimum-B-order 6 --maximum-B-order 11",
+  "scope": {
+    "B_orders": [6, 7, 8, 9, 10, 11],
+    "A_part": "minimum three-port star",
+    "singleton_rows": 2
+  },
+  "order_11": {
+    "nonisomorphic_connected_subcubic_B_graphs": 5524,
+    "packet_extensions": 9660,
+    "two_connected_assemblies": 3804,
+    "T3_assemblies": 436,
+    "T3_certificate_free_assemblies": 10,
+    "full_P4_survivors": 0,
+    "P4_failure_profiles": {
+      "0,2,12": 5,
+      "0,4,12": 2,
+      "1,4,12": 2,
+      "2,3,12": 1
+    }
+  },
+  "through_order_10": {
+    "T3_certificate_free_assemblies": 0
+  },
+  "scope_warning": "This is an exact finite screen only for the fixed minimum A-star and the listed B-orders. It is not a P4-only theorem and not a rooted four-mark resolution."
+}
