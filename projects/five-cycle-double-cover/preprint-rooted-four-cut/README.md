@@ -11,10 +11,13 @@ This directory contains a narrowly scoped research preprint. It records:
 4. a human-checkable cycle-translation obstruction and exact rooted
    factorization for one surviving exceptional three-pole interface;
 5. a human-checkable base-pair/coordinate-cut certificate;
-6. a two-solver rooted base-pair theorem through order 17 and a two-solver
+6. a human-checkable Tait-cap closure theorem: a nonbridge rooted shore
+   with a Tait-colourable one-vertex cap contains a base pair, with the
+   exact one-sided and two-sided exceptional consequences;
+7. a two-solver rooted base-pair theorem through order 17 and a two-solver
    full-signature theorem for the cyclically 4-edge-connected order-22 cap
    slice; and
-7. a corrected computer-assisted order-22 theorem restricted explicitly to
+8. a corrected computer-assisted order-22 theorem restricted explicitly to
    Tait-colourable connected simple cubic graphs.
 
 It does **not** claim a resolution of the Five-Cycle Double Cover Conjecture
@@ -64,6 +67,14 @@ The programs intentionally skip graphs with no Tait colouring. Under a
 literal universal quantifier, separation is vacuous on such a graph. The
 preprint states the exact verified result and explains this correction in
 the introduction.
+
+A later hostile audit also corrected an overstrong one-sided inference from
+base-pair containment. One Tait shore rules out equality-only and
+disjointness-only relations, but the mixed equality/intersection relation can
+survive. The paper gives the exact invariant-signature counterexample and
+states the three-sum path consequence only with the 3-connectivity premise
+required by the cited decomposition theorem. A dependent project-level claim
+of a global order-28 lower bound was withdrawn; that claim is not made here.
 
 Before public submission:
 

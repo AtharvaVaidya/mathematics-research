@@ -1899,16 +1899,13 @@ CaDiCaL and direct finite-domain classifiers agree byte-for-byte on all
 deletion, and checks both tables row-by-row.  Source completeness relies on
 Snarkhunter and its option semantics.
 
-Combining this complete cyclically-four cap classification with the proved
-exceptional-atom descent, the cyclic-three cap elimination through order
-36, the simple-cap theorem, and the complete order-22 census yields a
-finite theorem: no bridge-free connected simple terminal-distinct
-four-pole of order at most 24 has either exceptional exact fixed-five
-signature.  Any such pole has even order at least 26.  The proof chain and
-artifacts are in `search/four-pole-order24-cyclic4-cap-20260727/`.
-
-This advances only the finite exceptional-pole frontier.  It does not prove
-the universal exceptional-signature conjecture or Five-CDC.
+This is an exact classification of the retained cyclically-four cap class.
+A later audit found that the claimed reduction from all exceptional poles
+through order 24 used the false one-sided base-pair inference corrected
+below.  The former global lower bound of 26 is therefore withdrawn.  The
+finite tables and verifier in
+`search/four-pole-order24-cyclic4-cap-20260727/` are unaffected.  This does
+not prove the universal exceptional-signature conjecture or Five-CDC.
 
 ## Order-26 strict-snark full-signature probe
 
@@ -1954,18 +1951,17 @@ distinctness, cubicity, connectedness, triangle-freeness, cyclic
 deletion poles byte-for-byte and checks both tables and all sixteen shard
 logs.  The replay reproduces the committed report exactly.
 
-Combining this classification with the exceptional-atom descent, the
-cyclic-three cap elimination through order 36, the simple-cap theorem, and
-the earlier complete order-22 and order-24 exclusions proves:
-
-> No bridge-free connected simple terminal-distinct four-pole of order at
-> most 26 has either exceptional exact fixed-five signature.
-
-Consequently any such pole has even order at least 28.  The complete
-package is `search/four-pole-order26-cyclic4-cap-20260727/`.  Canonical
-source completeness still relies on Snarkhunter and its option semantics.
-This is not a universal exceptional-signature theorem and does not resolve
-Five-CDC.
+This proves the complete intended classification of cyclically
+4-edge-connected non-Tait caps at order 26.  A later audit found that the
+claimed reduction from every exceptional pole through order 26 to this cap
+class used an invalid one-sided base-pair inference: a containing root
+signature can add equality to a base-pair-versus-shore relation that was
+intersection-only.  Therefore the former global exceptional-pole
+lower bound of 28 is withdrawn.  The complete finite package remains
+`search/four-pole-order26-cyclic4-cap-20260727/`; its cap classification
+and verifier are unaffected.  Canonical source completeness still relies
+on Snarkhunter and its option semantics.  This is not a universal
+exceptional-signature theorem and does not resolve Five-CDC.
 
 ## Rooted three-pole base-pair frontier through order 17
 
@@ -1988,17 +1984,49 @@ on all eight shards, with \(52\,216\,251\) solver calls per
 implementation.
 
 Thus base-pair closure is a finite theorem through rooted order 17.
-In fact, a complete \(3\times7\) orbit table shows that one base pair
-against any nonempty invariant signature can never realize any of the
-three exceptional relations.  Hence the finite order-17 theorem alone
-eliminates the cyclic-three fork of every vertex-minimal exceptional
-two-cut-reduced simple cap through total order 36: at least one odd
-shore has order at most 17.  Any exceptional atom in that finite range
-must therefore have a cyclically-four-connected simple cap.  This does not eliminate
-that remaining cap fork.  The conditional human proof and finite
-artifacts are
+A complete \(3\times7\) orbit table shows that the base pair itself
+against any nonempty invariant signature never has any of the three
+exceptional relations.  This does not remain true after replacing the
+base pair by an arbitrary containing root signature.  Explicitly,
+\[
+ R=\{12,03,04,01\},\qquad S=\{01\}
+\]
+are invariant, \(R\) contains a base pair, and
+\(\operatorname{rel}(R,S)=\{\mathsf E,\mathsf I\}\).
+Consequently the order-17 theorem on one shore excludes the
+equality-only and disjointness-only cyclic-three relations through total
+order 36, but not the mixed \(\{\mathsf E,\mathsf I\}\) orientation of
+\({\cal E}_4\).  If both shores are within the finite frontier, their two
+base pairs do exclude all exceptional relations.  The corrected
+conditional proof and finite artifacts are
 `docs/rooted-three-pole-base-pair-closure-target.md` and
 `search/rooted-three-pole-frontier-20260727/`.
+
+## Tait-cap closure of the rooted three-pole target
+
+Audit date: **2026-07-27**.
+
+The rooted base-pair target now has an unbounded human-checkable positive
+class.  If capping the three connectors by one vertex gives a
+three-edge-colourable cubic graph, map its three Tait colours to
+\(01,02,12\).  For any proper cycle through the nonbridge root, translating
+the cycle labels by \(0123\) and \(0124\) preserves the \(D_5\) constraint
+and realizes the two mixed labels aligned with the root's original
+triangle label.  These three root values are exactly one base pair.
+
+One Tait cap therefore excludes the equality-only and disjointness-only
+root relations; two Tait caps exclude all three exceptional relations.
+The mixed \(\{\mathsf E,\mathsf I\}\) relation is not excluded
+one-sidedly.  Under the minimal simple-cap hypotheses, the cyclic-three
+factor tree is still a path between the two cap edges.  Both endpoint
+factors are non-three-edge-colourable for \({\cal E}_5\); for
+\({\cal E}_4\), a Tait endpoint can survive only at a mixed-orientation
+end cut and forces a two-label restriction on the opposite root
+signature.  The corrected proof is in
+`docs/rooted-three-pole-tait-cap-closure.md`.
+
+This is a universal structural reduction, not the full base-pair theorem:
+the case of non-Tait shore caps remains open.
 
 ## Elliptic quadratic-flow reformulation
 

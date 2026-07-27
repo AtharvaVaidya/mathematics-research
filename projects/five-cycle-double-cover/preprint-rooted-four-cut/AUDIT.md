@@ -172,6 +172,73 @@ convention.
 No defect remains after this clarification. The result is a necessary cut
 certificate, not base-pair closure.
 
+## Tait-cap closure and hostile correction
+
+Audited against:
+
+- `docs/rooted-three-pole-tait-cap-closure.md`;
+- `docs/rooted-three-pole-base-pair-closure-target.md`;
+- `docs/exceptional-cyclic-three-root-signature-factorization.md`;
+- `docs/exceptional-four-pole-simple-cap-enumeration-reduction.md`; and
+- the cited cubic three-sum decomposition hypotheses.
+
+The Tait-cap closure theorem itself survives line-by-line audit. At the cap
+vertex the three colours can be mapped, in physical connector order, to
+`01,02,12`. Every cubic vertex then has XOR sum zero. A nonbridge root lies
+on a proper cycle, and translation of that cycle by `0123` and `0124`
+changes the possible root values as follows:
+
+```text
+       01  02  12
++0123  23  13  03
++0124  24  14  04
+```
+
+All values remain in \(D_5\), each cycle vertex receives the translation
+twice, and the connector word is unchanged. Thus the three root values form
+exactly one base pair.
+
+The originally proposed one-sided exceptional corollary was false. The exact
+counterexample is
+\[
+ P_0=\{12,03,04\},\qquad
+ R=P_0\cup\{01\},\qquad S=\{01\},
+\]
+for which \(R,S\) are \(3\leftrightarrow4\)-invariant,
+\(P_0\subseteq R\), but
+\(\operatorname{rel}(R,S)=\{\mathsf E,\mathsf I\}\).
+The mistake was to apply a relation table for \(P_i\) itself after replacing
+\(P_i\) by a larger signature \(R\); the additional label can introduce
+equality.
+
+The corrected exact consequences are:
+
+- one Tait shore excludes equality-only and disjointness-only relations;
+- two Tait shores force both intersection and disjointness, excluding all
+  three exceptional relation sets; and
+- in a surviving mixed relation with \(P_i\subseteq R\), the opposite
+  signature is a nonempty subset of
+  \(U_0=\{01,02\}\), \(U_1=\{01,12\}\), or
+  \(U_2=\{02,12\}\), respectively, and intersects \(R\).
+
+An independent exhaustive replay checked all three base pairs against all
+127 nonempty invariant signatures and reproduced the displayed
+\(3\times7\) orbit table. It also reproduced the counterexample above.
+
+The factor-tree consequence received a second scope correction. The
+minimal simple-cap argument proves that every relevant cyclic three-cut
+separates the cap edges and proves 3-edge-connectivity. The cited published
+decomposition theorem assumes 3-vertex-connectivity. The preprint therefore
+assumes a 3-connected cap (or, equivalently for the deduction, that the
+factor tree has already been supplied); it does not promote
+3-edge-connectivity to 3-connectivity. Under that premise the tree is a path.
+Both endpoints are non-Tait in the disjointness-only case. In the mixed
+\(\mathcal E_4\) case, only an equality-only endpoint is forced non-Tait.
+
+This audit also withdrew a dependent project-level global order-28 lower
+bound. The finite cyclically-four order-26 classification remains valid, but
+it does not by itself reduce arbitrary exceptional poles to that class.
+
 ## Finite rooted frontiers
 
 The order-17 base-pair package was checked with:

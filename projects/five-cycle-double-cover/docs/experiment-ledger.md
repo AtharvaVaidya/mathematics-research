@@ -2337,11 +2337,13 @@ The result is a finite theorem through order 17, not an induction.
 The complete-signature corpus through order 13 realizes 22 nonempty
 nonbridge masks, whose only inclusion-minimal elements are the three
 base pairs; its \(22^2\) cross-relations are only `DI` and `DEI`.
-A separate exhaustive \(3\times127\) check shows that one base pair
-against any nonempty stabilizer-invariant signature never has relation
-`E`, `EI`, or `D`.  With the simple-cap fork, this eliminates every
-cyclic-three exceptional two-cut-reduced cap of total order at most 36.
-Artifacts and the independent replay are in
+A separate exhaustive \(3\times127\) check shows that the base pair
+itself against any nonempty stabilizer-invariant signature never has
+relation `E`, `EI`, or `D`.  It does not justify replacing the base
+pair by a containing signature: `R={12,03,04,01}` and `S={01}` give
+`EI`.  With the simple-cap fork, one order-17 shore therefore excludes
+the `E` and `D` cyclic-three branches through total order 36, but the
+mixed `EI` branch remains.  Artifacts and the independent replay are in
 `search/rooted-three-pole-frontier-20260727/`.
 
 ## Complete order-20 exceptional cap census
@@ -2497,9 +2499,10 @@ exceptional hits                       0
 
 The two full tables agree byte-for-byte.  A separate verifier checks the
 155 graph premises, reconstructs every deletion pole, and validates both
-sharded tables.  Combined with the atom descent and rooted cyclic-three
-elimination, this excludes simple terminal-distinct exceptional poles
-through order 24 and raises that even-order lower bound to 26.
+sharded tables.  A later audit found that the attempted reduction from all
+small exceptional poles to this cap class used a false one-sided base-pair
+inference.  The finite classification remains exact, but the former global
+lower-bound conclusion is withdrawn.
 
 Frozen package:
 `search/four-pole-order24-cyclic4-cap-20260727/`.

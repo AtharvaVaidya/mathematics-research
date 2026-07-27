@@ -1,9 +1,9 @@
-5474abc2662966387cc7914efba8c365ed8f6a4e7b895017edca6b3ba44149b0  main.tex
+3ec674676f0d36442d7a79d801784bc17fa7e09a6e5a6f62a8f3bd26b069e93c  main.tex
 03b0c6bab765655c3b615013e5e83ab0ab6baa3fe5599dc35166b60f025730f1  references.bib
-d2f7be7423f4d07b3aeb35c5754f7864450e2e9336e8e9e3f50eaae1cf1785ff  README.md
-ab4a9a294f4f643f0272b4c84ad4b2d61e59473cee6a35e35765c36e4c006236  AUDIT.md
-5b22cf093bec654f7fae5b58bc0945a4fa4404664d006a5ff1c1bb3cad8143ba  NOVELTY-ASSESSMENT.md
-8cd2059c9093d81111aacd6dd549ccaf81e488d4e50aef317e3338de9bd9b2f0  output/pdf/main.pdf
+9acd8b09d4fbbecb9265e320e748d7613f1d29b860df3c0bd95e577384f1d854  README.md
+bdcb24bd7120c5408c721f53c5e808d8d894cd3c648a12a6c0b4f2dbaee03f78  AUDIT.md
+440ad12535cb22abc169967b1d113ad210d5af8081cfa75c0f155dfa9088c84f  NOVELTY-ASSESSMENT.md
+5b5a5c439d16b419d52b7db7aa95d770f7720052367697b2df28e7e65d914222  output/pdf/main.pdf
 a00c2f53a3b95a06a7e8767aae2eb2bfa794fc95eeeba18bcac34aea6a12072a  ../scratch/tait_all_coloring_mark_separation.cpp
 104dca4ac143581a9b306172354428a96913f3fe1701c60b2a018510990ecead  ../scratch/verify_order22_separation_via_matchings.cpp
 59d8e99cffb573de6ffa8a4df122099db3fd856d8e87803920e9cf69d6946ca8  ../scratch/order22-universal-four-separation-result.json
@@ -12,6 +12,8 @@ a00c2f53a3b95a06a7e8767aae2eb2bfa794fc95eeeba18bcac34aea6a12072a  ../scratch/tai
 e93effd184798259bb048fc2b448eedc241856748209a42eefc9c0b5936c9c6b  ../docs/rooted-cycle-translation-obstruction.md
 445d926e253d432f6267010a95de332fa5840b3cb5ad9e18654f9e3e5cd3e262  ../docs/exceptional-cyclic-three-root-signature-factorization.md
 a30ea1e0dcd1f2ee23f05e312dd7d49706870d94fbd1966a979ec470949c5706  ../docs/rooted-base-pair-cycle-cut-certificate.md
+713f395803012585df3f6cc8a6cd205fe963f88e0761a5c8907b60ba2c626ab4  ../docs/rooted-three-pole-tait-cap-closure.md
+05f6d4b0e44ef5176926ed4b6e2f4a1fba7cc18473a17247e1d58afdcf8e6d6f  ../docs/rooted-three-pole-base-pair-closure-target.md
 705644c782f86a72d5e9b0ca0093e416328327fe3d90b06bcd8dbc329123c5e5  ../search/rooted-three-pole-frontier-20260727/order17-base-pair-report.json
 e1e590b0e9e9adca22d730d9a441acbe2a6a32a9e6a8af8107818a522f003be2  ../search/rooted-three-pole-frontier-20260727/rooted_base_pair_screen_cadical.cpp
 048dfb2f982164b0d9fad096f0b481acb23986a8a0ddfc5f121f6a298d1147f5  ../search/rooted-three-pole-frontier-20260727/rooted_base_pair_screen_csp.cpp
@@ -22,3 +24,8 @@ d970338c60474da4e5b3f742a4f5dcf39b703315833a06dba3deeb563508c585  ../search/four
 e2ce0dd4a6c98eb7a83b27fa7614519e61f7f04c1b5270c7e64ee0d42cafdae9  ../search/four-pole-order22-cap-20260727/artifacts/cyclic4-full-cadical.tsv.gz
 e2ce0dd4a6c98eb7a83b27fa7614519e61f7f04c1b5270c7e64ee0d42cafdae9  ../search/four-pole-order22-cap-20260727/artifacts/cyclic4-full-csp.tsv.gz
 f7d234b504034cd7b3528ed6820279bdc769a4c3c1292dbffaa40e423b60a501  ../search/four-pole-order22-cap-20260727/verify_completed_run.py
+8c4f5f050cd9106ce23d75ffed446132affff4932244529103eef3a85d731b1a  ../search/rooted-three-pole-frontier-20260727/README.md
+28bacc69e5764cbb754ef38c1a793df475bff7f499f8c728cd873276978274f9  ../search/rooted-three-pole-frontier-20260727/SHA256SUMS
+d2e665a257573917dc18504f5d140909b3a46d9f54148e5f11dcfa9085a0b70f  ../search/four-pole-order26-cyclic4-cap-20260727/README.md
+140630312314fb5fe0ea9338039bcf51a9c2f92f570dfc96db5e7795077cba58  ../search/four-pole-order26-cyclic4-cap-20260727/THEOREM.md
+1a178b370891b9394b47ae640fad04d7dda19c2334521e1503535297410819dd  ../search/four-pole-order26-cyclic4-cap-20260727/SHA256SUMS

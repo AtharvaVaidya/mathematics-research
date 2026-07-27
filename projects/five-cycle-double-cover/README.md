@@ -24,12 +24,12 @@ submission.
 ## Main research drafts
 
 - [`preprint-rooted-four-cut/output/pdf/main.pdf`](preprint-rooted-four-cut/output/pdf/main.pdf)
-  is a 21-page structural and computer-assisted research report on marked
+  is a 23-page structural and computer-assisted research report on marked
   circuits and fixed-five rooted interfaces.  It includes human-checkable
   proofs of the exact elliptic-flow reformulation, a four-mark closure
-  theorem, and a forbidden-root cut gate; it separately labels the
-  order-17 and order-22 finite censuses.  Its source, audit, novelty
-  assessment, and checksum ledger are in
+  theorem, a forbidden-root cut gate, and the corrected Tait-cap closure;
+  it separately labels the order-17 and order-22 finite censuses.  Its
+  source, audit, novelty assessment, and checksum ledger are in
   [`preprint-rooted-four-cut/`](preprint-rooted-four-cut/).  The paper
   explicitly says that it neither proves nor disproves five-CDC.
 - [`output/pdf/four-universally-separated-marks-preprint-20260726.pdf`](output/pdf/four-universally-separated-marks-preprint-20260726.pdf)
@@ -68,14 +68,11 @@ without claiming a universal theorem:
   gives a complete two-implementation classification of the retained
   155-graph cyclically 4-edge-connected non-Tait order-24 source.  All
   86,490 independent-edge deletion poles have full fixed-five boundary
-  signature.  Combined with the separately displayed reductions, this
-  raises the simple terminal-distinct exceptional-pole lower bound to 26.
+  signature.
 - [`search/four-pole-order26-cyclic4-cap-20260727/`](search/four-pole-order26-cyclic4-cap-20260727/)
   gives the corresponding complete retained cyclically-four order-26
   classification: 1,297 source graphs and 859,911 independent-edge
-  deletion poles, all with full fixed-five boundary signature.  Together
-  with the same human reductions, this raises only the scoped simple
-  terminal-distinct exceptional-pole lower bound to 28.
+  deletion poles, all with full fixed-five boundary signature.
 - [`search/four-pole-order26-strict-cap-probe-20260727/`](search/four-pole-order26-strict-cap-probe-20260727/)
   checks all 185,640 deletion poles from a retained 280-graph strict-snark
   source.  Every row again has full signature.  This earlier finite probe
@@ -87,6 +84,17 @@ without claiming a universal theorem:
 
 Each package has a solver-independent verifier, frozen checksums, precise
 source limitations, and an AI-use disclosure.  None resolves five-CDC.
+The finite cap classifications remain valid, but a later audit found that
+the attempted reduction from all small exceptional poles to this cap class
+used a false one-sided base-pair inference.  The former global order-26 and
+order-28 lower-bound conclusions are therefore withdrawn.
+
+The corrected human proof
+[`docs/rooted-three-pole-tait-cap-closure.md`](docs/rooted-three-pole-tait-cap-closure.md)
+shows that a Tait-colourable one-vertex shore cap forces a base pair in its
+root signature.  One such shore excludes only the equality-only and
+disjointness-only relations; two such shores exclude all three exceptional
+relations.  The non-Tait shore-cap case remains open.
 
 ## Fixed-line Fano branch
 

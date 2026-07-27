@@ -17,13 +17,13 @@ The complete `preprint-rooted-four-cut/` directory is included:
 
 - `main.tex`
 - `references.bib`
-- `output/pdf/main.pdf` (21 pages)
+- `output/pdf/main.pdf` (23 pages)
 - `README.md`
 - `AUDIT.md`
 - `NOVELTY-ASSESSMENT.md`
 - `CHECKSUMS.sha256`
 
-The abstract, first-page disclosure, introduction, README, and novelty
+The abstract, front-matter disclosure, introduction, README, and novelty
 assessment all state that the paper neither proves nor disproves five-CDC.
 
 ## Human-checkable proof and reduction notes
@@ -44,6 +44,7 @@ assessment all state that the paper neither proves nor disproves five-CDC.
 - `docs/exceptional-four-cut-surviving-split-atoms.md`
 - `docs/exceptional-four-pole-simple-cap-enumeration-reduction.md`
 - `docs/rooted-three-pole-base-pair-closure-target.md`
+- `docs/rooted-three-pole-tait-cap-closure.md`
 
 The current research state and open obligations are recorded in:
 
@@ -76,29 +77,31 @@ The branch includes all non-cache files in:
   transcripts, corpus identities, and verifier sources.
 - `search/four-pole-order24-cyclic4-cap-20260727/` — 44 files,
   1,067,314 bytes; complete retained cyclically-four order-24
-  classification and the human lower-bound proof chain.
+  classification and its corrected scope documentation.
 - `search/four-pole-order26-cyclic4-cap-20260727/` — 44 files,
   14,019,526 bytes; complete retained cyclically-four order-26
-  classification.  With the separately displayed reductions, this raises
-  only the scoped simple terminal-distinct exceptional-pole lower bound to
-  28 and does not resolve five-CDC.
+  classification.  Its 1,297 cap records and 859,911 deletion-pole rows
+  remain valid, but no global exceptional-pole lower bound follows.
 - `search/four-pole-order26-strict-cap-probe-20260727/` — 28 files,
   2,341,537 bytes; a finite retained strict-snark source probe, explicitly
-  not the pending complete order-26 classification.
+  distinct from the complete cyclically-four order-26 classification.
 - `search/mnp-h2-h5-aa-deletion-probe-20260727/` — 12 files, 129,104
   bytes; explicit \(H_2,\ldots,H_5\) prescribed-\(AA\) certificates and a
   solver-independent checker.
 
 Excluded deliberately: `__pycache__`, `.DS_Store`, private attachments,
 temporary `/private/tmp` output, compiled checker binaries, unrelated dirty
-files, broad 294 MB graph streams, and multi-gigabyte proof files.
+files, broad 294 MB graph streams, multi-gigabyte proof files, the running
+`search/rooted-three-pole-nontait-endpoint-frontier-20260727/` experiment,
+and unfinished order-28 or placeholder material.
 
 ## Validation performed before publication
 
 - Every entry in `preprint-rooted-four-cut/CHECKSUMS.sha256` passed.
-- The preprint PDF metadata reports 21 pages, and extracted first-page text
-  contains both the no-resolution statement and AI-use disclosure.
-- A clean Tectonic 0.16.9 rebuild succeeded at 21 pages and produced
+- The preprint PDF metadata reports 23 pages.  Extracted first-page text
+  contains the no-resolution statement, and page two contains the explicit
+  AI-use disclosure.
+- A clean Tectonic 0.16.9 rebuild succeeded at 23 pages and produced
   identical extracted text.  The rebuilt PDF is not byte-identical because
   Tectonic records a new creation timestamp; the committed PDF is
   authenticated by the frozen checksum instead.
@@ -111,16 +114,17 @@ files, broad 294 MB graph streams, and multi-gigabyte proof files.
 - The rooted order-17 transcript verifier reconstructed 654,676 canonical
   cores, 15,645,623 nonbridge roots, and zero base-pair violations.
 - `verify_report.py` accepted the frozen rooted-frontier report.
-- The three previously added compact package checksum ledgers passed.  The order-24
-  and \(H_2,\ldots,H_5\) independent `verify.py` programs reproduced their
-  committed JSON reports byte for byte.  The retained order-26 semantic
-  verifier was not rerun during publication preparation to avoid competing
-  with a separate complete order-26 classification already in progress;
-  its source, frozen report, and artifacts all passed their hashes.
-- The completed cyclically-four order-26 package passed both
-  `SOURCES.sha256` and `SHA256SUMS`; its independent `verify.py` replay
-  reconstructed all 1,297 source graphs and 859,911 deletion poles and
-  reproduced `report.json` byte for byte.
+- The compact package checksum ledgers passed.  The corrected order-24 and
+  order-26 cyclically-four `verify.py` programs were both replayed and
+  reproduced their committed JSON reports byte for byte.  The order-26
+  replay reconstructed all 1,297 source graphs and 859,911 deletion poles.
+  The \(H_2,\ldots,H_5\) verifier had already reproduced its committed
+  report independently.
+- The corrected rooted base-pair note and Tait-cap closure proof were
+  checked for local references, explicit scope, the mixed-relation
+  counterexample, and AI-use disclosure.  The audit withdraws the former
+  global order-26 and order-28 lower-bound conclusions while preserving the
+  exact finite cyclically-four cap classifications.
 
 No fresh full order-22 census is claimed by this publication preparation.
 The frozen reports state their exact scope and provenance.

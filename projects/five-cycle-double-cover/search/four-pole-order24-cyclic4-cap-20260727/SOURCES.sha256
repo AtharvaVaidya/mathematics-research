@@ -1,7 +1,7 @@
 55fa145872ce6da16a3915b62707fe3280d4a79402f6017590979289f2359060  ../../berge-fulkerson/search/canonical/tools/snarkhunter-2.0b/snarkhunter
 5a019a19ab30e24729d8f8e414c14fabbd70445354b44ab9d885af9dffbba6d8  ../../docs/exceptional-four-cut-surviving-split-atoms.md
 4684bb6b4796d0c4f8e13447b763da4725ccba02e5d98bbe5e123ca1eea9abf8  ../../docs/exceptional-four-pole-simple-cap-enumeration-reduction.md
-5b749ffa8b7868094945a74a34f91da92fb1d81171ec06ecc415c575df3a2eb0  ../../docs/rooted-three-pole-base-pair-closure-target.md
+05f6d4b0e44ef5176926ed4b6e2f4a1fba7cc18473a17247e1d58afdcf8e6d6f  ../../docs/rooted-three-pole-base-pair-closure-target.md
 37d5a07702260522d722867929843fadc099cf28e4a511a9b45399383d855ce4  ../four-pole-order18-exceptional-20260727/boundary_exceptional_cadical.cpp
 3f4fbb38ed3a085fb596a858598a157681b325112dafa7728069a3933a097893  ../four-pole-order18-exceptional-20260727/boundary_exceptional_csp.cpp
 ebf09db641cbff6415c26b14722eacef8c3f44eb5dd59ac884e3ea74c4c40b7c  ../four-pole-order20-cap-20260727/expand_independent_edge_deletions.cpp

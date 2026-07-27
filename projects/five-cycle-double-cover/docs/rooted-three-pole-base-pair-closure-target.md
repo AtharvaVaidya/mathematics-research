@@ -70,7 +70,7 @@ is disjoint.  Cyclically permuting \(0,1,2\), and swapping the two
 factors when necessary, gives every case with \(i\ne j\).
 \(\square\)
 
-Only one shore actually needs a base pair.  Let the seven
+For the one-sided question, let the seven
 \(3\leftrightarrow4\)-orbits, in their fixed order, be
 \[
  O_0=\{01\},\ O_1=\{02\},\ O_2=\{12\},\
@@ -89,7 +89,7 @@ P_2&DE&I&I&DI&DI&DEI&DI
 Here, for example, \(DE\) denotes
 \(\{\mathsf D,\mathsf E\}\).
 
-> **Lemma 1.2 (one-sided exceptional avoidance).**  
+> **Lemma 1.2 (one-sided relation bound).**  
 > If \(S\subseteq D_5\) is nonempty and invariant under
 > \(3\leftrightarrow4\), then for every \(i\)
 > \[
@@ -97,6 +97,13 @@ Here, for example, \(DE\) denotes
 > \bigl\{\{\mathsf E\},\{\mathsf E,\mathsf I\},
 >                    \{\mathsf D\}\bigr\}.                       \tag{6}
 > \]
+> More generally, if \(P_i\subseteq R\), then
+> \[
+> \operatorname{rel}(R,S)\notin
+> \bigl\{\{\mathsf E\},\{\mathsf D\}\bigr\}.                       \tag{7}
+> \]
+> The mixed relation \(\{\mathsf E,\mathsf I\}\) is not excluded
+> one-sidedly.
 
 ### Proof
 
@@ -105,8 +112,26 @@ relation set is the union of the corresponding entries in row \(i\)
 of (5).  No table entry is contained in \(\{\mathsf E\}\) or
 \(\{\mathsf D\}\).  The only entries avoiding \(\mathsf D\) are
 \(I\), whose nonempty union does not contain \(\mathsf E\).
-Thus none of the three relation sets in (6) can result.
+Thus none of the three relation sets in (6) can result.  If
+\(P_i\subseteq R\), then
+\(\operatorname{rel}(P_i,S)\subseteq\operatorname{rel}(R,S)\).
+The first part shows that this subset contains a relation other than
+\(\mathsf E\), and a relation other than \(\mathsf D\), proving (7).
 \(\square\)
+
+The last warning is essential.  For example,
+\[
+ P_0=\{12,03,04\},\qquad
+ S=\{01\},\qquad R=P_0\cup\{01\}
+                                                               \tag{8}
+\]
+are all \(3\leftrightarrow4\)-invariant, \(P_0\subseteq R\), and
+\[
+                    \operatorname{rel}(R,S)
+                    =\{\mathsf E,\mathsf I\}.                   \tag{9}
+\]
+Thus one may not replace \(P_i\) by an arbitrary containing root
+signature in the first assertion of Lemma 1.2.
 
 > **Theorem 1.3 (conditional elimination).**  
 > If the base-pair closure target holds, then no reduced
@@ -118,14 +143,14 @@ Thus none of the three relation sets in (6) can result.
 Lemma 4.1 of `rooted-cycle-translation-obstruction.md` proves that the
 two cap roots are nonbridges of their rooted shores.  The exact
 factorization theorem gives nonempty root signatures \(R,S\).
-Base-pair closure supplies \(P_i\subseteq R\) for some \(i\);
-closure on the second shore is not needed.  The set \(S\) is
-\(3\leftrightarrow4\)-invariant.  Lemma 1.2 excludes the three
-relation sets
+Base-pair closure supplies \(P_i\subseteq R\) and
+\(P_j\subseteq S\) for some \(i,j\).  Lemma 1.1 then puts both
+\(\mathsf I\) and \(\mathsf D\) in
+\(\operatorname{rel}(R,S)\), excluding the three relation sets
 \[
  \{\mathsf E\},\qquad
  \{\mathsf E,\mathsf I\},\qquad
- \{\mathsf D\},                                                \tag{7}
+ \{\mathsf D\},                                                \tag{10}
 \]
 which are exactly the exceptional possibilities in Corollary 3.1 of
 `exceptional-cyclic-three-root-signature-factorization.md`.
@@ -155,9 +180,9 @@ them.  Pairing all \(22^2\) masks produces only the relation sets
 \[
                          \{\mathsf I,\mathsf D\}
  \quad\text{and}\quad
-                         \{\mathsf E,\mathsf I,\mathsf D\};      \tag{8}
+                         \{\mathsf E,\mathsf I,\mathsf D\};      \tag{11}
 \]
-none produces any relation in (7).
+none produces any relation in (10).
 
 This is finite evidence, not an induction.  The next exact falsification
 search is a targeted canonical census for the first nonempty nonbridge
@@ -191,24 +216,32 @@ scoped through order 13 because the adaptive order-15 and order-17
 screens stop once they find a base pair rather than computing every
 complete signature.  The next falsification order is 19.
 
-The one-sided lemma turns this finite frontier into a cap reduction.
+The one-sided lemma gives a partial finite cap reduction.
 If an even-order cap \(G\) has a cyclic three-cut of the surviving
 \(2+2\) kind, its two rooted shores have odd orders \(n_1,n_2\) with
 \(n_1+n_2=|V(G)|\).  For \(|V(G)|\leq36\), at least one shore has
 order at most 17.  The finite base-pair theorem on that shore and
-Lemma 1.2 exclude all three exceptional gluing relations, regardless
-of the size or exact signature of the other shore.  Consequently:
+Lemma 1.2 exclude the equality-only and disjointness-only gluing
+relations, regardless of the size or exact signature of the other
+shore.  The mixed relation \(\{\mathsf E,\mathsf I\}\) remains.
+Consequently:
 
-> **Corollary 2.1 (finite cap fork through order 36).**  
+> **Corollary 2.1 (partial finite cap fork through order 36).**  
 > A vertex-minimal, two-cut-reduced, bridge-free connected simple
 > terminal-distinct four-pole of order at most 36 with an exceptional
-> exact five-colour
-> signature, if one exists, has a simple cap which is cyclically
-> \(4\)-edge-connected.
+> exact five-colour signature, if its simple cap has a cyclic
+> three-cut, can only realize the
+> \(\{\mathsf E,\mathsf I\}\) orientation of
+> \({\cal E}_4\).  The \({\cal E}_5\) signature and the
+> equality-only orientation of \({\cal E}_4\) are excluded.
 
 This corollary combines the finite order-17 theorem with the
-human-checkable simple-cap fork.  It says nothing about order 38,
-repeated terminals, nonsimple cores, or arbitrary multipoles.
+human-checkable simple-cap fork.  If both rooted shores have order at
+most 17, applying the finite theorem on both sides and using Lemma 1.1
+does exclude all three exceptional relations.  No bound on the total
+order alone forces both shore orders to be at most 17.  The corollary
+also says nothing about order 38, repeated terminals, nonsimple cores,
+or arbitrary multipoles.
 
 ## 3. Relation to cycle translations
 

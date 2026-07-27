@@ -1,6 +1,6 @@
-13dc0aae5136b87abb8dd8b1b78e1b14c421fdfe18b63600c0475be7fd02ec6d  ./README.md
-a318f58cfc82fcaaa120440a4437887d34921dcb4c1ee4bf27ec4a23b7311279  ./SOURCES.sha256
-bc110e9b7f64a190b95c4d2ed6324ac68550750f2b7a7ef8196bc030241d827a  ./THEOREM.md
+a391e51aa90feea6cb5892719ae461820afc252f4a6a99af61c9e6c2d7fedd7d  ./README.md
+d16e5c1d0463b009c819ca703de7aa8d91abd5fdd08a3d4dd5f64822f1de2ffa  ./SOURCES.sha256
+46218163a84fef9a307902423313933fae9159a367a63e59095bd4ad82d592eb  ./THEOREM.md
 64d9449e5060da4a21421a1bd79e4293f8b0c96e45eb26285fef413766b13aba  ./artifacts/cadical-full.tsv.gz
 6fd903e1c90f5344de6490ad7fd713bdc8c6811b029c960a643f352640cd997d  ./artifacts/cadical-shards/shard0.log
 9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  ./artifacts/cadical-shards/shard0.status
@@ -39,5 +39,5 @@ e4c37c3def6ca424f6166ceab6a95dc533a45d25232abaad1909ae7b50d20543  ./artifacts/cy
 37ef068ab597c6cc882eb2121d9743464b0717bc4beefab4348ef4221b6a7456  ./artifacts/cyclic4-nontait-order24.g6
 6ba22b2d0c2668b7fce505ad1ccedf605bfedebc37c6a062200b7eef64175354  ./artifacts/expand.log
 b8acb39a345feeafc62736cd0c00824ab83e3b7b570a9b48635c4916a7ab74a2  ./artifacts/snarkhunter.log
-2ce165e81478efe41df19d129aaeaa2f8938ef683131c1b5c49b3c45fd3f301b  ./report.json
-b61c66c713a3832b49a2fe1a7244d915187817fafaa5238a8e01d7af32232ca7  ./verify.py
+010e3725c5ead5d87d4a07ed7d5b9ff41953dbf5e4fad0ac277113ed6f9cb5d7  ./report.json
+3795006718a74bfc007834f78a1be06ad181ac4a08231324e82a30e5e958da0b  ./verify.py

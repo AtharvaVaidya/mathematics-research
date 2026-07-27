@@ -347,9 +347,9 @@ def main() -> int:
         ),
         "warning": (
             "Completeness of the 155-graph cyclic-4 source relies on the "
-            "retained Snarkhunter run. The finite exceptional-pole "
-            "consequence additionally uses separately proved atom and "
-            "cyclic-three reductions. This is not a universal "
+            "retained Snarkhunter run. A corrected audit withdraws the "
+            "former global exceptional-pole consequence because the "
+            "mixed cyclic-three relation remains open. This is not a universal "
             "full-signature theorem or a Five-CDC resolution."
         ),
     }

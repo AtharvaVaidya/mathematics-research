@@ -100,15 +100,16 @@ The targeted order-15 and order-17 runs establish containment but do
 not enumerate the sets of distinct masks.  This is the finite precursor
 of the open base-pair closure target; it is not an induction.
 
-A complete \(3\times7\) orbit table proves a stronger one-sided fact:
-one base pair against any nonempty invariant signature can never
-produce an exceptional relation `E`, `EI`, or `D`.  Consequently the
-order-17 finite theorem eliminates the cyclic-three branch of every
-vertex-minimal two-cut-reduced exceptional simple cap through total
-order 36; any such
-pole in that finite range must have a cyclically
-four-edge-connected cap.  `verify_report.py` checks all
-\(3\cdot127\) one-sided relation cases.
+A complete \(3\times7\) orbit table proves the exact fact that the base
+pair itself against any nonempty invariant signature never produces
+`E`, `EI`, or `D`.  It does not permit replacing the base pair by a
+containing signature: for example
+`R={12,03,04,01}` and `S={01}` give `EI`.  Consequently one order-17
+shore excludes the `E` and `D` cyclic-three branches through total
+order 36, but the mixed `EI` branch remains; if both shores lie in the
+finite frontier, their two base pairs exclude all exceptional
+relations.  `verify_report.py` checks the exact
+\(3\cdot127\) base-pair relation cases.
 
 Canonical order-\(n\) input is
 

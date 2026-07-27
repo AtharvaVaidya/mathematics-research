@@ -61,7 +61,7 @@ four-edge matching.  As algebraic setup, we first identify five
 Eulerian edge sets covering every edge twice with an
 everywhere-anisotropic flow in a four-dimensional quadratic space over
 \(\mathbb F_2\), including the exact convention for loops.  We then
-record six narrowly scoped results.
+record seven narrowly scoped results.
 First, if \(H\) has a Tait colouring in which the four marks have one
 common colour, and
 \[
@@ -92,14 +92,21 @@ equals one of the exceptional type patterns in the literature.  Missing
 root base pairs also force explicit odd proper-core cuts.  These are
 necessary restrictions, not eliminations.
 
-Fourth, two exact solvers show that every nonempty nonbridge rooted
+Fourth, we prove that a nonbridge root has one of the three base pairs
+whenever capping its three connectors by one vertex gives a
+Tait-colourable cubic graph.  One such Tait cap excludes the
+equality-only and disjointness-only exceptional root relations; two
+Tait caps exclude all three exceptional relations.  The mixed
+equality-plus-intersection relation is not excluded one-sidedly.
+
+Fifth, two exact solvers show that every nonempty nonbridge rooted
 three-pole signature through order 17 contains one of three base pairs:
 \(15\,645\,623\) roots in \(654\,676\) canonical cores are checked.
-Fifth, on the 31 cyclically \(4\)-edge-connected bridgeless non-Tait
+Sixth, on the 31 cyclically \(4\)-edge-connected bridgeless non-Tait
 cubic graphs of order 22, all \(14\,322\) independent-edge deletion
 poles have the full ten-type fixed-five boundary signature.
 
-Sixth, an exhaustive canonical computation finds no
+Seventh, an exhaustive canonical computation finds no
 \emph{Tait-colourable} connected simple cubic graph on 22 vertices
 having a universally separated four-edge matching.  Two separately
 written enumeration methods agree on \(7\,174\,735\) colourable graphs
@@ -144,7 +151,7 @@ universe.  They are not the unbounded-colour relation of
 M\'a\v cajov\'a, Mazzuoccolo, and Tabarelli; our finite computations do
 not classify colourings needing more than five coordinates.
 
-\subsection*{The six contributions}
+\subsection*{The contributions}
 
 \begin{center}
 \begin{tabularx}{\textwidth}{@{}
@@ -172,6 +179,12 @@ Theorem~\ref{thm:base-pair-certificate}
   & Failure of three rooted base pairs forces an odd proper-core cut
     carrying one common coordinate.
   & Elementary human proof; a necessary certificate only.\\
+Theorem~\ref{thm:tait-cap-closure}
+  & A Tait-colourable one-vertex cap forces one rooted base pair; the
+    exceptional consequence distinguishes one-sided from two-sided
+    closure.
+  & Elementary human proof with an explicit counterexample to the
+    overstrong one-sided inference.\\
 Theorem~\ref{thm:order17-base-pair}
   & Every nonempty nonbridge rooted three-pole signature through order
     17 contains a base pair.
@@ -1157,6 +1170,195 @@ certificate above is likewise necessary, not contradictory.  The
 further elimination here.
 \end{remark}
 
+\subsection{Tait-cap base-pair closure}
+
+Adjoin one new vertex to the three connector ends of a rooted
+three-pole \(Q\), producing a cubic graph \(\widehat Q\).
+
+\begin{theorem}[Tait-cap closure]
+\label{thm:tait-cap-closure}
+Let \((Q,r)\) be normalized by the connector word \(\tau\) in
+\eqref{eq:tau}.  If \(\widehat Q\) is Tait-colourable and \(r\) is a
+nonbridge of the proper graph of \(Q\), then
+\[
+ \mathcal P_i\subseteq\mathcal R_5(Q,r)
+ \qquad\text{for some }i\in\{0,1,2\}.                 \tag{6.11}
+\]
+\end{theorem}
+
+\begin{proof}
+Fix a Tait colouring of \(\widehat Q\).  The three cap edges have
+distinct colours.  Map their colours, in physical connector order, to
+\[
+                         01,\qquad02,\qquad12.
+\]
+Give every edge of \(\widehat Q\) the \(D_5\)-label assigned to its
+colour.  Every cubic vertex sees all three labels, whose symmetric
+difference is zero.  Deleting the cap vertex therefore gives a
+normalized root labelling of \(Q\).
+
+The root \(r\) receives one of \(01,02,12\).  Since it is a nonbridge,
+the elementary bridge--cycle equivalence gives a cycle \(C\) of proper
+edges containing \(r\).  Translate every label on \(C\), first by
+\[
+                         h_3=0123
+\]
+and, in a separate copy of the original labelling, by
+\[
+                         h_4=0124.
+\]
+The only labels initially occurring on \(C\) are \(01,02,12\), and
+\[
+\begin{array}{c|ccc}
+ &01&02&12\\ \hline
+{}+h_3&23&13&03\\
+{}+h_4&24&14&04.
+\end{array}                                                    \tag{6.12}
+\]
+All six outputs remain in \(D_5\).  At a cycle vertex the same
+translation is added on two incident edge-ends, so parity is unchanged;
+the proper cycle contains no connector semiedge.  Thus both translations
+are normalized root labellings by
+Lemma~\ref{lem:cycle-translation}.  According as the original root
+label is \(12,02,\) or \(01\), its three displayed values are exactly
+\(\mathcal P_0,\mathcal P_1,\) or \(\mathcal P_2\).
+\end{proof}
+
+The one-sided exceptional consequence requires care.  Let
+\[
+\begin{array}{c|ccccccc}
+ &\{01\}&\{02\}&\{12\}&\{03,04\}&\{13,14\}&\{23,24\}&\{34\}\\ \hline
+\mathcal P_0&I&I&DE&DEI&DI&DI&DI\\
+\mathcal P_1&I&DE&I&DI&DEI&DI&DI\\
+\mathcal P_2&DE&I&I&DI&DI&DEI&DI
+\end{array}                                                    \tag{6.13}
+\label{eq:tait-relation-table}
+\]
+record the cross-relations between a base pair and each stabilizer
+orbit; concatenated letters denote sets of relations.
+
+\begin{corollary}[Corrected Tait-shore consequence]
+\label{cor:tait-shore}
+In the cap geometry of Proposition~\ref{prop:factorization}, assume
+that \(R\) and \(S\) are nonempty:
+\begin{enumerate}[label=(\roman*),leftmargin=2.4em]
+\item if either \(\widehat Q_1\) or \(\widehat Q_2\) is
+  Tait-colourable, then
+  \[
+  \operatorname{rel}(R,S)\notin
+                \bigl\{\{\mathsf E\},\{\mathsf D\}\bigr\};
+  \]
+\item if both shore caps are Tait-colourable, then
+  \[
+  \operatorname{rel}(R,S)\notin
+  \bigl\{\{\mathsf E\},\{\mathsf E,\mathsf I\},
+                         \{\mathsf D\}\bigr\}.
+  \]
+\end{enumerate}
+Consequently one Tait shore excludes \(\mathcal E_5\) and the
+equality-only orientation of \(\mathcal E_4\); two Tait shores exclude
+both exceptional fixed-five signatures.
+\end{corollary}
+
+\begin{proof}
+Suppose first that \(\widehat Q_1\) is Tait-colourable.
+Lemma~\ref{lem:cap-nonbridge} and
+Theorem~\ref{thm:tait-cap-closure} give
+\(\mathcal P_i\subseteq R\).  The other signature \(S\) is nonempty and
+is a union of columns in \eqref{eq:tait-relation-table}.  Every nonempty union contains a
+relation other than \(\mathsf E\), and a relation other than
+\(\mathsf D\).  Since
+\(\operatorname{rel}(\mathcal P_i,S)\subseteq
+\operatorname{rel}(R,S)\), equality-only and disjointness-only are
+impossible.
+
+If both caps are Tait-colourable, there are base pairs
+\(\mathcal P_i\subseteq R\) and \(\mathcal P_j\subseteq S\).
+For \(i=j=0\), the pairs \(12,03\) and \(03,04\) exhibit
+\(\mathsf D\) and \(\mathsf I\), respectively; coordinate permutations
+give the other diagonal cases.  For \(i=0,j=1\), the pairs \(12,02\)
+and \(03,14\) exhibit \(\mathsf I\) and \(\mathsf D\); cyclic
+permutations of \(0,1,2\), and swapping the factors, give all
+off-diagonal cases.  Hence both \(\mathsf I\) and \(\mathsf D\) occur
+in \(\operatorname{rel}(R,S)\), excluding all three sparse exceptional
+sets.  Corollary~\ref{cor:exceptional-rooted} identifies those sets
+with the stated exceptional orientations.
+\end{proof}
+
+\begin{remark}[The mixed relation survives one-sidedly]
+The stronger one-sided claim is false.  The invariant sets
+\[
+ R=\mathcal P_0\cup\{01\},\qquad S=\{01\}
+\]
+satisfy \(\mathcal P_0\subseteq R\) but
+\[
+                    \operatorname{rel}(R,S)
+                    =\{\mathsf E,\mathsf I\}.            \tag{6.14}
+\]
+More precisely, put
+\[
+ U_0=\{01,02\},\qquad U_1=\{01,12\},\qquad
+ U_2=\{02,12\}.
+\]
+If \(\mathcal P_i\subseteq R\) and the cross-relation is exactly
+\(\{\mathsf E,\mathsf I\}\), Table~\eqref{eq:tait-relation-table} forces
+\[
+                      \varnothing\ne S\subseteq U_i,
+ \qquad R\cap S\ne\varnothing.                         \tag{6.15}
+\label{eq:tait-mixed-constraint}
+\]
+These are necessary restrictions, not an exclusion.
+\end{remark}
+
+\begin{corollary}[Conditional three-sum path consequence]
+\label{cor:tait-path}
+Suppose a 3-connected simple cap \(G=P+\{e,f\}\) satisfies the
+cyclic-three factorization hypotheses above and has a cubic
+three-sum factor tree in which every principal cyclic three-edge cut
+separates \(e\) from \(f\).  Then the factor tree is a path between
+the factors containing \(e\) and \(f\).
+
+If \(\mathcal C_5(P)=\mathcal E_5\), both endpoint factors are
+non-Tait.  If
+\(\mathcal C_5(P)=\mathcal E_4(i;j,k)\), an endpoint factor is
+non-Tait whenever its adjacent cut has pairing \(i\); a Tait endpoint
+is possible only for pairing \(j\) or \(k\), and then the opposite
+root signature satisfies \eqref{eq:tait-mixed-constraint}.  If the tree has one node,
+that node is the non-Tait cap supplied by
+Theorem~\ref{thm:simple-cap-reduction}.
+\end{corollary}
+
+\begin{proof}
+Let \(u,v\) be the factor-tree nodes containing \(e,f\).  In a tree,
+the edges whose deletion separates \(u\) and \(v\) are exactly the
+edges of the \(u\)-\(v\) path.  By hypothesis every tree edge has this
+property, so there is no off-path edge and the tree is a path.
+
+For a nontrivial path, the shore cap at an end cut is precisely the
+endpoint factor.  Corollary~\ref{cor:tait-shore} excludes a Tait
+endpoint when the corresponding relation is
+\(\{\mathsf D\}\) or \(\{\mathsf E\}\).
+Corollary~\ref{cor:exceptional-rooted} gives disjointness-only for
+\(\mathcal E_5\), equality-only for the \(\pi=i\) orientation of
+\(\mathcal E_4\), and the mixed relation for
+\(\pi\in\{j,k\}\).  The last case is restricted by
+\eqref{eq:tait-mixed-constraint}, as claimed.
+\end{proof}
+
+\begin{remark}[Premise supplied by the minimal simple-cap fork]
+In the vertex-minimal, two-cut-reduced simple-cap fork, the elementary
+cut analysis shows that every nontrivial cyclic three-edge cut
+separates \(e\) from \(f\): cuts meeting one or both cap edges leave a
+forbidden proper one- or two-edge cut, while a terminal-free shore of
+a cut disjoint from the cap edges can be replaced by one cubic vertex
+without changing the exact fixed-five signature.  The published
+decomposition theorem imported as \ref{imp:decomp} assumes
+3-connectivity, so Corollary~\ref{cor:tait-path} states that premise
+explicitly.  The simple-cap hypotheses alone establish
+3-edge-connectivity; they must not be silently promoted to
+3-vertex-connectivity.
+\end{remark}
+
 \section{Fixed-five rooted finite frontiers}
 
 \subsection{A human-checkable cap reduction}
@@ -1556,6 +1758,11 @@ language for the later rooted interface.  Theorem
 exceptional three-pole interface, but only conditionally on a singleton
 root signature; Theorem~\ref{thm:base-pair-certificate} turns a wider
 failure into an ordinary cut certificate.  Neither is an elimination.
+Theorem~\ref{thm:tait-cap-closure} proves base-pair closure for the
+unbounded class of rooted poles whose one-vertex cap is Tait-colourable.
+Corollary~\ref{cor:tait-shore} deliberately distinguishes the valid
+one-sided exclusions from the false claim that one Tait shore removes
+the mixed \(\{\mathsf E,\mathsf I\}\) relation.
 Theorems~\ref{thm:order17-base-pair} and
 \ref{thm:cyclic4-cap-census} establish exact finite frontiers in the
 fixed-five simple-core model, not universal signature theorems.

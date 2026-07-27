@@ -69,6 +69,8 @@ specialist priority search, the following appear new to the authors:
 - the cycle-translation blocker theorem and its
   \(K_{1,4}\)/non-bipartite support classification;
 - the complement-cycle/base-pair cut certificate;
+- the constructive Tait-cap closure theorem, which turns a Tait colouring
+  and any proper root cycle into one complete rooted base pair;
 - the finite theorem that every nonempty nonbridge rooted signature through
   order 17 contains a base pair;
 - the full-ten-type theorem for all 14,322 independent-edge deletion poles
@@ -82,6 +84,15 @@ zero-citation database result—are weak evidence of priority.
 The four-mark core theorem and forbidden-edge gate may also be new in their
 exact hypotheses, but their ingredients are published and elementary. Their
 novelty is the combination, not a new general cycle theorem.
+
+The Tait-cap theorem is also elementary once its two cycle translations are
+seen. Its responsible novelty claim is the exact rooted formulation and
+exceptional-interface consequence, not the underlying Tait-colouring or
+cycle-switch ideas. A hostile audit disproved the initially stronger
+one-sided consequence: base-pair containment does not exclude the mixed
+\(\{\mathsf E,\mathsf I\}\) relation. The corrected statement is what the
+manuscript claims. A global order-28 lower bound that depended on the false
+inference has been withdrawn.
 
 ## What has actually been checked
 
@@ -109,7 +120,8 @@ frozen. It is deliberately not claimed.
 
 1. A human graph theorist should verify every displayed proof, especially
    the imported theorem hypotheses, fixed-five versus arbitrary-colour
-   distinction, rooted gluing, and proper-core cut parity.
+   distinction, rooted gluing, proper-core cut parity, and the corrected
+   one-sided versus two-sided Tait-shore distinction.
 2. A separate person should reproduce each finite theorem from canonical
    input on an independently provisioned machine and compare retained
    digests.
@@ -118,7 +130,7 @@ frozen. It is deliberately not claimed.
 4. The source, exact generator version, raw logs, compressed transcripts,
    and hashes should be archived at a stable DOI.
 5. The human author should decide authorship and responsibility under the
-   target venue's AI policy and retain the page-one AI disclosure.
+   target venue's AI policy and retain the front-matter AI disclosure.
 
 Until those steps are complete, the correct label is:
 

@@ -98,13 +98,15 @@ done
 ```
 
 The order-24 and order-26 cyclically-four packages are complete for their
-documented retained sources.  Together with the separately proved
-reductions, the latter raises only the scoped simple terminal-distinct
-exceptional-pole lower bound to 28.  The separate strict-snark order-26
-package remains a finite retained-source control.  The \(H_2,\ldots,H_5\)
-package uses explicit positive edge labellings, so its \(AA\) certificates
-can be checked without trusting a SAT solver.  None of these computations
-resolves five-CDC.
+documented retained sources.  They do not imply a global exceptional-pole
+lower bound: the earlier reduction of the mixed cyclic-three relation to
+this cap class used an invalid one-sided base-pair inference.  The separate
+strict-snark order-26 package remains a finite retained-source control.
+The \(H_2,\ldots,H_5\) package uses explicit positive edge labellings, so
+its \(AA\) certificates can be checked without trusting a SAT solver.
+The corrected Tait-cap theorem is human-checkable in
+`docs/rooted-three-pole-tait-cap-closure.md`; non-Tait shore caps remain
+open.  None of these computations resolves five-CDC.
 
 ## Required recorded environment
 

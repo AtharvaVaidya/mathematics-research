@@ -918,13 +918,14 @@ Open obligations:
     \(654\,676\) canonical order-17 cores.  Their eight complete
     streamed transcript digests agree shard by shard, and both find
     zero violations.
-    A complete \(3\times7\) relation table further proves that one base
-    pair against any nonempty invariant signature avoids all three
-    exceptional relations.  Therefore the finite order-17 theorem
-    eliminates the cyclic-three cap fork for a two-cut-reduced atom
-    through total order 36,
-    although universal closure remains open and
-    cyclically-four-connected caps survive.  See
+    A complete \(3\times7\) relation table proves this only for the base
+    pair itself.  The inference to an arbitrary containing signature is
+    false: \(R=\{12,03,04,01\}\) and \(S=\{01\}\) give the mixed
+    exceptional relation \(\{\mathsf E,\mathsf I\}\).  Hence one
+    order-17 shore excludes equality-only and disjointness-only through
+    total order 36, but not the mixed \({\cal E}_4\) orientation.
+    Two shores within the finite frontier do exclude all exceptional
+    relations.  See
     `docs/rooted-three-pole-base-pair-closure-target.md`.
 58. **Five-CDC is exactly an anisotropic-flow problem in the elliptic
     four-space:** on the even-weight subspace \(V\leq\mathbb F_2^5\),
@@ -937,8 +938,10 @@ Open obligations:
     reformulation includes loops and parallel edges but is not a proof
     of existence and does not add orientability.  See
     `docs/five-cdc-elliptic-quadratic-flow-model.md`.
-59. **The simple terminal-distinct exceptional-pole lower bound reaches
-    order 28:** the simple-cap theorem reduces each even order to all
+59. **The claimed simple terminal-distinct lower bound of order 28 is
+    withdrawn; the cyclically-four cap censuses remain valid:** the
+    simple-cap theorem reduces the cyclically-four branch at each even
+    order to all
     independent-edge deletions from bridgeless non-Tait cubic caps.
     At order 22, two independent filters select the same \(12\,892\)
     caps from the complete \(7\,319\,447\)-graph canonical source.  Their
@@ -946,18 +949,19 @@ Open obligations:
     direct finite-domain solvers with matching complete transcript
     digests and zero exceptional hits.  A third verifier checks the
     canonical identities, cap premises, the entire deletion stream, and
-    both decision ledgers.  The exceptional-atom descent and rooted
-    base-pair theorem further show that any first exception through order
-    36 has a cyclically 4-edge-connected cap.  Snarkhunter generates 155
+    both decision ledgers.  The former proof that any first exception
+    through order 36 has a cyclically 4-edge-connected cap used the false
+    one-sided inference corrected in item 57.  Snarkhunter generates 155
     such non-Tait caps at order 24 and 1,297 at order 26.  Both exact
     classifiers give full mask `0x3ff` on all \(86\,490\) order-24 and
     \(859\,911\) order-26 deletion poles.  A solver-independent verifier
     reconstructs the latter stream and checks both complete tables and all
-    shard logs.  Therefore no bridge-free connected simple
-    terminal-distinct four-pole through order 26 has an exceptional exact
-    five-colour \(D_5\) signature; any such simple pole has even order at
-    least 28.  This does not cover repeated terminals, nonsimple cores,
-    unbounded-colour CDC signatures, or order 28.
+    shard logs.  Therefore every retained cyclically-four cap deletion
+    has full signature, but a mixed-orientation cyclic-three atom is not
+    reduced to that corpus.  No global lower bound for all bridge-free
+    connected simple terminal-distinct poles follows.  This also does not
+    cover repeated terminals, nonsimple cores, or unbounded-colour CDC
+    signatures.
     See `search/four-pole-order26-cyclic4-cap-20260727/`.
 60. **The quotient-lift theorem has an exact one-cycle
     component-parity normal form:**
@@ -1018,3 +1022,16 @@ Open obligations:
     the coverage.  This is finite evidence for the focused cap lift, not
     its universal proof.  See
     `search/mnp-h2-h5-aa-deletion-probe-20260727/`.
+64. **The rooted base-pair target is proved whenever the one-vertex cap
+    is Tait-colourable:** normalize a Tait colouring to the connector
+    triangle \(01,02,12\).  A proper cycle through the nonbridge root can
+    be translated by \(0123\) and \(0124\); the two translations and the
+    original labelling realize exactly one of the three base pairs.  One
+    Tait cap excludes equality-only and disjointness-only; two Tait caps
+    exclude all exceptional relations.  The mixed
+    \(\{\mathsf E,\mathsf I\}\) relation survives one-sidedly.  In the
+    three-sum decomposition of a minimal exceptional cap, the factor tree
+    is a path.  Both endpoint factors are non-Tait for \({\cal E}_5\);
+    an \({\cal E}_4\) endpoint may be Tait only at a mixed-orientation
+    end cut, with the opposite root signature correspondingly restricted.
+    See `docs/rooted-three-pole-tait-cap-closure.md`.
