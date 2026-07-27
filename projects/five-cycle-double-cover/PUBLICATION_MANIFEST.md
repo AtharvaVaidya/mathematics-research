@@ -41,6 +41,9 @@ assessment all state that the paper neither proves nor disproves five-CDC.
 - `docs/rooted-four-mark-p4-row-star-reduction.md`
 - `docs/rooted-four-mark-singleton-endpoint-closure.md`
 - `docs/order22-universal-four-separation-screen.md`
+- `docs/exceptional-four-cut-surviving-split-atoms.md`
+- `docs/exceptional-four-pole-simple-cap-enumeration-reduction.md`
+- `docs/rooted-three-pole-base-pair-closure-target.md`
 
 The current research state and open obligations are recorded in:
 
@@ -71,6 +74,15 @@ The branch includes all non-cache files in:
 - `search/four-pole-order22-cap-20260727/` — 84 files, 23,728,989
   bytes; completed cyclically-four order-22 cap-slice records, compressed
   transcripts, corpus identities, and verifier sources.
+- `search/four-pole-order24-cyclic4-cap-20260727/` — 44 files,
+  1,067,314 bytes; complete retained cyclically-four order-24
+  classification and the human lower-bound proof chain.
+- `search/four-pole-order26-strict-cap-probe-20260727/` — 28 files,
+  2,341,537 bytes; a finite retained strict-snark source probe, explicitly
+  not the pending complete order-26 classification.
+- `search/mnp-h2-h5-aa-deletion-probe-20260727/` — 12 files, 129,104
+  bytes; explicit \(H_2,\ldots,H_5\) prescribed-\(AA\) certificates and a
+  solver-independent checker.
 
 Excluded deliberately: `__pycache__`, `.DS_Store`, private attachments,
 temporary `/private/tmp` output, compiled checker binaries, unrelated dirty
@@ -94,6 +106,12 @@ files, broad 294 MB graph streams, and multi-gigabyte proof files.
 - The rooted order-17 transcript verifier reconstructed 654,676 canonical
   cores, 15,645,623 nonbridge roots, and zero base-pair violations.
 - `verify_report.py` accepted the frozen rooted-frontier report.
+- All three newer compact package checksum ledgers passed.  The order-24
+  and \(H_2,\ldots,H_5\) independent `verify.py` programs reproduced their
+  committed JSON reports byte for byte.  The retained order-26 semantic
+  verifier was not rerun during publication preparation to avoid competing
+  with a separate complete order-26 classification already in progress;
+  its source, frozen report, and artifacts all passed their hashes.
 
 No fresh full order-22 census is claimed by this publication preparation.
 The frozen reports state their exact scope and provenance.

@@ -78,6 +78,30 @@ warnings, counts, source hashes, and transcript identities are recorded in
 `search/four-pole-order22-cap-20260727/`.  This publication preparation did
 not claim a fresh independent full replay.
 
+The three newer compact four-pole packages have self-contained semantic
+verifiers and checksum ledgers:
+
+```sh
+for package in \
+  search/four-pole-order24-cyclic4-cap-20260727 \
+  search/four-pole-order26-strict-cap-probe-20260727 \
+  search/mnp-h2-h5-aa-deletion-probe-20260727
+do
+  (
+    cd "$package"
+    python3 verify.py > /tmp/"$(basename "$package")"-report.json
+    cmp /tmp/"$(basename "$package")"-report.json report.json
+    shasum -a 256 -c SHA256SUMS
+  )
+done
+```
+
+The order-24 package is complete for its documented cyclically-four source.
+The order-26 package is only a finite retained strict-snark probe; it is not
+the still-pending complete order-26 classification.  The \(H_2,\ldots,H_5\)
+package uses explicit positive edge labellings, so its \(AA\) certificates
+can be checked without trusting a SAT solver.
+
 ## Required recorded environment
 
 The byte-level audit was made on macOS arm64 with:

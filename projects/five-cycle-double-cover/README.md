@@ -59,6 +59,29 @@ All four PDFs prominently disclose substantive AI involvement and
 explicitly state their scope.  Their novelty assessments are provisional
 pending independent expert literature review.
 
+## Current compact four-pole frontier
+
+Three compact finite packages sharpen the fixed-five four-pole boundary
+without claiming a universal theorem:
+
+- [`search/four-pole-order24-cyclic4-cap-20260727/`](search/four-pole-order24-cyclic4-cap-20260727/)
+  gives a complete two-implementation classification of the retained
+  155-graph cyclically 4-edge-connected non-Tait order-24 source.  All
+  86,490 independent-edge deletion poles have full fixed-five boundary
+  signature.  Combined with the separately displayed reductions, this
+  raises the simple terminal-distinct exceptional-pole lower bound to 26.
+- [`search/four-pole-order26-strict-cap-probe-20260727/`](search/four-pole-order26-strict-cap-probe-20260727/)
+  checks all 185,640 deletion poles from a retained 280-graph strict-snark
+  source.  Every row again has full signature, but this is explicitly not
+  a census of every order-26 non-Tait graph.
+- [`search/mnp-h2-h5-aa-deletion-probe-20260727/`](search/mnp-h2-h5-aa-deletion-probe-20260727/)
+  supplies 394 explicit edge-labelling certificates covering all 97,608
+  independent edge pairs in the reconstructed \(H_2,\ldots,H_5\) family.
+  Each certificate directly proves the prescribed \(AA\) boundary state.
+
+Each package has a solver-independent verifier, frozen checksums, precise
+source limitations, and an AI-use disclosure.  None resolves five-CDC.
+
 ## Fixed-line Fano branch
 
 The standard five-cycle double cover conjecture remains unresolved.  The

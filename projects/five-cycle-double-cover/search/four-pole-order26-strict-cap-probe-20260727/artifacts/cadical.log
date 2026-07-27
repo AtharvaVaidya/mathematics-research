@@ -1,0 +1,4 @@
+progress rows=50000 queries=500000 hits=0
+progress rows=100000 queries=1000000 hits=0
+progress rows=150000 queries=1500000 hits=0
+SUMMARY implementation=cadical mode=full rows=185640 queries=1856400 sat=1856400 hits=0
