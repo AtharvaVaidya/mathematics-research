@@ -72,9 +72,19 @@ A later hostile audit also corrected an overstrong one-sided inference from
 base-pair containment. One Tait shore rules out equality-only and
 disjointness-only relations, but the mixed equality/intersection relation can
 survive. The paper gives the exact invariant-signature counterexample and
-states the three-sum path consequence only with the 3-connectivity premise
-required by the cited decomposition theorem. A dependent project-level claim
-of a global order-28 lower bound was withdrawn; that claim is not made here.
+discharges the 3-connectivity premise required by the cited decomposition
+theorem: a simple bridgeless cubic cap with no cyclic two-edge cut has no
+one- or two-vertex cut. A dependent project-level claim of a global order-28
+lower bound was withdrawn; that claim is not made here.
+
+A companion human reduction for the remaining mixed relation has also
+survived hostile audit in conditional form. It tracks a three-label
+**fork triple** \(\{qr,ps,pt\}\), not cardinality alone, while contracting
+endpoint \(K_4\) factors. Any label meeting all three fork edges is one of
+\(\{pq,pr\}\), so two path-rooted shores with fork triples cannot have a
+relation without a disjoint pair. The required triangle-free
+3-connected finite screen through order 24 is still running. It is not
+claimed here, and the order-28 lower bound remains withdrawn.
 
 Before public submission:
 

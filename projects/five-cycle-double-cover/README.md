@@ -24,7 +24,7 @@ submission.
 ## Main research drafts
 
 - [`preprint-rooted-four-cut/output/pdf/main.pdf`](preprint-rooted-four-cut/output/pdf/main.pdf)
-  is a 23-page structural and computer-assisted research report on marked
+  is a 24-page structural and computer-assisted research report on marked
   circuits and fixed-five rooted interfaces.  It includes human-checkable
   proofs of the exact elliptic-flow reformulation, a four-mark closure
   theorem, a forbidden-root cut gate, and the corrected Tait-cap closure;
@@ -94,7 +94,21 @@ The corrected human proof
 shows that a Tait-colourable one-vertex shore cap forces a base pair in its
 root signature.  One such shore excludes only the equality-only and
 disjointness-only relations; two such shores exclude all three exceptional
-relations.  The non-Tait shore-cap case remains open.
+relations.
+
+The frozen
+[`search/rooted-three-pole-nontait-endpoint-frontier-20260727/`](search/rooted-three-pole-nontait-endpoint-frontier-20260727/)
+package extends endpoint base-pair closure through factor order 26 using
+two independent classifiers and a solver-independent replay.  It gives cap
+order at least 54 for equality-only or disjointness-only cyclic-three
+relations.  The mixed relation remains open.
+
+The human-checkable
+[`docs/rooted-cap-triangle-induction.md`](docs/rooted-cap-triangle-induction.md)
+reduces that mixed branch through cap order 26 to a pending triangle-free
+3-connected shore screen through order 24.  Its local fork-triple tables
+have an exhaustive standard-library checker, but the finite screen is still
+running and no order-28 lower bound is claimed.
 
 ## Fixed-line Fano branch
 

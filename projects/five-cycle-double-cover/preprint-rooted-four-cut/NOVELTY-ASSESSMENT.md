@@ -71,6 +71,8 @@ specialist priority search, the following appear new to the authors:
 - the complement-cycle/base-pair cut certificate;
 - the constructive Tait-cap closure theorem, which turns a Tait colouring
   and any proper root cycle into one complete rooted base pair;
+- the companion path-rooted fork-triple induction, conditional on
+  triangle-free base-pair closure and not on the unfinished finite screen;
 - the finite theorem that every nonempty nonbridge rooted signature through
   order 17 contains a base pair;
 - the full-ten-type theorem for all 14,322 independent-edge deletion poles
@@ -92,7 +94,20 @@ cycle-switch ideas. A hostile audit disproved the initially stronger
 one-sided consequence: base-pair containment does not exclude the mixed
 \(\{\mathsf E,\mathsf I\}\) relation. The corrected statement is what the
 manuscript claims. A global order-28 lower bound that depended on the false
-inference has been withdrawn.
+inference has been withdrawn. The later cap-connectivity repair is elementary:
+bridgelessness plus absence of a cyclic two-edge cut forces a simple cubic
+cap to be 3-connected. It restores the decomposition premise, not the false
+one-sided relation inference.
+
+The fork-triple induction required its own correction during hostile audit.
+The statement “at least three labels” is too weak:
+\(\{01,02,12\}\) paired with itself has the mixed
+equality/intersection relation. The repaired theorem preserves the exact
+fork shape \(\{qr,ps,pt\}\). Its common intersectors are only
+\(\{pq,pr\}\), which is the structural fact needed for the conditional
+mixed-branch reduction. This human reduction appears new provisionally,
+but no finite order-28 consequence is claimed until the independent
+triangle-free screen is complete.
 
 ## What has actually been checked
 
@@ -130,7 +145,7 @@ frozen. It is deliberately not claimed.
 4. The source, exact generator version, raw logs, compressed transcripts,
    and hashes should be archived at a stable DOI.
 5. The human author should decide authorship and responsibility under the
-   target venue's AI policy and retain the front-matter AI disclosure.
+   target venue's AI policy and retain the page-one AI disclosure.
 
 Until those steps are complete, the correct label is:
 

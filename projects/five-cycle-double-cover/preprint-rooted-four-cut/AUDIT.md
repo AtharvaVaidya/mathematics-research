@@ -225,19 +225,102 @@ An independent exhaustive replay checked all three base pairs against all
 127 nonempty invariant signatures and reproduced the displayed
 \(3\times7\) orbit table. It also reproduced the counterexample above.
 
-The factor-tree consequence received a second scope correction. The
-minimal simple-cap argument proves that every relevant cyclic three-cut
-separates the cap edges and proves 3-edge-connectivity. The cited published
-decomposition theorem assumes 3-vertex-connectivity. The preprint therefore
-assumes a 3-connected cap (or, equivalently for the deduction, that the
-factor tree has already been supplied); it does not promote
-3-edge-connectivity to 3-connectivity. Under that premise the tree is a path.
+The factor-tree consequence initially received a second scope correction
+because the cited published decomposition theorem assumes
+3-vertex-connectivity. A subsequent elementary audit discharged rather than
+assumed that premise. The minimal simple cap is simple, bridgeless, cubic,
+and has no cyclic two-edge cut. A cutvertex would expose a bridge. A
+two-vertex cut forces two three-edge attachments, and adjoining to one
+component the vertex receiving two attachments exposes a cyclic two-edge
+cut. Thus the cap is 3-connected and the decomposition theorem applies; the
+factor tree is a path.
 Both endpoints are non-Tait in the disjointness-only case. In the mixed
 \(\mathcal E_4\) case, only an equality-only endpoint is forced non-Tait.
 
 This audit also withdrew a dependent project-level global order-28 lower
 bound. The finite cyclically-four order-26 classification remains valid, but
 it does not by itself reduce arbitrary exceptional poles to that class.
+
+## Cap connectivity and fork-triple induction
+
+The repaired cap-connectivity argument was checked line by line. Let \(G\)
+be simple, cubic, bridgeless, and without a cyclic two-edge cut. A
+cutvertex would leave some component attached by one incident edge, making
+that edge a bridge. If \(\{u,v\}\) is a two-vertex cut, every component of
+\(G-\{u,v\}\) has at least three boundary edges. A two-edge boundary has,
+on either shore \(X\),
+\[
+ |E(G[X])|=(3|X|-2)/2.
+\]
+Parity excludes \(|X|=1\), simplicity excludes \(|X|=2\), and every larger
+shore contains a cycle. Thus such a boundary would be a forbidden cyclic
+two-edge cut. The six incidences at \(u,v\) then force \(uv\notin E(G)\),
+exactly two components with three attachments each, and a \(2+1\)
+attachment distribution. Adding to one component the vertex receiving its
+two attachments creates another two-edge cut; the same count makes both
+shores cyclic. Hence \(G\) is 3-connected. An independent exhaustive
+small-graph check found no counterexample through order 12.
+
+The subsequent triangle induction was audited against
+`docs/rooted-cap-triangle-induction.md`. The following points were checked
+independently.
+
+- Contracting a triangle in a simple 3-connected cubic graph of order
+  greater than four preserves simplicity and 3-connectivity. Its external
+  neighbours are distinct; bridge and cyclic-two-cut obstructions lift
+  through the triangle.
+- The \(D_5\) contraction/expansion rule is bijective: the three external
+  labels XOR to zero, and each internal triangle edge receives the label
+  opposite it. A root outside the triangle, including an external edge,
+  therefore retains its exact normalized signature.
+- A root edge inside the triangle has precisely the three possible labels
+  \(\{12,03,04\}\) after local normalization. These form a fork triple
+  \(Q(p;q,r;s,t)=\{qr,ps,pt\}\).
+- At a triangle containing the deleted connector vertex, the three
+  effective connector words and all their coordinate normalizations
+  reproduce the displayed base-pair table. More generally, one fixed
+  inverse normalization acts simultaneously on all three labels of a
+  contracted fork, so it maps that fork to another fork.
+- When the connector vertex and root are both on the triangle, the
+  remaining unrooted three-pole admits every ordered connector triangle by
+  global \(S_5\)-transitivity. Expanding the three required words realizes
+  \(12,03,04\).
+- A triangle cannot cross a principal cyclic three-cut because that would
+  put two cut edges at one shore vertex. A cyclically-four factor with a
+  triangle is \(K_4\); an internal \(K_4\) loses two distinct gluing
+  vertices, so exposed triangles occur only at the path ends. Connector-end
+  contraction removes one \(K_4\) factor and preserves the path-rooted
+  premises.
+
+The first draft retained only the conclusion \(|R|\ge3\), which was
+insufficient: \(R=S=\{01,02,12\}\) are invariant, contain no standard base
+pair, and satisfy
+\(\operatorname{rel}(R,S)=\{\mathsf E,\mathsf I\}\).
+The corrected fork shape closes that gap. If
+\(Q(p;q,r;s,t)=\{qr,ps,pt\}\subseteq R\) and the cross-relation has no
+disjoint pair, every \(b\in S\) must meet all three fork labels. Meeting
+\(ps\) and \(pt\) forces \(p\in b\) or \(b=st\); the latter misses \(qr\).
+Therefore \(S\subseteq\{pq,pr\}\). Applying the fork induction to the
+opposite shore is impossible because a fork has three distinct labels.
+
+The upgraded standard-library checker and an independently written replay
+both verify the three local root values, all connector normalizations, all
+three base-pair rows, all 30 fork triples, coordinate-permutation closure,
+and the two-element common-intersector set of every fork. The frozen hashes
+are:
+
+```text
+checker 2c4dc8f501a3eb0db354146ae1ee9e83231cfe9d45af97b5fa03780d08481006
+result  1047a5ddbe98c641cdae37a81c7e4bf30d50a6171fee612eca05fd964b8ead74
+```
+
+For a cap of order at most 26, the two capped shores of a principal cut
+have total order at most 28 and each has order at least four, hence each
+has order at most 24. The resulting mixed-branch elimination remains
+conditional on the triangle-free 3-connected screen through order 24.
+That screen was still running at this audit and was not treated as passed.
+No order-28 lower bound or Five-CDC resolution is restored by the human
+argument alone.
 
 ## Finite rooted frontiers
 

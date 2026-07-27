@@ -147,13 +147,24 @@ table forces
 \]
 These are necessary constraints, not an exclusion.
 
-There is also a useful decomposition form, with one additional premise
-made explicit.  Under the vertex-minimal and two-cut-reduced hypotheses
-of the simple-cap fork, every nontrivial cyclic three-cut separates the
-two cap edges \(e,f\).  If the cap is also 3-connected, the published
-cubic three-sum decomposition theorem applies; more generally, it is
-enough to be given a factor-incidence tree whose edges are the relevant
-cyclic three-cuts.  That tree is a path:
+There is also a useful decomposition form.  Under the vertex-minimal
+and two-cut-reduced hypotheses of the simple-cap fork, every nontrivial
+cyclic three-cut separates the two cap edges \(e,f\).  The cap is in
+fact 3-connected.  The fork already proves that it is simple,
+bridgeless, cubic, and has no cyclic two-edge cut.  A cutvertex in a
+bridgeless cubic graph would leave one component attached by only one
+of the three incident edges, making that edge a bridge.  If
+\(\{u,v\}\) were a two-vertex cut, every component of
+\(G-\{u,v\}\) would have at least three boundary edges: a smaller
+boundary would be a bridge or, by cubic degree counting and simplicity,
+a cyclic two-edge cut.  The six incidences at \(u,v\) then force
+\(uv\notin E(G)\), exactly two components with three boundary edges
+each, and a \(2+1\) attachment to \(u,v\).  Adjoining to one component
+the vertex receiving two of its boundary edges exposes a cyclic
+two-edge cut, a contradiction.
+
+Thus the published cubic three-sum decomposition theorem applies.  Its
+factor-incidence tree is a path:
 an edge off the \(e\)-to-\(f\) path would expose a terminal-free cyclic
 shore, which the exact three-cut replacement removes.  Applying the
 corrected corollary to the cuts adjacent to the two ends gives the
@@ -173,9 +184,6 @@ itself and is non-three-edge-colourable by the simple-cap theorem.
 This path restriction does not eliminate the branch.  A three-sum path
 may retain the mixed \({\cal E}_4\) orientation at a Tait endpoint, and
 the universal base-pair theorem for non-Tait factors remains open.
-The simple-cap hypotheses by themselves establish 3-edge-connectivity,
-not the 3-vertex-connectivity assumed by the cited decomposition theorem;
-the extra premise above must not be omitted.
 
 ## AI-use disclosure
 

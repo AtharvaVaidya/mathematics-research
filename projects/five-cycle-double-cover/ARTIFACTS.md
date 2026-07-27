@@ -9,7 +9,7 @@ copied into a separate clean clone; it was not modified or committed.
 - Three compiled research drafts and their complete LaTeX/BibTeX sources,
   including the fixed-line Fano-flow span/obstruction note and its
   provisional novelty assessment.
-- The 23-page marked-circuits and fixed-five rooted-interfaces report in
+- The 24-page marked-circuits and fixed-five rooted-interfaces report in
   `preprint-rooted-four-cut/`, including LaTeX/BibTeX source, compiled PDF,
   line-by-line AI audit, cautious novelty assessment, build instructions,
   and a checksum ledger.  The front-matter AI-use disclosure and unresolved
@@ -38,9 +38,11 @@ copied into a separate clean clone; it was not modified or committed.
   former global lower-bound consequences are withdrawn because they used
   an invalid one-sided base-pair inference.
 - The corrected rooted base-pair relation note and the human-checkable
-  Tait-cap closure theorem.  One Tait shore excludes equality-only and
-  disjointness-only relations; two Tait shores exclude every exceptional
-  relation.  Non-Tait shore caps remain open, so this is not a universal
+  Tait-cap closure and cap-connectivity theorem.  The frozen endpoint
+  package classifies 1,360,452 roots through factor order 26 and derives
+  the pure-relation cap bound 54.  The fork-triple triangle induction and
+  its exhaustive local-table replay are also included.  The mixed branch's
+  triangle-free finite premise remains open, so this is not a universal
   exceptional-signature theorem or a five-CDC resolution.
 - The standalone computer-free four-mark proof.
 - Current status, publication assessment, encoding proof, marked-cut
@@ -109,7 +111,7 @@ The four compiled PDFs have SHA-256 digests:
 863f24bcad7780067e5c264e2253e673ea4b9d50e94f28a6cf6cf389cc20bcb0  output/pdf/two-connected-countermodels-five-cdc-preprint.pdf
 7a88cd04139344babf371c6b949d26b50e6733ac8db5a6a495f842e4e706dafc  output/pdf/four-universally-separated-marks-preprint-20260726.pdf
 9612a080fa5eca945c82d0c266cc94d62adeea6493ee6d10e7aa03805687e5e0  preprint-fano-combined-span/main.pdf
-5b5a5c439d16b419d52b7db7aa95d770f7720052367697b2df28e7e65d914222  preprint-rooted-four-cut/output/pdf/main.pdf
+cdeeef2049fb4cb267b1b01328f412bcd9293f0e93a403754edccebbf0f2c9c4  preprint-rooted-four-cut/output/pdf/main.pdf
 ```
 
 The original source files for those PDFs have SHA-256 digests:
@@ -117,7 +119,7 @@ The original source files for those PDFs have SHA-256 digests:
 ```text
 f244876a123a0c0fe3ead39805ddd7c3aa18c7b7ed1e4762484f008052564ddc  preprint-fano-one-switch/main.tex
 3c30aff3bc44a1163646eab8a41461d0859a44db04972be4a8810e0e0e2fa3dd  preprint-four-mark-core/main.tex
-3ec674676f0d36442d7a79d801784bc17fa7e09a6e5a6f62a8f3bd26b069e93c  preprint-rooted-four-cut/main.tex
+dda5209d48975f4a5f49148aca9da789cdb20451816b7284fb7e54330c7270aa  preprint-rooted-four-cut/main.tex
 ```
 
 Package-local `SHA256SUMS` files freeze the countermodel and \(H_4\)

@@ -2579,11 +2579,14 @@ byte-for-byte.  A third implementation checks all graph premises,
 reconstructs the complete deletion stream, validates every table row and
 all sixteen shard logs, and reproduces the committed report.
 
-Together with the human atom, cyclic-three, and simple-cap reductions and
-the earlier complete finite exclusions, this rules out the two exceptional
-fixed-five signatures for every bridge-free connected simple
-terminal-distinct four-pole through order 26.  The next possible even order
-is 28.
+The finite conclusion is exactly the displayed cyclically-four cap
+classification.  A later hostile audit found that the attempted reduction
+of every cyclic-three cap to this corpus used a false one-sided base-pair
+inference: the mixed equality/intersection relation can survive one-sidedly.
+Therefore this package alone does **not** rule out all exceptional
+terminal-distinct four-poles through order 26 and does not establish a
+global lower bound of 28.  The unaffected cyclically-four theorem and the
+withdrawal are both retained.
 
 Frozen package:
 `search/four-pole-order26-cyclic4-cap-20260727/`.
@@ -2740,3 +2743,49 @@ certificate table ad2192ff178482a97d5a905d71bcfe47f3b4e96879cb41ad7bb5ae6099d2f8
 result report     c92f338124fa57347d041fdc109f07ae24b0916787f4b904ed62fc41a611a854
 independent audit e76003fa7ec5aefb51d0e7aa19e3c37f938995c1313c20c752074263747ab03d
 ```
+
+## Cyclically-four endpoint root screen through factor order 26
+
+Audit date: **2026-07-27**.
+
+The complete retained cyclically 4-edge-connected non-Tait factor sources
+of orders \(20,22,24,26\) contain:
+
+```text
+factor order                  20       22       24        26
+source factors                 6       31      155     1,297
+vertex-deleted cores         120      682    3,720    33,722
+```
+
+Independent incremental-CaDiCaL and direct finite-domain classifiers
+screen every nonbridge root:
+
+```text
+source factors                         1,489
+vertex-deleted cores                  38,244
+nonbridge roots                    1,360,452
+solver calls per implementation    4,157,844
+empty signatures                           0
+base-pair-closed roots             1,360,452
+violations                                 0
+```
+
+The two complete uncompressed transcripts are byte-identical with SHA-256
+
+```text
+bfb90fd89b43e66f02ada87abcb87ab643d87a4b36dba616cd1f3e5d603b7364
+```
+
+A third implementation reconstructs every source graph and vertex
+deletion, checks triangle-freeness, cyclic four-edge-connectivity and
+non-Taitness, identifies each nonbridge root, verifies every adaptive
+decision, and aggregates all twelve shard logs and statuses.  It reproduced
+the frozen report twice.
+
+The finite theorem supplies base-pair closure for endpoint factors through
+order 26.  It yields cap order at least 54 for equality-only or
+disjointness-only cyclic-three relations.  It does not eliminate the mixed
+equality/intersection relation.
+
+Frozen package:
+`search/rooted-three-pole-nontait-endpoint-frontier-20260727/`.

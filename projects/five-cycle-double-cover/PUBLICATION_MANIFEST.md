@@ -17,7 +17,7 @@ The complete `preprint-rooted-four-cut/` directory is included:
 
 - `main.tex`
 - `references.bib`
-- `output/pdf/main.pdf` (23 pages)
+- `output/pdf/main.pdf` (24 pages)
 - `README.md`
 - `AUDIT.md`
 - `NOVELTY-ASSESSMENT.md`
@@ -45,6 +45,7 @@ assessment all state that the paper neither proves nor disproves five-CDC.
 - `docs/exceptional-four-pole-simple-cap-enumeration-reduction.md`
 - `docs/rooted-three-pole-base-pair-closure-target.md`
 - `docs/rooted-three-pole-tait-cap-closure.md`
+- `docs/rooted-cap-triangle-induction.md`
 
 The current research state and open obligations are recorded in:
 
@@ -65,6 +66,8 @@ The current research state and open obligations are recorded in:
 - `scratch/verify_rooted_three_pole_signature_factorization.mjs`
 - `scratch/rooted-three-pole-signature-factorization-result.json`
 - `scratch/rooted-four-mark-order20-screen-result.json`
+- `scratch/verify_rooted_cap_triangle_table.py`
+- `scratch/rooted-cap-triangle-table-v2.json`
 
 ## Reproducibility packages
 
@@ -88,23 +91,28 @@ The branch includes all non-cache files in:
 - `search/mnp-h2-h5-aa-deletion-probe-20260727/` — 12 files, 129,104
   bytes; explicit \(H_2,\ldots,H_5\) prescribed-\(AA\) certificates and a
   solver-independent checker.
+- `search/rooted-three-pole-nontait-endpoint-frontier-20260727/` — 44
+  files, 9,037,638 bytes; complete retained endpoint-factor classification
+  through order 26, two byte-identical solver transcripts, a
+  solver-independent replay, and the sound pure-relation cap bound 54.
 
 Excluded deliberately: `__pycache__`, `.DS_Store`, private attachments,
 temporary `/private/tmp` output, compiled checker binaries, unrelated dirty
 files, broad 294 MB graph streams, multi-gigabyte proof files, the running
-`search/rooted-three-pole-nontait-endpoint-frontier-20260727/` experiment,
-and unfinished order-28 or placeholder material.
+`search/rooted-three-pole-c3-cap-frontier-through24-20260727/` screen, and
+the unfinished `search/four-pole-order28-cyclic4-cap-20260727/`
+classification or other placeholder material.
 
 ## Validation performed before publication
 
 - Every entry in `preprint-rooted-four-cut/CHECKSUMS.sha256` passed.
-- The preprint PDF metadata reports 23 pages.  Extracted first-page text
+- The preprint PDF metadata reports 24 pages.  Extracted first-page text
   contains the no-resolution statement, and page two contains the explicit
   AI-use disclosure.
-- A clean Tectonic 0.16.9 rebuild succeeded at 23 pages and produced
-  identical extracted text.  The rebuilt PDF is not byte-identical because
-  Tectonic records a new creation timestamp; the committed PDF is
-  authenticated by the frozen checksum instead.
+- A clean Tectonic 0.16.9 rebuild produced the committed 24-page PDF with
+  SHA-256
+  `cdeeef2049fb4cb267b1b01328f412bcd9293f0e93a403754edccebbf0f2c9c4`.
+  All 24 pages were rendered and visually inspected.
 - JSON syntax checks passed for the order-22 separation result, order-17
   base-pair report, and cyclically-four order-22 report.
 - Both independently structured order-22 separation checkers compiled and
@@ -125,6 +133,13 @@ and unfinished order-28 or placeholder material.
   counterexample, and AI-use disclosure.  The audit withdraws the former
   global order-26 and order-28 lower-bound conclusions while preserving the
   exact finite cyclically-four cap classifications.
+- The endpoint package passed `SHA256SUMS`, `SOURCES.sha256`, and a fresh
+  independent semantic replay over 1,360,452 roots in 38,244 cores; it
+  reproduced `report.json` byte for byte.
+- The fork-triple checker reproduced
+  `scratch/rooted-cap-triangle-table-v2.json` byte for byte.  The proof is
+  conditional on the explicitly excluded running triangle-free screen and
+  does not claim the mixed branch or an order-28 lower bound.
 
 No fresh full order-22 census is claimed by this publication preparation.
 The frozen reports state their exact scope and provenance.

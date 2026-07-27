@@ -2017,8 +2017,11 @@ triangle label.  These three root values are exactly one base pair.
 One Tait cap therefore excludes the equality-only and disjointness-only
 root relations; two Tait caps exclude all three exceptional relations.
 The mixed \(\{\mathsf E,\mathsf I\}\) relation is not excluded
-one-sidedly.  Under the minimal simple-cap hypotheses, the cyclic-three
-factor tree is still a path between the two cap edges.  Both endpoint
+one-sidedly.  Under the minimal simple-cap hypotheses, the cap is simple,
+bridgeless, and has no cyclic two-edge cut.  An elementary cubic cut
+argument therefore makes it 3-connected, so the published three-sum
+decomposition applies and its factor tree is a path between the two cap
+edges.  Both endpoint
 factors are non-three-edge-colourable for \({\cal E}_5\); for
 \({\cal E}_4\), a Tait endpoint can survive only at a mixed-orientation
 end cut and forces a two-label restriction on the opposite root
@@ -2027,6 +2030,70 @@ signature.  The corrected proof is in
 
 This is a universal structural reduction, not the full base-pair theorem:
 the case of non-Tait shore caps remains open.
+
+## Cyclically-four endpoint base-pair frontier through factor order 26
+
+Audit date: **2026-07-27**.
+
+The non-Tait endpoint case is now classified through factor order 26.
+Snarkhunter supplies respectively \(6,31,155,1297\) triangle-free
+cyclically 4-edge-connected non-Tait simple cubic factors of orders
+\(20,22,24,26\).  Deleting every vertex gives 38,244 rooted cores.
+Independent incremental-CaDiCaL and direct finite-domain implementations
+test all 1,360,452 nonbridge roots in 4,157,844 solver calls each.  Their
+complete transcripts agree byte-for-byte; every row contains a base pair
+and there are no empty rows or violations.  The independent verifier
+reconstructs all source premises, cores, roots, decisions, shard logs, and
+the committed report.
+
+Together with the rooted-order-17 theorem and the human Tait-cap theorem,
+every endpoint factor of order at most 26 has base-pair closure.  For the
+equality-only and disjointness-only cyclic-three relations, one endpoint
+base pair is already impossible, so both endpoint factors have order at
+least 28 and the cap has order at least 54.
+
+This does **not** eliminate the mixed equality/intersection relation.
+Base pairs in two different endpoint factors of a path are not base pairs
+on the two shores of one cut.  The corrected theorem and full finite
+package are in
+`search/rooted-three-pole-nontait-endpoint-frontier-20260727/`.
+
+## Triangle induction for the mixed cyclic-three branch
+
+Audit date: **2026-07-27**.
+
+A new human reduction narrows the mixed branch to triangle-free
+3-connected shore caps.  Along a three-sum factor path, an exposed
+triangle is an endpoint \(K_4\) factor.  Contracting one at the connector
+end maps the three base pairs by the explicit table
+\[
+                       P_0\mapsto P_0,\qquad
+                       P_1\mapsto P_2,\qquad
+                       P_2\mapsto P_1.
+\]
+A triangle through the root permits three distinct root labels.  Thus,
+assuming base-pair closure for triangle-free caps through order \(N\),
+every nonempty path-rooted cap signature through \(N\) contains a
+**fork triple**
+\[
+                         \{qr,ps,pt\},
+\]
+where \(p,q,r,s,t\) are the five distinct coordinates.  Coordinate
+permutations preserve this shape.  This strengthened conclusion is
+necessary: cardinality three alone is insufficient, since two copies of
+\(\{01,02,12\}\) have the mixed equality/intersection relation.
+
+If a fork triple lies on one side of a relation with no disjoint pair,
+every label on the other side must meet all three fork labels, and the
+only possibilities are the two labels \(\{pq,pr\}\).  The other shore's
+own fork triple cannot fit in a two-element set.  For a cap of order at
+most 26, both capped shores of one principal cut have order at most 24.
+Therefore a complete triangle-free 3-connected cap screen through order
+24 would eliminate the mixed branch through order 26.  That
+two-implementation screen is currently running and is not yet claimed.
+The conditional human proof and an exhaustive replay of its local
+coordinate and common-intersector tables are in
+`docs/rooted-cap-triangle-induction.md`.
 
 ## Elliptic quadratic-flow reformulation
 

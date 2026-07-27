@@ -1,0 +1,12 @@
+55fa145872ce6da16a3915b62707fe3280d4a79402f6017590979289f2359060  ../../berge-fulkerson/search/canonical/tools/snarkhunter-2.0b/snarkhunter
+445d926e253d432f6267010a95de332fa5840b3cb5ad9e18654f9e3e5cd3e262  ../../docs/exceptional-cyclic-three-root-signature-factorization.md
+4684bb6b4796d0c4f8e13447b763da4725ccba02e5d98bbe5e123ca1eea9abf8  ../../docs/exceptional-four-pole-simple-cap-enumeration-reduction.md
+05f6d4b0e44ef5176926ed4b6e2f4a1fba7cc18473a17247e1d58afdcf8e6d6f  ../../docs/rooted-three-pole-base-pair-closure-target.md
+a29baccfd63253bb1b88cb5ebe34fc58c48ade40e70598820be216ef3d07b2c4  ../../docs/rooted-three-pole-tait-cap-closure.md
+8c4f5f050cd9106ce23d75ffed446132affff4932244529103eef3a85d731b1a  ../rooted-three-pole-frontier-20260727/README.md
+705644c782f86a72d5e9b0ca0093e416328327fe3d90b06bcd8dbc329123c5e5  ../rooted-three-pole-frontier-20260727/order17-base-pair-report.json
+e1e590b0e9e9adca22d730d9a441acbe2a6a32a9e6a8af8107818a522f003be2  ../rooted-three-pole-frontier-20260727/rooted_base_pair_screen_cadical.cpp
+048dfb2f982164b0d9fad096f0b481acb23986a8a0ddfc5f121f6a298d1147f5  ../rooted-three-pole-frontier-20260727/rooted_base_pair_screen_csp.cpp
+162d469547f92b4fea72d007ec06e67c18278bdbd59c3a0cedc372d463556b08  ../rooted-three-pole-frontier-20260727/rooted_three_pole_cadical.cpp
+0330412987f54f9947e64b008778e15a242fec80912dab3bbf129a96ad1857c5  ../rooted-three-pole-frontier-20260727/rooted_three_pole_csp.cpp
+25dd969f979170ab5d1467d51361f7c862e2b8ddc7e6f0556178a766b31efb61  ../rooted-three-pole-frontier-20260727/verify_order17_base_pair_run.py

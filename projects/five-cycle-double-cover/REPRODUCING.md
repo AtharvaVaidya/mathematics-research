@@ -23,7 +23,7 @@ census or clearance of the full reduced minimum-counterexample domain.
 
 ## Marked-circuits preprint and companion checks
 
-The 21-page publication draft is
+The 24-page publication draft is
 `preprint-rooted-four-cut/output/pdf/main.pdf`.  Its checksum ledger covers
 the source, PDF, human-audit files, order-22 separation checkers, selected
 rooted-interface notes, and the key order-17/order-22 frozen artifacts:
@@ -78,7 +78,7 @@ warnings, counts, source hashes, and transcript identities are recorded in
 `search/four-pole-order22-cap-20260727/`.  This publication preparation did
 not claim a fresh independent full replay.
 
-The three newer compact four-pole packages have self-contained semantic
+The newer compact rooted and four-pole packages have self-contained semantic
 verifiers and checksum ledgers:
 
 ```sh
@@ -86,6 +86,7 @@ for package in \
   search/four-pole-order24-cyclic4-cap-20260727 \
   search/four-pole-order26-cyclic4-cap-20260727 \
   search/four-pole-order26-strict-cap-probe-20260727 \
+  search/rooted-three-pole-nontait-endpoint-frontier-20260727 \
   search/mnp-h2-h5-aa-deletion-probe-20260727
 do
   (
@@ -104,9 +105,23 @@ this cap class used an invalid one-sided base-pair inference.  The separate
 strict-snark order-26 package remains a finite retained-source control.
 The \(H_2,\ldots,H_5\) package uses explicit positive edge labellings, so
 its \(AA\) certificates can be checked without trusting a SAT solver.
-The corrected Tait-cap theorem is human-checkable in
-`docs/rooted-three-pole-tait-cap-closure.md`; non-Tait shore caps remain
-open.  None of these computations resolves five-CDC.
+The corrected Tait-cap and cap-connectivity theorem is human-checkable in
+`docs/rooted-three-pole-tait-cap-closure.md`.  The endpoint package extends
+base-pair closure through factor order 26 and gives cap order at least 54
+only for the pure equality-only and disjointness-only relations.
+
+Replay the fork-triple local tables with:
+
+```sh
+python3 scratch/verify_rooted_cap_triangle_table.py \
+  > /tmp/rooted-cap-triangle-table-v2.json
+cmp /tmp/rooted-cap-triangle-table-v2.json \
+  scratch/rooted-cap-triangle-table-v2.json
+```
+
+That human reduction leaves a triangle-free 3-connected finite screen
+running.  It does not establish the mixed branch or an order-28 lower
+bound.  None of these computations resolves five-CDC.
 
 ## Required recorded environment
 

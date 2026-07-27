@@ -1029,9 +1029,39 @@ Open obligations:
     original labelling realize exactly one of the three base pairs.  One
     Tait cap excludes equality-only and disjointness-only; two Tait caps
     exclude all exceptional relations.  The mixed
-    \(\{\mathsf E,\mathsf I\}\) relation survives one-sidedly.  In the
-    three-sum decomposition of a minimal exceptional cap, the factor tree
-    is a path.  Both endpoint factors are non-Tait for \({\cal E}_5\);
+    \(\{\mathsf E,\mathsf I\}\) relation survives one-sidedly.  The
+    minimal exceptional cap is simple, bridgeless, cubic, and has no cyclic
+    two-edge cut.  A cutvertex would expose a bridge, and a two-vertex cut
+    would expose a cyclic two-edge cut, so the cap is 3-connected.  The cited
+    three-sum decomposition theorem therefore applies and its factor tree is
+    a path.  Both endpoint factors
+    are non-Tait for \({\cal E}_5\);
     an \({\cal E}_4\) endpoint may be Tait only at a mixed-orientation
     end cut, with the opposite root signature correspondingly restricted.
     See `docs/rooted-three-pole-tait-cap-closure.md`.
+65. **Cyclically-four non-Tait endpoint factors through order 26 have
+    base-pair closure:** the complete retained order-\(20,22,24,26\)
+    sources contain \(6,31,155,1297\) factors.  All 38,244 vertex
+    deletions and 1,360,452 nonbridge roots were classified by independent
+    incremental-SAT and direct finite-domain implementations, with matching
+    complete transcripts, 4,157,844 calls per implementation, and zero
+    empty or violating rows.  A solver-independent verifier reconstructs
+    every source premise, core, root, decision, and shard summary.  With
+    the Tait-cap and rooted-order-17 theorems this forces both endpoint
+    factors above order 26 for equality-only or disjointness-only
+    cyclic-three relations, giving cap order at least 54.  It does not
+    eliminate the mixed relation.  See
+    `search/rooted-three-pole-nontait-endpoint-frontier-20260727/`.
+66. **The mixed cyclic-three branch has a path-rooted triangle
+    induction, conditional on one pending finite premise:** connector-end
+    \(K_4\) contraction preserves the class of fork triples
+    \(\{qr,ps,pt\}\), while a root-end triangle forces exactly such a
+    triple.  Hence every nonempty path-rooted cap signature contains a
+    fork triple whenever its triangle-free contraction has base-pair
+    closure.  In a relation with no disjoint pair, the common
+    intersectors of a fork are exactly \(\{pq,pr\}\), so the opposite
+    signature has size at most two and cannot contain its own fork.
+    At cap order at most 26 both capped shores have order at most 24, so
+    a complete triangle-free 3-connected screen through order 24 would
+    close this finite branch.  That screen is running and not yet claimed.
+    See `docs/rooted-cap-triangle-induction.md`.

@@ -1353,10 +1353,19 @@ forbidden proper one- or two-edge cut, while a terminal-free shore of
 a cut disjoint from the cap edges can be replaced by one cubic vertex
 without changing the exact fixed-five signature.  The published
 decomposition theorem imported as \ref{imp:decomp} assumes
-3-connectivity, so Corollary~\ref{cor:tait-path} states that premise
-explicitly.  The simple-cap hypotheses alone establish
-3-edge-connectivity; they must not be silently promoted to
-3-vertex-connectivity.
+3-connectivity, and that premise follows here as well.  The cap is
+simple, bridgeless, cubic, and has no cyclic two-edge cut.  A cutvertex
+in a bridgeless cubic graph would leave one component attached by a
+single edge.  If \(\{u,v\}\) were a two-vertex cut, every component of
+\(G-\{u,v\}\) would have at least three boundary edges; a smaller
+boundary is a bridge or, by cubic degree counting and simplicity, a
+cyclic two-edge cut.  The six incidences at \(u,v\) then force
+\(uv\notin E(G)\), exactly two components with three boundary edges
+each, and a \(2+1\) attachment to \(u,v\).  Adding to one component the
+vertex receiving two attachments produces a cyclic two-edge cut, a
+contradiction.  Hence the minimal simple cap is 3-connected and
+Corollary~\ref{cor:tait-path} applies without an extra connectivity
+assumption.
 \end{remark}
 
 \section{Fixed-five rooted finite frontiers}
@@ -1782,6 +1791,13 @@ base-pair closure or reduce the coordinate-cut certificates, and then
 to eliminate the surviving cyclically-two/three-cut cap interfaces
 beyond the completed finite slice.  Nothing here classifies the
 published arbitrary-colour relation.
+An audited companion reduction tracks a fork triple
+\(\{qr,ps,pt\}\) through endpoint-triangle contractions and would
+exclude the remaining mixed cyclic-three relation once a
+triangle-free, 3-connected finite premise through the required order
+is certified.  That computation was still running when this draft was
+frozen; it is not one of the finite theorems claimed here, and the
+withdrawn order-\(28\) lower bound is not restored.
 Even a resolution of that local statement would still require the
 remaining global reductions in a Five-Cycle Double Cover proof.  No
 claim about the orientable conjecture is made.
