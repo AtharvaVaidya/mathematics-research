@@ -1,0 +1,342 @@
+# A general Laurent-time and one-line lemma for split normal degree
+
+Date: 26 July 2026
+
+## Outcome and scope
+
+Let
+\[
+ p=ad,\qquad q=bd,\qquad \gcd(a,b)=1,\qquad p>q\ge2,
+\tag{1}
+\]
+be exact normal degrees.  This note isolates the part of the
+split-cover argument which is independent of the special pair
+\((p,q)=(9,6)\).
+
+Suppose the common leading factor is a \(d\)-th power,
+\[
+ h=r^d,\qquad r\in\mathbf C[x]\setminus\{0\},
+\tag{2}
+\]
+and put \(z=ry\).  After making the lower coordinate monic and
+depressing it, write
+\[
+ g=w^q+c_2w^{q-2}+c_3w^{q-3}+\cdots+c_q.
+\tag{3}
+\]
+If the normalized bracket is
+\[
+ [f,g]_{x,w}=\frac{\lambda}{r},\qquad
+ \lambda\in\mathbf C^\times,
+\tag{4}
+\]
+then there are canonical Laurent coefficients \(A_\ell\) for which
+\[
+ A_1',\ldots,A_{q-2}'=0,\qquad
+ qA_{q-1}'=\frac{\lambda}{r}.
+\tag{5}
+\]
+Thus the rational time
+\[
+ T=qA_{q-1}
+\tag{6}
+\]
+satisfies \(T'=\lambda/r\).
+
+Consequently either \(r\) is constant and \(T\) is affine, or
+\[
+ T=\alpha+\beta(x-x_0)^{-k},\qquad
+ r=\gamma(x-x_0)^{k+1}
+\tag{7}
+\]
+for \(k\ge1\) and \(\beta\gamma\ne0\).
+
+In the pure-power case, cyclic descent gives a quotient coordinate
+\[
+ v=u^m,\qquad u=x-x_0,\qquad k=mn,
+\tag{8}
+\]
+and
+\[
+ [f,g]_{v,w}=\frac{\lambda}{m\gamma v^{n+1}}.
+\tag{9}
+\]
+At \(v=0\), put
+\[
+ \rho=\max_{2\le j\le q}
+ \frac{\operatorname {pole}_0(c_j)}{j}.
+\tag{10}
+\]
+If the invariant-level analysis for the degree pair proves
+\[
+ \boxed{\displaystyle
+ n\ge\frac{q-2}{2}\rho,}
+\tag{11}
+\]
+then the original lower coordinate is affine on the source line
+\(u=0\).  The constant-Jacobian identity makes one of the two
+coordinates affine and nonconstant on that line.  Gwoździewicz's
+theorem then makes the original Keller map a polynomial
+automorphism.
+
+This is a conditional reduction theorem.  It does not prove (11),
+classify the invariant-level curves, handle a connected nonsplit
+\(d\)-cover, or prove the Jacobian conjecture.
+
+For the next same-ratio case
+\[
+ (p,q)=(12,8)=(3\cdot4,2\cdot4),
+\tag{12}
+\]
+the general mechanism supplies six first integrals and the terminal
+time \(T=8A_7\).  Its exact new local requirement is
+\[
+ \boxed{n\ge3\rho.}
+\tag{13}
+\]
+The structural obstruction is therefore clear: the Laurent-time and
+cyclic-quotient arguments do not change, but the invariant boundary
+analysis must improve the threshold from \(2\rho\) in degree
+\((9,6)\) to \(3\rho\) in degree \((12,8)\).
+
+## 1. Canonical Laurent coefficients
+
+Let
+\[
+ s=g^{1/q}=w+O(w^{-1})
+\tag{14}
+\]
+be the distinguished formal root at \(w=\infty\).  Depression removes
+the constant term in \(s-w\), so its inverse satisfies
+\[
+ w=w(x,s)=s+O(s^{-1}),\qquad
+ s_w=1+O(s^{-2}).
+\tag{15}
+\]
+Expand at fixed \(s\):
+\[
+ \widehat f(x,s):=f(x,w(x,s))
+ =\Phi(x,s)+\sum_{\ell\ge1}A_\ell(x)s^{-\ell},
+\tag{16}
+\]
+where \(\Phi\) is the polynomial part in \(s\).
+
+Since \(g=s^q\), the fixed-\(s\) chain rule gives the exact identity
+\[
+ [f,g]_{x,w}
+ =q s^{q-1}s_w
+ \left(\frac{\partial\widehat f}{\partial x}\right)_s.
+\tag{17}
+\]
+Combining (4) and (17),
+\[
+ \left(\frac{\partial\widehat f}{\partial x}\right)_s
+ =\frac{\lambda}{qr}s^{-(q-1)}s_w^{-1}.
+\tag{18}
+\]
+By (15), the right side starts with
+\[
+ \frac{\lambda}{qr}s^{-(q-1)}
+\tag{19}
+\]
+and has no term of exponent greater than \(-(q-1)\).
+Coefficient comparison in (16) therefore proves:
+
+1. every coefficient of \(\Phi\) is constant in \(x\);
+2. \(A_1',\ldots,A_{q-2}'=0\);
+3. \(A_{q-1}'=\lambda/(qr)\).
+
+This proves (5) without expanding any approximate root.  As in the
+\((9,6)\) calculation, formal reversion shows that the \(A_\ell\)
+are rational functions of the normalized coefficients.
+
+## 2. Classification of the rational time
+
+By (5)--(6),
+\[
+ T'=\frac{\lambda}{r}.
+\tag{20}
+\]
+Thus \(T'\) has no finite zero.
+
+If \(T\) is a polynomial, it must be affine, and (20) makes \(r\)
+constant.  Suppose \(T\) has finite poles.  Let its degree as a map
+\(\mathbf P^1_x\to\mathbf P^1_T\) be \(D\), and let its distinct
+finite poles have orders \(m_1,\ldots,m_s\).
+
+Infinity cannot also be a pole.  If it had pole order \(m_\infty\),
+the total ramification at all poles would be
+\[
+ \sum_{i=1}^s(m_i-1)+(m_\infty-1)=D-s-1,
+\tag{21}
+\]
+and there is no other ramification because \(T'\) has no finite
+zero.  This contradicts the Riemann--Hurwitz total \(2D-2\).
+
+Let \(e_\infty\) be the local degree at infinity, where \(T\) now has
+a finite value.  Riemann--Hurwitz gives
+\[
+ (D-s)+(e_\infty-1)=2D-2.
+\tag{22}
+\]
+Hence \(e_\infty=D+s-1\).  Since \(e_\infty\le D\), one has \(s=1\)
+and \(e_\infty=D\).  The divisor of \(T-T(\infty)\) is therefore
+\[
+ D(\infty)-D(x_0),
+\]
+which proves
+\[
+ T=\alpha+\beta(x-x_0)^{-D}.
+\]
+Differentiating and using (20) gives
+\[
+ r=-\frac{\lambda}{D\beta}(x-x_0)^{D+1}.
+\]
+This is (7), with \(k=D\).
+
+## 3. Cyclic descent in the pure-power case
+
+Put \(u=x-x_0\), so
+\[
+ r=\gamma u^{k+1},\qquad
+ T=\alpha+\beta u^{-k}.
+\tag{23}
+\]
+Let \(K\subset\mathbf C(u)\) be the field generated by all normalized
+coefficients needed to recover \(f\) and \(g\).  Assume, as in the
+normal-degree construction, that:
+
+1. \(T\in K\); and
+2. the only possible finite pole of a normalized coefficient is
+   \(u=0\).
+
+Then
+\[
+ \mathbf C(u^k)=\mathbf C(T)\subset K\subset\mathbf C(u).
+\tag{24}
+\]
+The extension \(\mathbf C(u)/\mathbf C(u^k)\) is cyclic Galois.
+Galois correspondence supplies \(m\mid k\) such that
+\[
+ K=\mathbf C(u^m).
+\tag{25}
+\]
+Write \(v=u^m\) and \(k=mn\).  Every normalized coefficient is a
+rational function of \(v\) whose poles are contained in
+\(\{0,\infty\}\), hence is a Laurent polynomial in \(v\).
+
+The chain rule and (4) give
+\[
+ m u^{m-1}[f,g]_{v,w}
+ =\frac{\lambda}{\gamma u^{mn+1}},
+\]
+which is exactly (9).
+
+## 4. The exact Taylor threshold
+
+Write (3) as
+\[
+ g(v,w)=w^q+\sum_{j=2}^q c_j(v)w^{q-j}.
+\tag{26}
+\]
+Undoing the scaling and depression gives
+\[
+ G(u,y)=g\left(u^m,\gamma u^{mn+1}y+t(u)\right),
+\tag{27}
+\]
+where \(G\in\mathbf C[u,y]\) is the original lower coordinate.
+Let
+\[
+ e=\max\{0,-\operatorname {ord}_{u=0}t\}.
+\tag{28}
+\]
+
+By (10), \(c_j(u^m)\) has \(u\)-pole order at most \(mj\rho\).
+If \(e>m\rho\), then in
+\[
+ G(u,0)=t^q+\sum_{j=2}^q c_j(u^m)t^{q-j}
+\tag{29}
+\]
+the pole order \(qe\) of \(t^q\) is strictly greater than
+\[
+ mj\rho+(q-j)e
+\]
+for every \(j\ge2\).  Its leading pole cannot cancel, contrary to
+polynomiality of \(G(u,0)\).  Therefore
+\[
+ e\le m\rho.
+\tag{30}
+\]
+
+Write \(G=\sum_{i=0}^qG_i(u)y^i\).  Taylor expansion of (27) gives
+\[
+ G_i(u)=\frac{(\gamma u^{mn+1})^i}{i!}
+ \partial_w^i g(u^m,t(u)).
+\tag{31}
+\]
+Using (30), every term in the last derivative has pole order at most
+\(m(q-i)\rho\).  Hence
+\[
+ \operatorname {ord}_{u=0}G_i
+\ge i(mn+1)-m(q-i)\rho.
+\tag{32}
+\]
+
+At the threshold in (11),
+\[
+ in-(q-i)\rho
+\ge \frac q2(i-2)\rho\ge0
+\qquad(i\ge2).
+\tag{33}
+\]
+The additional \(+i\) in (32) makes the valuation strictly positive.
+Thus
+\[
+ G_i(0)=0\qquad(i\ge2),
+\tag{34}
+\]
+so \(G(0,y)\) is affine.
+
+If its linear coefficient is nonzero, \(G\) separates points of the
+line \(u=0\).  If it is zero, restricting
+\[
+ F_uG_y-F_yG_u=\lambda
+\]
+to that line gives
+\[
+ -F_y(0,y)G_u(0,y)=\lambda.
+\tag{35}
+\]
+Both factors are polynomials in \(y\), so both are nonzero constants.
+Then \(F(0,y)\) is affine and nonconstant.  In either case the Keller
+map is injective on \(u=0\).
+
+Gwoździewicz's injectivity-on-one-line theorem now makes it a
+polynomial automorphism.
+
+## 5. The \((12,8)\) specialization
+
+For
+\[
+ p=12,\qquad q=8,\qquad (a,b,d)=(3,2,4),
+\]
+the formal expansion has
+\[
+ A_1',\ldots,A_6'=0,\qquad
+ 8A_7'=\frac{\lambda}{r}.
+\tag{36}
+\]
+The rational time is \(T=8A_7\), and Sections 2--3 apply verbatim.
+The Taylor estimate is
+\[
+ \operatorname {ord}_{u=0}G_i
+\ge i(mn+1)-m(8-i)\rho.
+\tag{37}
+\]
+For \(i=2\), its degree-dependent part is
+\[
+ 2n-6\rho.
+\]
+Therefore \(n\ge3\rho\) is both the sharp threshold delivered by
+this estimate and the precise invariant-boundary target for the
+split pure-power \((12,8)\) chart.

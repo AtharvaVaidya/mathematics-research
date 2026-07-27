@@ -6,7 +6,7 @@ Date: 25 July 2026
 
 The all-scale theorem in
 `ALLSCALE_MARKED_CUSP_OBSTRUCTION.md` has the following exact consequence
-for the published Guccione--Guccione--Horruitiner--Valqui (GGHV)
+for the public Guccione--Guccione--Horruitiner--Valqui (GGHV) preprint
 reduction:
 
 > Both alternatives called **a** and **b** in the proof of GGHV
@@ -247,7 +247,8 @@ necessary alternatives
 \text{case c}\quad\text{or}\quad\text{a/b}.
 \tag{18}
 \]
-The all-scale theorem contradicts a/b.  Combining only published GGHV
+The all-scale theorem contradicts a/b.  Combining only the public GGHV
+preprint
 with the new theorem gives exactly
 \[
 \text{counterexample with maximum degree below }125

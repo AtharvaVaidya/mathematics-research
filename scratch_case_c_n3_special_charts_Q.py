@@ -15,9 +15,10 @@ pivot is also specialized to the two rational factors and the cubic
 factor modulo 32003.  Thus the script detects both a zero in the quintic
 field and a hidden nonunit at the chosen good prime.
 
-This is deliberately a scratch artifact until the exact generic-chart
-calculation and its interface with the original case-c coefficient scheme
-have completed their adversarial audit.
+The historical ``scratch_`` filename is retained for provenance.  The
+checks performed here are part of the audited certificate bridge in
+``current_context/CASE_C_FULL_CERTIFICATE_BRIDGE.md``; runtime caches are
+accelerators only and must be removed for a publication replay.
 """
 
 from __future__ import annotations
@@ -219,6 +220,24 @@ def impose_square(
     )
     zero = QuotientElement.coerce(0)
     one = QuotientElement.coerce(1)
+    square_root = parameters[2] - KAPPA * parameters[0] * parameters[0]
+    square = square_root * square_root
+    weight_four = [
+        equation
+        for equation in transformed
+        if equation and polynomial_weights(equation) == {4}
+    ]
+    assert len(weight_four) == 2
+    square_pivot = (0, 0, 2, 0, 0, 0, 0)
+    for index, equation in enumerate(weight_four):
+        assert set(equation.terms) == set(square.terms)
+        scalar = equation.terms[square_pivot]
+        assert_global_unit(f"exact deficit-four square scalar {index}", scalar)
+        assert all(
+            equation.terms[monomial] == scalar * coefficient
+            for monomial, coefficient in square.terms.items()
+        )
+
     imposed = [
         substitute(
             equation,
@@ -254,6 +273,38 @@ def specialize_coefficient(
         )
         power *= primitive
     return value
+
+
+def specialize_univariate_rational(
+    polynomial: sp.Poly,
+    primitive: K,
+) -> K:
+    """Reduce a rational univariate polynomial and evaluate it in ``K``."""
+    value = K()
+    for coefficient in polynomial.all_coeffs():
+        rational = sp.Rational(coefficient)
+        value = (
+            value * primitive
+            + K(int(rational.p) % PRIME) / (int(rational.q) % PRIME)
+        )
+    return value
+
+
+def verify_reconstructed_outer_reduction(eliminant: sp.Poly) -> None:
+    """Tie the reconstructed exact quotient to all three modular factors."""
+    derivative = eliminant.diff()
+    for factor_label, primitive in MODULAR_FACTORS:
+        assert specialize_univariate_rational(eliminant, primitive) == K(), (
+            factor_label,
+            "the reconstructed outer eliminant does not vanish",
+        )
+        assert specialize_univariate_rational(derivative, primitive) != K(), (
+            factor_label,
+            "the reconstructed outer eliminant is not squarefree",
+        )
+    print(
+        "exact outer eliminant reduces to the two rational and cubic factors"
+    )
 
 
 def specialize_polynomial(
@@ -567,10 +618,12 @@ def main() -> None:
         print("loaded exact outer algebra from cache", flush=True)
     else:
         s, eliminant, u, v = reconstruct_outer_algebra(args.workers)
+        save_pickle(OUTER_CACHE, {"outer": (s, eliminant, u, v)})
     assert eliminant.gens == (s,)
     assert eliminant.is_irreducible
     assert sp.gcd(eliminant, eliminant.diff()) == 1
     print("exact outer eliminant:", eliminant.as_expr())
+    verify_reconstructed_outer_reduction(eliminant)
     QuotientElement.configure(eliminant)
     assert_global_unit("outer coefficient u7", QuotientElement.coerce(u[7]))
     assert_global_unit("outer coefficient v10", QuotientElement.coerce(v[10]))

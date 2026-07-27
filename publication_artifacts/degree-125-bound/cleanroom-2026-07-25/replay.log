@@ -1,0 +1,197 @@
+== environment ==
+Python 3.12.13
+Python optimize 0
+SymPy 1.14.0
+Singular for arm64-Darwin version 4.4.1 (44105, 64 bit) Nov 11 2025 16:12:34
+with
+	GMP(6.3.0),NTL(11.6.0),FLINT(3.6.0),
+	omalloc,static readline(8),Plural,DBM,
+	dynamic modules,OM_NDEBUG,SING_NDEBUG,
+	CC:OPTIMIZE,CC:OPTIMIZE_SIZE,AvoidBranching,GenericMult,invTable,
+	eigenvalues,Gauss-Manin system,random=1785010776
+built-in modules: {}
+AC_CONFIGURE_ARGS =  '--disable-silent-rules' '--with-python=/opt/homebrew/opt/python@3.14/bin/python3.14' 'CXXFLAGS=-std=c++11' '--disable-debug' '--disable-dependency-tracking' '--prefix=/opt/homebrew/Cellar/singular/4.4.1p5_3' '--libdir=/opt/homebrew/Cellar/singular/4.4.1p5_3/lib' 'CC=clang' 'CXX=clang++' --enable-omalloc  OMALLOC_LIBS='/private/tmp/singular-20260629-49667-5wkvyv/singular-4.4.1/omalloc/libomalloc.la' OMALLOC_INCLUDES='-I/private/tmp/singular-20260629-49667-5wkvyv/singular-4.4.1' --htmldir=${prefix}/share/doc/singular --with-Singular RESOURCES_LIBS='/private/tmp/singular-20260629-49667-5wkvyv/singular-4.4.1/resources/libsingular_resources.la' RESOURCES_INCLUDES='-I/private/tmp/singular-20260629-49667-5wkvyv/singular-4.4.1 ' FACTORY_LIBS='/private/tmp/singular-20260629-49667-5wkvyv/singular-4.4.1/factory/libfactory.la' FACTORY_INCLUDES='-I/private/tmp/singular-20260629-49667-5wkvyv/singular-4.4.1 -I/private/tmp/singular-20260629-49667-5wkvyv/singular-4.4.1/factory -I/private/tmp/singular-20260629-49667-5wkvyv/singular-4.4.1/factory/include',
+CC = clang,FLAGS :  -g  -pipe -fno-common -g0 -O3 -Wno-unused-function -Wno-trigraphs -Wno-unused-parameter -Wunknown-pragmas -Wno-unused-variable -fomit-frame-pointer -fwrapv -fvisibility=default -finline-functions -fno-exceptions -fno-threadsafe-statics -funroll-loops -Qunused-arguments -pthread -pthread,
+CXX = clang++,FLAGS :  -std=c++11 -pipe -fno-common -g0 -O3 -Wno-unused-function -Wno-trigraphs -Wno-unused-parameter -Wunknown-pragmas -Wno-unused-variable -fomit-frame-pointer -fwrapv -fvisibility=default -finline-functions -fno-exceptions -fno-threadsafe-statics -funroll-loops -fno-rtti -Qunused-arguments -fno-delete-null-pointer-checks -pthread,
+DEFS : ,CPPFLAGS : ,
+LDFLAGS :  -pipe -fno-common -g0 -O3 -Wno-unused-function -Wno-trigraphs -Wno-unused-parameter -Wunknown-pragmas -Wno-unused-variable -fomit-frame-pointer -fwrapv -fvisibility=default -finline-functions -fno-exceptions -fno-threadsafe-statics -funroll-loops -Qunused-arguments  -rdynamic -flat_namespace -Wl,-bind_at_load -Wl,-undefined,dynamic_lookup,LIBS : -lreadline -lncurses  -lgmp   (ver: Apple LLVM 21.0.0 (clang-2100.0.123.102))
+argv[0]   :	Singular
+SearchPath:	/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB:/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/factory:/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../LIB:/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../lib/singular/MOD:/opt/homebrew/Cellar/singular/4.4.1p5_3/lib/singular/MOD:/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin:/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/..
+Singular  :	/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/Singular
+BinDir    :	/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin
+ProcDir   :	/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/..:/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../lib/singular/MOD:/opt/homebrew/Cellar/singular/4.4.1p5_3/lib/singular/MOD
+RootDir   :	/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/..
+DataDir   :	/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share
+DefaultDir:	/opt/homebrew/Cellar/singular/4.4.1p5_3
+InfoFile  :	/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/info/singular.info
+IdxFile   :	/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/singular.idx
+HtmlDir   :	/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/doc/singular
+ManualUrl :	https://www.singular.uni-kl.de/Manual/
+ExDir     :
+Path      :	/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin:/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/..:/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../lib/singular/MOD:/opt/homebrew/Cellar/singular/4.4.1p5_3/lib/singular/MOD:/Users/atharva/.local/bin:/Users/atharva/.rbenv/shims:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/opt/homebrew/bin:/Users/atharva/.codex/tmp/arg0/codex-arg0P0vD0W:/Users/atharva/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/atharva/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources
+emacs     :
+xemacs    :
+SingularEmacs:	/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/Singular
+EmacsLoad :	/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/emacs/.emacs-singular
+EmacsDir  :	/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/emacs
+SingularXterm:	/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/Singular
+xterm     :
+EmacsDir  :	/opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/emacs
+Available HelpBrowsers: safari, safari-www-idx, safari-www, builtin, dummy, emacs,
+Current HelpBrowser: safari
+                     SINGULAR                                 /  Development
+ A Computer Algebra System for Polynomial Computations       /   version 4.4.1
+                                                           0<
+ by: W. Decker, G.-M. Greuel, G. Pfister, H. Schoenemann     \   Jan 2025
+FB Mathematik der Universitaet, D-67653 Kaiserslautern        \
+Auf Wiedersehen.
+modstd.lib: /opt/homebrew/share/singular/LIB/modstd.lib
+version="version modstd.lib 4.4.1.4 Nov_2025 "; // $Id: bed704ebef3be31158bd592f79b2a562a172c5bd $
+== full case-c interface, global special fiber, and exact-Q charts ==
+passport: (2^10,1), (3^7), (17,1^4)
+character sum: 31104/19019
+nonzero character terms: 19
+weighted Hurwitz count: 5
+transitivity: automatic, since a component on the four fixed third-value sheets would make a 3-cycle equal an involution
+automorphisms: trivial, since the distinguished simple zero and 17-fold point are fixed and R(w)=w+... rules out nontrivial scaling
+RESULT: EXACT a/b OUTER HURWITZ COUNT IS FIVE
+support: exact 61/125-point GGHV polygon dictionary
+required vertices: z^-8 h^8 (deficit 10), z^-12 h^12 (deficit 15)
+outer reduction: squarefree factor degrees 1+1+3 at 32003
+r1 kernel dimensions: (2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+r2 kernel dimensions: (2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+cubic kernel dimensions: (2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+Hurwitz count: five normalized covers
+later propagation: no new kernel after deficit four
+
+==> /Users/atharva/Documents/Jacobian Conjecture/.venv/bin/python /Users/atharva/Documents/Jacobian Conjecture/route_bd_case_c_radial_obstruction.py
+building exact radial system for r1
+r1: 165 lower coefficients, 7 parameters, 79 consistency equations
+RADIAL r1 WEIGHT<=8 VDIM 380
+RADIAL r1 VDIM 328
+RADIAL r1 CERTIFIED
+building exact radial system for r2
+r2: 165 lower coefficients, 7 parameters, 79 consistency equations
+RADIAL r2 WEIGHT<=8 VDIM 380
+RADIAL r2 VDIM 328
+RADIAL r2 CERTIFIED
+building exact radial system for cubic
+cubic: 165 lower coefficients, 7 parameters, 79 consistency equations
+RADIAL cubic WEIGHT<=8 VDIM 380
+RADIAL cubic VDIM 328
+RADIAL cubic CERTIFIED
+RESULT: CASE-c MODULAR WEIGHTED PROJECTIVE FIBER IS EMPTY
+RESULT: all two rational plus three cubic-conjugate Hurwitz points are certified
+
+==> /Users/atharva/Documents/Jacobian Conjecture/.venv/bin/python /Users/atharva/Documents/Jacobian Conjecture/scratch_case_c_n3_special_charts_Q.py
+outer modular bases: 8/64
+outer modular bases: 16/64
+outer modular bases: 24/64
+outer modular bases: 32/64
+outer modular bases: 40/64
+outer modular bases: 48/64
+outer modular bases: 56/64
+outer modular bases: 64/64
+exact outer eliminant: s**5 + 204535941013701986254301093*s**4/17338999302864764928 + 75099472527007209207297345908694093083999160318537817*s**3/1202563587298979216682879915570795380736 + 25182729880348914761114309535744846831355604713175278596878583157*s**2/112213613458042348667112890681742058567237632 + 6300331891658649090958196308071746134124976810720758301430522707393365891*s/14363342522629420629390450007262983496606416896 - 930206660129096433749475266122359445351031352517661885125550567798599734193335611/5515523528689697521685932802788985662696864088064
+exact outer eliminant reduces to the two rational and cubic factors
+UNIT outer coefficient u7
+UNIT outer coefficient v10
+exact recurrence deficit 1: 0 cokernel rows
+exact recurrence deficit 2: 0 cokernel rows
+exact recurrence deficit 3: 0 cokernel rows
+exact recurrence deficit 4: 2 cokernel rows
+exact recurrence deficit 5: 2 cokernel rows
+exact recurrence deficit 6: 4 cokernel rows
+exact recurrence deficit 7: 5 cokernel rows
+exact recurrence deficit 8: 6 cokernel rows
+UNIT exact deficit-four square scalar 0
+UNIT exact deficit-four square scalar 1
+exact rows through deficit eight specialize coefficient-for-coefficient
+UNIT coefficient(L,X1)
+UNIT coefficient(L,Y0)
+UNIT coefficient(A,X3)
+UNIT determinant((A,B)/(X3,Y0^2))
+UNIT B/Y0^2 on A=0
+UNIT chart3 X6 pivot 0
+UNIT chart3 X6 pivot 1
+UNIT chart3 quadratic resultant
+EMPTY L=A=0,B!=0 over the exact quintic field
+UNIT chart4 quadratic determinant
+UNIT chart4 coefficient 0 of X6^2
+UNIT chart4 coefficient 1 of X6^2
+UNIT chart4 coefficient 2 of X6^2
+UNIT chart4 coefficient 3 of X6^2
+UNIT chart4 coefficient 4 of X6^2
+ONLY THE AFFINE CONE ORIGIN SURVIVES L=A=B=0
+RESULT: BOTH SPECIAL CHARTS ARE CERTIFIED OVER THE EXACT Q QUINTIC
+RESULT: EVERY TRIANGULAR PIVOT IS A UNIT MODULO 32003
+
+RESULT: CASE-c CERTIFICATE INTERFACE CHECKS PASSED
+== modular square branch ==
+n=3: outer and first three radial coefficients are automatic
+first nonautomatic coefficient: z^3 y^3 (radial deficit four)
+five-point reduction: two nonzero multiples of
+(Y2-169*Y0^2/48)^2
+on the square branch: one weight-five survivor, not divisible by Y0
+weight five is triangularly solvable; the next obstruction is later
+deficit six: charts 1/2 cut, chart 3 empty, chart 4 forces X4=X5=0
+deepest chart: deficit 7 automatic, deficit 8 forces X6=0
+RESULT: CASE-C n=3 HURWITZ BRIDGE PASSES
+== complete modular generic charts ==
+r1 L_NE_0 THROUGH 6 UNIT 0
+r1 L_NE_0 THROUGH 7 UNIT 1
+r1 L_NE_0 MINIMAL (0, 1) UNIT 1
+r1 L_NE_0 MINIMAL (0, 2) UNIT 1
+r1 L_NE_0 MINIMAL (1, 2) UNIT 1
+r1 L_NE_0 CERTIFIED
+r1 L_EQ_0_A_NE_0 THROUGH 6 UNIT 0
+r1 L_EQ_0_A_NE_0 THROUGH 7 UNIT 1
+r1 L_EQ_0_A_NE_0 MINIMAL (0,) UNIT 1
+r1 L_EQ_0_A_NE_0 MINIMAL (1,) UNIT 1
+r1 L_EQ_0_A_NE_0 MINIMAL (2,) UNIT 1
+r1 L_EQ_0_A_NE_0 CERTIFIED
+r2 L_NE_0 THROUGH 6 UNIT 0
+r2 L_NE_0 THROUGH 7 UNIT 1
+r2 L_NE_0 MINIMAL (0, 1) UNIT 1
+r2 L_NE_0 MINIMAL (0, 2) UNIT 1
+r2 L_NE_0 MINIMAL (1, 2) UNIT 1
+r2 L_NE_0 CERTIFIED
+r2 L_EQ_0_A_NE_0 THROUGH 6 UNIT 0
+r2 L_EQ_0_A_NE_0 THROUGH 7 UNIT 1
+r2 L_EQ_0_A_NE_0 MINIMAL (0,) UNIT 1
+r2 L_EQ_0_A_NE_0 MINIMAL (1,) UNIT 1
+r2 L_EQ_0_A_NE_0 MINIMAL (2,) UNIT 1
+r2 L_EQ_0_A_NE_0 CERTIFIED
+cubic L_NE_0 THROUGH 6 UNIT 0
+cubic L_NE_0 THROUGH 7 UNIT 1
+cubic L_NE_0 MINIMAL (0, 1) UNIT 1
+cubic L_NE_0 MINIMAL (0, 2) UNIT 1
+cubic L_NE_0 MINIMAL (1, 2) UNIT 1
+cubic L_NE_0 CERTIFIED
+cubic L_EQ_0_A_NE_0 THROUGH 6 UNIT 0
+cubic L_EQ_0_A_NE_0 THROUGH 7 UNIT 1
+cubic L_EQ_0_A_NE_0 MINIMAL (0,) UNIT 1
+cubic L_EQ_0_A_NE_0 MINIMAL (1,) UNIT 1
+cubic L_EQ_0_A_NE_0 MINIMAL (2,) UNIT 1
+cubic L_EQ_0_A_NE_0 CERTIFIED
+RESULT: BOTH GENERIC CHARTS SURVIVE DEFICIT SIX
+RESULT: BOTH GENERIC CHARTS ARE EMPTY AT DEFICIT SEVEN
+RESULT: ALL FIVE OUTER HURWITZ POINTS ARE CERTIFIED MOD 32003
+== all-scale a/b obstruction ==
+C=(2UB-3VA)/E parametrizes every c!=0 linear kernel
+high class degree: (5-d)k+1, uniquely forced from infinity
+high-class contact margin: N-r=d*k+1>0
+all-k kernel multiplicities: (2,2,2,1,0,...)
+RESULT: ALL-k RADIAL KERNEL WEIGHTS ARE (1,1,2,2,3,3,4)
+verified the two deficit-one p1 modes and exceptional q2 partner
+verified the completed-square local bracket rows
+verified the all-scale marked multiplicity and top-degree ledgers
+verified the all-scale analytic-quadratic degree contradiction
+verified the exhaustive horizontal/vertical Puiseux ledgers
+verified the cleared fourth-covariant identity
+RESULT: ALL-SCALE MARKED-CUSP OBSTRUCTION CHECKS PASS
+verified the exact GGHV a/b support-to-five-block map
+verified R=4 is Proposition 4.3(2) and the same support formula through R=32
+verified case c has 11 and 16 transverse blocks, including negative degrees
+SCOPE: a/b at R=4 is covered; case c and global higher-degree alternatives are not
+RESULT: CLEAN-ROOM DEGREE-125 REPLAY PASSED

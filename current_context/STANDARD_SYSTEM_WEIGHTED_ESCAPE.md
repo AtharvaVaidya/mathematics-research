@@ -490,12 +490,25 @@ normal obstruction is
 {x^{-1},\ldots,x^{1-n}}. \tag{34}
 \]
 For a generic non-tangent \(T\), (34) is nonzero.  The corresponding
-Sylvester remainder first appears at order \(\ell_0\), and (25) gives
-the generic determinant contact
+statement is a Laurent, or polynomiality, obstruction.  It does not
+imply that the derivative Sylvester remainder first appears at order
+\(\ell_0\).  Differentiating the earlier polynomial binomial terms can
+produce a lower-order remainder.  For example, when \(a=2,b=3\), the
+first polynomial truncation
 \[
-(n-1)\ell_0, \tag{35}
+P_\epsilon=R^2+\epsilon T,\qquad
+Q_\epsilon=R^3+\frac32\epsilon RT
 \]
-which is far below \(D=(n-1)(m-1)\).
+satisfies
+\[
+(Q_\epsilon)_x-\frac32R(P_\epsilon)_x
+=\frac32\epsilon R'T.
+\]
+Thus its derivative remainder is already linear in \(\epsilon\).
+The exact generic \(g=2\) contact is four rather than six, and an exact
+\(g=3\) specialization has contact seven rather than ten.  See
+`STANDARD_SYSTEM_SYLVESTER_REMAINDER_CORRECTION_AUDIT.md`.  No generic
+determinant-contact formula is inferred from (34).
 
 Formula (34) also explains the rootwise strata.  At a simple root
 \(\alpha\) of \(R\), put \(s_\alpha=\operatorname{ord}_\alpha T\).
@@ -508,9 +521,12 @@ If \(s_\alpha<a\), its first pole occurs at
 \ell_\alpha=
 \left\lfloor\frac{b}{a-s_\alpha}\right\rfloor+1. \tag{36}
 \]
-Thus extra vanishing of \(T\) at selected roots delays precisely those
-Hensel factors.  These are the special local-contact strata that replace
-a single generic Hessian calculation.
+Thus extra vanishing of \(T\) at selected roots delays this local
+Laurent pole.  Relating these pole orders to derivative-resultant
+Hensel contacts requires separately accounting for derivatives of the
+earlier polynomial truncation terms, as in the correction audit.  These
+are nevertheless special local strata that replace a single generic
+Hessian calculation.
 
 Finally, take the ambient saturating parameter from (28).  At order
 \(m-1\), \(\lambda_{m-1}\) contributes the negative band of \(C_0\)
@@ -681,12 +697,29 @@ the approximate root \(D\).
 Consequently even a translation-normalized, squarefree-\(R\)
 approximate-root induction is false if it tries to eliminate all
 normal coefficients before the forcing order.  The full
-\(g\)-multiple parameter sector is a reparametrization gauge large
-enough to hide the genuine homogeneous deformations (43).  Like the
-constant model, it still cannot supply the final
+\(g\)-multiple parameter sector is large enough to hide the genuine
+homogeneous deformations (43), but it is not all coordinate gauge.
+For a fixed pair
+\[
+P=R^aA(z),\qquad Q=R^bB(z),
+\]
+an honest change \(R\mapsto R\phi(z)\) can normalize one of \(A,B\),
+while the relative unit
+\[
+\mathcal I=\frac{B^a}{A^b}=\frac{Q^a}{P^b}
+\]
+survives up to tangent-to-the-identity composition.  Its order and
+leading coefficient are quotient invariants.  Thus (43) with \(c<a\)
+is physical relative \(g\)-sector data, not the orbit of the pure-power
+pair.  The exact quotient and a degree-bound-compatible countermodel
+are proved in
+`STANDARD_SYSTEM_G_MULTIPLE_REPARAMETRIZATION_QUOTIENT.md`.
+
+Like the constant model, (43) still cannot supply the final
 \(\tau^Nx^{1-n}\) term.  This shifts attention from divisibility of
-individual normal coefficients to the nonzero residue classes of
-\(\tau\)-order modulo \(g\).
+individual normal coefficients to the interaction between the retained
+relative unit and the nonzero residue classes of \(\tau\)-order modulo
+\(g\).
 
 ## 8. The mod-\(g\) normal equation and branch residues
 
@@ -702,7 +735,7 @@ then
 \sum_{k=0}^N\lambda_k\tau^kC^{m-k}
 =\sum_{r=0}^{g-1}\tau^rC^{-r}D^bA_r(w). \tag{49}
 \]
-Every reparametrization countermodel above lies in the \(r=0\)
+Every \(g\)-sector countermodel above lies in the \(r=0\)
 sector.  On the other hand,
 \[
 N=g(a+b)-2\equiv-2\pmod g. \tag{50}
@@ -773,6 +806,26 @@ Then \(Z=0\), although \(T\) need not be divisible by
 \(R^{a-1}\) and hence need not be tangent to the reduced common-root
 cone.  This is the precise reason that the linearized Keller identity,
 by itself, does not prove approximate-root induction.
+
+The all-order invariant form is also linear.  Work \(\tau\)-adically
+over \(k(X)\); after the common powers of \(R\) are removed, the
+relative ratio has constant term one.  Put
+\[
+\ell=\log(Q^a/P^b).
+\]
+Then (51) is equivalent to
+\[
+\tau\left(
+\frac{P_X}{P}\ell_\tau-\frac{P_\tau}{P}\ell_X
+\right)+ag\,\ell_X
+=-\frac{ac\tau^N}{PQ}.
+\]
+If the lower \(P\)- and \(\ell\)-orders are all divisible by \(g\),
+the residue classes in this equation decouple.  For \(g>2\), its
+order-\(N\) equation is exactly (63), even when the relative
+\(g\)-sector unit is nontrivial.  The unresolved mixing is therefore
+the non-\(g\)-multiple \(Z=0\) nilpotent cascade in the coefficients of
+the transport operator, not the relative unit by itself.
 
 There is a second consequence of (51) that is exact to all orders.
 Let \(\gamma\) be a normalization branch of the curve \(P=0\), and
@@ -858,16 +911,16 @@ branch of the pure \(g\)-sector model (43),
 \]
 For \(g=2\), (62) is the forbidden \(m\)-th coefficient, so each
 branch already violates (56).  For \(g>2\), it starts strictly after
-\(\tau^m\), and the pure \(g\)-sector gauge is invisible to this
-residue, as it should be.
+\(\tau^m\), and the pure \(g\)-sector family is invisible to this
+residue.
 
 The best remaining local statement is now quite concrete:
 
-> **Branch-resonance lemma.**  After quotienting the \(g\)-multiple
-> approximate-root reparametrizations, the standard equations through
-> order \(N\), including the final inhomogeneous equation, force on at
-> least one normalization branch a nonzero \(t^{em}\)-coefficient in
-> \(\tau^N/P_X\).
+> **Branch-resonance lemma.**  After choosing an honest
+> approximate-root slice while retaining the relative unit
+> \(Q^a/P^b\), the standard equations through order \(N\), including
+> the final inhomogeneous equation, force on at least one normalization
+> branch a nonzero \(t^{em}\)-coefficient in \(\tau^N/P_X\).
 
 Equations (54)--(56) would contradict this immediately.  The model
 (58) shows that the lemma has exactly the right residue class and that
@@ -1005,14 +1058,19 @@ Jacobian reappearing across the two distant Laurent orders
 This calculation rules out a tempting but invalid shortcut.  The
 nonzero class (66) cannot simply be declared incompatible with
 exactness; the meromorphic linear tail supplies the same graded class.
+In fact, exact reciprocal affine tails can have nonzero endpoint
+contribution while the coefficient (56) vanishes on every ramified
+normalization branch over the common-root divisor.  The Newton--Puiseux
+calculation and its strict scope are recorded in
+`STANDARD_SYSTEM_ENDPOINT_PAIRING_BRANCH_INVISIBILITY.md`.
 The remaining useful target must be global and strictly narrower than
 Heitmann's equivalence:
 
 > **Pole-filtered monodromy lemma.**  In the trace-zero
 > \(A_{a-1}\) local system of the finite cover
-> \(\Phi(z)=u\), quotient the invariant \(g\)-sector
-> reparametrizations and the endpoint pairing (70).  Then the
-> \(\zeta^{-2}\) forcing class cannot extend as a polynomial,
+> \(\Phi(z)=u\), choose a common approximate-root slice, retain the
+> relative \(g\)-sector unit, and quotient the endpoint pairing (70).
+> Then the \(\zeta^{-2}\) forcing class cannot extend as a polynomial,
 > single-valued section compatible with all boundary clusters.
 
 This is the first formulation that uses the new standard-system

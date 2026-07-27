@@ -1,0 +1,666 @@
+# Status and strategic pivot — 26 July 2026
+
+## Executive status
+
+The plane Jacobian conjecture is not resolved here.  No counterexample
+has been constructed, and no proof of \(JC(2)\) has been obtained.
+
+The latest normal-degree checkpoint closes the full \((12,8)\)
+frontier.  Exact local invariant analysis proves
+\[
+\operatorname {pole}(A_7)\geq3\rho
+\]
+through the smooth Davenport--Stothers stratum, all common-quartic
+collisions, and every extra approximate-root constant.  A new exact
+classification of inverse-character differentials on \(H^4=h\) shows
+that every genuinely non-fourth-power chart has a finite terminal pole;
+the local bound then makes an original source line affine.  The
+fourth-power chart is closed by Laurent time and cyclic descent, and
+the constant chart by the total-degree lower bound.  The exact notes
+and verifiers are
+`current_context/NORMAL_DEGREE_128_COUNTEREXAMPLE_CUSP_AND_LIFT_OBSTRUCTION.md`,
+`current_context/KUMMER_CHARACTER_EXACT_DIFFERENTIAL_CLASSIFICATION.md`,
+and `current_context/NORMAL_DEGREE_128_FULL_EXCLUSION.md`.
+This remains a frontier theorem, not a resolution; the next arithmetic
+normal-degree candidate is \((12,9)\).
+
+Three independently checkable advances were completed after the
+25 July checkpoint:
+
+1. The Gallagher weighted-lift polynomial-graph obstruction now covers
+   every nonconstant, not necessarily homogeneous target of degree at
+   most eleven.
+2. The projective critical schemes on the two natural scalar
+   fixed-plane perturbation rays are classified exactly; every member
+   of both rays has an affine critical point.
+3. The remaining Route A degree-four log-canonical and adjunction
+   ledgers are shown to be feasible, so that line of scalar
+   bookkeeping cannot eliminate the two surviving quartic profiles.
+
+The first result has been integrated into the standalone
+computer-assisted preprint
+`papers/weighted-lift-newton-obstructions/main.tex`.  Its exact theorem
+note and verifier passed three independent adversarial reviews after
+two genuine proof omissions and two presentation/exhaustiveness defects
+were repaired.  The 14-page PDF was rebuilt and inspected page by page.
+
+These are publishable scoped results, not a resolution of the
+two-dimensional conjecture.
+
+Subsequent theory-first work added four corrective or structural
+results: the generic standard-system resultant contact was corrected;
+the naive endpoint quotient was proved to collapse; isolated
+standard-system Newton faces were classified; and low-log-complexity
+generic Darboux fibers were excluded on the quadratic pseudoplane.  The
+details and strict limitations are recorded in Section 5 below and in
+the corresponding exact theorem notes.
+
+The strongest subsequent advance is a reviewed exclusion theorem for
+the squarefree common-root boundary in the reciprocal standard system.
+The strict compact-face bridge and a global degree average force an
+exact resonant normal form, whose homogenized Keller bracket is zero.
+Repeated roots remain open: their local compact faces and globally first
+fixed-base layer are classified, including the exact Kummer kernel, but
+factor splitting currently prevents iteration.  Independently, a
+full-degree cusp obstruction eliminates the three explicit Route A
+degree-\(4,5,6\) branch curves from transitive quartic monodromy.
+
+Two reviewed follow-ups sharpen the remaining cases.  The pure
+fixed-base Kummer modes close to an exact zero-bracket cone, and for
+Kummer period \(\kappa>1\) a derivative-gcd obstruction forces any
+candidate to leave that cone in at least one top homogeneous form.
+On Route A, the cubic critical-point dichotomy excludes the entire
+four-puncture equality case in the one-boundary quartic survivor, so
+every rational generic coordinate fiber there has at least six
+punctures.
+
+## 1. Degree-eleven weighted-lift theorem
+
+Let \(F=(A,B,C)\) be the exact Gallagher weighted lift, let \(U\) be its
+second-subduction coordinate, and let \(R_{\le2}\) be an arbitrary target
+polynomial of degree at most two.  On every polynomial graph,
+\[
+J_{x,y}\bigl(U+R_{\le2},Q\bigr)\notin\mathbb C^\times
+\]
+for every nonconstant \(Q(A,B,C)\) of target degree at most eleven.
+
+The proof is finite-dimensional but not a blind coefficient search.
+The primitive cusp collision lattice is
+\[
+\mathbb Z(5,-6,4).
+\]
+Through degree eleven there are exactly ten collision pairs
+\[
+B^6M\sim A^5C^4M,\qquad \deg M\le2.
+\]
+An exact triangular basis replaces their upper sides by
+\[
+T,\ AT,\ W,\ U,\ A^2T,\ AW,\ AU,\ BW,\ BU,\ CU.
+\]
+The scalar \(U\)-coefficient is then removed modulo the actual first
+coordinate \(U+R_{\le2}\).
+
+At regular graph boundaries, all augmented labels separate for graph
+degree \(L\ge2\).  At \(L=1\), four exact two-dimensional groups remain.
+Their Wronskian maps are injective, and a separate audit shows that every
+next lower label is two degrees away, so no lower atom can cancel the
+surviving coefficient.
+
+At a pole boundary, six two-dimensional groups remain.  Four are
+nonresonant.  The two exceptional characteristic families are, up to a
+nonzero scalar in the leading pole sector,
+\[
+\begin{aligned}
+BW:\quad&
+\rho=5-16k,\quad
+f=c\,u^{30k-10}(u^2-1)^{17k-5},\\
+AU:\quad&
+\rho=11-14k,\quad
+f=c\,u^{22k-18}(u^2-1)^{17k-13},
+\end{aligned}
+\qquad k\ge2.
+\]
+Congruence checks modulo \(16\) and \(14\) prove that these
+parametrizations exhaust the integral resonances.
+
+The first lower total-\(\gamma\) layer couples \(BW\) only to \(AT\),
+and \(AU\) only to the two-dimensional \(W/A^2B^3\) group.  A
+same-\(E\) and intervening-face audit rules out every other target
+interference.  Writing \(z=u-1\), the arbitrary zero sector is
+\[
+f_0(u)=1-\frac{57}{34}z+z^2h(u).
+\]
+The decisive local Laurent-jet determinants are
+\[
+\Delta_{BW/AT}\doteq(17k-5)(105k-32),\qquad
+\Delta_{AU/W}\doteq(17k-13)^2.
+\]
+The first is independent of \(h(1)\); the second is independent of
+\(h(1)\) and \(h'(1)\).  Higher jets cannot enter the selected
+coefficients.  Both determinants are nonzero for every \(k\ge2\).
+
+The exact artifacts are:
+
+- `current_context/WEIGHTED_LIFT_NONHOMOGENEOUS_DEGREE_ELEVEN_NEWTON_BASIS_CLOSURE.md`
+- `current_context/verify_weighted_lift_nonhomogeneous_degree_eleven_newton_basis_closure.py`
+- `papers/weighted-lift-newton-obstructions/main.tex`
+- `papers/weighted-lift-newton-obstructions/main.pdf`
+
+### Review history
+
+The first hostile review rejected the draft for two logically necessary
+filtration checks:
+
+- injectivity at \(L=1\) did not by itself exclude lower-label
+  interference;
+- the resonant pole face had not been proved unique at fixed
+  \(E=\beta+\rho q\).
+
+Both claims were true, were added as exact assertions, and were then
+re-reviewed.  A second referee required the arbitrary nonzero leading
+scalar and a proof that the integer resonance parametrizations were
+exhaustive.  Those corrections were also added.  Three independent
+referees then returned `ACCEPT`.
+
+This history matters: the theorem was not promoted merely because a
+symbolic script printed the desired conclusion.
+
+## 2. Fixed-plane projective critical scalar rays
+
+For the fixed lift \(U_0\), the affine critical scheme has length \(14\).
+The two simplest boundary-preserving perturbation rays can now be
+analyzed over the full projective parameter line.
+
+For
+\[
+U_\lambda=U_0+\lambda E^2,
+\]
+the affine critical length is \(21\) for nonzero generic \(\lambda\),
+and it is \(20\) at
+\[
+\lambda=\frac{-71\pm17\sqrt{17}}{2592}.
+\]
+At each exceptional value one point escapes to the distinguished
+projective point \(P_c\).
+
+For
+\[
+U_\lambda=U_0+\lambda tE^2,
+\]
+the affine length is generically \(21\).  It is \(19\) at
+\(\lambda=9/8\), with two points escaping to \(P_t\), and \(20\) at
+\(\lambda=-1/972\), with one point escaping to \(P_t\).  At
+\(\lambda=-1/24\) the length remains \(21\); the apparent degree drop
+is replaced by two explicit finite simple points on \(c=0\).
+
+Consequently neither scalar ray contains a polynomial submersion.  The
+calculation also shows that the leading homogeneous form determines the
+support at infinity but not its intersection multiplicity; lower
+projective jets are essential.
+
+Artifacts:
+
+- `current_context/FIXED_PLANE_PROJECTIVE_CRITICAL_SCALAR_RAYS.md`
+- `current_context/verify_fixed_plane_projective_critical_scalar_rays.py`
+
+## 3. Route A degree-four adjunction feasibility
+
+The two numerical degree-four survivor profiles were tested against the
+remaining canonical, Cartier, conductor, and log-deletion identities.
+Both profiles admit exact curve and local finite-cover certificates.
+The corrected calculation keeps the conductor adjunction divisor
+separate from the deleted log divisor.
+
+Thus those scalar identities do not exclude either survivor.  The local
+models are feasibility witnesses only: they do not assemble a global
+Keller cover.  The useful conclusion is negative but sharp—more
+adjunction bookkeeping of the same kind is unlikely to close degree
+four.
+
+Artifacts:
+
+- `current_context/ROUTE_A_DEGREE_FOUR_LOG_ADJUNCTION_FEASIBILITY.md`
+- `current_context/verify_route_a_degree_four_log_adjunction_feasibility.py`
+
+## 4. Novelty and publication assessment
+
+The degree-eleven weighted-lift theorem is the strongest positive result
+in this checkpoint.  It appears suitable for a scoped computer-assisted
+research note because it has:
+
+- a precise theorem with explicit limitations;
+- a finite exact basis theorem rather than an empirical search bound;
+- a new resonance mechanism resolved uniformly in the infinite
+  parameter \(k\);
+- executable rational-arithmetic certificates;
+- an explicit adversarial review and repair trail.
+
+No claim of priority is made.  A targeted search performed for the
+earlier manuscript found no matching polynomial-graph Newton-vertex
+theorem, but a broader MathSciNet/zbMATH review and human line-by-line
+refereeing remain necessary before submission.
+
+The fixed-plane scalar-ray classification is also new exact information,
+but it is better published as part of a larger critical-incidence paper
+unless its projective intersection mechanism is generalized beyond the
+two rays.
+
+The Route A feasibility theorem is valuable mainly because it prevents
+time being spent on a now-demonstrably insufficient obstruction.
+
+## 5. Strategic pivot
+
+Extending the weighted-lift computation directly to degree twelve would
+be useful but is not now the best primary route to the requested
+resolution.  Degree eleven already shows the characteristic pattern:
+new collision groups can be organized by the rank-one cusp lattice, and
+rare resonances are controlled by a finite local-jet map.  The right next
+question there is a general induction or finite-state collision theorem,
+not another isolated degree run.
+
+The primary resolution-directed route should instead move to the
+Guccione--Guccione--Valqui finite standard system, because that system is
+equivalent to the existence of a plane Keller counterexample rather than
+being a special three-dimensional descent family.
+
+The existing reduction is already sharp:
+
+1. Every counterexample produces a reciprocal polynomial arc based at a
+   nonzero point of the common-root cone
+   \[
+   P_0=R^a,\qquad Q_0=R^b,\qquad n=ga,\quad m=gb.
+   \]
+2. The equation-Jacobian is exactly, up to sign,
+   \[
+   \operatorname{Res}_x(P_x,Q_x),
+   \]
+   and a Keller arc would have maximal possible contact
+   \((n-1)(m-1)\).
+3. A common approximate-root change removes one \(g\)-sector unit but
+   not the relative unit
+   \[
+   \mathcal I=\frac{Q^{a}}{P^{b}}.
+   \]
+   Its first nonzero \(g\)-multiple jet is physical quotient data.
+   The larger triangular \(\lambda_{gq}\)-cancellation in the standard
+   presentation is not, by itself, a coordinate gauge on a fixed pair.
+4. The final inhomogeneous forcing lies in residue class
+   \(-2\bmod g\).
+5. On each normalization branch of \(P=0\), the Keller identity forces
+   the exact residue condition
+   \[
+   [t^{em}]
+   \left(\frac{\tau^{m+n-2}}{P_x}\Big|_\gamma\right)=0.
+   \]
+
+The first normal-form step must therefore retain the relative
+\(g\)-sector invariant rather than quotient it away.  In approximate-root
+coordinates
+\[
+P=R^aA(z),\qquad Q=R^bB(z),\qquad z=\tau^g/R,
+\]
+an honest change \(R\mapsto R\phi(z)\) has the complete relative
+invariant \(B^a/A^b\), up to tangent-to-the-identity composition.  One
+may normalize \(A=1\) or \(B=1\), but not both.
+
+The relative logarithm
+\[
+\ell=\log\left(\frac{Q^a}{P^b}\right)
+\]
+is especially useful because the homogenized Keller identity becomes a
+linear first-order equation in \(\ell\).  The \(g\)-multiple relative
+jets then remain visible but their residue classes decouple.  The actual
+mixing problem is the non-\(g\)-multiple \(Z=0\) nilpotent cascade in
+the common \(P,Q\) direction.
+
+Two audits now change that proposed route materially.
+
+First, the Laurent obstruction and the derivative-resultant filtration
+must be separated.  For the explicit first normal deformation
+\[
+P_\epsilon=R^a+\epsilon T
+\]
+and its polynomial binomial truncation \(Q_q\), where
+\[
+q=\left\lfloor\frac ba\right\rfloor,\qquad r=b-aq,
+\]
+there is an exact division-free identity
+\[
+(Q_q)_X-H_\epsilon(P_\epsilon)_X
+=r\binom{b/a}{q}\epsilon^qR^{r-1}R'T^q.
+\]
+On a natural Zariski-open set this gives
+\[
+\operatorname {ord}_\epsilon
+\operatorname {Res}_X((P_\epsilon)_X,(Q_q)_X)
+=gb-q-1.
+\]
+The earlier claim \((n-1)(q+1)\), inferred from the first Laurent pole,
+was false.  The correction gives the first exact obstruction map of the
+nonreduced normal cone and shows that generic nilpotent directions lose
+determinant contact much earlier than the Laurent calculation suggested.
+
+Second, the affine endpoint contribution can be nonzero while every
+individual normalization-branch coefficient
+\([t^{em}](\tau^N/P_X)\) vanishes.  More decisively, the
+endpoint-invisible affine pairings span the whole one-dimensional
+forcing line.  Quotienting all of them therefore kills the Keller
+forcing itself.  Restricting the quotient to lower-order cycles does
+not help: no nonzero pure affine tail is such a cycle, because it has a
+nonzero earlier cross term with \(R^a,R^b\).  Whether an endpoint term
+is removable depends on a full lift through the nilpotent cascade.
+
+The first attempt at that lift gives another useful negative result.
+For every allowed two-jet
+\[
+P=R^a+\tau^dT+\tau^{2d}S,
+\]
+the entire division-free derivative remainder has a polynomial
+primitive satisfying the reciprocal \(Q\)-degree bounds.  A free
+\(\tau^{m-1}X\) correction then saturates the derivative-resultant
+contact exactly.  This is only an ambient polynomial-\(Q\)
+countermodel: the primitive need not be realizable by the scalar
+standard parameters and does not solve the Keller bracket.  It proves
+that the resultant and coefficient bounds alone cannot supply the
+lifted-endpoint lemma.
+
+The Keller bracket is more rigid.  For a root-vanishing isolated
+binomial face, all strict cases have an uncancellable terminal; the
+only global single-face survivors are
+\[
+T=cR^\sigma,\qquad d=g(a-\sigma),
+\]
+the known physical \(g\)-sector monomials.  For a complete isolated
+matched compact face with arbitrary interior terms, direct
+differentiation gives
+\[
+\mathscr K_{\rm face}
+=(d'-gh')s^{a+b-1}z(aAB'-bA'B).
+\]
+Every strict-slope kernel is a reduced common-root shift, while equality
+is exactly the \(g\)-sector resonance.  For an actual polynomial Keller
+pair with squarefree common root, the local Keller identity makes the
+matched \(Q\)-face automatic: an Euler defect excludes every lower
+\(Q\)-face.  The resulting reduced shifts glue simultaneously in \(P\)
+and \(Q\) to a degree-compatible global change of \(R\).
+
+For squarefree \(R\), the post-resonant problem is now solved.  In the
+formal coordinate \(s=S(X,\tau)\), every existing \(g\)-sector lies
+strictly above a strict residual face.  Such a face would contain a
+primitive common shift of order \(<g\), contradicting least residual
+order.  If no root is strict, the reciprocal degree average forces the
+order to be \(gq\) and the residuals to be scalar multiples of
+\(R^{a-q}\) and \(R^{b-q}\).  Iteration terminates in
+\[
+P=S^aA(\tau^g/S),\qquad Q=S^bB(\tau^g/S),
+\]
+with arbitrary independent \(A,B\).  Coordinate covariance then gives
+\(\mathscr K_X(P,Q)=0\), contradicting the nonzero Keller forcing.
+Therefore no reciprocal Keller pair has squarefree common-root
+boundary.
+
+The remaining standard-system target is repeated \(R\).  The local
+strict-face theorem survives with root multiplicity \(e_i\), and the
+globally first fixed-base \(P\)-layer is
+\[
+T=aR^{a-1}L,\qquad \deg L\le g-E.
+\]
+The corresponding \(Q\)-layer is
+\[
+U_E=bR^{b-1}L+cR^{b-E/g},
+\]
+where the Kummer term exists precisely when \(g\mid e_iE\) for every
+\(i\).  This is not yet iterable: after
+\(R\mapsto R+\tau^EL\), repeated factors may split and \(S_X\) is not a
+formal unit at the original multiple root.
+
+The Kummer kernel has a complete pure-mode description.  Put
+\[
+d=\gcd(g,e_1,\ldots,e_r),\qquad \kappa=g/d,\qquad R=H^d.
+\]
+All fixed-base Kummer monomials lie in an exact zero-bracket cone built
+from \(\tau^\kappa\) and \(H\).  If \(\kappa>1\), however, both top
+derivatives inside that cone contain \(x^{\kappa-1}\), contradicting
+the first scalar Bezout equation.  Hence at least one top form of any
+Keller candidate must escape \(\mathbb C[x^\kappa]\).  When
+\(\kappa=1\), this universal factor disappears but the remaining
+defect recurrence is exactly the full constant-Jacobian recurrence;
+the Kummer calculation does not reduce it to a smaller system.
+
+The zero residual root after the first repeated-root Rees chart now has a
+conditional secondary-face theorem.  Strict secondary slopes force the
+actual lowest \(Q\)-face to be matched and cannot produce the scalar.
+Matched resonant faces have zero bracket.  Isolated matched super slopes
+and direct super-face/Kummer scalar terms violate the original reciprocal
+degree bounds.  More generally, every nonzero scalar terminal of an
+arbitrary anchored chain pulls back to the affine defect-one coefficient
+pair \(I=n-1,\ J=m-1\).  What remains is not another isolated face: it is
+the possibility of an unmatched compensating chain whose intermediate
+non-scalar brackets cancel successively.  See
+`current_context/STANDARD_SYSTEM_REPEATED_ROOT_ZERO_RESIDUAL_SECONDARY_FACE_NO_GO.md`.
+
+The Makar-Limanov--Trakhtenberg proper-divisor descent has also been
+checked against this exact gap.  Even if the compensating chain embeds in
+their chosen Newton resolution, the descent only proves finitely many
+nonprincipal power stages before a principal edge.  That principal
+category is nonempty: an exact Laurent face with slope \(3/2\) and positive
+intercept already has Jacobian one.  In reciprocal coordinates the
+surviving terminal is precisely
+\[
+p_0'q_1-p_1q_0'=c,
+\]
+with \(\gcd(p_0',q_0')=1\) the sharp first-layer condition.  Therefore
+power-index descent cannot supply the missing contradiction; the question
+is whether the full later homogeneous equations obstruct a lift.  See
+`current_context/STANDARD_SYSTEM_POWER_INDEX_PRINCIPAL_FACE_BRIDGE_AUDIT.md`.
+
+The next work should use the finite algebra of the deforming root scheme
+rather than another bounded coefficient sweep:
+
+1. pass to the normalization/Puiseux branches of the degree-\(g\)
+   approximate-root polynomial after the first common correction;
+2. formulate a monodromy-invariant truncated-order average over those
+   branches, replacing the lost local coordinate \(S\);
+3. identify Kummer modes as descent data for branch orbits and determine
+   whether nonlinear Keller equations kill or propagate them;
+4. test the lifted defect-one endpoint against every later homogeneous
+   equation, first deciding whether formal completion is obstructed at all;
+5. if a non-common residual survives, use its exact orbit and support as
+   a construction ansatz rather than enlarging a blind search.
+
+Route A now supplies an independent finite geometric target.  The
+Hamiltonian slice on a split \(\mathbb A^1\) generic fiber forces
+birationality, while on a split \(\mathbb G_m\) fiber it forces a cyclic
+Galois extension; both are impossible on the quadratic pseudoplane.
+With the accepted transposition-only quartic inertia, every rational
+generic coordinate fiber has at least four punctures.  In the
+one-boundary survivor, if both coordinate fibers are rational, one has
+at least six punctures and the branch curve has degree \(4\), \(5\), or
+\(6\).  The Galois pseudo-covering ingredient is prior work of
+Miyanishi; the new finite target is the simultaneous
+\(3+1\)-unibranch/\(2+2\)-multibranch classification in those three
+degrees.  Exact polynomial normalizations show that degrees \(4,5,6\)
+all survive the finite genus, delta, semigroup, puncture, and local
+permutation tests.  They nevertheless all fail globally for the same
+reason: the trigonal projection has a full-degree \((3,2)\) cusp, and
+the local cusp group surjects onto the affine complement group.  Its
+transposition image is contained in a nontransitive \(S_3\subset S_4\).
+The stronger claim that these complement groups are cyclic was
+retracted because the proposed explicit braid transports were not
+independently certified.  The next Route A question is whether every
+remaining minimal-puncture branch curve admits such a full-degree cusp,
+or whether a different projection can have a larger transitive image.
+
+That question is now answered for the entire four-puncture equality
+case in the one-boundary survivor.  Four punctures force the branch
+normalization map to the coordinate line to have degree three.  Its
+critical divisor either gives one full-degree deficient point or a
+second critical point.  The latter is smooth, nondeficient unibranch,
+or multibranch; in all three cases the global quartic image is generated
+by at most two transpositions or is a quotient of a nontransitive
+\(2+2\) local image.  Therefore a rational generic coordinate fiber
+has at least six punctures.  Six-or-more-puncture rational fibers,
+positive-genus fibers, and the two-boundary survivor remain open.
+
+Small \((g,a,b)\) computations should be used only to discover and test
+the normal form and to search for countermodels.  They should not be
+mistaken for a proof by bounded enumeration.
+
+## 6. Bottom line
+
+The project has produced a publishable squarefree-boundary exclusion
+theorem and several exact route audits, but not the requested proof or
+counterexample.  The squarefree common-root architecture is closed.
+The primary unresolved standard-system architecture has repeated
+boundary factors.  Its first layer, Kummer kernel, and zero-residual
+secondary matched-face analysis are exact; the remaining local gap is an
+unmatched compensating chain, now pinned to the affine defect-one terminal.
+The power-index descent reaches but does not exclude that terminal.
+Route A's three explicit quartic branch candidates are also closed by a
+full-degree cusp monodromy obstruction, and the whole four-puncture
+one-boundary case is excluded by the cubic critical-point theorem.  The
+next counterexample-first Route A target must have six or more punctures,
+positive genus, or the two-boundary zero-deficit profile.
+
+## 7. Later normal-degree and repeated-root checkpoint
+
+The apparent normal-degree \((8,6)\) frontier was an artifact of using
+only the narrow one-coordinate criterion.  A high source shear makes
+the total-degree gcd \(2p\), so the classical total-degree theorem
+closes it.  The first minimal-counterexample candidate left by the
+audited degree criteria is instead
+\[
+(\deg_yF,\deg_yG)=(9,6),
+\]
+with common leading coefficients \(h^3,h^2\) and
+\(\gcd(3,\deg h)=3\).
+
+The connected cubic-cover chart, where \(h\) is not a cube in
+\(\mathbf C(x)\), is now excluded.  Four exact approximate-root
+integrals become triangular after
+\[
+C=c-\frac{a^2}{4},\qquad
+D=d-\frac{ab}{2},\qquad
+Q=q-\frac{b^2}{4}.
+\]
+Their level set splits into a common-cubic branch with zero Jacobian
+and a cubic branch \(C^3=6Q^2+8jQ+8K/3\).  Generic cubic levels force a
+finite pole of the polynomial \(h\).  The sole cuspidal level is
+excluded by a finite weighted-homogeneous map, normality of
+\(\mathbf C[x,y]\), and the valuation equation
+\[
+-189V^6(3hV'-Vh')=\lambda h^3.
+\]
+This theorem has passed hostile mathematical review.  A focused audit
+of the cited primary sources located no theorem that subsumes this
+connected noncube-\(h\) exclusion, although that audit was not an
+exhaustive MathSciNet or zbMATH search and no absolute priority claim is
+made.  A standalone manuscript and checked PDF are in
+`papers/normal-degree-96-connected-exclusion/`.
+
+For the remaining cube chart \(h=r^3\), all seven upper character
+constants can be retained without losing integrability.  In the formal
+coordinate \(s=g^{1/6}\), the first four negative Laurent coefficients
+of \(f\) are constant and the fifth gives a rational time \(T\) with
+\[
+T'=\frac{\lambda}{r}.
+\]
+Riemann--Hurwitz reduces the nonconstant case to
+\[
+r=\gamma(x-a)^{k+1};
+\]
+otherwise \(r\) is constant.  When the six nontrivial-character upper
+constants vanish and only \(j\) survives, the constant-\(r\) chart is
+now excluded for arbitrary conserved levels.  Exact elimination leaves
+one upper Newton edge,
+\[
+27C_0^5=32UD_0^2,
+\]
+and the fifth Laurent coefficient has degree \(12e\), contradicting
+the affine terminal equation.  The complementary case with at least
+one of the six extra constants nonzero is also excluded.  Its weighted
+boundary is either a cusp with nonzero \(A_5\) or a common-cubic
+resonance.  Exact projective-chart ideals close the nonsingular
+resonance; a rank-two secondary normal map, its extra kernel direction,
+and six nonzero triple-collision terminal coefficients close the
+singular resonance.  Thus the full constant-\(r\) chart is impossible.
+Only the nonconstant single-root pure-power descent remains in normal
+degrees \((9,6)\).
+
+On the repeated-root side, the intervening filtered recurrence now
+excludes the saturated \((2,3)\) top-form family for every
+\(5\le g\le20\), including arbitrary compatible lower homogeneous
+coefficients.  The obstruction occurs at defect three, or at defect
+four on its exceptional hypersurface.  A hostile re-review accepted
+this exact finite-range statement; no all-\(g\) claim is made.
+
+## 8. Full \((9,6)\) closure and the general split-degree target
+
+The final nonconstant pure-power chart in normal degrees \((9,6)\) is
+now also excluded.  If \(u=x-a\), cyclic Galois descent gives
+\[
+ K=\mathbf C(v),\qquad v=u^m,\qquad k=mn,
+\]
+for the field generated by the depressed sextic coefficients.  The
+fifth Laurent time has the one-pole form
+\[
+ 6A_5=\alpha+\beta v^{-n}.
+\]
+An exact compactification of every invariant-level curve proves the
+sharp estimate
+\[
+ n\ge2\rho,
+\]
+where \(\rho\) is the weighted pole scale of the five sextic
+coefficients.  The sole apparent lower-ratio rational curve has two
+distinct poles of \(A_5\), so it cannot have the required one-pole
+time.  The \(U\ne0\) exceptional denominator, singular double edge,
+and both vertical limits have been checked separately.
+
+Undoing depression now gives, for the original degree-six coordinate,
+\[
+ \operatorname {ord}_{u=0}G_i
+ \ge i(mn+1)-m(6-i)\rho.
+\]
+Thus \(G(0,y)\) is affine.  If it is constant, the Keller identity
+forces \(F(0,y)\) to be affine and nonconstant instead.  The map is
+therefore injective on the line \(u=0\), and Gwoździewicz's theorem
+forces it to be a polynomial automorphism.  Together with the
+connected and constant-\(h\) exclusions, this closes the full
+\((9,6)\) normal-degree frontier.
+
+Three independent proof audits accepted the final pure-power argument.
+The complete focused exact verifier chain passes.  The immutable public
+checkpoint is
+`normal-degree-96-full-exclusion-v1`.
+
+This remains a degree-case theorem, not a proof of the plane Jacobian
+conjecture.  The reusable mechanism does, however, generalize.  For
+split normal degrees
+\[
+ (p,q)=(ad,bd),\qquad \gcd(a,b)=1,\qquad q<p,
+\]
+with \(h=r^d\), the formal coordinate
+\(s=g^{1/q}\) gives
+\[
+ A_1'=\cdots=A_{q-2}'=0,\qquad
+ qA_{q-1}'=\frac{\lambda}{r}.
+\]
+Riemann--Hurwitz and cyclic descent are unchanged.  In the pure-power
+case the same Taylor argument proves one-line injectivity as soon as
+\[
+ \boxed{n\ge\frac{q-2}{2}\rho.}
+\]
+For the next arithmetic case \((12,8)\), the precise new target is
+therefore \(n\ge3\rho\).  The weighted boundary of its top
+\((3,2)\)-approximate-root system is the extremal
+Davenport--Stothers equation
+\[
+ \deg_w(F^2-G^3)\le5.
+\]
+The active strategy is to use the finite Belyi/Davenport equality
+geometry and the common-power singular stratum to prove the
+threshold-three estimate, rather than expand the full coefficient
+system blindly.  In parallel, exact rational deformations of the
+extremal pairs are being tested for a genuine one-pole countermodel
+with \(n/\rho<3\).

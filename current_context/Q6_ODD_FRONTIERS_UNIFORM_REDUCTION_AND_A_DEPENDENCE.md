@@ -1,0 +1,440 @@
+# The odd \((3A,6)\) frontiers: uniform split reduction and the first \(A\)-dependent obstruction
+
+Date: 25 July 2026
+
+## Outcome and exact scope
+
+Let
+\[
+ \deg_yF=3A,\qquad \deg_yG=6,\qquad A\ge3\ \text{odd},
+\tag{1}
+\]
+and suppose the leading coefficients are
+\[
+ F_{3A}=h^A,\qquad G_6=h^2.
+\tag{2}
+\]
+This note treats the **split cubic chart**
+\[
+ h=r^3,\qquad r\in\mathbf C[x]\setminus\{0\}.
+\tag{3}
+\]
+
+There is a uniform theorem in \(A\):
+
+> **Uniform \(q=6\) split reduction.**  After the usual scaling and
+> depression, the full upper form is controlled by a constant
+> polynomial \(\Phi\), there are four canonical Laurent first
+> integrals and one rational time \(T=6A_5\), and the
+> Riemann--Hurwitz/cyclic descent is independent of \(A\).  In the
+> nonconstant pure-power chart it gives
+> \[
+>  K=\mathbf C(v),\qquad v=u^m,\qquad
+>  [f,g]_{v,w}=\frac{\lambda}{m\gamma v^{n+1}},
+>  \qquad T=\alpha+\beta v^{-n}.
+> \tag{4}
+> \]
+> If the invariant-level curves satisfy
+> \[
+>  \boxed{n\ge2\rho},
+> \tag{5}
+> \]
+> where \(\rho\) is the weighted pole scale of the depressed sextic
+> coefficients, then the original Keller map is injective on the
+> line \(u=0\), hence is an automorphism.
+
+Thus both the global Kummer argument and the final line argument are
+uniform for every odd \(A\).  The only nonuniform input is (5).
+
+The \((9,6)\) proof of (5) does **not** extend verbatim.  If
+\[
+ g=R^2+E,\qquad
+ R=w^3+\frac a2w+\frac b2,\qquad
+ E=Cw^2+Dw+Q,
+\tag{6}
+\]
+then the contribution of the top term \(S^{3A}\) to every Laurent
+residual vanishes to transverse order
+\[
+ \boxed{\frac{A+1}{2}}
+\tag{7}
+\]
+along the common-cubic locus \(E=0\).  This order is exactly two for
+\((9,6)\), exactly three for \((15,6)\), and grows without bound.
+The quadratic secondary normal map used in the \((9,6)\) boundary
+audit is therefore intrinsically degree-specific.
+
+There is a second exact sign of the same dependence.  In the even
+weighted-homogeneous top chart, the \((9,6)\) system has one nonzero
+terminal ray, whereas the \((15,6)\) system has three new terminal
+rays defined over a cubic number field.  All three new rays obey
+\[
+ \frac{\operatorname {pole}(A_5)}{\rho}=20,
+\tag{8}
+\]
+so they are not counterexamples to (5).  They are, however, exact
+countermodels to any claim that the \((9,6)\) compactification table
+or its quadratic common-cubic calculation is independent of \(A\).
+
+This note does **not** prove (5) uniformly, exclude the constant-\(r\)
+chart for \(A>3\), handle the connected noncube-\(h\) chart for
+\(A>3\), or prove the plane Jacobian conjecture.
+
+## 1. The upper approximate-root form for arbitrary odd \(A\)
+
+Put \(z=ry\), make the lower coordinate monic, and depress it:
+\[
+ g=w^6+aw^4+bw^3+cw^2+dw+q.
+\tag{9}
+\]
+For \(0\le k\le3A\), let
+\[
+ P_k=(g^{k/6})_+
+\tag{10}
+\]
+be the polynomial part at \(w=\infty\).  The triangular
+approximate-root expansion is
+\[
+ f=P_{3A}+\sum_{k=0}^{3A-1}\kappa_k(x)P_k.
+\tag{11}
+\]
+As in the degree-nine calculation,
+\[
+ \deg_w[P_k,g]\le4.
+\tag{12}
+\]
+The leading term of
+\[
+ [\kappa_kP_k,g]
+ =\kappa_k'P_kg_w+\kappa_k[P_k,g]
+\]
+is \(6\kappa_k'w^{k+5}\).  Descending triangularly in \(k\) in the
+equation
+\[
+ [f,g]_{x,w}=\frac{\lambda}{r}
+\tag{13}
+\]
+shows that every \(\kappa_k\) is constant.
+
+The terms with \(6\mid k\) are polynomials in \(g\), so constant
+target shears remove them; a target translation removes \(k=0\).
+Consequently one may write
+\[
+ \boxed{
+ f=(\Phi(g^{1/6}))_+,\qquad
+ \Phi(S)=S^{3A}
+ +\mathop{\sum_{1\le k<3A}}_{6\nmid k}\kappa_kS^k,
+ }
+\tag{14}
+\]
+with all \(\kappa_k\in\mathbf C\).
+
+For \(A=3\), (14) is the seven-constant upper form already used in
+the full \((9,6)\) exclusion.  For \(A=5\), it has thirteen lower
+constants, including the resonant core
+\[
+ S^{15}+\kappa_9S^9+\kappa_3S^3.
+\tag{15}
+\]
+The intermediate \(S^9\) term is one of the first new features at
+\((15,6)\).
+
+## 2. Four Laurent levels and one time, uniformly
+
+Let
+\[
+ s=g^{1/6}=w+O(w^{-1})
+\tag{16}
+\]
+and invert formally to \(w=w(x,s)=s+O(s^{-1})\).  There is a unique
+expansion
+\[
+ \widehat f(x,s):=f(x,w(x,s))
+ =\Phi(s)+\sum_{\ell\ge1}A_\ell(x)s^{-\ell}.
+\tag{17}
+\]
+Since \(g=s^6\), the fixed-\(s\) chain rule gives
+\[
+ [f,g]_{x,w}
+ =6s^5s_w
+ \left(\frac{\partial\widehat f}{\partial x}\right)_s.
+\tag{18}
+\]
+Because \(s_w=1+O(s^{-2})\), comparison of the nonnegative powers
+of \(s\), or equivalently of \(w\), gives
+\[
+ A_1'=A_2'=A_3'=A_4'=0,\qquad
+ 6A_5'=\frac{\lambda}{r}.
+\tag{19}
+\]
+Nothing in this argument depends on \(A\).
+
+Put
+\[
+ T=6A_5.
+\tag{20}
+\]
+Then \(T'=\lambda/r\), so the same Riemann--Hurwitz argument as in
+the general split-degree note gives either
+\[
+ r\in\mathbf C^\times,\qquad T\ \text{affine},
+\tag{21}
+\]
+or, after \(u=x-x_0\),
+\[
+ r=\gamma u^{k+1},\qquad
+ T=\alpha+\beta u^{-k},
+\qquad k\ge1.
+\tag{22}
+\]
+
+## 3. Cyclic descent and the uniform line threshold
+
+Let \(K\) be the field generated by \(a,b,c,d,q\).  The time \(T\)
+is a rational function of these coefficients and the constant
+\(\kappa_k\), so
+\[
+ \mathbf C(u^k)=\mathbf C(T)\subset K\subset\mathbf C(u).
+\tag{23}
+\]
+The cyclic Galois correspondence gives
+\[
+ K=\mathbf C(u^m)=\mathbf C(v),\qquad k=mn.
+\tag{24}
+\]
+All five sextic coefficients are Laurent polynomials in \(v\), and
+(13) becomes (4).
+
+At \(v=0\), put
+\[
+ \rho=\max\left\{
+ 0,\frac{\operatorname {pole}(a)}2,
+ \frac{\operatorname {pole}(b)}3,
+ \frac{\operatorname {pole}(c)}4,
+ \frac{\operatorname {pole}(d)}5,
+ \frac{\operatorname {pole}(q)}6
+ \right\}.
+\tag{25}
+\]
+Undoing depression has the form
+\[
+ G(u,y)=g\left(u^m,\gamma u^{mn+1}y+t(u)\right).
+\tag{26}
+\]
+Polynomiality at \(u=0\) first gives
+\[
+ \operatorname {pole}_{u=0}t\le m\rho.
+\tag{27}
+\]
+If \(G=\sum_{i=0}^6G_i(u)y^i\), Taylor expansion then gives
+\[
+ \operatorname {ord}_{u=0}G_i
+ \ge i(mn+1)-m(6-i)\rho.
+\tag{28}
+\]
+Under (5), the right side is positive for every \(i\ge2\).  Thus
+\[
+ G(0,y)=g_0+g_1y.
+\tag{29}
+\]
+If \(g_1\ne0\), \(G\) separates the points of the line \(u=0\).
+If \(g_1=0\), restriction of the Keller identity gives
+\[
+ -F_y(0,y)G_u(0,y)=\lambda,
+\tag{30}
+\]
+so both factors are nonzero constants and \(F(0,y)\) is affine
+nonconstant.  The map is injective on \(u=0\) in either case.
+Gwoździewicz's injectivity-on-one-line theorem makes it an
+automorphism.
+
+This proves the claimed uniformity of every step after (5).
+
+## 4. Exact transverse multiplicity of the top flow
+
+Write \(A=2r+1\), so \(r=(A-1)/2\), and use (6).  Let
+\[
+ I=(C,D,Q).
+\tag{31}
+\]
+The top flow is
+\[
+ P_{3A}=(g^{A/2})_+.
+\tag{32}
+\]
+In the \(I\)-adic Laurent ring,
+\[
+ g^{A/2}
+ =(R^2+E)^{A/2}
+ =\sum_{j\ge0}\binom{A/2}{j}R^{A-2j}E^j.
+\tag{33}
+\]
+For \(0\le j\le r\), the exponent \(A-2j\) is a positive odd
+integer.  Hence
+\[
+ \sum_{j=0}^{r}\binom{A/2}{j}R^{A-2j}E^j
+\tag{34}
+\]
+is already a polynomial in \(w\).  The first nonpolynomial term in
+(33) is
+\[
+ \binom{A/2}{r+1}\frac{E^{r+1}}R.
+\tag{35}
+\]
+It follows directly from the definition of polynomial part that
+the top-flow Laurent residuals \(A_\ell^{\rm top}\) satisfy
+\[
+ A_\ell^{\rm top}\in I^{r+1}
+ =I^{(A+1)/2}
+\qquad(\ell\ge1).
+\tag{36}
+\]
+
+The order is exact.  Restrict to
+\[
+ R=w^3,\qquad E=Q.
+\tag{37}
+\]
+Then formal substitution \(w=(s^6-Q)^{1/6}\) gives
+\[
+ A_1^{\rm top}=A_2^{\rm top}
+ =A_4^{\rm top}=A_5^{\rm top}=0,
+\qquad
+ \boxed{
+ A_3^{\rm top}
+ =-\binom{A/2}{(A+1)/2}Q^{(A+1)/2}.
+ }
+\tag{38}
+\]
+The binomial coefficient is nonzero in characteristic zero.  Thus
+(36) cannot be improved.
+
+For \(A=3\), the common-cubic normal cone begins quadratically.  The
+\((9,6)\) extra-character proof consequently splits according to
+\(2\eta\) versus a weighted deficit and uses a quadratic secondary
+normal map.  For \(A=5\), the first comparison is instead
+\(3\eta\), and the normal form is cubic.  In general it is
+\[
+ \frac{A+1}{2}\eta.
+\tag{39}
+\]
+This is the exact obstruction to making the old local proof uniform
+by changing only its numerical degree.
+
+## 5. Three new exact terminal rays at \((15,6)\)
+
+The dependence is visible even before lower upper modes are turned
+on.  Put \(v=z^{-1}\) and consider the even
+weighted-homogeneous ansatz
+\[
+ g=z^3G(w^2/z)
+ =w^6+zw^4+\xi z^2w^2+\eta z^3,
+\tag{40}
+\]
+and
+\[
+ f=(g^{5/2})_+.
+\tag{41}
+\]
+The weights are \(\operatorname {wt}(z,w)=(2,1)\), so
+\(\deg_{\rm wt}g=6\) and \(\deg_{\rm wt}f=15\).
+
+The coefficients of \(w^4z^7\) and \(w^2z^8\) in
+\([f,g]_{z,w}\) vanish on the common-square zero-bracket point
+\[
+ (\xi,\eta)=\left(\frac14,0\right).
+\tag{42}
+\]
+Away from (42), their exact elimination is
+\[
+ \boxed{
+ 7744\xi^3-16176\xi^2+10476\xi-2241=0,
+ }
+\tag{43}
+\]
+with
+\[
+ \boxed{
+ \eta=\frac{176\xi^2-168\xi+63}{288}.
+ }
+\tag{44}
+\]
+The discriminant of (43) is
+\[
+ -34441342746624\ne0,
+\tag{45}
+\]
+so it gives three distinct points over \(\mathbf C\).  At all three
+points the remaining coefficient of the bracket is nonzero:
+\[
+ [f,g]_{z,w}=c_\xi z^9,\qquad c_\xi\ne0.
+\tag{46}
+\]
+Thus \(A_1,\ldots,A_4\) are constant and
+\[
+ A_5=\frac{c_\xi}{60}z^{10}+\text{constant}.
+\tag{47}
+\]
+At \(v=0\),
+\[
+ \rho=\max\left\{\frac12,\frac24,\frac36\right\}
+ =\frac12,\qquad
+ n=10,
+\tag{48}
+\]
+which proves (8).
+
+For comparison, applying the same ansatz to the top \(S^9\) flow
+gives only
+\[
+ (\xi,\eta)=\left(\frac14,0\right)
+\quad\text{and}\quad
+ (\xi,\eta)=\left(\frac58,\frac3{32}\right).
+\tag{49}
+\]
+The second point is the familiar nonzero \((9,6)\) cusp ray.  The
+three roots of (43) are genuinely new at \((15,6)\).
+
+By weighted homogeneity, every nonzero terminal ray of the pure top
+\(S^{3A}\) flow has
+\[
+ \operatorname {pole}(A_5)
+ =(3A+5)\rho,
+\tag{50}
+\]
+so these new top rays are automatically far above the threshold
+two.  The unresolved issue is not the pure top ray.  It is the full
+compactification with all the lower modes in (14), especially the
+successive resonant layers
+\[
+ S^{3A},S^{3A-6},\ldots,S^3
+\tag{51}
+\]
+near the high-multiplicity common-cubic cone.
+
+## 6. What remains for an infinite-family theorem
+
+The following statement is now reduced sharply but is not proved:
+
+> For every odd \(A\ge3\), every rational invariant-level curve of
+> the full form (14) whose terminal time has one pole satisfies
+> \(n\ge2\rho\).
+
+The \((9,6)\) proof establishes it only for \(A=3\).  A uniform proof
+must do at least one of the following:
+
+1. classify the higher-order common-cubic normal forms generated by
+   (35), including balances among the resonant chain (51);
+2. replace the explicit Newton tables by a global curve argument
+   which uses the one-pole divisor of \(A_5\); or
+3. construct a genuine one-pole invariant curve with
+   \(n/\rho<2\), which would disprove the desired local theorem.
+
+The exact \((15,6)\) rays (43)--(48) do not supply such a
+counterexample.  No one-pole curve with \(n/\rho<2\) was found here.
+The established result is therefore a uniform **conditional**
+pure-power exclusion together with a rigorous obstruction to the
+only presently available proof of its hypothesis.
+
+The exact checks are in
+`verify_q6_odd_frontiers_uniform_reduction_and_a_dependence.py`.

@@ -1,0 +1,1116 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1.08in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\A}{\mathbb A}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Jac}{\operatorname{Jac}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\lc}{\operatorname{lc}}
+\newcommand{\Supp}{\operatorname{Supp}}
+\newcommand{\cU}{\mathcal U}
+
+\title{Newton-Vertex Obstructions for Polynomial-Graph Descents\\
+of the Gallagher Weighted Lift}
+\author{Atharva Vaidya}
+\date{26 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study polynomial-plane restrictions of the Gallagher weighted lift
+\(F=(A,B,C):\A^3\to\A^3\).  Let \(\cU(A,B,C)\) be its exact
+second-subduction coordinate.  We prove that, on every polynomial graph
+\(z=g(x,y)\),
+\[
+ \Jac_{x,y}\bigl(\cU+R,Q\bigr)\notin\C^\times
+\]
+for every target polynomial \(R(A,B,C)\) of degree at most two and every
+nonconstant, not necessarily homogeneous, \(Q(A,B,C)\) of degree at most
+eleven.  More generally the conclusion holds in arbitrary target degree
+provided no two support exponents of \(Q\) differ by a nonzero multiple of
+\((5,-6,4)\).  Its primitive positive and negative parts give the first
+possible collision, \(A^5C^4\) and \(B^6\), in degrees nine and six.
+We resolve this collision and all its multiples through degree eleven by an
+exact triangular basis change through three cusp subductions.
+
+The proof uses the globally earliest Newton vertex, rather than an
+isolated homogeneous face.  At a regular source boundary an exact
+seed gap protects either the leading Wronskian or its first
+nonmonomial deviation.  At a pole boundary, cancellation at
+\(u=1\) is incompatible with the leading coefficient at
+\(u=\infty\).  At degree eleven six two-dimensional polar groups remain.
+Four are immediately nonresonant; the two resonant characteristic rays
+are eliminated by exact local Laurent-jet determinants at \(u=1\).
+The determinants depend only on the graph's forced 1-jet and are
+independent of every higher zero-sector coefficient.  The finite
+seed-support assertions are checked by exact rational arithmetic in the
+accompanying code.
+
+This result excludes a broad descent architecture for a
+three-dimensional Keller counterexample.  It neither proves nor
+disproves the two-dimensional Jacobian conjecture.
+\end{abstract}
+
+\section{The weighted lift and the main theorem}
+
+The plane Jacobian conjecture and its standard reduction theory are
+surveyed in~\cite{BassConnellWright,vanDenEssen}.  The construction
+studied here is instead a descent problem arising from Gallagher's
+three-dimensional weighted-lift family~\cite{Gallagher}; none of the
+arguments below changes the scope of the classical reductions.  A
+targeted search conducted at the date of this draft found no statement
+matching Theorem~\ref{thm:main}; this is a cautious literature report,
+not a claim of priority.
+
+Put
+\[
+ r(w)=w(w+1)(w-3)(w-4)(w-5)(w+4),\qquad
+ H(w)=-\frac{r(w)}{92},
+\]
+and define
+\[
+ p(w)=H'(w)-H'(0),\qquad q(w)=wH'(w)-H(w).
+\]
+Their leading coefficients are
+\[
+ p_5=-\frac3{46},\qquad q_6=-\frac5{92}.
+\]
+In source coordinates put
+\[
+ u=1+xy,\qquad
+ \gamma=1-\frac{57}{34}xy+x^2z,\qquad
+ w=u\gamma .
+\]
+The weighted-lift coordinates have the exact presentations
+\[
+ A=\frac{q(w)+w\gamma}{x^2\gamma^2},\qquad
+ B=\frac{p(w)+\gamma}{x\gamma},\qquad
+ C=x\gamma .
+\tag{1}
+\]
+The engineered divisibilities make the three expressions in (1)
+polynomials in \(x,y,z\).  Direct differentiation gives
+\[
+\det\frac{\partial(A,B,C)}{\partial(x,y,z)}=1.
+\]
+This identity is checked from the explicit seed by
+\path{verify_weighted_lift_degree_six_graph_projection_no_go.py} and
+is also part of Gallagher's source construction~\cite{Gallagher}.
+
+We record the target polynomial used as the first coordinate.  Let
+\[
+\begin{aligned}
+t_1&=-\frac{8505}{18948593792},&
+t_2&=-\frac{79515}{151588750336},\\
+t_3&=\frac{1587485}{303177500672},&
+t_4&=-\frac{1079635}{303177500672},
+\end{aligned}
+\]
+and set
+\[
+\begin{aligned}
+T={}&p_5^6A^5C^4-q_6^5B^6
+ +t_1A^4BC^3+t_2A^3B^2C^2\\
+&+t_3A^2B^3C+t_4AB^4.
+\end{aligned}
+\tag{2}
+\]
+Write
+\[
+\lambda_0=
+\frac{258473511}{31221670147323559936}
+\]
+and
+\[
+\begin{aligned}
+s_0&=-\frac{10204102899}{11489574614215070056448},\\
+s_1&=\frac{5559334317}{249773361178588479488},\\
+s_2&=-\frac{1028649031155}{11489574614215070056448},\\
+s_3&=\frac{16337519127}{359049206694220939264}.
+\end{aligned}
+\]
+The exact second subduction is
+\[
+\cU=p_5^5CT-\lambda_0B^5+
+s_0A^4C^3+s_1A^3BC^2+s_2A^2B^2C+s_3AB^3.
+\tag{3}
+\]
+
+Adding a constant to \(Q\) does not change its Jacobian with any first
+coordinate.  We therefore replace \(Q\) by \(Q-Q(0)\) throughout.  For
+a polynomial
+\[
+Q-Q(0)=
+\sum_{\substack{a,b,c\ge0\\a+b+c>0}}
+\lambda_{abc}A^aB^bC^c,
+\]
+its support is the set of exponent triples with
+\(\lambda_{abc}\ne0\).  Call the support \emph{cusp-free} if no two
+of its elements differ by a nonzero multiple of \((5,-6,4)\).
+
+\begin{theorem}[Nonhomogeneous Newton-vertex obstruction]
+\label{thm:main}
+Let \(g\in\C[x,y]\), and restrict (1) to the graph \(z=g(x,y)\).
+If \(Q\in\C[A,B,C]\setminus\C\) has cusp-free support and
+\(\deg R\le2\), then
+\[
+\Jac_{x,y}\bigl(\cU(A,B,C)+R(A,B,C),Q(A,B,C)\bigr)
+\notin\C^\times .
+\tag{4}
+\]
+\end{theorem}
+
+\begin{corollary}[Automatic cusp-free range through degree eight]
+\label{cor:eight}
+The conclusion of Theorem~\ref{thm:main} holds for every nonconstant
+\(Q\) of total target degree at most eight.  No homogeneity assumption
+is imposed.
+\end{corollary}
+
+\begin{theorem}[Arbitrary targets through degree ten]
+\label{thm:ten}
+Let \(g\in\C[x,y]\), restrict (1) to \(z=g(x,y)\), and let
+\(\deg R\le2\).  For every nonconstant \(Q\in\C[A,B,C]\) of total
+target degree at most ten,
+\[
+\Jac_{x,y}\bigl(\cU+R,Q\bigr)\notin\C^\times .
+\]
+\end{theorem}
+
+\begin{theorem}[Arbitrary targets through degree eleven]
+\label{thm:eleven}
+Under the hypotheses of Theorem~\ref{thm:ten}, the same conclusion holds
+for every nonconstant \(Q\in\C[A,B,C]\) of total target degree at most
+eleven.
+\end{theorem}
+
+\begin{corollary}[Homogeneous targets]
+\label{cor:homogeneous}
+The conclusion of Theorem~\ref{thm:main} holds for every nonzero
+homogeneous target \(Q_n(A,B,C)\), in every degree \(n\), and every
+\(\deg R\le2\).
+\end{corollary}
+
+\section{Exact boundary templates}
+
+After restricting to \(z=g(x,y)\), substitute
+\[
+y=\frac{u-1}{x}.
+\]
+Then
+\[
+\gamma
+=1-\frac{57}{34}(u-1)
+ +x^2g\left(x,\frac{u-1}{x}\right)
+=\sum_{j=\rho}^{M}x^jf_j(u),
+\qquad f_\rho\ne0.
+\tag{5}
+\]
+Necessarily \(\rho\le0\).  If there is no negative power, the
+coefficient of \(x^0\) takes the value \(1\) at \(u=1\).
+
+Let \(\mathcal N(w,\gamma)\) be the numerator obtained from (3) after
+using (1) and clearing \(x^5\gamma^5\).  Define
+\[
+\begin{aligned}
+\mathsf A(u,\gamma)
+ &=\frac{q(u\gamma)+u\gamma^2}{\gamma^2},\\
+\mathsf B(u,\gamma)
+ &=\frac{p(u\gamma)+\gamma}{\gamma},\\
+\mathsf H(u,\gamma)
+ &=\frac{\mathcal N(u\gamma,\gamma)}{\gamma^5}.
+\end{aligned}
+\tag{6}
+\]
+Thus
+\[
+A=x^{-2}\mathsf A,\qquad
+B=x^{-1}\mathsf B,\qquad
+C=x\gamma,\qquad
+\cU=x^{-5}\mathsf H.
+\tag{7}
+\]
+
+\begin{lemma}[Exact seed support]
+\label{lem:seed}
+The templates in (6) are polynomials and have unique top
+\(\gamma\)-degree terms
+\[
+\begin{aligned}
+\mathsf A&=q_6u^6\gamma^4+\text{terms of lower \(\gamma\)-degree},\\
+\mathsf B&=p_5u^5\gamma^4+\text{terms of lower \(\gamma\)-degree},\\
+\mathsf H&=\theta u^{20}\gamma^{17}
+  +\text{terms of lower \(\gamma\)-degree},
+\end{aligned}
+\tag{8}
+\]
+where
+\[
+\theta=
+-\frac{36905625}{6077984970919772059860992}\ne0.
+\]
+If \(\rho=0\), put \(f=f_0\) and \(L=\deg f\).  Then \(L\ge1\),
+and every non-top seed term in (8), after \(\gamma=f\), loses at
+least \(L+1\) in \(u\)-degree.  If \(\rho<0\), every non-top seed
+term has strictly later \(x\)-order.
+\end{lemma}
+
+\begin{proof}
+The assertions follow by exact expansion of the degree-six seed and
+the two target subductions (2)--(3).  For \(\mathsf A,\mathsf B\),
+every non-top term loses at least one \(u\)-power and one
+\(\gamma\)-power.  For \(\mathsf H\), the only additional edge
+possibility loses two \(\gamma\)-powers and no \(u\)-power.  The
+regular loss is therefore at least
+\(\min\{L+1,2L\}=L+1\).  When \(\rho<0\), losing a
+\(\gamma\)-power strictly raises the \(x\)-order.
+
+The accompanying verifier expands all 77 nonzero terms of
+\(\mathcal N\) over \(\mathbb Q\), checks the divisibilities and
+support inequalities, and checks the displayed value of \(\theta\).
+No floating-point calculation is used.
+\end{proof}
+
+We repeatedly use the elementary identity
+\[
+\Jac_{x,y}\bigl(x^\alpha H(u),x^\beta V(u)\bigr)
+=x^{\alpha+\beta}
+\bigl(\alpha HV'-\beta H'V\bigr),
+\tag{9}
+\]
+which follows from \(u=1+xy\).
+
+\section{Regular boundaries}
+
+Assume \(\rho=0\).  Then
+\[
+f(1)=1,\qquad f'(1)=-\frac{57}{34},\qquad L=\deg f\ge1.
+\tag{10}
+\]
+For an exponent triple \(m=(a,b,c)\) define
+\[
+\beta=-2a-b+c,\qquad h=6a+5b,\qquad q=4a+4b+c.
+\tag{11}
+\]
+Notice that \(q=h+\beta\).  The top boundary term of
+\(A^aB^bC^c\) is
+\[
+q_6^ap_5^b x^\beta u^hf^q.
+\tag{12}
+\]
+
+Let \(\beta_0\) be the minimum \(\beta\) in \(\Supp Q\), and let
+\(h_0\) be the maximum \(h\) among terms with \(\beta=\beta_0\).
+The exponent triples at this vertex all have the same \(q=h_0+\beta_0\).
+Their aggregate coefficient is
+\[
+\Lambda_0=
+\sum_{\substack{\lambda_{abc}\ne0\\
+\beta=\beta_0,\ h=h_0}}
+\lambda_{abc}q_6^ap_5^b.
+\tag{13}
+\]
+
+\begin{proposition}[Regular vertex]
+\label{prop:regular}
+If \(\Lambda_0\ne0\), then
+\(\Jac(\cU,Q)\notin\C^\times\).
+\end{proposition}
+
+\begin{proof}
+On a fixed \(\beta\)-face the \(u\)-degree of (12) is
+\[
+h+qL=h+(h+\beta)L.
+\tag{14}
+\]
+Decreasing \(h\) by \(r\ge1\) therefore costs exactly
+\(r(L+1)\).  Lemma~\ref{lem:seed} gives the same protected gap for
+non-top seed terms.  Consequently (13) supplies a unique nonzero
+aggregate at the globally earliest Jacobian order
+\(x^{\beta_0-5}\).
+
+For a vertex exponent triple, the coefficient Wronskian is
+\[
+\mathcal W=-5\mathsf H\mathsf V'
+-\beta_0\mathsf H'\mathsf V.
+\tag{15}
+\]
+Its leading coefficient is a nonzero seed-and-target scalar times
+\[
+B_*L+C_*,
+\tag{16}
+\]
+where
+\[
+B_*=-5q-17\beta_0=14a-3b-22c,
+\quad
+C_*=-5h-20\beta_0=10a-5b-20c.
+\tag{17}
+\]
+If (16) is nonzero, then \(\mathcal W\ne0\).
+
+Suppose (16) vanishes.  The identity
+\[
+17C_*-15B_*=-10q
+\tag{18}
+\]
+implies \(B_*\ne0\).  The jets (10) rule out \(f=du^L\), so
+\[
+f=du^L+eu^{L-\delta}+\cdots,
+\qquad de\ne0,\quad1\le\delta\le L.
+\tag{19}
+\]
+After the leading cancellation, the first surviving coefficient in
+(15) is a nonzero multiple of
+\[
+-B_*\delta e.
+\tag{20}
+\]
+It occurs at degree drop at most \(L\), before any other target
+vertex or non-top seed term can enter.
+
+If \(\beta_0-5\ne0\), the nonzero earliest \(x\)-term already
+contradicts a constant Jacobian.  If \(\beta_0-5=0\), the surviving
+coefficient still has positive \(u\)-degree.  Before cancellation its
+degree is
+\[
+20+17L+h_0+qL-1>0,
+\]
+and (20) lowers it by only \(\delta\le L\).  Thus it cannot be a
+nonzero constant.
+\end{proof}
+
+\section{Pole boundaries}
+
+Assume \(\rho<0\) and put \(f=f_\rho\).  A graph monomial
+\(x^ry^s\) can contribute to \(f\) only when \(r+2-s=\rho\);
+hence
+\[
+f(u)=\sum_r c_r(u-1)^{r+2-\rho}.
+\]
+Consequently
+\[
+\nu:=\ord_{u=1}f\ge2-\rho,\qquad
+L:=\deg f\ge2-\rho,\qquad
+L+\rho+1\ge3.
+\tag{21}
+\]
+The leading boundary terms are
+\[
+\begin{aligned}
+\cU&=x^\alpha\theta u^{20}f^{17}+\cdots,
+&\alpha&=-5+17\rho,\\
+A&=x^{-2+4\rho}q_6u^6f^4+\cdots,\\
+B&=x^{-1+4\rho}p_5u^5f^4+\cdots,\\
+C&=x^{1+\rho}f+\cdots.
+\end{aligned}
+\tag{22}
+\]
+
+For a target exponent triple retain \(q\) from (11) and put
+\[
+E=\beta+\rho q.
+\tag{23}
+\]
+Let \(E_0\) be the minimum \(E\) in the support.  At the
+globally earliest face, group the top target terms by \(q\):
+\[
+\Lambda_q=
+\sum_{\substack{\lambda_{abc}\ne0\\E=E_0,\ q(a,b,c)=q}}
+\lambda_{abc}q_6^ap_5^b.
+\tag{24}
+\]
+Let \(q_{\min}\) and \(q_{\max}\) be the smallest and largest
+indices with \(\Lambda_q\ne0\).
+
+\begin{proposition}[Polar endpoints]
+\label{prop:polar}
+If some \(\Lambda_q\ne0\), then
+\(\Jac(\cU,Q)\notin\C^\times\).
+\end{proposition}
+
+\begin{proof}
+At fixed \(E_0\), the \(q\)-group is a nonzero multiple of
+\[
+u^sf^q,\qquad s=(1+\rho)q-E_0.
+\tag{25}
+\]
+At \(u=1\), the \(q_{\min}\)-group uniquely has least vanishing
+order.  Its \(f'\)-coefficient in the Wronskian is
+\[
+\alpha q_{\min}-17E_0.
+\tag{26}
+\]
+If this is nonzero, the resulting term has order
+\[
+(17+q_{\min})\nu-1>0
+\tag{27}
+\]
+at \(u=1\), and every larger \(q\) has strictly greater order.
+
+Suppose instead that (26) vanishes, so
+\[
+E_0=\frac{\alpha q_{\min}}{17}.
+\tag{28}
+\]
+At infinity the \(q_{\max}\)-group uniquely dominates because
+\(L+\rho+1>0\).  Its leading coefficient is
+\[
+\alpha\left(
+(L+\rho+1)(q_{\max}-q_{\min})
++\frac{2q_{\min}}{17}
+\right),
+\tag{29}
+\]
+which is nonzero.  Its degree is
+\[
+20+17L+(L+\rho+1)q_{\max}-E_0-1>0.
+\tag{30}
+\]
+Here \(E_0\le0\): for \(\rho\le-1\), the coefficients of
+\(a,b,c\) in \(E\) are respectively
+\(-2+4\rho,-1+4\rho,1+\rho\), all nonpositive.
+Every non-top seed term has later \(x\)-order by
+Lemma~\ref{lem:seed}.  Hence the earliest coefficient is nonzero
+and, if its \(x\)-order is zero, is still nonconstant by (27) or
+(30).
+\end{proof}
+
+\section{The cusp kernel and the degree-eight cutoff}
+
+\begin{lemma}[Primitive collision direction]
+\label{lem:kernel}
+Two exponent triples have the same pair \((\beta,h)\) if and only if
+their difference is
+\[
+k(5,-6,4),\qquad k\in\Z.
+\tag{31}
+\]
+For every fixed \(\rho<0\), equality of \((E,q)\) has the same
+kernel.
+\end{lemma}
+
+\begin{proof}
+The integer kernel of
+\[
+\begin{pmatrix}-2&-1&1\\6&5&0\end{pmatrix}
+\]
+is generated primitively by \((5,-6,4)\).  Replacing the first row
+by \(E=\beta+\rho q\) and the second by \(q=(4,4,1)\) leaves the
+same kernel.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+At a regular boundary, cusp-freeness makes the vertex in (13) a
+single nonzero target coefficient.  Proposition~\ref{prop:regular}
+applies.  At a pole boundary, Lemma~\ref{lem:kernel} makes every
+nonempty aggregate in (24) nonzero, so
+Proposition~\ref{prop:polar} applies.
+
+It remains to include \(R\).  At a regular boundary, every
+nonconstant monomial of target degree at most two has \(x\)-order at
+least \(-4>-5=\ord_x\cU\).  At a pole boundary such a monomial has
+\(\beta\ge-4\) and \(q\le8\), whence
+\[
+E_R-\alpha=(\beta+5)+\rho(q-17)>0.
+\tag{32}
+\]
+Thus \(\Jac(R,Q)\) occurs strictly after the protected earliest
+coefficient of \(\Jac(\cU,Q)\).
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:eight}]
+Suppose two distinct nonnegative exponent triples differ by
+\(k(5,-6,4)\), with \(k>0\) after exchanging them.  The triple on
+the negative-\(B\) side has \(b\ge6k\), so its total target degree
+is at least \(6k\).  The other triple has total degree larger by
+\(3k\), hence at least \(9k\).  Such a pair cannot occur when all
+monomials have degree at most eight.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:homogeneous}]
+The total degree changes by \(5-6+4=3\) along the primitive kernel.
+Distinct monomials in one homogeneous target therefore cannot differ
+by a nonzero multiple of (31).
+\end{proof}
+
+\section{Exact closure through degree ten}
+
+The primitive positive and negative parts of (31) give the first
+collision
+\[
+A^5C^4\quad\text{and}\quad B^6.
+\tag{33}
+\]
+Through degree ten, this collision and its multiples give exactly
+\[
+\begin{array}{c|c}
+B^6&A^5C^4\\
+AB^6&A^6C^4\\
+B^7&A^5BC^4\\
+B^6C&A^5C^5.
+\end{array}
+\tag{34}
+\]
+The polynomial \(T\) in (2) replaces the upper monomial in the first
+row, and \(AT\) does the same in the second row.  To handle the final
+two rows, define
+\[
+\begin{aligned}
+W={}&q_6^5BT-p_5\lambda_0A^5C^3
+-\frac{1289186932405}{367666387654882241806336}A^4BC^2\\
+&+\frac{967724214885}{183833193827441120903168}A^3B^2C\\
+&+\frac{280059055635}{367666387654882241806336}A^2B^3.
+\end{aligned}
+\tag{35}
+\]
+The coordinate \(\cU\) in (3) replaces \(CT\), while \(W\) replaces
+\(BT\).
+
+\begin{lemma}[Exact degree-ten basis]
+\label{lem:basis-ten}
+Remove
+\[
+(5,0,4),\quad(6,0,4),\quad(5,1,4),\quad(5,0,5)
+\tag{36}
+\]
+from the ordinary exponent triples of total degree at most ten.
+Adjoining \(T,AT,W,\cU\) gives a basis of the same polynomial space.
+Relative to the four removed monomials, the change-of-basis diagonal is
+\[
+p_5^6,\qquad p_5^6,\qquad q_6^5p_5^6,\qquad p_5^{11},
+\tag{37}
+\]
+and is nonzero.
+\end{lemma}
+
+\begin{proof}
+Lemma~\ref{lem:kernel} and the degree bound give exactly the four pairs
+in (34).  Multiplying (2) by \(1,A,B,C\) first gives a triangular
+replacement by \(T,AT,BT,CT\).  Equations (3) and (35) then replace
+\(CT,BT\) by \(\cU,W\), with the diagonal (37).  Exact expansion over
+\(\mathbb Q\) checks that the displayed target formulas agree with the
+boundary builders.
+\end{proof}
+
+We next record the boundary data of the three augmented atoms that remain
+after the first-coordinate reduction.  At a regular boundary their exact
+tops are
+\[
+\begin{array}{c|c|c}
+\text{atom}&\beta&u^hf^q\\ \hline
+T&-6&\lambda_0u^{25}f^{19}\\
+AT&-8&q_6\lambda_0u^{31}f^{23},
+\end{array}
+\tag{38}
+\]
+up to the nonzero seed factors already displayed.  Every non-top term
+in these two rows loses at least one \(u\)-power and one \(f\)-power,
+hence at least \(L+1\) in regular degree, and is later at a pole.
+The exact Pareto frontier of \(W\) is
+\[
+\kappa_{19}u^{26}f^{19}
++\kappa_{20}u^{25}f^{20},
+\qquad \kappa_{19}\kappa_{20}\ne0.
+\tag{39}
+\]
+The second term is the unique polar top.  It is also the unique regular
+top for \(L\ge2\).  For \(L=1\), the fixed jets force
+\[
+f(u)=\frac{91}{34}-\frac{57}{34}u,
+\tag{40}
+\]
+and the two frontier terms combine to a nonzero coefficient of degree
+\(45\).
+
+\begin{proof}[Proof of Theorem~\ref{thm:ten}]
+By Lemma~\ref{lem:basis-ten}, write
+\[
+Q=c+\mu\cU+\lambda_TT+\lambda_{AT}AT+\lambda_WW
++\sum\nolimits'\lambda_{abc}A^aB^bC^c,
+\tag{41}
+\]
+where the prime omits (36).  Put
+\[
+P=\cU+R,\qquad Q^\flat=Q-\mu P.
+\tag{42}
+\]
+Then \(\Jac(P,Q^\flat)=\Jac(P,Q)\), the coefficient of \(\cU\) in
+\(Q^\flat\) is zero, and only ordinary coefficients of degree at most
+two have changed.  If \(Q^\flat\) is constant, the Jacobian is zero.
+Assume henceforth that it is nonconstant.
+
+At a regular boundary, the retained ordinary \((\beta,h)\)-labels are
+pairwise distinct, and neither \((-6,25)\) nor \((-8,31)\) is ordinary.
+For \(L\ge2\), equality between the \(W\)-degree \(25+20L\) and an
+ordinary atom of order \(\beta=-7\) would imply
+\[
+(L+1)(h-27)=-2,
+\tag{43}
+\]
+which is impossible.  For \(L=1\), equality would require \(h=26\);
+the equations \(6a+5b=26\), \(c=-7+2a+b\ge0\) have no nonnegative
+solution.  Thus the globally earliest regular vertex is a singleton.
+
+The leading Wronskian characteristics of the new atoms are
+\[
+\begin{array}{c|c}
+T&7L-5\\
+AT&21L+5\\
+W&19L+15\quad(L\ge2),
+\end{array}
+\tag{44}
+\]
+and the \(L=1\) characteristic of \(W\) is \(34\).  All are nonzero.
+For an ordinary atom whose top characteristic vanishes, the deviation
+argument in Proposition~\ref{prop:regular} produces a nonzero coefficient
+within degree drop at most \(L\).  The only possible new interference
+could come from \(W\) on the \(\beta=-7\) face.  If an ordinary atom of
+height \(h\) lies above \(W\), its degree excess is
+\[
+(L+1)(h-27)+2.
+\tag{45}
+\]
+For \(h\ge28\) this is greater than \(L\); the remaining leading case
+\(h=27\) is \(A^2B^3\), whose characteristic is \(19L+5\ne0\).
+Hence the earliest regular Wronskian is nonzero.
+
+At a pole, put
+\[
+\alpha=-5+17\rho,\qquad E=\beta+\rho q.
+\tag{46}
+\]
+The retained ordinary polar labels, together with \(T\) and \(AT\), are
+pairwise distinct.  The sole collision after adjoining \(W\) is
+\[
+(\beta_W,q_W)=(-7,20)
+=(\beta_{A^2B^3},q_{A^2B^3}).
+\tag{47}
+\]
+At the globally earliest \(E\), choose the least nonzero \(q\)-group.
+If it is a singleton with top \(u^hf^q\), its Wronskian, up to a
+nonzero monomial factor, is
+\[
+(\alpha q-17E)\,u f'
++(\alpha h-20E)\,f.
+\tag{48}
+\]
+If the \(f'\)-coefficient is nonzero, this group has vanishing order
+\((17+q)\nu-1\) at \(u=1\), before every larger \(q\)-group.  If it
+vanishes, then \(\beta=-5q/17\), and the \(f\)-coefficient is
+\[
+\alpha h-20E=2E\ne0.
+\tag{49}
+\]
+Its order is \((17+q)\nu\), still before the next group because
+\(\nu\ge3\).
+
+It remains to treat the exceptional two-dimensional group.  Its exact
+polar top is
+\[
+f^{20}P(u),\qquad P(u)=a u^{27}+b u^{25},
+\qquad(a,b)\ne(0,0).
+\tag{50}
+\]
+Writing \(E=-7+20\rho\), direct differentiation gives, again up to a
+nonzero monomial factor,
+\[
+19u f'P+f\bigl(\alpha uP'-20EP\bigr).
+\tag{51}
+\]
+If \(P(1)\ne0\), its first coefficient has order \(37\nu-1\) and is
+nonzero.  If \(P(1)=0\), then \(P=a u^{25}(u^2-1)\) has a simple zero,
+and the coefficient at order \(37\nu\) is proportional to
+\[
+(19\nu+\alpha)P'(1).
+\tag{52}
+\]
+The graph inequality \(\nu\ge2-\rho\) gives
+\[
+19\nu+\alpha\ge33-2\rho>0.
+\tag{53}
+\]
+Every group with \(q\ge21\) starts later, so cancellation is impossible.
+
+Finally, every nonconstant monomial of \(R\) is later than \(\cU\):
+its regular order is at least \(-4>-5\), while at a pole
+\[
+E_R-\alpha=(\beta+5)+\rho(q-17)>0
+\tag{54}
+\]
+because \(\beta\ge-4\), \(q\le8\), and \(\rho<0\).  Thus
+\(\Jac(R,Q^\flat)\) cannot enter the isolated coefficient of
+\(\Jac(\cU,Q^\flat)\).  If that coefficient has \(x\)-order zero, it
+still has positive \(u\)-degree at a regular boundary or positive
+vanishing order at a pole.  It is therefore not a nonzero constant.
+\end{proof}
+
+\begin{remark}[No SAGBI termination claim]
+The generator \(W\) is forced: its two frontier vectors do not belong to
+the semigroup generated by \(A,B,C,T,\cU\).  Later exact subductions
+produce further projected-new values.  The proof above uses only the
+finite vector space through degree ten; it asserts neither finite
+termination nor infinitude of the full SAGBI completion.
+\end{remark}
+
+\section{Exact closure through degree eleven}
+
+Degree eleven contains ten copies of the primitive collision (33), one
+for each monomial of degree at most two:
+\[
+B^6M\sim A^5C^4M,\qquad \deg M\le2.
+\tag{55}
+\]
+The four degree-ten replacements extend without a new subduction
+generator.
+
+\begin{lemma}[Exact degree-eleven basis]
+\label{lem:basis-eleven}
+Remove \(A^5C^4M\), for all monomials \(M\) of degree at most two, from
+the ordinary monomial basis of target degree at most eleven.  The ten
+polynomials
+\[
+T,\ AT,\ W,\ \cU,\ A^2T,\ AW,\ A\cU,\ BW,\ B\cU,\ C\cU
+\tag{56}
+\]
+replace them and give a basis of the same vector space.
+\end{lemma}
+
+\begin{proof}
+The collision kernel is \(\Z(5,-6,4)\), so (55) is the complete list.
+Multiplication of \(T\) by
+\[
+1,\ A,\ B,\ C,\ A^2,\ AB,\ AC,\ B^2,\ BC,\ C^2
+\]
+first gives a triangular replacement.  Equations (3) and (35) then
+replace the corresponding \(CT\) and \(BT\) multiples by the entries
+of (56).  The exact coefficient matrix on the ten removed monomials has
+nonzero determinant.  The accompanying verifier constructs this matrix
+over \(\mathbb Q\).
+\end{proof}
+
+As before, write \(P=\cU+R_{\le2}\).  Subtracting the scalar
+\(\cU\)-coefficient of a target modulo \(P\) changes only ordinary
+coefficients of degree at most two and preserves the Jacobian.  The
+remaining augmented atoms are
+\[
+\mathcal A_{11}=
+\{T,AT,A^2T,W,AW,BW,A\cU,B\cU,C\cU\}.
+\tag{57}
+\]
+Their exact Pareto frontiers, recorded as \((\beta,h,q)\), are
+\[
+\begin{array}{c|c}
+\text{atom}&\text{frontier}\\ \hline
+T&(-6,25,19)\\
+AT&(-8,31,23)\\
+A^2T&(-10,37,27)\\
+W&(-7,26,19),\ (-7,25,20)\\
+AW&(-9,32,23),\ (-9,31,24)\\
+BW&(-8,31,23),\ (-8,30,24)\\
+A\cU&(-7,26,21)\\
+B\cU&(-6,25,21)\\
+C\cU&(-4,20,18).
+\end{array}
+\tag{58}
+\]
+
+\begin{lemma}[Regular degree-eleven boundary]
+\label{lem:regular-eleven}
+At every regular graph boundary, the earliest nonzero coefficient of
+\(\Jac(\cU,Q^\flat)\), for a nonconstant degree-eleven normal form
+\(Q^\flat\), is not a scalar.
+\end{lemma}
+
+\begin{proof}
+For \(L\ge2\), the larger \(q\)-entry dominates in each two-frontier
+row of (58).  The resulting \((\beta,h+Lq)\)-labels are pairwise
+distinct and distinct from every retained ordinary label.  Their
+Wronskian characteristics are
+\[
+\begin{array}{c|c@{\qquad}c|c}
+T&7L-5&AT&21L+5\\
+A^2T&35L+15&W&19L+15\\
+AW&33L+25&BW&16L+10\\
+A\cU&14L+10&B\cU&-3L-5\\
+C\cU&-22L-20&&
+\end{array}
+\tag{59}
+\]
+and none vanishes.  An exact gap audit of the retained ordinary atoms
+finds seven possible vanishing characteristics.  In every case the
+first nonmonomial deviation loses at most \(L\), while the next lower
+label is separated by more than \(L\).
+
+For \(L=1\), the fixed polynomial (40) leaves exactly four repeated
+labels:
+\[
+\begin{array}{c|c}
+(-4,38)&C\cU,\ AB^3C\\
+(-6,46)&B\cU,\ AB^4\\
+(-7,47)&A\cU,\ A^2B^3\\
+(-8,54)&AT,\ BW.
+\end{array}
+\tag{60}
+\]
+For a row of \(x\)-order \(\beta\), apply
+\[
+\mathcal W_\beta(V)=-5H V'-\beta H'V,
+\qquad H=\mathsf H(u,f(u)).
+\tag{61}
+\]
+The differences of the normalized next-to-leading coefficients of the
+two outputs in the four rows are, respectively,
+\[
+-\frac{481}{342},\quad
+-\frac{91}{152},\quad
+-\frac{2639}{1368},\quad
+\frac{8968203125}{121057727177}.
+\tag{62}
+\]
+Thus every two-dimensional map is injective, and a nonzero combination
+loses at most one \(u\)-degree.  The next lower target label on each of
+the four \(\beta\)-faces is at gap exactly two, so it cannot cancel the
+surviving coefficient.  The two remaining singleton ordinary resonances
+have first deviations of degree loss one and next-label gaps six and two.
+\end{proof}
+
+At a pole, the retained ordinary atoms and (57) have six and only six
+repeated \((\beta,q)\)-labels:
+\[
+\begin{array}{c|c|c|c}
+\text{group}&(\beta,q)&P(u)\text{ in }f^qP(u)&
+B=-5q-17\beta\\ \hline
+W/A^2B^3&(-7,20)&a u^{27}+b u^{25}&19\\
+C\cU/A^2B^2C^2&(-4,18)&a u^{22}+b u^{20}&-22\\
+B\cU/A^2B^3C&(-6,21)&a u^{27}+b u^{25}&-3\\
+BW/A^2B^4&(-8,24)&a u^{32}+b u^{30}&16\\
+A\cU/A^3B^2C&(-7,21)&a u^{28}+b u^{26}&14\\
+AW/A^3B^3&(-9,24)&a u^{33}+b u^{31}&33.
+\end{array}
+\tag{63}
+\]
+After a nonzero monomial factor is removed, the Wronskian of a row is
+\[
+B\,u f'P+f\bigl(\alpha uP'-20EP\bigr).
+\tag{64}
+\]
+If \(P(1)\ne0\), the first coefficient is nonzero because every \(B\)
+in (63) is nonzero.  If \(P(1)=0\), then
+\(P\) is a multiple of \(u^r(u^2-1)\), and the next coefficient is
+proportional to
+\[
+(B\nu+\alpha)P'(1).
+\tag{65}
+\]
+Four rows are immediately nonresonant under
+\(\rho<0,\ \nu\ge2-\rho\).  The remaining equations have exactly the
+two graph-compatible families
+\[
+\begin{aligned}
+BW:\quad&
+\rho=5-16k,\quad \nu=17k-5,\quad
+f=c\,u^{30k-10}(u^2-1)^{17k-5},\\
+A\cU:\quad&
+\rho=11-14k,\quad \nu=17k-13,\quad
+f=c\,u^{22k-18}(u^2-1)^{17k-13},
+\end{aligned}
+\qquad k\ge2,\quad c\in\C^\times.
+\tag{66}
+\]
+Indeed, reduction of the two resonance equations modulo \(16\) and
+\(14\) forces \(\rho\equiv5\pmod {16}\) and
+\(\rho\equiv11\pmod {14}\), respectively; the graph inequality then
+gives \(k\ge2\).  The scalar \(c\) does not change the logarithmic
+derivative.
+
+\begin{lemma}[Resonant local-jet obstruction]
+\label{lem:resonant-eleven}
+Neither family in (66) can cancel the first lower total-\(\gamma\)
+coefficient of the exact Jacobian.
+\end{lemma}
+
+\begin{proof}
+Write the top terms as
+\[
+x^{-5}h(u)\gamma^{17},\qquad x^\beta b(u)\gamma^n,
+\qquad h(u)=\theta u^{20}.
+\]
+Their top-total-\(\gamma\) Jacobian is, up to a fixed nonzero monomial
+factor,
+\[
+x^{-5+\beta}\gamma^{16+n}\mathcal L(\gamma),
+\tag{67}
+\]
+where
+\[
+\begin{aligned}
+\mathcal L(\gamma)={}&
+hb(-5n-17\beta)\,u\gamma_u\\
+&+u(17hb'-nh'b)x\gamma_x
++u(-5hb'-\beta h'b)\gamma .
+\end{aligned}
+\tag{68}
+\]
+On an \(x^I\)-sector this is a one-variable Euler equation.  Its
+polynomial negative-sector solutions are exactly (66).  Linearity of
+\(\mathcal L\) kills any sum of resonant intermediate sectors; a
+nonresonant intermediate sector would already give an earlier isolated
+coefficient.
+
+An exact \(E=\beta+\rho q\) audit is needed here.  On the \(BW\) ray,
+the complete resonant face is \(BW/A^2B^4\); on the \(A\cU\) ray it is
+\(A\cU/A^3B^2C\).  No different \(q\)-group shares either face for
+any \(k\ge2\).  Between that face and the first lower-total-\(\gamma\)
+order, the \(BW\) ray has only the seven singleton \(q=24\) labels
+\(\beta=-7,\ldots,-1\).  The \(A\cU\) ray has the three singleton
+\(q=20\) labels \(\beta=-10,-9,-8\), the \(q=21\) labels
+\(\beta=-6,\ldots,1\), and the duplicate \(B\cU\) atom at
+\(\beta=-6\).  The singleton lemma of Section~4 closes the former
+faces; the sole repeated intervening group is nonresonant because
+\[
+(-3)\nu+\alpha=-289k+221\ne0.
+\]
+Consequently a nonzero target coefficient at an intervening order would
+itself be an earlier obstruction.
+
+The first remaining sector is the \(x^0\)-sector.  With \(z=u-1\), the
+graph normalization fixes its 1-jet but not its higher coefficients:
+\[
+f_0(u)=1-\frac{57}{34}z+z^2h_0(u).
+\tag{69}
+\]
+At the same \(x\)-order the first lower total-\(\gamma\) seed layer
+enters.  Intermediate sectors cannot enter this coefficient: replacing
+a leading \(x^\rho f\) factor by one of them strictly raises its
+\(x\)-order.
+
+For the \(BW\) family, the only lower target atom at this order is
+\(AT\).  The \(z^{-1},z^0\) Laurent coefficients of the normalized
+residue and the leading \(AT\)-Wronskian have determinant
+\[
+\Delta_{BW/AT}\doteq(17k-5)(105k-32).
+\tag{70}
+\]
+The coefficient \(h_0(1)\) cancels identically.  For the \(A\cU\)
+family, the lower target space is the two-dimensional
+\(W/A^2B^3\) group.  The \(z^{-1},z^0,z^1\) coefficients of the
+residue and its two leading Wronskians have determinant
+\[
+\Delta_{A\cU/W}\doteq(17k-13)^2.
+\tag{71}
+\]
+Both \(h_0(1)\) and \(h_0'(1)\) cancel identically.  Here \(\doteq\)
+denotes equality up to a fixed nonzero rational scalar.  The two
+determinants are nonzero for every \(k\ge2\), independently of every
+higher coefficient in (69).
+
+The exact polar-label audit shows that the displayed lower atoms are the
+only possible interferences at these orders.  Every nonconstant monomial
+of \(R_{\le2}\) starts strictly later.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:eleven}]
+Use Lemma~\ref{lem:basis-eleven} and subtract the \(\cU\)-coefficient
+modulo \(P=\cU+R_{\le2}\).  If the resulting \(Q^\flat\) is constant,
+the Jacobian is zero.  Otherwise Lemma~\ref{lem:regular-eleven} handles
+every regular boundary.  At a pole, (63)--(65) handle all
+nonresonant groups and Lemma~\ref{lem:resonant-eleven} handles the two
+families (66).  The degree-two perturbation is later in each filtration.
+The isolated coefficient is either at nonzero \(x\)-order or has
+nonconstant \(u\)-dependence, so the Jacobian cannot be a nonzero scalar.
+\end{proof}
+
+\section{Computational reproducibility and scope}
+
+All exact computations use rational arithmetic.  From the repository
+root, the principal checks are
+\begingroup
+\footnotesize
+\begin{verbatim}
+.venv/bin/python \
+  current_context/verify_weighted_lift_degree_six_graph_projection_no_go.py
+.venv/bin/python \
+  current_context/verify_weighted_lift_global_minimal_boundary_face_closure.py
+.venv/bin/python \
+  current_context/verify_weighted_lift_nonhomogeneous_newton_vertex_closure.py
+.venv/bin/python \
+  current_context/verify_weighted_lift_nonhomogeneous_degree_nine_cusp_closure.py
+.venv/bin/python \
+  current_context/verify_weighted_lift_nonhomogeneous_degree_ten_newton_basis_closure.py
+.venv/bin/python \
+  current_context/verify_weighted_lift_nonhomogeneous_degree_eleven_newton_basis_closure.py
+.venv/bin/python \
+  current_context/verify_weighted_lift_sagbi_saturation_next_generator_audit.py
+\end{verbatim}
+\endgroup
+The first script checks the three-dimensional Keller identity.  The
+second reconstructs the seed from \(r(w)\), builds (2)--(3), checks the
+exact numerator support and seed gaps, and verifies the boundary
+formulas.  The third independently checks all derived Wronskian,
+endpoint, lattice, cutoff, and perturbation identities.  The fourth
+checks the exact degree-nine \(T\)-replacement.  The fifth checks all
+four collision classes, the triangular degree-ten basis, the exact
+frontiers of \(T,AT,W\), regular separation, and the exceptional polar
+Wronskian.  The sixth checks all ten degree-eleven collision classes,
+the augmented basis and exact frontiers, all regular and polar groups,
+the exhaustive resonance parametrization, the filtration gaps, and the
+two generic-zero-sector Laurent determinants.  The seventh checks the
+cautionary next saturation.
+
+The archived code version for this manuscript is
+\begin{center}
+\url{https://github.com/AtharvaVaidya/mathematics-research/tree/weighted-lift-newton-obstructions-v3}.
+\end{center}
+
+The theorem concerns polynomial graph embeddings into one specific
+three-dimensional Keller family and a specified first target
+coordinate.  It does not cover arbitrary nonlinear first-coordinate
+perturbations, non-graph affine-plane embeddings, or arbitrary plane
+Keller maps.  In particular it is not a proof of the plane Jacobian
+conjecture.
+
+\section*{Disclosure}
+
+OpenAI Codex assisted with symbolic computation, proof search,
+adversarial review, and drafting.  The named author is responsible for
+the claims.  This manuscript should receive independent human
+line-by-line verification and a broader expert novelty review before
+submission.
+
+\begin{thebibliography}{9}
+
+\bibitem{Gallagher}
+A.~Gallagher,
+\emph{The Jacobian counterexample, explained},
+\url{https://jacobianfun.org/jacobian-explained},
+accessed 25 July 2026;
+archived construction, \url{https://doi.org/10.5281/zenodo.21479195}.
+
+\bibitem{BassConnellWright}
+H.~Bass, E.~Connell, and D.~Wright,
+The Jacobian conjecture: reduction of degree and formal expansion of
+the inverse,
+\emph{Bull.\ Amer.\ Math.\ Soc.} \textbf{7} (1982), 287--330.
+
+\bibitem{vanDenEssen}
+A.~van den Essen,
+\emph{Polynomial Automorphisms and the Jacobian Conjecture},
+Progress in Mathematics 190, Birkh\"auser, 2000.
+
+\end{thebibliography}
+
+\end{document}

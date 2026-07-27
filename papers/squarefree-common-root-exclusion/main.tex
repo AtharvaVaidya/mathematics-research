@@ -1,0 +1,1100 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1.08in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\A}{\mathbb A}
+\newcommand{\KX}{\mathcal K_X}
+\newcommand{\KS}{\mathcal K_S}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\wt}{\operatorname{wt}}
+\newcommand{\Jac}{\operatorname{Jac}}
+\newcommand{\Res}{\operatorname{Res}}
+
+\title{Squarefree Common-Root Boundaries\\
+for Reciprocal Keller Pairs}
+\author{Atharva Vaidya}
+\date{26 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let \(g\geq2\), let \(1<a<b\) be coprime, and put
+\(n=ga\), \(m=gb\), and \(N=n+m-2\).
+We consider reciprocal polynomial pairs \(P,Q\in\C[X,\tau]\) satisfying
+\[
+ \deg_X[\tau^j]P\leq n-j,\qquad
+ \deg_X[\tau^j]Q\leq m-j
+\]
+and the homogenized Keller identity
+\[
+ \tau(P_XQ_\tau-P_\tau Q_X)+nPQ_X-mQP_X
+ =-c\tau^N,\qquad c\in\C^\times.
+\]
+We prove that such a pair cannot have boundary values
+\[
+ P(X,0)=R(X)^a,\qquad Q(X,0)=R(X)^b
+\]
+when \(R\) is a monic squarefree polynomial of degree \(g\).
+
+The proof first shows that every strict first compact Newton face
+encountered by the least-residual induction at a root of \(R\) is
+automatically matched in the two coordinates and is a reduced common-root
+shift.  These shifts glue through all orders below \(g\).
+A least-residual induction and the reciprocal degree bounds then force
+the exact resonant normal form
+\[
+ P=S^aA(\tau^g/S),\qquad Q=S^bB(\tau^g/S),
+\]
+where \(S\) is a reciprocal polynomial deformation of \(R\) and \(A,B\)
+are arbitrary polynomials of the allowed degrees.  The homogenized
+Keller bracket of every such pair is identically zero, giving the
+contradiction.
+
+This is an exclusion theorem for one boundary architecture.  It does
+not prove the plane Jacobian conjecture.  In particular, repeated-root
+boundaries admit local factor-splitting and Kummer modes that are not
+covered by the argument.
+\end{abstract}
+
+\section{Introduction and scope}
+
+The two-dimensional Jacobian conjecture asks whether every polynomial
+map \(f=(p,q):\A^2_\C\to\A^2_\C\) with
+\(\Jac(p,q)\in\C^\times\) is a polynomial automorphism.  The conjecture
+remains open.  A classical approach studies the configuration of roots
+and Newton data at infinity; see Biggers--Moh--Fried
+\cite{BiggersMohFried} and the subsequent standard-pair and admissible
+chain developments of Guccione, Guccione, Horruitiner, and Valqui
+\cite{GGVSystem,GGVLowerSide,GGHVAlgorithms,GGHV2022}.
+
+This paper isolates a boundary condition that arises naturally in a
+reciprocal chart at infinity.  Suppose the top boundary polynomials are
+coprime powers of one degree-\(g\) polynomial:
+\[
+ P(X,0)=R(X)^a,\qquad Q(X,0)=R(X)^b,
+ \qquad \gcd(a,b)=1.
+\]
+Our result says that \(R\) cannot be squarefree when the entire
+reciprocal polynomial pair satisfies the exact Keller identity.
+Equivalently, every candidate that reaches this common-power boundary
+must retain a repeated root.
+
+There are three reasons that the conclusion is not merely a local
+Newton-polygon observation.  First, the matching \(Q\)-face has to be
+deduced from the actual polynomial Keller identity; it cannot safely be
+read term by term from a Laurent standard presentation.  Second, local
+root shifts must glue into one polynomial approximate root while
+respecting the reciprocal degree bounds.  Third, the slope-\(g\)
+resonance does not force \(P\) and \(Q\) to remain relative powers.
+The proof retains independent resonant polynomials \(A\) and \(B\) and
+shows that the whole resulting cone nevertheless has zero bracket.
+
+\paragraph{Relation to earlier frameworks.}
+Guccione--Guccione--Valqui proved that failure of the Jacobian
+conjecture is equivalent to solvability of a finite system of polynomial
+equations \cite{GGVSystem}; later work organizes possible standard
+minimal pairs and Newton corners algorithmically
+\cite{GGVLowerSide,GGHVAlgorithms,GGHV2022}.  The theorem below is
+formulated directly for the reciprocal polynomial Keller identity.
+It does not reprove the reduction from an arbitrary counterexample to
+any particular standard system, and it does not assert that every
+common-root polynomial arising in every normalization is squarefree.
+
+Makar-Limanov and Trakhtenberg study Newton-resolution integrality and
+polynomiality conditions for a Jacobian mate, including a decreasing
+nonprincipal power index \cite{MakarLimanovTrakhtenberg}.  Their
+resolution constraints are close in spirit to the approximate-root
+analysis here, but we do not import their results, and we are not aware
+of the squarefree reciprocal-boundary exclusion in their work.
+Shaska proves that every \(\C^\times\)-equivariant Keller self-map of
+\(\A^2\) is an automorphism \cite{Shaska}.  Our final resonant cone has
+an exact weighted form, but the present theorem is neither an
+equivariant-map theorem nor a consequence claimed from that result.
+These comparisons are statements of scope, not claims of priority.
+
+\paragraph{Logical boundary.}
+The theorem does not prove or disprove the plane Jacobian conjecture.
+It excludes the squarefree case of a specific reciprocal common-root
+boundary.  Repeated roots are materially different: the local
+coordinate is no longer \(R\) itself, a strict face may split a repeated
+factor, and sub-\(g\) Kummer kernel modes can occur.  Section
+\ref{sec:repeated} records precisely where the present proof stops.
+
+\section{Reciprocal Keller pairs}
+
+\subsection{The reciprocal chart}
+
+Let \(p,q\in\C[x,y]\) have degree at most \(n,m\), respectively.  Put
+\[
+ X=\frac{x}{y},\qquad \tau=\frac1y
+\]
+and define
+\begin{equation}
+ P(X,\tau)=\tau^n p(X/\tau,1/\tau),\qquad
+ Q(X,\tau)=\tau^m q(X/\tau,1/\tau).
+\label{eq:reciprocal}
+\end{equation}
+These are polynomials.  If
+\[
+ P=\sum_{j\geq0}\tau^jP_j(X),\qquad
+ Q=\sum_{j\geq0}\tau^jQ_j(X),
+\]
+then
+\begin{equation}
+ \deg P_j\leq n-j,\qquad
+ \deg Q_j\leq m-j.
+\label{eq:degree-bounds}
+\end{equation}
+We use the convention \(\deg0=-\infty\), so the bounds also imply
+\(P_j=0\) for \(j>n\) and \(Q_j=0\) for \(j>m\).
+
+\begin{definition}
+For positive integers \(n,m\), define the homogenized Keller bracket
+\begin{equation}
+ \KX(P,Q)
+ :=
+ \tau(P_XQ_\tau-P_\tau Q_X)+nPQ_X-mQP_X.
+\label{eq:kx}
+\end{equation}
+A \emph{reciprocal Keller pair of bidegree \((n,m)\)} is a pair
+\(P,Q\in\C[X,\tau]\) satisfying \eqref{eq:degree-bounds} and
+\[
+ \KX(P,Q)=-c\tau^{n+m-2}
+\]
+for some \(c\in\C^\times\).
+\end{definition}
+
+\begin{proposition}[Reciprocal covariance of the Jacobian]
+\label{prop:reciprocal}
+For \eqref{eq:reciprocal},
+\[
+ \Jac_{x,y}(p,q)
+ =-\tau^{-n-m+2}\KX(P,Q).
+\]
+In particular, \(\Jac(p,q)=c\) if and only if
+\[
+ \KX(P,Q)=-c\tau^{n+m-2}.
+\]
+Conversely, the degree bounds make
+\[
+ p(x,y)=y^nP(x/y,1/y),\qquad
+ q(x,y)=y^mQ(x/y,1/y)
+\]
+polynomials, so every reciprocal Keller pair dehomogenizes to a plane
+Keller pair.
+\end{proposition}
+
+\begin{proof}
+The coordinate Jacobian is
+\[
+ \frac{\partial(X,\tau)}{\partial(x,y)}=-\tau^3.
+\]
+Moreover,
+\[
+ \frac{\partial(p,q)}{\partial(X,\tau)}
+ =\tau^{-n-m-1}\KX(P,Q).
+\]
+Multiplying these determinants proves the formula.  The converse
+polynomiality is exactly \eqref{eq:degree-bounds}.
+\end{proof}
+
+\subsection{Statement of the theorem}
+
+\begin{theorem}[Squarefree common-root exclusion]
+\label{thm:main}
+Let
+\[
+ g\geq2,\qquad 1<a<b,\qquad \gcd(a,b)=1,
+\]
+and put
+\[
+ n=ga,\qquad m=gb,\qquad N=n+m-2.
+\]
+There is no reciprocal Keller pair \(P,Q\in\C[X,\tau]\) satisfying
+\begin{equation}
+ P(X,0)=R(X)^a,\qquad Q(X,0)=R(X)^b
+\label{eq:boundary}
+\end{equation}
+for a monic squarefree polynomial \(R\in\C[X]\) of degree \(g\).
+\end{theorem}
+
+The proof gives a more precise normal-form statement.
+
+\begin{theorem}[Forced resonant normal form]
+\label{thm:normal-form}
+Under the hypotheses of Theorem~\ref{thm:main}, the Newton-face and
+reciprocal-degree constraints force polynomials
+\[
+ S(X,\tau)
+ =R(X)+\sum_{1\leq e<g}\tau^eL_e(X),
+ \qquad \deg L_e\leq g-e,
+\]
+and
+\[
+ A(z)=\sum_{q=0}^{a}A_qz^q,\qquad
+ B(z)=\sum_{q=0}^{b}B_qz^q,\qquad A_0=B_0=1,
+\]
+such that
+\begin{equation}
+ \boxed{
+ P=S^aA(\tau^g/S),\qquad Q=S^bB(\tau^g/S).
+ }
+\label{eq:normal-form}
+\end{equation}
+For arbitrary \(A,B\) in this formula,
+\[
+ \KX(P,Q)=0.
+\]
+\end{theorem}
+
+Thus Theorem~\ref{thm:normal-form} is the structural statement obtained
+immediately before the contradiction.  At each face used in its proof,
+vanishing below the forcing weight follows from the exact identity
+\(\KX(P,Q)=-c\tau^N\).
+
+\section{Compact Newton faces}
+\label{sec:faces}
+
+\subsection{A binomial warm-up}
+
+The following computation motivates both the physical slope \(g\) and
+the need to retain every monomial on a compact face.
+
+\begin{lemma}[An isolated binomial face cannot supply the scalar]
+\label{lem:binomial}
+Write
+\[
+ b=aq+r,\qquad 1\leq r<a,
+\]
+and consider the local bracket
+\[
+ \KS(F,G)
+ =\tau(F_sG_\tau-F_\tau G_s)+gaFG_s-gbGF_s.
+\]
+If the isolated \(P\)-face is
+\[
+ F=s^a+c_0\tau^d,\qquad c_0\neq0,\qquad d<ga,
+\]
+then cancellation forces the polynomial \(Q\)-chain
+\[
+ G_0=\sum_{j=0}^{q}C_j\tau^{dj}s^{b-aj},
+ \qquad
+ C_j=c_0^j\binom{b/a}{j}.
+\]
+Its uncancelled endpoint is
+\begin{equation}
+ c_0r(ga-d)C_q\,\tau^{d(q+1)}s^{r-1}.
+\label{eq:binomial-endpoint}
+\end{equation}
+No distinct polynomial \(Q\)-monomial cancels this endpoint.
+It cannot be the nonzero scalar forcing at order
+\(N=g(a+b)-2\).
+\end{lemma}
+
+\begin{proof}
+For \(G_j=C_j\tau^{dj}s^{b-aj}\), the \(s^a\)-part and
+\(c_0\tau^d\)-part of the bracket are
+\[
+ aj(d-ga)C_j\tau^{dj}s^{b-a(j-1)-1}
+\]
+and
+\[
+ c_0(ga-d)(b-aj)C_j
+ \tau^{d(j+1)}s^{b-aj-1},
+\]
+respectively.  Consecutive supports coincide, forcing
+\[
+ C_{j+1}
+ =c_0\frac{b-aj}{a(j+1)}C_j.
+\]
+This gives the displayed binomial coefficients and leaves
+\eqref{eq:binomial-endpoint}.  A further monomial
+\(h\tau^es^k\) could meet the endpoint only with
+\[
+ (e,k)=(d(q+1),r-a)
+ \quad\hbox{or}\quad
+ (e,k)=(dq,r).
+\]
+The first has \(k<0\), while the second is the already fixed last
+chain monomial.
+
+For the endpoint to be scalar in \(s\), one needs \(r=1\).  Then
+\[
+ N=g(a+b)-2=ga(q+1)+g-2.
+\]
+The equality \(d(q+1)=N\), together with \(d\leq ga\) and \(g\geq2\),
+forces \(g=2\) and \(d=ga\).  But then the coefficient
+\(ga-d\) is zero.  At \(d=ga\) the recurrence itself is not forced:
+both displayed bracket contributions vanish term by term, and the face
+still supplies no nonzero scalar.
+\end{proof}
+
+\begin{remark}
+Lemma~\ref{lem:binomial} assumes that there are no interior
+\(P\)-monomials on the edge.  The main argument cannot make that
+assumption.  We now treat the entire compact face and prove that the
+matching \(Q\)-face is automatic for an actual reciprocal Keller pair.
+\end{remark}
+
+\subsection{Local coordinates and covariance}
+
+Let \(\alpha\) be a simple root of \(R\).  During the induction we use a
+polynomial approximate root
+\[
+ s=S(X,\tau),\qquad S(X,0)=R(X).
+\]
+Since \(R'(\alpha)\neq0\), the formal implicit function theorem gives a
+local inverse \(X=\chi(s,\tau)\).  This change preserves the least
+\(\tau\)-order and the vanishing order of its first coefficient:
+\[
+ \tau^jT_j(X)+O(\tau^{j+1})
+ =
+ \tau^jT_j(\chi(s,0))+O(\tau^{j+1}).
+\]
+The inverse substitution places \(P\) and \(Q\) in
+\(\C[[s,\tau]]\).  Because all Newton weights used below are positive,
+each initial face is finite and has nonnegative exponents; hence the local
+lattice-coset decompositions are legitimate in this formal series ring.
+
+\begin{lemma}[Covariance under a moving root coordinate]
+\label{lem:covariance}
+If \(P=f(S,\tau)\) and \(Q=k(S,\tau)\), then
+\begin{equation}
+ \KX(P,Q)=S_X\KS(f,k),
+\label{eq:covariance}
+\end{equation}
+where
+\[
+ \KS(f,k)
+ =\tau(f_Sk_\tau-f_\tau k_S)+nfk_S-mkf_S
+\]
+and the \(\tau\)-derivatives on the right are taken with \(S\) fixed.
+\end{lemma}
+
+\begin{proof}
+Use
+\[
+ P_X=S_Xf_S,\qquad
+ P_\tau|_X=f_\tau|_S+S_\tau f_S
+\]
+and the analogous formulas for \(Q\).  The two terms containing
+\(S_\tau f_Sk_S\) cancel.
+\end{proof}
+
+\subsection{The automatic matched-face theorem}
+
+Give \(s,\tau\) primitive positive weights
+\[
+ \wt(s)=d',\qquad \wt(\tau)=h',\qquad
+ \gcd(d',h')=1.
+\]
+The slope is called \emph{strict} when
+\begin{equation}
+ \frac{d'}{h'}<g.
+\label{eq:strict}
+\end{equation}
+Put
+\[
+ z=\frac{\tau^{d'}}{s^{h'}}.
+\]
+Suppose the entire first compact \(P\)-face from \(s^a\) is
+\begin{equation}
+ P_0=s^aA(z),\qquad A(0)=1.
+\label{eq:pface}
+\end{equation}
+Polynomiality means that every term \(z^j\) in \(A\) satisfies
+\(h'j\leq a\).  By Lemma~\ref{lem:covariance}, the local Keller
+equation has right side
+\[
+ -\frac{c}{S_X}\tau^N.
+\]
+The factor \(1/S_X\) is a formal local unit with nonzero constant term,
+so the initial weight of the forcing remains \(h'N\).
+
+\begin{lemma}[General \(Q\)-coset formula]
+\label{lem:coset}
+Let
+\[
+ Q_{u,v}=\tau^us^vB(z),\qquad B(0)\neq0,
+\]
+and put
+\[
+ w=h'u+d'v,\qquad
+ \Delta=d'-gh',\qquad
+ L=u+gv-gb.
+\]
+Then
+\begin{align}
+ \KS(P_0,Q_{u,v})
+ =\tau^us^{a+v-1}\bigl(
+ &aL\,AB+a\Delta z\,AB'\notag\\
+ &+(gbh'-w)z\,A'B
+ \bigr).
+\label{eq:coset}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Differentiate \eqref{eq:pface} and \(Q_{u,v}\), using
+\[
+ s z_s=-h'z,\qquad \tau z_\tau=d'z,
+\]
+and collect the three Euler terms.  The coefficient independent of
+\(z\) inside the parentheses is \(aL A(0)B(0)\).
+\end{proof}
+
+\begin{proposition}[Strict compact-face bridge]
+\label{prop:strict-face}
+For an actual reciprocal Keller pair satisfying \eqref{eq:boundary},
+the lowest \(Q\)-face paired with the strict first \(P\)-face
+\eqref{eq:pface} is automatically
+\[
+ Q_0=s^bB(z),\qquad B(0)=1.
+\]
+Moreover, every nontrivial such strict first compact face is a common
+reduced shift:
+\begin{equation}
+ \boxed{
+ P_0=(s+\kappa\tau^\delta)^a,\qquad
+ Q_0=(s+\kappa\tau^\delta)^b,
+ \quad
+ \kappa\in\C^\times,\quad 1\leq\delta<g.
+ }
+\label{eq:reduced-face}
+\end{equation}
+The same conclusion holds if the first strict face is detected from
+\(Q\).
+\end{proposition}
+
+\begin{proof}
+Suppose the actual \(Q\) had a lowest face of weight \(w<bd'\).
+Its bracket with \(P_0\) has weight
+\[
+ (a-1)d'+w<(a+b-1)d'.
+\]
+On the other hand, the right side of the Keller identity has weight
+\(h'N\), and
+\begin{align}
+ h'N-(a+b-1)d'
+ &=(a+b-1)(gh'-d')+h'(g-2)>0.
+\label{eq:weight-gap}
+\end{align}
+The inequality remains strict when \(g=2\).  Thus the lower face must
+vanish.  The constant term in \eqref{eq:coset} forces \(L=0\), so
+\(u=g(b-v)\).  Since \(u,v\geq0\), one has \(v\leq b\), and hence
+\[
+ w=h'g(b-v)+d'v
+ =bd'+(b-v)(gh'-d')\geq bd',
+\]
+a contradiction.
+
+Therefore no \(Q\)-face lies below \(s^b\).  Every integral lattice
+point on the weight-\(bd'\) line lies in the single coset through
+\((u,v)=(0,b)\), because \(\gcd(d',h')=1\).  The complete face is
+therefore \(Q_0=s^bB(z)\) with \(B(0)=1\).  Terms on adjacent faces
+have strictly higher weight and do not enter the initial bracket.
+
+Putting \(u=0,v=b,w=bd'\) in \eqref{eq:coset} yields
+\begin{equation}
+ \KS(P_0,Q_0)
+ =(d'-gh')s^{a+b-1}z
+ \bigl(aAB'-bA'B\bigr).
+\label{eq:matched-bracket}
+\end{equation}
+Its weight is \((a+b-1)d'\), strictly below the forcing by
+\eqref{eq:weight-gap}.  Lemma~\ref{lem:covariance} and the fact that
+\(S_X\) is a local unit show that
+\[
+ aAB'-bA'B=0.
+\]
+If one of \(A,B\) were constant, the other would also be constant.
+For a nontrivial face, differentiation of \(B^a/A^b\), normalization
+at \(z=0\), and unique factorization in \(\C[z]\) give
+\[
+ B^a=A^b,\qquad A=C^a,\qquad B=C^b,\qquad C(0)=1.
+\]
+
+Let \(\ell=\deg A\).  Because \((d',h')\) is primitive, \(\ell\) is
+the lattice length of the \(P\)-edge, and its horizontal drop is
+\(h'\ell\leq a\).  From \(A=C^a\) one has \(a\mid\ell\).  Hence
+\[
+ a\leq\ell\leq h'\ell\leq a.
+\]
+Thus \(\ell=a\), \(h'=1\), and \(\deg C=1\).  Write
+\(C=1+\kappa z\).  Since the face is strict, \(d'<g\).
+Taking \(\delta=d'\) gives \eqref{eq:reduced-face}.
+Interchanging \((P,n,a)\) with \((Q,m,b)\) changes the bracket only by
+a sign, so the same argument applies when the strict face is first
+detected from \(Q\).
+\end{proof}
+
+\begin{remark}[Why the full polynomial identity matters]
+The conclusion of Proposition~\ref{prop:strict-face} is about the
+lowest face of the actual polynomial \(Q\).  In a Laurent or Puiseux
+standard presentation, polynomial projection can change finite-root
+Taylor order.  Thus one cannot prove automatic matching by assigning a
+weight to each unprojected standard term separately.  Formula
+\eqref{eq:coset}, the scalar weight gap, and polynomiality are the
+bridge.
+\end{remark}
+
+\section{Gluing through the subresonant orders}
+\label{sec:subresonant}
+
+We first absorb all common reduced shifts of order below \(g\).
+Starting with \(S=R\), assume inductively that lower orders have been
+removed and let \(0<j<g\) be the least order at which either residual
+is nonzero:
+\begin{equation}
+\begin{aligned}
+ P-S^a&=\tau^jT_j(X)+O(\tau^{j+1}),\\
+ Q-S^b&=\tau^jU_j(X)+O(\tau^{j+1}).
+\end{aligned}
+\label{eq:subresidual}
+\end{equation}
+
+\begin{lemma}[A subresonant layer contains a strict root]
+\label{lem:strict-root}
+If \(T_j\neq0\), then at some root \(\alpha\) of \(R\), the point
+defined by \(\tau^jT_j\) has slope strictly below \(g\).
+The same holds for \(U_j\neq0\).
+\end{lemma}
+
+\begin{proof}
+For each of the \(g\) distinct roots of \(R\), put
+\[
+ \sigma_\alpha
+ =\min\{\ord_\alpha T_j,a\},\qquad
+ h_\alpha=a-\sigma_\alpha.
+\]
+Squarefreeness gives
+\[
+ \sum_\alpha\sigma_\alpha\leq\deg T_j\leq ga-j,
+\]
+and hence
+\begin{equation}
+ j\leq\sum_\alpha h_\alpha.
+\label{eq:degree-average}
+\end{equation}
+If no root were strict, then \(j\geq gh_\alpha\) at every root, so
+\(\sum h_\alpha\leq j\).  Equality would hold everywhere and force
+\(h_\alpha=j/g\) for all \(\alpha\), impossible because
+\(0<j<g\).  Replace \(a\) by \(b\) for \(U_j\).
+\end{proof}
+
+\begin{proposition}[Subresonant common-root gluing]
+\label{prop:subgluing}
+At the order \(j\) in \eqref{eq:subresidual}, there is a polynomial
+\(L_j\in\C[X]\) with
+\[
+ \deg L_j\leq g-j
+\]
+such that
+\begin{equation}
+ T_j=aR^{a-1}L_j,\qquad
+ U_j=bR^{b-1}L_j.
+\label{eq:glued-layer}
+\end{equation}
+Consequently the replacement
+\[
+ S\longmapsto S+\tau^jL_j
+\]
+removes both residuals at order \(j\) and preserves all reciprocal
+degree bounds.
+\end{proposition}
+
+\begin{proof}
+Suppose first that \(T_j\neq0\).  At a root where
+\(\ord_\alpha T_j<a\), put \(h=a-\ord_\alpha T_j\).
+Since \(h\geq1\) and \(j<g\), the supplied point has slope
+\(j/h\leq j<g\).
+The actual first face has no greater slope, so
+Proposition~\ref{prop:strict-face} makes it a reduced shift with
+primitive order \(\delta<g\).  Its expansion contains
+\[
+ a\kappa\tau^\delta s^{a-1}.
+\]
+Since \(j\) is the least residual order, \(\delta\geq j\).  Since the
+face slope is \(\delta\),
+\[
+ \delta\leq\frac{j}{h}\leq j.
+\]
+Thus \(\delta=j\), \(h=1\), and
+\[
+ \ord_\alpha T_j=a-1
+\]
+at every active root.  At an inactive root the order is at least
+\(a\).  Lemma~\ref{lem:strict-root} guarantees that this reasoning is
+not vacuous.  It follows that
+\[
+ T_j=aR^{a-1}L_j.
+\]
+The degree bound gives
+\[
+ \deg L_j
+ \leq(ga-j)-g(a-1)=g-j.
+\]
+
+At an active root, the common face identifies the leading
+order-\(j\) coefficient of \(Q\) with
+\(bL_j(\alpha)s^{b-1}\), modulo \(s^b\).  At an inactive root,
+\(L_j(\alpha)=0\).  If \(\ord_\alpha U_j<b\) there, the \(Q\)-point
+would expose a strict common face and make the root active in \(P\),
+a contradiction.  Hence
+\[
+ U_j-bR^{b-1}L_j
+\]
+is divisible by \(R^b\).  Both terms have degree at most \(m-j<m\),
+so the difference vanishes.
+
+If \(T_j=0\) and \(U_j\neq0\), Lemma~\ref{lem:strict-root} produces a
+strict \(Q\)-face.  Proposition~\ref{prop:strict-face} makes it common,
+which would produce a nonzero \(P\)-coefficient at or before order
+\(j\), contrary to \eqref{eq:subresidual}.  Thus a \(Q\)-only
+subresonant layer is impossible.
+
+Finally, the coefficient bound on \(L_j\) implies that every binomial
+term in \((S+\tau^jL_j)^a\) and
+\((S+\tau^jL_j)^b\) satisfies the corresponding reciprocal degree
+bound.
+\end{proof}
+
+\begin{corollary}[Common-power form modulo \(\tau^g\)]
+\label{cor:modg}
+There is a polynomial
+\begin{equation}
+ S=R+\sum_{1\leq e<g}\tau^eL_e(X),
+ \qquad \deg L_e\leq g-e,
+\label{eq:S}
+\end{equation}
+such that
+\begin{equation}
+ P\equiv S^a\pmod{\tau^g},\qquad
+ Q\equiv S^b\pmod{\tau^g}.
+\label{eq:modg}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Apply Proposition~\ref{prop:subgluing} successively to the least
+remaining order below \(g\).  There are only \(g-1\) such orders.
+\end{proof}
+
+\section{The least-residual induction after resonance}
+\label{sec:resonance}
+
+The slope-\(g\) bracket prefactor in
+\eqref{eq:matched-bracket} vanishes, so the resonant coefficients of
+\(P\) and \(Q\) must remain independent.  Introduce the model
+\begin{equation}
+\begin{aligned}
+ P_{\mathrm{mod}}
+ &=\sum_{q=0}^{a}A_q\tau^{gq}S^{a-q},\\
+ Q_{\mathrm{mod}}
+ &=\sum_{q=0}^{b}B_q\tau^{gq}S^{b-q},
+\end{aligned}
+\qquad A_0=B_0=1.
+\label{eq:model}
+\end{equation}
+Initially only \(A_0,B_0\) are chosen.  Corollary~\ref{cor:modg}
+says that the model agrees with \(P,Q\) through every order below
+\(g\).  Every partial model satisfies the reciprocal degree bounds:
+indeed \(\deg_X[\tau^r]S^k\leq gk-r\), and the resulting sector
+estimate is written explicitly at the end of this section.  Hence each
+residual coefficient used below inherits the original degree bound.
+
+Suppose inductively that the model agrees through order \(j-1\), where
+\(j\geq g\), and write
+\begin{equation}
+\begin{aligned}
+ P-P_{\mathrm{mod}}
+ &=\tau^jT_j(X)+O(\tau^{j+1}),\\
+ Q-Q_{\mathrm{mod}}
+ &=\tau^jU_j(X)+O(\tau^{j+1}).
+\end{aligned}
+\label{eq:later-residual}
+\end{equation}
+At least one of \(T_j,U_j\) is nonzero.
+
+\begin{lemma}[No strict root after the subresonant bridge]
+\label{lem:no-strict-later}
+If \(T_j\neq0\), put
+\[
+ \sigma_\alpha=\min\{\ord_\alpha T_j,a\},
+ \qquad h_\alpha=a-\sigma_\alpha
+\]
+at each root of \(R\).  Then
+\begin{equation}
+ j\geq gh_\alpha
+\label{eq:no-strict}
+\end{equation}
+for every \(\alpha\).  The analogous statement holds for \(U_j\), with
+\(a\) replaced by \(b\).
+\end{lemma}
+
+\begin{proof}
+Suppose \(j<gh_\alpha\) at some root.  In the coordinate
+\(s=S(X,\tau)\), the point supplied by the residual lies below the
+slope-\(g\) line from \(s^a\).  Hence the actual first local face is
+strict.
+
+Every positive term already in the \(P\)-model has the form
+\[
+ A_q\tau^{gq}s^{a-q}.
+\]
+For the strict primitive weights \(d',h'\), its excess over the weight
+of \(s^a\) is
+\[
+ q(gh'-d')>0.
+\]
+Thus existing resonant sectors do not alter the first strict face.
+Proposition~\ref{prop:strict-face} makes that face a common reduced
+shift with primitive order \(1\leq\delta<g\).  It contains a nonzero
+term \(a\kappa\tau^\delta s^{a-1}\).
+
+But the model in the \(s\)-coordinate has positive orders only at
+multiples of \(g\), while \eqref{eq:later-residual} has no residual
+below \(j\).  Since \(\delta<g\leq j\), this is impossible.
+The proof for a strict face detected from \(U_j\) is symmetric; the
+common face would create the same forbidden primitive residual in
+\(P\).
+\end{proof}
+
+\begin{proposition}[Classification of the least residual]
+\label{prop:least-residual}
+If \(T_j\neq0\), then for some integer \(q\) with \(1\leq q\leq a\)
+and some \(c_q\in\C^\times\),
+\begin{equation}
+ j=gq,\qquad T_j=c_qR^{a-q}.
+\label{eq:psector}
+\end{equation}
+If \(U_j\neq0\), then for some \(1\leq q\leq b\) and
+\(d_q\in\C^\times\),
+\begin{equation}
+ j=gq,\qquad U_j=d_qR^{b-q}.
+\label{eq:qsector}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Assume \(T_j\neq0\).  Squarefreeness, the reciprocal bound, and the
+truncated orders in Lemma~\ref{lem:no-strict-later} give
+\[
+ \sum_\alpha\sigma_\alpha
+ \leq\deg T_j\leq ga-j,
+\qquad\hbox{so}\qquad
+ j\leq\sum_\alpha h_\alpha.
+\]
+On the other hand \eqref{eq:no-strict} gives
+\[
+ \sum_\alpha h_\alpha\leq j.
+\]
+All inequalities are equalities.  There are exactly \(g\) roots and
+every \(h_\alpha\leq j/g\); equality of the sum forces
+\[
+ j=gq,\qquad h_\alpha=q\quad\hbox{for every }\alpha.
+\]
+The truncation is now inactive, \(1\leq q\leq a\), and
+\[
+ \ord_\alpha T_j=a-q
+\]
+at every root.  Its degree saturates the bound:
+\[
+ \deg T_j=g(a-q)=n-j.
+\]
+There is no room for an additional zero, so
+\(T_j=c_qR^{a-q}\).  The proof for \(U_j\) is identical.
+\end{proof}
+
+\begin{proof}[Completion of the normal-form induction]
+At order \(j=gq\),
+\[
+ [\tau^{gq}]
+ \bigl(\tau^{gq}S^{a-q}\bigr)=R^{a-q}.
+\]
+Thus replacing \(A_q\) by \(A_q+c_q\) absorbs
+\eqref{eq:psector} without changing an earlier coefficient.  Similarly
+\(B_q\mapsto B_q+d_q\) absorbs \eqref{eq:qsector}.  If both residuals
+are present, the changes are made simultaneously.  If only one is
+present, its own scalar is changed; no relation between \(A\) and \(B\)
+is imposed.
+
+The induction terminates because \(P,Q\) are polynomials and their
+reciprocal bounds give \(\tau\)-degrees at most \(n,m\).  It proves
+\eqref{eq:normal-form}.
+
+It remains to check that the model itself stays reciprocal.  From
+\eqref{eq:S},
+\[
+ \deg_X[\tau^r]S^k\leq gk-r.
+\]
+Therefore
+\[
+ \deg_X[\tau^r]
+ \bigl(\tau^{gq}S^{a-q}\bigr)
+ \leq g(a-q)-(r-gq)=n-r,
+\]
+and analogously for \(Q\).  Also
+\[
+ gq+(g-1)(a-q)\leq n,
+\]
+so no excessive \(\tau\)-degree is introduced.  This completes the
+proof of the asserted exact normal form in
+Theorem~\ref{thm:normal-form}.
+\end{proof}
+
+\section{The resonant cone has zero bracket}
+\label{sec:zero}
+
+\begin{proposition}[Exact zero-bracket identity]
+\label{prop:zero}
+Let \(S\in\C[X,\tau]\) be arbitrary and put
+\[
+ z=\frac{\tau^g}{S},\qquad
+ f(S,\tau)=S^aA(z),\qquad
+ k(S,\tau)=S^bB(z),
+\]
+where \(A,B\) are arbitrary polynomials for which the displayed
+expressions are polynomial.  If \(n=ga\) and \(m=gb\), then
+\[
+ \KS(f,k)=0,\qquad \KX(f(S,\tau),k(S,\tau))=0.
+\]
+\end{proposition}
+
+\begin{proof}
+At fixed \(S\),
+\[
+\begin{aligned}
+ f_S&=S^{a-1}(aA-zA'),&
+ f_\tau&=gS^azA'/\tau,\\
+ k_S&=S^{b-1}(bB-zB'),&
+ k_\tau&=gS^bzB'/\tau.
+\end{aligned}
+\]
+Substitution into
+\[
+ \KS(f,k)
+ =\tau(f_Sk_\tau-f_\tau k_S)+gafk_S-gbkf_S
+\]
+gives zero after cancellation, with no condition relating \(A\) and
+\(B\).  Lemma~\ref{lem:covariance} then gives the \(X\)-coordinate
+identity.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The strict-face, subresonant-gluing, and least-residual results above
+force the exact form \eqref{eq:normal-form}.
+Proposition~\ref{prop:zero} then gives
+\[
+ \KX(P,Q)=0,
+\]
+contradicting
+\[
+ \KX(P,Q)=-c\tau^{n+m-2},\qquad c\neq0.
+\]
+\end{proof}
+
+\begin{remark}[The case \(g=2\)]
+There is no exceptional squarefree case at \(g=2\).
+The gap \eqref{eq:weight-gap} remains positive, the subresonant bridge
+handles the single order \(1\), the truncated degree average is
+unchanged, and Proposition~\ref{prop:zero} is exact for every
+\(g\geq1\).
+\end{remark}
+
+\section{Why repeated roots remain}
+\label{sec:repeated}
+
+Squarefreeness enters the proof in two indispensable ways.
+
+\begin{enumerate}[label=(\roman*)]
+\item At a simple root, \(s=S(X,\tau)\) is a formal local coordinate
+  and \(S_X\) is a unit, so the bracket covariance
+  \eqref{eq:covariance} preserves the initial face.
+\item The \(g\) distinct roots turn reciprocal degree bounds into the
+  sharp average used in Lemma~\ref{lem:strict-root} and
+  Proposition~\ref{prop:least-residual}.
+\end{enumerate}
+
+If a root of \(R\) has multiplicity \(e\geq2\), choose instead a local
+coordinate with \(R=s^e\).  Put
+\[
+ p=ae,\qquad q=be,\qquad \gamma=\frac ge.
+\]
+For a strict face
+\[
+ P_0=s^pA(z),\qquad z=\frac{\tau^{d'}}{s^{h'}},
+\qquad \frac{d'}{h'}<\frac ge,
+\]
+the matched bracket is
+\[
+ (d'-\gamma h')s^{p+q-1}z
+ \bigl(pAB'-qA'B\bigr).
+\]
+When this face lies below the scalar forcing, it follows only that
+\[
+ A=C^a,\qquad B=C^b,
+\]
+and the common local factor is
+\begin{equation}
+ s^eC\!\left(\frac{\tau^{d'}}{s^{h'}}\right).
+\label{eq:repeated-factor}
+\end{equation}
+Polynomiality allows \(\deg C>1\), so
+\eqref{eq:repeated-factor} can split the repeated factor.  A separate
+degree argument rules out an apparent strict face whose weight exactly
+equals the scalar forcing, but it does not make \(C\) linear.
+
+There is also a global first-layer kernel.  Write
+\[
+ R=\prod_i(X-\alpha_i)^{e_i}
+\]
+and define the Kummer period
+\[
+ \kappa_R
+ =\operatorname{lcm}_i\frac{g}{\gcd(g,e_i)}.
+\]
+At a fixed base \(R\), before the first nonzero \(P\)-coefficient (or
+after subtracting the common contribution at that coefficient), the
+homogeneous equation for a \(Q\)-coefficient at order \(j\) is
+\[
+ gR\,U_j'+(j-m)R'U_j=0.
+\]
+For an actually occupied coefficient, so \(0\leq j\leq m\), it has a
+nonzero polynomial solution precisely when \(\kappa_R\mid j\), in which
+case
+\[
+ U_j=cR^{\,b-j/g}.
+\]
+Thus repeated roots can support sub-\(g\) Kummer modes.  Even when the
+globally first \(P\)-layer is a common factor deformation, iterating it
+can change the factor multiplicities and the next Newton support.
+The covariance identity alone does not supply the missing secondary
+Newton--Rees induction.
+
+Accordingly the following are not consequences of this paper:
+
+\begin{itemize}
+\item a normal form modulo \(\tau^g\) for an arbitrary repeated-root
+  boundary;
+\item elimination of the resonant slope \(g/e\);
+\item elimination of Kummer modes after nonlinear interaction; or
+\item a proof of the plane Jacobian conjecture.
+\end{itemize}
+
+\section{Reproducibility and checking}
+\label{sec:repro}
+
+The proof is symbolic, but its recurrent identities and integer
+bookkeeping have exact companion checks in the repository containing
+this source.  From the repository root, run the following scripts with
+\texttt{python3} in an environment containing SymPy:
+\begingroup\footnotesize
+\begin{itemize}
+\item \nolinkurl{current_context/verify_standard_system_single_binomial_face_no_scalar.py}
+\item \nolinkurl{current_context/verify_standard_system_strict_compact_face_bridge.py}
+\item \nolinkurl{current_context/verify_standard_system_squarefree_common_root_exclusion.py}
+\end{itemize}
+\endgroup
+The first script checks the
+telescoping coefficients and endpoint arithmetic in
+Lemma~\ref{lem:binomial}.  The second checks
+\eqref{eq:coset}, \eqref{eq:weight-gap}, coordinate covariance, and
+the gluing degree arithmetic.  The third checks the strict-face formula,
+the fact that every existing \(g\)-sector lies above a strict face, the
+truncated degree-average lemma, sector absorption, reciprocal bounds,
+and the exact zero-bracket identity.
+
+For the scope statements in Section~\ref{sec:repeated}, the companion
+checks are
+\begingroup\footnotesize
+\begin{itemize}
+\item \nolinkurl{current_context/verify_standard_system_repeated_root_compact_face.py}
+\item \nolinkurl{current_context/verify_standard_system_repeated_root_global_first_layer.py}
+\item \nolinkurl{current_context/verify_standard_system_repeated_root_kummer_nonlinear_audit.py}
+\end{itemize}
+\endgroup
+These programs use exact rational and polynomial arithmetic.  They are
+not probabilistic and do not use floating point.  They are also not a
+substitute for the Newton-face proof: in particular, automatic face
+matching, local-to-global divisibility, and the logical use of
+least-residual minimality are mathematical arguments in the text.
+
+\paragraph{Trust boundary.}
+The main theorem has no computer-exhaustive hypothesis.  A reader can
+verify every displayed identity by differentiation and every discrete
+step by the stated divisibility and degree inequalities.  The scripts
+serve as regression checks against sign, weight, and indexing errors.
+
+\paragraph{Disclosure.}
+AI systems assisted with symbolic-search orchestration, adversarial
+review, exact-code checking, and preparation of this draft.  The named
+author is responsible for the mathematical claims, source, and
+independent verification before dissemination.
+
+\begin{thebibliography}{9}
+
+\bibitem{BiggersMohFried}
+R.~Biggers, T.~T. Moh, and M.~Fried,
+\emph{On the Jacobian conjecture and the configurations of roots},
+J. Reine Angew. Math. \textbf{340} (1983), 140--213,
+\url{https://doi.org/10.1515/crll.1983.340.140}.
+
+\bibitem{GGVSystem}
+J.~A. Guccione, J.~J. Guccione, and C.~Valqui,
+\emph{A system of polynomial equations related to the Jacobian
+Conjecture},
+preprint, arXiv:1406.0886, 2014,
+\url{https://arxiv.org/abs/1406.0886}.
+
+\bibitem{GGVLowerSide}
+J.~A. Guccione, J.~J. Guccione, and C.~Valqui,
+\emph{The two-dimensional Jacobian conjecture and the lower side of the
+Newton polygon},
+preprint, arXiv:1605.09430, 2016,
+\url{https://arxiv.org/abs/1605.09430}.
+
+\bibitem{GGHVAlgorithms}
+J.~A. Guccione, J.~J. Guccione, R.~Horruitiner, and C.~Valqui,
+\emph{Some algorithms related to the Jacobian Conjecture},
+preprint, arXiv:1708.07936, 2017,
+\url{https://arxiv.org/abs/1708.07936}.
+
+\bibitem{GGHV2022}
+J.~A. Guccione, J.~J. Guccione, R.~Horruitiner, and C.~Valqui,
+\emph{Increasing the degree of a possible counterexample to the
+Jacobian Conjecture from 100 to 108},
+preprint, arXiv:2204.14178, 2022,
+\url{https://arxiv.org/abs/2204.14178}.
+
+\bibitem{MakarLimanovTrakhtenberg}
+L.~Makar-Limanov and L.~Trakhtenberg,
+\emph{Properties of a Jacobian mate},
+S\~{a}o Paulo J. Math. Sci. \textbf{20} (2026), Article 16,
+\url{https://doi.org/10.1007/s40863-025-00520-4};
+open preprint MPIM 2024(33),
+\url{https://archive.mpim-bonn.mpg.de/id/eprint/5148/}.
+
+\bibitem{Shaska}
+T.~Shaska,
+\emph{Graded Keller maps and the Jacobian Conjecture},
+preprint, arXiv:2607.20210v1, 2026,
+\url{https://arxiv.org/abs/2607.20210}.
+
+\end{thebibliography}
+
+\end{document}
