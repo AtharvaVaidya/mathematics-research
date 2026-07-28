@@ -177,6 +177,42 @@ the necessary prefix/suffix action and ignores further constraints on
 which transpositions are legal.  Its lower bound is therefore independent
 of the BFS computations.
 
+### Corollary: the \(H=0\) endpoint itself has unbounded delay
+
+For \(m\ge2\), take the left root edge \(0\) and a \(02\)-labeled edge
+in the right cap.  From the Tait state, switch \(03\) on
+\[
+ P=\{0,3,4,5,6,7\}
+\]
+and then \(24\) on
+\[
+ Q=\{0,1,2,3\}.
+\]
+The roots are now labeled \(34,02\).  The all-bad line triangle
+\[
+                         (13,34,14)
+\]
+has \(K_1=K_3=Q\), \(K_2=P\), hence
+\[
+                         H=0,\qquad
+                         Z=\{1,2,4,5,6,7\}.
+\]
+Its two endpoint cut words are
+\[
+            13,C,B,A,C,B,\ldots\quad\text{and}\quad
+            14,C,B,A,C,B,\ldots.
+\]
+Applying the same boundary proof to the unchanged tail gives a
+root-transition lower bound
+\[
+                         \left\lfloor{m+1\over3}\right\rfloor
+\]
+from either endpoint.  Thus even the \(H=0\) residual endpoint has
+unbounded delay while \(H,Z\), both root labels, and the local cap data
+remain fixed.  The full construction and checker are in
+`scratch/d5-hzero-capped-ladder-unbounded-delay.md` and
+`scratch/check_d5_hzero_capped_ladder_delay_family.py`.
+
 ## Two-edge-cut mechanism
 
 Every separation between consecutive ladder columns is a two-edge cut.
