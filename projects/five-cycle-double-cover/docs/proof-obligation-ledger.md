@@ -1185,3 +1185,16 @@ Open obligations:
     It therefore refutes only the proposed oddness-four closure strategy,
     not FiveCDC.  See
     `search/one-boundary-five-oddness6-completion-20260727/`.
+74. **The terminal-distinct \(s=1\) one-boundary-five outside is
+    reducible by the ordered theta-cap switching attractor:** the fixed
+    seven-vertex cap accepts 6,000 ordered even \(D_5\) words and 58 of
+    62 global-coordinate orbits.  Each missing orbit has a bichromatic
+    pair with four boundary ends, and all three possible internal path
+    pairings switch into the cap relation.  Capping the opposite
+    factor-critical shore by an ordered 5-cycle produces a smaller simple
+    bridgeless cubic graph, so global cubic minimality supplies a nonempty
+    shore relation; switching and exact boundary gluing then contradict
+    minimality.  Primary and separately written finite enumerations agree.
+    This excludes only terminal-distinct \(s=1\).  Repeated-endpoint
+    \(s=1\) and every \(s\ge2\) outside remain open.  See
+    `docs/theta-cap-five-cycle-extension-lemma.md`.

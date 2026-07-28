@@ -2417,3 +2417,31 @@ source plus a displayed resistance-transfer argument; an explicit
 five-CDC.  Thus it is a counterexample only to the residual oddness-four
 proof strategy, not to FiveCDC.  See
 `search/one-boundary-five-oddness6-completion-20260727/`.
+
+## Theta-cap closure of the terminal-distinct \(s=1\) outside
+
+Audit date: **2026-07-27**.
+
+Choose a minimum-order counterexample among all bridgeless cubic
+multigraphs; the standard reductions make it simple and cyclically
+4-edge-connected.  In the terminal-distinct \(s=1\) one-boundary-five
+profile, cubic incidence counting and exclusion of a cyclic triangle
+3-cut force the seven-vertex outside to be the fixed ordered theta cap
+with path lengths \(2,3,3\).
+
+Its exact \(D_5\) language contains 6,000 of the 6,240 ordered even
+boundary words, or 58 of 62 orbits under global coordinate \(S_5\).
+Each of the four missing orbits has a bichromatic pair with four boundary
+ends.  For every possible pairing of those ends by the two internal paths,
+switching either path reaches the cap language.  Therefore every nonempty
+realisable ordered five-pole relation intersects the theta-cap relation.
+
+Capping the factor-critical shore by an ordered 5-cycle gives a simple
+bridgeless cubic graph smaller by two vertices.  Minimality makes its
+shore relation nonempty; the switching-attractor and exact gluing then
+contradict that the original graph was a counterexample.  Hence this one
+incidence subcase is excluded.  Repeated-endpoint \(s=1\) and all
+\(s\ge2\) outside patterns remain open.  Two independently written
+standard-library implementations and a displayed human proof are in
+`docs/theta-cap-five-cycle-extension-lemma.md`.  FiveCDC remains
+unresolved, and no orientable claim is made.

@@ -87,6 +87,31 @@ produce a FiveCDC counterexample.  The same package retains a SAT model
 and a compact edge labelling for an explicit standard five-cycle double
 cover, checked independently in the original and edge-label semantics.
 
+## Theta-cap switching exclusion
+
+The displayed argument in
+`docs/theta-cap-five-cycle-extension-lemma.md` closes one exact incidence
+subcase.  The ordered seven-vertex theta cap has 6,000 \(D_5\) boundary
+words, comprising 58 of the 62 global-coordinate orbits.  For each missing
+orbit there is a coordinate pair whose bichromatic subgraph has four
+boundary ends; whichever of the three path pairings occurs inside the
+opposite five-pole, switching either path reaches the theta relation.
+
+For a minimum-order bridgeless cubic counterexample, the
+terminal-distinct \(s=1\) outside is forced to be this theta cap.  Capping
+the factor-critical shore by an ordered 5-cycle gives a smaller simple
+bridgeless cubic graph, hence a nonempty shore relation by minimality.
+The switching lemma makes that relation meet the theta relation, and exact
+boundary-label gluing gives a FiveCDC, a contradiction.
+
+This does not close the repeated-endpoint \(s=1\) shapes, whose outside
+cap is not theta, or any \(s\ge2\) pattern, where nonemptiness of the
+factor-critical-shore relation alone does not force intersection with the
+actual outside relation.  Primary and independently written parity-CSP
+programs reproduce the complete finite table.  The underlying
+two-subset/multipole/switching language is prior work, and novelty of the
+specific cap lemma remains provisional pending specialist review.
+
 ## Reproducible artifacts and trust boundaries
 
 The focused standard-library replays are:
@@ -114,7 +139,9 @@ standalone replay of canonical generation. It is finite evidence only.
 
 Run the focused integrity and semantic replay commands in
 `REPRODUCING.md`. `ONE_BOUNDARY_FIVE_SHA256SUMS` freezes every file in
-this update, including the nested oddness-six package manifest.
+the earlier update, including the nested oddness-six package manifest.
+`THETA_CAP_SWITCHING_SHA256SUMS` separately freezes the theta-cap proof,
+both implementations, and both retained results.
 
 ## AI-use disclosure
 

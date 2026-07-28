@@ -135,6 +135,29 @@ proofs and exact remaining obligation are indexed by
 `ONE_BOUNDARY_FIVE_FRONTIER_20260727.md`.  These checks do not prove or
 disprove FiveCDC and do not test the orientable variant.
 
+The terminal-distinct \(s=1\) theta-cap exclusion has two
+standard-library implementations:
+
+```sh
+shasum -a 256 -c THETA_CAP_SWITCHING_SHA256SUMS
+python3 -B scratch/theta_cap_boundary_language.py \
+  > /tmp/theta-cap-boundary-language.json
+cmp /tmp/theta-cap-boundary-language.json \
+  scratch/theta-cap-boundary-language-result.json
+python3 -B scratch/theta_cap_boundary_language_independent.py \
+  > /tmp/theta-cap-boundary-language-independent.json
+cmp /tmp/theta-cap-boundary-language-independent.json \
+  scratch/theta-cap-boundary-language-independent-result.json
+```
+
+Both programs enumerate all 6,240 ordered even boundary words.  They
+independently obtain 6,000 accepted words, 58 of 62 global-coordinate
+orbits, the same four missing orbits, and all 24 successful switched-word
+extensions.  The theorem and its minimality/gluing proof are displayed in
+`docs/theta-cap-five-cycle-extension-lemma.md`.  This closes only the
+terminal-distinct \(s=1\) outside; repeated-endpoint \(s=1\) and all
+\(s\ge2\) patterns remain open.
+
 The order-100 oddness-six strategy counterexample has its own complete
 package.  Its quick replay reconstructs the source and completion, checks
 the exact Gallai--Edmonds profile, factor-critical shore, displayed

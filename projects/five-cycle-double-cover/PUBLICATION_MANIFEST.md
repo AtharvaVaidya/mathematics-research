@@ -68,17 +68,27 @@ It contains:
   compact order-100 specimen with exact one-boundary-five profile and
   exact oddness six, together with a two-checker resistance LRAT, an
   explicit 2-factor, a positive standard five-CDC model, an independently
-  checked compact edge labelling, and full cut replay; and
-- `ONE_BOUNDARY_FIVE_SHA256SUMS`.
+  checked compact edge labelling, and full cut replay;
+- `docs/theta-cap-five-cycle-extension-lemma.md`, with a displayed
+  \(58/62\) ordered theta-cap computation, bichromatic switching-attractor
+  proof, and the corrected global-minimality argument excluding the
+  terminal-distinct \(s=1\) outside;
+- `docs/reductions.md`, recording the elementary reduction to the simple
+  cyclically 4-edge-connected minimum bridgeless cubic domain;
+- primary and separately written standard-library parity-CSP programs,
+  with byte-reproducible retained JSON reports;
+- `THETA_CAP_SWITCHING_SHA256SUMS` and
+  `ONE_BOUNDARY_FIVE_SHA256SUMS`.
 
 The locally cyclically-four all-five-bad pole refutes a proposed local
 matching lemma, not FiveCDC.  Its displayed globally admissible
 completions have exact oddness four and are not counterexamples.  The
 order-100 specimen proves that oddness at most four is not universal in
-this branch, but it too has a checked standard five-CDC.  The remaining
-obligation is the global closure of the complementary paths.  The index
-records the AI-use disclosure and the exact machine trust boundaries.
-This update concerns only the standard conjecture.
+this branch, but it too has a checked standard five-CDC.  The theta-cap
+lemma closes the terminal-distinct \(s=1\) incidence branch.  The
+repeated-endpoint \(s=1\) shapes and all \(s\ge2\) outside patterns remain
+open.  The index records the AI-use disclosure and the exact machine trust
+boundaries.  This update concerns only the standard conjecture.
 
 ## Prescribed-root matching frontier
 

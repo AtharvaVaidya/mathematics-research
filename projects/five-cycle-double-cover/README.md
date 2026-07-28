@@ -85,6 +85,18 @@ checksum ledgers, exact trust boundaries, and a separate AI-use
 disclosure.  It neither resolves standard FiveCDC nor addresses the
 orientable variant.
 
+The human-checkable
+[`docs/theta-cap-five-cycle-extension-lemma.md`](docs/theta-cap-five-cycle-extension-lemma.md)
+now excludes the terminal-distinct \(s=1\) outside from a minimum-order
+bridgeless cubic counterexample.  Its ordered seven-vertex theta cap
+accepts 58 of the 62 \(D_5\) boundary orbits; every one of the four
+missing orbits can be switched along either bichromatic path into the cap
+relation.  Primary and separately written standard-library programs
+reproduce the complete 6,240-word calculation.  The repeated-endpoint
+\(s=1\) incidence shapes and all \(s\ge2\) outside patterns remain open.
+The encoding and switching method are prior machinery; only this specific
+cap calculation and scoped consequence are offered as provisionally new.
+
 ## Main research drafts
 
 - [`preprint-rooted-four-cut/output/pdf/main.pdf`](preprint-rooted-four-cut/output/pdf/main.pdf)

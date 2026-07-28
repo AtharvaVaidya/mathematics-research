@@ -1,0 +1,740 @@
+{
+  "implementation": "independent generic parity CSP",
+  "local_states_from_parity": 60,
+  "ordered_even_words": 6240,
+  "ordered_theta_words": 6000,
+  "ordered_path_words": 2160,
+  "path_words_rejected_by_theta": 120,
+  "even_S5_orbits": 62,
+  "theta_S5_orbits": 58,
+  "S5_orbit_size_distribution_even": {
+    "60": 20,
+    "120": 42
+  },
+  "missing_orbits": [
+    [
+      "01",
+      "01",
+      "02",
+      "12",
+      "01"
+    ],
+    [
+      "01",
+      "02",
+      "01",
+      "12",
+      "01"
+    ],
+    [
+      "01",
+      "02",
+      "12",
+      "02",
+      "02"
+    ],
+    [
+      "01",
+      "02",
+      "12",
+      "12",
+      "12"
+    ]
+  ],
+  "missing_ordered_orbit_sizes": [
+    60,
+    60,
+    60,
+    60
+  ],
+  "coordinate_five_cycles": 12,
+  "ordered_coordinate_five_cycles": 1440,
+  "all_coordinate_five_cycles_accepted": true,
+  "cap_terminal_automorphisms": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      0,
+      3,
+      2,
+      4
+    ],
+    [
+      2,
+      3,
+      0,
+      1,
+      4
+    ],
+    [
+      3,
+      2,
+      1,
+      0,
+      4
+    ]
+  ],
+  "coordinate_cycle_stabilizer_size": 10,
+  "placement_orbit_sizes": [
+    20,
+    20,
+    20,
+    20,
+    20,
+    20
+  ],
+  "displayed_table_failures": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  "all_switch_outputs_directly_accepted": true,
+  "all_switch_output_orbits_accepted": true,
+  "switching": [
+    {
+      "missing": [
+        "01",
+        "01",
+        "02",
+        "12",
+        "01"
+      ],
+      "pair": [
+        0,
+        3
+      ],
+      "positions": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "cases": [
+        [
+          {
+            "path": [
+              0,
+              1
+            ],
+            "word": [
+              "13",
+              "13",
+              "02",
+              "12",
+              "01"
+            ],
+            "orbit": [
+              "01",
+              "01",
+              "23",
+              "02",
+              "03"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          },
+          {
+            "path": [
+              2,
+              4
+            ],
+            "word": [
+              "01",
+              "01",
+              "23",
+              "12",
+              "13"
+            ],
+            "orbit": [
+              "01",
+              "01",
+              "23",
+              "02",
+              "03"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          }
+        ],
+        [
+          {
+            "path": [
+              0,
+              2
+            ],
+            "word": [
+              "13",
+              "01",
+              "23",
+              "12",
+              "01"
+            ],
+            "orbit": [
+              "01",
+              "02",
+              "13",
+              "03",
+              "02"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          },
+          {
+            "path": [
+              1,
+              4
+            ],
+            "word": [
+              "01",
+              "13",
+              "02",
+              "12",
+              "13"
+            ],
+            "orbit": [
+              "01",
+              "02",
+              "13",
+              "03",
+              "02"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          }
+        ],
+        [
+          {
+            "path": [
+              0,
+              4
+            ],
+            "word": [
+              "13",
+              "01",
+              "02",
+              "12",
+              "13"
+            ],
+            "orbit": [
+              "01",
+              "02",
+              "23",
+              "03",
+              "01"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          },
+          {
+            "path": [
+              1,
+              2
+            ],
+            "word": [
+              "01",
+              "13",
+              "23",
+              "12",
+              "01"
+            ],
+            "orbit": [
+              "01",
+              "02",
+              "23",
+              "03",
+              "01"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          }
+        ]
+      ]
+    },
+    {
+      "missing": [
+        "01",
+        "02",
+        "01",
+        "12",
+        "01"
+      ],
+      "pair": [
+        0,
+        3
+      ],
+      "positions": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "cases": [
+        [
+          {
+            "path": [
+              0,
+              1
+            ],
+            "word": [
+              "13",
+              "23",
+              "01",
+              "12",
+              "01"
+            ],
+            "orbit": [
+              "01",
+              "02",
+              "13",
+              "12",
+              "13"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          },
+          {
+            "path": [
+              2,
+              4
+            ],
+            "word": [
+              "01",
+              "02",
+              "13",
+              "12",
+              "13"
+            ],
+            "orbit": [
+              "01",
+              "02",
+              "13",
+              "12",
+              "13"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          }
+        ],
+        [
+          {
+            "path": [
+              0,
+              2
+            ],
+            "word": [
+              "13",
+              "02",
+              "13",
+              "12",
+              "01"
+            ],
+            "orbit": [
+              "01",
+              "23",
+              "01",
+              "02",
+              "03"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          },
+          {
+            "path": [
+              1,
+              4
+            ],
+            "word": [
+              "01",
+              "23",
+              "01",
+              "12",
+              "13"
+            ],
+            "orbit": [
+              "01",
+              "23",
+              "01",
+              "02",
+              "03"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          }
+        ],
+        [
+          {
+            "path": [
+              0,
+              4
+            ],
+            "word": [
+              "13",
+              "02",
+              "01",
+              "12",
+              "13"
+            ],
+            "orbit": [
+              "01",
+              "23",
+              "02",
+              "03",
+              "01"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          },
+          {
+            "path": [
+              1,
+              2
+            ],
+            "word": [
+              "01",
+              "23",
+              "13",
+              "12",
+              "01"
+            ],
+            "orbit": [
+              "01",
+              "23",
+              "02",
+              "03",
+              "01"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          }
+        ]
+      ]
+    },
+    {
+      "missing": [
+        "01",
+        "02",
+        "12",
+        "02",
+        "02"
+      ],
+      "pair": [
+        0,
+        3
+      ],
+      "positions": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "cases": [
+        [
+          {
+            "path": [
+              0,
+              1
+            ],
+            "word": [
+              "13",
+              "23",
+              "12",
+              "02",
+              "02"
+            ],
+            "orbit": [
+              "01",
+              "02",
+              "12",
+              "23",
+              "23"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          },
+          {
+            "path": [
+              3,
+              4
+            ],
+            "word": [
+              "01",
+              "02",
+              "12",
+              "23",
+              "23"
+            ],
+            "orbit": [
+              "01",
+              "02",
+              "12",
+              "23",
+              "23"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          }
+        ],
+        [
+          {
+            "path": [
+              0,
+              3
+            ],
+            "word": [
+              "13",
+              "02",
+              "12",
+              "23",
+              "02"
+            ],
+            "orbit": [
+              "01",
+              "23",
+              "02",
+              "12",
+              "23"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          },
+          {
+            "path": [
+              1,
+              4
+            ],
+            "word": [
+              "01",
+              "23",
+              "12",
+              "02",
+              "23"
+            ],
+            "orbit": [
+              "01",
+              "23",
+              "02",
+              "12",
+              "23"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          }
+        ],
+        [
+          {
+            "path": [
+              0,
+              4
+            ],
+            "word": [
+              "13",
+              "02",
+              "12",
+              "02",
+              "23"
+            ],
+            "orbit": [
+              "01",
+              "23",
+              "02",
+              "23",
+              "12"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          },
+          {
+            "path": [
+              1,
+              3
+            ],
+            "word": [
+              "01",
+              "23",
+              "12",
+              "23",
+              "02"
+            ],
+            "orbit": [
+              "01",
+              "23",
+              "02",
+              "23",
+              "12"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          }
+        ]
+      ]
+    },
+    {
+      "missing": [
+        "01",
+        "02",
+        "12",
+        "12",
+        "12"
+      ],
+      "pair": [
+        1,
+        3
+      ],
+      "positions": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "cases": [
+        [
+          {
+            "path": [
+              0,
+              2
+            ],
+            "word": [
+              "03",
+              "02",
+              "23",
+              "12",
+              "12"
+            ],
+            "orbit": [
+              "01",
+              "02",
+              "12",
+              "23",
+              "23"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          },
+          {
+            "path": [
+              3,
+              4
+            ],
+            "word": [
+              "01",
+              "02",
+              "12",
+              "23",
+              "23"
+            ],
+            "orbit": [
+              "01",
+              "02",
+              "12",
+              "23",
+              "23"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          }
+        ],
+        [
+          {
+            "path": [
+              0,
+              3
+            ],
+            "word": [
+              "03",
+              "02",
+              "12",
+              "23",
+              "12"
+            ],
+            "orbit": [
+              "01",
+              "02",
+              "23",
+              "12",
+              "23"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          },
+          {
+            "path": [
+              2,
+              4
+            ],
+            "word": [
+              "01",
+              "02",
+              "23",
+              "12",
+              "23"
+            ],
+            "orbit": [
+              "01",
+              "02",
+              "23",
+              "12",
+              "23"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          }
+        ],
+        [
+          {
+            "path": [
+              0,
+              4
+            ],
+            "word": [
+              "03",
+              "02",
+              "12",
+              "12",
+              "23"
+            ],
+            "orbit": [
+              "01",
+              "02",
+              "23",
+              "23",
+              "12"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          },
+          {
+            "path": [
+              2,
+              3
+            ],
+            "word": [
+              "01",
+              "02",
+              "23",
+              "23",
+              "12"
+            ],
+            "orbit": [
+              "01",
+              "02",
+              "23",
+              "23",
+              "12"
+            ],
+            "directly_accepted": true,
+            "orbit_accepted": true
+          }
+        ]
+      ]
+    }
+  ]
+}

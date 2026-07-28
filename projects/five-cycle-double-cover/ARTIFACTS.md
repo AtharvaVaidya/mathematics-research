@@ -63,7 +63,17 @@ copied into a separate clean clone; it was not modified or committed.
   a two-checker LRAT, an explicit 2-factor, and a directly checked
   standard five-CDC.  It refutes only an oddness-at-most-four closure
   strategy.  None of these examples is a FiveCDC counterexample, and the
-  global path-closure step remains open.
+  unrestricted global path-closure step remains open.
+- The theta-cap switching update:
+  `docs/theta-cap-five-cycle-extension-lemma.md`,
+  `docs/reductions.md`,
+  `scratch/theta_cap_boundary_language.py`, its separately written
+  parity-CSP audit, both retained JSON reports, and
+  `THETA_CAP_SWITCHING_SHA256SUMS`.  The displayed proof and two finite
+  implementations establish the ordered \(58/62\) cap language and
+  exclude only the terminal-distinct \(s=1\) outside in a minimum
+  bridgeless cubic counterexample.  Repeated-endpoint \(s=1\) and every
+  \(s\ge2\) outside remain open.
 - The complete compact focused theta-choice census through order 28:
   retained graph6 inputs and generator logs, source identities, two
   independently written classifiers, frozen result streams, aggregate
