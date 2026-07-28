@@ -68,7 +68,11 @@ needed to undo the contraction.  This refutes a natural reconfiguration
 lemma, not the five-cycle-double-cover conjecture.  A complementary Tait
 quotient proves that the analogous fully circuit-trapped branch is
 root-universal on cubic graphs, explaining why the degree-four trap does
-not lift unchanged.  Finally, exhaustive computations show that every
+not lift unchanged.  We also construct a planar cubic capped-ladder
+family proving that no constant number of root-component Kempe switches
+can always rescue two prescribed edges; this concerns a restricted
+strategy and does not refute rooted Kempe universality or FiveCDC.
+Finally, exhaustive computations show that every
 terminal equal-Euler-characteristic Kempe plateau is root-universal for
 all 81 biconnected simple cubic graphs on 12 vertices.  A weaker
 global-maximum test succeeds for all 480 such graphs on 14 vertices.
@@ -106,6 +110,13 @@ component-switch Euler formula below, or the particular finite trap.
 Accordingly, this draft makes no categorical novelty claim.  Its present
 value is that the statements, proofs, certificates, and limitations are
 exposed in a form that can be checked independently.
+
+\textbf{Literature-search TODO.}
+Before circulation as a preprint, conduct a targeted search for prior
+work on unbounded Kempe-switch distance in two-edge-cut chains, especially
+prefix/suffix word obstructions for cycle-double-cover or nowhere-zero
+flow reconfiguration.  The capped-ladder theorem below has not yet been
+compared adequately against that literature.
 
 \section{\texorpdfstring{\(D_5\)-flows}{D5-flows}}
 
@@ -567,6 +578,121 @@ branch; a general rooted-orbit obstruction could still use five
 coordinates, a disconnected coordinate class, or transitions between
 those regimes.
 
+\section{Unbounded delay for root-component rescue}
+
+Fix distinct root edges \(r,s\).  Call a state \emph{root-good} when some
+component of some \(Y_{ij}\) contains both roots.  While the state is not
+root-good, a \emph{root-component switch} means a component Kempe switch
+whose switched circuit contains exactly one root.
+
+For \(m\geq1\), define a capped ladder \(L_m\) as follows.  Its left cap
+has vertices \(a,b,p,q\), its ladder has vertices \(u_i,v_i\) for
+\(0\leq i\leq m\), and its right cap has vertices \(c,d,x,y\).  The edge
+set is
+\[
+\begin{split}
+ &ap,aq,bp,bq,pq,\quad au_0,bv_0,\\
+ &u_iv_i\quad(0\leq i\leq m),\\
+ &u_iu_{i+1},v_iv_{i+1}\quad(0\leq i<m),\\
+ &u_mc,v_md,\quad cx,cy,dx,dy,xy.
+\end{split}
+\]
+Thus the caps are copies of \(K_4-e\), and
+\[
+                  |V(L_m)|=2m+10,\qquad |E(L_m)|=3m+15.
+\]
+The graphs are simple planar cubic graphs.  They are bridgeless: cap
+edges lie on cap triangles, ladder edges lie on squares, and the
+attachment edges lie on cycles running through both rails and the caps.
+
+Put
+\[
+                         A=01,\qquad B=02,\qquad C=12.
+\]
+There is a Tait-supported \(D_5\)-flow on \(L_m\) for which the labels on
+the successive two-edge cuts from left to right form the length-\((m+2)\)
+prefix
+\[
+                         A,C,B,A,C,B,\ldots.
+\]
+Explicitly, label \(au_0,bv_0\) by \(A\), label \(u_0v_0\) by \(B\),
+and assign the rail-pair and rung labels successively so that every
+ladder vertex sees \(A,B,C\).  On the left cap take
+\[
+ q(ap)=q(bq)=B,\quad q(aq)=q(bp)=C,\quad q(pq)=A,
+\]
+and use the unique compatible Tait colouring on the right cap, up to
+exchanging its two inner vertices.  Every vertex then sees \(A,B,C\),
+so the local xor equations hold.
+
+\begin{theorem}[no constant root-component radius]
+\label{thm:unbounded-root-radius}
+Choose one root edge inside each cap of \(L_m\) in the state above.
+Every root-component-switch sequence that reaches a root-good state has
+length at least
+\[
+                         \left\lfloor\frac{m+2}{3}\right\rfloor.
+\]
+Consequently, no universal constant bounds the number of
+root-component switches required for rescue.
+\end{theorem}
+
+\begin{proof}
+Let \(D_0,\ldots,D_{m+1}\) be the nested two-edge cuts in the displayed
+word.  For an arbitrary \(D_5\)-flow, the two edges of each \(D_j\) have
+the same label: xor the vertex equations on either side of the cut;
+internal edges cancel twice, leaving the xor of the two cut labels.
+Write the resulting cut-label word as
+\(\lambda_0\lambda_1\cdots\lambda_{m+1}\).
+
+Let \(K\) be a factor component containing exactly one root.  Connectedness
+and nestedness imply that the cuts met by \(K\) form a prefix when \(K\)
+contains the left root and a suffix when it contains the right root.
+Moreover, \(K\) is Eulerian, so it meets a two-edge cut in zero or two
+edges.  A switch on \(K\) therefore applies one coordinate transposition
+to a prefix or suffix of the cut-label word.
+
+After \(t\) switches, their at most \(t\) boundaries divide the initial
+word into at most \(t+1\) intervals.  On each interval the final labels
+are obtained from the initial labels by one fixed coordinate permutation,
+namely the ordered composition of the switches covering that interval.
+
+If the final state is root-good through \(Y_h\), its component containing
+both roots crosses every \(D_j\).  Hence
+\[
+                              h\cdot\lambda_j=1
+                 \qquad(0\leq j\leq m+1),
+\]
+with dot product over \(\F_2\).
+
+Partition the initial word into
+\(\lfloor(m+2)/3\rfloor\) disjoint consecutive triples \(A,C,B\).
+No one triple can remain in a single interval.  Otherwise one coordinate
+permutation \(\pi\) would act on all three entries, and
+\[
+                \pi(A)+\pi(C)+\pi(B)=\pi(A+C+B)=0.
+\]
+Dotting with \(h\) contradicts the preceding display, because the xor of
+three ones is one, not zero.  Thus every disjoint triple contains a
+switch boundary in one of its two internal gaps.  Those gaps are disjoint
+between triples, so one boundary splits at most one triple.  Therefore
+\[
+                         t\geq\left\lfloor\frac{m+2}{3}\right\rfloor,
+\]
+as required.
+\end{proof}
+
+\begin{remark}[scope]
+The proof deliberately relaxes the actual move system and uses only its
+necessary prefix/suffix action.  It proves unbounded distance for the
+restricted root-component strategy.  It does not produce a state that is
+unrescuable by root-component switches, does not refute unrestricted
+rooted Kempe universality, and does not prove or disprove FiveCDC.
+Literal breadth-first searches find finite rescue distances
+\(3,4,5,6,8,9\) for selected roots in \(L_1,\ldots,L_6\), respectively.
+These computations are supplementary to, not inputs to, the proof.
+\end{remark}
+
 \section{Surface-Euler plateaus}
 
 Let \(\mathcal K(G)\) be the state graph whose vertices are \(D_5\)-flows
@@ -698,6 +824,7 @@ the companion repository.  From its root:
 python3 scratch/audit_d5_surface_euler_switch.py
 python3 scratch/check_d5_contraction_circuit_orbit_counterexample.py
 python3 scratch/check_d4_cubic_trap_root_universality.py
+python3 scratch/check_d5_capped_ladder_delay_family.py
 
 python3 scratch/verify_d5_surface_chi_plateaus_order12.py
 python3 scratch/verify_d5_root_euler_potential_reports.py
@@ -722,7 +849,9 @@ The human-checkable results in this note are:
  \item the boundary interpretation of the bichromatic factors;
  \item the exact one-switch Euler-change formula; and
  \item the four-coordinate one-step locking lemma and the cubic \(D_4\)
- trap theorem.
+ trap theorem; and
+ \item the capped-ladder lower bound proving that root-component rescue
+ has no universal constant radius.
 \end{enumerate}
 The cube topology change is a short explicit certificate.  The
 12-state contraction trap and the plateau tables are finite

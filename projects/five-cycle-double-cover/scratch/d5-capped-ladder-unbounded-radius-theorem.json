@@ -1,0 +1,41 @@
+{
+  "schema": "d5-capped-ladder-unbounded-radius-theorem-v1",
+  "status": "PROVED",
+  "date": "2026-07-28",
+  "graph_family": {
+    "name": "capped ladder L_m",
+    "parameter": "m >= 1",
+    "vertices": "2m + 10",
+    "edges": "3m + 15",
+    "properties": [
+      "finite",
+      "simple",
+      "planar",
+      "cubic",
+      "bridgeless"
+    ]
+  },
+  "initial_state": {
+    "support_labels": ["01", "02", "12"],
+    "cut_word": "prefix of 01,12,02,01,12,02,... of length m+2",
+    "local_xor": "each vertex sees 01,02,12"
+  },
+  "theorem": {
+    "move_class": "factor-component switches containing exactly one root",
+    "roots": "one edge in each terminal cap",
+    "lower_bound": "floor((m+2)/3)",
+    "consequence": "no universal constant root-component rescue radius"
+  },
+  "proof_invariants": [
+    "the two labels on every nested 2-edge cut are equal",
+    "one root-component switch transposes a prefix or suffix of the cut word",
+    "t switches induce at most t word boundaries",
+    "each initial disjoint 01,12,02 triple has xor zero",
+    "a final through-factor cannot be active on a zero-xor triple",
+    "every triple must contain a distinct switch boundary"
+  ],
+  "human_proof": "scratch/d5-capped-ladder-delay-family.md",
+  "computational_checker": "scratch/check_d5_capped_ladder_delay_family.py",
+  "rooted_orbit_counterexample": false,
+  "fivecdc_counterexample": false
+}
