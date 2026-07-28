@@ -24,15 +24,28 @@ are not independent human verification or peer review.
   order-15 canonical records, eight threshold transcripts, the primary
   CaDiCaL classifier, checksums, report, and an independent
   structure/corpus verifier with optional full replay.
+- `search/five-pole-universal-split-order17-20260727/` contains the eight
+  exact summaries and corpus identities for 1,109,844 order-17 cores and
+  11,098,440 positive terminal-pair checks, plus primary source and an
+  independent structure/corpus verifier.
+- `scratch/vertex-edge-universal-split-state-frontier.md` gives
+  line-by-line proofs of the boundary/closed-graph equivalence and the
+  prescribed matching, exact \(\mathbb F_2^2\)-flow, and avoiding
+  two-\(T\)-join equivalence.  The rooted theorem is open.
+- `scratch/audit_vertex_edge_split_state_equivalence.py` independently
+  checks the complete local algebra and the retained summary totals.
 - `scratch/d5-five-pole-ear-operator-frontier.md` and its two audit
   programs give the exact ear operator, restricted finite semigroups, and
   an independently replayed abstract countermodel to coarse induction.
   The countermodel is not claimed to be graph-realizable.
 - `FIVE_POLE_FRONTIER_SHA256SUMS` freezes the focused proof/audit sources
   and the nested order-15 package manifest.
+- `VERTEX_EDGE_SPLIT_SHA256SUMS` freezes the rooted proof/audit sources and
+  nested order-17 package manifest.
 
 This update does not prove or disprove FiveCDC and does not address the
-orientable variant.
+orientable variant.  The still-running order-40 rooted strong-snark job is
+not part of this publication snapshot.
 
 ## Prescribed-root matching frontier
 

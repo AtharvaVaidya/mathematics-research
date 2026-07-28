@@ -29,6 +29,13 @@ copied into a separate clean clone; it was not modified or committed.
   internally bridgeless cores, eight retained transcripts, the CaDiCaL
   classifier, a fresh-corpus structural replay, an optional byte-identical
   full replay, and exact trust/scope warnings.
+- The complete order-17 split-state package in
+  `search/five-pole-universal-split-order17-20260727/`: 1,109,844
+  canonical cores, 11,098,440 positive terminal-pair checks, all eight
+  summaries and corpus identities, primary source, and an independent
+  graph6/structure/corpus verifier.  The companion note contains displayed
+  proofs of the vertex/edge and rooted matching/flow/\(T\)-join
+  equivalences.  The solver remains in the positive-census trust base.
 - The exact open-ear operator note and two standard-library audit programs:
   a seven-state semigroup for repeated two-internal-vertex ears, a
   72-state bounded-port semigroup, and an independently replayed abstract
@@ -36,6 +43,8 @@ copied into a separate clean clone; it was not modified or committed.
   not asserted to be graph-realizable.  The compact
   `FIVE_POLE_FRONTIER_SHA256SUMS` ledger freezes these sources and the
   order-15 package manifest.
+- `VERTEX_EDGE_SPLIT_SHA256SUMS` freezes the order-17 package manifest,
+  human proof note, local algebra audit, and closed-graph diagnostic source.
 - The root-insertion update: a human-checkable proof closing the whole
   all-singleton branch for the standard five-cycle-double-cover
   conclusion, the exact two-factor interlacing criterion, C++ producer,

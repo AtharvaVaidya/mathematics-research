@@ -58,6 +58,26 @@ countermodel without importing the primary audit.  The countermodel is not
 claimed to be a graph pole.  These checks provide no proof or disproof of
 FiveCDC.
 
+The order-17 split-state update has a separate checksum and structural
+replay:
+
+```sh
+shasum -a 256 -c VERTEX_EDGE_SPLIT_SHA256SUMS
+(
+  cd search/five-pole-universal-split-order17-20260727
+  shasum -a 256 -c SHA256SUMS
+)
+python3 search/five-pole-universal-split-order17-20260727/verify.py
+python3 scratch/audit_vertex_edge_split_state_equivalence.py
+```
+
+The structural verifier regenerates all 1,109,844 canonical records,
+checks their graph6 semantics and bridge/degree profile, and compares
+eight exact corpus hashes and summary totals.  The optional `--replay`
+mode reruns all 11,098,440 positive CaDiCaL queries.  It was not rerun
+during this publication sync.  The arbitrary-order rooted property and
+standard FiveCDC remain open.
+
 ## Marked-circuits preprint and companion checks
 
 The 29-page publication draft is

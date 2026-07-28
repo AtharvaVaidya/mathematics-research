@@ -40,6 +40,15 @@ bounded evidence, not a resolution:
   corpus/structure replay, and an optional byte-identical full replay.
   Positive models were not retained, so the classifier and CaDiCaL remain
   in the trust base.
+- [`search/five-pole-universal-split-order17-20260727/`](search/five-pole-universal-split-order17-20260727/)
+  exhausts all 1,109,844 corresponding order-17 cores.  For every core,
+  all ten choices of a doubled terminal pair admit the boundary state
+  `01,01,23,24,34`, for 11,098,440 positive SAT checks.  The independent
+  verifier regenerates and structurally checks every canonical shard.
+  [`scratch/vertex-edge-universal-split-state-frontier.md`](scratch/vertex-edge-universal-split-state-frontier.md)
+  proves that this state is equivalent to a prescribed vertex/edge 5-CDC,
+  and then to a rooted exact-zero matching, four-flow, and two-\(T\)-join
+  certificate.  The arbitrary-order rooted theorem remains open.
 - [`scratch/d5-five-pole-ear-operator-frontier.md`](scratch/d5-five-pole-ear-operator-frontier.md)
   proves the exact open-ear operator and records two checked restricted
   infinite ear families.  It also gives an abstract, explicitly
@@ -49,7 +58,8 @@ bounded evidence, not a resolution:
   the note.
 
 None of these artifacts proves or disproves FiveCDC, and none concerns the
-orientable variant.
+orientable variant.  The order-40 rooted strong-snark computation was still
+running when this snapshot was frozen and is not included.
 
 ## Main research drafts
 
