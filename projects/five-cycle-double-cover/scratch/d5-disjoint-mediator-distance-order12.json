@@ -1,0 +1,1258 @@
+{
+  "claim_tested": "For disjoint factor pairs P,Q and intersecting factor circuits A,B, every e in A and g in B can be joined on a factor circuit after at most two Kempe switches.",
+  "generator": [
+    "/opt/homebrew/bin/geng",
+    "-Cq",
+    "-d3",
+    "-D3",
+    "12"
+  ],
+  "rows": [
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 592,
+      "graph6": "K??FEb_F?wD_",
+      "kempe_orbits_mod_global_s5": 64,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 12,
+      "minimum_switch_distance_histogram": {
+        "0": 86976,
+        "1": 3600
+      },
+      "required_state_root_pairs": 90576,
+      "states_with_disjoint_intersecting_circuit_requirements": 592,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 466,
+      "graph6": "K??FEbGL@WB_",
+      "kempe_orbits_mod_global_s5": 8,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 66,
+      "minimum_switch_distance_histogram": {
+        "0": 68922,
+        "1": 2232,
+        "2": 144
+      },
+      "required_state_root_pairs": 71298,
+      "states_with_disjoint_intersecting_circuit_requirements": 466,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 645,
+      "graph6": "K??FEagT@WB_",
+      "kempe_orbits_mod_global_s5": 1,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 645,
+      "minimum_switch_distance_histogram": {
+        "0": 88668,
+        "1": 9876,
+        "2": 123
+      },
+      "required_state_root_pairs": 98667,
+      "states_with_disjoint_intersecting_circuit_requirements": 645,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 443,
+      "graph6": "K??FEaKY@gB_",
+      "kempe_orbits_mod_global_s5": 22,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 308,
+      "minimum_switch_distance_histogram": {
+        "0": 65579,
+        "1": 2140,
+        "2": 60
+      },
+      "required_state_root_pairs": 67779,
+      "states_with_disjoint_intersecting_circuit_requirements": 443,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 414,
+      "graph6": "K??FEaKR@oE_",
+      "kempe_orbits_mod_global_s5": 35,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 380,
+      "minimum_switch_distance_histogram": {
+        "0": 61686,
+        "1": 1632,
+        "2": 24
+      },
+      "required_state_root_pairs": 63342,
+      "states_with_disjoint_intersecting_circuit_requirements": 414,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 623,
+      "graph6": "K?AEF@oM?w@o",
+      "kempe_orbits_mod_global_s5": 28,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 397,
+      "minimum_switch_distance_histogram": {
+        "0": 85914,
+        "1": 9234,
+        "2": 153
+      },
+      "required_state_root_pairs": 95301,
+      "states_with_disjoint_intersecting_circuit_requirements": 623,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 372,
+      "graph6": "K?AEB`gHcoB_",
+      "kempe_orbits_mod_global_s5": 42,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 172,
+      "minimum_switch_distance_histogram": {
+        "0": 55668,
+        "1": 1236,
+        "2": 12
+      },
+      "required_state_root_pairs": 56916,
+      "states_with_disjoint_intersecting_circuit_requirements": 372,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 380,
+      "graph6": "K?AEEHaM@oB_",
+      "kempe_orbits_mod_global_s5": 32,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 24,
+      "minimum_switch_distance_histogram": {
+        "0": 55836,
+        "1": 2304
+      },
+      "required_state_root_pairs": 58140,
+      "states_with_disjoint_intersecting_circuit_requirements": 380,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 760,
+      "graph6": "K?AEEDcF@oF?",
+      "kempe_orbits_mod_global_s5": 16,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 72,
+      "minimum_switch_distance_histogram": {
+        "0": 101288,
+        "1": 14464,
+        "2": 528
+      },
+      "required_state_root_pairs": 116280,
+      "states_with_disjoint_intersecting_circuit_requirements": 760,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 296,
+      "graph6": "K?AEDDWX@oB_",
+      "kempe_orbits_mod_global_s5": 128,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 4,
+      "minimum_switch_distance_histogram": {
+        "0": 45288
+      },
+      "required_state_root_pairs": 45288,
+      "states_with_disjoint_intersecting_circuit_requirements": 296,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 296,
+      "graph6": "K?ABF@ce?sB_",
+      "kempe_orbits_mod_global_s5": 128,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 4,
+      "minimum_switch_distance_histogram": {
+        "0": 45288
+      },
+      "required_state_root_pairs": 45288,
+      "states_with_disjoint_intersecting_circuit_requirements": 296,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 303,
+      "graph6": "K?ABEb_J?sB_",
+      "kempe_orbits_mod_global_s5": 17,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 176,
+      "minimum_switch_distance_histogram": {
+        "0": 45499,
+        "1": 860
+      },
+      "required_state_root_pairs": 46359,
+      "states_with_disjoint_intersecting_circuit_requirements": 303,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 284,
+      "graph6": "K?ABEagE`gH_",
+      "kempe_orbits_mod_global_s5": 16,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 82,
+      "minimum_switch_distance_histogram": {
+        "0": 43180,
+        "1": 272
+      },
+      "required_state_root_pairs": 43452,
+      "states_with_disjoint_intersecting_circuit_requirements": 284,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 226,
+      "graph6": "K?ABE`Ke@gDO",
+      "kempe_orbits_mod_global_s5": 46,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 40,
+      "minimum_switch_distance_histogram": {
+        "0": 34480,
+        "1": 98
+      },
+      "required_state_root_pairs": 34578,
+      "states_with_disjoint_intersecting_circuit_requirements": 226,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 267,
+      "graph6": "K?ABE`Ke@WEO",
+      "kempe_orbits_mod_global_s5": 40,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 52,
+      "minimum_switch_distance_histogram": {
+        "0": 40379,
+        "1": 472
+      },
+      "required_state_root_pairs": 40851,
+      "states_with_disjoint_intersecting_circuit_requirements": 267,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 388,
+      "graph6": "K?ABBb_e?[B_",
+      "kempe_orbits_mod_global_s5": 48,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 24,
+      "minimum_switch_distance_histogram": {
+        "0": 58124,
+        "1": 1168,
+        "2": 72
+      },
+      "required_state_root_pairs": 59364,
+      "states_with_disjoint_intersecting_circuit_requirements": 388,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?ABBb_E_wP_",
+      "kempe_orbits_mod_global_s5": 64,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 8,
+      "minimum_switch_distance_histogram": {
+        "0": 29070
+      },
+      "required_state_root_pairs": 29070,
+      "states_with_disjoint_intersecting_circuit_requirements": 190,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?ABB`gc_wP_",
+      "kempe_orbits_mod_global_s5": 64,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 8,
+      "minimum_switch_distance_histogram": {
+        "0": 29070
+      },
+      "required_state_root_pairs": 29070,
+      "states_with_disjoint_intersecting_circuit_requirements": 190,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 380,
+      "graph6": "K?ABB`gEcgP_",
+      "kempe_orbits_mod_global_s5": 32,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 24,
+      "minimum_switch_distance_histogram": {
+        "0": 55996,
+        "1": 2144
+      },
+      "required_state_root_pairs": 58140,
+      "states_with_disjoint_intersecting_circuit_requirements": 380,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 380,
+      "graph6": "K?ABCqWUBGCo",
+      "kempe_orbits_mod_global_s5": 32,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 24,
+      "minimum_switch_distance_histogram": {
+        "0": 55752,
+        "1": 2388
+      },
+      "required_state_root_pairs": 58140,
+      "states_with_disjoint_intersecting_circuit_requirements": 380,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?ABArOb@WEO",
+      "kempe_orbits_mod_global_s5": 64,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 8,
+      "minimum_switch_distance_histogram": {
+        "0": 29070
+      },
+      "required_state_root_pairs": 29070,
+      "states_with_disjoint_intersecting_circuit_requirements": 190,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 299,
+      "graph6": "K?ABApok?[P_",
+      "kempe_orbits_mod_global_s5": 4,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 132,
+      "minimum_switch_distance_histogram": {
+        "0": 44108,
+        "1": 1559,
+        "2": 80
+      },
+      "required_state_root_pairs": 45747,
+      "states_with_disjoint_intersecting_circuit_requirements": 299,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 598,
+      "graph6": "K?ABApoMCWOo",
+      "kempe_orbits_mod_global_s5": 2,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 396,
+      "minimum_switch_distance_histogram": {
+        "0": 83730,
+        "1": 7508,
+        "2": 256
+      },
+      "required_state_root_pairs": 91494,
+      "states_with_disjoint_intersecting_circuit_requirements": 598,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 249,
+      "graph6": "K?ABApoc`WP_",
+      "kempe_orbits_mod_global_s5": 24,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 48,
+      "minimum_switch_distance_histogram": {
+        "0": 37224,
+        "1": 826,
+        "2": 47
+      },
+      "required_state_root_pairs": 38097,
+      "states_with_disjoint_intersecting_circuit_requirements": 249,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 249,
+      "graph6": "K?ABArCe@gDO",
+      "kempe_orbits_mod_global_s5": 24,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 48,
+      "minimum_switch_distance_histogram": {
+        "0": 37203,
+        "1": 852,
+        "2": 42
+      },
+      "required_state_root_pairs": 38097,
+      "states_with_disjoint_intersecting_circuit_requirements": 249,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 122,
+      "graph6": "K?ABCiWRB_DO",
+      "kempe_orbits_mod_global_s5": 32,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 16,
+      "minimum_switch_distance_histogram": {
+        "0": 18658,
+        "1": 8
+      },
+      "required_state_root_pairs": 18666,
+      "states_with_disjoint_intersecting_circuit_requirements": 122,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 488,
+      "graph6": "K?ABCiKU@oKO",
+      "kempe_orbits_mod_global_s5": 8,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 144,
+      "minimum_switch_distance_histogram": {
+        "0": 70248,
+        "1": 4416
+      },
+      "required_state_root_pairs": 74664,
+      "states_with_disjoint_intersecting_circuit_requirements": 488,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 122,
+      "graph6": "K?ABEDoM?wP_",
+      "kempe_orbits_mod_global_s5": 32,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 16,
+      "minimum_switch_distance_histogram": {
+        "0": 18666
+      },
+      "required_state_root_pairs": 18666,
+      "states_with_disjoint_intersecting_circuit_requirements": 122,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?ABEDWM?wS_",
+      "kempe_orbits_mod_global_s5": 64,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 8,
+      "minimum_switch_distance_histogram": {
+        "0": 29070
+      },
+      "required_state_root_pairs": 29070,
+      "states_with_disjoint_intersecting_circuit_requirements": 190,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 249,
+      "graph6": "K?ABEESU@WF?",
+      "kempe_orbits_mod_global_s5": 24,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 48,
+      "minimum_switch_distance_histogram": {
+        "0": 37271,
+        "1": 784,
+        "2": 42
+      },
+      "required_state_root_pairs": 38097,
+      "states_with_disjoint_intersecting_circuit_requirements": 249,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 498,
+      "graph6": "K?ABBFOe@WB_",
+      "kempe_orbits_mod_global_s5": 12,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 144,
+      "minimum_switch_distance_histogram": {
+        "0": 71566,
+        "1": 4552,
+        "2": 76
+      },
+      "required_state_root_pairs": 76194,
+      "states_with_disjoint_intersecting_circuit_requirements": 498,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?ABBFOb@oB_",
+      "kempe_orbits_mod_global_s5": 16,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 48,
+      "minimum_switch_distance_histogram": {
+        "0": 35896,
+        "1": 1436
+      },
+      "required_state_root_pairs": 37332,
+      "states_with_disjoint_intersecting_circuit_requirements": 244,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 380,
+      "graph6": "K?ABBFCe@oB_",
+      "kempe_orbits_mod_global_s5": 32,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 24,
+      "minimum_switch_distance_histogram": {
+        "0": 56092,
+        "1": 2048
+      },
+      "required_state_root_pairs": 58140,
+      "states_with_disjoint_intersecting_circuit_requirements": 380,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 435,
+      "graph6": "K?ABCfOY?wD_",
+      "kempe_orbits_mod_global_s5": 25,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 212,
+      "minimum_switch_distance_histogram": {
+        "0": 63671,
+        "1": 2824,
+        "2": 60
+      },
+      "required_state_root_pairs": 66555,
+      "states_with_disjoint_intersecting_circuit_requirements": 435,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 348,
+      "graph6": "K?ABCfOR@oD_",
+      "kempe_orbits_mod_global_s5": 17,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 159,
+      "minimum_switch_distance_histogram": {
+        "0": 51920,
+        "1": 1292,
+        "2": 32
+      },
+      "required_state_root_pairs": 53244,
+      "states_with_disjoint_intersecting_circuit_requirements": 348,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 291,
+      "graph6": "K?ABCfGT@oD_",
+      "kempe_orbits_mod_global_s5": 9,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 232,
+      "minimum_switch_distance_histogram": {
+        "0": 43855,
+        "1": 652,
+        "2": 16
+      },
+      "required_state_root_pairs": 44523,
+      "states_with_disjoint_intersecting_circuit_requirements": 291,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 362,
+      "graph6": "K?ABCeWU@WK_",
+      "kempe_orbits_mod_global_s5": 18,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 76,
+      "minimum_switch_distance_histogram": {
+        "0": 54096,
+        "1": 1263,
+        "2": 27
+      },
+      "required_state_root_pairs": 55386,
+      "states_with_disjoint_intersecting_circuit_requirements": 362,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 334,
+      "graph6": "K?ABCdWT@WT?",
+      "kempe_orbits_mod_global_s5": 45,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 62,
+      "minimum_switch_distance_histogram": {
+        "0": 50332,
+        "1": 754,
+        "2": 16
+      },
+      "required_state_root_pairs": 51102,
+      "states_with_disjoint_intersecting_circuit_requirements": 334,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 358,
+      "graph6": "K?ABCfCY?wF?",
+      "kempe_orbits_mod_global_s5": 4,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 157,
+      "minimum_switch_distance_histogram": {
+        "0": 51814,
+        "1": 2918,
+        "2": 42
+      },
+      "required_state_root_pairs": 54774,
+      "states_with_disjoint_intersecting_circuit_requirements": 358,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 267,
+      "graph6": "K?ABCfCU@WF?",
+      "kempe_orbits_mod_global_s5": 40,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 52,
+      "minimum_switch_distance_histogram": {
+        "0": 40327,
+        "1": 524
+      },
+      "required_state_root_pairs": 40851,
+      "states_with_disjoint_intersecting_circuit_requirements": 267,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?ABAdoi?wP_",
+      "kempe_orbits_mod_global_s5": 16,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 48,
+      "minimum_switch_distance_histogram": {
+        "0": 35722,
+        "1": 1610
+      },
+      "required_state_root_pairs": 37332,
+      "states_with_disjoint_intersecting_circuit_requirements": 244,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 122,
+      "graph6": "K?ABAdgi?wQ_",
+      "kempe_orbits_mod_global_s5": 32,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 16,
+      "minimum_switch_distance_histogram": {
+        "0": 18666
+      },
+      "required_state_root_pairs": 18666,
+      "states_with_disjoint_intersecting_circuit_requirements": 122,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 299,
+      "graph6": "K?ABAfCi?wF?",
+      "kempe_orbits_mod_global_s5": 4,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 132,
+      "minimum_switch_distance_histogram": {
+        "0": 44113,
+        "1": 1550,
+        "2": 84
+      },
+      "required_state_root_pairs": 45747,
+      "states_with_disjoint_intersecting_circuit_requirements": 299,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 372,
+      "graph6": "K?AB?vOTDOD_",
+      "kempe_orbits_mod_global_s5": 42,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 172,
+      "minimum_switch_distance_histogram": {
+        "0": 54898,
+        "1": 1954,
+        "2": 64
+      },
+      "required_state_root_pairs": 56916,
+      "states_with_disjoint_intersecting_circuit_requirements": 372,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 249,
+      "graph6": "K?AB?tos@WP_",
+      "kempe_orbits_mod_global_s5": 24,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 48,
+      "minimum_switch_distance_histogram": {
+        "0": 37230,
+        "1": 828,
+        "2": 39
+      },
+      "required_state_root_pairs": 38097,
+      "states_with_disjoint_intersecting_circuit_requirements": 249,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 296,
+      "graph6": "K?ABCN_U?wF?",
+      "kempe_orbits_mod_global_s5": 128,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 4,
+      "minimum_switch_distance_histogram": {
+        "0": 45288
+      },
+      "required_state_root_pairs": 45288,
+      "states_with_disjoint_intersecting_circuit_requirements": 296,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 390,
+      "graph6": "K?ABCNOY?wF?",
+      "kempe_orbits_mod_global_s5": 36,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 127,
+      "minimum_switch_distance_histogram": {
+        "0": 56804,
+        "1": 2807,
+        "2": 59
+      },
+      "required_state_root_pairs": 59670,
+      "states_with_disjoint_intersecting_circuit_requirements": 390,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?BD?qcKaoHG",
+      "kempe_orbits_mod_global_s5": 16,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 48,
+      "minimum_switch_distance_histogram": {
+        "0": 35802,
+        "1": 1530
+      },
+      "required_state_root_pairs": 37332,
+      "states_with_disjoint_intersecting_circuit_requirements": 244,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?BD?pck?sHG",
+      "kempe_orbits_mod_global_s5": 64,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 8,
+      "minimum_switch_distance_histogram": {
+        "0": 29070
+      },
+      "required_state_root_pairs": 29070,
+      "states_with_disjoint_intersecting_circuit_requirements": 190,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?BD?pSw@SBG",
+      "kempe_orbits_mod_global_s5": 16,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 48,
+      "minimum_switch_distance_histogram": {
+        "0": 36020,
+        "1": 1312
+      },
+      "required_state_root_pairs": 37332,
+      "states_with_disjoint_intersecting_circuit_requirements": 244,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 321,
+      "graph6": "K?`@F@gd?sAo",
+      "kempe_orbits_mod_global_s5": 28,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 66,
+      "minimum_switch_distance_histogram": {
+        "0": 48366,
+        "1": 723,
+        "2": 24
+      },
+      "required_state_root_pairs": 49113,
+      "states_with_disjoint_intersecting_circuit_requirements": 321,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 273,
+      "graph6": "K?`@Eb_M?k@o",
+      "kempe_orbits_mod_global_s5": 65,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 56,
+      "minimum_switch_distance_histogram": {
+        "0": 41769
+      },
+      "required_state_root_pairs": 41769,
+      "states_with_disjoint_intersecting_circuit_requirements": 273,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 246,
+      "graph6": "K?`@Eb_J?sAo",
+      "kempe_orbits_mod_global_s5": 46,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 60,
+      "minimum_switch_distance_histogram": {
+        "0": 37638
+      },
+      "required_state_root_pairs": 37638,
+      "states_with_disjoint_intersecting_circuit_requirements": 246,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 226,
+      "graph6": "K?`@Eb_F?[EO",
+      "kempe_orbits_mod_global_s5": 46,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 40,
+      "minimum_switch_distance_histogram": {
+        "0": 34494,
+        "1": 84
+      },
+      "required_state_root_pairs": 34578,
+      "states_with_disjoint_intersecting_circuit_requirements": 226,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 239,
+      "graph6": "K?`@E`gh?sAo",
+      "kempe_orbits_mod_global_s5": 26,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 64,
+      "minimum_switch_distance_histogram": {
+        "0": 36351,
+        "1": 216
+      },
+      "required_state_root_pairs": 36567,
+      "states_with_disjoint_intersecting_circuit_requirements": 239,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 226,
+      "graph6": "K?`@E`gFCcCo",
+      "kempe_orbits_mod_global_s5": 46,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 40,
+      "minimum_switch_distance_histogram": {
+        "0": 34492,
+        "1": 86
+      },
+      "required_state_root_pairs": 34578,
+      "states_with_disjoint_intersecting_circuit_requirements": 226,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 150,
+      "graph6": "K?`@E`gFCKEO",
+      "kempe_orbits_mod_global_s5": 4,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 50,
+      "minimum_switch_distance_histogram": {
+        "0": 22944,
+        "1": 6
+      },
+      "required_state_root_pairs": 22950,
+      "states_with_disjoint_intersecting_circuit_requirements": 150,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 258,
+      "graph6": "K?`@E`gEcKE_",
+      "kempe_orbits_mod_global_s5": 92,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 36,
+      "minimum_switch_distance_histogram": {
+        "0": 39474
+      },
+      "required_state_root_pairs": 39474,
+      "states_with_disjoint_intersecting_circuit_requirements": 258,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 267,
+      "graph6": "K?`@E`Wh?kDO",
+      "kempe_orbits_mod_global_s5": 40,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 52,
+      "minimum_switch_distance_histogram": {
+        "0": 40329,
+        "1": 522
+      },
+      "required_state_root_pairs": 40851,
+      "states_with_disjoint_intersecting_circuit_requirements": 267,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?`@EaKY?kEO",
+      "kempe_orbits_mod_global_s5": 64,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 8,
+      "minimum_switch_distance_histogram": {
+        "0": 29070
+      },
+      "required_state_root_pairs": 29070,
+      "states_with_disjoint_intersecting_circuit_requirements": 190,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 122,
+      "graph6": "K?`@EaKX?sEO",
+      "kempe_orbits_mod_global_s5": 32,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 16,
+      "minimum_switch_distance_histogram": {
+        "0": 18666
+      },
+      "required_state_root_pairs": 18666,
+      "states_with_disjoint_intersecting_circuit_requirements": 122,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 122,
+      "graph6": "K?`@EROM?kCo",
+      "kempe_orbits_mod_global_s5": 32,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 16,
+      "minimum_switch_distance_histogram": {
+        "0": 18664,
+        "1": 2
+      },
+      "required_state_root_pairs": 18666,
+      "states_with_disjoint_intersecting_circuit_requirements": 122,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 498,
+      "graph6": "K?`@EQgLAcAo",
+      "kempe_orbits_mod_global_s5": 12,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 144,
+      "minimum_switch_distance_histogram": {
+        "0": 69678,
+        "1": 6196,
+        "2": 320
+      },
+      "required_state_root_pairs": 76194,
+      "states_with_disjoint_intersecting_circuit_requirements": 498,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 488,
+      "graph6": "K?`@EQK[?kEO",
+      "kempe_orbits_mod_global_s5": 8,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 144,
+      "minimum_switch_distance_histogram": {
+        "0": 64732,
+        "1": 9596,
+        "2": 312
+      },
+      "required_state_root_pairs": 74640,
+      "states_with_disjoint_intersecting_circuit_requirements": 488,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?`@Cr_T?[EO",
+      "kempe_orbits_mod_global_s5": 64,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 8,
+      "minimum_switch_distance_histogram": {
+        "0": 29070
+      },
+      "required_state_root_pairs": 29070,
+      "states_with_disjoint_intersecting_circuit_requirements": 190,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?`@CrGX?kEO",
+      "kempe_orbits_mod_global_s5": 16,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 48,
+      "minimum_switch_distance_histogram": {
+        "0": 35984,
+        "1": 1348
+      },
+      "required_state_root_pairs": 37332,
+      "states_with_disjoint_intersecting_circuit_requirements": 244,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 488,
+      "graph6": "K?`@CrGT@KEO",
+      "kempe_orbits_mod_global_s5": 8,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 144,
+      "minimum_switch_distance_histogram": {
+        "0": 66744,
+        "1": 7696,
+        "2": 224
+      },
+      "required_state_root_pairs": 74664,
+      "states_with_disjoint_intersecting_circuit_requirements": 488,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 122,
+      "graph6": "K?`@CrCY?kEO",
+      "kempe_orbits_mod_global_s5": 32,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 16,
+      "minimum_switch_distance_histogram": {
+        "0": 18666
+      },
+      "required_state_root_pairs": 18666,
+      "states_with_disjoint_intersecting_circuit_requirements": 122,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?`DAagK_iH_",
+      "kempe_orbits_mod_global_s5": 16,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 48,
+      "minimum_switch_distance_histogram": {
+        "0": 35856,
+        "1": 1476
+      },
+      "required_state_root_pairs": 37332,
+      "states_with_disjoint_intersecting_circuit_requirements": 244,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 249,
+      "graph6": "K?`D@`gE_iW_",
+      "kempe_orbits_mod_global_s5": 24,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 48,
+      "minimum_switch_distance_histogram": {
+        "0": 37203,
+        "1": 852,
+        "2": 42
+      },
+      "required_state_root_pairs": 38097,
+      "states_with_disjoint_intersecting_circuit_requirements": 249,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 249,
+      "graph6": "K?`D@`cS_wPG",
+      "kempe_orbits_mod_global_s5": 24,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 48,
+      "minimum_switch_distance_histogram": {
+        "0": 37075,
+        "1": 975,
+        "2": 47
+      },
+      "required_state_root_pairs": 38097,
+      "states_with_disjoint_intersecting_circuit_requirements": 249,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?`D@bAJAgBG",
+      "kempe_orbits_mod_global_s5": 64,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 8,
+      "minimum_switch_distance_histogram": {
+        "0": 29070
+      },
+      "required_state_root_pairs": 29070,
+      "states_with_disjoint_intersecting_circuit_requirements": 190,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 122,
+      "graph6": "K?`D@`ae?iH_",
+      "kempe_orbits_mod_global_s5": 32,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 16,
+      "minimum_switch_distance_histogram": {
+        "0": 18666
+      },
+      "required_state_root_pairs": 18666,
+      "states_with_disjoint_intersecting_circuit_requirements": 122,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 299,
+      "graph6": "K?`D@aQY?wGg",
+      "kempe_orbits_mod_global_s5": 4,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 132,
+      "minimum_switch_distance_histogram": {
+        "0": 43785,
+        "1": 1872,
+        "2": 90
+      },
+      "required_state_root_pairs": 45747,
+      "states_with_disjoint_intersecting_circuit_requirements": 299,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 299,
+      "graph6": "K?`@`ago_YI_",
+      "kempe_orbits_mod_global_s5": 4,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 132,
+      "minimum_switch_distance_histogram": {
+        "0": 43985,
+        "1": 1676,
+        "2": 86
+      },
+      "required_state_root_pairs": 45747,
+      "states_with_disjoint_intersecting_circuit_requirements": 299,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 976,
+      "graph6": "K?`CRAWK`gGg",
+      "kempe_orbits_mod_global_s5": 4,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 432,
+      "minimum_switch_distance_histogram": {
+        "0": 115888,
+        "1": 29648,
+        "2": 2064
+      },
+      "required_state_root_pairs": 147600,
+      "states_with_disjoint_intersecting_circuit_requirements": 976,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?`CPbGHb_Ag",
+      "kempe_orbits_mod_global_s5": 16,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 48,
+      "minimum_switch_distance_histogram": {
+        "0": 35904,
+        "1": 1428
+      },
+      "required_state_root_pairs": 37332,
+      "states_with_disjoint_intersecting_circuit_requirements": 244,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 380,
+      "graph6": "K?`CPag[?kGg",
+      "kempe_orbits_mod_global_s5": 32,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 24,
+      "minimum_switch_distance_histogram": {
+        "0": 56044,
+        "1": 2096
+      },
+      "required_state_root_pairs": 58140,
+      "states_with_disjoint_intersecting_circuit_requirements": 380,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?`CPagXAcAg",
+      "kempe_orbits_mod_global_s5": 16,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 48,
+      "minimum_switch_distance_histogram": {
+        "0": 35948,
+        "1": 1384
+      },
+      "required_state_root_pairs": 37332,
+      "states_with_disjoint_intersecting_circuit_requirements": 244,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 488,
+      "graph6": "K?`CPagWagAg",
+      "kempe_orbits_mod_global_s5": 8,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 144,
+      "minimum_switch_distance_histogram": {
+        "0": 65008,
+        "1": 9320,
+        "2": 336
+      },
+      "required_state_root_pairs": 74664,
+      "states_with_disjoint_intersecting_circuit_requirements": 488,
+      "vertices": 12
+    },
+    {
+      "edges": 18,
+      "flows_mod_global_s5": 488,
+      "graph6": "K?`CPagPagEG",
+      "kempe_orbits_mod_global_s5": 8,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 144,
+      "minimum_switch_distance_histogram": {
+        "0": 70728,
+        "1": 3936
+      },
+      "required_state_root_pairs": 74664,
+      "states_with_disjoint_intersecting_circuit_requirements": 488,
+      "vertices": 12
+    }
+  ],
+  "schema": "d5-disjoint-mediator-distance-order12-v1",
+  "scope": "Complete finite order-12 audit only; not a universal proof.",
+  "status": "PASS",
+  "summary": {
+    "flows_mod_global_s5": 25960,
+    "graphs": 81,
+    "kempe_orbits_mod_global_s5": 2650,
+    "maximum_minimum_switch_distance": 2,
+    "minimum_switch_distance_histogram": {
+      "0": 3783384,
+      "1": 181065,
+      "2": 5643
+    },
+    "required_state_root_pairs": 3970092,
+    "states_with_requirements": 25960
+  }
+}

@@ -1,0 +1,760 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\geometry{margin=1in}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\Dfive}{D_5}
+\newcommand{\symdiff}{\mathbin{\triangle}}
+\newcommand{\kap}{\kappa}
+\newcommand{\wt}{\operatorname{wt}}
+
+\title{Coloured Surfaces and Kempe Surgery for \(D_5\)-Flows:\\
+Structural Lemmas, a Reconfiguration Trap, and Finite Evidence}
+\author{Working research note for independent human verification}
+\date{July 28, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The standard five-cycle-double-cover conjecture asks whether every finite
+bridgeless graph has at most five Eulerian subgraphs covering each edge
+exactly twice.  It remains unresolved.  This note records a structural
+model and exact computations arising from an attempted proof.
+
+For a loopless cubic graph, a five-cycle double cover is equivalently a
+conservative labeling of every edge by a two-subset of five coordinates,
+called a \(D_5\)-flow.  We show directly that such a flow canonically
+determines a closed triangulated surface whose faces are dual to the graph
+vertices and whose primal vertices are properly coloured with five
+colours.  The coordinate circuits are precisely the primal vertex links,
+and
+\[
+ \chi(S(q))=\sum_{i=0}^{4}\kap(C_i)-\frac{|V(G)|}{2}.
+\]
+The usual componentwise coordinate transposition is a reversible
+triangle-band recolouring and regluing surgery.  We give an exact
+permutation formula for its change in Euler characteristic and a cube
+example in which one switch changes a torus into a sphere.
+
+We also prove a four-coordinate locking lemma and give a separately
+checkable 14-vertex contraction whose complete generalized-switch orbit
+has twelve normalized states, none satisfying the boundary condition
+needed to undo the contraction.  This refutes a natural reconfiguration
+lemma, not the five-cycle-double-cover conjecture.  A complementary Tait
+quotient proves that the analogous fully circuit-trapped branch is
+root-universal on cubic graphs, explaining why the degree-four trap does
+not lift unchanged.  Finally, exhaustive computations show that every
+terminal equal-Euler-characteristic Kempe plateau is root-universal for
+all 81 biconnected simple cubic graphs on 12 vertices.  A weaker
+global-maximum test succeeds for all 480 such graphs on 14 vertices.
+These are finite results only.  The universal terminal-plateau statement
+is left explicitly as a conjecture.
+\end{abstract}
+
+\section{Status, conventions, and contribution boundary}
+
+A \(k\)-cycle double cover, in the convention used here, is a list of at
+most \(k\) Eulerian edge-subsets such that every edge occurs in exactly two
+members.  Empty members may be appended, so ``at most five'' and ``five,
+allowing empty members'' are equivalent.  This agrees with the convention
+in Oum's recent exposition: the general cycle-double-cover theorem gives
+eight Eulerian subgraphs, while the reduction from eight to five remains
+Conjecture~18~\cite{Oum2026}.  Recent work on five-cycle double covers also
+continues to state the five-subgraph assertion as a conjecture and proves
+special cases~\cite{LiuEtAl2023,LiuEtAl2025}.
+
+The orientable five-cycle-double-cover conjecture adds directed Eulerian
+orientations so that each edge is used once in each direction.  It is a
+different, stronger statement; no orientation condition is imposed in
+this note.
+
+The embedding aspect is established background, not a novelty claim.
+Catlin explicitly studied embedded graphs, facial colourings, and double
+cycle covers~\cite{Catlin1990}; see also Zhang's monograph
+\cite{Zhang2012} and Mohar and Thomassen's text
+\cite{MoharThomassen2001}.  Ghanbari and \v{S}\'amal formulate the cubic
+CDC in terms of embeddings without singular edges and study both
+approximation and twist operations~\cite{GhanbariSamal2025,
+GhanbariSamal2026}.  We have not completed a publication-grade prior-art
+search for the exact \(D_5\) five-colour specialization, the
+component-switch Euler formula below, or the particular finite trap.
+Accordingly, this draft makes no categorical novelty claim.  Its present
+value is that the statements, proofs, certificates, and limitations are
+exposed in a form that can be checked independently.
+
+\section{\texorpdfstring{\(D_5\)-flows}{D5-flows}}
+
+All graphs in the structural sections are finite and loopless.  Parallel
+edges are permitted unless simplicity is stated.  Edge objects, including
+parallel ones, are distinct.
+
+Put
+\[
+ \Dfive=\binom{\{0,1,2,3,4\}}2\subset\F_2^5.
+\]
+We identify a pair \(ij\) with its weight-two incidence vector.  A
+\emph{\(D_5\)-flow} on a graph \(G\) is a map
+\[
+ q:E(G)\longrightarrow D_5
+\]
+such that
+\[
+ \bigoplus_{e\ni v}q(e)=0                                    \tag{1}
+\]
+at every vertex \(v\).  Since the graphs considered here are loopless,
+each incident edge appears once in (1).
+
+\begin{proposition}[cover--flow equivalence]\label{prop:cover-flow}
+The \(D_5\)-flows on \(G\) are in bijection with ordered five-tuples
+\((C_0,\ldots,C_4)\) of Eulerian edge-subsets in which every edge occurs
+exactly twice.
+\end{proposition}
+
+\begin{proof}
+Given \(q\), put
+\[
+ C_i=\{e\in E(G):i\in q(e)\}.
+\]
+The \(i\)-th coordinate of (1) says that \(C_i\) has even degree at every
+vertex.  Every label has weight two, so every edge belongs to exactly two
+of the \(C_i\).
+
+Conversely, given the five Eulerian subsets, label an edge by the two
+indices of the members containing it.  The label has weight two, and the
+five even-degree conditions are exactly (1).  The constructions are
+inverse.
+\end{proof}
+
+The following elementary local observation drives the surface model.
+
+\begin{lemma}[local coordinate triangle]\label{lem:local-triangle}
+Let \(a,b,c\in D_5\) and \(a+b+c=0\).  Then there are three distinct
+coordinates \(i,j,k\) for which
+\[
+ \{a,b,c\}=\{ij,ik,jk\}.
+\]
+\end{lemma}
+
+\begin{proof}
+We have \(c=a+b\).  Since
+\[
+ \wt(a+b)=4-2|a\cap b|=2,
+\]
+the two pairs \(a,b\) meet in exactly one coordinate.  Their union has
+three coordinates, and \(c=a\symdiff b\) is the third side of that
+coordinate triangle.
+\end{proof}
+
+\section{The coloured-surface dictionary}
+
+We first give a construction that does not assume an embedding in
+advance.
+
+\begin{theorem}[canonical coloured surface]\label{thm:surface}
+Let \(G\) be a connected loopless cubic graph with a \(D_5\)-flow \(q\).
+Then \(q\) canonically determines, up to colour-preserving cellular
+isomorphism, a connected closed triangulated surface \(S(q)\) with the
+following properties.
+\begin{enumerate}
+ \item The triangles of \(S(q)\) are indexed by \(V(G)\), and the dual
+ graph is \(G\).
+ \item The primal vertices are properly coloured with coordinates
+ \(0,\ldots,4\), in the sense that the three corners of every triangle
+ have distinct colours.
+ \item If \(C_i=\{e:i\in q(e)\}\), the components of \(C_i\) are in
+ bijection with the primal vertices of colour \(i\).
+\end{enumerate}
+Consequently, if \(n=|V(G)|\), then
+\[
+ \chi(S(q))=\sum_{i=0}^4\kap(C_i)-\frac n2.                  \tag{2}
+\]
+\end{theorem}
+
+\begin{proof}
+For each \(v\in V(G)\), Lemma~\ref{lem:local-triangle} gives three
+coordinate colours on the incident labels.  Take an abstract triangle
+\(\Delta_v\) with those vertex colours, and assign the side opposite the
+remaining colour to the incident graph edge whose label is the two
+endpoint colours of that side.
+
+For every graph edge \(e=uv\), glue the side of \(\Delta_u\) indexed by
+\(e\) to the side of \(\Delta_v\) indexed by \(e\), using the unique map
+that preserves its two endpoint colours.  Every triangle side is paired
+exactly once.  The quotient is therefore a closed two-dimensional
+pseudomanifold.
+
+A quotient vertex can initially have more than one link component.
+Replace it by one vertex for each link component.  Each resulting vertex
+has a circular link, so the normalized quotient is a closed triangulated
+surface.  Splitting vertices does not change the triangles, their side
+pairings, or the dual graph.  The surface is connected because its dual
+graph \(G\) is connected.
+
+Fix a coordinate \(i\).  In a triangle having an \(i\)-coloured corner,
+the two sides at that corner are exactly the two incident graph edges
+whose labels contain \(i\).  Following the link of that corner through the
+side pairings therefore follows a component of \(C_i\), and every such
+component arises this way.  This proves (1)--(3).
+
+The surface has \(n\) triangles and \(3n/2\) primal edges.  Its number of
+vertices is \(\sum_i\kap(C_i)\).  Euler's formula now gives
+\[
+ \chi(S(q))=\sum_i\kap(C_i)-\frac{3n}{2}+n,
+\]
+which is (2).
+\end{proof}
+
+For a precise converse, call a face-colouring of a cellular embedding of
+a cubic graph \emph{corner-proper} when the three face incidences at each
+graph vertex have three distinct colours.  This definition rules out a
+single face occupying two corners at one vertex.
+
+\begin{proposition}[converse]\label{prop:surface-converse}
+A corner-proper five-colouring of the faces of a cellular embedding of a
+connected cubic graph gives a \(D_5\)-flow: label an edge by the colours of
+its two incident face occurrences.  This construction and
+Theorem~\ref{thm:surface} are inverse after normalizing quotient vertices
+by link components.
+\end{proposition}
+
+\begin{proof}
+At a cubic vertex, let the three incident face colours be \(i,j,k\).  The
+three incident edge labels are \(ij,ik,jk\), whose xor is zero.  Thus the
+labels form a \(D_5\)-flow.  Taking the dual triangle at every graph vertex
+recovers the original side pairings and face-colour occurrences.
+Normalization separates exactly the distinct link components represented
+by distinct facial occurrences.
+\end{proof}
+
+\begin{remark}
+Propositions~\ref{prop:cover-flow} and~\ref{prop:surface-converse} show
+that the standard, unoriented five-cycle-double-cover problem for cubic
+graphs can be read as a problem of finding a corner-proper
+five-face-coloured cellular embedding.  This is not an orientability
+statement: \(S(q)\) may be orientable or nonorientable.
+\end{remark}
+
+\section{Bichromatic boundary curves and Kempe surgery}
+
+For \(i\ne j\), define
+\[
+ Y_{ij}=C_i\symdiff C_j
+       =\{e:|q(e)\cap\{i,j\}|=1\}.                            \tag{3}
+\]
+It is an even subgraph and, in a cubic graph, a disjoint union of
+circuits.
+
+\begin{proposition}[boundary interpretation]\label{prop:boundary}
+In \(S(q)\), let \(H_{ij}\) be the primal subgraph induced by the primal
+vertices of colours \(i,j\).  After the standard dual isotopy,
+\[
+ \partial N(H_{ij})=Y_{ij},                                  \tag{4}
+\]
+where \(N(H_{ij})\) is a sufficiently small regular neighbourhood.
+\end{proposition}
+
+\begin{proof}
+Check one primal triangle.  If it contains neither \(i\) nor \(j\), the
+neighbourhood has no boundary arc there.  If it contains exactly one of
+them, the boundary arc around that corner crosses the two triangle sides
+whose labels contain exactly one of \(i,j\).  If it contains both, the
+boundary arc around their common primal edge crosses the other two sides,
+again exactly those whose labels contain one of \(i,j\).  These local arcs
+join across paired triangle sides and give (4).
+\end{proof}
+
+Let \(K\) be a circuit component of \(Y_{ij}\).  A \emph{component Kempe
+switch} transposes \(i,j\) in the label of every edge of \(K\).
+
+\begin{lemma}[validity of a component switch]\label{lem:valid-switch}
+A component Kempe switch sends a \(D_5\)-flow to a \(D_5\)-flow and is an
+involution.
+\end{lemma}
+
+\begin{proof}
+For an active label, transposing \(i,j\) adds the vector \(ij\).  At each
+graph vertex the circuit \(K\) has degree zero or two, so the total added
+vector in the local xor equation is zero.  The switched labels still have
+weight two.  Applying the same transposition a second time restores the
+original state.
+\end{proof}
+
+On the coloured surface, this move has a concrete description.  Recolour
+the triangles traversed by \(K\) by the transposition \(i\leftrightarrow
+j\).  Active side gluings still match because both incident triangles
+are recoloured.  At an inactive \(ij\)-side incident with exactly one
+recoloured triangle, compose the side gluing with the endpoint flip.  The
+result is exactly the coloured quotient for the switched flow.  Thus the
+move is a reversible triangle-band recolouring and regluing surgery.
+It need not act on one fixed topological surface.
+
+\subsection{An exact Euler-change formula}
+
+Fix \(i,j\), and abbreviate \(A=C_i\), \(B=C_j\).  At each vertex of
+\(A\cup B\), the nonzero membership patterns in \((A,B)\) are
+\[
+ 10,\qquad 01,\qquad 11.
+\]
+Discard components of \(A\cup B\) that are pure circuits.  In every
+remaining component suppress the degree-two paths.  The result is a cubic
+multigraph \(T_{ij}\) whose three edge classes \(10,01,11\) are perfect
+matchings.  Write \(m_{10},m_{01},m_{11}\) for the associated
+fixed-point-free involutions on \(V(T_{ij})\).
+
+For a permutation \(\pi\), let \(z(\pi)\) denote its number of cycles,
+including fixed points.
+
+\begin{theorem}[one-switch Euler formula]\label{thm:euler-change}
+Let \(K\) be a component of \(Y_{ij}\) meeting \(T_{ij}\), and let \(W\)
+be the vertices on the corresponding alternating circuit of
+\(m_{10}\cup m_{01}\).  Define
+\[
+\begin{array}{c|cc}
+ &W&V(T_{ij})\setminus W\\ \hline
+m'_{10}&m_{01}&m_{10}\\
+m'_{01}&m_{10}&m_{01},
+\end{array}
+\qquad m'_{11}=m_{11}.                                      \tag{5}
+\]
+If \(q'\) is obtained by switching on \(K\), then
+\begin{equation}
+\begin{split}
+\chi(S(q'))-\chi(S(q))
+ =\frac12\bigl[&
+ z(m'_{10}m_{11})+z(m'_{01}m_{11})\\
+ &-z(m_{10}m_{11})-z(m_{01}m_{11})\bigr].
+\end{split}
+\tag{6}
+\end{equation}
+If \(K\) is a discarded pure circuit, the Euler change is zero.
+\end{theorem}
+
+\begin{proof}
+Only \(C_i=A\) and \(C_j=B\) can change, so by (2) the Euler change is
+\[
+ \Delta\kap(A)+\Delta\kap(B).                               \tag{7}
+\]
+The components of \(A\) that meet the cubic core correspond to the
+alternating circuits of the two matchings \(m_{10},m_{11}\); similarly,
+the core components of \(B\) correspond to the alternating circuits of
+\(m_{01},m_{11}\).
+
+If \(m_a,m_b\) are two perfect matchings, then on each alternating circuit
+of their union the product \(m_am_b\) has two permutation cycles.
+Therefore the number of alternating circuits is
+\(\tfrac12z(m_am_b)\).
+
+Switching \(i,j\) on \(K\) exchanges the \(10\)- and \(01\)-matching
+edges at exactly the vertices of \(W\), giving (5).  Substitute the
+before-and-after alternating-circuit counts into (7) to obtain (6).
+Pure circuit components outside the cubic core are unchanged or move
+whole from \(A\) to \(B\); their total contribution to (7) cancels.
+\end{proof}
+
+\subsection{A hand-checkable topology change}
+
+Take the cube with edge order
+\[
+\begin{array}{c|rrrrrrrrrrrr}
+e&0&1&2&3&4&5&6&7&8&9&10&11\\ \hline
+uv&01&03&04&12&17&23&26&35&45&47&56&67
+\end{array}
+\]
+and labels
+\[
+ 01,02,12,02,12,01,12,12,01,02,02,01.                      \tag{8}
+\]
+The reader can check the xor equation at each of the eight vertices
+directly from the table.  The coordinate component counts are
+\[
+ (\kap(C_0),\ldots,\kap(C_4))=(2,1,1,0,0),
+\]
+so (2) gives \(\chi=0\).  The edges \(\{0,1,3,5\}\) form one
+\(Y_{12}\)-circuit.  Transposing \(1,2\) on those four edges changes the
+component counts to
+\[
+ (2,2,2,0,0),
+\]
+so the new connected surface has \(\chi=2\).  A triangle-orientation
+propagation check shows that both surfaces are orientable.  Hence this
+single legal switch changes a torus into a sphere.  In particular, a
+global proof cannot treat all Kempe moves as curve slides on one fixed
+surface.
+
+\section{A four-coordinate locking mechanism}
+
+It is useful to distinguish component switches from a stronger move.
+For a coordinate pair \(p=ij\), a \emph{generalized factor switch}
+chooses any Eulerian edge-subset \(Z\subseteq Y_{ij}\) and adds the vector
+\(ij\) to every label on \(Z\).  This remains a \(D_5\)-flow by the same
+parity argument as Lemma~\ref{lem:valid-switch}.
+
+\begin{lemma}[four-coordinate one-step lock]\label{lem:four-lock}
+Suppose a \(D_5\)-flow uses exactly the four coordinates
+\(S=\{0,1,2,3,4\}\setminus\{t\}\), and suppose every nonempty coordinate
+class \(C_i\), \(i\in S\), is one circuit.  From this state, no generalized
+factor switch can introduce \(t\) nontrivially modulo a global coordinate
+permutation.
+\end{lemma}
+
+\begin{proof}
+A switch with pair \(p\subseteq S\) does not introduce \(t\).  For a pair
+\(p=\{i,t\}\), the absence of \(t\) gives
+\[
+ Y_{it}=C_i.
+\]
+A circuit has only two Eulerian edge-subsets, the empty set and the whole
+circuit.  The empty switch does nothing.  Switching all of \(C_i\)
+replaces \(i\) by \(t\) on every edge label containing \(i\), which is
+exactly the global coordinate transposition \(i\leftrightarrow t\).
+\end{proof}
+
+The hypothesis of Lemma~\ref{lem:four-lock} need not be preserved by all
+switches among the used coordinates.  Thus the lemma alone is a one-step
+statement, not an orbit theorem.  The following finite example separately
+certifies orbit closure.
+
+\begin{proposition}[certified generalized-switch trap]\label{prop:trap}
+There is a simple 3-connected cubic graph \(G\) on 14 vertices and an edge
+\(e\) such that, after contracting \(e\), the resulting degree-four graph
+has a generalized-factor-switch orbit with the following properties,
+modulo the global \(S_5\) action:
+\begin{enumerate}
+ \item the orbit has exactly 12 states;
+ \item every state uses four coordinates and each used coordinate class
+ is one circuit; and
+ \item every state has side xor of weight four and therefore cannot be
+ extended over the restored edge.
+\end{enumerate}
+The same contracted graph also has a different orbit containing
+extendible states.  Therefore this is not a counterexample to FiveCDC.
+\end{proposition}
+
+\begin{proof}[Finite certificate]
+The parent graph has graph6 string
+\[
+ \texttt{M?AA@BORD\_CoEOAo?}.
+\]
+In lexicographic edge order, contract edge \(15=(3,12)\).  With the
+contracted edges indexed by the inherited order, the prescribed sides at
+the degree-four vertex are
+\[
+ U=\{5,11\},\qquad V=\{15,16\}.
+\]
+One state in the orbit is
+\[
+\begin{split}
+(&01,02,03,13,03,01,23,02,03,03,02,23,23,13,12,\\
+ &01,23,12,01,02).
+\end{split}                                                  \tag{9}
+\]
+Its local xors vanish, while both side xors are
+\[
+ q(5)+q(11)=q(15)+q(16)=0123.                               \tag{10}
+\]
+
+The companion file \texttt{orbit-certificate.txt} lists all twelve
+normalized rows and the complete normalized adjacency relation.  A
+finite hand verification proceeds as follows.  For each row, check the
+local xor equations and (10).  For each coordinate pair, construct
+\(Y_{ij}\), delete one edge from every circuit to obtain a spanning
+forest, and use the remaining edges as a binary cycle-space basis.
+Switch every basis sum and normalize under the 120 coordinate
+permutations.  The resulting distinct rows are exactly the neighbours
+listed in the certificate.  The adjacency list is connected, so the
+twelve rows form one complete orbit.  Each row also directly satisfies
+the hypotheses of Lemma~\ref{lem:four-lock}.
+
+The supplied independent Python checker performs exactly these finite
+operations without a SAT solver, graph package, or canonical-labelling
+library.  It also checks cubicity, bridgelessness, and 3-connectivity of
+the parent.
+\end{proof}
+
+The proposition refutes the tempting assertion that every starting flow
+on a contraction can be repaired by generalized factor switches.  It
+does not refute the existential assertion that some flow on the
+contraction extends; in fact, the other orbit contains 968 normalized
+extendible states.
+
+\subsection{Why the degree-four trap does not lift unchanged}
+
+The contraction trap raises a natural concern: perhaps a cubic Kempe orbit
+could remain locked in four coordinates with all four coordinate classes
+connected and still fail rooted universality.  The next theorem excludes
+exactly that branch.
+
+Call a component-Kempe orbit on a cubic graph
+\emph{four-coordinate circuit-trapped} when every state uses exactly four
+coordinates and every used coordinate class is one circuit.
+
+\begin{theorem}[cubic \(D_4\) trap theorem]\label{thm:d4-trap}
+Every four-coordinate circuit-trapped component-Kempe orbit on a cubic
+graph is root-universal.  More precisely, every pair of root edges is
+rescued in the starting state or after one component switch between used
+coordinates.
+\end{theorem}
+
+\begin{proof}
+Fix a state \(q\), write \(S\) for its four used coordinates and \(t\) for
+the missing coordinate, and let \(r,s\) be distinct root edges.  For
+clarity, globally rename \(S\) as \(\{0,1,2,3\}\).
+
+Identify complementary labels in the three classes
+\[
+ \{01,23\},\qquad \{02,13\},\qquad \{03,12\}.                \tag{11}
+\]
+These are three Tait colours.  At each cubic vertex, the local xor triple
+is the triangle on three of the four coordinates, so its three labels lie
+in distinct classes in (11).  Thus the quotient is a proper
+three-edge-colouring.
+
+If \(q(r)\cap q(s)\) contains a coordinate \(i\), then both roots lie in
+\[
+ C_i=Y_{it}.
+\]
+The circuit-trap hypothesis says that \(C_i\) is one circuit, so the roots
+are already rescued.
+
+Otherwise the two root labels are disjoint.  They are complementary
+two-subsets of \(S\), hence have the same Tait colour \(A\).  Choose either
+other Tait colour \(B\).  The union of classes \(A\cup B\) is a factor
+\(Y_p\), where \(\{p,S\setminus p\}\) is the third class.  If \(r,s\) lie
+on the same component of \(Y_p\), they are already rescued.
+
+If they lie on different components, transpose the two coordinates of
+\(p\) on the component containing \(r\).  In the Tait quotient this
+interchanges the two active colours on that component: the colour of \(r\)
+changes from \(A\) to \(B\), while the colour of \(s\) remains \(A\).
+Labels from distinct complementary classes in (11) meet in exactly one
+coordinate, say \(k\).  The literal switch did not introduce \(t\), so
+both roots now lie in \(C'_k=Y'_{kt}\).  The switched state remains in the
+assumed circuit-trapped orbit, and therefore \(C'_k\) is one circuit
+containing both roots.
+\end{proof}
+
+The proof uses cubicity to obtain a proper Tait quotient and alternating
+bichromatic factor circuits.  Neither fact survives at the degree-four
+contraction vertex.  Theorem~\ref{thm:d4-trap} therefore explains why
+Proposition~\ref{prop:trap} cannot be transplanted unchanged to a cubic
+counterexample.  It closes only the fully circuit-trapped four-coordinate
+branch; a general rooted-orbit obstruction could still use five
+coordinates, a disconnected coordinate class, or transitions between
+those regimes.
+
+\section{Surface-Euler plateaus}
+
+Let \(\mathcal K(G)\) be the state graph whose vertices are \(D_5\)-flows
+modulo global coordinate permutations and whose edges are component
+Kempe switches.  Put
+\[
+ \Phi(q)=\chi(S(q)).
+\]
+For fixed graph edges \(r,s\), call \(q\) \emph{\((r,s)\)-good} if some
+\(Y_{ij}\)-component contains both roots.
+
+\begin{definition}
+A \(\Phi\)-plateau is a connected component after retaining only the
+equal-\(\Phi\) edges of \(\mathcal K(G)\).  It is \emph{terminal} when no
+state in it has a neighbour of larger \(\Phi\).  A set of states is
+\emph{root-universal} when, for every unordered edge pair \(r,s\), it
+contains an \((r,s)\)-good state.
+\end{definition}
+
+\begin{lemma}[connected-coordinate non-descent]\label{lem:connected-coordinates}
+Suppose every \(C_i\) is one nonempty circuit.  Then every component Kempe
+switch \(q\mapsto q'\) satisfies
+\[
+ \Phi(q')\geq\Phi(q).
+\]
+If \(q\) lies in a terminal plateau, every such first switch is
+\(\Phi\)-neutral.
+\end{lemma}
+
+\begin{proof}
+Only the two switched coordinate classes, say \(C_i,C_j\), can change.
+Initially their total component count is two.  If both resulting classes
+are nonempty, each has at least one component and their total remains at
+least two.
+
+Suppose instead that \(C'_i\) is empty.  Then the switched component
+contains all of \(C_i\), and \(C_i\cap C_j=\varnothing\), since intersection
+edges are not in \(Y_{ij}\).  The two original circuits are also
+vertex-disjoint: two edge-disjoint even subgraphs of a cubic graph cannot
+both have degree two at the same vertex.  The new \(C'_j\) therefore
+contains the two circuits as distinct components.  Its component count is
+at least two, while \(C'_i\) contributes zero.  The case \(C'_j=\varnothing\)
+is symmetric.  Thus
+\[
+ \kap(C'_i)+\kap(C'_j)\geq
+ \kap(C_i)+\kap(C_j)=2,
+\]
+and (2) proves non-descent.  Terminality excludes a strict increase.
+\end{proof}
+
+\begin{lemma}\label{lem:reach-terminal}
+Every state has a \(\Phi\)-nondecreasing Kempe path to a terminal plateau.
+\end{lemma}
+
+\begin{proof}
+Move freely inside the current equal-\(\Phi\) plateau.  If it is not
+terminal, reach a state having a neighbour of strictly larger \(\Phi\)
+and take that edge.  The state graph is finite, so \(\Phi\) can increase
+only finitely often.  The process ends at a terminal plateau.
+\end{proof}
+
+The computationally suggested statement is deliberately isolated.
+
+\begin{quote}
+\textbf{Terminal-plateau conjecture.}
+For every connected bridgeless cubic graph with a \(D_5\)-flow, every
+terminal \(\Phi\)-plateau is root-universal.
+\end{quote}
+
+This statement is unproved.  It is stronger than the finite observations
+below and is not asserted as a theorem.
+
+\subsection{Exact finite results}
+
+The state enumeration quotients only by the global \(S_5\) action.  Graphs
+were generated canonically by \texttt{geng -Cq -d3 -D3 n}.  The complete
+order-12 terminal-plateau audit gives:
+\[
+\begin{array}{lr}
+\toprule
+\text{biconnected simple cubic graphs} &81\\
+\text{normalized \(D_5\)-flows} &25{,}960\\
+\text{Kempe orbits} &2{,}650\\
+\text{terminal \(\Phi\)-plateaus} &2{,}659\\
+\text{non-root-universal terminal plateaus} &0\\
+\bottomrule
+\end{array}                                                  \tag{12}
+\]
+The terminal values range from \(-3\) to \(2\), and plateau sizes range
+from \(1\) to \(432\).  This is a complete finite census, not a proof of
+the terminal-plateau conjecture.
+
+An additional support diagnostic found 420 terminal plateaus in which
+every state uses all five coordinates.  Thus the order-12 positive result
+cannot be explained by always reaching a plateau with an unused
+coordinate and reducing to a four-coordinate argument.  This support
+diagnostic is present in the producer report but is not among the fields
+recomputed by the focused independent verifier described below.
+
+At order 14, a complete but weaker test was run.  In each Kempe orbit,
+retain the states having the orbit's global maximum \(\Phi\), and split
+them into connected equal-\(\Phi\) components.  Every such component was
+root-universal:
+\[
+\begin{array}{lr}
+\toprule
+\text{biconnected simple cubic graphs} &480\\
+\text{normalized \(D_5\)-flows} &537{,}418\\
+\text{Kempe orbits} &33{,}102\\
+\text{maximum number of max-\(\Phi\) components in one orbit} &12\\
+\text{non-root-universal max-\(\Phi\) components} &0\\
+\bottomrule
+\end{array}                                                  \tag{13}
+\]
+Equation (13) does not test terminal plateaus below the global orbit
+maximum and must not be reported as a complete order-14 test of the
+terminal-plateau conjecture.
+
+As a separate control, the union of each entire Kempe orbit was tested for
+root-universality through order 14.  The same 33,102 order-14 orbits gave
+6,951,420 orbit/root-pair tests and zero failures.  Again, this is finite
+evidence only.
+
+\subsection{Reproducibility and independent checks}
+
+The complete reports, producers, and focused independent verifiers are in
+the companion repository.  From its root:
+\begin{verbatim}
+python3 scratch/audit_d5_surface_euler_switch.py
+python3 scratch/check_d5_contraction_circuit_orbit_counterexample.py
+python3 scratch/check_d4_cubic_trap_root_universality.py
+
+python3 scratch/verify_d5_surface_chi_plateaus_order12.py
+python3 scratch/verify_d5_root_euler_potential_reports.py
+python3 scratch/verify_d5_root_kempe_order14_report.py
+\end{verbatim}
+The order-12 plateau verifier regenerates all graph identities and report
+arithmetic, then independently recomputes five deterministic
+boundary/extremal rows with a separately structured traversal.  The
+order-14 maximum-\(\Phi\) verifier regenerates all 480 graph identities
+and report arithmetic, then independently recomputes ten selected rows
+across orders 12 and 14.  These focused replays are independent semantic
+checks, not second full enumerations; that limitation is part of the
+claim.
+
+\section{What has and has not been established}
+
+The human-checkable results in this note are:
+\begin{enumerate}
+ \item the \(D_5\)-flow/five-even-subgraph equivalence;
+ \item the canonical properly five-coloured surface construction and
+ Euler formula;
+ \item the boundary interpretation of the bichromatic factors;
+ \item the exact one-switch Euler-change formula; and
+ \item the four-coordinate one-step locking lemma and the cubic \(D_4\)
+ trap theorem.
+\end{enumerate}
+The cube topology change is a short explicit certificate.  The
+12-state contraction trap and the plateau tables are finite
+computer-assisted results with full instances, producers, and independent
+focused checkers.
+
+No proof or disproof of the standard FiveCDC has been obtained.  No
+orientable FiveCDC result has been obtained.  The terminal-plateau
+conjecture is a proof target suggested by the computations, not a theorem.
+A responsible public submission would require independent checking by a
+graph theorist, a broader literature comparison, and archival publication
+of the exact code and reports.
+
+\section*{AI-use disclosure}
+
+This project used OpenAI Codex agents extensively under human direction.
+The agents proposed the \(D_5\) and coloured-surface viewpoints, derived
+candidate lemmas and proofs, wrote and ran the enumeration programs,
+searched for counterexamples to intermediate claims, produced the finite
+certificates, and drafted this manuscript.  The human operator selected
+the research objective and directed the work.  At the date of this draft,
+the manuscript has not received independent expert verification or peer
+review.
+
+AI systems are not listed as authors.  Any human who circulates or submits
+this note must personally verify the mathematical claims, take
+responsibility for the text and computations, confirm compliance with the
+venue's AI policy, and replace the working-draft author line with the
+responsible author list.  The disclosure is intentionally broad: it does
+not characterize the AI as a mere copy editor.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,147 @@
+{
+  "conclusion": "One legal Kempe switch changes the normalized coloured surface Euler characteristic by two.",
+  "coordinate_link_components_after": [
+    2,
+    2,
+    2,
+    0,
+    0
+  ],
+  "coordinate_link_components_before": [
+    2,
+    1,
+    1,
+    0,
+    0
+  ],
+  "edges": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      7
+    ]
+  ],
+  "final_labels_hex": [
+    "05",
+    "03",
+    "06",
+    "03",
+    "06",
+    "05",
+    "06",
+    "06",
+    "03",
+    "05",
+    "05",
+    "03"
+  ],
+  "graph": "cube",
+  "graph6": "Gl_XIS",
+  "initial_labels_hex": [
+    "03",
+    "05",
+    "06",
+    "05",
+    "06",
+    "03",
+    "06",
+    "06",
+    "03",
+    "05",
+    "05",
+    "03"
+  ],
+  "orientability_witness": {
+    "classification": "Klein bottle to torus",
+    "coordinate_link_components_before_and_after": [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "initial_labels_hex": [
+      "03",
+      "05",
+      "06",
+      "09",
+      "0a",
+      "03",
+      "0a",
+      "06",
+      "0a",
+      "0c",
+      "0c",
+      "06"
+    ],
+    "orientable_after": true,
+    "orientable_before": false,
+    "surface_euler_characteristic_before_and_after": 0,
+    "switch_component_edges": [
+      1,
+      2,
+      7,
+      8
+    ],
+    "switch_pair": [
+      0,
+      1
+    ]
+  },
+  "status": "PASS",
+  "surface_euler_characteristic_after": 2,
+  "surface_euler_characteristic_before": 0,
+  "switch_component_edges": [
+    0,
+    1,
+    3,
+    5
+  ],
+  "switch_pair": [
+    1,
+    2
+  ]
+}

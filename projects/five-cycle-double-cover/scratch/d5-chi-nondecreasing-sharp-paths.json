@@ -1,0 +1,343 @@
+[
+  {
+    "name": "one-switch chain-distance no-go",
+    "graph6": "M??CBAPsAWBOH_J??",
+    "roots": [
+      1,
+      17
+    ],
+    "path_length": 2,
+    "chi_sequence": [
+      -1,
+      -1,
+      -1
+    ],
+    "states_labels_hex": [
+      [
+        "03",
+        "05",
+        "06",
+        "18",
+        "0c",
+        "14",
+        "11",
+        "14",
+        "05",
+        "0c",
+        "0a",
+        "06",
+        "05",
+        "14",
+        "11",
+        "11",
+        "05",
+        "14",
+        "12",
+        "11",
+        "09"
+      ],
+      [
+        "03",
+        "05",
+        "06",
+        "18",
+        "0c",
+        "14",
+        "11",
+        "12",
+        "03",
+        "0c",
+        "0a",
+        "06",
+        "05",
+        "14",
+        "11",
+        "11",
+        "03",
+        "12",
+        "12",
+        "11",
+        "09"
+      ],
+      [
+        "03",
+        "05",
+        "06",
+        "18",
+        "0c",
+        "14",
+        "11",
+        "12",
+        "03",
+        "0c",
+        "0a",
+        "06",
+        "06",
+        "14",
+        "12",
+        "12",
+        "03",
+        "11",
+        "12",
+        "11",
+        "09"
+      ]
+    ],
+    "moves": [
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "component_edges": [
+          0,
+          1,
+          4,
+          5,
+          9,
+          10,
+          12,
+          13,
+          18
+        ],
+        "chi_before": -1,
+        "chi_after": -1,
+        "delta_chi": 0,
+        "coordinate_component_counts_before": [
+          1,
+          2
+        ],
+        "coordinate_component_counts_after": [
+          1,
+          2
+        ]
+      },
+      {
+        "pair": [
+          0,
+          1
+        ],
+        "component_edges": [
+          1,
+          2,
+          6,
+          7,
+          10,
+          11,
+          18,
+          19,
+          20
+        ],
+        "chi_before": -1,
+        "chi_after": -1,
+        "delta_chi": 0,
+        "coordinate_component_counts_before": [
+          1,
+          2
+        ],
+        "coordinate_component_counts_after": [
+          2,
+          1
+        ]
+      }
+    ],
+    "states_examined": 9
+  },
+  {
+    "name": "two-neutral-chain-move witness",
+    "graph6": "M?AA@AWwAgAgAoI_?",
+    "roots": [
+      15,
+      13
+    ],
+    "path_length": 3,
+    "chi_sequence": [
+      -2,
+      -2,
+      -2,
+      -2
+    ],
+    "states_labels_hex": [
+      [
+        "03",
+        "05",
+        "06",
+        "06",
+        "05",
+        "03",
+        "05",
+        "03",
+        "06",
+        "03",
+        "06",
+        "05",
+        "06",
+        "05",
+        "03",
+        "05",
+        "06",
+        "03",
+        "05",
+        "03",
+        "06"
+      ],
+      [
+        "03",
+        "05",
+        "06",
+        "06",
+        "05",
+        "03",
+        "05",
+        "03",
+        "06",
+        "03",
+        "05",
+        "06",
+        "06",
+        "05",
+        "03",
+        "06",
+        "05",
+        "03",
+        "05",
+        "03",
+        "06"
+      ],
+      [
+        "03",
+        "05",
+        "06",
+        "06",
+        "05",
+        "03",
+        "05",
+        "03",
+        "06",
+        "03",
+        "05",
+        "06",
+        "06",
+        "0c",
+        "0a",
+        "06",
+        "05",
+        "0a",
+        "0c",
+        "03",
+        "06"
+      ],
+      [
+        "03",
+        "05",
+        "06",
+        "06",
+        "05",
+        "03",
+        "05",
+        "03",
+        "06",
+        "09",
+        "05",
+        "0c",
+        "0c",
+        "06",
+        "0a",
+        "06",
+        "05",
+        "0a",
+        "0c",
+        "09",
+        "0c"
+      ]
+    ],
+    "moves": [
+      {
+        "pair": [
+          0,
+          1
+        ],
+        "component_edges": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          8,
+          12,
+          13,
+          18,
+          20
+        ],
+        "chi_before": -2,
+        "chi_after": -2,
+        "delta_chi": 0,
+        "coordinate_component_counts_before": [
+          2,
+          1
+        ],
+        "coordinate_component_counts_after": [
+          1,
+          2
+        ]
+      },
+      {
+        "pair": [
+          0,
+          3
+        ],
+        "component_edges": [
+          0,
+          1,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10,
+          16,
+          19
+        ],
+        "chi_before": -2,
+        "chi_after": -2,
+        "delta_chi": 0,
+        "coordinate_component_counts_before": [
+          2,
+          0
+        ],
+        "coordinate_component_counts_after": [
+          1,
+          1
+        ]
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "component_edges": [
+          0,
+          2,
+          3,
+          5,
+          7,
+          8,
+          15,
+          18
+        ],
+        "chi_before": -2,
+        "chi_after": -2,
+        "delta_chi": 0,
+        "coordinate_component_counts_before": [
+          1,
+          1
+        ],
+        "coordinate_component_counts_after": [
+          1,
+          1
+        ]
+      }
+    ],
+    "states_examined": 14
+  }
+]
