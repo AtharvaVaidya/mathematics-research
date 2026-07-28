@@ -189,18 +189,17 @@ simple and cyclically
 bridgeless cubic domain, since the smaller cap below need not be
 cyclically 4-edge-connected.
 
-Suppose a
-cycle-separating five-edge cut has a nontrivial factor-critical shore
-\(Q\), and its other shore is the seven-vertex theta cap above, with
-one cut edge at every \(w_i\).  This is precisely the
-terminal-distinct \(s=1\) one-boundary-five outside.
+Suppose a cycle-separating five-edge cut has a nontrivial
+factor-critical shore \(Q\), and suppose every cut edge has a different
+endpoint on the other shore in the \(s=1\) one-boundary-five branch.
+That outside shore has seven vertices.  Its two singleton
+factor-critical components are \(z_0,z_1\); its five remaining vertices
+are \(w_0,\ldots,w_4\), each incident with one cut edge.  Four of the
+\(w_i\) are the endpoints of two root edges, which we name
+\(w_0w_1,w_2w_3\).
 
-For completeness, here is why the named outside really is forced in this
-subcase.  Write the two root edges on \(W\) as \(w_0w_1,w_2w_3\), let
-\(W=U\cup\{w_4\}\), and let the two singleton components be
-\(z_0,z_1\).  Terminal-distinctness on the outside says that each \(w_i\)
-has one edge to \(Q\).  Thus every root endpoint has one remaining
-incidence to \(\{z_0,z_1\}\), while \(w_4\) has two and hence meets both
+Every root endpoint has one remaining incidence to
+\(\{z_0,z_1\}\), while \(w_4\) has two and, by simplicity, meets both
 singletons.  Each \(z_j\) has two remaining neighbours among the four
 root endpoints.  If it met both ends of one root, those three vertices
 would form a circuit separated by a three-edge cut from the
@@ -219,14 +218,16 @@ would force the component not containing \(u\) to have even order, while
 a perfect matching of \(Q-v\) would force the other component to have
 even order.  This contradicts the odd order of a factor-critical graph.
 Ambient cubicity then makes the five boundary endpoints in \(Q\)
-distinct: a boundary vertex incident with two cut edges would have a
-unique internal edge, which would be a bridge of nontrivial connected
+distinct.  A boundary vertex incident with exactly two cut edges would
+have a unique internal edge, which would be a bridge of nontrivial
+connected \(Q\); one incident with three cut edges would be isolated in
 \(Q\).
 
 Cap \(Q\) instead with a new 5-cycle \(c_0c_1c_2c_3c_4c_0\), joining
 \(c_i\) to the \(i\)-th terminal in the same boundary order used for
-\(w_i\).  The capped graph \(H\) is a smaller simple bridgeless cubic
-graph.  Its new cycle edges lie on the cap cycle.  For every new spoke,
+\(w_i\).  The capped graph \(H\) is a simple bridgeless cubic graph with
+two fewer vertices than \(G\).  Its new cycle edges lie on the cap cycle.
+For every new spoke,
 a path in the connected shore between its terminal and another terminal,
 together with the two spokes and one of the two cap-cycle arcs, gives a
 circuit through that spoke.  Every internal \(Q\)-edge already lies on
@@ -257,7 +258,7 @@ two-subset CDC-colouring language and bichromatic switches in
 [*Cycle double covers of graphs with small oddness*](https://doi.org/10.26493/1855-3974.3409.c13),
 Ars Mathematica Contemporanea 26 (2026), article P2.03.  The candidate
 contribution requiring novelty review is
-is the specific ordered seven-vertex theta-cap computation
+the specific ordered seven-vertex theta-cap computation
 \(58/62\), the twelve-case hitting argument, and its scoped
 minimum-counterexample consequence.  That priority assessment is
 provisional pending specialist literature review.
