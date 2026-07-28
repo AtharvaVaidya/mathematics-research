@@ -1,0 +1,1 @@
+PASS: exact capped-ladder lifting and eventual rescue; cap_solutions=180, directed_cells=60, cell_factor_tests=600, normalized_walks_through6=9331, maximum_constructive_plan=41, actual_lifts=[(2, 6, 33), (3, 7, 66), (4, 8, 136), (5, 9, 274), (6, 10, 553), (7, 11, 1107), (8, 12, 2217)]
