@@ -72,8 +72,16 @@ copied into a separate clean clone; it was not modified or committed.
   `THETA_CAP_SWITCHING_SHA256SUMS`.  The displayed proof and two finite
   implementations establish the ordered \(58/62\) cap language and
   exclude only the terminal-distinct \(s=1\) outside in a minimum
-  bridgeless cubic counterexample.  Repeated-endpoint \(s=1\) and every
-  \(s\ge2\) outside remain open.
+  bridgeless cubic counterexample.
+- The subsequent \(s\le2\) switching-core reduction:
+  `docs/one-boundary-five-D5-s12-reduction.md`, the shared exact incidence
+  generator, primary finite-domain relation solver, independently
+  implemented local-row relation solver, both retained reports,
+  `scratch/one-boundary-five-outside-relations.SHA256SUMS`, and
+  `S12_D5_REDUCTION_SHA256SUMS`.  It exhausts 6 retained \(s=1\) and 128
+  retained \(s=2\) outside patterns and leaves only \(s\ge3\) in this
+  branch.  The two relation implementations share the structural pattern
+  generator; this trust boundary is explicit.
 - The complete compact focused theta-choice census through order 28:
   retained graph6 inputs and generator logs, source identities, two
   independently written classifiers, frozen result streams, aggregate

@@ -77,6 +77,13 @@ It contains:
   cyclically 4-edge-connected minimum bridgeless cubic domain;
 - primary and separately written standard-library parity-CSP programs,
   with byte-reproducible retained JSON reports;
+- `docs/one-boundary-five-D5-s12-reduction.md`, with the
+  greatest-switching-core implication, two smaller-cap arguments, and the
+  exact elimination of every retained \(s=1,2\) outside pattern;
+- a shared exact incidence generator, primary finite-domain relation
+  solver, independently implemented local-row relation solver, both
+  retained reports, and their nested checksum package;
+- `S12_D5_REDUCTION_SHA256SUMS`;
 - `THETA_CAP_SWITCHING_SHA256SUMS` and
   `ONE_BOUNDARY_FIVE_SHA256SUMS`.
 
@@ -85,9 +92,11 @@ matching lemma, not FiveCDC.  Its displayed globally admissible
 completions have exact oddness four and are not counterexamples.  The
 order-100 specimen proves that oddness at most four is not universal in
 this branch, but it too has a checked standard five-CDC.  The theta-cap
-lemma closes the terminal-distinct \(s=1\) incidence branch.  The
-repeated-endpoint \(s=1\) shapes and all \(s\ge2\) outside patterns remain
-open.  The index records the AI-use disclosure and the exact machine trust
+lemma closes the terminal-distinct \(s=1\) incidence branch, and the
+switching-core/compatible-pair argument closes the repeated-endpoint
+\(s=1\) shapes and every retained \(s=2\) outside.  Together with the
+\(s=0\) triangle-cut argument, only \(s\ge3\) remains in this branch.
+The index records the AI-use disclosure and exact machine trust
 boundaries.  This update concerns only the standard conjecture.
 
 ## Prescribed-root matching frontier

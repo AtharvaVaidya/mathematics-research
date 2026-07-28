@@ -1195,6 +1195,21 @@ Open obligations:
     bridgeless cubic graph, so global cubic minimality supplies a nonempty
     shore relation; switching and exact boundary gluing then contradict
     minimality.  Primary and separately written finite enumerations agree.
-    This excludes only terminal-distinct \(s=1\).  Repeated-endpoint
-    \(s=1\) and every \(s\ge2\) outside remain open.  See
+    This lemma excludes only terminal-distinct \(s=1\); item 75 supplies
+    the separate argument for the remaining \(s=1,2\) patterns.  See
     `docs/theta-cap-five-cycle-extension-lemma.md`.
+75. **The greatest switching core and a compatible-pair cap eliminate
+    every retained \(s=1,2\) outside:** all 6 \(s=1\) and 128 \(s=2\)
+    incidence patterns satisfying the inherited minimum-counterexample
+    conditions are generated.  For terminal-distinct patterns the
+    complement of the outside \(D_5\) relation has empty greatest
+    switching core.  For every repeated-endpoint pattern the core is
+    exactly the 25-orbit local incompatibility set, in which the two
+    repeated labels are equal or disjoint.  A smaller simple bridgeless
+    cubic three-vertex path cap forces a state with those labels distinct
+    and intersecting, while a smaller 5-cycle cap supplies nonemptiness.
+    The greatest-core implication is proved by induction over deletion
+    rounds.  Two independently implemented relation solvers agree; they
+    share the exact structural generator.  Together with the \(s=0\)
+    triangle-cut argument, only \(s\ge3\) remains in this branch.  See
+    `docs/one-boundary-five-D5-s12-reduction.md`.

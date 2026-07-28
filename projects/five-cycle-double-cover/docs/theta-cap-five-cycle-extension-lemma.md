@@ -247,7 +247,10 @@ Therefore:
 
 This does **not** exclude the \(s=1\) incidence shapes with two boundary
 edges at one outside vertex, nor any of the \(s\ge2\) outside patterns.
-Those branches remain open.
+They require an argument beyond this theta-cap lemma.  The subsequent
+switching-core theorem in
+[`one-boundary-five-D5-s12-reduction.md`](one-boundary-five-D5-s12-reduction.md)
+excludes every retained \(s=1,2\) pattern.
 
 ## Prior work and novelty boundary
 
@@ -264,5 +267,5 @@ minimum-counterexample consequence.  That priority assessment is
 provisional pending specialist literature review.
 
 The standard Five-Cycle Double Cover Conjecture remains unresolved.  No
-claim here concerns the orientable variant.  The repeated-endpoint
-\(s=1\) and all \(s\ge2\) branches remain open.
+claim here concerns the orientable variant.  This lemma itself is scoped
+only to the terminal-distinct \(s=1\) branch.

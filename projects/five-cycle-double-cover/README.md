@@ -93,9 +93,20 @@ accepts 58 of the 62 \(D_5\) boundary orbits; every one of the four
 missing orbits can be switched along either bichromatic path into the cap
 relation.  Primary and separately written standard-library programs
 reproduce the complete 6,240-word calculation.  The repeated-endpoint
-\(s=1\) incidence shapes and all \(s\ge2\) outside patterns remain open.
-The encoding and switching method are prior machinery; only this specific
-cap calculation and scoped consequence are offered as provisionally new.
+\(s=1\) incidence shapes are outside that theta lemma.
+
+The subsequent human-checkable
+[`docs/one-boundary-five-D5-s12-reduction.md`](docs/one-boundary-five-D5-s12-reduction.md)
+uses the greatest subset satisfying all elementary bichromatic-path laws.
+Two independently implemented \(D_5\) relation solvers classify all 6
+retained \(s=1\) and 128 retained \(s=2\) outside patterns.  Empty
+complement cores handle every terminal-distinct pattern; for a repeated
+endpoint the 25-orbit core is exactly local incompatibility, while a
+smaller three-vertex path cap forces a compatible state.  Together with
+the \(s=0\) triangle-cut argument, this leaves only \(s\ge3\) in the
+one-boundary-five branch.  FiveCDC remains unresolved.  The encoding and
+switching method are prior machinery; novelty of these specific cap and
+core reductions is provisional.
 
 ## Main research drafts
 

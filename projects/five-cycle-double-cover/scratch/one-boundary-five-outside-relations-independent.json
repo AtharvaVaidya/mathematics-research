@@ -1,0 +1,239 @@
+{
+  "boundary_color_orbits": 62,
+  "method": "Independent local-row join over shared proper-edge labels; no use of the primary finite-domain satisfiability solver.",
+  "patterns": {
+    "1": 6,
+    "2": 128
+  },
+  "profiles": {
+    "1": [
+      {
+        "boundary_multiplicity_shape": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "complement_core_orbits": 0,
+        "outside_relation_orbits": 58,
+        "patterns": 2
+      },
+      {
+        "boundary_multiplicity_shape": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "complement_core_orbits": 25,
+        "outside_relation_orbits": 36,
+        "patterns": 4
+      }
+    ],
+    "2": [
+      {
+        "boundary_multiplicity_shape": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "complement_core_orbits": 0,
+        "outside_relation_orbits": 60,
+        "patterns": 16
+      },
+      {
+        "boundary_multiplicity_shape": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "complement_core_orbits": 0,
+        "outside_relation_orbits": 61,
+        "patterns": 8
+      },
+      {
+        "boundary_multiplicity_shape": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "complement_core_orbits": 0,
+        "outside_relation_orbits": 62,
+        "patterns": 8
+      },
+      {
+        "boundary_multiplicity_shape": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "complement_core_orbits": 25,
+        "outside_relation_orbits": 36,
+        "patterns": 32
+      },
+      {
+        "boundary_multiplicity_shape": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "complement_core_orbits": 25,
+        "outside_relation_orbits": 37,
+        "patterns": 64
+      }
+    ]
+  },
+  "schema": "one-boundary-five-outside-D5-independent-replay-v1",
+  "status": "PASS",
+  "switching_core_C5_cap_hit_profiles": {
+    "1": [
+      {
+        "hits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "patterns": 2
+      },
+      {
+        "hits": [
+          22,
+          18,
+          22,
+          18,
+          22,
+          22,
+          18,
+          18,
+          22,
+          18,
+          18,
+          22
+        ],
+        "patterns": 2
+      },
+      {
+        "hits": [
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18
+        ],
+        "patterns": 2
+      }
+    ],
+    "2": [
+      {
+        "hits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "patterns": 32
+      },
+      {
+        "hits": [
+          22,
+          18,
+          22,
+          18,
+          22,
+          22,
+          18,
+          18,
+          22,
+          18,
+          18,
+          22
+        ],
+        "patterns": 24
+      },
+      {
+        "hits": [
+          22,
+          22,
+          18,
+          18,
+          18,
+          18,
+          22,
+          22,
+          18,
+          18,
+          22,
+          22
+        ],
+        "patterns": 12
+      },
+      {
+        "hits": [
+          22,
+          22,
+          18,
+          22,
+          18,
+          22,
+          22,
+          22,
+          18,
+          18,
+          18,
+          18
+        ],
+        "patterns": 40
+      },
+      {
+        "hits": [
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18
+        ],
+        "patterns": 20
+      }
+    ]
+  }
+}

@@ -2440,8 +2440,45 @@ Capping the factor-critical shore by an ordered 5-cycle gives a simple
 bridgeless cubic graph smaller by two vertices.  Minimality makes its
 shore relation nonempty; the switching-attractor and exact gluing then
 contradict that the original graph was a counterexample.  Hence this one
-incidence subcase is excluded.  Repeated-endpoint \(s=1\) and all
-\(s\ge2\) outside patterns remain open.  Two independently written
-standard-library implementations and a displayed human proof are in
+incidence subcase is excluded.  The theta lemma alone does not handle the
+other \(s=1,2\) patterns; the next section supplies the separate
+switching-core argument.  Two independently written standard-library
+implementations and a displayed human proof are in
 `docs/theta-cap-five-cycle-extension-lemma.md`.  FiveCDC remains
 unresolved, and no orientable claim is made.
+
+## Switching-core closure through \(s=2\)
+
+Audit date: **2026-07-27**.
+
+A second local theorem closes the repeated-endpoint \(s=1\) cases and
+every \(s=2\) outside.  For any candidate set of boundary orbits, its
+greatest switching core is obtained by repeatedly deleting a state that
+cannot retain every mandatory bichromatic switch and one complete
+alternative corresponding to a possible pairing of four boundary ends.
+Every graph-realizable pole relation survives every round, giving the
+human implication
+\[
+\mathcal R_Q\cap\mathcal R_O=\varnothing
+\quad\Longrightarrow\quad
+\mathcal R_Q\subseteq
+\operatorname{Core}(\overline{\mathcal R_O}).
+\]
+
+An exact generator retains all 6 \(s=1\) and 128 \(s=2\) incidence
+patterns satisfying the inherited minimum-counterexample conditions.
+For distinct outside endpoints the complement core is empty.  With one
+repeated outside endpoint, the core has 25 coordinate orbits and is
+exactly the local incompatibility set: the repeated labels are equal or
+disjoint.  A smaller bridgeless three-vertex path cap forces a state in
+which those two prescribed labels are distinct and meet in one
+coordinate, contradicting containment in the core.  A smaller 5-cycle
+cap supplies nonemptiness in the distinct-endpoint case.
+
+The primary finite-domain solver and an independently implemented
+local-row join agree on every aggregate relation/core profile and the
+local-core identity.  They share the structural pattern generator, an
+explicit trust boundary.  The proof and artifacts are in
+`docs/one-boundary-five-D5-s12-reduction.md`.  With the earlier \(s=0\)
+triangle-cut theorem, only \(s\ge3\) remains in this branch.  The standard
+conjecture remains unresolved, and there is no orientable claim.

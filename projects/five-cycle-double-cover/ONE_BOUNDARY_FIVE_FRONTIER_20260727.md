@@ -104,13 +104,41 @@ bridgeless cubic graph, hence a nonempty shore relation by minimality.
 The switching lemma makes that relation meet the theta relation, and exact
 boundary-label gluing gives a FiveCDC, a contradiction.
 
-This does not close the repeated-endpoint \(s=1\) shapes, whose outside
-cap is not theta, or any \(s\ge2\) pattern, where nonemptiness of the
-factor-critical-shore relation alone does not force intersection with the
-actual outside relation.  Primary and independently written parity-CSP
-programs reproduce the complete finite table.  The underlying
+This theta lemma alone does not close the repeated-endpoint \(s=1\)
+shapes, whose outside cap is not theta, or any \(s\ge2\) pattern.
+Primary and independently written parity-CSP programs reproduce its
+complete finite table.  The underlying
 two-subset/multipole/switching language is prior work, and novelty of the
 specific cap lemma remains provisional pending specialist review.
+
+## Switching-core exclusion through \(s=2\)
+
+The subsequent displayed proof in
+`docs/one-boundary-five-D5-s12-reduction.md` closes all remaining
+\(s=1\) patterns and every \(s=2\) outside.  For a candidate avoidance
+set, repeatedly delete any boundary orbit which cannot satisfy the
+mandatory bichromatic switches and one complete path-pairing alternative.
+Every graph-realizable relation survives every deletion round, so it is
+contained in the greatest remaining core.
+
+The exact incidence generator retains all 6 \(s=1\) and 128 \(s=2\)
+patterns allowed by the inherited Gallai--Edmonds, bridgelessness,
+cyclic-four, and root-attainability conditions.  For every
+terminal-distinct pattern, the complement of the outside relation has
+empty core.  For every repeated-endpoint pattern, its 25-orbit core is
+exactly the set in which the two repeated labels are equal or disjoint.
+A smaller three-vertex path cap forces those two labels instead to be
+distinct and intersecting, so the factor-critical-shore relation cannot
+be contained in that core.
+
+The primary finite-domain solver and independently implemented local-row
+join reproduce the same relation/core profiles and local identity.  They
+share the exact structural pattern generator; this is recorded as a
+trust boundary rather than described as full implementation
+independence.  The smaller 5-cycle and path caps are proved simple,
+cubic, bridgeless, and smaller in the full bridgeless cubic minimality
+domain.  Together with the earlier \(s=0\) triangle-cut proof, the branch
+is reduced to \(s\ge3\).  FiveCDC remains open.
 
 ## Reproducible artifacts and trust boundaries
 
@@ -142,6 +170,8 @@ Run the focused integrity and semantic replay commands in
 the earlier update, including the nested oddness-six package manifest.
 `THETA_CAP_SWITCHING_SHA256SUMS` separately freezes the theta-cap proof,
 both implementations, and both retained results.
+`S12_D5_REDUCTION_SHA256SUMS` freezes the \(s\le2\) proof and its nested
+six-file computation checksum package.
 
 ## AI-use disclosure
 
