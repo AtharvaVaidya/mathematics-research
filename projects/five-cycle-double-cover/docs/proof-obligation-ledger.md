@@ -1373,6 +1373,24 @@ Open obligations:
     item 80.  See
     `scratch/jaeger-star-kernel-closure-countermodel-16v.md` and
     `scratch/jaeger-star-kernel-closure-triangle-expansion.md`.
+85. **The surviving exact star-parity target is invariant under nonroot
+    triangle expansion and contraction:** exact component parity is
+    equivalent to the existence of \(P\subseteq K_k\) for which
+    \((K_i\cap K_j)\triangle P\) is Eulerian.  Contracting a triangle
+    preserves every external odd-kernel membership and Eulerian parity.
+    Conversely, the local lift has 60 admissible odd-kernel traces; vertex
+    permutations and swapping \(i,j\) reduce them to seven rows, and every
+    row has a legal omitted-edge permutation and a local
+    \(P\)-completion.  A standard-library checker verifies all patterns
+    and symmetry orbits.  Thus the infinite triangle-expanded
+    countermodels in item 84 obstruct only graphic closure, not the exact
+    parity lemma.  In a simple 3-edge-connected cubic graph other than
+    \(K_4\), every triangle has three distinct external neighbours:
+    equality of exactly two gives a 2-edge cut, and equality of all three
+    gives \(K_4\).  Thus every triangle of a non-\(K_4\)
+    prescribed-root minimal exact obstruction must contain the root.
+    Triangle-free joint parity-and-base selection remains open.  See
+    `scratch/jaeger-star-exact-parity-triangle-invariance.md`.
 85. **The order-16 vertex-star closure countermodel is not a countermodel
     to symmetric Fano-minimum descent:** on graph6
     `O??CA?_ceOGgH_F?AK@P?`, root 13, the exact whole-state descent
@@ -1387,3 +1405,54 @@ Open obligations:
     not a complete order-16 descent census and not a universal proof.  See
     `output/jaeger-fano-min-descent-order16-closure-no-go/result.json` and
     `scratch/verify_jaeger_fano_min_descent_order16_closure_no_go.py`.
+86. **The seven-plane defect has an exact human exchange law:** a
+    reciprocal exchange toggles each zero-subgraph by
+    \(E_f'=E_f\triangle Z_f\), where \(Z_f\) is the corresponding linear
+    combination of the two active fundamental circuits.  For a component
+    \(Q\) of \(E_h\), its defect is the parity of any one of the four
+    boundary colour classes in \(h^{-1}(1)\); the four parities agree by
+    the flow cut equation.  This proves in particular that every \(d_h\)
+    is even.  When \(Z_h=\varnothing\), the component vector changes by
+    \(\beta_h'=\beta_h+\partial_hR\), hence
+    \(d_h'-d_h=|\partial_hR|-2|\partial_hR\cap\beta_h|\).
+    The split/merge case has a separate exact determinant/normal formula.
+    A literal checker verifies the set and Hamming formulas on all legal
+    exchanges at the frozen 14- and 16-vertex states.  The flow-level
+    component condition is independently Hušek--Šámal,
+    arXiv:2607.24724, Theorem 3.16; the star/tree selection is the open
+    obligation here.  See `scratch/jaeger-fano-reciprocal-exchange-law.md`
+    and `scratch/verify_jaeger_reciprocal_exchange_defect_formula.py`.
+87. **Immediate symmetric descent and fixed-kernel exposure are both
+    false, while full same-level descent survives:** on graph6
+    `O??CA?_ceOGgH_F?AK@P?`, root 13, an
+    explicit state has profile \((4,4,4,2,4,6,4)\).  All 147 candidate
+    reciprocal exchanges are replayed: 23 are legal, with minimum-score
+    histogram \(\{2:18,4:5\}\), so none lowers \(d_{\min}=2\).  A
+    kernel-inert exchange preserves the entire flow and profile but changes
+    the ambient tree realizations; one further both-active exchange reaches
+    profile \((2,2,2,2,4,6,0)\).  This refutes every one-exchange averaging
+    lemma but not descent from a same-level component.  A second state
+    with profile \((4,4,4,4,6,2,2)\) has 23 legal neighbours, all still
+    at score two, and no kernel-inert neighbour.  Its fixed-kernel
+    realization component is a singleton; an active same-level exchange
+    followed by a second exchange reaches zero.  This refutes the proposed
+    fixed-kernel exposure repair.  The surviving obligation is the full
+    same-level-component boundary theorem, allowing active neutral moves.
+    See
+    `scratch/jaeger-fano-min-immediate-descent-countermodel.md` and its
+    independent checker.
+88. **Nonroot triangle expansion gives an exact fibre-graph product but
+    not defect-score invariance:** contracting the triangle identifies
+    the expanded star-fibre exchange graph with
+    \(\mathcal X(G,r)\square\operatorname{Cay}(S_3,\text{transpositions})\).
+    External swaps project exactly, triangle-only swaps generate the
+    \(S_3\) factor, and mixed swaps are illegal because one tree acquires
+    the whole triangle.  Nevertheless one contracted profile
+    \((2,4,2,2,0,6,2)\) has four zero-defect lifts and two positive
+    defect-two lifts, so descent invariance does not follow from the graph
+    product.  Exact whole-state checks of all thirteen nonroot triangle
+    expansions of the 14-vertex fixed-coordinate graph cover 17,297,280
+    states with no trapped positive component.  This is a finite theorem,
+    not an inductive reduction.  See
+    `scratch/jaeger-triangle-expansion-descent-structure.md` and
+    `output/jaeger-fano-min-descent-triangle-expansions-16v/census.jsonl`.

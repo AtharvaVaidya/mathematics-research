@@ -67,7 +67,12 @@ c++ -O3 -std=c++20 \
   -o /tmp/count_jaeger_star_kernel_closure_countermodel_16v
 /tmp/count_jaeger_star_kernel_closure_countermodel_16v
 python3 scratch/verify_jaeger_star_kernel_closure_triangle_expansion.py
+python3 scratch/verify_jaeger_star_exact_parity_triangle_lift.py
 python3 scratch/verify_jaeger_fano_min_descent_order16_closure_no_go.py
+python3 scratch/verify_jaeger_reciprocal_exchange_defect_formula.py
+python3 scratch/verify_jaeger_fano_min_immediate_descent_countermodel.py
+python3 scratch/verify_jaeger_triangle_expansion_descent_structure.py
+python3 scratch/verify_jaeger_triangle_expanded_fixedtrap_descent.py
 python3 scratch/verify_jaeger_coordinate_five_order44.py \
   --input search/known_snarks/source/snarks_44.04.oddness4.cyc4.g6 \
   --witnesses output/jaeger-coordinate-five-order44/witnesses.jsonl
@@ -76,8 +81,14 @@ python3 scratch/verify_jaeger_coordinate_five_order44.py \
 The thinning verifier invokes both pinned LRAT checkers.  The order-44
 verifier does not trust producer-supplied flow values: it reconstructs the
 three trees, their fundamental completions, all edge directions, and every
-point-parity equation.  These commands verify bounded or conditional
-claims only; the universal star-packing selection lemma remains open.
+point-parity equation.  The reciprocal-exchange checker audits the exact
+seven-plane cut formula on two frozen states.  The immediate-descent checker
+verifies one positive state with no descending neighbour, a second with no
+kernel-inert neighbour, and both two-step escapes.  The triangle coverage
+verifier audits 13 exact fibres and
+17,297,280 enumerated states but does not duplicate the C++ state
+enumeration.  These commands verify bounded or conditional claims only; the
+universal star-packing selection lemma remains open.
 
 ## Required recorded environment
 

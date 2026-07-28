@@ -1,6 +1,6 @@
 # Five-cycle double cover laboratory report
 
-Audit date: **2026-07-27**.
+Audit date: **2026-07-28**.
 
 ## 1. Outcome
 
@@ -20,10 +20,20 @@ still states the five-coordinate strengthening separately as Conjecture 18:
 <https://arxiv.org/abs/2607.16356>.  The 2023 SIAM paper likewise describes
 5-CDC as the stronger conjecture and proves it for cubic graphs of oddness at
 most four: <https://epubs.siam.org/doi/10.1137/22M1472425>.
+Hušek and Šámal's arXiv:2607.24724v1, submitted July 27, 2026, likewise
+states FiveCDC as open. Their Theorem 3.16 independently proves the exact
+five-support component-parity characterization used in the Jaeger branch,
+and their Conjecture 3.19 isolates the equivalent missing flow-selection
+step. This project therefore claims no novelty or priority for that
+criterion.
 
 The strongest new outputs of this project are:
 
 - an exact quotient-lift characterization of the remaining obstruction;
+- a human proof that the exact Jaeger star component-parity target is
+  invariant under contracting or lifting any triangle away from the root,
+  reduced to seven local trace rows and backed by an exhaustive 60-trace
+  checker;
 - a human-checkable endpoint-fork reduction and a complete
   9,725,709-pole order-28 explicit-witness census, together proving a
   scoped order-30 lower bound for simple terminal-distinct fixed-five

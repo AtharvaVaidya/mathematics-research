@@ -11,14 +11,27 @@ python3 scratch/verify_jaeger_k_forest_petersen.py
 python3 scratch/check_jaeger_fixed_third_tree_parity_no_go.py
 python3 scratch/check_jaeger_perfect_forests_first_no_go.py
 python3 scratch/verify_jaeger_star_parity_descent_countermodel.py
+python3 scratch/verify_jaeger_reciprocal_exchange_defect_formula.py
+python3 scratch/verify_jaeger_fano_min_immediate_descent_countermodel.py
 python3 scratch/verify_jaeger_kernel_closure_typea_countermodel.py
+python3 scratch/verify_jaeger_star_exact_parity_triangle_lift.py
 ```
+
+The final command checks the separate two-way theorem for the surviving
+exact target: 60 admissible local traces, seven symmetry orbits, and no
+trace without a parity-preserving legal triangle lift. The expected SHA-256
+values are `96259e65072b5a8c03f572e028a650f6e075f787c66e7e59917630c2b22c1008`
+for the human note and
+`e3026b8acdf95555fad33a5a2871174b497a154151f5e0f4fde642d31053bbe7`
+for the checker.
 
 ## Symmetric Fano-minimum descent through order 14
 
 ```sh
 python3 scratch/verify_jaeger_fano_min_descent_frontier.py
 python3 scratch/verify_jaeger_fano_min_descent_order16_closure_no_go.py
+python3 scratch/verify_jaeger_triangle_expansion_descent_structure.py
+python3 scratch/verify_jaeger_triangle_expanded_fixedtrap_descent.py
 ```
 
 This independently regenerates the canonical graph streams,
@@ -28,7 +41,10 @@ totals, and SHA-256. It does not duplicate the C++ enumeration of all
 command printed in Section 8 of the paper. The second command independently
 replays one explicit state and all 147 incident exchanges in the targeted
 order-16 fibre; the full 953,856-state enumeration remains in the C++ trust
-boundary.
+boundary. The third command checks the exact six-lift score table. The
+fourth independently regenerates and audits the thirteen triangle-expanded
+inputs and their 17,297,280-state producer census; it does not duplicate
+the C++ whole-state enumeration.
 
 ## Kernel-closure frontier
 

@@ -70,6 +70,13 @@ component-parity criterion therefore says precisely:
 Equivalently, \(K_1\cap K_2\) is Eulerian after every component of
 \(K_3\) is contracted.
 
+This flow-level criterion is independently Theorem 3.16 of Radek
+Hušek and Robert Šámal, *Exponentially Many Circuit Double Covers*,
+[arXiv:2607.24724](https://arxiv.org/abs/2607.24724); their Conjecture
+3.19 asks for the required flow.  The new obligation studied here is
+therefore the special Jaeger star/tree selection and its exchange
+landscape, not priority for the component-parity characterization.
+
 Some parity is automatic but not enough.  By (2), for every component
 \(Q\) of \(K_3\),
 \[
@@ -133,11 +140,163 @@ the defect vector \(\omega_3\).  Formula (9) exposes the difficulty:
 the target is bilinear in the two odd-side forests, so ordinary linear
 boundary invariance does not force (5).
 
+### A coordinate-free form of every Fano defect bit
+
+Let \(W=\mathbb F_2^3\), let
+\(\phi:E(G)\to W-\{0\}\) be the flow of the packing, and for
+\(0\ne h\in W^*\) put
+\[
+                         E_h=\{e:h(\phi(e))=0\}.
+\]
+Choose any \(w\in W\) with \(h(w)=1\).  For a component \(Q\) of
+\(E_h\), its component-parity defect bit is
+\[
+ \beta_h(Q)=|\delta(Q)\cap\phi^{-1}(w)|\pmod2.                \tag{10}
+\]
+This does not depend on the chosen \(w\).  Indeed, flow conservation
+summed over \(Q\) says that the xor of the values on \(\delta(Q)\) is
+zero.  All those values lie in the four-point affine plane \(h=1\).
+The \(3\times4\) matrix formed by those four columns has one-dimensional
+kernel, spanned by \((1,1,1,1)\).  Hence the four colour-class parities
+on \(\delta(Q)\) are equal.
+
+Equivalently, choose \(g,\ell\in W^*\) so that
+\((g,\ell,h)\) is a basis of \(W^*\).  The common zero set
+\(E_g\cap E_\ell\) is exactly one of the four colour classes in \(h=1\),
+so
+\[
+                  \beta_h=\partial_h(E_g\cap E_\ell),        \tag{11}
+\]
+where \(\partial_h\) is boundary after contracting every \(E_h\)
+component.  In particular \(d_h=|\operatorname{supp}\beta_h|\) is
+always even, by the handshake lemma in the quotient multigraph.
+
+### The exact all-seven topology law
+
+For the reciprocal exchange below, define
+\[
+ Z_i=\begin{cases}C_i,&b\in K_i,\\\varnothing,&b\notin K_i,\end{cases}
+ \qquad
+ Z_j=\begin{cases}C_j,&a\in K_j,\\\varnothing,&a\notin K_j.\end{cases}
+\]
+Then (8) and \(F_s=E-K_s\) give the exact flow update
+\[
+                 \phi'=\phi+e_i1_{Z_i}+e_j1_{Z_j}.           \tag{12}
+\]
+For every \(0\ne f\in W^*\), put
+\[
+                  Z_f=f(e_i)Z_i\triangle f(e_j)Z_j.
+\]
+It follows edge by edge that
+\[
+                              E_f'=E_f\triangle Z_f.         \tag{13}
+\]
+Equations (10), (11), and (13) are a complete coordinate-free update
+rule: choose \(g,\ell\) completing \(h\), take the components of
+\(E_h\triangle Z_h\), and on each new component take the boundary
+parity of
+\[
+                  (E_g\triangle Z_g)\cap(E_\ell\triangle Z_\ell).
+                                                                    \tag{14}
+\]
+If \(Z_h=\varnothing\), the old and new quotient vertices are the same.
+Expanding (14) over \(\mathbb F_2\) gives
+\[
+ R=(Z_g\cap E_\ell)\triangle(E_g\cap Z_\ell)
+                         \triangle(Z_g\cap Z_\ell)
+\]
+and therefore
+\[
+                         \beta_h'=\beta_h+\partial_hR.        \tag{15}
+\]
+If \(Z_h\ne\varnothing\), (13)--(14) remain exact, but the component
+partition itself changes; one cannot compare defect vectors by a fixed
+quotient boundary.
+
+When both exchange circuits are active, precisely one of the seven
+nonzero functionals has \(Z_f=\varnothing\), two have \(Z_f=Z_i\), two
+have \(Z_f=Z_j\), and two have \(Z_f=Z_i\triangle Z_j\).  With exactly
+one active circuit, three planes are unchanged and four toggle.  With
+neither active, the full flow and all seven defects are unchanged.
+
+### The exact quotient-boundary and Hamming-weight update
+
+The preceding statement can be made completely explicit.  Consider a
+reciprocal exchange between omitted classes \(A_i,A_j\).  Let
+\(a\in A_i\), \(b\in A_j\), so that
+\[
+ T_i'=T_i+a-b,\qquad T_j'=T_j+b-a.
+\]
+Write \(C_i=C_{T_i}(a)\), \(C_j=C_{T_j}(b)\), and put
+\[
+ \alpha=1_{b\in K_i},\qquad \beta=1_{a\in K_j}.
+\]
+The exchange law (8) gives
+\[
+ K_i'=K_i\triangle\alpha C_i,\qquad
+ K_j'=K_j\triangle\beta C_j.                                \tag{16}
+\]
+Let \(k\) be the coordinate not in \(\{i,j\}\).  Since \(T_k\), hence
+\(K_k\), is unchanged, contract the components of \(K_k\) once and for
+all.  If
+\[
+ \partial_k:\mathbb F_2^{E(G)}\longrightarrow
+ \mathbb F_2^{\operatorname{comp}(K_k)}
+\]
+is the boundary map after this contraction, define
+\[
+\begin{split}
+ Q={}&\alpha(C_i\cap K_j)
+   \triangle\beta(C_j\cap K_i)\\
+   &\triangle\alpha\beta(C_i\cap C_j).
+\end{split}
+\]
+Boolean expansion of the intersection gives the exact identity
+\[
+ (K_i'\cap K_j')\triangle(K_i\cap K_j)=Q.
+\]
+Consequently the untouched-coordinate defect vector satisfies
+\[
+ \omega_k'=\omega_k+\partial_k Q.     \tag{17}
+\]
+In particular, writing \(|\cdot|\) for Hamming weight,
+\[
+ d_k'-d_k
+  =|\partial_kQ|
+   -2\,|\operatorname{supp}(\omega_k)
+          \cap\operatorname{supp}(\partial_kQ)|.             \tag{18}
+\]
+Thus this exchange lowers the untouched-coordinate defect precisely
+when its quotient-boundary toggle meets more currently bad components
+than good components.  It is neutral precisely when those two numbers
+are equal.
+
+This is a cut criterion, but not by itself an averaging proof.  The
+14-vertex fixed-coordinate countermodel has a selected coordinate for
+which every legal exchange that keeps its quotient fixed moves in the
+wrong direction.  Exchanges involving that coordinate change the
+quotient itself, and the other six Fano planes also change their
+zero-subgraphs.  Therefore a proof of descent for the minimum over all
+seven planes cannot follow by averaging (12) in one fixed quotient.
+
+The literal audit
+
+```sh
+python3 scratch/verify_jaeger_reciprocal_exchange_defect_formula.py
+```
+
+checks (16)--(18) for every legal exchange incident with both the
+14-vertex fixed-coordinate countermodel and the explicit
+\((4,4,4,4,4,4,4)\) state in the targeted order-16 fibre.  It checks 108
+and 147 candidate swaps respectively, including 18 and 25 legal swaps.
+This finite audit verifies the transcription of the formula; the proof
+above is the general argument.
+
 ## 4. A rigorous obstruction to the disjointness strengthening
 
 A tempting strengthening of (5) is to seek a packing with
 \[
-                         K_i\cap K_j=\varnothing               \tag{10}
+                         K_i\cap K_j=\varnothing               \tag{19}
 \]
 for some two coordinates.  This is false already in the Petersen
 graph, independently of the chosen star or packing.
@@ -164,7 +323,7 @@ By (2), every \(K(T_i)\) is an all-vertex odd subgraph.  The preceding
 argument proves
 \[
                   K(T_i)\cap K(T_j)\ne\varnothing
-                  \quad\text{for every }i\ne j                 \tag{11}
+                  \quad\text{for every }i\ne j                 \tag{20}
 \]
 for every triple of Petersen spanning trees, including every
 vertex-star packing.  Thus no proof of (5) can work by forcing the pure

@@ -73,15 +73,17 @@ every prescribed defect pattern of either type is feasible in every
 argument.  Blasiak's graphic-matroid theorem then identifies each
 fixed-multiplicity fibre with one symmetric-exchange component.
 
-The principal structural result is a human-checkable component-parity
-criterion.  Given a nowhere-zero \(\F_2^3\)-flow and a prescribed five-point
-subset of the eight affine points, a compatible pair labelling exists
-exactly when one forced leaf-bit xor vanishes in every component of a
-distinguished value subgraph.  For flows built from spanning trees, this
-becomes an odd-kernel statement: if \(K(T)\) is the unique all-vertex-odd
-forest contained in \(T\), then the star-fibre target is that
-\(K(T_1)\cap K(T_2)\) be Eulerian after contracting every component of
-\(K(T_3)\).
+We give a self-contained derivation of a component-parity criterion.  Given
+a nowhere-zero \(\F_2^3\)-flow and a prescribed five-point subset of the
+eight affine points, a compatible pair labelling exists exactly when one
+forced leaf-bit xor vanishes in every component of a distinguished value
+subgraph.  Hu\v{s}ek and \v{S}\'amal independently obtained the same
+flow-level characterization in Theorem~3.16 of
+\cite{HusekSamal2026}; we claim no novelty or priority for this criterion.
+For flows built from spanning trees, it becomes an odd-kernel statement:
+if \(K(T)\) is the unique all-vertex-odd forest contained in \(T\), then the
+star-fibre target is that \(K(T_1)\cap K(T_2)\) be Eulerian after contracting
+every component of \(K(T_3)\).
 
 We prove the exact tree-exchange law for these odd kernels.  We also give
 small, directly checkable obstructions to three natural strengthenings:
@@ -103,7 +105,10 @@ The sufficient strengthening
 dual-checked 16-vertex certificate refutes it even for a vertex-star fibre.
 Both countermodels preserve the weaker, correct quotient-parity target.
 A human triangle-contraction theorem extends the latter closure failure to
-an infinite rooted family, without making any claim against FiveCDC.
+an infinite rooted family, without making any claim against FiveCDC.  In
+contrast, the exact component-parity target is invariant in both directions
+under a nonroot triangle expansion; the lifting proof reduces to seven
+human-checkable local trace rows.
 
 Exact computation finds a five-point representative in all \(804{,}204\)
 feasible type-A/type-B fibres of all \(587\) connected simple bridgeless
@@ -114,8 +119,12 @@ Only the last census retains and independently replays every literal
 witness.  A separate exhaustive exchange census proves, through order
 \(14\), that every positive same-level component for the minimum
 seven-plane parity defect has an edge to a lower level; it covers
-\(529{,}150{,}122\) exact states.  These are finite results, not a
-universal selection theorem.
+\(529{,}150{,}122\) exact states.  We derive the exact simultaneous
+seven-plane update under a reciprocal tree exchange.  Two explicit
+16-vertex states show that neither immediate descent nor descent exposure
+inside one fixed odd-kernel triple is valid; active same-level motion is
+sometimes necessary.  These are finite results and exact no-go statements,
+not a universal selection theorem.
 \end{abstract}
 
 \tableofcontents
@@ -130,6 +139,15 @@ Preissmann~\cite{Celmins1985,Preissmann1981}; see also the surveys and flow
 work of Jaeger~\cite{Jaeger1979,Jaeger1985,Jaeger1988} and recent special
 cases~\cite{LiuEtAl2023,HuckKochol1995}.
 
+Hu\v{s}ek and \v{S}\'amal's contemporaneous preprint, submitted July 27,
+2026, explicitly records FiveCDC as open (their Conjecture~1.9), proves an
+exact five-support component-parity characterization (their
+Theorem~3.16), and states the resulting equivalent flow-selection problem
+as Conjecture~3.19~\cite{HusekSamal2026}.  Their theorem independently
+establishes the flow-level content of
+Theorem~\ref{thm:component} below.  The missing issue in both formulations
+is the universal choice of a suitable flow.
+
 Throughout, a graph is finite and undirected.  Parallel edges are distinct
 edge objects.  Unless a statement says ``simple'', parallel edges are
 permitted.  A loop contributes two incidences at its endpoint.  An
@@ -143,12 +161,13 @@ to ``at most five''.  This is the standard convention used in
 directed Eulerian orientations that use every edge once in each direction.
 It is a distinct, stronger conjecture and is not considered here.
 
-The exact fixed-fibre feasibility theorem, component criterion, and finite
-obstructions below may be useful independently of the universal conjecture.
-However, we have not completed a specialist priority search for their exact
-formulations.  We therefore make no categorical novelty claim.  The paper is
-a research draft whose proofs and certificates are deliberately exposed for
-human audit.
+We explicitly withdraw any novelty or priority claim for the component
+criterion: \cite[Theorem~3.16]{HusekSamal2026} independently gives the
+equivalent characterization.  The specialization to Jaeger star fibres,
+odd kernels, triangle invariance, and the exchange and no-go results may be
+useful independently, but they still require a specialist prior-art review.
+The paper is a research draft whose proofs and certificates are deliberately
+exposed for human audit.
 
 \section{The exact cover encoding}
 
@@ -428,7 +447,8 @@ indicator of \(h_v(w)=0\) is precisely \((h_v+h_0)(w)\).
 For edges outside \(E_0\), the unique labels forced by their two endpoints
 agree automatically.
 
-\begin{theorem}[component-parity criterion]\label{thm:component}
+\begin{theorem}[component-parity criterion; cf.\
+Hu\v{s}ek--\v{S}\'amal]\label{thm:component}
 A compatible pair labelling supported in \(S=W-B\) exists if and only if
 for every connected component \(Q\) of \((V(G),E_0)\),
 \[
@@ -455,6 +475,20 @@ is soluble exactly when the xor of the right-hand side is zero, which is
 \((4.6)\).  A solution selects one of the four permitted triangles at
 every special vertex and reconstructs the complete pair labelling.
 \end{proof}
+
+\begin{remark}[priority and coordinate translation]
+Hu\v{s}ek and \v{S}\'amal independently derive the same characterization
+in different coordinates~\cite[Theorem~3.16]{HusekSamal2026}.  In their
+normalization the five allowed affine points are
+\(\{000,001,010,011,100\}\); their eliminated local system is soluble
+exactly when every component of \((V,E-F)\) contains an even number of
+vertices from their set \(Z\).  After an affine relabelling taking \(S\)
+to that five-set, \(E-F\) is our distinguished value subgraph \(E_0\),
+and their component right-hand side is the leaf xor in~(4.6).  Thus the
+proof above is a self-contained coordinate derivation, not a novelty claim.
+Their Conjecture~3.19 is the equivalent remaining task of choosing a
+nowhere-zero \(\F_2^3\)-flow for which this parity condition holds.
+\end{remark}
 
 \begin{remark}
 Cycles cause no exception.  If \(Q\) has cycle rank \(\beta(Q)\), then a
@@ -1126,6 +1160,147 @@ The independent structural checker verifies the contraction, the
 six-lift calculation, and this Petersen description.  The contraction
 theorem itself is the human argument above.
 
+\subsubsection*{Exact component parity is triangle-invariant}
+
+The preceding infinite family concerns only the false closure
+strengthening.  The exact target behaves differently.  We first record a
+linear form that makes the distinction transparent.  Write
+\(\partial X\) for the set of vertices of odd degree in an edge set \(X\).
+
+\begin{lemma}[Eulerian completion in a forest]\label{lem:forest-completion}
+Let \(K\) be a forest and let \(A\cap K=\varnothing\).  The set \(A\) has
+even boundary on every component of \(K\) if and only if there is a unique
+\(P\subseteq K\) such that \(A\symdiff P\) is Eulerian.
+\end{lemma}
+
+\begin{proof}
+The condition is \(\partial P=\partial A\).  On each tree component of
+\(K\), the binary incidence map is injective and its image is exactly the
+even-cardinality vertex sets.  This proves both existence and uniqueness.
+\end{proof}
+
+Consequently, for a star packing \(T_0,T_1,T_2\), with
+\(K_i=K(T_i)\), the exact coordinate-two target is
+\[
+ \exists P\subseteq K_2\quad
+       (K_0\cap K_1)\symdiff P\text{ is Eulerian}.        \tag{6.17}
+\]
+The triple intersection is empty because \(K_i\subseteq T_i\) and no edge
+belongs to all three trees.  Thus the disjointness hypothesis in
+Lemma~\ref{lem:forest-completion} applies.  Unlike~(5.12), condition~(6.17)
+allows an entire cycle in the quotient by \(K_2\); it does not require
+each common edge to become a quotient loop.
+
+\begin{theorem}[exact nonroot triangle invariance]
+\label{thm:triangle-exact}
+Let \(G^\triangle\) be obtained from a cubic graph \(G\) by expanding a
+vertex \(z\) to a triangle, and let the star root \(r\) lie outside that
+triangle.  The star fibre at \(r\) contains a packing satisfying exact
+component parity in \(G^\triangle\) if and only if the corresponding
+contracted fibre contains one in \(G\).
+\end{theorem}
+
+\begin{proof}
+As in Theorem~\ref{thm:triangle-contraction}, each tree contains two
+triangle edges, contracts to a spanning tree, and preserves membership of
+every external edge in its odd kernel.
+
+Suppose first that~(6.17) holds upstairs.  Contract the Eulerian set
+\((K_0\cap K_1)\symdiff P\) and discard triangle loops.  Contraction
+preserves even degrees, and external odd-kernel membership is unchanged.
+The result is
+\[
+ (\bar K_0\cap\bar K_1)\symdiff\bar P,
+ \qquad \bar P\subseteq\bar K_2,
+\]
+so exact parity holds downstairs.
+
+For the converse, fix a downstairs witness
+\(\bar P\subseteq\bar K_2\).  Name the expanded vertices \(a,b,c\).
+Let \(b_i\subseteq\{a,b,c\}\) record which external edges at the contracted
+vertex belong to \(\bar K_i\), and let \(p\subseteq b_2\) record the
+external trace of \(\bar P\).  The local data obey
+\[
+ |b_i|\equiv1\pmod2,\qquad
+ b_0\cap b_1\cap b_2=\varnothing,\qquad
+ |(b_0\cap b_1)\symdiff p|\equiv0\pmod2.                 \tag{6.18}
+\]
+The first condition is odd degree in \(\bar K_i\), the second follows
+from the tree multiplicities, and the third is Eulerian parity of the
+downstairs witness at \(z\).
+
+A legal lift chooses omitted triangle edges
+\((o_0,o_1,o_2)\) as a permutation of \(ab,bc,ca\).  Let \(x_i\) be the
+triangle-edge part of the lifted \(K_i\).  It is the unique subset of the
+two included triangle edges with
+\[
+ \partial x_i=\{a,b,c\}\symdiff b_i.                    \tag{6.19}
+\]
+Put \(z_{\rm ext}=(b_0\cap b_1)\symdiff p\) and
+\(q=x_0\cap x_1\).  It is enough to find \(y\subseteq x_2\) such that
+\[
+ \partial y=z_{\rm ext}\symdiff\partial q,              \tag{6.20}
+\]
+because then \(P=\bar P\cup y\) witnesses~(6.17) upstairs.
+
+There are only seven cases up to permuting \(a,b,c\) and swapping
+coordinates zero and one.  In the following table, \(+\) denotes symmetric
+difference.  Each displayed \(x_i\) is obtained from~(6.19), and direct
+substitution verifies~(6.20).
+\[
+\begin{array}{c|c|c|c|c}
+(b_0,b_1,b_2)&p&(o_0,o_1,o_2)&(x_0,x_1,x_2)&y\\ \hline
+(a,a,b)&b&(ab,bc,ca)&(bc,ab{+}ca,ab{+}bc)&ab\\
+(a,b,a)&0&(ab,bc,ca)&(bc,ca,bc)&0\\
+(a,b,c)&0&(ab,bc,ca)&(bc,ca,ab)&0\\
+(a,b,abc)&0&(ab,bc,ca)&(bc,ca,0)&0\\
+(a,b,abc)&a{+}b&(bc,ca,ab)&(ab{+}ca,ab{+}bc,0)&0\\
+(a,b,abc)&a{+}c&(bc,ab,ca)&(ab{+}ca,ca,0)&0\\
+(a,abc,b)&b&(ab,bc,ca)&(bc,0,ab{+}bc)&ab
+\end{array}                                             \tag{6.21}
+\]
+For completeness, conditions~(6.18) admit \(60\) labelled quadruples.
+The seven displayed orbits have sizes
+\[
+                     6,12,6,6,6,12,12,
+\]
+whose sum is \(60\).  Hence the table covers every local trace and proves
+that some legal lift preserves exact parity.
+\end{proof}
+
+This proof is finite but human-checkable: the three equations
+(6.18)--(6.20), the seven rows, and the orbit-size sum are the entire local
+argument.  An independent standard-library checker enumerates all \(60\)
+traces and confirms seven orbits with no failed lift.  The numbers of
+traces having one, two, three, or four good lifts are respectively
+\(18,12,6,24\).  The human note and checker have SHA-256, respectively,
+\[
+\begin{split}
+&\texttt{96259e65072b5a8c03f572e028a650f6e075f787c66e7e59917630c2b22c1008},\\
+&\texttt{e3026b8acdf95555fad33a5a2871174b497a154151f5e0f4fde642d31053bbe7}.
+\end{split}
+\]
+
+For the simple-graph reduction, a small caveat must be closed.  In a simple
+3-edge-connected cubic graph other than \(K_4\), the three vertices of a
+triangle have distinct external neighbours.  If exactly two shared an
+external neighbour, the triangle together with that neighbour would expose
+a cut of size two; if all three shared it, the connected cubic graph would
+be \(K_4\).  Triangle contraction therefore remains simple.  It remains
+3-edge-connected because any cut of size at most two downstairs lifts by
+placing the whole triangle on the contracted vertex's shore.  The \(K_4\)
+star fibres are checked directly.
+
+It follows that every triangle in a prescribed-root minimal simple
+3-edge-connected obstruction to the exact star-fibre statement must contain
+the root.  For the unrooted existence problem, one may choose a root outside
+a triangle and contract it.  This does not handle a preassigned root inside
+the triangle and does not prove the triangle-free case.  Most importantly,
+Theorem~\ref{thm:triangle-exact} shows that the certified 16-vertex closure
+countermodel and its infinite expansion family are not obstructions to the
+exact target: closure descends but can fail to lift, whereas exact parity
+both descends and lifts.
+
 \section{A certified obstruction to direction thinning}
 
 A much broader sufficient rule would try to choose a star-fibre state in
@@ -1414,6 +1589,75 @@ JSON has SHA-256
 \]
 This is an exact result for one rooted fibre, not a full order-16 census.
 
+The exchange potential also admits a human update law.  For a component
+\(Q\) of \(E_h\), flow conservation implies that the four colour-class
+parities on \(\delta(Q)\), for the four values in \(h^{-1}(1)\), are equal.
+Their common value is the defect bit \(\beta_h(Q)\); in particular every
+\(d_h\) is even.  Under a reciprocal exchange between coordinates \(i,j\),
+let \(Z_i,Z_j\) be the active fundamental cycles from~(5.7), with an
+inactive cycle interpreted as empty.  For every \(f\ne0\), put
+\[
+ Z_f=f(e_i)Z_i\symdiff f(e_j)Z_j.
+\]
+Then the complete zero-subgraph update is
+\[
+                         E_f'=E_f\symdiff Z_f.           \tag{8.3}
+\]
+Choose \(g,\ell\) so that \((g,\ell,h)\) is a basis of the dual space.
+The new defect on every component \(Q'\) of \(E_h\symdiff Z_h\) is
+\[
+ \beta_h'(Q')
+ =|\delta(Q')\cap(E_g\symdiff Z_g)
+                    \cap(E_\ell\symdiff Z_\ell)|\pmod2. \tag{8.4}
+\]
+When \(Z_h=\varnothing\), the component partition is fixed.  Expanding
+the intersection gives
+\begin{equation}
+\begin{aligned}
+ R={}&(Z_g\cap E_\ell)\symdiff(E_g\cap Z_\ell)
+                         \symdiff(Z_g\cap Z_\ell),\\
+ \beta_h'={}&\beta_h+\partial_hR,\\
+ d_h'-d_h={}&|\partial_hR|
+ -2|\supp(\partial_hR)\cap\supp(\beta_h)|.
+\end{aligned}
+\tag{8.5}
+\end{equation}
+Equations~(8.3)--(8.5) are identities, but do not force a favourable
+exchange.
+
+Indeed, in the same order-16 fibre, the state with omitted-class masks
+\[
+                         (857601,1059160,180390)
+\]
+has profile \((4,4,4,2,4,6,4)\).  Of 147 candidate reciprocal swaps, 23
+are legal; 18 remain at \(d_{\min}=2\) and five rise to four.  None
+descends.  A kernel-inert same-level exchange followed by an active
+exchange reaches profile \((2,2,2,2,4,6,0)\).
+
+The natural fixed-kernel exposure repair is also false.  The state
+\[
+                         (1722528,307976,66647)
+\]
+has profile \((4,4,4,4,6,2,2)\).  Again 23 of 147 swaps are legal and
+all remain at score two, but none preserves the ordered kernel triple.
+Its fixed-kernel realization component is therefore a singleton.  An
+active same-level exchange changes the masks to
+\((1722504,308000,66647)\), after which a second exchange reaches
+\((1595528,434976,66647)\) with profile \((6,4,4,4,4,4,0)\).
+A standard-library checker reconstructs the graph, trees, kernels, all
+seven defects, both complete incident neighbourhoods, and both two-step
+paths.  Thus only the full same-level-component statement in
+Theorem~\ref{thm:fano-descent} survives these local simplifications.
+
+Nonroot triangle expansion also does not turn the finite theorem into an
+induction.  The expanded fibre graph is the Cartesian product of the
+contracted fibre graph and the transposition Cayley graph of \(S_3\), but
+the six lifted scores need not agree.  One contracted good state has four
+good lifts and two lifts of score two.  As a bounded control, all thirteen
+nonroot triangle expansions of the 14-vertex fixed-coordinate example were
+enumerated exactly: \(17{,}297{,}280\) states, maximum score four, and no
+trapped positive same-level component.
+
 For each tested state, Theorem~\ref{thm:fano-descent} also gives a
 nonincreasing path to level zero.  Follow equal-level exchanges to the
 marked boundary of the current component, take one descending exchange,
@@ -1484,6 +1728,14 @@ plane.  Proposition~\ref{prop:fibre} allows navigation throughout the
 fixed fibre.  What is missing is a proof that one state satisfies the
 nonlinear quotient-boundary condition.
 
+Theorem~\ref{thm:triangle-exact} supplies a genuine reduction for this
+missing statement: outside the prescribed root, triangles may be contracted
+without changing whether the fibre has a good state.  Thus a
+prescribed-root minimal simple 3-edge-connected obstruction has no triangle
+avoiding the root, and an unrooted minimal obstruction may be taken
+triangle-free.  This reduction does not select the three cographic bases;
+it only removes one local configuration while preserving the exact target.
+
 The parity-element and cographic-base forms expose additional structure,
 but Theorem~\ref{thm:star-closure-nogo} shows that their most direct
 graphic-closure strengthening is still too strong.  The surviving
@@ -1518,10 +1770,16 @@ The evidence and no-go results sharply delimit plausible approaches:
       smaller Proposition~\ref{prop:closure-nogo} shows the same failure
       for a generic type-A fibre, and
       Theorem~\ref{thm:triangle-contraction} gives an infinite rooted
-      family of star failures.
-\item The exact exchange update~(5.7) is bilinear.  A successful universal
-      descent argument must exploit the minimum over all seven planes and
-      must control neutral plateaus and paired component defects.
+      family of star failures.  Those closure failures do not survive as
+      exact obstructions: Theorem~\ref{thm:triangle-exact} proves that
+      exact component parity lifts as well as descends.
+\item One cannot require an immediately descending reciprocal exchange:
+      the first order-16 state above has none.
+\item One cannot repair immediate descent by moving only among realizations
+      of one fixed odd-kernel triple: the second order-16 state has no such
+      neighbour.  A successful universal descent argument must exploit the
+      full same-level component, including active neutral exchanges, and
+      must control the simultaneous topology changes in~(8.3).
 \end{enumerate}
 
 The current computations support Problem~\ref{prob:kernel}, but they do not
@@ -1553,7 +1811,7 @@ human + formal\\
 Component criterion &
 \path{scratch/jaeger-support5-component-criterion.md};
 \path{scratch/verify_jaeger_support5_component_criterion.py} &
-human + exhaustive\\
+human + exhaustive; cf.\ \cite{HusekSamal2026}\\
 \addlinespace
 Odd-kernel identities and Petersen no-go &
 \path{scratch/jaeger-k-forest-star-parity-identities.md};
@@ -1591,6 +1849,19 @@ Targeted order-16 symmetric descent &
 {\footnotesize\texttt{descent\_order16\_closure\_no\_go.py}} &
 whole-state + local replay\\
 \addlinespace
+Seven-plane exchange law and two local no-gos &
+{\footnotesize\path{scratch/jaeger-fano-reciprocal-exchange-law.md}};
+{\footnotesize\texttt{scratch/verify\_jaeger\_fano\_min\_}}\par
+{\footnotesize\texttt{immediate\_descent\_countermodel.py}} &
+human + literal exhaustive\\
+\addlinespace
+Triangle-expanded descent controls &
+{\footnotesize\texttt{output/jaeger-fano-min-descent-}}\par
+{\footnotesize\texttt{triangle-expansions-16v/}};
+{\footnotesize\texttt{scratch/verify\_jaeger\_triangle\_}}\par
+{\footnotesize\texttt{expanded\_fixedtrap\_descent.py}} &
+whole-state + coverage\\
+\addlinespace
 Generic type-A closure no-go &
 \path{scratch/verify_jaeger_kernel_closure_typea_countermodel.py} &
 independent exhaustive\\
@@ -1607,6 +1878,13 @@ Triangle-expansion closure family &
 {\footnotesize\texttt{scratch/verify\_jaeger\_star\_kernel\_}}\par
 {\footnotesize\texttt{closure\_triangle\_expansion.py}} &
 human + literal replay\\
+\addlinespace
+Exact triangle invariance &
+{\footnotesize\texttt{scratch/jaeger-star-exact-parity-}}\par
+{\footnotesize\texttt{triangle-invariance.md}};
+{\footnotesize\texttt{scratch/verify\_jaeger\_star\_exact\_}}\par
+{\footnotesize\texttt{parity\_triangle\_lift.py}} &
+human + exhaustive\\
 \addlinespace
 34-vertex thinning no-go &
 \path{output/jaeger-star-thinning-countermodel-34v/star-thin-any.cnf}
@@ -1651,7 +1929,9 @@ closure no-go on the generic 12-vertex fibre is exhaustively replayed by a
 standard-library checker but has no proof trace; the 16-vertex vertex-star
 no-go has a complete CNF and an LRAT accepted by both certificate checkers.
 The infinite closure family then follows from the human
-triangle-contraction proof, not from extrapolating the finite census.
+triangle-contraction proof, not from extrapolating the finite census.  The
+exact triangle-invariance theorem is a separate human reduction whose
+seven-row local table is exhaustively replayed by its checker.
 
 \section{AI-use disclosure and authorship}
 
@@ -1662,7 +1942,8 @@ Atharva Vaidya's direction.  The agents:
       predicates;
 \item proposed the fixed-fibre, component-parity, odd-kernel,
       parity-element, cographic-base, exchange, symmetric-descent, and
-      perfect-forest formulations;
+      perfect-forest formulations, and the exact triangle-lifting
+      reduction;
 \item wrote most of the search, certificate-generation, and verification
       code;
 \item found the finite countermodels and positive witnesses;
@@ -1682,9 +1963,12 @@ for any public version rests with the human author.
 \section*{Acknowledgements}
 
 This draft uses primary results of Jaeger, Nash-Williams, Tutte, Blasiak,
-Scott, Gutin, and Oum.  Their cited theorems are human mathematical work.
-The computational project is intended to make its own trust boundary
-visible, not to substitute automated output for peer review.
+Scott, Gutin, and Oum.  Hu\v{s}ek and \v{S}\'amal independently obtained
+the exact flow-level component-parity characterization; their
+Theorem~3.16 and Conjecture~3.19 corrected this draft's prior-art boundary
+before circulation.  All cited theorems are human mathematical work.  The
+computational project is intended to make its own trust boundary visible,
+not to substitute automated output for peer review.
 
 \bibliographystyle{plain}
 \bibliography{references}

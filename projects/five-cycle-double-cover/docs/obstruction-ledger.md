@@ -1183,3 +1183,58 @@ countermodel's three disjoint triangles contract to Petersen and form one
 alternating class of the bad root's distance-two 6-cycle.  See
 `scratch/jaeger-star-kernel-closure-countermodel-16v.md` and
 `scratch/jaeger-star-kernel-closure-triangle-expansion.md`.
+
+## O48 — Force symmetric descent in one reciprocal exchange
+
+Status: **FAILED APPROACH / EXACT HUMAN-CHECKABLE COUNTERMODEL**.
+
+On graph6 `O??CA?_ceOGgH_F?AK@P?`, root 13, the explicit star-fibre
+state with omitted masks `857601,1059160,180390` has exact profile
+\((4,4,4,2,4,6,4)\).  Exhausting all 147 candidate reciprocal swaps
+gives 23 legal neighbours, 18 still at \(d_{\min}=2\) and five at
+\(d_{\min}=4\); none descends.
+
+This is not a trap for the same-level-component theorem.  The
+kernel-inert exchange `(coordinates 0,1; edge IDs 19,6)` leaves all
+three kernels and the full profile unchanged.  It exposes the exchange
+`(coordinates 0,2; edge IDs 22,7)`, which then reaches profile
+\((2,2,2,2,4,6,0)\).  Thus the exact obstruction is to immediate
+averaging; a valid proof must use neutral realization changes.  See
+`scratch/jaeger-fano-min-immediate-descent-countermodel.md`.
+
+## O49 — Deduce descent invariance from triangle contraction alone
+
+Status: **FAILED APPROACH / HUMAN PRODUCT THEOREM AND EXACT SCORE
+COUNTEREXAMPLE**.
+
+Nonroot triangle expansion gives an exact Cartesian product of the
+star-fibre exchange graph with the transposition Cayley graph of \(S_3\).
+However the defect score is not pulled back from the contracted factor.
+For one contracted state with profile \((2,4,2,2,0,6,2)\), the six
+omitted-triangle assignments have four profiles with \(d_{\min}=0\) and
+two with \(d_{\min}=2\).  Therefore the exchange-graph product and
+preservation of external odd-kernel membership do not prove descent
+invariance.  See
+`scratch/jaeger-triangle-expansion-descent-structure.md`.
+
+## O50 — Expose descent while keeping the odd-kernel triple fixed
+
+Status: **FAILED APPROACH / EXACT HUMAN-CHECKABLE COUNTERMODEL**.
+
+On graph6 `O??CA?_ceOGgH_F?AK@P?`, root 13, the state with omitted
+masks `1722528,307976,66647` has exact profile
+\((4,4,4,4,6,2,2)\).  All 147 incident reciprocal swaps are tested.
+Exactly 23 are legal; every one remains at \(d_{\min}=2\), and none
+preserves the ordered triple of odd kernels.  Hence the state's
+fixed-kernel realization component is a singleton and cannot expose a
+descending exchange.
+
+The full same-level route still escapes in two steps.  The first,
+necessarily active, exchange changes the masks to
+`1722504,308000,66647` and the profile to
+\((4,2,2,4,6,2,2)\).  A second exchange reaches masks
+`1595528,434976,66647` and profile \((6,4,4,4,4,4,0)\).
+Thus a prospective proof must permit active same-level exchanges, not
+only neutral re-realizations of one kernel triple.  See
+`scratch/jaeger-fano-min-immediate-descent-countermodel.md` and its
+independent checker.

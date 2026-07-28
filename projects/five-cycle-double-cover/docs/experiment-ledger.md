@@ -3036,6 +3036,26 @@ theorem proves that closure failure is preserved by expanding any
 nonroot vertex into a triangle, giving an infinite countermodel family.
 See `scratch/jaeger-star-kernel-closure-triangle-expansion.md`.
 
+For the surviving exact condition, the same local lift problem has the
+opposite answer.  There are 60 admissible triples of odd-kernel traces
+together with an Eulerian-completion trace.  They form seven orbits under
+triangle-vertex permutations and exchange of the two common-kernel
+coordinates.  Every orbit has at least one exact-parity-preserving legal
+lift:
+
+```text
+good legal lifts per trace  traces
+1                           18
+2                           12
+3                            6
+4                           24
+```
+
+This is a complete local theorem, not a random test.  The human proof and
+independent exhaustive table are in
+`scratch/jaeger-star-exact-parity-triangle-invariance.md` and
+`scratch/verify_jaeger_star_exact_parity_triangle_lift.py`.
+
 ## Targeted symmetric descent on the order-16 closure countermodel
 
 Audit date: **2026-07-28**.
@@ -3063,3 +3083,48 @@ The machine-readable row and digest manifest are in
 targeted exact fibre result only.  The C++ whole-state enumeration is not
 duplicated in the independent Python checker, and no complete order-16
 descent census or universal theorem is claimed.
+
+## Immediate-descent no-go and triangle-expansion audit
+
+Audit date: **2026-07-28**.
+
+The exact positive order-16 state in
+`jaeger-fano-min-immediate-descent-countermodel.md` has 147 candidate
+swaps and 23 legal neighbours:
+
+```text
+neighbour d_min       2   4
+count                18   5
+```
+
+There is no immediate descent from its value two.  One kernel-inert
+neutral move followed by one active move reaches zero.  This is an exact
+countermodel to one-step averaging only.
+
+A second exact state in the same fibre, with omitted masks
+`1722528,307976,66647` and profile \((4,4,4,4,6,2,2)\), has 23 legal
+neighbours, all at \(d_{\min}=2\), and zero kernel-inert neighbours.
+Its fixed-kernel realization component is therefore a singleton.  An
+active same-level exchange followed by one further exchange reaches
+profile \((6,4,4,4,4,4,0)\).  This refutes fixed-kernel exposure but
+still does not refute the full same-level-component theorem.  The same
+independent Python checker exhausts both incident neighbourhoods and
+replays both two-step paths.
+
+The thirteen labelled graphs obtained by expanding one nonroot vertex
+of graph6 `M?AA@BORDGEOEOAo?` were then checked completely at root zero:
+
+```text
+triangle-expanded fibres                         13
+states per fibre                          1,330,560
+total exact states                       17,297,280
+maximum d_min                                      4
+trapped positive same-level components             0
+```
+
+The census SHA-256 is
+`501cc9db6987bc2b458abbf5f82bbcd37ccda74aff9817e91c36a9f6c49d80d3`.
+The coverage verifier independently regenerates all thirteen
+expansions, checks simplicity, cubicity and 3-edge-connectivity, and
+audits rows, totals and hashes.  The 17,297,280-state enumeration itself
+remains in the C++ trust boundary.

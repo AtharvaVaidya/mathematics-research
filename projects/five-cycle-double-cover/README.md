@@ -25,9 +25,15 @@ a nowhere-zero \(\mathbb F_2^3\)-flow.  In a vertex-star multiplicity
 fibre, let \(K_i\) be the unique all-vertices-odd forest contained in the
 spanning tree \(T_i\).  The canonical five-point lift exists exactly when
 \(K_1\cap K_2\) has even boundary on every component of \(K_3\).  The
-identity and its component-parity proof are in
+identity and a self-contained component-parity proof are in
 `scratch/jaeger-k-forest-star-parity-identities.md` and
-`scratch/jaeger-support5-component-criterion.md`.  Every one of 804,204
+`scratch/jaeger-support5-component-criterion.md`.  Hušek and Šámal,
+arXiv:2607.24724v1, independently give the equivalent flow-level
+characterization in their Theorem 3.16 and retain the flow-selection step
+as Conjecture 3.19; this project claims no priority for that criterion.
+The exact star target is invariant under contracting or lifting a triangle
+away from the root, by the seven-row human proof in
+`scratch/jaeger-star-exact-parity-triangle-invariance.md`.  Every one of 804,204
 feasible Type A/B fibres through order 14 passes, as do all 26,790 retained
 order-38 and all 1,364 retained order-44 star fibres.  The order-44 package
 contains literal witnesses checked by an independently written semantic
@@ -390,5 +396,20 @@ a vertex-star fibre: a dual-certified 16-vertex example has zero
 closure-good packings among 5,723,136, but 40,464 exact parity-good
 packings.  A human triangle-contraction theorem extends that auxiliary
 failure to an infinite rooted family.  The exact parity selection lemma and
-the universal symmetric-descent theorem remain open, so the standard
-Five-Cycle Double Cover Conjecture is not resolved.
+the universal symmetric-descent theorem remain open.  The seven-plane
+defect now has a self-contained exact exchange law, but immediate descent
+is false: a positive 16-vertex state has no descending neighbour, while a
+kernel-inert neutral exchange exposes a descent on the following move.
+The natural fixed-kernel exposure repair is also false: a second exact
+state has no kernel-inert neighbour and first needs an active same-level
+exchange.
+Nonroot triangle expansion gives an exact Cartesian product of fibre
+exchange graphs, but an explicit six-lift table shows that the defect score
+is not contraction-invariant.  Thirteen such expanded fibres, containing
+17,297,280 states, pass exact descent checks.  The remaining sharp
+obligation is the full same-level-component boundary theorem;
+consequently the standard Five-Cycle Double Cover Conjecture is not
+resolved.  See
+`scratch/jaeger-fano-reciprocal-exchange-law.md`,
+`scratch/jaeger-fano-min-immediate-descent-countermodel.md`, and
+`scratch/jaeger-triangle-expansion-descent-structure.md`.

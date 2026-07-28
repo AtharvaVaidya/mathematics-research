@@ -12,7 +12,14 @@
 //     /opt/homebrew/lib/libcadical.a -o /tmp/search_symmetric_local_traps
 //
 // Usage:
-//   search_symmetric_local_traps [steps-per-root] [seed] < graph6-stream
+//   search_symmetric_local_traps [steps-per-root] [seed] [root]
+//       [level|kernel] < graph6-stream
+//
+// Omit root (or pass -1) to inspect every root.  A fixed root is useful for
+// broad randomized scans of large canonical snark collections.  The default
+// `level` replay follows every same-d_min exchange.  The stronger `kernel`
+// replay follows only exchanges preserving all three odd kernels and asks
+// whether that neutral realization component exposes a descending exchange.
 
 #define JAEGER_FIXED_FIBRE_NO_MAIN
 #include "search_jaeger_fixed_fibre_sat.cpp"
@@ -226,7 +233,18 @@ RootModel feasible_root_model(const Graph& graph, int root) {
   if (solver.solve(encoding, multiplicity) != 10) {
     throw std::runtime_error("vertex-star fibre is infeasible");
   }
-  const auto tree32 = extract_trees(encoding, solver);
+  // The fixed-fibre source predates this randomized frontier and exposes a
+  // 32-bit convenience extractor.  Reconstruct the SAT model directly here
+  // so that the local search remains exact for every cubic graph with at
+  // most 42 vertices (and hence at most 63 edges).
+  std::array<WideMask, 3> tree_model{};
+  for (int edge = 0; edge < graph.m(); ++edge) {
+    for (int coordinate = 0; coordinate < 3; ++coordinate) {
+      if (solver.solver.val(encoding.tree[edge][coordinate]) > 0) {
+        tree_model[coordinate] |= WideMask{1} << edge;
+      }
+    }
+  }
   RootModel model;
   for (int edge = 0; edge < graph.m(); ++edge) {
     if (multiplicity[edge] == 2) model.internal.push_back(edge);
@@ -236,7 +254,7 @@ RootModel feasible_root_model(const Graph& graph, int root) {
   for (int coordinate = 0; coordinate < 3; ++coordinate) {
     int spoke = -1;
     for (const int edge : graph.incidence[root]) {
-      if ((tree32[coordinate] >> edge) & 1U) {
+      if ((tree_model[coordinate] >> edge) & 1ULL) {
         if (spoke >= 0) throw std::runtime_error("two spokes in one tree");
         spoke = edge;
       }
@@ -244,7 +262,7 @@ RootModel feasible_root_model(const Graph& graph, int root) {
     if (spoke < 0) throw std::runtime_error("tree has no spoke");
     model.spoke[coordinate] = spoke;
     for (int local = 0; local < internal_count; ++local) {
-      if (!((tree32[coordinate] >> model.internal[local]) & 1U)) {
+      if (!((tree_model[coordinate] >> model.internal[local]) & 1ULL)) {
         model.initial.omitted[coordinate] |= 1ULL << local;
       }
     }
@@ -282,6 +300,19 @@ std::array<int, 7> profile_of(
     kernels[coordinate] = odd_kernel_wide(graph, trees[coordinate]);
   }
   return exact_profile(graph, kernels);
+}
+
+std::array<WideMask, 3> kernels_of(
+    const Graph& graph, const RootModel& model, const StarState& state) {
+  const auto trees = trees_of(model, state);
+  std::array<WideMask, 3> kernels{};
+  for (int coordinate = 0; coordinate < 3; ++coordinate) {
+    if (!is_tree_wide(graph, trees[coordinate])) {
+      throw std::runtime_error("invalid state tree");
+    }
+    kernels[coordinate] = odd_kernel_wide(graph, trees[coordinate]);
+  }
+  return kernels;
 }
 
 std::vector<StarState> neighbours(
@@ -322,12 +353,27 @@ void print_profile(const std::array<int, 7>& profile) {
   std::cout << ']';
 }
 
+std::string json_escape(const std::string& text) {
+  std::string answer;
+  answer.reserve(text.size() + 4);
+  for (const char character : text) {
+    if (character == '\\' || character == '"') answer.push_back('\\');
+    answer.push_back(character);
+  }
+  return answer;
+}
+
 }  // namespace
 
 int main(int argc, char** argv) {
   const int steps = argc >= 2 ? std::atoi(argv[1]) : 10000;
   const std::uint64_t seed =
       argc >= 3 ? std::strtoull(argv[2], nullptr, 10) : 1;
+  const int requested_root = argc >= 4 ? std::atoi(argv[3]) : -1;
+  const std::string replay_mode = argc >= 5 ? argv[4] : "level";
+  if (replay_mode != "level" && replay_mode != "kernel") {
+    throw std::runtime_error("replay mode must be level or kernel");
+  }
   std::mt19937_64 random(seed);
   std::string graph6;
   int graph_index = 0;
@@ -336,11 +382,16 @@ int main(int argc, char** argv) {
     if (graph6.empty()) continue;
     const Graph graph = parse_graph6_local(graph6);
     if (!is_cubic_connected(graph) || !is_bridgeless(graph) ||
-        graph.m() > 32) {
+        graph.m() > 63) {
       ++graph_index;
       continue;
     }
-    for (int root = 0; root < graph.n; ++root) {
+    const int first_root = requested_root < 0 ? 0 : requested_root;
+    const int last_root = requested_root < 0 ? graph.n : requested_root + 1;
+    if (first_root < 0 || last_root > graph.n) {
+      throw std::runtime_error("requested root is outside the graph");
+    }
+    for (int root = first_root; root < last_root; ++root) {
       RootModel model = feasible_root_model(graph, root);
       StarState state = model.initial;
       std::unordered_set<StarState, StarStateHash> seen;
@@ -375,7 +426,7 @@ int main(int argc, char** argv) {
           if (score > 0 && lower == 0 && equal == 0) {
             std::cout << "{\"status\":\"STRICT_TRAP\","
                       << "\"graph_index\":" << graph_index << ','
-                      << "\"graph6\":\"" << graph6 << "\","
+                      << "\"graph6\":\"" << json_escape(graph6) << "\","
                       << "\"root\":" << root << ','
                       << "\"step\":" << step << ','
                       << "\"score\":" << score << ','
@@ -393,6 +444,10 @@ int main(int argc, char** argv) {
               !escaped_plateau_states.contains(state)) {
             ++plateau_replays;
             constexpr std::size_t plateau_limit = 100000;
+            const auto initial_kernels =
+                replay_mode == "kernel"
+                    ? kernels_of(graph, model, state)
+                    : std::array<WideMask, 3>{};
             std::unordered_set<StarState, StarStateHash> plateau_seen;
             std::deque<std::pair<StarState, int>> queue;
             plateau_seen.insert(state);
@@ -413,7 +468,12 @@ int main(int argc, char** argv) {
                   escape_distance = distance + 1;
                   break;
                 }
-                if (neighbour_score == score &&
+                const bool replay_neighbour =
+                    replay_mode == "level"
+                        ? neighbour_score == score
+                        : kernels_of(graph, model, neighbour) ==
+                              initial_kernels;
+                if (replay_neighbour &&
                     plateau_seen.insert(neighbour).second) {
                   queue.emplace_back(neighbour, distance + 1);
                   if (plateau_seen.size() > plateau_limit) {
@@ -425,9 +485,13 @@ int main(int argc, char** argv) {
               if (truncated) break;
             }
             if (!escaped && !truncated) {
-              std::cout << "{\"status\":\"PLATEAU_TRAP\","
+              std::cout << "{\"status\":\""
+                        << (replay_mode == "level"
+                                ? "PLATEAU_TRAP"
+                                : "KERNEL_EXPOSURE_TRAP")
+                        << "\","
                         << "\"graph_index\":" << graph_index << ','
-                        << "\"graph6\":\"" << graph6 << "\","
+                        << "\"graph6\":\"" << json_escape(graph6) << "\","
                         << "\"root\":" << root << ','
                         << "\"step\":" << step << ','
                         << "\"score\":" << score << ','
@@ -478,8 +542,9 @@ int main(int argc, char** argv) {
       }
       std::cout << "{\"status\":\"ROOT_DONE\","
                 << "\"graph_index\":" << graph_index << ','
-                << "\"graph6\":\"" << graph6 << "\","
+                << "\"graph6\":\"" << json_escape(graph6) << "\","
                 << "\"root\":" << root << ','
+                << "\"replay_mode\":\"" << replay_mode << "\","
                 << "\"steps\":" << steps << ','
                 << "\"distinct_states\":" << seen.size() << ','
                 << "\"positive_sampled\":" << positive_sampled << ','

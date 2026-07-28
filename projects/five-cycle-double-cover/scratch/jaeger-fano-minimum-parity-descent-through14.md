@@ -252,6 +252,35 @@ There is no sound reduction saying that a minimal failure must have at
 most 14 vertices, and the census covers simple graphs only.  Therefore
 this result must not be cited as a proof of FiveCDC.
 
+## 7. Exact exchange law and the sharpened open step
+
+The subsequent human calculation in
+`jaeger-fano-reciprocal-exchange-law.md` gives the complete update of all
+seven component vectors under one reciprocal exchange.  When a plane
+quotient stays fixed, its defect vector is toggled by an explicit
+quotient boundary, and the integer score change is an exact Hamming
+overlap formula.
+
+This does not force immediate descent.  The order-16 state frozen in
+`jaeger-fano-min-immediate-descent-countermodel.md` has positive
+\(d_{\min}=2\) and no descending neighbour among all 147 candidate
+swaps.  One kernel-inert neutral exchange preserves its complete flow
+but changes the available fundamental cycles, after which a second
+exchange reaches zero.  A second frozen state refutes the resulting
+fixed-kernel exposure proposal: it has no kernel-inert neighbour, and
+requires an active same-level exchange before its descent.  Thus the
+sharp surviving route is the full same-level-component theorem itself,
+not one-exchange averaging or augmentation confined to a fixed kernel
+triple.
+
+Nonroot triangle expansion also fails to give a formal induction for
+free.  Its fibre exchange graph is an exact Cartesian product with a
+six-state \(S_3\) factor, but the six lifted defect profiles need not
+equal the contracted profile.  All thirteen triangle expansions of the
+14-vertex fixed-coordinate graph nevertheless pass a complete
+17,297,280-state check; see
+`jaeger-triangle-expansion-descent-structure.md`.
+
 ## AI-use disclosure
 
 OpenAI Codex, under human direction, formulated the symmetric potential,

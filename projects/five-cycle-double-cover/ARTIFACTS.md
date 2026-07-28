@@ -6,12 +6,16 @@ copied into a separate clean clone; it was not modified or committed.
 
 ## Included
 
-- The 25-page, explicitly AI-disclosed working preprint
+- The 29-page, explicitly AI-disclosed working preprint
   `preprint-jaeger-fivecdc-frontier/`, with LaTeX source, rendered PDF,
   references, human-review gate, validation record, and checksum manifest.
   It presents the fixed-fibre feasibility theorem, exact five-point
   component criterion, odd-kernel identities, and carefully scoped
-  computational results without claiming a FiveCDC resolution.
+  computational results without claiming a FiveCDC resolution.  The
+  revised version corrects priority to Hušek--Šámal, proves exact nonroot
+  triangle invariance, derives the simultaneous seven-plane exchange law,
+  and records certified no-gos to immediate descent and fixed-kernel
+  exposure.
 - The Jaeger fixed-fibre reproducibility package: complete Type A/B
   support-five and support-six census streams through order 14; literal
   fixed-coordinate witnesses for 31 order-44 graphs and all 1,364 roots;
@@ -21,7 +25,10 @@ copied into a separate clean clone; it was not modified or committed.
   census over every root orbit of every simple 3-edge-connected cubic graph
   through order 14, with zero trapped positive-level components, plus a
   separate coverage/integrity verifier.  The state enumeration itself is
-  not independently duplicated.
+  not independently duplicated.  Thirteen triangle-expanded order-16
+  fibres add 17,297,280 exact states.  Standalone checkers replay the
+  all-seven exchange formulas and the two distinct two-step descent
+  mechanisms.
 - The parity-element/kernel-closure package: a human linear-algebra and
   cographic-base reformulation; exact positive star-fibre frontiers through
   order 14; an independently exhausted generic Type-A countermodel; and a

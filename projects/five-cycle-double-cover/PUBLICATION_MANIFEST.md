@@ -47,7 +47,7 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
 
 ## Jaeger fixed-fibre and five-point lifting update (2026-07-28)
 
-- `preprint-jaeger-fivecdc-frontier/` is a 25-page working preprint with
+- `preprint-jaeger-fivecdc-frontier/` is a 29-page working preprint with
   an explicit unresolved-status box, detailed AI-use disclosure,
   reproducibility table, human-review gate, and rendered PDF.
 - `scratch/jaeger-support5-component-criterion.md` proves the exact
@@ -57,6 +57,12 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
   fundamental completion of a cubic spanning tree is the complement of
   its unique all-vertices-odd forest, and translates five support to an
   Eulerian intersection after component contraction.
+- Hušek--Šámal, arXiv:2607.24724v1, Theorem 3.16 is now cited as the
+  independent source of the flow-level component criterion; the draft
+  explicitly withdraws priority for that characterization.
+- `scratch/jaeger-star-exact-parity-triangle-invariance.md` gives a
+  two-way human reduction for nonroot triangle expansion, with all 60
+  admissible traces reduced to seven checked symmetry orbits.
 - `scratch/jaeger-tree-choice-through14-and-exchange-no-go.md` proves
   prescribed Type A/B multiplicity feasibility by the
   Nash--Williams--Tutte partition inequality.
@@ -80,6 +86,16 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
   component.  The independent verifier audits graph and root coverage,
   totals, ordering, and hashes; it does not duplicate the whole-state
   enumeration.
+- `scratch/jaeger-fano-reciprocal-exchange-law.md` gives the exact
+  simultaneous update of all seven Fano-plane component defects.
+  `scratch/jaeger-fano-min-immediate-descent-countermodel.md` and its
+  standalone checker show that immediate descent and fixed-kernel
+  exposure both fail, while explicitly exhibiting two-step escapes.
+- `output/jaeger-fano-min-descent-triangle-expansions-16v/` retains the
+  exact thirteen-fibre control: 17,297,280 states, maximum
+  \(d_{\min}=4\), and no trapped positive same-level component.  Its
+  coverage verifier is standard-library only and does not duplicate the
+  C++ whole-state enumeration.
 - `scratch/jaeger-parity-element-and-kernel-closure-no-go.md` identifies
   odd kernels as fundamental circuits after adjoining one all-ones column
   and rewrites star packings as three cographic bases plus terminal joins.

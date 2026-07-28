@@ -1,6 +1,6 @@
 # Current-status audit
 
-Search date: **2026-07-26**.
+Search date: **2026-07-28**.
 
 ## Classification
 
@@ -19,6 +19,12 @@ Primary/current sources:
 - S.-i. Oum, *A proof of the cycle double cover conjecture by OpenAI: An
   exposition*, arXiv:2607.16356v2 (2026):
   <https://arxiv.org/abs/2607.16356>
+- R. Hušek and R. Šámal, *Exponentially Many Circuit Double Covers*,
+  arXiv:2607.24724v1 (submitted 2026-07-27):
+  <https://arxiv.org/abs/2607.24724>. Their Theorem 3.16 independently
+  gives the exact five-support component-parity characterization, their
+  Conjecture 3.19 is the equivalent remaining flow-selection problem, and
+  their introduction explicitly retains FiveCDC as open.
 - J. Geelen, *OpenAI's proof of the Cycle Double Cover Theorem*,
   arXiv:2607.15399 (2026): <https://arxiv.org/abs/2607.15399>
 - S. Liu, R.-X. Hao, R. Luo, and C.-Q. Zhang, *Five-cycle double cover and
