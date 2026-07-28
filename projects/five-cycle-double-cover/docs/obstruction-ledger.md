@@ -673,8 +673,8 @@ minimum-support hypotheses remains open.
 
 ## O32 — Local Kempe incidence inequalities at order 96
 
-Status: **REFUTED AS A COMPLETE CLOSURE METHOD / EXACT ABSTRACT
-NECESSARY-CONDITION COUNTERMODEL**.
+Status: **REFUTED FOR THE EARLIER INEQUALITY SET / LATER LOCAL
+CONSTRAINTS EXCLUDE THE ENTIRE ORDER-96 SYSTEM**.
 
 The \(8\)-by-\(8\) incidence matrix displayed in
 `docs/audit-and-generalization-order94-kempe.md` has the exact
@@ -685,6 +685,375 @@ shore.  The independent checker reports minimum slack one.
 
 No compatible cyclic orders, Tait core, girth-ten realization, universal
 separation, or five-CDC obstruction is asserted.  O32 refutes only the
-claim that the proved local incidence inequalities by themselves can
-push the connected size-four lower bound past 96.  New graph-realization,
-cyclic-order, multi-factor, or cut-interface information is required.
+claim that the earlier overlap and Kempe inequalities by themselves can
+push the connected size-four lower bound past 96.  The later sum-\(26\),
+diagonal-parity, and short-factor spacing lemmas do supply the missing
+information: the complete strengthened census has no order-96 matrix and
+raises this branch to order at least 98.
+
+## O33 — Order-98 incidence relaxation
+
+Status: **EXCLUDED BY A NEW LOCAL DIAGONAL CAP / COMPLETE THREE-WAY
+FINITE REPLAY**.
+
+The earlier order-96 constraints permit abstract all-marked order-98
+profile systems.  The missing local condition is that same-mark factor
+circuits whose excesses sum to two cannot have overlap three.  Such an
+overlap contracts to a positive weighting of either the triangular prism
+or \(K_{3,3}\) with total weight 22; the prism has two disjoint triangles
+and the \(K_{3,3}\) four-circuits average below ten, contradicting girth
+ten in either case.
+
+With this cap, the complete solver-free census has zero matrices on all
+335 simultaneous-\(S_8\) profile orbits.  Independent Z3 and HiGHS
+encodings agree, and a prune-free replay is empty.  Removing only the new
+cap restores exactly two profile survivors.  Thus O33 is eliminated at
+the incidence level and the connected size-four branch advances to order
+at least 100; no global five-CDC conclusion follows.
+
+## O34 — Order-100 row-star and global-rotation frontier
+
+Status: **EXCLUDED BY THREE PROFILE-LEVEL CNFS / LRAT AND SEMANTIC
+CLAUSE AUDITS**.
+
+At order 100, the human incidence argument excludes all unmarked factor
+circuits.  The all-marked cap-table relaxation retains 155 canonical
+profiles, and exact weighted row-and-column stars retain three profile
+alignments.  Those three profiles contain 5,528 labelled row-star
+matrices, or 827 orbits under their aligned stabilizers, so checking one
+matrix from each profile would not eliminate O34.
+
+The final encoding instead chooses the entire incidence matrix and its
+geometry inside each profile.  Its variables select every cell's cyclic
+positions, bijection, and endpoint twists; exact cover constraints glue
+all 46 common-colour tokens.  Short circuits generate sound negative
+option clauses.  The three final CNFs are UNSAT already before terminal
+pairing, and independent `lrat-check` runs accept all three LRATs.  A
+producer-free checker separately regenerates the finite domains and base
+formulas and confirms that all 996,904 learned clauses force concrete
+circuits of length below ten.
+
+Thus O34 is eliminated and the connected eight-mark extremal exact-zero
+size-four branch advances to order at least 102.  This remains a
+branch-specific obstruction ledger entry, not a resolution of five-CDC.
+
+## O35 — Pointwise exclusion of the two rooted coordinate cuts
+
+Status: **FAILED APPROACH**, refuted by a smallest retained order-seven
+control.
+
+For a rooted three-pole with boundary word \((01,02,12)\), a tempting
+strengthening of the complement-cycle argument was the following:
+whenever a nonbridge root has label \(12\) in one fixed \(D_5\)-labelling,
+it cannot simultaneously be a bridge after deleting the coordinate-\(3\)
+support and after deleting the coordinate-\(4\) support.  If true, one
+complement-cycle switch and the \(3\leftrightarrow4\) symmetry would have
+supplied the whole base pair \(\{12,03,04\}\).
+
+The claim already fails on graph6 `FCpv?`, with root edge \(0\).  An exact
+labelling and two explicit root-separating cuts witness both bridge
+conditions although the unlabelled root is not a bridge.  The complete root
+signature has orbit mask `0x2d`, which contains both base pairs `0x0c` and
+`0x21`; the pole is therefore repairable only after changing the labelling.
+The independently checked control is
+`scratch/root-double-coordinate-cut-order7-result.json`, its verifier is
+`scratch/verify_root_double_coordinate_cut.py`, and the general SAT
+falsifier is `scratch/test_root_double_coordinate_cut.cpp`.
+
+Thus the coordinate-cut certificates in
+`docs/rooted-base-pair-cycle-cut-certificate.md` cannot be contradicted
+pointwise.  A proof of universal base-pair closure must relate different
+labellings or use a genuinely multi-step reconfiguration.
+
+## O36 — Base-pair completion inside one cycle-reconfiguration component
+
+Status: **FAILED APPROACH**, refuted by the same smallest order-seven
+control.
+
+One might try to repair O35 by allowing an arbitrary sequence of legal
+constant translations on proper circuits while keeping the boundary word
+fixed.  This is still too restrictive.  The graph6 pole `FCpv?` has exactly
+55 fixed-boundary \(D_5\)-labellings.  Their exact circuit-reconfiguration
+graph has three components:
+
+```text
+component size   root labels on edge 0
+47               12, 03, 04
+ 2               01
+ 6               23, 24
+```
+
+Thus the base pair \(\{01,23,24\}\) exists in the full signature but is
+split between two reconfiguration components.  The two-labelling component
+with root \(01\) is closed under every legal single-circuit translation.
+Complete lower-order inputs at orders three and five contain no such
+control, so this is smallest in the retained simple rooted corpus.
+
+`scratch/test_root_reconfiguration_component.py` enumerates the affine
+\(\mathbb F_2^4\)-flow space and every circuit move.  The independently
+structured checker in `scratch/verify_root_double_coordinate_cut.py`
+reconstructs all 55 flows and the three component profiles from the raw
+graph and displayed labelling.
+
+Consequently recent ordinary nowhere-zero-flow reconfiguration machinery
+cannot be imported as a base-pair proof merely by restricting its moves to
+anisotropic flows.  A universal argument must compare distinct
+reconfiguration components, use a larger move, or bypass reconfiguration.
+
+## O37 — Standard low-arity polymorphism closure
+
+Status: **FAILED APPROACH**, excluded by independently checked LRAT
+certificates.
+
+The cubic \(D_5\) vertex rule is the ordered ternary relation
+\[
+ R(a,b,c)\quad\Longleftrightarrow\quad
+ a,b,c\in\binom{[5]}2,\qquad a+b+c=0.
+\]
+Equivalently, \(a,b,c\) are the three edges of a triangle in \(K_5\).
+Every boundary relation obtained by existentially gluing copies of this
+local relation must be preserved by its polymorphisms.  This suggested
+trying to exclude the published exceptional signatures with a standard
+binary, majority, minority, or cyclic closure operation.
+
+Deterministic finite searches instead prove that \(R\) has:
+
+```text
+no nonprojection idempotent binary polymorphism
+no ternary majority polymorphism
+no ternary minority polymorphism
+no idempotent cyclic ternary polymorphism
+```
+
+The four ordinary CNFs contain respectively 364,612; 4,336,400;
+4,336,400; and 4,344,950 clauses.  CaDiCaL produced LRAT certificates,
+and the separately built `lrat-check` accepts all four.  The generators,
+compressed proofs, replay, dimensions, and SHA-256 values are frozen in
+`search/d5-triangle-polymorphism-no-go-20260727/`.
+
+This does not classify every higher-arity polymorphism and does not show
+that either exceptional relation is realizable.  It closes only the usual
+low-arity universal-algebra shortcut: any successful algebraic invariant
+must be subtler than these standard closure identities.
+
+## O38 — Uniformly bounded Fano-flow reconfiguration
+
+Status: **FAILED APPROACH / HUMAN-CHECKABLE INFINITE LOWER-BOUND FAMILY /
+POSITIVE THREE-CDC CONTROLS**.
+
+A recursive family now rules out every universal constant bound on the
+number of connected-circuit switches needed to reach a Fano-good
+\(\mathbb F_2^3\)-flow.  The host \(H_d\) has \(3^d\) leaf ports and every
+connected circuit meets at most \(2^d\) of them.  Grafting one certified
+all-seven-bad block at every port gives a connected simple bridgeless cubic
+graph \(G_d\) with
+\[
+ |V(G_d)|=15\cdot3^d-5.
+\]
+Each switch can touch at most \(2^d\) bad-block footprints.  If fewer than
+\(\lceil(3/2)^d\rceil\) switches are used, one block and both of its
+connectors remain unchanged; its two-\(T\)-join obstruction excludes every
+Fano-good line.  Thus every path from the displayed flow to the good-flow
+set has length at least
+\[
+ \left\lceil(3/2)^d\right\rceil
+ =\Omega\!\left(|V(G_d)|^{\log_3(3/2)}\right),
+\]
+if such a path exists.
+
+Every \(G_d\) is explicitly three-edge-colourable and therefore has a
+three-cycle double cover.  The result refutes only constant-radius
+domination; it does not refute eventual good-flow domination in every
+reconfiguration component and does not refute Five-CDC.  The first
+40-vertex member has exact distance two: the two displayed switches and all
+seven component-defect rows are replayed by the independent checker
+`scratch/verify_fano_multistep_two_switch.py`.  The proof and exact
+literature audit are in
+`scratch/fano-multistep-reconfiguration-audit-20260727.md`.
+
+## O39 — Internal pole connectivity forces full fixed-five signature
+
+Status: **FAILED BROAD LEMMA / EXPLICIT ORDER-16 HUMAN COUNTERMODEL /
+FOCUSED CAP VERSION OPEN**.
+
+The terminal-distinct order-16 pole
+
+```text
+O????A?[BOI_g_Ao?kCo?
+```
+
+is connected, simple, bridge-free, and has exact cyclic connectivity four,
+but its exact fixed-five boundary mask is `0x3fe`: it misses \(AA\).  Three
+of its terminals \(5,7,8\) have a common neighbour \(14\).  If every
+semiedge had label \(A\), applying
+\[
+ p_A(B)=|A\cap B|\pmod2
+\]
+would give value one on all three proper edges at vertex \(14\), contrary
+to its parity equation.  Two independently written classifiers agree on
+the other nine states.
+
+Every simple cap of this pole creates a cyclic triangle cut, so it does not
+refute the focused conjecture for poles obtained by deleting two independent
+edges from a cyclically four-edge-connected non-Tait cubic graph.  In that
+focused geometry, a new human lemma proves that every component outside the
+four cap-edge endpoints has an even number of attachments.  This eliminates
+the scalar \(AA\) parity obstruction, but not the simultaneous \(D_5\)
+lift.  Exactly, \(AA\) is equivalent to an \(\mathbb F_2^2\)-flow whose
+zero set contains the prescribed edge pair and whose complement packs two
+edge-disjoint boundary joins.  That prescribed-zero packing theorem remains
+open.  Full details are in
+`scratch/fixed-five-d5-four-pole-full-signature-frontier.md`.
+
+The rooted-minimum shortcut is now also classified.  For a rooted
+inclusion-minimal exact zero matching \(M\supseteq R\), every quotient
+\(Q_c-R\) is a forest, but not every rooted cardinal-minimum matching
+packs.  A 22-vertex simple cubic cyclically 4-edge-connected non-Tait
+example has a nonpacking rooted minimum \(\{24,27,31\}\); a literal
+root-preserving neutral switch reaches the packing minimum
+\(\{13,24,27\}\).  The human obstruction and standard-library replay are
+in `scratch/focused-aa-rooted-minimum-frontier.md`.  This refutes only the
+all-minima strengthening.  Rooted feasibility and the existential
+neutral-component statement remain open.
+
+The perfect-matching shortcut has a sharp replacement.  For any
+3-edge-connected cubic graph and independent roots with endpoint set
+\(U\), Tutte--Berge gives
+\(\operatorname{def}(G-U)\le2\).  In the deficiency-two case, the
+complement of a rooted near-perfect matching suppresses either to a theta
+or to a loop--link--loop dumbbell, and it supports a nowhere-zero
+\(\mathbb F_2^2\)-flow exactly in the theta case.  Cyclic
+four-connectivity makes every tight barrier almost entirely singleton and
+puts a nonroot matching chord across every dumbbell-link bridge, but the
+alternating exchange that would force a theta is not yet proved.  The
+theta assertion already fails on a checked 10-vertex
+3-edge-connected cubic graph; that control is Tait-colourable and has a
+cyclic three-edge cut, so it lies outside the focused domain.  See
+`scratch/prescribed-root-matching-deficiency-frontier.md`.
+
+No focused limitation appears through order 30.  Two independent exact
+implementations classify all 136,557,951 independent root pairs in the
+retained complete cyclically-four non-Tait corpora at every even order
+from 10 through 30: 135,214,569 have deficiency zero, and all 1,343,382
+deficiency-two pairs admit a theta maximum; zero pairs are all-dumbbell.
+Every deficient bounded instance has \(|\delta(U)|=8\).  The exact
+unproved step is now a rotation-closure lemma turning one of the
+matching chords across a bad link cut into an alternating switch that
+strictly decreases the number of complement bridges.  See
+`search/focused-theta-choice-through28-20260727/`,
+`search/focused-theta-choice-order30-20260727/`, and
+`scratch/focused-theta-choice-census-frontier.md`.
+
+The purely local rotation-closure strengthening is false even after
+adding non-Taitness.  The checked 18-vertex graph
+`Q???C@?GF?CKSOF?AQ?W_B_AA_?`, with roots \(\{12,20\}\), has deficiency
+two and 40 maximum matchings; every complement is a dumbbell, although
+the 384-edge elementary exchange graph is connected.  Its canonical
+barrier has a nontrivial boundary-three factor-critical component, and
+the roots plus the never-selected barrier edge form a cyclic
+three-edge cut.  Hence it misses exactly the global cyclic-four
+hypothesis.  The exact singleton-barrier cyclic-four lemma and the
+one-boundary-five case remain open.  See
+`scratch/boundary-eight-rotation-closure-frontier.md`.
+
+The all-singleton branch is nevertheless closed for the **standard**
+Five-CDC by a different argument.  Write its Gallai--Edmonds partition as
+\(V(G)=D\dot\cup W\), where \(D\) is independent and
+\(|W|=|D|+2\).  Cubic degree counting forces exactly three edges inside
+\(W\).  A perfect matching through any prescribed one of those edges
+contains exactly one of the three.  Its complementary 2-factor therefore
+has only two non-\(D\)--\(W\) edges, and hence zero or two odd cycles.
+Huck--Kochol (1995) gives a standard five-cycle double cover.  Thus the
+unresolved prescribed-root theta lemma is stronger than is needed to
+dispose of this branch as a possible standard counterexample.  The only
+standard obstruction left by this barrier route is the one-boundary-five
+branch.  See `scratch/root-insertion-two-factor-frontier.md`.
+
+The independent whole-shore cyclic-three route is also complete through
+cap order 26.  Across 13,901 retained triangle-free 3-connected non-Tait
+caps at orders 20, 22, and 24, two exact implementations classify all
+330,790 vertex deletions and 10,824,084 proper roots.  Every normalized
+root signature is nonempty and contains a base pair, with byte-identical
+complete transcripts.  The human triangle induction transports this as
+a fork through endpoint \(K_4\) factors, and two opposing forks exclude
+the mixed exceptional relation.  See
+`search/rooted-three-pole-c3-cap-frontier-through24-20260727/`.
+
+The remaining finite order-28 cyclically-four branch is now closed.
+Across all 12,517 retained caps and 9,725,709 independent-edge
+deletions, every pole has explicit orbit-0 and orbit-2
+\(D_5\)-labellings.  Those two positive witnesses exclude all six
+exceptional exact masks, and two separately written full-stream
+checkers pass all 19,451,418 labellings.  Combining this with the
+cyclic-three endpoint-fork theorem and even pole order raises the scoped
+simple terminal-distinct fixed-five exceptional-pole lower bound to
+30.  This remains a bounded structural theorem, not a universal
+full-signature theorem or a Five-CDC resolution.  See
+`search/four-pole-order28-cyclic4-cap-20260727/`.
+
+## O40 — Small five-pole caps force a fork in every rooted signature
+
+Status: **FINITE GADGET SHORTCUT STALLS / EXACT EXPLORATORY CENSUS /
+NO UNIVERSAL NO-GO CLAIM**.
+
+Cutting a distinguished root with label \(A\) turns a rooted three-pole
+into a five-pole with normalized boundary word
+\[
+                         (01,02,12,A,A).
+\]
+This suggested capping the five boundary ends by a strictly smaller
+five-pole.  Minimality would then force the root signature to meet the
+cap's admitted \(A\)-set.  A sufficiently rich family of caps might have
+forced every surviving signature to contain a fork triple.
+
+The exact small-cap probe does not do so.  Two independently structured
+implementations agree through order nine.  The faster direct-CSP
+implementation then enumerates every connected simple cap core with five
+degree-two terminals and all other vertices cubic through order \(13\):
+\[
+                       1+6+52+536+6374=6969
+\]
+input cores, of which 6894 pass the gluing-admissibility test.  That test
+retains a cap when every internal bridge has terminals on both sides, the
+condition which makes the bridge lie on a cycle after gluing to a
+connected opposite rooted core.  Over all terminal permutations it finds
+the same 22 distinct admitted \(A\)-sets at every new order.  Requiring a
+\(3\leftrightarrow4\)-invariant root signature to hit every one of those
+sets still leaves ten fork-free signatures.  Their seven maximal members
+are
+\[
+\begin{gathered}
+\{01,02,12\},\\
+\{01,02,03,04\},\quad
+\{01,12,13,14\},\quad
+\{02,12,23,24\},\\
+\{01,03,04,13,14,34\},\\
+\{02,03,04,23,24,34\},\\
+\{12,13,14,23,24,34\}.
+\end{gathered}
+\]
+Thus these cap inequalities alone do not imply the fork theorem, even
+before proving the required strict-size and minimum-counterexample
+hypotheses.
+
+There is a simple reason the stabilization is structural rather than a
+numerical accident.  Each of the seven displayed maximal fork-free sets
+meets every one of the three base pairs \(P_0,P_1,P_2\).  Consequently it
+meets every cap admission set which itself contains a base pair.  Adding
+any number of caps already covered by the desired base-pair theorem can
+never eliminate any of the seven abstract survivors.  A pure
+existential-hitting proof of base-pair closure would therefore have to use
+a cap whose own root signature violates base-pair closure, or retain
+richer information than its admitted \(A\)-set.  The former would be a
+counterexample to the target rather than a proof of it.
+
+The exploratory producer and retained outputs are
+`scratch/rooted_five_pole_cap_hitting_probe.py`,
+`scratch/rooted_five_pole_cap_hitting_probe.cpp`,
+`scratch/rooted-five-pole-cap-hitting-order5-7-result.json`, and
+the corresponding `scratch/rooted-five-pole-cap-hitting-*-cpp-result.json`
+files through order 13.  This finite failure does not prove that larger or
+purpose-built caps are useless.  It shows that extending the naive cap
+family through order 13 adds no new root-admission set and prevents
+silently treating small-cap hitting as the missing universal base-pair
+argument.

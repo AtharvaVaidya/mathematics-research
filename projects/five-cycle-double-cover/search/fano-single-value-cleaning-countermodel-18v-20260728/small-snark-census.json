@@ -1,0 +1,573 @@
+{
+  "elapsed_seconds": 122.236700791982,
+  "first_countermodel": {
+    "Oum_potential_audit": {
+      "compatibility_rows": 57,
+      "exhaustive": true,
+      "first_five_color_witness": null,
+      "first_witness": null,
+      "five_color_merge_exists": false,
+      "free_dimension_after_translation_gauge": 1,
+      "maximum_clique_size_profile": {
+        "6": 2
+      },
+      "maximum_missing_pair_matching": 2,
+      "merge_exists": false,
+      "potential_solutions_after_translation_gauge": 2,
+      "potential_solutions_before_translation_gauge": 16,
+      "potential_solutions_examined": 2,
+      "rank_after_translation_gauge": 53,
+      "stopping_criterion": "five-color",
+      "used_pair_count_profile": {
+        "19": 2
+      }
+    },
+    "coordinate_cycle_masks": [
+      3435573,
+      66750198,
+      123952040
+    ],
+    "edges": [
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        10
+      ],
+      [
+        0,
+        11
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        13
+      ],
+      [
+        1,
+        15
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        2,
+        13
+      ],
+      [
+        2,
+        14
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        3,
+        12
+      ],
+      [
+        3,
+        13
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        4,
+        15
+      ],
+      [
+        4,
+        17
+      ],
+      [
+        5,
+        11
+      ],
+      [
+        5,
+        12
+      ],
+      [
+        5,
+        14
+      ],
+      [
+        6,
+        11
+      ],
+      [
+        6,
+        16
+      ],
+      [
+        6,
+        17
+      ],
+      [
+        7,
+        12
+      ],
+      [
+        7,
+        17
+      ],
+      [
+        8,
+        14
+      ],
+      [
+        8,
+        16
+      ],
+      [
+        9,
+        15
+      ],
+      [
+        9,
+        16
+      ]
+    ],
+    "flow_values_by_edge": [
+      1,
+      2,
+      3,
+      4,
+      3,
+      7,
+      2,
+      6,
+      4,
+      6,
+      3,
+      5,
+      4,
+      1,
+      5,
+      2,
+      4,
+      6,
+      1,
+      2,
+      3,
+      7,
+      6,
+      2,
+      6,
+      6,
+      4
+    ],
+    "functional_value_rows": [
+      {
+        "cycle_basis_dimension_G_minus_M_t": 5,
+        "factor_components": 3,
+        "line": [
+          2,
+          4,
+          6
+        ],
+        "mu": 1,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 6,
+        "switch_value": 2,
+        "tau_image_rank": 1,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 5,
+        "factor_components": 3,
+        "line": [
+          2,
+          4,
+          6
+        ],
+        "mu": 1,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 6,
+        "switch_value": 4,
+        "tau_image_rank": 1,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 4,
+        "factor_components": 3,
+        "line": [
+          2,
+          4,
+          6
+        ],
+        "mu": 1,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 6,
+        "switch_value": 6,
+        "tau_image_rank": 1,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 7,
+        "factor_components": 8,
+        "line": [
+          1,
+          4,
+          5
+        ],
+        "mu": 2,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 51,
+        "switch_value": 1,
+        "tau_image_rank": 4,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 5,
+        "factor_components": 8,
+        "line": [
+          1,
+          4,
+          5
+        ],
+        "mu": 2,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 51,
+        "switch_value": 4,
+        "tau_image_rank": 2,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 8,
+        "factor_components": 8,
+        "line": [
+          1,
+          4,
+          5
+        ],
+        "mu": 2,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 51,
+        "switch_value": 5,
+        "tau_image_rank": 5,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 6,
+        "factor_components": 7,
+        "line": [
+          3,
+          4,
+          7
+        ],
+        "mu": 3,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 58,
+        "switch_value": 3,
+        "tau_image_rank": 3,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 5,
+        "factor_components": 7,
+        "line": [
+          3,
+          4,
+          7
+        ],
+        "mu": 3,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 58,
+        "switch_value": 4,
+        "tau_image_rank": 2,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 8,
+        "factor_components": 7,
+        "line": [
+          3,
+          4,
+          7
+        ],
+        "mu": 3,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 58,
+        "switch_value": 7,
+        "tau_image_rank": 5,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 7,
+        "factor_components": 6,
+        "line": [
+          1,
+          2,
+          3
+        ],
+        "mu": 4,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 27,
+        "switch_value": 1,
+        "tau_image_rank": 3,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 5,
+        "factor_components": 6,
+        "line": [
+          1,
+          2,
+          3
+        ],
+        "mu": 4,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 27,
+        "switch_value": 2,
+        "tau_image_rank": 2,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 6,
+        "factor_components": 6,
+        "line": [
+          1,
+          2,
+          3
+        ],
+        "mu": 4,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 27,
+        "switch_value": 3,
+        "tau_image_rank": 3,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 5,
+        "factor_components": 9,
+        "line": [
+          2,
+          5,
+          7
+        ],
+        "mu": 5,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 243,
+        "switch_value": 2,
+        "tau_image_rank": 2,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 8,
+        "factor_components": 9,
+        "line": [
+          2,
+          5,
+          7
+        ],
+        "mu": 5,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 243,
+        "switch_value": 5,
+        "tau_image_rank": 5,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 8,
+        "factor_components": 9,
+        "line": [
+          2,
+          5,
+          7
+        ],
+        "mu": 5,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 243,
+        "switch_value": 7,
+        "tau_image_rank": 5,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 7,
+        "factor_components": 7,
+        "line": [
+          1,
+          6,
+          7
+        ],
+        "mu": 6,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 15,
+        "switch_value": 1,
+        "tau_image_rank": 3,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 4,
+        "factor_components": 7,
+        "line": [
+          1,
+          6,
+          7
+        ],
+        "mu": 6,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 15,
+        "switch_value": 6,
+        "tau_image_rank": 2,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 8,
+        "factor_components": 7,
+        "line": [
+          1,
+          6,
+          7
+        ],
+        "mu": 6,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 15,
+        "switch_value": 7,
+        "tau_image_rank": 4,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 6,
+        "factor_components": 6,
+        "line": [
+          3,
+          5,
+          6
+        ],
+        "mu": 7,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 36,
+        "switch_value": 3,
+        "tau_image_rank": 2,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 8,
+        "factor_components": 6,
+        "line": [
+          3,
+          5,
+          6
+        ],
+        "mu": 7,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 36,
+        "switch_value": 5,
+        "tau_image_rank": 4,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      },
+      {
+        "cycle_basis_dimension_G_minus_M_t": 4,
+        "factor_components": 6,
+        "line": [
+          3,
+          5,
+          6
+        ],
+        "mu": 7,
+        "r_mu_in_image_tau_t": false,
+        "rainbow_defect_mask": 36,
+        "switch_value": 6,
+        "tau_image_rank": 2,
+        "witness_binary_cycle_mask": null,
+        "witness_edge_ids": null
+      }
+    ],
+    "graph6": "Q???C@?GCoOoDO[?CcAO_?k?J??",
+    "vertices": 18
+  },
+  "graph_rows": [
+    {
+      "cycle_space_size": 64,
+      "edges": 15,
+      "graph6": "ICOf@pSb?",
+      "totals": {
+        "cleaning_pair_exists": 170,
+        "coordinate_triples": 4096,
+        "gl3_flow_orbit_representatives": 170,
+        "normalized_nowhere_zero_flows": 680,
+        "stabilizer_noncanonical_flows": 510
+      },
+      "vertices": 10
+    },
+    {
+      "cycle_space_size": 1024,
+      "edges": 27,
+      "graph6": "Q???C@?GCoOoDO[?CcAO_?k?J??",
+      "totals": {
+        "cleaning_pair_exists": 117072,
+        "coordinate_triples": 16777216,
+        "exact_countermodels": 624,
+        "gl3_flow_orbit_representatives": 118960,
+        "no_cleaning_pair": 1888,
+        "no_cleaning_pair_but_Oum_easy": 1264,
+        "normalized_nowhere_zero_flows": 475840,
+        "stabilizer_noncanonical_flows": 356880
+      },
+      "vertices": 18
+    },
+    {
+      "cycle_space_size": 1024,
+      "edges": 27,
+      "graph6": "Q??CA?_CCOW_Q_M?AD@A_@K?F??",
+      "totals": {
+        "cleaning_pair_exists": 116870,
+        "coordinate_triples": 16777216,
+        "exact_countermodels": 332,
+        "gl3_flow_orbit_representatives": 119260,
+        "no_cleaning_pair": 2390,
+        "no_cleaning_pair_but_Oum_easy": 2058,
+        "normalized_nowhere_zero_flows": 477040,
+        "stabilizer_noncanonical_flows": 357780
+      },
+      "vertices": 18
+    }
+  ],
+  "schema": "fano-single-value-cleaning-small-snark-census-v1",
+  "scope": {
+    "claim_tested": "Oum-hard implies existence of mu and nonzero t in ker(mu) with r_mu in image(tau_t)",
+    "flow_scope": "one representative per GL(3,2) orbit",
+    "graph6_source": "search/order22-filter-census-20260725/strict-snarks-through18.g6"
+  },
+  "totals": {
+    "cleaning_pair_exists": 234112,
+    "coordinate_triples": 33558528,
+    "exact_countermodels": 956,
+    "gl3_flow_orbit_representatives": 238390,
+    "no_cleaning_pair": 4278,
+    "no_cleaning_pair_but_Oum_easy": 3322,
+    "normalized_nowhere_zero_flows": 953560,
+    "stabilizer_noncanonical_flows": 715170
+  }
+}

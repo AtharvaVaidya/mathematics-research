@@ -1,0 +1,1612 @@
+{
+  "G_minus_M_t": {
+    "bridgeless": true,
+    "connected": true,
+    "odd_cuts_contained_in_marks": 0,
+    "separated_components": [
+      [
+        0,
+        2,
+        4,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      [
+        3,
+        5,
+        7,
+        16,
+        17
+      ]
+    ],
+    "separator_vertices": [
+      1,
+      6
+    ]
+  },
+  "canonical_graph6": "QCGY?c?W???F_GAAo@?D@P??`?G",
+  "circuit_audit": {
+    "binary_cycle_space_size": 1024,
+    "circuits_avoiding_M_t": 17,
+    "circuits_through_all_three_marks": 0,
+    "elementary_circuits": 692,
+    "mark_pattern_profile": {
+      "": 3,
+      "1": 3,
+      "1,3": 2,
+      "1,9": 2,
+      "3": 3,
+      "3,9": 1,
+      "9": 3
+    }
+  },
+  "disconnected_repair": {
+    "binary_cycle_mask": 34367022,
+    "component_lengths": [
+      5,
+      6
+    ],
+    "component_vertices": [
+      [
+        0,
+        8,
+        12,
+        14,
+        15
+      ],
+      [
+        1,
+        3,
+        5,
+        6,
+        7,
+        16
+      ]
+    ],
+    "edge_ids": [
+      1,
+      2,
+      3,
+      5,
+      9,
+      10,
+      13,
+      14,
+      18,
+      19,
+      25
+    ],
+    "edges": [
+      [
+        0,
+        12
+      ],
+      [
+        0,
+        14
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        16
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        5,
+        16
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        8,
+        15
+      ],
+      [
+        14,
+        15
+      ]
+    ],
+    "repaired_Oum_potential_audit": {
+      "covers": [
+        {
+          "five_coloring": [
+            4,
+            4,
+            0,
+            0,
+            1,
+            2,
+            3,
+            0
+          ],
+          "free_assignment_index": 0,
+          "labels": [
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "maximum_clique_size": 5,
+          "potential_word": 6614679450926272,
+          "six_cliques": [],
+          "used_pair_types": 14
+        },
+        {
+          "five_coloring": [
+            0,
+            1,
+            0,
+            2,
+            4,
+            4,
+            3,
+            0
+          ],
+          "free_assignment_index": 1,
+          "labels": [
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "maximum_clique_size": 5,
+          "potential_word": 16362793520247208,
+          "six_cliques": [],
+          "used_pair_types": 14
+        },
+        {
+          "five_coloring": [
+            0,
+            0,
+            1,
+            2,
+            0,
+            3,
+            4,
+            4
+          ],
+          "free_assignment_index": 2,
+          "labels": [
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "maximum_clique_size": 5,
+          "potential_word": 9375369826324848,
+          "six_cliques": [],
+          "used_pair_types": 14
+        },
+        {
+          "five_coloring": [
+            0,
+            0,
+            4,
+            4,
+            0,
+            1,
+            2,
+            3
+          ],
+          "free_assignment_index": 3,
+          "labels": [
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              5,
+              7
+            ]
+          ],
+          "maximum_clique_size": 5,
+          "potential_word": 3640494971542552,
+          "six_cliques": [],
+          "used_pair_types": 14
+        }
+      ],
+      "free_dimension": 2,
+      "gauged_potential_solutions": 4,
+      "rank": 52,
+      "rows": 57
+    },
+    "switched_flow_values_by_edge": [
+      6,
+      5,
+      3,
+      5,
+      4,
+      1,
+      5,
+      3,
+      6,
+      5,
+      3,
+      6,
+      3,
+      3,
+      7,
+      2,
+      4,
+      4,
+      3,
+      7,
+      7,
+      3,
+      5,
+      6,
+      6,
+      5,
+      2
+    ]
+  },
+  "flow_values_by_edge": [
+    6,
+    3,
+    5,
+    3,
+    4,
+    7,
+    5,
+    3,
+    6,
+    3,
+    5,
+    6,
+    3,
+    5,
+    1,
+    2,
+    4,
+    4,
+    5,
+    1,
+    7,
+    3,
+    5,
+    6,
+    6,
+    3,
+    2
+  ],
+  "graph": {
+    "connected": true,
+    "cubic": true,
+    "cyclically_4_edge_connected": true,
+    "edges": 27,
+    "girth": 5,
+    "simple": true,
+    "tait_colourable": false,
+    "vertices": 18
+  },
+  "initial_Oum_potential_audit": {
+    "covers": [
+      {
+        "five_coloring": null,
+        "free_assignment_index": 0,
+        "labels": [
+          [
+            3,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "maximum_clique_size": 6,
+        "potential_word": 4929152003792192,
+        "six_cliques": [
+          [
+            0,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        ],
+        "used_pair_types": 15
+      },
+      {
+        "five_coloring": null,
+        "free_assignment_index": 1,
+        "labels": [
+          [
+            3,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "maximum_clique_size": 6,
+        "potential_word": 16948983814347816,
+        "six_cliques": [
+          [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6
+          ]
+        ],
+        "used_pair_types": 15
+      },
+      {
+        "five_coloring": null,
+        "free_assignment_index": 2,
+        "labels": [
+          [
+            3,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "maximum_clique_size": 6,
+        "potential_word": 11071759245750512,
+        "six_cliques": [
+          [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6
+          ]
+        ],
+        "used_pair_types": 15
+      },
+      {
+        "five_coloring": null,
+        "free_assignment_index": 3,
+        "labels": [
+          [
+            3,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "maximum_clique_size": 6,
+        "potential_word": 3062963331510680,
+        "six_cliques": [
+          [
+            0,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        ],
+        "used_pair_types": 15
+      }
+    ],
+    "free_dimension": 2,
+    "gauged_potential_solutions": 4,
+    "rank": 52,
+    "rows": 57
+  },
+  "mark_value": 3,
+  "marked_edge_ids": [
+    1,
+    3,
+    9
+  ],
+  "marked_edges": [
+    [
+      0,
+      12
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      3,
+      5
+    ]
+  ],
+  "minimality_audit": {
+    "petersen_exhaustion": {
+      "avoidance_failures": 0,
+      "binary_cycles": 64,
+      "distinct_value_mask_pairs_checked": 6000,
+      "elementary_circuits": 57,
+      "nowhere_zero_F2_3_flows": 28560
+    },
+    "scope": "Relative to the frozen canonical Snarkhunter cyclically-4 non-Tait simple cubic lists; source completeness is inherited from that package.",
+    "smallest_failure_order": 18,
+    "source_rows_by_order": {
+      "10": 1,
+      "12": 0,
+      "14": 0,
+      "16": 0,
+      "18": 2
+    },
+    "source_sha256_by_order": {
+      "10": "7aec0fba73c081d7eebc551fc46b2484e73e58b2d36718dee105dbb6226e76aa",
+      "12": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "14": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "16": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "18": "2660e7d5c8a351b4ed3d69f8df316e748e264a630c01328ea4bed43f96f78dfd"
+    }
+  },
+  "schema": "fano-circuit-avoidance-countermodel-18v-v1",
+  "scope_warning": "This refutes a prescribed connected-circuit avoidance lemma inside the Oum pure-merge strategy. The same flow has another one-circuit repair, so this is not a countermodel to the unrestricted one-circuit repair conjecture and not a FiveCDC counterexample.",
+  "separate_connected_repair": {
+    "circuit_mask": 16783875,
+    "edge_ids": [
+      0,
+      1,
+      9,
+      11,
+      12,
+      24
+    ],
+    "edges": [
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        12
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        13
+      ],
+      [
+        12,
+        13
+      ]
+    ],
+    "repaired_Oum_potential_audit": {
+      "covers": [
+        {
+          "five_coloring": [
+            0,
+            1,
+            2,
+            0,
+            0,
+            3,
+            0,
+            4
+          ],
+          "free_assignment_index": 0,
+          "labels": [
+            [
+              2,
+              5
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              5,
+              7
+            ]
+          ],
+          "maximum_clique_size": 5,
+          "potential_word": 6881487677742896,
+          "six_cliques": [],
+          "used_pair_types": 10
+        },
+        {
+          "five_coloring": [
+            0,
+            0,
+            1,
+            0,
+            2,
+            3,
+            0,
+            4
+          ],
+          "free_assignment_index": 1,
+          "labels": [
+            [
+              2,
+              5
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "maximum_clique_size": 5,
+          "potential_word": 15136591529565784,
+          "six_cliques": [],
+          "used_pair_types": 10
+        }
+      ],
+      "free_dimension": 1,
+      "gauged_potential_solutions": 2,
+      "rank": 53,
+      "rows": 57
+    },
+    "scope": "This proves that the displayed prescribed-triple failure does not refute unrestricted one-circuit repair.",
+    "switch_value": 1,
+    "switched_flow_values_by_edge": [
+      7,
+      2,
+      5,
+      3,
+      4,
+      7,
+      5,
+      3,
+      6,
+      2,
+      5,
+      7,
+      2,
+      5,
+      1,
+      2,
+      4,
+      4,
+      5,
+      1,
+      7,
+      3,
+      5,
+      6,
+      7,
+      3,
+      2
+    ]
+  },
+  "status": "PASS",
+  "switch_value": 6,
+  "value_classes_are_matchings": true
+}

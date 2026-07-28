@@ -469,6 +469,34 @@ switch,” not five-CDC: the graph has the explicit cover
 connected-circuit repair.  This is evidence for the reduced restriction,
 not a proof.
 
+The reduced probe now also includes all seven retained order-34 strong
+snarks and the unique retained girth-at-least-six snarks of orders 28, 30,
+and 36.  Among 5,000 newly sampled nowhere-zero flows, 2,245 are
+pure-merge-bad and every one has an exactly checked connected-circuit
+repair.  The flow selection is random, so this remains finite sampled
+evidence.  The replay and human scope audit are in
+`scratch/audit_strict_oum_one_switch_20260728.py` and
+`scratch/strict-oum-one-switch-audit-20260728.md`.
+
+For an eight-coordinate cover the apparently broader \(R_5\)-compression
+criterion is now proved equivalent to five-colour pure merging.  Every
+graph on at most eight vertices with chromatic number at least six contains
+\(K_6\) or \(K_3\vee C_5\); neither maps to \(R_5\).  Thus this distinction
+does not create a second reduced branch.
+
+The most direct attempted proof of the surviving one-circuit statement is
+false even on the first Blanuša snark.  The exact package
+`search/fano-circuit-avoidance-countermodel-18v-20260728/` gives a
+merge-bad fixed flow for which \(G-M_6\) is connected and bridgeless, but
+three value-3 edges lie on no common circuit of \(G-M_6\).  A two-vertex
+separator proves noncontainment, while a disconnected binary cycle through
+all three marks repairs every compatible \(K_6\) cover.  Flow parity does
+exclude every odd cut contained in the marked triple; the failure is a
+two-separation outside the hypotheses of Knappe--Pitz.  The same fixed flow
+has a different connected-circuit repair, so this kills only the
+prescribed-triple proof step, not the surviving existential one-circuit
+formulation and not FiveCDC.
+
 The connected-kernel condition has also been scoped exactly.  Quotienting a
 \(D_5\)-flow by the weight-four vector omitting coordinate \(i\) sends
 precisely the labels outside \(C_i\) to the distinguished Fano line.

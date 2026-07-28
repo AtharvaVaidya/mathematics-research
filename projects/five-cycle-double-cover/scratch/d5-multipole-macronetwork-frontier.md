@@ -6,18 +6,31 @@
 COUNTEREXAMPLE.**
 
 Treating sharp poles as exact boundary constraints does not produce an
-obstruction in the first complete macro-network range.  Every connected
-bridgeless cubic gluing of
+obstruction in the complete macro-network ranges through four
+four-poles.  Every loopless connected bridgeless cubic gluing of
 
 - two \(C_5\) five-poles and no four-pole; or
-- two \(C_5\) five-poles and one of the four proper small four-pole
-  relations
+- two \(C_5\) five-poles and one, two, three, or four of the four proper
+  small four-pole relations
 
 has a standard five-cycle double cover.
 
 With one four-pole, every such graph is actually Tait-colourable.  With
 no four-pole, ten of the 120 labelled terminal pairings are non-Tait, but
 all ten still have directly checked standard 5-CDCs.
+
+With two four-poles, an independent combinatorial count gives 4,466,880
+loopless labelled pairing leaves and 4,435,200 connected bridgeless
+pairings for each underlying atom-type pattern.  Canonicalization reduces
+the three patterns to 1,861 expanded-graph isomorphism classes.  Twelve
+are non-Tait; all 1,861 have directly checked standard 5-CDCs.
+
+With three four-poles, exact boundary-relation dynamic programming
+reduces the full terminal-order search to 197,568 canonical states.
+Every state has nonempty \(D_5\) relation.
+
+With four four-poles, the same exact reduction exhausts 4,293,072
+canonical boundary states.  Again, every state has nonempty relation.
 
 No empty exact \(D_5\) relation was found, so there is no graph for which
 an UNSAT LRAT should be generated.
@@ -92,7 +105,7 @@ vertex has xor zero.  Tait models are likewise checked edge by edge and
 vertex by vertex.  Solver trust is therefore used only to discover
 positive assignments, not to validate their semantics.
 
-## 3. Exact labelled-pairing theorem
+## 3. Exact pairing theorem
 
 ### Two five-poles
 
@@ -135,10 +148,143 @@ Port permutations of `C]` cover all three of its proper relation masks;
 `ECxo` covers the fourth.  Thus the enumeration includes all four sharp
 four-pole constraints, not just two selected terminal orders.
 
+### Add two four-poles
+
+There are 4,466,880 labelled perfect matchings of terminal sets of sizes
+\(5,5,4,4\) when same-atom pairs are forbidden.  Solving the six macro
+multiplicities subject to row sums \(5,5,4,4\), then deleting a single
+edge of each positive type to test for a bridge, gives exactly 12
+connected bridgeless macro multiplicity matrices.  Their labelled lifts
+sum to
+
+\[
+                         4{,}435{,}200.
+\]
+
+Both counts are independently recomputed by the Python replay.  The C++
+generator expands every accepted labelled pairing, and nauty `shortg`
+removes graph isomorphs.  There are three underlying four-pole type
+patterns:
+
+\[
+\begin{array}{c|r|r|r|r}
+\text{four-pole atoms}&\text{labelled pairings}&
+\text{graph classes}&\text{non-Tait}&\text{FiveCDC UNSAT}\\ \hline
+\texttt{C]}+\texttt{C]}&4{,}435{,}200&252&2&0\\
+\texttt{C]}+\texttt{ECxo}&4{,}435{,}200&765&4&0\\
+\texttt{ECxo}+\texttt{ECxo}&4{,}435{,}200&844&6&0.
+\end{array}
+\]
+
+The checker independently parses every canonical graph, verifies
+simplicity, cubicity, connectedness, and bridgelessness, then solves the
+fully expanded Tait and FiveCDC formulas.  It checks the returned
+FiveCDC label on every edge and xors the three labels at every vertex.
+Thus the 12 non-Tait classes are not accepted through the Tait
+implication; each has an explicit weight-two, vertex-even FiveCDC model.
+Their canonical graph6 encodings and edge-label masks are frozen in
+`scratch/d5-multipole-macronetwork-frontier2-nontait-witnesses.json`;
+the Python replay verifies these witnesses without calling a solver and
+separately confirms non-Taitness with an exact three-edge-colouring
+backtracker.
+
+The three `C]` masks differ only by a permutation of its four ports.
+Relabelling those ports is a bijection of the exhaustive labelled
+pairing set.  Consequently the three underlying type patterns cover all
+ten unordered choices, with repetition, of two relations from the four
+sharp masks.
+
+### Add three four-poles
+
+The degree sequence of the five-atom macrograph is
+
+\[
+                          (5,5,4,4,4).
+\]
+
+Direct integer enumeration gives 178 labelled connected bridgeless
+macro multiplicity matrices.  Quotienting by type-preserving atom
+permutations leaves 25 macro classes when all three four-poles have the
+same underlying atom type and 56 classes in either mixed type pattern.
+
+The exact ordered boundary relations and their terminal stabilizers are
+
+\[
+\begin{array}{c|r|r|r}
+\text{atom}&\text{relation words}&\text{stabilizer}&
+\text{terminal-bijection orbits}\\ \hline
+C_5&4{,}620&10&5!/10=12\\
+\texttt{C]}&580&8&4!/8=3\\
+\texttt{ECxo}&630&24&4!/24=1.
+\end{array}
+\]
+
+For each atom, a terminal-to-labelled-half-edge bijection is quotiented
+independently by its exact relation stabilizer.  Every original port
+assignment is equivalent to exactly one of these local orbits up to
+possible harmless duplication from parallel-edge names.  Combining
+these local states with the canonical macro matrices gives:
+
+\[
+\begin{array}{c|r|r|r}
+\text{four-pole mode}&\text{macro classes}&
+\text{boundary-CSP states}&\text{empty }D_5\\ \hline
+AAA&25&97{,}200&0\\
+AAB&56&72{,}576&0\\
+ABB&56&24{,}192&0\\
+BBB&25&3{,}600&0\\ \hline
+\text{total}&&197{,}568&0.
+\end{array}
+\]
+
+Here \(A=\texttt{C]}\) and \(B=\texttt{ECxo}\).  Each local relation is
+stored as a Boolean extension table indexed by an ordered partial
+boundary word, using an eleventh value for “unassigned.”  The CSP search
+assigns the 11 joining-edge labels and prunes exactly when one incident
+partial word has no extension.  A completed state is accepted only when
+all five full boundary words belong to their reconstructed exact
+relations.
+
+As before, port permutations of \(A\) cover its three sharp masks.
+Thus `AAA`, `AAB`, `ABB`, and `BBB` cover every multiset of three
+relations from the four sharp masks.  No expanded graph is needed to
+justify a positive result: membership in each exact atom relation
+supplies compatible internal labels, and the shared joining-edge labels
+then give a FiveCDC labeling of the expansion.
+
+### Add four four-poles
+
+For macro degree sequence
+
+\[
+                         (5,5,4,4,4,4),
+\]
+
+there are 4,222 labelled connected bridgeless multiplicity matrices.
+Canonicalization and exact boundary DP give:
+
+\[
+\begin{array}{c|r|r|r}
+\text{four-pole mode}&\text{macro classes}&
+\text{boundary-CSP states}&\text{empty }D_5\\ \hline
+AAAA&143&1{,}667{,}952&0\\
+AAAB&410&1{,}594{,}080&0\\
+AABB&643&833{,}328&0\\
+ABBB&410&177{,}120&0\\
+BBBB&143&20{,}592&0\\ \hline
+\text{total}&&4{,}293{,}072&0.
+\end{array}
+\]
+
+The five modes cover every multiset of four sharp relations by the same
+local port-relabelling argument.  The Python replay independently
+reconstructs all 4,222 macro matrices and the five canonical macro
+counts before invoking the C++ boundary solver.
+
 This is the sharp exact no-go currently proved:
 
-> No connected bridgeless cubic macro-network made from exactly two
-> sharp \(C_5\) five-poles and at most one of the four proper
+> No loopless connected bridgeless cubic macro-network made from exactly
+> two sharp \(C_5\) five-poles and at most four of the four proper
 > order-\(\le14\) four-pole relations has empty exact \(D_5\) relation.
 
 ## 4. Larger deterministic diagnostics
@@ -167,7 +313,7 @@ formal count above because only the three displayed seeds are frozen.
 ## 5. Surviving obstruction
 
 Within the loopless macrograph model, the first unresolved exact range
-has at least two four-pole atoms, or at least four five-pole atoms.
+has at least five four-pole atoms, or at least four five-pole atoms.
 Labelled pairing enumeration grows too quickly there without quotienting
 simultaneously by
 
@@ -178,7 +324,8 @@ simultaneously by
 
 No semigroup-wide preserved satisfiability invariant was proved.  In
 particular, “all generated graphs are Tait-colourable” is false: the
-exact two-\(C_5\) range already contains ten non-Tait pairings, and the
+exact two-\(C_5\) range contains ten non-Tait pairings before four-poles,
+the two-four-pole frontier contains 12 non-Tait graph classes, and the
 larger diagnostics contain another 21.
 
 The next sound search should canonically enumerate macro multigraphs and
@@ -206,15 +353,44 @@ Include the three deterministic larger diagnostics with:
 python3 scratch/check_d5_multipole_macronetwork_frontier.py --random
 ```
 
-The checker compiles
-`scratch/search_d5_multipole_macronetwork.cpp` against CaDiCaL, but
-directly verifies every returned positive model.
+Regenerate and verify the complete two-four-pole frontier with:
+
+```sh
+python3 scratch/check_d5_multipole_macronetwork_frontier.py --frontier2
+```
+
+Reconstruct and exhaust the three-four-pole boundary-DP frontier with:
+
+```sh
+python3 scratch/check_d5_multipole_macronetwork_frontier.py --frontier3
+```
+
+Run the four-four-pole frontier, with its five atom modes evaluated in
+parallel, using:
+
+```sh
+python3 scratch/check_d5_multipole_macronetwork_frontier.py --frontier4
+```
+
+This longer replay compiles
+`scratch/generate_d5_frontier2_graphs.cpp`, canonicalizes its exhaustive
+streams with nauty `shortg`, and passes all representatives to
+`scratch/check_d5_frontier2_graphs.cpp`.  The latter is linked against
+CaDiCaL but directly verifies every returned positive model.  The
+emitted non-Tait witnesses must exactly match the frozen witness file.
+The three-four-pole replay compiles
+`scratch/search_d5_frontier3_boundary.cpp`; Python independently
+recomputes the relation stabilizer sizes and the canonical macro counts.
+The analogous four-pole program is
+`scratch/search_d5_frontier4_boundary.cpp`.
+The earlier ranges use `scratch/search_d5_multipole_macronetwork.cpp`.
 
 ## 7. Scope and AI disclosure
 
-This package supplies a finite no-go and a precise next obstruction.  It
-does not cover macro-loops, does not establish satisfiability of the full
-generated semigroup, and does not disprove FiveCDC.
+This package supplies a finite no-go through four sharp four-poles and a
+precise next obstruction.  It does not cover macro-loops, does not
+establish satisfiability of the full generated semigroup, and does not
+disprove FiveCDC.
 
 OpenAI Codex agents, under human direction, designed the boundary-CSP
 search, wrote the programs, ran the enumerations, and drafted this note.

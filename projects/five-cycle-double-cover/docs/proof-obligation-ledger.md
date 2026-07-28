@@ -537,7 +537,21 @@ Open obligations:
     solutions.  The graph has a three-cycle double cover and three
     nontrivial two-edge cuts.  Thus a cyclically 4-edge-connected version
     would still be sufficient for the minimum-counterexample route and is
-    the surviving formulation to prove or refute.
+    the surviving formulation to prove or refute.  The natural
+    prescribed-edge proof of that reduced statement is now itself
+    refuted by
+    `search/fano-circuit-avoidance-countermodel-18v-20260728/`.
+    On the first Blanuša snark a merge-bad flow has connected bridgeless
+    \(G-M_6\), but three value-3 edges lie on no common circuit because of
+    a two-vertex separator.  A disconnected binary cycle through the
+    triple repairs all four compatible \(K_6\) covers.  No odd cut is
+    contained in the triple, so Knappe--Pitz fails here through its
+    3-edge-connectivity hypothesis rather than its odd-cut criterion.
+    The same flow has another connected repair; therefore the existential
+    reduced formulation remains open.  Separately, on at most eight old
+    coordinates, \(H\to R_5\) is equivalent to
+    \(\chi(H)\le5\) by the \(K_6/K_3\vee C_5\) dichotomy, so general XOR
+    compression does not widen this branch.
 30. **Connected eight-mark branch sharpened; signed-holonomy closure
     open:** pairing the eight suppressed marks by the four zero edges
     gives the audited necessary inequality

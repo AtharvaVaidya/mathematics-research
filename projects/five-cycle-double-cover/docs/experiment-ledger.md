@@ -1638,6 +1638,39 @@ support only the surviving cyclically 4-edge-connected one-circuit
 formulation; they do not prove it or independently certify source-list
 completeness.
 
+The 2026-07-28 extension samples 500 flows on each of the seven retained
+order-34 strong snarks and on the unique retained
+girth-at-least-six snarks of orders 28, 30, and 36.  Among these 5,000 new
+flows, 2,245 are pure-merge-bad and every one has a checked
+connected-circuit repair.  The order-34 replay independently checks the
+source hash, graph premises, retained potential spaces, \(R_5\)
+obstructions, and repair witnesses in
+`scratch/audit_strict_oum_one_switch_20260728.py`.  All flow selections
+remain seeded samples, not complete flow-orbit censuses.
+
+The same audit proves a useful exact collapse: for every graph \(H\) on at
+most eight vertices,
+\[
+ H\to R_5\quad\Longleftrightarrow\quad\chi(H)\le5.
+\]
+The only 6-critical cores possible at this order are \(K_6\) and
+\(K_3\vee C_5\), and neither maps to \(R_5\).
+
+The proposed Knappe--Pitz closure after deleting one value matching is
+false.  The canonical order-18 package
+`search/fano-circuit-avoidance-countermodel-18v-20260728/` has a
+merge-bad flow on the first Blanuša snark for which \(G-M_6\) is connected
+and bridgeless.  Three value-3 edges have no common circuit, certified by
+a two-vertex separator, although no odd cut is contained in the triple.
+The disjoint union of a five-cycle and six-cycle through those marks is a
+legal value-6 binary-cycle switch and changes all four compatible
+\(K_6\) covers into five-colourable covers.  An independent
+standard-library checker verifies 1,024 binary cycles, 692 elementary
+circuits, 17 circuits avoiding \(M_6\), four initial potentials, four
+repaired potentials, and a 28,560-flow Petersen minimality control.  A
+different connected six-circuit repairs the same starting flow, so the
+unrestricted reduced existential claim remains open.
+
 ## Order-22 four-mark separation/nonpacking screen
 
 `scratch/tait_all_coloring_mark_separation.cpp` was run on all 7,319,447
@@ -2516,10 +2549,9 @@ exceptional hits                       0
 
 The two full tables agree byte-for-byte.  A separate verifier checks the
 155 graph premises, reconstructs every deletion pole, and validates both
-sharded tables.  A later audit found that the attempted reduction from all
-small exceptional poles to this cap class used a false one-sided base-pair
-inference.  The finite classification remains exact, but the former global
-lower-bound conclusion is withdrawn.
+sharded tables.  Combined with the atom descent and rooted cyclic-three
+elimination, this excludes simple terminal-distinct exceptional poles
+through order 24 and raises that even-order lower bound to 26.
 
 Frozen package:
 `search/four-pole-order24-cyclic4-cap-20260727/`.
@@ -2807,38 +2839,40 @@ equality/intersection relation.
 Frozen package:
 `search/rooted-three-pole-nontait-endpoint-frontier-20260727/`.
 
-## One-boundary-five factor-critical and completion frontier
+## Focused theta-choice census at order 30
 
 Audit date: **2026-07-27**.
 
-Direct standard-library matching enumeration verifies the 9- and
-15-vertex factor-critical pole countermodels, the 37-vertex path-deletion
-core from the retained oddness-six graph, the sharp locally
-cyclically-four threshold-two core, and a 67-vertex locally
-cyclically-four pole whose five terminals are all bad at threshold two.
-
-For the 67-vertex pole, the completion checks give:
+The official House of Graphs order-30 cyclically-four snark corpus has
+139,854 distinct graph6 records (compressed SHA-256
+`93b8abf7b907fee03b9ecb99b917d14c2cc4f97bc115c0e793635db22c408567`;
+decompressed SHA-256
+`bc6f29ec50910eae345ced81f87800686deb069dd1cb383d73dbcc56765f247d`).
+The primary C++ classifier and a separately written standard-library
+Python replay in sixteen disjoint shards agree exactly:
 
 ```text
-s=0 labelled completions                         720
-s=0 cyclically-four completions                    0
-s=1 terminal bijections checked                  120
-s=1 cyclically-four completions                  120
-s=1 isomorphism classes                           30
-s=1 minimum oddness                                4
-s=2 locally cyclic-four outside patterns          128
-s=2 unique labelled gluings                     9,600
-s=2 isomorphism classes                           570
-selected s=2 witness oddness                        4
+graphs                             139,854
+independent root pairs         125,868,600
+deficiency zero                124,646,796
+deficiency two, theta found      1,221,804
+deficiency two, all dumbbell             0
+boundary-six deficient pairs             0
+boundary-eight deficient pairs   1,221,804
+near matchings checked            7,814,531
 ```
 
-The full \(s=1\) replay classifies small cuts and enumerates every perfect
-matching for every terminal bijection. The retained \(s=2\) command
-canonically quotients all gluings and runs the exact cut and matching
-census on the selected lexicographic witness; small-cut classification
-of all 570 representatives is optional and was skipped in the retained
-record. Nauty `labelg` supplies only the isomorphism-class counts.
+Every independent shard reports `PASS`, and the compact package verifier
+rechecks the complete corpus, every retained hash, and exact aggregate
+agreement.  This is a finite structural theorem, not a universal
+theta-choice theorem or a Five-CDC resolution.
 
-These are exact finite structural results and countermodels to
-intermediate local lemmas. They neither prove nor disprove FiveCDC.
-Frozen index: `ONE_BOUNDARY_FIVE_FRONTIER_20260727.md`.
+Frozen package:
+`search/focused-theta-choice-order30-20260727/`.
+
+SHA-256:
+
+```text
+report       9a188be2ee948282a7550c5e5f3eeffe7d7dd8e94ac0e1cc64f08e703550ffcd
+checksums    ac96945c376fcd63a351b3da287751646ea563f23ae86366cd17c04b27496ccc
+```
