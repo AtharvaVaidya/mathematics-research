@@ -1238,3 +1238,48 @@ Thus a prospective proof must permit active same-level exchanges, not
 only neutral re-realizations of one kernel triple.  See
 `scratch/jaeger-fano-min-immediate-descent-countermodel.md` and its
 independent checker.
+
+## O51 — Force a packing pair from an affine-complement collision (APX)
+
+Status: **FAILED APPROACH / EXACT CYCLICALLY-4 NON-TAIT COUNTERMODEL**.
+
+The affine pair-exchange axiom is false on graph6
+`chc?GC@@G?_P?H??_?G?@??C??G?@G??C??P??@G?A?__?@_???C???g???GA??@?A??CG???G???GG????C_???@??A??G??A??_???OH`.
+The graph is simple cubic, girth five, cyclically 4-edge-connected, and
+non-3-edge-colourable.  A displayed bad nowhere-zero
+\(\mathbb F_2^3\)-flow has 33 affine-compatible line occurrences,
+representing 32 distinct value-class edge pairs, but none of those pair
+deletions packs two boundary \(T\)-joins.
+
+The standard-library checker exhausts all 221 perfect matchings, every
+edge cut of size at most three, and 198 packing queries by complete binary
+cycle-space enumeration.  An independent C++/CaDiCaL implementation also
+returns APX score zero.  The counting identities survive, but the global
+budgets are \(L_B(H)=0\), separated lower bound \(9\), and \(3Q=402\).
+
+This refutes only APX.  The same graph has a literal standard five-cover,
+and the same flow has 6,699 good switches among 9,532 legal
+connected-circuit switches.  See
+`scratch/fano-apx-countermodel-order36.md`.
+
+## O52 — Lift an already selected good state through a square
+
+Status: **FAILED APPROACH / EXACT MINIMUM-ORDER STATE COUNTERMODEL**.
+
+On the planar order-eight graph6 `G?zTb_`, root zero, the displayed
+star-fibre state has profile \((2,2,0)\). Replacing the independent edges
+\((1,7)\) and \((2,4)\) by a square gives \(3^8=6561\) omitted-owner
+assignments. Exactly 72 are legal three-tree lifts, with profile histogram
+\[
+(2,2,2):38,\quad(2,2,4):12,\quad(2,4,2):2,\quad
+(4,2,2):2,\quad(4,4,2):18.
+\]
+No lift is good in any coordinate.
+
+This refutes only fixed-state local lifting. Another good state for the
+same graph, root, and smoothing pair has a good local lift. Both order-six
+graphs satisfy the stronger statewise claim, while a complete order-eight
+census finds a jointly chosen good state and lift in all 672
+graph/root/pair instances. The whole-fibre existential square reduction
+remains open. See
+`scratch/jaeger-star-square-any-coordinate-lift-no-go.md`.

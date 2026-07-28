@@ -3128,3 +3128,75 @@ The coverage verifier independently regenerates all thirteen
 expansions, checks simplicity, cubicity and 3-edge-connectivity, and
 audits rows, totals and hashes.  The 17,297,280-state enumeration itself
 remains in the C++ trust boundary.
+
+## Affine pair-exchange countermodel at order 36
+
+Audit date: **2026-07-28**.
+
+Adversarial exact-flow search found a score-zero countermodel to APX on
+the seventeenth retained order-36 strong-snark row.  Direct independent
+replay gives:
+
+```text
+vertices / edges                              36 / 54
+girth / cyclic edge connectivity                5 / 4
+perfect matchings exhausted                       221
+original nonpacking value classes                   7
+all original/pair-deletion packing queries         198
+binary cycles tested                         1,274,117
+affine-compatible line occurrences                  33
+distinct affine-compatible pairs                    32
+affine-compatible packing pairs                       0
+```
+
+The checker also validates a standard five-cover with coordinate sizes
+\(25,19,21,21,22\).  A complete connected-circuit audit enumerates
+166,792 simple circuits and 9,532 legal circuit/value switches, 6,699 of
+which make the flow good.  Therefore the witness refutes APX only; it is
+neither a FiveCDC counterexample nor a countermodel to the broader reduced
+one-switch lemma.  See `scratch/fano-apx-countermodel-order36.md` and
+`scratch/fano-apx-countermodel-order36-result.json`.
+
+## Square-local lifting quantifier boundary
+
+Audit date: **2026-07-28**.
+
+The solver-free fixed-state checker on graph6 `G?zTb_`, root zero,
+enumerates all 6,561 assignments to the eight square edges. Exactly 72
+give legal three-tree lifts and none is good in any coordinate. An
+alternate good state for the same graph/root/smoothing pair does lift.
+
+Complete controls give:
+
+```text
+order-six graphs                                      2
+order-six good-state/pair instances               2,664
+order-six fixed-state failures                         0
+order-eight graphs / roots / pairs                4 / 32 / 672
+order-eight whole-fibre failures                       0
+state attempts in order-eight existential search     688
+```
+
+Thus the first fixed-state failure occurs at order eight, while the weaker
+whole-fibre square implication survives every order-eight instance. See
+`scratch/verify_jaeger_star_square_order6_controls.py` and
+`scratch/verify_jaeger_star_square_existential_order8.py`.
+
+## Simultaneous-triangle plateau stress
+
+Audit date: **2026-07-28**.
+
+The exact product-neighbour search exhausts all 3,780 two-triangle lifts
+of each of two frozen order-16 boundary-free states. Among lifts with no
+lower neighbour, their minimum equal-neighbour counts are respectively 14
+and 7; no strict trap occurs. The second run is reproduced directly by
+`scratch/search_jaeger_lifted_immediate_traps.py`.
+
+Broader randomized sampling covers all 2,828 order-16 simple
+3-edge-connected cubic graphs at root zero, every root of the order-36 APX
+host, and 211 canonically distinct one- to three-triangle expansions of
+that host. All replayed plateaux escape within the stated search limits.
+These are explicitly exploratory state samples, not exhaustive fibre
+theorems. The separate simultaneous-triangle Cartesian-product identity is
+proved by hand in
+`scratch/jaeger-simultaneous-triangle-lift-plateau-search.md`.

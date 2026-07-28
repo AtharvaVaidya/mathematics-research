@@ -1,0 +1,63 @@
+{
+  "schema": "fano-apx-countermodel-order36-result-v1",
+  "scope": "APX countermodel only; the graph has an explicit standard FiveCDC",
+  "graph6": "chc?GC@@G?_P?H??_?G?@??C??G?@G??C??P??@G?A?__?@_???C???g???GA??@?A??CG???G???GG????C_???@??A??G??A??_???OH",
+  "graph_premises": {
+    "vertices": 36,
+    "edges": 54,
+    "simple": true,
+    "cubic": true,
+    "connected": true,
+    "girth": 5,
+    "cyclic_edge_connectivity": 4,
+    "displayed_cyclic_four_cut": [15, 29, 36, 38],
+    "perfect_matchings_exhausted": 221,
+    "three_edge_colourable": false
+  },
+  "flow_premises": {
+    "nowhere_zero_f2_3_flow": true,
+    "bad_value_classes": 7
+  },
+  "apx": {
+    "affine_occurrences": 33,
+    "affine_distinct_pairs": 32,
+    "apx_witness_count": 0,
+    "packing_queries": 198,
+    "maximum_cycle_rank": 16,
+    "binary_cycles_tested_before_positive_controls": 1274117
+  },
+  "counting_audit": {
+    "identities_19_through_23": true,
+    "A": 15,
+    "H": 69,
+    "B": 90,
+    "Q": 134,
+    "L_B_H": 0,
+    "separated_L_sum": 9,
+    "three_Q": 402,
+    "sum_r": 17,
+    "girth_times_sum_r": 85,
+    "six_n": 216
+  },
+  "positive_controls": {
+    "standard_five_cdc": true,
+    "five_cdc_coordinate_sizes": [25, 19, 21, 21, 22],
+    "one_circuit_repair": {
+      "switch_value": 1,
+      "circuit_edges": [0, 1, 17, 18, 20, 22, 31, 45, 47, 48, 49, 51, 53],
+      "successful_values_after_switch": [3]
+    },
+    "complete_circuit_audit": {
+      "simple_circuits": 166792,
+      "legal_switches": 9532,
+      "good_switches": 6699
+    }
+  },
+  "source_sha256": {
+    "standard_library_checker": "7df19997f820af9b2a916cafed36c8d891ebc803b769b1a066c67823b9ea5320",
+    "cpp_cadical_checker": "d2cf3ff53e1108287dbd84ec0fdc99513af0c062a1a149866e09521bf96414e0",
+    "graph_and_flow": "50f74970536e13062a9ac670e2cdbf7452098962a6ca0380654ec2f199a0d856",
+    "graph6": "98a0569ec675179c752533fe431fcf46b5ce89d03fac260c11d39c87b881056a"
+  },
+  "ai_use": "OpenAI Codex agents under human direction found, checked, and documented this auxiliary countermodel; no independent human peer review has occurred."
+}

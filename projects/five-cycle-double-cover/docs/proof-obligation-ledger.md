@@ -1456,3 +1456,43 @@ Open obligations:
     not an inductive reduction.  See
     `scratch/jaeger-triangle-expansion-descent-structure.md` and
     `output/jaeger-fano-min-descent-triangle-expansions-16v/census.jsonl`.
+89. **The affine pair-exchange axiom is false even in its exact reduced
+    domain:** a 36-vertex simple cubic girth-five,
+    cyclically 4-edge-connected non-Tait graph has a bad nowhere-zero
+    \(\mathbb F_2^3\)-flow with 33 affine-compatible line occurrences
+    (32 distinct edge pairs) and no packing deletion among them.  A
+    standard-library checker independently enumerates all 221 perfect
+    matchings, all cyclic cuts of size at most three, and every relevant
+    binary cycle space; a separate C++/CaDiCaL replay also returns APX
+    score zero.  The same graph has an explicit standard five-cover, and
+    the same flow has 6,699 good legal circuit switches.  Thus APX and any
+    universal \(Q\)-bound forcing inequalities (25)/(26) are closed
+    negatively, while the reduced one-switch lemma and FiveCDC remain
+    open.  See `scratch/fano-apx-countermodel-order36.md`.
+90. **Fixed-state square lifting is false; whole-fibre square reduction is
+    still open:** on the planar order-eight graph6 `G?zTb_`, root zero, an
+    exact-good state of profile \((2,2,0)\) and one independent smoothing
+    pair have 72 legal local lifts among all \(3^8\) gadget words, but none
+    is good in any coordinate.  Another good state for the same
+    graph/root/pair does lift, so the no-go concerns the order of
+    quantifiers and not existence in the fibre.  Both order-six graphs pass
+    the stronger statewise property.  A complete census of all four simple
+    3-edge-connected cubic order-eight graphs, all roots, and all eligible
+    smoothing pairs finds no failure of the whole-fibre implication in 672
+    instances.  A square induction must therefore select the downstairs
+    state and lift jointly.  See
+    `scratch/jaeger-star-square-any-coordinate-lift-no-go.md`.
+91. **Simultaneous nonroot triangle expansion has an exact exchange-graph
+    product, but not a product defect:** expanding a set \(S\) of original
+    nonroot vertices gives
+    \(\mathcal X(G^S,r)\cong\mathcal X(G,r)\square
+    \operatorname{Cay}(S_3,\mathcal T)^{\square|S|}\), even when expanded
+    vertices are adjacent. External swaps project, same-triangle swaps are
+    transpositions, and every mixed or different-triangle swap completes a
+    triangle in one changed tree. The defect varies between sheets, so the
+    product does not prove descent. Exhaustive one- and two-triangle lifts
+    of two adversarial order-16 states find no strict trap, and broad
+    plateau sampling also escapes, but these are finite or exploratory
+    evidence only. The full same-level-component boundary theorem remains
+    open. See
+    `scratch/jaeger-simultaneous-triangle-lift-plateau-search.md`.

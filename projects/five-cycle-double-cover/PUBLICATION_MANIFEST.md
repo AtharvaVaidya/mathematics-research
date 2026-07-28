@@ -47,7 +47,7 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
 
 ## Jaeger fixed-fibre and five-point lifting update (2026-07-28)
 
-- `preprint-jaeger-fivecdc-frontier/` is a 29-page working preprint with
+- `preprint-jaeger-fivecdc-frontier/` is a 30-page working preprint with
   an explicit unresolved-status box, detailed AI-use disclosure,
   reproducibility table, human-review gate, and rendered PDF.
 - `scratch/jaeger-support5-component-criterion.md` proves the exact
@@ -91,6 +91,15 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
   `scratch/jaeger-fano-min-immediate-descent-countermodel.md` and its
   standalone checker show that immediate descent and fixed-kernel
   exposure both fail, while explicitly exhibiting two-step escapes.
+- `scratch/jaeger-simultaneous-triangle-lift-plateau-search.md` proves that
+  simultaneous nonroot triangle expansions give one Cartesian
+  \(\operatorname{Cay}(S_3,\mathcal T)\) factor per triangle. The
+  accompanying exact lift search finds no strict trap in two adversarial
+  order-16 controls; broader plateau data are labeled exploratory.
+- `scratch/jaeger-star-square-any-coordinate-lift-no-go.md` gives the
+  minimum-order fixed-state square-lift failure. The order-six controls and
+  complete 672-instance order-eight census preserve the weaker whole-fibre
+  implication.
 - `output/jaeger-fano-min-descent-triangle-expansions-16v/` retains the
   exact thirteen-fibre control: 17,297,280 states, maximum
   \(d_{\min}=4\), and no trapped positive same-level component.  Its
@@ -111,6 +120,12 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
 - `formal/FiveCDC/`, `verifier_a/`, and `verifier_b/` retain the
   fixed-graph semantic formalization and two independently implemented
   target checkers.
+- `scratch/fano-apx-countermodel-order36.md` and its independent verifier
+  refute the affine pair-exchange axiom on a 36-vertex cyclically
+  4-edge-connected snark. The same graph has a checked standard five-cover,
+  and the same flow has thousands of one-switch repairs, so APX alone is
+  closed negatively while FiveCDC and the reduced one-switch lemma remain
+  open.
 
 The exact universal obligation is still to select a parity-good packing in
 every required vertex-star fibre.  Universal descent for the symmetric

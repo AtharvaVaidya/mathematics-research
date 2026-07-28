@@ -1301,6 +1301,61 @@ countermodel and its infinite expansion family are not obstructions to the
 exact target: closure descends but can fail to lift, whereas exact parity
 both descends and lifts.
 
+\subsection{A four-cycle warning: statewise local lifting fails}
+
+The triangle theorem does not extend by simply replacing the triangle by a
+square.  The distinction is already visible without SAT.
+
+\begin{proposition}[square-local statewise lifting no-go]
+\label{prop:square-lift-nogo}
+There are a simple planar 3-edge-connected cubic graph \(H\), a nonroot
+independent edge pair \(AC,BD\), and an exact-good star-fibre state
+\(\mathcal T\) such that, after replacing \(AC,BD\) by the square
+\[
+                 Aa,Bb,Cc,Dd,ab,bc,cd,da,
+\]
+no star-fibre lift that fixes \(\mathcal T-\{AC,BD\}\) outside the gadget
+is exact-good in any of the three coordinate directions.
+\end{proposition}
+
+The labelled downstairs graph is
+\(\texttt{G?zTb\_}\), with root \(0\), and the displayed state in the
+reproduction note has profile
+\[
+                              (2,2,0).
+\]
+Every one of the eight gadget edges has multiplicity two, so a local lift
+is specified by its omitted tree on each edge.  Exhausting all
+\(3^8=6561\) omitted-owner words leaves exactly \(72\) legal three-tree
+lifts.  Their complete profile histogram is
+\[
+\begin{array}{c|rrrrr}
+\text{profile}&(2,2,2)&(2,2,4)&(2,4,2)&(4,2,2)&(4,4,2)\\ \hline
+\text{count}&38&12&2&2&18 .
+\end{array}
+\]
+Thus no local lift is good even after changing the output coordinate.
+
+This does \emph{not} refute the whole-fibre existential square reduction.
+The expanded graph has a separately displayed star-fibre state of profile
+\((0,4,4)\).  More sharply, the same downstairs graph, root, and smoothing
+pair have another good state, of profile \((0,2,2)\), with a good
+square-local lift.  The proposition therefore rejects only the quantifier
+``lift this already chosen good state locally.''  A valid square induction
+would have to coordinate the state selection with the lift, and the exact
+whole-fibre implication remains open.
+
+The exact finite boundary has also been checked below this first failure.
+For both simple 3-edge-connected cubic graphs of order six, every good
+downstairs state has an any-coordinate good local lift for every eligible
+smoothing pair.  At order eight, a complete \texttt{geng} census of the
+four simple 3-edge-connected cubic graphs, all eight roots, and all
+twenty-one eligible pairs checks \(672\) graph/root/pair instances.  In
+every instance some good downstairs state has a good local lift; only
+\(688\) state attempts are needed in total.  Thus order eight is the first
+fixed-state failure but supplies no counterexample to the existential
+square implication.
+
 \section{A certified obstruction to direction thinning}
 
 A much broader sufficient rule would try to choose a star-fibre state in
@@ -1658,6 +1713,32 @@ nonroot triangle expansions of the 14-vertex fixed-coordinate example were
 enumerated exactly: \(17{,}297{,}280\) states, maximum score four, and no
 trapped positive same-level component.
 
+The graph product extends exactly to simultaneous expansions.  If \(S\)
+is any set of nonroot vertices of the original loopless cubic graph, even
+with adjacent members, and \(G^S\) expands every member to a triangle, then
+\[
+\mathcal X(G^S,r)\cong
+\mathcal X(G,r)\mathbin{\square}
+\operatorname{Cay}(S_3,\mathcal T)^{\square |S|},       \tag{8.6}
+\]
+where \(\mathcal T\) is the set of transpositions.  Indeed, each expanded
+triangle has multiplicity two on all three edges, so the three trees omit
+distinct edges and give one \(S_3\) coordinate.  A reciprocal swap between
+external edges is precisely the contracted swap; a swap between two
+omitted edges of one triangle is a transposition.  A mixed
+triangle/external swap, or a swap between two different triangles, makes
+one changed tree contain a complete triangle and is illegal.  These are all
+possibilities and prove~(8.6).
+
+This additional product structure still does not control the defect.
+Exact simultaneous-lift searches on two adversarial order-16 states find
+no strict trap: all \(3{,}780\) two-triangle lifts of the first have at
+least fourteen equal-level neighbours when none descends, and all
+\(3{,}780\) lifts of the second have at least seven.  Larger randomized
+plateau searches also escaped, but are explicitly exploratory.  The
+product theorem is human; none of these finite searches proves the
+same-level-component statement.
+
 For each tested state, Theorem~\ref{thm:fano-descent} also gives a
 nonincreasing path to level zero.  Follow equal-level exchanges to the
 marked boundary of the current component, take one descending exchange,
@@ -1780,6 +1861,10 @@ The evidence and no-go results sharply delimit plausible approaches:
       neighbour.  A successful universal descent argument must exploit the
       full same-level component, including active neutral exchanges, and
       must control the simultaneous topology changes in~(8.3).
+\item One cannot prove a four-cycle reduction by lifting one fixed good
+      downstairs state inside the square, even if the successful coordinate
+      may change, by Proposition~\ref{prop:square-lift-nogo}.  The
+      whole-fibre existential square implication is still open.
 \end{enumerate}
 
 The current computations support Problem~\ref{prob:kernel}, but they do not
@@ -1886,6 +1971,27 @@ Exact triangle invariance &
 {\footnotesize\texttt{parity\_triangle\_lift.py}} &
 human + exhaustive\\
 \addlinespace
+Square-local statewise lifting no-go &
+{\footnotesize\texttt{scratch/jaeger-star-square-any-coordinate-}}\par
+{\footnotesize\texttt{lift-no-go.md}};
+{\footnotesize\texttt{scratch/verify\_jaeger\_star\_square\_}}\par
+{\footnotesize\texttt{any\_coordinate\_lift\_countermodel.py}} &
+human + exhaustive\\
+\addlinespace
+Square-lift finite boundary &
+{\footnotesize\texttt{scratch/verify\_jaeger\_star\_square\_}}\par
+{\footnotesize\texttt{order6\_controls.py}};
+{\footnotesize\texttt{scratch/verify\_jaeger\_star\_square\_}}\par
+{\footnotesize\texttt{existential\_order8.py}} &
+exhaustive\\
+\addlinespace
+Simultaneous triangle product &
+{\footnotesize\texttt{scratch/jaeger-simultaneous-triangle-}}\par
+{\footnotesize\texttt{lift-plateau-search.md}};
+{\footnotesize\texttt{scratch/search\_jaeger\_lifted\_}}\par
+{\footnotesize\texttt{immediate\_traps.py}} &
+human + finite search\\
+\addlinespace
 34-vertex thinning no-go &
 \path{output/jaeger-star-thinning-countermodel-34v/star-thin-any.cnf}
 and \path{star-thin-any.lrat};
@@ -1943,7 +2049,7 @@ Atharva Vaidya's direction.  The agents:
 \item proposed the fixed-fibre, component-parity, odd-kernel,
       parity-element, cographic-base, exchange, symmetric-descent, and
       perfect-forest formulations, and the exact triangle-lifting
-      reduction;
+      reduction and square-local no-go tests;
 \item wrote most of the search, certificate-generation, and verification
       code;
 \item found the finite countermodels and positive witnesses;

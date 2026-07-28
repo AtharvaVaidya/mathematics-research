@@ -2658,3 +2658,44 @@ semantically.  This is a noncanonical random family screen with possible
 duplicates, not a census.  The fixed seeds, counts, code hash, and
 limitations are in
 `scratch/random-c5-factor-fivecdc-search-20260728.json`.
+
+## APX and square-local Jaeger route eliminations
+
+Audit date: **2026-07-28**.
+
+The affine pair-exchange axiom (APX) is false even on a simple girth-five,
+cyclically 4-edge-connected 36-vertex snark. The exact checker exhausts all
+221 perfect matchings and all 198 relevant binary-cycle packing queries;
+none of the 32 distinct affine-compatible pairs packs. This is not a
+FiveCDC counterexample: the graph has a directly checked standard
+five-cover, and 6,699 of 9,532 legal circuit switches repair the displayed
+flow. The broader reduced one-switch lemma remains open. See
+`scratch/fano-apx-countermodel-order36.md`.
+
+A separate solver-free no-go closes fixed-state square lifting. On graph6
+`G?zTb_`, root zero, one good state has exactly 72 legal local lifts and
+none is good in any coordinate. An alternate state for the same
+graph/root/smoothing pair does lift. Both order-six graphs pass the stronger
+statewise property, and all 672 order-eight whole-fibre instances admit a
+jointly chosen good state and lift. Hence the whole-fibre square reduction
+also remains open. See
+`scratch/jaeger-star-square-any-coordinate-lift-no-go.md`.
+
+Together these results eliminate two plausible short proofs without
+changing the resolution status. The sharp Jaeger obligation is still a
+universal full same-level-component descent theorem, or an equivalent joint
+tree-packing/parity selection theorem.
+
+For any set \(S\) of simultaneous nonroot triangle expansions, the exchange
+graph now has the human-proved factorization
+\[
+\mathcal X(G^S,r)\cong\mathcal X(G,r)\square
+\operatorname{Cay}(S_3,\mathcal T)^{\square|S|}.
+\]
+The defect is not constant on the \(S_3\) sheets, so this is structural
+rather than a descent proof. Exhaustive two-triangle searches on two
+adversarial order-16 states find no strict trap (minimum neutral degrees 14
+and 7), and randomized order-16, order-36, and triangle-expanded stress
+tests also escape. Only the product identity is a theorem; the latter
+results are finite or exploratory. See
+`scratch/jaeger-simultaneous-triangle-lift-plateau-search.md`.

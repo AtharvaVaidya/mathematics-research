@@ -34,6 +34,12 @@ The strongest new outputs of this project are:
   invariant under contracting or lifting any triangle away from the root,
   reduced to seven local trace rows and backed by an exhaustive 60-trace
   checker;
+- an exact order-eight countermodel to fixed-state square lifting, paired
+  with an alternate-state positive control and complete positive
+  whole-fibre checks on all 672 order-eight graph/root/smoothing instances;
+- a human Cartesian-product theorem for the exchange graph under any number
+  of simultaneous nonroot triangle expansions, with exact adversarial
+  finite controls and separately labeled randomized plateau stress tests;
 - a human-checkable endpoint-fork reduction and a complete
   9,725,709-pole order-28 explicit-witness census, together proving a
   scoped order-30 lower bound for simple terminal-distinct fixed-five

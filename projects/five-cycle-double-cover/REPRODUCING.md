@@ -68,11 +68,20 @@ c++ -O3 -std=c++20 \
 /tmp/count_jaeger_star_kernel_closure_countermodel_16v
 python3 scratch/verify_jaeger_star_kernel_closure_triangle_expansion.py
 python3 scratch/verify_jaeger_star_exact_parity_triangle_lift.py
+python3 scratch/verify_jaeger_star_square_any_coordinate_lift_countermodel.py
+python3 scratch/verify_jaeger_star_square_order6_controls.py
+python3 scratch/verify_jaeger_star_square_existential_order8.py
 python3 scratch/verify_jaeger_fano_min_descent_order16_closure_no_go.py
 python3 scratch/verify_jaeger_reciprocal_exchange_defect_formula.py
 python3 scratch/verify_jaeger_fano_min_immediate_descent_countermodel.py
 python3 scratch/verify_jaeger_triangle_expansion_descent_structure.py
 python3 scratch/verify_jaeger_triangle_expanded_fixedtrap_descent.py
+python3 -m py_compile scratch/search_jaeger_lifted_immediate_traps.py
+python3 scratch/search_jaeger_lifted_immediate_traps.py \
+  --triangles 2 \
+  --graph6 'Ot?GO?@?_G?T@IOSAIBO?' \
+  --root 0 --spokes 2,1,0 \
+  --omitted 1720610,271049,105492
 python3 scratch/verify_jaeger_coordinate_five_order44.py \
   --input search/known_snarks/source/snarks_44.04.oddness4.cyc4.g6 \
   --witnesses output/jaeger-coordinate-five-order44/witnesses.jsonl
@@ -87,7 +96,13 @@ verifies one positive state with no descending neighbour, a second with no
 kernel-inert neighbour, and both two-step escapes.  The triangle coverage
 verifier audits 13 exact fibres and
 17,297,280 enumerated states but does not duplicate the C++ state
-enumeration.  These commands verify bounded or conditional claims only; the
+enumeration.  The square checkers prove one exact fixed-state no-go, its
+order-six minimality control, and the positive whole-fibre statement in all
+672 order-eight graph/root/pair instances. The simultaneous-triangle search
+checks 3,780 two-gadget lifts of a frozen state; the corresponding Cartesian
+product is a separate human theorem in
+`scratch/jaeger-simultaneous-triangle-lift-plateau-search.md`. These commands
+verify bounded or conditional claims only; the
 universal star-packing selection lemma remains open.
 
 ## Required recorded environment

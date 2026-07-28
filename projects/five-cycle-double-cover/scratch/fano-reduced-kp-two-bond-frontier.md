@@ -1,7 +1,7 @@
 # Reduced Fano one-switch route: the two-bond frontier
 
-Status: **CORRECTED CONDITIONAL REDUCTION / EXACT AUXILIARY
-COUNTERMODEL / REDUCED ONE-SWITCH LEMMA OPEN**.
+Status: **CORRECTED CONDITIONAL REDUCTION / AFFINE PAIR-EXCHANGE AXIOM
+REFUTED / REDUCED ONE-SWITCH LEMMA OPEN**.
 
 This note isolates the precise point at which the Knappe--Pitz
 three-prescribed-edge theorem can help the reduced Fano-flow one-switch
@@ -448,9 +448,9 @@ because at most \(z_U\) matching edges can touch isolated components.
 The resulting condition depends only on
 \(|M_s|,z_U,r_U,q_s\).
 
-Criterion (11) is a proved finite obstruction budget.  It still does not
-resolve APX: no universal upper bound on \(q_s\) strong enough for (11)
-is presently proved.
+Criterion (11) is a proved finite obstruction budget.  The order-36
+countermodel in Section 11 proves that no universal upper bound on \(q_s\)
+strong enough to force (11) can hold throughout the stated APX domain.
 
 ## 9. Four canonical defect vectors for every nonpacking pair
 
@@ -637,9 +637,45 @@ Finally, if \(G\) has girth \(g\), summing (9) over all seven lines gives
                          \sum_U r_U\le\frac{6n}{g}.       \tag{27}
 \]
 Equations (19)--(27) are a global seven-value constraint, not seven
-separate estimates.  They still stop short of resolution: no bound on
-the global nonpacking budget \(Q\), or on the distribution of the
-\(r_U\), strong enough to reverse (25) or (26) is currently proved.
+separate estimates.  They remain correct, but Section 11 gives a literal
+APX countermodel with
+\[
+ L_B(H)=0,\qquad
+ \sum_{U,s}L_{N_U}(h_{s,U})=9,\qquad 3Q=402.
+\]
+Thus no theorem that universally reverses (25) or (26) on the APX domain
+is possible.
+
+## 11. Exact order-36 countermodel to APX
+
+The package
+`fano-apx-countermodel-order36.md`,
+`fano-apx-countermodel-order36.txt`, and
+`verify_fano_apx_countermodel_order36.py`
+freezes a simple cubic girth-five, cyclically 4-edge-connected,
+non-3-edge-colourable graph and a bad nowhere-zero
+\(\mathbb F_2^3\)-flow for which
+\[
+                 {\cal P}_s\cap{\cal A}_s=\varnothing
+                 \qquad(s=1,\ldots,7).
+\]
+The graph6 record is
+
+```text
+chc?GC@@G?_P?H??_?G?@??C??G?@G??C??P??@G?A?__?@_???C???g???GA??@?A??CG???G???GG????C_???@??A??G??A??_???OH
+```
+
+Complete enumeration gives 33 affine-compatible line occurrences,
+representing 32 distinct pairs, and none of their pair deletions packs.
+The standard-library checker answers all 198 original/pair-deletion
+packing queries by enumerating the complete relevant binary cycle spaces.
+An independent C++/CaDiCaL implementation also returns APX score zero.
+
+This refutes APX, not the reduced one-switch lemma.  The same flow has
+6,699 good switches among 9,532 legal connected-circuit switches, and the
+same graph has a directly checked five-cycle double cover with coordinate
+sizes \(25,19,21,21,22\).  The proof and complete scope audit are in the
+dedicated note.
 
 ## AI-use disclosure
 

@@ -45,6 +45,14 @@ The following cited checkers all exited zero in the final validation pass:
 - `verify_jaeger_triangle_expanded_fixedtrap_descent.py`: PASS; all thirteen
   inputs, graph premises, census rows, hashes, and the 17,297,280-state
   aggregate are independently audited.
+- `search_jaeger_lifted_immediate_traps.py`: PASS on the frozen second
+  order-16 state with two simultaneous triangle expansions; all 3,780
+  lifts were checked and the minimum equal-neighbour count among states
+  with no lower neighbour was seven. This is a finite control for the
+  separately proved Cartesian-product theorem, not a universal descent
+  check; note/search SHA-256
+  `acb8b66d72c350b6f768b791ed9b3167d4282acf2a587d4fcfd52ac062e8b6b7` /
+  `94cd82b1dbf84ffd46a6622fff8741fc1bb4187e616e16aee54b5dc5e7717303`.
 - `verify_jaeger_kernel_closure_typea_countermodel.py`: PASS; 355,392
   ordered packings in each 12-vertex fibre, zero closure-good and 7,704
   exact-parity-good.
@@ -69,6 +77,23 @@ The following cited checkers all exited zero in the final validation pass:
   1:18, 2:12, 3:6, 4:24); note/checker SHA-256
   `96259e65072b5a8c03f572e028a650f6e075f787c66e7e59917630c2b22c1008` /
   `e3026b8acdf95555fad33a5a2871174b497a154151f5e0f4fde642d31053bbe7`.
+- `verify_jaeger_star_square_any_coordinate_lift_countermodel.py`: PASS;
+  all \(3^8=6561\) omitted-owner words were checked, exactly 72 were legal,
+  none was good in any coordinate, and a separate good downstairs state
+  for the same graph/root/square was independently lifted successfully;
+  note/checker SHA-256
+  `ea24f997aaae027a25802a9ed291411199789077011c14a605c0956e615fb529` /
+  `a26ba8296cdab88685089d43d7be8002d209d90d3d662ef45b86f89aabc053eb`.
+- `verify_jaeger_star_square_order6_controls.py`: PASS; every good state of
+  both simple 3-edge-connected cubic order-six graphs has an
+  any-coordinate good local lift for every eligible smoothing pair;
+  SHA-256
+  `0f7d64413105ed6c69bd171734297fdf7e45b81af31bd812665efd92111dd73e`.
+- `verify_jaeger_star_square_existential_order8.py`: PASS; all four simple
+  3-edge-connected cubic order-eight graphs, all roots, and all 21 eligible
+  smoothing pairs were exhausted, for 672 whole-fibre instances and zero
+  failures; SHA-256
+  `f9366e50d6e7b0e53b87114f6daf7ee1ca640ac224f1f8d1363190e87fd7124b`.
 - `verify_jaeger_five_point_frontier.py`: PASS; 587 graphs, 944,974
   placements, and all 804,204 feasible fibres successful.
 - `verify_jaeger_star_thinning_countermodel_34v.py`: PASS; both

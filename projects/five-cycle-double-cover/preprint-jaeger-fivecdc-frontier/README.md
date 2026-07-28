@@ -19,7 +19,14 @@ argument. It does not claim a proof or counterexample to FiveCDC.
 The revised exchange section proves the exact all-seven update law and
 records two independently replayed order-16 no-gos: immediate descent and
 fixed-kernel exposure are both false, while the broader full same-level
-descent statement remains open.
+descent statement remains open. Simultaneous nonroot triangle expansions
+give an exact Cartesian-product theorem with one \(S_3\) Cayley factor per
+triangle, but the defect is not a product potential. A further solver-free order-eight example
+shows that one fixed good state need not have a good square-local lift in
+any coordinate; an alternate good state for the same graph and square does
+lift. A complete order-eight census finds a compatible state-and-lift in
+all 672 graph/root/smoothing instances, so the whole-fibre square reduction
+remains open rather than refuted.
 
 **Priority correction:** Hušek and Šámal, *Exponentially Many Circuit
 Double Covers*, arXiv:2607.24724v1 (submitted July 27, 2026), independently

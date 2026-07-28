@@ -15,6 +15,9 @@ python3 scratch/verify_jaeger_reciprocal_exchange_defect_formula.py
 python3 scratch/verify_jaeger_fano_min_immediate_descent_countermodel.py
 python3 scratch/verify_jaeger_kernel_closure_typea_countermodel.py
 python3 scratch/verify_jaeger_star_exact_parity_triangle_lift.py
+python3 scratch/verify_jaeger_star_square_any_coordinate_lift_countermodel.py
+python3 scratch/verify_jaeger_star_square_order6_controls.py
+python3 scratch/verify_jaeger_star_square_existential_order8.py
 ```
 
 The final command checks the separate two-way theorem for the surviving
@@ -24,6 +27,24 @@ values are `96259e65072b5a8c03f572e028a650f6e075f787c66e7e59917630c2b22c1008`
 for the human note and
 `e3026b8acdf95555fad33a5a2871174b497a154151f5e0f4fde642d31053bbe7`
 for the checker.
+
+The last three commands freeze the exact square-local quantifier boundary.
+The first checks the order-eight fixed-state countermodel: 6,561 gadget
+words, 72 legal lifts, and no lift good in any coordinate, followed by an
+alternate-state positive control. The second proves that no such fixed-state
+failure occurs on either simple 3-edge-connected cubic graph of order six.
+The third checks the weaker whole-fibre existential statement on all four
+simple 3-edge-connected cubic graphs of order eight, all roots, and all
+eligible smoothing pairs: 672 instances and zero failures. Expected
+SHA-256 values are
+`ea24f997aaae027a25802a9ed291411199789077011c14a605c0956e615fb529`
+for the human note,
+`a26ba8296cdab88685089d43d7be8002d209d90d3d662ef45b86f89aabc053eb`
+for the countermodel checker,
+`0f7d64413105ed6c69bd171734297fdf7e45b81af31bd812665efd92111dd73e`
+for the order-six controls, and
+`f9366e50d6e7b0e53b87114f6daf7ee1ca640ac224f1f8d1363190e87fd7124b`
+for the order-eight census.
 
 ## Symmetric Fano-minimum descent through order 14
 
@@ -45,6 +66,27 @@ boundary. The third command checks the exact six-lift score table. The
 fourth independently regenerates and audits the thirteen triangle-expanded
 inputs and their 17,297,280-state producer census; it does not duplicate
 the C++ whole-state enumeration.
+
+## Simultaneous triangle-product controls
+
+```sh
+python3 -m py_compile scratch/search_jaeger_lifted_immediate_traps.py
+python3 scratch/search_jaeger_lifted_immediate_traps.py \
+  --triangles 2 \
+  --graph6 'Ot?GO?@?_G?T@IOSAIBO?' \
+  --root 0 --spokes 2,1,0 \
+  --omitted 1720610,271049,105492
+```
+
+Expected final JSON: 3,780 tested lifts, zero lower neighbour at the
+minimizing lift, and minimum equal-neighbour count seven. The Cartesian
+product theorem is proved separately in
+`scratch/jaeger-simultaneous-triangle-lift-plateau-search.md`; the program
+checks only finite controls. Expected SHA-256 values are
+`acb8b66d72c350b6f768b791ed9b3167d4282acf2a587d4fcfd52ac062e8b6b7`
+for the note and
+`94cd82b1dbf84ffd46a6622fff8741fc1bb4187e616e16aee54b5dc5e7717303`
+for the Python search.
 
 ## Kernel-closure frontier
 

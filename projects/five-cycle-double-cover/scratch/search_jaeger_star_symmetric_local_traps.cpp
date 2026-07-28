@@ -25,6 +25,7 @@
 #include "search_jaeger_fixed_fibre_sat.cpp"
 
 #include <deque>
+#include <limits>
 #include <random>
 #include <unordered_set>
 
@@ -400,6 +401,9 @@ int main(int argc, char** argv) {
       std::uint64_t plateau_replays = 0;
       std::size_t largest_replayed_plateau = 0;
       int largest_escape_distance = 0;
+      int smallest_neutral_degree = std::numeric_limits<int>::max();
+      StarState smallest_neutral_witness;
+      std::array<int, 7> smallest_neutral_profile{};
       StarState largest_plateau_witness;
       std::array<int, 7> largest_plateau_profile{};
       int largest_plateau_score = 0;
@@ -439,6 +443,12 @@ int main(int argc, char** argv) {
                       << "\"legal_neighbours\":" << next.size() << ','
                       << "\"higher_neighbours\":" << higher << "}\n";
             return 1;
+          }
+          if (score > 0 && lower == 0 &&
+              equal < smallest_neutral_degree) {
+            smallest_neutral_degree = equal;
+            smallest_neutral_witness = state;
+            smallest_neutral_profile = profile;
           }
           if (score > 0 && lower == 0 && equal > 0 &&
               !escaped_plateau_states.contains(state)) {
@@ -544,6 +554,8 @@ int main(int argc, char** argv) {
                 << "\"graph_index\":" << graph_index << ','
                 << "\"graph6\":\"" << json_escape(graph6) << "\","
                 << "\"root\":" << root << ','
+                << "\"spokes\":[" << model.spoke[0] << ','
+                << model.spoke[1] << ',' << model.spoke[2] << "],"
                 << "\"replay_mode\":\"" << replay_mode << "\","
                 << "\"steps\":" << steps << ','
                 << "\"distinct_states\":" << seen.size() << ','
@@ -553,6 +565,16 @@ int main(int argc, char** argv) {
                 << largest_replayed_plateau << ','
                 << "\"largest_escape_distance\":"
                 << largest_escape_distance;
+      if (smallest_neutral_degree != std::numeric_limits<int>::max()) {
+        std::cout << ",\"smallest_neutral_degree\":"
+                  << smallest_neutral_degree
+                  << ",\"smallest_neutral_profile\":";
+        print_profile(smallest_neutral_profile);
+        std::cout << ",\"smallest_neutral_omitted\":["
+                  << smallest_neutral_witness.omitted[0] << ','
+                  << smallest_neutral_witness.omitted[1] << ','
+                  << smallest_neutral_witness.omitted[2] << ']';
+      }
       if (largest_replayed_plateau) {
         std::cout << ",\"largest_plateau_witness_score\":"
                   << largest_plateau_score

@@ -35,25 +35,34 @@ check at least the following.
    Eulerian-completion lemma, descent by contraction, equations
    (6.18)--(6.20), every row of the seven-orbit table, and the
    simple-3-edge-connected caveat. The checker is a backstop, not the proof.
-10. Audit the symmetric Fano-minimum score in the C++ whole-state enumerator.
+10. Verify the square-local lifting no-go directly: the two displayed
+    downstairs states, the eight gadget ports, completeness of the
+    \(3^8\) omitted-owner enumeration, all 72 legal lifts, and the alternate
+    state's successful lift. Audit the order-six statewise controls and the
+    complete 672-instance order-eight whole-fibre census. Preserve the
+    distinction between failure for one selected state and the still-open
+    whole-fibre implication.
+11. Audit the symmetric Fano-minimum score in the C++ whole-state enumerator.
    Its Python verifier independently checks graph/root coverage and hashes,
    but does not re-enumerate the 529,150,122 states. Separately verify the
    all-seven exchange identities (8.3)--(8.5), both complete 147-swap
    neighbourhoods used to refute immediate descent and fixed-kernel
    exposure, and the distinction between inactive and active same-level
-   moves.
-11. Audit the 34-vertex CNF generator, then replay both LRAT checkers from
+   moves. Verify the four-case proof of the simultaneous-triangle Cartesian
+   product, especially swaps involving two different triangle gadgets; do
+   not infer that the defect is a product potential.
+12. Audit the 34-vertex CNF generator, then replay both LRAT checkers from
    pinned source revisions.
-12. Treat the order-14 and order-38 positive censuses as rerunnable
+13. Treat the order-14 and order-38 positive censuses as rerunnable
    computations, not archived witness-by-witness proofs. The order-44 result
    does retain and independently replay every literal witness.
-13. Continue the specialist prior-art search for the
-    odd-kernel/parity-element formulation, exact triangle invariance,
-    cographic-base correspondence, symmetric potential, and fixed-fibre
-    feasibility observation. Hušek--Šámal already settle the priority
-    boundary for the flow-level component criterion; no remaining item is
-    presented with a categorical novelty claim.
-14. Decide whether Atharva Vaidya should be the sole named author and whether
+14. Continue the specialist prior-art search for the
+   odd-kernel/parity-element formulation, exact triangle invariance,
+   cographic-base correspondence, symmetric potential, and fixed-fibre
+   feasibility observation. Hušek--Šámal already settle the priority
+   boundary for the flow-level component criterion; no remaining item is
+   presented with a categorical novelty claim.
+15. Decide whether Atharva Vaidya should be the sole named author and whether
    any additional human contributors meet the journal's authorship policy.
    AI systems must not be listed as authors, but their role must remain
    disclosed.

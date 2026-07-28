@@ -403,8 +403,14 @@ kernel-inert neutral exchange exposes a descent on the following move.
 The natural fixed-kernel exposure repair is also false: a second exact
 state has no kernel-inert neighbour and first needs an active same-level
 exchange.
+The triangle-style fixed-state lifting rule also fails for a square:
+an exact planar order-eight state has 72 legal local lifts but none good in
+any coordinate. An alternate state for the same fibre does lift, and a
+complete 672-instance order-eight census has no whole-fibre failure, so the
+existential square reduction remains open.
 Nonroot triangle expansion gives an exact Cartesian product of fibre
-exchange graphs, but an explicit six-lift table shows that the defect score
+exchange graphs, and simultaneous expansions give one \(S_3\) Cayley
+factor per triangle. An explicit six-lift table shows that the defect score
 is not contraction-invariant.  Thirteen such expanded fibres, containing
 17,297,280 states, pass exact descent checks.  The remaining sharp
 obligation is the full same-level-component boundary theorem;

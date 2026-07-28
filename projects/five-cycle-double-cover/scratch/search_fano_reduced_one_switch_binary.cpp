@@ -796,6 +796,54 @@ int rewire_search(const int samples, const std::uint64_t seed,
   return 0;
 }
 
+int apx_rewire_search(const int samples, const std::uint64_t seed,
+                      const int stop_after,
+                      const bool require_girth_five) {
+  std::mt19937_64 random(seed);
+  std::uint64_t generated = 0, simple = 0, premise = 0, bad = 0;
+  int minimum_score = 1 << 30;
+  for (int sample = 0; sample < samples; ++sample) {
+    ++generated;
+    Graph graph;
+    std::vector<int> flow;
+    if (!random_signature_graph(random, &graph, &flow)) continue;
+    ++simple;
+    if (!cyclically_four(graph, require_girth_five)) continue;
+    ++premise;
+    PackingOracle oracle(graph);
+    if (good(flow, oracle)) continue;
+    ++bad;
+    const int score = affine_packing_pair_count(graph, flow, oracle);
+    if (score < minimum_score) {
+      minimum_score = score;
+      std::cerr << "sample=" << sample << " bad=" << bad
+                << " best_apx=" << minimum_score
+                << " cache=" << oracle.cache.size() << std::endl;
+    }
+    if (!score) {
+      std::cout << "{\"status\":\"APX_REWIRE_COUNTERMODEL\",\"sample\":"
+                << sample << ",\"edges\":[";
+      for (int edge = 0; edge < static_cast<int>(graph.edges.size()); ++edge) {
+        if (edge) std::cout << ',';
+        std::cout << '[' << graph.edges[edge].first << ','
+                  << graph.edges[edge].second << ',' << flow[edge] << ']';
+      }
+      std::cout << "]}" << std::endl;
+      return 3;
+    }
+    if (stop_after > 0 && bad >= static_cast<std::uint64_t>(stop_after)) {
+      break;
+    }
+  }
+  std::cout << "{\"status\":\"APX_REWIRE_DONE\",\"generated\":"
+            << generated << ",\"simple\":" << simple
+            << ",\"premise\":" << premise << ",\"bad\":" << bad
+            << ",\"minimum_apx_witness_count\":"
+            << (minimum_score == (1 << 30) ? -1 : minimum_score)
+            << "}" << std::endl;
+  return 0;
+}
+
 int perturb_search(const int samples, const std::uint64_t seed,
                    const int switches) {
   std::mt19937_64 random(seed);
@@ -1131,6 +1179,70 @@ int apx_neighborhood_search(const std::string& path,
   return best_score ? 0 : 3;
 }
 
+int circuit_repair_audit(const std::string& path,
+                         const bool stop_at_first) {
+  std::ifstream input(path);
+  std::string record, flow_line;
+  if (!input || !std::getline(input, record) ||
+      !std::getline(input, flow_line)) {
+    throw std::runtime_error("cannot read circuit-audit state");
+  }
+  Graph graph = decode_graph6(record);
+  std::vector<int> flow;
+  std::stringstream parser(flow_line);
+  std::string item;
+  while (std::getline(parser, item, ',')) {
+    flow.push_back(std::stoi(item));
+  }
+  if (flow.size() != graph.edges.size()) {
+    throw std::runtime_error("circuit-audit flow has wrong length");
+  }
+  const std::vector<Key> circuits = all_circuits(graph);
+  PackingOracle oracle(graph);
+  if (good(flow, oracle)) {
+    throw std::runtime_error("circuit-audit state is not bad");
+  }
+  const auto initial_classes = classes(flow);
+  std::uint64_t legal = 0, repairs = 0;
+  int first_value = 0;
+  Key first_circuit;
+  for (int value = 1; value <= 7; ++value) {
+    for (const Key circuit : circuits) {
+      if ((circuit.lo & initial_classes[value - 1].lo) ||
+          (circuit.hi & initial_classes[value - 1].hi)) {
+        continue;
+      }
+      ++legal;
+      if (good(switched_flow(flow, circuit, value), oracle)) {
+        ++repairs;
+        if (!first_value) {
+          first_value = value;
+          first_circuit = circuit;
+        }
+        if (stop_at_first) break;
+      }
+    }
+    if (stop_at_first && first_value) break;
+  }
+  std::cout << "{\"status\":\"CIRCUIT_REPAIR_AUDIT\","
+            << "\"graph6\":\"" << record << "\",\"vertices\":"
+            << graph.vertices << ",\"circuits\":" << circuits.size()
+            << ",\"legal_switches_tested\":" << legal
+            << ",\"good_switches\":" << repairs
+            << ",\"complete\":" << (stop_at_first ? "false" : "true")
+            << ",\"first_value\":" << first_value
+            << ",\"first_circuit\":[";
+  bool comma = false;
+  for (int edge = 0; edge < static_cast<int>(flow.size()); ++edge) {
+    if (!selected(first_circuit, edge)) continue;
+    if (comma) std::cout << ',';
+    comma = true;
+    std::cout << edge;
+  }
+  std::cout << "]}" << std::endl;
+  return 0;
+}
+
 // Search a stronger operation than the target lemma: X may be any binary
 // cycle, possibly disconnected.  SAT therefore disproves nothing; UNSAT
 // for all (t,b) pairs certifies no connected-circuit repair.
@@ -1265,6 +1377,54 @@ int core_search(const std::string& path, const int samples,
   return 0;
 }
 
+int apx_sample_search(const std::string& path, const int samples,
+                      const std::uint64_t seed) {
+  std::ifstream input(path);
+  if (!input) throw std::runtime_error("cannot open " + path);
+  std::mt19937_64 random(seed);
+  std::string record;
+  std::uint64_t graphs = 0, flows = 0, flow_trials = 0, bad = 0;
+  int minimum_score = 1 << 30;
+  while (std::getline(input, record)) {
+    if (record.empty()) continue;
+    Graph graph = decode_graph6(record);
+    PackingOracle oracle(graph);
+    ++graphs;
+    for (int sample = 0; sample < samples; ++sample) {
+      const std::vector<int> flow =
+          random_flow(graph, random, &flow_trials);
+      ++flows;
+      if (good(flow, oracle)) continue;
+      ++bad;
+      const int score = affine_packing_pair_count(graph, flow, oracle);
+      if (score < minimum_score) {
+        minimum_score = score;
+        std::cerr << "graph=" << graphs << " sample=" << sample
+                  << " bad=" << bad << " best_apx=" << minimum_score
+                  << " cache=" << oracle.cache.size() << std::endl;
+      }
+      if (!score) {
+        std::cout << "{\"status\":\"APX_SAMPLE_COUNTERMODEL\","
+                  << "\"graph6\":\"" << record
+                  << "\",\"vertices\":" << graph.vertices
+                  << ",\"flow\":[";
+        for (int edge = 0; edge < static_cast<int>(flow.size()); ++edge) {
+          if (edge) std::cout << ',';
+          std::cout << flow[edge];
+        }
+        std::cout << "]}" << std::endl;
+        return 3;
+      }
+    }
+  }
+  std::cout << "{\"status\":\"APX_SAMPLE_DONE\",\"graphs\":" << graphs
+            << ",\"flows\":" << flows << ",\"bad\":" << bad
+            << ",\"minimum_apx_witness_count\":"
+            << (minimum_score == (1 << 30) ? -1 : minimum_score)
+            << ",\"flow_trials\":" << flow_trials << "}" << std::endl;
+  return 0;
+}
+
 int pair_deletion_search(const std::string& path, const int samples,
                          const std::uint64_t seed,
                          const bool require_lift) {
@@ -1393,11 +1553,23 @@ int main(int argc, char** argv) {
       return apx_neighborhood_search(
           argv[2], std::stoi(argv[3]), std::stoull(argv[4]));
     }
+    if (std::string(argv[1]) == "--circuit-audit" ||
+        std::string(argv[1]) == "--circuit-first") {
+      return circuit_repair_audit(
+          argv[2], std::string(argv[1]) == "--circuit-first");
+    }
     if (std::string(argv[1]) == "--rewire40" ||
         std::string(argv[1]) == "--rewire40-cyclic4") {
       return rewire_search(std::stoi(argv[2]), std::stoull(argv[3]),
                            std::stoi(argv[4]),
                            std::string(argv[1]) == "--rewire40");
+    }
+    if (std::string(argv[1]) == "--apx-rewire40" ||
+        std::string(argv[1]) == "--apx-rewire40-cyclic4") {
+      return apx_rewire_search(
+          std::stoi(argv[2]), std::stoull(argv[3]),
+          std::stoi(argv[4]),
+          std::string(argv[1]) == "--apx-rewire40");
     }
     if (std::string(argv[1]) == "--perturb40") {
       return perturb_search(std::stoi(argv[2]), std::stoull(argv[3]),
@@ -1408,6 +1580,10 @@ int main(int argc, char** argv) {
       return core_search(argv[2], std::stoi(argv[3]),
                          std::stoull(argv[4]),
                          std::string(argv[1]) == "--core-bad");
+    }
+    if (std::string(argv[1]) == "--apx-sample") {
+      return apx_sample_search(
+          argv[2], std::stoi(argv[3]), std::stoull(argv[4]));
     }
     if (std::string(argv[1]) == "--pair-bad") {
       return pair_deletion_search(
