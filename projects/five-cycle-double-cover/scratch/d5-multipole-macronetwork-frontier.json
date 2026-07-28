@@ -1,0 +1,90 @@
+{
+  "schema": "d5-multipole-macronetwork-frontier-v1",
+  "classification": "EXACT SMALL MACRO-NETWORK NO-GO / FRONTIER OPEN",
+  "relations": {
+    "c5_words": 4620,
+    "c5_color_orbits": 46,
+    "proper_four_pole_masks": [
+      "0x3ef",
+      "0x3f7",
+      "0x3fd",
+      "0x3fe"
+    ],
+    "four_pole_atoms": {
+      "C]": "three terminal-order variants: 0x3ef, 0x3f7, 0x3fd",
+      "ECxo": "terminal-symmetric relation 0x3fe"
+    }
+  },
+  "exact_labelled_pairing_census": [
+    {
+      "five_atoms": 2,
+      "four_atoms": 0,
+      "pairing_leaves": 120,
+      "connected_bridgeless_pairings": 120,
+      "tait_unsat": 10,
+      "fivecdc_unsat": 0
+    },
+    {
+      "five_atoms": 2,
+      "four_atoms": 1,
+      "four_atom": "C]",
+      "pairing_leaves": 14400,
+      "connected_bridgeless_pairings": 14400,
+      "tait_unsat": 0,
+      "fivecdc_unsat": 0
+    },
+    {
+      "five_atoms": 2,
+      "four_atoms": 1,
+      "four_atom": "ECxo",
+      "pairing_leaves": 14400,
+      "connected_bridgeless_pairings": 14400,
+      "tait_unsat": 0,
+      "fivecdc_unsat": 0
+    }
+  ],
+  "deterministic_random_diagnostics": [
+    {
+      "seed": 20260730,
+      "trials": 50000,
+      "five_atoms": 2,
+      "four_atoms_range": [
+        0,
+        30
+      ],
+      "four_mode": "mixed",
+      "accepted": 9390,
+      "tait_unsat": 15,
+      "fivecdc_unsat": 0
+    },
+    {
+      "seed": 20260731,
+      "trials": 50000,
+      "five_atoms": 4,
+      "four_atoms_range": [
+        0,
+        30
+      ],
+      "four_mode": "mixed",
+      "accepted": 8927,
+      "tait_unsat": 2,
+      "fivecdc_unsat": 0
+    },
+    {
+      "seed": 20260732,
+      "trials": 50000,
+      "five_atoms": 2,
+      "four_atoms_range": [
+        1,
+        40
+      ],
+      "four_mode": "ECxo only",
+      "accepted": 9654,
+      "tait_unsat": 4,
+      "fivecdc_unsat": 0
+    }
+  ],
+  "fivecdc_unsat_found": false,
+  "lrat_generated": false,
+  "scope_warning": "The exact theorem stops at loopless macrographs with two C5 atoms and at most one four-pole atom. Larger macro-networks were sampled, not exhausted; same-atom terminal pairings (macro-loops) were not searched. No semigroup-wide satisfiability invariant was proved."
+}

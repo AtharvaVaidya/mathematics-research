@@ -281,7 +281,8 @@ Open obligations:
     giving resistance monotonicity under proper superposition remains an
     imported literature theorem rather than a Lean theorem.  This positive
     case enters but does not exhaust the minimum-counterexample domain.
-17. **Exact reduction established; exchange lemma open:** for any exact-zero
+17. **Exact reduction established; unrestricted exchange lemma refuted:**
+    for any exact-zero
     matching \(M\), the condition \(A\cap B=M\) is exactly the packing of
     two edge-disjoint \(T\)-joins in
     \((G-M,T=\partial M)\).  The restricted flow proves bridgelessness,
@@ -290,19 +291,26 @@ Open obligations:
     no \(T\)-join.  If all components are \(T\)-even, the minimum is two
     and the imported Codato--Conforti--Serafini theorem makes an
     odd-\(K_{2,3}\) graft minor necessary for remaining failure of this
-    fixed \(M\).  A universal proof would follow by showing that a
+    fixed \(M\).  A universal proof would have followed by showing that a
     genuinely nonpacking minimum exact-zero matching can be exchanged for
-    a smaller one.  A proved partial switch says that every \(T\)-join
+    a smaller one.  The 130-vertex package
+    `search/minimum-zero-exchange-countermodel-130v-20260727/` now refutes
+    this: \(r_f=r_M=5\), while the least matching/four-flow extension has
+    size six.  A proved partial switch says that every \(T\)-join
     \(J\) meets each of the three nonzero flow-color classes in at least
     \(|M|\) edges, hence \(|J|\ge3|M|\); this does not yet imply packing.
-    No complete exchange theorem is proved.  The finite package
+    Therefore no unrestricted complete exchange theorem is possible.  The
+    finite package
     does prove that all 20,749 minimum supports in the complete order-20
     hard corpus and all 92,313 minimum supports of reconstructed \(H_3\)
     extend; the latter enumeration is complete by a two-checker LRAT.
     Existentially, every one of the 12,892 frozen hard order-22 rows has an
     extending minimum support; seven size-two lower bounds have LRATs
     accepted by both proof checkers.
-    These finite discharges do not close the universal obligation.
+    These finite discharges remain useful controls but do not restore the
+    refuted universal obligation.  A narrower theorem may still use the
+    cyclically \(4\)-edge-connected, girth-at-least-ten
+    minimum-counterexample hypotheses.
 18. **Blind-audit correction discharged exactly:** the frozen graph6
     instance `Is?AXW[[?` is a simple cubic connected bridgeless graph with
     an exact-zero matching whose complement has two \(T\)-odd components.
@@ -938,8 +946,8 @@ Open obligations:
     reformulation includes loops and parallel edges but is not a proof
     of existence and does not add orientability.  See
     `docs/five-cdc-elliptic-quadratic-flow-model.md`.
-59. **The first claimed simple terminal-distinct lower bound of order 28
-    was withdrawn; the cyclically-four cap censuses remain valid:** the
+59. **The claimed simple terminal-distinct lower bound of order 28 is
+    withdrawn; the cyclically-four cap censuses remain valid:** the
     simple-cap theorem reduces the cyclically-four branch at each even
     order to all
     independent-edge deletions from bridgeless non-Tait cubic caps.
@@ -959,9 +967,7 @@ Open obligations:
     shard logs.  Therefore every retained cyclically-four cap deletion
     has full signature, but a mixed-orientation cyclic-three atom is not
     reduced to that corpus.  No global lower bound for all bridge-free
-    connected simple terminal-distinct poles follows from these censuses
-    alone.  Item 67 records the later independent two-sided fork transport
-    which soundly restores the scoped order-28 bound.  This also does not
+    connected simple terminal-distinct poles follows.  This also does not
     cover repeated terminals, nonsimple cores, or unbounded-colour CDC
     signatures.
     See `search/four-pole-order26-cyclic4-cap-20260727/`.
@@ -1068,9 +1074,9 @@ Open obligations:
     Two exact implementations now classify every one of the 10,824,084
     proper roots in the 330,790 vertex-deleted cores from all 13,901
     retained triangle-free 3-connected non-Tait caps at orders 20, 22,
-    and 24. Every signature is nonempty and base-pair closed, and the
-    complete transcripts agree byte-for-byte. Thus the finite branch is
-    closed independently of item 67. See
+    and 24.  Every signature is nonempty and base-pair closed, and the
+    complete transcripts agree byte-for-byte.  Thus the finite branch is
+    closed independently of item 67.  See
     `docs/rooted-cap-triangle-induction.md` and
     `search/rooted-three-pole-c3-cap-frontier-through24-20260727/`.
 67. **A root-end base pair lifts through an arbitrary factor path as a
@@ -1108,7 +1114,61 @@ Open obligations:
     remains global selection of the flow and special line, not local
     triangle choice.  See
     `docs/five-cdc-five-point-triangle-list-lift.md`.
-69. **The complete retained order-28 cyclically-four cap class has no
+69. **Rooted minimum exact-zero supports obey a quotient-forest theorem,
+    but not every rooted minimum packs:** for prescribed independent
+    roots \(R\subseteq M\), inclusion-minimality implies that
+    \(Q_c-R\) is a forest for each nonzero quotient-flow value \(c\);
+    hence every quotient cycle uses a root and the quotient cycle rank is
+    at most two.  The stronger all-minima packing assertion is false on a
+    22-vertex simple cubic cyclically 4-edge-connected non-Tait graph:
+    the rooted minimum \(\{24,27,31\}\) has a one-vertex degree-three
+    obstruction to the even-marked circuit criterion.  A checked
+    root-preserving neutral switch reaches the packing minimum
+    \(\{13,24,27\}\), with two explicit disjoint \(T\)-joins.  The
+    standard-library replay passes.  Across the retained complete
+    order-22 focused corpus, all 14,322 independent pairs have some
+    packing rooted minimum, although 352 also have nonpacking minima.
+    The universal obligation is therefore rooted flow feasibility plus
+    reachability of packing inside the rooted minimum neutral component,
+    or exclusion of the surviving size-five parity and odd-\(K_{2,3}\)
+    graft branches.  See
+    `scratch/focused-aa-rooted-minimum-frontier.md`.
+70. **Deleting the four endpoints of prescribed independent roots leaves
+    matching deficiency at most two, but the theta choice is open:** for
+    every finite 3-edge-connected cubic graph \(G\), roots \(R=\{e,f\}\),
+    and \(U=V(e)\cup V(f)\), the Tutte--Berge inequalities give
+    \(\operatorname{def}(G-U)\le2\).  A maximum matching in the
+    deficiency-two case has a complement whose suppressed two-branch
+    core is either a theta or a loop--link--loop dumbbell; it is an exact
+    zero matching for an \(\mathbb F_2^2\)-flow exactly in the theta
+    case.  Under simple cyclic four-connectivity, a tight barrier has
+    only singleton three-boundary odd components except possibly one
+    five-boundary component, and every dumbbell-link edge has a nonroot
+    matching chord across its cyclic cut.  A checked smallest
+    10-vertex 3-edge-connected control has only dumbbell maxima, showing
+    that 3-edge-connectivity alone is insufficient; it is Tait-colourable
+    and has a cyclic three-edge cut.  The remaining focused obligation is
+    to turn the matching chords into a theta-producing exchange, or find
+    a cyclically-four non-Tait countermodel.  See
+    `scratch/prescribed-root-matching-deficiency-frontier.md`.
+71. **The focused perfect-or-theta alternative holds throughout the
+    retained complete corpora at every even order from 10 through 30:**
+    two independent exact implementations classify 136,557,951
+    independent root pairs in 153,863 cyclically-four non-Tait simple
+    cubic graphs.  Exactly 135,214,569 leave a perfectly matchable
+    endpoint-deleted graph; the other 1,343,382 have deficiency two and
+    every one admits some
+    maximum matching whose complement is theta rather than dumbbell.
+    There are no all-dumbbell pairs.  All deficient instances have
+    \(|\delta(U)|=8\), but this is only a bounded observation.  The human
+    exchange audit proves that maximum near-perfect matchings are related
+    by even alternating circuits and exposed-vertex rotations.  The
+    universal obligation is to show that a complement-bridge-minimizing
+    dumbbell state cannot be closed under all such moves.  See
+    `search/focused-theta-choice-through28-20260727/`,
+    `search/focused-theta-choice-order30-20260727/`, and
+    `scratch/focused-theta-choice-census-frontier.md`.
+72. **The complete retained order-28 cyclically-four cap class has no
     exceptional deletion pole, raising the scoped lower bound to
     order 30:** Snarkhunter supplies 12,517 documented cyclically
     4-edge-connected non-Tait simple cubic caps.  Their 9,725,709
@@ -1117,100 +1177,61 @@ Open obligations:
     \((01,01,01,01)\), and orbit 2,
     \((01,01,23,23)\).  The first three exceptional exact masks omit
     orbit 2 and the last three omit orbit 0, so the two witnesses
-    exclude all six masks.  The package verifier and a separately
-    written C++/zlib checker replay every displayed vertex equation.
-    Combined with the human cyclic-three endpoint-fork bound of 30, the
-    previous cyclically-four classifications through 26, and the parity
-    identity \(3n-4=2m\) for a terminal-distinct cubic four-pole, this
-    proves the stated order-30 lower bound in the vertex-minimal,
-    two-cut-reduced, bridge-free, connected, simple, terminal-distinct
-    fixed-five scope.  It is not a universal full-signature theorem and
-    not Five-CDC.  See
+    exclude all six masks.  An independent verifier reconstructs every
+    deletion and checks every displayed vertex equation.  Combined with
+    the human cyclic-three endpoint-fork bound of 30, the previous
+    cyclically-four classifications through 26, and the parity identity
+    \(3n-4=2m\) for a terminal-distinct cubic four-pole, this proves the
+    stated order-30 lower bound in the vertex-minimal, two-cut-reduced,
+    bridge-free, connected, simple, terminal-distinct fixed-five scope.
+    It is not a universal full-signature theorem and not Five-CDC.  See
     `search/four-pole-order28-cyclic4-cap-20260727/`.
-70. **Universal five-pole nonemptiness is already equivalent to the
-    standard conjecture, and the 46-state screen reaches order 15:**
+73. **Boundary-eight local rotation closure does not replace cyclic
+    four-edge-connectivity:** the graph
+    `Q???C@?GF?CKSOF?AQ?W_B_AA_?` with roots \(\{12,20\}\) is simple,
+    cubic, 3-edge-connected, non-Tait, and has matching deficiency two.
+    All 40 maximum matchings give dumbbell complements, while their full
+    elementary exchange graph is connected with 384 edges.  For the
+    canonical barrier \(A=\{6,16\}\), the roots and the unique unused
+    \(A\)-edge form a cyclic three-edge cut; this makes that edge a
+    complement bridge for every maximum matching.  A direct cut proof,
+    two \(K_{2,3}\)-to-Petersen contractions, and a standard-library
+    checker independently establish the claims.  Thus a proof from the
+    boundary-eight incidence counts, non-Taitness, and exchange
+    minimality alone is impossible.  The focused cyclic-four
+    singleton-barrier lemma and the one-boundary-five case remain open.
+    See `scratch/boundary-eight-rotation-closure-frontier.md`.
+74. **The all-singleton Gallai--Edmonds branch cannot contain a standard
+    Five-CDC counterexample:** write its partition as
+    \(V(G)=D\dot\cup W\), with \(D\) independent and
+    \(|W|=|D|+2\).  Cubic degree counting gives
+    \(|E(G[W])|=3\).  Schönberger's edge-prescribed matching theorem
+    gives a perfect matching through any chosen edge of \(G[W]\); counting
+    then shows that it contains exactly one such edge.  The complementary
+    2-factor contains the other two, so its cycles contain an odd number
+    of same-side edges on zero or exactly two components.  Its oddness is
+    therefore at most two, and Huck--Kochol (1995) gives a standard
+    five-cycle double cover.  This is a human-checkable universal closure
+    of the standard singleton branch.  It neither proves the stronger
+    prescribed-root theta statement nor treats the one-boundary-five
+    factor-critical branch.  See
+    `scratch/root-insertion-two-factor-frontier.md`.
+75. **Universal five-pole nonemptiness is already equivalent to the
+    standard conjecture, and the 46-state screen now reaches order 15:**
     replace an edge \(uv\) of a finite simple bridgeless cubic graph by a
     six-edge path whose five internal vertices are the terminals of a
     five-pole.  Every proper edge of the new core lies on a circuit.
     Summing a pole \(D_5\)-labelling over the old vertex set forces the
     first and last path-edge labels to agree, so deleting the path and
-    restoring \(uv\) gives a FiveCDC of the original graph.  Conversely,
+    restoring \(uv\) gives a Five-CDC of the original graph.  Conversely,
     after normalizing the old edge label to \(01\), the path labels
     \(01,02,03,01,02,01\) and semiedge labels
     \(12,23,13,12,12\) extend the cover.  Thus the universal 46-of-62
-    theorem would resolve FiveCDC; it is not merely a five-cut reduction.
-    The bounded threshold census nevertheless has a clean extension: all
-    69,243 canonical internally bridgeless order-15 five-poles reach 46
-    states, with zero below-threshold records.  Structural replay passes,
-    while the universal nonemptiness proof remains exactly the unresolved
-    obligation.  See `docs/five-pole-realizability-frontier.md` and
+    theorem would resolve Five-CDC; it is not merely a five-cut
+    reduction.  The bounded threshold census nevertheless has a clean
+    extension: all 69,243 canonical internally bridgeless order-15
+    five-poles reach 46 states, with zero below-threshold records.
+    Structural replay passes, while the universal nonemptiness proof
+    remains exactly the unresolved obligation.  See
+    `docs/five-pole-realizability-frontier.md` and
     `search/five-pole-46-threshold-order15-20260727/`.
-71. **The standard all-singleton matching branch is closed, leaving one
-    factor-critical five-boundary branch:** in the all-singleton
-    Gallai--Edmonds profile, degree counting gives exactly three edges
-    inside the \(W\)-shore. A perfect matching through one such edge has a
-    complementary 2-factor with at most two odd components, so the cited
-    Huck--Kochol theorem supplies a standard FiveCDC. In the remaining
-    profile there is one nontrivial factor-critical component \(Q\) with
-    five boundary edges. A perfect matching through one prescribed root
-    satisfies \(k+2r=3\), hence \(k=r=1\), and the perfect-matching
-    polytope makes at least two \(Q\)-terminals attainable. If one attained
-    terminal has a near-perfect matching leaving at most two internal odd
-    circuits, the full graph has oddness at most four and again has a
-    standard FiveCDC. These are displayed human-checkable reductions; the
-    prescribed-root theta statement remains stronger and open. See
-    `docs/root-insertion-two-factor-frontier.md` and
-    `docs/one-boundary-five-oddness-frontier.md`.
-72. **The local at-most-one-bad-terminal lemma is false even in a globally
-    admissible one-five-boundary completion:** a 67-vertex locally
-    cyclically-four factor-critical five-pole has five bad terminals, each
-    leaving at least four internal odd circuits under every relevant
-    near-perfect matching. The solver-free \(s=0\) case always has a
-    cyclic triangle cut. Explicit \(s=1\) and \(s=2\) completions are
-    simple, cubic, bridgeless, cyclically four-edge-connected, non-Tait,
-    and have exact oddness four. Thus they are not FiveCDC
-    counterexamples. The exact surviving obligation is to exploit closure
-    of the two complementary paths through the outside shore, rather than
-    count internal odd circuits alone. See
-    `ONE_BOUNDARY_FIVE_FRONTIER_20260727.md`.
-73. **Oddness at most four is not universal in the one-boundary-five
-    branch:** an explicit 100-vertex simple cubic cyclically
-    four-edge-connected graph has the exact residual Gallai--Edmonds
-    profile and exact oddness six.  A source-resistance CNF has an LRAT
-    accepted by both `lrat-check` and CakeML `cake_lpr`; the displayed
-    shore-transfer proof yields resistance at least five for the
-    completion, and an explicit perfect matching gives a 2-factor with
-    exactly six odd circuits.  The same graph has an explicit standard
-    five-CDC checked in both SAT-model and compact edge-label semantics.
-    It therefore refutes only the proposed oddness-four closure strategy,
-    not FiveCDC.  See
-    `search/one-boundary-five-oddness6-completion-20260727/`.
-74. **The terminal-distinct \(s=1\) one-boundary-five outside is
-    reducible by the ordered theta-cap switching attractor:** the fixed
-    seven-vertex cap accepts 6,000 ordered even \(D_5\) words and 58 of
-    62 global-coordinate orbits.  Each missing orbit has a bichromatic
-    pair with four boundary ends, and all three possible internal path
-    pairings switch into the cap relation.  Capping the opposite
-    factor-critical shore by an ordered 5-cycle produces a smaller simple
-    bridgeless cubic graph, so global cubic minimality supplies a nonempty
-    shore relation; switching and exact boundary gluing then contradict
-    minimality.  Primary and separately written finite enumerations agree.
-    This lemma excludes only terminal-distinct \(s=1\); item 75 supplies
-    the separate argument for the remaining \(s=1,2\) patterns.  See
-    `docs/theta-cap-five-cycle-extension-lemma.md`.
-75. **The greatest switching core and a compatible-pair cap eliminate
-    every retained \(s=1,2,3\) outside:** all 6 \(s=1\), 128 \(s=2\),
-    and 3,576 \(s=3\) incidence patterns satisfying the inherited
-    minimum-counterexample conditions are generated.  For
-    terminal-distinct patterns the
-    complement of the outside \(D_5\) relation has empty greatest
-    switching core.  For every repeated-endpoint pattern the core is
-    exactly the 25-orbit local incompatibility set, in which the two
-    repeated labels are equal or disjoint.  A smaller simple bridgeless
-    cubic three-vertex path cap forces a state with those labels distinct
-    and intersecting, while a smaller 5-cycle cap supplies nonemptiness.
-    The greatest-core implication is proved by induction over deletion
-    rounds.  Two independently implemented relation solvers agree; they
-    share the exact structural generator.  Together with the \(s=0\)
-    triangle-cut argument, only \(s\ge4\) remains in this branch.  See
-    `docs/one-boundary-five-D5-s123-reduction.md`.

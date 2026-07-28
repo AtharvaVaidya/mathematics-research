@@ -1,525 +1,355 @@
-# Five-cycle double cover research archive
+# Five-cycle double cover laboratory
 
-Status as of **2026-07-27**: the standard five-cycle double cover
-conjecture remains open.  Nothing in this directory is a proof or a
-counterexample to that conjecture.
+This repository is a machine-assisted research package for the five-cycle
+double cover conjecture (5-CDC).  Its acceptance condition is:
 
-This is a curated, reproducible publication bundle from an autonomous
-conjecture-resolution laboratory.  It contains four research drafts, a
-computer-free marked-graph theorem, explicit human-checkable
-countermodels to two intermediate proof strategies, exact SAT/XOR
-documentation, and compact checker sources.  Temporary search output and
-multi-gigabyte certificates are deliberately not committed.
+> Given a finite undirected graph \(G=(V,E)\), find five indexed even
+> (Eulerian) edge-subsets \(C_0,\ldots,C_4\) such that every edge belongs to
+> exactly two of them.
 
-## AI-use disclosure
+The project does **not** currently claim a resolution.  Every result is
+classified using the status vocabulary in the lab protocol.  In particular,
+finite searches are not evidence of the universal statement.
 
-OpenAI Codex agents, directed by Atharva Vaidya, generated and revised
-arguments, programs, audits, computations, and manuscript text in this
-research archive.  Agent-to-agent checks are not independent human
-verification or peer review.  The papers display their mathematical
-arguments for line-by-line human checking, separate computational claims
-from human proofs, and require independent specialist review before
-submission.
+The consolidated outcome is in `docs/lab-report.md`.  Exact conventions,
+encodings, literature status, experiments, and open proof obligations are
+recorded under `docs/`. The complete deterministic handoff is in
+`REPRODUCING.md`; run `sh tools/verify_all.sh` for the non-destructive master
+verification.
 
-## Five-pole path-extension and ear frontier
+The current publication draft is in `preprint/`.  It presents the explicit
+stable \(D_5\)-tile construction for the frozen figure transcription of the
+Mattiolo--Negrini--Pagani family, with a full AI-use disclosure and a
+novelty audit explaining why Huck--Kochol already implies existence for the
+author-defined family.  It is a review draft, not a universal resolution or
+a circulation-ready manuscript.  An independent assessment of the newer
+minimum-support and cap results is in `preprint-structural/NO-GO.md`; it
+recommends against a second preprint because the universal exchange theorem
+is still missing and the main framework overlaps published 4-flow,
+\(T\)-join, and multipole-boundary methods.
 
-The newest five-pole branch is deliberately scoped as a reformulation and
-bounded evidence, not a resolution:
+The independent \(K_6\)-reformulation publication audit is in
+`preprint-k6/NO-GO.md`.  It likewise recommends **no standalone preprint**:
+the duad/syntheme encoding substantially overlaps Král' et al. (2009), and
+the relevant spectrum was already computed by Goodall--Garijo--Nešetřil
+(2014).  The branch nevertheless produced a useful certified negative
+result.  The package
+`search/k6-defect-snark-plateau-20260725/` freezes a 36-vertex
+cyclically 4-edge-connected snark flow with four \(K_6\) defects and no
+immediately defect-reducing constant-value cycle switch.  Its full
+\(2^{19}\)-cycle scan, independent four-pole transfer proof, structural
+audit, dual-checked LRAT, and perfect-matching enumeration all pass.  This
+refutes a proposed descent lemma, not the five-cycle double cover
+conjecture.  A checked four-switch path reaches a six-coordinate cover,
+and the human star-cycle elimination lemma then gives an explicit fifth
+switch to a standard five-cycle double cover of the witness.
 
-- [`docs/five-pole-realizability-frontier.md`](docs/five-pole-realizability-frontier.md)
-  gives a line-by-line path-extension proof that universal nonemptiness of
-  the stated internally bridgeless five-pole boundary relation is already
-  equivalent, after the standard reductions, to FiveCDC.  Consequently the
-  proposed universal 46-of-62 orbit lower bound would be stronger than the
-  original conjecture; it is not a known auxiliary lemma.
-- [`search/five-pole-46-threshold-order15-20260727/`](search/five-pole-46-threshold-order15-20260727/)
-  is an exact threshold census of all 69,243 connected simple internally
-  bridgeless terminal-distinct cubic five-pole cores of order 15.  Every
-  record reaches 46 satisfiable boundary orbits.  The package includes the
-  primary classifier, all eight transcripts, hashes, a fresh canonical
-  corpus/structure replay, and an optional byte-identical full replay.
-  Positive models were not retained, so the classifier and CaDiCaL remain
-  in the trust base.
-- [`search/five-pole-universal-split-order17-20260727/`](search/five-pole-universal-split-order17-20260727/)
-  exhausts all 1,109,844 corresponding order-17 cores.  For every core,
-  all ten choices of a doubled terminal pair admit the boundary state
-  `01,01,23,24,34`, for 11,098,440 positive SAT checks.  The independent
-  verifier regenerates and structurally checks every canonical shard.
-  [`scratch/vertex-edge-universal-split-state-frontier.md`](scratch/vertex-edge-universal-split-state-frontier.md)
-  proves that this state is equivalent to a prescribed vertex/edge 5-CDC,
-  and then to a rooted exact-zero matching, four-flow, and two-\(T\)-join
-  certificate.  The arbitrary-order rooted theorem remains open.
-- [`scratch/d5-five-pole-ear-operator-frontier.md`](scratch/d5-five-pole-ear-operator-frontier.md)
-  proves the exact open-ear operator and records two checked restricted
-  infinite ear families.  It also gives an abstract, explicitly
-  non-graph-realizability countermodel showing why coarse support and
-  switching invariants cannot prove the universal 46-orbit statement.
-  The primary and independent standard-library audits are retained beside
-  the note.
+The exact Petersen package
+`search/k6-petersen-star-barrier-20260725/` exposes a sharper obstruction:
+a triangle-only flow lies in a 720-state component under
+triangle-preserving switches, and every state in that component uses all
+15 duads.  Thus a universal reconfiguration proof must sometimes
+reintroduce defects.  The package proves the optimal barrier is two and
+supplies a two-switch path to an explicit five-cycle double cover.
 
-None of these artifacts proves or disproves FiveCDC, and none concerns the
-orientable variant.  The order-40 rooted strong-snark computation was still
-running when this snapshot was frozen and is not included.
+The obstruction now extends to the infinite Petersen-ring family in
+`search/k6-petersen-ring-barrier-20260725/`.  For every \(n\ge1\), the
+triangle-only component has exactly \(15\cdot48^n\) states, none omitting
+a \(K_6\)-star, while a sharp defect-two path reaches an explicit standard
+five-cycle double cover.  A corrected human proof accounts for both
+crossing-label circuits and the previously omitted remote-vertex case;
+Python and independently structured JavaScript backstop the complete
+34,560-state \(R_2\) component.  A narrowly scoped, prominently
+AI-disclosed research draft is in `preprint-k6-petersen-rings/`.  It is
+preprint-worthy pending independent human proof and novelty review, and
+does not claim a resolution of five-CDC.
 
-## One-boundary-five Gallai--Edmonds frontier
+A second exact theorem closes the tempting connected-kernel route.
+Replacing every cotree edge of a non-Tait cubic base by a diamond produces
+no connected-kernel \(\mathbb F_2^3\)-flow, while a local duad rule lifts
+any ordinary five-cover through every diamond.  The 34-vertex Petersen
+instance in
+`search/connected-kernel-cotree-diamond-separator-20260725/` has an
+explicit standard five-cover accepted by both target verifiers and a
+two-checker LRAT for a 465-clause connected-kernel relaxation.  Iteration
+gives an infinite separation family.  This proves that a connected
+coordinate complement is a strictly stronger normal form; it does not
+produce a five-CDC counterexample.  A seven-page, AI-disclosed research
+draft is frozen under `preprint-connected-kernel-separator/`.  Independent
+referee review found the proof correct after minor clarification and
+identified Jin--Mazzuoccolo--Steffen's all-edge \(K_4\) 2-cut construction
+as a close gadget precedent; the draft now claims only the narrower
+connected-join separation and cotree refinement.
 
-[`ONE_BOUNDARY_FIVE_FRONTIER_20260727.md`](ONE_BOUNDARY_FIVE_FRONTIER_20260727.md)
-indexes the newest surviving standard-FiveCDC branch.  The companion
-human notes prove the exact matching count, the two-attainable-terminal
-lemma, a conditional oddness-four reduction, and the solver-free exclusion
-of the \(s=0\) completion.  Explicit checked poles show that three tempting
-local matching strengthenings are false, including an all-five-bad
-locally cyclically-four 67-vertex core.
+A different exact package now closes the unrestricted fixed-join
+preparation route.  The 38-vertex graph in
+`search/fixed-join-preparation-trap-20260725/` has a binary cycle whose
+complement has two components and contains 125 inclusion-minimal exact
+\(\mathbb F_2^2\)-flow zero sets; every one has preparation minimum two.
+Projection through two inserted Petersen 2-poles gives a short human proof,
+and independent Python and JavaScript checkers replay the complete finite
+claims.  The graph has an explicit standard five-cover and two nontrivial
+two-edge cuts.  It is therefore a counterexample only to the unrestricted
+preparation lemma—not to five-CDC, and not to a preparation statement
+restricted to cyclically 4-edge-connected minimum counterexamples.
 
-That core nevertheless has explicit cyclically-four \(s=1\) and \(s=2\)
-completions of exact oddness four.  They are not FiveCDC counterexamples.
-A newer order-100 completion in
-[`search/one-boundary-five-oddness6-completion-20260727/`](search/one-boundary-five-oddness6-completion-20260727/)
-has the exact same one-boundary-five profile and exact oddness six.  This
-rules out closing the entire branch by an oddness-at-most-four theorem.
-The specimen has an explicit standard five-cycle double cover, so it is
-not a counterexample.  The surviving proof obligation must use how the two
-complementary paths close through the outside shore.  The update includes
-standard-library replays, checked proof certificates, retained witnesses,
-checksum ledgers, exact trust boundaries, and a separate AI-use
-disclosure.  It neither resolves standard FiveCDC nor addresses the
-orientable variant.
+The minimum-support branch has also been hardened against an overly strong
+exchange claim.  The exact package
+`search/minimum-switch-local-plateau-20260725/` gives a 16-vertex simple
+bridgeless cubic graph, an \(\mathbb F_2^2\)-flow with two matching zero
+edges, and a complete proof that this support neither packs two \(T\)-joins
+nor admits a strictly decreasing matching-preserving constant-value cycle
+switch.  A neutral switch followed by a decreasing switch has support
+profile \(2\to2\to1\), and the final support packs.  Thus strict one-step
+descent is false, while neutral nonincreasing reconfiguration and the
+globally minimum-support conjecture remain open.  Independent Python and
+JavaScript verifiers check the literal witness; an exact primary census
+finds no such local plateau through order 14 and 64 flow signatures at
+order 16.  This is not a five-CDC counterexample.
 
-The human-checkable
-[`docs/theta-cap-five-cycle-extension-lemma.md`](docs/theta-cap-five-cycle-extension-lemma.md)
-now excludes the terminal-distinct \(s=1\) outside from a minimum-order
-bridgeless cubic counterexample.  Its ordered seven-vertex theta cap
-accepts 58 of the 62 \(D_5\) boundary orbits; every one of the four
-missing orbits can be switched along either bichromatic path into the cap
-relation.  Primary and separately written standard-library programs
-reproduce the complete 6,240-word calculation.  The repeated-endpoint
-\(s=1\) incidence shapes are outside that theta lemma.
-
-The subsequent human-checkable
-[`docs/one-boundary-five-D5-s123-reduction.md`](docs/one-boundary-five-D5-s123-reduction.md)
-uses the greatest subset satisfying all elementary bichromatic-path laws.
-Two independently implemented \(D_5\) relation solvers classify all 6
-retained \(s=1\), 128 retained \(s=2\), and 3,576 retained \(s=3\)
-outside patterns.  Empty
-complement cores handle every terminal-distinct pattern; for a repeated
-endpoint the 25-orbit core is exactly local incompatibility, while a
-smaller three-vertex path cap forces a compatible state.  Together with
-the \(s=0\) triangle-cut argument, this leaves only \(s\ge4\) in the
-one-boundary-five branch.  FiveCDC remains unresolved.  The encoding and
-switching method are prior machinery; novelty of these specific cap and
-core reductions is provisional.
-
-## Main research drafts
-
-- [`preprint-rooted-four-cut/output/pdf/main.pdf`](preprint-rooted-four-cut/output/pdf/main.pdf)
-  is a 29-page structural and computer-assisted research report on marked
-  circuits and fixed-five rooted interfaces.  It includes human-checkable
-  proofs of the exact elliptic-flow reformulation, a four-mark closure
-  theorem, a forbidden-root cut gate, the corrected Tait-cap closure, and
-  the root-end fork lift; it separately labels every finite census used
-  in the scoped exceptional-pole lower bound.  Its
-  source, audit, novelty assessment, and checksum ledger are in
-  [`preprint-rooted-four-cut/`](preprint-rooted-four-cut/).  The paper
-  explicitly says that it neither proves nor disproves five-CDC.
-- [`output/pdf/four-universally-separated-marks-preprint-20260726.pdf`](output/pdf/four-universally-separated-marks-preprint-20260726.pdf)
-  proves a marked cubic-graph theorem.  Under universal Tait separation
-  and a precise cyclic-cut inequality, four marked edges lie in one
-  four-mark cycle or two disjoint two-mark cycles.  The argument is
-  computer-free.  Its source is
-  [`preprint-four-mark-core/main.tex`](preprint-four-mark-core/main.tex),
-  and a standalone proof is in
-  [`docs/four-mark-core-closure.md`](docs/four-mark-core-closure.md).
-- [`output/pdf/two-connected-countermodels-five-cdc-preprint.pdf`](output/pdf/two-connected-countermodels-five-cdc-preprint.pdf)
-  gives explicit 40- and 46-vertex countermodels to two proposed
-  one-circuit repair strategies.  Both graphs positively have standard
-  five-cycle double covers, so they are not counterexamples to five-CDC.
-  Its source is
-  [`preprint-fano-one-switch/main.tex`](preprint-fano-one-switch/main.tex).
-- [`preprint-fano-combined-span/main.pdf`](preprint-fano-combined-span/main.pdf)
-  proves a universal combined-image identity and exact quadratic normal
-  form for fixed-projection Fano-flow cleaning, then gives a
-  human-checkable Petersen obstruction to one prescribed-line
-  strengthening.  The Petersen graph positively has a five-cycle double
-  cover, so this is not a counterexample to five-CDC.  Source and the
-  cautious novelty audit are in
-  [`preprint-fano-combined-span/`](preprint-fano-combined-span/).
-
-All four PDFs prominently disclose substantive AI involvement and
-explicitly state their scope.  Their novelty assessments are provisional
-pending independent expert literature review.
-
-## Current compact four-pole frontier
-
-Five compact finite packages sharpen the fixed-five four-pole boundary
-without claiming a universal theorem:
-
-- [`search/four-pole-order24-cyclic4-cap-20260727/`](search/four-pole-order24-cyclic4-cap-20260727/)
-  gives a complete two-implementation classification of the retained
-  155-graph cyclically 4-edge-connected non-Tait order-24 source.  All
-  86,490 independent-edge deletion poles have full fixed-five boundary
-  signature.
-- [`search/four-pole-order26-cyclic4-cap-20260727/`](search/four-pole-order26-cyclic4-cap-20260727/)
-  gives the corresponding complete retained cyclically-four order-26
-  classification: 1,297 source graphs and 859,911 independent-edge
-  deletion poles, all with full fixed-five boundary signature.
-- [`search/four-pole-order26-strict-cap-probe-20260727/`](search/four-pole-order26-strict-cap-probe-20260727/)
-  checks all 185,640 deletion poles from a retained 280-graph strict-snark
-  source.  Every row again has full signature.  This earlier finite probe
-  is retained as an independently frozen strict-source control.
-- [`search/four-pole-order28-cyclic4-cap-20260727/`](search/four-pole-order28-cyclic4-cap-20260727/)
-  records the complete retained 12,517-graph order-28 source and compact
-  reports for 9,725,709 deletion poles.  Two positive boundary witnesses
-  per pole exclude all six exceptional masks.  The ordinary Git archive
-  omits the 363 MB witness stream and its 40 MB generated pole stream but
-  preserves their hashes, generation commands, checker sources, logs, and
-  independently reproduced summary.
-- [`search/mnp-h2-h5-aa-deletion-probe-20260727/`](search/mnp-h2-h5-aa-deletion-probe-20260727/)
-  supplies 394 explicit edge-labelling certificates covering all 97,608
-  independent edge pairs in the reconstructed \(H_2,\ldots,H_5\) family.
-  Each certificate directly proves the prescribed \(AA\) boundary state.
-
-Each package has a solver-independent verifier, frozen checksums, precise
-source limitations, and an AI-use disclosure.  None resolves five-CDC.
-The finite cap classifications remain valid.  A hostile audit withdrew an
-earlier reduction from all small exceptional poles because it used a false
-one-sided base-pair inference.  The later two-sided endpoint-fork lift
-below supplies a different sound reduction and restores only the stated
-bridge-free simple terminal-distinct fixed-five lower bound of order 28.
-
-The corrected human proof
-[`docs/rooted-three-pole-tait-cap-closure.md`](docs/rooted-three-pole-tait-cap-closure.md)
-shows that a Tait-colourable one-vertex shore cap forces a base pair in its
-root signature.  One such shore excludes only the equality-only and
-disjointness-only relations; two such shores exclude all three exceptional
-relations.
-
-The frozen
-[`search/rooted-three-pole-nontait-endpoint-frontier-20260727/`](search/rooted-three-pole-nontait-endpoint-frontier-20260727/)
-package extends endpoint base-pair closure through factor order 26 using
-two independent classifiers and a solver-independent replay.  It gives cap
-order at least 54 for equality-only or disjointness-only cyclic-three
-relations.  The package alone does not eliminate the mixed relation.
-
-The human-checkable
-[`docs/rooted-cap-triangle-induction.md`](docs/rooted-cap-triangle-induction.md)
-reduces that mixed branch through cap order 26 to a triangle-free
-3-connected shore screen through order 24. The screen is now frozen in
-[`search/rooted-three-pole-c3-cap-frontier-through24-20260727/`](search/rooted-three-pole-c3-cap-frontier-through24-20260727/):
-two exact implementations classify all 10,824,084 proper roots, with no
-empty signature or base-pair violation. This is a bounded result, not a
-universal rooted-closure theorem.
-
-The independent human argument in
-[`docs/rooted-cap-end-factor-fork-lift.md`](docs/rooted-cap-end-factor-fork-lift.md)
-bypasses that screen for the stronger finite lower bound.  A base pair in
-each root-end factor transports through its three-sum path as a fork
-triple; any two forks force both an unequal-intersection and a disjoint
-cross-pair.  With the completed endpoint and cyclically-four cap
-classifications through order 26, this first restores the scoped simple
-terminal-distinct exceptional-pole lower bound of order 28.  The complete
-order-28 two-witness classification then raises that scoped bound to 30.
-This is not a universal exceptional-pole theorem, and Five-CDC remains
-unresolved.
-
-The exact five-point restriction theorem in
-[`docs/five-cdc-five-point-triangle-list-lift.md`](docs/five-cdc-five-point-triangle-list-lift.md)
-classifies all local ways to compress the eight-coordinate triangle lift
-to five coordinate points.  Independent Python and JavaScript checkers
-agree on all 392 five-set/line cases.  The remaining global flow-and-line
-selection problem is still open.
-
-## Fixed-line Fano branch
-
-The standard five-cycle double cover conjecture remains unresolved.  The
-new fixed-line package has plausible, moderate, and specific novelty, but
-every theorem and priority claim still requires independent human
-verification:
-
-- [`docs/fano-combined-line-span.md`](docs/fano-combined-line-span.md)
-  contains the universal linear identity and exact nonlinear normal form;
-  [`docs/fano-triangle-expansion-invariance.md`](docs/fano-triangle-expansion-invariance.md)
-  proves that triangle expansion cannot create the first all-seven
-  fixed-projection obstruction.
-- [`search/fano-two-cycle-petersen-countermodel-20260726/`](search/fano-two-cycle-petersen-countermodel-20260726/)
-  freezes the Petersen proof, semantic checker, CNFs, and verified DRAT
-  certificates for two failed prescribed lines.
-- [`search/fano-some-good-line-census-20260726/`](search/fano-some-good-line-census-20260726/)
-  is an exact negative census through every connected simple bridgeless
-  cubic graph of order \(18\), plus retained strict snarks at orders
-  \(20,22,24\) and ten targeted cyclically-5-connected order-\(26\)
-  snarks.  It finds no all-seven obstruction in that stated scope.
-- [`docs/aligned-nice-borrower-frontier.md`](docs/aligned-nice-borrower-frontier.md)
-  records that the aligned rooted branch remains open at one
-  \(b_3\)-tight equality atom.
-
-## Latest structural branch
-
-The connected eight-mark branch remains open.  The newest notes expose
-its exact remaining constraints without claiming a five-CDC resolution:
-
-- [`docs/kempe-transversality-and-eight-mark-girth.md`](docs/kempe-transversality-and-eight-mark-girth.md)
-  proves human-checkable Kempe and marked-girth lemmas.  Its
-  \(|V|\ge88\) corollary is scoped to the extremal exact-zero size-four
-  branch: arbitrary matchings need not produce distinct suppressed marks
-  forming matchings.
-- [`docs/audit-eight-mark-girth-bound.md`](docs/audit-eight-mark-girth-bound.md)
-  independently reconstructs that corollary, verifies the numerical
-  bound, and records the necessary suppression hypotheses.
-- [`docs/eight-mark-bichromatic-code.md`](docs/eight-mark-bichromatic-code.md)
-  reduces the fixed-colouring problem to an exact signed-graph component
-  test.
-- [`docs/connected-eight-mark-paired-cut-condition.md`](docs/connected-eight-mark-paired-cut-condition.md)
-  derives the paired cyclic-cut condition that retains the four matching
-  pairs lost by the simpler unpaired inequality.
-- [`docs/cyclic-four-separated-triple-atom-reduction.md`](docs/cyclic-four-separated-triple-atom-reduction.md)
-  explicitly marks the proposed cyclic-four atom lemma as refuted while
-  retaining its sound conditional reductions.
-- [`docs/eulerian-factor-quotient-tjoin-reduction.md`](docs/eulerian-factor-quotient-tjoin-reduction.md),
-  [`docs/two-tjoin-cycle-lift-obstruction.md`](docs/two-tjoin-cycle-lift-obstruction.md),
-  and [`docs/size-four-terminal-gap-cut-reduction.md`](docs/size-four-terminal-gap-cut-reduction.md)
-  prove the exact local lifting criterion, refute automatic quotient
-  lifting, and reduce unavoidable terminal-gap failure to explicit cyclic
-  four- and six-cut interfaces.
-- [`docs/cyclic-four-cut-zero-pair-signature.md`](docs/cyclic-four-cut-zero-pair-signature.md)
-  and [`docs/cyclic-six-cut-four-mark-interface.md`](docs/cyclic-six-cut-four-mark-interface.md)
-  audit those two cut frontiers.  Both notes identify precise remaining
-  obligations; neither eliminates its cut branch.
-- [`docs/equality-complementary-quotient-no-go.md`](docs/equality-complementary-quotient-no-go.md)
-  proves that the canonical complementary quotient-join construction
-  cannot lift in the sharp order-\(88\) equality case.
-
-Two new finite equality diagnostics sharply delimit the selector route:
-
-- [`docs/equality88-incidence-rotation-countermodel.md`](docs/equality88-incidence-rotation-countermodel.md)
-  gives an explicit decorated \(8+8\), 5-regular incidence object whose
-  reconstructed simple cubic 80-vertex core has zero good bichromatic
-  selectors.  It fails girth and universal separation and positively has
-  unrestricted two-\(T\)-join packing, so it is a countermodel only to the
-  incidence-only proof strategy.
-- [`docs/order80-vertex-transitive-control.md`](docs/order80-vertex-transitive-control.md)
-  eliminates the 33 order-80 cubic vertex-transitive census graphs from the
-  surviving equality scope.  Its follow-up
-  [`docs/order80-c10-selector-transversal-scan.md`](docs/order80-c10-selector-transversal-scan.md)
-  checks all 74,940 factor-transversal records in the sole girth-ten graph:
-  every record has between 94 and 138 good selectors.  Vertex-transitivity
-  is not a minimum-counterexample reduction.
-
-The finite diagnostics are now complemented by a solver-free
-low-surplus theorem.  The equality proof in
-[`docs/equality88-kempe-girth-contradiction.md`](docs/equality88-kempe-girth-contradiction.md)
-and its blind audit
-[`docs/equality88-overlap-audit.md`](docs/equality88-overlap-audit.md)
-use ambient girth and a literal Kempe splice to exclude order \(88\).
-The general argument in
-[`docs/order94-kempe-surplus-bound.md`](docs/order94-kempe-surplus-bound.md),
-independently reconstructed and generalized in
-[`docs/audit-and-generalization-order94-kempe.md`](docs/audit-and-generalization-order94-kempe.md),
-also excludes orders \(90,92,94\).  Its exact scoped conclusion is:
-\[
-  |V(G)|\ge96
-\]
-in the connected eight-mark extremal exact-zero size-four
-minimum-counterexample branch.  It is not a bound for arbitrary cubic
-graphs and does not resolve five-CDC.
-
-The transparent checker
-[`scratch/verify_order96_kempe_incidence_frontier.py`](scratch/verify_order96_kempe_incidence_frontier.py)
-verifies an explicit abstract order-\(96\) incidence matrix against all
-proved pairwise, single-switch, and nonempty simultaneous-switch
-inequalities.  The matrix passes with minimum slack one.  It is a
-method-frontier certificate, not a graph realization or a conjecture
-counterexample.
-
-The next ambient order, \(100\), now has a certified but still scoped
-exclusion in
-[`docs/order100-unmarked-exclusion-and-row-star-frontier.md`](docs/order100-unmarked-exclusion-and-row-star-frontier.md).
-A short human-checkable Kempe-incidence proof excludes unmarked
-bichromatic factor circuits.  In the all-marked case, a solver-free
-enumeration reduces all \(1002\) simultaneous profile orbits first to
-\(155\), then an exact weighted-kernel row-and-column-star census reduces
-them to three abstract profile orbits.  An independently written Z3
-replay agrees on the three survivors.  The complete star-compatible
-incidence space contains \(827\) matrix orbits.
-
-A profile-level gluing formula then ranges over every labelled matrix,
-cyclic position assignment, common-edge bijection, and endpoint
-orientation in each of those three profiles; it does not select one
-representative matrix.  All three profile formulas are UNSAT already in
-\(G-M\).  Their committed CNFs have independently verified LRAT hashes,
-and a separate producer-free semantic checker reconstructs the complete
-base formulas and verifies all \(996{,}904\) dynamically learned clauses
-from forced short circuits.  The exact scoped consequence is
-\[
-  |V(G)|\ge102
-\]
-in the connected eight-mark extremal exact-zero size-four branch.  This
-does **not** cover other matching sizes or exchange branches and is not a
-resolution of five-CDC.
-
-Two adjacent reductions are also current but remain open:
-
-- [`docs/fano-canonical-join-cut-certificates.md`](docs/fano-canonical-join-cut-certificates.md)
-  converts failure of the seven canonical Fano packing tests into exact
-  binary cut certificates and a checkerboard obstruction.  These are
-  human-checkable necessary conditions; the required uncrossing step is
-  open.
-- [`scratch/rooted-p4-structured-endpoint-screen-result.json`](scratch/rooted-p4-structured-endpoint-screen-result.json)
-  records an exact negative screen on 240 structured order-38 rows:
-  101,760 endpoint-path tests and no rooted \(P_4\) failure.  This is
-  finite evidence on one labelled construction family, not a universal
-  rooted theorem and not five-CDC.
-
-The cyclic six-cut branch has also been reduced more sharply:
-
-- [`docs/rooted-four-mark-cap-avoidance.md`](docs/rooted-four-mark-cap-avoidance.md)
-  proves that the all-mark trace can always avoid the cap edge, and gives
-  an exact order-28 countermodel showing that universal separation alone
-  does not force componentwise marked parity.
-- [`docs/rooted-four-mark-bridgeless-reduction.md`](docs/rooted-four-mark-bridgeless-reduction.md)
-  proves that the marked-cut hypothesis eliminates the countermodel's
-  odd-shore bridge mechanism.  Any surviving deleted-root graph is
-  2-connected and its complementary mark-pair circuit families form a
-  genuine cross-intersecting four-way linkage obstruction.
-
-The rooted theorem remains open.  The attached finite rooted screens are
-diagnostics within their stated scopes, not substitutes for a universal
-proof.
-
-The adjacent cyclic four-cut branch now has an exact rooted-packing
-interpretation.  The human-checkable note
-[`docs/four-pole-exception-rooted-packing-algebra.md`](docs/four-pole-exception-rooted-packing-algebra.md)
-identifies projection-coherent lifts with ordered pairs of edge-disjoint
-terminal joins, excludes a zero-free exceptional shore, and proves an
-exact two-plus-two minimal-factor reduction.  Its independent JavaScript
-checker reconstructs all 640 boundary words, ten symmetry orbits, 259
-admissible masks, and the exceptional factorizations.  This finite
-algebra neither proves graph realizability of an exceptional signature
-nor resolves Máčajová--Mazzuoccolo--Tabarelli Conjecture 3.7, which
+The follow-up package
+`search/minimum-switch-neutral-components-n16-20260725/` builds the full
+support-\(\le2\) switch graph on all six order-16 hosts with local plateaus.
+Two independent implementations agree that all 33,546 ordered states reach
+a size-one state without exceeding support two, and that all 384 local
+plateaus have distance exactly two.  This proves neutral-then-descent on
+that finite boundary; the universal neutral-reconfiguration statement
 remains open.
 
-The compact package
-[`search/cyclic4-universally-separated-triple-n24-20260726/`](search/cyclic4-universally-separated-triple-n24-20260726/)
-freezes the refuting order-24 graph, all 144 retained hits, exact search
-scope, canonical records, hashes, and independently structured single-
-and batch-verifiers.  It establishes that a universally separated triple
-can occur in a cyclically four-edge-connected Tait-colourable cubic graph.
-All 144 construction hits have marked-subdivision girth five, however,
-so none satisfies the surviving connected-branch threshold of ten.
+The complete hard order-18 extension is frozen in
+`search/minimum-switch-neutral-components-n18-20260725/`.  A
+human-checkable bucket lemma reduces one-switch adjacency to sharing one of
+\(p,q,p+q\).  Independent C++ and NumPy implementations replay all 179
+graphs and 1,680,414 ordered support-\(\le2\) states.  All 7,704 strict
+local plateaus on 56 graphs again have distance exactly two from size one.
+This closes the finite support-size-two boundary through order 18, not the
+universal or higher-support problem.
 
-## Human-checkable material
+The complete hard order-20 extension is frozen in
+`search/minimum-switch-neutral-components-n20-20260725/`.  The two
+implementations agree field-for-field on all 1,388 non-Tait graphs and
+20,161,044 ordered support-\(\le2\) states.  All 118,134 strict local
+nonpacking plateaus have distance exactly two.  Exactly 21,492 states do
+not reach size one; they are all the states on the unique minimum-size-two
+graph, and every one already packs two \(T\)-joins.  Thus every nonpacking
+state reaches size one on this finite boundary.  This is still not a
+universal exchange theorem.
 
-- [`MATCHING_FRONTIER_20260727.md`](MATCHING_FRONTIER_20260727.md)
-  indexes the prescribed-root matching branch. It separates the universal
-  deficiency theorem, boundary-eight and singleton Gallai--Edmonds
-  reductions, exact finite censuses through order 30, checked
-  countermodels to weaker lemmas, and the prescribed-root case that
-  remains open.
-- [`search/focused-theta-choice-order30-20260727/`](search/focused-theta-choice-order30-20260727/)
-  classifies all 125,868,600 independent root pairs in the cited
-  139,854-graph order-30 House of Graphs corpus. A primary C++20
-  implementation and a separately written Python replay in sixteen
-  shards agree: all 1,221,804 deficiency-two pairs admit a theta choice,
-  and no all-dumbbell pair occurs. This is a verified finite structural
-  result, not a universal theorem or a Five-CDC resolution.
-- [`docs/root-insertion-two-factor-frontier.md`](docs/root-insertion-two-factor-frontier.md)
-  gives a line-by-line proof that the all-singleton Gallai--Edmonds
-  branch already has a **standard** five-cycle double cover: an
-  edge-prescribed perfect matching leaves a 2-factor with at most two
-  odd circuits.  It also proves the exact root-insertion interlacing
-  criterion and records a two-implementation finite screen through order
-  28.  This closes one standard branch, not the prescribed-root
-  alternative or Five-CDC itself.
-- [`docs/four-mark-core-closure.md`](docs/four-mark-core-closure.md) gives
-  the full computer-free four-mark proof.
-- [`docs/audit-eight-mark-girth-bound.md`](docs/audit-eight-mark-girth-bound.md)
-  gives a clean-room, computer-free proof and scope audit of the
-  conditional order-\(88\) corollary.
-- [`search/connected-one-switch-countermodel-40v-20260726/HUMAN-PROOF.md`](search/connected-one-switch-countermodel-40v-20260726/HUMAN-PROOF.md)
-  proves the planar 40-vertex intermediate countermodel.
-- [`search/fano-pure-merge-one-switch-countermodel-46v-20260726/HUMAN-PROOF.md`](search/fano-pure-merge-one-switch-countermodel-46v-20260726/HUMAN-PROOF.md)
-  proves the nonplanar 46-vertex pure-merge countermodel.
-- [`docs/encoding.md`](docs/encoding.md) proves the equivalence between
-  five Eulerian edge-subsets and the exact SAT/XOR edge-label formula,
-  including graph-convention cautions.
-- [`docs/order100-unmarked-exclusion-and-row-star-frontier.md`](docs/order100-unmarked-exclusion-and-row-star-frontier.md)
-  gives the complete human proof excluding unmarked factors at order
-  \(100\), proves completeness of the profile-level finite encoding, and
-  clearly separates the scoped order-\(100\) exclusion from five-CDC.
-- [`docs/publication-assessment-20260726.md`](docs/publication-assessment-20260726.md)
-  separates apparently new statements from known ingredients.
-- [`docs/current-status.md`](docs/current-status.md) and
-  [`docs/proof-obligation-ledger.md`](docs/proof-obligation-ledger.md)
-  record the broader search status and remaining proof obligations.
+Order 22 is the first exact boundary where the stronger quantifier fails.
+The package
+`search/minimum-switch-packing-components-n22-20260725/` covers the seven
+hard graphs whose globally minimum exact-zero matching size is two.  Among
+1,441 distinct minimum supports, 15 supports on two graphs do not pack.
+Nevertheless, all 2,808 ordered realizations of those supports are one
+neutral switch from a packing state.  Thus “every minimum support packs” is
+false, while the existential neutral-component formulation survives this
+complete finite boundary.
 
-## Quick independent checks
+The first complete minimum-size-three component census is frozen in
+`search/minimum-size-three-packing-components-20260725/`.  On the
+42-vertex parity-countermodel it classifies all 366 globally minimum
+supports and 611,712 global-colour flow orbits.  Seventy-six supports do
+not pack.  Every nonpacking orbit nevertheless reaches packing by neutral
+switches, but 720 orbits have exact distance two, refuting the stronger
+one-switch claim.  Independent Python and C++ implementations agree on
+all counts.  All 720 distance-two orbits occur on the single support
+\(\{20,30,53\}\).  An additional Gaussian-elimination checker enumerates
+the 8,192 eligible even subgraphs for that support and verifies directly
+that every one has an odd-marked component, while also checking a literal
+two-switch path to packing.  This preserves, but does not prove, the
+universal minimum-component formulation.
 
-The compact countermodel checkers use only the Python standard library:
+The unique distance-two support is now explained compositionally in
+`docs/three-sum-neutral-decomposition.md` and the sealed package
+`search/three-sum-neutral-decomposition-20260725/`.  Binary cycle spaces
+across a cubic three-edge sum form an exact fibre product over the even
+three-bit boundary words.  For a flow with exactly one zero joining edge,
+the global support packs precisely when both capped pole supports pack.
+The retained first switch changes both nonpacking pole flows with boundary
+word \(000\); the second, with boundary word \(110\), repairs both poles
+simultaneously.  An independent checker reimplements graph6 parsing,
+capping, cycle-space enumeration, and all six capped packing tests.  This
+explains the finite path but is not a universal exchange theorem.
 
-```sh
-python3 search/fano-value-class-flow-countermodel-20260726/independent_checker.py
-python3 search/connected-one-switch-countermodel-40v-20260726/independent_checker.py
-python3 search/connected-one-switch-countermodel-40v-20260726/verify_package.py
-python3 search/fano-pure-merge-one-switch-countermodel-46v-20260726/independent_checker.py
-python3 -m tools.test_encode_five_cdc_xor_fast
-python3 search/h4-all-minimum-support-packing-20260726/verify_upper_witness.py
-python3 -B search/cyclic4-universally-separated-triple-n24-20260726/verify_package.py
-python3 -B scratch/verify_equality88_rotation_countermodel.py
-python3 -B scratch/audit_equality88_rotation_countermodel.py
-python3 -B scratch/audit_order80_c10_selector_scan.py
-python3 -B scratch/verify_order96_kempe_incidence_frontier.py
-python3 -B scratch/prescribed-root-matching-deficiency-checker.py
-python3 -B scratch/rotation-closure-countermodel-checker.py
-(cd search/focused-theta-choice-through28-20260727 && python3 verify.py)
-(cd search/focused-theta-choice-order30-20260727 && \
-  python3 verify.py && shasum -a 256 -c SHA256SUMS)
-shasum -a 256 -c ROOT_INSERTION_SHA256SUMS
-python3 -B scratch/check-root-insertion-published.py
-(cd search/rooted-three-pole-c3-cap-frontier-through24-20260727 && \
-  shasum -a 256 -c CHECKSUMS-PUBLISHED.sha256)
-python3 -B scratch/check_order100_row_star_patterns.py
-python3 -B scratch/enumerate_order100_incidence_relaxation.py
-python3 -B scratch/enumerate_order100_exact_row_star_relaxation.py \
-  --baseline-json scratch/order100-incidence-relaxation-survivors.json
-python3 -B scratch/enumerate_order100_row_star_matrix_orbits.py
-for profile in 0 1 2; do
-  python3 -B scratch/check_order100_global_profile_cnf.py \
-    --profile "$profile" \
-    --cnf "scratch/order100-global-profile${profile}-final.cnf"
-done
-python3 -B scratch/audit_fano_canonical_cut_certificates.py
-python3 -B scratch/verify_rooted_four_mark_countermodel.py
-python3 -B scratch/four_pole_two_plus_two_algebra.py
-node scratch/verify_four_pole_two_plus_two_algebra.mjs
-```
+A separate exact proof route is recorded in
+`docs/minimum-zero-tjoin-route.md`.  On loopless cubic graphs it converts
+the remaining extension condition for an exact-zero matching into packing
+two edge-disjoint \(T\)-joins.  A classical packing theorem reduces every
+fixed-matching failure, after the necessary componentwise \(T\)-even
+condition, to the presence of an odd-\(K_{2,3}\) graft minor.  Without
+that condition, a \(T\)-odd component is the first obstruction.  For a
+minimum exact-zero matching \(M\), a direct flow switch further proves
+that every associated \(T\)-join \(J\) obeys \(|J|\ge3|M|\).  The finite
+audit package
+`search/component-parity-tjoin-countermodel-20260725/` freezes the exact
+ten-vertex example that exposed the missing hypothesis; it also verifies a
+standard five-cover, so it is not a counterexample to the conjecture.  The
+stronger package
+`search/minimum-component-parity-countermodel-20260725/` freezes a
+42-vertex graph with a **globally minimum** size-three exact-zero matching
+whose complement has two terminal-odd components.  A human three-pole
+inequality and a dual-checked LRAT prove minimality.  Complete projected
+enumeration finds 365 other minimum supports with connected complements,
+including an explicit standard-five-cover certificate, so this refutes
+“every minimum support is parity-good” but not the surviving existential
+minimum-support route.  Its three-edge cut also excludes it from the
+cyclically 4-edge-connected minimum-counterexample domain.  The exact
+finite cap diagnostic `search/h5-core-cap-flow-bound-20260725/`
+reconstructs all 3,024 ways, modulo dihedral symmetry, to attach a
+five-cycle to five of the ten marked paths in the certified \(H_5\) Tait
+core.  Every capped graph has a directly checked exact-zero matching of
+size at most two.  This is finite positive evidence for a boundary exchange
+lemma, not a universal theorem.  The more general exact package
+`search/five-pole-c5-boundary-calculus-20260725/` classifies all 6,240
+ordered five-boundary words into 62 \(S_5\)-orbits and four elementary
+types, proves a conditional five-cut reducibility theorem, and exhibits
+disjoint abstract state sets showing that the present cap-and-switch axioms
+still do not force compatibility.  The finite certificate package proves,
+among other controls, that all 92,313
+minimum exact-zero matchings of the reconstructed \(H_3\) extend.  The
+full hard order-22 package proves that all 12,892 frozen rows have some
+extending minimum support.  This once suggested a universal exchange
+lemma, but that unrestricted lemma is now refuted by the certified
+130-vertex graph in
+`search/minimum-zero-exchange-countermodel-130v-20260727/`: it has
+\(r_f=r_M=5\), no matching/four-flow extension of size at most five, and
+an explicit extension of size six.  The graph itself has a checked
+standard five-cover, so it is a route countermodel rather than a Five-CDC
+counterexample.
 
-The 40-vertex checker optionally uses nauty's `labelg` to recheck the
-canonical graph6 encoding.  Its semantic checks still run when nauty is
-absent.
+The new coordinate-factor lemma in
+`docs/flow-resistance-weak-oddness.md` proves directly that
+\(\omega_{\rm w}(G)\le2r_f(G)\) for loopless cubic multigraphs.  Huck's
+published weak-oddness restriction for a possible minimum five-CDC
+counterexample therefore gives the sound reduction \(r_f(G)\ge4\) for a
+smallest counterexample.  At exact-zero matching size four, extremality
+forces all three coordinate factors to have profile \((8,8,8)\);
+suppressing the eight zero endpoints, precolouring all resulting marks
+alike, and lifting the eight disjoint marked bichromatic circuits gives
+\(|V(G)|\ge88\).  Thus a smallest
+counterexample has \(r_M\ge5\), or lies in this separated
+size-four/order-at-least-88 branch.  The human proof and clean-room audit
+are in `docs/kempe-transversality-and-eight-mark-girth.md` and
+`docs/audit-eight-mark-girth-bound.md`.  The two-implementation finite package
+`search/flow-weak-oddness-coordinate-20260725/` checks the retained
+\(H_3,H_4,H_5\) coordinate profiles \((4,4,6)\), \((4,6,8)\), and
+\((6,8,8)\).  The completed \(H_4\) search exhausts 4,931,430 distinct
+globally minimum size-four supports; every one packs, and the blocking
+CNF's UNSAT LRAT is accepted by two proof checkers.  This is a complete
+finite theorem for that one frozen graph, not a universal closure.
 
-The complete laboratory replay is documented in
-[`REPRODUCING.md`](REPRODUCING.md).  Some commands there refer to the full
-local laboratory rather than this curated Git bundle.  See
-[`ARTIFACTS.md`](ARTIFACTS.md) for the exact included and omitted scope.
+The exact package
+`search/tjoin-weighted-minima-countermodel-20260725/` closes one attempted
+shortcut: a 22-vertex cyclically 4-edge-connected host satisfies the three
+colour-weighted \(T\)-join lower bounds and all three quotient-forest
+conditions, yet does not pack two \(T\)-joins.  Its displayed support is
+not globally minimum and the graph has girth four.  The later 130-vertex
+package closes the unrestricted global-minimum route itself; only variants
+using additional reduced-domain hypotheses remain possible.
 
-## Standard versus orientable five-CDC
+Two-edge sums amplify the 130-vertex separation.  The elementary
+composition proof in `docs/minimum-zero-two-sum-amplification.md` gives
+connected simple bridgeless cubic graphs \(G_n\) with
+\[
+r_f(G_n)=r_M(G_n)=5\cdot2^n,\qquad
+\eta(G_n)=6\cdot2^n,
+\]
+where \(\eta\) is the least matching size in a matching/four-flow
+five-cover certificate.  Thus \(\eta-r_M\) is unbounded.  Every member
+still has an explicit standard five-cover and has cyclic two-edge cuts, so
+this is a secondary obstruction theorem, not a resolution of Five-CDC.
 
-This archive's primary target is the standard conjecture: at most five
-Eulerian edge-subsets cover every edge exactly twice.  Empty Eulerian
-subgraphs may pad a cover with fewer than five coordinates.  The
-orientable version is stronger and is not silently substituted for the
-standard formulation.
+The follow-up realizability frontier is recorded in
+`docs/five-pole-realizability-frontier.md`.  A human degree-count argument
+shows why internally bridgeless poles are the sound objects in the reduced
+minimum-counterexample domain.  Exact finite search then finds a sharp
+46-state lower bound for all 5,214 canonical five-poles through order 13,
+with every extremal relation \(C_5\)-like.  The analogous four-pole census
+has only nine- and ten-state relations through order 14, excluding the two
+small signatures conjectured in Máčajová--Mazzuoccolo--Tabarelli within
+that finite scope.  Neither finite pattern is promoted to a universal
+theorem or a publication claim.
 
-## AI-use disclosure
+The surviving size-four branch now has an exact factor-quotient
+formulation.  Contracting the eight marked bichromatic factor circuits
+gives a connected Eulerian quotient, but quotient \(T\)-joins must satisfy
+additional cyclic-port routing equations to lift.  A small
+human-checkable quotient refutes automatic lifting, while the actual
+minimum-counterexample hypotheses reduce an unavoidable terminal-gap
+failure to a cyclic four-cut with two zero edges or a cyclic six-cut with
+all four.  See `docs/eulerian-factor-quotient-tjoin-reduction.md`,
+`docs/two-tjoin-cycle-lift-obstruction.md`, and
+`docs/size-four-terminal-gap-cut-reduction.md`.
 
-OpenAI Codex agents, operating under Atharva Vaidya's direction, made
-substantive contributions throughout this project: proposing and
-refuting intermediate claims, finding proof architectures and finite
-constructions, writing programs and checkers, conducting literature
-searches, drafting manuscripts, and performing additional agent audits.
-Those agent audits are not independent human verification or peer review.
+As a finite equality control, all 33 cubic vertex-transitive order-80
+graphs in the Potočnik--Spiga--Verret census are excluded from the
+stable-eight core: 32 fail exact marked-girth incidence bounds, and the
+sole girth-ten graph has 426,256 normalized Tait colourings but no
+universally separated eight-edge matching.  Exact scope and
+reproduction data are in `docs/order80-vertex-transitive-control.md`.
+This is not an enumeration of arbitrary order-80 cubic graphs.
 
-No mathematical claim should be accepted because an AI system generated
-or checked it.  A human graph theorist should independently verify every
-proof and attribution, rerun the checkers, conduct a specialist novelty
-search, and assume normal scholarly responsibility before any formal
-submission.
+The ambient orders \(88,90,92,94,96,98,100\) are now excluded in the
+extremal exact-zero size-four branch by solver-free girth/Kempe
+arguments, complete finite incidence censuses, and a certified global
+rotation closure at order 100.  At equality, all
+marked bichromatic factor circuits are core \(C_{10}\)'s lifting to
+\(C_{11}\)'s.  Ambient girth forces their bipartite incidence multigraph
+to be simple; switching one factor circuit would then create a
+bichromatic \(C_{50}\) carrying four marks, contrary to universal
+separation.  At positive surplus, a three-matching cycle-rank argument,
+the general inequality \(2p+u\le d+2\), sharp marked-circuit overlap
+bounds, and simultaneous spacing constraints remove the subsequent
+orders.
+
+At order \(98\), all 335 canonical incidence profile pairs are
+infeasible.  The solver-free backtracker, an independent Z3 formulation,
+a prune-free 9,193,235-node replay, and an independently generated HiGHS
+formulation agree.  The new human local ingredient is a weighted
+triangular-prism/\(K_{3,3}\) diagonal-overlap lemma.  This first gave the
+rigorously scoped branch bound
+\[
+                         |V(G)|\ge100.
+\]
+See
+`docs/equality88-kempe-girth-contradiction.md`,
+`docs/equality88-overlap-audit.md`,
+`docs/order94-kempe-surplus-bound.md`, and
+`docs/order98-complete-incidence-census.md`.
+
+At order \(100\), a human argument excludes unmarked factor circuits.
+The exact pairwise incidence relaxation leaves 155 canonical profiles,
+weighted row/column stars leave three, and three profile-level CNFs
+choose every remaining incidence matrix, cyclic position, bijection, and
+twist.  Independently checked LRATs prove all three UNSAT already in the
+deleted-matching core.  A producer-free semantic checker regenerates the
+base encodings and verifies all 996,904 learned clauses as forced short
+circuits.  The updated branch-specific bound is therefore
+\[
+                         |V(G)|\ge102.
+\]
+See `docs/order100-unmarked-exclusion-and-row-star-frontier.md`.  None of
+these branch-specific bounds resolves five-CDC.
+
+The cyclic six-cut reduction has also been sharpened to a rooted
+four-mark obligation.  Cycle/cut orthogonality always supplies an
+all-mark binary cycle avoiding the cap, but componentwise even mark
+parity remains open.  An exact order-28 countermodel shows why universal
+separation alone is insufficient and pinpoints the missing marked-cut
+hypothesis.  Under that marked-cut hypothesis, a new bridge-elimination
+lemma proves that every surviving rooted failure has a 2-connected
+subcubic deleted-root graph in which all three complementary mark-pair
+circuit families are cross-intersecting.  See
+`docs/rooted-four-mark-cap-avoidance.md` and
+`docs/rooted-four-mark-bridgeless-reduction.md`.
+
+The cyclic four-cut exceptional pair now has an exact rooted-packing
+interpretation.  Projection-coherent five-coordinate lifts are precisely
+ordered pairs of edge-disjoint terminal joins, and the two exceptional
+boundary polarities say respectively that the distinguished nonzero cap
+must be used or avoided.  A zero-free shore always has the avoiding
+state, so only internal-zero distributions \((1,1)\) and \((2,0)\)
+survive.  Exact ten-state composition also shows that a two-plus-two
+decomposition cannot first create the four-type exception.  The full
+exceptional-signature conjecture remains open.  See
+`docs/four-pole-exception-rooted-packing-algebra.md`.

@@ -1,0 +1,4592 @@
+{
+  "accepted_per_graph": 500,
+  "elapsed_seconds": 256.50386370898923,
+  "first_one_circuit_local_bad_flow": null,
+  "graph_rows": [
+    {
+      "binary_cycles": 262144,
+      "edges": 51,
+      "elementary_circuits": 105043,
+      "first_pure_merge_bad_flow": {
+        "coordinate_cycle_masks": [
+          2164070468131699,
+          6108933467224,
+          1529228566166261
+        ],
+        "direct_potential_audit": {
+          "compatibility_rows": 105,
+          "exhaustive": true,
+          "first_five_color_witness": null,
+          "first_witness": null,
+          "five_color_merge_exists": false,
+          "free_dimension_after_translation_gauge": 3,
+          "maximum_clique_size_profile": {
+            "6": 8
+          },
+          "maximum_missing_pair_matching": 2,
+          "merge_exists": false,
+          "potential_solutions_after_translation_gauge": 8,
+          "potential_solutions_before_translation_gauge": 64,
+          "potential_solutions_examined": 8,
+          "rank_after_translation_gauge": 99,
+          "stopping_criterion": "five-color",
+          "used_pair_count_profile": {
+            "23": 4,
+            "24": 4
+          }
+        },
+        "flow_values_by_edge": [
+          5,
+          1,
+          4,
+          2,
+          7,
+          5,
+          7,
+          4,
+          1,
+          5,
+          2,
+          7,
+          5,
+          6,
+          4,
+          1,
+          7,
+          6,
+          7,
+          2,
+          4,
+          4,
+          6,
+          3,
+          5,
+          1,
+          4,
+          3,
+          2,
+          1,
+          7,
+          1,
+          5,
+          6,
+          3,
+          2,
+          5,
+          1,
+          4,
+          6,
+          2,
+          4,
+          6,
+          4,
+          1,
+          5,
+          4,
+          1,
+          5,
+          1,
+          5
+        ],
+        "repair": {
+          "circuit_edges": [
+            11,
+            12,
+            21,
+            22,
+            30
+          ],
+          "circuit_mask": 1080039424,
+          "repair_mechanism": "pure-five-merge",
+          "resulting_direct_audit": {
+            "compatibility_rows": 105,
+            "exhaustive": false,
+            "first_five_color_witness": {
+              "color_by_coordinate": [
+                0,
+                3,
+                2,
+                4,
+                1,
+                2,
+                3,
+                4
+              ],
+              "eight_cover_labels": [
+                [
+                  1,
+                  4
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  0,
+                  7
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  5
+                ]
+              ],
+              "free_assignment_index": 0,
+              "potential_word": 2893073097481646404191221973424
+            },
+            "first_witness": {
+              "eight_cover_labels": [
+                [
+                  1,
+                  4
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  0,
+                  7
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  5
+                ]
+              ],
+              "forbidden_merge_pairs": [
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  3,
+                  7
+                ]
+              ],
+              "free_assignment_index": 0,
+              "potential_word": 2893073097481646404191221973424
+            },
+            "five_color_merge_exists": true,
+            "free_dimension_after_translation_gauge": 3,
+            "maximum_clique_size_profile": {
+              "5": 1
+            },
+            "maximum_missing_pair_matching": 3,
+            "merge_exists": true,
+            "potential_solutions_after_translation_gauge": 8,
+            "potential_solutions_before_translation_gauge": 64,
+            "potential_solutions_examined": 1,
+            "rank_after_translation_gauge": 99,
+            "stopping_criterion": "five-color",
+            "used_pair_count_profile": {
+              "21": 1
+            }
+          },
+          "resulting_flow_values_by_edge": [
+            5,
+            1,
+            4,
+            2,
+            7,
+            5,
+            7,
+            4,
+            1,
+            5,
+            2,
+            6,
+            4,
+            6,
+            4,
+            1,
+            7,
+            6,
+            7,
+            2,
+            4,
+            5,
+            7,
+            3,
+            5,
+            1,
+            4,
+            3,
+            2,
+            1,
+            6,
+            1,
+            5,
+            6,
+            3,
+            2,
+            5,
+            1,
+            4,
+            6,
+            2,
+            4,
+            6,
+            4,
+            1,
+            5,
+            4,
+            1,
+            5,
+            1,
+            5
+          ],
+          "switch_value": 1
+        }
+      },
+      "graph6": "ahc?GC@?G?_`_?C?g?G?@@?C?GGC?G?GCG?@??CG@??_??@G??@????_???GA??@????C???@G?_??G???@C????H??_@?G",
+      "graph_index": 0,
+      "totals": {
+        "distinct_nowhere_zero_flows": 500,
+        "merge_good_pure-five-merge": 266,
+        "merge_good_quotient-line": 8,
+        "one_circuit_repairable": 226,
+        "pure_merge_bad": 226,
+        "repair_circuit_length_10": 8,
+        "repair_circuit_length_11": 12,
+        "repair_circuit_length_12": 9,
+        "repair_circuit_length_13": 12,
+        "repair_circuit_length_14": 5,
+        "repair_circuit_length_15": 1,
+        "repair_circuit_length_16": 8,
+        "repair_circuit_length_17": 5,
+        "repair_circuit_length_18": 1,
+        "repair_circuit_length_19": 3,
+        "repair_circuit_length_20": 2,
+        "repair_circuit_length_5": 75,
+        "repair_circuit_length_6": 25,
+        "repair_circuit_length_7": 33,
+        "repair_circuit_length_8": 23,
+        "repair_circuit_length_9": 4,
+        "repair_pure-five-merge": 225,
+        "repair_quotient-line": 1,
+        "repair_switch_value_1": 224,
+        "repair_switch_value_2": 2,
+        "repair_switches_tested": 1413,
+        "triple_draws": 890484,
+        "zero_edge_rejections": 889984
+      },
+      "vertices": 34
+    },
+    {
+      "binary_cycles": 262144,
+      "edges": 51,
+      "elementary_circuits": 99107,
+      "first_pure_merge_bad_flow": {
+        "coordinate_cycle_masks": [
+          1667114225302261,
+          1362739799567819,
+          2170361491999934
+        ],
+        "direct_potential_audit": {
+          "compatibility_rows": 105,
+          "exhaustive": true,
+          "first_five_color_witness": null,
+          "first_witness": null,
+          "five_color_merge_exists": false,
+          "free_dimension_after_translation_gauge": 2,
+          "maximum_clique_size_profile": {
+            "6": 3,
+            "7": 1
+          },
+          "maximum_missing_pair_matching": 2,
+          "merge_exists": false,
+          "potential_solutions_after_translation_gauge": 4,
+          "potential_solutions_before_translation_gauge": 32,
+          "potential_solutions_examined": 4,
+          "rank_after_translation_gauge": 100,
+          "stopping_criterion": "five-color",
+          "used_pair_count_profile": {
+            "24": 2,
+            "26": 1,
+            "27": 1
+          }
+        },
+        "flow_values_by_edge": [
+          3,
+          6,
+          5,
+          6,
+          5,
+          5,
+          3,
+          7,
+          2,
+          1,
+          6,
+          7,
+          1,
+          3,
+          5,
+          7,
+          4,
+          5,
+          2,
+          2,
+          1,
+          3,
+          4,
+          6,
+          7,
+          1,
+          3,
+          4,
+          2,
+          4,
+          1,
+          6,
+          3,
+          7,
+          6,
+          5,
+          1,
+          7,
+          6,
+          4,
+          6,
+          2,
+          7,
+          1,
+          6,
+          5,
+          3,
+          7,
+          5,
+          4,
+          7
+        ],
+        "repair": {
+          "circuit_edges": [
+            0,
+            1,
+            3,
+            5,
+            7
+          ],
+          "circuit_mask": 171,
+          "repair_mechanism": "pure-five-merge",
+          "resulting_direct_audit": {
+            "compatibility_rows": 105,
+            "exhaustive": false,
+            "first_five_color_witness": {
+              "color_by_coordinate": [
+                2,
+                0,
+                3,
+                2,
+                3,
+                1,
+                4,
+                4
+              ],
+              "eight_cover_labels": [
+                [
+                  5,
+                  7
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  3,
+                  7
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ]
+              ],
+              "free_assignment_index": 12,
+              "potential_word": 3059043673379442868760314105728
+            },
+            "first_witness": {
+              "eight_cover_labels": [
+                [
+                  5,
+                  7
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  3,
+                  7
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ]
+              ],
+              "forbidden_merge_pairs": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  6,
+                  7
+                ]
+              ],
+              "free_assignment_index": 12,
+              "potential_word": 3059043673379442868760314105728
+            },
+            "five_color_merge_exists": true,
+            "free_dimension_after_translation_gauge": 4,
+            "maximum_clique_size_profile": {
+              "5": 1,
+              "6": 10,
+              "7": 2
+            },
+            "maximum_missing_pair_matching": 3,
+            "merge_exists": true,
+            "potential_solutions_after_translation_gauge": 16,
+            "potential_solutions_before_translation_gauge": 128,
+            "potential_solutions_examined": 13,
+            "rank_after_translation_gauge": 98,
+            "stopping_criterion": "five-color",
+            "used_pair_count_profile": {
+              "19": 3,
+              "20": 2,
+              "21": 1,
+              "22": 1,
+              "23": 2,
+              "24": 3,
+              "25": 1
+            }
+          },
+          "resulting_flow_values_by_edge": [
+            2,
+            7,
+            5,
+            7,
+            5,
+            4,
+            3,
+            6,
+            2,
+            1,
+            6,
+            7,
+            1,
+            3,
+            5,
+            7,
+            4,
+            5,
+            2,
+            2,
+            1,
+            3,
+            4,
+            6,
+            7,
+            1,
+            3,
+            4,
+            2,
+            4,
+            1,
+            6,
+            3,
+            7,
+            6,
+            5,
+            1,
+            7,
+            6,
+            4,
+            6,
+            2,
+            7,
+            1,
+            6,
+            5,
+            3,
+            7,
+            5,
+            4,
+            7
+          ],
+          "switch_value": 1
+        }
+      },
+      "graph6": "ahc?GC@@G?_P?H??_?GG@_??O?I??GA?CG?@?A?G?@?_??@G??@????_???G?A?@????C???@G??_?G???@C????H??A@?G",
+      "graph_index": 1,
+      "totals": {
+        "distinct_nowhere_zero_flows": 500,
+        "merge_good_pure-five-merge": 244,
+        "merge_good_quotient-line": 6,
+        "one_circuit_repairable": 250,
+        "pure_merge_bad": 250,
+        "repair_circuit_length_10": 9,
+        "repair_circuit_length_11": 8,
+        "repair_circuit_length_12": 8,
+        "repair_circuit_length_13": 13,
+        "repair_circuit_length_14": 4,
+        "repair_circuit_length_15": 7,
+        "repair_circuit_length_16": 6,
+        "repair_circuit_length_17": 2,
+        "repair_circuit_length_19": 1,
+        "repair_circuit_length_20": 2,
+        "repair_circuit_length_22": 1,
+        "repair_circuit_length_5": 98,
+        "repair_circuit_length_6": 37,
+        "repair_circuit_length_7": 30,
+        "repair_circuit_length_8": 17,
+        "repair_circuit_length_9": 7,
+        "repair_pure-five-merge": 250,
+        "repair_switch_value_1": 249,
+        "repair_switch_value_2": 1,
+        "repair_switches_tested": 1741,
+        "triple_draws": 932567,
+        "zero_edge_rejections": 932067
+      },
+      "vertices": 34
+    },
+    {
+      "binary_cycles": 262144,
+      "edges": 51,
+      "elementary_circuits": 94081,
+      "first_pure_merge_bad_flow": {
+        "coordinate_cycle_masks": [
+          1666440649420149,
+          961766555745139,
+          385737967370925
+        ],
+        "direct_potential_audit": {
+          "compatibility_rows": 105,
+          "exhaustive": true,
+          "first_five_color_witness": null,
+          "first_witness": null,
+          "five_color_merge_exists": false,
+          "free_dimension_after_translation_gauge": 2,
+          "maximum_clique_size_profile": {
+            "6": 4
+          },
+          "maximum_missing_pair_matching": 2,
+          "merge_exists": false,
+          "potential_solutions_after_translation_gauge": 4,
+          "potential_solutions_before_translation_gauge": 32,
+          "potential_solutions_examined": 4,
+          "rank_after_translation_gauge": 100,
+          "stopping_criterion": "five-color",
+          "used_pair_count_profile": {
+            "19": 4
+          }
+        },
+        "flow_values_by_edge": [
+          7,
+          2,
+          5,
+          4,
+          3,
+          7,
+          3,
+          4,
+          3,
+          6,
+          1,
+          3,
+          2,
+          3,
+          2,
+          5,
+          6,
+          1,
+          4,
+          2,
+          1,
+          3,
+          3,
+          7,
+          2,
+          5,
+          4,
+          6,
+          7,
+          3,
+          1,
+          6,
+          4,
+          5,
+          1,
+          3,
+          7,
+          2,
+          4,
+          7,
+          1,
+          7,
+          4,
+          7,
+          4,
+          3,
+          7,
+          1,
+          7,
+          2,
+          1
+        ],
+        "repair": {
+          "circuit_edges": [
+            0,
+            1,
+            3,
+            6,
+            9,
+            11,
+            12,
+            19,
+            21,
+            35,
+            41,
+            43,
+            44
+          ],
+          "circuit_mask": 28621664688715,
+          "repair_mechanism": "pure-five-merge",
+          "resulting_direct_audit": {
+            "compatibility_rows": 105,
+            "exhaustive": false,
+            "first_five_color_witness": {
+              "color_by_coordinate": [
+                0,
+                2,
+                3,
+                4,
+                2,
+                3,
+                1,
+                4
+              ],
+              "eight_cover_labels": [
+                [
+                  3,
+                  5
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "free_assignment_index": 0,
+              "potential_word": 1556180807273198027669789156608
+            },
+            "first_witness": {
+              "eight_cover_labels": [
+                [
+                  3,
+                  5
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "forbidden_merge_pairs": [
+                [
+                  1,
+                  4
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  3,
+                  7
+                ]
+              ],
+              "free_assignment_index": 0,
+              "potential_word": 1556180807273198027669789156608
+            },
+            "five_color_merge_exists": true,
+            "free_dimension_after_translation_gauge": 2,
+            "maximum_clique_size_profile": {
+              "5": 1
+            },
+            "maximum_missing_pair_matching": 3,
+            "merge_exists": true,
+            "potential_solutions_after_translation_gauge": 4,
+            "potential_solutions_before_translation_gauge": 32,
+            "potential_solutions_examined": 1,
+            "rank_after_translation_gauge": 100,
+            "stopping_criterion": "five-color",
+            "used_pair_count_profile": {
+              "22": 1
+            }
+          },
+          "resulting_flow_values_by_edge": [
+            6,
+            3,
+            5,
+            5,
+            3,
+            7,
+            2,
+            4,
+            3,
+            7,
+            1,
+            2,
+            3,
+            3,
+            2,
+            5,
+            6,
+            1,
+            4,
+            3,
+            1,
+            2,
+            3,
+            7,
+            2,
+            5,
+            4,
+            6,
+            7,
+            3,
+            1,
+            6,
+            4,
+            5,
+            1,
+            2,
+            7,
+            2,
+            4,
+            7,
+            1,
+            6,
+            4,
+            6,
+            5,
+            3,
+            7,
+            1,
+            7,
+            2,
+            1
+          ],
+          "switch_value": 1
+        }
+      },
+      "graph6": "ahc?GC@@G?_P?H??_?G?@??C??G?AGG?E???C??I???_G?@A??@?A??_??GG???@G???C??G?G?@??G??G?C??O?@???GCG",
+      "graph_index": 2,
+      "totals": {
+        "distinct_nowhere_zero_flows": 500,
+        "merge_good_pure-five-merge": 287,
+        "merge_good_quotient-line": 5,
+        "one_circuit_repairable": 208,
+        "pure_merge_bad": 208,
+        "repair_circuit_length_10": 1,
+        "repair_circuit_length_11": 10,
+        "repair_circuit_length_12": 13,
+        "repair_circuit_length_13": 4,
+        "repair_circuit_length_14": 6,
+        "repair_circuit_length_15": 8,
+        "repair_circuit_length_16": 3,
+        "repair_circuit_length_17": 3,
+        "repair_circuit_length_18": 1,
+        "repair_circuit_length_19": 2,
+        "repair_circuit_length_20": 2,
+        "repair_circuit_length_24": 1,
+        "repair_circuit_length_25": 1,
+        "repair_circuit_length_5": 78,
+        "repair_circuit_length_6": 37,
+        "repair_circuit_length_7": 18,
+        "repair_circuit_length_8": 16,
+        "repair_circuit_length_9": 4,
+        "repair_pure-five-merge": 208,
+        "repair_switch_value_1": 205,
+        "repair_switch_value_2": 3,
+        "repair_switches_tested": 1480,
+        "triple_draws": 852299,
+        "zero_edge_rejections": 851799
+      },
+      "vertices": 34
+    },
+    {
+      "binary_cycles": 262144,
+      "edges": 51,
+      "elementary_circuits": 93171,
+      "first_pure_merge_bad_flow": {
+        "coordinate_cycle_masks": [
+          1609460054930891,
+          968290446595262,
+          2069772551106232
+        ],
+        "direct_potential_audit": {
+          "compatibility_rows": 105,
+          "exhaustive": true,
+          "first_five_color_witness": null,
+          "first_witness": null,
+          "five_color_merge_exists": false,
+          "free_dimension_after_translation_gauge": 1,
+          "maximum_clique_size_profile": {
+            "6": 2
+          },
+          "maximum_missing_pair_matching": 2,
+          "merge_exists": false,
+          "potential_solutions_after_translation_gauge": 2,
+          "potential_solutions_before_translation_gauge": 16,
+          "potential_solutions_examined": 2,
+          "rank_after_translation_gauge": 101,
+          "stopping_criterion": "five-color",
+          "used_pair_count_profile": {
+            "15": 1,
+            "19": 1
+          }
+        },
+        "flow_values_by_edge": [
+          1,
+          3,
+          2,
+          7,
+          6,
+          6,
+          1,
+          7,
+          1,
+          4,
+          7,
+          4,
+          3,
+          5,
+          2,
+          7,
+          2,
+          3,
+          4,
+          7,
+          3,
+          4,
+          1,
+          5,
+          4,
+          1,
+          1,
+          5,
+          7,
+          6,
+          4,
+          3,
+          3,
+          7,
+          2,
+          1,
+          4,
+          6,
+          5,
+          3,
+          1,
+          5,
+          1,
+          4,
+          7,
+          3,
+          6,
+          1,
+          7,
+          6,
+          5
+        ],
+        "repair": {
+          "circuit_edges": [
+            1,
+            2,
+            9,
+            10,
+            11,
+            13,
+            16,
+            19,
+            21,
+            36,
+            38,
+            39,
+            41
+          ],
+          "circuit_mask": 3092379151878,
+          "repair_mechanism": "pure-five-merge",
+          "resulting_direct_audit": {
+            "compatibility_rows": 105,
+            "exhaustive": false,
+            "first_five_color_witness": {
+              "color_by_coordinate": [
+                3,
+                4,
+                3,
+                0,
+                1,
+                2,
+                4,
+                0
+              ],
+              "eight_cover_labels": [
+                [
+                  2,
+                  3
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  4
+                ]
+              ],
+              "free_assignment_index": 0,
+              "potential_word": 5047792451644667503247278925088
+            },
+            "first_witness": {
+              "eight_cover_labels": [
+                [
+                  2,
+                  3
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  4
+                ]
+              ],
+              "forbidden_merge_pairs": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  3,
+                  7
+                ]
+              ],
+              "free_assignment_index": 0,
+              "potential_word": 5047792451644667503247278925088
+            },
+            "five_color_merge_exists": true,
+            "free_dimension_after_translation_gauge": 1,
+            "maximum_clique_size_profile": {
+              "5": 1
+            },
+            "maximum_missing_pair_matching": 3,
+            "merge_exists": true,
+            "potential_solutions_after_translation_gauge": 2,
+            "potential_solutions_before_translation_gauge": 16,
+            "potential_solutions_examined": 1,
+            "rank_after_translation_gauge": 101,
+            "stopping_criterion": "five-color",
+            "used_pair_count_profile": {
+              "18": 1
+            }
+          },
+          "resulting_flow_values_by_edge": [
+            1,
+            2,
+            3,
+            7,
+            6,
+            6,
+            1,
+            7,
+            1,
+            5,
+            6,
+            5,
+            3,
+            4,
+            2,
+            7,
+            3,
+            3,
+            4,
+            6,
+            3,
+            5,
+            1,
+            5,
+            4,
+            1,
+            1,
+            5,
+            7,
+            6,
+            4,
+            3,
+            3,
+            7,
+            2,
+            1,
+            5,
+            6,
+            4,
+            2,
+            1,
+            4,
+            1,
+            4,
+            7,
+            3,
+            6,
+            1,
+            7,
+            6,
+            5
+          ],
+          "switch_value": 1
+        }
+      },
+      "graph6": "ahc?GC@@G?_P?H??_?G?@??C??G??GGAE???C??I???_G?@A??@?A??_?C?G???@G???C??C?G??_?G??C?C??G?@???GCG",
+      "graph_index": 3,
+      "totals": {
+        "distinct_nowhere_zero_flows": 500,
+        "merge_good_pure-five-merge": 271,
+        "merge_good_quotient-line": 3,
+        "one_circuit_repairable": 226,
+        "pure_merge_bad": 226,
+        "repair_circuit_length_10": 8,
+        "repair_circuit_length_11": 12,
+        "repair_circuit_length_12": 8,
+        "repair_circuit_length_13": 3,
+        "repair_circuit_length_14": 5,
+        "repair_circuit_length_15": 6,
+        "repair_circuit_length_16": 1,
+        "repair_circuit_length_17": 6,
+        "repair_circuit_length_18": 3,
+        "repair_circuit_length_20": 2,
+        "repair_circuit_length_22": 2,
+        "repair_circuit_length_23": 1,
+        "repair_circuit_length_5": 88,
+        "repair_circuit_length_6": 44,
+        "repair_circuit_length_7": 23,
+        "repair_circuit_length_8": 3,
+        "repair_circuit_length_9": 11,
+        "repair_pure-five-merge": 225,
+        "repair_quotient-line": 1,
+        "repair_switch_value_1": 223,
+        "repair_switch_value_2": 3,
+        "repair_switches_tested": 1867,
+        "triple_draws": 953131,
+        "zero_edge_rejections": 952631
+      },
+      "vertices": 34
+    },
+    {
+      "binary_cycles": 262144,
+      "edges": 51,
+      "elementary_circuits": 91799,
+      "first_pure_merge_bad_flow": {
+        "coordinate_cycle_masks": [
+          1441708438926688,
+          258271310478285,
+          2073022432663358
+        ],
+        "direct_potential_audit": {
+          "compatibility_rows": 105,
+          "exhaustive": true,
+          "first_five_color_witness": null,
+          "first_witness": null,
+          "five_color_merge_exists": false,
+          "free_dimension_after_translation_gauge": 1,
+          "maximum_clique_size_profile": {
+            "7": 2
+          },
+          "maximum_missing_pair_matching": 1,
+          "merge_exists": false,
+          "potential_solutions_after_translation_gauge": 2,
+          "potential_solutions_before_translation_gauge": 16,
+          "potential_solutions_examined": 2,
+          "rank_after_translation_gauge": 101,
+          "stopping_criterion": "five-color",
+          "used_pair_count_profile": {
+            "21": 2
+          }
+        },
+        "flow_values_by_edge": [
+          2,
+          4,
+          6,
+          6,
+          4,
+          5,
+          3,
+          2,
+          7,
+          6,
+          5,
+          2,
+          7,
+          3,
+          6,
+          4,
+          7,
+          3,
+          7,
+          1,
+          7,
+          6,
+          1,
+          6,
+          7,
+          1,
+          5,
+          2,
+          2,
+          7,
+          3,
+          1,
+          7,
+          4,
+          6,
+          1,
+          1,
+          7,
+          6,
+          2,
+          5,
+          3,
+          5,
+          7,
+          5,
+          2,
+          6,
+          2,
+          5,
+          4,
+          5
+        ],
+        "repair": {
+          "circuit_edges": [
+            0,
+            1,
+            3,
+            5,
+            7
+          ],
+          "circuit_mask": 171,
+          "repair_mechanism": "pure-five-merge",
+          "resulting_direct_audit": {
+            "compatibility_rows": 105,
+            "exhaustive": false,
+            "first_five_color_witness": {
+              "color_by_coordinate": [
+                0,
+                3,
+                0,
+                1,
+                3,
+                2,
+                4,
+                4
+              ],
+              "eight_cover_labels": [
+                [
+                  5,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ]
+              ],
+              "free_assignment_index": 1,
+              "potential_word": 1263784758309490667950807712328
+            },
+            "first_witness": {
+              "eight_cover_labels": [
+                [
+                  5,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  3,
+                  6
+                ]
+              ],
+              "forbidden_merge_pairs": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  6,
+                  7
+                ]
+              ],
+              "free_assignment_index": 1,
+              "potential_word": 1263784758309490667950807712328
+            },
+            "five_color_merge_exists": true,
+            "free_dimension_after_translation_gauge": 2,
+            "maximum_clique_size_profile": {
+              "5": 1,
+              "6": 1
+            },
+            "maximum_missing_pair_matching": 3,
+            "merge_exists": true,
+            "potential_solutions_after_translation_gauge": 4,
+            "potential_solutions_before_translation_gauge": 32,
+            "potential_solutions_examined": 2,
+            "rank_after_translation_gauge": 100,
+            "stopping_criterion": "five-color",
+            "used_pair_count_profile": {
+              "18": 1,
+              "20": 1
+            }
+          },
+          "resulting_flow_values_by_edge": [
+            3,
+            5,
+            6,
+            7,
+            4,
+            4,
+            3,
+            3,
+            7,
+            6,
+            5,
+            2,
+            7,
+            3,
+            6,
+            4,
+            7,
+            3,
+            7,
+            1,
+            7,
+            6,
+            1,
+            6,
+            7,
+            1,
+            5,
+            2,
+            2,
+            7,
+            3,
+            1,
+            7,
+            4,
+            6,
+            1,
+            1,
+            7,
+            6,
+            2,
+            5,
+            3,
+            5,
+            7,
+            5,
+            2,
+            6,
+            2,
+            5,
+            4,
+            5
+          ],
+          "switch_value": 1
+        }
+      },
+      "graph6": "ahc?GC@@G?_P?H??_?G?@??C??G??GGAE???C??I???_G?@?A?@A???_?C?G???@G???C??C?G??_?G??C?C??G?@???GCG",
+      "graph_index": 4,
+      "totals": {
+        "distinct_nowhere_zero_flows": 500,
+        "merge_good_pure-five-merge": 270,
+        "merge_good_quotient-line": 5,
+        "one_circuit_repairable": 225,
+        "pure_merge_bad": 225,
+        "repair_circuit_length_10": 2,
+        "repair_circuit_length_11": 5,
+        "repair_circuit_length_12": 7,
+        "repair_circuit_length_13": 7,
+        "repair_circuit_length_14": 2,
+        "repair_circuit_length_15": 6,
+        "repair_circuit_length_16": 5,
+        "repair_circuit_length_17": 4,
+        "repair_circuit_length_18": 2,
+        "repair_circuit_length_19": 1,
+        "repair_circuit_length_20": 1,
+        "repair_circuit_length_21": 1,
+        "repair_circuit_length_23": 1,
+        "repair_circuit_length_24": 1,
+        "repair_circuit_length_5": 89,
+        "repair_circuit_length_6": 47,
+        "repair_circuit_length_7": 29,
+        "repair_circuit_length_8": 9,
+        "repair_circuit_length_9": 6,
+        "repair_pure-five-merge": 223,
+        "repair_quotient-line": 2,
+        "repair_switch_value_1": 222,
+        "repair_switch_value_2": 3,
+        "repair_switches_tested": 1635,
+        "triple_draws": 924703,
+        "zero_edge_rejections": 924203
+      },
+      "vertices": 34
+    },
+    {
+      "binary_cycles": 262144,
+      "edges": 51,
+      "elementary_circuits": 86773,
+      "first_pure_merge_bad_flow": {
+        "coordinate_cycle_masks": [
+          1912834472955486,
+          885629959001773,
+          488704446227302
+        ],
+        "direct_potential_audit": {
+          "compatibility_rows": 105,
+          "exhaustive": true,
+          "first_five_color_witness": null,
+          "first_witness": null,
+          "five_color_merge_exists": false,
+          "free_dimension_after_translation_gauge": 2,
+          "maximum_clique_size_profile": {
+            "6": 4
+          },
+          "maximum_missing_pair_matching": 2,
+          "merge_exists": false,
+          "potential_solutions_after_translation_gauge": 4,
+          "potential_solutions_before_translation_gauge": 32,
+          "potential_solutions_examined": 4,
+          "rank_after_translation_gauge": 100,
+          "stopping_criterion": "five-color",
+          "used_pair_count_profile": {
+            "15": 2,
+            "19": 2
+          }
+        },
+        "flow_values_by_edge": [
+          2,
+          5,
+          7,
+          3,
+          1,
+          6,
+          5,
+          2,
+          4,
+          7,
+          3,
+          1,
+          2,
+          4,
+          7,
+          6,
+          2,
+          7,
+          1,
+          6,
+          2,
+          4,
+          5,
+          4,
+          3,
+          7,
+          4,
+          7,
+          5,
+          1,
+          7,
+          2,
+          6,
+          1,
+          1,
+          6,
+          7,
+          7,
+          6,
+          1,
+          3,
+          1,
+          6,
+          5,
+          4,
+          6,
+          1,
+          5,
+          6,
+          3,
+          1
+        ],
+        "repair": {
+          "circuit_edges": [
+            0,
+            1,
+            3,
+            5,
+            7
+          ],
+          "circuit_mask": 171,
+          "repair_mechanism": "pure-five-merge",
+          "resulting_direct_audit": {
+            "compatibility_rows": 105,
+            "exhaustive": false,
+            "first_five_color_witness": {
+              "color_by_coordinate": [
+                3,
+                0,
+                0,
+                3,
+                1,
+                4,
+                2,
+                4
+              ],
+              "eight_cover_labels": [
+                [
+                  4,
+                  7
+                ],
+                [
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  0,
+                  7
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  5
+                ]
+              ],
+              "free_assignment_index": 1,
+              "potential_word": 2457254110908293604974810529896
+            },
+            "first_witness": {
+              "eight_cover_labels": [
+                [
+                  4,
+                  7
+                ],
+                [
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  0,
+                  7
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  3,
+                  5
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  5
+                ]
+              ],
+              "forbidden_merge_pairs": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  5,
+                  7
+                ]
+              ],
+              "free_assignment_index": 1,
+              "potential_word": 2457254110908293604974810529896
+            },
+            "five_color_merge_exists": true,
+            "free_dimension_after_translation_gauge": 2,
+            "maximum_clique_size_profile": {
+              "5": 1,
+              "6": 1
+            },
+            "maximum_missing_pair_matching": 3,
+            "merge_exists": true,
+            "potential_solutions_after_translation_gauge": 4,
+            "potential_solutions_before_translation_gauge": 32,
+            "potential_solutions_examined": 2,
+            "rank_after_translation_gauge": 100,
+            "stopping_criterion": "five-color",
+            "used_pair_count_profile": {
+              "18": 1,
+              "19": 1
+            }
+          },
+          "resulting_flow_values_by_edge": [
+            3,
+            4,
+            7,
+            2,
+            1,
+            7,
+            5,
+            3,
+            4,
+            7,
+            3,
+            1,
+            2,
+            4,
+            7,
+            6,
+            2,
+            7,
+            1,
+            6,
+            2,
+            4,
+            5,
+            4,
+            3,
+            7,
+            4,
+            7,
+            5,
+            1,
+            7,
+            2,
+            6,
+            1,
+            1,
+            6,
+            7,
+            7,
+            6,
+            1,
+            3,
+            1,
+            6,
+            5,
+            4,
+            6,
+            1,
+            5,
+            6,
+            3,
+            1
+          ],
+          "switch_value": 1
+        }
+      },
+      "graph6": "ahc?GC@@G?_P?H??_?G?@??C??G?@G??C??P??@G?A?__?@_???C???g???GA??@A???C?G??G???GH????C??G?@???O_G",
+      "graph_index": 5,
+      "totals": {
+        "distinct_nowhere_zero_flows": 500,
+        "merge_good_pure-five-merge": 298,
+        "merge_good_quotient-line": 4,
+        "one_circuit_repairable": 198,
+        "pure_merge_bad": 198,
+        "repair_circuit_length_10": 3,
+        "repair_circuit_length_11": 4,
+        "repair_circuit_length_12": 4,
+        "repair_circuit_length_13": 4,
+        "repair_circuit_length_14": 1,
+        "repair_circuit_length_15": 4,
+        "repair_circuit_length_16": 5,
+        "repair_circuit_length_17": 5,
+        "repair_circuit_length_18": 2,
+        "repair_circuit_length_20": 3,
+        "repair_circuit_length_21": 1,
+        "repair_circuit_length_24": 1,
+        "repair_circuit_length_5": 101,
+        "repair_circuit_length_6": 34,
+        "repair_circuit_length_7": 8,
+        "repair_circuit_length_8": 17,
+        "repair_circuit_length_9": 1,
+        "repair_pure-five-merge": 196,
+        "repair_quotient-line": 2,
+        "repair_switch_value_1": 193,
+        "repair_switch_value_2": 5,
+        "repair_switches_tested": 1644,
+        "triple_draws": 961352,
+        "zero_edge_rejections": 960852
+      },
+      "vertices": 34
+    },
+    {
+      "binary_cycles": 262144,
+      "edges": 51,
+      "elementary_circuits": 87235,
+      "first_pure_merge_bad_flow": {
+        "coordinate_cycle_masks": [
+          1630419942684405,
+          1301061271540907,
+          1890812152926067
+        ],
+        "direct_potential_audit": {
+          "compatibility_rows": 105,
+          "exhaustive": true,
+          "first_five_color_witness": null,
+          "first_witness": null,
+          "five_color_merge_exists": false,
+          "free_dimension_after_translation_gauge": 0,
+          "maximum_clique_size_profile": {
+            "7": 1
+          },
+          "maximum_missing_pair_matching": 1,
+          "merge_exists": false,
+          "potential_solutions_after_translation_gauge": 1,
+          "potential_solutions_before_translation_gauge": 8,
+          "potential_solutions_examined": 1,
+          "rank_after_translation_gauge": 102,
+          "stopping_criterion": "five-color",
+          "used_pair_count_profile": {
+            "21": 1
+          }
+        },
+        "flow_values_by_edge": [
+          7,
+          6,
+          1,
+          2,
+          5,
+          7,
+          5,
+          3,
+          4,
+          5,
+          7,
+          4,
+          3,
+          1,
+          6,
+          3,
+          2,
+          6,
+          5,
+          2,
+          4,
+          6,
+          2,
+          7,
+          1,
+          6,
+          2,
+          3,
+          1,
+          3,
+          2,
+          3,
+          5,
+          7,
+          6,
+          7,
+          1,
+          4,
+          3,
+          5,
+          6,
+          7,
+          6,
+          3,
+          6,
+          4,
+          1,
+          7,
+          1,
+          4,
+          7
+        ],
+        "repair": {
+          "circuit_edges": [
+            3,
+            4,
+            6,
+            10,
+            12,
+            14,
+            15,
+            16,
+            18,
+            22,
+            30,
+            31,
+            33,
+            38,
+            39,
+            44,
+            49
+          ],
+          "circuit_mask": 581378588922968,
+          "repair_mechanism": "pure-five-merge",
+          "resulting_direct_audit": {
+            "compatibility_rows": 105,
+            "exhaustive": false,
+            "first_five_color_witness": {
+              "color_by_coordinate": [
+                3,
+                0,
+                1,
+                4,
+                0,
+                3,
+                2,
+                4
+              ],
+              "eight_cover_labels": [
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  7
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  0,
+                  7
+                ]
+              ],
+              "free_assignment_index": 0,
+              "potential_word": 4230266657161465927689303903312
+            },
+            "first_witness": {
+              "eight_cover_labels": [
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  3,
+                  6
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  0,
+                  7
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  0,
+                  7
+                ]
+              ],
+              "forbidden_merge_pairs": [
+                [
+                  0,
+                  5
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  3,
+                  7
+                ]
+              ],
+              "free_assignment_index": 0,
+              "potential_word": 4230266657161465927689303903312
+            },
+            "five_color_merge_exists": true,
+            "free_dimension_after_translation_gauge": 2,
+            "maximum_clique_size_profile": {
+              "5": 1
+            },
+            "maximum_missing_pair_matching": 3,
+            "merge_exists": true,
+            "potential_solutions_after_translation_gauge": 4,
+            "potential_solutions_before_translation_gauge": 32,
+            "potential_solutions_examined": 1,
+            "rank_after_translation_gauge": 100,
+            "stopping_criterion": "five-color",
+            "used_pair_count_profile": {
+              "17": 1
+            }
+          },
+          "resulting_flow_values_by_edge": [
+            7,
+            6,
+            1,
+            3,
+            4,
+            7,
+            4,
+            3,
+            4,
+            5,
+            6,
+            4,
+            2,
+            1,
+            7,
+            2,
+            3,
+            6,
+            4,
+            2,
+            4,
+            6,
+            3,
+            7,
+            1,
+            6,
+            2,
+            3,
+            1,
+            3,
+            3,
+            2,
+            5,
+            6,
+            6,
+            7,
+            1,
+            4,
+            2,
+            4,
+            6,
+            7,
+            6,
+            3,
+            7,
+            4,
+            1,
+            7,
+            1,
+            5,
+            7
+          ],
+          "switch_value": 1
+        }
+      },
+      "graph6": "ahc?GC@@G?_P?H??_?G?@??C??G?@G??C??P??@G???__G@_???C???g???GA??@A???C?G??G???OH????C??G?@???O_G",
+      "graph_index": 6,
+      "totals": {
+        "distinct_nowhere_zero_flows": 500,
+        "merge_good_pure-five-merge": 298,
+        "merge_good_quotient-line": 7,
+        "one_circuit_repairable": 195,
+        "pure_merge_bad": 195,
+        "repair_circuit_length_10": 2,
+        "repair_circuit_length_12": 5,
+        "repair_circuit_length_13": 5,
+        "repair_circuit_length_14": 4,
+        "repair_circuit_length_15": 3,
+        "repair_circuit_length_16": 1,
+        "repair_circuit_length_17": 4,
+        "repair_circuit_length_18": 4,
+        "repair_circuit_length_19": 1,
+        "repair_circuit_length_20": 2,
+        "repair_circuit_length_21": 2,
+        "repair_circuit_length_22": 1,
+        "repair_circuit_length_5": 96,
+        "repair_circuit_length_6": 45,
+        "repair_circuit_length_7": 12,
+        "repair_circuit_length_8": 6,
+        "repair_circuit_length_9": 2,
+        "repair_pure-five-merge": 195,
+        "repair_switch_value_1": 188,
+        "repair_switch_value_2": 7,
+        "repair_switches_tested": 1747,
+        "triple_draws": 842955,
+        "zero_edge_rejections": 842455
+      },
+      "vertices": 34
+    }
+  ],
+  "input": "search/strong_snarks/source/strongsnarks_34_5_cyc4.g6",
+  "schema": "fixed-fano-pure-merge-strict-random-sampler-v1",
+  "scope_warning": "Seeded random flow samples, not a complete flow-orbit census and not a universal theorem.",
+  "seed": 20260728,
+  "status": "SAMPLED_PASS"
+}
