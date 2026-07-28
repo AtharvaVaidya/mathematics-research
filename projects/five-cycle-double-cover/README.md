@@ -28,6 +28,19 @@ recommends against a second preprint because the universal exchange theorem
 is still missing and the main framework overlaps published 4-flow,
 \(T\)-join, and multipole-boundary methods.
 
+The latest surface-Kempe audit closes several tempting local proof routes.
+The human corner-pairing argument proves that factor switches with zero or
+two remote twists are neutral, but explicit connected 2-lifts refute the
+inferred boundary-size bound, universal local neutrality, and even the
+weaker local nonnegative-delta claim.  A separate 56-vertex package
+exhausts a terminal equal-\(\chi\) plateau with 55,652 states modulo
+global \(S_5\): 1,041 states have disconnected neutral-component
+hypergraphs, yet the whole plateau is root-universal.  See
+`scratch/d5-local-neutral-corner-pairing-frontier.md` and
+`scratch/d5-lift56-terminal-plateau-neutral-connectivity-no-go.md`.
+These are exact route counterexamples and a positive finite plateau result,
+not a proof or disproof of FiveCDC.
+
 The independent \(K_6\)-reformulation publication audit is in
 `preprint-k6/NO-GO.md`.  It likewise recommends **no standalone preprint**:
 the duad/syntheme encoding substantially overlaps Král' et al. (2009), and

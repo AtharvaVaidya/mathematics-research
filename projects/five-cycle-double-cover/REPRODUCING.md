@@ -21,6 +21,39 @@ temporary directory is removed after success or failure.
 The frontier statement concerns one explicit positive instance.  It is not a
 census or clearance of the full reduced minimum-counterexample domain.
 
+## Surface-Kempe local no-gos and the 56-vertex terminal plateau
+
+From `projects/five-cycle-double-cover`, the focused quick checks are:
+
+```sh
+python3 scratch/check_d5_local_boundary_degree_two_lift_no_go.py
+python3 scratch/check_d5_local_zero_two_lift_no_go.py
+python3 scratch/check_d5_local_max_two_lift_no_go.py
+python3 scratch/check_d5_local_max_two_lift_no_go_independent.py
+python3 scratch/check_d5_local_chi_max_neutral_connectivity_no_go.py
+python3 scratch/check_d5_local_chi_max_direct_chain_descent_no_go.py
+python3 scratch/check_d5_lift56_disconnected_plateau_state.py
+shasum -a 256 -c scratch/d5-lift56-terminal-plateau-SHA256SUMS
+```
+
+The complete terminal-plateau replay is:
+
+```sh
+clang++ -std=c++17 -O3 -DNDEBUG \
+  scratch/audit_d5_lift56_equal_chi_plateau.cpp \
+  -o /tmp/audit_d5_lift56_equal_chi_plateau
+/tmp/audit_d5_lift56_equal_chi_plateau \
+  > /tmp/d5-lift56-terminal-plateau-report.txt
+diff -u scratch/d5-lift56-terminal-plateau-report.txt \
+  /tmp/d5-lift56-terminal-plateau-report.txt
+```
+
+The expected exact plateau totals are 55,652 states modulo global \(S_5\),
+1,022,160 directed neutral moves, 1,041 states with disconnected neutral
+support, no positive exit, and no uncovered root pair.  This refutes a
+statewise connectivity shortcut while supporting—but not proving—the
+terminal-plateau root-universality conjecture.
+
 ## Five-pole path-extension and ear frontier
 
 The path-extension argument is a displayed human proof in
