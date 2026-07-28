@@ -1173,3 +1173,15 @@ Open obligations:
     of the two complementary paths through the outside shore, rather than
     count internal odd circuits alone. See
     `ONE_BOUNDARY_FIVE_FRONTIER_20260727.md`.
+73. **Oddness at most four is not universal in the one-boundary-five
+    branch:** an explicit 100-vertex simple cubic cyclically
+    four-edge-connected graph has the exact residual Gallai--Edmonds
+    profile and exact oddness six.  A source-resistance CNF has an LRAT
+    accepted by both `lrat-check` and CakeML `cake_lpr`; the displayed
+    shore-transfer proof yields resistance at least five for the
+    completion, and an explicit perfect matching gives a 2-factor with
+    exactly six odd circuits.  The same graph has an explicit standard
+    five-CDC checked in both SAT-model and compact edge-label semantics.
+    It therefore refutes only the proposed oddness-four closure strategy,
+    not FiveCDC.  See
+    `search/one-boundary-five-oddness6-completion-20260727/`.

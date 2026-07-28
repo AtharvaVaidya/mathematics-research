@@ -73,11 +73,17 @@ locally cyclically-four 67-vertex core.
 
 That core nevertheless has explicit cyclically-four \(s=1\) and \(s=2\)
 completions of exact oddness four.  They are not FiveCDC counterexamples.
-The surviving proof obligation must use how the two complementary paths
-close through the outside shore.  The update includes standard-library
-replays, retained JSON records, a checksum ledger, exact trust boundaries,
-and a separate AI-use disclosure.  It neither resolves standard FiveCDC
-nor addresses the orientable variant.
+A newer order-100 completion in
+[`search/one-boundary-five-oddness6-completion-20260727/`](search/one-boundary-five-oddness6-completion-20260727/)
+has the exact same one-boundary-five profile and exact oddness six.  This
+rules out closing the entire branch by an oddness-at-most-four theorem.
+The specimen has an explicit standard five-cycle double cover, so it is
+not a counterexample.  The surviving proof obligation must use how the two
+complementary paths close through the outside shore.  The update includes
+standard-library replays, checked proof certificates, retained witnesses,
+checksum ledgers, exact trust boundaries, and a separate AI-use
+disclosure.  It neither resolves standard FiveCDC nor addresses the
+orientable variant.
 
 ## Main research drafts
 

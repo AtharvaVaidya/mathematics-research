@@ -135,6 +135,40 @@ proofs and exact remaining obligation are indexed by
 `ONE_BOUNDARY_FIVE_FRONTIER_20260727.md`.  These checks do not prove or
 disprove FiveCDC and do not test the orientable variant.
 
+The order-100 oddness-six strategy counterexample has its own complete
+package.  Its quick replay reconstructs the source and completion, checks
+the exact Gallai--Edmonds profile, factor-critical shore, displayed
+six-odd-circuit 2-factor, and explicit standard five-CDC.  The full mode
+also enumerates all cyclic edge cuts of size at most three:
+
+```sh
+(
+  cd search/one-boundary-five-oddness6-completion-20260727
+  shasum -a 256 -c SHA256SUMS
+)
+python3 search/one-boundary-five-oddness6-completion-20260727/verify.py
+python3 search/one-boundary-five-oddness6-completion-20260727/verify.py \
+  --full
+```
+
+The source resistance LRAT was checked by both pinned certificate
+checkers:
+
+```sh
+.tools/cert-checkers/drat-trim/lrat-check \
+  search/one-boundary-five-oddness6-completion-20260727/source96-delete-at-most6.cnf \
+  search/one-boundary-five-oddness6-completion-20260727/source96-delete-at-most6.lrat
+.tools/cert-checkers/cake_lpr/cake_lpr \
+  search/one-boundary-five-oddness6-completion-20260727/source96-delete-at-most6.cnf \
+  search/one-boundary-five-oddness6-completion-20260727/source96-delete-at-most6.lrat
+python3 -m verifier_a check-model \
+  search/one-boundary-five-oddness6-completion-20260727/graph.json \
+  search/one-boundary-five-oddness6-completion-20260727/fivecdc.model
+```
+
+This graph disproves only the proposed oddness-at-most-four closure of
+the residual branch.  Its retained five-CDC is positive.
+
 ## Marked-circuits preprint and companion checks
 
 The 29-page publication draft is

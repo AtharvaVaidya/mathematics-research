@@ -2401,9 +2401,19 @@ displayed completions have exact oddness four. The solver-free \(s=0\)
 case is impossible because the outside singleton and one root form a
 cyclic triangle cut.
 
-Therefore the current exact obligation is global: use the way the two
+At that stage the remaining obligation was global: use the way the two
 complementary paths in \(Q\) close through the outside shore to force
-small oddness, a prescribed-root theta/exact-zero flow, or a genuine
-cyclically-four non-Tait obstruction. No such universal proof or
-obstruction is currently known in this project. See
-`ONE_BOUNDARY_FIVE_FRONTIER_20260727.md`.
+oddness at most four, a prescribed-root theta/exact-zero flow, or a
+different obstruction.  The next specimen rules out the first option as
+a universal theorem.  See `ONE_BOUNDARY_FIVE_FRONTIER_20260727.md`.
+
+A later explicit order-100 completion shows that the phrase “force small
+oddness” cannot mean a universal oddness-at-most-four theorem for this
+branch.  It has the exact one-boundary-five profile, is cyclically
+four-edge-connected, and has exact oddness six.  The lower bound is
+obtained from a two-checker LRAT for the resistance of its order-96
+source plus a displayed resistance-transfer argument; an explicit
+2-factor gives equality.  The graph also has a directly checked standard
+five-CDC.  Thus it is a counterexample only to the residual oddness-four
+proof strategy, not to FiveCDC.  See
+`search/one-boundary-five-oddness6-completion-20260727/`.

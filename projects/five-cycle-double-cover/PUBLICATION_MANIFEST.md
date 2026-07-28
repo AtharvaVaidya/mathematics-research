@@ -64,14 +64,21 @@ It contains:
 - retained JSON outputs for the explicit countermodels, sharp-threshold
   core, all-five-bad core, 720-case \(s=0\) audit, 120 \(s=1\)
   bijections, and 9,600 \(s=2\) gluings; and
+- `search/one-boundary-five-oddness6-completion-20260727/`, a complete
+  compact order-100 specimen with exact one-boundary-five profile and
+  exact oddness six, together with a two-checker resistance LRAT, an
+  explicit 2-factor, a positive standard five-CDC model, an independently
+  checked compact edge labelling, and full cut replay; and
 - `ONE_BOUNDARY_FIVE_SHA256SUMS`.
 
 The locally cyclically-four all-five-bad pole refutes a proposed local
 matching lemma, not FiveCDC.  Its displayed globally admissible
 completions have exact oddness four and are not counterexamples.  The
-remaining obligation is the global closure of the complementary paths.
-The index records the AI-use disclosure and the exact machine trust
-boundaries.  This update concerns only the standard conjecture.
+order-100 specimen proves that oddness at most four is not universal in
+this branch, but it too has a checked standard five-CDC.  The remaining
+obligation is the global closure of the complementary paths.  The index
+records the AI-use disclosure and the exact machine trust boundaries.
+This update concerns only the standard conjecture.
 
 ## Prescribed-root matching frontier
 
@@ -300,6 +307,15 @@ hashes and regeneration commands are retained.
   clean-room shard reports, and exact agreement with the C++ totals:
   125,868,600 independent root pairs, 1,221,804 deficiency-two theta
   choices, and zero all-dumbbell cases.
+- The order-100 oddness-six package passed its nested and focused checksum
+  ledgers, quick structural replay, and full cyclic-cut replay.  The pinned
+  `lrat-check` and CakeML `cake_lpr` checkers both accepted the retained
+  source-resistance LRAT.  Verifier A accepted the retained standard
+  five-CDC SAT model, while the package replay independently accepted the
+  compact edge labelling.  The existing resistance renderer regenerated
+  the retained CNF byte for byte.  The certificate checkers establish
+  UNSAT of that CNF; the renderer is not a second independently written
+  semantic encoder.
 
 No fresh full order-22 census is claimed by this publication preparation.
 The frozen reports state their exact scope and provenance.

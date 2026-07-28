@@ -58,8 +58,12 @@ copied into a separate clean clone; it was not modified or committed.
   proposed local matching lemmas, the solver-free \(s=0\) exclusion,
   cyclically-four \(s=1\) and \(s=2\) completions of exact oddness four,
   standard-library replay code, retained JSON results, and
-  `ONE_BOUNDARY_FIVE_SHA256SUMS`.  The examples are not FiveCDC
-  counterexamples, and the global path-closure step remains open.
+  `ONE_BOUNDARY_FIVE_SHA256SUMS`.  The later compact order-100 package
+  gives a one-boundary-five completion of exact oddness six, certified by
+  a two-checker LRAT, an explicit 2-factor, and a directly checked
+  standard five-CDC.  It refutes only an oddness-at-most-four closure
+  strategy.  None of these examples is a FiveCDC counterexample, and the
+  global path-closure step remains open.
 - The complete compact focused theta-choice census through order 28:
   retained graph6 inputs and generator logs, source identities, two
   independently written classifiers, frozen result streams, aggregate

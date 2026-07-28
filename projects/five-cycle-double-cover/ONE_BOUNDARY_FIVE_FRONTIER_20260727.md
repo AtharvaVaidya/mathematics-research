@@ -64,10 +64,28 @@ replaced by a purely local odd-circuit count.
   FiveCDC counterexamples; rather, they show that global closure of the
   two complementary paths must be used.
 
-The exact unresolved obligation is to exploit the outside pairing/closure
-structure to obtain oddness at most two or four, a prescribed-root theta
-or exact-zero flow, or else a genuine cyclically-four non-Tait
-obstruction. None of the retained examples is such an obstruction.
+Before the order-100 specimen below, the unresolved obligation could
+still have been met by proving oddness at most four throughout the branch.
+That route is now closed.  The surviving universal obligation is to use
+the outside pairing/closure structure to obtain a prescribed-root theta,
+an exact-zero flow, a standard five-CDC directly, or some other mechanism
+which does not rely on a universal oddness-at-most-four bound.
+
+## Oddness-six strategy counterexample
+
+The compact package
+`search/one-boundary-five-oddness6-completion-20260727/` gives a
+100-vertex simple cubic cyclically four-edge-connected completion with
+the exact one-boundary-five Gallai--Edmonds profile and exact oddness six.
+Its displayed resistance-transfer argument derives the lower bound from
+a source-resistance CNF whose LRAT is accepted by both `lrat-check` and
+CakeML `cake_lpr`; an explicit perfect matching supplies the upper bound.
+
+This closes one question and sharpens the remaining obligation: the whole
+branch cannot be disposed of by proving oddness at most four.  It does not
+produce a FiveCDC counterexample.  The same package retains a SAT model
+and a compact edge labelling for an explicit standard five-cycle double
+cover, checked independently in the original and edge-label semantics.
 
 ## Reproducible artifacts and trust boundaries
 
@@ -96,7 +114,7 @@ standalone replay of canonical generation. It is finite evidence only.
 
 Run the focused integrity and semantic replay commands in
 `REPRODUCING.md`. `ONE_BOUNDARY_FIVE_SHA256SUMS` freezes every file in
-this update.
+this update, including the nested oddness-six package manifest.
 
 ## AI-use disclosure
 

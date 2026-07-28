@@ -1,0 +1,8504 @@
+c five-cdc-cnf-v1
+c graph-sha256 51bbe42d56b873b279ae618980c6f52306f7ddf1246621d3e4a0ea5c44998cef
+c coordinates are 1..5; vertices and edge ids are 0-based
+c var 1 x edge 0 coordinate 1
+c var 2 x edge 0 coordinate 2
+c var 3 x edge 0 coordinate 3
+c var 4 x edge 0 coordinate 4
+c var 5 x edge 0 coordinate 5
+c var 6 x edge 1 coordinate 1
+c var 7 x edge 1 coordinate 2
+c var 8 x edge 1 coordinate 3
+c var 9 x edge 1 coordinate 4
+c var 10 x edge 1 coordinate 5
+c var 11 x edge 2 coordinate 1
+c var 12 x edge 2 coordinate 2
+c var 13 x edge 2 coordinate 3
+c var 14 x edge 2 coordinate 4
+c var 15 x edge 2 coordinate 5
+c var 16 x edge 3 coordinate 1
+c var 17 x edge 3 coordinate 2
+c var 18 x edge 3 coordinate 3
+c var 19 x edge 3 coordinate 4
+c var 20 x edge 3 coordinate 5
+c var 21 x edge 4 coordinate 1
+c var 22 x edge 4 coordinate 2
+c var 23 x edge 4 coordinate 3
+c var 24 x edge 4 coordinate 4
+c var 25 x edge 4 coordinate 5
+c var 26 x edge 5 coordinate 1
+c var 27 x edge 5 coordinate 2
+c var 28 x edge 5 coordinate 3
+c var 29 x edge 5 coordinate 4
+c var 30 x edge 5 coordinate 5
+c var 31 x edge 6 coordinate 1
+c var 32 x edge 6 coordinate 2
+c var 33 x edge 6 coordinate 3
+c var 34 x edge 6 coordinate 4
+c var 35 x edge 6 coordinate 5
+c var 36 x edge 7 coordinate 1
+c var 37 x edge 7 coordinate 2
+c var 38 x edge 7 coordinate 3
+c var 39 x edge 7 coordinate 4
+c var 40 x edge 7 coordinate 5
+c var 41 x edge 8 coordinate 1
+c var 42 x edge 8 coordinate 2
+c var 43 x edge 8 coordinate 3
+c var 44 x edge 8 coordinate 4
+c var 45 x edge 8 coordinate 5
+c var 46 x edge 9 coordinate 1
+c var 47 x edge 9 coordinate 2
+c var 48 x edge 9 coordinate 3
+c var 49 x edge 9 coordinate 4
+c var 50 x edge 9 coordinate 5
+c var 51 x edge 10 coordinate 1
+c var 52 x edge 10 coordinate 2
+c var 53 x edge 10 coordinate 3
+c var 54 x edge 10 coordinate 4
+c var 55 x edge 10 coordinate 5
+c var 56 x edge 11 coordinate 1
+c var 57 x edge 11 coordinate 2
+c var 58 x edge 11 coordinate 3
+c var 59 x edge 11 coordinate 4
+c var 60 x edge 11 coordinate 5
+c var 61 x edge 12 coordinate 1
+c var 62 x edge 12 coordinate 2
+c var 63 x edge 12 coordinate 3
+c var 64 x edge 12 coordinate 4
+c var 65 x edge 12 coordinate 5
+c var 66 x edge 13 coordinate 1
+c var 67 x edge 13 coordinate 2
+c var 68 x edge 13 coordinate 3
+c var 69 x edge 13 coordinate 4
+c var 70 x edge 13 coordinate 5
+c var 71 x edge 14 coordinate 1
+c var 72 x edge 14 coordinate 2
+c var 73 x edge 14 coordinate 3
+c var 74 x edge 14 coordinate 4
+c var 75 x edge 14 coordinate 5
+c var 76 x edge 15 coordinate 1
+c var 77 x edge 15 coordinate 2
+c var 78 x edge 15 coordinate 3
+c var 79 x edge 15 coordinate 4
+c var 80 x edge 15 coordinate 5
+c var 81 x edge 16 coordinate 1
+c var 82 x edge 16 coordinate 2
+c var 83 x edge 16 coordinate 3
+c var 84 x edge 16 coordinate 4
+c var 85 x edge 16 coordinate 5
+c var 86 x edge 17 coordinate 1
+c var 87 x edge 17 coordinate 2
+c var 88 x edge 17 coordinate 3
+c var 89 x edge 17 coordinate 4
+c var 90 x edge 17 coordinate 5
+c var 91 x edge 18 coordinate 1
+c var 92 x edge 18 coordinate 2
+c var 93 x edge 18 coordinate 3
+c var 94 x edge 18 coordinate 4
+c var 95 x edge 18 coordinate 5
+c var 96 x edge 19 coordinate 1
+c var 97 x edge 19 coordinate 2
+c var 98 x edge 19 coordinate 3
+c var 99 x edge 19 coordinate 4
+c var 100 x edge 19 coordinate 5
+c var 101 x edge 20 coordinate 1
+c var 102 x edge 20 coordinate 2
+c var 103 x edge 20 coordinate 3
+c var 104 x edge 20 coordinate 4
+c var 105 x edge 20 coordinate 5
+c var 106 x edge 21 coordinate 1
+c var 107 x edge 21 coordinate 2
+c var 108 x edge 21 coordinate 3
+c var 109 x edge 21 coordinate 4
+c var 110 x edge 21 coordinate 5
+c var 111 x edge 22 coordinate 1
+c var 112 x edge 22 coordinate 2
+c var 113 x edge 22 coordinate 3
+c var 114 x edge 22 coordinate 4
+c var 115 x edge 22 coordinate 5
+c var 116 x edge 23 coordinate 1
+c var 117 x edge 23 coordinate 2
+c var 118 x edge 23 coordinate 3
+c var 119 x edge 23 coordinate 4
+c var 120 x edge 23 coordinate 5
+c var 121 x edge 24 coordinate 1
+c var 122 x edge 24 coordinate 2
+c var 123 x edge 24 coordinate 3
+c var 124 x edge 24 coordinate 4
+c var 125 x edge 24 coordinate 5
+c var 126 x edge 25 coordinate 1
+c var 127 x edge 25 coordinate 2
+c var 128 x edge 25 coordinate 3
+c var 129 x edge 25 coordinate 4
+c var 130 x edge 25 coordinate 5
+c var 131 x edge 26 coordinate 1
+c var 132 x edge 26 coordinate 2
+c var 133 x edge 26 coordinate 3
+c var 134 x edge 26 coordinate 4
+c var 135 x edge 26 coordinate 5
+c var 136 x edge 27 coordinate 1
+c var 137 x edge 27 coordinate 2
+c var 138 x edge 27 coordinate 3
+c var 139 x edge 27 coordinate 4
+c var 140 x edge 27 coordinate 5
+c var 141 x edge 28 coordinate 1
+c var 142 x edge 28 coordinate 2
+c var 143 x edge 28 coordinate 3
+c var 144 x edge 28 coordinate 4
+c var 145 x edge 28 coordinate 5
+c var 146 x edge 29 coordinate 1
+c var 147 x edge 29 coordinate 2
+c var 148 x edge 29 coordinate 3
+c var 149 x edge 29 coordinate 4
+c var 150 x edge 29 coordinate 5
+c var 151 x edge 30 coordinate 1
+c var 152 x edge 30 coordinate 2
+c var 153 x edge 30 coordinate 3
+c var 154 x edge 30 coordinate 4
+c var 155 x edge 30 coordinate 5
+c var 156 x edge 31 coordinate 1
+c var 157 x edge 31 coordinate 2
+c var 158 x edge 31 coordinate 3
+c var 159 x edge 31 coordinate 4
+c var 160 x edge 31 coordinate 5
+c var 161 x edge 32 coordinate 1
+c var 162 x edge 32 coordinate 2
+c var 163 x edge 32 coordinate 3
+c var 164 x edge 32 coordinate 4
+c var 165 x edge 32 coordinate 5
+c var 166 x edge 33 coordinate 1
+c var 167 x edge 33 coordinate 2
+c var 168 x edge 33 coordinate 3
+c var 169 x edge 33 coordinate 4
+c var 170 x edge 33 coordinate 5
+c var 171 x edge 34 coordinate 1
+c var 172 x edge 34 coordinate 2
+c var 173 x edge 34 coordinate 3
+c var 174 x edge 34 coordinate 4
+c var 175 x edge 34 coordinate 5
+c var 176 x edge 35 coordinate 1
+c var 177 x edge 35 coordinate 2
+c var 178 x edge 35 coordinate 3
+c var 179 x edge 35 coordinate 4
+c var 180 x edge 35 coordinate 5
+c var 181 x edge 36 coordinate 1
+c var 182 x edge 36 coordinate 2
+c var 183 x edge 36 coordinate 3
+c var 184 x edge 36 coordinate 4
+c var 185 x edge 36 coordinate 5
+c var 186 x edge 37 coordinate 1
+c var 187 x edge 37 coordinate 2
+c var 188 x edge 37 coordinate 3
+c var 189 x edge 37 coordinate 4
+c var 190 x edge 37 coordinate 5
+c var 191 x edge 38 coordinate 1
+c var 192 x edge 38 coordinate 2
+c var 193 x edge 38 coordinate 3
+c var 194 x edge 38 coordinate 4
+c var 195 x edge 38 coordinate 5
+c var 196 x edge 39 coordinate 1
+c var 197 x edge 39 coordinate 2
+c var 198 x edge 39 coordinate 3
+c var 199 x edge 39 coordinate 4
+c var 200 x edge 39 coordinate 5
+c var 201 x edge 40 coordinate 1
+c var 202 x edge 40 coordinate 2
+c var 203 x edge 40 coordinate 3
+c var 204 x edge 40 coordinate 4
+c var 205 x edge 40 coordinate 5
+c var 206 x edge 41 coordinate 1
+c var 207 x edge 41 coordinate 2
+c var 208 x edge 41 coordinate 3
+c var 209 x edge 41 coordinate 4
+c var 210 x edge 41 coordinate 5
+c var 211 x edge 42 coordinate 1
+c var 212 x edge 42 coordinate 2
+c var 213 x edge 42 coordinate 3
+c var 214 x edge 42 coordinate 4
+c var 215 x edge 42 coordinate 5
+c var 216 x edge 43 coordinate 1
+c var 217 x edge 43 coordinate 2
+c var 218 x edge 43 coordinate 3
+c var 219 x edge 43 coordinate 4
+c var 220 x edge 43 coordinate 5
+c var 221 x edge 44 coordinate 1
+c var 222 x edge 44 coordinate 2
+c var 223 x edge 44 coordinate 3
+c var 224 x edge 44 coordinate 4
+c var 225 x edge 44 coordinate 5
+c var 226 x edge 45 coordinate 1
+c var 227 x edge 45 coordinate 2
+c var 228 x edge 45 coordinate 3
+c var 229 x edge 45 coordinate 4
+c var 230 x edge 45 coordinate 5
+c var 231 x edge 46 coordinate 1
+c var 232 x edge 46 coordinate 2
+c var 233 x edge 46 coordinate 3
+c var 234 x edge 46 coordinate 4
+c var 235 x edge 46 coordinate 5
+c var 236 x edge 47 coordinate 1
+c var 237 x edge 47 coordinate 2
+c var 238 x edge 47 coordinate 3
+c var 239 x edge 47 coordinate 4
+c var 240 x edge 47 coordinate 5
+c var 241 x edge 48 coordinate 1
+c var 242 x edge 48 coordinate 2
+c var 243 x edge 48 coordinate 3
+c var 244 x edge 48 coordinate 4
+c var 245 x edge 48 coordinate 5
+c var 246 x edge 49 coordinate 1
+c var 247 x edge 49 coordinate 2
+c var 248 x edge 49 coordinate 3
+c var 249 x edge 49 coordinate 4
+c var 250 x edge 49 coordinate 5
+c var 251 x edge 50 coordinate 1
+c var 252 x edge 50 coordinate 2
+c var 253 x edge 50 coordinate 3
+c var 254 x edge 50 coordinate 4
+c var 255 x edge 50 coordinate 5
+c var 256 x edge 51 coordinate 1
+c var 257 x edge 51 coordinate 2
+c var 258 x edge 51 coordinate 3
+c var 259 x edge 51 coordinate 4
+c var 260 x edge 51 coordinate 5
+c var 261 x edge 52 coordinate 1
+c var 262 x edge 52 coordinate 2
+c var 263 x edge 52 coordinate 3
+c var 264 x edge 52 coordinate 4
+c var 265 x edge 52 coordinate 5
+c var 266 x edge 53 coordinate 1
+c var 267 x edge 53 coordinate 2
+c var 268 x edge 53 coordinate 3
+c var 269 x edge 53 coordinate 4
+c var 270 x edge 53 coordinate 5
+c var 271 x edge 54 coordinate 1
+c var 272 x edge 54 coordinate 2
+c var 273 x edge 54 coordinate 3
+c var 274 x edge 54 coordinate 4
+c var 275 x edge 54 coordinate 5
+c var 276 x edge 55 coordinate 1
+c var 277 x edge 55 coordinate 2
+c var 278 x edge 55 coordinate 3
+c var 279 x edge 55 coordinate 4
+c var 280 x edge 55 coordinate 5
+c var 281 x edge 56 coordinate 1
+c var 282 x edge 56 coordinate 2
+c var 283 x edge 56 coordinate 3
+c var 284 x edge 56 coordinate 4
+c var 285 x edge 56 coordinate 5
+c var 286 x edge 57 coordinate 1
+c var 287 x edge 57 coordinate 2
+c var 288 x edge 57 coordinate 3
+c var 289 x edge 57 coordinate 4
+c var 290 x edge 57 coordinate 5
+c var 291 x edge 58 coordinate 1
+c var 292 x edge 58 coordinate 2
+c var 293 x edge 58 coordinate 3
+c var 294 x edge 58 coordinate 4
+c var 295 x edge 58 coordinate 5
+c var 296 x edge 59 coordinate 1
+c var 297 x edge 59 coordinate 2
+c var 298 x edge 59 coordinate 3
+c var 299 x edge 59 coordinate 4
+c var 300 x edge 59 coordinate 5
+c var 301 x edge 60 coordinate 1
+c var 302 x edge 60 coordinate 2
+c var 303 x edge 60 coordinate 3
+c var 304 x edge 60 coordinate 4
+c var 305 x edge 60 coordinate 5
+c var 306 x edge 61 coordinate 1
+c var 307 x edge 61 coordinate 2
+c var 308 x edge 61 coordinate 3
+c var 309 x edge 61 coordinate 4
+c var 310 x edge 61 coordinate 5
+c var 311 x edge 62 coordinate 1
+c var 312 x edge 62 coordinate 2
+c var 313 x edge 62 coordinate 3
+c var 314 x edge 62 coordinate 4
+c var 315 x edge 62 coordinate 5
+c var 316 x edge 63 coordinate 1
+c var 317 x edge 63 coordinate 2
+c var 318 x edge 63 coordinate 3
+c var 319 x edge 63 coordinate 4
+c var 320 x edge 63 coordinate 5
+c var 321 x edge 64 coordinate 1
+c var 322 x edge 64 coordinate 2
+c var 323 x edge 64 coordinate 3
+c var 324 x edge 64 coordinate 4
+c var 325 x edge 64 coordinate 5
+c var 326 x edge 65 coordinate 1
+c var 327 x edge 65 coordinate 2
+c var 328 x edge 65 coordinate 3
+c var 329 x edge 65 coordinate 4
+c var 330 x edge 65 coordinate 5
+c var 331 x edge 66 coordinate 1
+c var 332 x edge 66 coordinate 2
+c var 333 x edge 66 coordinate 3
+c var 334 x edge 66 coordinate 4
+c var 335 x edge 66 coordinate 5
+c var 336 x edge 67 coordinate 1
+c var 337 x edge 67 coordinate 2
+c var 338 x edge 67 coordinate 3
+c var 339 x edge 67 coordinate 4
+c var 340 x edge 67 coordinate 5
+c var 341 x edge 68 coordinate 1
+c var 342 x edge 68 coordinate 2
+c var 343 x edge 68 coordinate 3
+c var 344 x edge 68 coordinate 4
+c var 345 x edge 68 coordinate 5
+c var 346 x edge 69 coordinate 1
+c var 347 x edge 69 coordinate 2
+c var 348 x edge 69 coordinate 3
+c var 349 x edge 69 coordinate 4
+c var 350 x edge 69 coordinate 5
+c var 351 x edge 70 coordinate 1
+c var 352 x edge 70 coordinate 2
+c var 353 x edge 70 coordinate 3
+c var 354 x edge 70 coordinate 4
+c var 355 x edge 70 coordinate 5
+c var 356 x edge 71 coordinate 1
+c var 357 x edge 71 coordinate 2
+c var 358 x edge 71 coordinate 3
+c var 359 x edge 71 coordinate 4
+c var 360 x edge 71 coordinate 5
+c var 361 x edge 72 coordinate 1
+c var 362 x edge 72 coordinate 2
+c var 363 x edge 72 coordinate 3
+c var 364 x edge 72 coordinate 4
+c var 365 x edge 72 coordinate 5
+c var 366 x edge 73 coordinate 1
+c var 367 x edge 73 coordinate 2
+c var 368 x edge 73 coordinate 3
+c var 369 x edge 73 coordinate 4
+c var 370 x edge 73 coordinate 5
+c var 371 x edge 74 coordinate 1
+c var 372 x edge 74 coordinate 2
+c var 373 x edge 74 coordinate 3
+c var 374 x edge 74 coordinate 4
+c var 375 x edge 74 coordinate 5
+c var 376 x edge 75 coordinate 1
+c var 377 x edge 75 coordinate 2
+c var 378 x edge 75 coordinate 3
+c var 379 x edge 75 coordinate 4
+c var 380 x edge 75 coordinate 5
+c var 381 x edge 76 coordinate 1
+c var 382 x edge 76 coordinate 2
+c var 383 x edge 76 coordinate 3
+c var 384 x edge 76 coordinate 4
+c var 385 x edge 76 coordinate 5
+c var 386 x edge 77 coordinate 1
+c var 387 x edge 77 coordinate 2
+c var 388 x edge 77 coordinate 3
+c var 389 x edge 77 coordinate 4
+c var 390 x edge 77 coordinate 5
+c var 391 x edge 78 coordinate 1
+c var 392 x edge 78 coordinate 2
+c var 393 x edge 78 coordinate 3
+c var 394 x edge 78 coordinate 4
+c var 395 x edge 78 coordinate 5
+c var 396 x edge 79 coordinate 1
+c var 397 x edge 79 coordinate 2
+c var 398 x edge 79 coordinate 3
+c var 399 x edge 79 coordinate 4
+c var 400 x edge 79 coordinate 5
+c var 401 x edge 80 coordinate 1
+c var 402 x edge 80 coordinate 2
+c var 403 x edge 80 coordinate 3
+c var 404 x edge 80 coordinate 4
+c var 405 x edge 80 coordinate 5
+c var 406 x edge 81 coordinate 1
+c var 407 x edge 81 coordinate 2
+c var 408 x edge 81 coordinate 3
+c var 409 x edge 81 coordinate 4
+c var 410 x edge 81 coordinate 5
+c var 411 x edge 82 coordinate 1
+c var 412 x edge 82 coordinate 2
+c var 413 x edge 82 coordinate 3
+c var 414 x edge 82 coordinate 4
+c var 415 x edge 82 coordinate 5
+c var 416 x edge 83 coordinate 1
+c var 417 x edge 83 coordinate 2
+c var 418 x edge 83 coordinate 3
+c var 419 x edge 83 coordinate 4
+c var 420 x edge 83 coordinate 5
+c var 421 x edge 84 coordinate 1
+c var 422 x edge 84 coordinate 2
+c var 423 x edge 84 coordinate 3
+c var 424 x edge 84 coordinate 4
+c var 425 x edge 84 coordinate 5
+c var 426 x edge 85 coordinate 1
+c var 427 x edge 85 coordinate 2
+c var 428 x edge 85 coordinate 3
+c var 429 x edge 85 coordinate 4
+c var 430 x edge 85 coordinate 5
+c var 431 x edge 86 coordinate 1
+c var 432 x edge 86 coordinate 2
+c var 433 x edge 86 coordinate 3
+c var 434 x edge 86 coordinate 4
+c var 435 x edge 86 coordinate 5
+c var 436 x edge 87 coordinate 1
+c var 437 x edge 87 coordinate 2
+c var 438 x edge 87 coordinate 3
+c var 439 x edge 87 coordinate 4
+c var 440 x edge 87 coordinate 5
+c var 441 x edge 88 coordinate 1
+c var 442 x edge 88 coordinate 2
+c var 443 x edge 88 coordinate 3
+c var 444 x edge 88 coordinate 4
+c var 445 x edge 88 coordinate 5
+c var 446 x edge 89 coordinate 1
+c var 447 x edge 89 coordinate 2
+c var 448 x edge 89 coordinate 3
+c var 449 x edge 89 coordinate 4
+c var 450 x edge 89 coordinate 5
+c var 451 x edge 90 coordinate 1
+c var 452 x edge 90 coordinate 2
+c var 453 x edge 90 coordinate 3
+c var 454 x edge 90 coordinate 4
+c var 455 x edge 90 coordinate 5
+c var 456 x edge 91 coordinate 1
+c var 457 x edge 91 coordinate 2
+c var 458 x edge 91 coordinate 3
+c var 459 x edge 91 coordinate 4
+c var 460 x edge 91 coordinate 5
+c var 461 x edge 92 coordinate 1
+c var 462 x edge 92 coordinate 2
+c var 463 x edge 92 coordinate 3
+c var 464 x edge 92 coordinate 4
+c var 465 x edge 92 coordinate 5
+c var 466 x edge 93 coordinate 1
+c var 467 x edge 93 coordinate 2
+c var 468 x edge 93 coordinate 3
+c var 469 x edge 93 coordinate 4
+c var 470 x edge 93 coordinate 5
+c var 471 x edge 94 coordinate 1
+c var 472 x edge 94 coordinate 2
+c var 473 x edge 94 coordinate 3
+c var 474 x edge 94 coordinate 4
+c var 475 x edge 94 coordinate 5
+c var 476 x edge 95 coordinate 1
+c var 477 x edge 95 coordinate 2
+c var 478 x edge 95 coordinate 3
+c var 479 x edge 95 coordinate 4
+c var 480 x edge 95 coordinate 5
+c var 481 x edge 96 coordinate 1
+c var 482 x edge 96 coordinate 2
+c var 483 x edge 96 coordinate 3
+c var 484 x edge 96 coordinate 4
+c var 485 x edge 96 coordinate 5
+c var 486 x edge 97 coordinate 1
+c var 487 x edge 97 coordinate 2
+c var 488 x edge 97 coordinate 3
+c var 489 x edge 97 coordinate 4
+c var 490 x edge 97 coordinate 5
+c var 491 x edge 98 coordinate 1
+c var 492 x edge 98 coordinate 2
+c var 493 x edge 98 coordinate 3
+c var 494 x edge 98 coordinate 4
+c var 495 x edge 98 coordinate 5
+c var 496 x edge 99 coordinate 1
+c var 497 x edge 99 coordinate 2
+c var 498 x edge 99 coordinate 3
+c var 499 x edge 99 coordinate 4
+c var 500 x edge 99 coordinate 5
+c var 501 x edge 100 coordinate 1
+c var 502 x edge 100 coordinate 2
+c var 503 x edge 100 coordinate 3
+c var 504 x edge 100 coordinate 4
+c var 505 x edge 100 coordinate 5
+c var 506 x edge 101 coordinate 1
+c var 507 x edge 101 coordinate 2
+c var 508 x edge 101 coordinate 3
+c var 509 x edge 101 coordinate 4
+c var 510 x edge 101 coordinate 5
+c var 511 x edge 102 coordinate 1
+c var 512 x edge 102 coordinate 2
+c var 513 x edge 102 coordinate 3
+c var 514 x edge 102 coordinate 4
+c var 515 x edge 102 coordinate 5
+c var 516 x edge 103 coordinate 1
+c var 517 x edge 103 coordinate 2
+c var 518 x edge 103 coordinate 3
+c var 519 x edge 103 coordinate 4
+c var 520 x edge 103 coordinate 5
+c var 521 x edge 104 coordinate 1
+c var 522 x edge 104 coordinate 2
+c var 523 x edge 104 coordinate 3
+c var 524 x edge 104 coordinate 4
+c var 525 x edge 104 coordinate 5
+c var 526 x edge 105 coordinate 1
+c var 527 x edge 105 coordinate 2
+c var 528 x edge 105 coordinate 3
+c var 529 x edge 105 coordinate 4
+c var 530 x edge 105 coordinate 5
+c var 531 x edge 106 coordinate 1
+c var 532 x edge 106 coordinate 2
+c var 533 x edge 106 coordinate 3
+c var 534 x edge 106 coordinate 4
+c var 535 x edge 106 coordinate 5
+c var 536 x edge 107 coordinate 1
+c var 537 x edge 107 coordinate 2
+c var 538 x edge 107 coordinate 3
+c var 539 x edge 107 coordinate 4
+c var 540 x edge 107 coordinate 5
+c var 541 x edge 108 coordinate 1
+c var 542 x edge 108 coordinate 2
+c var 543 x edge 108 coordinate 3
+c var 544 x edge 108 coordinate 4
+c var 545 x edge 108 coordinate 5
+c var 546 x edge 109 coordinate 1
+c var 547 x edge 109 coordinate 2
+c var 548 x edge 109 coordinate 3
+c var 549 x edge 109 coordinate 4
+c var 550 x edge 109 coordinate 5
+c var 551 x edge 110 coordinate 1
+c var 552 x edge 110 coordinate 2
+c var 553 x edge 110 coordinate 3
+c var 554 x edge 110 coordinate 4
+c var 555 x edge 110 coordinate 5
+c var 556 x edge 111 coordinate 1
+c var 557 x edge 111 coordinate 2
+c var 558 x edge 111 coordinate 3
+c var 559 x edge 111 coordinate 4
+c var 560 x edge 111 coordinate 5
+c var 561 x edge 112 coordinate 1
+c var 562 x edge 112 coordinate 2
+c var 563 x edge 112 coordinate 3
+c var 564 x edge 112 coordinate 4
+c var 565 x edge 112 coordinate 5
+c var 566 x edge 113 coordinate 1
+c var 567 x edge 113 coordinate 2
+c var 568 x edge 113 coordinate 3
+c var 569 x edge 113 coordinate 4
+c var 570 x edge 113 coordinate 5
+c var 571 x edge 114 coordinate 1
+c var 572 x edge 114 coordinate 2
+c var 573 x edge 114 coordinate 3
+c var 574 x edge 114 coordinate 4
+c var 575 x edge 114 coordinate 5
+c var 576 x edge 115 coordinate 1
+c var 577 x edge 115 coordinate 2
+c var 578 x edge 115 coordinate 3
+c var 579 x edge 115 coordinate 4
+c var 580 x edge 115 coordinate 5
+c var 581 x edge 116 coordinate 1
+c var 582 x edge 116 coordinate 2
+c var 583 x edge 116 coordinate 3
+c var 584 x edge 116 coordinate 4
+c var 585 x edge 116 coordinate 5
+c var 586 x edge 117 coordinate 1
+c var 587 x edge 117 coordinate 2
+c var 588 x edge 117 coordinate 3
+c var 589 x edge 117 coordinate 4
+c var 590 x edge 117 coordinate 5
+c var 591 x edge 118 coordinate 1
+c var 592 x edge 118 coordinate 2
+c var 593 x edge 118 coordinate 3
+c var 594 x edge 118 coordinate 4
+c var 595 x edge 118 coordinate 5
+c var 596 x edge 119 coordinate 1
+c var 597 x edge 119 coordinate 2
+c var 598 x edge 119 coordinate 3
+c var 599 x edge 119 coordinate 4
+c var 600 x edge 119 coordinate 5
+c var 601 x edge 120 coordinate 1
+c var 602 x edge 120 coordinate 2
+c var 603 x edge 120 coordinate 3
+c var 604 x edge 120 coordinate 4
+c var 605 x edge 120 coordinate 5
+c var 606 x edge 121 coordinate 1
+c var 607 x edge 121 coordinate 2
+c var 608 x edge 121 coordinate 3
+c var 609 x edge 121 coordinate 4
+c var 610 x edge 121 coordinate 5
+c var 611 x edge 122 coordinate 1
+c var 612 x edge 122 coordinate 2
+c var 613 x edge 122 coordinate 3
+c var 614 x edge 122 coordinate 4
+c var 615 x edge 122 coordinate 5
+c var 616 x edge 123 coordinate 1
+c var 617 x edge 123 coordinate 2
+c var 618 x edge 123 coordinate 3
+c var 619 x edge 123 coordinate 4
+c var 620 x edge 123 coordinate 5
+c var 621 x edge 124 coordinate 1
+c var 622 x edge 124 coordinate 2
+c var 623 x edge 124 coordinate 3
+c var 624 x edge 124 coordinate 4
+c var 625 x edge 124 coordinate 5
+c var 626 x edge 125 coordinate 1
+c var 627 x edge 125 coordinate 2
+c var 628 x edge 125 coordinate 3
+c var 629 x edge 125 coordinate 4
+c var 630 x edge 125 coordinate 5
+c var 631 x edge 126 coordinate 1
+c var 632 x edge 126 coordinate 2
+c var 633 x edge 126 coordinate 3
+c var 634 x edge 126 coordinate 4
+c var 635 x edge 126 coordinate 5
+c var 636 x edge 127 coordinate 1
+c var 637 x edge 127 coordinate 2
+c var 638 x edge 127 coordinate 3
+c var 639 x edge 127 coordinate 4
+c var 640 x edge 127 coordinate 5
+c var 641 x edge 128 coordinate 1
+c var 642 x edge 128 coordinate 2
+c var 643 x edge 128 coordinate 3
+c var 644 x edge 128 coordinate 4
+c var 645 x edge 128 coordinate 5
+c var 646 x edge 129 coordinate 1
+c var 647 x edge 129 coordinate 2
+c var 648 x edge 129 coordinate 3
+c var 649 x edge 129 coordinate 4
+c var 650 x edge 129 coordinate 5
+c var 651 x edge 130 coordinate 1
+c var 652 x edge 130 coordinate 2
+c var 653 x edge 130 coordinate 3
+c var 654 x edge 130 coordinate 4
+c var 655 x edge 130 coordinate 5
+c var 656 x edge 131 coordinate 1
+c var 657 x edge 131 coordinate 2
+c var 658 x edge 131 coordinate 3
+c var 659 x edge 131 coordinate 4
+c var 660 x edge 131 coordinate 5
+c var 661 x edge 132 coordinate 1
+c var 662 x edge 132 coordinate 2
+c var 663 x edge 132 coordinate 3
+c var 664 x edge 132 coordinate 4
+c var 665 x edge 132 coordinate 5
+c var 666 x edge 133 coordinate 1
+c var 667 x edge 133 coordinate 2
+c var 668 x edge 133 coordinate 3
+c var 669 x edge 133 coordinate 4
+c var 670 x edge 133 coordinate 5
+c var 671 x edge 134 coordinate 1
+c var 672 x edge 134 coordinate 2
+c var 673 x edge 134 coordinate 3
+c var 674 x edge 134 coordinate 4
+c var 675 x edge 134 coordinate 5
+c var 676 x edge 135 coordinate 1
+c var 677 x edge 135 coordinate 2
+c var 678 x edge 135 coordinate 3
+c var 679 x edge 135 coordinate 4
+c var 680 x edge 135 coordinate 5
+c var 681 x edge 136 coordinate 1
+c var 682 x edge 136 coordinate 2
+c var 683 x edge 136 coordinate 3
+c var 684 x edge 136 coordinate 4
+c var 685 x edge 136 coordinate 5
+c var 686 x edge 137 coordinate 1
+c var 687 x edge 137 coordinate 2
+c var 688 x edge 137 coordinate 3
+c var 689 x edge 137 coordinate 4
+c var 690 x edge 137 coordinate 5
+c var 691 x edge 138 coordinate 1
+c var 692 x edge 138 coordinate 2
+c var 693 x edge 138 coordinate 3
+c var 694 x edge 138 coordinate 4
+c var 695 x edge 138 coordinate 5
+c var 696 x edge 139 coordinate 1
+c var 697 x edge 139 coordinate 2
+c var 698 x edge 139 coordinate 3
+c var 699 x edge 139 coordinate 4
+c var 700 x edge 139 coordinate 5
+c var 701 x edge 140 coordinate 1
+c var 702 x edge 140 coordinate 2
+c var 703 x edge 140 coordinate 3
+c var 704 x edge 140 coordinate 4
+c var 705 x edge 140 coordinate 5
+c var 706 x edge 141 coordinate 1
+c var 707 x edge 141 coordinate 2
+c var 708 x edge 141 coordinate 3
+c var 709 x edge 141 coordinate 4
+c var 710 x edge 141 coordinate 5
+c var 711 x edge 142 coordinate 1
+c var 712 x edge 142 coordinate 2
+c var 713 x edge 142 coordinate 3
+c var 714 x edge 142 coordinate 4
+c var 715 x edge 142 coordinate 5
+c var 716 x edge 143 coordinate 1
+c var 717 x edge 143 coordinate 2
+c var 718 x edge 143 coordinate 3
+c var 719 x edge 143 coordinate 4
+c var 720 x edge 143 coordinate 5
+c var 721 x edge 144 coordinate 1
+c var 722 x edge 144 coordinate 2
+c var 723 x edge 144 coordinate 3
+c var 724 x edge 144 coordinate 4
+c var 725 x edge 144 coordinate 5
+c var 726 x edge 145 coordinate 1
+c var 727 x edge 145 coordinate 2
+c var 728 x edge 145 coordinate 3
+c var 729 x edge 145 coordinate 4
+c var 730 x edge 145 coordinate 5
+c var 731 x edge 146 coordinate 1
+c var 732 x edge 146 coordinate 2
+c var 733 x edge 146 coordinate 3
+c var 734 x edge 146 coordinate 4
+c var 735 x edge 146 coordinate 5
+c var 736 x edge 147 coordinate 1
+c var 737 x edge 147 coordinate 2
+c var 738 x edge 147 coordinate 3
+c var 739 x edge 147 coordinate 4
+c var 740 x edge 147 coordinate 5
+c var 741 x edge 148 coordinate 1
+c var 742 x edge 148 coordinate 2
+c var 743 x edge 148 coordinate 3
+c var 744 x edge 148 coordinate 4
+c var 745 x edge 148 coordinate 5
+c var 746 x edge 149 coordinate 1
+c var 747 x edge 149 coordinate 2
+c var 748 x edge 149 coordinate 3
+c var 749 x edge 149 coordinate 4
+c var 750 x edge 149 coordinate 5
+c var 751 parity vertex 0 coordinate 1 step 1
+c var 752 parity vertex 0 coordinate 1 step 2
+c var 753 parity vertex 0 coordinate 2 step 1
+c var 754 parity vertex 0 coordinate 2 step 2
+c var 755 parity vertex 0 coordinate 3 step 1
+c var 756 parity vertex 0 coordinate 3 step 2
+c var 757 parity vertex 0 coordinate 4 step 1
+c var 758 parity vertex 0 coordinate 4 step 2
+c var 759 parity vertex 0 coordinate 5 step 1
+c var 760 parity vertex 0 coordinate 5 step 2
+c var 761 parity vertex 1 coordinate 1 step 1
+c var 762 parity vertex 1 coordinate 1 step 2
+c var 763 parity vertex 1 coordinate 2 step 1
+c var 764 parity vertex 1 coordinate 2 step 2
+c var 765 parity vertex 1 coordinate 3 step 1
+c var 766 parity vertex 1 coordinate 3 step 2
+c var 767 parity vertex 1 coordinate 4 step 1
+c var 768 parity vertex 1 coordinate 4 step 2
+c var 769 parity vertex 1 coordinate 5 step 1
+c var 770 parity vertex 1 coordinate 5 step 2
+c var 771 parity vertex 2 coordinate 1 step 1
+c var 772 parity vertex 2 coordinate 1 step 2
+c var 773 parity vertex 2 coordinate 2 step 1
+c var 774 parity vertex 2 coordinate 2 step 2
+c var 775 parity vertex 2 coordinate 3 step 1
+c var 776 parity vertex 2 coordinate 3 step 2
+c var 777 parity vertex 2 coordinate 4 step 1
+c var 778 parity vertex 2 coordinate 4 step 2
+c var 779 parity vertex 2 coordinate 5 step 1
+c var 780 parity vertex 2 coordinate 5 step 2
+c var 781 parity vertex 3 coordinate 1 step 1
+c var 782 parity vertex 3 coordinate 1 step 2
+c var 783 parity vertex 3 coordinate 2 step 1
+c var 784 parity vertex 3 coordinate 2 step 2
+c var 785 parity vertex 3 coordinate 3 step 1
+c var 786 parity vertex 3 coordinate 3 step 2
+c var 787 parity vertex 3 coordinate 4 step 1
+c var 788 parity vertex 3 coordinate 4 step 2
+c var 789 parity vertex 3 coordinate 5 step 1
+c var 790 parity vertex 3 coordinate 5 step 2
+c var 791 parity vertex 4 coordinate 1 step 1
+c var 792 parity vertex 4 coordinate 1 step 2
+c var 793 parity vertex 4 coordinate 2 step 1
+c var 794 parity vertex 4 coordinate 2 step 2
+c var 795 parity vertex 4 coordinate 3 step 1
+c var 796 parity vertex 4 coordinate 3 step 2
+c var 797 parity vertex 4 coordinate 4 step 1
+c var 798 parity vertex 4 coordinate 4 step 2
+c var 799 parity vertex 4 coordinate 5 step 1
+c var 800 parity vertex 4 coordinate 5 step 2
+c var 801 parity vertex 5 coordinate 1 step 1
+c var 802 parity vertex 5 coordinate 1 step 2
+c var 803 parity vertex 5 coordinate 2 step 1
+c var 804 parity vertex 5 coordinate 2 step 2
+c var 805 parity vertex 5 coordinate 3 step 1
+c var 806 parity vertex 5 coordinate 3 step 2
+c var 807 parity vertex 5 coordinate 4 step 1
+c var 808 parity vertex 5 coordinate 4 step 2
+c var 809 parity vertex 5 coordinate 5 step 1
+c var 810 parity vertex 5 coordinate 5 step 2
+c var 811 parity vertex 6 coordinate 1 step 1
+c var 812 parity vertex 6 coordinate 1 step 2
+c var 813 parity vertex 6 coordinate 2 step 1
+c var 814 parity vertex 6 coordinate 2 step 2
+c var 815 parity vertex 6 coordinate 3 step 1
+c var 816 parity vertex 6 coordinate 3 step 2
+c var 817 parity vertex 6 coordinate 4 step 1
+c var 818 parity vertex 6 coordinate 4 step 2
+c var 819 parity vertex 6 coordinate 5 step 1
+c var 820 parity vertex 6 coordinate 5 step 2
+c var 821 parity vertex 7 coordinate 1 step 1
+c var 822 parity vertex 7 coordinate 1 step 2
+c var 823 parity vertex 7 coordinate 2 step 1
+c var 824 parity vertex 7 coordinate 2 step 2
+c var 825 parity vertex 7 coordinate 3 step 1
+c var 826 parity vertex 7 coordinate 3 step 2
+c var 827 parity vertex 7 coordinate 4 step 1
+c var 828 parity vertex 7 coordinate 4 step 2
+c var 829 parity vertex 7 coordinate 5 step 1
+c var 830 parity vertex 7 coordinate 5 step 2
+c var 831 parity vertex 8 coordinate 1 step 1
+c var 832 parity vertex 8 coordinate 1 step 2
+c var 833 parity vertex 8 coordinate 2 step 1
+c var 834 parity vertex 8 coordinate 2 step 2
+c var 835 parity vertex 8 coordinate 3 step 1
+c var 836 parity vertex 8 coordinate 3 step 2
+c var 837 parity vertex 8 coordinate 4 step 1
+c var 838 parity vertex 8 coordinate 4 step 2
+c var 839 parity vertex 8 coordinate 5 step 1
+c var 840 parity vertex 8 coordinate 5 step 2
+c var 841 parity vertex 9 coordinate 1 step 1
+c var 842 parity vertex 9 coordinate 1 step 2
+c var 843 parity vertex 9 coordinate 2 step 1
+c var 844 parity vertex 9 coordinate 2 step 2
+c var 845 parity vertex 9 coordinate 3 step 1
+c var 846 parity vertex 9 coordinate 3 step 2
+c var 847 parity vertex 9 coordinate 4 step 1
+c var 848 parity vertex 9 coordinate 4 step 2
+c var 849 parity vertex 9 coordinate 5 step 1
+c var 850 parity vertex 9 coordinate 5 step 2
+c var 851 parity vertex 10 coordinate 1 step 1
+c var 852 parity vertex 10 coordinate 1 step 2
+c var 853 parity vertex 10 coordinate 2 step 1
+c var 854 parity vertex 10 coordinate 2 step 2
+c var 855 parity vertex 10 coordinate 3 step 1
+c var 856 parity vertex 10 coordinate 3 step 2
+c var 857 parity vertex 10 coordinate 4 step 1
+c var 858 parity vertex 10 coordinate 4 step 2
+c var 859 parity vertex 10 coordinate 5 step 1
+c var 860 parity vertex 10 coordinate 5 step 2
+c var 861 parity vertex 11 coordinate 1 step 1
+c var 862 parity vertex 11 coordinate 1 step 2
+c var 863 parity vertex 11 coordinate 2 step 1
+c var 864 parity vertex 11 coordinate 2 step 2
+c var 865 parity vertex 11 coordinate 3 step 1
+c var 866 parity vertex 11 coordinate 3 step 2
+c var 867 parity vertex 11 coordinate 4 step 1
+c var 868 parity vertex 11 coordinate 4 step 2
+c var 869 parity vertex 11 coordinate 5 step 1
+c var 870 parity vertex 11 coordinate 5 step 2
+c var 871 parity vertex 12 coordinate 1 step 1
+c var 872 parity vertex 12 coordinate 1 step 2
+c var 873 parity vertex 12 coordinate 2 step 1
+c var 874 parity vertex 12 coordinate 2 step 2
+c var 875 parity vertex 12 coordinate 3 step 1
+c var 876 parity vertex 12 coordinate 3 step 2
+c var 877 parity vertex 12 coordinate 4 step 1
+c var 878 parity vertex 12 coordinate 4 step 2
+c var 879 parity vertex 12 coordinate 5 step 1
+c var 880 parity vertex 12 coordinate 5 step 2
+c var 881 parity vertex 13 coordinate 1 step 1
+c var 882 parity vertex 13 coordinate 1 step 2
+c var 883 parity vertex 13 coordinate 2 step 1
+c var 884 parity vertex 13 coordinate 2 step 2
+c var 885 parity vertex 13 coordinate 3 step 1
+c var 886 parity vertex 13 coordinate 3 step 2
+c var 887 parity vertex 13 coordinate 4 step 1
+c var 888 parity vertex 13 coordinate 4 step 2
+c var 889 parity vertex 13 coordinate 5 step 1
+c var 890 parity vertex 13 coordinate 5 step 2
+c var 891 parity vertex 14 coordinate 1 step 1
+c var 892 parity vertex 14 coordinate 1 step 2
+c var 893 parity vertex 14 coordinate 2 step 1
+c var 894 parity vertex 14 coordinate 2 step 2
+c var 895 parity vertex 14 coordinate 3 step 1
+c var 896 parity vertex 14 coordinate 3 step 2
+c var 897 parity vertex 14 coordinate 4 step 1
+c var 898 parity vertex 14 coordinate 4 step 2
+c var 899 parity vertex 14 coordinate 5 step 1
+c var 900 parity vertex 14 coordinate 5 step 2
+c var 901 parity vertex 15 coordinate 1 step 1
+c var 902 parity vertex 15 coordinate 1 step 2
+c var 903 parity vertex 15 coordinate 2 step 1
+c var 904 parity vertex 15 coordinate 2 step 2
+c var 905 parity vertex 15 coordinate 3 step 1
+c var 906 parity vertex 15 coordinate 3 step 2
+c var 907 parity vertex 15 coordinate 4 step 1
+c var 908 parity vertex 15 coordinate 4 step 2
+c var 909 parity vertex 15 coordinate 5 step 1
+c var 910 parity vertex 15 coordinate 5 step 2
+c var 911 parity vertex 16 coordinate 1 step 1
+c var 912 parity vertex 16 coordinate 1 step 2
+c var 913 parity vertex 16 coordinate 2 step 1
+c var 914 parity vertex 16 coordinate 2 step 2
+c var 915 parity vertex 16 coordinate 3 step 1
+c var 916 parity vertex 16 coordinate 3 step 2
+c var 917 parity vertex 16 coordinate 4 step 1
+c var 918 parity vertex 16 coordinate 4 step 2
+c var 919 parity vertex 16 coordinate 5 step 1
+c var 920 parity vertex 16 coordinate 5 step 2
+c var 921 parity vertex 17 coordinate 1 step 1
+c var 922 parity vertex 17 coordinate 1 step 2
+c var 923 parity vertex 17 coordinate 2 step 1
+c var 924 parity vertex 17 coordinate 2 step 2
+c var 925 parity vertex 17 coordinate 3 step 1
+c var 926 parity vertex 17 coordinate 3 step 2
+c var 927 parity vertex 17 coordinate 4 step 1
+c var 928 parity vertex 17 coordinate 4 step 2
+c var 929 parity vertex 17 coordinate 5 step 1
+c var 930 parity vertex 17 coordinate 5 step 2
+c var 931 parity vertex 18 coordinate 1 step 1
+c var 932 parity vertex 18 coordinate 1 step 2
+c var 933 parity vertex 18 coordinate 2 step 1
+c var 934 parity vertex 18 coordinate 2 step 2
+c var 935 parity vertex 18 coordinate 3 step 1
+c var 936 parity vertex 18 coordinate 3 step 2
+c var 937 parity vertex 18 coordinate 4 step 1
+c var 938 parity vertex 18 coordinate 4 step 2
+c var 939 parity vertex 18 coordinate 5 step 1
+c var 940 parity vertex 18 coordinate 5 step 2
+c var 941 parity vertex 19 coordinate 1 step 1
+c var 942 parity vertex 19 coordinate 1 step 2
+c var 943 parity vertex 19 coordinate 2 step 1
+c var 944 parity vertex 19 coordinate 2 step 2
+c var 945 parity vertex 19 coordinate 3 step 1
+c var 946 parity vertex 19 coordinate 3 step 2
+c var 947 parity vertex 19 coordinate 4 step 1
+c var 948 parity vertex 19 coordinate 4 step 2
+c var 949 parity vertex 19 coordinate 5 step 1
+c var 950 parity vertex 19 coordinate 5 step 2
+c var 951 parity vertex 20 coordinate 1 step 1
+c var 952 parity vertex 20 coordinate 1 step 2
+c var 953 parity vertex 20 coordinate 2 step 1
+c var 954 parity vertex 20 coordinate 2 step 2
+c var 955 parity vertex 20 coordinate 3 step 1
+c var 956 parity vertex 20 coordinate 3 step 2
+c var 957 parity vertex 20 coordinate 4 step 1
+c var 958 parity vertex 20 coordinate 4 step 2
+c var 959 parity vertex 20 coordinate 5 step 1
+c var 960 parity vertex 20 coordinate 5 step 2
+c var 961 parity vertex 21 coordinate 1 step 1
+c var 962 parity vertex 21 coordinate 1 step 2
+c var 963 parity vertex 21 coordinate 2 step 1
+c var 964 parity vertex 21 coordinate 2 step 2
+c var 965 parity vertex 21 coordinate 3 step 1
+c var 966 parity vertex 21 coordinate 3 step 2
+c var 967 parity vertex 21 coordinate 4 step 1
+c var 968 parity vertex 21 coordinate 4 step 2
+c var 969 parity vertex 21 coordinate 5 step 1
+c var 970 parity vertex 21 coordinate 5 step 2
+c var 971 parity vertex 22 coordinate 1 step 1
+c var 972 parity vertex 22 coordinate 1 step 2
+c var 973 parity vertex 22 coordinate 2 step 1
+c var 974 parity vertex 22 coordinate 2 step 2
+c var 975 parity vertex 22 coordinate 3 step 1
+c var 976 parity vertex 22 coordinate 3 step 2
+c var 977 parity vertex 22 coordinate 4 step 1
+c var 978 parity vertex 22 coordinate 4 step 2
+c var 979 parity vertex 22 coordinate 5 step 1
+c var 980 parity vertex 22 coordinate 5 step 2
+c var 981 parity vertex 23 coordinate 1 step 1
+c var 982 parity vertex 23 coordinate 1 step 2
+c var 983 parity vertex 23 coordinate 2 step 1
+c var 984 parity vertex 23 coordinate 2 step 2
+c var 985 parity vertex 23 coordinate 3 step 1
+c var 986 parity vertex 23 coordinate 3 step 2
+c var 987 parity vertex 23 coordinate 4 step 1
+c var 988 parity vertex 23 coordinate 4 step 2
+c var 989 parity vertex 23 coordinate 5 step 1
+c var 990 parity vertex 23 coordinate 5 step 2
+c var 991 parity vertex 24 coordinate 1 step 1
+c var 992 parity vertex 24 coordinate 1 step 2
+c var 993 parity vertex 24 coordinate 2 step 1
+c var 994 parity vertex 24 coordinate 2 step 2
+c var 995 parity vertex 24 coordinate 3 step 1
+c var 996 parity vertex 24 coordinate 3 step 2
+c var 997 parity vertex 24 coordinate 4 step 1
+c var 998 parity vertex 24 coordinate 4 step 2
+c var 999 parity vertex 24 coordinate 5 step 1
+c var 1000 parity vertex 24 coordinate 5 step 2
+c var 1001 parity vertex 25 coordinate 1 step 1
+c var 1002 parity vertex 25 coordinate 1 step 2
+c var 1003 parity vertex 25 coordinate 2 step 1
+c var 1004 parity vertex 25 coordinate 2 step 2
+c var 1005 parity vertex 25 coordinate 3 step 1
+c var 1006 parity vertex 25 coordinate 3 step 2
+c var 1007 parity vertex 25 coordinate 4 step 1
+c var 1008 parity vertex 25 coordinate 4 step 2
+c var 1009 parity vertex 25 coordinate 5 step 1
+c var 1010 parity vertex 25 coordinate 5 step 2
+c var 1011 parity vertex 26 coordinate 1 step 1
+c var 1012 parity vertex 26 coordinate 1 step 2
+c var 1013 parity vertex 26 coordinate 2 step 1
+c var 1014 parity vertex 26 coordinate 2 step 2
+c var 1015 parity vertex 26 coordinate 3 step 1
+c var 1016 parity vertex 26 coordinate 3 step 2
+c var 1017 parity vertex 26 coordinate 4 step 1
+c var 1018 parity vertex 26 coordinate 4 step 2
+c var 1019 parity vertex 26 coordinate 5 step 1
+c var 1020 parity vertex 26 coordinate 5 step 2
+c var 1021 parity vertex 27 coordinate 1 step 1
+c var 1022 parity vertex 27 coordinate 1 step 2
+c var 1023 parity vertex 27 coordinate 2 step 1
+c var 1024 parity vertex 27 coordinate 2 step 2
+c var 1025 parity vertex 27 coordinate 3 step 1
+c var 1026 parity vertex 27 coordinate 3 step 2
+c var 1027 parity vertex 27 coordinate 4 step 1
+c var 1028 parity vertex 27 coordinate 4 step 2
+c var 1029 parity vertex 27 coordinate 5 step 1
+c var 1030 parity vertex 27 coordinate 5 step 2
+c var 1031 parity vertex 28 coordinate 1 step 1
+c var 1032 parity vertex 28 coordinate 1 step 2
+c var 1033 parity vertex 28 coordinate 2 step 1
+c var 1034 parity vertex 28 coordinate 2 step 2
+c var 1035 parity vertex 28 coordinate 3 step 1
+c var 1036 parity vertex 28 coordinate 3 step 2
+c var 1037 parity vertex 28 coordinate 4 step 1
+c var 1038 parity vertex 28 coordinate 4 step 2
+c var 1039 parity vertex 28 coordinate 5 step 1
+c var 1040 parity vertex 28 coordinate 5 step 2
+c var 1041 parity vertex 29 coordinate 1 step 1
+c var 1042 parity vertex 29 coordinate 1 step 2
+c var 1043 parity vertex 29 coordinate 2 step 1
+c var 1044 parity vertex 29 coordinate 2 step 2
+c var 1045 parity vertex 29 coordinate 3 step 1
+c var 1046 parity vertex 29 coordinate 3 step 2
+c var 1047 parity vertex 29 coordinate 4 step 1
+c var 1048 parity vertex 29 coordinate 4 step 2
+c var 1049 parity vertex 29 coordinate 5 step 1
+c var 1050 parity vertex 29 coordinate 5 step 2
+c var 1051 parity vertex 30 coordinate 1 step 1
+c var 1052 parity vertex 30 coordinate 1 step 2
+c var 1053 parity vertex 30 coordinate 2 step 1
+c var 1054 parity vertex 30 coordinate 2 step 2
+c var 1055 parity vertex 30 coordinate 3 step 1
+c var 1056 parity vertex 30 coordinate 3 step 2
+c var 1057 parity vertex 30 coordinate 4 step 1
+c var 1058 parity vertex 30 coordinate 4 step 2
+c var 1059 parity vertex 30 coordinate 5 step 1
+c var 1060 parity vertex 30 coordinate 5 step 2
+c var 1061 parity vertex 31 coordinate 1 step 1
+c var 1062 parity vertex 31 coordinate 1 step 2
+c var 1063 parity vertex 31 coordinate 2 step 1
+c var 1064 parity vertex 31 coordinate 2 step 2
+c var 1065 parity vertex 31 coordinate 3 step 1
+c var 1066 parity vertex 31 coordinate 3 step 2
+c var 1067 parity vertex 31 coordinate 4 step 1
+c var 1068 parity vertex 31 coordinate 4 step 2
+c var 1069 parity vertex 31 coordinate 5 step 1
+c var 1070 parity vertex 31 coordinate 5 step 2
+c var 1071 parity vertex 32 coordinate 1 step 1
+c var 1072 parity vertex 32 coordinate 1 step 2
+c var 1073 parity vertex 32 coordinate 2 step 1
+c var 1074 parity vertex 32 coordinate 2 step 2
+c var 1075 parity vertex 32 coordinate 3 step 1
+c var 1076 parity vertex 32 coordinate 3 step 2
+c var 1077 parity vertex 32 coordinate 4 step 1
+c var 1078 parity vertex 32 coordinate 4 step 2
+c var 1079 parity vertex 32 coordinate 5 step 1
+c var 1080 parity vertex 32 coordinate 5 step 2
+c var 1081 parity vertex 33 coordinate 1 step 1
+c var 1082 parity vertex 33 coordinate 1 step 2
+c var 1083 parity vertex 33 coordinate 2 step 1
+c var 1084 parity vertex 33 coordinate 2 step 2
+c var 1085 parity vertex 33 coordinate 3 step 1
+c var 1086 parity vertex 33 coordinate 3 step 2
+c var 1087 parity vertex 33 coordinate 4 step 1
+c var 1088 parity vertex 33 coordinate 4 step 2
+c var 1089 parity vertex 33 coordinate 5 step 1
+c var 1090 parity vertex 33 coordinate 5 step 2
+c var 1091 parity vertex 34 coordinate 1 step 1
+c var 1092 parity vertex 34 coordinate 1 step 2
+c var 1093 parity vertex 34 coordinate 2 step 1
+c var 1094 parity vertex 34 coordinate 2 step 2
+c var 1095 parity vertex 34 coordinate 3 step 1
+c var 1096 parity vertex 34 coordinate 3 step 2
+c var 1097 parity vertex 34 coordinate 4 step 1
+c var 1098 parity vertex 34 coordinate 4 step 2
+c var 1099 parity vertex 34 coordinate 5 step 1
+c var 1100 parity vertex 34 coordinate 5 step 2
+c var 1101 parity vertex 35 coordinate 1 step 1
+c var 1102 parity vertex 35 coordinate 1 step 2
+c var 1103 parity vertex 35 coordinate 2 step 1
+c var 1104 parity vertex 35 coordinate 2 step 2
+c var 1105 parity vertex 35 coordinate 3 step 1
+c var 1106 parity vertex 35 coordinate 3 step 2
+c var 1107 parity vertex 35 coordinate 4 step 1
+c var 1108 parity vertex 35 coordinate 4 step 2
+c var 1109 parity vertex 35 coordinate 5 step 1
+c var 1110 parity vertex 35 coordinate 5 step 2
+c var 1111 parity vertex 36 coordinate 1 step 1
+c var 1112 parity vertex 36 coordinate 1 step 2
+c var 1113 parity vertex 36 coordinate 2 step 1
+c var 1114 parity vertex 36 coordinate 2 step 2
+c var 1115 parity vertex 36 coordinate 3 step 1
+c var 1116 parity vertex 36 coordinate 3 step 2
+c var 1117 parity vertex 36 coordinate 4 step 1
+c var 1118 parity vertex 36 coordinate 4 step 2
+c var 1119 parity vertex 36 coordinate 5 step 1
+c var 1120 parity vertex 36 coordinate 5 step 2
+c var 1121 parity vertex 37 coordinate 1 step 1
+c var 1122 parity vertex 37 coordinate 1 step 2
+c var 1123 parity vertex 37 coordinate 2 step 1
+c var 1124 parity vertex 37 coordinate 2 step 2
+c var 1125 parity vertex 37 coordinate 3 step 1
+c var 1126 parity vertex 37 coordinate 3 step 2
+c var 1127 parity vertex 37 coordinate 4 step 1
+c var 1128 parity vertex 37 coordinate 4 step 2
+c var 1129 parity vertex 37 coordinate 5 step 1
+c var 1130 parity vertex 37 coordinate 5 step 2
+c var 1131 parity vertex 38 coordinate 1 step 1
+c var 1132 parity vertex 38 coordinate 1 step 2
+c var 1133 parity vertex 38 coordinate 2 step 1
+c var 1134 parity vertex 38 coordinate 2 step 2
+c var 1135 parity vertex 38 coordinate 3 step 1
+c var 1136 parity vertex 38 coordinate 3 step 2
+c var 1137 parity vertex 38 coordinate 4 step 1
+c var 1138 parity vertex 38 coordinate 4 step 2
+c var 1139 parity vertex 38 coordinate 5 step 1
+c var 1140 parity vertex 38 coordinate 5 step 2
+c var 1141 parity vertex 39 coordinate 1 step 1
+c var 1142 parity vertex 39 coordinate 1 step 2
+c var 1143 parity vertex 39 coordinate 2 step 1
+c var 1144 parity vertex 39 coordinate 2 step 2
+c var 1145 parity vertex 39 coordinate 3 step 1
+c var 1146 parity vertex 39 coordinate 3 step 2
+c var 1147 parity vertex 39 coordinate 4 step 1
+c var 1148 parity vertex 39 coordinate 4 step 2
+c var 1149 parity vertex 39 coordinate 5 step 1
+c var 1150 parity vertex 39 coordinate 5 step 2
+c var 1151 parity vertex 40 coordinate 1 step 1
+c var 1152 parity vertex 40 coordinate 1 step 2
+c var 1153 parity vertex 40 coordinate 2 step 1
+c var 1154 parity vertex 40 coordinate 2 step 2
+c var 1155 parity vertex 40 coordinate 3 step 1
+c var 1156 parity vertex 40 coordinate 3 step 2
+c var 1157 parity vertex 40 coordinate 4 step 1
+c var 1158 parity vertex 40 coordinate 4 step 2
+c var 1159 parity vertex 40 coordinate 5 step 1
+c var 1160 parity vertex 40 coordinate 5 step 2
+c var 1161 parity vertex 41 coordinate 1 step 1
+c var 1162 parity vertex 41 coordinate 1 step 2
+c var 1163 parity vertex 41 coordinate 2 step 1
+c var 1164 parity vertex 41 coordinate 2 step 2
+c var 1165 parity vertex 41 coordinate 3 step 1
+c var 1166 parity vertex 41 coordinate 3 step 2
+c var 1167 parity vertex 41 coordinate 4 step 1
+c var 1168 parity vertex 41 coordinate 4 step 2
+c var 1169 parity vertex 41 coordinate 5 step 1
+c var 1170 parity vertex 41 coordinate 5 step 2
+c var 1171 parity vertex 42 coordinate 1 step 1
+c var 1172 parity vertex 42 coordinate 1 step 2
+c var 1173 parity vertex 42 coordinate 2 step 1
+c var 1174 parity vertex 42 coordinate 2 step 2
+c var 1175 parity vertex 42 coordinate 3 step 1
+c var 1176 parity vertex 42 coordinate 3 step 2
+c var 1177 parity vertex 42 coordinate 4 step 1
+c var 1178 parity vertex 42 coordinate 4 step 2
+c var 1179 parity vertex 42 coordinate 5 step 1
+c var 1180 parity vertex 42 coordinate 5 step 2
+c var 1181 parity vertex 43 coordinate 1 step 1
+c var 1182 parity vertex 43 coordinate 1 step 2
+c var 1183 parity vertex 43 coordinate 2 step 1
+c var 1184 parity vertex 43 coordinate 2 step 2
+c var 1185 parity vertex 43 coordinate 3 step 1
+c var 1186 parity vertex 43 coordinate 3 step 2
+c var 1187 parity vertex 43 coordinate 4 step 1
+c var 1188 parity vertex 43 coordinate 4 step 2
+c var 1189 parity vertex 43 coordinate 5 step 1
+c var 1190 parity vertex 43 coordinate 5 step 2
+c var 1191 parity vertex 44 coordinate 1 step 1
+c var 1192 parity vertex 44 coordinate 1 step 2
+c var 1193 parity vertex 44 coordinate 2 step 1
+c var 1194 parity vertex 44 coordinate 2 step 2
+c var 1195 parity vertex 44 coordinate 3 step 1
+c var 1196 parity vertex 44 coordinate 3 step 2
+c var 1197 parity vertex 44 coordinate 4 step 1
+c var 1198 parity vertex 44 coordinate 4 step 2
+c var 1199 parity vertex 44 coordinate 5 step 1
+c var 1200 parity vertex 44 coordinate 5 step 2
+c var 1201 parity vertex 45 coordinate 1 step 1
+c var 1202 parity vertex 45 coordinate 1 step 2
+c var 1203 parity vertex 45 coordinate 2 step 1
+c var 1204 parity vertex 45 coordinate 2 step 2
+c var 1205 parity vertex 45 coordinate 3 step 1
+c var 1206 parity vertex 45 coordinate 3 step 2
+c var 1207 parity vertex 45 coordinate 4 step 1
+c var 1208 parity vertex 45 coordinate 4 step 2
+c var 1209 parity vertex 45 coordinate 5 step 1
+c var 1210 parity vertex 45 coordinate 5 step 2
+c var 1211 parity vertex 46 coordinate 1 step 1
+c var 1212 parity vertex 46 coordinate 1 step 2
+c var 1213 parity vertex 46 coordinate 2 step 1
+c var 1214 parity vertex 46 coordinate 2 step 2
+c var 1215 parity vertex 46 coordinate 3 step 1
+c var 1216 parity vertex 46 coordinate 3 step 2
+c var 1217 parity vertex 46 coordinate 4 step 1
+c var 1218 parity vertex 46 coordinate 4 step 2
+c var 1219 parity vertex 46 coordinate 5 step 1
+c var 1220 parity vertex 46 coordinate 5 step 2
+c var 1221 parity vertex 47 coordinate 1 step 1
+c var 1222 parity vertex 47 coordinate 1 step 2
+c var 1223 parity vertex 47 coordinate 2 step 1
+c var 1224 parity vertex 47 coordinate 2 step 2
+c var 1225 parity vertex 47 coordinate 3 step 1
+c var 1226 parity vertex 47 coordinate 3 step 2
+c var 1227 parity vertex 47 coordinate 4 step 1
+c var 1228 parity vertex 47 coordinate 4 step 2
+c var 1229 parity vertex 47 coordinate 5 step 1
+c var 1230 parity vertex 47 coordinate 5 step 2
+c var 1231 parity vertex 48 coordinate 1 step 1
+c var 1232 parity vertex 48 coordinate 1 step 2
+c var 1233 parity vertex 48 coordinate 2 step 1
+c var 1234 parity vertex 48 coordinate 2 step 2
+c var 1235 parity vertex 48 coordinate 3 step 1
+c var 1236 parity vertex 48 coordinate 3 step 2
+c var 1237 parity vertex 48 coordinate 4 step 1
+c var 1238 parity vertex 48 coordinate 4 step 2
+c var 1239 parity vertex 48 coordinate 5 step 1
+c var 1240 parity vertex 48 coordinate 5 step 2
+c var 1241 parity vertex 49 coordinate 1 step 1
+c var 1242 parity vertex 49 coordinate 1 step 2
+c var 1243 parity vertex 49 coordinate 2 step 1
+c var 1244 parity vertex 49 coordinate 2 step 2
+c var 1245 parity vertex 49 coordinate 3 step 1
+c var 1246 parity vertex 49 coordinate 3 step 2
+c var 1247 parity vertex 49 coordinate 4 step 1
+c var 1248 parity vertex 49 coordinate 4 step 2
+c var 1249 parity vertex 49 coordinate 5 step 1
+c var 1250 parity vertex 49 coordinate 5 step 2
+c var 1251 parity vertex 50 coordinate 1 step 1
+c var 1252 parity vertex 50 coordinate 1 step 2
+c var 1253 parity vertex 50 coordinate 2 step 1
+c var 1254 parity vertex 50 coordinate 2 step 2
+c var 1255 parity vertex 50 coordinate 3 step 1
+c var 1256 parity vertex 50 coordinate 3 step 2
+c var 1257 parity vertex 50 coordinate 4 step 1
+c var 1258 parity vertex 50 coordinate 4 step 2
+c var 1259 parity vertex 50 coordinate 5 step 1
+c var 1260 parity vertex 50 coordinate 5 step 2
+c var 1261 parity vertex 51 coordinate 1 step 1
+c var 1262 parity vertex 51 coordinate 1 step 2
+c var 1263 parity vertex 51 coordinate 2 step 1
+c var 1264 parity vertex 51 coordinate 2 step 2
+c var 1265 parity vertex 51 coordinate 3 step 1
+c var 1266 parity vertex 51 coordinate 3 step 2
+c var 1267 parity vertex 51 coordinate 4 step 1
+c var 1268 parity vertex 51 coordinate 4 step 2
+c var 1269 parity vertex 51 coordinate 5 step 1
+c var 1270 parity vertex 51 coordinate 5 step 2
+c var 1271 parity vertex 52 coordinate 1 step 1
+c var 1272 parity vertex 52 coordinate 1 step 2
+c var 1273 parity vertex 52 coordinate 2 step 1
+c var 1274 parity vertex 52 coordinate 2 step 2
+c var 1275 parity vertex 52 coordinate 3 step 1
+c var 1276 parity vertex 52 coordinate 3 step 2
+c var 1277 parity vertex 52 coordinate 4 step 1
+c var 1278 parity vertex 52 coordinate 4 step 2
+c var 1279 parity vertex 52 coordinate 5 step 1
+c var 1280 parity vertex 52 coordinate 5 step 2
+c var 1281 parity vertex 53 coordinate 1 step 1
+c var 1282 parity vertex 53 coordinate 1 step 2
+c var 1283 parity vertex 53 coordinate 2 step 1
+c var 1284 parity vertex 53 coordinate 2 step 2
+c var 1285 parity vertex 53 coordinate 3 step 1
+c var 1286 parity vertex 53 coordinate 3 step 2
+c var 1287 parity vertex 53 coordinate 4 step 1
+c var 1288 parity vertex 53 coordinate 4 step 2
+c var 1289 parity vertex 53 coordinate 5 step 1
+c var 1290 parity vertex 53 coordinate 5 step 2
+c var 1291 parity vertex 54 coordinate 1 step 1
+c var 1292 parity vertex 54 coordinate 1 step 2
+c var 1293 parity vertex 54 coordinate 2 step 1
+c var 1294 parity vertex 54 coordinate 2 step 2
+c var 1295 parity vertex 54 coordinate 3 step 1
+c var 1296 parity vertex 54 coordinate 3 step 2
+c var 1297 parity vertex 54 coordinate 4 step 1
+c var 1298 parity vertex 54 coordinate 4 step 2
+c var 1299 parity vertex 54 coordinate 5 step 1
+c var 1300 parity vertex 54 coordinate 5 step 2
+c var 1301 parity vertex 55 coordinate 1 step 1
+c var 1302 parity vertex 55 coordinate 1 step 2
+c var 1303 parity vertex 55 coordinate 2 step 1
+c var 1304 parity vertex 55 coordinate 2 step 2
+c var 1305 parity vertex 55 coordinate 3 step 1
+c var 1306 parity vertex 55 coordinate 3 step 2
+c var 1307 parity vertex 55 coordinate 4 step 1
+c var 1308 parity vertex 55 coordinate 4 step 2
+c var 1309 parity vertex 55 coordinate 5 step 1
+c var 1310 parity vertex 55 coordinate 5 step 2
+c var 1311 parity vertex 56 coordinate 1 step 1
+c var 1312 parity vertex 56 coordinate 1 step 2
+c var 1313 parity vertex 56 coordinate 2 step 1
+c var 1314 parity vertex 56 coordinate 2 step 2
+c var 1315 parity vertex 56 coordinate 3 step 1
+c var 1316 parity vertex 56 coordinate 3 step 2
+c var 1317 parity vertex 56 coordinate 4 step 1
+c var 1318 parity vertex 56 coordinate 4 step 2
+c var 1319 parity vertex 56 coordinate 5 step 1
+c var 1320 parity vertex 56 coordinate 5 step 2
+c var 1321 parity vertex 57 coordinate 1 step 1
+c var 1322 parity vertex 57 coordinate 1 step 2
+c var 1323 parity vertex 57 coordinate 2 step 1
+c var 1324 parity vertex 57 coordinate 2 step 2
+c var 1325 parity vertex 57 coordinate 3 step 1
+c var 1326 parity vertex 57 coordinate 3 step 2
+c var 1327 parity vertex 57 coordinate 4 step 1
+c var 1328 parity vertex 57 coordinate 4 step 2
+c var 1329 parity vertex 57 coordinate 5 step 1
+c var 1330 parity vertex 57 coordinate 5 step 2
+c var 1331 parity vertex 58 coordinate 1 step 1
+c var 1332 parity vertex 58 coordinate 1 step 2
+c var 1333 parity vertex 58 coordinate 2 step 1
+c var 1334 parity vertex 58 coordinate 2 step 2
+c var 1335 parity vertex 58 coordinate 3 step 1
+c var 1336 parity vertex 58 coordinate 3 step 2
+c var 1337 parity vertex 58 coordinate 4 step 1
+c var 1338 parity vertex 58 coordinate 4 step 2
+c var 1339 parity vertex 58 coordinate 5 step 1
+c var 1340 parity vertex 58 coordinate 5 step 2
+c var 1341 parity vertex 59 coordinate 1 step 1
+c var 1342 parity vertex 59 coordinate 1 step 2
+c var 1343 parity vertex 59 coordinate 2 step 1
+c var 1344 parity vertex 59 coordinate 2 step 2
+c var 1345 parity vertex 59 coordinate 3 step 1
+c var 1346 parity vertex 59 coordinate 3 step 2
+c var 1347 parity vertex 59 coordinate 4 step 1
+c var 1348 parity vertex 59 coordinate 4 step 2
+c var 1349 parity vertex 59 coordinate 5 step 1
+c var 1350 parity vertex 59 coordinate 5 step 2
+c var 1351 parity vertex 60 coordinate 1 step 1
+c var 1352 parity vertex 60 coordinate 1 step 2
+c var 1353 parity vertex 60 coordinate 2 step 1
+c var 1354 parity vertex 60 coordinate 2 step 2
+c var 1355 parity vertex 60 coordinate 3 step 1
+c var 1356 parity vertex 60 coordinate 3 step 2
+c var 1357 parity vertex 60 coordinate 4 step 1
+c var 1358 parity vertex 60 coordinate 4 step 2
+c var 1359 parity vertex 60 coordinate 5 step 1
+c var 1360 parity vertex 60 coordinate 5 step 2
+c var 1361 parity vertex 61 coordinate 1 step 1
+c var 1362 parity vertex 61 coordinate 1 step 2
+c var 1363 parity vertex 61 coordinate 2 step 1
+c var 1364 parity vertex 61 coordinate 2 step 2
+c var 1365 parity vertex 61 coordinate 3 step 1
+c var 1366 parity vertex 61 coordinate 3 step 2
+c var 1367 parity vertex 61 coordinate 4 step 1
+c var 1368 parity vertex 61 coordinate 4 step 2
+c var 1369 parity vertex 61 coordinate 5 step 1
+c var 1370 parity vertex 61 coordinate 5 step 2
+c var 1371 parity vertex 62 coordinate 1 step 1
+c var 1372 parity vertex 62 coordinate 1 step 2
+c var 1373 parity vertex 62 coordinate 2 step 1
+c var 1374 parity vertex 62 coordinate 2 step 2
+c var 1375 parity vertex 62 coordinate 3 step 1
+c var 1376 parity vertex 62 coordinate 3 step 2
+c var 1377 parity vertex 62 coordinate 4 step 1
+c var 1378 parity vertex 62 coordinate 4 step 2
+c var 1379 parity vertex 62 coordinate 5 step 1
+c var 1380 parity vertex 62 coordinate 5 step 2
+c var 1381 parity vertex 63 coordinate 1 step 1
+c var 1382 parity vertex 63 coordinate 1 step 2
+c var 1383 parity vertex 63 coordinate 2 step 1
+c var 1384 parity vertex 63 coordinate 2 step 2
+c var 1385 parity vertex 63 coordinate 3 step 1
+c var 1386 parity vertex 63 coordinate 3 step 2
+c var 1387 parity vertex 63 coordinate 4 step 1
+c var 1388 parity vertex 63 coordinate 4 step 2
+c var 1389 parity vertex 63 coordinate 5 step 1
+c var 1390 parity vertex 63 coordinate 5 step 2
+c var 1391 parity vertex 64 coordinate 1 step 1
+c var 1392 parity vertex 64 coordinate 1 step 2
+c var 1393 parity vertex 64 coordinate 2 step 1
+c var 1394 parity vertex 64 coordinate 2 step 2
+c var 1395 parity vertex 64 coordinate 3 step 1
+c var 1396 parity vertex 64 coordinate 3 step 2
+c var 1397 parity vertex 64 coordinate 4 step 1
+c var 1398 parity vertex 64 coordinate 4 step 2
+c var 1399 parity vertex 64 coordinate 5 step 1
+c var 1400 parity vertex 64 coordinate 5 step 2
+c var 1401 parity vertex 65 coordinate 1 step 1
+c var 1402 parity vertex 65 coordinate 1 step 2
+c var 1403 parity vertex 65 coordinate 2 step 1
+c var 1404 parity vertex 65 coordinate 2 step 2
+c var 1405 parity vertex 65 coordinate 3 step 1
+c var 1406 parity vertex 65 coordinate 3 step 2
+c var 1407 parity vertex 65 coordinate 4 step 1
+c var 1408 parity vertex 65 coordinate 4 step 2
+c var 1409 parity vertex 65 coordinate 5 step 1
+c var 1410 parity vertex 65 coordinate 5 step 2
+c var 1411 parity vertex 66 coordinate 1 step 1
+c var 1412 parity vertex 66 coordinate 1 step 2
+c var 1413 parity vertex 66 coordinate 2 step 1
+c var 1414 parity vertex 66 coordinate 2 step 2
+c var 1415 parity vertex 66 coordinate 3 step 1
+c var 1416 parity vertex 66 coordinate 3 step 2
+c var 1417 parity vertex 66 coordinate 4 step 1
+c var 1418 parity vertex 66 coordinate 4 step 2
+c var 1419 parity vertex 66 coordinate 5 step 1
+c var 1420 parity vertex 66 coordinate 5 step 2
+c var 1421 parity vertex 67 coordinate 1 step 1
+c var 1422 parity vertex 67 coordinate 1 step 2
+c var 1423 parity vertex 67 coordinate 2 step 1
+c var 1424 parity vertex 67 coordinate 2 step 2
+c var 1425 parity vertex 67 coordinate 3 step 1
+c var 1426 parity vertex 67 coordinate 3 step 2
+c var 1427 parity vertex 67 coordinate 4 step 1
+c var 1428 parity vertex 67 coordinate 4 step 2
+c var 1429 parity vertex 67 coordinate 5 step 1
+c var 1430 parity vertex 67 coordinate 5 step 2
+c var 1431 parity vertex 68 coordinate 1 step 1
+c var 1432 parity vertex 68 coordinate 1 step 2
+c var 1433 parity vertex 68 coordinate 2 step 1
+c var 1434 parity vertex 68 coordinate 2 step 2
+c var 1435 parity vertex 68 coordinate 3 step 1
+c var 1436 parity vertex 68 coordinate 3 step 2
+c var 1437 parity vertex 68 coordinate 4 step 1
+c var 1438 parity vertex 68 coordinate 4 step 2
+c var 1439 parity vertex 68 coordinate 5 step 1
+c var 1440 parity vertex 68 coordinate 5 step 2
+c var 1441 parity vertex 69 coordinate 1 step 1
+c var 1442 parity vertex 69 coordinate 1 step 2
+c var 1443 parity vertex 69 coordinate 2 step 1
+c var 1444 parity vertex 69 coordinate 2 step 2
+c var 1445 parity vertex 69 coordinate 3 step 1
+c var 1446 parity vertex 69 coordinate 3 step 2
+c var 1447 parity vertex 69 coordinate 4 step 1
+c var 1448 parity vertex 69 coordinate 4 step 2
+c var 1449 parity vertex 69 coordinate 5 step 1
+c var 1450 parity vertex 69 coordinate 5 step 2
+c var 1451 parity vertex 70 coordinate 1 step 1
+c var 1452 parity vertex 70 coordinate 1 step 2
+c var 1453 parity vertex 70 coordinate 2 step 1
+c var 1454 parity vertex 70 coordinate 2 step 2
+c var 1455 parity vertex 70 coordinate 3 step 1
+c var 1456 parity vertex 70 coordinate 3 step 2
+c var 1457 parity vertex 70 coordinate 4 step 1
+c var 1458 parity vertex 70 coordinate 4 step 2
+c var 1459 parity vertex 70 coordinate 5 step 1
+c var 1460 parity vertex 70 coordinate 5 step 2
+c var 1461 parity vertex 71 coordinate 1 step 1
+c var 1462 parity vertex 71 coordinate 1 step 2
+c var 1463 parity vertex 71 coordinate 2 step 1
+c var 1464 parity vertex 71 coordinate 2 step 2
+c var 1465 parity vertex 71 coordinate 3 step 1
+c var 1466 parity vertex 71 coordinate 3 step 2
+c var 1467 parity vertex 71 coordinate 4 step 1
+c var 1468 parity vertex 71 coordinate 4 step 2
+c var 1469 parity vertex 71 coordinate 5 step 1
+c var 1470 parity vertex 71 coordinate 5 step 2
+c var 1471 parity vertex 72 coordinate 1 step 1
+c var 1472 parity vertex 72 coordinate 1 step 2
+c var 1473 parity vertex 72 coordinate 2 step 1
+c var 1474 parity vertex 72 coordinate 2 step 2
+c var 1475 parity vertex 72 coordinate 3 step 1
+c var 1476 parity vertex 72 coordinate 3 step 2
+c var 1477 parity vertex 72 coordinate 4 step 1
+c var 1478 parity vertex 72 coordinate 4 step 2
+c var 1479 parity vertex 72 coordinate 5 step 1
+c var 1480 parity vertex 72 coordinate 5 step 2
+c var 1481 parity vertex 73 coordinate 1 step 1
+c var 1482 parity vertex 73 coordinate 1 step 2
+c var 1483 parity vertex 73 coordinate 2 step 1
+c var 1484 parity vertex 73 coordinate 2 step 2
+c var 1485 parity vertex 73 coordinate 3 step 1
+c var 1486 parity vertex 73 coordinate 3 step 2
+c var 1487 parity vertex 73 coordinate 4 step 1
+c var 1488 parity vertex 73 coordinate 4 step 2
+c var 1489 parity vertex 73 coordinate 5 step 1
+c var 1490 parity vertex 73 coordinate 5 step 2
+c var 1491 parity vertex 74 coordinate 1 step 1
+c var 1492 parity vertex 74 coordinate 1 step 2
+c var 1493 parity vertex 74 coordinate 2 step 1
+c var 1494 parity vertex 74 coordinate 2 step 2
+c var 1495 parity vertex 74 coordinate 3 step 1
+c var 1496 parity vertex 74 coordinate 3 step 2
+c var 1497 parity vertex 74 coordinate 4 step 1
+c var 1498 parity vertex 74 coordinate 4 step 2
+c var 1499 parity vertex 74 coordinate 5 step 1
+c var 1500 parity vertex 74 coordinate 5 step 2
+c var 1501 parity vertex 75 coordinate 1 step 1
+c var 1502 parity vertex 75 coordinate 1 step 2
+c var 1503 parity vertex 75 coordinate 2 step 1
+c var 1504 parity vertex 75 coordinate 2 step 2
+c var 1505 parity vertex 75 coordinate 3 step 1
+c var 1506 parity vertex 75 coordinate 3 step 2
+c var 1507 parity vertex 75 coordinate 4 step 1
+c var 1508 parity vertex 75 coordinate 4 step 2
+c var 1509 parity vertex 75 coordinate 5 step 1
+c var 1510 parity vertex 75 coordinate 5 step 2
+c var 1511 parity vertex 76 coordinate 1 step 1
+c var 1512 parity vertex 76 coordinate 1 step 2
+c var 1513 parity vertex 76 coordinate 2 step 1
+c var 1514 parity vertex 76 coordinate 2 step 2
+c var 1515 parity vertex 76 coordinate 3 step 1
+c var 1516 parity vertex 76 coordinate 3 step 2
+c var 1517 parity vertex 76 coordinate 4 step 1
+c var 1518 parity vertex 76 coordinate 4 step 2
+c var 1519 parity vertex 76 coordinate 5 step 1
+c var 1520 parity vertex 76 coordinate 5 step 2
+c var 1521 parity vertex 77 coordinate 1 step 1
+c var 1522 parity vertex 77 coordinate 1 step 2
+c var 1523 parity vertex 77 coordinate 2 step 1
+c var 1524 parity vertex 77 coordinate 2 step 2
+c var 1525 parity vertex 77 coordinate 3 step 1
+c var 1526 parity vertex 77 coordinate 3 step 2
+c var 1527 parity vertex 77 coordinate 4 step 1
+c var 1528 parity vertex 77 coordinate 4 step 2
+c var 1529 parity vertex 77 coordinate 5 step 1
+c var 1530 parity vertex 77 coordinate 5 step 2
+c var 1531 parity vertex 78 coordinate 1 step 1
+c var 1532 parity vertex 78 coordinate 1 step 2
+c var 1533 parity vertex 78 coordinate 2 step 1
+c var 1534 parity vertex 78 coordinate 2 step 2
+c var 1535 parity vertex 78 coordinate 3 step 1
+c var 1536 parity vertex 78 coordinate 3 step 2
+c var 1537 parity vertex 78 coordinate 4 step 1
+c var 1538 parity vertex 78 coordinate 4 step 2
+c var 1539 parity vertex 78 coordinate 5 step 1
+c var 1540 parity vertex 78 coordinate 5 step 2
+c var 1541 parity vertex 79 coordinate 1 step 1
+c var 1542 parity vertex 79 coordinate 1 step 2
+c var 1543 parity vertex 79 coordinate 2 step 1
+c var 1544 parity vertex 79 coordinate 2 step 2
+c var 1545 parity vertex 79 coordinate 3 step 1
+c var 1546 parity vertex 79 coordinate 3 step 2
+c var 1547 parity vertex 79 coordinate 4 step 1
+c var 1548 parity vertex 79 coordinate 4 step 2
+c var 1549 parity vertex 79 coordinate 5 step 1
+c var 1550 parity vertex 79 coordinate 5 step 2
+c var 1551 parity vertex 80 coordinate 1 step 1
+c var 1552 parity vertex 80 coordinate 1 step 2
+c var 1553 parity vertex 80 coordinate 2 step 1
+c var 1554 parity vertex 80 coordinate 2 step 2
+c var 1555 parity vertex 80 coordinate 3 step 1
+c var 1556 parity vertex 80 coordinate 3 step 2
+c var 1557 parity vertex 80 coordinate 4 step 1
+c var 1558 parity vertex 80 coordinate 4 step 2
+c var 1559 parity vertex 80 coordinate 5 step 1
+c var 1560 parity vertex 80 coordinate 5 step 2
+c var 1561 parity vertex 81 coordinate 1 step 1
+c var 1562 parity vertex 81 coordinate 1 step 2
+c var 1563 parity vertex 81 coordinate 2 step 1
+c var 1564 parity vertex 81 coordinate 2 step 2
+c var 1565 parity vertex 81 coordinate 3 step 1
+c var 1566 parity vertex 81 coordinate 3 step 2
+c var 1567 parity vertex 81 coordinate 4 step 1
+c var 1568 parity vertex 81 coordinate 4 step 2
+c var 1569 parity vertex 81 coordinate 5 step 1
+c var 1570 parity vertex 81 coordinate 5 step 2
+c var 1571 parity vertex 82 coordinate 1 step 1
+c var 1572 parity vertex 82 coordinate 1 step 2
+c var 1573 parity vertex 82 coordinate 2 step 1
+c var 1574 parity vertex 82 coordinate 2 step 2
+c var 1575 parity vertex 82 coordinate 3 step 1
+c var 1576 parity vertex 82 coordinate 3 step 2
+c var 1577 parity vertex 82 coordinate 4 step 1
+c var 1578 parity vertex 82 coordinate 4 step 2
+c var 1579 parity vertex 82 coordinate 5 step 1
+c var 1580 parity vertex 82 coordinate 5 step 2
+c var 1581 parity vertex 83 coordinate 1 step 1
+c var 1582 parity vertex 83 coordinate 1 step 2
+c var 1583 parity vertex 83 coordinate 2 step 1
+c var 1584 parity vertex 83 coordinate 2 step 2
+c var 1585 parity vertex 83 coordinate 3 step 1
+c var 1586 parity vertex 83 coordinate 3 step 2
+c var 1587 parity vertex 83 coordinate 4 step 1
+c var 1588 parity vertex 83 coordinate 4 step 2
+c var 1589 parity vertex 83 coordinate 5 step 1
+c var 1590 parity vertex 83 coordinate 5 step 2
+c var 1591 parity vertex 84 coordinate 1 step 1
+c var 1592 parity vertex 84 coordinate 1 step 2
+c var 1593 parity vertex 84 coordinate 2 step 1
+c var 1594 parity vertex 84 coordinate 2 step 2
+c var 1595 parity vertex 84 coordinate 3 step 1
+c var 1596 parity vertex 84 coordinate 3 step 2
+c var 1597 parity vertex 84 coordinate 4 step 1
+c var 1598 parity vertex 84 coordinate 4 step 2
+c var 1599 parity vertex 84 coordinate 5 step 1
+c var 1600 parity vertex 84 coordinate 5 step 2
+c var 1601 parity vertex 85 coordinate 1 step 1
+c var 1602 parity vertex 85 coordinate 1 step 2
+c var 1603 parity vertex 85 coordinate 2 step 1
+c var 1604 parity vertex 85 coordinate 2 step 2
+c var 1605 parity vertex 85 coordinate 3 step 1
+c var 1606 parity vertex 85 coordinate 3 step 2
+c var 1607 parity vertex 85 coordinate 4 step 1
+c var 1608 parity vertex 85 coordinate 4 step 2
+c var 1609 parity vertex 85 coordinate 5 step 1
+c var 1610 parity vertex 85 coordinate 5 step 2
+c var 1611 parity vertex 86 coordinate 1 step 1
+c var 1612 parity vertex 86 coordinate 1 step 2
+c var 1613 parity vertex 86 coordinate 2 step 1
+c var 1614 parity vertex 86 coordinate 2 step 2
+c var 1615 parity vertex 86 coordinate 3 step 1
+c var 1616 parity vertex 86 coordinate 3 step 2
+c var 1617 parity vertex 86 coordinate 4 step 1
+c var 1618 parity vertex 86 coordinate 4 step 2
+c var 1619 parity vertex 86 coordinate 5 step 1
+c var 1620 parity vertex 86 coordinate 5 step 2
+c var 1621 parity vertex 87 coordinate 1 step 1
+c var 1622 parity vertex 87 coordinate 1 step 2
+c var 1623 parity vertex 87 coordinate 2 step 1
+c var 1624 parity vertex 87 coordinate 2 step 2
+c var 1625 parity vertex 87 coordinate 3 step 1
+c var 1626 parity vertex 87 coordinate 3 step 2
+c var 1627 parity vertex 87 coordinate 4 step 1
+c var 1628 parity vertex 87 coordinate 4 step 2
+c var 1629 parity vertex 87 coordinate 5 step 1
+c var 1630 parity vertex 87 coordinate 5 step 2
+c var 1631 parity vertex 88 coordinate 1 step 1
+c var 1632 parity vertex 88 coordinate 1 step 2
+c var 1633 parity vertex 88 coordinate 2 step 1
+c var 1634 parity vertex 88 coordinate 2 step 2
+c var 1635 parity vertex 88 coordinate 3 step 1
+c var 1636 parity vertex 88 coordinate 3 step 2
+c var 1637 parity vertex 88 coordinate 4 step 1
+c var 1638 parity vertex 88 coordinate 4 step 2
+c var 1639 parity vertex 88 coordinate 5 step 1
+c var 1640 parity vertex 88 coordinate 5 step 2
+c var 1641 parity vertex 89 coordinate 1 step 1
+c var 1642 parity vertex 89 coordinate 1 step 2
+c var 1643 parity vertex 89 coordinate 2 step 1
+c var 1644 parity vertex 89 coordinate 2 step 2
+c var 1645 parity vertex 89 coordinate 3 step 1
+c var 1646 parity vertex 89 coordinate 3 step 2
+c var 1647 parity vertex 89 coordinate 4 step 1
+c var 1648 parity vertex 89 coordinate 4 step 2
+c var 1649 parity vertex 89 coordinate 5 step 1
+c var 1650 parity vertex 89 coordinate 5 step 2
+c var 1651 parity vertex 90 coordinate 1 step 1
+c var 1652 parity vertex 90 coordinate 1 step 2
+c var 1653 parity vertex 90 coordinate 2 step 1
+c var 1654 parity vertex 90 coordinate 2 step 2
+c var 1655 parity vertex 90 coordinate 3 step 1
+c var 1656 parity vertex 90 coordinate 3 step 2
+c var 1657 parity vertex 90 coordinate 4 step 1
+c var 1658 parity vertex 90 coordinate 4 step 2
+c var 1659 parity vertex 90 coordinate 5 step 1
+c var 1660 parity vertex 90 coordinate 5 step 2
+c var 1661 parity vertex 91 coordinate 1 step 1
+c var 1662 parity vertex 91 coordinate 1 step 2
+c var 1663 parity vertex 91 coordinate 2 step 1
+c var 1664 parity vertex 91 coordinate 2 step 2
+c var 1665 parity vertex 91 coordinate 3 step 1
+c var 1666 parity vertex 91 coordinate 3 step 2
+c var 1667 parity vertex 91 coordinate 4 step 1
+c var 1668 parity vertex 91 coordinate 4 step 2
+c var 1669 parity vertex 91 coordinate 5 step 1
+c var 1670 parity vertex 91 coordinate 5 step 2
+c var 1671 parity vertex 92 coordinate 1 step 1
+c var 1672 parity vertex 92 coordinate 1 step 2
+c var 1673 parity vertex 92 coordinate 2 step 1
+c var 1674 parity vertex 92 coordinate 2 step 2
+c var 1675 parity vertex 92 coordinate 3 step 1
+c var 1676 parity vertex 92 coordinate 3 step 2
+c var 1677 parity vertex 92 coordinate 4 step 1
+c var 1678 parity vertex 92 coordinate 4 step 2
+c var 1679 parity vertex 92 coordinate 5 step 1
+c var 1680 parity vertex 92 coordinate 5 step 2
+c var 1681 parity vertex 93 coordinate 1 step 1
+c var 1682 parity vertex 93 coordinate 1 step 2
+c var 1683 parity vertex 93 coordinate 2 step 1
+c var 1684 parity vertex 93 coordinate 2 step 2
+c var 1685 parity vertex 93 coordinate 3 step 1
+c var 1686 parity vertex 93 coordinate 3 step 2
+c var 1687 parity vertex 93 coordinate 4 step 1
+c var 1688 parity vertex 93 coordinate 4 step 2
+c var 1689 parity vertex 93 coordinate 5 step 1
+c var 1690 parity vertex 93 coordinate 5 step 2
+c var 1691 parity vertex 94 coordinate 1 step 1
+c var 1692 parity vertex 94 coordinate 1 step 2
+c var 1693 parity vertex 94 coordinate 2 step 1
+c var 1694 parity vertex 94 coordinate 2 step 2
+c var 1695 parity vertex 94 coordinate 3 step 1
+c var 1696 parity vertex 94 coordinate 3 step 2
+c var 1697 parity vertex 94 coordinate 4 step 1
+c var 1698 parity vertex 94 coordinate 4 step 2
+c var 1699 parity vertex 94 coordinate 5 step 1
+c var 1700 parity vertex 94 coordinate 5 step 2
+c var 1701 parity vertex 95 coordinate 1 step 1
+c var 1702 parity vertex 95 coordinate 1 step 2
+c var 1703 parity vertex 95 coordinate 2 step 1
+c var 1704 parity vertex 95 coordinate 2 step 2
+c var 1705 parity vertex 95 coordinate 3 step 1
+c var 1706 parity vertex 95 coordinate 3 step 2
+c var 1707 parity vertex 95 coordinate 4 step 1
+c var 1708 parity vertex 95 coordinate 4 step 2
+c var 1709 parity vertex 95 coordinate 5 step 1
+c var 1710 parity vertex 95 coordinate 5 step 2
+c var 1711 parity vertex 96 coordinate 1 step 1
+c var 1712 parity vertex 96 coordinate 1 step 2
+c var 1713 parity vertex 96 coordinate 2 step 1
+c var 1714 parity vertex 96 coordinate 2 step 2
+c var 1715 parity vertex 96 coordinate 3 step 1
+c var 1716 parity vertex 96 coordinate 3 step 2
+c var 1717 parity vertex 96 coordinate 4 step 1
+c var 1718 parity vertex 96 coordinate 4 step 2
+c var 1719 parity vertex 96 coordinate 5 step 1
+c var 1720 parity vertex 96 coordinate 5 step 2
+c var 1721 parity vertex 97 coordinate 1 step 1
+c var 1722 parity vertex 97 coordinate 1 step 2
+c var 1723 parity vertex 97 coordinate 2 step 1
+c var 1724 parity vertex 97 coordinate 2 step 2
+c var 1725 parity vertex 97 coordinate 3 step 1
+c var 1726 parity vertex 97 coordinate 3 step 2
+c var 1727 parity vertex 97 coordinate 4 step 1
+c var 1728 parity vertex 97 coordinate 4 step 2
+c var 1729 parity vertex 97 coordinate 5 step 1
+c var 1730 parity vertex 97 coordinate 5 step 2
+c var 1731 parity vertex 98 coordinate 1 step 1
+c var 1732 parity vertex 98 coordinate 1 step 2
+c var 1733 parity vertex 98 coordinate 2 step 1
+c var 1734 parity vertex 98 coordinate 2 step 2
+c var 1735 parity vertex 98 coordinate 3 step 1
+c var 1736 parity vertex 98 coordinate 3 step 2
+c var 1737 parity vertex 98 coordinate 4 step 1
+c var 1738 parity vertex 98 coordinate 4 step 2
+c var 1739 parity vertex 98 coordinate 5 step 1
+c var 1740 parity vertex 98 coordinate 5 step 2
+c var 1741 parity vertex 99 coordinate 1 step 1
+c var 1742 parity vertex 99 coordinate 1 step 2
+c var 1743 parity vertex 99 coordinate 2 step 1
+c var 1744 parity vertex 99 coordinate 2 step 2
+c var 1745 parity vertex 99 coordinate 3 step 1
+c var 1746 parity vertex 99 coordinate 3 step 2
+c var 1747 parity vertex 99 coordinate 4 step 1
+c var 1748 parity vertex 99 coordinate 4 step 2
+c var 1749 parity vertex 99 coordinate 5 step 1
+c var 1750 parity vertex 99 coordinate 5 step 2
+p cnf 1750 6750
+-1 -2 -3 0
+-1 -2 -4 0
+-1 -2 -5 0
+-1 -3 -4 0
+-1 -3 -5 0
+-1 -4 -5 0
+-2 -3 -4 0
+-2 -3 -5 0
+-2 -4 -5 0
+-3 -4 -5 0
+1 2 3 4 0
+1 2 3 5 0
+1 2 4 5 0
+1 3 4 5 0
+2 3 4 5 0
+-6 -7 -8 0
+-6 -7 -9 0
+-6 -7 -10 0
+-6 -8 -9 0
+-6 -8 -10 0
+-6 -9 -10 0
+-7 -8 -9 0
+-7 -8 -10 0
+-7 -9 -10 0
+-8 -9 -10 0
+6 7 8 9 0
+6 7 8 10 0
+6 7 9 10 0
+6 8 9 10 0
+7 8 9 10 0
+-11 -12 -13 0
+-11 -12 -14 0
+-11 -12 -15 0
+-11 -13 -14 0
+-11 -13 -15 0
+-11 -14 -15 0
+-12 -13 -14 0
+-12 -13 -15 0
+-12 -14 -15 0
+-13 -14 -15 0
+11 12 13 14 0
+11 12 13 15 0
+11 12 14 15 0
+11 13 14 15 0
+12 13 14 15 0
+-16 -17 -18 0
+-16 -17 -19 0
+-16 -17 -20 0
+-16 -18 -19 0
+-16 -18 -20 0
+-16 -19 -20 0
+-17 -18 -19 0
+-17 -18 -20 0
+-17 -19 -20 0
+-18 -19 -20 0
+16 17 18 19 0
+16 17 18 20 0
+16 17 19 20 0
+16 18 19 20 0
+17 18 19 20 0
+-21 -22 -23 0
+-21 -22 -24 0
+-21 -22 -25 0
+-21 -23 -24 0
+-21 -23 -25 0
+-21 -24 -25 0
+-22 -23 -24 0
+-22 -23 -25 0
+-22 -24 -25 0
+-23 -24 -25 0
+21 22 23 24 0
+21 22 23 25 0
+21 22 24 25 0
+21 23 24 25 0
+22 23 24 25 0
+-26 -27 -28 0
+-26 -27 -29 0
+-26 -27 -30 0
+-26 -28 -29 0
+-26 -28 -30 0
+-26 -29 -30 0
+-27 -28 -29 0
+-27 -28 -30 0
+-27 -29 -30 0
+-28 -29 -30 0
+26 27 28 29 0
+26 27 28 30 0
+26 27 29 30 0
+26 28 29 30 0
+27 28 29 30 0
+-31 -32 -33 0
+-31 -32 -34 0
+-31 -32 -35 0
+-31 -33 -34 0
+-31 -33 -35 0
+-31 -34 -35 0
+-32 -33 -34 0
+-32 -33 -35 0
+-32 -34 -35 0
+-33 -34 -35 0
+31 32 33 34 0
+31 32 33 35 0
+31 32 34 35 0
+31 33 34 35 0
+32 33 34 35 0
+-36 -37 -38 0
+-36 -37 -39 0
+-36 -37 -40 0
+-36 -38 -39 0
+-36 -38 -40 0
+-36 -39 -40 0
+-37 -38 -39 0
+-37 -38 -40 0
+-37 -39 -40 0
+-38 -39 -40 0
+36 37 38 39 0
+36 37 38 40 0
+36 37 39 40 0
+36 38 39 40 0
+37 38 39 40 0
+-41 -42 -43 0
+-41 -42 -44 0
+-41 -42 -45 0
+-41 -43 -44 0
+-41 -43 -45 0
+-41 -44 -45 0
+-42 -43 -44 0
+-42 -43 -45 0
+-42 -44 -45 0
+-43 -44 -45 0
+41 42 43 44 0
+41 42 43 45 0
+41 42 44 45 0
+41 43 44 45 0
+42 43 44 45 0
+-46 -47 -48 0
+-46 -47 -49 0
+-46 -47 -50 0
+-46 -48 -49 0
+-46 -48 -50 0
+-46 -49 -50 0
+-47 -48 -49 0
+-47 -48 -50 0
+-47 -49 -50 0
+-48 -49 -50 0
+46 47 48 49 0
+46 47 48 50 0
+46 47 49 50 0
+46 48 49 50 0
+47 48 49 50 0
+-51 -52 -53 0
+-51 -52 -54 0
+-51 -52 -55 0
+-51 -53 -54 0
+-51 -53 -55 0
+-51 -54 -55 0
+-52 -53 -54 0
+-52 -53 -55 0
+-52 -54 -55 0
+-53 -54 -55 0
+51 52 53 54 0
+51 52 53 55 0
+51 52 54 55 0
+51 53 54 55 0
+52 53 54 55 0
+-56 -57 -58 0
+-56 -57 -59 0
+-56 -57 -60 0
+-56 -58 -59 0
+-56 -58 -60 0
+-56 -59 -60 0
+-57 -58 -59 0
+-57 -58 -60 0
+-57 -59 -60 0
+-58 -59 -60 0
+56 57 58 59 0
+56 57 58 60 0
+56 57 59 60 0
+56 58 59 60 0
+57 58 59 60 0
+-61 -62 -63 0
+-61 -62 -64 0
+-61 -62 -65 0
+-61 -63 -64 0
+-61 -63 -65 0
+-61 -64 -65 0
+-62 -63 -64 0
+-62 -63 -65 0
+-62 -64 -65 0
+-63 -64 -65 0
+61 62 63 64 0
+61 62 63 65 0
+61 62 64 65 0
+61 63 64 65 0
+62 63 64 65 0
+-66 -67 -68 0
+-66 -67 -69 0
+-66 -67 -70 0
+-66 -68 -69 0
+-66 -68 -70 0
+-66 -69 -70 0
+-67 -68 -69 0
+-67 -68 -70 0
+-67 -69 -70 0
+-68 -69 -70 0
+66 67 68 69 0
+66 67 68 70 0
+66 67 69 70 0
+66 68 69 70 0
+67 68 69 70 0
+-71 -72 -73 0
+-71 -72 -74 0
+-71 -72 -75 0
+-71 -73 -74 0
+-71 -73 -75 0
+-71 -74 -75 0
+-72 -73 -74 0
+-72 -73 -75 0
+-72 -74 -75 0
+-73 -74 -75 0
+71 72 73 74 0
+71 72 73 75 0
+71 72 74 75 0
+71 73 74 75 0
+72 73 74 75 0
+-76 -77 -78 0
+-76 -77 -79 0
+-76 -77 -80 0
+-76 -78 -79 0
+-76 -78 -80 0
+-76 -79 -80 0
+-77 -78 -79 0
+-77 -78 -80 0
+-77 -79 -80 0
+-78 -79 -80 0
+76 77 78 79 0
+76 77 78 80 0
+76 77 79 80 0
+76 78 79 80 0
+77 78 79 80 0
+-81 -82 -83 0
+-81 -82 -84 0
+-81 -82 -85 0
+-81 -83 -84 0
+-81 -83 -85 0
+-81 -84 -85 0
+-82 -83 -84 0
+-82 -83 -85 0
+-82 -84 -85 0
+-83 -84 -85 0
+81 82 83 84 0
+81 82 83 85 0
+81 82 84 85 0
+81 83 84 85 0
+82 83 84 85 0
+-86 -87 -88 0
+-86 -87 -89 0
+-86 -87 -90 0
+-86 -88 -89 0
+-86 -88 -90 0
+-86 -89 -90 0
+-87 -88 -89 0
+-87 -88 -90 0
+-87 -89 -90 0
+-88 -89 -90 0
+86 87 88 89 0
+86 87 88 90 0
+86 87 89 90 0
+86 88 89 90 0
+87 88 89 90 0
+-91 -92 -93 0
+-91 -92 -94 0
+-91 -92 -95 0
+-91 -93 -94 0
+-91 -93 -95 0
+-91 -94 -95 0
+-92 -93 -94 0
+-92 -93 -95 0
+-92 -94 -95 0
+-93 -94 -95 0
+91 92 93 94 0
+91 92 93 95 0
+91 92 94 95 0
+91 93 94 95 0
+92 93 94 95 0
+-96 -97 -98 0
+-96 -97 -99 0
+-96 -97 -100 0
+-96 -98 -99 0
+-96 -98 -100 0
+-96 -99 -100 0
+-97 -98 -99 0
+-97 -98 -100 0
+-97 -99 -100 0
+-98 -99 -100 0
+96 97 98 99 0
+96 97 98 100 0
+96 97 99 100 0
+96 98 99 100 0
+97 98 99 100 0
+-101 -102 -103 0
+-101 -102 -104 0
+-101 -102 -105 0
+-101 -103 -104 0
+-101 -103 -105 0
+-101 -104 -105 0
+-102 -103 -104 0
+-102 -103 -105 0
+-102 -104 -105 0
+-103 -104 -105 0
+101 102 103 104 0
+101 102 103 105 0
+101 102 104 105 0
+101 103 104 105 0
+102 103 104 105 0
+-106 -107 -108 0
+-106 -107 -109 0
+-106 -107 -110 0
+-106 -108 -109 0
+-106 -108 -110 0
+-106 -109 -110 0
+-107 -108 -109 0
+-107 -108 -110 0
+-107 -109 -110 0
+-108 -109 -110 0
+106 107 108 109 0
+106 107 108 110 0
+106 107 109 110 0
+106 108 109 110 0
+107 108 109 110 0
+-111 -112 -113 0
+-111 -112 -114 0
+-111 -112 -115 0
+-111 -113 -114 0
+-111 -113 -115 0
+-111 -114 -115 0
+-112 -113 -114 0
+-112 -113 -115 0
+-112 -114 -115 0
+-113 -114 -115 0
+111 112 113 114 0
+111 112 113 115 0
+111 112 114 115 0
+111 113 114 115 0
+112 113 114 115 0
+-116 -117 -118 0
+-116 -117 -119 0
+-116 -117 -120 0
+-116 -118 -119 0
+-116 -118 -120 0
+-116 -119 -120 0
+-117 -118 -119 0
+-117 -118 -120 0
+-117 -119 -120 0
+-118 -119 -120 0
+116 117 118 119 0
+116 117 118 120 0
+116 117 119 120 0
+116 118 119 120 0
+117 118 119 120 0
+-121 -122 -123 0
+-121 -122 -124 0
+-121 -122 -125 0
+-121 -123 -124 0
+-121 -123 -125 0
+-121 -124 -125 0
+-122 -123 -124 0
+-122 -123 -125 0
+-122 -124 -125 0
+-123 -124 -125 0
+121 122 123 124 0
+121 122 123 125 0
+121 122 124 125 0
+121 123 124 125 0
+122 123 124 125 0
+-126 -127 -128 0
+-126 -127 -129 0
+-126 -127 -130 0
+-126 -128 -129 0
+-126 -128 -130 0
+-126 -129 -130 0
+-127 -128 -129 0
+-127 -128 -130 0
+-127 -129 -130 0
+-128 -129 -130 0
+126 127 128 129 0
+126 127 128 130 0
+126 127 129 130 0
+126 128 129 130 0
+127 128 129 130 0
+-131 -132 -133 0
+-131 -132 -134 0
+-131 -132 -135 0
+-131 -133 -134 0
+-131 -133 -135 0
+-131 -134 -135 0
+-132 -133 -134 0
+-132 -133 -135 0
+-132 -134 -135 0
+-133 -134 -135 0
+131 132 133 134 0
+131 132 133 135 0
+131 132 134 135 0
+131 133 134 135 0
+132 133 134 135 0
+-136 -137 -138 0
+-136 -137 -139 0
+-136 -137 -140 0
+-136 -138 -139 0
+-136 -138 -140 0
+-136 -139 -140 0
+-137 -138 -139 0
+-137 -138 -140 0
+-137 -139 -140 0
+-138 -139 -140 0
+136 137 138 139 0
+136 137 138 140 0
+136 137 139 140 0
+136 138 139 140 0
+137 138 139 140 0
+-141 -142 -143 0
+-141 -142 -144 0
+-141 -142 -145 0
+-141 -143 -144 0
+-141 -143 -145 0
+-141 -144 -145 0
+-142 -143 -144 0
+-142 -143 -145 0
+-142 -144 -145 0
+-143 -144 -145 0
+141 142 143 144 0
+141 142 143 145 0
+141 142 144 145 0
+141 143 144 145 0
+142 143 144 145 0
+-146 -147 -148 0
+-146 -147 -149 0
+-146 -147 -150 0
+-146 -148 -149 0
+-146 -148 -150 0
+-146 -149 -150 0
+-147 -148 -149 0
+-147 -148 -150 0
+-147 -149 -150 0
+-148 -149 -150 0
+146 147 148 149 0
+146 147 148 150 0
+146 147 149 150 0
+146 148 149 150 0
+147 148 149 150 0
+-151 -152 -153 0
+-151 -152 -154 0
+-151 -152 -155 0
+-151 -153 -154 0
+-151 -153 -155 0
+-151 -154 -155 0
+-152 -153 -154 0
+-152 -153 -155 0
+-152 -154 -155 0
+-153 -154 -155 0
+151 152 153 154 0
+151 152 153 155 0
+151 152 154 155 0
+151 153 154 155 0
+152 153 154 155 0
+-156 -157 -158 0
+-156 -157 -159 0
+-156 -157 -160 0
+-156 -158 -159 0
+-156 -158 -160 0
+-156 -159 -160 0
+-157 -158 -159 0
+-157 -158 -160 0
+-157 -159 -160 0
+-158 -159 -160 0
+156 157 158 159 0
+156 157 158 160 0
+156 157 159 160 0
+156 158 159 160 0
+157 158 159 160 0
+-161 -162 -163 0
+-161 -162 -164 0
+-161 -162 -165 0
+-161 -163 -164 0
+-161 -163 -165 0
+-161 -164 -165 0
+-162 -163 -164 0
+-162 -163 -165 0
+-162 -164 -165 0
+-163 -164 -165 0
+161 162 163 164 0
+161 162 163 165 0
+161 162 164 165 0
+161 163 164 165 0
+162 163 164 165 0
+-166 -167 -168 0
+-166 -167 -169 0
+-166 -167 -170 0
+-166 -168 -169 0
+-166 -168 -170 0
+-166 -169 -170 0
+-167 -168 -169 0
+-167 -168 -170 0
+-167 -169 -170 0
+-168 -169 -170 0
+166 167 168 169 0
+166 167 168 170 0
+166 167 169 170 0
+166 168 169 170 0
+167 168 169 170 0
+-171 -172 -173 0
+-171 -172 -174 0
+-171 -172 -175 0
+-171 -173 -174 0
+-171 -173 -175 0
+-171 -174 -175 0
+-172 -173 -174 0
+-172 -173 -175 0
+-172 -174 -175 0
+-173 -174 -175 0
+171 172 173 174 0
+171 172 173 175 0
+171 172 174 175 0
+171 173 174 175 0
+172 173 174 175 0
+-176 -177 -178 0
+-176 -177 -179 0
+-176 -177 -180 0
+-176 -178 -179 0
+-176 -178 -180 0
+-176 -179 -180 0
+-177 -178 -179 0
+-177 -178 -180 0
+-177 -179 -180 0
+-178 -179 -180 0
+176 177 178 179 0
+176 177 178 180 0
+176 177 179 180 0
+176 178 179 180 0
+177 178 179 180 0
+-181 -182 -183 0
+-181 -182 -184 0
+-181 -182 -185 0
+-181 -183 -184 0
+-181 -183 -185 0
+-181 -184 -185 0
+-182 -183 -184 0
+-182 -183 -185 0
+-182 -184 -185 0
+-183 -184 -185 0
+181 182 183 184 0
+181 182 183 185 0
+181 182 184 185 0
+181 183 184 185 0
+182 183 184 185 0
+-186 -187 -188 0
+-186 -187 -189 0
+-186 -187 -190 0
+-186 -188 -189 0
+-186 -188 -190 0
+-186 -189 -190 0
+-187 -188 -189 0
+-187 -188 -190 0
+-187 -189 -190 0
+-188 -189 -190 0
+186 187 188 189 0
+186 187 188 190 0
+186 187 189 190 0
+186 188 189 190 0
+187 188 189 190 0
+-191 -192 -193 0
+-191 -192 -194 0
+-191 -192 -195 0
+-191 -193 -194 0
+-191 -193 -195 0
+-191 -194 -195 0
+-192 -193 -194 0
+-192 -193 -195 0
+-192 -194 -195 0
+-193 -194 -195 0
+191 192 193 194 0
+191 192 193 195 0
+191 192 194 195 0
+191 193 194 195 0
+192 193 194 195 0
+-196 -197 -198 0
+-196 -197 -199 0
+-196 -197 -200 0
+-196 -198 -199 0
+-196 -198 -200 0
+-196 -199 -200 0
+-197 -198 -199 0
+-197 -198 -200 0
+-197 -199 -200 0
+-198 -199 -200 0
+196 197 198 199 0
+196 197 198 200 0
+196 197 199 200 0
+196 198 199 200 0
+197 198 199 200 0
+-201 -202 -203 0
+-201 -202 -204 0
+-201 -202 -205 0
+-201 -203 -204 0
+-201 -203 -205 0
+-201 -204 -205 0
+-202 -203 -204 0
+-202 -203 -205 0
+-202 -204 -205 0
+-203 -204 -205 0
+201 202 203 204 0
+201 202 203 205 0
+201 202 204 205 0
+201 203 204 205 0
+202 203 204 205 0
+-206 -207 -208 0
+-206 -207 -209 0
+-206 -207 -210 0
+-206 -208 -209 0
+-206 -208 -210 0
+-206 -209 -210 0
+-207 -208 -209 0
+-207 -208 -210 0
+-207 -209 -210 0
+-208 -209 -210 0
+206 207 208 209 0
+206 207 208 210 0
+206 207 209 210 0
+206 208 209 210 0
+207 208 209 210 0
+-211 -212 -213 0
+-211 -212 -214 0
+-211 -212 -215 0
+-211 -213 -214 0
+-211 -213 -215 0
+-211 -214 -215 0
+-212 -213 -214 0
+-212 -213 -215 0
+-212 -214 -215 0
+-213 -214 -215 0
+211 212 213 214 0
+211 212 213 215 0
+211 212 214 215 0
+211 213 214 215 0
+212 213 214 215 0
+-216 -217 -218 0
+-216 -217 -219 0
+-216 -217 -220 0
+-216 -218 -219 0
+-216 -218 -220 0
+-216 -219 -220 0
+-217 -218 -219 0
+-217 -218 -220 0
+-217 -219 -220 0
+-218 -219 -220 0
+216 217 218 219 0
+216 217 218 220 0
+216 217 219 220 0
+216 218 219 220 0
+217 218 219 220 0
+-221 -222 -223 0
+-221 -222 -224 0
+-221 -222 -225 0
+-221 -223 -224 0
+-221 -223 -225 0
+-221 -224 -225 0
+-222 -223 -224 0
+-222 -223 -225 0
+-222 -224 -225 0
+-223 -224 -225 0
+221 222 223 224 0
+221 222 223 225 0
+221 222 224 225 0
+221 223 224 225 0
+222 223 224 225 0
+-226 -227 -228 0
+-226 -227 -229 0
+-226 -227 -230 0
+-226 -228 -229 0
+-226 -228 -230 0
+-226 -229 -230 0
+-227 -228 -229 0
+-227 -228 -230 0
+-227 -229 -230 0
+-228 -229 -230 0
+226 227 228 229 0
+226 227 228 230 0
+226 227 229 230 0
+226 228 229 230 0
+227 228 229 230 0
+-231 -232 -233 0
+-231 -232 -234 0
+-231 -232 -235 0
+-231 -233 -234 0
+-231 -233 -235 0
+-231 -234 -235 0
+-232 -233 -234 0
+-232 -233 -235 0
+-232 -234 -235 0
+-233 -234 -235 0
+231 232 233 234 0
+231 232 233 235 0
+231 232 234 235 0
+231 233 234 235 0
+232 233 234 235 0
+-236 -237 -238 0
+-236 -237 -239 0
+-236 -237 -240 0
+-236 -238 -239 0
+-236 -238 -240 0
+-236 -239 -240 0
+-237 -238 -239 0
+-237 -238 -240 0
+-237 -239 -240 0
+-238 -239 -240 0
+236 237 238 239 0
+236 237 238 240 0
+236 237 239 240 0
+236 238 239 240 0
+237 238 239 240 0
+-241 -242 -243 0
+-241 -242 -244 0
+-241 -242 -245 0
+-241 -243 -244 0
+-241 -243 -245 0
+-241 -244 -245 0
+-242 -243 -244 0
+-242 -243 -245 0
+-242 -244 -245 0
+-243 -244 -245 0
+241 242 243 244 0
+241 242 243 245 0
+241 242 244 245 0
+241 243 244 245 0
+242 243 244 245 0
+-246 -247 -248 0
+-246 -247 -249 0
+-246 -247 -250 0
+-246 -248 -249 0
+-246 -248 -250 0
+-246 -249 -250 0
+-247 -248 -249 0
+-247 -248 -250 0
+-247 -249 -250 0
+-248 -249 -250 0
+246 247 248 249 0
+246 247 248 250 0
+246 247 249 250 0
+246 248 249 250 0
+247 248 249 250 0
+-251 -252 -253 0
+-251 -252 -254 0
+-251 -252 -255 0
+-251 -253 -254 0
+-251 -253 -255 0
+-251 -254 -255 0
+-252 -253 -254 0
+-252 -253 -255 0
+-252 -254 -255 0
+-253 -254 -255 0
+251 252 253 254 0
+251 252 253 255 0
+251 252 254 255 0
+251 253 254 255 0
+252 253 254 255 0
+-256 -257 -258 0
+-256 -257 -259 0
+-256 -257 -260 0
+-256 -258 -259 0
+-256 -258 -260 0
+-256 -259 -260 0
+-257 -258 -259 0
+-257 -258 -260 0
+-257 -259 -260 0
+-258 -259 -260 0
+256 257 258 259 0
+256 257 258 260 0
+256 257 259 260 0
+256 258 259 260 0
+257 258 259 260 0
+-261 -262 -263 0
+-261 -262 -264 0
+-261 -262 -265 0
+-261 -263 -264 0
+-261 -263 -265 0
+-261 -264 -265 0
+-262 -263 -264 0
+-262 -263 -265 0
+-262 -264 -265 0
+-263 -264 -265 0
+261 262 263 264 0
+261 262 263 265 0
+261 262 264 265 0
+261 263 264 265 0
+262 263 264 265 0
+-266 -267 -268 0
+-266 -267 -269 0
+-266 -267 -270 0
+-266 -268 -269 0
+-266 -268 -270 0
+-266 -269 -270 0
+-267 -268 -269 0
+-267 -268 -270 0
+-267 -269 -270 0
+-268 -269 -270 0
+266 267 268 269 0
+266 267 268 270 0
+266 267 269 270 0
+266 268 269 270 0
+267 268 269 270 0
+-271 -272 -273 0
+-271 -272 -274 0
+-271 -272 -275 0
+-271 -273 -274 0
+-271 -273 -275 0
+-271 -274 -275 0
+-272 -273 -274 0
+-272 -273 -275 0
+-272 -274 -275 0
+-273 -274 -275 0
+271 272 273 274 0
+271 272 273 275 0
+271 272 274 275 0
+271 273 274 275 0
+272 273 274 275 0
+-276 -277 -278 0
+-276 -277 -279 0
+-276 -277 -280 0
+-276 -278 -279 0
+-276 -278 -280 0
+-276 -279 -280 0
+-277 -278 -279 0
+-277 -278 -280 0
+-277 -279 -280 0
+-278 -279 -280 0
+276 277 278 279 0
+276 277 278 280 0
+276 277 279 280 0
+276 278 279 280 0
+277 278 279 280 0
+-281 -282 -283 0
+-281 -282 -284 0
+-281 -282 -285 0
+-281 -283 -284 0
+-281 -283 -285 0
+-281 -284 -285 0
+-282 -283 -284 0
+-282 -283 -285 0
+-282 -284 -285 0
+-283 -284 -285 0
+281 282 283 284 0
+281 282 283 285 0
+281 282 284 285 0
+281 283 284 285 0
+282 283 284 285 0
+-286 -287 -288 0
+-286 -287 -289 0
+-286 -287 -290 0
+-286 -288 -289 0
+-286 -288 -290 0
+-286 -289 -290 0
+-287 -288 -289 0
+-287 -288 -290 0
+-287 -289 -290 0
+-288 -289 -290 0
+286 287 288 289 0
+286 287 288 290 0
+286 287 289 290 0
+286 288 289 290 0
+287 288 289 290 0
+-291 -292 -293 0
+-291 -292 -294 0
+-291 -292 -295 0
+-291 -293 -294 0
+-291 -293 -295 0
+-291 -294 -295 0
+-292 -293 -294 0
+-292 -293 -295 0
+-292 -294 -295 0
+-293 -294 -295 0
+291 292 293 294 0
+291 292 293 295 0
+291 292 294 295 0
+291 293 294 295 0
+292 293 294 295 0
+-296 -297 -298 0
+-296 -297 -299 0
+-296 -297 -300 0
+-296 -298 -299 0
+-296 -298 -300 0
+-296 -299 -300 0
+-297 -298 -299 0
+-297 -298 -300 0
+-297 -299 -300 0
+-298 -299 -300 0
+296 297 298 299 0
+296 297 298 300 0
+296 297 299 300 0
+296 298 299 300 0
+297 298 299 300 0
+-301 -302 -303 0
+-301 -302 -304 0
+-301 -302 -305 0
+-301 -303 -304 0
+-301 -303 -305 0
+-301 -304 -305 0
+-302 -303 -304 0
+-302 -303 -305 0
+-302 -304 -305 0
+-303 -304 -305 0
+301 302 303 304 0
+301 302 303 305 0
+301 302 304 305 0
+301 303 304 305 0
+302 303 304 305 0
+-306 -307 -308 0
+-306 -307 -309 0
+-306 -307 -310 0
+-306 -308 -309 0
+-306 -308 -310 0
+-306 -309 -310 0
+-307 -308 -309 0
+-307 -308 -310 0
+-307 -309 -310 0
+-308 -309 -310 0
+306 307 308 309 0
+306 307 308 310 0
+306 307 309 310 0
+306 308 309 310 0
+307 308 309 310 0
+-311 -312 -313 0
+-311 -312 -314 0
+-311 -312 -315 0
+-311 -313 -314 0
+-311 -313 -315 0
+-311 -314 -315 0
+-312 -313 -314 0
+-312 -313 -315 0
+-312 -314 -315 0
+-313 -314 -315 0
+311 312 313 314 0
+311 312 313 315 0
+311 312 314 315 0
+311 313 314 315 0
+312 313 314 315 0
+-316 -317 -318 0
+-316 -317 -319 0
+-316 -317 -320 0
+-316 -318 -319 0
+-316 -318 -320 0
+-316 -319 -320 0
+-317 -318 -319 0
+-317 -318 -320 0
+-317 -319 -320 0
+-318 -319 -320 0
+316 317 318 319 0
+316 317 318 320 0
+316 317 319 320 0
+316 318 319 320 0
+317 318 319 320 0
+-321 -322 -323 0
+-321 -322 -324 0
+-321 -322 -325 0
+-321 -323 -324 0
+-321 -323 -325 0
+-321 -324 -325 0
+-322 -323 -324 0
+-322 -323 -325 0
+-322 -324 -325 0
+-323 -324 -325 0
+321 322 323 324 0
+321 322 323 325 0
+321 322 324 325 0
+321 323 324 325 0
+322 323 324 325 0
+-326 -327 -328 0
+-326 -327 -329 0
+-326 -327 -330 0
+-326 -328 -329 0
+-326 -328 -330 0
+-326 -329 -330 0
+-327 -328 -329 0
+-327 -328 -330 0
+-327 -329 -330 0
+-328 -329 -330 0
+326 327 328 329 0
+326 327 328 330 0
+326 327 329 330 0
+326 328 329 330 0
+327 328 329 330 0
+-331 -332 -333 0
+-331 -332 -334 0
+-331 -332 -335 0
+-331 -333 -334 0
+-331 -333 -335 0
+-331 -334 -335 0
+-332 -333 -334 0
+-332 -333 -335 0
+-332 -334 -335 0
+-333 -334 -335 0
+331 332 333 334 0
+331 332 333 335 0
+331 332 334 335 0
+331 333 334 335 0
+332 333 334 335 0
+-336 -337 -338 0
+-336 -337 -339 0
+-336 -337 -340 0
+-336 -338 -339 0
+-336 -338 -340 0
+-336 -339 -340 0
+-337 -338 -339 0
+-337 -338 -340 0
+-337 -339 -340 0
+-338 -339 -340 0
+336 337 338 339 0
+336 337 338 340 0
+336 337 339 340 0
+336 338 339 340 0
+337 338 339 340 0
+-341 -342 -343 0
+-341 -342 -344 0
+-341 -342 -345 0
+-341 -343 -344 0
+-341 -343 -345 0
+-341 -344 -345 0
+-342 -343 -344 0
+-342 -343 -345 0
+-342 -344 -345 0
+-343 -344 -345 0
+341 342 343 344 0
+341 342 343 345 0
+341 342 344 345 0
+341 343 344 345 0
+342 343 344 345 0
+-346 -347 -348 0
+-346 -347 -349 0
+-346 -347 -350 0
+-346 -348 -349 0
+-346 -348 -350 0
+-346 -349 -350 0
+-347 -348 -349 0
+-347 -348 -350 0
+-347 -349 -350 0
+-348 -349 -350 0
+346 347 348 349 0
+346 347 348 350 0
+346 347 349 350 0
+346 348 349 350 0
+347 348 349 350 0
+-351 -352 -353 0
+-351 -352 -354 0
+-351 -352 -355 0
+-351 -353 -354 0
+-351 -353 -355 0
+-351 -354 -355 0
+-352 -353 -354 0
+-352 -353 -355 0
+-352 -354 -355 0
+-353 -354 -355 0
+351 352 353 354 0
+351 352 353 355 0
+351 352 354 355 0
+351 353 354 355 0
+352 353 354 355 0
+-356 -357 -358 0
+-356 -357 -359 0
+-356 -357 -360 0
+-356 -358 -359 0
+-356 -358 -360 0
+-356 -359 -360 0
+-357 -358 -359 0
+-357 -358 -360 0
+-357 -359 -360 0
+-358 -359 -360 0
+356 357 358 359 0
+356 357 358 360 0
+356 357 359 360 0
+356 358 359 360 0
+357 358 359 360 0
+-361 -362 -363 0
+-361 -362 -364 0
+-361 -362 -365 0
+-361 -363 -364 0
+-361 -363 -365 0
+-361 -364 -365 0
+-362 -363 -364 0
+-362 -363 -365 0
+-362 -364 -365 0
+-363 -364 -365 0
+361 362 363 364 0
+361 362 363 365 0
+361 362 364 365 0
+361 363 364 365 0
+362 363 364 365 0
+-366 -367 -368 0
+-366 -367 -369 0
+-366 -367 -370 0
+-366 -368 -369 0
+-366 -368 -370 0
+-366 -369 -370 0
+-367 -368 -369 0
+-367 -368 -370 0
+-367 -369 -370 0
+-368 -369 -370 0
+366 367 368 369 0
+366 367 368 370 0
+366 367 369 370 0
+366 368 369 370 0
+367 368 369 370 0
+-371 -372 -373 0
+-371 -372 -374 0
+-371 -372 -375 0
+-371 -373 -374 0
+-371 -373 -375 0
+-371 -374 -375 0
+-372 -373 -374 0
+-372 -373 -375 0
+-372 -374 -375 0
+-373 -374 -375 0
+371 372 373 374 0
+371 372 373 375 0
+371 372 374 375 0
+371 373 374 375 0
+372 373 374 375 0
+-376 -377 -378 0
+-376 -377 -379 0
+-376 -377 -380 0
+-376 -378 -379 0
+-376 -378 -380 0
+-376 -379 -380 0
+-377 -378 -379 0
+-377 -378 -380 0
+-377 -379 -380 0
+-378 -379 -380 0
+376 377 378 379 0
+376 377 378 380 0
+376 377 379 380 0
+376 378 379 380 0
+377 378 379 380 0
+-381 -382 -383 0
+-381 -382 -384 0
+-381 -382 -385 0
+-381 -383 -384 0
+-381 -383 -385 0
+-381 -384 -385 0
+-382 -383 -384 0
+-382 -383 -385 0
+-382 -384 -385 0
+-383 -384 -385 0
+381 382 383 384 0
+381 382 383 385 0
+381 382 384 385 0
+381 383 384 385 0
+382 383 384 385 0
+-386 -387 -388 0
+-386 -387 -389 0
+-386 -387 -390 0
+-386 -388 -389 0
+-386 -388 -390 0
+-386 -389 -390 0
+-387 -388 -389 0
+-387 -388 -390 0
+-387 -389 -390 0
+-388 -389 -390 0
+386 387 388 389 0
+386 387 388 390 0
+386 387 389 390 0
+386 388 389 390 0
+387 388 389 390 0
+-391 -392 -393 0
+-391 -392 -394 0
+-391 -392 -395 0
+-391 -393 -394 0
+-391 -393 -395 0
+-391 -394 -395 0
+-392 -393 -394 0
+-392 -393 -395 0
+-392 -394 -395 0
+-393 -394 -395 0
+391 392 393 394 0
+391 392 393 395 0
+391 392 394 395 0
+391 393 394 395 0
+392 393 394 395 0
+-396 -397 -398 0
+-396 -397 -399 0
+-396 -397 -400 0
+-396 -398 -399 0
+-396 -398 -400 0
+-396 -399 -400 0
+-397 -398 -399 0
+-397 -398 -400 0
+-397 -399 -400 0
+-398 -399 -400 0
+396 397 398 399 0
+396 397 398 400 0
+396 397 399 400 0
+396 398 399 400 0
+397 398 399 400 0
+-401 -402 -403 0
+-401 -402 -404 0
+-401 -402 -405 0
+-401 -403 -404 0
+-401 -403 -405 0
+-401 -404 -405 0
+-402 -403 -404 0
+-402 -403 -405 0
+-402 -404 -405 0
+-403 -404 -405 0
+401 402 403 404 0
+401 402 403 405 0
+401 402 404 405 0
+401 403 404 405 0
+402 403 404 405 0
+-406 -407 -408 0
+-406 -407 -409 0
+-406 -407 -410 0
+-406 -408 -409 0
+-406 -408 -410 0
+-406 -409 -410 0
+-407 -408 -409 0
+-407 -408 -410 0
+-407 -409 -410 0
+-408 -409 -410 0
+406 407 408 409 0
+406 407 408 410 0
+406 407 409 410 0
+406 408 409 410 0
+407 408 409 410 0
+-411 -412 -413 0
+-411 -412 -414 0
+-411 -412 -415 0
+-411 -413 -414 0
+-411 -413 -415 0
+-411 -414 -415 0
+-412 -413 -414 0
+-412 -413 -415 0
+-412 -414 -415 0
+-413 -414 -415 0
+411 412 413 414 0
+411 412 413 415 0
+411 412 414 415 0
+411 413 414 415 0
+412 413 414 415 0
+-416 -417 -418 0
+-416 -417 -419 0
+-416 -417 -420 0
+-416 -418 -419 0
+-416 -418 -420 0
+-416 -419 -420 0
+-417 -418 -419 0
+-417 -418 -420 0
+-417 -419 -420 0
+-418 -419 -420 0
+416 417 418 419 0
+416 417 418 420 0
+416 417 419 420 0
+416 418 419 420 0
+417 418 419 420 0
+-421 -422 -423 0
+-421 -422 -424 0
+-421 -422 -425 0
+-421 -423 -424 0
+-421 -423 -425 0
+-421 -424 -425 0
+-422 -423 -424 0
+-422 -423 -425 0
+-422 -424 -425 0
+-423 -424 -425 0
+421 422 423 424 0
+421 422 423 425 0
+421 422 424 425 0
+421 423 424 425 0
+422 423 424 425 0
+-426 -427 -428 0
+-426 -427 -429 0
+-426 -427 -430 0
+-426 -428 -429 0
+-426 -428 -430 0
+-426 -429 -430 0
+-427 -428 -429 0
+-427 -428 -430 0
+-427 -429 -430 0
+-428 -429 -430 0
+426 427 428 429 0
+426 427 428 430 0
+426 427 429 430 0
+426 428 429 430 0
+427 428 429 430 0
+-431 -432 -433 0
+-431 -432 -434 0
+-431 -432 -435 0
+-431 -433 -434 0
+-431 -433 -435 0
+-431 -434 -435 0
+-432 -433 -434 0
+-432 -433 -435 0
+-432 -434 -435 0
+-433 -434 -435 0
+431 432 433 434 0
+431 432 433 435 0
+431 432 434 435 0
+431 433 434 435 0
+432 433 434 435 0
+-436 -437 -438 0
+-436 -437 -439 0
+-436 -437 -440 0
+-436 -438 -439 0
+-436 -438 -440 0
+-436 -439 -440 0
+-437 -438 -439 0
+-437 -438 -440 0
+-437 -439 -440 0
+-438 -439 -440 0
+436 437 438 439 0
+436 437 438 440 0
+436 437 439 440 0
+436 438 439 440 0
+437 438 439 440 0
+-441 -442 -443 0
+-441 -442 -444 0
+-441 -442 -445 0
+-441 -443 -444 0
+-441 -443 -445 0
+-441 -444 -445 0
+-442 -443 -444 0
+-442 -443 -445 0
+-442 -444 -445 0
+-443 -444 -445 0
+441 442 443 444 0
+441 442 443 445 0
+441 442 444 445 0
+441 443 444 445 0
+442 443 444 445 0
+-446 -447 -448 0
+-446 -447 -449 0
+-446 -447 -450 0
+-446 -448 -449 0
+-446 -448 -450 0
+-446 -449 -450 0
+-447 -448 -449 0
+-447 -448 -450 0
+-447 -449 -450 0
+-448 -449 -450 0
+446 447 448 449 0
+446 447 448 450 0
+446 447 449 450 0
+446 448 449 450 0
+447 448 449 450 0
+-451 -452 -453 0
+-451 -452 -454 0
+-451 -452 -455 0
+-451 -453 -454 0
+-451 -453 -455 0
+-451 -454 -455 0
+-452 -453 -454 0
+-452 -453 -455 0
+-452 -454 -455 0
+-453 -454 -455 0
+451 452 453 454 0
+451 452 453 455 0
+451 452 454 455 0
+451 453 454 455 0
+452 453 454 455 0
+-456 -457 -458 0
+-456 -457 -459 0
+-456 -457 -460 0
+-456 -458 -459 0
+-456 -458 -460 0
+-456 -459 -460 0
+-457 -458 -459 0
+-457 -458 -460 0
+-457 -459 -460 0
+-458 -459 -460 0
+456 457 458 459 0
+456 457 458 460 0
+456 457 459 460 0
+456 458 459 460 0
+457 458 459 460 0
+-461 -462 -463 0
+-461 -462 -464 0
+-461 -462 -465 0
+-461 -463 -464 0
+-461 -463 -465 0
+-461 -464 -465 0
+-462 -463 -464 0
+-462 -463 -465 0
+-462 -464 -465 0
+-463 -464 -465 0
+461 462 463 464 0
+461 462 463 465 0
+461 462 464 465 0
+461 463 464 465 0
+462 463 464 465 0
+-466 -467 -468 0
+-466 -467 -469 0
+-466 -467 -470 0
+-466 -468 -469 0
+-466 -468 -470 0
+-466 -469 -470 0
+-467 -468 -469 0
+-467 -468 -470 0
+-467 -469 -470 0
+-468 -469 -470 0
+466 467 468 469 0
+466 467 468 470 0
+466 467 469 470 0
+466 468 469 470 0
+467 468 469 470 0
+-471 -472 -473 0
+-471 -472 -474 0
+-471 -472 -475 0
+-471 -473 -474 0
+-471 -473 -475 0
+-471 -474 -475 0
+-472 -473 -474 0
+-472 -473 -475 0
+-472 -474 -475 0
+-473 -474 -475 0
+471 472 473 474 0
+471 472 473 475 0
+471 472 474 475 0
+471 473 474 475 0
+472 473 474 475 0
+-476 -477 -478 0
+-476 -477 -479 0
+-476 -477 -480 0
+-476 -478 -479 0
+-476 -478 -480 0
+-476 -479 -480 0
+-477 -478 -479 0
+-477 -478 -480 0
+-477 -479 -480 0
+-478 -479 -480 0
+476 477 478 479 0
+476 477 478 480 0
+476 477 479 480 0
+476 478 479 480 0
+477 478 479 480 0
+-481 -482 -483 0
+-481 -482 -484 0
+-481 -482 -485 0
+-481 -483 -484 0
+-481 -483 -485 0
+-481 -484 -485 0
+-482 -483 -484 0
+-482 -483 -485 0
+-482 -484 -485 0
+-483 -484 -485 0
+481 482 483 484 0
+481 482 483 485 0
+481 482 484 485 0
+481 483 484 485 0
+482 483 484 485 0
+-486 -487 -488 0
+-486 -487 -489 0
+-486 -487 -490 0
+-486 -488 -489 0
+-486 -488 -490 0
+-486 -489 -490 0
+-487 -488 -489 0
+-487 -488 -490 0
+-487 -489 -490 0
+-488 -489 -490 0
+486 487 488 489 0
+486 487 488 490 0
+486 487 489 490 0
+486 488 489 490 0
+487 488 489 490 0
+-491 -492 -493 0
+-491 -492 -494 0
+-491 -492 -495 0
+-491 -493 -494 0
+-491 -493 -495 0
+-491 -494 -495 0
+-492 -493 -494 0
+-492 -493 -495 0
+-492 -494 -495 0
+-493 -494 -495 0
+491 492 493 494 0
+491 492 493 495 0
+491 492 494 495 0
+491 493 494 495 0
+492 493 494 495 0
+-496 -497 -498 0
+-496 -497 -499 0
+-496 -497 -500 0
+-496 -498 -499 0
+-496 -498 -500 0
+-496 -499 -500 0
+-497 -498 -499 0
+-497 -498 -500 0
+-497 -499 -500 0
+-498 -499 -500 0
+496 497 498 499 0
+496 497 498 500 0
+496 497 499 500 0
+496 498 499 500 0
+497 498 499 500 0
+-501 -502 -503 0
+-501 -502 -504 0
+-501 -502 -505 0
+-501 -503 -504 0
+-501 -503 -505 0
+-501 -504 -505 0
+-502 -503 -504 0
+-502 -503 -505 0
+-502 -504 -505 0
+-503 -504 -505 0
+501 502 503 504 0
+501 502 503 505 0
+501 502 504 505 0
+501 503 504 505 0
+502 503 504 505 0
+-506 -507 -508 0
+-506 -507 -509 0
+-506 -507 -510 0
+-506 -508 -509 0
+-506 -508 -510 0
+-506 -509 -510 0
+-507 -508 -509 0
+-507 -508 -510 0
+-507 -509 -510 0
+-508 -509 -510 0
+506 507 508 509 0
+506 507 508 510 0
+506 507 509 510 0
+506 508 509 510 0
+507 508 509 510 0
+-511 -512 -513 0
+-511 -512 -514 0
+-511 -512 -515 0
+-511 -513 -514 0
+-511 -513 -515 0
+-511 -514 -515 0
+-512 -513 -514 0
+-512 -513 -515 0
+-512 -514 -515 0
+-513 -514 -515 0
+511 512 513 514 0
+511 512 513 515 0
+511 512 514 515 0
+511 513 514 515 0
+512 513 514 515 0
+-516 -517 -518 0
+-516 -517 -519 0
+-516 -517 -520 0
+-516 -518 -519 0
+-516 -518 -520 0
+-516 -519 -520 0
+-517 -518 -519 0
+-517 -518 -520 0
+-517 -519 -520 0
+-518 -519 -520 0
+516 517 518 519 0
+516 517 518 520 0
+516 517 519 520 0
+516 518 519 520 0
+517 518 519 520 0
+-521 -522 -523 0
+-521 -522 -524 0
+-521 -522 -525 0
+-521 -523 -524 0
+-521 -523 -525 0
+-521 -524 -525 0
+-522 -523 -524 0
+-522 -523 -525 0
+-522 -524 -525 0
+-523 -524 -525 0
+521 522 523 524 0
+521 522 523 525 0
+521 522 524 525 0
+521 523 524 525 0
+522 523 524 525 0
+-526 -527 -528 0
+-526 -527 -529 0
+-526 -527 -530 0
+-526 -528 -529 0
+-526 -528 -530 0
+-526 -529 -530 0
+-527 -528 -529 0
+-527 -528 -530 0
+-527 -529 -530 0
+-528 -529 -530 0
+526 527 528 529 0
+526 527 528 530 0
+526 527 529 530 0
+526 528 529 530 0
+527 528 529 530 0
+-531 -532 -533 0
+-531 -532 -534 0
+-531 -532 -535 0
+-531 -533 -534 0
+-531 -533 -535 0
+-531 -534 -535 0
+-532 -533 -534 0
+-532 -533 -535 0
+-532 -534 -535 0
+-533 -534 -535 0
+531 532 533 534 0
+531 532 533 535 0
+531 532 534 535 0
+531 533 534 535 0
+532 533 534 535 0
+-536 -537 -538 0
+-536 -537 -539 0
+-536 -537 -540 0
+-536 -538 -539 0
+-536 -538 -540 0
+-536 -539 -540 0
+-537 -538 -539 0
+-537 -538 -540 0
+-537 -539 -540 0
+-538 -539 -540 0
+536 537 538 539 0
+536 537 538 540 0
+536 537 539 540 0
+536 538 539 540 0
+537 538 539 540 0
+-541 -542 -543 0
+-541 -542 -544 0
+-541 -542 -545 0
+-541 -543 -544 0
+-541 -543 -545 0
+-541 -544 -545 0
+-542 -543 -544 0
+-542 -543 -545 0
+-542 -544 -545 0
+-543 -544 -545 0
+541 542 543 544 0
+541 542 543 545 0
+541 542 544 545 0
+541 543 544 545 0
+542 543 544 545 0
+-546 -547 -548 0
+-546 -547 -549 0
+-546 -547 -550 0
+-546 -548 -549 0
+-546 -548 -550 0
+-546 -549 -550 0
+-547 -548 -549 0
+-547 -548 -550 0
+-547 -549 -550 0
+-548 -549 -550 0
+546 547 548 549 0
+546 547 548 550 0
+546 547 549 550 0
+546 548 549 550 0
+547 548 549 550 0
+-551 -552 -553 0
+-551 -552 -554 0
+-551 -552 -555 0
+-551 -553 -554 0
+-551 -553 -555 0
+-551 -554 -555 0
+-552 -553 -554 0
+-552 -553 -555 0
+-552 -554 -555 0
+-553 -554 -555 0
+551 552 553 554 0
+551 552 553 555 0
+551 552 554 555 0
+551 553 554 555 0
+552 553 554 555 0
+-556 -557 -558 0
+-556 -557 -559 0
+-556 -557 -560 0
+-556 -558 -559 0
+-556 -558 -560 0
+-556 -559 -560 0
+-557 -558 -559 0
+-557 -558 -560 0
+-557 -559 -560 0
+-558 -559 -560 0
+556 557 558 559 0
+556 557 558 560 0
+556 557 559 560 0
+556 558 559 560 0
+557 558 559 560 0
+-561 -562 -563 0
+-561 -562 -564 0
+-561 -562 -565 0
+-561 -563 -564 0
+-561 -563 -565 0
+-561 -564 -565 0
+-562 -563 -564 0
+-562 -563 -565 0
+-562 -564 -565 0
+-563 -564 -565 0
+561 562 563 564 0
+561 562 563 565 0
+561 562 564 565 0
+561 563 564 565 0
+562 563 564 565 0
+-566 -567 -568 0
+-566 -567 -569 0
+-566 -567 -570 0
+-566 -568 -569 0
+-566 -568 -570 0
+-566 -569 -570 0
+-567 -568 -569 0
+-567 -568 -570 0
+-567 -569 -570 0
+-568 -569 -570 0
+566 567 568 569 0
+566 567 568 570 0
+566 567 569 570 0
+566 568 569 570 0
+567 568 569 570 0
+-571 -572 -573 0
+-571 -572 -574 0
+-571 -572 -575 0
+-571 -573 -574 0
+-571 -573 -575 0
+-571 -574 -575 0
+-572 -573 -574 0
+-572 -573 -575 0
+-572 -574 -575 0
+-573 -574 -575 0
+571 572 573 574 0
+571 572 573 575 0
+571 572 574 575 0
+571 573 574 575 0
+572 573 574 575 0
+-576 -577 -578 0
+-576 -577 -579 0
+-576 -577 -580 0
+-576 -578 -579 0
+-576 -578 -580 0
+-576 -579 -580 0
+-577 -578 -579 0
+-577 -578 -580 0
+-577 -579 -580 0
+-578 -579 -580 0
+576 577 578 579 0
+576 577 578 580 0
+576 577 579 580 0
+576 578 579 580 0
+577 578 579 580 0
+-581 -582 -583 0
+-581 -582 -584 0
+-581 -582 -585 0
+-581 -583 -584 0
+-581 -583 -585 0
+-581 -584 -585 0
+-582 -583 -584 0
+-582 -583 -585 0
+-582 -584 -585 0
+-583 -584 -585 0
+581 582 583 584 0
+581 582 583 585 0
+581 582 584 585 0
+581 583 584 585 0
+582 583 584 585 0
+-586 -587 -588 0
+-586 -587 -589 0
+-586 -587 -590 0
+-586 -588 -589 0
+-586 -588 -590 0
+-586 -589 -590 0
+-587 -588 -589 0
+-587 -588 -590 0
+-587 -589 -590 0
+-588 -589 -590 0
+586 587 588 589 0
+586 587 588 590 0
+586 587 589 590 0
+586 588 589 590 0
+587 588 589 590 0
+-591 -592 -593 0
+-591 -592 -594 0
+-591 -592 -595 0
+-591 -593 -594 0
+-591 -593 -595 0
+-591 -594 -595 0
+-592 -593 -594 0
+-592 -593 -595 0
+-592 -594 -595 0
+-593 -594 -595 0
+591 592 593 594 0
+591 592 593 595 0
+591 592 594 595 0
+591 593 594 595 0
+592 593 594 595 0
+-596 -597 -598 0
+-596 -597 -599 0
+-596 -597 -600 0
+-596 -598 -599 0
+-596 -598 -600 0
+-596 -599 -600 0
+-597 -598 -599 0
+-597 -598 -600 0
+-597 -599 -600 0
+-598 -599 -600 0
+596 597 598 599 0
+596 597 598 600 0
+596 597 599 600 0
+596 598 599 600 0
+597 598 599 600 0
+-601 -602 -603 0
+-601 -602 -604 0
+-601 -602 -605 0
+-601 -603 -604 0
+-601 -603 -605 0
+-601 -604 -605 0
+-602 -603 -604 0
+-602 -603 -605 0
+-602 -604 -605 0
+-603 -604 -605 0
+601 602 603 604 0
+601 602 603 605 0
+601 602 604 605 0
+601 603 604 605 0
+602 603 604 605 0
+-606 -607 -608 0
+-606 -607 -609 0
+-606 -607 -610 0
+-606 -608 -609 0
+-606 -608 -610 0
+-606 -609 -610 0
+-607 -608 -609 0
+-607 -608 -610 0
+-607 -609 -610 0
+-608 -609 -610 0
+606 607 608 609 0
+606 607 608 610 0
+606 607 609 610 0
+606 608 609 610 0
+607 608 609 610 0
+-611 -612 -613 0
+-611 -612 -614 0
+-611 -612 -615 0
+-611 -613 -614 0
+-611 -613 -615 0
+-611 -614 -615 0
+-612 -613 -614 0
+-612 -613 -615 0
+-612 -614 -615 0
+-613 -614 -615 0
+611 612 613 614 0
+611 612 613 615 0
+611 612 614 615 0
+611 613 614 615 0
+612 613 614 615 0
+-616 -617 -618 0
+-616 -617 -619 0
+-616 -617 -620 0
+-616 -618 -619 0
+-616 -618 -620 0
+-616 -619 -620 0
+-617 -618 -619 0
+-617 -618 -620 0
+-617 -619 -620 0
+-618 -619 -620 0
+616 617 618 619 0
+616 617 618 620 0
+616 617 619 620 0
+616 618 619 620 0
+617 618 619 620 0
+-621 -622 -623 0
+-621 -622 -624 0
+-621 -622 -625 0
+-621 -623 -624 0
+-621 -623 -625 0
+-621 -624 -625 0
+-622 -623 -624 0
+-622 -623 -625 0
+-622 -624 -625 0
+-623 -624 -625 0
+621 622 623 624 0
+621 622 623 625 0
+621 622 624 625 0
+621 623 624 625 0
+622 623 624 625 0
+-626 -627 -628 0
+-626 -627 -629 0
+-626 -627 -630 0
+-626 -628 -629 0
+-626 -628 -630 0
+-626 -629 -630 0
+-627 -628 -629 0
+-627 -628 -630 0
+-627 -629 -630 0
+-628 -629 -630 0
+626 627 628 629 0
+626 627 628 630 0
+626 627 629 630 0
+626 628 629 630 0
+627 628 629 630 0
+-631 -632 -633 0
+-631 -632 -634 0
+-631 -632 -635 0
+-631 -633 -634 0
+-631 -633 -635 0
+-631 -634 -635 0
+-632 -633 -634 0
+-632 -633 -635 0
+-632 -634 -635 0
+-633 -634 -635 0
+631 632 633 634 0
+631 632 633 635 0
+631 632 634 635 0
+631 633 634 635 0
+632 633 634 635 0
+-636 -637 -638 0
+-636 -637 -639 0
+-636 -637 -640 0
+-636 -638 -639 0
+-636 -638 -640 0
+-636 -639 -640 0
+-637 -638 -639 0
+-637 -638 -640 0
+-637 -639 -640 0
+-638 -639 -640 0
+636 637 638 639 0
+636 637 638 640 0
+636 637 639 640 0
+636 638 639 640 0
+637 638 639 640 0
+-641 -642 -643 0
+-641 -642 -644 0
+-641 -642 -645 0
+-641 -643 -644 0
+-641 -643 -645 0
+-641 -644 -645 0
+-642 -643 -644 0
+-642 -643 -645 0
+-642 -644 -645 0
+-643 -644 -645 0
+641 642 643 644 0
+641 642 643 645 0
+641 642 644 645 0
+641 643 644 645 0
+642 643 644 645 0
+-646 -647 -648 0
+-646 -647 -649 0
+-646 -647 -650 0
+-646 -648 -649 0
+-646 -648 -650 0
+-646 -649 -650 0
+-647 -648 -649 0
+-647 -648 -650 0
+-647 -649 -650 0
+-648 -649 -650 0
+646 647 648 649 0
+646 647 648 650 0
+646 647 649 650 0
+646 648 649 650 0
+647 648 649 650 0
+-651 -652 -653 0
+-651 -652 -654 0
+-651 -652 -655 0
+-651 -653 -654 0
+-651 -653 -655 0
+-651 -654 -655 0
+-652 -653 -654 0
+-652 -653 -655 0
+-652 -654 -655 0
+-653 -654 -655 0
+651 652 653 654 0
+651 652 653 655 0
+651 652 654 655 0
+651 653 654 655 0
+652 653 654 655 0
+-656 -657 -658 0
+-656 -657 -659 0
+-656 -657 -660 0
+-656 -658 -659 0
+-656 -658 -660 0
+-656 -659 -660 0
+-657 -658 -659 0
+-657 -658 -660 0
+-657 -659 -660 0
+-658 -659 -660 0
+656 657 658 659 0
+656 657 658 660 0
+656 657 659 660 0
+656 658 659 660 0
+657 658 659 660 0
+-661 -662 -663 0
+-661 -662 -664 0
+-661 -662 -665 0
+-661 -663 -664 0
+-661 -663 -665 0
+-661 -664 -665 0
+-662 -663 -664 0
+-662 -663 -665 0
+-662 -664 -665 0
+-663 -664 -665 0
+661 662 663 664 0
+661 662 663 665 0
+661 662 664 665 0
+661 663 664 665 0
+662 663 664 665 0
+-666 -667 -668 0
+-666 -667 -669 0
+-666 -667 -670 0
+-666 -668 -669 0
+-666 -668 -670 0
+-666 -669 -670 0
+-667 -668 -669 0
+-667 -668 -670 0
+-667 -669 -670 0
+-668 -669 -670 0
+666 667 668 669 0
+666 667 668 670 0
+666 667 669 670 0
+666 668 669 670 0
+667 668 669 670 0
+-671 -672 -673 0
+-671 -672 -674 0
+-671 -672 -675 0
+-671 -673 -674 0
+-671 -673 -675 0
+-671 -674 -675 0
+-672 -673 -674 0
+-672 -673 -675 0
+-672 -674 -675 0
+-673 -674 -675 0
+671 672 673 674 0
+671 672 673 675 0
+671 672 674 675 0
+671 673 674 675 0
+672 673 674 675 0
+-676 -677 -678 0
+-676 -677 -679 0
+-676 -677 -680 0
+-676 -678 -679 0
+-676 -678 -680 0
+-676 -679 -680 0
+-677 -678 -679 0
+-677 -678 -680 0
+-677 -679 -680 0
+-678 -679 -680 0
+676 677 678 679 0
+676 677 678 680 0
+676 677 679 680 0
+676 678 679 680 0
+677 678 679 680 0
+-681 -682 -683 0
+-681 -682 -684 0
+-681 -682 -685 0
+-681 -683 -684 0
+-681 -683 -685 0
+-681 -684 -685 0
+-682 -683 -684 0
+-682 -683 -685 0
+-682 -684 -685 0
+-683 -684 -685 0
+681 682 683 684 0
+681 682 683 685 0
+681 682 684 685 0
+681 683 684 685 0
+682 683 684 685 0
+-686 -687 -688 0
+-686 -687 -689 0
+-686 -687 -690 0
+-686 -688 -689 0
+-686 -688 -690 0
+-686 -689 -690 0
+-687 -688 -689 0
+-687 -688 -690 0
+-687 -689 -690 0
+-688 -689 -690 0
+686 687 688 689 0
+686 687 688 690 0
+686 687 689 690 0
+686 688 689 690 0
+687 688 689 690 0
+-691 -692 -693 0
+-691 -692 -694 0
+-691 -692 -695 0
+-691 -693 -694 0
+-691 -693 -695 0
+-691 -694 -695 0
+-692 -693 -694 0
+-692 -693 -695 0
+-692 -694 -695 0
+-693 -694 -695 0
+691 692 693 694 0
+691 692 693 695 0
+691 692 694 695 0
+691 693 694 695 0
+692 693 694 695 0
+-696 -697 -698 0
+-696 -697 -699 0
+-696 -697 -700 0
+-696 -698 -699 0
+-696 -698 -700 0
+-696 -699 -700 0
+-697 -698 -699 0
+-697 -698 -700 0
+-697 -699 -700 0
+-698 -699 -700 0
+696 697 698 699 0
+696 697 698 700 0
+696 697 699 700 0
+696 698 699 700 0
+697 698 699 700 0
+-701 -702 -703 0
+-701 -702 -704 0
+-701 -702 -705 0
+-701 -703 -704 0
+-701 -703 -705 0
+-701 -704 -705 0
+-702 -703 -704 0
+-702 -703 -705 0
+-702 -704 -705 0
+-703 -704 -705 0
+701 702 703 704 0
+701 702 703 705 0
+701 702 704 705 0
+701 703 704 705 0
+702 703 704 705 0
+-706 -707 -708 0
+-706 -707 -709 0
+-706 -707 -710 0
+-706 -708 -709 0
+-706 -708 -710 0
+-706 -709 -710 0
+-707 -708 -709 0
+-707 -708 -710 0
+-707 -709 -710 0
+-708 -709 -710 0
+706 707 708 709 0
+706 707 708 710 0
+706 707 709 710 0
+706 708 709 710 0
+707 708 709 710 0
+-711 -712 -713 0
+-711 -712 -714 0
+-711 -712 -715 0
+-711 -713 -714 0
+-711 -713 -715 0
+-711 -714 -715 0
+-712 -713 -714 0
+-712 -713 -715 0
+-712 -714 -715 0
+-713 -714 -715 0
+711 712 713 714 0
+711 712 713 715 0
+711 712 714 715 0
+711 713 714 715 0
+712 713 714 715 0
+-716 -717 -718 0
+-716 -717 -719 0
+-716 -717 -720 0
+-716 -718 -719 0
+-716 -718 -720 0
+-716 -719 -720 0
+-717 -718 -719 0
+-717 -718 -720 0
+-717 -719 -720 0
+-718 -719 -720 0
+716 717 718 719 0
+716 717 718 720 0
+716 717 719 720 0
+716 718 719 720 0
+717 718 719 720 0
+-721 -722 -723 0
+-721 -722 -724 0
+-721 -722 -725 0
+-721 -723 -724 0
+-721 -723 -725 0
+-721 -724 -725 0
+-722 -723 -724 0
+-722 -723 -725 0
+-722 -724 -725 0
+-723 -724 -725 0
+721 722 723 724 0
+721 722 723 725 0
+721 722 724 725 0
+721 723 724 725 0
+722 723 724 725 0
+-726 -727 -728 0
+-726 -727 -729 0
+-726 -727 -730 0
+-726 -728 -729 0
+-726 -728 -730 0
+-726 -729 -730 0
+-727 -728 -729 0
+-727 -728 -730 0
+-727 -729 -730 0
+-728 -729 -730 0
+726 727 728 729 0
+726 727 728 730 0
+726 727 729 730 0
+726 728 729 730 0
+727 728 729 730 0
+-731 -732 -733 0
+-731 -732 -734 0
+-731 -732 -735 0
+-731 -733 -734 0
+-731 -733 -735 0
+-731 -734 -735 0
+-732 -733 -734 0
+-732 -733 -735 0
+-732 -734 -735 0
+-733 -734 -735 0
+731 732 733 734 0
+731 732 733 735 0
+731 732 734 735 0
+731 733 734 735 0
+732 733 734 735 0
+-736 -737 -738 0
+-736 -737 -739 0
+-736 -737 -740 0
+-736 -738 -739 0
+-736 -738 -740 0
+-736 -739 -740 0
+-737 -738 -739 0
+-737 -738 -740 0
+-737 -739 -740 0
+-738 -739 -740 0
+736 737 738 739 0
+736 737 738 740 0
+736 737 739 740 0
+736 738 739 740 0
+737 738 739 740 0
+-741 -742 -743 0
+-741 -742 -744 0
+-741 -742 -745 0
+-741 -743 -744 0
+-741 -743 -745 0
+-741 -744 -745 0
+-742 -743 -744 0
+-742 -743 -745 0
+-742 -744 -745 0
+-743 -744 -745 0
+741 742 743 744 0
+741 742 743 745 0
+741 742 744 745 0
+741 743 744 745 0
+742 743 744 745 0
+-746 -747 -748 0
+-746 -747 -749 0
+-746 -747 -750 0
+-746 -748 -749 0
+-746 -748 -750 0
+-746 -749 -750 0
+-747 -748 -749 0
+-747 -748 -750 0
+-747 -749 -750 0
+-748 -749 -750 0
+746 747 748 749 0
+746 747 748 750 0
+746 747 749 750 0
+746 748 749 750 0
+747 748 749 750 0
+1 6 -751 0
+-1 -6 -751 0
+1 -6 751 0
+-1 6 751 0
+751 11 -752 0
+-751 -11 -752 0
+751 -11 752 0
+-751 11 752 0
+-752 0
+2 7 -753 0
+-2 -7 -753 0
+2 -7 753 0
+-2 7 753 0
+753 12 -754 0
+-753 -12 -754 0
+753 -12 754 0
+-753 12 754 0
+-754 0
+3 8 -755 0
+-3 -8 -755 0
+3 -8 755 0
+-3 8 755 0
+755 13 -756 0
+-755 -13 -756 0
+755 -13 756 0
+-755 13 756 0
+-756 0
+4 9 -757 0
+-4 -9 -757 0
+4 -9 757 0
+-4 9 757 0
+757 14 -758 0
+-757 -14 -758 0
+757 -14 758 0
+-757 14 758 0
+-758 0
+5 10 -759 0
+-5 -10 -759 0
+5 -10 759 0
+-5 10 759 0
+759 15 -760 0
+-759 -15 -760 0
+759 -15 760 0
+-759 15 760 0
+-760 0
+1 16 -761 0
+-1 -16 -761 0
+1 -16 761 0
+-1 16 761 0
+761 21 -762 0
+-761 -21 -762 0
+761 -21 762 0
+-761 21 762 0
+-762 0
+2 17 -763 0
+-2 -17 -763 0
+2 -17 763 0
+-2 17 763 0
+763 22 -764 0
+-763 -22 -764 0
+763 -22 764 0
+-763 22 764 0
+-764 0
+3 18 -765 0
+-3 -18 -765 0
+3 -18 765 0
+-3 18 765 0
+765 23 -766 0
+-765 -23 -766 0
+765 -23 766 0
+-765 23 766 0
+-766 0
+4 19 -767 0
+-4 -19 -767 0
+4 -19 767 0
+-4 19 767 0
+767 24 -768 0
+-767 -24 -768 0
+767 -24 768 0
+-767 24 768 0
+-768 0
+5 20 -769 0
+-5 -20 -769 0
+5 -20 769 0
+-5 20 769 0
+769 25 -770 0
+-769 -25 -770 0
+769 -25 770 0
+-769 25 770 0
+-770 0
+26 31 -771 0
+-26 -31 -771 0
+26 -31 771 0
+-26 31 771 0
+771 36 -772 0
+-771 -36 -772 0
+771 -36 772 0
+-771 36 772 0
+-772 0
+27 32 -773 0
+-27 -32 -773 0
+27 -32 773 0
+-27 32 773 0
+773 37 -774 0
+-773 -37 -774 0
+773 -37 774 0
+-773 37 774 0
+-774 0
+28 33 -775 0
+-28 -33 -775 0
+28 -33 775 0
+-28 33 775 0
+775 38 -776 0
+-775 -38 -776 0
+775 -38 776 0
+-775 38 776 0
+-776 0
+29 34 -777 0
+-29 -34 -777 0
+29 -34 777 0
+-29 34 777 0
+777 39 -778 0
+-777 -39 -778 0
+777 -39 778 0
+-777 39 778 0
+-778 0
+30 35 -779 0
+-30 -35 -779 0
+30 -35 779 0
+-30 35 779 0
+779 40 -780 0
+-779 -40 -780 0
+779 -40 780 0
+-779 40 780 0
+-780 0
+6 41 -781 0
+-6 -41 -781 0
+6 -41 781 0
+-6 41 781 0
+781 46 -782 0
+-781 -46 -782 0
+781 -46 782 0
+-781 46 782 0
+-782 0
+7 42 -783 0
+-7 -42 -783 0
+7 -42 783 0
+-7 42 783 0
+783 47 -784 0
+-783 -47 -784 0
+783 -47 784 0
+-783 47 784 0
+-784 0
+8 43 -785 0
+-8 -43 -785 0
+8 -43 785 0
+-8 43 785 0
+785 48 -786 0
+-785 -48 -786 0
+785 -48 786 0
+-785 48 786 0
+-786 0
+9 44 -787 0
+-9 -44 -787 0
+9 -44 787 0
+-9 44 787 0
+787 49 -788 0
+-787 -49 -788 0
+787 -49 788 0
+-787 49 788 0
+-788 0
+10 45 -789 0
+-10 -45 -789 0
+10 -45 789 0
+-10 45 789 0
+789 50 -790 0
+-789 -50 -790 0
+789 -50 790 0
+-789 50 790 0
+-790 0
+16 51 -791 0
+-16 -51 -791 0
+16 -51 791 0
+-16 51 791 0
+791 56 -792 0
+-791 -56 -792 0
+791 -56 792 0
+-791 56 792 0
+-792 0
+17 52 -793 0
+-17 -52 -793 0
+17 -52 793 0
+-17 52 793 0
+793 57 -794 0
+-793 -57 -794 0
+793 -57 794 0
+-793 57 794 0
+-794 0
+18 53 -795 0
+-18 -53 -795 0
+18 -53 795 0
+-18 53 795 0
+795 58 -796 0
+-795 -58 -796 0
+795 -58 796 0
+-795 58 796 0
+-796 0
+19 54 -797 0
+-19 -54 -797 0
+19 -54 797 0
+-19 54 797 0
+797 59 -798 0
+-797 -59 -798 0
+797 -59 798 0
+-797 59 798 0
+-798 0
+20 55 -799 0
+-20 -55 -799 0
+20 -55 799 0
+-20 55 799 0
+799 60 -800 0
+-799 -60 -800 0
+799 -60 800 0
+-799 60 800 0
+-800 0
+26 41 -801 0
+-26 -41 -801 0
+26 -41 801 0
+-26 41 801 0
+801 61 -802 0
+-801 -61 -802 0
+801 -61 802 0
+-801 61 802 0
+-802 0
+27 42 -803 0
+-27 -42 -803 0
+27 -42 803 0
+-27 42 803 0
+803 62 -804 0
+-803 -62 -804 0
+803 -62 804 0
+-803 62 804 0
+-804 0
+28 43 -805 0
+-28 -43 -805 0
+28 -43 805 0
+-28 43 805 0
+805 63 -806 0
+-805 -63 -806 0
+805 -63 806 0
+-805 63 806 0
+-806 0
+29 44 -807 0
+-29 -44 -807 0
+29 -44 807 0
+-29 44 807 0
+807 64 -808 0
+-807 -64 -808 0
+807 -64 808 0
+-807 64 808 0
+-808 0
+30 45 -809 0
+-30 -45 -809 0
+30 -45 809 0
+-30 45 809 0
+809 65 -810 0
+-809 -65 -810 0
+809 -65 810 0
+-809 65 810 0
+-810 0
+46 51 -811 0
+-46 -51 -811 0
+46 -51 811 0
+-46 51 811 0
+811 66 -812 0
+-811 -66 -812 0
+811 -66 812 0
+-811 66 812 0
+-812 0
+47 52 -813 0
+-47 -52 -813 0
+47 -52 813 0
+-47 52 813 0
+813 67 -814 0
+-813 -67 -814 0
+813 -67 814 0
+-813 67 814 0
+-814 0
+48 53 -815 0
+-48 -53 -815 0
+48 -53 815 0
+-48 53 815 0
+815 68 -816 0
+-815 -68 -816 0
+815 -68 816 0
+-815 68 816 0
+-816 0
+49 54 -817 0
+-49 -54 -817 0
+49 -54 817 0
+-49 54 817 0
+817 69 -818 0
+-817 -69 -818 0
+817 -69 818 0
+-817 69 818 0
+-818 0
+50 55 -819 0
+-50 -55 -819 0
+50 -55 819 0
+-50 55 819 0
+819 70 -820 0
+-819 -70 -820 0
+819 -70 820 0
+-819 70 820 0
+-820 0
+71 76 -821 0
+-71 -76 -821 0
+71 -76 821 0
+-71 76 821 0
+821 81 -822 0
+-821 -81 -822 0
+821 -81 822 0
+-821 81 822 0
+-822 0
+72 77 -823 0
+-72 -77 -823 0
+72 -77 823 0
+-72 77 823 0
+823 82 -824 0
+-823 -82 -824 0
+823 -82 824 0
+-823 82 824 0
+-824 0
+73 78 -825 0
+-73 -78 -825 0
+73 -78 825 0
+-73 78 825 0
+825 83 -826 0
+-825 -83 -826 0
+825 -83 826 0
+-825 83 826 0
+-826 0
+74 79 -827 0
+-74 -79 -827 0
+74 -79 827 0
+-74 79 827 0
+827 84 -828 0
+-827 -84 -828 0
+827 -84 828 0
+-827 84 828 0
+-828 0
+75 80 -829 0
+-75 -80 -829 0
+75 -80 829 0
+-75 80 829 0
+829 85 -830 0
+-829 -85 -830 0
+829 -85 830 0
+-829 85 830 0
+-830 0
+71 86 -831 0
+-71 -86 -831 0
+71 -86 831 0
+-71 86 831 0
+831 91 -832 0
+-831 -91 -832 0
+831 -91 832 0
+-831 91 832 0
+-832 0
+72 87 -833 0
+-72 -87 -833 0
+72 -87 833 0
+-72 87 833 0
+833 92 -834 0
+-833 -92 -834 0
+833 -92 834 0
+-833 92 834 0
+-834 0
+73 88 -835 0
+-73 -88 -835 0
+73 -88 835 0
+-73 88 835 0
+835 93 -836 0
+-835 -93 -836 0
+835 -93 836 0
+-835 93 836 0
+-836 0
+74 89 -837 0
+-74 -89 -837 0
+74 -89 837 0
+-74 89 837 0
+837 94 -838 0
+-837 -94 -838 0
+837 -94 838 0
+-837 94 838 0
+-838 0
+75 90 -839 0
+-75 -90 -839 0
+75 -90 839 0
+-75 90 839 0
+839 95 -840 0
+-839 -95 -840 0
+839 -95 840 0
+-839 95 840 0
+-840 0
+86 96 -841 0
+-86 -96 -841 0
+86 -96 841 0
+-86 96 841 0
+841 101 -842 0
+-841 -101 -842 0
+841 -101 842 0
+-841 101 842 0
+-842 0
+87 97 -843 0
+-87 -97 -843 0
+87 -97 843 0
+-87 97 843 0
+843 102 -844 0
+-843 -102 -844 0
+843 -102 844 0
+-843 102 844 0
+-844 0
+88 98 -845 0
+-88 -98 -845 0
+88 -98 845 0
+-88 98 845 0
+845 103 -846 0
+-845 -103 -846 0
+845 -103 846 0
+-845 103 846 0
+-846 0
+89 99 -847 0
+-89 -99 -847 0
+89 -99 847 0
+-89 99 847 0
+847 104 -848 0
+-847 -104 -848 0
+847 -104 848 0
+-847 104 848 0
+-848 0
+90 100 -849 0
+-90 -100 -849 0
+90 -100 849 0
+-90 100 849 0
+849 105 -850 0
+-849 -105 -850 0
+849 -105 850 0
+-849 105 850 0
+-850 0
+11 106 -851 0
+-11 -106 -851 0
+11 -106 851 0
+-11 106 851 0
+851 111 -852 0
+-851 -111 -852 0
+851 -111 852 0
+-851 111 852 0
+-852 0
+12 107 -853 0
+-12 -107 -853 0
+12 -107 853 0
+-12 107 853 0
+853 112 -854 0
+-853 -112 -854 0
+853 -112 854 0
+-853 112 854 0
+-854 0
+13 108 -855 0
+-13 -108 -855 0
+13 -108 855 0
+-13 108 855 0
+855 113 -856 0
+-855 -113 -856 0
+855 -113 856 0
+-855 113 856 0
+-856 0
+14 109 -857 0
+-14 -109 -857 0
+14 -109 857 0
+-14 109 857 0
+857 114 -858 0
+-857 -114 -858 0
+857 -114 858 0
+-857 114 858 0
+-858 0
+15 110 -859 0
+-15 -110 -859 0
+15 -110 859 0
+-15 110 859 0
+859 115 -860 0
+-859 -115 -860 0
+859 -115 860 0
+-859 115 860 0
+-860 0
+116 121 -861 0
+-116 -121 -861 0
+116 -121 861 0
+-116 121 861 0
+861 126 -862 0
+-861 -126 -862 0
+861 -126 862 0
+-861 126 862 0
+-862 0
+117 122 -863 0
+-117 -122 -863 0
+117 -122 863 0
+-117 122 863 0
+863 127 -864 0
+-863 -127 -864 0
+863 -127 864 0
+-863 127 864 0
+-864 0
+118 123 -865 0
+-118 -123 -865 0
+118 -123 865 0
+-118 123 865 0
+865 128 -866 0
+-865 -128 -866 0
+865 -128 866 0
+-865 128 866 0
+-866 0
+119 124 -867 0
+-119 -124 -867 0
+119 -124 867 0
+-119 124 867 0
+867 129 -868 0
+-867 -129 -868 0
+867 -129 868 0
+-867 129 868 0
+-868 0
+120 125 -869 0
+-120 -125 -869 0
+120 -125 869 0
+-120 125 869 0
+869 130 -870 0
+-869 -130 -870 0
+869 -130 870 0
+-869 130 870 0
+-870 0
+76 106 -871 0
+-76 -106 -871 0
+76 -106 871 0
+-76 106 871 0
+871 131 -872 0
+-871 -131 -872 0
+871 -131 872 0
+-871 131 872 0
+-872 0
+77 107 -873 0
+-77 -107 -873 0
+77 -107 873 0
+-77 107 873 0
+873 132 -874 0
+-873 -132 -874 0
+873 -132 874 0
+-873 132 874 0
+-874 0
+78 108 -875 0
+-78 -108 -875 0
+78 -108 875 0
+-78 108 875 0
+875 133 -876 0
+-875 -133 -876 0
+875 -133 876 0
+-875 133 876 0
+-876 0
+79 109 -877 0
+-79 -109 -877 0
+79 -109 877 0
+-79 109 877 0
+877 134 -878 0
+-877 -134 -878 0
+877 -134 878 0
+-877 134 878 0
+-878 0
+80 110 -879 0
+-80 -110 -879 0
+80 -110 879 0
+-80 110 879 0
+879 135 -880 0
+-879 -135 -880 0
+879 -135 880 0
+-879 135 880 0
+-880 0
+91 111 -881 0
+-91 -111 -881 0
+91 -111 881 0
+-91 111 881 0
+881 116 -882 0
+-881 -116 -882 0
+881 -116 882 0
+-881 116 882 0
+-882 0
+92 112 -883 0
+-92 -112 -883 0
+92 -112 883 0
+-92 112 883 0
+883 117 -884 0
+-883 -117 -884 0
+883 -117 884 0
+-883 117 884 0
+-884 0
+93 113 -885 0
+-93 -113 -885 0
+93 -113 885 0
+-93 113 885 0
+885 118 -886 0
+-885 -118 -886 0
+885 -118 886 0
+-885 118 886 0
+-886 0
+94 114 -887 0
+-94 -114 -887 0
+94 -114 887 0
+-94 114 887 0
+887 119 -888 0
+-887 -119 -888 0
+887 -119 888 0
+-887 119 888 0
+-888 0
+95 115 -889 0
+-95 -115 -889 0
+95 -115 889 0
+-95 115 889 0
+889 120 -890 0
+-889 -120 -890 0
+889 -120 890 0
+-889 120 890 0
+-890 0
+96 121 -891 0
+-96 -121 -891 0
+96 -121 891 0
+-96 121 891 0
+891 131 -892 0
+-891 -131 -892 0
+891 -131 892 0
+-891 131 892 0
+-892 0
+97 122 -893 0
+-97 -122 -893 0
+97 -122 893 0
+-97 122 893 0
+893 132 -894 0
+-893 -132 -894 0
+893 -132 894 0
+-893 132 894 0
+-894 0
+98 123 -895 0
+-98 -123 -895 0
+98 -123 895 0
+-98 123 895 0
+895 133 -896 0
+-895 -133 -896 0
+895 -133 896 0
+-895 133 896 0
+-896 0
+99 124 -897 0
+-99 -124 -897 0
+99 -124 897 0
+-99 124 897 0
+897 134 -898 0
+-897 -134 -898 0
+897 -134 898 0
+-897 134 898 0
+-898 0
+100 125 -899 0
+-100 -125 -899 0
+100 -125 899 0
+-100 125 899 0
+899 135 -900 0
+-899 -135 -900 0
+899 -135 900 0
+-899 135 900 0
+-900 0
+136 141 -901 0
+-136 -141 -901 0
+136 -141 901 0
+-136 141 901 0
+901 146 -902 0
+-901 -146 -902 0
+901 -146 902 0
+-901 146 902 0
+-902 0
+137 142 -903 0
+-137 -142 -903 0
+137 -142 903 0
+-137 142 903 0
+903 147 -904 0
+-903 -147 -904 0
+903 -147 904 0
+-903 147 904 0
+-904 0
+138 143 -905 0
+-138 -143 -905 0
+138 -143 905 0
+-138 143 905 0
+905 148 -906 0
+-905 -148 -906 0
+905 -148 906 0
+-905 148 906 0
+-906 0
+139 144 -907 0
+-139 -144 -907 0
+139 -144 907 0
+-139 144 907 0
+907 149 -908 0
+-907 -149 -908 0
+907 -149 908 0
+-907 149 908 0
+-908 0
+140 145 -909 0
+-140 -145 -909 0
+140 -145 909 0
+-140 145 909 0
+909 150 -910 0
+-909 -150 -910 0
+909 -150 910 0
+-909 150 910 0
+-910 0
+136 151 -911 0
+-136 -151 -911 0
+136 -151 911 0
+-136 151 911 0
+911 156 -912 0
+-911 -156 -912 0
+911 -156 912 0
+-911 156 912 0
+-912 0
+137 152 -913 0
+-137 -152 -913 0
+137 -152 913 0
+-137 152 913 0
+913 157 -914 0
+-913 -157 -914 0
+913 -157 914 0
+-913 157 914 0
+-914 0
+138 153 -915 0
+-138 -153 -915 0
+138 -153 915 0
+-138 153 915 0
+915 158 -916 0
+-915 -158 -916 0
+915 -158 916 0
+-915 158 916 0
+-916 0
+139 154 -917 0
+-139 -154 -917 0
+139 -154 917 0
+-139 154 917 0
+917 159 -918 0
+-917 -159 -918 0
+917 -159 918 0
+-917 159 918 0
+-918 0
+140 155 -919 0
+-140 -155 -919 0
+140 -155 919 0
+-140 155 919 0
+919 160 -920 0
+-919 -160 -920 0
+919 -160 920 0
+-919 160 920 0
+-920 0
+21 151 -921 0
+-21 -151 -921 0
+21 -151 921 0
+-21 151 921 0
+921 161 -922 0
+-921 -161 -922 0
+921 -161 922 0
+-921 161 922 0
+-922 0
+22 152 -923 0
+-22 -152 -923 0
+22 -152 923 0
+-22 152 923 0
+923 162 -924 0
+-923 -162 -924 0
+923 -162 924 0
+-923 162 924 0
+-924 0
+23 153 -925 0
+-23 -153 -925 0
+23 -153 925 0
+-23 153 925 0
+925 163 -926 0
+-925 -163 -926 0
+925 -163 926 0
+-925 163 926 0
+-926 0
+24 154 -927 0
+-24 -154 -927 0
+24 -154 927 0
+-24 154 927 0
+927 164 -928 0
+-927 -164 -928 0
+927 -164 928 0
+-927 164 928 0
+-928 0
+25 155 -929 0
+-25 -155 -929 0
+25 -155 929 0
+-25 155 929 0
+929 165 -930 0
+-929 -165 -930 0
+929 -165 930 0
+-929 165 930 0
+-930 0
+31 166 -931 0
+-31 -166 -931 0
+31 -166 931 0
+-31 166 931 0
+931 171 -932 0
+-931 -171 -932 0
+931 -171 932 0
+-931 171 932 0
+-932 0
+32 167 -933 0
+-32 -167 -933 0
+32 -167 933 0
+-32 167 933 0
+933 172 -934 0
+-933 -172 -934 0
+933 -172 934 0
+-933 172 934 0
+-934 0
+33 168 -935 0
+-33 -168 -935 0
+33 -168 935 0
+-33 168 935 0
+935 173 -936 0
+-935 -173 -936 0
+935 -173 936 0
+-935 173 936 0
+-936 0
+34 169 -937 0
+-34 -169 -937 0
+34 -169 937 0
+-34 169 937 0
+937 174 -938 0
+-937 -174 -938 0
+937 -174 938 0
+-937 174 938 0
+-938 0
+35 170 -939 0
+-35 -170 -939 0
+35 -170 939 0
+-35 170 939 0
+939 175 -940 0
+-939 -175 -940 0
+939 -175 940 0
+-939 175 940 0
+-940 0
+176 181 -941 0
+-176 -181 -941 0
+176 -181 941 0
+-176 181 941 0
+941 186 -942 0
+-941 -186 -942 0
+941 -186 942 0
+-941 186 942 0
+-942 0
+177 182 -943 0
+-177 -182 -943 0
+177 -182 943 0
+-177 182 943 0
+943 187 -944 0
+-943 -187 -944 0
+943 -187 944 0
+-943 187 944 0
+-944 0
+178 183 -945 0
+-178 -183 -945 0
+178 -183 945 0
+-178 183 945 0
+945 188 -946 0
+-945 -188 -946 0
+945 -188 946 0
+-945 188 946 0
+-946 0
+179 184 -947 0
+-179 -184 -947 0
+179 -184 947 0
+-179 184 947 0
+947 189 -948 0
+-947 -189 -948 0
+947 -189 948 0
+-947 189 948 0
+-948 0
+180 185 -949 0
+-180 -185 -949 0
+180 -185 949 0
+-180 185 949 0
+949 190 -950 0
+-949 -190 -950 0
+949 -190 950 0
+-949 190 950 0
+-950 0
+141 166 -951 0
+-141 -166 -951 0
+141 -166 951 0
+-141 166 951 0
+951 191 -952 0
+-951 -191 -952 0
+951 -191 952 0
+-951 191 952 0
+-952 0
+142 167 -953 0
+-142 -167 -953 0
+142 -167 953 0
+-142 167 953 0
+953 192 -954 0
+-953 -192 -954 0
+953 -192 954 0
+-953 192 954 0
+-954 0
+143 168 -955 0
+-143 -168 -955 0
+143 -168 955 0
+-143 168 955 0
+955 193 -956 0
+-955 -193 -956 0
+955 -193 956 0
+-955 193 956 0
+-956 0
+144 169 -957 0
+-144 -169 -957 0
+144 -169 957 0
+-144 169 957 0
+957 194 -958 0
+-957 -194 -958 0
+957 -194 958 0
+-957 194 958 0
+-958 0
+145 170 -959 0
+-145 -170 -959 0
+145 -170 959 0
+-145 170 959 0
+959 195 -960 0
+-959 -195 -960 0
+959 -195 960 0
+-959 195 960 0
+-960 0
+156 171 -961 0
+-156 -171 -961 0
+156 -171 961 0
+-156 171 961 0
+961 176 -962 0
+-961 -176 -962 0
+961 -176 962 0
+-961 176 962 0
+-962 0
+157 172 -963 0
+-157 -172 -963 0
+157 -172 963 0
+-157 172 963 0
+963 177 -964 0
+-963 -177 -964 0
+963 -177 964 0
+-963 177 964 0
+-964 0
+158 173 -965 0
+-158 -173 -965 0
+158 -173 965 0
+-158 173 965 0
+965 178 -966 0
+-965 -178 -966 0
+965 -178 966 0
+-965 178 966 0
+-966 0
+159 174 -967 0
+-159 -174 -967 0
+159 -174 967 0
+-159 174 967 0
+967 179 -968 0
+-967 -179 -968 0
+967 -179 968 0
+-967 179 968 0
+-968 0
+160 175 -969 0
+-160 -175 -969 0
+160 -175 969 0
+-160 175 969 0
+969 180 -970 0
+-969 -180 -970 0
+969 -180 970 0
+-969 180 970 0
+-970 0
+161 181 -971 0
+-161 -181 -971 0
+161 -181 971 0
+-161 181 971 0
+971 191 -972 0
+-971 -191 -972 0
+971 -191 972 0
+-971 191 972 0
+-972 0
+162 182 -973 0
+-162 -182 -973 0
+162 -182 973 0
+-162 182 973 0
+973 192 -974 0
+-973 -192 -974 0
+973 -192 974 0
+-973 192 974 0
+-974 0
+163 183 -975 0
+-163 -183 -975 0
+163 -183 975 0
+-163 183 975 0
+975 193 -976 0
+-975 -193 -976 0
+975 -193 976 0
+-975 193 976 0
+-976 0
+164 184 -977 0
+-164 -184 -977 0
+164 -184 977 0
+-164 184 977 0
+977 194 -978 0
+-977 -194 -978 0
+977 -194 978 0
+-977 194 978 0
+-978 0
+165 185 -979 0
+-165 -185 -979 0
+165 -185 979 0
+-165 185 979 0
+979 195 -980 0
+-979 -195 -980 0
+979 -195 980 0
+-979 195 980 0
+-980 0
+196 201 -981 0
+-196 -201 -981 0
+196 -201 981 0
+-196 201 981 0
+981 206 -982 0
+-981 -206 -982 0
+981 -206 982 0
+-981 206 982 0
+-982 0
+197 202 -983 0
+-197 -202 -983 0
+197 -202 983 0
+-197 202 983 0
+983 207 -984 0
+-983 -207 -984 0
+983 -207 984 0
+-983 207 984 0
+-984 0
+198 203 -985 0
+-198 -203 -985 0
+198 -203 985 0
+-198 203 985 0
+985 208 -986 0
+-985 -208 -986 0
+985 -208 986 0
+-985 208 986 0
+-986 0
+199 204 -987 0
+-199 -204 -987 0
+199 -204 987 0
+-199 204 987 0
+987 209 -988 0
+-987 -209 -988 0
+987 -209 988 0
+-987 209 988 0
+-988 0
+200 205 -989 0
+-200 -205 -989 0
+200 -205 989 0
+-200 205 989 0
+989 210 -990 0
+-989 -210 -990 0
+989 -210 990 0
+-989 210 990 0
+-990 0
+211 216 -991 0
+-211 -216 -991 0
+211 -216 991 0
+-211 216 991 0
+991 221 -992 0
+-991 -221 -992 0
+991 -221 992 0
+-991 221 992 0
+-992 0
+212 217 -993 0
+-212 -217 -993 0
+212 -217 993 0
+-212 217 993 0
+993 222 -994 0
+-993 -222 -994 0
+993 -222 994 0
+-993 222 994 0
+-994 0
+213 218 -995 0
+-213 -218 -995 0
+213 -218 995 0
+-213 218 995 0
+995 223 -996 0
+-995 -223 -996 0
+995 -223 996 0
+-995 223 996 0
+-996 0
+214 219 -997 0
+-214 -219 -997 0
+214 -219 997 0
+-214 219 997 0
+997 224 -998 0
+-997 -224 -998 0
+997 -224 998 0
+-997 224 998 0
+-998 0
+215 220 -999 0
+-215 -220 -999 0
+215 -220 999 0
+-215 220 999 0
+999 225 -1000 0
+-999 -225 -1000 0
+999 -225 1000 0
+-999 225 1000 0
+-1000 0
+211 226 -1001 0
+-211 -226 -1001 0
+211 -226 1001 0
+-211 226 1001 0
+1001 231 -1002 0
+-1001 -231 -1002 0
+1001 -231 1002 0
+-1001 231 1002 0
+-1002 0
+212 227 -1003 0
+-212 -227 -1003 0
+212 -227 1003 0
+-212 227 1003 0
+1003 232 -1004 0
+-1003 -232 -1004 0
+1003 -232 1004 0
+-1003 232 1004 0
+-1004 0
+213 228 -1005 0
+-213 -228 -1005 0
+213 -228 1005 0
+-213 228 1005 0
+1005 233 -1006 0
+-1005 -233 -1006 0
+1005 -233 1006 0
+-1005 233 1006 0
+-1006 0
+214 229 -1007 0
+-214 -229 -1007 0
+214 -229 1007 0
+-214 229 1007 0
+1007 234 -1008 0
+-1007 -234 -1008 0
+1007 -234 1008 0
+-1007 234 1008 0
+-1008 0
+215 230 -1009 0
+-215 -230 -1009 0
+215 -230 1009 0
+-215 230 1009 0
+1009 235 -1010 0
+-1009 -235 -1010 0
+1009 -235 1010 0
+-1009 235 1010 0
+-1010 0
+236 241 -1011 0
+-236 -241 -1011 0
+236 -241 1011 0
+-236 241 1011 0
+1011 246 -1012 0
+-1011 -246 -1012 0
+1011 -246 1012 0
+-1011 246 1012 0
+-1012 0
+237 242 -1013 0
+-237 -242 -1013 0
+237 -242 1013 0
+-237 242 1013 0
+1013 247 -1014 0
+-1013 -247 -1014 0
+1013 -247 1014 0
+-1013 247 1014 0
+-1014 0
+238 243 -1015 0
+-238 -243 -1015 0
+238 -243 1015 0
+-238 243 1015 0
+1015 248 -1016 0
+-1015 -248 -1016 0
+1015 -248 1016 0
+-1015 248 1016 0
+-1016 0
+239 244 -1017 0
+-239 -244 -1017 0
+239 -244 1017 0
+-239 244 1017 0
+1017 249 -1018 0
+-1017 -249 -1018 0
+1017 -249 1018 0
+-1017 249 1018 0
+-1018 0
+240 245 -1019 0
+-240 -245 -1019 0
+240 -245 1019 0
+-240 245 1019 0
+1019 250 -1020 0
+-1019 -250 -1020 0
+1019 -250 1020 0
+-1019 250 1020 0
+-1020 0
+196 236 -1021 0
+-196 -236 -1021 0
+196 -236 1021 0
+-196 236 1021 0
+1021 251 -1022 0
+-1021 -251 -1022 0
+1021 -251 1022 0
+-1021 251 1022 0
+-1022 0
+197 237 -1023 0
+-197 -237 -1023 0
+197 -237 1023 0
+-197 237 1023 0
+1023 252 -1024 0
+-1023 -252 -1024 0
+1023 -252 1024 0
+-1023 252 1024 0
+-1024 0
+198 238 -1025 0
+-198 -238 -1025 0
+198 -238 1025 0
+-198 238 1025 0
+1025 253 -1026 0
+-1025 -253 -1026 0
+1025 -253 1026 0
+-1025 253 1026 0
+-1026 0
+199 239 -1027 0
+-199 -239 -1027 0
+199 -239 1027 0
+-199 239 1027 0
+1027 254 -1028 0
+-1027 -254 -1028 0
+1027 -254 1028 0
+-1027 254 1028 0
+-1028 0
+200 240 -1029 0
+-200 -240 -1029 0
+200 -240 1029 0
+-200 240 1029 0
+1029 255 -1030 0
+-1029 -255 -1030 0
+1029 -255 1030 0
+-1029 255 1030 0
+-1030 0
+201 256 -1031 0
+-201 -256 -1031 0
+201 -256 1031 0
+-201 256 1031 0
+1031 261 -1032 0
+-1031 -261 -1032 0
+1031 -261 1032 0
+-1031 261 1032 0
+-1032 0
+202 257 -1033 0
+-202 -257 -1033 0
+202 -257 1033 0
+-202 257 1033 0
+1033 262 -1034 0
+-1033 -262 -1034 0
+1033 -262 1034 0
+-1033 262 1034 0
+-1034 0
+203 258 -1035 0
+-203 -258 -1035 0
+203 -258 1035 0
+-203 258 1035 0
+1035 263 -1036 0
+-1035 -263 -1036 0
+1035 -263 1036 0
+-1035 263 1036 0
+-1036 0
+204 259 -1037 0
+-204 -259 -1037 0
+204 -259 1037 0
+-204 259 1037 0
+1037 264 -1038 0
+-1037 -264 -1038 0
+1037 -264 1038 0
+-1037 264 1038 0
+-1038 0
+205 260 -1039 0
+-205 -260 -1039 0
+205 -260 1039 0
+-205 260 1039 0
+1039 265 -1040 0
+-1039 -265 -1040 0
+1039 -265 1040 0
+-1039 265 1040 0
+-1040 0
+216 266 -1041 0
+-216 -266 -1041 0
+216 -266 1041 0
+-216 266 1041 0
+1041 271 -1042 0
+-1041 -271 -1042 0
+1041 -271 1042 0
+-1041 271 1042 0
+-1042 0
+217 267 -1043 0
+-217 -267 -1043 0
+217 -267 1043 0
+-217 267 1043 0
+1043 272 -1044 0
+-1043 -272 -1044 0
+1043 -272 1044 0
+-1043 272 1044 0
+-1044 0
+218 268 -1045 0
+-218 -268 -1045 0
+218 -268 1045 0
+-218 268 1045 0
+1045 273 -1046 0
+-1045 -273 -1046 0
+1045 -273 1046 0
+-1045 273 1046 0
+-1046 0
+219 269 -1047 0
+-219 -269 -1047 0
+219 -269 1047 0
+-219 269 1047 0
+1047 274 -1048 0
+-1047 -274 -1048 0
+1047 -274 1048 0
+-1047 274 1048 0
+-1048 0
+220 270 -1049 0
+-220 -270 -1049 0
+220 -270 1049 0
+-220 270 1049 0
+1049 275 -1050 0
+-1049 -275 -1050 0
+1049 -275 1050 0
+-1049 275 1050 0
+-1050 0
+226 256 -1051 0
+-226 -256 -1051 0
+226 -256 1051 0
+-226 256 1051 0
+1051 276 -1052 0
+-1051 -276 -1052 0
+1051 -276 1052 0
+-1051 276 1052 0
+-1052 0
+227 257 -1053 0
+-227 -257 -1053 0
+227 -257 1053 0
+-227 257 1053 0
+1053 277 -1054 0
+-1053 -277 -1054 0
+1053 -277 1054 0
+-1053 277 1054 0
+-1054 0
+228 258 -1055 0
+-228 -258 -1055 0
+228 -258 1055 0
+-228 258 1055 0
+1055 278 -1056 0
+-1055 -278 -1056 0
+1055 -278 1056 0
+-1055 278 1056 0
+-1056 0
+229 259 -1057 0
+-229 -259 -1057 0
+229 -259 1057 0
+-229 259 1057 0
+1057 279 -1058 0
+-1057 -279 -1058 0
+1057 -279 1058 0
+-1057 279 1058 0
+-1058 0
+230 260 -1059 0
+-230 -260 -1059 0
+230 -260 1059 0
+-230 260 1059 0
+1059 280 -1060 0
+-1059 -280 -1060 0
+1059 -280 1060 0
+-1059 280 1060 0
+-1060 0
+241 261 -1061 0
+-241 -261 -1061 0
+241 -261 1061 0
+-241 261 1061 0
+1061 266 -1062 0
+-1061 -266 -1062 0
+1061 -266 1062 0
+-1061 266 1062 0
+-1062 0
+242 262 -1063 0
+-242 -262 -1063 0
+242 -262 1063 0
+-242 262 1063 0
+1063 267 -1064 0
+-1063 -267 -1064 0
+1063 -267 1064 0
+-1063 267 1064 0
+-1064 0
+243 263 -1065 0
+-243 -263 -1065 0
+243 -263 1065 0
+-243 263 1065 0
+1065 268 -1066 0
+-1065 -268 -1066 0
+1065 -268 1066 0
+-1065 268 1066 0
+-1066 0
+244 264 -1067 0
+-244 -264 -1067 0
+244 -264 1067 0
+-244 264 1067 0
+1067 269 -1068 0
+-1067 -269 -1068 0
+1067 -269 1068 0
+-1067 269 1068 0
+-1068 0
+245 265 -1069 0
+-245 -265 -1069 0
+245 -265 1069 0
+-245 265 1069 0
+1069 270 -1070 0
+-1069 -270 -1070 0
+1069 -270 1070 0
+-1069 270 1070 0
+-1070 0
+251 271 -1071 0
+-251 -271 -1071 0
+251 -271 1071 0
+-251 271 1071 0
+1071 276 -1072 0
+-1071 -276 -1072 0
+1071 -276 1072 0
+-1071 276 1072 0
+-1072 0
+252 272 -1073 0
+-252 -272 -1073 0
+252 -272 1073 0
+-252 272 1073 0
+1073 277 -1074 0
+-1073 -277 -1074 0
+1073 -277 1074 0
+-1073 277 1074 0
+-1074 0
+253 273 -1075 0
+-253 -273 -1075 0
+253 -273 1075 0
+-253 273 1075 0
+1075 278 -1076 0
+-1075 -278 -1076 0
+1075 -278 1076 0
+-1075 278 1076 0
+-1076 0
+254 274 -1077 0
+-254 -274 -1077 0
+254 -274 1077 0
+-254 274 1077 0
+1077 279 -1078 0
+-1077 -279 -1078 0
+1077 -279 1078 0
+-1077 279 1078 0
+-1078 0
+255 275 -1079 0
+-255 -275 -1079 0
+255 -275 1079 0
+-255 275 1079 0
+1079 280 -1080 0
+-1079 -280 -1080 0
+1079 -280 1080 0
+-1079 280 1080 0
+-1080 0
+146 281 -1081 0
+-146 -281 -1081 0
+146 -281 1081 0
+-146 281 1081 0
+1081 286 -1082 0
+-1081 -286 -1082 0
+1081 -286 1082 0
+-1081 286 1082 0
+-1082 0
+147 282 -1083 0
+-147 -282 -1083 0
+147 -282 1083 0
+-147 282 1083 0
+1083 287 -1084 0
+-1083 -287 -1084 0
+1083 -287 1084 0
+-1083 287 1084 0
+-1084 0
+148 283 -1085 0
+-148 -283 -1085 0
+148 -283 1085 0
+-148 283 1085 0
+1085 288 -1086 0
+-1085 -288 -1086 0
+1085 -288 1086 0
+-1085 288 1086 0
+-1086 0
+149 284 -1087 0
+-149 -284 -1087 0
+149 -284 1087 0
+-149 284 1087 0
+1087 289 -1088 0
+-1087 -289 -1088 0
+1087 -289 1088 0
+-1087 289 1088 0
+-1088 0
+150 285 -1089 0
+-150 -285 -1089 0
+150 -285 1089 0
+-150 285 1089 0
+1089 290 -1090 0
+-1089 -290 -1090 0
+1089 -290 1090 0
+-1089 290 1090 0
+-1090 0
+281 291 -1091 0
+-281 -291 -1091 0
+281 -291 1091 0
+-281 291 1091 0
+1091 296 -1092 0
+-1091 -296 -1092 0
+1091 -296 1092 0
+-1091 296 1092 0
+-1092 0
+282 292 -1093 0
+-282 -292 -1093 0
+282 -292 1093 0
+-282 292 1093 0
+1093 297 -1094 0
+-1093 -297 -1094 0
+1093 -297 1094 0
+-1093 297 1094 0
+-1094 0
+283 293 -1095 0
+-283 -293 -1095 0
+283 -293 1095 0
+-283 293 1095 0
+1095 298 -1096 0
+-1095 -298 -1096 0
+1095 -298 1096 0
+-1095 298 1096 0
+-1096 0
+284 294 -1097 0
+-284 -294 -1097 0
+284 -294 1097 0
+-284 294 1097 0
+1097 299 -1098 0
+-1097 -299 -1098 0
+1097 -299 1098 0
+-1097 299 1098 0
+-1098 0
+285 295 -1099 0
+-285 -295 -1099 0
+285 -295 1099 0
+-285 295 1099 0
+1099 300 -1100 0
+-1099 -300 -1100 0
+1099 -300 1100 0
+-1099 300 1100 0
+-1100 0
+206 291 -1101 0
+-206 -291 -1101 0
+206 -291 1101 0
+-206 291 1101 0
+1101 301 -1102 0
+-1101 -301 -1102 0
+1101 -301 1102 0
+-1101 301 1102 0
+-1102 0
+207 292 -1103 0
+-207 -292 -1103 0
+207 -292 1103 0
+-207 292 1103 0
+1103 302 -1104 0
+-1103 -302 -1104 0
+1103 -302 1104 0
+-1103 302 1104 0
+-1104 0
+208 293 -1105 0
+-208 -293 -1105 0
+208 -293 1105 0
+-208 293 1105 0
+1105 303 -1106 0
+-1105 -303 -1106 0
+1105 -303 1106 0
+-1105 303 1106 0
+-1106 0
+209 294 -1107 0
+-209 -294 -1107 0
+209 -294 1107 0
+-209 294 1107 0
+1107 304 -1108 0
+-1107 -304 -1108 0
+1107 -304 1108 0
+-1107 304 1108 0
+-1108 0
+210 295 -1109 0
+-210 -295 -1109 0
+210 -295 1109 0
+-210 295 1109 0
+1109 305 -1110 0
+-1109 -305 -1110 0
+1109 -305 1110 0
+-1109 305 1110 0
+-1110 0
+221 306 -1111 0
+-221 -306 -1111 0
+221 -306 1111 0
+-221 306 1111 0
+1111 311 -1112 0
+-1111 -311 -1112 0
+1111 -311 1112 0
+-1111 311 1112 0
+-1112 0
+222 307 -1113 0
+-222 -307 -1113 0
+222 -307 1113 0
+-222 307 1113 0
+1113 312 -1114 0
+-1113 -312 -1114 0
+1113 -312 1114 0
+-1113 312 1114 0
+-1114 0
+223 308 -1115 0
+-223 -308 -1115 0
+223 -308 1115 0
+-223 308 1115 0
+1115 313 -1116 0
+-1115 -313 -1116 0
+1115 -313 1116 0
+-1115 313 1116 0
+-1116 0
+224 309 -1117 0
+-224 -309 -1117 0
+224 -309 1117 0
+-224 309 1117 0
+1117 314 -1118 0
+-1117 -314 -1118 0
+1117 -314 1118 0
+-1117 314 1118 0
+-1118 0
+225 310 -1119 0
+-225 -310 -1119 0
+225 -310 1119 0
+-225 310 1119 0
+1119 315 -1120 0
+-1119 -315 -1120 0
+1119 -315 1120 0
+-1119 315 1120 0
+-1120 0
+186 316 -1121 0
+-186 -316 -1121 0
+186 -316 1121 0
+-186 316 1121 0
+1121 321 -1122 0
+-1121 -321 -1122 0
+1121 -321 1122 0
+-1121 321 1122 0
+-1122 0
+187 317 -1123 0
+-187 -317 -1123 0
+187 -317 1123 0
+-187 317 1123 0
+1123 322 -1124 0
+-1123 -322 -1124 0
+1123 -322 1124 0
+-1123 322 1124 0
+-1124 0
+188 318 -1125 0
+-188 -318 -1125 0
+188 -318 1125 0
+-188 318 1125 0
+1125 323 -1126 0
+-1125 -323 -1126 0
+1125 -323 1126 0
+-1125 323 1126 0
+-1126 0
+189 319 -1127 0
+-189 -319 -1127 0
+189 -319 1127 0
+-189 319 1127 0
+1127 324 -1128 0
+-1127 -324 -1128 0
+1127 -324 1128 0
+-1127 324 1128 0
+-1128 0
+190 320 -1129 0
+-190 -320 -1129 0
+190 -320 1129 0
+-190 320 1129 0
+1129 325 -1130 0
+-1129 -325 -1130 0
+1129 -325 1130 0
+-1129 325 1130 0
+-1130 0
+286 306 -1131 0
+-286 -306 -1131 0
+286 -306 1131 0
+-286 306 1131 0
+1131 326 -1132 0
+-1131 -326 -1132 0
+1131 -326 1132 0
+-1131 326 1132 0
+-1132 0
+287 307 -1133 0
+-287 -307 -1133 0
+287 -307 1133 0
+-287 307 1133 0
+1133 327 -1134 0
+-1133 -327 -1134 0
+1133 -327 1134 0
+-1133 327 1134 0
+-1134 0
+288 308 -1135 0
+-288 -308 -1135 0
+288 -308 1135 0
+-288 308 1135 0
+1135 328 -1136 0
+-1135 -328 -1136 0
+1135 -328 1136 0
+-1135 328 1136 0
+-1136 0
+289 309 -1137 0
+-289 -309 -1137 0
+289 -309 1137 0
+-289 309 1137 0
+1137 329 -1138 0
+-1137 -329 -1138 0
+1137 -329 1138 0
+-1137 329 1138 0
+-1138 0
+290 310 -1139 0
+-290 -310 -1139 0
+290 -310 1139 0
+-290 310 1139 0
+1139 330 -1140 0
+-1139 -330 -1140 0
+1139 -330 1140 0
+-1139 330 1140 0
+-1140 0
+296 311 -1141 0
+-296 -311 -1141 0
+296 -311 1141 0
+-296 311 1141 0
+1141 316 -1142 0
+-1141 -316 -1142 0
+1141 -316 1142 0
+-1141 316 1142 0
+-1142 0
+297 312 -1143 0
+-297 -312 -1143 0
+297 -312 1143 0
+-297 312 1143 0
+1143 317 -1144 0
+-1143 -317 -1144 0
+1143 -317 1144 0
+-1143 317 1144 0
+-1144 0
+298 313 -1145 0
+-298 -313 -1145 0
+298 -313 1145 0
+-298 313 1145 0
+1145 318 -1146 0
+-1145 -318 -1146 0
+1145 -318 1146 0
+-1145 318 1146 0
+-1146 0
+299 314 -1147 0
+-299 -314 -1147 0
+299 -314 1147 0
+-299 314 1147 0
+1147 319 -1148 0
+-1147 -319 -1148 0
+1147 -319 1148 0
+-1147 319 1148 0
+-1148 0
+300 315 -1149 0
+-300 -315 -1149 0
+300 -315 1149 0
+-300 315 1149 0
+1149 320 -1150 0
+-1149 -320 -1150 0
+1149 -320 1150 0
+-1149 320 1150 0
+-1150 0
+301 321 -1151 0
+-301 -321 -1151 0
+301 -321 1151 0
+-301 321 1151 0
+1151 326 -1152 0
+-1151 -326 -1152 0
+1151 -326 1152 0
+-1151 326 1152 0
+-1152 0
+302 322 -1153 0
+-302 -322 -1153 0
+302 -322 1153 0
+-302 322 1153 0
+1153 327 -1154 0
+-1153 -327 -1154 0
+1153 -327 1154 0
+-1153 327 1154 0
+-1154 0
+303 323 -1155 0
+-303 -323 -1155 0
+303 -323 1155 0
+-303 323 1155 0
+1155 328 -1156 0
+-1155 -328 -1156 0
+1155 -328 1156 0
+-1155 328 1156 0
+-1156 0
+304 324 -1157 0
+-304 -324 -1157 0
+304 -324 1157 0
+-304 324 1157 0
+1157 329 -1158 0
+-1157 -329 -1158 0
+1157 -329 1158 0
+-1157 329 1158 0
+-1158 0
+305 325 -1159 0
+-305 -325 -1159 0
+305 -325 1159 0
+-305 325 1159 0
+1159 330 -1160 0
+-1159 -330 -1160 0
+1159 -330 1160 0
+-1159 330 1160 0
+-1160 0
+331 336 -1161 0
+-331 -336 -1161 0
+331 -336 1161 0
+-331 336 1161 0
+1161 341 -1162 0
+-1161 -341 -1162 0
+1161 -341 1162 0
+-1161 341 1162 0
+-1162 0
+332 337 -1163 0
+-332 -337 -1163 0
+332 -337 1163 0
+-332 337 1163 0
+1163 342 -1164 0
+-1163 -342 -1164 0
+1163 -342 1164 0
+-1163 342 1164 0
+-1164 0
+333 338 -1165 0
+-333 -338 -1165 0
+333 -338 1165 0
+-333 338 1165 0
+1165 343 -1166 0
+-1165 -343 -1166 0
+1165 -343 1166 0
+-1165 343 1166 0
+-1166 0
+334 339 -1167 0
+-334 -339 -1167 0
+334 -339 1167 0
+-334 339 1167 0
+1167 344 -1168 0
+-1167 -344 -1168 0
+1167 -344 1168 0
+-1167 344 1168 0
+-1168 0
+335 340 -1169 0
+-335 -340 -1169 0
+335 -340 1169 0
+-335 340 1169 0
+1169 345 -1170 0
+-1169 -345 -1170 0
+1169 -345 1170 0
+-1169 345 1170 0
+-1170 0
+331 346 -1171 0
+-331 -346 -1171 0
+331 -346 1171 0
+-331 346 1171 0
+1171 351 -1172 0
+-1171 -351 -1172 0
+1171 -351 1172 0
+-1171 351 1172 0
+-1172 0
+332 347 -1173 0
+-332 -347 -1173 0
+332 -347 1173 0
+-332 347 1173 0
+1173 352 -1174 0
+-1173 -352 -1174 0
+1173 -352 1174 0
+-1173 352 1174 0
+-1174 0
+333 348 -1175 0
+-333 -348 -1175 0
+333 -348 1175 0
+-333 348 1175 0
+1175 353 -1176 0
+-1175 -353 -1176 0
+1175 -353 1176 0
+-1175 353 1176 0
+-1176 0
+334 349 -1177 0
+-334 -349 -1177 0
+334 -349 1177 0
+-334 349 1177 0
+1177 354 -1178 0
+-1177 -354 -1178 0
+1177 -354 1178 0
+-1177 354 1178 0
+-1178 0
+335 350 -1179 0
+-335 -350 -1179 0
+335 -350 1179 0
+-335 350 1179 0
+1179 355 -1180 0
+-1179 -355 -1180 0
+1179 -355 1180 0
+-1179 355 1180 0
+-1180 0
+231 346 -1181 0
+-231 -346 -1181 0
+231 -346 1181 0
+-231 346 1181 0
+1181 356 -1182 0
+-1181 -356 -1182 0
+1181 -356 1182 0
+-1181 356 1182 0
+-1182 0
+232 347 -1183 0
+-232 -347 -1183 0
+232 -347 1183 0
+-232 347 1183 0
+1183 357 -1184 0
+-1183 -357 -1184 0
+1183 -357 1184 0
+-1183 357 1184 0
+-1184 0
+233 348 -1185 0
+-233 -348 -1185 0
+233 -348 1185 0
+-233 348 1185 0
+1185 358 -1186 0
+-1185 -358 -1186 0
+1185 -358 1186 0
+-1185 358 1186 0
+-1186 0
+234 349 -1187 0
+-234 -349 -1187 0
+234 -349 1187 0
+-234 349 1187 0
+1187 359 -1188 0
+-1187 -359 -1188 0
+1187 -359 1188 0
+-1187 359 1188 0
+-1188 0
+235 350 -1189 0
+-235 -350 -1189 0
+235 -350 1189 0
+-235 350 1189 0
+1189 360 -1190 0
+-1189 -360 -1190 0
+1189 -360 1190 0
+-1189 360 1190 0
+-1190 0
+246 361 -1191 0
+-246 -361 -1191 0
+246 -361 1191 0
+-246 361 1191 0
+1191 366 -1192 0
+-1191 -366 -1192 0
+1191 -366 1192 0
+-1191 366 1192 0
+-1192 0
+247 362 -1193 0
+-247 -362 -1193 0
+247 -362 1193 0
+-247 362 1193 0
+1193 367 -1194 0
+-1193 -367 -1194 0
+1193 -367 1194 0
+-1193 367 1194 0
+-1194 0
+248 363 -1195 0
+-248 -363 -1195 0
+248 -363 1195 0
+-248 363 1195 0
+1195 368 -1196 0
+-1195 -368 -1196 0
+1195 -368 1196 0
+-1195 368 1196 0
+-1196 0
+249 364 -1197 0
+-249 -364 -1197 0
+249 -364 1197 0
+-249 364 1197 0
+1197 369 -1198 0
+-1197 -369 -1198 0
+1197 -369 1198 0
+-1197 369 1198 0
+-1198 0
+250 365 -1199 0
+-250 -365 -1199 0
+250 -365 1199 0
+-250 365 1199 0
+1199 370 -1200 0
+-1199 -370 -1200 0
+1199 -370 1200 0
+-1199 370 1200 0
+-1200 0
+371 376 -1201 0
+-371 -376 -1201 0
+371 -376 1201 0
+-371 376 1201 0
+1201 381 -1202 0
+-1201 -381 -1202 0
+1201 -381 1202 0
+-1201 381 1202 0
+-1202 0
+372 377 -1203 0
+-372 -377 -1203 0
+372 -377 1203 0
+-372 377 1203 0
+1203 382 -1204 0
+-1203 -382 -1204 0
+1203 -382 1204 0
+-1203 382 1204 0
+-1204 0
+373 378 -1205 0
+-373 -378 -1205 0
+373 -378 1205 0
+-373 378 1205 0
+1205 383 -1206 0
+-1205 -383 -1206 0
+1205 -383 1206 0
+-1205 383 1206 0
+-1206 0
+374 379 -1207 0
+-374 -379 -1207 0
+374 -379 1207 0
+-374 379 1207 0
+1207 384 -1208 0
+-1207 -384 -1208 0
+1207 -384 1208 0
+-1207 384 1208 0
+-1208 0
+375 380 -1209 0
+-375 -380 -1209 0
+375 -380 1209 0
+-375 380 1209 0
+1209 385 -1210 0
+-1209 -385 -1210 0
+1209 -385 1210 0
+-1209 385 1210 0
+-1210 0
+336 361 -1211 0
+-336 -361 -1211 0
+336 -361 1211 0
+-336 361 1211 0
+1211 386 -1212 0
+-1211 -386 -1212 0
+1211 -386 1212 0
+-1211 386 1212 0
+-1212 0
+337 362 -1213 0
+-337 -362 -1213 0
+337 -362 1213 0
+-337 362 1213 0
+1213 387 -1214 0
+-1213 -387 -1214 0
+1213 -387 1214 0
+-1213 387 1214 0
+-1214 0
+338 363 -1215 0
+-338 -363 -1215 0
+338 -363 1215 0
+-338 363 1215 0
+1215 388 -1216 0
+-1215 -388 -1216 0
+1215 -388 1216 0
+-1215 388 1216 0
+-1216 0
+339 364 -1217 0
+-339 -364 -1217 0
+339 -364 1217 0
+-339 364 1217 0
+1217 389 -1218 0
+-1217 -389 -1218 0
+1217 -389 1218 0
+-1217 389 1218 0
+-1218 0
+340 365 -1219 0
+-340 -365 -1219 0
+340 -365 1219 0
+-340 365 1219 0
+1219 390 -1220 0
+-1219 -390 -1220 0
+1219 -390 1220 0
+-1219 390 1220 0
+-1220 0
+351 366 -1221 0
+-351 -366 -1221 0
+351 -366 1221 0
+-351 366 1221 0
+1221 371 -1222 0
+-1221 -371 -1222 0
+1221 -371 1222 0
+-1221 371 1222 0
+-1222 0
+352 367 -1223 0
+-352 -367 -1223 0
+352 -367 1223 0
+-352 367 1223 0
+1223 372 -1224 0
+-1223 -372 -1224 0
+1223 -372 1224 0
+-1223 372 1224 0
+-1224 0
+353 368 -1225 0
+-353 -368 -1225 0
+353 -368 1225 0
+-353 368 1225 0
+1225 373 -1226 0
+-1225 -373 -1226 0
+1225 -373 1226 0
+-1225 373 1226 0
+-1226 0
+354 369 -1227 0
+-354 -369 -1227 0
+354 -369 1227 0
+-354 369 1227 0
+1227 374 -1228 0
+-1227 -374 -1228 0
+1227 -374 1228 0
+-1227 374 1228 0
+-1228 0
+355 370 -1229 0
+-355 -370 -1229 0
+355 -370 1229 0
+-355 370 1229 0
+1229 375 -1230 0
+-1229 -375 -1230 0
+1229 -375 1230 0
+-1229 375 1230 0
+-1230 0
+356 376 -1231 0
+-356 -376 -1231 0
+356 -376 1231 0
+-356 376 1231 0
+1231 386 -1232 0
+-1231 -386 -1232 0
+1231 -386 1232 0
+-1231 386 1232 0
+-1232 0
+357 377 -1233 0
+-357 -377 -1233 0
+357 -377 1233 0
+-357 377 1233 0
+1233 387 -1234 0
+-1233 -387 -1234 0
+1233 -387 1234 0
+-1233 387 1234 0
+-1234 0
+358 378 -1235 0
+-358 -378 -1235 0
+358 -378 1235 0
+-358 378 1235 0
+1235 388 -1236 0
+-1235 -388 -1236 0
+1235 -388 1236 0
+-1235 388 1236 0
+-1236 0
+359 379 -1237 0
+-359 -379 -1237 0
+359 -379 1237 0
+-359 379 1237 0
+1237 389 -1238 0
+-1237 -389 -1238 0
+1237 -389 1238 0
+-1237 389 1238 0
+-1238 0
+360 380 -1239 0
+-360 -380 -1239 0
+360 -380 1239 0
+-360 380 1239 0
+1239 390 -1240 0
+-1239 -390 -1240 0
+1239 -390 1240 0
+-1239 390 1240 0
+-1240 0
+391 396 -1241 0
+-391 -396 -1241 0
+391 -396 1241 0
+-391 396 1241 0
+1241 401 -1242 0
+-1241 -401 -1242 0
+1241 -401 1242 0
+-1241 401 1242 0
+-1242 0
+392 397 -1243 0
+-392 -397 -1243 0
+392 -397 1243 0
+-392 397 1243 0
+1243 402 -1244 0
+-1243 -402 -1244 0
+1243 -402 1244 0
+-1243 402 1244 0
+-1244 0
+393 398 -1245 0
+-393 -398 -1245 0
+393 -398 1245 0
+-393 398 1245 0
+1245 403 -1246 0
+-1245 -403 -1246 0
+1245 -403 1246 0
+-1245 403 1246 0
+-1246 0
+394 399 -1247 0
+-394 -399 -1247 0
+394 -399 1247 0
+-394 399 1247 0
+1247 404 -1248 0
+-1247 -404 -1248 0
+1247 -404 1248 0
+-1247 404 1248 0
+-1248 0
+395 400 -1249 0
+-395 -400 -1249 0
+395 -400 1249 0
+-395 400 1249 0
+1249 405 -1250 0
+-1249 -405 -1250 0
+1249 -405 1250 0
+-1249 405 1250 0
+-1250 0
+406 411 -1251 0
+-406 -411 -1251 0
+406 -411 1251 0
+-406 411 1251 0
+1251 416 -1252 0
+-1251 -416 -1252 0
+1251 -416 1252 0
+-1251 416 1252 0
+-1252 0
+407 412 -1253 0
+-407 -412 -1253 0
+407 -412 1253 0
+-407 412 1253 0
+1253 417 -1254 0
+-1253 -417 -1254 0
+1253 -417 1254 0
+-1253 417 1254 0
+-1254 0
+408 413 -1255 0
+-408 -413 -1255 0
+408 -413 1255 0
+-408 413 1255 0
+1255 418 -1256 0
+-1255 -418 -1256 0
+1255 -418 1256 0
+-1255 418 1256 0
+-1256 0
+409 414 -1257 0
+-409 -414 -1257 0
+409 -414 1257 0
+-409 414 1257 0
+1257 419 -1258 0
+-1257 -419 -1258 0
+1257 -419 1258 0
+-1257 419 1258 0
+-1258 0
+410 415 -1259 0
+-410 -415 -1259 0
+410 -415 1259 0
+-410 415 1259 0
+1259 420 -1260 0
+-1259 -420 -1260 0
+1259 -420 1260 0
+-1259 420 1260 0
+-1260 0
+406 421 -1261 0
+-406 -421 -1261 0
+406 -421 1261 0
+-406 421 1261 0
+1261 426 -1262 0
+-1261 -426 -1262 0
+1261 -426 1262 0
+-1261 426 1262 0
+-1262 0
+407 422 -1263 0
+-407 -422 -1263 0
+407 -422 1263 0
+-407 422 1263 0
+1263 427 -1264 0
+-1263 -427 -1264 0
+1263 -427 1264 0
+-1263 427 1264 0
+-1264 0
+408 423 -1265 0
+-408 -423 -1265 0
+408 -423 1265 0
+-408 423 1265 0
+1265 428 -1266 0
+-1265 -428 -1266 0
+1265 -428 1266 0
+-1265 428 1266 0
+-1266 0
+409 424 -1267 0
+-409 -424 -1267 0
+409 -424 1267 0
+-409 424 1267 0
+1267 429 -1268 0
+-1267 -429 -1268 0
+1267 -429 1268 0
+-1267 429 1268 0
+-1268 0
+410 425 -1269 0
+-410 -425 -1269 0
+410 -425 1269 0
+-410 425 1269 0
+1269 430 -1270 0
+-1269 -430 -1270 0
+1269 -430 1270 0
+-1269 430 1270 0
+-1270 0
+431 436 -1271 0
+-431 -436 -1271 0
+431 -436 1271 0
+-431 436 1271 0
+1271 441 -1272 0
+-1271 -441 -1272 0
+1271 -441 1272 0
+-1271 441 1272 0
+-1272 0
+432 437 -1273 0
+-432 -437 -1273 0
+432 -437 1273 0
+-432 437 1273 0
+1273 442 -1274 0
+-1273 -442 -1274 0
+1273 -442 1274 0
+-1273 442 1274 0
+-1274 0
+433 438 -1275 0
+-433 -438 -1275 0
+433 -438 1275 0
+-433 438 1275 0
+1275 443 -1276 0
+-1275 -443 -1276 0
+1275 -443 1276 0
+-1275 443 1276 0
+-1276 0
+434 439 -1277 0
+-434 -439 -1277 0
+434 -439 1277 0
+-434 439 1277 0
+1277 444 -1278 0
+-1277 -444 -1278 0
+1277 -444 1278 0
+-1277 444 1278 0
+-1278 0
+435 440 -1279 0
+-435 -440 -1279 0
+435 -440 1279 0
+-435 440 1279 0
+1279 445 -1280 0
+-1279 -445 -1280 0
+1279 -445 1280 0
+-1279 445 1280 0
+-1280 0
+391 431 -1281 0
+-391 -431 -1281 0
+391 -431 1281 0
+-391 431 1281 0
+1281 446 -1282 0
+-1281 -446 -1282 0
+1281 -446 1282 0
+-1281 446 1282 0
+-1282 0
+392 432 -1283 0
+-392 -432 -1283 0
+392 -432 1283 0
+-392 432 1283 0
+1283 447 -1284 0
+-1283 -447 -1284 0
+1283 -447 1284 0
+-1283 447 1284 0
+-1284 0
+393 433 -1285 0
+-393 -433 -1285 0
+393 -433 1285 0
+-393 433 1285 0
+1285 448 -1286 0
+-1285 -448 -1286 0
+1285 -448 1286 0
+-1285 448 1286 0
+-1286 0
+394 434 -1287 0
+-394 -434 -1287 0
+394 -434 1287 0
+-394 434 1287 0
+1287 449 -1288 0
+-1287 -449 -1288 0
+1287 -449 1288 0
+-1287 449 1288 0
+-1288 0
+395 435 -1289 0
+-395 -435 -1289 0
+395 -435 1289 0
+-395 435 1289 0
+1289 450 -1290 0
+-1289 -450 -1290 0
+1289 -450 1290 0
+-1289 450 1290 0
+-1290 0
+396 451 -1291 0
+-396 -451 -1291 0
+396 -451 1291 0
+-396 451 1291 0
+1291 456 -1292 0
+-1291 -456 -1292 0
+1291 -456 1292 0
+-1291 456 1292 0
+-1292 0
+397 452 -1293 0
+-397 -452 -1293 0
+397 -452 1293 0
+-397 452 1293 0
+1293 457 -1294 0
+-1293 -457 -1294 0
+1293 -457 1294 0
+-1293 457 1294 0
+-1294 0
+398 453 -1295 0
+-398 -453 -1295 0
+398 -453 1295 0
+-398 453 1295 0
+1295 458 -1296 0
+-1295 -458 -1296 0
+1295 -458 1296 0
+-1295 458 1296 0
+-1296 0
+399 454 -1297 0
+-399 -454 -1297 0
+399 -454 1297 0
+-399 454 1297 0
+1297 459 -1298 0
+-1297 -459 -1298 0
+1297 -459 1298 0
+-1297 459 1298 0
+-1298 0
+400 455 -1299 0
+-400 -455 -1299 0
+400 -455 1299 0
+-400 455 1299 0
+1299 460 -1300 0
+-1299 -460 -1300 0
+1299 -460 1300 0
+-1299 460 1300 0
+-1300 0
+411 461 -1301 0
+-411 -461 -1301 0
+411 -461 1301 0
+-411 461 1301 0
+1301 466 -1302 0
+-1301 -466 -1302 0
+1301 -466 1302 0
+-1301 466 1302 0
+-1302 0
+412 462 -1303 0
+-412 -462 -1303 0
+412 -462 1303 0
+-412 462 1303 0
+1303 467 -1304 0
+-1303 -467 -1304 0
+1303 -467 1304 0
+-1303 467 1304 0
+-1304 0
+413 463 -1305 0
+-413 -463 -1305 0
+413 -463 1305 0
+-413 463 1305 0
+1305 468 -1306 0
+-1305 -468 -1306 0
+1305 -468 1306 0
+-1305 468 1306 0
+-1306 0
+414 464 -1307 0
+-414 -464 -1307 0
+414 -464 1307 0
+-414 464 1307 0
+1307 469 -1308 0
+-1307 -469 -1308 0
+1307 -469 1308 0
+-1307 469 1308 0
+-1308 0
+415 465 -1309 0
+-415 -465 -1309 0
+415 -465 1309 0
+-415 465 1309 0
+1309 470 -1310 0
+-1309 -470 -1310 0
+1309 -470 1310 0
+-1309 470 1310 0
+-1310 0
+421 451 -1311 0
+-421 -451 -1311 0
+421 -451 1311 0
+-421 451 1311 0
+1311 471 -1312 0
+-1311 -471 -1312 0
+1311 -471 1312 0
+-1311 471 1312 0
+-1312 0
+422 452 -1313 0
+-422 -452 -1313 0
+422 -452 1313 0
+-422 452 1313 0
+1313 472 -1314 0
+-1313 -472 -1314 0
+1313 -472 1314 0
+-1313 472 1314 0
+-1314 0
+423 453 -1315 0
+-423 -453 -1315 0
+423 -453 1315 0
+-423 453 1315 0
+1315 473 -1316 0
+-1315 -473 -1316 0
+1315 -473 1316 0
+-1315 473 1316 0
+-1316 0
+424 454 -1317 0
+-424 -454 -1317 0
+424 -454 1317 0
+-424 454 1317 0
+1317 474 -1318 0
+-1317 -474 -1318 0
+1317 -474 1318 0
+-1317 474 1318 0
+-1318 0
+425 455 -1319 0
+-425 -455 -1319 0
+425 -455 1319 0
+-425 455 1319 0
+1319 475 -1320 0
+-1319 -475 -1320 0
+1319 -475 1320 0
+-1319 475 1320 0
+-1320 0
+436 456 -1321 0
+-436 -456 -1321 0
+436 -456 1321 0
+-436 456 1321 0
+1321 461 -1322 0
+-1321 -461 -1322 0
+1321 -461 1322 0
+-1321 461 1322 0
+-1322 0
+437 457 -1323 0
+-437 -457 -1323 0
+437 -457 1323 0
+-437 457 1323 0
+1323 462 -1324 0
+-1323 -462 -1324 0
+1323 -462 1324 0
+-1323 462 1324 0
+-1324 0
+438 458 -1325 0
+-438 -458 -1325 0
+438 -458 1325 0
+-438 458 1325 0
+1325 463 -1326 0
+-1325 -463 -1326 0
+1325 -463 1326 0
+-1325 463 1326 0
+-1326 0
+439 459 -1327 0
+-439 -459 -1327 0
+439 -459 1327 0
+-439 459 1327 0
+1327 464 -1328 0
+-1327 -464 -1328 0
+1327 -464 1328 0
+-1327 464 1328 0
+-1328 0
+440 460 -1329 0
+-440 -460 -1329 0
+440 -460 1329 0
+-440 460 1329 0
+1329 465 -1330 0
+-1329 -465 -1330 0
+1329 -465 1330 0
+-1329 465 1330 0
+-1330 0
+446 466 -1331 0
+-446 -466 -1331 0
+446 -466 1331 0
+-446 466 1331 0
+1331 471 -1332 0
+-1331 -471 -1332 0
+1331 -471 1332 0
+-1331 471 1332 0
+-1332 0
+447 467 -1333 0
+-447 -467 -1333 0
+447 -467 1333 0
+-447 467 1333 0
+1333 472 -1334 0
+-1333 -472 -1334 0
+1333 -472 1334 0
+-1333 472 1334 0
+-1334 0
+448 468 -1335 0
+-448 -468 -1335 0
+448 -468 1335 0
+-448 468 1335 0
+1335 473 -1336 0
+-1335 -473 -1336 0
+1335 -473 1336 0
+-1335 473 1336 0
+-1336 0
+449 469 -1337 0
+-449 -469 -1337 0
+449 -469 1337 0
+-449 469 1337 0
+1337 474 -1338 0
+-1337 -474 -1338 0
+1337 -474 1338 0
+-1337 474 1338 0
+-1338 0
+450 470 -1339 0
+-450 -470 -1339 0
+450 -470 1339 0
+-450 470 1339 0
+1339 475 -1340 0
+-1339 -475 -1340 0
+1339 -475 1340 0
+-1339 475 1340 0
+-1340 0
+341 476 -1341 0
+-341 -476 -1341 0
+341 -476 1341 0
+-341 476 1341 0
+1341 481 -1342 0
+-1341 -481 -1342 0
+1341 -481 1342 0
+-1341 481 1342 0
+-1342 0
+342 477 -1343 0
+-342 -477 -1343 0
+342 -477 1343 0
+-342 477 1343 0
+1343 482 -1344 0
+-1343 -482 -1344 0
+1343 -482 1344 0
+-1343 482 1344 0
+-1344 0
+343 478 -1345 0
+-343 -478 -1345 0
+343 -478 1345 0
+-343 478 1345 0
+1345 483 -1346 0
+-1345 -483 -1346 0
+1345 -483 1346 0
+-1345 483 1346 0
+-1346 0
+344 479 -1347 0
+-344 -479 -1347 0
+344 -479 1347 0
+-344 479 1347 0
+1347 484 -1348 0
+-1347 -484 -1348 0
+1347 -484 1348 0
+-1347 484 1348 0
+-1348 0
+345 480 -1349 0
+-345 -480 -1349 0
+345 -480 1349 0
+-345 480 1349 0
+1349 485 -1350 0
+-1349 -485 -1350 0
+1349 -485 1350 0
+-1349 485 1350 0
+-1350 0
+476 486 -1351 0
+-476 -486 -1351 0
+476 -486 1351 0
+-476 486 1351 0
+1351 491 -1352 0
+-1351 -491 -1352 0
+1351 -491 1352 0
+-1351 491 1352 0
+-1352 0
+477 487 -1353 0
+-477 -487 -1353 0
+477 -487 1353 0
+-477 487 1353 0
+1353 492 -1354 0
+-1353 -492 -1354 0
+1353 -492 1354 0
+-1353 492 1354 0
+-1354 0
+478 488 -1355 0
+-478 -488 -1355 0
+478 -488 1355 0
+-478 488 1355 0
+1355 493 -1356 0
+-1355 -493 -1356 0
+1355 -493 1356 0
+-1355 493 1356 0
+-1356 0
+479 489 -1357 0
+-479 -489 -1357 0
+479 -489 1357 0
+-479 489 1357 0
+1357 494 -1358 0
+-1357 -494 -1358 0
+1357 -494 1358 0
+-1357 494 1358 0
+-1358 0
+480 490 -1359 0
+-480 -490 -1359 0
+480 -490 1359 0
+-480 490 1359 0
+1359 495 -1360 0
+-1359 -495 -1360 0
+1359 -495 1360 0
+-1359 495 1360 0
+-1360 0
+401 486 -1361 0
+-401 -486 -1361 0
+401 -486 1361 0
+-401 486 1361 0
+1361 496 -1362 0
+-1361 -496 -1362 0
+1361 -496 1362 0
+-1361 496 1362 0
+-1362 0
+402 487 -1363 0
+-402 -487 -1363 0
+402 -487 1363 0
+-402 487 1363 0
+1363 497 -1364 0
+-1363 -497 -1364 0
+1363 -497 1364 0
+-1363 497 1364 0
+-1364 0
+403 488 -1365 0
+-403 -488 -1365 0
+403 -488 1365 0
+-403 488 1365 0
+1365 498 -1366 0
+-1365 -498 -1366 0
+1365 -498 1366 0
+-1365 498 1366 0
+-1366 0
+404 489 -1367 0
+-404 -489 -1367 0
+404 -489 1367 0
+-404 489 1367 0
+1367 499 -1368 0
+-1367 -499 -1368 0
+1367 -499 1368 0
+-1367 499 1368 0
+-1368 0
+405 490 -1369 0
+-405 -490 -1369 0
+405 -490 1369 0
+-405 490 1369 0
+1369 500 -1370 0
+-1369 -500 -1370 0
+1369 -500 1370 0
+-1369 500 1370 0
+-1370 0
+416 501 -1371 0
+-416 -501 -1371 0
+416 -501 1371 0
+-416 501 1371 0
+1371 506 -1372 0
+-1371 -506 -1372 0
+1371 -506 1372 0
+-1371 506 1372 0
+-1372 0
+417 502 -1373 0
+-417 -502 -1373 0
+417 -502 1373 0
+-417 502 1373 0
+1373 507 -1374 0
+-1373 -507 -1374 0
+1373 -507 1374 0
+-1373 507 1374 0
+-1374 0
+418 503 -1375 0
+-418 -503 -1375 0
+418 -503 1375 0
+-418 503 1375 0
+1375 508 -1376 0
+-1375 -508 -1376 0
+1375 -508 1376 0
+-1375 508 1376 0
+-1376 0
+419 504 -1377 0
+-419 -504 -1377 0
+419 -504 1377 0
+-419 504 1377 0
+1377 509 -1378 0
+-1377 -509 -1378 0
+1377 -509 1378 0
+-1377 509 1378 0
+-1378 0
+420 505 -1379 0
+-420 -505 -1379 0
+420 -505 1379 0
+-420 505 1379 0
+1379 510 -1380 0
+-1379 -510 -1380 0
+1379 -510 1380 0
+-1379 510 1380 0
+-1380 0
+381 511 -1381 0
+-381 -511 -1381 0
+381 -511 1381 0
+-381 511 1381 0
+1381 516 -1382 0
+-1381 -516 -1382 0
+1381 -516 1382 0
+-1381 516 1382 0
+-1382 0
+382 512 -1383 0
+-382 -512 -1383 0
+382 -512 1383 0
+-382 512 1383 0
+1383 517 -1384 0
+-1383 -517 -1384 0
+1383 -517 1384 0
+-1383 517 1384 0
+-1384 0
+383 513 -1385 0
+-383 -513 -1385 0
+383 -513 1385 0
+-383 513 1385 0
+1385 518 -1386 0
+-1385 -518 -1386 0
+1385 -518 1386 0
+-1385 518 1386 0
+-1386 0
+384 514 -1387 0
+-384 -514 -1387 0
+384 -514 1387 0
+-384 514 1387 0
+1387 519 -1388 0
+-1387 -519 -1388 0
+1387 -519 1388 0
+-1387 519 1388 0
+-1388 0
+385 515 -1389 0
+-385 -515 -1389 0
+385 -515 1389 0
+-385 515 1389 0
+1389 520 -1390 0
+-1389 -520 -1390 0
+1389 -520 1390 0
+-1389 520 1390 0
+-1390 0
+481 501 -1391 0
+-481 -501 -1391 0
+481 -501 1391 0
+-481 501 1391 0
+1391 521 -1392 0
+-1391 -521 -1392 0
+1391 -521 1392 0
+-1391 521 1392 0
+-1392 0
+482 502 -1393 0
+-482 -502 -1393 0
+482 -502 1393 0
+-482 502 1393 0
+1393 522 -1394 0
+-1393 -522 -1394 0
+1393 -522 1394 0
+-1393 522 1394 0
+-1394 0
+483 503 -1395 0
+-483 -503 -1395 0
+483 -503 1395 0
+-483 503 1395 0
+1395 523 -1396 0
+-1395 -523 -1396 0
+1395 -523 1396 0
+-1395 523 1396 0
+-1396 0
+484 504 -1397 0
+-484 -504 -1397 0
+484 -504 1397 0
+-484 504 1397 0
+1397 524 -1398 0
+-1397 -524 -1398 0
+1397 -524 1398 0
+-1397 524 1398 0
+-1398 0
+485 505 -1399 0
+-485 -505 -1399 0
+485 -505 1399 0
+-485 505 1399 0
+1399 525 -1400 0
+-1399 -525 -1400 0
+1399 -525 1400 0
+-1399 525 1400 0
+-1400 0
+491 506 -1401 0
+-491 -506 -1401 0
+491 -506 1401 0
+-491 506 1401 0
+1401 511 -1402 0
+-1401 -511 -1402 0
+1401 -511 1402 0
+-1401 511 1402 0
+-1402 0
+492 507 -1403 0
+-492 -507 -1403 0
+492 -507 1403 0
+-492 507 1403 0
+1403 512 -1404 0
+-1403 -512 -1404 0
+1403 -512 1404 0
+-1403 512 1404 0
+-1404 0
+493 508 -1405 0
+-493 -508 -1405 0
+493 -508 1405 0
+-493 508 1405 0
+1405 513 -1406 0
+-1405 -513 -1406 0
+1405 -513 1406 0
+-1405 513 1406 0
+-1406 0
+494 509 -1407 0
+-494 -509 -1407 0
+494 -509 1407 0
+-494 509 1407 0
+1407 514 -1408 0
+-1407 -514 -1408 0
+1407 -514 1408 0
+-1407 514 1408 0
+-1408 0
+495 510 -1409 0
+-495 -510 -1409 0
+495 -510 1409 0
+-495 510 1409 0
+1409 515 -1410 0
+-1409 -515 -1410 0
+1409 -515 1410 0
+-1409 515 1410 0
+-1410 0
+496 516 -1411 0
+-496 -516 -1411 0
+496 -516 1411 0
+-496 516 1411 0
+1411 521 -1412 0
+-1411 -521 -1412 0
+1411 -521 1412 0
+-1411 521 1412 0
+-1412 0
+497 517 -1413 0
+-497 -517 -1413 0
+497 -517 1413 0
+-497 517 1413 0
+1413 522 -1414 0
+-1413 -522 -1414 0
+1413 -522 1414 0
+-1413 522 1414 0
+-1414 0
+498 518 -1415 0
+-498 -518 -1415 0
+498 -518 1415 0
+-498 518 1415 0
+1415 523 -1416 0
+-1415 -523 -1416 0
+1415 -523 1416 0
+-1415 523 1416 0
+-1416 0
+499 519 -1417 0
+-499 -519 -1417 0
+499 -519 1417 0
+-499 519 1417 0
+1417 524 -1418 0
+-1417 -524 -1418 0
+1417 -524 1418 0
+-1417 524 1418 0
+-1418 0
+500 520 -1419 0
+-500 -520 -1419 0
+500 -520 1419 0
+-500 520 1419 0
+1419 525 -1420 0
+-1419 -525 -1420 0
+1419 -525 1420 0
+-1419 525 1420 0
+-1420 0
+526 531 -1421 0
+-526 -531 -1421 0
+526 -531 1421 0
+-526 531 1421 0
+1421 536 -1422 0
+-1421 -536 -1422 0
+1421 -536 1422 0
+-1421 536 1422 0
+-1422 0
+527 532 -1423 0
+-527 -532 -1423 0
+527 -532 1423 0
+-527 532 1423 0
+1423 537 -1424 0
+-1423 -537 -1424 0
+1423 -537 1424 0
+-1423 537 1424 0
+-1424 0
+528 533 -1425 0
+-528 -533 -1425 0
+528 -533 1425 0
+-528 533 1425 0
+1425 538 -1426 0
+-1425 -538 -1426 0
+1425 -538 1426 0
+-1425 538 1426 0
+-1426 0
+529 534 -1427 0
+-529 -534 -1427 0
+529 -534 1427 0
+-529 534 1427 0
+1427 539 -1428 0
+-1427 -539 -1428 0
+1427 -539 1428 0
+-1427 539 1428 0
+-1428 0
+530 535 -1429 0
+-530 -535 -1429 0
+530 -535 1429 0
+-530 535 1429 0
+1429 540 -1430 0
+-1429 -540 -1430 0
+1429 -540 1430 0
+-1429 540 1430 0
+-1430 0
+526 541 -1431 0
+-526 -541 -1431 0
+526 -541 1431 0
+-526 541 1431 0
+1431 546 -1432 0
+-1431 -546 -1432 0
+1431 -546 1432 0
+-1431 546 1432 0
+-1432 0
+527 542 -1433 0
+-527 -542 -1433 0
+527 -542 1433 0
+-527 542 1433 0
+1433 547 -1434 0
+-1433 -547 -1434 0
+1433 -547 1434 0
+-1433 547 1434 0
+-1434 0
+528 543 -1435 0
+-528 -543 -1435 0
+528 -543 1435 0
+-528 543 1435 0
+1435 548 -1436 0
+-1435 -548 -1436 0
+1435 -548 1436 0
+-1435 548 1436 0
+-1436 0
+529 544 -1437 0
+-529 -544 -1437 0
+529 -544 1437 0
+-529 544 1437 0
+1437 549 -1438 0
+-1437 -549 -1438 0
+1437 -549 1438 0
+-1437 549 1438 0
+-1438 0
+530 545 -1439 0
+-530 -545 -1439 0
+530 -545 1439 0
+-530 545 1439 0
+1439 550 -1440 0
+-1439 -550 -1440 0
+1439 -550 1440 0
+-1439 550 1440 0
+-1440 0
+426 541 -1441 0
+-426 -541 -1441 0
+426 -541 1441 0
+-426 541 1441 0
+1441 551 -1442 0
+-1441 -551 -1442 0
+1441 -551 1442 0
+-1441 551 1442 0
+-1442 0
+427 542 -1443 0
+-427 -542 -1443 0
+427 -542 1443 0
+-427 542 1443 0
+1443 552 -1444 0
+-1443 -552 -1444 0
+1443 -552 1444 0
+-1443 552 1444 0
+-1444 0
+428 543 -1445 0
+-428 -543 -1445 0
+428 -543 1445 0
+-428 543 1445 0
+1445 553 -1446 0
+-1445 -553 -1446 0
+1445 -553 1446 0
+-1445 553 1446 0
+-1446 0
+429 544 -1447 0
+-429 -544 -1447 0
+429 -544 1447 0
+-429 544 1447 0
+1447 554 -1448 0
+-1447 -554 -1448 0
+1447 -554 1448 0
+-1447 554 1448 0
+-1448 0
+430 545 -1449 0
+-430 -545 -1449 0
+430 -545 1449 0
+-430 545 1449 0
+1449 555 -1450 0
+-1449 -555 -1450 0
+1449 -555 1450 0
+-1449 555 1450 0
+-1450 0
+441 556 -1451 0
+-441 -556 -1451 0
+441 -556 1451 0
+-441 556 1451 0
+1451 561 -1452 0
+-1451 -561 -1452 0
+1451 -561 1452 0
+-1451 561 1452 0
+-1452 0
+442 557 -1453 0
+-442 -557 -1453 0
+442 -557 1453 0
+-442 557 1453 0
+1453 562 -1454 0
+-1453 -562 -1454 0
+1453 -562 1454 0
+-1453 562 1454 0
+-1454 0
+443 558 -1455 0
+-443 -558 -1455 0
+443 -558 1455 0
+-443 558 1455 0
+1455 563 -1456 0
+-1455 -563 -1456 0
+1455 -563 1456 0
+-1455 563 1456 0
+-1456 0
+444 559 -1457 0
+-444 -559 -1457 0
+444 -559 1457 0
+-444 559 1457 0
+1457 564 -1458 0
+-1457 -564 -1458 0
+1457 -564 1458 0
+-1457 564 1458 0
+-1458 0
+445 560 -1459 0
+-445 -560 -1459 0
+445 -560 1459 0
+-445 560 1459 0
+1459 565 -1460 0
+-1459 -565 -1460 0
+1459 -565 1460 0
+-1459 565 1460 0
+-1460 0
+566 571 -1461 0
+-566 -571 -1461 0
+566 -571 1461 0
+-566 571 1461 0
+1461 576 -1462 0
+-1461 -576 -1462 0
+1461 -576 1462 0
+-1461 576 1462 0
+-1462 0
+567 572 -1463 0
+-567 -572 -1463 0
+567 -572 1463 0
+-567 572 1463 0
+1463 577 -1464 0
+-1463 -577 -1464 0
+1463 -577 1464 0
+-1463 577 1464 0
+-1464 0
+568 573 -1465 0
+-568 -573 -1465 0
+568 -573 1465 0
+-568 573 1465 0
+1465 578 -1466 0
+-1465 -578 -1466 0
+1465 -578 1466 0
+-1465 578 1466 0
+-1466 0
+569 574 -1467 0
+-569 -574 -1467 0
+569 -574 1467 0
+-569 574 1467 0
+1467 579 -1468 0
+-1467 -579 -1468 0
+1467 -579 1468 0
+-1467 579 1468 0
+-1468 0
+570 575 -1469 0
+-570 -575 -1469 0
+570 -575 1469 0
+-570 575 1469 0
+1469 580 -1470 0
+-1469 -580 -1470 0
+1469 -580 1470 0
+-1469 580 1470 0
+-1470 0
+531 556 -1471 0
+-531 -556 -1471 0
+531 -556 1471 0
+-531 556 1471 0
+1471 581 -1472 0
+-1471 -581 -1472 0
+1471 -581 1472 0
+-1471 581 1472 0
+-1472 0
+532 557 -1473 0
+-532 -557 -1473 0
+532 -557 1473 0
+-532 557 1473 0
+1473 582 -1474 0
+-1473 -582 -1474 0
+1473 -582 1474 0
+-1473 582 1474 0
+-1474 0
+533 558 -1475 0
+-533 -558 -1475 0
+533 -558 1475 0
+-533 558 1475 0
+1475 583 -1476 0
+-1475 -583 -1476 0
+1475 -583 1476 0
+-1475 583 1476 0
+-1476 0
+534 559 -1477 0
+-534 -559 -1477 0
+534 -559 1477 0
+-534 559 1477 0
+1477 584 -1478 0
+-1477 -584 -1478 0
+1477 -584 1478 0
+-1477 584 1478 0
+-1478 0
+535 560 -1479 0
+-535 -560 -1479 0
+535 -560 1479 0
+-535 560 1479 0
+1479 585 -1480 0
+-1479 -585 -1480 0
+1479 -585 1480 0
+-1479 585 1480 0
+-1480 0
+546 561 -1481 0
+-546 -561 -1481 0
+546 -561 1481 0
+-546 561 1481 0
+1481 566 -1482 0
+-1481 -566 -1482 0
+1481 -566 1482 0
+-1481 566 1482 0
+-1482 0
+547 562 -1483 0
+-547 -562 -1483 0
+547 -562 1483 0
+-547 562 1483 0
+1483 567 -1484 0
+-1483 -567 -1484 0
+1483 -567 1484 0
+-1483 567 1484 0
+-1484 0
+548 563 -1485 0
+-548 -563 -1485 0
+548 -563 1485 0
+-548 563 1485 0
+1485 568 -1486 0
+-1485 -568 -1486 0
+1485 -568 1486 0
+-1485 568 1486 0
+-1486 0
+549 564 -1487 0
+-549 -564 -1487 0
+549 -564 1487 0
+-549 564 1487 0
+1487 569 -1488 0
+-1487 -569 -1488 0
+1487 -569 1488 0
+-1487 569 1488 0
+-1488 0
+550 565 -1489 0
+-550 -565 -1489 0
+550 -565 1489 0
+-550 565 1489 0
+1489 570 -1490 0
+-1489 -570 -1490 0
+1489 -570 1490 0
+-1489 570 1490 0
+-1490 0
+551 571 -1491 0
+-551 -571 -1491 0
+551 -571 1491 0
+-551 571 1491 0
+1491 581 -1492 0
+-1491 -581 -1492 0
+1491 -581 1492 0
+-1491 581 1492 0
+-1492 0
+552 572 -1493 0
+-552 -572 -1493 0
+552 -572 1493 0
+-552 572 1493 0
+1493 582 -1494 0
+-1493 -582 -1494 0
+1493 -582 1494 0
+-1493 582 1494 0
+-1494 0
+553 573 -1495 0
+-553 -573 -1495 0
+553 -573 1495 0
+-553 573 1495 0
+1495 583 -1496 0
+-1495 -583 -1496 0
+1495 -583 1496 0
+-1495 583 1496 0
+-1496 0
+554 574 -1497 0
+-554 -574 -1497 0
+554 -574 1497 0
+-554 574 1497 0
+1497 584 -1498 0
+-1497 -584 -1498 0
+1497 -584 1498 0
+-1497 584 1498 0
+-1498 0
+555 575 -1499 0
+-555 -575 -1499 0
+555 -575 1499 0
+-555 575 1499 0
+1499 585 -1500 0
+-1499 -585 -1500 0
+1499 -585 1500 0
+-1499 585 1500 0
+-1500 0
+586 591 -1501 0
+-586 -591 -1501 0
+586 -591 1501 0
+-586 591 1501 0
+1501 596 -1502 0
+-1501 -596 -1502 0
+1501 -596 1502 0
+-1501 596 1502 0
+-1502 0
+587 592 -1503 0
+-587 -592 -1503 0
+587 -592 1503 0
+-587 592 1503 0
+1503 597 -1504 0
+-1503 -597 -1504 0
+1503 -597 1504 0
+-1503 597 1504 0
+-1504 0
+588 593 -1505 0
+-588 -593 -1505 0
+588 -593 1505 0
+-588 593 1505 0
+1505 598 -1506 0
+-1505 -598 -1506 0
+1505 -598 1506 0
+-1505 598 1506 0
+-1506 0
+589 594 -1507 0
+-589 -594 -1507 0
+589 -594 1507 0
+-589 594 1507 0
+1507 599 -1508 0
+-1507 -599 -1508 0
+1507 -599 1508 0
+-1507 599 1508 0
+-1508 0
+590 595 -1509 0
+-590 -595 -1509 0
+590 -595 1509 0
+-590 595 1509 0
+1509 600 -1510 0
+-1509 -600 -1510 0
+1509 -600 1510 0
+-1509 600 1510 0
+-1510 0
+601 606 -1511 0
+-601 -606 -1511 0
+601 -606 1511 0
+-601 606 1511 0
+1511 611 -1512 0
+-1511 -611 -1512 0
+1511 -611 1512 0
+-1511 611 1512 0
+-1512 0
+602 607 -1513 0
+-602 -607 -1513 0
+602 -607 1513 0
+-602 607 1513 0
+1513 612 -1514 0
+-1513 -612 -1514 0
+1513 -612 1514 0
+-1513 612 1514 0
+-1514 0
+603 608 -1515 0
+-603 -608 -1515 0
+603 -608 1515 0
+-603 608 1515 0
+1515 613 -1516 0
+-1515 -613 -1516 0
+1515 -613 1516 0
+-1515 613 1516 0
+-1516 0
+604 609 -1517 0
+-604 -609 -1517 0
+604 -609 1517 0
+-604 609 1517 0
+1517 614 -1518 0
+-1517 -614 -1518 0
+1517 -614 1518 0
+-1517 614 1518 0
+-1518 0
+605 610 -1519 0
+-605 -610 -1519 0
+605 -610 1519 0
+-605 610 1519 0
+1519 615 -1520 0
+-1519 -615 -1520 0
+1519 -615 1520 0
+-1519 615 1520 0
+-1520 0
+81 601 -1521 0
+-81 -601 -1521 0
+81 -601 1521 0
+-81 601 1521 0
+1521 616 -1522 0
+-1521 -616 -1522 0
+1521 -616 1522 0
+-1521 616 1522 0
+-1522 0
+82 602 -1523 0
+-82 -602 -1523 0
+82 -602 1523 0
+-82 602 1523 0
+1523 617 -1524 0
+-1523 -617 -1524 0
+1523 -617 1524 0
+-1523 617 1524 0
+-1524 0
+83 603 -1525 0
+-83 -603 -1525 0
+83 -603 1525 0
+-83 603 1525 0
+1525 618 -1526 0
+-1525 -618 -1526 0
+1525 -618 1526 0
+-1525 618 1526 0
+-1526 0
+84 604 -1527 0
+-84 -604 -1527 0
+84 -604 1527 0
+-84 604 1527 0
+1527 619 -1528 0
+-1527 -619 -1528 0
+1527 -619 1528 0
+-1527 619 1528 0
+-1528 0
+85 605 -1529 0
+-85 -605 -1529 0
+85 -605 1529 0
+-85 605 1529 0
+1529 620 -1530 0
+-1529 -620 -1530 0
+1529 -620 1530 0
+-1529 620 1530 0
+-1530 0
+126 621 -1531 0
+-126 -621 -1531 0
+126 -621 1531 0
+-126 621 1531 0
+1531 626 -1532 0
+-1531 -626 -1532 0
+1531 -626 1532 0
+-1531 626 1532 0
+-1532 0
+127 622 -1533 0
+-127 -622 -1533 0
+127 -622 1533 0
+-127 622 1533 0
+1533 627 -1534 0
+-1533 -627 -1534 0
+1533 -627 1534 0
+-1533 627 1534 0
+-1534 0
+128 623 -1535 0
+-128 -623 -1535 0
+128 -623 1535 0
+-128 623 1535 0
+1535 628 -1536 0
+-1535 -628 -1536 0
+1535 -628 1536 0
+-1535 628 1536 0
+-1536 0
+129 624 -1537 0
+-129 -624 -1537 0
+129 -624 1537 0
+-129 624 1537 0
+1537 629 -1538 0
+-1537 -629 -1538 0
+1537 -629 1538 0
+-1537 629 1538 0
+-1538 0
+130 625 -1539 0
+-130 -625 -1539 0
+130 -625 1539 0
+-130 625 1539 0
+1539 630 -1540 0
+-1539 -630 -1540 0
+1539 -630 1540 0
+-1539 630 1540 0
+-1540 0
+586 621 -1541 0
+-586 -621 -1541 0
+586 -621 1541 0
+-586 621 1541 0
+1541 631 -1542 0
+-1541 -631 -1542 0
+1541 -631 1542 0
+-1541 631 1542 0
+-1542 0
+587 622 -1543 0
+-587 -622 -1543 0
+587 -622 1543 0
+-587 622 1543 0
+1543 632 -1544 0
+-1543 -632 -1544 0
+1543 -632 1544 0
+-1543 632 1544 0
+-1544 0
+588 623 -1545 0
+-588 -623 -1545 0
+588 -623 1545 0
+-588 623 1545 0
+1545 633 -1546 0
+-1545 -633 -1546 0
+1545 -633 1546 0
+-1545 633 1546 0
+-1546 0
+589 624 -1547 0
+-589 -624 -1547 0
+589 -624 1547 0
+-589 624 1547 0
+1547 634 -1548 0
+-1547 -634 -1548 0
+1547 -634 1548 0
+-1547 634 1548 0
+-1548 0
+590 625 -1549 0
+-590 -625 -1549 0
+590 -625 1549 0
+-590 625 1549 0
+1549 635 -1550 0
+-1549 -635 -1550 0
+1549 -635 1550 0
+-1549 635 1550 0
+-1550 0
+591 636 -1551 0
+-591 -636 -1551 0
+591 -636 1551 0
+-591 636 1551 0
+1551 641 -1552 0
+-1551 -641 -1552 0
+1551 -641 1552 0
+-1551 641 1552 0
+-1552 0
+592 637 -1553 0
+-592 -637 -1553 0
+592 -637 1553 0
+-592 637 1553 0
+1553 642 -1554 0
+-1553 -642 -1554 0
+1553 -642 1554 0
+-1553 642 1554 0
+-1554 0
+593 638 -1555 0
+-593 -638 -1555 0
+593 -638 1555 0
+-593 638 1555 0
+1555 643 -1556 0
+-1555 -643 -1556 0
+1555 -643 1556 0
+-1555 643 1556 0
+-1556 0
+594 639 -1557 0
+-594 -639 -1557 0
+594 -639 1557 0
+-594 639 1557 0
+1557 644 -1558 0
+-1557 -644 -1558 0
+1557 -644 1558 0
+-1557 644 1558 0
+-1558 0
+595 640 -1559 0
+-595 -640 -1559 0
+595 -640 1559 0
+-595 640 1559 0
+1559 645 -1560 0
+-1559 -645 -1560 0
+1559 -645 1560 0
+-1559 645 1560 0
+-1560 0
+606 646 -1561 0
+-606 -646 -1561 0
+606 -646 1561 0
+-606 646 1561 0
+1561 651 -1562 0
+-1561 -651 -1562 0
+1561 -651 1562 0
+-1561 651 1562 0
+-1562 0
+607 647 -1563 0
+-607 -647 -1563 0
+607 -647 1563 0
+-607 647 1563 0
+1563 652 -1564 0
+-1563 -652 -1564 0
+1563 -652 1564 0
+-1563 652 1564 0
+-1564 0
+608 648 -1565 0
+-608 -648 -1565 0
+608 -648 1565 0
+-608 648 1565 0
+1565 653 -1566 0
+-1565 -653 -1566 0
+1565 -653 1566 0
+-1565 653 1566 0
+-1566 0
+609 649 -1567 0
+-609 -649 -1567 0
+609 -649 1567 0
+-609 649 1567 0
+1567 654 -1568 0
+-1567 -654 -1568 0
+1567 -654 1568 0
+-1567 654 1568 0
+-1568 0
+610 650 -1569 0
+-610 -650 -1569 0
+610 -650 1569 0
+-610 650 1569 0
+1569 655 -1570 0
+-1569 -655 -1570 0
+1569 -655 1570 0
+-1569 655 1570 0
+-1570 0
+616 636 -1571 0
+-616 -636 -1571 0
+616 -636 1571 0
+-616 636 1571 0
+1571 656 -1572 0
+-1571 -656 -1572 0
+1571 -656 1572 0
+-1571 656 1572 0
+-1572 0
+617 637 -1573 0
+-617 -637 -1573 0
+617 -637 1573 0
+-617 637 1573 0
+1573 657 -1574 0
+-1573 -657 -1574 0
+1573 -657 1574 0
+-1573 657 1574 0
+-1574 0
+618 638 -1575 0
+-618 -638 -1575 0
+618 -638 1575 0
+-618 638 1575 0
+1575 658 -1576 0
+-1575 -658 -1576 0
+1575 -658 1576 0
+-1575 658 1576 0
+-1576 0
+619 639 -1577 0
+-619 -639 -1577 0
+619 -639 1577 0
+-619 639 1577 0
+1577 659 -1578 0
+-1577 -659 -1578 0
+1577 -659 1578 0
+-1577 659 1578 0
+-1578 0
+620 640 -1579 0
+-620 -640 -1579 0
+620 -640 1579 0
+-620 640 1579 0
+1579 660 -1580 0
+-1579 -660 -1580 0
+1579 -660 1580 0
+-1579 660 1580 0
+-1580 0
+626 641 -1581 0
+-626 -641 -1581 0
+626 -641 1581 0
+-626 641 1581 0
+1581 646 -1582 0
+-1581 -646 -1582 0
+1581 -646 1582 0
+-1581 646 1582 0
+-1582 0
+627 642 -1583 0
+-627 -642 -1583 0
+627 -642 1583 0
+-627 642 1583 0
+1583 647 -1584 0
+-1583 -647 -1584 0
+1583 -647 1584 0
+-1583 647 1584 0
+-1584 0
+628 643 -1585 0
+-628 -643 -1585 0
+628 -643 1585 0
+-628 643 1585 0
+1585 648 -1586 0
+-1585 -648 -1586 0
+1585 -648 1586 0
+-1585 648 1586 0
+-1586 0
+629 644 -1587 0
+-629 -644 -1587 0
+629 -644 1587 0
+-629 644 1587 0
+1587 649 -1588 0
+-1587 -649 -1588 0
+1587 -649 1588 0
+-1587 649 1588 0
+-1588 0
+630 645 -1589 0
+-630 -645 -1589 0
+630 -645 1589 0
+-630 645 1589 0
+1589 650 -1590 0
+-1589 -650 -1590 0
+1589 -650 1590 0
+-1589 650 1590 0
+-1590 0
+631 651 -1591 0
+-631 -651 -1591 0
+631 -651 1591 0
+-631 651 1591 0
+1591 656 -1592 0
+-1591 -656 -1592 0
+1591 -656 1592 0
+-1591 656 1592 0
+-1592 0
+632 652 -1593 0
+-632 -652 -1593 0
+632 -652 1593 0
+-632 652 1593 0
+1593 657 -1594 0
+-1593 -657 -1594 0
+1593 -657 1594 0
+-1593 657 1594 0
+-1594 0
+633 653 -1595 0
+-633 -653 -1595 0
+633 -653 1595 0
+-633 653 1595 0
+1595 658 -1596 0
+-1595 -658 -1596 0
+1595 -658 1596 0
+-1595 658 1596 0
+-1596 0
+634 654 -1597 0
+-634 -654 -1597 0
+634 -654 1597 0
+-634 654 1597 0
+1597 659 -1598 0
+-1597 -659 -1598 0
+1597 -659 1598 0
+-1597 659 1598 0
+-1598 0
+635 655 -1599 0
+-635 -655 -1599 0
+635 -655 1599 0
+-635 655 1599 0
+1599 660 -1600 0
+-1599 -660 -1600 0
+1599 -660 1600 0
+-1599 660 1600 0
+-1600 0
+536 661 -1601 0
+-536 -661 -1601 0
+536 -661 1601 0
+-536 661 1601 0
+1601 666 -1602 0
+-1601 -666 -1602 0
+1601 -666 1602 0
+-1601 666 1602 0
+-1602 0
+537 662 -1603 0
+-537 -662 -1603 0
+537 -662 1603 0
+-537 662 1603 0
+1603 667 -1604 0
+-1603 -667 -1604 0
+1603 -667 1604 0
+-1603 667 1604 0
+-1604 0
+538 663 -1605 0
+-538 -663 -1605 0
+538 -663 1605 0
+-538 663 1605 0
+1605 668 -1606 0
+-1605 -668 -1606 0
+1605 -668 1606 0
+-1605 668 1606 0
+-1606 0
+539 664 -1607 0
+-539 -664 -1607 0
+539 -664 1607 0
+-539 664 1607 0
+1607 669 -1608 0
+-1607 -669 -1608 0
+1607 -669 1608 0
+-1607 669 1608 0
+-1608 0
+540 665 -1609 0
+-540 -665 -1609 0
+540 -665 1609 0
+-540 665 1609 0
+1609 670 -1610 0
+-1609 -670 -1610 0
+1609 -670 1610 0
+-1609 670 1610 0
+-1610 0
+661 671 -1611 0
+-661 -671 -1611 0
+661 -671 1611 0
+-661 671 1611 0
+1611 676 -1612 0
+-1611 -676 -1612 0
+1611 -676 1612 0
+-1611 676 1612 0
+-1612 0
+662 672 -1613 0
+-662 -672 -1613 0
+662 -672 1613 0
+-662 672 1613 0
+1613 677 -1614 0
+-1613 -677 -1614 0
+1613 -677 1614 0
+-1613 677 1614 0
+-1614 0
+663 673 -1615 0
+-663 -673 -1615 0
+663 -673 1615 0
+-663 673 1615 0
+1615 678 -1616 0
+-1615 -678 -1616 0
+1615 -678 1616 0
+-1615 678 1616 0
+-1616 0
+664 674 -1617 0
+-664 -674 -1617 0
+664 -674 1617 0
+-664 674 1617 0
+1617 679 -1618 0
+-1617 -679 -1618 0
+1617 -679 1618 0
+-1617 679 1618 0
+-1618 0
+665 675 -1619 0
+-665 -675 -1619 0
+665 -675 1619 0
+-665 675 1619 0
+1619 680 -1620 0
+-1619 -680 -1620 0
+1619 -680 1620 0
+-1619 680 1620 0
+-1620 0
+596 671 -1621 0
+-596 -671 -1621 0
+596 -671 1621 0
+-596 671 1621 0
+1621 681 -1622 0
+-1621 -681 -1622 0
+1621 -681 1622 0
+-1621 681 1622 0
+-1622 0
+597 672 -1623 0
+-597 -672 -1623 0
+597 -672 1623 0
+-597 672 1623 0
+1623 682 -1624 0
+-1623 -682 -1624 0
+1623 -682 1624 0
+-1623 682 1624 0
+-1624 0
+598 673 -1625 0
+-598 -673 -1625 0
+598 -673 1625 0
+-598 673 1625 0
+1625 683 -1626 0
+-1625 -683 -1626 0
+1625 -683 1626 0
+-1625 683 1626 0
+-1626 0
+599 674 -1627 0
+-599 -674 -1627 0
+599 -674 1627 0
+-599 674 1627 0
+1627 684 -1628 0
+-1627 -684 -1628 0
+1627 -684 1628 0
+-1627 684 1628 0
+-1628 0
+600 675 -1629 0
+-600 -675 -1629 0
+600 -675 1629 0
+-600 675 1629 0
+1629 685 -1630 0
+-1629 -685 -1630 0
+1629 -685 1630 0
+-1629 685 1630 0
+-1630 0
+611 686 -1631 0
+-611 -686 -1631 0
+611 -686 1631 0
+-611 686 1631 0
+1631 691 -1632 0
+-1631 -691 -1632 0
+1631 -691 1632 0
+-1631 691 1632 0
+-1632 0
+612 687 -1633 0
+-612 -687 -1633 0
+612 -687 1633 0
+-612 687 1633 0
+1633 692 -1634 0
+-1633 -692 -1634 0
+1633 -692 1634 0
+-1633 692 1634 0
+-1634 0
+613 688 -1635 0
+-613 -688 -1635 0
+613 -688 1635 0
+-613 688 1635 0
+1635 693 -1636 0
+-1635 -693 -1636 0
+1635 -693 1636 0
+-1635 693 1636 0
+-1636 0
+614 689 -1637 0
+-614 -689 -1637 0
+614 -689 1637 0
+-614 689 1637 0
+1637 694 -1638 0
+-1637 -694 -1638 0
+1637 -694 1638 0
+-1637 694 1638 0
+-1638 0
+615 690 -1639 0
+-615 -690 -1639 0
+615 -690 1639 0
+-615 690 1639 0
+1639 695 -1640 0
+-1639 -695 -1640 0
+1639 -695 1640 0
+-1639 695 1640 0
+-1640 0
+576 696 -1641 0
+-576 -696 -1641 0
+576 -696 1641 0
+-576 696 1641 0
+1641 701 -1642 0
+-1641 -701 -1642 0
+1641 -701 1642 0
+-1641 701 1642 0
+-1642 0
+577 697 -1643 0
+-577 -697 -1643 0
+577 -697 1643 0
+-577 697 1643 0
+1643 702 -1644 0
+-1643 -702 -1644 0
+1643 -702 1644 0
+-1643 702 1644 0
+-1644 0
+578 698 -1645 0
+-578 -698 -1645 0
+578 -698 1645 0
+-578 698 1645 0
+1645 703 -1646 0
+-1645 -703 -1646 0
+1645 -703 1646 0
+-1645 703 1646 0
+-1646 0
+579 699 -1647 0
+-579 -699 -1647 0
+579 -699 1647 0
+-579 699 1647 0
+1647 704 -1648 0
+-1647 -704 -1648 0
+1647 -704 1648 0
+-1647 704 1648 0
+-1648 0
+580 700 -1649 0
+-580 -700 -1649 0
+580 -700 1649 0
+-580 700 1649 0
+1649 705 -1650 0
+-1649 -705 -1650 0
+1649 -705 1650 0
+-1649 705 1650 0
+-1650 0
+666 686 -1651 0
+-666 -686 -1651 0
+666 -686 1651 0
+-666 686 1651 0
+1651 706 -1652 0
+-1651 -706 -1652 0
+1651 -706 1652 0
+-1651 706 1652 0
+-1652 0
+667 687 -1653 0
+-667 -687 -1653 0
+667 -687 1653 0
+-667 687 1653 0
+1653 707 -1654 0
+-1653 -707 -1654 0
+1653 -707 1654 0
+-1653 707 1654 0
+-1654 0
+668 688 -1655 0
+-668 -688 -1655 0
+668 -688 1655 0
+-668 688 1655 0
+1655 708 -1656 0
+-1655 -708 -1656 0
+1655 -708 1656 0
+-1655 708 1656 0
+-1656 0
+669 689 -1657 0
+-669 -689 -1657 0
+669 -689 1657 0
+-669 689 1657 0
+1657 709 -1658 0
+-1657 -709 -1658 0
+1657 -709 1658 0
+-1657 709 1658 0
+-1658 0
+670 690 -1659 0
+-670 -690 -1659 0
+670 -690 1659 0
+-670 690 1659 0
+1659 710 -1660 0
+-1659 -710 -1660 0
+1659 -710 1660 0
+-1659 710 1660 0
+-1660 0
+676 691 -1661 0
+-676 -691 -1661 0
+676 -691 1661 0
+-676 691 1661 0
+1661 696 -1662 0
+-1661 -696 -1662 0
+1661 -696 1662 0
+-1661 696 1662 0
+-1662 0
+677 692 -1663 0
+-677 -692 -1663 0
+677 -692 1663 0
+-677 692 1663 0
+1663 697 -1664 0
+-1663 -697 -1664 0
+1663 -697 1664 0
+-1663 697 1664 0
+-1664 0
+678 693 -1665 0
+-678 -693 -1665 0
+678 -693 1665 0
+-678 693 1665 0
+1665 698 -1666 0
+-1665 -698 -1666 0
+1665 -698 1666 0
+-1665 698 1666 0
+-1666 0
+679 694 -1667 0
+-679 -694 -1667 0
+679 -694 1667 0
+-679 694 1667 0
+1667 699 -1668 0
+-1667 -699 -1668 0
+1667 -699 1668 0
+-1667 699 1668 0
+-1668 0
+680 695 -1669 0
+-680 -695 -1669 0
+680 -695 1669 0
+-680 695 1669 0
+1669 700 -1670 0
+-1669 -700 -1670 0
+1669 -700 1670 0
+-1669 700 1670 0
+-1670 0
+681 701 -1671 0
+-681 -701 -1671 0
+681 -701 1671 0
+-681 701 1671 0
+1671 706 -1672 0
+-1671 -706 -1672 0
+1671 -706 1672 0
+-1671 706 1672 0
+-1672 0
+682 702 -1673 0
+-682 -702 -1673 0
+682 -702 1673 0
+-682 702 1673 0
+1673 707 -1674 0
+-1673 -707 -1674 0
+1673 -707 1674 0
+-1673 707 1674 0
+-1674 0
+683 703 -1675 0
+-683 -703 -1675 0
+683 -703 1675 0
+-683 703 1675 0
+1675 708 -1676 0
+-1675 -708 -1676 0
+1675 -708 1676 0
+-1675 708 1676 0
+-1676 0
+684 704 -1677 0
+-684 -704 -1677 0
+684 -704 1677 0
+-684 704 1677 0
+1677 709 -1678 0
+-1677 -709 -1678 0
+1677 -709 1678 0
+-1677 709 1678 0
+-1678 0
+685 705 -1679 0
+-685 -705 -1679 0
+685 -705 1679 0
+-685 705 1679 0
+1679 710 -1680 0
+-1679 -710 -1680 0
+1679 -710 1680 0
+-1679 710 1680 0
+-1680 0
+36 711 -1681 0
+-36 -711 -1681 0
+36 -711 1681 0
+-36 711 1681 0
+1681 716 -1682 0
+-1681 -716 -1682 0
+1681 -716 1682 0
+-1681 716 1682 0
+-1682 0
+37 712 -1683 0
+-37 -712 -1683 0
+37 -712 1683 0
+-37 712 1683 0
+1683 717 -1684 0
+-1683 -717 -1684 0
+1683 -717 1684 0
+-1683 717 1684 0
+-1684 0
+38 713 -1685 0
+-38 -713 -1685 0
+38 -713 1685 0
+-38 713 1685 0
+1685 718 -1686 0
+-1685 -718 -1686 0
+1685 -718 1686 0
+-1685 718 1686 0
+-1686 0
+39 714 -1687 0
+-39 -714 -1687 0
+39 -714 1687 0
+-39 714 1687 0
+1687 719 -1688 0
+-1687 -719 -1688 0
+1687 -719 1688 0
+-1687 719 1688 0
+-1688 0
+40 715 -1689 0
+-40 -715 -1689 0
+40 -715 1689 0
+-40 715 1689 0
+1689 720 -1690 0
+-1689 -720 -1690 0
+1689 -720 1690 0
+-1689 720 1690 0
+-1690 0
+56 711 -1691 0
+-56 -711 -1691 0
+56 -711 1691 0
+-56 711 1691 0
+1691 721 -1692 0
+-1691 -721 -1692 0
+1691 -721 1692 0
+-1691 721 1692 0
+-1692 0
+57 712 -1693 0
+-57 -712 -1693 0
+57 -712 1693 0
+-57 712 1693 0
+1693 722 -1694 0
+-1693 -722 -1694 0
+1693 -722 1694 0
+-1693 722 1694 0
+-1694 0
+58 713 -1695 0
+-58 -713 -1695 0
+58 -713 1695 0
+-58 713 1695 0
+1695 723 -1696 0
+-1695 -723 -1696 0
+1695 -723 1696 0
+-1695 723 1696 0
+-1696 0
+59 714 -1697 0
+-59 -714 -1697 0
+59 -714 1697 0
+-59 714 1697 0
+1697 724 -1698 0
+-1697 -724 -1698 0
+1697 -724 1698 0
+-1697 724 1698 0
+-1698 0
+60 715 -1699 0
+-60 -715 -1699 0
+60 -715 1699 0
+-60 715 1699 0
+1699 725 -1700 0
+-1699 -725 -1700 0
+1699 -725 1700 0
+-1699 725 1700 0
+-1700 0
+61 726 -1701 0
+-61 -726 -1701 0
+61 -726 1701 0
+-61 726 1701 0
+1701 731 -1702 0
+-1701 -731 -1702 0
+1701 -731 1702 0
+-1701 731 1702 0
+-1702 0
+62 727 -1703 0
+-62 -727 -1703 0
+62 -727 1703 0
+-62 727 1703 0
+1703 732 -1704 0
+-1703 -732 -1704 0
+1703 -732 1704 0
+-1703 732 1704 0
+-1704 0
+63 728 -1705 0
+-63 -728 -1705 0
+63 -728 1705 0
+-63 728 1705 0
+1705 733 -1706 0
+-1705 -733 -1706 0
+1705 -733 1706 0
+-1705 733 1706 0
+-1706 0
+64 729 -1707 0
+-64 -729 -1707 0
+64 -729 1707 0
+-64 729 1707 0
+1707 734 -1708 0
+-1707 -734 -1708 0
+1707 -734 1708 0
+-1707 734 1708 0
+-1708 0
+65 730 -1709 0
+-65 -730 -1709 0
+65 -730 1709 0
+-65 730 1709 0
+1709 735 -1710 0
+-1709 -735 -1710 0
+1709 -735 1710 0
+-1709 735 1710 0
+-1710 0
+66 726 -1711 0
+-66 -726 -1711 0
+66 -726 1711 0
+-66 726 1711 0
+1711 736 -1712 0
+-1711 -736 -1712 0
+1711 -736 1712 0
+-1711 736 1712 0
+-1712 0
+67 727 -1713 0
+-67 -727 -1713 0
+67 -727 1713 0
+-67 727 1713 0
+1713 737 -1714 0
+-1713 -737 -1714 0
+1713 -737 1714 0
+-1713 737 1714 0
+-1714 0
+68 728 -1715 0
+-68 -728 -1715 0
+68 -728 1715 0
+-68 728 1715 0
+1715 738 -1716 0
+-1715 -738 -1716 0
+1715 -738 1716 0
+-1715 738 1716 0
+-1716 0
+69 729 -1717 0
+-69 -729 -1717 0
+69 -729 1717 0
+-69 729 1717 0
+1717 739 -1718 0
+-1717 -739 -1718 0
+1717 -739 1718 0
+-1717 739 1718 0
+-1718 0
+70 730 -1719 0
+-70 -730 -1719 0
+70 -730 1719 0
+-70 730 1719 0
+1719 740 -1720 0
+-1719 -740 -1720 0
+1719 -740 1720 0
+-1719 740 1720 0
+-1720 0
+101 741 -1721 0
+-101 -741 -1721 0
+101 -741 1721 0
+-101 741 1721 0
+1721 746 -1722 0
+-1721 -746 -1722 0
+1721 -746 1722 0
+-1721 746 1722 0
+-1722 0
+102 742 -1723 0
+-102 -742 -1723 0
+102 -742 1723 0
+-102 742 1723 0
+1723 747 -1724 0
+-1723 -747 -1724 0
+1723 -747 1724 0
+-1723 747 1724 0
+-1724 0
+103 743 -1725 0
+-103 -743 -1725 0
+103 -743 1725 0
+-103 743 1725 0
+1725 748 -1726 0
+-1725 -748 -1726 0
+1725 -748 1726 0
+-1725 748 1726 0
+-1726 0
+104 744 -1727 0
+-104 -744 -1727 0
+104 -744 1727 0
+-104 744 1727 0
+1727 749 -1728 0
+-1727 -749 -1728 0
+1727 -749 1728 0
+-1727 749 1728 0
+-1728 0
+105 745 -1729 0
+-105 -745 -1729 0
+105 -745 1729 0
+-105 745 1729 0
+1729 750 -1730 0
+-1729 -750 -1730 0
+1729 -750 1730 0
+-1729 750 1730 0
+-1730 0
+716 731 -1731 0
+-716 -731 -1731 0
+716 -731 1731 0
+-716 731 1731 0
+1731 741 -1732 0
+-1731 -741 -1732 0
+1731 -741 1732 0
+-1731 741 1732 0
+-1732 0
+717 732 -1733 0
+-717 -732 -1733 0
+717 -732 1733 0
+-717 732 1733 0
+1733 742 -1734 0
+-1733 -742 -1734 0
+1733 -742 1734 0
+-1733 742 1734 0
+-1734 0
+718 733 -1735 0
+-718 -733 -1735 0
+718 -733 1735 0
+-718 733 1735 0
+1735 743 -1736 0
+-1735 -743 -1736 0
+1735 -743 1736 0
+-1735 743 1736 0
+-1736 0
+719 734 -1737 0
+-719 -734 -1737 0
+719 -734 1737 0
+-719 734 1737 0
+1737 744 -1738 0
+-1737 -744 -1738 0
+1737 -744 1738 0
+-1737 744 1738 0
+-1738 0
+720 735 -1739 0
+-720 -735 -1739 0
+720 -735 1739 0
+-720 735 1739 0
+1739 745 -1740 0
+-1739 -745 -1740 0
+1739 -745 1740 0
+-1739 745 1740 0
+-1740 0
+721 736 -1741 0
+-721 -736 -1741 0
+721 -736 1741 0
+-721 736 1741 0
+1741 746 -1742 0
+-1741 -746 -1742 0
+1741 -746 1742 0
+-1741 746 1742 0
+-1742 0
+722 737 -1743 0
+-722 -737 -1743 0
+722 -737 1743 0
+-722 737 1743 0
+1743 747 -1744 0
+-1743 -747 -1744 0
+1743 -747 1744 0
+-1743 747 1744 0
+-1744 0
+723 738 -1745 0
+-723 -738 -1745 0
+723 -738 1745 0
+-723 738 1745 0
+1745 748 -1746 0
+-1745 -748 -1746 0
+1745 -748 1746 0
+-1745 748 1746 0
+-1746 0
+724 739 -1747 0
+-724 -739 -1747 0
+724 -739 1747 0
+-724 739 1747 0
+1747 749 -1748 0
+-1747 -749 -1748 0
+1747 -749 1748 0
+-1747 749 1748 0
+-1748 0
+725 740 -1749 0
+-725 -740 -1749 0
+725 -740 1749 0
+-725 740 1749 0
+1749 750 -1750 0
+-1749 -750 -1750 0
+1749 -750 1750 0
+-1749 750 1750 0
+-1750 0
