@@ -1,0 +1,22 @@
+{
+  "implementation": "clean-room-python-bitmask-v1",
+  "results": [
+    {
+      "corpus_sha256": "b4f6494c23793a40158a03ccd7c0943ae2e397c90a1467e27814bd007789be1f",
+      "deficient": 27107,
+      "first_failure": "406:30,37:[?GQ?aO?K?C@???Cg?GE?P????oCO???]?A??D?GA??@_?????AA?_?c???O???X",
+      "first_singleton_failure": "",
+      "graphs": 3129,
+      "local_failure": 426,
+      "local_witness": 26681,
+      "order": 28,
+      "pairs": 2431233,
+      "shard": 2,
+      "shard_count": 4,
+      "singleton": 135,
+      "singleton_local_failure": 0,
+      "singleton_local_witness": 135,
+      "source_graphs": 12517
+    }
+  ]
+}

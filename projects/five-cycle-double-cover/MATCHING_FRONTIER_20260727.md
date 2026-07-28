@@ -1,8 +1,8 @@
 # Prescribed-root matching frontier, 2026-07-27
 
-Status: **human-checkable scoped theorems and reductions / exact finite
-census through order 28 / connected singleton case open / Five-CDC
-unresolved**.
+Status: **human-checkable scoped theorems and reductions / standard
+all-singleton branch closed / exact finite census through order 28 /
+prescribed-root singleton case open / Five-CDC unresolved**.
 
 This index collects the current prescribed-root matching branch of the
 Five-Cycle Double Cover research archive. It neither proves nor disproves
@@ -27,7 +27,16 @@ Five-CDC claim.
   is a singleton. It proves the target implication when the associated
   bipartite cross-graph \(J\) is disconnected and reduces every remaining
   counterexample or proof obligation to connected \(J\). The connected
-  case is open.
+  **prescribed-root theta** case is open.
+- [`docs/root-insertion-two-factor-frontier.md`](docs/root-insertion-two-factor-frontier.md)
+  proves a separate standard closure of the entire all-singleton branch.
+  A degree count leaves exactly three edges inside the non-singleton
+  shore.  An edge-prescribed perfect matching uses exactly one of them,
+  so its complementary 2-factor has zero or two odd circuits.  The
+  zero case is Tait-colourable; the two-odd-circuit case is covered by
+  Huck--Kochol's 1995 theorem.  This argument is displayed in full and
+  does not establish the stronger prescribed-root flow needed for the
+  current gluing construction.
 - The more developed marked-circuits and rooted-interface results are in
   [`preprint-rooted-four-cut/`](preprint-rooted-four-cut/), including the
   complete LaTeX source, 29-page PDF, audit, novelty assessment, checksums,
@@ -56,6 +65,21 @@ Canonical source completeness and the meanings of the generator options
 are inherited from the retained Snarkhunter 2.0b runs. The zero in the
 last column is not a proof at arbitrary order.
 
+The root-insertion note gives a second, more restrictive finite screen.
+It starts with a perfect matching containing one root, inserts the other
+root, and tests whether the resulting complement is bridgeless.  The C++
+producer and a separately written Python replay agree on every order:
+
+| deficient root pairs | local insertion witnesses | failures | all-singleton pairs | singleton failures |
+|---:|---:|---:|---:|---:|
+| 121,578 | 119,652 | 1,926 | 807 | 0 |
+
+The unrestricted failures begin at order 24 and show that local insertion
+is not a universal method.  The zero in the all-singleton column is exact
+only for the retained finite corpora through order 28.  The reports,
+shards, sources, and compact cross-checker are under `scratch/` and frozen
+by `ROOT_INSERTION_SHA256SUMS`.
+
 ## Additional bounded rooted-cap screen
 
 [`search/rooted-three-pole-c3-cap-frontier-through24-20260727/`](search/rooted-three-pole-c3-cap-frontier-through24-20260727/)
@@ -81,6 +105,8 @@ Run from `projects/five-cycle-double-cover/`:
 ```sh
 python3 -B scratch/prescribed-root-matching-deficiency-checker.py
 python3 -B scratch/rotation-closure-countermodel-checker.py
+shasum -a 256 -c ROOT_INSERTION_SHA256SUMS
+python3 -B scratch/check-root-insertion-published.py
 (
   cd search/focused-theta-choice-through28-20260727
   shasum -a 256 -c SHA256SUMS

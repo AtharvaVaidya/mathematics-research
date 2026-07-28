@@ -1,0 +1,60 @@
+{
+  "status": "independent-clean-room-replay-pass",
+  "scope": {
+    "order": 28,
+    "corpus": "search/focused-theta-choice-through28-20260727/artifacts/cyclic4-nontait-order28.g6",
+    "corpus_sha256": "b4f6494c23793a40158a03ccd7c0943ae2e397c90a1467e27814bd007789be1f",
+    "source_graphs": 12517,
+    "shard_count": 4
+  },
+  "totals": {
+    "graphs": 12517,
+    "pairs": 9725709,
+    "deficient": 108676,
+    "local_witness": 106876,
+    "local_failure": 1800,
+    "singleton": 594,
+    "singleton_local_witness": 594,
+    "singleton_local_failure": 0
+  },
+  "primary_cpp_expected": {
+    "graphs": 12517,
+    "pairs": 9725709,
+    "deficient": 108676,
+    "local_witness": 106876,
+    "local_failure": 1800,
+    "singleton": 594,
+    "singleton_local_witness": 594,
+    "singleton_local_failure": 0,
+    "first_failure": "164:0,4:[?HY@cO?G???a??C??A?B_?G?SG@@??EC_???a?K??????C?B?????B_@?@??G?H",
+    "first_singleton_failure": ""
+  },
+  "comparison": {
+    "all_totals_match": true,
+    "first_failure_matches": true,
+    "no_singleton_failure_in_either_implementation": true
+  },
+  "shards": [
+    {
+      "shard": 0,
+      "file": "scratch/root-insertion-independent-order28-shard0.json",
+      "sha256": "9a595d9026dfab0f51a18c1919a44768a83849eecb82eee99c15219c35136318"
+    },
+    {
+      "shard": 1,
+      "file": "scratch/root-insertion-independent-order28-shard1.json",
+      "sha256": "618c5f1bdd569fe82c452c8f191809e1b88e21bd672a6118ae4e0bf571fa6347"
+    },
+    {
+      "shard": 2,
+      "file": "scratch/root-insertion-independent-order28-shard2.json",
+      "sha256": "c36bed354c54c55b87fa7d304707f10aff2583a2e3ca4334a149cc1ff788b572"
+    },
+    {
+      "shard": 3,
+      "file": "scratch/root-insertion-independent-order28-shard3.json",
+      "sha256": "ad3ea8bdae052791c282f2e5586cd2aa58d3cf89ac7e97503fb4fa0c34dd3501"
+    }
+  ],
+  "claim_boundary": "This is an exact finite replay only. It does not prove the universal singleton lemma, the focused perfect-or-theta alternative, or the Five-Cycle Double Cover Conjecture."
+}

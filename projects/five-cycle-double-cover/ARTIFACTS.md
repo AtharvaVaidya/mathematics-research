@@ -18,8 +18,15 @@ copied into a separate clean clone; it was not modified or committed.
   `MATCHING_FRONTIER_20260727.md`: a human proof of the universal
   deficiency-two bound, the exact boundary-eight Gallai--Edmonds
   reduction, the disconnected singleton-case Tait theorem, checked
-  countermodels to weaker rotation claims, and the connected singleton
-  case left explicitly open.
+  countermodels to weaker rotation claims, and the prescribed-root
+  connected singleton case left explicitly open.
+- The root-insertion update: a human-checkable proof closing the whole
+  all-singleton branch for the standard five-cycle-double-cover
+  conclusion, the exact two-factor interlacing criterion, C++ producer,
+  separately written Python replay, all retained reports through order
+  28, a compact cross-implementation checker, and
+  `ROOT_INSERTION_SHA256SUMS`.  It does not close the prescribed-root
+  version.
 - The complete compact focused theta-choice census through order 28:
   retained graph6 inputs and generator logs, source identities, two
   independently written classifiers, frozen result streams, aggregate

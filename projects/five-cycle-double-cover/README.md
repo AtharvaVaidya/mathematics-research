@@ -324,8 +324,16 @@ so none satisfies the surviving connected-branch threshold of ten.
   indexes the prescribed-root matching branch. It separates the universal
   deficiency theorem, boundary-eight and singleton Gallai--Edmonds
   reductions, exact finite census through order 28, checked
-  countermodels to weaker lemmas, and the connected case that remains
-  open.
+  countermodels to weaker lemmas, and the prescribed-root case that
+  remains open.
+- [`docs/root-insertion-two-factor-frontier.md`](docs/root-insertion-two-factor-frontier.md)
+  gives a line-by-line proof that the all-singleton Gallai--Edmonds
+  branch already has a **standard** five-cycle double cover: an
+  edge-prescribed perfect matching leaves a 2-factor with at most two
+  odd circuits.  It also proves the exact root-insertion interlacing
+  criterion and records a two-implementation finite screen through order
+  28.  This closes one standard branch, not the prescribed-root
+  alternative or Five-CDC itself.
 - [`docs/four-mark-core-closure.md`](docs/four-mark-core-closure.md) gives
   the full computer-free four-mark proof.
 - [`docs/audit-eight-mark-girth-bound.md`](docs/audit-eight-mark-girth-bound.md)
@@ -367,6 +375,8 @@ python3 -B scratch/verify_order96_kempe_incidence_frontier.py
 python3 -B scratch/prescribed-root-matching-deficiency-checker.py
 python3 -B scratch/rotation-closure-countermodel-checker.py
 (cd search/focused-theta-choice-through28-20260727 && python3 verify.py)
+shasum -a 256 -c ROOT_INSERTION_SHA256SUMS
+python3 -B scratch/check-root-insertion-published.py
 (cd search/rooted-three-pole-c3-cap-frontier-through24-20260727 && \
   shasum -a 256 -c CHECKSUMS-PUBLISHED.sha256)
 python3 -B scratch/check_order100_row_star_patterns.py

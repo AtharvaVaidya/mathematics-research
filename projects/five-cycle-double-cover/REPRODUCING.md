@@ -168,6 +168,8 @@ uses only the Python standard library and the system SHA-256 utility:
 ```sh
 python3 -B scratch/prescribed-root-matching-deficiency-checker.py
 python3 -B scratch/rotation-closure-countermodel-checker.py
+shasum -a 256 -c ROOT_INSERTION_SHA256SUMS
+python3 -B scratch/check-root-insertion-published.py
 (
   cd search/focused-theta-choice-through28-20260727
   shasum -a 256 -c SHA256SUMS
@@ -177,9 +179,53 @@ python3 -B scratch/rotation-closure-countermodel-checker.py
 ```
 
 These commands check the finite countermodels and the frozen census
-records. They do not prove the open connected singleton case. Complete
-re-execution of both census classifiers is documented in
+records.  The human proof in
+`docs/root-insertion-two-factor-frontier.md` closes the all-singleton
+branch only for the standard five-cycle-double-cover conclusion; the
+stronger prescribed-root singleton case remains open.  Complete
+re-execution of both focused-theta census classifiers is documented in
 `search/focused-theta-choice-through28-20260727/REPRODUCING.md`.
+
+The root-insertion producer and independent replay are retained
+separately.  A quick executable smoke replay of the order-10 row is:
+
+```sh
+c++ -std=c++17 -O3 -Wall -Wextra -pedantic \
+  scratch/focused-local-insertion-census.cpp \
+  -o /tmp/focused-local-insertion-census
+/tmp/focused-local-insertion-census 10 \
+  search/focused-theta-choice-through28-20260727/artifacts/\
+cyclic4-nontait-order10.g6 \
+  > /tmp/root-insertion-order10.ndjson
+head -n 1 scratch/focused-local-insertion-result.ndjson \
+  > /tmp/root-insertion-order10.expected.ndjson
+cmp /tmp/root-insertion-order10.expected.ndjson \
+  /tmp/root-insertion-order10.ndjson
+
+python3 -B scratch/verify-root-insertion-census.py \
+  --orders 10 \
+  --output /tmp/root-insertion-order10-independent.json
+```
+
+The complete clean-room order-28 replay is parallelizable by graph-index
+shard:
+
+```sh
+for shard in 0 1 2 3; do
+  python3 -B scratch/verify-root-insertion-census.py \
+    --orders 28 --shard "$shard" --shard-count 4 \
+    --output "/tmp/root-insertion-order28-shard${shard}.json" &
+done
+wait
+```
+
+The retained four outputs and their aggregate comparison are frozen by
+`ROOT_INSERTION_SHA256SUMS`.  Rerunning the last command is a full
+independent semantic replay and can take substantial CPU time.  The
+compact checker above validates the retained shard hashes, independently
+recomputes all published aggregates, and compares them with the C++
+producer output.  These computations are finite evidence only and do not
+resolve Five-CDC.
 
 Replay the five-point local theorem with:
 

@@ -20,8 +20,18 @@ are not independent human verification or peer review.
 - `docs/focused-theta-choice-census-frontier.md`
 - `docs/boundary-eight-rotation-closure-frontier.md`
 - `docs/singleton-ge-tait-frontier.md`
+- `docs/root-insertion-two-factor-frontier.md`
 - `scratch/prescribed-root-matching-deficiency-checker.py`
 - `scratch/rotation-closure-countermodel-checker.py`
+- `scratch/focused-local-insertion-census.cpp`
+- `scratch/verify-root-insertion-census.py`
+- `scratch/check-root-insertion-published.py`
+- `scratch/focused-local-insertion-result.ndjson`
+- `scratch/root-insertion-independent-through22.json`
+- `scratch/root-insertion-independent-through26.json`
+- `scratch/root-insertion-independent-order28-combined.json`
+- `scratch/root-insertion-independent-order28-shard0.json` through
+  `scratch/root-insertion-independent-order28-shard3.json`
 - `scratch/focused-theta-choice-census.cpp`
 - `scratch/verify-focused-theta-choice-census.py`
 - `scratch/focused-theta-choice-census-result.json`
@@ -29,9 +39,11 @@ are not independent human verification or peer review.
 
 The universal deficiency-two theorem, boundary-eight incidence theorem,
 and disconnected singleton-case Tait theorem have complete displayed
-proofs. The connected singleton case remains open. The focused census
-through order 28 is exact over the retained corpora but is not promoted
-to a universal statement.
+proofs.  The new oddness argument closes the whole all-singleton branch
+for the standard five-cycle-double-cover conclusion.  The stronger
+prescribed-root connected singleton case remains open.  The focused and
+root-insertion censuses through order 28 are exact over the retained
+corpora but are not promoted to universal statements.
 
 ## Preprint
 
