@@ -19,6 +19,12 @@
     "conclusion": "the rooted state is reducible by root-component switches",
     "remaining_local_check": "two-active-port connectivity in every proposed transfer cell"
   },
+  "coarse_cell_no_go": {
+    "graph6": "K^`GOKA?O@_F",
+    "cut_word_after_refinement": ["02", "01", "02"],
+    "factor": "Y_01",
+    "result": "both coarse ports active but separate rung U-turns prevent transfer"
+  },
   "finite_checks": {
     "labeled_trees_through_order_5": 145,
     "normalized_J_homomorphisms": 165570,
@@ -28,7 +34,7 @@
   "artifacts": [
     {
       "path": "scratch/d5-johnson-transfer-tree-rescue.md",
-      "sha256": "d29b0f3b36cf8b28724ebf6533606c57ac5028b929aa52c4f601b5f0ec2400f3"
+      "sha256": "0887d1542880fd1f0748543bc0f1897b81dbc58a0af44040faf924df652fd02e"
     },
     {
       "path": "scratch/check_d5_johnson_transfer_tree_rescue.py",
@@ -37,6 +43,10 @@
     {
       "path": "scratch/d5-johnson-transfer-tree-check.txt",
       "sha256": "7c5dff46d5adde5c34af9b777c1ddec056508a22a6d8af23cc2a9e1d93c9a58c"
+    },
+    {
+      "path": "scratch/check_d5_coarse_transfer_cell_no_go.py",
+      "sha256": "9e9f078ea991ef578892d58f24ee0217f54b624017ffefa70a9189aad7c4b648"
     }
   ],
   "fivecdc_resolution": false,

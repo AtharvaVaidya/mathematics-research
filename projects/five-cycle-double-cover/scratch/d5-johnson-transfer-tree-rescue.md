@@ -93,6 +93,33 @@ active pair produces a U-turn into its branch.  Verifying this
 two-active-port connectivity for each proposed cell is the remaining
 graph-specific obligation.
 
+### Why the cell must be decomposed finely enough
+
+Parity alone does not make two active ports transfer through an
+arbitrarily coarse block.  In the order-12 capped ladder
+
+```text
+K^`GOKA?O@_F
+```
+
+use Tait labels \(A=01,B=02,C=12\).  Regard its square as one coarse
+two-port cell.  Both port cuts have label \(B\).  For factor \(Y_{01}\),
+\(B,C\) are active and \(A\) is inactive.  The two \(C\)-rungs join the
+two \(B\)-edges of each port in separate U-turns, while the two
+cross-cell \(A\)-rails are absent.  Thus both coarse ports are active
+but no factor component transfers between them.
+
+The square has a middle two-edge cut labeled \(A\).  Refining the block
+restores the Johnson path
+\[
+                              B,A,B;
+\]
+the inactive middle vertex then predicts the two U-turns exactly.  This
+literal example, checked by
+`scratch/check_d5_coarse_transfer_cell_no_go.py`, shows that condition 4
+is substantive and that a transfer-tree decomposition must expose all
+relevant serial two-edge cuts.
+
 The capped ladder is the path case, where the cell and cap transfer
 lemmas prove conditions 3--5 directly.  The theorem now shows that
 branching of the abstract transfer network causes no new word
