@@ -15,14 +15,20 @@ The strongest publishable-looking content is:
   reconfiguration trap cannot lift unchanged;
 - the explicit four-coordinate generalized-switch orbit trap, which closes a
   natural contraction/reconfiguration strategy; and
-- the first-foreign factor-splice identity; and
-- the complete terminal-plateau chain and refined blocker censuses through
-  order 14, together with exact witnesses delimiting the local lemmas.
+- the human-checkable fixed-five reduction and rooted edge-insertion
+  equivalence, which isolate an exact sufficient edge-extension premise;
+- the complete order-14 terminal-plateau census and fixed-distance descent
+  census; and
+- the complete 195-edge elimination screen on a 130-vertex cyclically
+  4-edge-connected girth-ten graph.
 
 The broad embedding dictionary is established background, not a contribution
 that should be advertised as new. The exact combination with proper
-five-colour \(D_5\) data, the switch formula, and the finite trap may be new,
-but no categorical novelty claim is justified yet.
+five-colour \(D_5\) data, the switch formula, the rooted reduction, and the
+finite censuses may be new.  The rooted equivalence itself is elementary and
+should not be called deep merely because it identifies the right frontier.
+No categorical novelty claim is justified until a specialist prior-art
+review is complete.
 
 ## Literature checked for this draft
 
@@ -54,14 +60,14 @@ This is a targeted check, not a systematic prior-art review.
 2. Search specifically for coloured crystallizations, edge-coloured
    triangulations, transition systems, and permutation formulas for
    split/merge changes under Kempe switches.
-3. Obtain independent expert review of both order-14 implementations and
-   archive the full primary blocker transcripts; the second implementation
-   already supplies a separately structured directed-root control.
+3. Obtain a genuinely independent full implementation of the order-14
+   terminal-plateau census, not only focused semantic verification of the
+   frozen report.
 4. Archive exact source, reports, `geng` version, compiler version, and
    checksums at an immutable commit or DOI.
-5. Decide whether the note should lead with the exact switch formula or the
-   reconfiguration counterexample; either is a more defensible contribution
-   than the positive finite evidence alone.
+5. Decide whether the note should lead with the exact switch formula, the
+   reconfiguration counterexample, or the rooted edge-extension reduction;
+   each is more defensible than positive finite evidence alone.
 6. Retain the full AI-use disclosure and comply with the target venue's
    authorship and AI policies.
 

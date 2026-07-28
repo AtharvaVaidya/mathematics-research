@@ -21,584 +21,63 @@ temporary directory is removed after success or failure.
 The frontier statement concerns one explicit positive instance.  It is not a
 census or clearance of the full reduced minimum-counterexample domain.
 
-## Surface-Kempe local no-gos and the 56-vertex terminal plateau
+## Rooted-resolution frontier checks
 
-From `projects/five-cycle-double-cover`, the focused quick checks are:
-
-```sh
-python3 scratch/check_d5_local_boundary_degree_two_lift_no_go.py
-python3 scratch/check_d5_local_zero_two_lift_no_go.py
-python3 scratch/check_d5_local_max_two_lift_no_go.py
-python3 scratch/check_d5_local_max_two_lift_no_go_independent.py
-python3 scratch/check_d5_local_chi_max_neutral_connectivity_no_go.py
-python3 scratch/check_d5_local_chi_max_direct_chain_descent_no_go.py
-python3 scratch/check_d5_lift56_disconnected_plateau_state.py
-shasum -a 256 -c scratch/d5-lift56-terminal-plateau-SHA256SUMS
-```
-
-The complete terminal-plateau replay is:
+The newest conditional reduction and finite controls are outside the older
+master script's frozen acceptance boundary.  Run them directly:
 
 ```sh
-clang++ -std=c++17 -O3 -DNDEBUG \
-  scratch/audit_d5_lift56_equal_chi_plateau.cpp \
-  -o /tmp/audit_d5_lift56_equal_chi_plateau
-/tmp/audit_d5_lift56_equal_chi_plateau \
-  > /tmp/d5-lift56-terminal-plateau-report.txt
-diff -u scratch/d5-lift56-terminal-plateau-report.txt \
-  /tmp/d5-lift56-terminal-plateau-report.txt
-```
-
-The expected exact plateau totals are 55,652 states modulo global \(S_5\),
-1,022,160 directed neutral moves, 1,041 states with disconnected neutral
-support, no positive exit, and no uncovered root pair.  This refutes a
-statewise connectivity shortcut while supporting—but not proving—the
-terminal-plateau root-universality conjecture.
-
-## Terminal-chain and affine-pair frontiers
-
-The complete order-14 terminal-\(\chi\), fixed-distance report and its
-independent order-12 control are checked by:
-
-```sh
-(
-  cd scratch
-  shasum -a 256 -c d5-terminal-chi-chain-SHA256SUMS
-)
 python3 scratch/verify_d5_terminal_chi_chain_lex_order14_report.py
-python3 scratch/audit_d5_terminal_chi_chain_lex_order12.py
-python3 scratch/check_d5_terminal_shared_pair_self_reentry_no_go.py
-python3 scratch/check_d5_terminal_up_without_down_no_go.py
+python3 scratch/verify_d5_root_component_distance_order16_summary.py
+python3 scratch/verify_d5_root_feasibility_lift13_girth10.py
+python3 scratch/verify_oum_combined_choice_12v.py
+python3 scratch/verify_jaeger_tree_choice_through14.py
+python3 scratch/verify_jaeger_one_tree_exchange_countermodel.py
+python3 scratch/check_d5_root_port_monodromy_local_charge.py
+python3 scratch/check_d5_connected_shared_coordinate_incidence.py
 ```
 
-The frozen order-14 totals are 33,598 terminal \(\chi\)-plateaus, 642,167
-fixed-distance bad subplateaus, maximum distance three, and zero failed
-subplateaus.  The independent order-12 totals are 2,659 terminal plateaus,
-33,610 bad subplateaus, and zero failures.  The last two commands verify
-genuine terminal-plateau countermodels to distance-primary and immediate
-greedy descent.  These results leave the universal closed-subplateau exit
-lemma open.
+The first three commands verify the order-14 terminal census, the order-16
+root-rescue census, and all 195 rooted reductions of the retained
+130-vertex girth-ten graph.  The remaining commands verify exact no-go and
+compression frontiers.  None is a universal FiveCDC proof.
 
-The reduced affine-pair package has a quick standard-library replay:
+## Jaeger fixed-fibre frontier checks
+
+The human identities, complete order-14 census, certified 34-vertex
+thinning obstruction, small no-go examples, and literal order-44 witnesses
+can be checked independently with:
 
 ```sh
-(
-  cd scratch
-  shasum -a 256 -c fano-apx-score1-SHA256SUMS
-)
-python3 scratch/check_fano_apx_score1_order24.py
+python3 scratch/verify_jaeger_five_point_frontier.py
+python3 scratch/verify_jaeger_support5_component_criterion.py
+python3 scratch/verify_jaeger_star_thinning_countermodel_34v.py
+python3 scratch/verify_jaeger_34v_star_good_witness.py
+python3 scratch/check_jaeger_fixed_third_tree_parity_no_go.py
+python3 scratch/verify_jaeger_k_forest_petersen.py
+python3 scratch/check_jaeger_perfect_forests_first_no_go.py
+python3 scratch/verify_jaeger_star_parity_descent_countermodel.py
+python3 scratch/verify_jaeger_kernel_closure_typea_countermodel.py
+python3 scratch/verify_jaeger_kernel_closure_frontier.py
+python3 scratch/verify_jaeger_fano_min_descent_frontier.py
+python3 scratch/verify_jaeger_kernel_closure_order16_census.py
+python3 scratch/verify_jaeger_star_kernel_closure_countermodel_16v.py
+c++ -O3 -std=c++20 \
+  scratch/count_jaeger_star_kernel_closure_countermodel_16v.cpp \
+  -o /tmp/count_jaeger_star_kernel_closure_countermodel_16v
+/tmp/count_jaeger_star_kernel_closure_countermodel_16v
+python3 scratch/verify_jaeger_star_kernel_closure_triangle_expansion.py
+python3 scratch/verify_jaeger_fano_min_descent_order16_closure_no_go.py
+python3 scratch/verify_jaeger_coordinate_five_order44.py \
+  --input search/known_snarks/source/snarks_44.04.oddness4.cyc4.g6 \
+  --witnesses output/jaeger-coordinate-five-order44/witnesses.jsonl
 ```
 
-It reconstructs the graph and flow, all 4,681 simple circuits, all 1,371
-legal one-circuit switches, the 180 still-bad neighbours and their complete
-APX-score distribution, the unique initial affine/packing intersection,
-its four canonical defect vectors, and an explicit repairing circuit.  To
-build the CaDiCaL-backed search producer:
-
-```sh
-c++ -std=c++20 -O3 -DNDEBUG \
-  scratch/search_fano_reduced_one_switch_binary.cpp \
-  -I/opt/homebrew/include -L/opt/homebrew/lib -lcadical \
-  -o /tmp/search_fano_reduced_one_switch_binary
-```
-
-The score-one state is a near-state only.  APX and FiveCDC remain open.
-
-## First-foreign splice, block-potential, and Fourier checks
-
-The local splice identity and its complete order-12 terminal audit are
-replayed by:
-
-```sh
-python3 scratch/check_d5_terminal_both_arc_reentry_no_go.py
-python3 scratch/check_d5_unavoidable_reentry_switch_no_go.py
-python3 scratch/audit_d5_first_foreign_splice_order12.py
-shasum -a 256 -c scratch/d5-first-foreign-splice-SHA256SUMS
-```
-
-The first command verifies the seven-state terminal counterexample to
-immediate rescue.  The second independently reconstructs the same
-obstruction and its exact neutral two-switch repair.  The third exhausts
-all 81 biconnected simple cubic graphs of order 12 and checks 2,154,613
-first-foreign configurations, including 1,688,084 rooted distance-two
-cases, with zero failures.
-
-The corrected order-14 \(b^*\) package explicitly enforces
-\(\lvert P\cap Q\rvert=1\).  Check its frozen transcripts and hashes by:
-
-```sh
-python3 scratch/verify_d5_terminal_foreign_block_order14.py
-shasum -a 256 -c \
-  output/d5-terminal-foreign-block-potential/SHA256SUMS
-```
-
-The expected primary summaries have 480 graphs, 537,418 normalized flows,
-33,598 terminal plateaus, and respectively 646,399 ordered and 643,528
-endpoint-symmetric fixed-\((d,b^*)\) subplateaus, with zero failures.  A
-separately implemented directed-root audit is checked by:
-
-```sh
-python3 scratch/verify_d5_cyclic_block_lex_reports.py
-shasum -a 256 -c scratch/d5-cyclic-block-lex-SHA256SUMS
-python3 scratch/check_d5_cyclic_block_one_step_no_go_order14.py
-python3 scratch/check_d5_no_fresh_coordinate_blocker_order12.py
-```
-
-It reports 1,293,664 directed-root subplateaus at order 14 with zero
-failures.  The standalone witness proves that restricting a descent step
-to the minimizing root component or first blocker is false, even though a
-neutral third-pair switch immediately rescues the roots.  The last command
-checks the all-five-coordinate witness showing that the associated
-fresh-coordinate multi-splice lemma is not universally available.
-
-The exact Fourier/Laplacian count and the failed modular corollary are
-replayed by:
-
-```sh
-python3 scratch/audit_d5_fourier_laplacian_count.py \
-  --census-max-order 10
-shasum -a 256 -c scratch/d5-fourier-laplacian-SHA256SUMS
-```
-
-The checker compares the signed-rank formula with direct \(D_5\)-flow
-counts, including loops and parallel edges.  It also verifies that the
-proposed mod-3 nonvanishing route already fails on \(K_4\).  The frozen
-order-12 report extends the complete bridgeless cubic census to 107 graphs
-through order 12 and records the first failures of two naive 2-adic
-valuation predictions.  None of these finite or structural checks proves
-or disproves FiveCDC.
-
-## Five-pole path-extension and ear frontier
-
-The path-extension argument is a displayed human proof in
-`docs/five-pole-realizability-frontier.md`.  The order-15 threshold package
-has a quick standard-library verifier:
-
-```sh
-shasum -a 256 -c FIVE_POLE_FRONTIER_SHA256SUMS
-python3 search/five-pole-46-threshold-order15-20260727/verify.py
-```
-
-It checks the package manifest, parses all 69,243 graph6 records, verifies
-the degree profile and absence of proper-edge bridges, and regenerates the
-canonical `geng` corpus for exact comparison.  A full classifier replay,
-requiring nauty, C++17, and CaDiCaL, is available as:
-
-```sh
-python3 search/five-pole-46-threshold-order15-20260727/verify.py --replay
-```
-
-The ear-operator computations use only the Python standard library:
-
-```sh
-python3 scratch/audit_five_pole_ear_operator.py \
-  > /tmp/d5-ear-quick.json
-python3 scratch/audit_five_pole_ear_operator.py --extended \
-  > /tmp/d5-ear-extended.json
-python3 scratch/verify_d5_ear_countermodel_independent.py \
-  > /tmp/d5-ear-countermodel-independent.json
-```
-
-The extended audit reconstructs the 72-state restricted semigroup; the
-independent program recomputes the 6,240-word universe and abstract
-countermodel without importing the primary audit.  The countermodel is not
-claimed to be a graph pole.  These checks provide no proof or disproof of
-FiveCDC.
-
-The order-17 split-state update has a separate checksum and structural
-replay:
-
-```sh
-shasum -a 256 -c VERTEX_EDGE_SPLIT_SHA256SUMS
-(
-  cd search/five-pole-universal-split-order17-20260727
-  shasum -a 256 -c SHA256SUMS
-)
-python3 search/five-pole-universal-split-order17-20260727/verify.py
-python3 scratch/audit_vertex_edge_split_state_equivalence.py
-```
-
-The structural verifier regenerates all 1,109,844 canonical records,
-checks their graph6 semantics and bridge/degree profile, and compares
-eight exact corpus hashes and summary totals.  The optional `--replay`
-mode reruns all 11,098,440 positive CaDiCaL queries.  It was not rerun
-during this publication sync.  The arbitrary-order rooted property and
-standard FiveCDC remain open.
-
-## One-boundary-five frontier
-
-From `projects/five-cycle-double-cover`, verify the frozen update and run
-the focused standard-library checks:
-
-```sh
-shasum -a 256 -c ONE_BOUNDARY_FIVE_SHA256SUMS
-python3 -B scratch/audit_factor_critical_ear_forest.py --self-check \
-  > /tmp/factor-critical-five-pole-counterexamples.json
-cmp /tmp/factor-critical-five-pole-counterexamples.json \
-  scratch/factor-critical-five-pole-counterexamples-result.json
-python3 -B scratch/audit_factor_critical_ear_forest.py \
-  --r2-json artifacts/structured/graphs/lukotka_R2_oddness6.json \
-  > /tmp/factor-critical-r2-path-counterexample.json
-cmp /tmp/factor-critical-r2-path-counterexample.json \
-  scratch/factor-critical-r2-path-counterexample-result.json
-python3 -B scratch/check_cyclic4_threshold_two_core.py \
-  > /tmp/cyclic4-threshold-two-core.json
-cmp /tmp/cyclic4-threshold-two-core.json \
-  scratch/cyclic4-threshold-two-core-result.json
-python3 -B scratch/check_cyclic4_all_bad_threshold_three_core.py \
-  > /tmp/cyclic4-all-bad-threshold-three-core.json
-cmp /tmp/cyclic4-all-bad-threshold-three-core.json \
-  scratch/cyclic4-all-bad-threshold-three-core-result.json
-python3 -B scratch/check_one_boundary_five_completion_frontier.py \
-  > /tmp/one-boundary-five-completion.json
-cmp /tmp/one-boundary-five-completion.json \
-  scratch/one-boundary-five-completion-result.json
-```
-
-The longer exact completion replays are:
-
-```sh
-python3 -B scratch/check_s1_theta_q67_completions.py \
-  --output /tmp/s1-theta-q67-census.json
-cmp /tmp/s1-theta-q67-census.json scratch/s1-theta-q67-census.json
-python3 -B scratch/check_s2_q67_completion_classes.py \
-  --skip-class-cuts --output /tmp/s2-q67-classes.json
-cmp /tmp/s2-q67-classes.json scratch/s2-q67-classes.json
-```
-
-The \(s=1\) command checks all 120 terminal bijections, every small cut,
-and every perfect matching.  The \(s=2\) command regenerates and
-canonically quotients all 9,600 gluings, while running the exact cut and
-matching census on the selected lexicographic witness.  The optional
-nauty `labelg` executable supplies the isomorphism-class counts.  Remove
-`--skip-class-cuts` to classify small cuts in a representative of all 570
-classes.
-
-The retained order-17 aggregate
-`scratch/factor-critical-five-pole-oddness-order17.json` is not a
-standalone corpus replay because the canonical input stream is omitted
-from this compact update.  It is finite provenance only.  The human
-proofs and exact remaining obligation are indexed by
-`ONE_BOUNDARY_FIVE_FRONTIER_20260727.md`.  These checks do not prove or
-disprove FiveCDC and do not test the orientable variant.
-
-The terminal-distinct \(s=1\) theta-cap exclusion has two
-standard-library implementations:
-
-```sh
-shasum -a 256 -c THETA_CAP_SWITCHING_SHA256SUMS
-python3 -B scratch/theta_cap_boundary_language.py \
-  > /tmp/theta-cap-boundary-language.json
-cmp /tmp/theta-cap-boundary-language.json \
-  scratch/theta-cap-boundary-language-result.json
-python3 -B scratch/theta_cap_boundary_language_independent.py \
-  > /tmp/theta-cap-boundary-language-independent.json
-cmp /tmp/theta-cap-boundary-language-independent.json \
-  scratch/theta-cap-boundary-language-independent-result.json
-```
-
-Both programs enumerate all 6,240 ordered even boundary words.  They
-independently obtain 6,000 accepted words, 58 of 62 global-coordinate
-orbits, the same four missing orbits, and all 24 successful switched-word
-extensions.  The theorem and its minimality/gluing proof are displayed in
-`docs/theta-cap-five-cycle-extension-lemma.md`.  This closes only the
-terminal-distinct \(s=1\) outside.
-
-The subsequent \(s\le3\) switching-core reduction is replayed by:
-
-```sh
-shasum -a 256 -c S123_D5_REDUCTION_SHA256SUMS
-shasum -a 256 -c \
-  scratch/one-boundary-five-outside-relations.SHA256SUMS
-python3 -B scratch/classify_one_boundary_five_outside_relations.py \
-  --max-s 3 --output /tmp/one-boundary-five-outside-relations.json
-cmp /tmp/one-boundary-five-outside-relations.json \
-  scratch/one-boundary-five-outside-relations.json
-python3 -B \
-  scratch/verify_one_boundary_five_outside_relations_independent.py \
-  --output /tmp/one-boundary-five-outside-relations-independent.json
-cmp /tmp/one-boundary-five-outside-relations-independent.json \
-  scratch/one-boundary-five-outside-relations-independent.json
-```
-
-The two implementations reconstruct all 62 global-coordinate boundary
-orbits and agree on the relation/core profiles of all 6 retained
-\(s=1\), 128 retained \(s=2\), and 3,576 retained \(s=3\) patterns.  The
-independent relation
-solver imports the shared structural pattern generator but does not use
-the primary satisfiability or switching-core code.  The human proof in
-`docs/one-boundary-five-D5-s123-reduction.md` checks why every actual
-minimum-counterexample outside survives the structural filters and why
-the smaller 5-cycle and three-vertex path caps are bridgeless.  Combined
-with the \(s=0\) triangle-cut argument, only \(s\ge4\) remains open in
-this branch.
-
-The order-100 oddness-six strategy counterexample has its own complete
-package.  Its quick replay reconstructs the source and completion, checks
-the exact Gallai--Edmonds profile, factor-critical shore, displayed
-six-odd-circuit 2-factor, and explicit standard five-CDC.  The full mode
-also enumerates all cyclic edge cuts of size at most three:
-
-```sh
-(
-  cd search/one-boundary-five-oddness6-completion-20260727
-  shasum -a 256 -c SHA256SUMS
-)
-python3 search/one-boundary-five-oddness6-completion-20260727/verify.py
-python3 search/one-boundary-five-oddness6-completion-20260727/verify.py \
-  --full
-```
-
-The source resistance LRAT was checked by both pinned certificate
-checkers:
-
-```sh
-.tools/cert-checkers/drat-trim/lrat-check \
-  search/one-boundary-five-oddness6-completion-20260727/source96-delete-at-most6.cnf \
-  search/one-boundary-five-oddness6-completion-20260727/source96-delete-at-most6.lrat
-.tools/cert-checkers/cake_lpr/cake_lpr \
-  search/one-boundary-five-oddness6-completion-20260727/source96-delete-at-most6.cnf \
-  search/one-boundary-five-oddness6-completion-20260727/source96-delete-at-most6.lrat
-python3 -m verifier_a check-model \
-  search/one-boundary-five-oddness6-completion-20260727/graph.json \
-  search/one-boundary-five-oddness6-completion-20260727/fivecdc.model
-```
-
-This graph disproves only the proposed oddness-at-most-four closure of
-the residual branch.  Its retained five-CDC is positive.
-
-## Marked-circuits preprint and companion checks
-
-The 29-page publication draft is
-`preprint-rooted-four-cut/output/pdf/main.pdf`.  Its checksum ledger covers
-the source, PDF, human-audit files, order-22 separation checkers, selected
-rooted-interface notes, and the key order-17/order-22 frozen artifacts:
-
-```sh
-(cd preprint-rooted-four-cut && shasum -a 256 -c CHECKSUMS-PUBLISHED.sha256)
-```
-
-`CHECKSUMS.sha256` freezes the full laboratory package, including the two
-large order-28 streams omitted from ordinary Git.
-
-Build the manuscript with:
-
-```sh
-(cd preprint-rooted-four-cut && tectonic main.tex --outdir output/pdf)
-```
-
-The two order-22 separation implementations can be compiled and exercised
-on the complete order-12 control corpus without rerunning the much larger
-order-22 census:
-
-```sh
-clang++ -O3 -std=c++20 \
-  scratch/tait_all_coloring_mark_separation.cpp \
-  -o /tmp/tait_all_coloring_mark_separation
-clang++ -O3 -std=c++20 \
-  scratch/verify_order22_separation_via_matchings.cpp \
-  -o /tmp/verify_order22_separation_via_matchings
-
-/opt/homebrew/bin/geng -cq -d3 -D3 12 |
-  /tmp/tait_all_coloring_mark_separation \
-    --target 4 --stop-after-first
-/opt/homebrew/bin/geng -cq -d3 -D3 12 |
-  /tmp/verify_order22_separation_via_matchings \
-    --target 4 --stop-after-first
-```
-
-Both should report 85 rows, 80 Tait-colourable graphs, 307 normalized
-colourings, and zero target-four witnesses; the independent implementation
-also reports 902 perfect matchings.
-
-Verify the retained rooted order-17 theorem and its independent summary:
-
-```sh
-python3 search/rooted-three-pole-frontier-20260727/verify_order17_base_pair_run.py \
-  search/rooted-three-pole-frontier-20260727/artifacts/order17-base-pair
-python3 search/rooted-three-pole-frontier-20260727/verify_report.py
-```
-
-The full order-22 universal-separation and cap-slice computations are
-expensive frozen censuses.  Their exact commands, environment, scope
-warnings, counts, source hashes, and transcript identities are recorded in
-`scratch/order22-universal-four-separation-result.json`,
-`docs/order22-universal-four-separation-screen.md`, and
-`search/four-pole-order22-cap-20260727/`.  This publication preparation did
-not claim a fresh independent full replay.
-
-The newer compact rooted and four-pole packages have self-contained semantic
-verifiers and checksum ledgers:
-
-```sh
-for package in \
-  search/four-pole-order24-cyclic4-cap-20260727 \
-  search/four-pole-order26-cyclic4-cap-20260727 \
-  search/four-pole-order26-strict-cap-probe-20260727 \
-  search/rooted-three-pole-nontait-endpoint-frontier-20260727 \
-  search/mnp-h2-h5-aa-deletion-probe-20260727
-do
-  (
-    cd "$package"
-    python3 verify.py > /tmp/"$(basename "$package")"-report.json
-    cmp /tmp/"$(basename "$package")"-report.json report.json
-    shasum -a 256 -c SHA256SUMS
-  )
-done
-```
-
-The order-24 and order-26 cyclically-four packages are complete for their
-documented retained sources.  They do not imply a lower bound by
-themselves: an earlier reduction of the mixed cyclic-three relation to this
-cap class used an invalid one-sided base-pair inference.  The later
-endpoint-fork lift gives a separate sound two-sided reduction.  The
-strict-snark order-26 package remains a finite retained-source control.
-The \(H_2,\ldots,H_5\) package uses explicit positive edge labellings, so
-its \(AA\) certificates can be checked without trusting a SAT solver.
-The corrected Tait-cap and cap-connectivity theorem is human-checkable in
-`docs/rooted-three-pole-tait-cap-closure.md`.  The endpoint package extends
-base-pair closure through factor order 26 and gives cap order at least 54
-only for the pure equality-only and disjointness-only relations.
-
-Replay the fork-triple local tables with:
-
-```sh
-python3 scratch/verify_rooted_cap_triangle_table.py \
-  > /tmp/rooted-cap-triangle-table-v2.json
-cmp /tmp/rooted-cap-triangle-table-v2.json \
-  scratch/rooted-cap-triangle-table-v2.json
-```
-
-The triangle-free 3-connected finite screen is now complete through cap
-order 24. Its compact Git package omits two byte-identical 34,355,648-byte
-transcripts but retains their hashes and regeneration instructions. Check
-every present frozen artifact and the source manifest with:
-
-```sh
-(
-  cd search/rooted-three-pole-c3-cap-frontier-through24-20260727
-  shasum -a 256 -c CHECKSUMS-PUBLISHED.sha256
-  shasum -a 256 -c SOURCES.sha256
-  python3 -m py_compile verify.py
-  python3 -m json.tool report.json >/dev/null
-)
-```
-
-The full 10,824,084-row semantic replay requires the omitted transcripts;
-see that package's `PUBLICATION-OMISSIONS.md`. Replay the independent
-endpoint-fork lift table with:
-
-```sh
-python3 scratch/verify_rooted_end_factor_fork_lift.py \
-  > /tmp/rooted-end-factor-fork-lift-replay.json
-cmp /tmp/rooted-end-factor-fork-lift-replay.json \
-  scratch/rooted-end-factor-fork-lift-replay.json
-```
-
-The human endpoint-fork proof bypasses that screen and, together
-with the completed finite endpoint and cap classifications, restores the
-bridge-free simple terminal-distinct fixed-five lower bound of order 28.
-The complete retained order-28 two-witness classification raises that
-scoped bound to 30.  Its package preserves the full checksum ledger,
-generation commands, source corpus, compact reports, and checker sources;
-`search/four-pole-order28-cyclic4-cap-20260727/PUBLICATION-OMISSIONS.md`
-records the two excluded generated streams and the original-layout scope
-of its source-provenance ledger.
-None of these results resolves five-CDC.
-
-## Prescribed-root matching frontier
-
-The shortest complete integrity replay for the matching-frontier update
-uses only the Python standard library and the system SHA-256 utility:
-
-```sh
-python3 -B scratch/prescribed-root-matching-deficiency-checker.py
-python3 -B scratch/rotation-closure-countermodel-checker.py
-shasum -a 256 -c ROOT_INSERTION_SHA256SUMS
-python3 -B scratch/check-root-insertion-published.py
-(
-  cd search/focused-theta-choice-through28-20260727
-  shasum -a 256 -c SHA256SUMS
-  python3 verify.py > /tmp/focused-theta-report.json
-  cmp /tmp/focused-theta-report.json report.json
-)
-(
-  cd search/focused-theta-choice-order30-20260727
-  python3 verify.py
-  shasum -a 256 -c SHA256SUMS
-)
-```
-
-These commands check the finite countermodels and the frozen census
-records.  The human proof in
-`docs/root-insertion-two-factor-frontier.md` closes the all-singleton
-branch only for the standard five-cycle-double-cover conclusion; the
-stronger prescribed-root singleton case remains open.  Complete
-re-execution of both focused-theta census classifiers is documented in
-`search/focused-theta-choice-through28-20260727/REPRODUCING.md`.
-
-The separate order-30 command checks the compressed and decompressed
-House of Graphs corpus hashes, all 139,854 distinct order-30 simple-cubic
-records, the primary C++ result, all sixteen independent Python shard
-reports, and exact aggregate agreement. Full C++ and clean-room Python
-replay commands are in
-`search/focused-theta-choice-order30-20260727/REPRODUCING.md`. The
-retained classification is a finite structural result over the cited
-corpus; it is not a universal theta-choice theorem, a standard Five-CDC
-resolution, or an orientable Five-CDC claim.
-
-The root-insertion producer and independent replay are retained
-separately.  A quick executable smoke replay of the order-10 row is:
-
-```sh
-c++ -std=c++17 -O3 -Wall -Wextra -pedantic \
-  scratch/focused-local-insertion-census.cpp \
-  -o /tmp/focused-local-insertion-census
-/tmp/focused-local-insertion-census 10 \
-  search/focused-theta-choice-through28-20260727/artifacts/\
-cyclic4-nontait-order10.g6 \
-  > /tmp/root-insertion-order10.ndjson
-head -n 1 scratch/focused-local-insertion-result.ndjson \
-  > /tmp/root-insertion-order10.expected.ndjson
-cmp /tmp/root-insertion-order10.expected.ndjson \
-  /tmp/root-insertion-order10.ndjson
-
-python3 -B scratch/verify-root-insertion-census.py \
-  --orders 10 \
-  --output /tmp/root-insertion-order10-independent.json
-```
-
-The complete clean-room order-28 replay is parallelizable by graph-index
-shard:
-
-```sh
-for shard in 0 1 2 3; do
-  python3 -B scratch/verify-root-insertion-census.py \
-    --orders 28 --shard "$shard" --shard-count 4 \
-    --output "/tmp/root-insertion-order28-shard${shard}.json" &
-done
-wait
-```
-
-The retained four outputs and their aggregate comparison are frozen by
-`ROOT_INSERTION_SHA256SUMS`.  Rerunning the last command is a full
-independent semantic replay and can take substantial CPU time.  The
-compact checker above validates the retained shard hashes, independently
-recomputes all published aggregates, and compares them with the C++
-producer output.  These computations are finite evidence only and do not
-resolve Five-CDC.
-
-Replay the five-point local theorem with:
-
-```sh
-python3 scratch/verify_five_point_triangle_list_lift.py \
-  > /tmp/five-point-triangle-list-lift-result.json
-cmp /tmp/five-point-triangle-list-lift-result.json \
-  scratch/five-point-triangle-list-lift-result.json
-node scratch/verify_five_point_triangle_list_lift.mjs \
-  > /tmp/five-point-triangle-list-lift-independent.json
-cmp /tmp/five-point-triangle-list-lift-independent.json \
-  scratch/five-point-triangle-list-lift-independent.json
-```
+The thinning verifier invokes both pinned LRAT checkers.  The order-44
+verifier does not trust producer-supplied flow values: it reconstructs the
+three trees, their fundamental completions, all edge directions, and every
+point-parity equation.  These commands verify bounded or conditional
+claims only; the universal star-packing selection lemma remains open.
 
 ## Required recorded environment
 
@@ -1346,6 +825,62 @@ python3 -m unittest -v \
   blind-audit/test_order22_finite_package_audit.py
 ```
 
+The branch-specific order-\(98\) incidence closure has a smaller direct
+replay:
+
+```sh
+python3 scratch/verify_diagonal_c14_c10_triple_overlap.py
+clang++ -std=c++20 -O3 \
+  scratch/verify_marked_two_factor_overlap_caps.cpp \
+  -o /tmp/verify_marked_two_factor_overlap_caps
+/tmp/verify_marked_two_factor_overlap_caps
+python3 scratch/enumerate_order98_incidence_system.py
+python3 scratch/check_order98_incidence_system_z3.py
+python3 scratch/check_order98_diagonal_cap_control.py
+python3 scratch/audit_order98_incidence_system_independent.py --prune-off
+```
+
+The last command uses SciPy/HiGHS as a supplementary third formulation.
+The solver-free census and its prune-free replay are the transparent
+finite proof.
+
+The order-\(100\) continuation first reproduces the cap-table and exact
+row-star reductions, then checks the three profile-level CNFs:
+
+```sh
+python3 scratch/enumerate_order100_incidence_relaxation.py
+python3 scratch/check_order100_incidence_relaxation_z3.py
+python3 scratch/enumerate_order100_exact_row_star_relaxation.py
+python3 scratch/check_order100_exact_row_star_z3.py
+
+c++ -std=c++20 -O3 scratch/cadical_incremental_server.cpp \
+  -I/opt/homebrew/include /opt/homebrew/lib/libcadical.a \
+  -o /tmp/cadical_incremental_server
+
+python3 scratch/solve_order100_global_profile_sat.py \
+  --profile 0 --cnf scratch/order100-global-profile0-final.cnf
+python3 scratch/solve_order100_global_profile_sat.py \
+  --profile 1 --cnf scratch/order100-global-profile1-final.cnf
+python3 scratch/solve_order100_global_profile_sat.py \
+  --profile 2 --cnf scratch/order100-global-profile2-final.cnf
+
+python3 scratch/check_order100_global_profile_cnf.py \
+  --profile 0 --cnf scratch/order100-global-profile0-final.cnf
+python3 scratch/check_order100_global_profile_cnf.py \
+  --profile 1 --cnf scratch/order100-global-profile1-final.cnf
+python3 scratch/check_order100_global_profile_cnf.py \
+  --profile 2 --cnf scratch/order100-global-profile2-final.cnf
+```
+
+For each frozen CNF, the retained LRAT can be checked with
+`lrat-check CNF LRAT`; the expected output is `VERIFIED`.  The semantic
+checker is producer-free and separately validates every appended lazy
+clause as a forced short circuit.
+
+Together these commands prove only the connected eight-mark extremal
+exact-zero size-four branch bound \(|V(G)|\ge102\), not the five-cycle
+double cover conjecture.
+
 The \(R_4\) positive witness and tower theorem can likewise be checked
 without rerunning either search:
 
@@ -1417,137 +952,6 @@ row count and SHA-256 of the current incomplete \(H_4\) prefix.  Its
 `status` and `warning` fields are part of the claim: the projected-support
 master had not reached UNSAT, so the rows prove only that the listed
 4,425,636 distinct minimum supports pack.
-
-## Order-100 connected eight-mark profile closure
-
-Run these commands from `projects/five-cycle-double-cover/`.  The primary
-censuses use Python's standard library:
-
-```sh
-shasum -a 256 -c ORDER100_SHA256SUMS
-
-python3 -B scratch/enumerate_order100_incidence_relaxation.py \
-  > /tmp/order100-incidence.out
-diff -u scratch/order100-incidence-relaxation-result.txt \
-  /tmp/order100-incidence.out
-
-python3 -B scratch/enumerate_order100_exact_row_star_relaxation.py \
-  --baseline-json scratch/order100-incidence-relaxation-survivors.json \
-  > /tmp/order100-row-star.out
-diff -u scratch/order100-exact-row-star-result.txt \
-  /tmp/order100-row-star.out
-
-python3 -B scratch/check_order100_row_star_patterns.py
-
-python3 -B scratch/enumerate_order100_row_star_matrix_orbits.py \
-  > /tmp/order100-matrix-orbits.out
-diff -u scratch/order100-row-star-matrix-orbits-result.txt \
-  /tmp/order100-matrix-orbits.out
-shasum -a 256 -c ORDER100_SHA256SUMS
-```
-
-The independent replays require a `z3` executable on `PATH`:
-
-```sh
-python3 -B scratch/check_order100_incidence_relaxation_z3.py \
-  > /tmp/order100-incidence-z3.out
-
-python3 -B scratch/check_order100_exact_row_star_z3.py \
-  --baseline-json scratch/order100-incidence-relaxation-survivors.json \
-  > /tmp/order100-row-star-z3.out
-diff -u scratch/order100-exact-row-star-z3-result.txt \
-  /tmp/order100-row-star-z3.out
-```
-
-The local overlap table has a separate C++20 implementation:
-
-```sh
-clang++ -std=c++20 -O3 \
-  scratch/verify_marked_two_factor_overlap_caps.cpp \
-  -o /tmp/verify_marked_two_factor_overlap_caps
-/tmp/verify_marked_two_factor_overlap_caps
-```
-
-The earlier `order100-global-word-profile*-final.cnf` instances concern
-one retained primary incidence matrix in each surviving profile.  They
-remain useful controls but are not certificates for all \(827\) matrix
-orbits.
-
-```sh
-for profile in 0 1 2; do
-  lrat-check \
-    scratch/order100-global-word-profile${profile}-final.cnf \
-    scratch/order100-global-word-profile${profile}-final.lrat
-  cake_lpr \
-    scratch/order100-global-word-profile${profile}-final.cnf \
-    scratch/order100-global-word-profile${profile}-final.lrat
-done
-```
-
-The newer `order100-global-profile*-final.cnf` instances induce the
-incidence matrix from exact position covers.  Together they cover every
-labelled matrix and rotation in all three survivor profiles.  First run
-the producer-free semantic checker; it reconstructs the base CNF and
-accepts every learned clause only after finding a forced short circuit:
-
-```sh
-for profile in 0 1 2; do
-  python3 -B scratch/check_order100_global_profile_cnf.py \
-    --profile "$profile" \
-    --cnf "scratch/order100-global-profile${profile}-final.cnf" \
-    --output "/tmp/order100-profile${profile}-semantic.json"
-  diff -u \
-    "scratch/order100-global-profile${profile}-semantic-check.json" \
-    "/tmp/order100-profile${profile}-semantic.json"
-done
-```
-
-The three LRATs total approximately 6.5 GB and are not committed.  With
-CaDiCaL 3.0.1 and the pinned C checker, regenerate and check them as
-follows:
-
-```sh
-for profile in 0 1 2; do
-  cadical --no-binary --lrat \
-    "scratch/order100-global-profile${profile}-final.cnf" \
-    "/tmp/order100-global-profile${profile}-final.lrat"
-  lrat-check \
-    "scratch/order100-global-profile${profile}-final.cnf" \
-    "/tmp/order100-global-profile${profile}-final.lrat"
-done
-```
-
-The expected LRAT hashes, exact byte sizes, formula counts, semantic
-clause hashes, checker hashes, and proof/check transcripts are in
-`scratch/order100-global-profile-closure-manifest.json`.  The committed
-CNFs and compact transcripts are frozen by `ORDER100_SHA256SUMS`.
-
-The human proof excluding an unmarked factor, completeness proof for the
-profile encoding, symmetry normalization, and exact scope are in
-`docs/order100-unmarked-exclusion-and-row-star-frontier.md`.
-
-## Current open reductions
-
-The canonical Fano cut-certificate transcription has a compact independent
-audit:
-
-```sh
-python3 -B scratch/audit_fano_canonical_cut_certificates.py
-```
-
-Its theorem gives necessary conditions for a switch-local bad flow.  The
-uncrossing step remains open.
-
-The retained rooted \(P_4\) result is
-`scratch/rooted-p4-structured-endpoint-screen-result.json`.  The producer
-pipeline recorded there scanned 240 structured order-38 rows and 101,760
-endpoint-path instances without finding a failure.  Replaying the complete
-pipeline additionally requires the separately built
-`tait_all_coloring_mark_separation` producer.  The included
-`scratch/search_full_hypothesis_p4_residual.py` is the consumer and
-`scratch/search_rooted_subcubic_linkage_counterexample.py` supplies its
-path/linkage primitives.  This is exact finite evidence on the recorded
-rows, not a universal rooted theorem or a five-CDC result.
 
 ## Repository and generated-file state
 

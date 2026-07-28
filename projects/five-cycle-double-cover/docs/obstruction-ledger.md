@@ -1057,3 +1057,129 @@ purpose-built caps are useless.  It shows that extending the naive cap
 family through order 13 adds no new root-admission set and prevents
 silently treating small-cap hitting as the missing universal base-pair
 argument.
+
+## O41 — Thinning a Jaeger star flow to five values
+
+Status: **FAILED APPROACH / DUAL-CERTIFIED FINITE COUNTERMODEL**.
+
+On the retained 34-vertex simple bridgeless cubic graph, root zero, every
+Fano direction occurs at least twice in every fixed-star packing that would
+support the proposed thinning conclusion.  The complete
+`star-thin-any.cnf` is UNSAT; its LRAT is accepted independently by
+`lrat-check` and the verified CakeML `cake_lpr` checker.  The same fixed
+star fibre nevertheless has an explicit support-five pair labelling, so
+this is not a Five-CDC counterexample.  It proves only that support five
+cannot be forced by making some flow value occur at most once.  See
+`output/jaeger-star-thinning-countermodel-34v/` and
+`scratch/verify_jaeger_star_thinning_countermodel_34v.py`.
+
+## O42 — Fix the third tree, then repair the other two
+
+Status: **FAILED APPROACH / EXACT SMALL COUNTERMODEL**.
+
+In the cube at root zero, one displayed extendible third tree has 16
+ordered residual completions and all 16 fail the required quotient parity,
+although another jointly chosen triple succeeds.  Of 132 extendible third
+trees in that star fibre, 12 are bad.  Hence an arbitrary \(T_3\) cannot be
+frozen before choosing \(T_1,T_2\).  The exact existential star-packing
+lemma survives.  See `scratch/jaeger-fixed-third-tree-parity-no-go.md` and
+`scratch/check_jaeger_fixed_third_tree_parity_no_go.py`.
+
+## O43 — Force two odd-side forests to be disjoint
+
+Status: **FAILED APPROACH / HUMAN PETERSEN OBSTRUCTION**.
+
+If two edge-disjoint spanning subgraphs of a cubic graph have odd degree at
+every vertex, both are perfect matchings and their union is an even
+2-factor.  Every Petersen 2-factor consists of two 5-cycles, so no two
+odd-side forests \(K(T_i),K(T_j)\) can be disjoint.  A complete independent
+enumeration checks all 4,416 ordered star packings at each Petersen root,
+while also finding 384 parity-good packings.  Thus emptiness of
+\(K(T_i)\cap K(T_j)\) is strictly stronger than the needed contracted
+Eulerian condition.  See `scratch/jaeger-k-forest-star-parity-identities.md`
+and `scratch/verify_jaeger_k_forest_petersen.py`.
+
+## O44 — Choose Scott-perfect forests first, then extend
+
+Status: **FAILED APPROACH / HUMAN MATROID-RANK OBSTRUCTION**.
+
+For a labelled 10-vertex Möbius ladder and a fixed root, three displayed
+perfect matchings respect all star-fibre capacities, use the three root
+edges separately, and even have \(K_1\cap K_2=\varnothing\).  Nevertheless
+they have no simultaneous extension to three spanning trees: a ten-copy
+residual subset has contracted graphic ranks \(3,3,3\), contradicting the
+necessary matroid-union inequality \(10\le3+3+3\).  A separate exhaustive
+assignment check returns zero extensions, while another forest triple on
+the same graph does extend.  Thus Scott's perfect-forest theorem must be
+coupled to the full family of matroid-union inequalities.  See
+`scratch/jaeger-perfect-forests-first-no-go.md` and
+`scratch/check_jaeger_perfect_forests_first_no_go.py`.
+
+## O45 — Never increase one fixed-coordinate star-parity defect
+
+Status: **FAILED APPROACH / EXACT HUMAN-CHECKABLE COUNTERMODEL**.
+
+On graph6 `M?AA@BORDGEOEOAo?`, root zero, the displayed three-tree packing
+has two bad components for one preselected Fano coordinate.  It has exactly
+18 legal reciprocal
+two-tree exchange neighbours, all of defect four, and no same-level or
+descending neighbour.  The remaining 90 of 108 candidate swaps violate a
+tree condition.  Thus this state is a trapped singleton at defect two for
+that coordinate.  Its full seven-plane profile is
+\((2,4,2,2,0,6,2)\), so it is already support-five-good in a different
+plane; a reciprocal exchange also lowers the symmetric minimum in another
+coordinate.  This refutes only preselected-coordinate descent.  It is not
+a Five-CDC counterexample and does not refute the seven-plane potential.
+See `scratch/jaeger-star-parity-descent-countermodel.md`.
+
+## O46 — Replace contracted parity by graphic closure in every Type-A fibre
+
+Status: **FAILED APPROACH / EXACT EXHAUSTIVE COUNTERMODEL**.
+
+The sufficient condition
+\(K_1\cap K_2\subseteq\operatorname{cl}_{M(G)}(K_3)\) replaces “even
+degree after contracting \(K_3\)-components” by the stronger demand that
+every relevant edge become a quotient loop.  On graph6
+``K?`@E`gFCKEO``, the two automorphic Type-A defect triples
+\(\{0,4,11\}\) and \(\{1,3,10\}\) each have 355,392 ordered spanning-tree
+packings.  None is closure-good in any coordinate, although 7,704
+packings satisfy the exact component-parity condition in one coordinate.
+An independent checker reconstructs all 8,640 spanning trees and
+exhausts every packing without using the SAT producer.  This rules out the
+generic Type-A/B closure theorem only.  A vertex-star fibre has the extra
+four-cocycle \(\delta(r)\cup\{p\}\) in the parity-element extension.  The
+later countermodel in O47 shows that this extra structure still does not
+force closure.  See
+`scratch/jaeger-parity-element-and-kernel-closure-no-go.md`.
+
+## O47 — Replace exact star-component parity by graphic closure
+
+Status: **FAILED APPROACH / DUAL-CHECKED VERTEX-STAR COUNTERMODEL /
+INFINITE FAMILY**.
+
+In graph6 `O??CA?_ceOGgH_F?AK@P?`, rooted at vertex 13, none of the
+5,723,136 ordered star-fibre packings satisfies
+\[
+K_i\cap K_j\subseteq\operatorname{cl}(K_k)
+\]
+in any coordinate.  The graph is simple cubic, 3-edge-connected, and
+3-vertex-connected.  A direct cographic-base partition counter enumerates
+the whole fibre; independently, a 744-variable, 101,037-clause CNF is
+UNSAT and its LRAT proof is accepted by both `lrat-check` and verified
+CakeML `cake_lpr`.
+
+The exact component-parity target survives strongly: 40,464 packings pass
+it, and a literal five-point pair labelling gives a short independent
+witness.  In that witness, the four common-kernel edges form a quotient
+4-cycle rather than quotient loops, exposing exactly what closure
+incorrectly forbids.
+
+Triangle contraction gives a human infinite-family theorem.  A star
+packing rooted outside an expanded triangle uses two triangle edges in
+each tree; contraction preserves all external odd-kernel memberships.
+Thus closure-goodness descends, and its contrapositive shows that
+triangle-expanding any nonroot vertex preserves closure failure.  The
+countermodel's three disjoint triangles contract to Petersen and form one
+alternating class of the bad root's distance-two 6-cycle.  See
+`scratch/jaeger-star-kernel-closure-countermodel-16v.md` and
+`scratch/jaeger-star-kernel-closure-triangle-expansion.md`.

@@ -14,6 +14,96 @@ OpenAI Codex agents, directed by Atharva Vaidya, generated or revised the
 arguments, programs, computations, audits, and prose. Agent cross-checks
 are not independent human verification or peer review.
 
+## Rooted-resolution update (2026-07-28)
+
+- `ROOTED_RESOLUTION_FRONTIER_20260728.md` states the exact current
+  theorem and remaining premise.
+- `scratch/d5-terminal-root-universality-suffices.md` and its hostile
+  audit write out the fixed-five reductions, including degree-two
+  suppression and 2-/3-cut pasting.
+- `scratch/d5-independent-root-feasibility-desargues-frontier.md` proves
+  the two-way edge-adapted insertion equivalence and the strengthened
+  3-edge-connected, root-specific 8/9-cycle geometry.
+- `scratch/d5-root-good-matching-fourflow-characterization.md` gives the
+  exact rooted matching, nowhere-zero 4-flow, and connected
+  two-\(T\)-join equivalence.
+- `output/d5-root-feasibility-lift13-girth10/all-eliminations.json`
+  retains root-good labels for all 195 edge eliminations of the
+  130-vertex girth-ten control; the separately written verifier
+  reconstructs and checks every witness.
+- `scratch/oum-combined-choice-equivalence-and-toggle.md`,
+  `scratch/jaeger-tree-choice-through14-and-exchange-no-go.md`, and their
+  reports/checkers delimit the eight-to-five and spanning-tree routes.
+- `scratch/d5-root-port-monodromy-local-charge.md` and
+  `scratch/d5-connected-shared-coordinate-incidence-and-shortest-no-go.md`
+  record the exact monodromy divisor, connected incidence theorem, and
+  sharp scope failures.
+- `preprint-d5-surface-kempe/` contains the updated 16-page working
+  preprint, source, checksum ledger, review guide, and cautious
+  publication assessment.
+
+This update is a conditional reduction and finite-evidence package.  It
+does not prove or disprove FiveCDC, and it makes no orientable claim.
+
+## Jaeger fixed-fibre and five-point lifting update (2026-07-28)
+
+- `preprint-jaeger-fivecdc-frontier/` is a 25-page working preprint with
+  an explicit unresolved-status box, detailed AI-use disclosure,
+  reproducibility table, human-review gate, and rendered PDF.
+- `scratch/jaeger-support5-component-criterion.md` proves the exact
+  component-parity criterion for restricting Oum-compatible pairs to five
+  affine points.
+- `scratch/jaeger-k-forest-star-parity-identities.md` proves that the
+  fundamental completion of a cubic spanning tree is the complement of
+  its unique all-vertices-odd forest, and translates five support to an
+  Eulerian intersection after component contraction.
+- `scratch/jaeger-tree-choice-through14-and-exchange-no-go.md` proves
+  prescribed Type A/B multiplicity feasibility by the
+  Nash--Williams--Tutte partition inequality.
+- `output/jaeger-five-point-fibres-through14/` and its independent verifier
+  cover 587 simple bridgeless cubic graphs, 944,974 placements, and all
+  804,204 feasible fibres, with zero support-five failures.
+- `output/jaeger-coordinate-five-order44/` retains literal witnesses for
+  31 graphs and all 1,364 roots.  Its separate standard-library verifier
+  reconstructs graph premises, trees, completions, flow values, supported
+  pairs, and point parity.
+- `output/jaeger-star-thinning-countermodel-34v/` retains a complete CNF
+  and dual-accepted LRAT for failure of every thinning direction, plus a
+  positive five-point witness in the same fibre.
+- The Petersen, fixed-third-tree, perfect-forest-extension, and
+  fixed-coordinate monotone-descent notes are countermodels to stronger
+  intermediate lemmas only.
+- `output/jaeger-fano-min-descent-through14/` and
+  `scratch/jaeger-fano-minimum-parity-descent-through14.md` give the exact
+  all-seven symmetric descent theorem through order 14: 419 graphs, 3,567
+  root-orbit fibres, and 529,150,122 states with no trapped positive-level
+  component.  The independent verifier audits graph and root coverage,
+  totals, ordering, and hashes; it does not duplicate the whole-state
+  enumeration.
+- `scratch/jaeger-parity-element-and-kernel-closure-no-go.md` identifies
+  odd kernels as fundamental circuits after adjoining one all-ones column
+  and rewrites star packings as three cographic bases plus terminal joins.
+  `output/jaeger-kernel-closure-frontier/` freezes the positive tests
+  through order 14 and a generic Type-A 12-vertex no-go.
+- `output/jaeger-star-kernel-closure-countermodel-16v/` contains a
+  certificate-producing CNF and LRAT, accepted by both `lrat-check` and
+  verified CakeML `cake_lpr`, that refutes kernel closure in a vertex-star
+  fibre.  A solver-free enumeration checks all 5,723,136 packings: zero
+  are closure-good, while 40,464 meet the exact component-parity target.
+  The human triangle-contraction theorem extends the closure failure to an
+  infinite rooted family of simple cubic 3-edge-connected graphs.
+- `formal/FiveCDC/`, `verifier_a/`, and `verifier_b/` retain the
+  fixed-graph semantic formalization and two independently implemented
+  target checkers.
+
+The exact universal obligation is still to select a parity-good packing in
+every required vertex-star fibre.  Universal descent for the symmetric
+seven-plane potential would suffice and remains open.  Kernel closure is
+now disproved even for a vertex-star fibre; every retained countermodel
+nevertheless has an exact five-point witness.  The standard FiveCDC
+conjecture therefore remains unresolved, and the orientable conjecture is
+not addressed.
+
 ## Five-pole path-extension and ear frontier
 
 - `docs/five-pole-realizability-frontier.md` gives the human-checkable

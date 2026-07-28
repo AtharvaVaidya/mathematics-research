@@ -1,0 +1,22 @@
+{
+  "artifact": "five-cdc-verifier-a",
+  "version": "1.0.0",
+  "graph_format": "five-cdc-multigraph-v1",
+  "cnf_format": "five-cdc-cnf-v1",
+  "xor_format": "five-cdc-xor-dimacs-v1",
+  "coordinates": 5,
+  "implementation_dependencies": "Python standard library only",
+  "minimum_python": "3.9",
+  "freeze": {
+    "date": "2026-07-24",
+    "unit_tests": 19,
+    "tested_python": "3.10.4",
+    "native_xor_integration": "CryptoMiniSat 5.14.7"
+  },
+  "solver_wrapper": {
+    "name": "CaDiCaL",
+    "required_version": "3.0.1",
+    "proof_format": "text LRAT",
+    "independent_proof_checker_bundled": false
+  }
+}

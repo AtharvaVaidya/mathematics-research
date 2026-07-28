@@ -1,0 +1,23 @@
+{
+  "claim_boundary": "Complete producer census over the canonical connected simple cubic order-16 geng stream. Coverage and totals are independently checked; positive SAT classifications remain inside the producer trust boundary. The unique negative instance has a separate dual-checked LRAT and full non-SAT fibre enumeration.",
+  "date": "2026-07-28",
+  "generator": {
+    "command": "/opt/homebrew/bin/geng -q -c -d3 -D3 16",
+    "graphs": 4060
+  },
+  "totals": {
+    "roots": 64960,
+    "feasible_star_fibres": 45248,
+    "closure_good_star_fibres": 45247,
+    "closure_failures": 1
+  },
+  "unique_failure": {
+    "graph6": "O??CA?_ceOGgH_F?AK@P?",
+    "root": 13
+  },
+  "artifacts": {
+    "stars-order16.jsonl": "889d0e5857b62e082f3fcad0a929e7c0d92032a8e675f4d2ff9f40272ea43d46",
+    "../../scratch/search_jaeger_star_kernel_closure_sat.cpp": "948c5ca1081a7a2d75c790dc5f5e92db271b716e5dc84a4c5a082571b28564b6",
+    "../../scratch/verify_jaeger_kernel_closure_order16_census.py": "0e116eaf01aa4d33a964713f17c6c7035bf2afbd057fab4c5a5413758c53308b"
+  }
+}

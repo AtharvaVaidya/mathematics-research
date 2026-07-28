@@ -72,14 +72,17 @@ not lift unchanged.  We also construct a planar cubic capped-ladder
 family proving that no constant number of root-component Kempe switches
 can always rescue two prescribed edges; this concerns a restricted
 strategy and does not refute rooted Kempe universality or FiveCDC.
-Finally, exhaustive computations show that every
-terminal equal-Euler-characteristic Kempe plateau is root-universal for
-all biconnected simple cubic graphs through 14 vertices.  At order 14 this
-checks 33,598 terminal plateaus and 642,167 fixed-distance subplateaus.  A
-human-checkable first-foreign factor-splice lemma refines the distance by a
-cyclic blocker statistic; two implementations again find no obstruction
-through order 14.  These are finite results only.  The universal
-terminal-plateau statement is left explicitly as a conjecture.
+We prove that universal rooted feasibility on the smaller graph obtained
+by eliminating one edge of a minimum counterexample would imply
+FiveCDC; a still weaker sufficient premise only concerns independent
+roots in 3-edge-connected cubic graphs with the short-cycle geometry
+forced by edge elimination from girth ten.  Finally,
+exhaustive computations show that all 33,598 terminal
+equal-Euler-characteristic Kempe plateaus on the 480 biconnected simple
+cubic graphs of order 14 are root-universal.  A sharper fixed-distance
+descent test has 642,167 subplateaus and no failure.  These are finite
+results only.  The universal terminal-plateau statement is left
+explicitly as a conjecture.
 \end{abstract}
 
 \section{Status, conventions, and contribution boundary}
@@ -767,6 +770,199 @@ terminal \(\Phi\)-plateau is root-universal.
 This statement is unproved.  It is stronger than the finite observations
 below and is not asserted as a theorem.
 
+\subsection{Why the terminal conjecture would imply FiveCDC}
+
+The preceding conjecture is not merely a reconfiguration statement about
+graphs already known to have a \(D_5\)-flow.  Together with the standard
+minimum-counterexample reductions, it would prove FiveCDC.
+
+\begin{lemma}[two-root insertion equivalence]\label{lem:two-root-insertion}
+Let \(H\) be cubic, let \(r=u_1u_2\) and \(s=v_1v_2\) be distinct edges,
+and obtain \(G\) by subdividing \(r,s\) with new vertices \(u,v\) and
+adding \(e=uv\).  Then \(H\) has an \((r,s)\)-good \(D_5\)-flow if and
+only if \(G\) has a \(D_5\)-flow \(q\) in which \(u,v\) lie on the same
+component of \(Y_{q(e)}(q)\).
+\end{lemma}
+
+\begin{proof}
+Choose a component \(K\) of \(Y_{ij}(q)\) containing both roots.
+After subdividing \(r,s\), give both halves their old labels, so \(K\)
+becomes a circuit \(K^*\) through \(u,v\).  Choose either
+\(u\)-to-\(v\) arc of \(K^*\) and transpose \(i,j\) on its edges.
+Every internal vertex sees either zero or two changed labels.  At each
+of \(u,v\), exactly one label changes by the vector \(ij\).  Label the
+new edge \(uv\) by \(ij\); this restores xor zero at both new vertices.
+All labels still have weight two.  The new edge has label \(ij\), so it
+is inactive in \(Y_{ij}\); transposition preserves activity, and hence
+the subdivided \(K\) remains a factor circuit through \(u,v\).
+
+Conversely, let \(q\) be a flow on \(G\), put \(P=q(e)\), and let \(K\)
+be the common \(Y_P(q)\)-circuit through \(u,v\).  The edge \(e\) is
+inactive.  At \(u\), the other two labels therefore have the form
+\(a,a+P\), and the same holds at \(v\).  Transpose the two coordinates
+of \(P\) on one \(u\)-to-\(v\) arc of \(K\), and delete \(e\).
+Internal vertex xors are unchanged, while the defect \(P\) at each
+endpoint cancels the deleted label.  Exactly one of \(a,a+P\) is
+transposed at each endpoint, so the two surviving labels become equal.
+Suppressing \(u,v\) therefore gives a \(D_5\)-flow on \(H\), and the
+suppressed image of \(K\) is one \(Y_P\)-circuit containing \(r,s\).
+\end{proof}
+
+\begin{lemma}[bridgeless elimination]\label{lem:bridgeless-elimination}
+Let \(G\) be a simple cyclically \(4\)-edge-connected cubic graph of
+girth at least five.  For \(e=uv\), write
+\[
+ N(u)-v=\{u_1,u_2\},\qquad N(v)-u=\{v_1,v_2\}.
+\]
+Deleting \(u,v\) and adding \(r=u_1u_2\), \(s=v_1v_2\) produces a
+smaller simple \(3\)-edge-connected cubic graph \(G\div e\).
+\end{lemma}
+
+\begin{proof}
+The elementary edge-reduction criterion stated immediately before
+Lemma~2.1 of \cite{BrinkmannGoedgebeurMcKay2011} says that an edge of a
+connected cubic graph is irreducible only if it is a bridge, has an
+endpoint in a triangle not containing it, or has both endpoints on a
+4-cycle not containing it.  Thus the girth and connectivity hypotheses
+make \(G\div e\) connected.  The four neighbours displayed above are
+distinct, neither new edge is a loop or duplicates an old edge, and the
+two new edges are distinct; otherwise \(G\) has a triangle or a
+4-cycle.  Hence \(G\div e\) is simple.
+
+Suppose it has a bridge \(b\), with shores \(X,Y\).  If \(b=r\), then
+the endpoints of \(s\) lie on one shore while \(u_1,u_2\) lie on
+opposite shores.  Restoring \(u,v,e\) leaves the edge from \(u\) into
+the other shore as a bridge of \(G\), a contradiction.  The case
+\(b=s\) is symmetric.
+
+Otherwise \(b\) is an old edge.  Neither \(r\) nor \(s\) crosses
+\((X,Y)\), so each of the pairs \(\{u_1,u_2\}\), \(\{v_1,v_2\}\)
+lies within one shore.  If the two pairs lie on the same shore, \(b\)
+remains a bridge after restoring \(u,v,e\).  If they lie on opposite
+shores, \(\{b,e\}\) is a 2-edge-cut of \(G\).  Both conclusions
+contradict 3-edge-connectivity.
+
+It remains to exclude a 2-edge-cut \(\delta_H(X)\) in \(H=G\div e\).
+Let \(t\) be the number of roots crossing it.  If \(t=2\), put the
+reinserted vertices \(u,v\) on the same shore: one spoke from each
+replaced root crosses and \(uv\) does not, giving a 2-edge-cut of \(G\).
+If \(t=1\), put the vertex belonging to the noncrossing root on that
+root's shore and put the other new vertex there as well.  One old cut
+edge and one spoke cross, again giving a 2-edge-cut of \(G\).  If
+\(t=0\) and both root pairs lie on one shore, put both new vertices
+there; the old 2-edge-cut persists.  The only remaining placement has
+the two root pairs on opposite shores.  Placing \(u,v\) on their
+respective shores then makes the two old cut edges together with \(uv\)
+a 3-edge-cut of \(G\).
+Both shores contain circuits: a tree shore \(X\) of a 2-cut in a cubic
+graph would satisfy
+\(3|X|=2(|X|-1)+2\), which is impossible.  This contradicts cyclic
+\(4\)-edge-connectivity.  Hence \(H\) is 3-edge-connected.
+\end{proof}
+
+\begin{proposition}[fixed-five minimum reduction]
+\label{prop:fixed-five-reduction}
+If the standard Five-Cycle Double Cover Conjecture is false, it has a
+minimum counterexample that is simple, cubic, cyclically
+\(4\)-edge-connected, and not 3-edge-colourable.
+\end{proposition}
+
+\begin{proof}
+Choose a counterexample with as few edges as possible.  Components may
+be covered separately, padding each list with empty members and taking
+unions member by member.  A loop may be deleted and then inserted into
+any two members, since a loop contributes degree two at its endpoint.
+Thus the counterexample is connected and loopless.
+
+The usual minimum-counterexample proof for cycle double covers
+\cite{Zhang2012} preserves the fixed bound five.  For completeness, here
+are the two reconstructions where that point matters.  Across a
+2-edge-cut, close the two shores by one artificial edge each.  The two
+artificial edges receive labels in \(D_5\); a global permutation of the
+five coordinates makes those labels equal, after which deleting the
+artificial edges and restoring the cut edges pastes the two
+\(D_5\)-flows member by member.  Hence a minimum counterexample is
+3-edge-connected.
+
+If a vertex has degree at least four, Fleischner's splitting lemma
+\cite[Lemma~III.26]{Fleischner1990} supplies two incident edges whose
+split-off graph remains bridgeless.  In a five-cover of that smaller
+graph, replace every occurrence of the artificial edge by the
+corresponding two-edge path through the split vertex.  This changes no
+member index and preserves even degree.  Minimality therefore makes the
+counterexample have maximum degree at most three.  A degree-two vertex
+may likewise be suppressed: replace its two incident edges by one edge,
+then lift a cover by replacing every occurrence of the new edge by the
+original two-edge path.  A connected loopless bridgeless graph has no
+degree-one vertex, so the minimum counterexample is cubic.
+
+If a nontrivial 3-edge-cut remains, contract each shore in turn to a
+cubic vertex and cover the two smaller bridgeless graphs.  At a cubic
+vertex the three \(D_5\)-labels with xor zero are the three edges of a
+triangle on three coordinates.  Every bijection between two ordered
+label triangles is induced by a permutation of the five coordinates.
+After applying such a permutation to one shore, the three boundary
+labels match and the covers paste without adding a member.  Thus no
+nontrivial 3-edge-cut remains, which for a cubic graph is cyclic
+\(4\)-edge-connectivity.
+
+A proper 3-edge-colouring with colour classes \(M_1,M_2,M_3\) gives the
+three-member double cover
+\[
+ M_1\cup M_2,\qquad M_1\cup M_3,\qquad M_2\cup M_3;
+\]
+append two empty members.  The minimum counterexample is therefore not
+3-edge-colourable.  A loopless 3-edge-connected cubic multigraph with
+parallel edges is either separated by a 2-edge-cut or is the two-vertex
+graph with three parallel edges.  The latter is 3-edge-colourable, so
+the minimum counterexample is simple.
+\end{proof}
+
+\begin{proposition}[conditional resolution]\label{prop:conditional-resolution}
+The terminal-plateau conjecture implies the standard Five-Cycle Double
+Cover Conjecture.
+\end{proposition}
+
+\begin{proof}
+If FiveCDC is false, Proposition~\ref{prop:fixed-five-reduction} gives a
+simple cyclically \(4\)-edge-connected cubic minimum counterexample
+\(G\).  Huck proved
+that such a minimum FiveCDC counterexample has girth at least
+ten~\cite{Huck2000}.  Choose any edge \(e\).
+Lemma~\ref{lem:bridgeless-elimination} gives a smaller bridgeless cubic
+graph \(H=G\div e\).  By minimality, \(H\) has a \(D_5\)-flow.
+
+Lemma~\ref{lem:reach-terminal} reaches a terminal plateau in its Kempe
+orbit.  By the terminal-plateau conjecture, that plateau contains a
+state in which the two new edges \(r,s\) of \(H\) lie on one factor
+component.  Lemma~\ref{lem:two-root-insertion} extends this state over
+the inverse edge insertion, giving a \(D_5\)-flow on \(G\), a
+contradiction.
+\end{proof}
+
+\begin{remark}[a weaker sufficient premise]\label{rem:weaker-premise}
+The proof needs neither every Kempe orbit nor a prescribed starting
+flow.  It is enough to prove the following independent-pair feasibility
+statement:
+
+\begin{quote}
+Every simple \(3\)-edge-connected cubic graph \(H\) with independent
+edges \(r,s\), having girth at least eight, every 8-circuit through both
+roots, and every 9-circuit through at least one root, has the following
+property: if \(H\) has a \(D_5\)-flow, then it has one in which one
+factor component contains both roots.
+\end{quote}
+
+Indeed, for \(H=G\div e\) the new edges \(r,s\) are vertex-disjoint.  A
+circuit of \(H\) using neither, one, or both new edges lifts to a circuit
+of \(G\) of the same length, one greater, or two greater, respectively.
+Thus \(g(G)\ge10\) implies \(g(H)\ge8\); moreover, every 8-circuit uses
+both roots and every 9-circuit uses at least one.  Lemma
+\ref{lem:bridgeless-elimination} gives 3-edge-connectivity, and
+Lemma~\ref{lem:two-root-insertion} finishes the same contradiction.
+This feasibility statement is still open.
+\end{remark}
+
 \subsection{Exact finite results}
 
 The state enumeration quotients only by the global \(S_5\) action.  Graphs
@@ -794,73 +990,58 @@ coordinate and reducing to a four-coordinate argument.  This support
 diagnostic is present in the producer report but is not among the fields
 recomputed by the focused independent verifier described below.
 
-At order 14, the stronger terminal-plateau chain test was run completely.
-For fixed roots \(r,s\), let \(d_q(r,s)\) be the minimum number of factor
-components in an intersection chain from \(r\) to \(s\).  Thus \(d=1\)
-is exactly the root-good condition.  Within every terminal
-\(\Phi\)-plateau, split the states of each fixed bad value \(d>1\) into
-components under neutral moves preserving \(d\).  Every such component
-had a neutral boundary edge to smaller distance:
+At order 14, the complete terminal-plateau computation gives:
 \[
 \begin{array}{lr}
 \toprule
 \text{biconnected simple cubic graphs} &480\\
 \text{normalized \(D_5\)-flows} &537{,}418\\
 \text{terminal \(\Phi\)-plateaus} &33{,}598\\
-\text{fixed-\(d>1\) subplateaus} &642{,}167\\
-\text{maximum factor-component-chain distance} &3\\
-\text{failed fixed-distance subplateaus} &0\\
+\text{non-root-universal terminal plateaus} &0\\
 \bottomrule
 \end{array}                                                  \tag{13}
 \]
-An independently structured Python implementation agrees through order
-12 on 2,659 terminal plateaus and 33,610 fixed-distance subplateaus, again
-with no failure.  Equation (13) is finite evidence only; it does not prove
-the universal closed-subplateau exit statement.
+This includes terminal plateaus below the global maximum of an orbit.
 
-\subsection{A first-foreign splice and a refined finite target}
-
-For a coordinate pair \(P\), write \(Y_P\) for its factor.  Let \(P,Q\)
-share exactly one coordinate, put \(P'=P\mathbin\triangle Q\), and let
-\(H\) be a component of \(Y_Q(q)\).  If \(q'\) is obtained by switching
-\(Q\) on \(H\), then the following edgewise identity holds:
+There is a sharper finite descent test.  For fixed roots \(r,s\), let
+\(d_q(r,s)\) be the minimum number of factor components in an
+intersection chain from \(r\) to \(s\).  Thus \(d=1\) is exactly
+root-goodness.  Inside each terminal plateau, split the states of fixed
+distance \(d>1\) into components under neutral, distance-preserving
+moves.  Every such component has a neutral exit to smaller distance:
 \[
-             Y_{P'}(q')
-             =Y_P(q)\mathbin\triangle\bigl(Y_Q(q)\setminus H\bigr).
-                                                               \tag{14}
+\begin{array}{lr}
+\toprule
+\text{terminal fixed-\(d>1\) subplateaus} &642{,}167\\
+\text{maximum distance} &3\\
+\text{subplateaus without a neutral descent exit} &0\\
+\bottomrule
+\end{array}                                                  \tag{14}
 \]
-Outside \(H\), the indicator of \(Y_{P'}\) is the sum modulo two of
-the indicators of \(Y_P,Y_Q\).  On \(H\), transposing \(Q\) converts
-membership in \(Y_{P'}\) to membership in \(Y_P\), proving (14).
+This suggests the following exact human target: every fixed-\(d>1\)
+subplateau in every terminal \(\Phi\)-plateau has a neutral edge to
+smaller \(d\).  Repeated descent would prove terminal
+root-universality.  The assertion is unproved outside the finite census.
 
-Let \(C\) be the \(Y_P\)-component through a root \(r\), and let \(D\ne H\)
-be a \(Y_Q\)-component.  Orient \(C\) from \(r\), ignoring all returns to
-\(H\).  If the first component of \(Y_Q\setminus H\) encountered is \(D\),
-then the new \(Y_{P'}\)-component through \(r\) meets \(D\).  Indeed, the
-initial segment of \(C\) survives in (14), the common path with \(D\)
-cancels at the first encounter, and cubicity pairs the incoming \(C\)-edge
-with the outgoing \(D\)-edge.  For a distance-two chain \(C,D\), this
-proves that the switch does not increase the rooted distance.
+As a separate unrestricted control, all \(3{,}874\) biconnected simple
+cubic graphs of order 16 were checked.  Across \(15{,}187{,}695\)
+normalized flows, all \(223{,}926{,}065\) initially root-bad state/root
+pairs were rescued using only switches on factor components containing
+exactly one root; the maximum minimum distance was five.  No graph in
+that order-16 census has girth eight, so this computation does not
+directly reach the high-girth subclass in
+Remark~\ref{rem:weaker-premise}.  All of these statements are finite
+evidence only.
 
-The identity suggests counting maximal foreign \(Y_Q\)-component blocks
-encountered before \(D\).  Minimizing this count over both orientations
-and all eligible shared-coordinate shortest first pairs defines \(b^*\);
-when no eligible pair exists, \(b^*=0\), meaning only that this particular
-obstruction is absent.  Complete fixed-\((d,b^*)\) terminal-subplateau
-censuses through order 14 gave zero failures.  The primary
-lower-index-root implementation found 646,399 subplateaus, while a
-separate directed-root implementation found 1,293,664.
-
-The refinement is not a local greedy theorem.  A seven-state terminal
-plateau on 12 vertices has a neutral prescribed switch with
-\(d:2\to2\), not \(2\to1\).  A separate order-14 terminal witness has
-\((d,b^*)=(2,1)\), but every switch of the minimizing root component or
-first blocker either decreases \(\Phi\) or raises \(d\); a neutral switch
-on a third coordinate pair reaches \(d=1\).  Thus the remaining universal
-obligation is a global neutral closed-cage exclusion, not a one-switch
-rule.  In that witness the unused fifth coordinate gives a transparent
-multi-splice, but this is not universal either: an exact order-12 terminal
-state with \(b^*=1\) uses all five coordinates.
+The first complete high-girth edge-elimination control uses a cubic
+graph on 130 vertices that has girth ten and is cyclically
+\(4\)-edge-connected.
+For each of its 195 edges, the reduced 128-vertex rooted instance was
+solved independently.  All 195 are root-good; their reduced girths are
+nine or ten.  The complete positive labels are retained, and a separate
+checker reconstructs every reduction, enumerates the parent's
+3-edge-cuts, verifies all \(D_5\) equations, and checks factor
+connectivity.  This is one graph, not a universal theorem.
 
 \subsection{Reproducibility and independent checks}
 
@@ -876,18 +1057,20 @@ python3 scratch/verify_d5_surface_chi_plateaus_order12.py
 python3 scratch/verify_d5_root_euler_potential_reports.py
 python3 scratch/verify_d5_root_kempe_order14_report.py
 python3 scratch/verify_d5_terminal_chi_chain_lex_order14_report.py
-python3 scratch/verify_d5_terminal_foreign_block_order14.py
-python3 scratch/verify_d5_cyclic_block_lex_reports.py
-python3 scratch/check_d5_cyclic_block_one_step_no_go_order14.py
+python3 scratch/verify_d5_root_component_distance_order16_summary.py
+python3 scratch/verify_d5_root_feasibility_lift13_girth10.py
 \end{verbatim}
 The order-12 plateau verifier regenerates all graph identities and report
 arithmetic, then independently recomputes five deterministic
 boundary/extremal rows with a separately structured traversal.  The
-terminal-chain and blocker verifiers check the frozen complete order-14
-reports, summary arithmetic, failure fields, and cryptographic hashes.
-The directed-root blocker implementation is separately structured and has
-its own frozen summaries and hash ledger.  These checks certify finite
-computations only.
+order-14 fixed-distance verifier checks the frozen report digest,
+canonical graph order, per-row failure fields, and all summary arithmetic;
+its producer first reproduces the independent order-12 totals.  The
+order-16 verifier checks the frozen graph identities, girth
+stratification, and summary totals.  These report verifiers are
+independent semantic checks of selected structure and aggregate
+arithmetic, not second full enumerations; that limitation is part of the
+claim.
 
 \section{What has and has not been established}
 
@@ -897,13 +1080,13 @@ The human-checkable results in this note are:
  \item the canonical properly five-coloured surface construction and
  Euler formula;
  \item the boundary interpretation of the bichromatic factors;
- \item the exact one-switch Euler-change formula; and
+ \item the exact one-switch Euler-change formula;
  \item the four-coordinate one-step locking lemma and the cubic \(D_4\)
- trap theorem; and
+ trap theorem;
  \item the capped-ladder lower bound proving that root-component rescue
  has no universal constant radius; and
- \item the first-foreign factor-splice identity and its distance
- nonincrease consequence.
+ \item the fixed-five minimum-counterexample reduction, bridgeless
+ edge elimination, and the rooted-feasibility implication to FiveCDC.
 \end{enumerate}
 The cube topology change is a short explicit certificate.  The
 12-state contraction trap and the plateau tables are finite
@@ -911,9 +1094,8 @@ computer-assisted results with full instances, producers, and independent
 focused checkers.
 
 No proof or disproof of the standard FiveCDC has been obtained.  No
-orientable FiveCDC result has been obtained.  The terminal-plateau and
-closed-subplateau exit statements are proof targets suggested by the
-computations, not theorems.
+orientable FiveCDC result has been obtained.  The terminal-plateau
+conjecture is a proof target suggested by the computations, not a theorem.
 A responsible public submission would require independent checking by a
 graph theorist, a broader literature comparison, and archival publication
 of the exact code and reports.

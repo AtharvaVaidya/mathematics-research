@@ -1249,3 +1249,141 @@ Open obligations:
     remains exactly the unresolved obligation.  See
     `docs/five-pole-realizability-frontier.md` and
     `search/five-pole-46-threshold-order15-20260727/`.
+76. **A fixed Jaeger multiplicity fibre has an exact five-support
+    criterion:** in a cubic graph let \(T_1,T_2,T_3\) be spanning trees
+    with empty common intersection and let \(K_i\) be the unique
+    all-vertices-odd forest contained in \(T_i\).  In a vertex-star fibre,
+    the canonical five-point lift exists exactly when
+    \(K_1\cap K_2\) has even boundary on every component of \(K_3\).
+    Equivalently, \(K_1\cap K_2\) is Eulerian after the \(K_3\)-components
+    are contracted.  This follows both from the local five-point triangle
+    table and from the identity \(F(T)=E-K(T)\) for the fundamental
+    completion.  The component criterion has been exhaustively compared
+    with the direct pair-labelling CSP on all 30,744 nowhere-zero
+    \(\mathbb F_2^3\)-flows on connected simple cubic graphs through order
+    eight, with zero mismatches.  See
+    `scratch/jaeger-support5-component-criterion.md` and
+    `scratch/jaeger-k-forest-star-parity-identities.md`.
+77. **Every prescribed Type A or Type B three-tree multiplicity pattern is
+    feasible in a 3-edge-connected cubic graph:** if an edge has
+    multiplicity \(m_e\in\{0,1,2\}\), put \(d_e=2-m_e\).  The only
+    three-unit defect patterns are Type A (three distinct \(d_e=1\)) and
+    Type B (one \(d_e=2\), one \(d_e=1\)).  Replacing \(e\) by \(m_e\)
+    parallel copies gives, for every \(k\)-part vertex partition with
+    \(q\) crossing original edges and crossing defect \(D\),
+    \(2q-D\ge3k-3\).  Nash--Williams--Tutte therefore partitions the
+    multigraph into three spanning trees.  Fixed-fibre exchange
+    connectivity follows independently from Blasiak's graphic-matroid
+    toric-ideal theorem.  This is a human reduction; it does not select a
+    packing satisfying item 76.  See
+    `scratch/jaeger-tree-choice-through14-and-exchange-no-go.md`.
+78. **The exact fixed-fibre five-support frontier reaches all simple
+    bridgeless cubic graphs through order 14:** all 587 graphs and all
+    944,974 Type A/B placements were classified.  Of 804,204 feasible
+    fibres, every one has a compatible pair labelling supported on at most
+    five Fano points.  A separately written verifier checks graph
+    premises, placement completeness, and every retained witness.  This is
+    a bounded theorem, not a proof of the universal selection lemma.  See
+    `output/jaeger-five-point-fibres-through14/census.jsonl` and
+    `scratch/verify_jaeger_five_point_frontier.py`.
+79. **The canonical vertex-star five-support frontier has independently
+    checked larger hard-snark samples:** all \(705\cdot38=26{,}790\)
+    order-38 star fibres and all \(31\cdot44=1{,}364\) star fibres in the
+    retained order-44 oddness-four source list admit witnesses supported
+    in the fixed set \(\{0,4,5,6,7\}\).  The order-44 verifier independently
+    decodes graph6, checks simplicity, cubicity, connectivity and
+    bridgelessness, reconstructs all three fundamental completions, and
+    checks point parity on every literal witness.  The result is finite and
+    source-list oddness is provenance, not recomputed.  See
+    `scratch/jaeger-coordinate-five-star-order38-result.json`,
+    `output/jaeger-coordinate-five-order44/result.json`, and
+    `scratch/verify_jaeger_coordinate_five_order44.py`.
+80. **The surviving universal obligation is a joint parity-and-base
+    selection lemma:** for every 3-edge-connected cubic graph and a chosen
+    vertex star, select a three-tree packing in that fixed fibre so that
+    item 76 holds (the fixed canonical coordinate would suffice).
+    Choosing an arbitrary third tree and repairing the other two is false,
+    and choosing parity-good perfect forests before extending them is also
+    false.  Consequently the forest variables and all matroid-union rank
+    inequalities must be controlled jointly.  No proof or counterexample
+    to this exact existential lemma is presently known.
+81. **Defect-monotone reciprocal exchange in one fixed Fano coordinate is
+    false:** the
+    14-vertex 3-edge-connected cubic graph
+    `M?AA@BORDGEOEOAo?`, root zero, has an explicit star-packing state with
+    two bad \(K_3\)-components.  Among all 108 candidate reciprocal
+    two-tree swaps, 18 preserve the spanning-tree conditions and every one
+    raises the defect to four; the other 90 are illegal.  Thus the state is
+    a singleton component of its fixed-coordinate defect-two level.  It is
+    already good in another Fano plane, with seven-plane profile
+    \((2,4,2,2,0,6,2)\), and one reciprocal exchange gives profile
+    \((0,2,4,4,2,2,2)\).  Thus the countermodel does not refute descent for
+    the symmetric minimum over all seven planes.  See
+    `scratch/jaeger-star-parity-descent-countermodel.md` and
+    `scratch/verify_jaeger_star_parity_descent_countermodel.py`.
+82. **The symmetric Fano-minimum exchange potential satisfies a complete
+    bounded descent theorem through order 14:** for every simple
+    3-edge-connected cubic graph through 14 vertices, every root
+    automorphism orbit, and every state in the corresponding star fibre,
+    each positive same-level component for
+    \(d_{\min}=\min_{0\ne h\in(\mathbb F_2^3)^*}d_h\) has an exchange edge
+    to a lower level.  The exact census covers 419 graphs, 3,567 rooted
+    instances, and 529,150,122 states with no failure; the largest
+    \(d_{\min}\) is four.  An independent verifier regenerates the complete
+    graph stream, 3-edge-connectivity filter, root orbits, row ordering,
+    totals, and digest.  It does not independently re-enumerate all states,
+    so the C++ enumerator remains inside the trust boundary.  This is a
+    finite theorem, not a universal descent proof.  See
+    `scratch/jaeger-fano-minimum-parity-descent-through14.md` and
+    `output/jaeger-fano-min-descent-through14/census.jsonl`.
+83. **Odd kernels are fundamental circuits of one parity element, but a
+    natural closure strengthening fails outside vertex-star fibres:**
+    adjoining the all-ones column \(p\) to a reduced incidence matrix gives
+    \(C(T,p)=K(T)\cup\{p\}\) for every spanning tree \(T\), equivalently
+    \(1_{e\in K(T)}=\det A_{T-e+p}\pmod2\).  Requiring
+    \(K_1\cap K_2\subseteq\operatorname{cl}(K_3)\) is sufficient for the
+    exact component-parity target.  On graph6 ``K?`@E`gFCKEO``, however, each
+    of two automorphic non-star Type-A fibres has 355,392 ordered packings,
+    none closure-good in any coordinate, while 7,704 satisfy the actual
+    parity target.  A standard-library independent checker exhausts all
+    packings.  The vertex-star case retains extra structure:
+    \(\delta(r)\cup\{p\}\) is a four-element cocycle, and deleting \(r\)
+    turns a packing into a partition into three cographic bases with three
+    terminal joins.  All 5,646 feasible vertex-star fibres through order
+    14, all 1,364 retained order-44 stars, and 2,500 deterministic random
+    order-50 stars passed the initial closure test.  Item 84 records the
+    later exact vertex-star countermodel, so the proposed sufficient
+    theorem is now false.  See
+    `scratch/jaeger-parity-element-and-kernel-closure-no-go.md`.
+84. **Graphic closure is false even in a 3-connected vertex-star fibre,
+    while the exact parity target survives:** graph6
+    `O??CA?_ceOGgH_F?AK@P?`, rooted at vertex 13, is simple cubic,
+    3-edge-connected, and 3-vertex-connected.  Its star fibre contains
+    5,723,136 ordered three-tree packings.  An independent cographic-base
+    partition enumeration finds zero packing good for
+    \(K_i\cap K_j\subseteq\operatorname{cl}(K_k)\), but 40,464 packings
+    good for the exact contracted component-parity condition.  A
+    744-variable, 101,037-clause CNF is UNSAT, with an LRAT proof accepted
+    by both `lrat-check` and verified CakeML `cake_lpr`; a separate literal
+    five-point witness confirms that this is not a Five-CDC obstruction.
+    Triangle contraction proves that nonroot triangle expansion preserves
+    closure failure, yielding an infinite family of simple cubic
+    3-edge-connected countermodels to this strengthening.  The universal
+    obligation remains the weaker joint parity-and-base selection lemma in
+    item 80.  See
+    `scratch/jaeger-star-kernel-closure-countermodel-16v.md` and
+    `scratch/jaeger-star-kernel-closure-triangle-expansion.md`.
+85. **The order-16 vertex-star closure countermodel is not a countermodel
+    to symmetric Fano-minimum descent:** on graph6
+    `O??CA?_ceOGgH_F?AK@P?`, root 13, the exact whole-state descent
+    enumerator checks all 953,856 states, reaches maximum
+    \(d_{\min}=4\), and finds no trapped positive same-level component.
+    An independently written local replay reconstructs one explicit state
+    with profile \((4,4,4,4,4,4,4)\), exhausts all 147 candidate
+    reciprocal exchanges, and finds 25 legal neighbours: 22 lower
+    \(d_{\min}\) to two and three preserve four.  The independent checker
+    does not re-enumerate the entire fibre, so the full-state C++ program
+    remains in the trust boundary.  This is one targeted order-16 fibre,
+    not a complete order-16 descent census and not a universal proof.  See
+    `output/jaeger-fano-min-descent-order16-closure-no-go/result.json` and
+    `scratch/verify_jaeger_fano_min_descent_order16_closure_no_go.py`.

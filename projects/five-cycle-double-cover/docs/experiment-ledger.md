@@ -2876,3 +2876,190 @@ SHA-256:
 report       9a188be2ee948282a7550c5e5f3eeffe7d7dd8e94ac0e1cc64f08e703550ffcd
 checksums    ac96945c376fcd63a351b3da287751646ea563f23ae86366cd17c04b27496ccc
 ```
+
+## Jaeger fixed-fibre support-five frontier
+
+Audit date: **2026-07-28**.
+
+The exact fixed-fibre search labels every edge by its membership
+multiplicity in three spanning trees, derives the three fundamental
+completions, and asks for a compatible pair labelling on at most five
+points.  All simple bridgeless cubic graphs through order 14 give:
+
+```text
+graphs                                      587
+Type A/B placements                     944,974
+feasible fixed fibres                    804,204
+feasible fibres with support at most 5   804,204
+failures                                       0
+```
+
+The retained census SHA-256 is
+`482e2ee028aa1663f2b91b71569422ab59c1033d51601ca52fac581b173872f1`.
+The independently written replay
+`scratch/verify_jaeger_five_point_frontier.py` accepts the complete stream.
+
+For the stronger fixed-coordinate star test, all 26,790 star fibres on the
+705 retained order-38 records pass.  A separately frozen order-44 literal
+witness package covers 31 graphs and all 1,364 roots, again with zero
+failures.  Its primary hashes are:
+
+```text
+result                         040226e29e81fc6635f17813dd9bc5747ba33d8a226bba1b35ff7ca18e28000c
+literal witnesses              3ff25437d5e32fff7c60ceca695a6476d6c7d2404c1e8551bf14987f228cd4b4
+normalized semantic witnesses  abb8bab730e873a6648d6e56987b6595f95162b2a3e7bd07d592b8d300790800
+input graph list               d701f0cffce5aaba17315d2d9d3851bb747c4e1ece3e2cf188522237b388a0ef
+```
+
+The independent verifier reconstructs all three spanning trees and
+fundamental completions rather than trusting producer-supplied flow values.
+These are bounded positive results.  They do not prove that every
+3-edge-connected cubic graph has a parity-good star packing.
+
+## Jaeger parity-element and kernel-closure frontier
+
+Audit date: **2026-07-28**.
+
+Appending an all-ones column \(p\) to a reduced binary incidence matrix
+turns every odd kernel into the fundamental circuit
+\(C(T,p)-p\).  The stronger search target asks for a packing and
+coordinate with
+\(K_j\cap K_k\subseteq\operatorname{cl}(K_i)\), which implies but is
+stronger than exact component parity.
+
+The frozen census gives:
+
+```text
+connected simple cubic graphs through order 14       621
+vertex-star patterns                               8,392
+feasible vertex-star fibres                        5,646
+kernel-closure-good vertex-star fibres              5,646
+
+connected simple cubic graphs through order 12       112
+Type A/B patterns                                110,127
+feasible Type A/B fibres                          90,203
+kernel-closure-good Type A/B fibres                90,201
+generic Type-A failures                                 2
+```
+
+Both failures occur on graph6 `K?\`@E\`gFCKEO`, at defect triples
+\(\{0,4,11\}\) and \(\{1,3,10\}\).  An independent exhaustive checker
+finds 355,392 ordered packings per fibre, zero closure-good packings, and
+7,704 exact-parity-good packings.  A second independent semantic replay
+checks all 12,695 positive Type-A/B witnesses through order ten.
+
+The still-open vertex-star strengthening also passed the retained
+34-vertex hard graph, all 1,364 star fibres in the order-44 oddness-four
+list, and all 2,500 roots in 50 deterministic random order-50
+3-edge-connected cubic graphs.
+
+Frozen package:
+`output/jaeger-kernel-closure-frontier/`.
+
+## Jaeger symmetric-descent frontier
+
+Audit date: **2026-07-28**.
+
+For the symmetric defect \(d_{\min}\), the minimum of the exact
+component-parity defect over all seven Fano planes, the complete
+reciprocal-exchange census through order 14 contains:
+
+```text
+simple 3-edge-connected cubic graphs       419
+root automorphism-orbit instances        3,567
+exact star-fibre states             529,150,122
+trapped positive-level components             0
+maximum d_min                                  4
+```
+
+The row-level census has SHA-256
+`f1d720265cc58a732cf2b58920b8dacc12f36191cecc731949622f5c80f4f2e0`.
+The independent coverage verifier regenerates the graph streams,
+3-edge-connectivity filters and root orbits and checks every aggregate and
+digest.  The C++ state enumeration is not independently duplicated.
+
+This is a finite theorem; the universal symmetric-descent theorem remains
+open.
+
+## Jaeger vertex-star kernel-closure countermodel at order 16
+
+Audit date: **2026-07-28**.
+
+The complete connected-simple-cubic order-16 search contains:
+
+```text
+graphs                                      4,060
+vertex-star roots                          64,960
+feasible star fibres                       45,248
+kernel-closure-good feasible fibres        45,247
+kernel-closure failures                         1
+```
+
+The unique failure is graph6 `O??CA?_ceOGgH_F?AK@P?`, root 13.  The
+frozen producer stream
+`output/jaeger-kernel-closure-frontier/stars-order16.jsonl` has SHA-256
+`889d0e5857b62e082f3fcad0a929e7c0d92032a8e675f4d2ff9f40272ea43d46`.
+This bounded census locates the first failure after the all-positive
+through-order-14 census; it is not by itself a proof of unlabeled
+minimality beyond the stated generator stream.
+
+The failed fibre was then checked without the producer.  Deleting the
+root yields 16,200 cographic bases and 158,976 unordered partitions into
+three such bases.  Restoring coordinate order and the spoke bijection
+gives 5,723,136 ordered packings, with histogram:
+
+```text
+(closure-good coordinates, parity-good coordinates)  count
+(0,0)                                             5,682,672
+(0,1)                                                40,464
+```
+
+A separately generated 744-variable, 101,037-clause CNF is UNSAT.  Its
+LRAT certificate is accepted by both `lrat-check` and verified CakeML
+`cake_lpr`.  Primary hashes:
+
+```text
+CNF   ccd8ef9504ef725dc02be9234992cbc9e238f1c12ed39ad3068645c73e3c5baf
+LRAT  ffcd95bc48db7c5be222e05b86aa72cf0828ef01e45e7cf45e9a92cab76aa3a5
+```
+
+An independent literal witness verifies exact component parity and a
+five-point pair labelling in the same fibre.  Thus this is a
+counterexample only to the closure strengthening, not to the surviving
+Jaeger parity lemma or Five-CDC.  See
+`scratch/jaeger-star-kernel-closure-countermodel-16v.md`.
+
+The three disjoint triangles contract to Petersen.  A direct no-SAT
+checker exhibits a closure-good packing after contracting one triangle
+and verifies that all six legal lifts fail closure.  A human contraction
+theorem proves that closure failure is preserved by expanding any
+nonroot vertex into a triangle, giving an infinite countermodel family.
+See `scratch/jaeger-star-kernel-closure-triangle-expansion.md`.
+
+## Targeted symmetric descent on the order-16 closure countermodel
+
+Audit date: **2026-07-28**.
+
+The unique order-16 vertex-star fibre failing the stronger kernel-closure
+condition was checked separately under the exact symmetric potential
+\(d_{\min}\):
+
+```text
+graph6                         O??CA?_ceOGgH_F?AK@P?
+root                                                  13
+exact star-fibre states                           953,856
+maximum d_min                                           4
+trapped positive same-level components                  0
+```
+
+The independent local replay uses omitted-class masks
+`8413,1725442,363296`.  It reconstructs the exact seven-plane profile
+\((4,4,4,4,4,4,4)\) and exhausts all 147 incident exchange candidates:
+25 are legal, of which 22 lower the symmetric minimum to two and three
+stay at four.
+
+The machine-readable row and digest manifest are in
+`output/jaeger-fano-min-descent-order16-closure-no-go/`.  This is a
+targeted exact fibre result only.  The C++ whole-state enumeration is not
+duplicated in the independent Python checker, and no complete order-16
+descent census or universal theorem is claimed.

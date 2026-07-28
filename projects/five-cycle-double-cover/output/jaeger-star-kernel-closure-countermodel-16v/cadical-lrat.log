@@ -1,0 +1,138 @@
+c --- [ banner ] -------------------------------------------------------------
+c
+c CaDiCaL SAT Solver
+c Copyright (c) 2016-2026
+c A. Biere, M. Fleury, N. Froleyks, K. Fazekas, F. Pollitt, T. Faller
+c JKU Linz, University of Freiburg, TU Wien
+c
+c Version 3.0.1
+c Apple clang version 21.0.0 (clang-2100.0.123.102) -Wall -Wextra -O3 -DNDEBUG -DNCLOSEFROM
+c Sun Jul 19 15:40:55 UTC 2026 Darwin Tahoe-arm64.local 25.4.0 arm64
+c
+c --- [ proof tracing ] ------------------------------------------------------
+c
+c opening file to write 'output/jaeger-star-kernel-closure-countermodel-16v/star-kernel-closure.lrat'
+c writing non-binary proof trace to 'output/jaeger-star-kernel-closure-countermodel-16v/star-kernel-closure.lrat'
+c
+c --- [ parsing input ] ------------------------------------------------------
+c
+c reading DIMACS file from 'output/jaeger-star-kernel-closure-countermodel-16v/star-kernel-closure.cnf'
+c opening file to read 'output/jaeger-star-kernel-closure-countermodel-16v/star-kernel-closure.cnf'
+c found 'p cnf 744 101037' header
+c parsed 101037 clauses in 0.04 seconds process time
+c
+c --- [ options ] ------------------------------------------------------------
+c
+c   --binary=false                 (different from default 'true')
+c   --checkproof=2                 (different from default '3')
+c   --lrat=true                    (different from default 'false')
+c
+c --- [ solving ] ------------------------------------------------------------
+c
+c time measured in process time since initialization
+c
+c  seconds  reduction conflicts       size tier2       variables
+c         MB    restarts   redundant    glue  trail        remaining
+c          level     rate       size/glu tier1  irredundant
+c
+c *  0.04  0  0 0   0  0    0    0 0.0 0 0 2 6  0% 101037 744 100%
+c )  0.04  0  0 0   0  0    0    0 0.0 0 0 2 6  0% 101037 744 100%
+c {  0.04  0  0 0   0  0    0    0 0.0 0 0 2 6  0% 101037 744 100%
+c i  0.04  0  7 0   0  3    3    1 3.0 1 0 2 6 19% 101037 743 100%
+c -  0.05  0 15 1  60  4  302  209 1.6 8 5 2 6 58% 101032 743 100%
+c -  0.07  0 11 2  85  3  737  502 1.7 8 5 2 6 58% 101032 743 100%
+c i  0.07  0 11 2  85  3  808  540 1.7 8 5 2 6 58% 101032 742 100%
+c }  0.07  0 10 2  85  2 1001  701 1.8 8 4 2 6 58% 101032 742 100%
+c [  0.07  0  0 2  85  0 1001  701 0.0 0 0 2 6  0% 101032 742 100%
+c O  0.07  0 19 2  85 20 1002  702 2.0 2 1 2 6 68% 101032 742 100%
+c -  0.09  0 11 3  85  1 1419  950 1.9 10 5 2 6 71% 101025 742 100%
+c i  0.10  0  8 3  85  1 2030 1413 2.1 10 4 2 6 64% 101025 737 99%
+c i  0.10  0  8 3  86  1 2157 1488 2.2 9 4 2 6 62% 101025 710 95%
+c i  0.10  0  8 3  86  1 2185 1498 2.2 9 4 2 6 62% 101025 706 95%
+c i  0.10  0  8 3  86  1 2191 1499 2.2 9 4 2 6 62% 101025 676 91%
+c i  0.11  0  7 3  86  1 2201 1504 2.2 9 4 2 6 62% 101025 636 85%
+c i  0.12  0  7 3  86  1 2204  550 2.2 9 4 2 6 41% 43117 625 84%
+c i  0.12  0  7 3  86  1 2205  550 2.2 9 4 2 6 45% 43117 619 83%
+c i  0.12  0  7 3  86  1 2206  550 2.2 9 4 2 6 37% 43117 609 82%
+c i  0.12  0  7 3  86  1 2207  550 2.2 9 4 2 6 43% 43117 509 68%
+c
+c  seconds  reduction conflicts       size tier2      variables
+c         MB    restarts   redundant    glue  trail       remaining
+c          level     rate       size/glu tier1  irredundant
+c
+c i  0.12  0  7 3  86  1 2209  550 2.2 9 4 2 6 43% 43117 460 62%
+c ]  0.12  0  7 3  86  1 2211  550 2.2 9 4 2 6 45% 43117 330 44%
+c 0  0.12  0  7 3  86  1 2211  550 2.2 9 4 2 6 45% 43117 330 44%
+c
+c --- [ closing proof ] ------------------------------------------------------
+c
+c LRAT proof file 'output/jaeger-star-kernel-closure-countermodel-16v/star-kernel-closure.lrat' closed
+c LRAT 15486 added clauses 17.61%
+c LRAT 72441 deleted clauses 82.39%
+c LRAT 1764561 bytes (1.68 MB)
+c
+c --- [ result ] -------------------------------------------------------------
+c
+s UNSATISFIABLE
+c
+c --- [ run-time profiling ] -------------------------------------------------
+c
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c
+c         0.08   99.92% search
+c         0.05   56.66% stable
+c         0.04   43.59% parse
+c         0.03   41.22% unstable
+c         0.00    2.01% lucky
+c         0.00    0.00% simplify
+c   =================================
+c         0.08   69.35% solve
+c
+c last line shows process time for solving
+c (percentage relative to total process time)
+c
+c --- [ statistics ] ---------------------------------------------------------
+c
+c chronological:               399        18.05 %  of conflicts
+c conflicts:                  2211     27095.92    per second
+c decisions:                  3558     43603.48    per second
+c fixed:                       414        55.65 %  of all variables
+c learned:                    2124        96.07 %  per conflict
+c learned_lits:              28532       100.00 %  learned literals
+c minimized:                     0         0.00 %  learned literals
+c shrunken:                   6503        22.79 %  learned literals
+c minishrunken:               3693        12.94 %  learned literals
+c otfs:                         67         3.03 %  of conflict
+c propagations:             301879         3.70 M  per second
+c reduced:                     201         9.09 %  per conflict
+c rephased:                      1      2211.00    interval
+c restarts:                     86        25.71    interval
+c stabilizing:                   1        54.45 %  of conflicts
+c subsumed:                    408         0.40 %  of all clauses
+c strengthened:                 63         0.06 %  of all clauses
+c ticks:                   7437302        24.64    propagation
+c
+c seconds are measured in process time for solving
+c
+c --- [ glue usage ] ---------------------------------------------------------
+c
+c focused glue 2 used 672 clauses 21.98% accumulated 63.98% tier1
+c focused glue 3 used 441 clauses 14.42% accumulated 78.41%
+c focused glue 4 used 279 clauses 9.126% accumulated 87.53%
+c focused glue 5 used 166 clauses 5.430% accumulated 92.96%
+c focused glue 6 used 110 clauses 3.598% accumulated 96.56% tier2
+c
+c stable glue 1 used 4316 clauses 55.34% accumulated 55.34% tier1
+c stable glue 2 used 1486 clauses 19.05% accumulated 74.39% tier2
+c
+c
+c --- [ resources ] ----------------------------------------------------------
+c
+c total process time since initialization:         0.12    seconds
+c total real time since initialization:            0.12    seconds
+c maximum resident set size of process:           45.14    MB
+c
+c --- [ shutting down ] ------------------------------------------------------
+c
+c exit 20

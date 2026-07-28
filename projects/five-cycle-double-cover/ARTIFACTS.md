@@ -1,11 +1,58 @@
 # Curated artifact inventory
 
-This bundle was assembled on **2026-07-27** from the local laboratory at
+This bundle was assembled on **2026-07-28** from the local laboratory at
 `/Users/atharvavaidya/Documents/conjectures`.  The source workspace was
 copied into a separate clean clone; it was not modified or committed.
 
 ## Included
 
+- The 25-page, explicitly AI-disclosed working preprint
+  `preprint-jaeger-fivecdc-frontier/`, with LaTeX source, rendered PDF,
+  references, human-review gate, validation record, and checksum manifest.
+  It presents the fixed-fibre feasibility theorem, exact five-point
+  component criterion, odd-kernel identities, and carefully scoped
+  computational results without claiming a FiveCDC resolution.
+- The Jaeger fixed-fibre reproducibility package: complete Type A/B
+  support-five and support-six census streams through order 14; literal
+  fixed-coordinate witnesses for 31 order-44 graphs and all 1,364 roots;
+  an independently checked order-38 summary; human no-go notes and exact
+  checkers; and source for the fixed-fibre SAT encoders.
+- The symmetric Fano-minimum descent package: an exact 529,150,122-state
+  census over every root orbit of every simple 3-edge-connected cubic graph
+  through order 14, with zero trapped positive-level components, plus a
+  separate coverage/integrity verifier.  The state enumeration itself is
+  not independently duplicated.
+- The parity-element/kernel-closure package: a human linear-algebra and
+  cographic-base reformulation; exact positive star-fibre frontiers through
+  order 14; an independently exhausted generic Type-A countermodel; and a
+  dual-certified 16-vertex vertex-star countermodel.  A solver-free
+  enumeration checks all 5,723,136 packings, and a human contraction theorem
+  generates an infinite rooted family.  Exact component parity survives.
+- The 34-vertex direction-thinning countermodel package, including the
+  complete `star-thin-any.cnf`, its LRAT accepted by both `lrat-check` and
+  verified CakeML `cake_lpr`, and a separately checked positive
+  five-point witness in the same star fibre.  This refutes thinning only,
+  not FiveCDC.
+- The two independent target-semantics verifier implementations and the
+  fixed-graph Lean development, excluding Lean build state.
+- The rooted-resolution handoff
+  `ROOTED_RESOLUTION_FRONTIER_20260728.md`: a human-checkable fixed-five
+  minimum-counterexample reduction, two-way rooted edge-insertion
+  equivalence, exact matching/4-flow/two-\(T\)-join characterization,
+  complete order-14 and order-16 finite controls, and all 195 positive
+  edge-elimination witnesses for a cyclically 4-edge-connected
+  130-vertex girth-ten graph.  It explicitly states that the remaining
+  rooted premise and FiveCDC are unresolved.
+- The exact Oum/Jaeger scope package: Oum-compatible pair data are proved
+  equivalent to arbitrary eight-coordinate covers; the combined
+  five-colour choice is exactly FiveCDC; fixed-tree and one-tree-exchange
+  strengthenings have checked countermodels; and the existential
+  Jaeger-tree choice has a complete positive census through order 14.
+- The root-port and connected-incidence package, including the sharp
+  36-sheet monodromy divisor, its 3,600-state disconnected realization,
+  the connected shared-coordinate factor-chain theorem, and the
+  shortest-chain no-go.  These are route delimiters, not counterexamples
+  to FiveCDC.
 - Three compiled research drafts and their complete LaTeX/BibTeX sources,
   including the fixed-line Fano-flow span/obstruction note and its
   provisional novelty assessment.
@@ -201,13 +248,14 @@ copied into a separate clean clone; it was not modified or committed.
   checker sources, result summaries, and the original SHA-256 ledger.
 - The native-XOR five-CDC encoder and its unit test.
 
-The four compiled PDFs have SHA-256 digests:
+The five compiled PDFs have SHA-256 digests:
 
 ```text
 863f24bcad7780067e5c264e2253e673ea4b9d50e94f28a6cf6cf389cc20bcb0  output/pdf/two-connected-countermodels-five-cdc-preprint.pdf
 7a88cd04139344babf371c6b949d26b50e6733ac8db5a6a495f842e4e706dafc  output/pdf/four-universally-separated-marks-preprint-20260726.pdf
 9612a080fa5eca945c82d0c266cc94d62adeea6493ee6d10e7aa03805687e5e0  preprint-fano-combined-span/main.pdf
 8d0da87f5e07abf1dc5cc25e05f16faeb442a7dead8754f7b8bb4b88596f9b95  preprint-rooted-four-cut/output/pdf/main.pdf
+ab74a5c3b3bf996c19a032ca8aac2fe0463a65d0409564ba4b3acd866f3e2177  preprint-d5-surface-kempe/main.pdf
 ```
 
 The original source files for those PDFs have SHA-256 digests:
@@ -232,8 +280,9 @@ The following were excluded from ordinary Git:
 
 - LaTeX build auxiliaries (`.aux`, `.bbl`, `.blg`, `.log`, `.out`) and
   duplicate build-directory PDFs.
-- Python caches, `.DS_Store`, temporary files, solver logs, and
-  exploratory scratch output.
+- Python caches, `.DS_Store`, temporary files, unrelated solver logs, and
+  exploratory scratch output.  The small proof-checker logs belonging to
+  the retained 34-vertex certificate are included with that package.
 - Broad graph censuses and unrelated conjecture branches.
 - The \(H_4\) projected-support corpus and full certificates:
 

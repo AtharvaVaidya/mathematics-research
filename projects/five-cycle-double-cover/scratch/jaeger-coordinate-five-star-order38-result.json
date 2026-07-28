@@ -1,0 +1,57 @@
+{
+  "date": "2026-07-28",
+  "status": "FINITE_EXACT_CENSUS_NO_COUNTERMODEL",
+  "claim_boundary": "This is a bounded SAT census, not a proof of the universal star-fibre lemma and not a proof of FiveCDC.",
+  "target": {
+    "fibre": "For every vertex r, tree multiplicity is one on delta(r) and two on every other edge.",
+    "support": [0, 4, 5, 6, 7],
+    "missing_points": [1, 2, 3],
+    "special_direction_plane": [0, 1, 2, 3],
+    "normal_coordinate_bit": 2,
+    "mode": "star-five-coordinate"
+  },
+  "census": [
+    {
+      "class": "order-38 strong snarks of girth at least 5 and cyclic connectivity 4",
+      "graphs": 298,
+      "vertex_star_fibres": 11324,
+      "feasible_fibres": 11324,
+      "sat_supported_fibres": 11324,
+      "unsat_supported_fibres": 0,
+      "source": "berge-fulkerson/search/strong_snark_bf_census/canonical/strongsnarks_38_5_cyc4.g6",
+      "source_sha256": "094f1c4ee0b73dc8550179cadf509187c5274a6090da01811266edbadaf93949"
+    },
+    {
+      "class": "order-38 strong snarks of girth 4 and cyclic connectivity 4",
+      "graphs": 407,
+      "vertex_star_fibres": 15466,
+      "feasible_fibres": 15466,
+      "sat_supported_fibres": 15466,
+      "unsat_supported_fibres": 0,
+      "source": "berge-fulkerson/search/strong_snark_bf_census/canonical/strongsnarks_38_4_cyc4.g6",
+      "source_sha256": "21f009acbc217e00f9563554b2103ff2c9e829fb2da0861ed41f7a273cda7d15"
+    }
+  ],
+  "totals": {
+    "graphs": 705,
+    "vertex_star_fibres": 26790,
+    "feasible_fibres": 26790,
+    "sat_supported_fibres": 26790,
+    "unsat_supported_fibres": 0
+  },
+  "implementation": {
+    "source": "scratch/search_jaeger_special_fibres_sat.cpp",
+    "source_sha256": "9e41c7885065467526eaf70d0dbbd8ab2906f8571f702fc3fea47063d743ea74",
+    "compiler": "Apple clang 21.0.0",
+    "solver": "CaDiCaL 3.0.1",
+    "semantic_model_checks": [
+      "each returned coordinate is a spanning tree",
+      "tree multiplicities equal the prescribed star fibre",
+      "each completion contains every cotree edge and is Eulerian",
+      "the three completion bits give a nowhere-zero flow",
+      "each selected pair xors to its edge flow value",
+      "each point has even incidence at every vertex",
+      "points 1, 2, and 3 are forbidden on every edge"
+    ]
+  }
+}

@@ -19,8 +19,14 @@ certificates, and large finite computations.
    proposition is a separate finite claim.
 7. The cubic \(D_4\) trap theorem. Check the complementary-pair Tait quotient
    and both root-label cases; the orbit-wide circuit hypothesis is essential.
-8. The first-foreign splice identity and its transition-pairing consequence.
-   Check separately that it proves distance nonincrease, not immediate rescue.
+8. The two-root insertion equivalence, in both directions.  At each new
+   endpoint verify that the open-arc transposition makes the two surviving
+   labels equal after deletion of the central edge.
+9. The fixed-five minimum-counterexample reductions, especially suppression
+   of degree-two vertices and coordinate matching across 2- and 3-edge cuts.
+10. The strengthened elimination lemma: cyclically 4-edge-connected
+    girth-at-least-five parent implies a simple 3-edge-connected reduced
+    graph.
 
 ## Small certificates
 
@@ -43,18 +49,17 @@ python3 scratch/verify_d5_surface_chi_plateaus_order12.py
 python3 scratch/verify_d5_root_euler_potential_reports.py
 python3 scratch/verify_d5_root_kempe_order14_report.py
 python3 scratch/verify_d5_terminal_chi_chain_lex_order14_report.py
-python3 scratch/verify_d5_terminal_foreign_block_order14.py
-python3 scratch/verify_d5_cyclic_block_lex_reports.py
-python3 scratch/check_d5_cyclic_block_one_step_no_go_order14.py
-python3 scratch/check_d5_no_fresh_coordinate_blocker_order12.py
+python3 scratch/verify_d5_root_component_distance_order16_summary.py
+python3 scratch/verify_d5_root_feasibility_lift13_girth10.py
 ```
 
-The terminal-plateau chain census is complete through order 14.  The two
-block-potential implementations use different root accounting conventions,
-so their subplateau totals should not be conflated.  Both are finite
-censuses, not proofs for arbitrary graphs.  The two final witness checkers
-also prevent the first-foreign and fresh-coordinate lemmas from being
-overstated as universal one-step descent rules.
+The order-14 report now covers all terminal equal-\(\chi\) plateaus, not
+only the global maximum.  Its focused verifier checks the frozen graph order,
+report digest, per-row failure fields, and summary arithmetic; it is not a
+second full enumeration.  The order-16 result is a separate unrestricted
+root-rescue census and contains no girth-eight graph.  The lift-13 checker
+does independently reconstruct and semantically verify all 195 positive
+high-girth witnesses.
 
 ## Publication checks still required
 

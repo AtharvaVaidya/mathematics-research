@@ -1,0 +1,1692 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\geometry{margin=1in}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{problem}[theorem]{Open problem}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\inc}{\operatorname{inc}}
+\newcommand{\symdiff}{\mathbin{\triangle}}
+\newcommand{\1}{\mathbf 1}
+\newcommand{\FiveCDC}{\textup{FiveCDC}}
+\newcommand{\xor}{\mathbin{\oplus}}
+\newcommand{\bigxor}{\bigoplus}
+
+\title{Fixed-Multiplicity Tree Fibres and Five-Point Liftings\\
+for the Five-Cycle Double Cover Conjecture}
+\author{Atharva Vaidya\\
+\small AI-assisted working preprint for independent human verification}
+\date{July 28, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fcolorbox{red!65!black}{red!4}{
+\parbox{0.91\textwidth}{
+\textbf{Resolution status.}
+The standard five-cycle double cover conjecture remains unresolved.
+This paper proves reductions and exact criteria inside one proof route,
+gives certified counterexamples to several tempting stronger lemmas, and
+reports bounded positive computations.  It proves neither the conjecture
+nor its negation.
+}}
+\end{center}
+
+\begin{abstract}
+The five-cycle double cover conjecture asks whether every finite bridgeless
+graph has at most five Eulerian edge-subsets covering every edge exactly
+twice.  We study a fixed-multiplicity spanning-tree route suggested by
+Jaeger's nowhere-zero \(\F_2^3\)-flow construction.
+
+For a cubic graph and three spanning trees with empty common intersection,
+the edge multiplicities have only two possible defect types.  We prove that
+every prescribed defect pattern of either type is feasible in every
+3-edge-connected cubic graph, by a direct Nash-Williams--Tutte partition
+argument.  Blasiak's graphic-matroid theorem then identifies each
+fixed-multiplicity fibre with one symmetric-exchange component.
+
+The principal structural result is a human-checkable component-parity
+criterion.  Given a nowhere-zero \(\F_2^3\)-flow and a prescribed five-point
+subset of the eight affine points, a compatible pair labelling exists
+exactly when one forced leaf-bit xor vanishes in every component of a
+distinguished value subgraph.  For flows built from spanning trees, this
+becomes an odd-kernel statement: if \(K(T)\) is the unique all-vertex-odd
+forest contained in \(T\), then the star-fibre target is that
+\(K(T_1)\cap K(T_2)\) be Eulerian after contracting every component of
+\(K(T_3)\).
+
+We prove the exact tree-exchange law for these odd kernels.  We also give
+small, directly checkable obstructions to three natural strengthenings:
+Petersen forbids pairwise-disjoint odd kernels; the cube refutes a
+fixed-third-tree repair lemma; and a ten-vertex M\"obius ladder refutes an
+unqualified ``choose perfect forests first, extend later'' strategy.  A
+34-vertex strong snark, represented by a \(4{,}444\)-variable CNF and a
+dual-checked LRAT certificate, refutes every flow-direction thinning rule in
+one star fibre, while the same fibre has an independently checked
+five-point labelling.
+
+We also represent \(K(T)\cup\{p\}\) as the fundamental circuit of one
+all-ones parity element \(p\) in a binary extension of the graphic matroid.
+Deleting the root of a star fibre turns its three-tree packings into
+partitions into three cographic bases with three prescribed terminal joins.
+The sufficient strengthening
+\(K(T_1)\cap K(T_2)\subseteq\operatorname{cl}(K(T_3))\) is false: an exact
+12-vertex enumeration refutes it for generic type-A fibres, and a
+dual-checked 16-vertex certificate refutes it even for a vertex-star fibre.
+Both countermodels preserve the weaker, correct quotient-parity target.
+A human triangle-contraction theorem extends the latter closure failure to
+an infinite rooted family, without making any claim against FiveCDC.
+
+Exact computation finds a five-point representative in all \(804{,}204\)
+feasible type-A/type-B fibres of all \(587\) connected simple bridgeless
+cubic graphs through order \(14\); in all \(26{,}790\) vertex-star fibres
+of \(705\) order-\(38\) strong snarks; and in all \(1{,}364\) vertex-star
+fibres of a retained family of \(31\) order-\(44\) oddness-four snarks.
+Only the last census retains and independently replays every literal
+witness.  A separate exhaustive exchange census proves, through order
+\(14\), that every positive same-level component for the minimum
+seven-plane parity defect has an edge to a lower level; it covers
+\(529{,}150{,}122\) exact states.  These are finite results, not a
+universal selection theorem.
+\end{abstract}
+
+\tableofcontents
+
+\section{Status, conventions, and contribution boundary}
+
+Oum defines a \(k\)-cycle double cover as a collection of at most \(k\)
+Eulerian subgraphs covering every edge exactly twice, proves the
+eight-subgraph bound, and states the five-subgraph assertion as
+Conjecture~18~\cite{Oum2026}.  The conjecture is attributed to Celmins and
+Preissmann~\cite{Celmins1985,Preissmann1981}; see also the surveys and flow
+work of Jaeger~\cite{Jaeger1979,Jaeger1985,Jaeger1988} and recent special
+cases~\cite{LiuEtAl2023,HuckKochol1995}.
+
+Throughout, a graph is finite and undirected.  Parallel edges are distinct
+edge objects.  Unless a statement says ``simple'', parallel edges are
+permitted.  A loop contributes two incidences at its endpoint.  An
+\emph{Eulerian edge-subset} is an edge set whose incidence degree is even at
+every vertex; it need not be connected or 2-regular.
+
+The five members form an indexed tuple.  Empty Eulerian subsets and repeated
+subsets are allowed.  Hence ``five, allowing empty members'' is equivalent
+to ``at most five''.  This is the standard convention used in
+\cite{Oum2026}.  The orientable five-cycle double cover conjecture imposes
+directed Eulerian orientations that use every edge once in each direction.
+It is a distinct, stronger conjecture and is not considered here.
+
+The exact fixed-fibre feasibility theorem, component criterion, and finite
+obstructions below may be useful independently of the universal conjecture.
+However, we have not completed a specialist priority search for their exact
+formulations.  We therefore make no categorical novelty claim.  The paper is
+a research draft whose proofs and certificates are deliberately exposed for
+human audit.
+
+\section{The exact cover encoding}
+
+Let \(G=(V,E)\) be an edge-indexed multigraph.  For \(e\in E\) and
+\(i\in\{0,1,2,3,4\}\), introduce \(x_{e,i}\in\{0,1\}\).  Write
+\(\inc(v)\) for the multiset of incidences at \(v\); a loop appears twice.
+Consider
+\begin{align}
+ \sum_{i=0}^{4}x_{e,i}&=2
+       &&(e\in E),                                      \tag{2.1}\\
+ \bigxor_{(e,\text{ incidence})\in\inc(v)}x_{e,i}&=0
+       &&(v\in V,\;0\leq i<5).                          \tag{2.2}
+\end{align}
+
+\begin{theorem}[encoding equivalence]\label{thm:encoding}
+Satisfying assignments of \((2.1)\)--\((2.2)\) are in bijection with
+ordered five-tuples \((C_0,\ldots,C_4)\) of Eulerian edge-subsets that
+contain every edge in exactly two coordinates.
+\end{theorem}
+
+\begin{proof}
+Given an assignment, set \(C_i=\{e:x_{e,i}=1\}\).  Equation~(2.1) says
+that each edge occurs in exactly two of these sets.  Equation~(2.2) is
+exactly the degree of \(v\) in \(C_i\), reduced modulo two.  Hence every
+\(C_i\) is Eulerian.
+
+Conversely, take the five characteristic functions of a cover.  Exact
+double coverage gives~(2.1), and Eulerian parity gives~(2.2).  The two
+maps are inverse.  A loop causes no exception: its two parity incidences
+cancel, while its single membership variable remains constrained by
+\((2.1)\).
+\end{proof}
+
+This gives both a native-XOR encoding and a certificate-producing CNF.
+For exact-two among \(y_0,\ldots,y_4\), use the ten negative clauses on
+triples and the five positive clauses on four-subsets.  For an even-parity
+row \(z_1\xor\cdots\xor z_d=0\), add the blocking clause
+\[
+ \bigvee_{a_j=1}\neg z_j\;\vee\!
+ \bigvee_{a_j=0}z_j
+\]
+for every odd vector \(a\in\{0,1\}^d\).  This direct form has no parity
+auxiliaries.  It is exponential in \(d\), but small on the cubic search
+domain.  An UNSAT proof for this formula certifies the fixed-graph
+nonexistence claim only after graph parsing, incidence conventions, and
+bridgelessness are checked separately.
+
+\section{Tree coordinates and fixed-multiplicity fibres}
+
+\subsection{Fundamental completions}
+
+Let \(T\) be a spanning tree of a connected graph \(G\).  For every
+cotree edge \(e\), let \(C_T(e)\) be its fundamental circuit, and define
+\[
+ F(T)=\mathop{\symdiff}_{e\notin T} C_T(e).              \tag{3.1}
+\]
+
+\begin{lemma}[unique completion]\label{lem:completion}
+\(F(T)\) is the unique Eulerian edge-subset containing every edge of
+\(E(G)-T\).
+\end{lemma}
+
+\begin{proof}
+Every fundamental circuit is Eulerian, so their symmetric difference is
+Eulerian.  Each cotree edge belongs to its own fundamental circuit and to no
+other one, hence belongs to \(F(T)\).  If \(F'\) is a second Eulerian set
+containing the cotree with the same prescribed cotree indicators, then
+\(F(T)\symdiff F'\) is an Eulerian subset of the tree \(T\).  A nonempty
+forest has a vertex of odd degree in its selected subgraph, so that
+difference is empty.
+\end{proof}
+
+Let \(T_1,T_2,T_3\) be spanning trees with empty common intersection.
+Put \(F_i=F(T_i)\) and
+\[
+ \phi(e)=\bigl(\1_{F_1}(e),\1_{F_2}(e),\1_{F_3}(e)\bigr)
+       \in\F_2^3.                                      \tag{3.2}
+\]
+Each coordinate is Eulerian, so \(\phi\) is a flow.  Every edge is omitted
+by some \(T_i\), hence is in \(F_i\), and therefore \(\phi(e)\ne0\).
+This is Jaeger's spanning-tree construction of a nowhere-zero
+\(\F_2^3\)-flow; compare~\cite{Jaeger1979,Oum2026}.
+
+\begin{definition}[compatible pair labelling]
+For a nowhere-zero flow \(\phi:E(G)\to W-\{0\}\), where
+\(W=\F_2^3\), a compatible pair labelling is a map
+\[
+ \lambda(e)=\{x_e,y_e\}\in\binom W2
+\]
+such that \(x_e+y_e=\phi(e)\), and such that every point \(s\in W\)
+occurs an even number of times among the pairs incident with every vertex.
+\end{definition}
+
+\begin{proposition}[pair labels give covers]\label{prop:pairs-cover}
+If a compatible pair labelling uses at most five points of \(W\), then
+its point-coordinate edge sets are a five-cycle double cover.
+\end{proposition}
+
+\begin{proof}
+For each used point \(s\), take \(H_s=\{e:s\in\lambda(e)\}\).
+Compatibility makes \(H_s\) Eulerian.  Every pair has two distinct
+points, so every edge lies in exactly two \(H_s\).  Pad with empty sets if
+fewer than five points are used.
+\end{proof}
+
+\subsection{Three defects}
+
+Now suppose \(G\) is cubic on \(n\) vertices.  Define the tree multiplicity
+\[
+ m_e=\bigl|\{i:e\in T_i\}\bigr|,\qquad d_e=2-m_e.         \tag{3.3}
+\]
+Since the common intersection is empty, \(m_e\leq2\), and
+\[
+ \sum_{e\in E(G)}d_e
+ =2\frac{3n}{2}-3(n-1)=3.                                \tag{3.4}
+\]
+Thus there are exactly two patterns:
+\begin{enumerate}
+\item \emph{type A}: three distinct edges have \(d_e=1\);
+\item \emph{type B}: one edge has \(d_e=2\), a different edge has
+      \(d_e=1\).
+\end{enumerate}
+All other defects vanish.
+
+\begin{theorem}[prescribed-fibre feasibility]\label{thm:feasible}
+Let \(G\) be a finite 3-edge-connected cubic graph.  Every vector
+\(d\in\{0,1,2\}^{E(G)}\) with \(\sum_e d_e=3\) is realized by three
+spanning trees whose multiplicity on \(e\) is \(2-d_e\).
+\end{theorem}
+
+\begin{proof}
+Replace each edge \(e\) by \(2-d_e\) labelled parallel copies, obtaining a
+multigraph \(H_d\).  It has
+\[
+ |E(H_d)|=2|E(G)|-3=3(n-1).                              \tag{3.5}
+\]
+Consider a partition \(\mathcal P\) of \(V(G)\) into \(k\geq2\) nonempty
+parts.  Let \(q\) be the number of original edges crossing the partition
+and let \(D\) be the sum of \(d_e\) over crossing edges.  Every part is a
+proper nonempty vertex set, so 3-edge-connectivity gives boundary size at
+least three.  Summing the \(k\) boundary sizes counts each crossing edge
+twice; hence \(2q\geq3k\).  Since \(D\leq3\),
+\[
+ |E_{H_d}(\mathcal P)|=2q-D\geq3k-3=3(k-1).              \tag{3.6}
+\]
+By the Nash-Williams--Tutte spanning-tree packing theorem
+\cite{NashWilliams1961,Tutte1961}, \(H_d\) has three edge-disjoint
+spanning trees.  Their total size is \(3(n-1)=|E(H_d)|\), so they use
+every copy.  Projecting labelled copies back to \(G\) gives the prescribed
+multiplicities.
+\end{proof}
+
+Thus every type-A and type-B placement is feasible in the 3-edge-connected
+cubic domain; the fibre is never empty there.
+
+\subsection{Exchange connectivity}
+
+A reciprocal symmetric exchange replaces two trees by
+\[
+ T_i'=T_i-e+f,\qquad T_j'=T_j-f+e,                       \tag{3.7}
+\]
+when both displayed sets are spanning trees.  It preserves the edgewise
+multiplicity vector and the pairwise intersection \(T_i\cap T_j\), hence
+also preserves an empty triple intersection.
+
+Blasiak proved that the toric ideal of a graphic matroid is generated by
+quadrics corresponding to single-element symmetric exchanges
+\cite{Blasiak2008}.  Under the standard Markov-basis interpretation, any
+two multisets of graphic-matroid bases with the same multiset union are
+connected by these moves.  Consequently:
+
+\begin{proposition}[fixed-fibre connectivity]\label{prop:fibre}
+After quotienting by permutation of the three trees, the
+symmetric-exchange components are exactly the feasible fixed-\(m\)
+fibres.
+\end{proposition}
+
+The universal proof obligation inside this route is therefore not
+connectivity or feasibility.  It is the following selection assertion.
+
+\begin{problem}[fixed-fibre five-point selection]\label{prob:fibre}
+Does every type-A or type-B fibre of every 3-edge-connected cubic graph
+contain a tree triple whose completion flow admits a compatible pair
+labelling supported on at most five points of \(\F_2^3\)?
+\end{problem}
+
+This problem is stronger than what is needed for a single graph, since one
+good fibre would suffice for that graph.  It remains open.
+
+\section{A five-point component-parity criterion}
+
+This section gives an exact, noncomputational test for the conclusion of
+Problem~\ref{prob:fibre} once the flow and the five-point set are fixed.
+
+Let \(W=\F_2^3\), let \(\phi:E(G)\to W-\{0\}\) be a nowhere-zero flow on
+a loopless cubic graph, and let \(B\subset W\) have three points.  The
+affine span of \(B\) is a four-point plane
+\[
+ A=b+U_0,
+\]
+where \(U_0\leq W\) has dimension two.  Write
+\[
+ a^*=A-B,\qquad A'=W-A,\qquad S=W-B=A'\cup\{a^*\}.       \tag{4.1}
+\]
+Choose \(z\in A'\).  Let \(h_0\in W^*-\{0\}\) have kernel \(U_0\).
+
+At a graph vertex \(v\), the three incident flow values are distinct,
+nonzero, and sum to zero.  Together with zero they form a linear plane
+\(U_v\).  Let \(h_v\) be its nonzero normal, and put
+\[
+ E_0=\{e:\phi(e)\in U_0\}.                                \tag{4.2}
+\]
+
+\begin{lemma}[local triangle classification]\label{lem:local}
+In a compatible pair labelling, the three incident pairs at a cubic
+vertex are the three edges of a simple triangle on \(W\).  Their
+differences are the three nonzero points of \(U_v\).
+
+Moreover, the degree of \(v\) in \((V,E_0)\) is three if \(U_v=U_0\),
+and one otherwise.  A degree-three vertex has exactly four local triangles
+supported in \(S\), while a degree-one vertex has exactly one.
+\end{lemma}
+
+\begin{proof}
+View the three pair labels as the edges of a loopless three-edge
+multigraph on vertex set \(W\).  Local compatibility says that every
+vertex of this multigraph has even degree.  The only nonempty loopless
+three-edge possibility is a simple triangle.  If its vertices are
+\(r,s,t\), its edge differences are
+\[
+ r+s,\quad r+t,\quad s+t,
+\]
+which are the three nonzero elements of a two-dimensional linear
+subspace.  They are exactly the three incident flow values.
+
+The planes \(U_v\) and \(U_0\) either agree or meet in a one-dimensional
+subspace.  This proves the degree assertion.  If they agree, a local
+triangle is three points of one coset of \(U_0\).  It cannot lie in \(A\),
+because \(A\cap S=\{a^*\}\); it is therefore
+\(A'-\{t\}\) for one of the four \(t\in A'\).
+
+In the remaining case write the incident values as \(p,q,r\), where
+\(p\in U_0-\{0\}\), \(q,r\notin U_0\), and \(p=q+r\).
+Every coset of \(U_v\) meets \(A\) in one \(p\)-pair and \(A'\) in the
+other.  The coset containing \(a^*\) meets \(A\) in
+\(\{a^*,a^*+p\}\).  A supported three-point subset of that coset must omit
+\(a^*+p\), and is therefore
+\[
+ \{a^*,a^*+q,a^*+r\}.                                    \tag{4.3}
+\]
+The other coset meets \(A\) in a \(p\)-pair contained entirely in \(B\);
+omitting only one point cannot avoid \(B\).  This proves uniqueness.
+\end{proof}
+
+Call the degree-three vertices of \((V,E_0)\) \emph{special}, and its
+degree-one vertices \emph{leaves}.  For \(p\in U_0-\{0\}\), the affine
+plane \(A'\) has two \(p\)-pairs.  Give \(\{z,z+p\}\) port bit \(1\) and
+the other pair port bit \(0\).
+
+At a special vertex with incident \(E_0\)-values \(p_1,p_2,p_3\), the four
+triangles \(A'-\{t\}\) produce exactly
+\[
+ 000,\quad011,\quad101,\quad110.                          \tag{4.4}
+\]
+Thus their port bits obey one even-parity equation.  At a leaf \(v\), the
+unique local triangle forces the port bit on its only \(E_0\)-edge; call
+it \(\ell_v\).  If \(w=z+a^*\), the forced value has the coordinate-free
+description
+\[
+ \ell_v=(h_v+h_0)(w).                                     \tag{4.5}
+\]
+Indeed, the forced \(p\)-pair is
+\(\{a^*+q,a^*+q+p\}\).  It equals the base pair
+\(\{z,z+p\}\) exactly when \(w+q\in\{0,p\}\), equivalently when
+\(w\in U_v\).  Since \(w\notin U_0\), we have \(h_0(w)=1\); hence the
+indicator of \(h_v(w)=0\) is precisely \((h_v+h_0)(w)\).
+For edges outside \(E_0\), the unique labels forced by their two endpoints
+agree automatically.
+
+\begin{theorem}[component-parity criterion]\label{thm:component}
+A compatible pair labelling supported in \(S=W-B\) exists if and only if
+for every connected component \(Q\) of \((V(G),E_0)\),
+\[
+ \bigxor_{v\in L(Q)}\ell_v=0,                             \tag{4.6}
+\]
+where \(L(Q)\) is the set of degree-one vertices of \(Q\).
+\end{theorem}
+
+\begin{proof}
+Give every edge \(e\in E_0\) one variable \(x_e\in\F_2\), its selected
+port bit.  Lemma~\ref{lem:local} gives exactly the equations
+\[
+ x_e=\ell_v\quad\text{at a leaf }v,\qquad
+ \bigxor_{e\ni v}x_e=0\quad\text{at a special vertex }v.   \tag{4.7}
+\]
+Equality of endpoint bits is precisely compatibility on edges of \(E_0\);
+compatibility off \(E_0\) is automatic by the unique local classification.
+
+On a connected component \(Q\), system~(4.7) is its vertex-edge incidence
+system over \(\F_2\), with right-hand side \(\ell_v\) at leaves and zero
+at special vertices.  The image of the incidence matrix of a connected
+loopless graph is exactly the even-parity subspace.  Therefore the system
+is soluble exactly when the xor of the right-hand side is zero, which is
+\((4.6)\).  A solution selects one of the four permitted triangles at
+every special vertex and reconstructs the complete pair labelling.
+\end{proof}
+
+\begin{remark}
+Cycles cause no exception.  If \(Q\) has cycle rank \(\beta(Q)\), then a
+soluble component has \(2^{\beta(Q)}\) port solutions.  The condition does
+not depend on the auxiliary base point \(z\); changing \(z\) performs a
+gauge change on the edge variables.
+\end{remark}
+
+An independent checker exhausts the local classification and all
+\(30{,}744\) literal nowhere-zero \(\F_2^3\)-flows on the eight connected
+simple cubic graphs through order eight.  Direct solution of the original
+supported-triangle constraint and criterion~(4.6) agree in every case.
+Not every arbitrary flow passes: \(2{,}520\) of these flows have no
+supporting plane at all.
+
+\section{Odd kernels and the star-fibre target}
+
+For a spanning tree \(T\) in a cubic graph of even order, define
+\[
+ K(T)=\{e\in T:\text{the components of \(T-e\) have odd order}\}. \tag{5.1}
+\]
+
+\begin{theorem}[odd-kernel identity]\label{thm:kernel}
+\(K(T)\) is the unique subset of \(T\) having odd degree at every vertex,
+and
+\[
+ F(T)=E(G)-K(T).                                          \tag{5.2}
+\]
+In particular, \(K(T)\) is a spanning all-vertex-odd forest and each of
+its components has even order.
+\end{theorem}
+
+\begin{proof}
+Root \(T\).  For a nonroot vertex \(v\), sum the required odd degrees over
+the subtree below \(v\).  Internal edges count twice, so the parent edge
+must be selected exactly when the subtree has odd order.  This forces all
+nonroot parent-edge choices.  The root equation follows because the total
+order is even.  Thus the all-odd subset exists, is unique, and is
+exactly~(5.1).
+
+The complement \(E(G)-K(T)\) is Eulerian because \(G\) has degree three
+and \(K(T)\) has odd degree at every vertex.  It contains every cotree
+edge.  Lemma~\ref{lem:completion} gives~(5.2).  Summing odd degrees in one
+component of \(K(T)\) shows that its number of vertices is even.
+\end{proof}
+
+Fix a vertex-star type-A fibre and number the spokes so that spoke \(i\)
+belongs only to \(T_i\).  Put \(K_i=K(T_i)\).  Under
+\(\phi=(\1_{F_1},\1_{F_2},\1_{F_3})\), the zero set of coordinate three is
+\(K_3\).  Since the three trees have empty common intersection,
+\(K_1\cap K_2\cap K_3=\varnothing\), and the pure third-coordinate value
+class is exactly
+\[
+ \{e:\phi(e)=(0,0,1)\}=K_1\cap K_2.                       \tag{5.3}
+\]
+Taking \(U_0=\ker(x_3)\) in Theorem~\ref{thm:component} yields:
+
+\begin{corollary}[star-fibre quotient criterion]\label{cor:quotient}
+The canonical five-point set associated with \(\ker(x_3)\) supports a
+compatible pair labelling if and only if
+\[
+ |\delta_G(Q)\cap K_1\cap K_2|\equiv0\pmod2               \tag{5.4}
+\]
+for every component \(Q\) of \(K_3\).  Equivalently,
+\(K_1\cap K_2\) is Eulerian after every \(K_3\)-component is contracted.
+\end{corollary}
+
+Some parity is automatic but insufficient.  For every \(K_3\)-component
+\(Q\), Theorem~\ref{thm:kernel} gives
+\[
+ |\delta(Q)\cap K_1|\equiv|\delta(Q)\cap K_2|
+ \equiv |Q|\equiv0\pmod2.                                \tag{5.5}
+\]
+The intersection of two even cut sets need not be even.  If
+\[
+ \omega_3(Q)=|\delta(Q)\cap K_1\cap K_2|\pmod2,
+\]
+then \(\xor_Q\omega_3(Q)=0\), because every quotient edge is counted at
+both endpoints.  Bad components therefore occur in pairs.  The missing
+selection theorem must cancel these paired local defects.
+
+\subsection{Exact exchange law}
+
+\begin{theorem}[odd-kernel exchange]\label{thm:exchange}
+Let \(T'=T-a+b\), where \(b\notin T\) and
+\(a\in C_T(b)\).  Then
+\[
+ K(T')=
+ \begin{cases}
+ K(T),&a\notin K(T),\\
+ K(T)\symdiff C_T(b),&a\in K(T).
+ \end{cases}                                             \tag{5.6}
+\]
+\end{theorem}
+
+\begin{proof}
+In the old cotree coordinates, the completion \(F(T')\) is either
+\(F(T)\) or \(F(T)\symdiff C_T(b)\).  The new cotree contains \(a\), so
+the first choice occurs exactly when \(a\in F(T)\).  Apply
+\(F(T)=E-K(T)\).
+\end{proof}
+
+If \(K_3\) is fixed and exchanges in the first two trees give
+\[
+ K_1'=K_1\symdiff\alpha C_1,\qquad
+ K_2'=K_2\symdiff\beta C_2
+\]
+with \(\alpha,\beta\in\{0,1\}\), then edge indicators satisfy
+\begin{align}
+ \1_{K_1'\cap K_2'}={}&\1_{K_1\cap K_2}
+ +\alpha\1_{C_1\cap K_2}
+ +\beta\1_{C_2\cap K_1}
+ +\alpha\beta\1_{C_1\cap C_2}.                           \tag{5.7}
+\end{align}
+The quotient-boundary target is therefore bilinear.  Ordinary linear
+cycle-space invariance does not imply~(5.4).
+
+\subsection{One parity element}
+
+The odd kernel is nonlinear as a function of a tree, but it is a standard
+fundamental circuit after one binary extension.  This observation makes the
+remaining selection problem accessible to matroid language without changing
+its semantics.
+
+Let \(G\) now be any connected loopless graph of even order \(n\).  Delete
+the row of a vertex \(\rho\) from its binary vertex-edge incidence matrix,
+obtaining
+\[
+ A\in\F_2^{(n-1)\times E(G)}.
+\]
+Put \(p=\1\in\F_2^{n-1}\), and let \(\widetilde M\) be the binary matroid
+represented by \([A\mid p]\).
+
+\begin{theorem}[parity-element representation]\label{thm:parity-element}
+For every spanning tree \(T\),
+\[
+ C_{\widetilde M}(T,p)=K(T)\cup\{p\}.                    \tag{5.8}
+\]
+Equivalently, for every \(e\in T\),
+\[
+ \1_{e\in K(T)}=\det A_{T-e+p}\pmod2,                   \tag{5.9}
+\]
+where \(A_{T-e+p}\) replaces the column of \(e\) in the tree basis by
+\(p\).
+\end{theorem}
+
+\begin{proof}
+The square matrix \(A_T\) is invertible.  If
+\(z=A_T^{-1}p\), then the nonroot incidence equations say that the edge
+set \(\supp(z)\subseteq T\) has odd degree at every nonroot vertex.
+The number of odd-degree vertices is even, while \(n\) is even, so the
+root degree is odd as well.  The uniqueness part of
+Theorem~\ref{thm:kernel} gives \(\supp(z)=K(T)\).  Thus
+\[
+ p=\sum_{e\in K(T)}A_e
+\]
+is the unique dependence of \(p\) on the basis \(T\), and its support is
+the fundamental circuit~(5.8).  Cramer's rule over \(\F_2\) gives~(5.9);
+the determinant of a binary tree-incidence basis is one.
+\end{proof}
+
+Parallel graph edges are distinct equal columns, so the statement treats
+them as distinct parallel matroid elements.  A graph loop is a zero column
+and belongs to neither a spanning tree nor its odd kernel.
+
+\subsection{Root deletion and three cographic bases}
+
+The vertex-star case has structure absent from a generic type-A defect
+set.  Let \(r\) be the chosen cubic vertex, put \(D=\delta(r)\), and choose
+the deleted incidence row to be the row of \(r\).  Summing all rows of
+\([A\mid p]\) gives the row-space cocycle
+\[
+ D\cup\{p\}.                                             \tag{5.10}
+\]
+Indeed, an edge outside \(D\) has two nonroot incidences, an edge in \(D\)
+has one, and the \(p\)-column has \(n-1\), hence an odd number, of ones.
+Circuit-cocycle orthogonality applied to~(5.8) says that
+\(|K(T)\cap D|\) is odd.
+
+\begin{proposition}[cographic-base form of a star fibre]
+\label{prop:cographic}
+Let \(H=G-r\).  A star-fibre packing is equivalent to:
+\begin{enumerate}
+\item a partition \(E(H)=R_1\mathbin{\dot\cup}R_2
+      \mathbin{\dot\cup}R_3\) into three bases of \(M^*(H)\); and
+\item a bijection between the three sets \(R_i\) and the three neighbours
+      \(u_i\) of \(r\).
+\end{enumerate}
+Writing \(S_i=E(H)-R_i\), the corresponding tree is
+\(T_i=S_i+ru_i\).  Moreover,
+\[
+ J_i=K(T_i)-ru_i
+\]
+is the unique subset of the tree \(S_i\) with boundary
+\[
+ \partial_HJ_i=V(H)-\{u_i\}.                             \tag{5.11}
+\]
+\end{proposition}
+
+\begin{proof}
+Each tree in a star-fibre packing must use an edge of \(D\).  There are
+three trees and only three available root-edge copies, so each tree uses
+exactly one, say \(ru_i\).  Removing the leaf \(r\) leaves a spanning tree
+\(S_i\) of \(H\).  Every internal edge occurs in exactly two of the
+\(S_i\), hence their complements \(R_i\) partition \(E(H)\).  Complements
+of spanning trees are precisely the bases of the cographic matroid.
+
+Conversely, complements of three cographic bases are three spanning trees
+of \(H\).  Adding the three root spokes bijectively reconstructs the
+required multiplicities.  The root spoke belongs to \(K(T_i)\), since
+\(r\) is a leaf of \(T_i\) and has odd kernel degree.  Removing it makes
+the degree at \(u_i\) even and leaves every other vertex of \(H\) odd,
+which proves~(5.11).  Uniqueness follows because a tree has no nonempty
+Eulerian edge-subset.
+\end{proof}
+
+This gives a clean sufficient strengthening of
+Corollary~\ref{cor:quotient}.  For distinct \(i,j,k\), require
+\[
+ K(T_j)\cap K(T_k)
+       \subseteq\operatorname{cl}_{M(G)}(K(T_i)).        \tag{5.12}
+\]
+Because \(K(T_i)\) is a forest, an edge is in its graphic closure exactly
+when its endpoints are in one \(K(T_i)\)-component.  Thus every edge of
+the intersection becomes a loop after contraction, and~(5.12) implies
+the exact even-boundary condition.  In the cographic-base form,
+\[
+ J_j\cap J_k\subseteq\operatorname{cl}_{M(H)}(J_i).      \tag{5.13}
+\]
+The root is a leaf, so it cannot create a new path between two vertices of
+\(H\); hence~(5.12) and~(5.13) are equivalent.
+
+There is also a literal linear-algebra test.  If \(a_e\) is the incidence
+column of \(e\notin T_i\), then
+\[
+ e\in\operatorname{cl}(K(T_i))
+ \quad\Longleftrightarrow\quad
+ \supp(A_{T_i}^{-1}a_e)
+ \subseteq\supp(A_{T_i}^{-1}p).                          \tag{5.14}
+\]
+The left support is the \(T_i\)-path joining the endpoints of \(e\), and
+Theorem~\ref{thm:parity-element} identifies the right support with
+\(K(T_i)\).  Condition~(5.12) is stronger than the desired parity
+condition: Section~\ref{sec:closure-nogo} gives both a sharp generic
+type-A countermodel and a dual-certified vertex-star countermodel.
+
+\section{Human-sized obstructions to stronger lemmas}
+
+The next results do not obstruct the exact component-parity target.  They
+identify proof strategies that lose essential flexibility.
+
+\subsection{Petersen forbids disjoint odd kernels}
+
+\begin{proposition}[Petersen no-go]\label{prop:petersen}
+For every triple of spanning trees of the Petersen graph and every
+\(i\ne j\),
+\[
+ K(T_i)\cap K(T_j)\ne\varnothing.                         \tag{6.1}
+\]
+In particular, the quotient condition~(5.4) cannot be proved by always
+making a pure-coordinate class empty.
+\end{proposition}
+
+\begin{proof}
+Let \(K,L\) be edge-disjoint spanning subgraphs of a cubic graph, both
+having odd degree at every vertex.  At each vertex,
+\(\deg_K(v)+\deg_L(v)\leq3\), while both summands are positive and odd.
+Thus both degrees are one: \(K\) and \(L\) are disjoint perfect matchings.
+Their union is a 2-factor whose cycles alternate between the matchings,
+so all its cycles are even.
+
+The Petersen graph has no even 2-factor.  In its outer-pentagon,
+inner-star presentation, a perfect matching uses an odd number of spokes.
+Three spokes are impossible: the two unmatched outer indices would have
+to differ by one modulo five, while the same inner indices would have to
+differ by two.  With one or five spokes, the complementary 2-factor is
+two 5-cycles.  Theorem~\ref{thm:kernel} now proves~(6.1).
+\end{proof}
+
+Exhaustion gives a useful positive control.  For each of the ten Petersen
+stars there are \(4{,}416\) ordered packings, no packing has disjoint
+odd-kernel pairs, but \(384\) packings satisfy~(5.4) in some coordinate.
+
+\subsection{The cube refutes a fixed-third-tree repair}
+
+Use the following edge order for the cube:
+\[
+\begin{array}{llll}
+0:04&1:05&2:06&3:14\\
+4:15&5:17&6:24&7:26\\
+8:27&9:35&10:36&11:37.
+\end{array}
+\]
+Take root \(0\), so the star is \(\{0,1,2\}\), and fix
+\[
+ T_3=\{0,3,4,7,8,9,11\},\qquad
+ K_3=\{0,4,7,11\}.                                      \tag{6.2}
+\]
+The \(K_3\)-components are
+\[
+ \{0,4\},\quad\{1,5\},\quad\{2,6\},\quad\{3,7\}.          \tag{6.3}
+\]
+
+\begin{proposition}[fixed-base no-go]\label{prop:cube}
+The tree \(T_3\) in~(6.2) occurs in \(16\) ordered partitions of the cube
+star fibre, but none of its completions \(T_1,T_2\) satisfies~(5.4).
+The same star fibre has a parity-good jointly chosen triple.
+\end{proposition}
+
+\begin{proof}
+Normalize by putting root edge \(1\) in \(T_1\) and root edge \(2\) in
+\(T_2\).  Swapping the first two trees gives the other eight completions.
+For all eight normalized rows,
+\[
+ K_1=\{1,5,6,10\}.
+\]
+The complete residual enumeration is:
+\begin{center}
+\small
+\begin{tabular}{@{}p{.29\textwidth}p{.29\textwidth}p{.18\textwidth}l@{}}
+\toprule
+\(T_1\)&\(T_2\)&\(K_2\)&\(K_1\cap K_2\)\\
+\midrule
+1 3 4 5 6 7 10&2 5 6 8 9 10 11&2 5 6 9&5 6\\
+1 3 4 5 6 10 11&2 5 6 7 8 9 10&2 5 6 9&5 6\\
+1 3 5 6 7 9 10&2 4 5 6 8 10 11&2 4 6 11&6\\
+1 3 5 6 9 10 11&2 4 5 6 7 8 10&2 4 6 7 8 10&6 10\\
+1 4 5 6 7 8 10&2 3 5 6 9 10 11&2 5 6 9&5 6\\
+1 4 5 6 8 10 11&2 3 5 6 7 9 10&2 5 6 9&5 6\\
+1 5 6 7 8 9 10&2 3 4 5 6 10 11&2 4 6 11&6\\
+1 5 6 8 9 10 11&2 3 4 5 6 7 10&2 3 4 5 7 10&5 10\\
+\bottomrule
+\end{tabular}
+\end{center}
+In the quotient by~(6.3), edge \(5\) joins the second and fourth
+components, edge \(6\) joins the third and first, and edge \(10\) joins
+the fourth and third.  Each of
+\[
+ \{5,6\},\quad\{6\},\quad\{6,10\},\quad\{5,10\}
+\]
+has an odd-degree quotient vertex.  This proves failure for all sixteen
+ordered completions.
+
+Joint choice succeeds, for example, with
+\[
+\begin{aligned}
+T_1&=\{1,3,4,7,8,9,11\},\\
+T_2&=\{2,5,6,8,9,10,11\},\\
+T_3&=\{0,3,4,5,6,7,10\}.
+\end{aligned}
+\]
+Here \(K_1=\{1,3,7,11\}\), \(K_2=\{2,5,6,9\}\), and their intersection is
+empty.
+\end{proof}
+
+Of the \(132\) extendible third trees in this cube star fibre, \(12\) are
+bad in the sense of Proposition~\ref{prop:cube}.  A proof must co-optimize
+all three bases rather than freeze an arbitrary \(T_3\).
+
+\subsection{Perfect forests cannot be extended blindly}
+
+A perfect forest is a spanning all-odd forest whose components are induced.
+Scott proved that every connected even-order graph has one
+\cite{Scott2001}; Gutin gave a short linear-algebra proof
+\cite{Gutin2016}.  Choosing three such forests before choosing the trees is
+tempting, because any spanning tree containing an all-odd forest has it as
+its odd kernel.  The simultaneous extension step is nevertheless false.
+
+\begin{proposition}[ten-copy rank obstruction]\label{prop:perfect}
+There is a 3-edge-connected cubic graph \(G\), a root-star capacity vector,
+and three capacity-respecting perfect matchings \(K_1,K_2,K_3\) satisfying
+\(K_1\cap K_2=\varnothing\), which do not extend to a three-tree partition
+of the star fibre.
+\end{proposition}
+
+\begin{proof}
+Use the labelled ten-vertex M\"obius ladder
+\[
+\begin{array}{lllll}
+0:05&1:06&2:07&3:15&4:17\\
+5:18&6:25&7:28&8:29&9:36\\
+10:37&11:39&12:46&13:48&14:49.
+\end{array}
+\]
+At root \(0\), choose
+\[
+\begin{aligned}
+K_1&=\{0,4,7,11,12\},\\
+K_2&=\{1,5,6,10,14\},\\
+K_3&=\{2,5,6,11,12\}.
+\end{aligned}                                            \tag{6.4}
+\]
+Each is a perfect matching, the root edges occur once, every other edge
+occurs at most twice, and \(K_1\cap K_2=\varnothing\).
+
+After reserving these copies, let \(X\) be the ten residual copies
+\[
+ 3a,3b,7,8a,8b,9a,9b,13a,13b,14.                         \tag{6.5}
+\]
+After contracting \(K_i\), the graphic-matroid rank of \(X\) is three for
+each \(i\).  This is visible without matroid terminology: adding the
+underlying edges of \(X\) to the five matching components leaves exactly
+two vertex components in each coordinate:
+\[
+\begin{array}{c|l}
+K_1+X&\{0,1,5,7\}\mid\{2,3,4,6,8,9\}\\
+K_2+X&\{0,3,6,7\}\mid\{1,2,4,5,8,9\}\\
+K_3+X&\{0,7\}\mid\{1,2,3,4,5,6,8,9\}.
+\end{array}
+\]
+Thus an acyclic extension in coordinate \(i\) uses at most three members
+of \(X\).  Three tree extensions could use at most nine, but the residual
+partition must assign all ten members of \(X\).  This contradiction proves
+nonextension.
+\end{proof}
+
+The obstruction concerns a preselected forest triple.  Another perfect
+forest triple in the same graph and fibre does extend and meets the parity
+target.  Hence Scott's theorem remains potentially useful only if its
+forests are selected jointly with all matroid-union rank inequalities.
+
+\subsection{Kernel closure is false}
+\label{sec:closure-nogo}
+
+The closure strengthening~(5.12) fails both for a generic type-A defect
+set and, at a slightly larger order, for a vertex star.  The two failures
+use different certificate styles.
+
+\begin{proposition}[exact 12-vertex closure no-go]
+\label{prop:closure-nogo}
+The simple 3-edge-connected cubic graph with graph6 record
+\[
+ \text{\nolinkurl{K?`@E`gFCKEO}}
+\]
+has two automorphic type-A fibres, with defect triples
+\[
+ D_0=\{0,4,11\},\qquad D_1=\{1,3,10\},                  \tag{6.6}
+\]
+such that neither fibre has a tree packing satisfying~(5.12) in any
+coordinate.  Each fibre nevertheless has \(7{,}704\) ordered packings
+satisfying the exact quotient-parity condition in one coordinate.
+\end{proposition}
+
+The edge order decoded from the graph6 record is
+\[
+\begin{array}{rrrrrr}
+0:04&1:15&2:26&3:07&4:17&5:37\\
+6:18&7:28&8:48&9:39&10:49&11:59\\
+12:0\,10&13:5\,10&14:6\,10&15:2\,11&16:3\,11&17:6\,11.
+\end{array}                                             \tag{6.7}
+\]
+The edges \(0,10,11,1,4,3\) form the six-cycle
+\(0,4,9,5,1,7,0\), and \(D_0,D_1\) are its alternating matchings.
+
+This proposition is an exhaustive finite statement, rather than a short
+structural theorem.  Its completeness can nevertheless be audited
+directly.  A standard-library Python checker finds exactly \(8{,}640\)
+spanning trees.  If \(D\) is one of~(6.6), \(M=E-D\), and the first two
+tree masks are fixed, multiplicity forces
+\[
+ T_3=((T_1\symdiff T_2)\cap M)\cup(D-(T_1\cup T_2)).     \tag{6.8}
+\]
+The checker enumerates all ordered pairs among the \(8{,}640\) trees,
+uses~(6.8), and retains the pair exactly when the forced third mask is
+also a spanning tree.  It obtains \(355{,}392\) ordered packings per
+fibre.  Direct reconstruction of every odd kernel gives the complete
+histogram
+\[
+\begin{array}{c|c|r}
+\text{closure-good coordinates}&\text{parity-good coordinates}
+ &\text{packings}\\ \hline
+0&0&347{,}688\\
+0&1&7{,}704.
+\end{array}                                             \tag{6.9}
+\]
+
+For a positive control, one parity-good packing for \(D_0\) is
+\[
+\begin{aligned}
+T_1&=\{0,1,2,3,4,5,6,7,10,14,15\},\\
+T_2&=\{1,2,5,8,9,10,11,12,13,16,17\},\\
+T_3&=\{3,6,7,8,9,12,13,14,15,16,17\}.
+\end{aligned}                                          \tag{6.10}
+\]
+Its odd kernels are
+\[
+\begin{aligned}
+K_1&=\{1,3,4,5,6,10,14,15\},\\
+K_2&=\{1,2,5,8,9,12,16\},\\
+K_3&=\{3,6,7,8,9,13,17\}.
+\end{aligned}
+\]
+These displayed sets permit a direct human check of the positive claim.
+The universal negative count in~(6.9) depends on the enumerator and its
+independent semantic implementation; it has no LRAT certificate.  The
+checker SHA-256 is
+\[
+\texttt{a0d38e436994449f2c6d568b1cb6b3975d47754f94e001d94e8215d6e6817c7f}.
+\]
+Thus Proposition~\ref{prop:closure-nogo} already blocks a closure theorem
+for arbitrary type-A fibres.  It does not yet use the special star
+cocycle~(5.10).
+
+\begin{theorem}[dual-certified vertex-star closure no-go]
+\label{thm:star-closure-nogo}
+There is a simple 3-edge-connected cubic graph \(G\) of order \(16\) and
+a vertex \(r\) such that no packing in the vertex-star fibre at \(r\)
+satisfies~(5.12) in any coordinate.  The same fibre has a compatible
+pair labelling supported on five points and hence satisfies the exact
+quotient-parity target.
+\end{theorem}
+
+The graph6 record and root are
+\[
+\text{\nolinkurl{O??CA?_ceOGgH_F?AK@P?}},\qquad r=13,     \tag{6.11}
+\]
+and the root-star edge indices are \(10,13,17\) in column-major graph6
+edge order.  An independent parser verifies that the graph is simple,
+cubic, 3-edge-connected, and even 3-vertex-connected.
+
+For auditability, we describe the complete certificate semantics.  The
+CNF has \(744\) variables and \(101{,}037\) clauses.  Variables
+\(t_{e,i}\) and \(k_{e,i}\) encode the trees and odd kernels.  Edge rows
+impose multiplicity one on the three root edges and multiplicity two
+elsewhere.  For each coordinate, one cut clause for every nonempty
+subset of \(V-\{0\}\) forces connectivity.  The total multiplicity is
+\(3(16-1)=45\); three connected spanning subgraphs use at least \(15\)
+edges each, so every coordinate has exactly \(15\) edges and is a
+spanning tree.
+
+Clauses \(k_{e,i}\Rightarrow t_{e,i}\), together with odd incidence
+parity at every vertex, make \(k_{\cdot,i}\) the unique all-odd subset
+of that tree, namely \(K(T_i)\).  A variable \(q_e\) is constrained to
+be equivalent to \(k_{e,0}\wedge k_{e,1}\).  Conditional path variables
+then require, when \(q_e=1\), a boundary-\(\partial e\) edge set supported
+inside \(K(T_2)\).  Since \(K(T_2)\) is a forest, such a set exists
+exactly when the endpoints of \(e\) lie in one \(K(T_2)\)-component.
+The formula therefore asks for~(5.12) in coordinate two.  Tree-coordinate
+symmetry makes it satisfiable exactly when some coordinate works.
+
+CaDiCaL produced an LRAT proof of UNSAT.  Both the C
+\texttt{lrat-check} checker and the formally verified CakeML
+\texttt{cake\_lpr} checker accept it:
+\[
+\begin{array}{ll}
+\text{CNF SHA-256}&
+\texttt{ccd8ef9504ef725dc02be9234992cbc9e238f1c12ed39ad3068645c73e3c5baf},\\
+\text{LRAT SHA-256}&
+\texttt{ffcd95bc48db7c5be222e05b86aa72cf0828ef01e45e7cf45e9a92cab76aa3a5}.
+\end{array}                                             \tag{6.12}
+\]
+The independent wrapper checks those bytes and both proof-checker
+outcomes.  It also replays a witness produced by a different support-five
+encoding: three literal spanning trees in this fibre yield exact
+component parity in coordinate two and pair labels supported on
+\(\{0,4,5,6,7\}\).  Thus the theorem refutes only the closure
+strengthening, not the star-fibre parity target or FiveCDC.
+
+An independent solver-free C++ enumeration uses
+Proposition~\ref{prop:cographic}.  It finds \(16{,}200\) cographic bases
+of \(G-r\), \(158{,}976\) unordered three-base partitions, and
+\(5{,}723{,}136\) ordered star packings after all coordinate and spoke
+assignments.  Its complete histogram is
+\[
+\begin{array}{c|c|r}
+\text{closure-good coordinates}&\text{parity-good coordinates}
+ &\text{packings}\\ \hline
+0&0&5{,}682{,}672\\
+0&1&40{,}464.
+\end{array}                                             \tag{6.13}
+\]
+This duplicates the UNSAT conclusion by direct enumeration and shows
+that exact parity is not rare in the same fibre.
+
+A complete producer scan of all \(4{,}060\) connected simple cubic graphs
+of order \(16\), all \(64{,}960\) roots, and all \(45{,}248\) feasible
+star fibres finds exactly this one closure failure.  Together with the
+complete positive star census through order \(14\), this makes order \(16\)
+minimal within the connected simple cubic star-fibre domain.  The witness
+contains the triangle \(0,6,9\); hence it does not refute the closure
+strengthening on strict snarks or even on the girth-at-least-five subclass.
+The frozen stream has SHA-256
+\[
+\texttt{889d0e5857b62e082f3fcad0a929e7c0d92032a8e675f4d2ff9f40272ea43d46}.
+\]
+This order-16 census is a producer computation; the UNSAT claim for the one
+displayed fibre has the stronger dual-checked certificate above.
+
+\subsubsection*{Triangle contraction and an infinite auxiliary family}
+
+The graph6 record has a useful structural explanation, and the resulting
+statement has a short human proof.
+
+\begin{theorem}[triangle-contraction theorem]
+\label{thm:triangle-contraction}
+Let \(G^\triangle\) be a simple cubic graph, let \(\Delta\) be a triangle,
+and let \(G\) be obtained by contracting \(\Delta\) to one vertex.  Fix a
+root \(r\notin V(\Delta)\).  Every closure-good star packing of
+\((G^\triangle,r)\) contracts to a closure-good star packing of \((G,r)\).
+Consequently, triangle expansion at any nonroot vertex preserves failure
+of~(5.12).
+\end{theorem}
+
+\begin{proof}
+Every triangle edge has multiplicity two, so the three trees have six
+triangle-edge occurrences in total.  A tree contains at most two edges of
+a triangle.  Hence each tree \(T_i\) contains exactly two.  Contracting
+those two edges produces a spanning tree \(\bar T_i\) of \(G\), and all
+external multiplicities are unchanged.
+
+For an edge \(e\notin E(\Delta)\), all three triangle vertices lie on one
+side of \(T_i-e\).  Contraction removes two vertices from that side, so its
+order has the same parity.  Therefore
+\[
+ e\in K(T_i)\quad\Longleftrightarrow\quad
+ e\in K(\bar T_i) \qquad(e\notin E(\Delta)).              \tag{6.14}
+\]
+Suppose the packing upstairs is closure-good in coordinate \(k\), and
+let \(e\in K(\bar T_i)\cap K(\bar T_j)\).  By~(6.14), its corresponding
+external edge lies in \(K(T_i)\cap K(T_j)\), so its endpoints are joined
+by a \(K(T_k)\)-path.  Contracting the triangle maps that path to a
+\(K(\bar T_k)\)-walk and hence to a path.  Thus the contracted packing is
+closure-good.  The final assertion is the contrapositive.
+\end{proof}
+
+Triangle expansion preserves simplicity and cubicity.  It also preserves
+3-edge-connectivity: any cut of size at most two that does not split the
+new triangle contracts unchanged; if it splits one vertex from two, or two
+from one, replacing the two crossing triangle edges by the two corresponding
+external edges gives a cut of no larger size after contraction.  Starting
+from Theorem~\ref{thm:star-closure-nogo} and repeatedly expanding any
+nonroot vertex therefore gives an infinite family of simple cubic
+3-edge-connected rooted closure countermodels, of orders
+\[
+ 16+2t,\qquad t\geq0.                                    \tag{6.15}
+\]
+This is an infinite family only for the discarded sufficient
+strengthening~(5.12).  The outside-root hypothesis is essential to this
+proof.  If the root lies inside the expanded triangle, its three triangle
+edges have total multiplicity four rather than six, so at least one
+coordinate cannot contract to a tree.
+
+The local lifting law explains the obstruction.  Expand a contracted
+tree vertex \(z\) to a triangle \(abc\), and suppose the lifted tree uses
+the path \(a-b-c\).  Let \(b_x\) indicate whether the external edge at
+\(x\) belongs to the downstairs odd kernel.  Odd degree at \(z\) gives
+\(b_a+b_b+b_c=1\), and odd degree at the three lifted vertices forces
+\[
+ \1_{ab\in K(T)}=1+b_a,\qquad
+ \1_{bc\in K(T)}=1+b_c \pmod2.                           \tag{6.16}
+\]
+If all three external traces equal one, neither new path edge belongs to
+the lifted kernel, so one downstairs component splits into three.  In a
+literal 14-vertex quotient packing, the standard checker reconstructs all
+six bijections between tree coordinates and omitted triangle edges: the
+downstairs closure vector is \((0,0,1)\), while every lifted vector is
+\((0,0,0)\).
+
+Finally, the 16-vertex countermodel has three disjoint triangles
+\[
+ \{0,6,9\},\qquad\{1,7,11\},\qquad\{2,8,15\}.
+\]
+Contracting all three gives the Petersen graph.  Relative to the image of
+the root, its six distance-two vertices induce a 6-cycle, and the expanded
+vertices are one alternating class.  The two alternating classes at each
+of ten roots form one automorphism orbit, giving \(10\cdot2=20\) rooted
+Petersen triple-expansions, all rooted-isomorphic to the certified pair.
+The independent structural checker verifies the contraction, the
+six-lift calculation, and this Petersen description.  The contraction
+theorem itself is the human argument above.
+
+\section{A certified obstruction to direction thinning}
+
+A much broader sufficient rule would try to choose a star-fibre state in
+which some nonzero flow value occurs at most once.  Such thinning forces at
+least three missing pairs in the corresponding perfect matching of \(K_8\)
+and hence gives a five-colourable co-occurrence graph.  The rule is false.
+
+\begin{theorem}[certified 34-vertex countermodel]\label{thm:thin}
+There is a simple, cubic, 3-edge-connected 34-vertex graph and a
+vertex-star fibre such that for every state
+\((T_1,T_2,T_3)\) in the fibre and every \(d\in\F_2^3-\{0\}\),
+\[
+ |\phi^{-1}(d)|\geq2.                                    \tag{7.1}
+\]
+\end{theorem}
+
+The graph6 encoding is
+\begin{center}
+\footnotesize
+\nolinkurl{as???SK????A?A?C_@_?B?@_??G??_I?GA_AA????_??@?????B??@_?o??????_C??CGO??B@????a????__??C@O??A?_}
+\end{center}
+In column-major edge order, edges \(0,1,2\) are the star at vertex \(0\).
+Their tree multiplicities are one and every other edge has multiplicity
+two.
+
+\subsection{Certificate semantics}
+
+The CNF has \(4{,}444\) variables and \(251{,}803\) clauses.  For each
+tree coordinate, every nonroot vertex chooses one parent edge, the root
+chooses none, and unary levels strictly decrease from child to parent.
+Thus the selected \(33\) edges form a spanning tree, and every spanning
+tree has such an encoding.  Edge rows impose the prescribed fibre.
+
+Completion variables \(f_{e,i}\) satisfy
+\[
+ e\notin T_i\Longrightarrow f_{e,i}=1,\qquad
+ \sum_{e\in\delta(v)}f_{e,i}=0\pmod2.                     \tag{7.2}
+\]
+Lemma~\ref{lem:completion} proves that these are the literal fundamental
+completions, not a relaxation.  Tseitin variables define the seven possible
+values of \(\phi(e)\).  Selector clauses ask for one \(d\ne0\) that occurs
+on at most one edge.  Consequently the CNF is satisfiable exactly when
+\((7.1)\) is false.
+
+CaDiCaL 3.0.1~\cite{PollittEtAl2026} produced an LRAT certificate.
+The C checker \texttt{lrat-check} and the formally verified CakeML
+\texttt{cake\_lpr} checker~\cite{TanHeuleMyreen2021} both accept it.
+\[
+\begin{array}{ll}
+\text{CNF SHA-256}&
+\texttt{8c96bd3d02685c12dca1eee78047459c65a60b0defdf87b68c000274dee9e6c0},\\
+\text{LRAT SHA-256}&
+\texttt{a9600d2cf2efa191f789438f811f116932d79ca0493f1522bc7e3b0ccee01ae4}.
+\end{array}
+\]
+The graph parser and certificate wrapper independently check simplicity,
+cubicity, connectivity after every one- and two-edge deletion, and the
+encoding invariants.  This proves Theorem~\ref{thm:thin} subject to the
+usual trust boundary of the displayed semantic argument, the checked CNF
+bytes, and the proof-checker implementations.
+
+\subsection{The same fibre has exact five-point support}
+
+The obstruction is only to thinning.  An independently replayed SAT witness
+in the same fibre has flow-value counts
+\[
+ (7,5,10,7,7,7,8)
+\]
+and pair labels using exactly the five points
+\[
+ \{3,4,5,6,7\}.
+\]
+All ten pairs among those points occur.  Proposition~\ref{prop:pairs-cover}
+therefore gives a literal five-cycle double cover with no merge.  A
+standard-library checker reparses the graph, verifies the trees and star
+multiplicities, recomputes all fundamental completions, and checks every
+pair xor and local parity equation.  The witness SHA-256 is
+\[
+\texttt{5516fa0bb0bf58f3bc3984de60b47e43f3f43c0cf45a28920e7f916d53d44063}.
+\]
+Four-point support is impossible in this fibre: four affine points realize
+at most six nonzero pair differences, while Theorem~\ref{thm:thin} forces
+all seven differences to occur.  Thus the minimum support here is exactly
+five.
+
+\section{Bounded exact computations}
+
+All statements in this section are finite computations.  They are not
+inductive arguments and do not establish Problem~\ref{prob:fibre}.
+
+\subsection{Every fixed fibre through order fourteen}
+
+Nauty's canonical cubic-graph generation methods
+\cite{BrinkmannGoedgebeurMcKay2011} were used to enumerate every connected
+simple bridgeless cubic graph of orders \(4,6,8,10,12,14\).  For each
+type-A/type-B placement, a certificate-checking SAT encoding searched for
+three trees in the fixed fibre and a compatible labelling on at most five
+points.  Every returned model was checked inside the producer by direct
+tree traversal, recomputation of the completions, pair xor, and point
+parity.
+
+\[
+\begin{array}{rrrrr}
+\toprule
+|V|&\text{graphs}&\text{placements}&\text{feasible}&
+ \text{five-point SAT}\\
+\midrule
+4&1&50&50&50\\
+6&2&312&312&312\\
+8&5&1{,}760&1{,}608&1{,}608\\
+10&18&11{,}970&10{,}725&10{,}725\\
+12&81&90{,}882&77{,}508&77{,}508\\
+14&480&840{,}000&714{,}001&714{,}001\\
+\midrule
+\text{total}&587&944{,}974&804{,}204&804{,}204\\
+\bottomrule
+\end{array}
+\]
+
+The frozen report has SHA-256
+\[
+\texttt{482e2ee028aa1663f2b91b71569422ab59c1033d51601ca52fac581b173872f1}.
+\]
+An independent structural verifier checks this hash, the canonical graph
+set, graph premises, pattern counts, source hashes, row totals, and the
+equality of feasible and successful counts.  It does not retain and replay
+all \(804{,}204\) literal models.  Accordingly, this census is exactly
+rerunnable but has a larger trust surface than the order-44 witness archive
+below.
+
+\subsection{Order thirty-eight strong snarks}
+
+The stronger canonical support
+\[
+ S_0=\{0,4,5,6,7\}                                       \tag{8.1}
+\]
+was imposed in every vertex-star fibre of two complete retained
+order-\(38\) strong-snark lists:
+\[
+\begin{array}{lrrr}
+\toprule
+\text{class}&\text{graphs}&\text{star fibres}&\text{SAT in \(S_0\)}\\
+\midrule
+\text{girth at least \(5\), cyclic connectivity \(4\)}
+ &298&11{,}324&11{,}324\\
+\text{girth \(4\), cyclic connectivity \(4\)}
+ &407&15{,}466&15{,}466\\
+\midrule
+\text{total}&705&26{,}790&26{,}790\\
+\bottomrule
+\end{array}
+\]
+The frozen result JSON has SHA-256
+\[
+\texttt{9322f3dfa82d42966873cbb49f93dd328bfd1d57d61853a84db0ac21e2604d96}.
+\]
+The producer performed direct semantic checks on every returned model, but
+this run did not archive a separate literal witness file.  It is therefore
+reported as bounded computational evidence, not as a certificate package
+of the same strength as Theorem~\ref{thm:thin}.
+
+\subsection{A retained order-forty-four family}
+
+For all \(31\) graphs in the retained order-\(44\), oddness-four,
+cyclic-connectivity-four source file, all \(44\) roots admit a labelling in
+the same fixed support \(S_0\).  This gives \(1{,}364\) star witnesses.
+Unlike the preceding censuses, every literal witness is retained.
+
+An independently written standard-library verifier decodes graph6, checks
+the 44-vertex simple cubic graph and bridgelessness, checks all three trees
+and the star multiplicities, reconstructs the fundamental completions,
+checks the emitted flow values, and checks every supported pair and every
+local parity equation.  Its result is
+\begin{description}
+\item[Witness JSONL SHA-256]\hfill\\[-4pt]
+{\footnotesize\path{3ff25437d5e32fff7c60ceca695a6476d6c7d2404c1e8551bf14987f228cd4b4}}
+\item[Verification JSON SHA-256]\hfill\\[-4pt]
+{\footnotesize\path{803055d00e601547ee7e59135089849796dc12367302a233822dde7075a1b560}}
+\item[Normalized semantics SHA-256]\hfill\\[-4pt]
+{\footnotesize\path{abb8bab730e873a6648d6e56987b6595f95162b2a3e7bd07d592b8d300790800}}
+\end{description}
+This is not a complete order-\(44\) snark census; it concerns exactly the
+stated 31-graph input family.
+
+\subsection{Symmetric Fano-minimum descent through order fourteen}
+\label{sec:fano-descent}
+
+For a star-fibre flow \(\phi\) and each nonzero functional
+\(h\in(\F_2^3)^*\), put
+\[
+ E_h=\{e:h(\phi(e))=0\}.
+\]
+Theorem~\ref{thm:component} assigns a leaf-parity bit
+\(\omega_h(Q)\) to every component \(Q\) of \(E_h\).  Define
+\[
+ d_h(\phi)=|\{Q:\omega_h(Q)=1\}|,\qquad
+ d_{\min}(\phi)=\min_{h\ne0}d_h(\phi).                  \tag{8.2}
+\]
+Thus \(d_{\min}=0\) exactly when at least one of the seven associated
+five-point supports passes the component criterion.
+
+Minimizing one preselected coordinate is not sufficient.  On the
+14-vertex graph
+\[
+ \text{\nolinkurl{M?AA@BORDGEOEOAo?}},
+\]
+an explicit state has fixed-coordinate defect two and exactly 18 legal
+reciprocal exchange neighbours, all of fixed-coordinate defect four; the
+other 90 candidate swaps violate a tree condition.  Yet its full
+seven-plane profile is
+\[
+ (2,4,2,2,0,6,2),
+\]
+so that state is already good for another plane.  One legal exchange has
+profile \((0,2,4,4,2,2,2)\).  This exact countermodel therefore motivates
+the symmetric minimum rather than obstructing it.
+
+\begin{theorem}[finite symmetric descent]\label{thm:fano-descent}
+Let \(G\) be a simple 3-edge-connected cubic graph with
+\(|V(G)|\leq14\), fix a vertex \(r\), and fix any assignment of its three
+spokes to the three trees.  In the reciprocal-exchange graph of the
+corresponding star fibre, every connected component of every positive
+level set \(d_{\min}^{-1}(k)\) has an exchange edge to a lower level.
+\end{theorem}
+
+This is an exhaustive computer theorem.  Here is the proof object and its
+trust boundary.  Delete \(r\), and let \(A_0,A_1,A_2\) be the internal
+edges omitted by the three trees.  The enumerator visits every ordered
+partition
+\[
+ E(G-r)=A_0\mathbin{\dot\cup}A_1\mathbin{\dot\cup}A_2
+\]
+for which every spoke plus \(E(G-r)-A_i\) is a spanning tree.  It
+reconstructs each odd kernel by rooted odd-subtree sizes and then computes
+all seven instances of the leaf-bit system~(4.7), not a proxy score.
+Every legal reciprocal swap is generated.  Equal-level neighbours are
+joined in a disjoint-set structure, and each state with a lower-level
+neighbour marks its same-level component.  The asserted failure condition
+is precisely a positive unmarked component.
+
+Canonical graph generation, followed by explicit connectivity tests after
+every deletion of at most two edges, and one representative from every
+vertex-automorphism orbit gives:
+\[
+\begin{array}{rrrrr}
+\toprule
+|V|&\text{3EC graphs}&\text{root orbits}&\text{states}&\text{failures}\\
+\midrule
+4&1&1&6&0\\
+6&2&2&84&0\\
+8&4&8&2{,}304&0\\
+10&14&44&96{,}720&0\\
+12&57&329&5{,}994{,}624&0\\
+14&341&3{,}183&523{,}056{,}384&0\\
+\midrule
+\text{total}&419&3{,}567&529{,}150{,}122&0\\
+\bottomrule
+\end{array}
+\]
+The maximum observed \(d_{\min}\) is four.  Graph automorphisms transport
+the complete state and exchange graphs.  Permuting the three spoke
+assignments permutes flow coordinates and hence the seven functionals, so
+one assignment per root is sufficient.
+
+The frozen row-level census has SHA-256
+\[
+\texttt{f1d720265cc58a732cf2b58920b8dacc12f36191cecc731949622f5c80f4f2e0}.
+\]
+An independently written verifier regenerates every canonical graph,
+3-edge-connectivity filter, root orbit, row order, total, and digest.
+It does not re-enumerate the \(529{,}150{,}122\) states, so the C++
+whole-state enumerator remains in the trust boundary.  The theorem is
+finite: there is no reduction from a universal failure to order at most
+14.
+
+One targeted order-16 extension is especially relevant.  In the
+vertex-star fibre of Theorem~\ref{thm:star-closure-nogo}, the same
+whole-state enumerator checks all \(953{,}856\) states, again finds maximum
+\(d_{\min}=4\), and finds no trapped positive-level component.  A separate
+Python implementation replays one explicit all-seven profile
+\((4,4,4,4,4,4,4)\) and all 147 incident exchange candidates; 25 are
+legal, of which 22 descend to symmetric defect two.  The targeted result
+JSON has SHA-256
+\[
+\texttt{90e1443fab33559480f7774bdb5dfffc904bfcd05efacf81ca845e55a4980626}.
+\]
+This is an exact result for one rooted fibre, not a full order-16 census.
+
+For each tested state, Theorem~\ref{thm:fano-descent} also gives a
+nonincreasing path to level zero.  Follow equal-level exchanges to the
+marked boundary of the current component, take one descending exchange,
+and iterate.  Finiteness of the nonnegative level proves termination.
+
+\subsection{The kernel-closure frontier}
+
+Before the countermodel in Theorem~\ref{thm:star-closure-nogo}, the stronger
+closure condition~(5.12) passes the following bounded domains:
+\[
+\begin{array}{lrrr}
+\toprule
+\text{domain}&\text{patterns}&\text{feasible}&\text{closure-good}\\
+\midrule
+\text{vertex stars, connected simple cubic, through 14}
+ &8{,}392&5{,}646&5{,}646\\
+\text{all type A/B, connected simple cubic, through 12}
+ &110{,}127&90{,}203&90{,}201\\
+\text{retained order-44 stars}&1{,}364&1{,}364&1{,}364\\
+\bottomrule
+\end{array}
+\]
+The two generic failures in the second row are exactly the automorphic
+fibres of Proposition~\ref{prop:closure-nogo}.  At order \(16\), however,
+the complete connected-simple-cubic stream has \(4{,}060\) graphs,
+\(64{,}960\) roots, \(45{,}248\) feasible star fibres, and exactly the one
+failure certified in Theorem~\ref{thm:star-closure-nogo}.  The retained
+34-vertex strong snark passes at all 34 roots, and 50 deterministic random
+simple 3-edge-connected cubic graphs of order 50 pass at all \(2{,}500\)
+tested roots.  Those latter rows are reproducible samples, not exhaustive
+families, and cannot rescue the universal closure statement.
+
+The star-through-14 report and the type-A/B-through-12 report have
+SHA-256, respectively,
+\[
+\begin{split}
+&\texttt{e1042339b327659c7d6e9bbcfd46eb0576cd0f5644bf2cf3450b2e05998928a1},\\
+&\texttt{80f68833c07bd555d3f7b5b8a2cc7b4a1b2bcc7d3b16c3472a4621101310e9d8}.
+\end{split}
+\]
+The producer replays returned models semantically.  A separate
+standard-library verifier replays all \(12{,}695\) positive type-A/B
+witnesses through order ten, and
+Proposition~\ref{prop:closure-nogo} has its own independent complete
+enumerator.  The order-16 failure has the independently checked
+CNF/LRAT package described in Theorem~\ref{thm:star-closure-nogo}.
+The larger positive rows are bounded evidence with the producer inside
+their trust boundary.
+
+\section{The surviving theorem and failed shortcuts}
+
+The exact star-fibre target can now be stated without affine labels.
+
+\begin{problem}[odd-kernel parity selection]\label{prob:kernel}
+For every 3-edge-connected cubic graph \(G\) and vertex \(r\), can the
+copies of \(2G-\delta(r)\) be partitioned into spanning trees
+\(T_1,T_2,T_3\) so that, after permuting coordinates,
+\[
+ |\delta(Q)\cap K(T_1)\cap K(T_2)|\equiv0\pmod2
+\]
+for every component \(Q\) of \(K(T_3)\)?
+\end{problem}
+
+Theorem~\ref{thm:feasible} supplies the tree partition.
+Corollary~\ref{cor:quotient} says that the additional parity condition is
+exactly a five-point compatible labelling in the canonical coordinate
+plane.  Proposition~\ref{prop:fibre} allows navigation throughout the
+fixed fibre.  What is missing is a proof that one state satisfies the
+nonlinear quotient-boundary condition.
+
+The parity-element and cographic-base forms expose additional structure,
+but Theorem~\ref{thm:star-closure-nogo} shows that their most direct
+graphic-closure strengthening is still too strong.  The surviving
+exchange route is the following.
+
+\begin{problem}[universal symmetric descent]\label{prob:descent}
+Does Theorem~\ref{thm:fano-descent} hold without the order bound?
+\end{problem}
+
+A positive answer would also prove the star-fibre selection statement:
+starting from any feasible packing, repeated equal-level navigation and
+strict descent reaches \(d_{\min}=0\).  The finite census supplies no
+minimal-counterexample reduction and therefore does not answer this
+problem.
+
+The evidence and no-go results sharply delimit plausible approaches:
+\begin{enumerate}
+\item One cannot force \(K(T_i)\cap K(T_j)=\varnothing\), by
+      Proposition~\ref{prop:petersen}.
+\item One cannot choose an arbitrary \(T_3\) and repair only the other two
+      trees, by Proposition~\ref{prop:cube}.
+\item One cannot independently choose parity-good perfect forests and
+      invoke an unconditional simultaneous extension theorem, by
+      Proposition~\ref{prop:perfect}.
+\item One cannot use the terminal condition that some Fano direction has
+      size at most one, by Theorem~\ref{thm:thin}.
+\item One cannot demand monotone descent for one preselected Fano
+      coordinate; the 14-vertex state in
+      Section~\ref{sec:fano-descent} is a trapped singleton at defect two.
+\item One cannot replace quotient evenness by graphic closure, even in a
+      vertex-star fibre, by Theorem~\ref{thm:star-closure-nogo}.  The
+      smaller Proposition~\ref{prop:closure-nogo} shows the same failure
+      for a generic type-A fibre, and
+      Theorem~\ref{thm:triangle-contraction} gives an infinite rooted
+      family of star failures.
+\item The exact exchange update~(5.7) is bilinear.  A successful universal
+      descent argument must exploit the minimum over all seven planes and
+      must control neutral plateaus and paired component defects.
+\end{enumerate}
+
+The current computations support Problem~\ref{prob:kernel}, but they do not
+exclude a larger countermodel to it.  Conversely, failure of this
+particular star-fibre lemma would not be a counterexample to FiveCDC:
+another multiplicity fibre or a non-Jaeger cover could still succeed.
+
+\section{Reproducibility and certificate boundary}
+
+All paths below are relative to the workspace root containing this
+preprint.
+
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}
+  >{\raggedright\arraybackslash}p{.29\textwidth}
+  >{\raggedright\arraybackslash}p{.51\textwidth}
+  >{\raggedright\arraybackslash}p{.15\textwidth}@{}}
+\toprule
+Claim & Primary artifact or checker & Verification level\\
+\midrule
+\endhead
+Encoding equivalence &
+\path{docs/encoding.md}; fixed-graph Lean development under
+\path{formal/FiveCDC} &
+human + formal\\
+\addlinespace
+Component criterion &
+\path{scratch/jaeger-support5-component-criterion.md};
+\path{scratch/verify_jaeger_support5_component_criterion.py} &
+human + exhaustive\\
+\addlinespace
+Odd-kernel identities and Petersen no-go &
+\path{scratch/jaeger-k-forest-star-parity-identities.md};
+\path{scratch/verify_jaeger_k_forest_petersen.py} &
+human + exhaustive\\
+\addlinespace
+Cube fixed-base no-go &
+\path{scratch/jaeger-fixed-third-tree-parity-no-go.md};
+\path{scratch/check_jaeger_fixed_third_tree_parity_no_go.py} &
+human + exhaustive\\
+\addlinespace
+Perfect-forest extension no-go &
+\path{scratch/jaeger-perfect-forests-first-no-go.md};
+\path{scratch/check_jaeger_perfect_forests_first_no_go.py} &
+human + exhaustive\\
+\addlinespace
+Parity-element and cographic-base reformulations &
+{\footnotesize\path{scratch/jaeger-parity-element-and-kernel-closure-no-go.md}} &
+human proof\\
+\addlinespace
+Fixed-coordinate descent no-go &
+\path{scratch/jaeger-star-parity-descent-countermodel.md};
+\path{scratch/verify_jaeger_star_parity_descent_countermodel.py} &
+literal exhaustive\\
+\addlinespace
+Symmetric descent through order 14 &
+\path{output/jaeger-fano-min-descent-through14/census.jsonl};
+\path{scratch/verify_jaeger_fano_min_descent_frontier.py} &
+whole-state + coverage\\
+\addlinespace
+Targeted order-16 symmetric descent &
+{\footnotesize\texttt{output/jaeger-fano-min-descent-}}\par
+{\footnotesize\texttt{order16-closure-no-go/}};
+{\footnotesize\texttt{scratch/verify\_jaeger\_fano\_min\_}}\par
+{\footnotesize\texttt{descent\_order16\_closure\_no\_go.py}} &
+whole-state + local replay\\
+\addlinespace
+Generic type-A closure no-go &
+\path{scratch/verify_jaeger_kernel_closure_typea_countermodel.py} &
+independent exhaustive\\
+\addlinespace
+Vertex-star closure no-go &
+\path{output/jaeger-star-kernel-closure-countermodel-16v/};
+{\footnotesize\path{scratch/verify_jaeger_star_kernel_closure_countermodel_16v.py}};
+{\footnotesize\path{scratch/count_jaeger_star_kernel_closure_countermodel_16v.cpp}} &
+CNF + LRAT + exhaustive\\
+\addlinespace
+Triangle-expansion closure family &
+{\footnotesize\texttt{scratch/jaeger-star-kernel-closure-}}\par
+{\footnotesize\texttt{triangle-expansion.md}};
+{\footnotesize\texttt{scratch/verify\_jaeger\_star\_kernel\_}}\par
+{\footnotesize\texttt{closure\_triangle\_expansion.py}} &
+human + literal replay\\
+\addlinespace
+34-vertex thinning no-go &
+\path{output/jaeger-star-thinning-countermodel-34v/star-thin-any.cnf}
+and \path{star-thin-any.lrat};
+\path{scratch/verify_jaeger_star_thinning_countermodel_34v.py} &
+CNF + dual LRAT\\
+\addlinespace
+34-vertex positive five support &
+\path{star-good-five-witness.json};
+\path{scratch/verify_jaeger_34v_star_good_witness.py} &
+literal replay\\
+\addlinespace
+All fibres through order 14 &
+\path{output/jaeger-five-point-fibres-through14/census.jsonl};
+\path{scratch/verify_jaeger_five_point_frontier.py} &
+rerunnable aggregate\\
+\addlinespace
+Order-38 star census &
+\path{scratch/jaeger-coordinate-five-star-order38-result.json} &
+producer checked\\
+\addlinespace
+Order-44 selected family &
+\path{output/jaeger-coordinate-five-order44/witnesses.jsonl};
+\path{scratch/verify_jaeger_coordinate_five_order44.py} &
+literal replay\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+The short commands are collected in
+\path{preprint-jaeger-fivecdc-frontier/REPRODUCIBILITY.md}.  The positive
+order-14 and order-38 results have no UNSAT claim and no proof trace; their
+trust boundary is the generator, SAT solver, internal model checks, and
+aggregate verifier.  The order-44 archive is stronger because its models
+are retained and reconstructed by independent code.  The 34-vertex
+negative result is stronger still in a different direction: its complete
+UNSAT formula is accompanied by a proof trace checked by two independently
+implemented checkers, one formally verified.  The symmetric-descent census
+has an independently checked canonical coverage manifest, but only one
+implementation enumerates its half-billion exact states.  The kernel-
+closure no-go on the generic 12-vertex fibre is exhaustively replayed by a
+standard-library checker but has no proof trace; the 16-vertex vertex-star
+no-go has a complete CNF and an LRAT accepted by both certificate checkers.
+The infinite closure family then follows from the human
+triangle-contraction proof, not from extrapolating the finite census.
+
+\section{AI-use disclosure and authorship}
+
+This project was conducted with extensive use of OpenAI Codex agents under
+Atharva Vaidya's direction.  The agents:
+\begin{itemize}
+\item translated the research prompt into exact SAT/XOR and graph-theoretic
+      predicates;
+\item proposed the fixed-fibre, component-parity, odd-kernel,
+      parity-element, cographic-base, exchange, symmetric-descent, and
+      perfect-forest formulations;
+\item wrote most of the search, certificate-generation, and verification
+      code;
+\item found the finite countermodels and positive witnesses;
+\item ran literature searches and assembled bibliographic metadata; and
+\item drafted essentially all prose and \LaTeX{} in this manuscript.
+\end{itemize}
+
+The human-directed protocol required explicit conjecture/proof/certificate
+labels, independent semantic checkers, and prominent nonresolution
+warnings.  Nevertheless, AI generation is not independent mathematical
+review.  No claim is made that a human author independently derived every
+argument before this draft was prepared.  A specialist should verify the
+proofs, software semantics, certificate toolchain, and prior-art boundary
+before submission.  AI systems are not listed as authors; responsibility
+for any public version rests with the human author.
+
+\section*{Acknowledgements}
+
+This draft uses primary results of Jaeger, Nash-Williams, Tutte, Blasiak,
+Scott, Gutin, and Oum.  Their cited theorems are human mathematical work.
+The computational project is intended to make its own trust boundary
+visible, not to substitute automated output for peer review.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

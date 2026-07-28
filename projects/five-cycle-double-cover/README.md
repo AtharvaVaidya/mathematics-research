@@ -11,6 +11,32 @@ The project does **not** currently claim a resolution.  Every result is
 classified using the status vocabulary in the lab protocol.  In particular,
 finite searches are not evidence of the universal statement.
 
+The newest exact handoff is
+`ROOTED_RESOLUTION_FRONTIER_20260728.md`.  It gives the fully written
+fixed-five minimum-counterexample reduction, the two-way rooted
+edge-insertion equivalence, the resulting 3-edge-connected
+girth-eight/short-cycle frontier, and the complete 195-edge elimination
+screen on a 130-vertex cyclically 4-edge-connected girth-ten graph.  The
+remaining rooted premise is explicitly unproved and is an exact
+edge-extension form of FiveCDC, not a resolution.
+
+A second current frontier starts from Jaeger's three-tree construction of
+a nowhere-zero \(\mathbb F_2^3\)-flow.  In a vertex-star multiplicity
+fibre, let \(K_i\) be the unique all-vertices-odd forest contained in the
+spanning tree \(T_i\).  The canonical five-point lift exists exactly when
+\(K_1\cap K_2\) has even boundary on every component of \(K_3\).  The
+identity and its component-parity proof are in
+`scratch/jaeger-k-forest-star-parity-identities.md` and
+`scratch/jaeger-support5-component-criterion.md`.  Every one of 804,204
+feasible Type A/B fibres through order 14 passes, as do all 26,790 retained
+order-38 and all 1,364 retained order-44 star fibres.  The order-44 package
+contains literal witnesses checked by an independently written semantic
+verifier.  The universal joint parity-and-tree-packing selection lemma is
+still unproved.  Certified countermodels rule out three tempting
+strengthenings: thinning a star flow to five values, fixing the third tree
+before repair, and choosing parity-good perfect forests before simultaneous
+tree extension.
+
 The consolidated outcome is in `docs/lab-report.md`.  Exact conventions,
 encodings, literature status, experiments, and open proof obligations are
 recorded under `docs/`. The complete deterministic handoff is in
@@ -27,80 +53,6 @@ minimum-support and cap results is in `preprint-structural/NO-GO.md`; it
 recommends against a second preprint because the universal exchange theorem
 is still missing and the main framework overlaps published 4-flow,
 \(T\)-join, and multipole-boundary methods.
-
-The latest surface-Kempe audit closes several tempting local proof routes.
-The human corner-pairing argument proves that factor switches with zero or
-two remote twists are neutral, but explicit connected 2-lifts refute the
-inferred boundary-size bound, universal local neutrality, and even the
-weaker local nonnegative-delta claim.  A separate 56-vertex package
-exhausts a terminal equal-\(\chi\) plateau with 55,652 states modulo
-global \(S_5\): 1,041 states have disconnected neutral-component
-hypergraphs, yet the whole plateau is root-universal.  See
-`scratch/d5-local-neutral-corner-pairing-frontier.md` and
-`scratch/d5-lift56-terminal-plateau-neutral-connectivity-no-go.md`.
-These are exact route counterexamples and a positive finite plateau result,
-not a proof or disproof of FiveCDC.
-
-The sharper terminal-\(\chi\) chain census now checks every one of the
-642,167 fixed-distance subplateaus arising from all 480 biconnected simple
-cubic graphs of order 14.  Every bad subplateau has a neutral exit to lower
-factor-component-chain distance; an independent order-12 implementation
-agrees on 33,610 subplateaus.  Two standalone terminal witnesses also show
-why this finite pattern has not yet become a proof: a neutral
-shared-coordinate self-reentry switch can raise the distance \(2\to3\),
-and a second terminal state has no immediate neutral descent at all even
-though a neutral \(2\to2\to1\) route exists.  See
-`scratch/d5-terminal-chi-chain-lexicographic-target.md` and
-`scratch/d5-terminal-shared-pair-self-reentry-no-go.md`.  The universal
-closed-subplateau exit lemma remains open.
-
-The newest refinement proves a human-checkable first-foreign factor-splice
-identity and measures the intervening foreign factor-component blocks by a
-secondary potential \(b^*\).  Two separately implemented complete censuses
-through order 14 find no closed terminal fixed-\((d,b^*)\) subplateau.  In
-the primary lower-index-root accounting there are 646,399 such subplateaus;
-in the independent directed-root accounting there are 1,293,664.  Both
-have zero failures, and the primary full transcripts are protected by an
-independent verifier and SHA-256 ledger.  A seven-state order-12 terminal
-plateau refutes the stronger claim that the prescribed root-component
-switch must immediately rescue the roots.  A separate order-14 witness
-shows that even switching the root component or first blocker can fail,
-while one neutral third-pair switch succeeds.  See
-`scratch/d5-first-foreign-splice-lemma.md`,
-`scratch/d5-terminal-foreign-block-potential-through-order14.md`, and
-`scratch/d5-cyclic-block-one-step-no-go-order14.md`.  A clean
-fresh-coordinate multi-splice lemma explains that third-pair rescue, but
-an all-five-coordinate order-12 state refutes universal availability of a
-fresh coordinate.  These results isolate the neutral closed-cage exclusion
-still needed for a proof; they do not resolve FiveCDC.
-
-An independent Fourier calculation also gives an exact formula for the
-number of \(D_5\)-flows as a signed sum over contracted edge sets, involving
-the binary ranks of their quotient Laplacians.  Direct enumeration agrees
-on \(K_4\), \(K_{3,3}\), the cube, the Petersen graph, and loop/parallel-edge
-controls.  The tempting mod-3 nonvanishing corollary fails already on
-\(K_4\), whose signed-rank sum is \(18\).  The exact identity and its
-standard-library checker are in
-`scratch/d5-fourier-laplacian-count.md` and
-`scratch/audit_d5_fourier_laplacian_count.py`.  The complete bridgeless
-cubic census through order 12 finds no vanishing leading coefficient, but
-\(K_{3,3}\) and the cube already refute two naive 2-adic leading-term
-predictions.  This is a structural counting identity, bounded evidence,
-and several failed modular proof routes, not a resolution.
-
-The reduced Fano-flow branch has an exact affine pair-circuit theorem:
-two value-\(s\) edges admit the required pure-deletion circuit precisely
-when their endpoint pairs in the affine-complement circuit decomposition
-agree.  The surviving APX obligation is to prove that some such affine
-pair is also a packing deletion pair.  The frozen strict order-24 near-state
-has APX score exactly one; its independent checker enumerates all 4,681
-simple circuits, 1,371 legal switches, and 180 still-bad neighbours, every
-one retaining positive APX score.  Global collision identities and explicit
-four-defect certificates are proved, but aggregate counts and defect-weight
-profiles are too weak to force the required correlation.  See
-`scratch/fano-reduced-kp-two-bond-frontier.md` and
-`scratch/fano-apx-score1-order24.json`.  This is a checked near-state and a
-conditional reduction, not a FiveCDC proof.
 
 The independent \(K_6\)-reformulation publication audit is in
 `preprint-k6/NO-GO.md`.  It likewise recommends **no standalone preprint**:
@@ -427,3 +379,16 @@ survive.  Exact ten-state composition also shows that a two-plus-two
 decomposition cannot first create the four-type exception.  The full
 exceptional-signature conjecture remains open.  See
 `docs/four-pole-exception-rooted-packing-algebra.md`.
+
+The current sharp Jaeger frontier is the symmetric seven-plane exchange
+potential.  A complete exact census of 529,150,122 star-fibre states on all
+simple 3-edge-connected cubic graphs through order 14 finds no trapped
+positive-level component.  A parity-element reformulation identifies every
+odd kernel as a fundamental circuit and exposes a cographic-base selection
+language.  Its natural graphic-closure strengthening is now false even for
+a vertex-star fibre: a dual-certified 16-vertex example has zero
+closure-good packings among 5,723,136, but 40,464 exact parity-good
+packings.  A human triangle-contraction theorem extends that auxiliary
+failure to an infinite rooted family.  The exact parity selection lemma and
+the universal symmetric-descent theorem remain open, so the standard
+Five-Cycle Double Cover Conjecture is not resolved.
