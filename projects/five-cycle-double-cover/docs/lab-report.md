@@ -1272,3 +1272,35 @@ exact-zero-matching exchange theorem that packs the required two
 girth-at-least-10 minimum-counterexample hypotheses essentially.  Any
 target-standard UNSAT candidate still requires the full
 independent-certificate gate.
+
+## 11. Direct reduction audit and surviving frontier
+
+Audit date: **2026-07-28**.
+
+The direct standard FiveCDC branch generated no UNSAT candidate.  The
+exact-two CNF plus left-associated XOR-gate encoding was applied to 45,924
+graphs in six layers, and every returned model was independently checked
+against the original parity semantics.  Because no UNSAT answer occurred,
+the required LRAT/DRAT acceptance gate was never invoked and no
+counterexample claim is available.
+
+The branch did produce two human-checkable pruning theorems.  FiveCDC
+pulls back through finite graph coverings.  The specified Petersen
+four-pole substitution on two independent edges also preserves FiveCDC;
+its proof reduces to a 13-row boundary-extension table audited on all 550
+labelled cases.  These theorems make the tested lift and Petersen-product
+layers logically redundant as counterexample searches from positive bases.
+
+The Jaeger branch now has two sharper exact boundaries.  Whole-fibre square
+lifting has no countermodel through downstairs order 14, and a fixed
+five-cover extends across the square exactly for equal or disjoint deleted
+edge labels.  The order-14 layer contains 572,880 explicit witnesses,
+independently reconstructed by a separate checker.  Conversely,
+sorted-profile one-step descent fails on an explicit 36-vertex state, but a
+two-step same-level escape exists.
+
+Acceptance-gate verdict remains unchanged: **no universal proof and no
+independently certified target UNSAT instance**.  The live obligations are
+the universal whole-fibre square selection lemma, the full
+same-\(d_{\min}\) plateau-boundary theorem, and genuinely non-covering
+substitution/reduction rules not subsumed by the Petersen certificate.

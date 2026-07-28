@@ -39,16 +39,21 @@ check at least the following.
     downstairs states, the eight gadget ports, completeness of the
     \(3^8\) omitted-owner enumeration, all 72 legal lifts, and the alternate
     state's successful lift. Audit the order-six statewise controls and the
-    complete 672-instance order-eight whole-fibre census. Preserve the
-    distinction between failure for one selected state and the still-open
-    whole-fibre implication.
+    complete 672-instance order-eight whole-fibre census. Check the
+    equal-or-disjoint fixed-cover extension lemma by hand, then replay the
+    order-10 and order-12 whole-fibre censuses (6,300 and 53,352 instances)
+    and the independently checked 572,880-row order-14 witness corpus.
+    Preserve the distinction between failure for one selected state, a
+    fixed outside five-labelling, and the still-open whole-fibre implication.
 11. Audit the symmetric Fano-minimum score in the C++ whole-state enumerator.
    Its Python verifier independently checks graph/root coverage and hashes,
    but does not re-enumerate the 529,150,122 states. Separately verify the
    all-seven exchange identities (8.3)--(8.5), both complete 147-swap
    neighbourhoods used to refute immediate descent and fixed-kernel
-   exposure, and the distinction between inactive and active same-level
-   moves. Verify the four-case proof of the simultaneous-triangle Cartesian
+   exposure, the order-36 sorted-profile neighbourhood, and the distinction
+   between inactive and active same-level moves. Verify the two-exchange
+   escape before concluding that the full plateau statement survives.
+   Verify the four-case proof of the simultaneous-triangle Cartesian
    product, especially swaps involving two different triangle gadgets; do
    not infer that the defect is a product potential.
 12. Audit the 34-vertex CNF generator, then replay both LRAT checkers from

@@ -47,7 +47,7 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
 
 ## Jaeger fixed-fibre and five-point lifting update (2026-07-28)
 
-- `preprint-jaeger-fivecdc-frontier/` is a 30-page working preprint with
+- `preprint-jaeger-fivecdc-frontier/` is a 32-page working preprint with
   an explicit unresolved-status box, detailed AI-use disclosure,
   reproducibility table, human-review gate, and rendered PDF.
 - `scratch/jaeger-support5-component-criterion.md` proves the exact
@@ -99,7 +99,19 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
 - `scratch/jaeger-star-square-any-coordinate-lift-no-go.md` gives the
   minimum-order fixed-state square-lift failure. The order-six controls and
   complete 672-instance order-eight census preserve the weaker whole-fibre
-  implication.
+  implication.  The new fixed-cover square-extension lemma proves that the
+  two deleted pair labels extend exactly when they are equal or disjoint.
+  Complete solver-free whole-fibre censuses at orders ten and twelve check
+  6,300 and 53,352 labelled instances with zero failures.  The order-14
+  certificate census adds 572,880 explicit witnesses, each reconstructed
+  by a separately written standard-library checker, so any countermodel to
+  the local-selection statement in this class has order at least 16.
+- `scratch/jaeger-sorted-profile-local-no-go-order36.md` and its
+  independent checker refute one-step lexicographic descent of the complete
+  sorted seven-defect profile.  The exact 63-neighbour split is
+  0 lower, 13 equal, and 50 higher; a checked two-exchange same-level path
+  reaches defect zero, so the full plateau-component statement remains
+  open.
 - `output/jaeger-fano-min-descent-triangle-expansions-16v/` retains the
   exact thirteen-fibre control: 17,297,280 states, maximum
   \(d_{\min}=4\), and no trapped positive same-level component.  Its
@@ -134,6 +146,32 @@ now disproved even for a vertex-star fibre; every retained countermodel
 nevertheless has an exact five-point witness.  The standard FiveCDC
 conjecture therefore remains unresolved, and the orientable conjecture is
 not addressed.
+
+## Direct covering and Petersen-substitution update (2026-07-28)
+
+- `scratch/fivecdc-cover-pullback-reduction-20260728.md` gives a
+  human-checkable proof that every finite graph cover of a FiveCDC-positive
+  graph is FiveCDC-positive.  Its incidence convention explicitly handles
+  loops and parallel edges.
+- `scratch/fivecdc-petersen-four-pole-extension-theorem-20260728.md`
+  proves that replacing two independent edges of a positive cubic graph by
+  the Petersen four-pole obtained by deleting adjacent vertices preserves
+  FiveCDC for every port bijection.  Its 13-row pair-label table covers the
+  three \(S_5\) orbit types.
+- `scratch/verify_petersen_four_pole_extension_theorem_20260728.py`
+  independently checks all 100 ordered pair-label choices, 550 labelled
+  boundary placements, 120 coordinate permutations, and every internal
+  parity.
+- `scratch/direct-fivecdc-counterexample-branch-report-20260728.md` records
+  the exact solver semantics and 45,924 checked SAT instances at orders
+  40, 48, 56, 64, 80, and 160.
+- `scratch/direct-fivecdc-curated-SHA256SUMS-20260728.txt` freezes the
+  compact 16-entry publication package.  The large graph/model streams are
+  intentionally excluded; their hashes remain in the report.
+
+This update provides two sound positive reductions and finite encoder
+controls.  It contains no UNSAT target, no counterexample, and no claimed
+resolution.
 
 ## Five-pole path-extension and ear frontier
 

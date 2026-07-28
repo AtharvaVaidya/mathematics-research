@@ -2699,3 +2699,42 @@ and 7), and randomized order-16, order-36, and triangle-expanded stress
 tests also escape. Only the product identity is a theorem; the latter
 results are finite or exploratory. See
 `scratch/jaeger-simultaneous-triangle-lift-plateau-search.md`.
+
+## Direct reductions, square frontier, and sorted-profile no-go
+
+Audit date: **2026-07-28**.
+
+The mandated direct exact-two/parity encoding was run on all 7,654 retained
+canonical order-40 strong snarks and on five derived layers at orders
+48, 56, 64, 80, and 160.  All 45,924 instances were SAT and every model was
+checked against the raw edge-weight and vertex-XOR semantics.  No target
+UNSAT result or proof certificate was produced.
+
+Two infinite search directions are now pruned by proofs rather than finite
+extrapolation:
+
+1. FiveCDC pulls back along any finite graph covering, including loops and
+   parallel edges under the incidence/dart convention.
+2. The Petersen four-pole obtained by deleting adjacent vertices extends
+   every boundary multiset \(q,q,r,r\) of pair labels, for every port
+   placement.  A 13-row human table and an independent exhaustive checker
+   cover all 550 labelled boundary assignments.
+
+Neither result resolves FiveCDC; they show that positive bases cannot be
+turned into counterexamples by those two operations.
+
+For square expansion, a fixed five-labelling extends if and only if the two
+deleted pair labels are equal or disjoint.  The stronger whole-fibre
+state-and-lift statement has zero failures in complete solver-free censuses
+through downstairs order 12: 6,300 instances at order 10 and 53,352 at
+order 12.  A certificate census at order 14 adds all 572,880 labelled
+instances; a separately written checker reconstructs every witness.  A
+future countermodel in the simple 3-edge-connected cubic class therefore
+has downstairs order at least 16.
+
+Finally, the sorted seven-defect profile is not a one-step descent
+potential.  On the explicit order-36 state, all 867 reciprocal candidates
+are reconstructed; 63 are legal, with 0 lexicographically lower, 13 equal,
+and 50 higher neighbours.  A two-exchange path within \(d_{\min}=2\)
+reaches defect zero, so the full same-level-component theorem survives.
+See the exact notes and independent checkers under `scratch/`.

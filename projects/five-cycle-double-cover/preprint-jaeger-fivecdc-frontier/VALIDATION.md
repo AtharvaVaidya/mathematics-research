@@ -6,7 +6,7 @@ Resolution status: FiveCDC remains unresolved.
 
 The manuscript compiled successfully with
 `SOURCE_DATE_EPOCH=1785271878 tectonic main.tex`, reproducing the committed
-PDF byte for byte. `pdfinfo` reported 29 US-letter pages, no encryption, no
+PDF byte for byte. `pdfinfo` reported 32 US-letter pages, no encryption, no
 forms, and no JavaScript.
 All pages were rendered with Poppler at 120 dpi and visually inspected.
 There were no clipped lines, overflowing tables, broken glyphs, or unreadable
@@ -40,6 +40,14 @@ The following cited checkers all exited zero in the final validation pass:
   descent; the second has 23 score-two neighbours, zero kernel-inert
   neighbours, and an independently reconstructed active-neutral
   two-step escape.
+- `verify_jaeger_sorted_profile_local_no_go_order36.py`: PASS; the literal
+  simple 3-edge-connected cubic order-36 state has 867 reciprocal
+  candidates and 63 legal neighbours, split exactly as 0 lower, 13 equal,
+  and 50 higher for the sorted seven-defect profile. A same-\(d_{\min}\)
+  escape to defect zero is independently replayed in two exchanges after
+  57 breadth-first states; note/checker SHA-256
+  `5d1737becf817615190a875808c5dff12d8cb14c7b8736d3f6967f49c4fb745e` /
+  `9b595f2a83371f08792e967d12d49b9050e6ca5766330bb87a7b0be6d4f48178`.
 - `verify_jaeger_triangle_expansion_descent_structure.py`: PASS; the six
   lifted profiles and their common contraction are reconstructed.
 - `verify_jaeger_triangle_expanded_fixedtrap_descent.py`: PASS; all thirteen
@@ -94,6 +102,27 @@ The following cited checkers all exited zero in the final validation pass:
   smoothing pairs were exhausted, for 672 whole-fibre instances and zero
   failures; SHA-256
   `f9366e50d6e7b0e53b87114f6daf7ee1ca640ac224f1f8d1363190e87fd7124b`.
+- `search_jaeger_star_square_existential_census.py`: PASS at orders 10 and
+  12. The exact solver-free runs retained 14 and 57 simple
+  3-edge-connected cubic graphs, 140 and 684 labelled roots, and 6,300 and
+  53,352 eligible edge-pair instances, with zero failures. Witness-corpus
+  digests were
+  `1ae75f2864163e8ec6b04c0d92f012f00375ab55f92cc1284ad8233d4c42ab8f`
+  and
+  `b6b5420643799ddfe9ab3f252b0447c7de7704b27ddd8e75eaed39613b567b4e`;
+  note/checker SHA-256
+  `0fed1da84326097378145396bf2608aac44ad2c2e6a36c9ad464d215fc019015` /
+  `bf3ce5e8c82bce4d84a14c80b538cb5337fd4a4a56016d0043eb70a4d82dbcd8`.
+- `verify_jaeger_star_square_existential_order14.py`: PASS on the complete
+  explicit witness corpus. It independently regenerated all 509 canonical
+  connected cubic records, retained 341 simple 3-edge-connected graphs,
+  required all 4,774 root keys and 572,880 eligible edge-pair witnesses,
+  and reconstructed every downstairs/lifted tree certificate. The corpus
+  contains 24,268 distinct checked downstairs states and has SHA-256
+  `26dfe990a6655170f5fdcb6faf1424db279b57e8d094269417b7330fb5affd41`;
+  search/checker SHA-256
+  `f457fbf60bf5f2b94828bcf6295e0bf289b70205c55b70ab81d35de2fbc9697e` /
+  `81545f6d0fc1331783a3d7e1d9f267961172a3398a05c635096c093d6638a791`.
 - `verify_jaeger_five_point_frontier.py`: PASS; 587 graphs, 944,974
   placements, and all 804,204 feasible fibres successful.
 - `verify_jaeger_star_thinning_countermodel_34v.py`: PASS; both

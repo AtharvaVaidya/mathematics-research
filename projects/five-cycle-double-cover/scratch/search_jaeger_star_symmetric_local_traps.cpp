@@ -366,6 +366,7 @@ std::string json_escape(const std::string& text) {
 
 }  // namespace
 
+#ifndef JAEGER_SYMMETRIC_LOCAL_TRAPS_NO_MAIN
 int main(int argc, char** argv) {
   const int steps = argc >= 2 ? std::atoi(argv[1]) : 10000;
   const std::uint64_t seed =
@@ -592,3 +593,4 @@ int main(int argc, char** argv) {
   std::cerr << "sampled distinct states " << sampled_states << '\n';
   return 0;
 }
+#endif

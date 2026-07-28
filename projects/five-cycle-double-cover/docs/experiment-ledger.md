@@ -3200,3 +3200,34 @@ These are explicitly exploratory state samples, not exhaustive fibre
 theorems. The separate simultaneous-triangle Cartesian-product identity is
 proved by hand in
 `scratch/jaeger-simultaneous-triangle-lift-plateau-search.md`.
+
+## Direct exact portfolio and local theorem audits
+
+Audit date: **2026-07-28**.
+
+The direct CaDiCaL portfolio checked 7,654 retained order-40 strong snarks,
+their deterministic connected 2-lifts at orders 80 and 160, and three
+successive Petersen four-pole substitution layers at orders 48, 56, and 64.
+All 45,924 instances were SAT with raw semantic replay.  The cover-pullback
+and Petersen-extension theorems subsequently explain every derived layer
+from the positive bases; the large witness streams are therefore retained
+locally but omitted from the curated publication bundle.
+
+The square whole-fibre checker exhausts 14 simple 3-edge-connected cubic
+graphs at order 10 and 57 at order 12.  Across 6,300 and 53,352 labelled
+root/independent-edge-pair instances it finds zero failures.  Witness
+digests are
+`1ae75f2864163e8ec6b04c0d92f012f00375ab55f92cc1284ad8233d4c42ab8f`
+and
+`b6b5420643799ddfe9ab3f252b0447c7de7704b27ddd8e75eaed39613b567b4e`.
+At order 14, a certificate producer covers 341 graphs, 4,774 roots, and
+572,880 edge-pair instances.  A separately written standard-library checker
+reconstructs every witness; the corpus uses 24,268 distinct downstairs
+states and has SHA-256
+`26dfe990a6655170f5fdcb6faf1424db279b57e8d094269417b7330fb5affd41`.
+
+The sorted-profile checker exhausts the complete 867-candidate
+neighbourhood of one order-36 state, finds the exact 0/13/50 split among
+63 legal moves, and independently replays a distance-two same-level escape.
+All three results are exact for their stated domains and are not a
+resolution of FiveCDC.

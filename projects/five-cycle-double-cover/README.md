@@ -419,3 +419,37 @@ resolved.  See
 `scratch/jaeger-fano-reciprocal-exchange-law.md`,
 `scratch/jaeger-fano-min-immediate-descent-countermodel.md`, and
 `scratch/jaeger-triangle-expansion-descent-structure.md`.
+
+## Exact direct-search reductions and sharpened local frontiers
+
+Audit date: **2026-07-28**.
+
+Two direct counterexample families are now eliminated by human proofs.
+A standard FiveCDC pulls back through every finite graph covering, with
+loops handled by the two-incidence convention.  Therefore connected
+2-lifts of positive graphs cannot be counterexamples.  Separately, deleting
+two independent edges of a positive cubic graph and inserting the
+Petersen four-pole obtained by deleting adjacent vertices preserves
+FiveCDC for every port bijection.  A displayed 13-row table covers the
+three \(S_5\)-orbits of boundary-label pairs; an independent checker
+exhausts all 550 labelled boundary assignments.  These are sound pruning
+reductions, not a proof of FiveCDC.  See
+`scratch/fivecdc-cover-pullback-reduction-20260728.md` and
+`scratch/fivecdc-petersen-four-pole-extension-theorem-20260728.md`.
+
+The direct exact-two/XOR solver found checked standard FiveCDC witnesses on
+all 45,924 tested graphs at orders 40, 48, 56, 64, 80, and 160.  The lift
+and Petersen-substitution theorems explain five of the six layers once the
+order-40 bases are positive.  No target UNSAT instance occurred, so no
+FiveCDC UNSAT certificate exists in this portfolio.
+
+For the square route, a fixed outside five-cover extends across the square
+exactly when the two deleted edge labels are equal or disjoint.  Complete
+whole-fibre censuses through order 14 check 633,204 labelled
+root/edge-pair instances with zero failures; the 572,880 order-14 witnesses
+are all replayed by a separately written checker.  For the exchange
+route, a 36-vertex state proves that even the sorted seven-defect profile
+need not decrease in one legal exchange: its 63 legal neighbours split as
+0 lower, 13 equal, and 50 higher.  A checked two-exchange same-level escape
+still reaches defect zero.  Thus the whole-fibre square implication and the
+full plateau-component theorem both remain open.

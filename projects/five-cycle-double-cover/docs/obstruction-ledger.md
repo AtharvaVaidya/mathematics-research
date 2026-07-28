@@ -1280,6 +1280,34 @@ This refutes only fixed-state local lifting. Another good state for the
 same graph, root, and smoothing pair has a good local lift. Both order-six
 graphs satisfy the stronger statewise claim, while a complete order-eight
 census finds a jointly chosen good state and lift in all 672
-graph/root/pair instances. The whole-fibre existential square reduction
+graph/root/pair instances. Later complete censuses extend the whole-fibre
+frontier through order 14; the final 572,880-witness layer is replayed by a
+separately written checker. The whole-fibre existential square reduction
 remains open. See
 `scratch/jaeger-star-square-any-coordinate-lift-no-go.md`.
+
+## O53 — Use the sorted seven-defect profile as a one-step potential
+
+Status: **FAILED APPROACH / EXACT ORDER-36 COUNTERMODEL**.
+
+The explicit state in
+`scratch/jaeger-sorted-profile-local-no-go-order36.md` has profile
+\((6,6,2,4,2,2,2)\) and sorted profile
+\((2,2,2,2,4,6,6)\).  Of 867 reciprocal candidates, exactly 63 are legal:
+zero are lexicographically lower, 13 are equal, and 50 are higher.  The
+independent standard-library checker reconstructs every tree, odd kernel,
+defect, and exchange.  A checked two-exchange same-level path reaches
+defect zero, so this refutes only one-step majorization, not the full
+plateau-component theorem.
+
+## O54 — Generate counterexamples by covers or the tested Petersen four-pole
+
+Status: **FAILED COUNTEREXAMPLE FAMILIES / HUMAN POSITIVE REDUCTIONS**.
+
+Every finite cover of a FiveCDC-positive graph is positive by taking edge
+preimages coordinatewise.  Every replacement of two independent edges by
+the Petersen four-pole obtained from deleting adjacent vertices is also
+positive for every port bijection.  The latter has a 13-row pair-label
+certificate independently checked on all 550 boundary assignments.  These
+operations cannot produce a counterexample from a positive base; they do
+not prove that every graph reduces by such operations.

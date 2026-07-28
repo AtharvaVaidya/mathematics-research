@@ -13,14 +13,25 @@ python3 scratch/check_jaeger_perfect_forests_first_no_go.py
 python3 scratch/verify_jaeger_star_parity_descent_countermodel.py
 python3 scratch/verify_jaeger_reciprocal_exchange_defect_formula.py
 python3 scratch/verify_jaeger_fano_min_immediate_descent_countermodel.py
+python3 scratch/verify_jaeger_sorted_profile_local_no_go_order36.py
 python3 scratch/verify_jaeger_kernel_closure_typea_countermodel.py
 python3 scratch/verify_jaeger_star_exact_parity_triangle_lift.py
 python3 scratch/verify_jaeger_star_square_any_coordinate_lift_countermodel.py
 python3 scratch/verify_jaeger_star_square_order6_controls.py
 python3 scratch/verify_jaeger_star_square_existential_order8.py
+python3 scratch/search_jaeger_star_square_existential_census.py --order 10
+python3 scratch/search_jaeger_star_square_existential_census.py --order 12
+clang++ -O3 -std=c++20 \
+  scratch/search_jaeger_star_square_existential_order14.cpp \
+  -o /tmp/search_square_order14
+geng -cq -d3 -D3 14 |
+  /tmp/search_square_order14 |
+  gzip -9 >/tmp/square-order14-witnesses.tsv.gz
+python3 scratch/verify_jaeger_star_square_existential_order14.py \
+  /tmp/square-order14-witnesses.tsv.gz
 ```
 
-The final command checks the separate two-way theorem for the surviving
+The exact-triangle command checks the separate two-way theorem for the surviving
 exact target: 60 admissible local traces, seven symmetry orbits, and no
 trace without a parity-preserving legal triangle lift. The expected SHA-256
 values are `96259e65072b5a8c03f572e028a650f6e075f787c66e7e59917630c2b22c1008`
@@ -28,7 +39,8 @@ for the human note and
 `e3026b8acdf95555fad33a5a2871174b497a154151f5e0f4fde642d31053bbe7`
 for the checker.
 
-The last three commands freeze the exact square-local quantifier boundary.
+The final five square commands freeze the exact square-local quantifier
+boundary.
 The first checks the order-eight fixed-state countermodel: 6,561 gadget
 words, 72 legal lifts, and no lift good in any coordinate, followed by an
 alternate-state positive control. The second proves that no such fixed-state
@@ -44,7 +56,34 @@ for the countermodel checker,
 `0f7d64413105ed6c69bd171734297fdf7e45b81af31bd812665efd92111dd73e`
 for the order-six controls, and
 `f9366e50d6e7b0e53b87114f6daf7ee1ca640ac224f1f8d1363190e87fd7124b`
-for the order-eight census.
+for the order-eight census. The final two commands extend the whole-fibre
+frontier to every simple 3-edge-connected cubic graph of orders 10 and 12:
+6,300 and 53,352 labelled root/edge-pair instances, respectively, with zero
+failures. The human note also proves the fixed-cover extension criterion
+\(P=Q\) or \(P\cap Q=\varnothing\). Expected SHA-256 values are
+`0fed1da84326097378145396bf2608aac44ad2c2e6a36c9ad464d215fc019015`
+for the note and
+`bf3ce5e8c82bce4d84a14c80b538cb5337fd4a4a56016d0043eb70a4d82dbcd8`
+for the combined order-10/order-12 checker. The final compile/generate/check
+sequence produces and independently replays one explicit witness for each
+of the 572,880 labelled order-14 instances. It must report 341 retained
+graphs, 4,774 roots, 24,268 distinct certified downstairs states, and corpus
+SHA-256
+`26dfe990a6655170f5fdcb6faf1424db279b57e8d094269417b7330fb5affd41`.
+Expected program SHA-256 values are
+`f457fbf60bf5f2b94828bcf6295e0bf289b70205c55b70ab81d35de2fbc9697e`
+for the C++ search and
+`81545f6d0fc1331783a3d7e1d9f267961172a3398a05c635096c093d6638a791`
+for the independent checker.
+
+The sorted-profile command reconstructs the literal 36-vertex state,
+checks all 867 exchange candidates and the exact \(0/13/50\)
+lower/equal/higher split among 63 legal neighbours, then replays a
+two-exchange same-\(d_{\min}\) escape. Expected SHA-256 values are
+`5d1737becf817615190a875808c5dff12d8cb14c7b8736d3f6967f49c4fb745e`
+for the note and
+`9b595f2a83371f08792e967d12d49b9050e6ca5766330bb87a7b0be6d4f48178`
+for the independent checker.
 
 ## Symmetric Fano-minimum descent through order 14
 

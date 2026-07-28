@@ -123,8 +123,14 @@ seven-plane parity defect has an edge to a lower level; it covers
 seven-plane update under a reciprocal tree exchange.  Two explicit
 16-vertex states show that neither immediate descent nor descent exposure
 inside one fixed odd-kernel triple is valid; active same-level motion is
-sometimes necessary.  These are finite results and exact no-go statements,
-not a universal selection theorem.
+sometimes necessary.  A 36-vertex state further shows that even the complete
+sorted seven-defect profile need not decrease in one exchange, although an
+exact two-exchange same-level escape exists.  For square expansion, we prove
+that a fixed five-cover extends exactly when the two deleted edge labels are
+equal or disjoint, and a solver-free whole-fibre census finds compatible
+state-and-lift choices in every simple 3-edge-connected cubic instance
+through downstairs order \(14\).  These are finite results and exact no-go
+statements, not a universal selection theorem.
 \end{abstract}
 
 \tableofcontents
@@ -1356,6 +1362,77 @@ every instance some good downstairs state has a good local lift; only
 fixed-state failure but supplies no counterexample to the existential
 square implication.
 
+There is an exact criterion at the level of one already chosen five-cover.
+Label each edge by the two cover coordinates containing it.  Suppose the
+deleted edges \(AC\) and \(BD\) have labels \(P\) and \(Q\), respectively,
+and hold all labels outside the square fixed.  Terminal parity forces the
+four attachment labels to be \(P,Q,P,Q\).  If \(X\) is the label on \(ab\),
+then parity around the square forces
+\[
+ X,\qquad X\symdiff Q,\qquad X\symdiff P\symdiff Q,\qquad
+ X\symdiff P.                                           \tag{6.21}
+\]
+All four sets in~(6.21) have size two if and only if
+\[
+                         P=Q\quad\hbox{or}\quad P\cap Q=\varnothing.
+                                                               \tag{6.22}
+\]
+For \(P=Q\), choose \(X\) meeting \(P\) once; for disjoint \(P,Q\), choose
+one point of each.  If \(P=\{p,q\}\) and \(Q=\{p,s\}\), the three weight
+conditions would give
+\[
+ x_p+x_q=x_p+x_s=x_q+x_s=1,
+\]
+which is impossible.  This proves~(6.22).  The criterion is deliberately
+for a fixed outside five-labelling; it does not identify which exact-good
+tree state should be selected.
+
+A standard-library, solver-free census tests that remaining selection
+quantifier on every simple 3-edge-connected cubic graph of orders ten and
+twelve.  For every labelled root and every eligible independent edge pair,
+it enumerates the entire star fibre and accepts only after reconstructing a
+good downstairs state and a good square-local lift.  The exact totals are
+\[
+\begin{array}{c|rrrr}
+\text{order}&\text{3-edge-connected graphs}&\text{roots}
+ &\text{edge-pair instances}&\text{failures}\\ \hline
+10&14&140&6{,}300&0\\
+12&57&684&53{,}352&0.
+\end{array}
+\]
+The search required \(6{,}923\) and \(66{,}696\) good-state/pair attempts,
+respectively; in particular, the first good state need not always be the
+one that lifts.  The witness-corpus SHA-256 values are
+\[
+\begin{split}
+10:\;&\texttt{1ae75f2864163e8ec6b04c0d92f012f00375ab55f92cc1284ad8233d4c42ab8f},\\
+12:\;&\texttt{b6b5420643799ddfe9ab3f252b0447c7de7704b27ddd8e75eaed39613b567b4e}.
+\end{split}
+\]
+
+At order fourteen, a C++ search writes an explicit pair of downstairs and
+lifted tree triples for every instance.  A separately written
+standard-library checker regenerates the canonical \texttt{geng} stream,
+independently filters three-edge-connectivity, requires exactly one row for
+each graph, root, and independent edge-pair key, and reconstructs all six trees,
+their multiplicities, outside agreement, and both exact component-parity
+tests.  It accepts
+\[
+\begin{array}{c|rrrr}
+\text{order}&\text{3-edge-connected graphs}&\text{roots}
+ &\text{edge-pair witnesses}&\text{failures}\\ \hline
+14&341&4{,}774&572{,}880&0.
+\end{array}
+\]
+The corpus uses \(24{,}268\) distinct downstairs states and has SHA-256
+\[
+\texttt{26dfe990a6655170f5fdcb6faf1424db279b57e8d094269417b7330fb5affd41}.
+\]
+Thus any countermodel to this stronger local-selection statement in the
+simple 3-edge-connected cubic class has downstairs order at least sixteen.
+This is a finite certificate census, not a proof of the whole-fibre
+implication.
+
 \section{A certified obstruction to direction thinning}
 
 A much broader sufficient rule would try to choose a star-fibre state in
@@ -1704,6 +1781,22 @@ seven defects, both complete incident neighbourhoods, and both two-step
 paths.  Thus only the full same-level-component statement in
 Theorem~\ref{thm:fano-descent} survives these local simplifications.
 
+Sorting all seven defects does not restore one-step monotonicity.  On the
+36-vertex graph and literal state recorded in the reproducibility note, the
+ordered profile is
+\[
+                         (6,6,2,4,2,2,2),
+\qquad \sigma=(2,2,2,2,4,6,6).
+\]
+Of \(3\cdot17\cdot17=867\) reciprocal candidates, exactly \(63\) are legal:
+none has a lexicographically smaller sorted profile, \(13\) have the same
+profile, and \(50\) have a larger one.  An independent standard-library
+checker exhausts the neighbourhood.  Nevertheless, breadth-first search
+within \(d_{\min}=2\) finds a defect-zero state in two exchanges, after
+inserting \(57\) same-level states in deterministic order.  Thus neither
+the scalar score nor its sorted refinement is a discrete-convex one-step
+potential; the full plateau-component statement still survives.
+
 Nonroot triangle expansion also does not turn the finite theorem into an
 induction.  The expanded fibre graph is the Cartesian product of the
 contracted fibre graph and the transposition Cayley graph of \(S_3\), but
@@ -1856,6 +1949,10 @@ The evidence and no-go results sharply delimit plausible approaches:
       exact component parity lifts as well as descends.
 \item One cannot require an immediately descending reciprocal exchange:
       the first order-16 state above has none.
+\item One cannot repair immediate descent by lexicographically minimizing
+      the sorted seven-defect profile: the order-36 state above has
+      \(0/13/50\) lower/equal/higher legal neighbours.  Its exact two-step
+      same-level escape leaves the full plateau-component problem open.
 \item One cannot repair immediate descent by moving only among realizations
       of one fixed odd-kernel triple: the second order-16 state has no such
       neighbour.  A successful universal descent argument must exploit the
@@ -1864,7 +1961,9 @@ The evidence and no-go results sharply delimit plausible approaches:
 \item One cannot prove a four-cycle reduction by lifting one fixed good
       downstairs state inside the square, even if the successful coordinate
       may change, by Proposition~\ref{prop:square-lift-nogo}.  The
-      whole-fibre existential square implication is still open.
+      whole-fibre existential square implication is still open, though the
+      fixed-cover criterion~(6.22) is exact and the stronger local-selection
+      statement has no countermodel through downstairs order fourteen.
 \end{enumerate}
 
 The current computations support Problem~\ref{prob:kernel}, but they do not
@@ -1940,6 +2039,13 @@ Seven-plane exchange law and two local no-gos &
 {\footnotesize\texttt{immediate\_descent\_countermodel.py}} &
 human + literal exhaustive\\
 \addlinespace
+Sorted-profile one-step no-go &
+{\footnotesize\texttt{scratch/jaeger-sorted-profile-local-}}\par
+{\footnotesize\texttt{no-go-order36.md}};
+{\footnotesize\texttt{scratch/verify\_jaeger\_sorted\_profile\_}}\par
+{\footnotesize\texttt{local\_no\_go\_order36.py}} &
+literal exhaustive\\
+\addlinespace
 Triangle-expanded descent controls &
 {\footnotesize\texttt{output/jaeger-fano-min-descent-}}\par
 {\footnotesize\texttt{triangle-expansions-16v/}};
@@ -1982,8 +2088,12 @@ Square-lift finite boundary &
 {\footnotesize\texttt{scratch/verify\_jaeger\_star\_square\_}}\par
 {\footnotesize\texttt{order6\_controls.py}};
 {\footnotesize\texttt{scratch/verify\_jaeger\_star\_square\_}}\par
-{\footnotesize\texttt{existential\_order8.py}} &
-exhaustive\\
+{\footnotesize\texttt{existential\_order8.py}};
+{\footnotesize\texttt{scratch/search\_jaeger\_star\_square\_}}\par
+{\footnotesize\texttt{existential\_census.py}};
+{\footnotesize\texttt{scratch/verify\_jaeger\_star\_square\_}}\par
+{\footnotesize\texttt{existential\_order14.py}} &
+human fixed-cover lemma + certificate census through order 14\\
 \addlinespace
 Simultaneous triangle product &
 {\footnotesize\texttt{scratch/jaeger-simultaneous-triangle-}}\par
@@ -2049,7 +2159,7 @@ Atharva Vaidya's direction.  The agents:
 \item proposed the fixed-fibre, component-parity, odd-kernel,
       parity-element, cographic-base, exchange, symmetric-descent, and
       perfect-forest formulations, and the exact triangle-lifting
-      reduction and square-local no-go tests;
+      reduction, square-extension criterion, and square-local no-go tests;
 \item wrote most of the search, certificate-generation, and verification
       code;
 \item found the finite countermodels and positive witnesses;

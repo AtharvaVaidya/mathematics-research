@@ -21,12 +21,17 @@ records two independently replayed order-16 no-gos: immediate descent and
 fixed-kernel exposure are both false, while the broader full same-level
 descent statement remains open. Simultaneous nonroot triangle expansions
 give an exact Cartesian-product theorem with one \(S_3\) Cayley factor per
-triangle, but the defect is not a product potential. A further solver-free order-eight example
+triangle, but the defect is not a product potential. A 36-vertex exact
+countermodel shows that even the sorted seven-defect profile need not
+decrease in one exchange; it nevertheless has a checked two-exchange
+same-level escape. A further solver-free order-eight example
 shows that one fixed good state need not have a good square-local lift in
 any coordinate; an alternate good state for the same graph and square does
-lift. A complete order-eight census finds a compatible state-and-lift in
-all 672 graph/root/smoothing instances, so the whole-fibre square reduction
-remains open rather than refuted.
+lift. The paper proves an exact fixed-cover square-extension criterion:
+the deleted edge labels must be equal or disjoint. Complete whole-fibre
+censuses through downstairs order 14 find compatible state-and-lift choices
+in all 633,204 graph/root/smoothing instances tested, so the whole-fibre
+square reduction remains open rather than refuted.
 
 **Priority correction:** Hušek and Šámal, *Exponentially Many Circuit
 Double Covers*, arXiv:2607.24724v1 (submitted July 27, 2026), independently

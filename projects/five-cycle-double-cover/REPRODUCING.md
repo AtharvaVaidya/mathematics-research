@@ -1000,3 +1000,39 @@ The following are generated and intentionally ignored:
 The platform-specific `verifier_b/verifier-b` executable is not ignored; its
 hash is part of the external Verifier B freeze record. A different Go release
 or target may produce a different executable even from identical source.
+
+## 2026-07-28 direct reductions and local-frontier replay
+
+```sh
+shasum -a 256 -c scratch/direct-fivecdc-curated-SHA256SUMS-20260728.txt
+python3 scratch/verify_petersen_four_pole_extension_theorem_20260728.py
+python3 scratch/verify_jaeger_sorted_profile_local_no_go_order36.py
+python3 scratch/search_jaeger_star_square_existential_census.py --order 10
+python3 scratch/search_jaeger_star_square_existential_census.py --order 12
+clang++ -O3 -std=c++20 \
+  scratch/search_jaeger_star_square_existential_order14.cpp \
+  -o /tmp/search_square_order14
+geng -cq -d3 -D3 14 |
+  /tmp/search_square_order14 |
+  gzip -9 >/tmp/square-order14-witnesses.tsv.gz
+python3 scratch/verify_jaeger_star_square_existential_order14.py \
+  /tmp/square-order14-witnesses.tsv.gz
+```
+
+The Petersen checker must report 13 certificate rows, 100 ordered label
+pairs, 550 boundary assignments, and all internal parities true.  The
+sorted-profile checker must report 867 candidates, 63 legal exchanges, a
+0/13/50 lower/equal/higher split, and a distance-two same-level escape.
+The square censuses must report 6,300 and 53,352 instances with zero
+failures and witness digests
+`1ae75f2864163e8ec6b04c0d92f012f00375ab55f92cc1284ad8233d4c42ab8f`
+and
+`b6b5420643799ddfe9ab3f252b0447c7de7704b27ddd8e75eaed39613b567b4e`.
+The order-14 checker must report 341 retained graphs, 4,774 roots, 572,880
+witnesses, 24,268 distinct downstairs states, and corpus digest
+`26dfe990a6655170f5fdcb6faf1424db279b57e8d094269417b7330fb5affd41`.
+
+The direct portfolio contains no UNSAT result.  Its large redundant graph
+and model streams are intentionally excluded from the compact publication
+package; their hashes and exact run counts are frozen in
+`scratch/direct-fivecdc-counterexample-branch-report-20260728.md`.

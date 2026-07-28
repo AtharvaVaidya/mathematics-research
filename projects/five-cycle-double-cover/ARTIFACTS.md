@@ -6,7 +6,7 @@ copied into a separate clean clone; it was not modified or committed.
 
 ## Included
 
-- The 30-page, explicitly AI-disclosed working preprint
+- The 32-page, explicitly AI-disclosed working preprint
   `preprint-jaeger-fivecdc-frontier/`, with LaTeX source, rendered PDF,
   references, human-review gate, validation record, and checksum manifest.
   It presents the fixed-fibre feasibility theorem, exact five-point
@@ -16,7 +16,10 @@ copied into a separate clean clone; it was not modified or committed.
   triangle invariance, derives the simultaneous seven-plane exchange law,
   proves the simultaneous-triangle Cartesian-product theorem, and records
   certified no-gos to immediate descent, fixed-kernel exposure, and
-  fixed-state square lifting.
+  fixed-state square lifting.  It now also gives the equal-or-disjoint
+  fixed-cover square-extension lemma, a complete whole-fibre square census
+  through downstairs order 14, and an exact order-36 countermodel to
+  one-step descent of the sorted seven-defect profile.
 - The Jaeger fixed-fibre reproducibility package: complete Type A/B
   support-five and support-six census streams through order 14; literal
   fixed-coordinate witnesses for 31 order-44 graphs and all 1,364 roots;
@@ -40,8 +43,23 @@ copied into a separate clean clone; it was not modified or committed.
 - The square-local quantifier boundary: one planar order-eight good state
   has 72 legal local lifts and none good in any coordinate, while an
   alternate state lifts. Both order-six graphs satisfy the stronger
-  statewise rule, and all 672 order-eight whole-fibre instances satisfy
-  the weaker jointly selected state-and-lift statement.
+  statewise rule.  The fixed-cover label criterion is proved exactly:
+  the two deleted labels must be equal or disjoint.  Complete solver-free
+  whole-fibre censuses have zero failures in 672 order-eight, 6,300
+  order-ten, 53,352 order-twelve, and 572,880 order-fourteen labelled
+  instances.  The final layer retains every explicit witness and a
+  separately written checker reconstructs them all.
+- The compact direct FiveCDC package: an exact-two CNF with explicit XOR
+  gates, semantic and reconstruction checkers, deterministic 2-lift and
+  Petersen-substitution generators, seven compact audit summaries, and a
+  curated checksum manifest.  It records checked SAT witnesses on 45,924
+  graphs while excluding the large redundant model streams.  Human proofs
+  show that FiveCDC pulls back through graph coverings and that the
+  specified Petersen four-pole substitution preserves FiveCDC for every
+  port bijection.  The latter has a displayed 13-row certificate checked
+  on all 550 labelled boundary assignments.  No target UNSAT result was
+  found.  `LOCAL_FRONTIER_SHA256SUMS_20260728` freezes the compact direct,
+  square, sorted-profile, and retained order-14 certificate artifacts.
 - The parity-element/kernel-closure package: a human linear-algebra and
   cographic-base reformulation; exact positive star-fibre frontiers through
   order 14; an independently exhausted generic Type-A countermodel; and a

@@ -1496,3 +1496,28 @@ Open obligations:
     evidence only. The full same-level-component boundary theorem remains
     open. See
     `scratch/jaeger-simultaneous-triangle-lift-plateau-search.md`.
+
+92. **Whole-fibre square selection:** prove that whenever a downstairs
+    star fibre has an exact-good state, every eligible square smoothing has
+    some (pair-dependent) good state with a good local lift.  A fixed
+    outside five-cover extends exactly when the deleted labels are equal or
+    disjoint.  Complete censuses have zero failures through downstairs
+    order 14, including an independently replayed 572,880-witness final
+    layer, so any simple 3-edge-connected cubic countermodel to the stronger
+    local-selection statement has order at least 16.
+    Status: **OPEN / exact finite frontier**.
+
+93. **Full plateau-component boundary:** prove that every positive
+    same-\(d_{\min}\) exchange component has an edge to a lower level.
+    Immediate scalar descent, fixed-kernel exposure, and immediate
+    lexicographic descent of the sorted seven-defect profile are all false.
+    The new order-36 sorted-profile local minimum escapes in two same-level
+    moves, so it is not a trapped component.
+    Status: **OPEN / three one-step strengthenings refuted**.
+
+94. **Minimal-counterexample substitution reduction:** characterize
+    non-covering multipoles whose boundary relation is universally
+    FiveCDC-extendable.  Ordinary graph covers and the adjacent-vertex
+    Petersen four-pole substitution are now soundly positive and cannot
+    generate a smallest counterexample from a positive base.
+    Status: **OPEN beyond the proved operations**.
