@@ -21,6 +21,36 @@ arguments for line-by-line human checking, separate computational claims
 from human proofs, and require independent specialist review before
 submission.
 
+## Five-pole path-extension and ear frontier
+
+The newest five-pole branch is deliberately scoped as a reformulation and
+bounded evidence, not a resolution:
+
+- [`docs/five-pole-realizability-frontier.md`](docs/five-pole-realizability-frontier.md)
+  gives a line-by-line path-extension proof that universal nonemptiness of
+  the stated internally bridgeless five-pole boundary relation is already
+  equivalent, after the standard reductions, to FiveCDC.  Consequently the
+  proposed universal 46-of-62 orbit lower bound would be stronger than the
+  original conjecture; it is not a known auxiliary lemma.
+- [`search/five-pole-46-threshold-order15-20260727/`](search/five-pole-46-threshold-order15-20260727/)
+  is an exact threshold census of all 69,243 connected simple internally
+  bridgeless terminal-distinct cubic five-pole cores of order 15.  Every
+  record reaches 46 satisfiable boundary orbits.  The package includes the
+  primary classifier, all eight transcripts, hashes, a fresh canonical
+  corpus/structure replay, and an optional byte-identical full replay.
+  Positive models were not retained, so the classifier and CaDiCaL remain
+  in the trust base.
+- [`scratch/d5-five-pole-ear-operator-frontier.md`](scratch/d5-five-pole-ear-operator-frontier.md)
+  proves the exact open-ear operator and records two checked restricted
+  infinite ear families.  It also gives an abstract, explicitly
+  non-graph-realizability countermodel showing why coarse support and
+  switching invariants cannot prove the universal 46-orbit statement.
+  The primary and independent standard-library audits are retained beside
+  the note.
+
+None of these artifacts proves or disproves FiveCDC, and none concerns the
+orientable variant.
+
 ## Main research drafts
 
 - [`preprint-rooted-four-cut/output/pdf/main.pdf`](preprint-rooted-four-cut/output/pdf/main.pdf)

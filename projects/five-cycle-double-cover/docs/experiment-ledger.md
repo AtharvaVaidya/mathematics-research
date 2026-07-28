@@ -1079,6 +1079,8 @@ boundary color-orbit.  Its extended ledger contains:
   sizes \(46,56,57,58,60,61,62\);
 - 298 sharp 46-state poles, every complete relation equal to one ordered
   \(C_5\)-cap relation;
+- 69,243 internally bridgeless five-poles at order 15, every one reaching
+  the 46-state threshold in a stopping census;
 - 6,894 gluing-admissible five-poles through order 13 and no disjoint
   complete pair under any terminal permutation;
 - 19,513 internally bridgeless four-poles through order 14, all with nine
@@ -1099,6 +1101,21 @@ Rejected boundary states trust CaDiCaL rather than retained per-query
 UNSAT certificates.  The result is a reproducible finite census, not a
 certified counterexample, a universal pole theorem, or a five-CDC
 resolution.
+
+The order-15 threshold transcripts and structural replay are frozen in
+`search/five-pole-46-threshold-order15-20260727/`.  This run stops after
+46 admitted states and therefore does not supply an exact order-15
+profile.
+
+A human scope correction in
+`docs/five-pole-realizability-frontier.md` shows that universal nonempty
+state relations for internally bridgeless five-poles would already imply
+Five-CDC: replace one edge of a bridgeless cubic graph by a six-edge path,
+use the five internal path vertices as terminals, and contract any pole
+labelling back through the equality of its two endpoint labels.  The
+reverse extension is explicit.  Therefore the proposed 46-state theorem
+is stronger than the original conjecture and must not be presented as a
+strictly easier auxiliary target.
 
 ## Required fields for search runs
 

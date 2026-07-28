@@ -858,14 +858,38 @@ marked-core, three-vertex-path, and 2-lift samples through pole order 25,
 orbits also have at least 46 states.  These are exhaustive only through
 order 13 and in the explicitly named finite families.
 
+A threshold-only extension exhausts all 69,243 internally bridgeless
+order-15 cores.  Every record reaches 46 satisfiable boundary orbits;
+there is no order-15 counterexample to the threshold.  Since the
+classifier stops at 46, this run does not determine the full state-size
+profile.  A fresh canonical-corpus replay, bridge checks, transcripts,
+and an optional byte-identical CaDiCaL replay are in
+`search/five-pole-46-threshold-order15-20260727/`.
+
 The internal-bridge restriction has a short human proof in
 `docs/five-pole-realizability-frontier.md`: a bridge splitting off
 \(k\le2\) distinct terminals creates a cycle-separating cut of size
 \(k+1\le3\), contradicting the reduced cyclically 4-edge-connected
 domain.  The universal 46-state lower bound remains unproved.  If true, it
 would force two five-pole shore relations to intersect by
-\(46+46-62=30\), excluding the corresponding five-cut; it would still not
-resolve highly connected graphs.
+\(46+46-62=30\), excluding the corresponding five-cut.
+
+A scope audit proves that the universal lower bound would in fact resolve
+standard Five-CDC, rather than merely remove five-cuts.  Given any edge
+\(uv\) of a simple bridgeless cubic graph, replace it by a six-edge path
+with five new degree-two terminal vertices.  The resulting five-pole core
+is internally bridgeless.  Any \(D_5\)-labelling of the pole has equal
+labels on the two path-end edges after summing over the old vertices, so
+it contracts back to a \(D_5\)-labelling of the original graph.
+Conversely, the closed label walk
+\[
+01,02,03,01,02,01
+\]
+extends any normalized label on the replaced edge, with terminal labels
+\(12,23,13,12,12\).  Thus universal nonemptiness for this five-pole class
+is already equivalent, after the standard reduction, to Five-CDC; the
+46-state assertion is strictly stronger.  The complete human proof is in
+`docs/five-pole-realizability-frontier.md`.
 
 The adjacent four-pole obstruction from Máčajová--Mazzuoccolo--Tabarelli
 has also been tested without being claimed solved.  Every one of the

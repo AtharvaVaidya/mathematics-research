@@ -6,11 +6,33 @@ Status: **AI-assisted research draft; the Five-Cycle Double Cover
 Conjecture remains unresolved.**
 
 This manifest records the material included through the
-`codex/fivecdc-matching-frontier-20260727` branch, which extends the
-earlier `codex/five-cdc-marked-circuits-20260727` publication branch.
+`codex/fivecdc-matching-frontier-20260727` branch, including the later
+five-pole path-extension, order-15 threshold, and open-ear update.  It
+extends the earlier `codex/five-cdc-marked-circuits-20260727` publication
+branch.
 OpenAI Codex agents, directed by Atharva Vaidya, generated or revised the
 arguments, programs, computations, audits, and prose. Agent cross-checks
 are not independent human verification or peer review.
+
+## Five-pole path-extension and ear frontier
+
+- `docs/five-pole-realizability-frontier.md` gives the human-checkable
+  bridge and path-extension lemmas and states the corrected logical scope:
+  universal boundary nonemptiness in the stated class would already imply
+  standard FiveCDC.
+- `search/five-pole-46-threshold-order15-20260727/` contains all 69,243
+  order-15 canonical records, eight threshold transcripts, the primary
+  CaDiCaL classifier, checksums, report, and an independent
+  structure/corpus verifier with optional full replay.
+- `scratch/d5-five-pole-ear-operator-frontier.md` and its two audit
+  programs give the exact ear operator, restricted finite semigroups, and
+  an independently replayed abstract countermodel to coarse induction.
+  The countermodel is not claimed to be graph-realizable.
+- `FIVE_POLE_FRONTIER_SHA256SUMS` freezes the focused proof/audit sources
+  and the nested order-15 package manifest.
+
+This update does not prove or disprove FiveCDC and does not address the
+orientable variant.
 
 ## Prescribed-root matching frontier
 

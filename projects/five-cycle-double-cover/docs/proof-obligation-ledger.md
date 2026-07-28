@@ -1127,3 +1127,21 @@ Open obligations:
     fixed-five scope.  It is not a universal full-signature theorem and
     not Five-CDC.  See
     `search/four-pole-order28-cyclic4-cap-20260727/`.
+70. **Universal five-pole nonemptiness is already equivalent to the
+    standard conjecture, and the 46-state screen reaches order 15:**
+    replace an edge \(uv\) of a finite simple bridgeless cubic graph by a
+    six-edge path whose five internal vertices are the terminals of a
+    five-pole.  Every proper edge of the new core lies on a circuit.
+    Summing a pole \(D_5\)-labelling over the old vertex set forces the
+    first and last path-edge labels to agree, so deleting the path and
+    restoring \(uv\) gives a FiveCDC of the original graph.  Conversely,
+    after normalizing the old edge label to \(01\), the path labels
+    \(01,02,03,01,02,01\) and semiedge labels
+    \(12,23,13,12,12\) extend the cover.  Thus the universal 46-of-62
+    theorem would resolve FiveCDC; it is not merely a five-cut reduction.
+    The bounded threshold census nevertheless has a clean extension: all
+    69,243 canonical internally bridgeless order-15 five-poles reach 46
+    states, with zero below-threshold records.  Structural replay passes,
+    while the universal nonemptiness proof remains exactly the unresolved
+    obligation.  See `docs/five-pole-realizability-frontier.md` and
+    `search/five-pole-46-threshold-order15-20260727/`.

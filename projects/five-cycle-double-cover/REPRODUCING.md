@@ -21,6 +21,43 @@ temporary directory is removed after success or failure.
 The frontier statement concerns one explicit positive instance.  It is not a
 census or clearance of the full reduced minimum-counterexample domain.
 
+## Five-pole path-extension and ear frontier
+
+The path-extension argument is a displayed human proof in
+`docs/five-pole-realizability-frontier.md`.  The order-15 threshold package
+has a quick standard-library verifier:
+
+```sh
+shasum -a 256 -c FIVE_POLE_FRONTIER_SHA256SUMS
+python3 search/five-pole-46-threshold-order15-20260727/verify.py
+```
+
+It checks the package manifest, parses all 69,243 graph6 records, verifies
+the degree profile and absence of proper-edge bridges, and regenerates the
+canonical `geng` corpus for exact comparison.  A full classifier replay,
+requiring nauty, C++17, and CaDiCaL, is available as:
+
+```sh
+python3 search/five-pole-46-threshold-order15-20260727/verify.py --replay
+```
+
+The ear-operator computations use only the Python standard library:
+
+```sh
+python3 scratch/audit_five_pole_ear_operator.py \
+  > /tmp/d5-ear-quick.json
+python3 scratch/audit_five_pole_ear_operator.py --extended \
+  > /tmp/d5-ear-extended.json
+python3 scratch/verify_d5_ear_countermodel_independent.py \
+  > /tmp/d5-ear-countermodel-independent.json
+```
+
+The extended audit reconstructs the 72-state restricted semigroup; the
+independent program recomputes the 6,240-word universe and abstract
+countermodel without importing the primary audit.  The countermodel is not
+claimed to be a graph pole.  These checks provide no proof or disproof of
+FiveCDC.
+
 ## Marked-circuits preprint and companion checks
 
 The 29-page publication draft is

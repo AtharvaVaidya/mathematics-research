@@ -20,6 +20,22 @@ copied into a separate clean clone; it was not modified or committed.
   reduction, the disconnected singleton-case Tait theorem, checked
   countermodels to weaker rotation claims, and the prescribed-root
   connected singleton case left explicitly open.
+- The five-pole path-extension reformulation in
+  `docs/five-pole-realizability-frontier.md`, including the
+  human-checkable proof that universal boundary nonemptiness in the stated
+  class would already imply standard FiveCDC.
+- The complete threshold-only order-15 five-pole package in
+  `search/five-pole-46-threshold-order15-20260727/`: 69,243 canonical
+  internally bridgeless cores, eight retained transcripts, the CaDiCaL
+  classifier, a fresh-corpus structural replay, an optional byte-identical
+  full replay, and exact trust/scope warnings.
+- The exact open-ear operator note and two standard-library audit programs:
+  a seven-state semigroup for repeated two-internal-vertex ears, a
+  72-state bounded-port semigroup, and an independently replayed abstract
+  countermodel to coarse induction.  The abstract relation is expressly
+  not asserted to be graph-realizable.  The compact
+  `FIVE_POLE_FRONTIER_SHA256SUMS` ledger freezes these sources and the
+  order-15 package manifest.
 - The root-insertion update: a human-checkable proof closing the whole
   all-singleton branch for the standard five-cycle-double-cover
   conclusion, the exact two-factor interlacing criterion, C++ producer,
