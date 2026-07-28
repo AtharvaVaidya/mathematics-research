@@ -41,6 +41,33 @@ hypergraphs, yet the whole plateau is root-universal.  See
 These are exact route counterexamples and a positive finite plateau result,
 not a proof or disproof of FiveCDC.
 
+The sharper terminal-\(\chi\) chain census now checks every one of the
+642,167 fixed-distance subplateaus arising from all 480 biconnected simple
+cubic graphs of order 14.  Every bad subplateau has a neutral exit to lower
+factor-component-chain distance; an independent order-12 implementation
+agrees on 33,610 subplateaus.  Two standalone terminal witnesses also show
+why this finite pattern has not yet become a proof: a neutral
+shared-coordinate self-reentry switch can raise the distance \(2\to3\),
+and a second terminal state has no immediate neutral descent at all even
+though a neutral \(2\to2\to1\) route exists.  See
+`scratch/d5-terminal-chi-chain-lexicographic-target.md` and
+`scratch/d5-terminal-shared-pair-self-reentry-no-go.md`.  The universal
+closed-subplateau exit lemma remains open.
+
+The reduced Fano-flow branch has an exact affine pair-circuit theorem:
+two value-\(s\) edges admit the required pure-deletion circuit precisely
+when their endpoint pairs in the affine-complement circuit decomposition
+agree.  The surviving APX obligation is to prove that some such affine
+pair is also a packing deletion pair.  The frozen strict order-24 near-state
+has APX score exactly one; its independent checker enumerates all 4,681
+simple circuits, 1,371 legal switches, and 180 still-bad neighbours, every
+one retaining positive APX score.  Global collision identities and explicit
+four-defect certificates are proved, but aggregate counts and defect-weight
+profiles are too weak to force the required correlation.  See
+`scratch/fano-reduced-kp-two-bond-frontier.md` and
+`scratch/fano-apx-score1-order24.json`.  This is a checked near-state and a
+conditional reduction, not a FiveCDC proof.
+
 The independent \(K_6\)-reformulation publication audit is in
 `preprint-k6/NO-GO.md`.  It likewise recommends **no standalone preprint**:
 the duad/syntheme encoding substantially overlaps Král' et al. (2009), and

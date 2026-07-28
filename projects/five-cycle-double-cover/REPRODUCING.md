@@ -54,6 +54,55 @@ support, no positive exit, and no uncovered root pair.  This refutes a
 statewise connectivity shortcut while supporting—but not proving—the
 terminal-plateau root-universality conjecture.
 
+## Terminal-chain and affine-pair frontiers
+
+The complete order-14 terminal-\(\chi\), fixed-distance report and its
+independent order-12 control are checked by:
+
+```sh
+(
+  cd scratch
+  shasum -a 256 -c d5-terminal-chi-chain-SHA256SUMS
+)
+python3 scratch/verify_d5_terminal_chi_chain_lex_order14_report.py
+python3 scratch/audit_d5_terminal_chi_chain_lex_order12.py
+python3 scratch/check_d5_terminal_shared_pair_self_reentry_no_go.py
+python3 scratch/check_d5_terminal_up_without_down_no_go.py
+```
+
+The frozen order-14 totals are 33,598 terminal \(\chi\)-plateaus, 642,167
+fixed-distance bad subplateaus, maximum distance three, and zero failed
+subplateaus.  The independent order-12 totals are 2,659 terminal plateaus,
+33,610 bad subplateaus, and zero failures.  The last two commands verify
+genuine terminal-plateau countermodels to distance-primary and immediate
+greedy descent.  These results leave the universal closed-subplateau exit
+lemma open.
+
+The reduced affine-pair package has a quick standard-library replay:
+
+```sh
+(
+  cd scratch
+  shasum -a 256 -c fano-apx-score1-SHA256SUMS
+)
+python3 scratch/check_fano_apx_score1_order24.py
+```
+
+It reconstructs the graph and flow, all 4,681 simple circuits, all 1,371
+legal one-circuit switches, the 180 still-bad neighbours and their complete
+APX-score distribution, the unique initial affine/packing intersection,
+its four canonical defect vectors, and an explicit repairing circuit.  To
+build the CaDiCaL-backed search producer:
+
+```sh
+c++ -std=c++20 -O3 -DNDEBUG \
+  scratch/search_fano_reduced_one_switch_binary.cpp \
+  -I/opt/homebrew/include -L/opt/homebrew/lib -lcadical \
+  -o /tmp/search_fano_reduced_one_switch_binary
+```
+
+The score-one state is a near-state only.  APX and FiveCDC remain open.
+
 ## Five-pole path-extension and ear frontier
 
 The path-extension argument is a displayed human proof in
