@@ -103,6 +103,70 @@ c++ -std=c++20 -O3 -DNDEBUG \
 
 The score-one state is a near-state only.  APX and FiveCDC remain open.
 
+## First-foreign splice, block-potential, and Fourier checks
+
+The local splice identity and its complete order-12 terminal audit are
+replayed by:
+
+```sh
+python3 scratch/check_d5_terminal_both_arc_reentry_no_go.py
+python3 scratch/check_d5_unavoidable_reentry_switch_no_go.py
+python3 scratch/audit_d5_first_foreign_splice_order12.py
+shasum -a 256 -c scratch/d5-first-foreign-splice-SHA256SUMS
+```
+
+The first command verifies the seven-state terminal counterexample to
+immediate rescue.  The second independently reconstructs the same
+obstruction and its exact neutral two-switch repair.  The third exhausts
+all 81 biconnected simple cubic graphs of order 12 and checks 2,154,613
+first-foreign configurations, including 1,688,084 rooted distance-two
+cases, with zero failures.
+
+The corrected order-14 \(b^*\) package explicitly enforces
+\(\lvert P\cap Q\rvert=1\).  Check its frozen transcripts and hashes by:
+
+```sh
+python3 scratch/verify_d5_terminal_foreign_block_order14.py
+shasum -a 256 -c \
+  output/d5-terminal-foreign-block-potential/SHA256SUMS
+```
+
+The expected primary summaries have 480 graphs, 537,418 normalized flows,
+33,598 terminal plateaus, and respectively 646,399 ordered and 643,528
+endpoint-symmetric fixed-\((d,b^*)\) subplateaus, with zero failures.  A
+separately implemented directed-root audit is checked by:
+
+```sh
+python3 scratch/verify_d5_cyclic_block_lex_reports.py
+shasum -a 256 -c scratch/d5-cyclic-block-lex-SHA256SUMS
+python3 scratch/check_d5_cyclic_block_one_step_no_go_order14.py
+python3 scratch/check_d5_no_fresh_coordinate_blocker_order12.py
+```
+
+It reports 1,293,664 directed-root subplateaus at order 14 with zero
+failures.  The standalone witness proves that restricting a descent step
+to the minimizing root component or first blocker is false, even though a
+neutral third-pair switch immediately rescues the roots.  The last command
+checks the all-five-coordinate witness showing that the associated
+fresh-coordinate multi-splice lemma is not universally available.
+
+The exact Fourier/Laplacian count and the failed modular corollary are
+replayed by:
+
+```sh
+python3 scratch/audit_d5_fourier_laplacian_count.py \
+  --census-max-order 10
+shasum -a 256 -c scratch/d5-fourier-laplacian-SHA256SUMS
+```
+
+The checker compares the signed-rank formula with direct \(D_5\)-flow
+counts, including loops and parallel edges.  It also verifies that the
+proposed mod-3 nonvanishing route already fails on \(K_4\).  The frozen
+order-12 report extends the complete bridgeless cubic census to 107 graphs
+through order 12 and records the first failures of two naive 2-adic
+valuation predictions.  None of these finite or structural checks proves
+or disproves FiveCDC.
+
 ## Five-pole path-extension and ear frontier
 
 The path-extension argument is a displayed human proof in

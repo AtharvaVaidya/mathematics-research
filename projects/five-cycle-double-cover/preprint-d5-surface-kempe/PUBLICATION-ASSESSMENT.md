@@ -15,8 +15,9 @@ The strongest publishable-looking content is:
   reconfiguration trap cannot lift unchanged;
 - the explicit four-coordinate generalized-switch orbit trap, which closes a
   natural contraction/reconfiguration strategy; and
-- the complete order-12 terminal-plateau census, with the deliberately weaker
-  order-14 global-maximum result.
+- the first-foreign factor-splice identity; and
+- the complete terminal-plateau chain and refined blocker censuses through
+  order 14, together with exact witnesses delimiting the local lemmas.
 
 The broad embedding dictionary is established background, not a contribution
 that should be advertised as new. The exact combination with proper
@@ -53,8 +54,9 @@ This is a targeted check, not a systematic prior-art review.
 2. Search specifically for coloured crystallizations, edge-coloured
    triangulations, transition systems, and permutation formulas for
    split/merge changes under Kempe switches.
-3. Obtain a genuinely independent implementation of the full order-12
-   terminal-plateau census, not only focused semantic replays.
+3. Obtain independent expert review of both order-14 implementations and
+   archive the full primary blocker transcripts; the second implementation
+   already supplies a separately structured directed-root control.
 4. Archive exact source, reports, `geng` version, compiler version, and
    checksums at an immutable commit or DOI.
 5. Decide whether the note should lead with the exact switch formula or the

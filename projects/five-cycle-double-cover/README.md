@@ -54,6 +54,40 @@ though a neutral \(2\to2\to1\) route exists.  See
 `scratch/d5-terminal-shared-pair-self-reentry-no-go.md`.  The universal
 closed-subplateau exit lemma remains open.
 
+The newest refinement proves a human-checkable first-foreign factor-splice
+identity and measures the intervening foreign factor-component blocks by a
+secondary potential \(b^*\).  Two separately implemented complete censuses
+through order 14 find no closed terminal fixed-\((d,b^*)\) subplateau.  In
+the primary lower-index-root accounting there are 646,399 such subplateaus;
+in the independent directed-root accounting there are 1,293,664.  Both
+have zero failures, and the primary full transcripts are protected by an
+independent verifier and SHA-256 ledger.  A seven-state order-12 terminal
+plateau refutes the stronger claim that the prescribed root-component
+switch must immediately rescue the roots.  A separate order-14 witness
+shows that even switching the root component or first blocker can fail,
+while one neutral third-pair switch succeeds.  See
+`scratch/d5-first-foreign-splice-lemma.md`,
+`scratch/d5-terminal-foreign-block-potential-through-order14.md`, and
+`scratch/d5-cyclic-block-one-step-no-go-order14.md`.  A clean
+fresh-coordinate multi-splice lemma explains that third-pair rescue, but
+an all-five-coordinate order-12 state refutes universal availability of a
+fresh coordinate.  These results isolate the neutral closed-cage exclusion
+still needed for a proof; they do not resolve FiveCDC.
+
+An independent Fourier calculation also gives an exact formula for the
+number of \(D_5\)-flows as a signed sum over contracted edge sets, involving
+the binary ranks of their quotient Laplacians.  Direct enumeration agrees
+on \(K_4\), \(K_{3,3}\), the cube, the Petersen graph, and loop/parallel-edge
+controls.  The tempting mod-3 nonvanishing corollary fails already on
+\(K_4\), whose signed-rank sum is \(18\).  The exact identity and its
+standard-library checker are in
+`scratch/d5-fourier-laplacian-count.md` and
+`scratch/audit_d5_fourier_laplacian_count.py`.  The complete bridgeless
+cubic census through order 12 finds no vanishing leading coefficient, but
+\(K_{3,3}\) and the cube already refute two naive 2-adic leading-term
+predictions.  This is a structural counting identity, bounded evidence,
+and several failed modular proof routes, not a resolution.
+
 The reduced Fano-flow branch has an exact affine pair-circuit theorem:
 two value-\(s\) edges admit the required pure-deletion circuit precisely
 when their endpoint pairs in the affine-complement circuit decomposition

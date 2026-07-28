@@ -426,6 +426,7 @@ static State parse_state_hex(const std::string& text, int edge_count) {
     return state;
 }
 
+#ifndef D5_CHAIN_POTENTIAL_LIBRARY
 int main(int argc, char** argv) {
     if (argc == 6 && std::string(argv[1]) == "--target") {
         const std::string graph6 = argv[2];
@@ -571,3 +572,4 @@ int main(int argc, char** argv) {
     if (original_output) std::cout.rdbuf(original_output);
     return failures ? 1 : 0;
 }
+#endif

@@ -74,10 +74,12 @@ can always rescue two prescribed edges; this concerns a restricted
 strategy and does not refute rooted Kempe universality or FiveCDC.
 Finally, exhaustive computations show that every
 terminal equal-Euler-characteristic Kempe plateau is root-universal for
-all 81 biconnected simple cubic graphs on 12 vertices.  A weaker
-global-maximum test succeeds for all 480 such graphs on 14 vertices.
-These are finite results only.  The universal terminal-plateau statement
-is left explicitly as a conjecture.
+all biconnected simple cubic graphs through 14 vertices.  At order 14 this
+checks 33,598 terminal plateaus and 642,167 fixed-distance subplateaus.  A
+human-checkable first-foreign factor-splice lemma refines the distance by a
+cyclic blocker statistic; two implementations again find no obstruction
+through order 14.  These are finite results only.  The universal
+terminal-plateau statement is left explicitly as a conjecture.
 \end{abstract}
 
 \section{Status, conventions, and contribution boundary}
@@ -792,29 +794,73 @@ coordinate and reducing to a four-coordinate argument.  This support
 diagnostic is present in the producer report but is not among the fields
 recomputed by the focused independent verifier described below.
 
-At order 14, a complete but weaker test was run.  In each Kempe orbit,
-retain the states having the orbit's global maximum \(\Phi\), and split
-them into connected equal-\(\Phi\) components.  Every such component was
-root-universal:
+At order 14, the stronger terminal-plateau chain test was run completely.
+For fixed roots \(r,s\), let \(d_q(r,s)\) be the minimum number of factor
+components in an intersection chain from \(r\) to \(s\).  Thus \(d=1\)
+is exactly the root-good condition.  Within every terminal
+\(\Phi\)-plateau, split the states of each fixed bad value \(d>1\) into
+components under neutral moves preserving \(d\).  Every such component
+had a neutral boundary edge to smaller distance:
 \[
 \begin{array}{lr}
 \toprule
 \text{biconnected simple cubic graphs} &480\\
 \text{normalized \(D_5\)-flows} &537{,}418\\
-\text{Kempe orbits} &33{,}102\\
-\text{maximum number of max-\(\Phi\) components in one orbit} &12\\
-\text{non-root-universal max-\(\Phi\) components} &0\\
+\text{terminal \(\Phi\)-plateaus} &33{,}598\\
+\text{fixed-\(d>1\) subplateaus} &642{,}167\\
+\text{maximum factor-component-chain distance} &3\\
+\text{failed fixed-distance subplateaus} &0\\
 \bottomrule
 \end{array}                                                  \tag{13}
 \]
-Equation (13) does not test terminal plateaus below the global orbit
-maximum and must not be reported as a complete order-14 test of the
-terminal-plateau conjecture.
+An independently structured Python implementation agrees through order
+12 on 2,659 terminal plateaus and 33,610 fixed-distance subplateaus, again
+with no failure.  Equation (13) is finite evidence only; it does not prove
+the universal closed-subplateau exit statement.
 
-As a separate control, the union of each entire Kempe orbit was tested for
-root-universality through order 14.  The same 33,102 order-14 orbits gave
-6,951,420 orbit/root-pair tests and zero failures.  Again, this is finite
-evidence only.
+\subsection{A first-foreign splice and a refined finite target}
+
+For a coordinate pair \(P\), write \(Y_P\) for its factor.  Let \(P,Q\)
+share exactly one coordinate, put \(P'=P\mathbin\triangle Q\), and let
+\(H\) be a component of \(Y_Q(q)\).  If \(q'\) is obtained by switching
+\(Q\) on \(H\), then the following edgewise identity holds:
+\[
+             Y_{P'}(q')
+             =Y_P(q)\mathbin\triangle\bigl(Y_Q(q)\setminus H\bigr).
+                                                               \tag{14}
+\]
+Outside \(H\), the indicator of \(Y_{P'}\) is the sum modulo two of
+the indicators of \(Y_P,Y_Q\).  On \(H\), transposing \(Q\) converts
+membership in \(Y_{P'}\) to membership in \(Y_P\), proving (14).
+
+Let \(C\) be the \(Y_P\)-component through a root \(r\), and let \(D\ne H\)
+be a \(Y_Q\)-component.  Orient \(C\) from \(r\), ignoring all returns to
+\(H\).  If the first component of \(Y_Q\setminus H\) encountered is \(D\),
+then the new \(Y_{P'}\)-component through \(r\) meets \(D\).  Indeed, the
+initial segment of \(C\) survives in (14), the common path with \(D\)
+cancels at the first encounter, and cubicity pairs the incoming \(C\)-edge
+with the outgoing \(D\)-edge.  For a distance-two chain \(C,D\), this
+proves that the switch does not increase the rooted distance.
+
+The identity suggests counting maximal foreign \(Y_Q\)-component blocks
+encountered before \(D\).  Minimizing this count over both orientations
+and all eligible shared-coordinate shortest first pairs defines \(b^*\);
+when no eligible pair exists, \(b^*=0\), meaning only that this particular
+obstruction is absent.  Complete fixed-\((d,b^*)\) terminal-subplateau
+censuses through order 14 gave zero failures.  The primary
+lower-index-root implementation found 646,399 subplateaus, while a
+separate directed-root implementation found 1,293,664.
+
+The refinement is not a local greedy theorem.  A seven-state terminal
+plateau on 12 vertices has a neutral prescribed switch with
+\(d:2\to2\), not \(2\to1\).  A separate order-14 terminal witness has
+\((d,b^*)=(2,1)\), but every switch of the minimizing root component or
+first blocker either decreases \(\Phi\) or raises \(d\); a neutral switch
+on a third coordinate pair reaches \(d=1\).  Thus the remaining universal
+obligation is a global neutral closed-cage exclusion, not a one-switch
+rule.  In that witness the unused fifth coordinate gives a transparent
+multi-splice, but this is not universal either: an exact order-12 terminal
+state with \(b^*=1\) uses all five coordinates.
 
 \subsection{Reproducibility and independent checks}
 
@@ -829,15 +875,19 @@ python3 scratch/check_d5_capped_ladder_delay_family.py
 python3 scratch/verify_d5_surface_chi_plateaus_order12.py
 python3 scratch/verify_d5_root_euler_potential_reports.py
 python3 scratch/verify_d5_root_kempe_order14_report.py
+python3 scratch/verify_d5_terminal_chi_chain_lex_order14_report.py
+python3 scratch/verify_d5_terminal_foreign_block_order14.py
+python3 scratch/verify_d5_cyclic_block_lex_reports.py
+python3 scratch/check_d5_cyclic_block_one_step_no_go_order14.py
 \end{verbatim}
 The order-12 plateau verifier regenerates all graph identities and report
 arithmetic, then independently recomputes five deterministic
 boundary/extremal rows with a separately structured traversal.  The
-order-14 maximum-\(\Phi\) verifier regenerates all 480 graph identities
-and report arithmetic, then independently recomputes ten selected rows
-across orders 12 and 14.  These focused replays are independent semantic
-checks, not second full enumerations; that limitation is part of the
-claim.
+terminal-chain and blocker verifiers check the frozen complete order-14
+reports, summary arithmetic, failure fields, and cryptographic hashes.
+The directed-root blocker implementation is separately structured and has
+its own frozen summaries and hash ledger.  These checks certify finite
+computations only.
 
 \section{What has and has not been established}
 
@@ -851,7 +901,9 @@ The human-checkable results in this note are:
  \item the four-coordinate one-step locking lemma and the cubic \(D_4\)
  trap theorem; and
  \item the capped-ladder lower bound proving that root-component rescue
- has no universal constant radius.
+ has no universal constant radius; and
+ \item the first-foreign factor-splice identity and its distance
+ nonincrease consequence.
 \end{enumerate}
 The cube topology change is a short explicit certificate.  The
 12-state contraction trap and the plateau tables are finite
@@ -859,8 +911,9 @@ computer-assisted results with full instances, producers, and independent
 focused checkers.
 
 No proof or disproof of the standard FiveCDC has been obtained.  No
-orientable FiveCDC result has been obtained.  The terminal-plateau
-conjecture is a proof target suggested by the computations, not a theorem.
+orientable FiveCDC result has been obtained.  The terminal-plateau and
+closed-subplateau exit statements are proof targets suggested by the
+computations, not theorems.
 A responsible public submission would require independent checking by a
 graph theorist, a broader literature comparison, and archival publication
 of the exact code and reports.

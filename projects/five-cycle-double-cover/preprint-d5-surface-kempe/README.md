@@ -37,12 +37,18 @@ python3 scratch/check_d4_cubic_trap_root_universality.py
 python3 scratch/verify_d5_surface_chi_plateaus_order12.py
 python3 scratch/verify_d5_root_euler_potential_reports.py
 python3 scratch/verify_d5_root_kempe_order14_report.py
+python3 scratch/verify_d5_terminal_chi_chain_lex_order14_report.py
+python3 scratch/verify_d5_terminal_foreign_block_order14.py
+python3 scratch/verify_d5_cyclic_block_lex_reports.py
+python3 scratch/check_d5_cyclic_block_one_step_no_go_order14.py
+python3 scratch/check_d5_no_fresh_coordinate_blocker_order12.py
 ```
 
 The complete census producers require Brendan McKay's `geng`. The
-independent verifiers regenerate graph identities and arithmetic but
-semantically replay selected rows rather than rerunning every expensive
-enumeration. That scope is stated explicitly in the manuscript.
+independent verifiers check graph identities, arithmetic, frozen report
+hashes, and focused semantics.  The directed-root blocker implementation
+is separately structured.  Their exact scopes are stated in the
+manuscript.
 
 The draft contains a full AI-use disclosure. It should not be submitted or
 cited as vetted research until a human graph theorist has checked the proofs,

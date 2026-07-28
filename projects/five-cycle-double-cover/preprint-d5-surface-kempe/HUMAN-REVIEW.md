@@ -19,6 +19,8 @@ certificates, and large finite computations.
    proposition is a separate finite claim.
 7. The cubic \(D_4\) trap theorem. Check the complementary-pair Tait quotient
    and both root-label cases; the orbit-wide circuit hypothesis is essential.
+8. The first-foreign splice identity and its transition-pairing consequence.
+   Check separately that it proves distance nonincrease, not immediate rescue.
 
 ## Small certificates
 
@@ -40,12 +42,19 @@ python3 scratch/check_d4_cubic_trap_root_universality.py
 python3 scratch/verify_d5_surface_chi_plateaus_order12.py
 python3 scratch/verify_d5_root_euler_potential_reports.py
 python3 scratch/verify_d5_root_kempe_order14_report.py
+python3 scratch/verify_d5_terminal_chi_chain_lex_order14_report.py
+python3 scratch/verify_d5_terminal_foreign_block_order14.py
+python3 scratch/verify_d5_cyclic_block_lex_reports.py
+python3 scratch/check_d5_cyclic_block_one_step_no_go_order14.py
+python3 scratch/check_d5_no_fresh_coordinate_blocker_order12.py
 ```
 
-The order-12 terminal-plateau claim is stronger than the order-14 claim.
-At order 14, only connected components of the global maximum-\(\chi\)
-states in each orbit were tested. Do not rewrite this as a complete
-order-14 terminal-plateau census.
+The terminal-plateau chain census is complete through order 14.  The two
+block-potential implementations use different root accounting conventions,
+so their subplateau totals should not be conflated.  Both are finite
+censuses, not proofs for arbitrary graphs.  The two final witness checkers
+also prevent the first-foreign and fresh-coordinate lemmas from being
+overstated as universal one-step descent rules.
 
 ## Publication checks still required
 
