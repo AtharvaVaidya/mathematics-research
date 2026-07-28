@@ -1,0 +1,109 @@
+# One-boundary-five FiveCDC frontier
+
+Date: **2026-07-27**
+
+Status: **AI-assisted research draft. The standard Five-Cycle Double
+Cover Conjecture remains unresolved. No counterexample is claimed. The
+orientable variant is not analyzed here.**
+
+This index freezes the current surviving branch of the prescribed-root
+matching analysis. The all-singleton Gallai--Edmonds branch is already
+closed for the standard FiveCDC conclusion by the oddness-at-most-two
+argument in `docs/root-insertion-two-factor-frontier.md`. What remains is
+the branch with one nontrivial factor-critical component having five
+boundary edges.
+
+## Human-checkable statements
+
+`docs/one-boundary-five-oddness-frontier.md` displays proofs of the
+following statements under its precise finite, simple, bridgeless cubic
+and cyclically-four hypotheses:
+
+1. the nontrivial factor-critical component has no bridge, so its five
+   boundary edges have five distinct endpoints;
+2. every proper circuit-containing shore inside that component has
+   completed boundary at least four;
+3. a perfect matching containing a prescribed root uses exactly one root
+   and exactly one edge of the five-edge boundary;
+4. at least two distinct boundary terminals are attainable, by the
+   perfect-matching polytope;
+5. if an attainable exposed terminal has a near-perfect matching leaving
+   at most two internal odd circuits, then the completed cubic graph has
+   oddness at most four and hence a standard FiveCDC by the cited
+   small-oddness theorem; and
+6. it is enough that at most one boundary terminal fail that sufficient
+   condition.
+
+`docs/one-boundary-five-completion-frontier.md` gives a solver-free proof
+that the parameter value \(s=0\) is impossible in the cyclically-four
+branch: the singleton outside vertex and one root edge form a triangle
+whose boundary has size three.
+
+These arguments are printed for line-by-line human checking. The final
+FiveCDC implication in item 5 invokes the cited published
+Huck--Kochol small-oddness theorem; this archive does not reprove that
+external theorem.
+
+## Exact limits of those reductions
+
+The retained explicit examples show why the remaining step cannot be
+replaced by a purely local odd-circuit count.
+
+- The 9-vertex pole `H?b@bQS` has a unique relevant near-perfect matching
+  whose complement contains a triangle, refuting the proposed coforest
+  shortcut under factor-criticality alone.
+- The displayed 15-vertex pole has two relevant near-perfect matchings,
+  both leaving two odd internal circuits. This makes the threshold two
+  in the conditional reduction sharp outside the cyclically-four domain.
+- A 67-vertex locally cyclically-four factor-critical five-pole has all
+  five terminals bad even at threshold two: every relevant near-perfect
+  matching leaves at least four internal odd circuits.
+- That 67-vertex pole occurs in explicit simple cubic, bridgeless,
+  cyclically-four, non-Tait completions at \(s=1\) and \(s=2\). Both
+  displayed completions have exact oddness four. Therefore they are not
+  FiveCDC counterexamples; rather, they show that global closure of the
+  two complementary paths must be used.
+
+The exact unresolved obligation is to exploit the outside pairing/closure
+structure to obtain oddness at most two or four, a prescribed-root theta
+or exact-zero flow, or else a genuine cyclically-four non-Tait
+obstruction. None of the retained examples is such an obstruction.
+
+## Reproducible artifacts and trust boundaries
+
+The focused standard-library replays are:
+
+- `scratch/audit_factor_critical_ear_forest.py`;
+- `scratch/check_cyclic4_threshold_two_core.py`;
+- `scratch/check_cyclic4_all_bad_threshold_three_core.py`;
+- `scratch/check_one_boundary_five_completion_frontier.py`;
+- `scratch/check_s1_theta_q67_completions.py`;
+- `scratch/enumerate_one_boundary_five_outside.py`; and
+- `scratch/check_s2_q67_completion_classes.py`.
+
+The corresponding retained JSON records are checksum-frozen. The
+120-bijection \(s=1\) replay and the selected \(s=2\) replay enumerate
+perfect matchings directly. Nauty `labelg` is used only for the reported
+isomorphism-class counts; it is not needed for the displayed graph,
+small-cut, or oddness conclusions.
+
+The C++ source
+`scratch/factor-critical-five-pole-oddness-census.cpp` and retained
+`scratch/factor-critical-five-pole-oddness-order17.json` record the
+bounded order-17 pole census. The full input stream is not included in
+this compact update, so the JSON is a provenance record rather than a
+standalone replay of canonical generation. It is finite evidence only.
+
+Run the focused integrity and semantic replay commands in
+`REPRODUCING.md`. `ONE_BOUNDARY_FIVE_SHA256SUMS` freezes every file in
+this update.
+
+## AI-use disclosure
+
+OpenAI Codex agents, directed by Atharva Vaidya, developed or revised the
+arguments, programs, computations, audits, and prose in this update.
+Agent-to-agent checks are not independent human verification or peer
+review. The universal claims above are accompanied by displayed proofs,
+and computational claims are labelled separately with their replay and
+trust boundaries. Independent specialist review is required before
+submission or citation as new mathematics.

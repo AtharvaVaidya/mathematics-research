@@ -1,0 +1,154 @@
+{
+  "classification": "EXACT FINITE CHECK; NOT A FIVE-CYCLE-DOUBLE-COVER RESOLUTION",
+  "core": {
+    "all_terminal_minimum_internal_odd_circuits": 4,
+    "order": 67,
+    "terminal_source_labels": [
+      3,
+      7,
+      8,
+      9,
+      12
+    ]
+  },
+  "s0": {
+    "bridgeless_completions": 720,
+    "completions_with_explicit_cyclic_3_cut": 720,
+    "cyclically_4_edge_connected_completions": 0,
+    "labelled_completions": 720
+  },
+  "s1_identity_theta_completion": {
+    "Tait_colorable": false,
+    "Z_neighbourhoods_local_W": [
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        1,
+        3,
+        4
+      ]
+    ],
+    "bridgeless": true,
+    "complement_odd_circuit_distribution": {
+      "10": 4,
+      "4": 43137,
+      "6": 2660,
+      "8": 408
+    },
+    "cyclically_4_edge_connected": true,
+    "factor_critical_core_order": 67,
+    "matching_type_distribution": {
+      "k=1,r=1,odd=4": 24242,
+      "k=1,r=1,odd=6": 1960,
+      "k=1,r=1,odd=8": 88,
+      "k=3,r=0,odd=10": 4,
+      "k=3,r=0,odd=4": 18895,
+      "k=3,r=0,odd=6": 700,
+      "k=3,r=0,odd=8": 320
+    },
+    "oddness": 4,
+    "order": 74,
+    "perfect_matching_count": 46209,
+    "root_edges_local_W": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "simple_cubic": true,
+    "size": 111,
+    "strict_Hall_for_A": "|N({a})|=3>|{a}|=1 (Q and the two singleton components)",
+    "terminal_source_labels_to_local_W": [
+      [
+        3,
+        0
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        9,
+        3
+      ],
+      [
+        12,
+        4
+      ]
+    ]
+  },
+  "s2_lexicographic_completion": {
+    "Tait_colorable": false,
+    "Z_neighbourhoods_local_W": [
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        0,
+        2,
+        5
+      ],
+      [
+        1,
+        3,
+        4
+      ]
+    ],
+    "boundary_stub_W_indices": [
+      1,
+      3,
+      4,
+      5,
+      5
+    ],
+    "bridgeless": true,
+    "complement_odd_circuit_distribution": {
+      "4": 40562,
+      "6": 24346,
+      "8": 400
+    },
+    "cyclically_4_edge_connected": true,
+    "oddness": 4,
+    "order": 76,
+    "perfect_matching_count": 65308,
+    "root_edges_local_W": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "simple_cubic": true,
+    "size": 114,
+    "strict_Hall_checks_for_A": {
+      "{w4,w5}": "4 >= 3",
+      "{w4}": "3 >= 2",
+      "{w5}": "2 >= 2"
+    },
+    "terminal_source_labels_in_stub_order": [
+      3,
+      7,
+      8,
+      9,
+      12
+    ]
+  },
+  "schema": "one-boundary-five-completion-frontier-v1",
+  "warning": "The displayed s=1 and s=2 graphs have oddness four.  They are not oddness-six obstructions and say nothing against Five-CDC."
+}

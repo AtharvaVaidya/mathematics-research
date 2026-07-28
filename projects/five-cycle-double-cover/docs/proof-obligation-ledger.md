@@ -1145,3 +1145,31 @@ Open obligations:
     while the universal nonemptiness proof remains exactly the unresolved
     obligation.  See `docs/five-pole-realizability-frontier.md` and
     `search/five-pole-46-threshold-order15-20260727/`.
+71. **The standard all-singleton matching branch is closed, leaving one
+    factor-critical five-boundary branch:** in the all-singleton
+    Gallai--Edmonds profile, degree counting gives exactly three edges
+    inside the \(W\)-shore. A perfect matching through one such edge has a
+    complementary 2-factor with at most two odd components, so the cited
+    Huck--Kochol theorem supplies a standard FiveCDC. In the remaining
+    profile there is one nontrivial factor-critical component \(Q\) with
+    five boundary edges. A perfect matching through one prescribed root
+    satisfies \(k+2r=3\), hence \(k=r=1\), and the perfect-matching
+    polytope makes at least two \(Q\)-terminals attainable. If one attained
+    terminal has a near-perfect matching leaving at most two internal odd
+    circuits, the full graph has oddness at most four and again has a
+    standard FiveCDC. These are displayed human-checkable reductions; the
+    prescribed-root theta statement remains stronger and open. See
+    `docs/root-insertion-two-factor-frontier.md` and
+    `docs/one-boundary-five-oddness-frontier.md`.
+72. **The local at-most-one-bad-terminal lemma is false even in a globally
+    admissible one-five-boundary completion:** a 67-vertex locally
+    cyclically-four factor-critical five-pole has five bad terminals, each
+    leaving at least four internal odd circuits under every relevant
+    near-perfect matching. The solver-free \(s=0\) case always has a
+    cyclic triangle cut. Explicit \(s=1\) and \(s=2\) completions are
+    simple, cubic, bridgeless, cyclically four-edge-connected, non-Tait,
+    and have exact oddness four. Thus they are not FiveCDC
+    counterexamples. The exact surviving obligation is to exploit closure
+    of the two complementary paths through the outside shore, rather than
+    count internal odd circuits alone. See
+    `ONE_BOUNDARY_FIVE_FRONTIER_20260727.md`.

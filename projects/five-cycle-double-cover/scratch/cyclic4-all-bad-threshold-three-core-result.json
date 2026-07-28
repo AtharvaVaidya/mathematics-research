@@ -1,0 +1,94 @@
+{
+  "classification": "EXACT EXPLICIT COUNTEREXAMPLE CHECK",
+  "core": {
+    "bad_boundary_vertices": [
+      3,
+      7,
+      8,
+      9,
+      12
+    ],
+    "bad_threshold": "minimum odd internal circuits >= 3",
+    "boundary_vertices_in_source_numbering": [
+      3,
+      7,
+      8,
+      9,
+      12
+    ],
+    "factor_critical": true,
+    "locally_cyclic_four": true,
+    "order": 67,
+    "profiles": {
+      "12": {
+        "minimum_odd_internal_circuits": 4,
+        "near_perfect_matchings": 5859,
+        "odd_internal_circuit_distribution": {
+          "4": 5347,
+          "5": 392,
+          "6": 112,
+          "7": 8
+        }
+      },
+      "3": {
+        "minimum_odd_internal_circuits": 4,
+        "near_perfect_matchings": 3848,
+        "odd_internal_circuit_distribution": {
+          "4": 3592,
+          "5": 196,
+          "6": 56,
+          "7": 4
+        }
+      },
+      "7": {
+        "minimum_odd_internal_circuits": 4,
+        "near_perfect_matchings": 3848,
+        "odd_internal_circuit_distribution": {
+          "4": 3592,
+          "5": 196,
+          "6": 56,
+          "7": 4
+        }
+      },
+      "8": {
+        "minimum_odd_internal_circuits": 4,
+        "near_perfect_matchings": 3028,
+        "odd_internal_circuit_distribution": {
+          "4": 2772,
+          "5": 196,
+          "6": 56,
+          "7": 4
+        }
+      },
+      "9": {
+        "minimum_odd_internal_circuits": 4,
+        "near_perfect_matchings": 3848,
+        "odd_internal_circuit_distribution": {
+          "4": 3592,
+          "5": 196,
+          "6": 56,
+          "7": 4
+        }
+      }
+    }
+  },
+  "deleted_induced_path": [
+    4,
+    0,
+    5
+  ],
+  "logical_scope": "Refutes the purely local cyclic-four at-most-one-bad-terminal lemma. Does not refute Five-CDC and does not establish GE outside-shore realizability.",
+  "schema": "cyclic4-all-bad-threshold-three-core-v1",
+  "source": {
+    "complementary_odd_circuit_distribution": {
+      "6": 20855,
+      "8": 88
+    },
+    "construction": "cyclic junction N2-N2-N1 from arXiv:1212.3641",
+    "cyclically_four_edge_connected": true,
+    "edges": 105,
+    "oddness": 6,
+    "order": 70,
+    "perfect_matchings": 20943
+  }
+}

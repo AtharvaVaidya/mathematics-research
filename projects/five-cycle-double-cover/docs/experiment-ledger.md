@@ -2806,3 +2806,39 @@ equality/intersection relation.
 
 Frozen package:
 `search/rooted-three-pole-nontait-endpoint-frontier-20260727/`.
+
+## One-boundary-five factor-critical and completion frontier
+
+Audit date: **2026-07-27**.
+
+Direct standard-library matching enumeration verifies the 9- and
+15-vertex factor-critical pole countermodels, the 37-vertex path-deletion
+core from the retained oddness-six graph, the sharp locally
+cyclically-four threshold-two core, and a 67-vertex locally
+cyclically-four pole whose five terminals are all bad at threshold two.
+
+For the 67-vertex pole, the completion checks give:
+
+```text
+s=0 labelled completions                         720
+s=0 cyclically-four completions                    0
+s=1 terminal bijections checked                  120
+s=1 cyclically-four completions                  120
+s=1 isomorphism classes                           30
+s=1 minimum oddness                                4
+s=2 locally cyclic-four outside patterns          128
+s=2 unique labelled gluings                     9,600
+s=2 isomorphism classes                           570
+selected s=2 witness oddness                        4
+```
+
+The full \(s=1\) replay classifies small cuts and enumerates every perfect
+matching for every terminal bijection. The retained \(s=2\) command
+canonically quotients all gluings and runs the exact cut and matching
+census on the selected lexicographic witness; small-cut classification
+of all 570 representatives is optional and was skipped in the retained
+record. Nauty `labelg` supplies only the isomorphism-class counts.
+
+These are exact finite structural results and countermodels to
+intermediate local lemmas. They neither prove nor disprove FiveCDC.
+Frozen index: `ONE_BOUNDARY_FIVE_FRONTIER_20260727.md`.

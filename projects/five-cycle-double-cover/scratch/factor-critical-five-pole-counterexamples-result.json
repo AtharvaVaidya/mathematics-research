@@ -1,0 +1,193 @@
+{
+  "cases": [
+    {
+      "boundary_vertices": [
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "connected": true,
+      "edges": [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          8
+        ]
+      ],
+      "exposed_boundary_vertex": 6,
+      "factor_critical": true,
+      "graph6": "H?b@bQS",
+      "internally_bridgeless": true,
+      "minimum_completed_cut_of_cyclic_subset": 3,
+      "minimum_completed_cyclic_cut_witness": [
+        0,
+        5,
+        8
+      ],
+      "name": "forest",
+      "near_perfect_matchings": 1,
+      "odd_internal_circuit_distribution": {
+        "1": 1
+      },
+      "order": 9
+    },
+    {
+      "boundary_vertices": [
+        2,
+        3,
+        8,
+        9,
+        10
+      ],
+      "connected": true,
+      "edges": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          5,
+          13
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          6,
+          13
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          7,
+          14
+        ]
+      ],
+      "exposed_boundary_vertex": 2,
+      "factor_critical": true,
+      "graph6": "N??CA?oI?gX?AoP_Og?",
+      "internally_bridgeless": true,
+      "minimum_completed_cut_of_cyclic_subset": 2,
+      "minimum_completed_cyclic_cut_witness": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        7,
+        11,
+        12,
+        13,
+        14
+      ],
+      "name": "one_odd_circuit",
+      "near_perfect_matchings": 2,
+      "odd_internal_circuit_distribution": {
+        "2": 2
+      },
+      "order": 15
+    }
+  ],
+  "classification": "EXACT EXPLICIT COUNTEREXAMPLE CHECK",
+  "schema": "factor-critical-five-pole-counterexamples-v1"
+}

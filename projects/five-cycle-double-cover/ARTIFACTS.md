@@ -52,6 +52,14 @@ copied into a separate clean clone; it was not modified or committed.
   28, a compact cross-implementation checker, and
   `ROOT_INSERTION_SHA256SUMS`.  It does not close the prescribed-root
   version.
+- The one-boundary-five update indexed by
+  `ONE_BOUNDARY_FIVE_FRONTIER_20260727.md`: two human-checkable notes,
+  explicit factor-critical and locally cyclically-four countermodels to
+  proposed local matching lemmas, the solver-free \(s=0\) exclusion,
+  cyclically-four \(s=1\) and \(s=2\) completions of exact oddness four,
+  standard-library replay code, retained JSON results, and
+  `ONE_BOUNDARY_FIVE_SHA256SUMS`.  The examples are not FiveCDC
+  counterexamples, and the global path-closure step remains open.
 - The complete compact focused theta-choice census through order 28:
   retained graph6 inputs and generator logs, source identities, two
   independently written classifiers, frozen result streams, aggregate

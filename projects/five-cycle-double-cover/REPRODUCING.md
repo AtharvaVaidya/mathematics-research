@@ -78,6 +78,63 @@ mode reruns all 11,098,440 positive CaDiCaL queries.  It was not rerun
 during this publication sync.  The arbitrary-order rooted property and
 standard FiveCDC remain open.
 
+## One-boundary-five frontier
+
+From `projects/five-cycle-double-cover`, verify the frozen update and run
+the focused standard-library checks:
+
+```sh
+shasum -a 256 -c ONE_BOUNDARY_FIVE_SHA256SUMS
+python3 -B scratch/audit_factor_critical_ear_forest.py --self-check \
+  > /tmp/factor-critical-five-pole-counterexamples.json
+cmp /tmp/factor-critical-five-pole-counterexamples.json \
+  scratch/factor-critical-five-pole-counterexamples-result.json
+python3 -B scratch/audit_factor_critical_ear_forest.py \
+  --r2-json artifacts/structured/graphs/lukotka_R2_oddness6.json \
+  > /tmp/factor-critical-r2-path-counterexample.json
+cmp /tmp/factor-critical-r2-path-counterexample.json \
+  scratch/factor-critical-r2-path-counterexample-result.json
+python3 -B scratch/check_cyclic4_threshold_two_core.py \
+  > /tmp/cyclic4-threshold-two-core.json
+cmp /tmp/cyclic4-threshold-two-core.json \
+  scratch/cyclic4-threshold-two-core-result.json
+python3 -B scratch/check_cyclic4_all_bad_threshold_three_core.py \
+  > /tmp/cyclic4-all-bad-threshold-three-core.json
+cmp /tmp/cyclic4-all-bad-threshold-three-core.json \
+  scratch/cyclic4-all-bad-threshold-three-core-result.json
+python3 -B scratch/check_one_boundary_five_completion_frontier.py \
+  > /tmp/one-boundary-five-completion.json
+cmp /tmp/one-boundary-five-completion.json \
+  scratch/one-boundary-five-completion-result.json
+```
+
+The longer exact completion replays are:
+
+```sh
+python3 -B scratch/check_s1_theta_q67_completions.py \
+  --output /tmp/s1-theta-q67-census.json
+cmp /tmp/s1-theta-q67-census.json scratch/s1-theta-q67-census.json
+python3 -B scratch/check_s2_q67_completion_classes.py \
+  --skip-class-cuts --output /tmp/s2-q67-classes.json
+cmp /tmp/s2-q67-classes.json scratch/s2-q67-classes.json
+```
+
+The \(s=1\) command checks all 120 terminal bijections, every small cut,
+and every perfect matching.  The \(s=2\) command regenerates and
+canonically quotients all 9,600 gluings, while running the exact cut and
+matching census on the selected lexicographic witness.  The optional
+nauty `labelg` executable supplies the isomorphism-class counts.  Remove
+`--skip-class-cuts` to classify small cuts in a representative of all 570
+classes.
+
+The retained order-17 aggregate
+`scratch/factor-critical-five-pole-oddness-order17.json` is not a
+standalone corpus replay because the canonical input stream is omitted
+from this compact update.  It is finite provenance only.  The human
+proofs and exact remaining obligation are indexed by
+`ONE_BOUNDARY_FIVE_FRONTIER_20260727.md`.  These checks do not prove or
+disprove FiveCDC and do not test the orientable variant.
+
 ## Marked-circuits preprint and companion checks
 
 The 29-page publication draft is

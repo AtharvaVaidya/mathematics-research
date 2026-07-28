@@ -47,6 +47,32 @@ This update does not prove or disprove FiveCDC and does not address the
 orientable variant.  The still-running order-40 rooted strong-snark job is
 not part of this publication snapshot.
 
+## One-boundary-five update
+
+`ONE_BOUNDARY_FIVE_FRONTIER_20260727.md` indexes the new focused update.
+It contains:
+
+- `docs/one-boundary-five-oddness-frontier.md`, with displayed proofs of
+  the exact boundary matching count, the two-attainable-terminal lemma,
+  and the conditional oddness-four reduction;
+- `docs/one-boundary-five-completion-frontier.md`, including the
+  human-checkable cyclic-three-cut proof excluding \(s=0\);
+- seven standard-library replay programs for the explicit small poles,
+  the locally cyclically-four 67-vertex core, and its \(s=1\) and \(s=2\)
+  completions;
+- the order-17 C++ census source and retained aggregate;
+- retained JSON outputs for the explicit countermodels, sharp-threshold
+  core, all-five-bad core, 720-case \(s=0\) audit, 120 \(s=1\)
+  bijections, and 9,600 \(s=2\) gluings; and
+- `ONE_BOUNDARY_FIVE_SHA256SUMS`.
+
+The locally cyclically-four all-five-bad pole refutes a proposed local
+matching lemma, not FiveCDC.  Its displayed globally admissible
+completions have exact oddness four and are not counterexamples.  The
+remaining obligation is the global closure of the complementary paths.
+The index records the AI-use disclosure and the exact machine trust
+boundaries.  This update concerns only the standard conjecture.
+
 ## Prescribed-root matching frontier
 
 `MATCHING_FRONTIER_20260727.md` indexes the added matching branch:

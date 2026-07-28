@@ -61,6 +61,24 @@ None of these artifacts proves or disproves FiveCDC, and none concerns the
 orientable variant.  The order-40 rooted strong-snark computation was still
 running when this snapshot was frozen and is not included.
 
+## One-boundary-five Gallai--Edmonds frontier
+
+[`ONE_BOUNDARY_FIVE_FRONTIER_20260727.md`](ONE_BOUNDARY_FIVE_FRONTIER_20260727.md)
+indexes the newest surviving standard-FiveCDC branch.  The companion
+human notes prove the exact matching count, the two-attainable-terminal
+lemma, a conditional oddness-four reduction, and the solver-free exclusion
+of the \(s=0\) completion.  Explicit checked poles show that three tempting
+local matching strengthenings are false, including an all-five-bad
+locally cyclically-four 67-vertex core.
+
+That core nevertheless has explicit cyclically-four \(s=1\) and \(s=2\)
+completions of exact oddness four.  They are not FiveCDC counterexamples.
+The surviving proof obligation must use how the two complementary paths
+close through the outside shore.  The update includes standard-library
+replays, retained JSON records, a checksum ledger, exact trust boundaries,
+and a separate AI-use disclosure.  It neither resolves standard FiveCDC
+nor addresses the orientable variant.
+
 ## Main research drafts
 
 - [`preprint-rooted-four-cut/output/pdf/main.pdf`](preprint-rooted-four-cut/output/pdf/main.pdf)

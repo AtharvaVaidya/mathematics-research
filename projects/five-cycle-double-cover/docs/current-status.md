@@ -2372,3 +2372,38 @@ strong prescribed-\(AA\) property on this family.  This is a finite theorem
 for four retained graphs, not a universal cap theorem and not a Five-CDC
 resolution.  The explicit certificates are in
 `search/mnp-h2-h5-aa-deletion-probe-20260727/`.
+
+## Current standard FiveCDC matching branch
+
+Audit date: **2026-07-27**.
+
+The all-singleton Gallai--Edmonds branch is closed for the standard
+conjecture: cubic degree counting leaves exactly three same-side edges,
+and a perfect matching through one of them has a complementary 2-factor
+with at most two odd circuits. The cited Huck--Kochol theorem then gives
+a standard five-cycle double cover. This does not prove the stronger
+prescribed-root theta statement.
+
+The sole surviving branch in this reduction has one nontrivial
+factor-critical component \(Q\) with five boundary edges. A displayed
+matching count gives \(k+2r=3\), so a perfect matching through a prescribed
+root uses exactly one root and exactly one \(Q\)-boundary edge. The
+perfect-matching polytope shows that at least two distinct \(Q\)-terminals
+are attainable. If one attained terminal has a near-perfect matching
+leaving at most two odd circuits wholly inside \(Q\), then the completed
+graph has oddness at most four and hence a standard FiveCDC.
+
+This local sufficient condition is not universal. A checked 67-vertex
+locally cyclically-four factor-critical five-pole has all five terminals
+bad at that threshold. It occurs in explicit simple cubic, bridgeless,
+cyclically-four, non-Tait completions for \(s=1\) and \(s=2\), but both
+displayed completions have exact oddness four. The solver-free \(s=0\)
+case is impossible because the outside singleton and one root form a
+cyclic triangle cut.
+
+Therefore the current exact obligation is global: use the way the two
+complementary paths in \(Q\) close through the outside shore to force
+small oddness, a prescribed-root theta/exact-zero flow, or a genuine
+cyclically-four non-Tait obstruction. No such universal proof or
+obstruction is currently known in this project. See
+`ONE_BOUNDARY_FIVE_FRONTIER_20260727.md`.
