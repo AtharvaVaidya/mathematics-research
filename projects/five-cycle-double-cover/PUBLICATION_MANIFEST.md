@@ -36,14 +36,16 @@ are not independent human verification or peer review.
 - `scratch/verify-focused-theta-choice-census.py`
 - `scratch/focused-theta-choice-census-result.json`
 - `search/focused-theta-choice-through28-20260727/`
+- `search/focused-theta-choice-order30-20260727/`
 
 The universal deficiency-two theorem, boundary-eight incidence theorem,
 and disconnected singleton-case Tait theorem have complete displayed
 proofs.  The new oddness argument closes the whole all-singleton branch
 for the standard five-cycle-double-cover conclusion.  The stronger
 prescribed-root connected singleton case remains open.  The focused and
-root-insertion censuses through order 28 are exact over the retained
-corpora but are not promoted to universal statements.
+root-insertion censuses through order 28, and the separate focused-theta
+order-30 census, are exact over their recorded corpora but are not
+promoted to universal statements.
 
 ## Preprint
 
@@ -152,6 +154,11 @@ The branch includes all non-cache files in:
   retained source corpus, generator logs, two classifier sources, frozen
   result streams, and aggregate verifier for 14,009 graphs and 10,689,351
   independent root pairs.
+- `search/focused-theta-choice-order30-20260727/` — 42 files, 1,719,245
+  bytes; complete retained 139,854-graph House of Graphs corpus, primary
+  C++20 result, sixteen clean-room Python shard reports and logs, compact
+  verifier, reproduction instructions, and checksum ledger for
+  125,868,600 independent root pairs.
 - `search/rooted-three-pole-c3-cap-frontier-through24-20260727/` —
   compact publication subset of the complete 10,824,084-root
   triangle-free cap screen: source corpora, expanded cores, logs,
@@ -226,6 +233,12 @@ hashes and regeneration commands are retained.
   Python standard library. The focused-theta package checksum ledger and
   aggregate verifier pass; the retained result classifies 14,009 graphs
   and 10,689,351 root pairs with zero all-dumbbell cases through order 28.
+- The order-30 focused-theta package passed its complete checksum ledger
+  and compact verifier. The audit directly checked the retained corpus
+  hashes, 139,854 unique order-30 simple-cubic records, all sixteen
+  clean-room shard reports, and exact agreement with the C++ totals:
+  125,868,600 independent root pairs, 1,221,804 deficiency-two theta
+  choices, and zero all-dumbbell cases.
 
 No fresh full order-22 census is claimed by this publication preparation.
 The frozen reports state their exact scope and provenance.

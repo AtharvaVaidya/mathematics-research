@@ -1,0 +1,22 @@
+{
+  "classification": "PASS",
+  "elapsed_seconds": 1347.097,
+  "results": [
+    {
+      "corpus_sha256": "bc6f29ec50910eae345ced81f87800686deb069dd1cb383d73dbcc56765f247d",
+      "def0": 7790514,
+      "def2_all_dumbbell": 0,
+      "def2_boundary6": 0,
+      "def2_boundary8": 76386,
+      "def2_theta": 76386,
+      "graphs": 8741,
+      "near_matchings_checked": 485311,
+      "order": 30,
+      "pairs": 7866900,
+      "shard_count": 16,
+      "shard_index": 10,
+      "source_graphs": 139854
+    }
+  ],
+  "warning": "This is a finite exact result for the requested corpus scope, not a universal theta-choice theorem."
+}

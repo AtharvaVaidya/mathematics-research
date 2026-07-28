@@ -32,6 +32,13 @@ copied into a separate clean clone; it was not modified or committed.
   independently written classifiers, frozen result streams, aggregate
   checker, and exact scope statement. Its zero all-dumbbell count is a
   finite result over the recorded corpora, not a universal theorem.
+- The complete order-30 focused theta-choice package: the cited
+  139,854-graph House of Graphs corpus, primary C++20 classifier, a
+  separately written Python standard-library verifier run in sixteen
+  disjoint shards, complete reports and logs, a compact aggregate/corpus
+  audit, and a full checksum ledger. The two implementations agree over
+  all 125,868,600 independent root pairs, with no all-dumbbell case. This
+  is finite structural evidence and does not resolve Five-CDC.
 - The complete compact order-17 rooted three-pole base-pair package and the
   completed cyclically-four order-22 cap-slice package, with two solver
   implementations, retained transcript digests, compressed transcripts,

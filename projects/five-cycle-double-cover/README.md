@@ -323,9 +323,16 @@ so none satisfies the surviving connected-branch threshold of ten.
 - [`MATCHING_FRONTIER_20260727.md`](MATCHING_FRONTIER_20260727.md)
   indexes the prescribed-root matching branch. It separates the universal
   deficiency theorem, boundary-eight and singleton Gallai--Edmonds
-  reductions, exact finite census through order 28, checked
+  reductions, exact finite censuses through order 30, checked
   countermodels to weaker lemmas, and the prescribed-root case that
   remains open.
+- [`search/focused-theta-choice-order30-20260727/`](search/focused-theta-choice-order30-20260727/)
+  classifies all 125,868,600 independent root pairs in the cited
+  139,854-graph order-30 House of Graphs corpus. A primary C++20
+  implementation and a separately written Python replay in sixteen
+  shards agree: all 1,221,804 deficiency-two pairs admit a theta choice,
+  and no all-dumbbell pair occurs. This is a verified finite structural
+  result, not a universal theorem or a Five-CDC resolution.
 - [`docs/root-insertion-two-factor-frontier.md`](docs/root-insertion-two-factor-frontier.md)
   gives a line-by-line proof that the all-singleton Gallai--Edmonds
   branch already has a **standard** five-cycle double cover: an
@@ -375,6 +382,8 @@ python3 -B scratch/verify_order96_kempe_incidence_frontier.py
 python3 -B scratch/prescribed-root-matching-deficiency-checker.py
 python3 -B scratch/rotation-closure-countermodel-checker.py
 (cd search/focused-theta-choice-through28-20260727 && python3 verify.py)
+(cd search/focused-theta-choice-order30-20260727 && \
+  python3 verify.py && shasum -a 256 -c SHA256SUMS)
 shasum -a 256 -c ROOT_INSERTION_SHA256SUMS
 python3 -B scratch/check-root-insertion-published.py
 (cd search/rooted-three-pole-c3-cap-frontier-through24-20260727 && \

@@ -1,7 +1,7 @@
 # Prescribed-root matching frontier, 2026-07-27
 
 Status: **human-checkable scoped theorems and reductions / standard
-all-singleton branch closed / exact finite census through order 28 /
+all-singleton branch closed / exact finite censuses through order 30 /
 prescribed-root singleton case open / Five-CDC unresolved**.
 
 This index collects the current prescribed-root matching branch of the
@@ -65,6 +65,25 @@ Canonical source completeness and the meanings of the generator options
 are inherited from the retained Snarkhunter 2.0b runs. The zero in the
 last column is not a proof at arbitrary order.
 
+The separate
+[`search/focused-theta-choice-order30-20260727/`](search/focused-theta-choice-order30-20260727/)
+package performs the same finite classification for every independent
+root pair in the 139,854 order-30 simple cubic snarks of cyclic edge
+connectivity at least four in the cited House of Graphs corpus:
+
+| graphs | root pairs | perfect after deletion | deficiency-two with a theta choice | all dumbbell |
+|---:|---:|---:|---:|---:|
+| 139,854 | 125,868,600 | 124,646,796 | 1,221,804 | **0** |
+
+A C++20 classifier and a separately written Python standard-library
+replay in sixteen disjoint graph-index shards agree in every aggregate
+field. The package retains the source corpus, complete shard reports,
+logs, hashes, and both implementations. The snark and cyclic-connectivity
+classification is inherited from the cited corpus; the package verifier
+directly checks the corpus hash, uniqueness, order, and simple-cubic
+degree profile. This remains finite evidence, not a universal
+theta-choice theorem or a Five-CDC result.
+
 The root-insertion note gives a second, more restrictive finite screen.
 It starts with a perfect matching containing one root, inserts the other
 root, and tests whether the resulting complement is bridgeless.  The C++
@@ -114,6 +133,11 @@ python3 -B scratch/check-root-insertion-published.py
   cmp /tmp/focused-theta-report.json report.json
 )
 (
+  cd search/focused-theta-choice-order30-20260727
+  python3 verify.py
+  shasum -a 256 -c SHA256SUMS
+)
+(
   cd search/rooted-three-pole-c3-cap-frontier-through24-20260727
   shasum -a 256 -c CHECKSUMS-PUBLISHED.sha256
   shasum -a 256 -c SOURCES.sha256
@@ -126,7 +150,9 @@ The compact commands check the displayed finite countermodels, the
 retained source identities, and all aggregate census fields. Full
 re-execution of the independent C++ and Python classifiers is documented
 in
-[`search/focused-theta-choice-through28-20260727/REPRODUCING.md`](search/focused-theta-choice-through28-20260727/REPRODUCING.md).
+[`search/focused-theta-choice-through28-20260727/REPRODUCING.md`](search/focused-theta-choice-through28-20260727/REPRODUCING.md)
+and
+[`search/focused-theta-choice-order30-20260727/REPRODUCING.md`](search/focused-theta-choice-order30-20260727/REPRODUCING.md).
 
 ## AI-use disclosure
 

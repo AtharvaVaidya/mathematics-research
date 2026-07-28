@@ -176,6 +176,11 @@ python3 -B scratch/check-root-insertion-published.py
   python3 verify.py > /tmp/focused-theta-report.json
   cmp /tmp/focused-theta-report.json report.json
 )
+(
+  cd search/focused-theta-choice-order30-20260727
+  python3 verify.py
+  shasum -a 256 -c SHA256SUMS
+)
 ```
 
 These commands check the finite countermodels and the frozen census
@@ -185,6 +190,16 @@ branch only for the standard five-cycle-double-cover conclusion; the
 stronger prescribed-root singleton case remains open.  Complete
 re-execution of both focused-theta census classifiers is documented in
 `search/focused-theta-choice-through28-20260727/REPRODUCING.md`.
+
+The separate order-30 command checks the compressed and decompressed
+House of Graphs corpus hashes, all 139,854 distinct order-30 simple-cubic
+records, the primary C++ result, all sixteen independent Python shard
+reports, and exact aggregate agreement. Full C++ and clean-room Python
+replay commands are in
+`search/focused-theta-choice-order30-20260727/REPRODUCING.md`. The
+retained classification is a finite structural result over the cited
+corpus; it is not a universal theta-choice theorem, a standard Five-CDC
+resolution, or an orientable Five-CDC claim.
 
 The root-insertion producer and independent replay are retained
 separately.  A quick executable smoke replay of the order-10 row is:
