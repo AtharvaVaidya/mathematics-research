@@ -1199,9 +1199,10 @@ Open obligations:
     the separate argument for the remaining \(s=1,2\) patterns.  See
     `docs/theta-cap-five-cycle-extension-lemma.md`.
 75. **The greatest switching core and a compatible-pair cap eliminate
-    every retained \(s=1,2\) outside:** all 6 \(s=1\) and 128 \(s=2\)
-    incidence patterns satisfying the inherited minimum-counterexample
-    conditions are generated.  For terminal-distinct patterns the
+    every retained \(s=1,2,3\) outside:** all 6 \(s=1\), 128 \(s=2\),
+    and 3,576 \(s=3\) incidence patterns satisfying the inherited
+    minimum-counterexample conditions are generated.  For
+    terminal-distinct patterns the
     complement of the outside \(D_5\) relation has empty greatest
     switching core.  For every repeated-endpoint pattern the core is
     exactly the 25-orbit local incompatibility set, in which the two
@@ -1211,5 +1212,5 @@ Open obligations:
     The greatest-core implication is proved by induction over deletion
     rounds.  Two independently implemented relation solvers agree; they
     share the exact structural generator.  Together with the \(s=0\)
-    triangle-cut argument, only \(s\ge3\) remains in this branch.  See
-    `docs/one-boundary-five-D5-s12-reduction.md`.
+    triangle-cut argument, only \(s\ge4\) remains in this branch.  See
+    `docs/one-boundary-five-D5-s123-reduction.md`.

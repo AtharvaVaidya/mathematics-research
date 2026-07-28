@@ -249,8 +249,8 @@ This does **not** exclude the \(s=1\) incidence shapes with two boundary
 edges at one outside vertex, nor any of the \(s\ge2\) outside patterns.
 They require an argument beyond this theta-cap lemma.  The subsequent
 switching-core theorem in
-[`one-boundary-five-D5-s12-reduction.md`](one-boundary-five-D5-s12-reduction.md)
-excludes every retained \(s=1,2\) pattern.
+[`one-boundary-five-D5-s123-reduction.md`](one-boundary-five-D5-s123-reduction.md)
+excludes every retained \(s=1,2,3\) pattern.
 
 ## Prior work and novelty boundary
 

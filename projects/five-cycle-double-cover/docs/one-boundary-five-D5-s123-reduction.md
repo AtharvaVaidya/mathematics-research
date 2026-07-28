@@ -1,8 +1,8 @@
-# The \(D_5\) reduction for \(s=1,2\)
+# The \(D_5\) reduction for \(s=1,2,3\)
 
 Status: **human-checkable switching and minimality proof plus two
 independently implemented boundary-relation solvers over one exact
-incidence generator; eliminates every \(s=1\) and \(s=2\) outside in the
+incidence generator; eliminates every \(s=1,2,3\) outside in the
 one-boundary-five branch; does not resolve Five-CDC**.
 
 ## 1. Setup
@@ -193,9 +193,15 @@ Both implementations give:
 | 2 | \(1+1+1+1+1\) | 62 | 0 | 8 |
 | 2 | \(2+1+1+1\) | 36 | 25 | 32 |
 | 2 | \(2+1+1+1\) | 37 | 25 | 64 |
+| 3 | \(1+1+1+1+1\) | 60 | 0 | 204 |
+| 3 | \(1+1+1+1+1\) | 61 | 0 | 336 |
+| 3 | \(1+1+1+1+1\) | 62 | 0 | 516 |
+| 3 | \(2+1+1+1\) | 36 | 25 | 264 |
+| 3 | \(2+1+1+1\) | 37 | 25 | 2,256 |
 
 There are therefore 6 retained \(s=1\) patterns and 128 retained
-\(s=2\) patterns.
+\(s=2\) patterns.  For \(s=3\), there are 1,056 terminal-distinct and
+2,520 repeated-endpoint patterns, for a total of 3,576.
 
 For every repeated-endpoint pattern, let positions \(i,j\) be the two
 semiedges incident with the same outside vertex.  Both implementations
@@ -217,7 +223,7 @@ Reproduction:
 shasum -a 256 -c \
   scratch/one-boundary-five-outside-relations.SHA256SUMS
 python3 -B scratch/classify_one_boundary_five_outside_relations.py \
-  --output /tmp/one-boundary-five-outside-relations.json
+  --max-s 3 --output /tmp/one-boundary-five-outside-relations.json
 cmp /tmp/one-boundary-five-outside-relations.json \
   scratch/one-boundary-five-outside-relations.json
 python3 -B \
@@ -230,7 +236,7 @@ cmp /tmp/one-boundary-five-outside-relations-independent.json \
 ## 5. Elimination theorem
 
 **Theorem.** A minimum standard Five-CDC counterexample cannot have
-\(s=1\) or \(s=2\) in the one-boundary-five branch.
+\(s=1\), \(s=2\), or \(s=3\) in the one-boundary-five branch.
 
 **Proof.**  Suppose first that the five boundary incidences of \(O\)
 have distinct outside endpoints.  The table gives
@@ -261,7 +267,7 @@ The earlier triangle-cut argument excludes \(s=0\).  Combining it with
 this theorem leaves only
 
 \[
-                              s\ge3
+                              s\ge4
 \]
 
 in the one-boundary-five branch.
@@ -270,7 +276,7 @@ in the one-boundary-five branch.
 
 This is a genuine reduction of the minimum-counterexample frontier, not
 a resolution of Five-CDC.  It uses a finite exhaustive calculation for
-the \(s=1,2\) outside relations.  The switching law, both smaller-cap
+the \(s=1,2,3\) outside relations.  The switching law, both smaller-cap
 arguments, and the final implication are written above as ordinary
 human-checkable proofs.
 
@@ -285,10 +291,10 @@ and bichromatic-chain switching are prior machinery; see Máčajová,
 Mazzuoccolo, and Trevisan,
 [*Cycle double covers of graphs with small oddness*](https://doi.org/10.26493/1855-3974.3409.c13),
 Ars Mathematica Contemporanea 26 (2026), article P2.03.  The candidate
-contribution here is the greatest-core use, the exact \(s=1,2\) outside
+contribution here is the greatest-core use, the exact \(s=1,2,3\) outside
 census, and the compatible-pair cap reduction.  That novelty assessment
 is provisional pending specialist review.
 
 The standard Five-Cycle Double Cover Conjecture remains open.  The
-one-boundary-five branch is reduced only to \(s\ge3\), and no statement
+one-boundary-five branch is reduced only to \(s\ge4\), and no statement
 here concerns the orientable variant.

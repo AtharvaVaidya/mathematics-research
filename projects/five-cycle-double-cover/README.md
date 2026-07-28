@@ -96,14 +96,15 @@ reproduce the complete 6,240-word calculation.  The repeated-endpoint
 \(s=1\) incidence shapes are outside that theta lemma.
 
 The subsequent human-checkable
-[`docs/one-boundary-five-D5-s12-reduction.md`](docs/one-boundary-five-D5-s12-reduction.md)
+[`docs/one-boundary-five-D5-s123-reduction.md`](docs/one-boundary-five-D5-s123-reduction.md)
 uses the greatest subset satisfying all elementary bichromatic-path laws.
 Two independently implemented \(D_5\) relation solvers classify all 6
-retained \(s=1\) and 128 retained \(s=2\) outside patterns.  Empty
+retained \(s=1\), 128 retained \(s=2\), and 3,576 retained \(s=3\)
+outside patterns.  Empty
 complement cores handle every terminal-distinct pattern; for a repeated
 endpoint the 25-orbit core is exactly local incompatibility, while a
 smaller three-vertex path cap forces a compatible state.  Together with
-the \(s=0\) triangle-cut argument, this leaves only \(s\ge3\) in the
+the \(s=0\) triangle-cut argument, this leaves only \(s\ge4\) in the
 one-boundary-five branch.  FiveCDC remains unresolved.  The encoding and
 switching method are prior machinery; novelty of these specific cap and
 core reductions is provisional.

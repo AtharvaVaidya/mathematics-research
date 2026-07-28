@@ -157,14 +157,14 @@ extensions.  The theorem and its minimality/gluing proof are displayed in
 `docs/theta-cap-five-cycle-extension-lemma.md`.  This closes only the
 terminal-distinct \(s=1\) outside.
 
-The subsequent \(s\le2\) switching-core reduction is replayed by:
+The subsequent \(s\le3\) switching-core reduction is replayed by:
 
 ```sh
-shasum -a 256 -c S12_D5_REDUCTION_SHA256SUMS
+shasum -a 256 -c S123_D5_REDUCTION_SHA256SUMS
 shasum -a 256 -c \
   scratch/one-boundary-five-outside-relations.SHA256SUMS
 python3 -B scratch/classify_one_boundary_five_outside_relations.py \
-  --output /tmp/one-boundary-five-outside-relations.json
+  --max-s 3 --output /tmp/one-boundary-five-outside-relations.json
 cmp /tmp/one-boundary-five-outside-relations.json \
   scratch/one-boundary-five-outside-relations.json
 python3 -B \
@@ -176,13 +176,14 @@ cmp /tmp/one-boundary-five-outside-relations-independent.json \
 
 The two implementations reconstruct all 62 global-coordinate boundary
 orbits and agree on the relation/core profiles of all 6 retained
-\(s=1\) and 128 retained \(s=2\) patterns.  The independent relation
+\(s=1\), 128 retained \(s=2\), and 3,576 retained \(s=3\) patterns.  The
+independent relation
 solver imports the shared structural pattern generator but does not use
 the primary satisfiability or switching-core code.  The human proof in
-`docs/one-boundary-five-D5-s12-reduction.md` checks why every actual
+`docs/one-boundary-five-D5-s123-reduction.md` checks why every actual
 minimum-counterexample outside survives the structural filters and why
 the smaller 5-cycle and three-vertex path caps are bridgeless.  Combined
-with the \(s=0\) triangle-cut argument, only \(s\ge3\) remains open in
+with the \(s=0\) triangle-cut argument, only \(s\ge4\) remains open in
 this branch.
 
 The order-100 oddness-six strategy counterexample has its own complete

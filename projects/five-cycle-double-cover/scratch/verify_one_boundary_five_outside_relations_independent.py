@@ -297,7 +297,7 @@ def replay(report: dict[str, object]) -> dict[str, object]:
     actual: dict[int, Counter] = {}
     hit_profiles: dict[int, Counter] = {}
 
-    for s in (1, 2):
+    for s in sorted(expected):
         profile = Counter()
         hits = Counter()
         patterns = retained_patterns(s)

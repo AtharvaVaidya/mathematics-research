@@ -3,7 +3,8 @@
   "method": "Independent local-row join over shared proper-edge labels; no use of the primary finite-domain satisfiability solver.",
   "patterns": {
     "1": 6,
-    "2": 128
+    "2": 128,
+    "3": 3576
   },
   "profiles": {
     "1": [
@@ -89,6 +90,66 @@
         "complement_core_orbits": 25,
         "outside_relation_orbits": 37,
         "patterns": 64
+      }
+    ],
+    "3": [
+      {
+        "boundary_multiplicity_shape": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "complement_core_orbits": 0,
+        "outside_relation_orbits": 60,
+        "patterns": 204
+      },
+      {
+        "boundary_multiplicity_shape": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "complement_core_orbits": 0,
+        "outside_relation_orbits": 61,
+        "patterns": 336
+      },
+      {
+        "boundary_multiplicity_shape": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "complement_core_orbits": 0,
+        "outside_relation_orbits": 62,
+        "patterns": 516
+      },
+      {
+        "boundary_multiplicity_shape": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "complement_core_orbits": 25,
+        "outside_relation_orbits": 36,
+        "patterns": 264
+      },
+      {
+        "boundary_multiplicity_shape": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "complement_core_orbits": 25,
+        "outside_relation_orbits": 37,
+        "patterns": 2256
       }
     ]
   },
@@ -233,6 +294,93 @@
           18
         ],
         "patterns": 20
+      }
+    ],
+    "3": [
+      {
+        "hits": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "patterns": 1056
+      },
+      {
+        "hits": [
+          22,
+          18,
+          22,
+          18,
+          22,
+          22,
+          18,
+          18,
+          22,
+          18,
+          18,
+          22
+        ],
+        "patterns": 754
+      },
+      {
+        "hits": [
+          22,
+          22,
+          18,
+          18,
+          18,
+          18,
+          22,
+          22,
+          18,
+          18,
+          22,
+          22
+        ],
+        "patterns": 424
+      },
+      {
+        "hits": [
+          22,
+          22,
+          18,
+          22,
+          18,
+          22,
+          22,
+          22,
+          18,
+          18,
+          18,
+          18
+        ],
+        "patterns": 892
+      },
+      {
+        "hits": [
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          18,
+          18,
+          18,
+          18,
+          18,
+          18
+        ],
+        "patterns": 450
       }
     ]
   }
