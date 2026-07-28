@@ -295,13 +295,16 @@ obstruction for every pair in every \({\cal A}_s\).
 
 The exact screen in
 `scratch/search_fano_reduced_one_switch_binary.cpp` tests (5) by complete
-T-join SAT and literal circuit enumeration.  It currently passes:
+T-join SAT and literal circuit enumeration.  Before the adversarial
+order-36 search in Section 11 found a countermodel, the exploratory screen
+passed:
 
 - 77 sampled bad strict order-22 flows;
 - 331 sampled bad strict order-24 flows; and
 - 1,527 sampled bad flows on ten strict order-40 graphs.
 
-The weaker assertion \({\cal P}_s\ne\varnothing\) for some \(s\) passed
+The weaker assertion \({\cal P}_s\ne\varnothing\) for some \(s\) also
+passed
 859, 1,536, and 1,426 sampled bad flows at orders 22, 24, and on the first
 order-40 graph, respectively.  These are reconnaissance counts, not a
 proof of APX.
