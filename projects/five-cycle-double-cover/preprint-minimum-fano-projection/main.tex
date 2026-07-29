@@ -46,7 +46,7 @@ Five-Cycle Double Cover Conjecture}
 \textbf{Resolution status.}
 The five-cycle double cover conjecture remains unresolved.
 This note proves an exchange theorem, settles the minimum-support cases
-through size twelve, and gives exact finite censuses.  It proves neither the
+through size thirteen, and gives exact finite censuses.  It proves neither the
 conjecture nor its negation.
 }}
 \end{center}
@@ -91,8 +91,20 @@ excludes all 14.  Thus every minimum extendable projection of size at most
 eleven is cleanable.  At size twelve, 13,788,824 dirty boundary states
 either clean directly or admit a strict circuit deletion; two independent
 enumerators agree exactly.  Thus every minimum extendable projection of
-size at most twelve is cleanable, and a counterexample to the proposed
-selection principle must have minimum size at least thirteen.
+size at most twelve is cleanable.  At size thirteen two independently
+written exact classifiers agree on all five support shapes and all
+\(189{,}998{,}862\) charge-valid states.  Of the \(159{,}369{,}966\)
+dirty states, \(159{,}362{,}292\) clean directly and \(7{,}674\) admit
+a strict circuit deletion; there are zero residuals.  Thus every minimum
+extendable projection of size at most thirteen is cleanable, and a
+counterexample to the proposed selection principle must have minimum size
+at least fourteen.  This boundary method is sharp: at size fourteen an
+explicit \(7+7\) state is neither directly cleanable nor circuit-deletable.
+It has a simple bridgeless cubic realization on 18 vertices whose displayed
+size-fourteen projection is uncleanable under every extension.  The graph's
+minimum projection size is nevertheless five and all four minima are
+cleanable, so this is a counterexample to the unrestricted boundary
+dichotomy, not to the minimum-projection principle or FiveCDC.
 
 We perform an exact canonical census of all \(41{,}301\) connected simple
 cubic graphs of order \(18\).  Among the \(39{,}866\) bridgeless graphs,
@@ -146,7 +158,8 @@ The contribution of this note is narrower:
 \begin{enumerate}
   \item a minimum-support exchange theorem, with a complete proof;
   \item a human proof through size five and an exact boundary extension
-        through size twelve;
+        through size thirteen, plus a sharp size-fourteen counterstate
+        to the unrestricted boundary method;
   \item four simultaneous shortest-join consequences;
   \item a reproducible canonical order-\(18\) census and an expanded
         exact replay on frozen sources through order \(28\); and
@@ -714,6 +727,102 @@ coordinate is now zero but the assumed low value is nonzero.  The result
 is therefore a nowhere-zero flow with first-coordinate support \(h-D\).
 \end{proof}
 
+\begin{proposition}[fixed-map affine cleaning]\label{prop:affineclean}
+Fix component maps \(L_a\) for which the circuit equations (13) are
+consistent, and fix one solution \(r^0\).  Let \(\mathcal D\) be the set
+of circuit components of \(h\).  Every solution is of the form
+\[
+                       r_i=r_i^0+z_D\qquad(e_i\in D),
+\]
+with one independently chosen translation \(z_D\in K\) per circuit.
+For a component \(W_a\), define
+\[
+ b_a=\sum_{e_i\in\delta(W_a)}q(r_i^0),\qquad
+ t_{aD}=\bigoplus_{e_i\in\delta(W_a)\cap D}r_i^0,
+\]
+where \(q(x_1,x_2)=x_1x_2\), and put
+\(B(x,y)=x_1y_2+x_2y_1\).  Then the repaired extension is clean exactly
+when
+\[
+                         b_a+\sum_{D\in\mathcal D}B(t_{aD},z_D)=0
+                         \qquad\text{for every }a.        \tag{15a}
+\]
+In particular, cleanliness for fixed component maps is an affine linear
+system over \(\F_2\), with at most \(2(|\mathcal D|-1)\) scalar variables.
+\end{proposition}
+
+\begin{proof}
+The difference of two solutions of (13) is equal on consecutive edges,
+and hence is constant around each circuit.  Every circuit meets
+\(\delta(W_a)\) evenly.  Summing (13) at all circuit vertices in \(W_a\)
+also gives
+\(\bigoplus_{e_i\in\delta(W_a)}r_i=0\).
+Consequently the four parities in (14) are either all zero or all one:
+their total is zero, and their two \(K\)-coordinate sums are zero.
+
+The common defect bit equals
+\(\sum_{e_i\in\delta(W_a)}q(r_i)\).  Indeed,
+\({\bf1}_{x=0}=1+x_1+x_2+q(x)\), and the constant and linear sums vanish
+by the preceding two parity identities.  Substitute
+\(r_i=r_i^0+z_D\) and use
+\[
+ q(x+z)=q(x)+q(z)+B(x,z).
+\]
+The \(q(z_D)\) term occurs an even number of times on each circuit cut
+and cancels, leaving exactly (15a).  Finally
+\(\bigoplus_Dt_{aD}=0\), so translating every circuit by the same element
+changes no equation; one \(z_D\) may be fixed to zero.
+\end{proof}
+
+\begin{remark}
+This proposition is a human-checkable reduction of the translation search,
+not a universal solution.  If its affine system is inconsistent, binary
+linear duality gives a short XOR witness \(y\) with
+\(y^{\mathsf T}\Phi=0\) and \(y^{\mathsf T}b=1\).
+The exact remaining issue is to choose the component maps so that either
+this system is consistent or one integrated circuit word omits a colour,
+which triggers Proposition~\ref{prop:deletecircuit}.
+\end{remark}
+
+\begin{proposition}[dual-cut feasible move]\label{prop:dualcut}
+If the fixed-map system (15a) is inconsistent, there is a nonempty
+proper union \(Y\) of components of \(G-h\) such that, for every circuit
+\(D\) of \(h\),
+\[
+                    \bigoplus_{e_i\in\delta(Y)\cap D}r_i^0=0,
+                                                               \tag{15b}
+\]
+while an odd number of the circuits meet \(\delta(Y)\) oddly in each
+of the four low colours.  Moreover, for every \(T\in\operatorname{GL}(2,2)\),
+postcomposing all \(L_a\) with \(T\) for \(W_a\subseteq Y\), and changing
+no other component map, preserves circuit consistency.
+\end{proposition}
+
+\begin{proof}
+Let \(y\) be a dual XOR witness from the preceding remark and let \(Y\)
+be its selected component union.  Summing \(t_{aD}\) over the selected
+rows cancels support edges internal to \(Y\) twice and leaves exactly
+the left side of (15b).  Nondegeneracy of \(B\) and
+\(y^{\mathsf T}\Phi=0\) make this xor zero for every circuit.  Each
+circuit crosses \(\delta(Y)\) evenly, so zero colour xor forces its four
+cut-colour parities to be equal.  The identity
+\(y^{\mathsf T}b=1\) says that the sum of their \(q\)-parities is odd;
+hence an odd number of circuits are rainbow-odd on the cut.
+
+Finally, summing (13) over the circuit vertices in \(Y\) gives zero by
+(15b).  Postcomposition sends this partial sum to \(T(0)=0\); the
+complementary partial sum is also zero because the original circuit
+total was zero.  Thus every circuit equation remains consistent.
+\end{proof}
+
+\begin{remark}
+The proposition turns every failed translation system into six
+coordinated feasible map choices.  A universal proof still needs a
+well-founded progress statement: one of these choices must clean, make
+some circuit omit a colour, or decrease an invariant.  No such invariant
+is proved here.
+\end{remark}
+
 \begin{theorem}[minimum projections through size eleven]
 \label{thm:sizeeleven}
 Under the hypotheses of Theorem~\ref{thm:sizeten}, every
@@ -766,7 +875,7 @@ cumulative checker and all 14 certificates are in the bundled
 through-eleven package.
 \end{remark}
 
-\subsection{Clean or delete at size twelve}
+\subsection{Clean or delete at sizes twelve and thirteen}
 
 Propositions~\ref{prop:directrepair} and
 \ref{prop:deletecircuit} give a useful dichotomy: it is enough to find
@@ -821,6 +930,130 @@ two implementations agree on every table entry.  This is independent
 agent replication, not human peer review.
 \end{remark}
 
+\begin{theorem}[minimum projections through size thirteen]
+\label{thm:sizethirteen}
+Under the hypotheses of Theorem~\ref{thm:sizeten}, every
+cardinality-minimum extendable projection of size at most thirteen is
+cleanable.
+\end{theorem}
+
+\begin{proof}
+Only total size thirteen remains.  Since every circuit component contains
+all four colours, the complete shape list is
+\[
+                13,\qquad4+9,\qquad5+8,\qquad6+7,\qquad4+4+5. \tag{18}
+\]
+The exact classifier applies the same clean-or-delete test as in
+Theorem~\ref{thm:sizetwelve}.  Its complete counts are
+\[
+\begin{array}{c|r|r|r|r|r}
+\text{shape}&\text{words}&\text{charge-valid}&\text{dirty}&
+\text{direct clean}&\text{delete}\\
+\hline
+13&2583&155{,}381{,}679&129{,}684{,}490&129{,}684{,}490&0\\
+4+9&130&7{,}753{,}918&6{,}657{,}654&6{,}657{,}594&60\\
+5+8&203&12{,}144{,}485&10{,}404{,}652&10{,}401{,}428&3224\\
+6+7&242&14{,}480{,}258&12{,}415{,}026&12{,}410{,}636&4390\\
+4+4+5&4&238{,}522&208{,}144&208{,}144&0
+\end{array}
+\]
+Thus \(159{,}369{,}966\) dirty states split into
+\(159{,}362{,}292\) direct repairs and \(7{,}674\) strict circuit
+deletions, with no residual state outside those branches.  Proposition
+\ref{prop:deletecircuit} excludes every deletion state from global
+minimality, proving the claim.
+\end{proof}
+
+\begin{remark}
+The primary size-thirteen package freezes one literal map, integrated
+word, deleted circuit, and omitted colour for every deletion state.
+A separately written valid-block/exact-cover implementation regenerates
+the word orbits, component partitions, map search, affine cleaning
+decisions, and deletion decisions.  The implementations agree on every
+table entry.  This is exact independent agent replication, not peer review.
+\end{remark}
+
+\begin{proposition}[sharp failure of unrestricted clean or delete]
+\label{prop:sizefourteenfailure}
+The clean-or-delete boundary statement used in
+Theorems~\ref{thm:sizetwelve} and \ref{thm:sizethirteen} is false at
+total support size fourteen.  A counterstate has two seven-circuits with
+\[
+\begin{split}
+(c_i)&=\texttt{0101023}\mid\texttt{0101232},\\
+(\pi_i)&=\texttt{01234444413024}.
+\end{split}                                               \tag{19}
+\]
+Every circuit uses all four colours and every component charge is zero,
+but no component-map tuple and relative circuit translation cleans the
+state or makes either circuit low-valued and nowhere zero.
+\end{proposition}
+
+\begin{proof}
+The derivative word is
+\(\texttt{3111121}\mid\texttt{2111311}\), from which the five zero block
+charges and dirtiness are checked directly.  Normalize the map of block
+zero to the identity, and put
+\[
+ u_i=L_i(1)\ (i=1,2,3),\qquad a=L_4(1),\qquad b=L_4(2).
+\]
+All five displayed elements are nonzero and \(a\ne b\).
+The transformed derivatives on the two circuits are
+\[
+(3,u_1,u_2,u_3,a,b,a),\qquad
+(b,a,u_1,u_3,3,u_2,a).
+\]
+Their two integrability equations coincide and reduce to
+\[
+                            b=3+u_1+u_2+u_3.             \tag{20}
+\]
+Zero-start integration gives
+\[
+\begin{split}
+r^A={}&(3,3+u_1,3+u_1+u_2,b,a+b,a,0),\\
+r^B={}&(b,a+b,3+u_2+u_3+a,3+u_2+a,u_2+a,a,0).
+\end{split}
+\]
+Both rows contain \(\{0,a,b,a+b\}=K\), so deletion is impossible.
+
+Let \(z\) translate the second circuit.  Cleanliness at blocks
+\(0,1,2,3\) respectively requires \(z\) to lie in
+\[
+\begin{array}{ll}
+u_2+a+\{0,3\},&
+3+a+b+\{0,u_1\},\\
+3+u_1+u_2+a+\{0,u_2\},&
+u_1+u_3+a+\{0,u_3\}.                                    \tag{21}
+\end{array}
+\]
+If \(z=u_2+a+3\), the third and fourth lines force
+\(u_1=u_2\) and \(u_3=3\); then (20) gives \(b=0\).
+If \(z=u_2+a\), the second and fourth lines force
+\(u_3=u_1\) and \(u_2=u_1\); the third then forces \(u_1=3\), and again
+(20) gives \(b=0\).  Both conclusions contradict invertibility of
+\(L_4\).  Thus no clean translation exists.
+\end{proof}
+
+\begin{remark}[realization and scope]
+The state (19) is realized by a simple connected bridgeless non-Tait
+cubic graph on 18 vertices, with canonical graph6 encoding
+\[
+                  \texttt{Qs???SC@GS@\_CDOoC@@@?O?CO?g}.
+\]
+The graph is nonplanar; the package displays a \(K_{3,3}\) subdivision.
+Exact enumeration of its \(2^{10}\)-element cycle space finds 15,360
+ordered extensions of the displayed size-fourteen projection and no
+clean one.  Nevertheless, the graph has minimum extendable-projection
+size five, exactly four minimum supports, and all four are cleanable.
+Thus Proposition~\ref{prop:sizefourteenfailure} refutes the unrestricted
+boundary lemma, not Conjecture~\ref{conj:minimum} or FiveCDC.  The
+complete certificate and graph audit are in the bundled size-fourteen
+dichotomy-counterstate package; it also independently replays all 1,296
+normalized map tuples and freezes the 40 effective cases.  A separately
+written package exhausts all \(6^5\) full map assignments and independently
+reconstructs the graph, cycle space, extension counts, and four minima.
+\end{remark}
+
 \begin{corollary}[rainbow shortcut]\label{cor:shortcut}
 Every binary cycle \(C\) satisfying \(|C\cap h|>|C-h|\) meets all four
 sets \(M_c\).
@@ -843,6 +1076,15 @@ The stronger statement that every minimum projection is cleanable also
 survives the finite census in Section~\ref{sec:census}, but it is not needed.
 Conjecture~\ref{conj:minimum}, together with the Hu\v{s}ek--\v{S}\'amal
 equivalence, would imply the cubic FiveCDC conjecture.
+
+Proposition~\ref{prop:sizefourteenfailure} shows that componentwise maps,
+circuit translations, and whole-circuit deletion do not by themselves
+prove this conjecture.  A valid boundary can defeat every such move even
+when its projection is uncleanable under all extensions.  What excludes
+the example is global minimality: a different size-five projection exists.
+The remaining argument must therefore use the full four-colour exchange
+inequalities, not only their consequence that every support circuit is
+four-coloured.
 
 Suppose a minimum projection \(h\) is not cleanable.  Every extension then
 has a rainbow-odd component \(W\) of \(G-h\), so all four \(M_c\)'s cross
@@ -870,8 +1112,8 @@ component of an \emph{uncleanable globally minimum-support projection},
 derive a negative colour-avoiding cycle after allowable neutral
 recolouring, using the four simultaneous shortest-\(T_c\)-join
 inequalities of Corollary~\ref{cor:tjoin}.  No proof of this statement is
-given here.  By Theorem~\ref{thm:sizetwelve}, any counterexample to this
-selection principle has minimum support at least thirteen.
+given here.  By Theorem~\ref{thm:sizethirteen}, any counterexample to this
+selection principle has minimum support at least fourteen.
 
 \section{Exact finite census}\label{sec:census}
 
@@ -1082,15 +1324,21 @@ python3 verify.py
 The exchange theorem converts global support minimality into four ordinary
 geodesic conditions: one shortest join for each affine value class.
 Theorems~\ref{thm:sizefive}, \ref{thm:sizeseven}, \ref{thm:sizeten},
-\ref{thm:sizeeleven}, and \ref{thm:sizetwelve} close every possible
-nonzero support size through twelve:
+\ref{thm:sizeeleven}, \ref{thm:sizetwelve}, and
+\ref{thm:sizethirteen} close every possible
+nonzero support size through thirteen:
 a counterexample to Conjecture~\ref{conj:minimum} must have minimum
-projection size at least thirteen.
+projection size at least fourteen.
 The useful feature is simultaneity.  A cycle that would shorten the
 projection is allowed to be blocked by one colour, but
 Corollary~\ref{cor:shortcut} forces it to be blocked by all four.
 Likewise, disconnected projections are severely constrained because every
 circuit component must contain every colour.
+The size-fourteen state (19) shows that this numerical frontier is sharp
+for the clean-or-delete boundary method.  Its realization also shows why
+the exchange theorem cannot be discarded: boundary conservation and
+four-colour use alone admit an uncleanable projection, while a smaller
+cleanable projection elsewhere in the same graph saves the conjecture.
 
 The four-colour simultaneity cannot be replaced by a theorem about one
 matching.  In the Petersen graph with edge set
@@ -1127,7 +1375,11 @@ are also regenerated by dependency-free exact checkers.  The
 through-eleven checker freezes every first direct-repair failure and its
 smaller-support certificate.  The through-twelve package freezes all 392
 new circuit-deletion certificates and includes a separately implemented
-full census.
+full census.  The matching through-thirteen packages independently
+reproduce all five new shapes and freeze all 7,674 deletion certificates.
+The size-fourteen package independently checks the first failure of the
+unrestricted dichotomy, its 40-case map certificate, and its exhaustive
+18-vertex realization analysis.
 The order-\(18\) result is
 reproducible from canonical generation and exhaustive cycle-space
 enumeration.  The expanded census exactly replays frozen sources but

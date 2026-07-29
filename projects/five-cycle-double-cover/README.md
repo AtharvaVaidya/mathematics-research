@@ -14,7 +14,7 @@ finite searches are not evidence of the universal statement.
 The newest publication-candidate update is
 `preprint-minimum-fano-projection/`.  It proves a simultaneous
 minimum-support exchange theorem and an exact boundary-cleaning
-theorem for every support shape through size twelve.  The checker exhausts
+theorem for every support shape through size thirteen.  The checker exhausts
 proper affine circuit words, complement-component partitions, independent
 componentwise \(\mathrm{GL}(2,2)\) maps, and repaired circuit values.  It
 directly cleans all 125,178 valid dirty canonical states through size ten.
@@ -25,13 +25,27 @@ all 13,788,824 dirty
 states: 13,788,432 clean directly and 392 admit a strict circuit deletion,
 so none survives global minimality.  Thus any counterexample to the
 proposed minimum-projection selection principle has minimum size at least
-thirteen.  Its exact finite evidence also includes
+fourteen.  At size thirteen, two independent exact classifiers agree on
+all 189,998,862 charge-valid states: 159,369,966 are dirty, 159,362,292
+clean directly, and the remaining 7,674 admit a strict circuit deletion,
+with zero residuals.  At size fourteen the unrestricted boundary
+dichotomy fails sharply: an explicit \(7+7\) state has an 18-vertex
+simple bridgeless cubic realization whose size-fourteen projection has
+15,360 extensions and no clean one.  The same graph has four cleanable
+global minima of size five, so this refutes the proof method, not
+FiveCDC.  Its exact finite evidence also includes
 147,539 minima on frozen sources through
 order 28, 433,730 minima on 7,661 retained order-34/order-40 strong-snark
 rows, and a certified 130-vertex case with minimum size 42 and 11,264
 cleanable minima.  The manuscript includes full proofs, exact replay
 packages, and an AI-use disclosure.  This remains a partial theorem and
 does **not** resolve FiveCDC.
+The fixed-map translation search is reduced by a displayed human proof to
+an affine XOR system in
+`scratch/minimum-projection-fixed-map-affine-cleaning-20260729/README.md`;
+the note derives dual-cut feasible moves and records the exact
+size-fourteen failure of the unrestricted map-choice statement.  Any
+surviving proof must use the full global minimum-exchange inequalities.
 
 The earlier `preprint-husek-samal-reconfiguration/` proves a human-checkable
 packing-to-switch lemma and gives an exact cyclically 4-edge-connected

@@ -5,7 +5,7 @@ minimum-support route to the standard five-cycle double cover conjecture.
 
 **Resolution status:** FiveCDC remains open. The paper proves a
 human-checkable exchange theorem and a complete minimum-projection theorem
-through support size twelve, reports exact finite censuses, and states the
+through support size thirteen, reports exact finite censuses, and states the
 remaining universal selection principle as an explicit conjecture. It
 claims neither a proof nor a counterexample.
 
@@ -42,13 +42,19 @@ the size-at-most-five theorem with:
 python3 scratch/minimum-projection-size5-theorem-20260729/verify.py
 ```
 
-Replay the cumulative cleanability theorem through size twelve with:
+Replay the cumulative cleanability theorem through size thirteen with:
 
 ```sh
 python3 scratch/minimum-projection-through11-cleanability-20260729/verify_through10.py
 python3 scratch/minimum-projection-through11-cleanability-20260729/verify.py
 python3 scratch/minimum-projection-through12-clean-or-delete-20260729/verify_output.py
 python3 scratch/minimum-projection-size12-independent-audit-20260729/replay.py
+python3 scratch/minimum-projection-through13-clean-or-delete-20260729/verify_output.py
+python3 scratch/minimum-projection-size13-independent-audit-20260729/replay.py
+python3 scratch/minimum-projection-size14-dichotomy-counterstate-20260729/verify.py
+python3 scratch/minimum-projection-size14-dichotomy-counterstate-20260729/analyze_realization.py
+python3 scratch/minimum-projection-size14-independent-audit-20260729/verify_abstract.py
+python3 scratch/minimum-projection-size14-independent-audit-20260729/verify_realization.py
 ```
 
 The dependency-free checker exhausts every support shape allowed by the
@@ -64,7 +70,27 @@ size-eleven counts and the 14 replacement certificates.  At size twelve,
 13,788,824 dirty states split into 13,788,432 direct repairs and 392
 strict circuit-deletion certificates, with zero residuals.  A separately
 written word-orbit/exact-cover auditor reproduces the entire size-twelve
-census.
+census.  At size thirteen, two independently written exact classifiers
+agree on all five support shapes and all 189,998,862 charge-valid states.
+Of the 159,369,966 dirty states, 159,362,292 clean directly and 7,674
+admit a strict circuit deletion; again there are zero residuals.
+The unrestricted boundary dichotomy first fails at size fourteen, on an
+explicit \(7+7\) state.  Its 18-vertex simple bridgeless cubic realization
+has 15,360 ordered extensions of the displayed projection and none is
+clean.  Exact cycle-space enumeration nevertheless finds minimum
+projection size five, four minimum supports, and all four cleanable.  This
+is a sharp counterexample to the boundary method, not to FiveCDC.
+The size-fourteen package includes `HUMAN-PROOF.md`, which proves the
+failure by four affine-line constraints without relying on its 40-row
+finite certificate.
+
+The human-checkable reduction showing that, for fixed component maps,
+cleaning is an affine XOR system is written in full at
+`scratch/minimum-projection-fixed-map-affine-cleaning-20260729/README.md`.
+It also derives dual-cut feasible moves and records the exact
+size-fourteen counterstate.  A surviving proof must use global
+minimum-exchange information beyond the unrestricted map-choice
+implication, which is now refuted.
 
 Run the expanded exact replay with:
 

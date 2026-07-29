@@ -1,0 +1,4 @@
+canonical_graph6=Qs???SC@GS@_CDOoC@@@?O?CO?g
+vertices=18
+edges=27
+planarity=nonplanar

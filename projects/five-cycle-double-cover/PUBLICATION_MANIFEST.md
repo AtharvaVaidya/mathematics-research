@@ -20,7 +20,10 @@ are not independent human verification or peer review.
   human proof for minimum sizes at most five.  The cumulative package
   `scratch/minimum-projection-through12-clean-or-delete-20260729/` and
   `scratch/minimum-projection-size12-independent-audit-20260729/` extend
-  this through size twelve.  The exact affine boundary classifiers enumerate
+  this through size twelve; the matching
+  `scratch/minimum-projection-through13-clean-or-delete-20260729/` and
+  `scratch/minimum-projection-size13-independent-audit-20260729/` packages
+  extend it through size thirteen.  The exact affine boundary classifiers enumerate
   every support shape forced by minimum exchange and directly clean all
   125,178 valid dirty canonical word/partition states using independent
   \(\operatorname{GL}(2,2)\) maps on complement components and repaired
@@ -32,9 +35,33 @@ are not independent human verification or peer review.
   separately written valid-block checker reproduces all size-eleven
   counts and replacements.  At size twelve, two independent enumerators
   classify all 13,788,824 dirty states: 13,788,432 clean directly and 392
-  admit a strict circuit deletion, with zero residuals.  Consequently any
-  counterexample to the minimum-projection selection principle has minimum
-  size at least thirteen.
+  admit a strict circuit deletion, with zero residuals.  At size thirteen,
+  two independent implementations agree on all five support shapes and
+  all 189,998,862 charge-valid states.  Of 159,369,966 dirty states,
+  159,362,292 clean directly and 7,674 admit a strict circuit deletion,
+  again with zero residuals.  Consequently any counterexample to the
+  minimum-projection selection principle has minimum size at least fourteen.
+- `scratch/minimum-projection-fixed-map-affine-cleaning-20260729/README.md`
+  gives a complete human-checkable derivation of the one-bit cut defect,
+  the affine XOR cleaning system for fixed component maps, the
+  circuit-deletion alternative, and dual-cut coordinated feasible moves.
+  It also records the sharp size-fourteen failure of the unrestricted
+  map-choice implication.
+- `scratch/minimum-projection-size14-dichotomy-counterstate-20260729/`
+  gives the first total-support counterstate to unrestricted clean or
+  delete.  Its \(7+7\) word/partition has 320 normalized feasible map
+  tuples and zero clean or deletion outcomes; a 40-case reduced table is
+  an XOR-checkable certificate.  A simple connected bridgeless nonplanar
+  cubic realization has canonical graph6
+  `Qs???SC@GS@_CDOoC@@@?O?CO?g`.  Its displayed size-fourteen projection
+  has 15,360 extensions and none clean, but its minimum projection size is
+  five and all four minima are cleanable.  This refutes only the boundary
+  lemma, not the minimum-projection conjecture or FiveCDC.
+- `scratch/minimum-projection-size14-independent-audit-20260729/`
+  independently exhausts all \(6^5\) map assignments and reconstructs the
+  realization, \(K_{3,3}\) subdivision, 1,024-cycle space, 15,360 target
+  extensions, and four cleanable minima without importing the primary
+  checker or its output.
 - `scratch/minimum-projection-known-strong-snarks-20260729/` freezes an
   exact SAT scan of seven retained order-34 and 7,654 retained order-40
   graph6 rows.  Every row has minimum projection size ten, and all 433,730
@@ -74,9 +101,10 @@ are not independent human verification or peer review.
   This closes a tempting one-matching shortcut but does not realize the
   four synchronized affine classes.
 - `preprint-minimum-fano-projection/` is the corresponding working
-  preprint.  It contains the human exchange and size-through-twelve proofs,
-  all exact census reports, the Petersen limitation, checksums, and an
-  explicit AI-use and human-review disclosure.
+  preprint.  It contains the human exchange and size-through-thirteen proofs,
+  the sharp size-fourteen method counterstate, all exact census reports,
+  the Petersen limitation, checksums, and an explicit AI-use and
+  human-review disclosure.
 - `search/minimum-projection-n130-20260729/` certifies that the retained
   130-vertex graph has minimum extendable projection size \(42\), exactly
   11,264 minimum supports, and no unclean minimum.  One LRAT proves the
