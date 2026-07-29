@@ -91,11 +91,24 @@ Graph decode_graph6(const std::string& record) {
   if (record.empty() || static_cast<unsigned char>(record[0]) < 63) {
     throw std::runtime_error("unsupported graph6 record");
   }
-  const int n = static_cast<unsigned char>(record[0]) - 63;
-  if (n > 62) throw std::runtime_error("large graph6 unsupported");
+  int n = 0;
+  std::size_t payload = 1;
+  if (record[0] != '~') {
+    n = static_cast<unsigned char>(record[0]) - 63;
+  } else if (record.size() >= 4 && record[1] != '~') {
+    n = ((static_cast<unsigned char>(record[1]) - 63) << 12) |
+        ((static_cast<unsigned char>(record[2]) - 63) << 6) |
+        (static_cast<unsigned char>(record[3]) - 63);
+    payload = 4;
+  } else {
+    throw std::runtime_error("very large graph6 unsupported");
+  }
   std::vector<int> bits;
-  for (std::size_t index = 1; index < record.size(); ++index) {
+  for (std::size_t index = payload; index < record.size(); ++index) {
     const int value = static_cast<unsigned char>(record[index]) - 63;
+    if (value < 0 || value >= 64) {
+      throw std::runtime_error("invalid graph6 payload");
+    }
     for (int shift = 5; shift >= 0; --shift) {
       bits.push_back((value >> shift) & 1);
     }
@@ -116,9 +129,6 @@ Graph decode_graph6(const std::string& record) {
         graph.incidence[right].push_back(edge);
       }
     }
-  }
-  if (graph.edges.size() > 128) {
-    throw std::runtime_error("more than 128 edges unsupported");
   }
   for (const auto& row : graph.incidence) {
     if (row.size() != 3) throw std::runtime_error("graph not cubic");
@@ -143,6 +153,10 @@ Graph decode_graph6(const std::string& record) {
   if (std::find(parent.begin(), parent.end(), -1) != parent.end()) {
     throw std::runtime_error("graph disconnected");
   }
+  // The search modes based on Key use at most 128 edges.  The
+  // certificate-oriented SAT audits below do not need a cycle basis and
+  // also support larger cubic graphs.
+  if (graph.edges.size() > 128) return graph;
   std::vector<bool> tree(graph.edges.size(), false);
   for (int vertex = 1; vertex < n; ++vertex) tree[parent_edge[vertex]] = true;
   for (int edge = 0; edge < static_cast<int>(graph.edges.size()); ++edge) {
@@ -176,9 +190,12 @@ struct PackingOracle {
 
   explicit PackingOracle(const Graph& graph_) : graph(graph_) {}
 
-  bool packs(const Key matching) {
-    const auto known = cache.find(matching);
-    if (known != cache.end()) return known->second;
+  bool find(const Key matching, std::vector<int>* red_edges = nullptr,
+            std::vector<int>* blue_edges = nullptr) {
+    if (!red_edges && !blue_edges) {
+      const auto known = cache.find(matching);
+      if (known != cache.end()) return known->second;
+    }
     const int m = graph.edges.size();
     std::vector<int> terminal(graph.vertices, 0);
     for (int edge = 0; edge < m; ++edge) {
@@ -205,9 +222,69 @@ struct PackingOracle {
     }
     const bool answer = solver.solve() == 10;
     cache.emplace(matching, answer);
+    if (answer) {
+      if (red_edges) {
+        red_edges->clear();
+        for (int edge = 0; edge < m; ++edge) {
+          if (solver.val(edge + 1) > 0) red_edges->push_back(edge);
+        }
+      }
+      if (blue_edges) {
+        blue_edges->clear();
+        for (int edge = 0; edge < m; ++edge) {
+          if (solver.val(m + edge + 1) > 0) blue_edges->push_back(edge);
+        }
+      }
+    }
     return answer;
   }
+
+  bool packs(const Key matching) { return find(matching); }
 };
+
+bool packs_explicit_matching(
+    const Graph& graph, const std::vector<bool>& matching) {
+  const int m = graph.edges.size();
+  if (matching.size() != graph.edges.size()) {
+    throw std::runtime_error("explicit matching has wrong length");
+  }
+  std::vector<int> terminal(graph.vertices, 0);
+  for (int edge = 0; edge < m; ++edge) {
+    if (!matching[edge]) continue;
+    terminal[graph.edges[edge].first] ^= 1;
+    terminal[graph.edges[edge].second] ^= 1;
+  }
+  CaDiCaL::Solver solver;
+  for (int edge = 0; edge < m; ++edge) {
+    if (!matching[edge]) {
+      add_clause(solver, {-(edge + 1), -(m + edge + 1)});
+    }
+  }
+  for (int vertex = 0; vertex < graph.vertices; ++vertex) {
+    std::vector<int> red, blue;
+    for (const int edge : graph.incidence[vertex]) {
+      if (!matching[edge]) {
+        red.push_back(edge + 1);
+        blue.push_back(m + edge + 1);
+      }
+    }
+    add_xor(solver, red, terminal[vertex]);
+    add_xor(solver, blue, terminal[vertex]);
+  }
+  return solver.solve() == 10;
+}
+
+bool any_value_class_packs(const Graph& graph,
+                           const std::vector<int>& flow) {
+  for (int value = 1; value <= 7; ++value) {
+    std::vector<bool> matching(graph.edges.size(), false);
+    for (int edge = 0; edge < static_cast<int>(flow.size()); ++edge) {
+      matching[edge] = flow[edge] == value;
+    }
+    if (packs_explicit_matching(graph, matching)) return true;
+  }
+  return false;
+}
 
 std::array<Key, 7> classes(const std::vector<int>& flow) {
   std::array<Key, 7> result{};
@@ -401,7 +478,7 @@ std::vector<Key> all_circuits(const Graph& graph) {
 }
 
 bool connected_circuit_repair(
-    const Graph& graph, const std::vector<Key>& circuits,
+    const Graph& /*graph*/, const std::vector<Key>& circuits,
     const std::vector<int>& flow, PackingOracle& oracle,
     int* repair_value, Key* repair_circuit, std::uint64_t* tested) {
   const auto initial_classes = classes(flow);
@@ -550,7 +627,7 @@ struct FlowSwitch {
 };
 
 std::vector<FlowSwitch> legal_flow_switches(
-    const Graph& graph, const std::vector<Key>& circuits,
+    const Graph& /*graph*/, const std::vector<Key>& circuits,
     const std::vector<int>& flow) {
   const auto value_classes = classes(flow);
   std::vector<FlowSwitch> result;
@@ -1563,16 +1640,111 @@ int husek_samal_circuit_audit(const std::string& path,
   return repairs ? 0 : 3;
 }
 
+int husek_samal_packable_one_switch_audit(
+    const std::string& path) {
+  std::ifstream input(path);
+  std::string record, flow_line;
+  if (!input || !std::getline(input, record) ||
+      !std::getline(input, flow_line)) {
+    throw std::runtime_error("cannot read H-S packable audit state");
+  }
+  Graph graph = decode_graph6(record);
+  std::vector<int> flow;
+  std::stringstream parser(flow_line);
+  std::string item;
+  while (std::getline(parser, item, ',')) {
+    flow.push_back(std::stoi(item));
+  }
+  if (flow.size() != graph.edges.size()) {
+    throw std::runtime_error("H-S packable state has wrong flow length");
+  }
+  const auto initial_profile = husek_samal_profile(graph, flow);
+  if (std::find(initial_profile.begin(), initial_profile.end(), 0) !=
+      initial_profile.end()) {
+    throw std::runtime_error("H-S packable state is already good");
+  }
+
+  PackingOracle oracle(graph);
+  const auto value_classes = classes(flow);
+  std::vector<int> packable_values;
+  std::vector<int> first_red, first_blue;
+  bool witness_saved = false;
+  for (int value = 1; value <= 7; ++value) {
+    std::vector<int> red, blue;
+    if (!oracle.find(value_classes[value - 1], &red, &blue)) continue;
+    packable_values.push_back(value);
+    if (!witness_saved) {
+      first_red = std::move(red);
+      first_blue = std::move(blue);
+      witness_saved = true;
+    }
+  }
+  if (packable_values.empty()) {
+    throw std::runtime_error("H-S packable state is not packable");
+  }
+
+  const std::vector<Key> circuits = all_circuits(graph);
+  std::uint64_t legal = 0, repairs = 0;
+  for (int value = 1; value <= 7; ++value) {
+    for (const Key circuit : circuits) {
+      if ((circuit.lo & value_classes[value - 1].lo) ||
+          (circuit.hi & value_classes[value - 1].hi)) {
+        continue;
+      }
+      ++legal;
+      repairs += husek_samal_good(
+          graph, switched_flow(flow, circuit, value));
+    }
+  }
+
+  std::cout
+      << "{\"status\":\"HS_PACKABLE_ONE_SWITCH_AUDIT\","
+      << "\"graph6\":\"" << record
+      << "\",\"vertices\":" << graph.vertices
+      << ",\"initial_profile\":[";
+  for (int index = 0; index < 7; ++index) {
+    if (index) std::cout << ',';
+    std::cout << initial_profile[index];
+  }
+  std::cout << "],\"packable_values\":[";
+  for (int index = 0;
+       index < static_cast<int>(packable_values.size()); ++index) {
+    if (index) std::cout << ',';
+    std::cout << packable_values[index];
+  }
+  std::cout << "],\"packing_witness_value\":"
+            << packable_values.front()
+            << ",\"packing_red\":[";
+  for (int index = 0; index < static_cast<int>(first_red.size());
+       ++index) {
+    if (index) std::cout << ',';
+    std::cout << first_red[index];
+  }
+  std::cout << "],\"packing_blue\":[";
+  for (int index = 0; index < static_cast<int>(first_blue.size());
+       ++index) {
+    if (index) std::cout << ',';
+    std::cout << first_blue[index];
+  }
+  std::cout << "],\"circuits\":" << circuits.size()
+            << ",\"legal_switches_tested\":" << legal
+            << ",\"good_switches\":" << repairs
+            << ",\"complete\":true}" << std::endl;
+  return repairs ? 3 : 0;
+}
+
 // Search a stronger operation than the target lemma: X may be any binary
 // cycle, possibly disconnected.  SAT therefore disproves nothing; UNSAT
 // for all (t,b) pairs certifies no connected-circuit repair.
 bool binary_cycle_repair(const Graph& graph, const std::vector<int>& flow,
                          const int t, const int b,
-                         std::vector<int>* switched_edges) {
+                         std::vector<int>* switched_edges,
+                         std::vector<int>* red_edges = nullptr,
+                         std::vector<int>* blue_edges = nullptr) {
   if (t == b) return false;
   const int m = graph.edges.size();
   CaDiCaL::Solver solver;
-  const auto x = [m](int edge) { return edge + 1; };
+  const auto x = [](int edge) { return edge + 1; };
   const auto red = [m](int edge) { return m + edge + 1; };
   const auto blue = [m](int edge) { return 2 * m + edge + 1; };
 
@@ -1617,7 +1789,97 @@ bool binary_cycle_repair(const Graph& graph, const std::vector<int>& flow,
       if (solver.val(x(edge)) > 0) switched_edges->push_back(edge);
     }
   }
+  if (red_edges) {
+    red_edges->clear();
+    for (int edge = 0; edge < m; ++edge) {
+      if (solver.val(red(edge)) > 0) red_edges->push_back(edge);
+    }
+  }
+  if (blue_edges) {
+    blue_edges->clear();
+    for (int edge = 0; edge < m; ++edge) {
+      if (solver.val(blue(edge)) > 0) blue_edges->push_back(edge);
+    }
+  }
   return true;
+}
+
+int packing_binary_switch_pair_audit(const std::string& path) {
+  std::ifstream input(path);
+  std::string record, flow_line;
+  if (!input || !std::getline(input, record) ||
+      !std::getline(input, flow_line)) {
+    throw std::runtime_error("cannot read binary-switch audit state");
+  }
+  Graph graph = decode_graph6(record);
+  std::vector<int> flow;
+  std::stringstream parser(flow_line);
+  std::string item;
+  while (std::getline(parser, item, ',')) {
+    flow.push_back(std::stoi(item));
+  }
+  if (flow.size() != graph.edges.size()) {
+    throw std::runtime_error("binary-switch state has wrong flow length");
+  }
+  if (any_value_class_packs(graph, flow)) {
+    throw std::runtime_error("binary-switch state is already packable");
+  }
+  int repairs = 0;
+  std::vector<std::array<int, 2>> failed_pairs;
+  int first_value = 0, first_target = 0;
+  std::vector<int> first_support, first_red, first_blue;
+  for (int value = 1; value <= 7; ++value) {
+    for (int target = 1; target <= 7; ++target) {
+      if (target == value) continue;
+      std::vector<int> support, red_support, blue_support;
+      if (binary_cycle_repair(
+              graph, flow, value, target, &support,
+              &red_support, &blue_support)) {
+        ++repairs;
+        if (!first_value) {
+          first_value = value;
+          first_target = target;
+          first_support = std::move(support);
+          first_red = std::move(red_support);
+          first_blue = std::move(blue_support);
+        }
+      } else {
+        failed_pairs.push_back({value, target});
+      }
+    }
+  }
+  std::cout
+      << "{\"status\":\"PACKING_BINARY_SWITCH_PAIR_AUDIT\","
+      << "\"graph6\":\"" << record
+      << "\",\"vertices\":" << graph.vertices
+      << ",\"repair_pairs\":" << repairs
+      << ",\"failed_pairs\":[";
+  for (int index = 0; index < static_cast<int>(failed_pairs.size());
+       ++index) {
+    if (index) std::cout << ',';
+    std::cout << '[' << failed_pairs[index][0] << ','
+              << failed_pairs[index][1] << ']';
+  }
+  std::cout << "],\"first_value\":" << first_value
+            << ",\"first_target\":" << first_target
+            << ",\"first_support\":[";
+  for (int index = 0; index < static_cast<int>(first_support.size());
+       ++index) {
+    if (index) std::cout << ',';
+    std::cout << first_support[index];
+  }
+  std::cout << "],\"first_red\":[";
+  for (int index = 0; index < static_cast<int>(first_red.size()); ++index) {
+    if (index) std::cout << ',';
+    std::cout << first_red[index];
+  }
+  std::cout << "],\"first_blue\":[";
+  for (int index = 0; index < static_cast<int>(first_blue.size()); ++index) {
+    if (index) std::cout << ',';
+    std::cout << first_blue[index];
+  }
+  std::cout << "]}" << std::endl;
+  return repairs ? 0 : 3;
 }
 
 Key random_cycle(const Graph& graph, std::mt19937_64& random) {
@@ -1890,6 +2152,484 @@ int husek_samal_radius_two_sample_search(
   return 0;
 }
 
+int husek_samal_packable_one_switch_sample_search(
+    const std::string& path, const int samples,
+    const std::uint64_t seed) {
+  std::ifstream input(path);
+  if (!input) throw std::runtime_error("cannot open " + path);
+  std::mt19937_64 random(seed);
+  std::string record;
+  std::uint64_t graphs = 0, flows = 0, flow_trials = 0;
+  std::uint64_t hs_bad = 0, packable_hs_bad = 0;
+  std::uint64_t legal_tested = 0, circuits_seen = 0;
+  std::uint64_t maximum_tested = 0;
+  while (std::getline(input, record)) {
+    if (record.empty()) continue;
+    Graph graph = decode_graph6(record);
+    PackingOracle oracle(graph);
+    ++graphs;
+    for (int sample = 0; sample < samples; ++sample) {
+      const std::vector<int> flow =
+          random_flow(graph, random, &flow_trials);
+      ++flows;
+      const auto initial_profile = husek_samal_profile(graph, flow);
+      if (std::find(initial_profile.begin(), initial_profile.end(), 0) !=
+          initial_profile.end()) {
+        continue;
+      }
+      ++hs_bad;
+      if (!good(flow, oracle)) continue;
+      ++packable_hs_bad;
+      int repair_value = 0;
+      Key repair_circuit;
+      std::uint64_t tested = 0, seen = 0;
+      const bool repair = husek_samal_circuit_repair_stream(
+          graph, flow, &repair_value, &repair_circuit, &tested, &seen);
+      legal_tested += tested;
+      circuits_seen += seen;
+      maximum_tested = std::max(maximum_tested, tested);
+      if (!repair) {
+        std::vector<int> packable_values;
+        const auto value_classes = classes(flow);
+        for (int value = 1; value <= 7; ++value) {
+          if (oracle.packs(value_classes[value - 1])) {
+            packable_values.push_back(value);
+          }
+        }
+        std::cout
+            << "{\"status\":\"HS_PACKABLE_ONE_SWITCH_COUNTERMODEL\","
+            << "\"graph6\":\"" << record
+            << "\",\"vertices\":" << graph.vertices
+            << ",\"sample\":" << sample
+            << ",\"initial_profile\":[";
+        for (int index = 0; index < 7; ++index) {
+          if (index) std::cout << ',';
+          std::cout << initial_profile[index];
+        }
+        std::cout << "],\"packable_values\":[";
+        for (int index = 0;
+             index < static_cast<int>(packable_values.size()); ++index) {
+          if (index) std::cout << ',';
+          std::cout << packable_values[index];
+        }
+        std::cout << "],\"circuits_seen\":" << seen
+                  << ",\"legal_switches_tested\":" << tested
+                  << ",\"flow\":[";
+        for (int edge = 0; edge < static_cast<int>(flow.size()); ++edge) {
+          if (edge) std::cout << ',';
+          std::cout << flow[edge];
+        }
+        std::cout << "]}" << std::endl;
+        return 3;
+      }
+    }
+  }
+  std::cout
+      << "{\"status\":\"HS_PACKABLE_ONE_SWITCH_SAMPLE_DONE\","
+      << "\"graphs\":" << graphs
+      << ",\"flows\":" << flows
+      << ",\"hs_bad\":" << hs_bad
+      << ",\"packable_hs_bad\":" << packable_hs_bad
+      << ",\"flow_trials\":" << flow_trials
+      << ",\"circuits_seen_before_repairs\":" << circuits_seen
+      << ",\"legal_switches_tested_before_repairs\":" << legal_tested
+      << ",\"maximum_legal_switches_before_repair\":"
+      << maximum_tested << "}" << std::endl;
+  return 0;
+}
+
+int packing_one_switch_countermodel_sample_search(
+    const std::string& path, const int samples,
+    const std::uint64_t seed) {
+  std::ifstream input(path);
+  if (!input) throw std::runtime_error("cannot open " + path);
+  std::mt19937_64 random(seed);
+  std::string record;
+  std::uint64_t graphs = 0, flows = 0, flow_trials = 0;
+  std::uint64_t packing_bad = 0, legal_tested = 0;
+  std::uint64_t maximum_tested = 0;
+  std::unordered_map<std::string, std::uint64_t> repair_patterns;
+  while (std::getline(input, record)) {
+    if (record.empty()) continue;
+    Graph graph = decode_graph6(record);
+    PackingOracle oracle(graph);
+    const std::vector<Key> circuits = all_circuits(graph);
+    ++graphs;
+    for (int sample = 0; sample < samples; ++sample) {
+      const std::vector<int> flow =
+          random_flow(graph, random, &flow_trials);
+      ++flows;
+      if (good(flow, oracle)) continue;
+      ++packing_bad;
+      int repair_value = 0;
+      Key repair_circuit;
+      std::uint64_t tested = 0;
+      const bool repair = connected_circuit_repair(
+          graph, circuits, flow, oracle, &repair_value,
+          &repair_circuit, &tested);
+      legal_tested += tested;
+      maximum_tested = std::max(maximum_tested, tested);
+      if (!repair) {
+        std::cout
+            << "{\"status\":\"PACKING_ONE_SWITCH_COUNTERMODEL\","
+            << "\"graph6\":\"" << record
+            << "\",\"vertices\":" << graph.vertices
+            << ",\"sample\":" << sample
+            << ",\"circuits\":" << circuits.size()
+            << ",\"legal_switches_tested\":" << tested
+            << ",\"flow\":[";
+        for (int edge = 0; edge < static_cast<int>(flow.size()); ++edge) {
+          if (edge) std::cout << ',';
+          std::cout << flow[edge];
+        }
+        std::cout << "]}" << std::endl;
+        return 3;
+      }
+      const std::vector<int> repaired =
+          switched_flow(flow, repair_circuit, repair_value);
+      const auto repaired_classes = classes(repaired);
+      int target_value = 0;
+      for (int value = 1; value <= 7; ++value) {
+        if (oracle.packs(repaired_classes[value - 1])) {
+          target_value = value;
+          break;
+        }
+      }
+      if (!target_value || target_value == repair_value) {
+        throw std::runtime_error(
+            "packing repair has no changed packing target");
+      }
+      int length = 0, removed = 0, added = 0;
+      for (int edge = 0; edge < static_cast<int>(flow.size()); ++edge) {
+        if (!selected(repair_circuit, edge)) continue;
+        ++length;
+        removed += flow[edge] == target_value;
+        added += flow[edge] == (target_value ^ repair_value);
+      }
+      const std::string pattern =
+          std::to_string(length) + "/" + std::to_string(removed) +
+          "/" + std::to_string(added);
+      ++repair_patterns[pattern];
+    }
+  }
+  std::vector<std::pair<std::string, std::uint64_t>> sorted_patterns(
+      repair_patterns.begin(), repair_patterns.end());
+  std::sort(sorted_patterns.begin(), sorted_patterns.end());
+  std::cout
+      << "{\"status\":\"PACKING_ONE_SWITCH_SAMPLE_DONE\","
+      << "\"graphs\":" << graphs
+      << ",\"flows\":" << flows
+      << ",\"packing_bad\":" << packing_bad
+      << ",\"flow_trials\":" << flow_trials
+      << ",\"legal_switches_tested_before_repairs\":" << legal_tested
+      << ",\"maximum_legal_switches_before_repair\":"
+      << maximum_tested << ",\"repair_patterns_length_removed_added\":{";
+  for (int index = 0;
+       index < static_cast<int>(sorted_patterns.size()); ++index) {
+    if (index) std::cout << ',';
+    std::cout << '\"' << sorted_patterns[index].first << "\":"
+              << sorted_patterns[index].second;
+  }
+  std::cout << "}}" << std::endl;
+  return 0;
+}
+
+int packing_binary_switch_countermodel_sample_search(
+    const std::string& path, const int samples,
+    const std::uint64_t seed) {
+  std::ifstream input(path);
+  if (!input) throw std::runtime_error("cannot open " + path);
+  std::mt19937_64 random(seed);
+  std::string record;
+  std::uint64_t graphs = 0, flows = 0, flow_trials = 0;
+  std::uint64_t packing_bad = 0, repair_pairs_tested = 0;
+  std::uint64_t maximum_pairs_before_repair = 0;
+  while (std::getline(input, record)) {
+    if (record.empty()) continue;
+    Graph graph = decode_graph6(record);
+    PackingOracle oracle(graph);
+    ++graphs;
+    for (int sample = 0; sample < samples; ++sample) {
+      const std::vector<int> flow =
+          random_flow(graph, random, &flow_trials);
+      ++flows;
+      if (good(flow, oracle)) continue;
+      ++packing_bad;
+      int repair_value = 0, target_value = 0;
+      std::vector<int> support;
+      std::uint64_t tested = 0;
+      for (int value = 1; value <= 7 && !repair_value; ++value) {
+        for (int target = 1; target <= 7; ++target) {
+          if (target == value) continue;
+          ++tested;
+          std::vector<int> candidate_support;
+          if (!binary_cycle_repair(
+                  graph, flow, value, target, &candidate_support)) {
+            continue;
+          }
+          repair_value = value;
+          target_value = target;
+          support = std::move(candidate_support);
+          break;
+        }
+      }
+      repair_pairs_tested += tested;
+      maximum_pairs_before_repair =
+          std::max(maximum_pairs_before_repair, tested);
+      if (!repair_value) {
+        std::cout
+            << "{\"status\":\"PACKING_BINARY_SWITCH_COUNTERMODEL\","
+            << "\"graph6\":\"" << record
+            << "\",\"vertices\":" << graph.vertices
+            << ",\"sample\":" << sample
+            << ",\"value_target_pairs_tested\":" << tested
+            << ",\"flow\":[";
+        for (int edge = 0; edge < static_cast<int>(flow.size()); ++edge) {
+          if (edge) std::cout << ',';
+          std::cout << flow[edge];
+        }
+        std::cout << "]}" << std::endl;
+        return 3;
+      }
+
+      std::vector<int> switched = flow;
+      std::vector<int> parity(graph.vertices, 0);
+      for (const int edge : support) {
+        if (flow[edge] == repair_value) {
+          throw std::runtime_error(
+              "binary packing repair contains forbidden-value edge");
+        }
+        switched[edge] ^= repair_value;
+        parity[graph.edges[edge].first] ^= 1;
+        parity[graph.edges[edge].second] ^= 1;
+      }
+      if (std::find(parity.begin(), parity.end(), 1) != parity.end()) {
+        throw std::runtime_error(
+            "binary packing repair support is not even");
+      }
+      if (!oracle.packs(classes(switched)[target_value - 1])) {
+        throw std::runtime_error(
+            "binary packing repair target does not pack");
+      }
+    }
+  }
+  std::cout
+      << "{\"status\":\"PACKING_BINARY_SWITCH_SAMPLE_DONE\","
+      << "\"graphs\":" << graphs
+      << ",\"flows\":" << flows
+      << ",\"packing_bad\":" << packing_bad
+      << ",\"flow_trials\":" << flow_trials
+      << ",\"value_target_pairs_tested_before_repairs\":"
+      << repair_pairs_tested
+      << ",\"maximum_value_target_pairs_before_repair\":"
+      << maximum_pairs_before_repair << "}" << std::endl;
+  return 0;
+}
+
+int packing_binary_switch_score_sample_search(
+    const std::string& path, const int samples,
+    const std::uint64_t seed) {
+  std::ifstream input(path);
+  if (!input) throw std::runtime_error("cannot open " + path);
+  std::mt19937_64 random(seed);
+  std::string record;
+  std::uint64_t graphs = 0, flows = 0, flow_trials = 0;
+  std::uint64_t packing_bad = 0;
+  int minimum_repairs = 43;
+  std::string minimum_record;
+  std::vector<int> minimum_flow;
+  std::array<std::uint64_t, 43> histogram{};
+  while (std::getline(input, record)) {
+    if (record.empty()) continue;
+    Graph graph = decode_graph6(record);
+    PackingOracle oracle(graph);
+    ++graphs;
+    for (int sample = 0; sample < samples; ++sample) {
+      const std::vector<int> flow =
+          random_flow(graph, random, &flow_trials);
+      ++flows;
+      if (good(flow, oracle)) continue;
+      ++packing_bad;
+      int repairs = 0;
+      for (int value = 1; value <= 7; ++value) {
+        for (int target = 1; target <= 7; ++target) {
+          if (target == value) continue;
+          repairs += binary_cycle_repair(
+              graph, flow, value, target, nullptr);
+        }
+      }
+      ++histogram[repairs];
+      if (repairs < minimum_repairs) {
+        minimum_repairs = repairs;
+        minimum_record = record;
+        minimum_flow = flow;
+      }
+      if (!repairs) {
+        std::cout
+            << "{\"status\":\"PACKING_BINARY_SWITCH_COUNTERMODEL\","
+            << "\"graph6\":\"" << record
+            << "\",\"vertices\":" << graph.vertices
+            << ",\"sample\":" << sample
+            << ",\"value_target_pairs_tested\":42,\"flow\":[";
+        for (int edge = 0; edge < static_cast<int>(flow.size()); ++edge) {
+          if (edge) std::cout << ',';
+          std::cout << flow[edge];
+        }
+        std::cout << "]}" << std::endl;
+        return 3;
+      }
+    }
+  }
+  std::cout
+      << "{\"status\":\"PACKING_BINARY_SWITCH_SCORE_SAMPLE_DONE\","
+      << "\"graphs\":" << graphs
+      << ",\"flows\":" << flows
+      << ",\"packing_bad\":" << packing_bad
+      << ",\"flow_trials\":" << flow_trials
+      << ",\"minimum_repair_pairs\":"
+      << (minimum_repairs == 43 ? -1 : minimum_repairs)
+      << ",\"repair_pair_histogram\":{";
+  bool comma = false;
+  for (int repairs = 0; repairs <= 42; ++repairs) {
+    if (!histogram[repairs]) continue;
+    if (comma) std::cout << ',';
+    comma = true;
+    std::cout << '\"' << repairs << "\":" << histogram[repairs];
+  }
+  std::cout << "},\"minimum_graph6\":\"" << minimum_record
+            << "\",\"minimum_flow\":[";
+  for (int edge = 0; edge < static_cast<int>(minimum_flow.size());
+       ++edge) {
+    if (edge) std::cout << ',';
+    std::cout << minimum_flow[edge];
+  }
+  std::cout << "]}" << std::endl;
+  return 0;
+}
+
+int packing_binary_switch_mcmc_search(
+    const std::string& path, const int steps,
+    const std::uint64_t seed, const int sample_interval) {
+  if (steps <= 0 || sample_interval <= 0) {
+    throw std::runtime_error("MCMC steps and interval must be positive");
+  }
+  std::ifstream input(path);
+  std::string record, flow_line;
+  if (!input || !std::getline(input, record) ||
+      !std::getline(input, flow_line)) {
+    throw std::runtime_error("cannot read MCMC state");
+  }
+  Graph graph = decode_graph6(record);
+  std::vector<int> current;
+  std::stringstream parser(flow_line);
+  std::string item;
+  while (std::getline(parser, item, ',')) {
+    current.push_back(std::stoi(item));
+  }
+  if (current.size() != graph.edges.size()) {
+    throw std::runtime_error("MCMC state has wrong flow length");
+  }
+  for (const int value : current) {
+    if (value < 1 || value > 7) {
+      throw std::runtime_error("MCMC state has a zero or invalid value");
+    }
+  }
+  for (const auto& row : graph.incidence) {
+    if (current[row[0]] ^ current[row[1]] ^ current[row[2]]) {
+      throw std::runtime_error("MCMC state is not a flow");
+    }
+  }
+
+  PackingOracle oracle(graph);
+  std::mt19937_64 random(seed);
+  std::uint64_t accepted = 0, rejected_no_value = 0;
+  std::uint64_t packing_checks = 0, packing_bad = 0;
+  int minimum_repairs = 43;
+  std::vector<int> minimum_flow;
+  for (int step = 1; step <= steps; ++step) {
+    Key cycle;
+    const int generators =
+        1 + static_cast<int>(random() % std::min<std::size_t>(
+            3, graph.cycle_basis.size()));
+    for (int count = 0; count < generators; ++count) {
+      const Key basis =
+          graph.cycle_basis[random() % graph.cycle_basis.size()];
+      cycle.lo ^= basis.lo;
+      cycle.hi ^= basis.hi;
+    }
+    if (!cycle.lo && !cycle.hi) continue;
+    std::array<bool, 8> present{};
+    for (int edge = 0; edge < static_cast<int>(current.size()); ++edge) {
+      if (selected(cycle, edge)) present[current[edge]] = true;
+    }
+    std::vector<int> legal_values;
+    for (int value = 1; value <= 7; ++value) {
+      if (!present[value]) legal_values.push_back(value);
+    }
+    if (legal_values.empty()) {
+      ++rejected_no_value;
+      continue;
+    }
+    const int value = legal_values[random() % legal_values.size()];
+    current = switched_flow(current, cycle, value);
+    ++accepted;
+    if (accepted % static_cast<std::uint64_t>(sample_interval)) continue;
+    ++packing_checks;
+    if (good(current, oracle)) continue;
+    ++packing_bad;
+    int repairs = 0;
+    for (int switch_value = 1; switch_value <= 7; ++switch_value) {
+      for (int target = 1; target <= 7; ++target) {
+        if (target == switch_value) continue;
+        repairs += binary_cycle_repair(
+            graph, current, switch_value, target, nullptr);
+      }
+    }
+    if (repairs < minimum_repairs) {
+      minimum_repairs = repairs;
+      minimum_flow = current;
+      std::cerr << "accepted=" << accepted
+                << " packing_bad=" << packing_bad
+                << " best_binary_pairs=" << minimum_repairs
+                << " packing_cache=" << oracle.cache.size()
+                << std::endl;
+    }
+    if (!repairs) {
+      std::cout
+          << "{\"status\":\"PACKING_BINARY_SWITCH_COUNTERMODEL\","
+          << "\"graph6\":\"" << record
+          << "\",\"vertices\":" << graph.vertices
+          << ",\"accepted_moves\":" << accepted
+          << ",\"flow\":[";
+      for (int edge = 0; edge < static_cast<int>(current.size()); ++edge) {
+        if (edge) std::cout << ',';
+        std::cout << current[edge];
+      }
+      std::cout << "]}" << std::endl;
+      return 3;
+    }
+  }
+  std::cout
+      << "{\"status\":\"PACKING_BINARY_SWITCH_MCMC_DONE\","
+      << "\"graph6\":\"" << record
+      << "\",\"vertices\":" << graph.vertices
+      << ",\"steps\":" << steps
+      << ",\"accepted_moves\":" << accepted
+      << ",\"rejected_no_legal_value\":" << rejected_no_value
+      << ",\"sample_interval\":" << sample_interval
+      << ",\"packing_checks\":" << packing_checks
+      << ",\"packing_bad\":" << packing_bad
+      << ",\"minimum_repair_pairs\":"
+      << (minimum_repairs == 43 ? -1 : minimum_repairs)
+      << ",\"minimum_flow\":[";
+  for (int edge = 0; edge < static_cast<int>(minimum_flow.size()); ++edge) {
+    if (edge) std::cout << ',';
+    std::cout << minimum_flow[edge];
+  }
+  std::cout << "]}" << std::endl;
+  return 0;
+}
+
 int pair_deletion_search(const std::string& path, const int samples,
                          const std::uint64_t seed,
                          const bool require_lift) {
@@ -1991,6 +2731,17 @@ int pair_deletion_search(const std::string& path, const int samples,
 }
 
 int main(int argc, char** argv) {
+  if (argc == 6 &&
+      std::string(argv[1]) == "--packing-binary-switch-mcmc") {
+    try {
+      return packing_binary_switch_mcmc_search(
+          argv[2], std::stoi(argv[3]), std::stoull(argv[4]),
+          std::stoi(argv[5]));
+    } catch (const std::exception& error) {
+      std::cerr << "ERROR: " << error.what() << std::endl;
+      return 1;
+    }
+  }
   if (argc == 6 && std::string(argv[1]) == "--hill") {
     try {
       return hill_search(argv[2], std::stoi(argv[3]),
@@ -2027,6 +2778,12 @@ int main(int argc, char** argv) {
         std::string(argv[1]) == "--hs-circuit-first") {
       return husek_samal_circuit_audit(
           argv[2], std::string(argv[1]) == "--hs-circuit-first");
+    }
+    if (std::string(argv[1]) == "--hs-packable-one-switch-audit") {
+      return husek_samal_packable_one_switch_audit(argv[2]);
+    }
+    if (std::string(argv[1]) == "--packing-binary-switch-pair-audit") {
+      return packing_binary_switch_pair_audit(argv[2]);
     }
     if (std::string(argv[1]) == "--hs-rewire40" ||
         std::string(argv[1]) == "--hs-rewire40-girth5") {
@@ -2067,6 +2824,22 @@ int main(int argc, char** argv) {
     }
     if (std::string(argv[1]) == "--hs-radius2-sample") {
       return husek_samal_radius_two_sample_search(
+          argv[2], std::stoi(argv[3]), std::stoull(argv[4]));
+    }
+    if (std::string(argv[1]) == "--hs-packable-one-switch-sample") {
+      return husek_samal_packable_one_switch_sample_search(
+          argv[2], std::stoi(argv[3]), std::stoull(argv[4]));
+    }
+    if (std::string(argv[1]) == "--packing-one-switch-sample") {
+      return packing_one_switch_countermodel_sample_search(
+          argv[2], std::stoi(argv[3]), std::stoull(argv[4]));
+    }
+    if (std::string(argv[1]) == "--packing-binary-switch-sample") {
+      return packing_binary_switch_countermodel_sample_search(
+          argv[2], std::stoi(argv[3]), std::stoull(argv[4]));
+    }
+    if (std::string(argv[1]) == "--packing-binary-switch-score-sample") {
+      return packing_binary_switch_score_sample_search(
           argv[2], std::stoi(argv[3]), std::stoull(argv[4]));
     }
     if (std::string(argv[1]) == "--pair-bad") {
@@ -2169,7 +2942,8 @@ int main(int argc, char** argv) {
         }
         std::cout << "]}" << std::endl;
         if (!connected_repair || !repair_pairs ||
-            (stop_after > 0 && bad >= stop_after)) {
+            (stop_after > 0 &&
+             bad >= static_cast<std::uint64_t>(stop_after))) {
           std::cerr << "graphs=" << graphs << " flows=" << flows
                     << " bad=" << bad << " trials=" << flow_trials
                     << std::endl;

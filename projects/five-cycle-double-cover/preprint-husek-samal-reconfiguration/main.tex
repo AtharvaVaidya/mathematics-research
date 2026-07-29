@@ -84,11 +84,13 @@ exactly what makes one switch sufficient.
 
 We then give an exact 26-vertex obstruction to radius one.  The graph is
 simple, cubic, cyclically \(4\)-edge-connected, has girth five, and is
-not Tait-colourable.  For the displayed nowhere-zero flow, a
-standard-library checker exhausts all \(8{,}797\) simple cycles and all
-\(1{,}604\) legal cycle--value switches; none reaches the component
-condition.  An explicit two-switch path does reach it, proving that the
-displayed flow has exact distance two.  An independently checked
+not Tait-colourable.  One displayed value class already admits two
+edge-disjoint boundary joins.  Nevertheless, for the displayed
+nowhere-zero flow, a standard-library checker exhausts all \(9{,}213\)
+simple cycles and all \(1{,}485\) legal cycle--value switches; none
+reaches the component condition.  The packing construction splits into
+two circuit components, and switching both reaches the condition.  Thus
+the displayed flow has exact distance two.  An independently checked
 five-cycle double cover of the same graph confirms that this is not a
 counterexample to FiveCDC.
 
@@ -129,8 +131,9 @@ Our contribution has deliberately narrow scope:
 \item a direct proof that a two-join packing yields a finite legal switch
       sequence to a Hu\v{s}ek--\v{S}\'amal-good flow;
 \item an exact strict 26-vertex countermodel to the assertion that one
-      simple-cycle switch always suffices, together with an exact
-      distance-two path and a positive FiveCDC certificate; and
+      simple-cycle switch always suffices even when a value class already
+      packs, together with an exact distance-two path and a positive
+      FiveCDC certificate; and
 \item one 40-vertex negative and one 60-vertex positive control.
 \end{enumerate}
 No reduction from FiveCDC to a universal radius-one assertion is claimed
@@ -318,13 +321,13 @@ Graph6 orders the edges lexicographically by second endpoint and then by
 first endpoint.  Consider the graph
 \begin{center}
 \ttfamily\small
-Y?HI@e??GC?Ba??CO???ACG??BH?G?g?C??O??GI??@??C@?A?C??C@\_
+Y??G@cOOGC??P??Ap???`\_A??CIC???IC\_C?@??HO??A??B\_G????D?\_
 \end{center}
 and the following flow values in that edge order:
 \begin{equation}
 \begin{split}
-(&7,5,3,7,1,3,2,3,5,5,2,6,1,4,7,2,3,7,6,5,\\
- &4,1,6,4,4,6,2,5,6,4,2,1,4,3,3,2,6,7,1).
+(&5,1,5,4,4,4,7,1,6,7,3,1,6,4,3,2,3,2,6,1,\\
+ &2,5,5,2,7,6,3,2,5,7,1,1,7,6,5,3,1,7,6).
 \end{split}
 \end{equation}
 
@@ -335,9 +338,11 @@ The graph and flow in \emph{(5.1)} have the following properties.
       girth five, and has no Tait \(3\)-edge-colouring.
 \item The displayed values form a nowhere-zero \(W\)-flow with profile
       \[
-                           (8,8,4,6,6,6,4).
+                           (6,6,4,6,2,4,4).
       \]
-\item The graph has \(8{,}797\) simple cycles and exactly \(1{,}604\)
+\item Its value-4 class packs two edge-disjoint boundary joins in its
+      complement.
+\item The graph has \(9{,}213\) simple cycles and exactly \(1{,}485\)
       legal cycle--value switches from this flow.  None is H--S-good.
       The minimum defect at radius at most one is two.
 \item The graph has the explicit standard FiveCDC given below.
@@ -350,8 +355,8 @@ Encode a pair of cover coordinates by a five-bit integer.  In graph6
 edge order, the labels are
 \begin{equation}
 \begin{split}
-(&12,6,20,12,6,3,5,3,18,9,17,3,17,24,3,18,18,9,17,9,\\
- &17,24,10,18,10,18,24,24,24,10,10,18,10,24,10,18,10,18,24).
+(&3,20,5,17,3,5,6,3,3,5,10,6,3,5,3,6,5,9,10,12,\\
+ &6,18,24,12,20,6,18,6,20,18,6,6,18,20,6,5,5,6,3).
 \end{split}
 \end{equation}
 Every label in (5.2) has Hamming weight two.  For each of the five bit
@@ -363,18 +368,34 @@ edge belongs to exactly two of them.
 Starting from (5.1), perform
 \begin{equation}
 \begin{array}{c@{\qquad}l}
- a=1&
- C=(1,2,3,7,8,9,10,11,13,15,16,19,20,27,28,29),\\[2mm]
- a=5&
- C=(0,1,2,4,6,7,8,9,10,11,15,30,32,33).
+ a=4&
+ C=(0,1,2,8,9,20,22,24,25,26,30,31,33),\\[2mm]
+ a=4&
+ C=(6,12,14,15,34,35).
 \end{array}
 \end{equation}
 Both supports are simple cycles and avoid the current value class being
 added.  The successive profiles are
 \begin{equation}
-                (2,8,4,6,6,6,10),\qquad(2,4,4,6,4,0,6).
+                (4,6,4,2,4,4,4),\qquad(4,6,4,0,6,4,4).
 \end{equation}
 Thus (5.3) gives an H--S-good flow after two steps.
+
+\paragraph{Packing certificate.}
+The value-4 matching is
+\[
+                         M_4=(3,4,5,13).
+\]
+The two edge sets
+\begin{align*}
+J_0={}&(1,14,15,18,20,21,26,28,29,30,31,32,35,37,38),\\
+J_1={}&(0,2,6,7,8,9,12,16,17)
+\end{align*}
+are disjoint, avoid \(M_4\), and both have boundary
+\(\partial M_4\).  The even support furnished by
+Theorem~\ref{thm:packing} has exactly the two components in (5.3).
+Hence this certificate explains the distance-two repair while proving
+that packability alone does not force a radius-one neighbour.
 
 \begin{proof}[Certificate proof of Theorem~\ref{thm:counter}]
 The supplied standard-library checker decodes graph6 from first
@@ -393,13 +414,14 @@ is smaller than its final vertex.  Hence each undirected simple cycle is
 generated exactly once.  For each generated cycle and each
 \(a\in W-\{0\}\), the checker tests legality directly and, when legal,
 recomputes the full seven-entry defect profile from graph components.
-The resulting exact totals are \(8{,}797\) cycles, \(1{,}604\) legal
+The resulting exact totals are \(9{,}213\) cycles, \(1{,}485\) legal
 switches, and zero clean neighbours.  This proves
 \(\dist_{\HS}(f)\geq2\).  Direct verification of (5.3)--(5.4) proves
 \(\dist_{\HS}(f)\leq2\).
 
-Finally, the checker tests every weight and every vertex-coordinate
-parity in (5.2).  These finite checks prove all five assertions.
+Finally, the checker verifies the matching and both join boundaries,
+and tests every weight and every vertex-coordinate parity in (5.2).
+These finite checks prove all six assertions.
 \end{proof}
 
 \begin{remark}
@@ -475,7 +497,7 @@ cycle--value pairs, not merely cycles.}
 \toprule
 order & cycles & legal & initial minimum & radius-one minimum & outcome\\
 \midrule
-26 & \(8{,}797\)   & \(1{,}604\)  & \(4\) & \(2\) & no repair; distance \(2\)\\
+26 & \(9{,}213\)   & \(1{,}485\)  & \(2\) & \(2\) & packs; no one-switch repair\\
 40 & \(941{,}438\) & \(48{,}544\) & \(4\) & \(2\) & no repair; Tait control\\
 60 & ---           & ---          & \(4\) & \(0\) & displayed one-switch repair\\
 \bottomrule
@@ -486,13 +508,18 @@ order & cycles & legal & initial minimum & radius-one minimum & outcome\\
 
 The principal checker is
 \[
-\texttt{scratch/verify\_husek\_samal\_one\_switch\_boundary.py}.
+\texttt{scratch/verify\_husek\_samal\_packable\_one\_switch\_countermodel.py}.
 \]
 It uses only the Python standard library.  Its graph6 decoder, flow
 checker, component-defect routine, simple-cycle generator, switch
 routine, cyclic-cut enumeration, girth computation, Tait-colouring
 backtracker, and FiveCDC checker are implemented locally.  No SAT solver
 or opaque mathematical library is used.
+
+The 40-vertex negative control is checked by the separately written
+\[
+\texttt{scratch/verify\_husek\_samal\_one\_switch\_boundary.py}.
+\]
 
 The 60-vertex construction has a second checker,
 \[
@@ -510,12 +537,14 @@ The frozen artifact hashes at the time of this draft are:
 \toprule
 SHA-256 & file\\
 \midrule
+\nolinkurl{9bdcb3a65f6dc07224f8a20c79e45e9085c9f73c55ead745ac64127decd76607}
+& packable-state checker\\
 \nolinkurl{ac51aaf266178eb764fcada85b25e17dc2c18c129413abb51a2b309513ea415d}
 & boundary checker\\
 \nolinkurl{09f9bdc797948b49cf6b7a3080160e07111dad718f0e07ae00a2a9c0958b9a6e}
 & independent 60-vertex replay\\
-\nolinkurl{1c8c0b5959fb7e8f7333b44860a519e1351f366e0a78ab5be8a061287f9dfd46}
-& order-26 retained state\\
+\nolinkurl{5cd280e730e0dc336681c3768945b7c691e023cb4f957a7408ea306597053f45}
+& packable order-26 retained state\\
 \nolinkurl{6e1dc5fb3b290fe8364559844ed419ee6dda1ec974b2ad3aebfd21442c8fe6aa}
 & order-40 retained state\\
 \bottomrule
@@ -524,6 +553,7 @@ SHA-256 & file\\
 
 From the project root, the exact replay commands are
 \begin{verbatim}
+python3 scratch/verify_husek_samal_packable_one_switch_countermodel.py
 python3 scratch/verify_husek_samal_one_switch_boundary.py
 python3 scratch/verify_fano_order60_flow_repair.py
 \end{verbatim}
@@ -544,9 +574,10 @@ class.  They leave open all of the following:
 \end{enumerate}
 
 The 26-vertex state has exact distance two, but this is one instance,
-not evidence of a universal radius-two theorem.  Likewise, the
-packing-to-switch lemma resolves states possessing an appropriate
-packing by a finite sequence; it supplies no universal packing theorem.
+not evidence of a universal radius-two theorem.  It also shows sharply
+that the finite sequence in the packing-to-switch lemma cannot always be
+replaced by one circuit.  The lemma supplies no universal packing
+theorem.
 
 \section{Novelty and responsibility boundary}
 

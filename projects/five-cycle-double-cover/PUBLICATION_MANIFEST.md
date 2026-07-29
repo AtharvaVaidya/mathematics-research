@@ -45,6 +45,32 @@ are not independent human verification or peer review.
 This update is a conditional reduction and finite-evidence package.  It
 does not prove or disprove FiveCDC, and it makes no orientable claim.
 
+## H--S reconfiguration and binary-repair update (2026-07-28)
+
+- `preprint-husek-samal-reconfiguration/` is an eight-page working
+  preprint with a page-one AI-use disclosure and human-review gate.  Its
+  strengthened strict order-26 theorem shows that an H--S-bad flow can
+  already have a packable value class yet have no good simple-cycle
+  neighbour.  A solver-free checker exhausts 9,213 cycles and 1,485 legal
+  switches, checks the two joins, exact distance two, graph premises, and
+  an explicit FiveCDC.
+- `scratch/fano-binary-packing-repair-frontier-20260728.md` proves the
+  exact 21-incidence symmetry and SAT/XOR formulation for binary repair.
+- `search/fano-binary-repair-connected-countermodel-108v-20260728/`
+  freezes a connected simple bridgeless cubic order-108 countermodel to
+  binary repair under connectedness alone.  The 51,193-clause formula is
+  UNSAT, with LRAT accepted by both `lrat-check` and verified CakeML
+  `cake_lpr`; an independently structured checker reconstructs the graph,
+  flow, formula, and a positive FiveCDC.
+- The order-108 graph has exactly two cyclic 2-edge cuts.  Therefore it
+  is not a FiveCDC counterexample and does not refute the surviving
+  cyclically-4, girth-ten binary-repair lemma.
+- `verify_order80_girth10_binary_repair.py` supplies a solver-free
+  positive girth-ten control on a Tait-colourable order-80 graph.
+
+These are auxiliary publishable-candidate results, not a resolution.
+Novelty remains provisional pending specialist review.
+
 ## Jaeger fixed-fibre and five-point lifting update (2026-07-28)
 
 - `preprint-jaeger-fivecdc-frontier/` is a 34-page working preprint with

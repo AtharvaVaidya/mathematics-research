@@ -2935,16 +2935,18 @@ some nonzero \(\mu\).
 The proposed radius-one theorem is false even in the strict-snark
 domain.  A retained order-26 simple cubic cyclically 4-edge-connected
 non-Tait graph of girth five has a nowhere-zero flow with profile
-\((8,8,4,6,6,6,4)\).  Two independent implementations enumerate all
-8,797 simple cycles and all 1,604 legal cycle--value switches; none is
-good.  A standard-library checker also exhausts Tait colourings,
-validates cyclic cuts of sizes at most three, and checks an explicit
-FiveCDC.  The displayed flow has exact H--S distance two, with checked
-intermediate profiles
+\((6,6,4,6,2,4,4)\).  Its value-4 class already packs two
+edge-disjoint boundary joins.  A standard-library implementation
+enumerates all 9,213 simple cycles and all 1,485 legal cycle--value
+switches; none is good.  It also exhausts Tait colourings, validates
+cyclic cuts of sizes at most three, and checks an explicit FiveCDC.  The
+displayed flow has exact H--S distance two, with checked intermediate
+profiles
 \[
-              (2,8,4,6,6,6,10),\qquad(2,4,4,6,4,0,6).
+              (4,6,4,2,4,4,4),\qquad(4,6,4,0,6,4,4).
 \]
-Thus this closes only the radius-one proof route.
+Thus even an already packable state can require both components of the
+packing-to-switch support; this closes only the radius-one proof route.
 
 There is nevertheless a human packing-to-switch theorem.  If a value
 class \(M_a\) has two disjoint \(\partial M_a\)-joins \(J_1,J_2\), take
@@ -2962,3 +2964,38 @@ The exact surviving problem is finite-radius or unrestricted
 reconfiguration of all-seven-nonpacking flows, or direct existential
 flow selection.  See
 `scratch/husek-samal-one-switch-reduced-frontier-20260728.md`.
+
+## Binary packing repair and its exact connectivity boundary
+
+Audit date: **2026-07-28**.
+
+For distinct Fano values \(t,b\), a binary repair chooses an even
+subgraph \(X\) avoiding the current value-\(t\) class, switches \(t\) on
+\(X\), and asks that the new value-\(b\) matching pack two disjoint
+boundary joins.  The exact formulation uses switch variables and two
+join variables.  The targets \(b\) and \(b+t\) are equivalent, reducing
+the 42 ordered queries to 21 Fano point--line incidences.
+
+This route survives the sound minimum-counterexample class but not
+connectedness alone.  An adversarial order-36 state has only 14 of 21
+repairing incidences.  Three linear relabellings partition all 21 failed
+incidences.  Joining the three copies by two crossed cubic 2-sums gives
+a connected simple bridgeless cubic graph of order 108 whose displayed
+flow has no binary repair.
+
+The combined selector-gated formula has 10,227 variables and 51,193
+clauses.  Its LRAT is accepted by both `lrat-check` and the
+CakeML-generated verified `cake_lpr`.  A separately structured checker
+reconstructs the composition, flow, all CNF clauses, graph metadata, and
+an explicit standard FiveCDC.  The graph has girth five and exactly two
+cyclic 2-edge cuts, so it is not a FiveCDC counterexample and does not
+refute the cyclically 4-edge-connected girth-ten repair conjecture.
+
+On the positive side, a solver-free certificate on the retained
+80-vertex cubic vertex-transitive girth-ten graph checks one binary
+repair through explicit switch and join sets and constructs the resulting
+FiveCDC.  Seeded samples found no repair failure in the reduced snark
+controls, but those are not censuses.
+
+See `scratch/fano-binary-packing-repair-frontier-20260728.md` and
+`search/fano-binary-repair-connected-countermodel-108v-20260728/`.

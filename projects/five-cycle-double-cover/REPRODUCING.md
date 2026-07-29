@@ -21,6 +21,28 @@ temporary directory is removed after success or failure.
 The frontier statement concerns one explicit positive instance.  It is not a
 census or clearance of the full reduced minimum-counterexample domain.
 
+## Hušek--Šámal and binary-repair publication checks
+
+The current auxiliary preprint and its connected repair obstruction are
+checked separately from the older master script:
+
+```sh
+python3 scratch/verify_husek_samal_packable_one_switch_countermodel.py
+python3 scratch/verify_husek_samal_one_switch_boundary.py
+python3 scratch/verify_fano_order60_flow_repair.py
+python3 scratch/verify_order80_girth10_binary_repair.py
+
+cd search/fano-binary-repair-connected-countermodel-108v-20260728
+shasum -a 256 -c SHA256SUMS
+python3 verify.py \
+  --lrat-check /path/to/drat-trim/lrat-check \
+  --cake-lpr /path/to/cake_lpr
+```
+
+The verifier deliberately fails closed unless both proof-checker paths are
+supplied.  These commands prove only the displayed auxiliary finite
+theorems, not FiveCDC.
+
 ## Rooted-resolution frontier checks
 
 The newest conditional reduction and finite controls are outside the older

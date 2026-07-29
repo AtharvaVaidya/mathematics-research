@@ -1457,17 +1457,40 @@ Hušek--Šámal formulation cannot be dropped.  See
 
 Status: **FAILED APPROACH / EXACT STRICT ORDER-26 COUNTERMODEL**.
 
-The graph6 record
-`Y?HI@e??GC?Ba??CO???ACG??BH?G?g?C??O??GI??@??C@?A?C??C@_`
-is simple cubic, cyclically 4-edge-connected, non-Tait, and has girth
-five.  Its displayed nowhere-zero \(\mathbb F_2^3\)-flow has defect
-profile \((8,8,4,6,6,6,4)\).  Complete simple-cycle enumeration gives
-8,797 cycles and 1,604 legal value switches; every neighbour remains
-dirty.  A separately written standard-library checker agrees and also
-checks an explicit FiveCDC.
+The retained order-26 graph is simple cubic, cyclically
+4-edge-connected, non-Tait, and has girth five.  Its displayed
+nowhere-zero \(\mathbb F_2^3\)-flow has defect profile
+\((6,6,4,6,2,4,4)\), and its value-4 class already packs two disjoint
+boundary joins.  Complete simple-cycle enumeration gives 9,213 cycles
+and 1,485 legal value switches; every neighbour remains dirty.  A
+separately written standard-library checker also checks the packing,
+graph premises, and an explicit FiveCDC.
 
 The state is not a multi-switch obstruction: a displayed two-switch
-path reaches profile \((2,4,4,6,4,0,6)\), so its exact distance is two.
-This refutes radius one even under every elementary minimum-counterexample
-restriction, but not FiveCDC or unrestricted H--S reconfiguration.  See
+path reaches profile \((4,6,4,0,6,4,4)\), so its exact distance is two.
+This refutes radius one even for an already packable strict state, but not
+FiveCDC or unrestricted H--S reconfiguration.  See
 `scratch/husek-samal-one-switch-reduced-frontier-20260728.md`.
+
+## O64 — Connected binary-cycle repair to a packable value class
+
+Status: **FAILED OUTSIDE CYCLIC-4 / EXACT ORDER-108 COUNTERMODEL**.
+
+The proposed binary repair chooses an even support avoiding one Fano
+value class, switches by that value, and asks that one target value class
+pack.  Targets paired by translation are equivalent, leaving 21 Fano
+point--line incidences.
+
+A connected order-36 state fails seven incidences.  Three explicit linear
+relabelings partition all 21 incidences among three copies.  Two crossed
+cubic 2-sums give a connected simple bridgeless cubic order-108 graph.
+The full selector-gated formula for all 21 global repairs has 10,227
+variables and 51,193 clauses and is UNSAT.  Both `lrat-check` and
+CakeML `cake_lpr` accept the LRAT; an independent semantic checker
+reconstructs every clause.
+
+The graph has girth five and exactly two cyclic 2-edge cuts.  It also has
+an explicit standard FiveCDC.  Hence this refutes connected binary repair
+but leaves open the cyclically 4-edge-connected, girth-ten version that
+would suffice for FiveCDC.  See
+`search/fano-binary-repair-connected-countermodel-108v-20260728/`.

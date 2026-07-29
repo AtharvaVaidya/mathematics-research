@@ -3453,3 +3453,44 @@ Seeded radius-two samples then tested:
 The respective second-neighbour counts were 4,432,803 and 1,594,834.
 These runs do not enumerate the flow spaces or independently establish
 completeness of the graph lists.
+
+## Binary packing repair: score descent, girth-ten control, and connected
+countermodel
+
+Audit date: **2026-07-28**.
+
+The exact binary-repair SAT block chooses an even switch support \(X\)
+avoiding \(M_t\), forms the literal switched target class
+\[
+ M'_b=(M_b-X)\cup(M_{b+t}\cap X),
+\]
+and chooses two disjoint \(\partial M'_b\)-joins avoiding \(M'_b\).
+The symmetry \(b\leftrightarrow b+t\) reduces 42 ordered queries to 21
+incidences.
+
+Seeded samples on the retained order-26, order-34, and order-44 lists
+found at least one repair for every all-seven-nonpacking state tested.
+On the APX order-36 graph, a 10,000-flow sample had minimum score 30/42.
+Adversarial flow walks then found a state with score 28/42, or 14/21
+incidences.  Solver-independent cycle-space enumeration proves the seven
+incidence failures.
+
+Three explicit \(\mathrm{GL}(3,2)\) relabellings send those seven failures
+to a partition of all 21 incidences.  Two crossed cubic 2-sums connect the
+three copies.  The resulting order-108 graph is simple, cubic, connected,
+and bridgeless.  A complete 51,193-clause combined formula proves that all
+21 global repair incidences fail; the 7.3 MB LRAT passes both `lrat-check`
+and verified `cake_lpr`.  Independent reconstruction gives girth five,
+zero bridges, exactly two cyclic 2-edge cuts, and a positive FiveCDC.
+
+The composition therefore refutes connected binary packing repair but
+does not enter the cyclically-4 minimum-counterexample domain.  The
+certificate package is
+`search/fano-binary-repair-connected-countermodel-108v-20260728/`.
+
+A separate high-girth stress test uses the retained order-80 cubic
+vertex-transitive girth-ten graph.  Three deterministic MCMC runs sampled
+163 all-seven-nonpacking flows; every one had all 42 ordered repair
+queries SAT.  The graph is Tait-colourable.  One switch, two joins, the
+girth and cyclic-cut metadata, and the constructed standard FiveCDC are
+frozen in a solver-free certificate.

@@ -7,7 +7,7 @@ A human author should:
 
 1. Check the packing-to-switch proof line by line.
 2. Independently decode the order-26 graph6 record and check the displayed
-   flow and FiveCDC labels.
+   flow, two joins, and FiveCDC labels.
 3. Reimplement the simple-cycle and legal-switch enumeration independently.
 4. Verify the cyclic-connectivity, girth, and non-Tait claims with a
    separate program.

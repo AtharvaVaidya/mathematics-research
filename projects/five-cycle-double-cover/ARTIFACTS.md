@@ -6,6 +6,21 @@ copied into a separate clean clone; it was not modified or committed.
 
 ## Included
 
+- The eight-page H--S flow-reconfiguration preprint, revised to use a
+  strict 26-vertex flow whose value-4 class already packs.  Its
+  standard-library checker exhausts all 9,213 simple cycles and 1,485
+  legal switches, proves no radius-one repair, checks the two-component
+  distance-two packing repair, graph premises, and an explicit standard
+  FiveCDC.
+- The binary packing-repair frontier and exact order-108 connectivity
+  countermodel.  Three relabelled order-36 blocks joined by two crossed
+  cubic 2-sums yield a connected simple bridgeless graph with zero
+  repairing Fano incidences.  A 10,227-variable, 51,193-clause combined
+  CNF has a dual-accepted LRAT, and a separate semantic checker
+  reconstructs every clause and a positive FiveCDC.  The two cyclic
+  2-edge cuts keep this auxiliary obstruction outside the minimum
+  FiveCDC domain.
+
 - The 34-page, explicitly AI-disclosed working preprint
   `preprint-jaeger-fivecdc-frontier/`, with LaTeX source, rendered PDF,
   references, human-review gate, validation record, and checksum manifest.

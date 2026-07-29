@@ -3,7 +3,8 @@
 Date: 2026-07-28
 
 Status: **direct radius-one domination is false even on a strict
-26-vertex snark.  A packing-to-multi-switch lemma is proved.**
+26-vertex snark, including when a value class already packs.  A
+packing-to-multi-switch lemma is proved.**
 Nothing in this note is a resolution of FiveCDC.
 
 ## 1. Exact formulation
@@ -325,23 +326,84 @@ the older packing-bad one-switch census.  The H--S repair changes how a
 functional sees the complementary factor and exposes a packing which
 was already intrinsic to \(M_7\).
 
-## 8. Reproduction
+## 8. Packability itself does not restore radius one
+
+A further tempting bridge was:
+
+> If an H--S-bad flow already has a packable value class, then some
+> legal simple-cycle switch makes it H--S-good.
+
+This is false.  The first connected simple cubic countermodel found has
+order 12.  Its graph6 record and flow are
+
+```text
+K?`DAagK_iH_
+3,1,1,7,6,2,2,4,6,3,5,6,7,3,4,7,5,2
+```
+
+Its value-5 class consists of edges \(10,16\).  The following two
+edge-disjoint joins avoid that class and have the same four-vertex
+boundary:
+
+```text
+J1 = 4,5,7,8,9,15
+J2 = 0,2,11,12,13,17
+```
+
+The initial H--S profile is
+\[
+                         (4,6,4,4,2,4,4).
+\]
+Complete edge-subset enumeration finds exactly 76 simple cycles and 100
+legal cycle--value switches.  None is H--S-good.  The packing-to-switch
+construction for \(\mu=1\) instead gives two disjoint five-cycles; both
+must be switched.  The profiles after the first and second components
+are
+\[
+                (2,4,4,2,2,4,4),\qquad
+                (0,4,2,2,2,4,2).
+\]
+An exhaustive full-span flow-orbit census found no such countermodel in
+connected simple cubic graphs through order 10.  Full span is sound here:
+if the image of the flow lies in a proper subspace of
+\(\mathbb F_2^3\), a nonzero functional annihilates the image and makes
+the H--S defect zero.  The order-12 minimality statement is restricted to
+connected simple cubic graphs, not multigraphs.
+
+The phenomenon also occurs inside the strict-snark domain.  The retained
+state `husek-samal-packable-one-switch-countermodel-order26.txt` is simple
+cubic, cyclically 4-edge-connected, non-Tait, nonplanar, and has girth
+five.  Its initial profile is
+\[
+                         (6,6,4,6,2,4,4),
+\]
+and value 4 packs.  The independent standard-library checker enumerates
+all 9,213 simple cycles and all 1,485 legal switches, finding no good
+switch.  The exact H--S distance is two.  It also checks an explicit
+standard FiveCDC, so this is only an auxiliary countermodel.
+
+Thus the packing-to-switch lemma is inherently a finite-sequence
+statement: its even support can have more than one circuit component,
+and no unrelated repairing single circuit need exist.
+
+## 9. Reproduction
 
 From the project root:
 
 ```bash
 python3 scratch/verify_fano_order60_flow_repair.py
 python3 scratch/verify_husek_samal_one_switch_boundary.py
+python3 scratch/verify_husek_samal_packable_one_switch_countermodel.py
 ```
 
-Both programs use only the Python standard library.  The second reads
+All three programs use only the Python standard library.  The second reads
 the frozen order-40 construction certificate and independently checks
 the order-26 and second order-40 states.  It uses its own graph, flow,
 component-parity, simple-cycle, switch, Tait-colouring, FiveCDC, girth,
-and cyclic-cut routines.  A separate C++ implementation gives the same
-order-26 totals.
+and cyclic-cut routines.  The third checks the stricter packable order-26
+state.  A separate C++ implementation gives the same order-26 totals.
 
-## 9. Remaining resolution obligation
+## 10. Remaining resolution obligation
 
 Radius one is no longer a viable universal route.  The live exact
 targets are:

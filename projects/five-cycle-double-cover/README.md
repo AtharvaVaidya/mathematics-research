@@ -11,6 +11,20 @@ The project does **not** currently claim a resolution.  Every result is
 classified using the status vocabulary in the lab protocol.  In particular,
 finite searches are not evidence of the universal statement.
 
+The newest publication-candidate update is
+`preprint-husek-samal-reconfiguration/`.  It proves a human-checkable
+packing-to-switch lemma and gives an exact cyclically 4-edge-connected
+26-vertex snark flow showing that a packable value class can still require
+two simple-cycle switches to reach the Hušek--Šámal component condition.
+The standard-library checker exhausts every legal radius-one move and also
+checks an explicit standard FiveCDC.  A related package,
+`search/fano-binary-repair-connected-countermodel-108v-20260728/`, gives a
+connected 108-vertex obstruction to a stronger binary-repair lemma, with a
+51,193-clause CNF and LRAT accepted by both C and CakeML checkers.  Its two
+cyclic 2-edge cuts keep it outside the minimum-counterexample domain.
+Both results disclose AI use and make no FiveCDC resolution or priority
+claim.
+
 The newest exact handoff is
 `ROOTED_RESOLUTION_FRONTIER_20260728.md`.  It gives the fully written
 fixed-five minimum-counterexample reduction, the two-way rooted
