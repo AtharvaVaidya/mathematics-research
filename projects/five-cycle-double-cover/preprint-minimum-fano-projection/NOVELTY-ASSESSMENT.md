@@ -30,7 +30,13 @@ The manuscript proves:
    exchange inequalities can be forced without changing the local
    two-colour boundary pairings, together with an explicit state that
    defeats every one-round fixed-colour Kempe move but escapes in two
-   rounds.
+   rounds;
+9. an unbounded two-terminal cleaning theorem for one-circuit supports;
+   and
+10. a conditional orbit-reflecting \(K_{3,3}-e\) inflation theorem that
+    transfers any hypothetical goal-free dynamic boundary orbit to one
+    satisfying all four recomputed exchange inequalities at every
+    reachable state.
 
 This is a partial theorem about the Hušek--Šámal flow criterion.  It does
 not resolve the Five-Cycle Double Cover Conjecture.
@@ -56,6 +62,15 @@ The prescribed-cycle antecedent is:
   Combinatorics 29 (2013), 977--979,
   <https://doi.org/10.1007/s00373-012-1169-8>.
 
+The \(K_{3,3}\) input used by the dynamic inflation is prior work:
+
+- sarah-marie belcastro and Ruth Haas, *Counting edge-Kempe-equivalence
+  classes for 3-edge-colored cubic graphs*, arXiv:1209.1730,
+  <https://arxiv.org/abs/1209.1730>.  Section 4.2 records the two
+  edge-Kempe classes of \(K_{3,3}\) and the Hamiltonian property of every
+  colour pair.  The project claims novelty only for its conditional
+  orbit-reflecting use of the edge-deleted pole, not for that fact.
+
 A targeted arXiv search on 29 July 2026 for combinations of “minimum
 extendable projection,” “minimum support,” “Fano projection,”
 “componentwise GL(2,2),” and “five-cycle double cover” found no matching
@@ -75,10 +90,14 @@ all four colours; any general descent must reapply them dynamically.
 The new size-fourteen ingredient is not merely a larger
 census: its two-colour path-switch argument quantifies over every possible
 terminal pairing in an unknown cubic realization and is checked by 724
-literal deletion rows.  A targeted web/arXiv screen found no theorem
-stated in the language of minimum extendable Fano projections, but this
-does not establish priority.  The result is suitable for public circulation
-as an AI-assisted preprint **after** a graph theorist:
+literal deletion rows.  The two-terminal theorem also excludes an
+unbounded dynamic-trap class without computation, while the conditional
+\(K_{3,3}-e\) theorem cleanly separates boundary-orbit obstruction from
+the metric exchange inequalities.  A targeted web/arXiv screen found no
+theorem stated in the language of minimum extendable Fano projections, but
+this does not establish priority.  The result is suitable for public
+circulation as an explicitly provisional AI-assisted working preprint.
+A formal venue submission should wait until a graph theorist:
 
 - checks the flow-to-cleanliness semantics line by line;
 - audits both finite classifiers in a clean environment;
@@ -103,7 +122,8 @@ theorem to higher-degree vertices.
 
 OpenAI Codex agents under Atharva Vaidya's direction discovered the proof
 route, counterstates, size-fourteen Kempe escape, and static-inflation
-obstruction; wrote the exact
+obstruction; proposed the two-terminal cleaning and orbit-reflecting
+\(K_{3,3}-e\) lemmas; wrote the exact
 classifiers, exhaustive certificate builders, and independent checkers;
 performed the preliminary literature screen; and drafted the manuscript
 and this assessment.  A hostile agent audit of the inflation proof passed

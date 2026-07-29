@@ -149,6 +149,19 @@ are not independent human verification or peer review.
   counterexample.  A full-cycle checker, a separate shortest-\(T\)-join
   checker, a complete boundary-profile reconfiguration census, exact
   hashes, a human proof, and a hostile agent audit are included.
+- `scratch/minimum-projection-dynamic-kempe-frontier-20260729/` proves two
+  dynamic-frontier statements.  First, if the support is one circuit and
+  every complement component has exactly two vertices on it, every
+  extension is directly cleanable by componentwise
+  \(\operatorname{GL}(2,2)\) maps and support reintegration.  This is an
+  unbounded human theorem.  Second, chains of the edge-deleted
+  \(K_{3,3}\) two-pole reflect boundary-changing Kempe moves and transfer
+  any hypothetical goal-free base orbit to one satisfying all four
+  recomputed exchange inequalities at every reachable state.  The latter
+  theorem is conditional: no base orbit or globally minimum
+  counterexample is supplied.  The package includes two independently
+  written dependency-free checkers, exact hashes, exploratory results
+  clearly separated from the theorems, and a hostile agent audit.
 - `search/minimum-projection-n130-20260729/` certifies that the retained
   130-vertex graph has minimum extendable projection size \(42\), exactly
   11,264 minimum supports, and no unclean minimum.  One LRAT proves the

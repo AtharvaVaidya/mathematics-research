@@ -1,0 +1,3 @@
+K33_DIRECT assignments=19683 proper=12 global_colour_orbits=2
+PAIRING_INCIDENCE_AUDIT checked=146599 support_orders=2,4,6,8,10,12,14 all_clean=yes
+PASS: independent local audit

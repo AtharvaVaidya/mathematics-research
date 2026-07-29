@@ -1,0 +1,6 @@
+EXPLORATORY_ONLY canonical_exhaustive=no
+ORDER10 samples=10 literal_colourings_range=288..480 combined_states_range=5760..9720 goal_free_components=0
+K33_FOUR_EDGE_CUT samples=61 literal_colourings=192_or_216 combined_states_range=3840..4392 goal_free_components=0
+ORDER12 samples=4 literal_colourings_range=240..468 combined_states_range=4860..9510 goal_free_components=0
+DYNAMIC_COMPONENTS connected_samples=74 two_component_samples=1 every_component_contains_goal=yes
+NO_THEOREM: these random samples do not rule out a dynamic trap

@@ -81,6 +81,18 @@ The package contains two differently structured inequality checks, a full
 boundary-profile reconfiguration census, exact hashes, and an explicit
 AI-use/human-review warning.
 
+The dynamic frontier is now sharpened in
+`scratch/minimum-projection-dynamic-kempe-frontier-20260729/`.  A
+human-checkable unbounded theorem proves direct cleaning whenever the
+support is one circuit and every complement component has exactly two
+vertices on it.  The same package proves that the edge-deleted
+\(K_{3,3}\) two-pole is boundary-orbit-reflecting: chaining it transfers
+any hypothetical goal-free dynamic boundary orbit to one satisfying all
+four recomputed exchange inequalities after every reachable move.  It
+does not find such an orbit or establish global support minimality.  Two
+independently written checkers and a hostile agent audit pass; priority and
+the proofs themselves still require independent expert human review.
+
 The earlier `preprint-husek-samal-reconfiguration/` proves a human-checkable
 packing-to-switch lemma and gives an exact cyclically 4-edge-connected
 26-vertex snark flow showing that a packable value class can still require

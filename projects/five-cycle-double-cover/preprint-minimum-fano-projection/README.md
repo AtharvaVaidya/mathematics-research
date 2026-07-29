@@ -16,7 +16,7 @@ cubic.
 Build from this directory with:
 
 ```sh
-tectonic main.tex
+SOURCE_DATE_EPOCH=1785283200 tectonic main.tex
 ```
 
 Run the exhaustive order-18 checker from the project root with:
@@ -67,6 +67,8 @@ python3 scratch/cubic-reduction-standard-fivecdc-20260729/verify_local_relations
 python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/verify.py
 python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/independent_audit.py
 python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/kempe_state_graph.py
+python3 scratch/minimum-projection-dynamic-kempe-frontier-20260729/verify.py
+python3 scratch/minimum-projection-dynamic-kempe-frontier-20260729/independent_audit.py
 ```
 
 The dependency-free checker exhausts every support shape allowed by the
@@ -143,6 +145,22 @@ The full-cycle and shortest-\(T\)-join checkers verify the four inequalities
 by different methods; an agent hostile audit passed after correcting the
 terminal-distance exposition, but no independent human has reviewed it.
 
+The next dynamic boundary is isolated in
+`scratch/minimum-projection-dynamic-kempe-frontier-20260729/`.  A complete
+human proof shows that when the support is one circuit and every complement
+component has exactly two vertices on it, componentwise linear maps and
+reintegration always produce a clean extension.  This is an unbounded
+theorem.  A second proof shows that chains of the \(K_{3,3}-e\) two-pole
+reflect every boundary-changing three-colour Kempe move.  Consequently,
+any hypothetical goal-free base orbit can be inflated so that all four
+minimum-exchange inequalities hold after every reachable recolouring,
+without creating a new clean or deletion boundary state.  No such base
+orbit is known, so the transfer theorem is conditional and does not
+construct a FiveCDC counterexample or a globally minimum positive
+projection.  Two independently written dependency-free checkers audit the
+finite pole and incidence claims; a hostile agent audit passed, but no
+independent human has reviewed the new lemmas.
+
 Run the expanded exact replay with:
 
 ```sh
@@ -180,8 +198,10 @@ minimum nonzero Fano value-class size \(\rho_3=5\), showing that the two
 minimization parameters are distinct.
 
 The prose, proof route, checker, and research workflow were developed by
-OpenAI Codex agents under Atharva Vaidya's direction. The disclosure in the
-paper must remain. Before public submission, the draft requires
+OpenAI Codex agents under Atharva Vaidya's direction. This includes the
+two-terminal cleaning lemma, the orbit-reflecting \(K_{3,3}-e\) use, and
+their checkers and internal hostile audit. The disclosure in the paper
+must remain. Before public submission, the draft requires
 line-by-line review by a human graph theorist, a clean independent census
 rerun, bibliography audit, and a venue-specific authorship/disclosure
 decision.

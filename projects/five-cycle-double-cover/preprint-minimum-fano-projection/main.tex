@@ -139,6 +139,17 @@ step must exploit the \emph{dynamic} reapplication of the exchange theorem
 after neutral recolouring, not only its four inequalities at the initial
 flow.
 
+Two further structural results sharpen that dynamic frontier.  If the
+support is one circuit and every complement component has exactly two
+vertices on it, every extension is directly cleanable by componentwise
+maps and reintegration on the support; this is an unbounded theorem, not
+a finite census.  Conversely, chains of the
+edge-deleted \(K_{3,3}\) two-pole reflect all boundary-changing Kempe
+moves.  They transfer any hypothetical goal-free boundary orbit to one in
+which all four exchange inequalities hold at every reachable state.  No
+goal-free base orbit is known, so this conditional transfer supplies
+neither a counterexample nor a resolution.
+
 We perform an exact canonical census of all \(41{,}301\) connected simple
 cubic graphs of order \(18\).  Among the \(39{,}866\) bridgeless graphs,
 exactly \(179\) are not Tait-colourable, and every minimum-cardinality
@@ -1608,6 +1619,114 @@ are in
 \path{scratch/general-kempe-descent-static-exchange-obstruction-20260729/}.
 \end{remark}
 
+\begin{proposition}[a directly clean unbounded class]
+\label{prop:twoterminalclean}
+Let \(H=\supp(h)\) be one circuit.  If every component \(W\) of
+\((V,E-H)\) contains exactly two vertices of \(H\), then every extension
+\(f=(h,s)\) is cleanable by independent componentwise
+\(\operatorname{GL}(2,2)\) maps followed by reintegration of the low
+values on \(H\).
+\end{proposition}
+
+\begin{proof}
+At a vertex \(v_i\) of \(H\), let \(d_i\ne0\) be the low value on the
+unique edge of \(E-H\), and let \(s_{i-1},s_i\) be the low values on the
+two incident edges of \(H\).  Flow conservation gives
+\[
+                         d_i=s_{i-1}+s_i.                    \tag{29}
+\]
+Summing the low-flow equations over a complement component \(W\) shows
+that the xor of its boundary values \(d_i\) is zero.  There are exactly
+two, so they are equal.  Fix \(t\in\F_2^2-\{0\}\).  Independently on each
+\(W\), choose a linear automorphism sending its common boundary value to
+\(t\).  These maps preserve the low-flow equations inside \(W\).
+
+The circuit \(H\) has two vertices for every complement component and
+hence even length.  Thus (29), now with every \(d_i=t\), integrates around
+\(H\), and its edge values alternate between \(a\) and \(a+t\).
+At each of the two vertices of \(H\) in \(W\), the two support incidences
+therefore have one value \(a\) and one value \(a+t\).  Across the four
+incidences both values occur twice.  A support edge internal to \(W\) is
+counted twice; deleting its two equal copies does not change parity.
+Consequently every low value occurs evenly on \(\delta(W)\).  This holds
+for every \(W\), so the resulting extension is clean.
+\end{proof}
+
+\begin{proposition}[conditional orbit-reflecting inflation]
+\label{prop:dynamicinflation}
+Let a support-boundary state realized in a simple connected bridgeless
+cubic graph have no clean or circuit-deletion state in one connected
+component of its reconfiguration graph, where the moves include all
+charge-preserving two-colour Kempe path multiswitches and all feasible
+componentwise \(\operatorname{GL}(2,2)\) maps.  There is a simple
+connected bridgeless cubic inflation for which:
+\begin{enumerate}
+  \item every reachable boundary-changing move contracts to a move in the
+        same base component, while every additional internal move
+        contracts to the identity; and
+  \item at every reachable state, all four inequalities
+        \[
+        C\cap M_c=\varnothing\quad\Longrightarrow\quad
+        |C\cap H|\leq |C-H|                                  \tag{30}
+        \]
+        hold for every binary cycle \(C\) and every \(c\in\F_2^2\).
+\end{enumerate}
+The assertion is conditional: it does not assert that such a goal-free
+base component exists or that the displayed support is globally minimum.
+\end{proposition}
+
+\begin{proof}
+Delete an edge \(ab\) of \(K_{3,3}\), regard \(a,b\) as degree-two
+terminals, and attach one external edge at each terminal.  Call this
+two-pole \(P\).  By the parity lemma, the attachment colours in every
+proper three-edge-colouring of \(P\) are equal, say to \(t\); adding
+\(ab\) in colour \(t\) gives a Tait colouring of \(K_{3,3}\), and deletion
+is the inverse.  The two Tait-colouring classes of \(K_{3,3}\) have every
+colour pair Hamiltonian~\cite[Section~4.2]{BelcastroHaas2012}.  Therefore
+a pair containing \(t\) induces the unique terminal-to-terminal path of
+\(P\), while the other pair induces an internal circuit.  A switch of the
+first kind changes the boundary exactly as a switch on the contracted
+edge; a switch of the second kind leaves the boundary fixed.  Both retain
+the two-valued internal Kempe-class label.  Hence \(P\) preserves and
+reflects boundary-changing Kempe moves.
+
+Replace every complement edge by a chain of \(r\) copies of \(P\).  The
+shortest terminal-to-terminal path inside one copy has length three, so
+the old-endpoint distance of the chain is \(L=4r+1\).  Equal terminal
+colours propagate along a chain.  Thus every boundary-changing Kempe
+component contracts to its base component, every internal switch
+contracts to the identity, and every base move expands.  Contraction also
+preserves the endpoints of simultaneous path switches and the boundary
+action of componentwise maps.  Fresh pole vertices preserve simplicity
+and cubicity.  Bridgelessness follows because a base circuit through a
+replaced edge expands through a terminal path, while every internal pole
+edge lies on an internal bichromatic circuit or on a terminal path
+completed by such a base circuit.
+
+Choose \(L\geq|H|\).  In any reachable state, absence of a deletion means
+that every circuit component of \(H\) uses all four low values.  Fix \(c\)
+and decompose a binary cycle \(C\) avoiding \(M_c\) into edge-disjoint
+circuits.  A circuit internal to a replacement chain meets no support
+edge.  Every other circuit using complement edges traverses a whole chain,
+so it has at least \(L\) complement edges and at most \(|H|\) support
+edges.  A circuit contained in \(H\) is impossible because every support
+component meets \(M_c\).  Summing over the decomposition gives (30).
+Orbit reflection prevents a new clean or deletion boundary state, and the
+same argument applies after every reachable recolouring.
+\end{proof}
+
+\begin{remark}[exact replay and search boundary]
+The bundled dynamic Kempe frontier package contains a dependency-free
+enumeration of all twelve proper pole colourings, its two six-state Kempe
+orbits, chain distances through eight copies, and all 146,599 two-terminal
+pairings on one support circuit through order fourteen.  A separately
+written checker scans all \(3^9\) edge assignments of \(K_{3,3}\) and
+verifies the cut-incidence parity in
+Proposition~\ref{prop:twoterminalclean}.  A noncanonical exploratory search
+over 75 larger random poles found no goal-free component; this is negative
+experimental evidence, not an exhaustive theorem.
+\end{remark}
+
 The four-colour simultaneity cannot be replaced by a theorem about one
 matching.  In the Petersen graph with edge set
 \[
@@ -1669,6 +1788,12 @@ The static-exchange proposition and example were found, formalized, and
 hostilely audited by Codex agents.  That audit corrected the distinction
 between the gadget's internal-terminal distance and its old-endpoint
 traversal distance; it is still not independent human review.
+The two-terminal cleaning proof and the orbit-reflecting \(K_{3,3}-e\)
+inflation were likewise proposed, formalized, checked, and hostilely
+audited by Codex agents.  The dynamic package contains two independently
+written finite checkers, but its unbounded conclusions rest on the
+displayed human proofs rather than the finite tests.  The \(K_{3,3}\)
+Kempe-class fact is prior work of Belcastro and Haas.
 
 Hu\v{s}ek and \v{S}\'amal's flow criterion and
 Hoffmann-Ostenhof's matching/join formulation are prior work.  This draft
