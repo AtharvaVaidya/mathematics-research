@@ -1,0 +1,2 @@
+RESULT canonical_words=20004 length=15 derivative_profiles=18 combined_profiles=461 charge_valid=26634745428 initially_clean=3235970836 dirty=23398774592
+PASS

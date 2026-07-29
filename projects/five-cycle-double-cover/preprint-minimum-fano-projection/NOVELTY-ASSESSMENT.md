@@ -11,29 +11,36 @@ The manuscript proves:
 
 1. the simultaneous minimum-projection exchange theorem;
 2. exact cleanability of every cardinality-minimum extendable projection
-   of size at most fourteen in connected bridgeless loopless cubic graphs;
-3. the first failure, at support shape \(5+6\), of the stronger direct
+   of size at most fifteen in connected bridgeless loopless cubic graphs;
+3. a universal relative-\(\mathrm{GL}(2,2)\) tensor theorem implying
+   direct cleanability of every one-support-circuit boundary state, and
+   of every several-circuit state with circuitwise component balance;
+4. the first failure, at support shape \(5+6\), of the stronger direct
    componentwise-\(\mathrm{GL}(2,2)\) cleaning statement;
-4. a size-five replacement certificate excluding every such failure from
+5. a size-five replacement certificate excluding every such failure from
    global minimality;
-5. exhaustive size-twelve and size-thirteen clean-or-delete theorems,
+6. exhaustive size-twelve and size-thirteen clean-or-delete theorems,
    each independently reproduced by two exact enumerators;
-6. a sharp size-fourteen counterstate to the unrestricted
+7. a sharp size-fourteen counterstate to the unrestricted
    clean-or-delete boundary lemma, together with a simple bridgeless
    cubic realization whose displayed projection is uncleanable but whose
    four global minima are all cleanable; and
-7. a complete size-fourteen primary census whose only 224 residuals all
+8. a complete size-fourteen primary census whose only 224 residuals all
    have shape \(7+7\), an independent full \(7+7\) census, and a
    pairing-robust Kempe path theorem that sends every residual to a
    strict size-seven deletion; and
-8. a general \(K_4-e\) inflation theorem showing that all four static
+9. a complete size-fifteen primary census of 35,247,202,556
+   charge-valid states whose only 6,036 residuals all have shape \(7+8\),
+   together with an independently written induction audit and
+   realization-robust inverse Kempe lifts;
+10. a general \(K_4-e\) inflation theorem showing that all four static
    exchange inequalities can be forced without changing the local
    two-colour boundary pairings, together with an explicit state that
    defeats every one-round fixed-colour Kempe move but escapes in two
    rounds;
-9. an unbounded two-terminal cleaning theorem for one-circuit supports;
+11. an unbounded two-terminal cleaning theorem for one-circuit supports;
    and
-10. a conditional orbit-reflecting \(K_{3,3}-e\) inflation theorem that
+12. a conditional orbit-reflecting \(K_{3,3}-e\) inflation theorem that
     transfers any hypothetical goal-free dynamic boundary orbit to one
     satisfying all four recomputed exchange inequalities at every
     reachable state.
@@ -78,19 +85,31 @@ prior theorem.  Because the Hušek--Šámal preprint itself was only two days
 old, this search cannot establish priority or rule out unpublished
 parallel work.
 
+The later relative-\(\mathrm{GL}(2,2)\) tensor proof has not received a
+literature-wide novelty screen.  Its Euler-tour, interlacement, and
+quadratic-parity language is close to established circuit-partition and
+isotropic-system theory.  The manuscript therefore makes no priority
+claim for that lemma pending expert comparison with Bouchet's and
+Traldi's frameworks.
+
 ## Publication judgment
 
-The exchange theorem, through-fourteen boundary theorem, the
+The exchange theorem, through-fifteen boundary theorem, the universal
+one-circuit tensor theorem, the
 triangle-expanded-Petersen direct-repair countermodel, and the sharp
 size-fourteen clean-or-delete countermodel form a coherent, reproducible
 research note.  The static-inflation theorem further identifies a precise
 proof-method boundary: the initial shortest-join inequalities have no
 additional universal local boundary force once every support circuit uses
 all four colours; any general descent must reapply them dynamically.
-The new size-fourteen ingredient is not merely a larger
-census: its two-colour path-switch argument quantifies over every possible
-terminal pairing in an unknown cubic realization and is checked by 724
-literal deletion rows.  The two-terminal theorem also excludes an
+The size-fourteen and size-fifteen advances are not merely larger
+censuses.  At size fourteen the two-colour path-switch argument quantifies
+over every possible terminal pairing in an unknown cubic realization; at
+size fifteen the inverse-smoothing audit links every residual to the
+size-fourteen family, and a separate matching-game checker verifies every
+residual directly.  The tensor theorem removes the entire
+one-circuit branch by a short human argument.  The two-terminal theorem
+also excludes an
 unbounded dynamic-trap class without computation, while the conditional
 \(K_{3,3}-e\) theorem cleanly separates boundary-orbit obstruction from
 the metric exchange inequalities.  A targeted web/arXiv screen found no
@@ -115,13 +134,14 @@ cubic.  A separate elementary incidence-cluster theorem shows that the
 standard universal FiveCDC assertion reduces from arbitrary finite
 bridgeless multigraphs to loopless cubic multigraphs, and the usual local
 reductions reach strong snarks.  No novelty is claimed for those standard
-graph-class reductions, and they do not extend the size-fourteen boundary
+graph-class reductions, and they do not extend the size-fifteen boundary
 theorem to higher-degree vertices.
 
 ## AI-use disclosure
 
 OpenAI Codex agents under Atharva Vaidya's direction discovered the proof
-route, counterstates, size-fourteen Kempe escape, and static-inflation
+route, counterstates, size-fourteen and size-fifteen Kempe escapes, the
+relative-\(\mathrm{GL}(2,2)\) tensor proof, and the static-inflation
 obstruction; proposed the two-terminal cleaning and orbit-reflecting
 \(K_{3,3}-e\) lemmas; wrote the exact
 classifiers, exhaustive certificate builders, and independent checkers;

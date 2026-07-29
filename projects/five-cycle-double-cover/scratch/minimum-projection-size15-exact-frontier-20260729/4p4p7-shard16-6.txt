@@ -1,0 +1,1 @@
+RESULT shape=4+4+7 canonical_words=34 shard=6/16 selected_words=2 charge_valid=2608970 dirty=2345604 direct_clean=2345604 delete_branch=0 dichotomy_failures=0

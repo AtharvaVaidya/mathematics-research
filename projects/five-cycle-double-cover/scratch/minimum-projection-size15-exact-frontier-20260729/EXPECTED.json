@@ -1,0 +1,86 @@
+{
+  "shapes": {
+    "4+4+7": {
+      "selected_words": 34,
+      "charge_valid": 45252514,
+      "dirty": 40901504,
+      "direct_clean": 40901444,
+      "delete_branch": 60,
+      "dichotomy_failures": 0,
+      "canonical_words": 34
+    },
+    "4+5+6": {
+      "selected_words": 72,
+      "charge_valid": 94943832,
+      "dirty": 85691028,
+      "direct_clean": 85687790,
+      "delete_branch": 3238,
+      "dichotomy_failures": 0,
+      "canonical_words": 72
+    },
+    "5+5+5": {
+      "selected_words": 20,
+      "charge_valid": 26498996,
+      "dirty": 23865564,
+      "direct_clean": 23865124,
+      "delete_branch": 440,
+      "dichotomy_failures": 0,
+      "canonical_words": 20
+    },
+    "4+11": {
+      "selected_words": 985,
+      "charge_valid": 1305883765,
+      "dirty": 1166954048,
+      "direct_clean": 1166933276,
+      "delete_branch": 20772,
+      "dichotomy_failures": 0,
+      "canonical_words": 985
+    },
+    "5+10": {
+      "selected_words": 1489,
+      "charge_valid": 1975366285,
+      "dirty": 1762347048,
+      "direct_clean": 1761806487,
+      "delete_branch": 540561,
+      "dichotomy_failures": 0,
+      "canonical_words": 1489
+    },
+    "6+9": {
+      "selected_words": 1924,
+      "charge_valid": 2555260324,
+      "dirty": 2281097772,
+      "direct_clean": 2280299726,
+      "delete_branch": 798046,
+      "dichotomy_failures": 0,
+      "canonical_words": 1924
+    },
+    "7+8": {
+      "selected_words": 1964,
+      "charge_valid": 2609251412,
+      "dirty": 2328991036,
+      "direct_clean": 2327987350,
+      "delete_branch": 997650,
+      "dichotomy_failures": 6036,
+      "canonical_words": 1964
+    },
+    "15": {
+      "selected_words": 20004,
+      "charge_valid": 26634745428,
+      "dirty": 23398774592,
+      "direct_clean": 23398774592,
+      "delete_branch": 0,
+      "dichotomy_failures": 0,
+      "canonical_words": 20004
+    }
+  },
+  "total": {
+    "canonical_words": 26492,
+    "charge_valid": 35247202556,
+    "dirty": 31088622592,
+    "direct_clean": 31086255789,
+    "delete_branch": 2360767,
+    "dichotomy_failures": 6036
+  },
+  "counterstate_rows": 6036,
+  "counterstate_sha256": "d6619b5fe5529832bff459740e3a9490e1dabba8b187e2298dd234b023c3c55b"
+}

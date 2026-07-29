@@ -1,0 +1,8 @@
+GL maps: 6
+matrix order: m11,m21,m12,m22
+k=3 edges=3 spins=36 vars=300 clauses=1188 status=s UNSATISFIABLE
+k=3 PASS: no tensor countermodel
+k=4 edges=6 spins=216 vars=3912 clauses=15768 status=s UNSATISFIABLE
+k=4 PASS: no tensor countermodel
+k=5 edges=10 spins=1296 vars=41080 clauses=165456 status=s UNSATISFIABLE
+k=5 PASS: no tensor countermodel

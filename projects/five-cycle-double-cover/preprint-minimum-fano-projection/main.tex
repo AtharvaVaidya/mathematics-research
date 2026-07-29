@@ -46,7 +46,7 @@ Five-Cycle Double Cover Conjecture}
 \textbf{Resolution status.}
 The five-cycle double cover conjecture remains unresolved.
 This note proves an exchange theorem, settles the minimum-support cases
-through size fourteen for finite connected bridgeless loopless cubic
+through size fifteen for finite connected bridgeless loopless cubic
 multigraphs (parallel edges allowed), and gives exact finite censuses.  It
 proves neither the conjecture nor its negation.  The standard conjecture
 for finite bridgeless multigraphs reduces to the cubic setting by
@@ -112,9 +112,34 @@ We prove a two-colour path-switch lemma for the split-occurrence boundary
 model and give 724 literal deletion rows that meet every possible
 four- or six-terminal path pairing.  Every residual therefore has a strict
 size-seven deletion escape in every cubic realization.  Thus every
-minimum extendable projection of size at most fourteen is cleanable, and a
-counterexample to the proposed selection principle must have minimum size
-at least fifteen.
+minimum extendable projection of size at most fourteen is cleanable.
+
+We next prove a universal relative-\(\operatorname{GL}(2,2)\) tensor
+lemma.  Given an arbitrary linear functional of \(L_a^{-1}L_b\) on every
+pair of complement components, component maps can always be chosen so
+that the resulting pair graph is Eulerian.  A short human proof uses a
+three-point linear functional on the six elements of
+\(\operatorname{GL}(2,2)\); after expanding an indicator polynomial,
+leaf terms vanish and nonempty cycle-union terms cancel in pairs.  This
+implies that every charge-valid one-support-circuit boundary state is
+directly cleanable, with no bound on the circuit length or number of
+complement components.  It also cleans several support circuits whenever
+every component is charge-balanced separately on each circuit.
+
+At size fifteen the primary exact classifier enumerates \(26{,}492\)
+word orbits and \(35{,}247{,}202{,}556\) charge-valid abstract states
+over all eight support shapes.  Of the \(31{,}088{,}622{,}592\) dirty
+states, \(31{,}086{,}255{,}789\) clean directly and \(2{,}360{,}767\)
+admit a strict circuit deletion.  The remaining 6,036 states all have
+shape \(7+8\).  A separately written canonical audit identifies every
+one as a same-block one-occurrence extension of a frozen size-fourteen
+residual, and realization-robust inverse Kempe certificates cover all of
+them.  The 20,004-word one-circuit row independently agrees with a
+zero-sum-partition recurrence; all \(23{,}398{,}774{,}592\) dirty states
+also clean in the completed anchor census, in agreement with the tensor
+proof.  Therefore every minimum extendable projection of size at most
+fifteen is cleanable, and a counterexample to the proposed selection
+principle must have minimum size at least sixteen.
 
 The support-preserving boundary method is nevertheless sharp: at size
 fourteen an explicit \(7+7\) state is neither directly cleanable nor
@@ -139,11 +164,10 @@ step must exploit the \emph{dynamic} reapplication of the exchange theorem
 after neutral recolouring, not only its four inequalities at the initial
 flow.
 
-Two further structural results sharpen that dynamic frontier.  If the
-support is one circuit and every complement component has exactly two
-vertices on it, every extension is directly cleanable by componentwise
-maps and reintegration on the support; this is an unbounded theorem, not
-a finite census.  Conversely, chains of the
+Two further structural results sharpen that dynamic frontier.  The tensor
+theorem directly cleans every one-circuit support, strictly subsuming the
+earlier two-terminal-component argument, and gives the circuitwise-balanced
+several-circuit corollary above.  Conversely, chains of the
 edge-deleted \(K_{3,3}\) two-pole reflect all boundary-changing Kempe
 moves.  They transfer any hypothetical goal-free boundary orbit to one in
 which all four exchange inequalities hold at every reachable state.  No
@@ -248,8 +272,11 @@ The contribution of this note is narrower:
 \begin{enumerate}
   \item a minimum-support exchange theorem, with a complete proof;
   \item a human proof through size five and an exact boundary extension
-        through size fourteen, plus a sharp size-fourteen counterstate
+        through size fifteen, plus a sharp size-fourteen counterstate
         to the unrestricted support-preserving boundary method;
+  \item a universal tensor theorem that directly cleans every
+        one-support-circuit state and every circuitwise-balanced
+        several-circuit state;
   \item four simultaneous shortest-join consequences;
   \item a general inflation theorem showing that those four inequalities,
         at one fixed flow, do not force one-round Kempe descent;
@@ -1253,6 +1280,303 @@ partition counts, and all direct-clean/delete decisions currently rest on
 the primary classifier.
 \end{remark}
 
+\subsection{A universal tensor repair and the size-fifteen frontier}
+
+The one-circuit rows in the preceding finite tables are instances of a
+general algebraic theorem.
+
+\begin{theorem}[relative-\(\operatorname{GL}(2,2)\) tensor lemma]
+\label{thm:tensor}
+Put \({\cal G}=\operatorname{GL}(2,2)\).  Let \(V\) be finite.  Orient
+each unordered pair \(\{a,b\}\subseteq V\) once, and assign it an
+arbitrary linear functional
+\[
+             \phi_{ab}:\operatorname{Mat}_2(\F_2)\longrightarrow\F_2.
+\]
+There are maps \(L_a\in{\cal G}\) such that, for
+\[
+ w_{ab}=\phi_{ab}(L_a^{-1}L_b),\qquad
+ Q_a=\sum_{b\ne a}w_{ab},                               \tag{26}
+\]
+every \(Q_a\) is zero.
+\end{theorem}
+
+\begin{proof}
+Regard functions \({\cal G}\to\F_2\) as a six-dimensional vector space.
+Identify \(0=(0,0)\), \(1=(1,0)\), \(2=(0,1)\), and \(3=(1,1)\).
+Write a map as the string of its images of \(0,1,2,3\), and define
+\[
+ \lambda(f)=f(\texttt{0132})+f(\texttt{0213})+
+            f(\texttt{0321}).
+\]
+Then
+\[
+ \lambda(1)=1,\qquad
+ \lambda(M\mapsto M_{ij})=0\quad(1\le i,j\le2).          \tag{26a}
+\]
+For the second assertion, in column-major order the flattened matrices
+of the three displayed maps are
+\[
+ (1,0,1,1),\quad(0,1,1,0),\quad(1,1,0,1),
+\]
+whose sum is zero.
+
+For a fixed tensor instance, let
+\[
+                    F((L_a)_{a\in V})=\prod_{a\in V}(1+Q_a).
+\]
+This is the indicator of the desired assignments.  Apply
+\(\Lambda=\lambda^{\otimes V}\) after expanding \(F\).  An expansion
+choice selects at most one incident edge at each vertex.  Because the
+edge functions are Boolean, \(w_e^2=w_e\), so terms may be grouped by
+the simple graph \(H\) of distinct selected edges.
+
+If a nonempty \(H\) has a leaf, its grouped monomial depends on the map
+at that leaf through one linear coordinate function.  Multiplication by
+a fixed matrix is linear, and on \({\cal G}\)
+\[
+ \begin{pmatrix}p&q\\r&s\end{pmatrix}^{-1}
+ =\begin{pmatrix}s&q\\r&p\end{pmatrix}.
+\]
+Thus (26a) kills the monomial, regardless of which orientation was fixed
+for the leaf edge.
+
+Suppose instead that \(H\) has no leaf.  If \(S\) is the set of vertices
+that selected an edge, then
+\[
+ |E(H)|\le |S|\le |V(H)|\le |E(H)|.
+\]
+The last inequality is the minimum-degree-two bound, with \(V(H)\)
+containing only nonisolated vertices.  Equality holds throughout.
+Consequently \(H\) is a disjoint union of cycles, every vertex selects
+one edge, and every edge is selected exactly once.  Each cycle has two
+such selections, its two cyclic orientations.  A nonempty union of
+cycles therefore has coefficient \(2^{c(H)}=0\) in \(\F_2\).
+
+All nonconstant grouped terms are killed or cancel.  The constant term
+gives
+\[
+                         \Lambda(F)=\lambda(1)^{|V|}=1.
+\]
+Hence \(F\) is not the zero function, proving the theorem.
+\end{proof}
+
+\begin{corollary}[universal one-circuit direct cleaning]
+\label{cor:onecircuittensor}
+Every charge-valid abstract boundary state whose support is one circuit
+has a direct repair of Proposition~\ref{prop:directrepair}.  There is no
+bound on the circuit length, number of complement components, or
+component degrees in the abstract state.
+\end{corollary}
+
+\begin{proof}
+Use the notation of Proposition~\ref{prop:directrepair}, and assume the
+single support circuit is cut open in a fixed place.  For each component
+\(a\), conservation says
+\[
+                         \bigoplus_{\pi_i=a}d_i=0.        \tag{26b}
+\]
+Choose local maps \(L_a\) and put \(z_i=L_{\pi_i}d_i\).  For distinct
+components \(a,b\), define
+\[
+ w_{ab}=\sum_{\substack{j<i\\\pi_j=b,\ \pi_i=a}}
+                         B(z_j,z_i),                     \tag{26c}
+\]
+where \(B\) is the nondegenerate alternating form on \(\F_2^2\).
+The opposite ordering has the same value, since the sum of the two
+orderings is
+\[
+ B\left(\sum_{\pi_j=b}z_j,\sum_{\pi_i=a}z_i\right)=0
+\]
+by (26b).  Thus \(w_{ab}\) is symmetric and independent of the cut.
+For the latter assertion explicitly, moving one occurrence \((a,z)\)
+across the cut changes its pair bit with \(b\) by
+\(B(z,\sum_{\pi_i=b}z_i)=0\); the case of a \(b\)-occurrence is the same.
+For the orientation fixed on \(\{a,b\}\), preservation of \(B\) gives
+\[
+ B(L_bd_j,L_ad_i)=B(L_a^{-1}L_bd_j,d_i).
+\]
+Summing these terms defines a linear functional of the four matrix
+entries of \(L_a^{-1}L_b\), exactly as in Theorem~\ref{thm:tensor}.
+Reversing the chosen pair orientation is harmless because matrix
+inversion is linear on \({\cal G}\).
+
+It remains to identify the obstruction.  Integrate the \(z_i\)'s around
+the circuit, with an arbitrary base value, to obtain the \(r_i\)'s in
+(13).  Put \(q(x_1,x_2)=x_1x_2\); its polarization identity is
+\[
+                     q(x+y)+q(x)+q(y)=B(x,y).            \tag{26d}
+\]
+The common parity of the four low colours at component \(a\) is the
+parity of colour \(11\).  At the boundary occurrence \(i\), both support
+incidences \(e_{i-1},e_i\) must be counted; an edge whose two ends belong
+to the same component is thereby counted twice and cancels.  Hence this
+parity is
+\[
+ P_a=\sum_{\pi_i=a}\bigl(q(r_{i-1})+q(r_i)\bigr).
+\]
+Since \(r_i=r_{i-1}+z_i\), (26d) gives
+\[
+ P_a=\sum_{\pi_i=a}q(z_i)
+     +\sum_{\pi_i=a}B(r_{i-1},z_i).                     \tag{26e}
+\]
+After cutting the circuit, write
+\(r_{i-1}=r_*+\sum_{j<i}z_j\).  The base term in (26e) is
+\(B(r_*,\sum_{\pi_i=a}z_i)=0\) by (26b), so
+\[
+ P_a=\sum_{\pi_i=a}q(z_i)
+    +\sum_{\substack{j<i\\\pi_i=a}}B(z_j,z_i).
+\]
+Separate the last sum according to whether \(\pi_j=a\).  Applying
+\(q\) to the zero block sum in (26b) gives
+\[
+ 0=q\left(\sum_{\pi_i=a}z_i\right)
+  =\sum_{\pi_i=a}q(z_i)
+   +\sum_{\substack{j<i\\\pi_j=\pi_i=a}}B(z_j,z_i).
+\]
+Thus the \(q(z_i)\) terms and all same-block pairs cancel.  The remaining
+cross-component terms are exactly
+\[
+                              Q_a=\sum_{b\ne a}w_{ab}.
+\]
+Theorem~\ref{thm:tensor} chooses the maps so that all these common parity
+bits vanish.  Equations (13) and (14) then hold, so the state directly
+cleans.
+\end{proof}
+
+\begin{corollary}[circuitwise-balanced several-circuit repair]
+\label{cor:multicircuittensor}
+Suppose a boundary state has support circuits \(D_1,\ldots,D_t\) and
+satisfies
+\[
+        \bigoplus_{\substack{\pi_i=a\\i\text{ on }D_j}}d_i=0
+        \qquad\text{for every component \(a\) and circuit \(D_j\)}.
+                                                               \tag{26f}
+\]
+Then it is directly cleanable.
+\end{corollary}
+
+\begin{proof}
+Construct (26c) separately on every circuit.  For each unordered pair,
+sum its per-circuit linear functionals.  The total obstruction at a
+component is the sum of its per-circuit obstructions, hence is again the
+degree parity \(Q_a\) of one tensor instance.  Apply
+Theorem~\ref{thm:tensor} once to obtain a common map \(L_a\) for every
+circuit.  Condition (26f) makes each circuit integrable, since
+\[
+ \bigoplus_{i\text{ on }D_j}L_{\pi_i}d_i
+ =\bigoplus_a L_a
+   \left(\bigoplus_{\substack{\pi_i=a\\i\text{ on }D_j}}d_i\right)=0.
+\]
+Integrate the circuits independently.
+\end{proof}
+
+\begin{remark}
+Condition (26f) is stronger than ordinary component conservation, which
+requires only the xor over all support circuits to vanish.  Thus
+Corollary~\ref{cor:multicircuittensor} is a structural subclass theorem,
+not a replacement for the multi-circuit census below.
+\end{remark}
+
+\begin{theorem}[minimum projections through size fifteen]
+\label{thm:sizefifteen}
+Under the hypotheses of Theorem~\ref{thm:sizeten}, every
+cardinality-minimum extendable projection of size at most fifteen is
+cleanable.
+\end{theorem}
+
+\begin{proof}
+Only total size fifteen remains.  The complete circuit-length list is
+\[
+\begin{gathered}
+15,\quad4+11,\quad5+10,\quad6+9,\quad7+8,\\
+4+4+7,\quad4+5+6,\quad5+5+5.
+\end{gathered}
+\]
+The primary exact classifier applies the same canonical word generation,
+charge-valid set-partition enumeration, component maps, relative circuit
+starts, direct-cleaning test, and strict-deletion test as above.  Its
+mutually exclusive counts are:
+
+\begin{center}
+\scriptsize
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+shape & words & charge-valid & dirty & direct clean & delete & residual\\
+\midrule
+\(4+4+7\)&34&45,252,514&40,901,504&40,901,444&60&0\\
+\(4+5+6\)&72&94,943,832&85,691,028&85,687,790&3,238&0\\
+\(5+5+5\)&20&26,498,996&23,865,564&23,865,124&440&0\\
+\(4+11\)&985&1,305,883,765&1,166,954,048&1,166,933,276&20,772&0\\
+\(5+10\)&1,489&1,975,366,285&1,762,347,048&1,761,806,487&540,561&0\\
+\(6+9\)&1,924&2,555,260,324&2,281,097,772&2,280,299,726&798,046&0\\
+\(7+8\)&1,964&2,609,251,412&2,328,991,036&2,327,987,350&997,650&6,036\\
+\(15\)&20,004&26,634,745,428&23,398,774,592&23,398,774,592&0&0\\
+\midrule
+total&26,492&35,247,202,556&31,088,622,592&
+31,086,255,789&2,360,767&6,036\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Corollary~\ref{cor:onecircuittensor} proves the \(15\) row without
+enumeration.  As an exact regression, sixteen completed anchor/Laplacian
+shards also test all \(23{,}398{,}774{,}592\) dirty one-circuit states
+and find zero failures.  A separately implemented zero-sum-partition
+recurrence reproduces the one-circuit charge-valid, initially clean, and
+dirty counts.
+
+For the other seven shapes, every deletion row contradicts global
+minimality by Proposition~\ref{prop:deletecircuit}.  Only the 6,036
+\(7+8\) residual rows remain.  They are handled by a finite,
+realization-independent lift from the size-fourteen Kempe certificates.
+Delete one removable repeated-colour occurrence whose two adjacent
+derivative occurrences lie in the same complement block.  If the old
+derivatives are \(a,b\), the shorter boundary replaces them by \(a+b\);
+charge conservation is unchanged and no two blocks are merged.
+
+For a fixed two-colour Kempe pair, terminal status is a linear functional
+of the derivative.  Every perfect matching of the old terminals collapses
+to one on the shorter boundary.  If both \(a,b\) are terminals and are
+matched to \(p,q\), the collapsed matching has the artificial pair
+\(pq\); switching its two actual old paths has the same boundary action
+as the short switch, apart from an explicitly tracked change of the
+reinserted support value.  The other cases merely delete the pair
+\(ab\), rename one terminal as \(a+b\), or leave the matching unchanged.
+Thus a matching-robust short certificate lifts after finitely checking
+the reinserted value, circuit closure, and final omitted-colour deletion.
+
+A separately written canonical induction checker verifies every one of
+the 6,036 emitted residual rows.  Each has between three and five
+same-block smoothing positions, and at least one of them smooths
+canonically to a frozen size-fourteen residual.  Thus each row is
+canonically equivalent to a member of the 6,180-state inverse-extension
+family.  A literal checker quantifies over every old perfect matching and
+verifies a successful one- or two-path lift for all 6,180 states; a
+redundant direct checker verifies the same realization-robust game on all
+6,036 emitted rows.  Hence every cubic realization of every size-fifteen
+residual has a strict deletion escape.  No residual can be globally
+minimum, proving the theorem.
+\end{proof}
+
+\begin{remark}[size-fifteen trust boundary]
+The tensor proof is human-checkable and independent of the one-circuit
+census.  The zero-sum recurrence independently checks its partition
+totals; the anchor parser checks shard completeness and zero failures but
+imports the primary word/partition generator.  The multi-circuit
+word-orbit counts, charge-valid partition counts, and clean/delete
+decisions rest on the primary classifier.  The residual induction checker
+is independently written, but takes the 6,036 primary residual rows as
+input.  It finds 5,200 fully canonical residual classes, with digest
+\[
+\texttt{f2c0c2b53322c72f00672e3f9c7d807aeb26a6ba771357a673c84c2fdaf96206}.
+\]
+All source, shard outputs, literal residuals, frozen totals, and hashes
+are in the bundled size-fifteen exact-frontier, induction-audit,
+anchor-audit, and one-circuit tensor packages.  These computational claims
+are exact agent-produced certificates, not independent human peer review.
+\end{remark}
+
 \begin{corollary}[rainbow shortcut]\label{cor:shortcut}
 Every binary cycle \(C\) satisfying \(|C\cap h|>|C-h|\) meets all four
 sets \(M_c\).
@@ -1314,8 +1638,8 @@ component of an \emph{uncleanable globally minimum-support projection},
 derive a negative colour-avoiding cycle after allowable neutral
 recolouring, using the four simultaneous shortest-\(T_c\)-join
 inequalities of Corollary~\ref{cor:tjoin}.  No proof of this statement is
-given here.  By Theorem~\ref{thm:sizefourteen}, any counterexample to this
-selection principle has minimum support at least fifteen.
+given here.  By Theorem~\ref{thm:sizefifteen}, any counterexample to this
+selection principle has minimum support at least sixteen.
 
 \section{Exact finite census}\label{sec:census}
 
@@ -1528,10 +1852,10 @@ geodesic conditions: one shortest join for each affine value class.
 Theorems~\ref{thm:sizefive}, \ref{thm:sizeseven}, \ref{thm:sizeten},
 \ref{thm:sizeeleven}, \ref{thm:sizetwelve}, and
 \ref{thm:sizethirteen}, together with
-Theorem~\ref{thm:sizefourteen}, close every possible
-nonzero support size through fourteen:
+Theorems~\ref{thm:sizefourteen} and \ref{thm:sizefifteen} close every
+possible nonzero support size through fifteen:
 a counterexample to Conjecture~\ref{conj:minimum} must have minimum
-projection size at least fifteen.
+projection size at least sixteen.
 The useful feature is simultaneity.  A cycle that would shorten the
 projection is allowed to be blocked by one colour, but
 Corollary~\ref{cor:shortcut} forces it to be blocked by all four.
@@ -1542,7 +1866,12 @@ for the support-preserving clean-or-delete boundary method.
 Theorem~\ref{thm:sizefourteen} also shows exactly what that abstract state
 forgets: two-colour subgraphs inside a cubic complement pair the boundary
 occurrences by paths, and a matching-robust Kempe switch reaches a strict
-deletion.  Larger boundary states need not admit the same finite strategy.
+deletion.  Corollary~\ref{cor:onecircuittensor} removes one entire
+unbounded branch: every one-circuit boundary directly cleans.  The
+remaining open frontier therefore begins with several circuits lacking
+the separate per-circuit balance of
+Corollary~\ref{cor:multicircuittensor}; larger such states need not admit
+the same finite strategy.
 
 \begin{proposition}[static exchange has no further local boundary force]
 \label{prop:staticinflation}
@@ -1769,6 +2098,19 @@ The size-fourteen primary package freezes all seven shape counts and the
 regenerates all 333 word orbits and \(91{,}481{,}505\) charge-valid
 states, while the Kempe package freezes 724 matching-robust deletion rows
 and checks them with an independently structured literal verifier.
+Codex agents also derived the universal tensor lemma, the one-circuit
+obstruction identity, and the circuitwise-balanced corollary displayed
+above.  A separate hostile agent audit checked the expansion grouping,
+the leaf cancellation, all no-leaf graphs through seven tensor vertices,
+and all 4,096 three-vertex tensors; this remains agent review, not
+independent human verification.  The size-fifteen primary package freezes
+all eight shape counts and 6,036 residual rows.  A separately written
+induction checker canonicalizes every residual and links it to the
+matching-robust inverse-extension family.  The single-circuit anchor
+census completed all sixteen shards and found zero failures; an
+independent parser checks aggregation and agreement with the
+zero-sum-partition recurrence, but it is not an independently implemented
+full candidate census.
 The static-exchange package contains the human proof of
 Proposition~\ref{prop:staticinflation}, a primary full-cycle checker, a
 separate shortest-\(T\)-join checker for the four inequalities, and the

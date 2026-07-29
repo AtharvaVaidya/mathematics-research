@@ -5,7 +5,7 @@ minimum-support route to the standard five-cycle double cover conjecture.
 
 **Resolution status:** FiveCDC remains open. The paper proves a
 human-checkable exchange theorem and a complete minimum-projection theorem
-through support size fourteen for connected bridgeless loopless cubic
+through support size fifteen for connected bridgeless loopless cubic
 graphs, reports exact finite censuses, and states the remaining universal
 selection principle as an explicit conjecture. It claims neither a proof
 nor a counterexample to FiveCDC. An elementary incidence-cluster theorem
@@ -46,7 +46,7 @@ the size-at-most-five theorem with:
 python3 scratch/minimum-projection-size5-theorem-20260729/verify.py
 ```
 
-Replay the cumulative cleanability theorem through size fourteen with:
+Replay the cumulative cleanability theorem through size fifteen with:
 
 ```sh
 python3 scratch/minimum-projection-through11-cleanability-20260729/verify_through10.py
@@ -63,6 +63,13 @@ python3 scratch/minimum-projection-through14-cleanability-20260729/verify_summar
 python3 scratch/minimum-projection-size14-7p7-independent-audit-20260729/replay_full_census.py
 python3 scratch/minimum-projection-size14-7p7-independent-audit-20260729/independent_audit.py
 python3 scratch/minimum-projection-size14-kempe-escape-20260729/verify_all_certificates.py
+python3 scratch/minimum-projection-size15-exact-frontier-20260729/verify_summary.py
+python3 scratch/minimum-projection-size15-induction-audit-20260729/audit_induction.py \
+  scratch/minimum-projection-size15-exact-frontier-20260729/7p8-shard16-*.txt \
+  --expect-full-7p8
+python3 scratch/minimum-projection-size15-anchor-single-audit-20260729/audit_anchor_shards.py \
+  scratch/minimum-projection-size15-exact-frontier-20260729/15-shard16-*.txt
+python3 scratch/minimum-projection-single-circuit-tensor-frontier-20260729/independent_audit.py
 python3 scratch/cubic-reduction-standard-fivecdc-20260729/verify_local_relations.py
 python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/verify.py
 python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/independent_audit.py
@@ -100,6 +107,28 @@ size-seven deletion escape in every cubic realization.  Hence every
 globally minimum extendable projection of size at most fourteen is
 cleanable.
 
+At size fifteen the exact classifier covers all eight support shapes:
+26,492 canonical word orbits and 35,247,202,556 charge-valid abstract
+states. Among 31,088,622,592 dirty states, 31,086,255,789 clean directly,
+2,360,767 admit strict circuit deletion, and 6,036 remain after those two
+tests. Every residual has shape \(7+8\). A separately written canonical
+induction checker links every residual to a frozen size-fourteen
+matching-robust Kempe family. A separate literal matching-game checker
+verifies a realization-robust rescue directly on every residual.
+The single-circuit row is also settled without enumeration by a new
+human-checkable relative-\(\mathrm{GL}(2,2)\) tensor theorem: every
+charge-valid one-circuit boundary directly cleans at arbitrary length.
+The completed 16-shard anchor census agrees, finding zero failures among
+23,398,774,592 dirty one-circuit states; a zero-sum-partition recurrence
+independently reproduces the partition totals. Hence every globally
+minimum extendable projection of size at most fifteen is cleanable.
+
+The tensor theorem also cleans several support circuits when every
+complement component is charge-balanced separately on each circuit.
+Ordinary boundary conservation requires only total balance across all
+circuits, so this corollary does not settle the general multi-circuit
+case.
+
 The unrestricted boundary dichotomy still first fails at size fourteen,
 on an explicit \(7+7\) state.  Its 18-vertex simple bridgeless cubic realization
 has 15,360 ordered extensions of the displayed projection and none is
@@ -118,9 +147,11 @@ The human-checkable reduction showing that, for fixed component maps,
 cleaning is an affine XOR system is written in full at
 `scratch/minimum-projection-fixed-map-affine-cleaning-20260729/README.md`.
 It also derives dual-cut feasible moves and records the exact
-size-fourteen counterstate.  The Kempe escape shows how internal
+size-fourteen counterstate.  The Kempe escapes show how internal
 two-colour paths supply additional information absent from the abstract
-map-choice implication.  Larger supports remain uncontrolled.
+map-choice implication.  The unresolved frontier starts at support size
+sixteen and, structurally, in multi-circuit states that are not
+circuitwise balanced.
 
 The exact standard convention and general-to-cubic/snark reductions are
 proved in
@@ -199,9 +230,10 @@ minimization parameters are distinct.
 
 The prose, proof route, checker, and research workflow were developed by
 OpenAI Codex agents under Atharva Vaidya's direction. This includes the
-two-terminal cleaning lemma, the orbit-reflecting \(K_{3,3}-e\) use, and
-their checkers and internal hostile audit. The disclosure in the paper
-must remain. Before public submission, the draft requires
+universal tensor lemma and obstruction identity, the size-fifteen census
+and induction lift, the two-terminal cleaning lemma, the orbit-reflecting
+\(K_{3,3}-e\) use, and their checkers and internal hostile audits. The
+disclosure in the paper must remain. Before public submission, the draft requires
 line-by-line review by a human graph theorist, a clean independent census
 rerun, bibliography audit, and a venue-specific authorship/disclosure
 decision.

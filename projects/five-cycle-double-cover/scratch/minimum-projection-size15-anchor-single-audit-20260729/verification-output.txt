@@ -1,0 +1,5 @@
+SHARDS count=16 canonical_words=20004 selected_words=20004
+ZSP_AGREEMENT charge_valid=26634745428 initially_clean=3235970836 dirty=23398774592
+ANCHOR_CENSUS direct_clean=23398774592 failures=0 anchor_systems=199816760346 anchor_evaluations=199816760346 generic_evaluations=26634725424
+SHARD_ROW_SHA256 0a227e97a93e36b3063261335755483f2e6f34cbf7d9a4226e0782917f479c51
+PASS

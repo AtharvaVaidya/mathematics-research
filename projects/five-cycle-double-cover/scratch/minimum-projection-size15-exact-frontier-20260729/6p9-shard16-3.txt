@@ -1,0 +1,5 @@
+6+9 shard=3/16 progress=25 dirty=31734400 failures=0
+6+9 shard=3/16 progress=50 dirty=60310672 failures=0
+6+9 shard=3/16 progress=75 dirty=89096808 failures=0
+6+9 shard=3/16 progress=100 dirty=119778376 failures=0
+RESULT shape=6+9 canonical_words=1924 shard=3/16 selected_words=121 charge_valid=161600101 dirty=144101020 direct_clean=144048867 delete_branch=52153 dichotomy_failures=0

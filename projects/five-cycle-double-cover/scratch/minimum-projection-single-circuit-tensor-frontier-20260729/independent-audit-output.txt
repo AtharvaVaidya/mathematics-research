@@ -1,0 +1,10 @@
+gadget masks checked: 16
+lambda support points: 3
+expansion groups checked through K7: 155000
+charge-zero cyclic words checked through length 6: 12321
+k=3 tensor systems checked: 4096
+k=3 fixed-gauge support identities: 4096
+k=3 full Lambda identities: 4096
+minimum clean relative assignments: 4
+one minimizer: 0 1 1
+independent audit: PASS

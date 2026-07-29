@@ -27,8 +27,12 @@ are not independent human verification or peer review.
   `scratch/minimum-projection-through14-cleanability-20260729/`,
   `scratch/minimum-projection-size14-7p7-independent-audit-20260729/`,
   and `scratch/minimum-projection-size14-kempe-escape-20260729/` packages
-  extend the minimum-projection theorem through size fourteen in connected
-  bridgeless loopless cubic graphs.  The exact affine boundary classifiers enumerate
+  extend the minimum-projection theorem through size fourteen.  The
+  `scratch/minimum-projection-size15-exact-frontier-20260729/`,
+  `scratch/minimum-projection-size15-induction-audit-20260729/`, and
+  `scratch/minimum-projection-size15-anchor-single-audit-20260729/`
+  packages extend it through size fifteen in connected bridgeless loopless
+  cubic graphs.  The exact affine boundary classifiers enumerate
   every support shape forced by minimum exchange and directly clean all
   125,178 valid dirty canonical word/partition states using independent
   \(\operatorname{GL}(2,2)\) maps on complement components and repaired
@@ -52,9 +56,27 @@ are not independent human verification or peer review.
   all 333 word orbits, 91,481,505 charge-valid states, and exactly the
   same residual set.  A split-occurrence two-colour path lemma and 724
   literal matching-robust deletion rows send every residual to a
-  size-seven extendable projection.  Consequently any counterexample to
-  the minimum-projection selection principle in this cubic setting has
-  minimum size at least fifteen.
+  size-seven extendable projection.  At size fifteen the primary
+  classifier covers 26,492 canonical word orbits and 35,247,202,556
+  charge-valid states.  Its 31,088,622,592 dirty states split into
+  31,086,255,789 direct repairs, 2,360,767 strict circuit deletions, and
+  6,036 residual \(7+8\) states.  An independently written induction
+  checker canonically links every residual to the size-fourteen
+  inverse-extension family; a separate realization-robust matching-game
+  replay verifies all 6,036 rows directly.  Consequently any counterexample
+  to the minimum-projection selection principle in this cubic setting has
+  minimum size at least sixteen.
+- `scratch/minimum-projection-single-circuit-tensor-frontier-20260729/`
+  proves a human-checkable relative-\(\operatorname{GL}(2,2)\) tensor
+  lemma by a three-point linear functional and leaf/cycle cancellation.
+  It implies that every charge-valid one-circuit boundary state directly
+  cleans, with no bound on circuit length, component count, or component
+  degree.  Summing the tensors also treats several circuits when every
+  component is charge-balanced separately on each circuit.  The latter
+  hypothesis is stronger than ordinary conservation, so this does not
+  settle the general multi-circuit case.  A separately written finite
+  audit checks the cancellation expansion through seven tensor vertices,
+  all 4,096 three-vertex tensor instances, and the boundary identities.
 - `scratch/minimum-projection-fixed-map-affine-cleaning-20260729/README.md`
   gives a complete human-checkable derivation of the one-bit cut defect,
   the affine XOR cleaning system for fixed component maps, the
@@ -125,10 +147,11 @@ are not independent human verification or peer review.
   This closes a tempting one-matching shortcut but does not realize the
   four synchronized affine classes.
 - `preprint-minimum-fano-projection/` is the corresponding working
-  preprint.  It contains the human exchange and size-through-fourteen
-  proofs, the sharp size-fourteen support-preserving method counterstate,
-  the Kempe escape, all exact census reports, the Petersen limitation,
-  checksums, and an explicit AI-use and human-review disclosure.
+  preprint.  It contains the human exchange and size-through-fifteen
+  proofs, the universal tensor argument, the sharp size-fourteen
+  support-preserving method counterstate, the Kempe escapes, all exact
+  census reports, the Petersen limitation, checksums, and an explicit
+  AI-use and human-review disclosure.
 - `scratch/cubic-reduction-standard-fivecdc-20260729/` fixes the exact
   indexed even-subgraph convention and proves that the universal standard
   assertion is equivalent across finite bridgeless multigraphs, loopless
@@ -173,7 +196,7 @@ are not independent human verification or peer review.
 
 These are proof-strategy results in the cubic setting, not a proof or
 disproof of FiveCDC.  The standard universal conjecture reduces to that
-setting, but the size-through-fourteen projection theorem remains a cubic
+setting, but the size-through-fifteen projection theorem remains a cubic
 statement and larger supports are open.
 
 ## Rooted-resolution update (2026-07-28)

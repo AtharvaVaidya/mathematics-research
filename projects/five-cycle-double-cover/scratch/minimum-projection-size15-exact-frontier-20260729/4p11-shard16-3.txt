@@ -1,0 +1,3 @@
+4+11 shard=3/16 progress=25 dirty=30785320 failures=0
+4+11 shard=3/16 progress=50 dirty=59427092 failures=0
+RESULT shape=4+11 canonical_words=985 shard=3/16 selected_words=62 charge_valid=81912830 dirty=73151336 direct_clean=73150172 delete_branch=1164 dichotomy_failures=0

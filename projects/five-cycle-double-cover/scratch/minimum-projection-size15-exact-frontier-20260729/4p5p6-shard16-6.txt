@@ -1,0 +1,1 @@
+RESULT shape=4+5+6 canonical_words=72 shard=6/16 selected_words=5 charge_valid=6358193 dirty=5722204 direct_clean=5722026 delete_branch=178 dichotomy_failures=0

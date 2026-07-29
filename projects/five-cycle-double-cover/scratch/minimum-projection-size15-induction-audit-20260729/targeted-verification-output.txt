@@ -1,0 +1,10 @@
+SIZE14 literal_residuals=224 canonical_equivalence_classes=200 canonical_digest=c41b8887e7863d5b8f773b95f806ee183fe604ead6313a32ec9df572bc3e99d3
+OBSTRUCTION original_feasible=320 clean=0 delete=0
+SMOOTH circuit=0 local=0 blocks=0,0 word=1010123|0101232 partition=01234404130002 feasible=320 clean=0 delete=40 equivalent_to_224=0
+SMOOTH circuit=0 local=5 blocks=4,4 word=0101023|0101232 partition=00123404130002 feasible=320 clean=0 delete=0 equivalent_to_224=1
+SMOOTH circuit=1 local=0 blocks=4,1 word=01010123|101232 partition=00123110130002 feasible=56 clean=16 delete=0 equivalent_to_224=0
+SMOOTH circuit=1 local=3 blocks=0,0 word=01010123|010232 partition=00123440413002 feasible=320 clean=0 delete=80 equivalent_to_224=0
+SMOOTH circuit=1 local=4 blocks=0,0 word=01010123|010132 partition=00123440413002 feasible=320 clean=0 delete=80 equivalent_to_224=0
+SMOOTH circuit=1 local=6 blocks=2,4 word=01010123|010123 partition=00123220213000 feasible=56 clean=16 delete=0 equivalent_to_224=0
+AUDIT checked=6180 covered=6180 failures=0 same_block_smoothing_histogram=[(3, 1076), (4, 4208), (5, 896)] canonical_input_classes=5622 canonical_input_digest=703a6beac5682565e1c0f0bc6a4f4e481ea2508cde4589047c87483fdb1c416a
+PASS

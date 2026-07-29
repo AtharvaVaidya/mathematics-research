@@ -1,0 +1,25 @@
+progress=250/6180 robust=250
+progress=500/6180 robust=500
+progress=750/6180 robust=750
+progress=1000/6180 robust=1000
+progress=1250/6180 robust=1250
+progress=1500/6180 robust=1500
+progress=1750/6180 robust=1750
+progress=2000/6180 robust=2000
+progress=2250/6180 robust=2250
+progress=2500/6180 robust=2500
+progress=2750/6180 robust=2750
+progress=3000/6180 robust=3000
+progress=3250/6180 robust=3250
+progress=3500/6180 robust=3500
+progress=3750/6180 robust=3750
+progress=4000/6180 robust=4000
+progress=4250/6180 robust=4250
+progress=4500/6180 robust=4500
+progress=4750/6180 robust=4750
+progress=5000/6180 robust=5000
+progress=5250/6180 robust=5250
+progress=5500/6180 robust=5500
+progress=5750/6180 robust=5750
+progress=6000/6180 robust=6000
+RESULT checked=6180 robust=6180 kempe_counterstates=0

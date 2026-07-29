@@ -14,7 +14,7 @@ finite searches are not evidence of the universal statement.
 The newest publication-candidate update is
 `preprint-minimum-fano-projection/`.  It proves a simultaneous
 minimum-support exchange theorem and an exact boundary-cleaning
-theorem for every support shape through size fourteen in connected
+theorem for every support shape through size fifteen in connected
 bridgeless loopless cubic graphs.  The checker exhausts
 proper affine circuit words, complement-component partitions, independent
 componentwise \(\mathrm{GL}(2,2)\) maps, and repaired circuit values.  It
@@ -36,8 +36,16 @@ all 333 word orbits, 91,481,505 charge-valid states, and the same 224
 rows.  A graph-independent Kempe path argument in the split-occurrence
 model, backed by 724 literal matching-robust certificates, gives every
 residual a strict size-seven deletion escape.  Thus no residual can be
-globally minimum, and any counterexample to the proposed selection
-principle has minimum support at least fifteen.
+globally minimum.  At size fifteen, the exact classifier covers 26,492
+canonical word orbits and 35,247,202,556 charge-valid states.  Among
+31,088,622,592 dirty states, 31,086,255,789 clean directly, 2,360,767
+admit a strict circuit deletion, and 6,036 residual \(7+8\) states are
+all covered by realization-robust inverse Kempe lifts from size fourteen.
+A human-checkable relative-\(\operatorname{GL}(2,2)\) tensor theorem
+independently proves direct cleaning for every charge-valid one-circuit
+boundary at arbitrary length.  Consequently any counterexample to the
+proposed minimum-projection selection principle has minimum support at
+least sixteen.
 
 The unrestricted boundary dichotomy nevertheless fails sharply at size
 fourteen: an explicit \(7+7\) state has an 18-vertex
@@ -59,8 +67,14 @@ the note derives dual-cut feasible moves and records the exact
 size-fourteen failure of the unrestricted map-choice statement.  The
 size-fourteen Kempe theorem is in
 `scratch/minimum-projection-through14-cleanability-20260729/` and
-`scratch/minimum-projection-size14-kempe-escape-20260729/`.  Larger
-supports remain uncontrolled.  The exact standard convention and a
+`scratch/minimum-projection-size14-kempe-escape-20260729/`.  Larger support
+sizes remain uncontrolled in general; the unresolved structural frontier
+begins with unbalanced multi-circuit states at size sixteen.  The
+size-fifteen census, independent lift audit, anchor audit, and universal
+tensor proof are in the corresponding
+`scratch/minimum-projection-size15-*` and
+`scratch/minimum-projection-single-circuit-tensor-frontier-20260729/`
+packages.  The exact standard convention and a
 self-contained graph-class reduction are now frozen in
 `scratch/cubic-reduction-standard-fivecdc-20260729/`: the universal
 assertion for arbitrary finite bridgeless multigraphs is equivalent to its
@@ -83,9 +97,10 @@ AI-use/human-review warning.
 
 The dynamic frontier is now sharpened in
 `scratch/minimum-projection-dynamic-kempe-frontier-20260729/`.  A
-human-checkable unbounded theorem proves direct cleaning whenever the
-support is one circuit and every complement component has exactly two
-vertices on it.  The same package proves that the edge-deleted
+human-checkable theorem there proves direct cleaning for a two-terminal
+one-circuit subclass; the newer tensor package removes the two-terminal
+restriction and proves the full abstract one-circuit statement.  The same
+dynamic package proves that the edge-deleted
 \(K_{3,3}\) two-pole is boundary-orbit-reflecting: chaining it transfers
 any hypothetical goal-free dynamic boundary orbit to one satisfying all
 four recomputed exchange inequalities after every reachable move.  It
