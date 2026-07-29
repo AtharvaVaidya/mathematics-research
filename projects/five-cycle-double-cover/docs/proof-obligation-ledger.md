@@ -1548,7 +1548,7 @@ Open obligations:
     cotree-diamond expansion produces FiveCDC-positive simple bridgeless
     cubic graphs \(G_d\) such that every Fano line of every nowhere-zero
     \(\mathbb F_2^3\)-flow has at least \(d+1\) components.  The component
-    growth is a human induction, and explicit flows attain equality.
+    growth is a human induction, and explicit clean flows attain equality.
     Thus the valid at-most-two-component cleaning corollary cannot be made
     universal by proving a bounded-component selection lemma.  The
     unbounded global parity-selection problem remains.

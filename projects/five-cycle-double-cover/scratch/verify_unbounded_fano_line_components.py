@@ -129,6 +129,52 @@ def check_flow(
         require(total == 0, "flow conservation failure")
 
 
+def bad_line_components(
+    order: int,
+    edges: tuple[tuple[int, int], ...],
+    flow: tuple[int, ...],
+) -> tuple[int, ...]:
+    adjacency = [[] for _ in range(order)]
+    for edge, value in enumerate(flow):
+        if value in LINE:
+            first, second = edges[edge]
+            adjacency[first].append(second)
+            adjacency[second].append(first)
+    component_of = [-1] * order
+    components = []
+    for root in range(order):
+        if component_of[root] != -1:
+            continue
+        identifier = len(components)
+        component_of[root] = identifier
+        queue = [root]
+        members = []
+        while queue:
+            vertex = queue.pop()
+            members.append(vertex)
+            for other in adjacency[vertex]:
+                if component_of[other] == -1:
+                    component_of[other] = identifier
+                    queue.append(other)
+        components.append(members)
+
+    parities = [[0] * 8 for _ in components]
+    for edge, value in enumerate(flow):
+        first, second = edges[edge]
+        left = component_of[first]
+        right = component_of[second]
+        if left != right:
+            parities[left][value] ^= 1
+            parities[right][value] ^= 1
+    bad = []
+    for identifier, parity in enumerate(parities):
+        affine = tuple(parity[value] for value in (4, 5, 6, 7))
+        require(len(set(affine)) == 1, "affine cut parities disagree")
+        if affine[0]:
+            bad.append(identifier)
+    return tuple(bad)
+
+
 def check_cover(
     order: int,
     edges: tuple[tuple[int, int], ...],
@@ -355,10 +401,12 @@ def main() -> None:
             all(size % 2 == 0 for size in line_sizes),
             "line component has odd order",
         )
+        require(not bad_line_components(order, edges, flow), "line is not clean")
 
         print(
             f"depth={depth} order={order} edges={len(edges)} "
-            f"outside_cycle={len(outside)} line_components={line_sizes}"
+            f"outside_cycle={len(outside)} line_components={line_sizes} "
+            "clean=true"
         )
 
         if depth + 1 == len(expected_orders):

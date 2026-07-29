@@ -74,7 +74,7 @@ We also prove that no bounded-component kernel-line normal form can be
 universal.  Iterated cotree--diamond expansion gives simple bridgeless
 cubic graphs \(G_d\), all with explicit five-cycle double covers, such
 that every Fano line in every nowhere-zero \(\F_2^3\)-flow has at least
-\(d+1\) components.  Explicit flows attain equality.
+\(d+1\) components.  Explicit clean flows attain equality.
 
 Finally, we display a nowhere-zero \(\F_2^3\)-flow on the Petersen graph
 with two prescribed lines that cannot be cleaned while their functional
@@ -518,7 +518,8 @@ a standard five-cycle double cover, such that every nowhere-zero
 \[
                               \kappa_L(f)\ge d+1.       \tag{5.3}
 \]
-Equality is attained.  Their orders begin
+Equality is attained by a flow in which the displayed line is clean.
+Their orders begin
 \[
                          10,34,106,322,\ldots
 \]
@@ -569,8 +570,11 @@ value \(x\), choose distinct outside values \(y,z\ne x\) and use
 The outside support replaces one circuit edge by a four-edge path and
 remains a circuit.  The three line-valued internal edges in that diamond
 form one isolated star, while all line-valued diamonds connect their old
-ends.  Exactly one line component is therefore added at every stage,
-giving equality in (5.3).
+ends.  The new star has the two equal affine boundary values \(x,x\), so
+it is clean, and every old component retains its affine boundary parities.
+The connected Petersen line is clean.  Exactly one clean line component
+is therefore added at every stage, giving equality in (5.3) with zero
+defect.
 
 Finally, a cubic graph on \(n\) vertices has \(n/2+1\) cotree edges.
 Each adds four vertices, so \(n_{d+1}=n_d+4(n_d/2+1)=3n_d+4\).
@@ -756,7 +760,8 @@ python3 scratch/verify_unbounded_fano_line_components.py
 \end{verbatim}
 using only the Python standard library.  It constructs depths zero
 through three, checks the graph and spanning-tree data, every flow and
-five-cover equation, and exact line-component counts \(1,2,3,4\).
+five-cover equation, exact line-component counts \(1,2,3,4\), and zero
+defect in every displayed component.
 The universal assertion in Theorem~\ref{thm:unbounded} rests on the
 displayed induction, not on exhaustive flow enumeration.
 

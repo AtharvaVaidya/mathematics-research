@@ -3332,7 +3332,9 @@ line of every nowhere-zero \(\mathbb F_2^3\)-flow has at least
 \(1,2,3,4,\ldots\) components respectively.  The same local duad rule
 used in the connected-kernel separator lifts FiveCDC at every step.
 Choosing each tree to contain all but one edge of a displayed quotient
-circuit and using the explicit diamond flow lift attains equality.
+circuit and using the explicit diamond flow lift attains equality.  The
+new isolated component has two equal affine boundary values and every old
+defect is preserved, so these sharp flows are already clean.
 
 The human induction is
 `scratch/unbounded-fano-line-components-20260728.md`.  The construction

@@ -24,7 +24,8 @@ There is an infinite sequence of finite simple bridgeless cubic graphs
    \[
                          \kappa_L(f)\ge d+1;             \tag{1}
    \]
-3. equality is attained for every \(d\); and
+3. equality is attained for every \(d\) by a flow in which that line is
+   already clean; and
 4. their orders satisfy
    \[
              |V(G_0)|=10,\qquad
@@ -155,8 +156,12 @@ Lift a line-valued diamond entirely inside \(L\).  For an outside value
 in the edge order (2).  The outside support replaces the selected old
 edge by a four-edge path, so it remains one circuit.  The three
 line-valued internal edges of that diamond form one new isolated star.
-All other line components lift without splitting.  Thus exactly one
-component is added at every step and equality holds in (1).
+All other line components lift without splitting.  The new star has
+exactly the two equal outside-valued boundary edges \(x,x\), so it is
+clean, and every old component retains its old affine boundary parities.
+Starting from the connected, hence clean, Petersen line, exactly one
+clean component is added at every step.  Equality holds in (1), with
+zero defect.
 
 ## Reproduction and scope
 
@@ -170,7 +175,8 @@ The standard-library checker constructs depths zero through three,
 orders \(10,34,106,322\).  It checks simplicity, cubicity,
 bridgelessness, the spanning-tree choices, the outside circuit, every
 flow equation, every FiveCDC parity equation, and exact line-component
-counts \(1,2,3,4\).  It also independently enumerates the six Petersen
+counts \(1,2,3,4\), including zero defect in every displayed component.
+It also independently enumerates the six Petersen
 perfect matchings and their two odd complementary circuits.
 
 The universal lower bound is the displayed induction, not an exhaustive
