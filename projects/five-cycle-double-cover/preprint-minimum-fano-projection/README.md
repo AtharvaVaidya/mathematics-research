@@ -144,6 +144,17 @@ and strictly deletes it.  An explicit deletion reaches a globally minimum
 size-five clean projection.  This is a sharp boundary-method obstruction,
 not a FiveCDC counterexample.
 
+The interaction analysis now extends in
+`scratch/two-occurrence-clean-delete-frontier-20260729/`.
+Every loopless two-occurrence state of total support at most sixteen has
+a clean interaction flow or a strict support-circuit deletion.  A human
+shape reduction leaves only the three multiplicity profiles
+\((3,2,2)\), \((3,3,2)\), and \((4,3,1)\); two independent exact
+checkers classify all 22,032 cyclic-order states as 21,816 clean and 216
+delete-only, with no residual.  Thus every globally minimum state in
+this subclass is cleanable.  Interaction loops and general occurrence
+multiplicities remain open at size sixteen.
+
 The unrestricted boundary dichotomy still first fails at size fourteen,
 on an explicit \(7+7\) state.  Its 18-vertex simple bridgeless cubic realization
 has 15,360 ordered extensions of the displayed projection and none is
@@ -197,6 +208,18 @@ proof gives
 in a cubic graph.  Thus any viable dual descent must transport interior
 metric or Kempe-pairing information.
 
+The exact equality case is frozen in
+`scratch/minimum-projection-density-equality-rigidity-20260729/`.
+Writing \(m=|E-h|\), the four dual slacks satisfy
+\[
+ 4m-3|h|=\sum_c(A_c+U_c).
+\]
+At equality \(G-h\) is a forest, \(|h|\) is divisible by twelve,
+complement and boundary derivative colours are perfectly balanced, and
+every affine witness has equal selected and outside colour counts.
+Hence an uncleanable equality-case minimum projection must have support
+at least 24.  Strict positive slack remains open.
+
 The dynamic coupling is frozen in
 `scratch/minimum-projection-sixmap-color-load-frontier-20260729/`.
 For every six-map-integrable component union \(Y\), global minimality
@@ -212,6 +235,16 @@ Violation constructively returns a legal common map switch and a strict
 colour-avoiding binary-cycle descent.  Two independent audits and a
 hostile proof audit pass.  It remains open whether rainbow-oddness must
 force such a violation.
+
+The local implication is false.  The audited package
+`scratch/minimum-projection-rainbow-load-counterstate-20260729/`
+realizes a rainbow-odd, six-map-integrable support 6-circuit on the cube
+graph with two complementary 3-stars.  All nine load inequalities hold,
+and lengths four and five are impossible in the same minimal two-tree
+model.  The cube is Tait-colourable and four of the six switches already
+clean the state, so its displayed projection is not globally minimum.
+This rules out a local parity-to-load proof, not the global-minimum
+conjecture or FiveCDC.
 
 The same reduction records the exact size-fourteen counterstate.  The
 Kempe escapes show how internal two-colour paths supply additional

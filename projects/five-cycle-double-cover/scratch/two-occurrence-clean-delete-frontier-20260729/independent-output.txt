@@ -1,0 +1,8 @@
+PROFILE multiplicities=(3, 2, 2) degrees=(5, 5, 4) flows=138 states=432 clean_states=432 delete_only_states=0 no_goal_states=0
+  goal_histogram=((114, 12), (120, 24), (126, 132), (132, 120), (138, 144))
+PROFILE multiplicities=(3, 3, 2) degrees=(6, 5, 5) flows=402 states=8640 clean_states=8640 delete_only_states=0 no_goal_states=0
+  goal_histogram=((306, 180), (318, 72), (324, 144), (330, 1404), (336, 1584), (342, 1296), (348, 1944), (354, 360), (360, 648), (366, 468), (372, 360), (378, 144), (402, 36))
+PROFILE multiplicities=(4, 3, 1) degrees=(7, 5, 4) flows=420 states=12960 clean_states=12744 delete_only_states=216 no_goal_states=0
+  goal_histogram=((360, 936), (366, 1728), (372, 1872), (378, 3888), (384, 1296), (390, 1584), (396, 1008), (402, 144), (408, 432), (420, 72))
+TOTAL {'flows': 960, 'states': 22032, 'clean': 21816, 'delete_only': 216}
+PASS independent literal endpoint-set audit

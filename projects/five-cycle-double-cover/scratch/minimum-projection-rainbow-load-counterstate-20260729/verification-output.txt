@@ -1,0 +1,1 @@
+PASS: vertices=8 edges=12 bridges=0 clean_map_translation_states=16 dirty_map_translation_states=8 census={4: (12, 0, {4: 12}), 5: (120, 0, {3: 120}), 6: (960, 888, {6: 72, 4: 576, 2: 312})}

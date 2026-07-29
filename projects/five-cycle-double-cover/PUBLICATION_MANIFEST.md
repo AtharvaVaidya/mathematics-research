@@ -89,6 +89,16 @@ are not independent human verification or peer review.
   projection.  The human ten-orbit table, primary and independent
   checkers, smaller-size census, hostile audit, and hash ledger pass.
   This is a proof-boundary result, not a FiveCDC counterexample.
+- `scratch/two-occurrence-clean-delete-frontier-20260729/` extends that
+  interaction analysis through total support sixteen when the
+  interaction multigraph is loopless.  A human reduction leaves only
+  the parallel-triangle multiplicity profiles
+  \((3,2,2)\), \((3,3,2)\), and \((4,3,1)\).
+  Two independently structured exact checkers classify all 22,032
+  cyclic-order states as 21,816 clean and 216 delete-only, with zero
+  residuals.  Hence every globally minimum projection in this subclass
+  is cleanable.  Interaction loops and general occurrence multiplicities
+  remain open at size sixteen.
 - `scratch/minimum-projection-fixed-map-affine-cleaning-20260729/README.md`
   gives a complete human-checkable derivation of the one-bit cut defect,
   the affine XOR cleaning system for fixed component maps, the
@@ -130,6 +140,17 @@ are not independent human verification or peer review.
   checkers audit the six-map algebra and cut-parity identities; the
   universal theorem itself is the displayed LP proof and remains subject
   to expert human review.
+- `scratch/minimum-projection-density-equality-rigidity-20260729/`
+  decomposes the density slack exactly as
+  \(4|E-h|-3|h|=\sum_c(A_c+U_c)\).
+  Equality forces every positive dual shore to have one support and one
+  complement edge, every complement edge to be saturated in all four
+  duals, \(G-h\) to be a forest, \(|h|\) divisible by twelve, all
+  complement and boundary derivative colours equinumerous, and every
+  affine witness exactly colour-balanced.  An uncleanable equality-case
+  minimum projection must have support at least 24.  The human proof, two
+  arithmetic audits, hostile audit, outputs, and ledger pass; positive
+  slack remains open.
 - `scratch/minimum-projection-sixmap-color-load-frontier-20260729/`
   couples the legal six-map witness switch to dynamically recomputed
   global-minimum exchange.  If \(N_b\) and \(O_a\) are complement-edge
@@ -143,6 +164,15 @@ are not independent human verification or peer review.
   two independent finite audits, hostile logical audit, outputs, and
   hash ledger pass.  Rainbow parity is not yet proved to force a
   violation.
+- `scratch/minimum-projection-rainbow-load-counterstate-20260729/`
+  shows that local rainbow parity does not force that violation.  The
+  cube graph has a support 6-circuit, two complementary 3-stars, a
+  rainbow-odd six-map-integrable shore, all four support colours, and all
+  nine load inequalities.  Lengths four and five are impossible in the
+  corresponding minimally connected two-tree model.  The graph is
+  Tait-colourable and four of its six switches clean the state, so the
+  displayed projection is not globally minimum.  This is an audited
+  proof-method counterstate, not a FiveCDC counterexample.
 - `scratch/minimum-projection-size14-dichotomy-counterstate-20260729/`
   gives the first total-support counterstate to unrestricted clean or
   delete.  Its \(7+7\) word/partition has 320 normalized feasible map

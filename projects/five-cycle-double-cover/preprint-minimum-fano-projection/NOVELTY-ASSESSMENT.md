@@ -62,7 +62,16 @@ The manuscript proves:
     cubic support-density bound \(|h|\le 6|V|/7\); and
 17. a six-map colour-load inequality which turns any violating
     inside/outside derivative profile into an explicit legal recolouring
-    and strict projection descent.
+    and strict projection descent; and
+18. a loopless two-occurrence clean-or-delete theorem through total
+    support sixteen, with a complete human shape reduction and two
+    independent exact checks of the three residual profiles; and
+19. a smallest cube-graph counterstate showing that local rainbow parity,
+    cyclic closure, all-four support colours, and minimally connected
+    complement components do not force a colour-load violation; and
+20. an exact four-dual slack decomposition and rigidity theorem at
+    \(|h|=6|V|/7\), forcing a forest complement, divisibility by twelve,
+    equinumerous colours, and exactly balanced affine witnesses.
 
 This is a partial theorem about the Hušek--Šámal flow criterion.  It does
 not resolve the Five-Cycle Double Cover Conjecture.
@@ -137,6 +146,24 @@ has been completed.  In particular, the project does not claim that its
 inequality, boundary-incidence form, or six-map application has
 established priority.
 
+The support-sixteen two-occurrence result is a specialized finite
+extension of the interaction-flow dictionary developed in this project.
+Its reduction is elementary and its residual census exact, but it has
+not received a literature-wide novelty screen.  No priority claim is
+made pending comparison with multipole-flow and circuit-partition
+literature.
+
+The rainbow-load counterstate is a failed-approach certificate rather
+than a positive theorem.  Its cube realization and length-four-to-six
+minimality are exact, but no priority claim is made for the observation.
+Its value is methodological: it shows why global minimum information
+cannot be replaced by local rainbow and component-connectivity data.
+
+The equality-rigidity theorem is an elementary complementary-slackness
+deduction within this project-specific dual framework.  It has not
+received a literature-wide novelty comparison, and no priority claim is
+made for either the slack decomposition or its equality classification.
+
 ## Publication judgment
 
 The exchange theorem, through-fifteen boundary theorem, the universal
@@ -179,6 +206,17 @@ of one of nine explicit inequalities constructs a legal recolouring and
 strict descent.  It narrows the remaining proof obligation to whether
 rainbow-oddness forces a load violation or whether surviving interior
 geometry is reducible.
+The two-occurrence theorem separately removes every loopless interaction
+state through support sixteen.  It does not raise the general
+through-fifteen theorem: interaction loops and higher occurrence
+multiplicities remain uncontrolled at size sixteen.
+The cube counterstate then rules out the simplest attempted implication
+from rainbow parity to the colour-load inequality.  Because the cube is
+Tait-colourable and the displayed projection is not minimum, it leaves
+the actual global-minimum implication open.
+The equality theorem sharply isolates one global regime: any uncleanable
+case at zero density slack has support at least twenty-four and a rigid
+forest/balanced-colour structure.  Positive slack remains uncontrolled.
 A formal venue submission should wait until a graph theorist:
 
 - checks the flow-to-cleanliness semantics line by line;
@@ -208,7 +246,10 @@ relative-\(\mathrm{GL}(2,2)\) tensor proof, the Petersen interaction
 dictionary and descent, the six-map witness-neutralization identity, and
 its exact cyclic-dynamics obstruction, the shortest-join zero-price and
 support-density theorems, the six-map colour-load inequality and
-constructive descent, and the static-inflation obstruction; proposed
+constructive descent, the support-sixteen two-occurrence theorem, and the
+cube rainbow-load counterstate, the equality-rigidity theorem, and the
+static-inflation obstruction;
+proposed
 the two-terminal cleaning and orbit-reflecting
 \(K_{3,3}-e\) lemmas; wrote the exact
 classifiers, exhaustive certificate builders, and independent checkers;
@@ -224,5 +265,15 @@ shortest-join primal/dual pair, the every-optimal-dual quantifier, the
 zero-price and density deductions, the six-map formulas, checker
 independence, and the frozen hash ledger.  A fifth hostile audit checked
 the colour-load half-load argument, legal-switch descent, boundary
-conversion, checker independence, and its frozen ledger.  Agent agreement is not independent human
-verification or peer review.
+conversion, checker independence, and its frozen ledger.  Agent agreement
+is not independent human verification or peer review.  A sixth hostile
+audit checked the complete
+interaction-shape reduction, flow/clean/delete semantics, both finite
+implementations, counts, and the size-sixteen theorem's scope.
+A seventh hostile audit reconstructed the cube graph and flow, verified
+the rainbow witness and every load inequality, checked all six maps, the
+Tait colouring, the length-four-to-six census, checker scope, and hash
+ledger.
+An eighth hostile audit checked the four-dual slack identity, equality
+implications, bridge/forest step, colour and topology counts, exact
+witness balance, support-24 corollary, both arithmetic audits, and ledger.

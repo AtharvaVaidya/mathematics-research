@@ -161,6 +161,11 @@ new density bounds
 for a cubic graph.  Hence an LP descent must transport metric or
 path-pairing information inside complement components, not merely a
 quotient-cut price.
+An exact slack decomposition shows that equality
+\(|h|=6|V|/7\) is rigid: \(G-h\) is a forest, all complement and
+boundary derivative colours are equinumerous, \(|h|\) is divisible by
+twelve, and every affine witness is exactly colour-balanced.  Any
+uncleanable equality obstruction has \(|h|\ge24\).
 
 We also obtain an exact dynamic exchange test.  Every nonzero functional
 \(\alpha\) on the low \(\F_2^2\)-flow takes value one on at least
@@ -178,6 +183,16 @@ now concrete: prove that some rainbow-odd witness violates this load
 bound, or use the interior geometry that lets all nine inequalities
 survive.
 
+The first alternative is false from local boundary data alone.  On the
+cube graph, a displayed 6-circuit projection and its two complementary
+3-stars have a rainbow-odd, six-map-integrable witness, use all four
+support colours, and satisfy every colour-load inequality strictly.
+Lengths four and five are impossible in the corresponding two-tree
+model, so six is the first local counterstate.  The cube is
+Tait-colourable and four of its six map switches already clean the state;
+the projection is not globally minimum.  Thus the counterstate isolates,
+rather than bypasses, the missing global hypothesis.
+
 At size fifteen the primary exact classifier enumerates \(26{,}492\)
 word orbits and \(35{,}247{,}202{,}556\) charge-valid abstract states
 over all eight support shapes.  Of the \(31{,}088{,}622{,}592\) dirty
@@ -192,6 +207,16 @@ also clean in the completed anchor census, in agreement with the tensor
 proof.  Therefore every minimum extendable projection of size at most
 fifteen is cleanable, and a counterexample to the proposed selection
 principle must have minimum size at least sixteen.
+
+In the loopless two-occurrence interaction subclass we also close the
+next size.  A human reduction leaves only the three parallel-triangle
+profiles with multiplicities
+\((3,2,2)\), \((3,3,2)\), and \((4,3,1)\).
+Two independent exact checks exhaust their 22,032 cyclic-order states:
+21,816 admit a clean interaction flow and the other 216 strictly delete
+a support circuit.  Thus every globally minimum state in this subclass
+is clean through support sixteen.  Interaction loops and arbitrary
+occurrence multiplicities remain open at size sixteen.
 
 The support-preserving boundary method is nevertheless sharp: at size
 fourteen an explicit \(7+7\) state is neither directly cleanable nor
@@ -331,6 +356,9 @@ The contribution of this note is narrower:
         several-circuit state, together with the Petersen
         two-occurrence boundary showing why the balance hypothesis cannot
         simply be dropped;
+  \item a loopless two-occurrence clean-or-delete theorem through total
+        support sixteen, reduced by hand to three finite interaction
+        profiles and independently checked;
   \item an affine-XOR duality theorem for general several-circuit
         cleaning and a six-map identity that legally neutralizes any one
         chosen dual inconsistency witness, together with an exact
@@ -338,10 +366,13 @@ The contribution of this note is narrower:
         termination argument;
   \item a shortest-join dual theorem forcing every positive dual shore
         to split a complement component, with the support-density bound
-        \(|h|\le6|V|/7\) in cubic graphs;
+        \(|h|\le6|V|/7\) in cubic graphs and a complete rigidity theorem
+        at equality;
   \item a six-map colour-load inequality coupling a neutral recolouring
         to the dynamically recomputed exchange inequalities, with an
-        explicit strict descent whenever the bound fails;
+        explicit strict descent whenever the bound fails, plus a smallest
+        cube-graph counterstate showing that local rainbow parity alone
+        need not violate it;
   \item four simultaneous shortest-join consequences;
   \item a general inflation theorem showing that those four inequalities,
         at one fixed flow, do not force one-round Kempe descent;
@@ -582,6 +613,105 @@ of \(J_c\) and unit capacity on every complement edge.  This proves
 (8e).  Choose \(c\) with \(|M_c|\le|h|/4\) to get the first inequality
 in (8f).  Finally substitute \(|E|=3|V|/2\).
 \end{proof}
+
+\begin{proposition}[rigidity at density equality]
+\label{prop:densityrigidity}
+Put \(m=|E-h|\), fix any optimal duals in (8a), and define
+\[
+\begin{split}
+ A_c&=\sum_Sy_{c,S}
+       \bigl(|\delta_{G-M_c}(S)|-2\bigr),\\
+ U_c&=\sum_{e\in E-h}\bigl(1-\ell_c(e)\bigr).
+\end{split}                                               \tag{8h}
+\]
+Then
+\[
+                         4m-3|h|=\sum_{c\in K}(A_c+U_c), \tag{8i}
+\]
+and every term on the right is nonnegative.
+
+If equality holds in (8f), equivalently \(4m=3|h|\), then:
+\begin{enumerate}
+  \item every positive dual shore has exactly one \(J_c\)-edge and one
+        complement edge in \(G-M_c\);
+  \item every complement edge is saturated in all four duals, and
+        \(G-h\) is a forest;
+  \item \(|h|\) is divisible by twelve,
+        \[
+        |V|-|h|=\frac{|h|}{6},\qquad
+        \#\operatorname{comp}(G-h)=\frac{5|h|}{12};
+        \tag{8j}
+        \]
+  \item each nonzero low colour occurs on exactly \(|h|/4\) complement
+        edges and at exactly \(|h|/3\) support-boundary incidences; and
+  \item every six-map-integrable component union, in particular every
+        affine-cleaning witness shore, has equal selected derivative
+        counts in the three nonzero colours, and equal outside counts.
+\end{enumerate}
+Consequently an uncleanable globally minimum projection at density
+equality must have \(|h|\ge24\).
+\end{proposition}
+
+\begin{proof}
+By (8c), every positive shore has exactly one \(J_c\)-edge and, by
+Proposition~\ref{prop:zerodualprice}, at least one complement edge.
+Thus \(A_c\ge0\); unit capacity gives \(U_c\ge0\).
+Double-counting weighted cut-edge incidences gives
+\[
+ 2|J_c|+A_c
+ =\sum_Sy_{c,S}|\delta_{G-M_c}(S)|
+ =\sum_{e\in E-M_c}\ell_c(e)
+ =|J_c|+m-U_c.
+                                                               \tag{8k}
+\]
+Hence \(m-|J_c|=A_c+U_c\).  Summing over the four colours and using
+\(\sum_c|J_c|=3|h|\) proves (8i).
+
+At equality every \(A_c\) and \(U_c\) vanishes.  The first two assertions
+about dual cuts and saturation follow immediately.  For any complement
+edge \(e\), saturation supplies a positive shore whose only complement
+crossing is \(e\).  Such a shore cannot cut a complement circuit in just
+one edge, so every complement edge is a bridge of \(G-h\), proving the
+forest assertion.
+
+Let \(m_t\) count complement edges of nonzero low colour \(t\).  The
+functional half-load argument in the proof of
+Proposition~\ref{prop:colorload} gives
+\[
+                    m-m_t\ge\frac{|h|}{2}.
+\]
+Since \(m=3|h|/4\) and \(\sum_tm_t=m\), all three \(m_t\) equal
+\(|h|/4\).  Put \(n=|V|-|h|\).  Cubicity gives \(n=|h|/6\).  If \(k_t\)
+is the number of colour-\(t\) complement incidences at support vertices,
+then
+\[
+                         2m_t=n+k_t,
+\]
+because every off-support cubic vertex sees the three nonzero colours
+once each.  Hence \(k_t=|h|/3\), proving divisibility by twelve.
+
+If the complement forest has \(q\) components, its support vertices are
+its leaves and its off-support vertices have degree three.  Summing the
+tree identity ``leaves = internal vertices \(+2\)'' gives
+\(n=|h|-2q\), hence \(q=5|h|/12\).
+
+Finally let \(a_t\) be the three selected derivative counts of a
+six-map-integrable component union.  The outside counts are
+\(|h|/3-a_t\), and (15m) gives
+\[
+ \max_ta_t+\max_t\bigl(|h|/3-a_t\bigr)\le2n=|h|/3.
+\]
+Thus \(\max_ta_t=\min_ta_t\), proving exact balance inside and outside.
+The only positive multiple of twelve below twenty-four is twelve, and
+Theorem~\ref{thm:sizefifteen} excludes an uncleanable minimum projection
+of that size.
+\end{proof}
+
+\begin{remark}
+The full proof, two arithmetic audits, frozen outputs, and hash ledger
+are in the density-equality-rigidity package under \path{scratch/}.
+Strict density slack \(4m-3|h|>0\) remains open.
+\end{remark}
 
 \begin{corollary}[flow-resistance bound]\label{cor:resistance}
 Let \(r_f(G)\) be the minimum number of zero edges in an
@@ -1292,6 +1422,81 @@ Since \(h\) is 2-regular on its support,
 \]
 Substitution in (15l) is exactly (15m).
 \end{proof}
+
+\begin{proposition}[global minimality is essential for load forcing]
+\label{prop:rainbowloadcounterstate}
+There is a simple connected bridgeless planar cubic graph carrying a
+nowhere-zero \(\F_2^3\)-flow, a 6-circuit projection \(h\), and a
+component-union shore \(Y\) with all of the following properties:
+\begin{enumerate}
+  \item the four low-colour classes cross \(\delta(Y)\) oddly;
+  \item all six common \(\operatorname{GL}(2,2)\) switches on \(Y\) are
+        integrable;
+  \item every support colour occurs; and
+  \item all nine boundary-load inequalities (15m) hold.
+\end{enumerate}
+The graph is Tait-colourable, so the displayed \(h\) is not globally
+minimum.  Thus rainbow parity, cyclic closure, and minimally connected
+complement components do not imply a violation of (15m) without the
+global-minimum hypothesis.
+\end{proposition}
+
+\begin{proof}
+Take vertices \(0,\ldots,7\), support circuit
+\[
+  01,12,23,34,45,50,
+\]
+and complement edges
+\[
+  06,26,46,\qquad17,37,57.
+\]
+This is the cube graph, with canonical graph6 string
+\texttt{Gs@ipo}.  In the displayed edge order, take first coordinate
+\[
+                  111111000000
+\]
+and low coordinate
+\[
+                  102030123123.
+\]
+Direct xor at every vertex is zero and no full edge value vanishes.
+Removing \(h\) leaves the two 3-stars
+\[
+ W_0=\{0,2,4,6\},\qquad W_1=\{1,3,5,7\}.
+\]
+For \(Y=W_1\), the derivative word around the support circuit is
+\(\texttt{112233}\), while the shore word is
+\(\texttt{010101}\).  Each shore half has derivative xor
+\(1+2+3=0\), so every common linear switch is integrable.
+
+The cut is the whole support circuit.  Its support-colour counts are
+\((3,1,1,1)\), hence all four are odd.  Inside and outside \(Y\), the
+three nonzero complement-colour counts are both \((1,1,1)\).  Thus
+\[
+ O_a+N_b=2\le |E-h|-\frac{|h|}{2}=3
+\]
+for every \(a,b\ne0\); equivalently,
+\(k_a(\overline Y)+k_b(Y)=2\le4=2(|V|-|h|)\).
+Finally the edge-colour word
+\[
+                  121323231321
+\]
+is a Tait colouring in the same edge order.  Its associated
+nowhere-zero \(K\)-flow has first projection zero, proving that the
+displayed size-six projection is not minimum.
+\end{proof}
+
+\begin{remark}
+\begin{sloppypar}
+In the one-circuit model with two minimally connected cubic-tree
+components, lengths four and five force a load violation, whereas the
+displayed length-six state is safe.  An exact boundary census gives
+\(12,120,960\) states at lengths \(4,5,6\), with respectively
+\(0,0,888\) load-safe rows.  The rainbow-load counterstate package under
+\path{scratch/} contains the literal graph, full six-map table,
+independent checker, outputs, and hash ledger.
+\end{sloppypar}
+\end{remark}
 
 \begin{remark}
 Proposition~\ref{prop:sixmapneutralization} removes any \emph{chosen}
@@ -2014,6 +2219,71 @@ This is a boundary-method obstruction, not a minimum-projection or
 FiveCDC counterexample.
 \end{remark}
 
+\begin{theorem}[loopless two-occurrence frontier through sixteen]
+\label{thm:twooccurrencesixteen}
+Suppose every complement component has exactly two support-boundary
+occurrences, the interaction multigraph \(J\) of
+Proposition~\ref{prop:petersentwooccurrence} is loopless, the total
+support is at most sixteen, and \(J\) admits a nowhere-zero \(K\)-flow.
+Then some such flow either cleans the state or omits a low colour on a
+whole support circuit and hence strictly deletes that circuit.
+Consequently every cardinality-minimum extendable projection in this
+subclass is cleanable.
+\end{theorem}
+
+\begin{proof}
+The total support is the degree sum of \(J\).  Disconnected interaction
+components may be treated independently.  A vertex of degree at most
+three already deletes under every feasible flow, because its integrated
+closed walk visits at most three of the four points of \(K\).  If every
+degree is even, the constant nonzero flow makes every local walk
+alternate between two points and deletes.
+
+A connected two-vertex interaction graph is a parallel bundle.  For an
+even bundle, use the constant flow.  For an odd bundle of size at least
+three, give two consecutive edges distinct values \(b,c\) and every
+other edge \(a=b+c\).  Both vertex xors vanish, while the local walk
+starting before the exceptional pair has prefixes \(0,b,a\) and then
+alternates between \(a\) and \(0\), omitting \(c\).  A connected
+three-vertex graph which is not a triangle is a path of parallel bundles;
+apply the same zero-xor construction independently at its two leaves.
+
+It remains to consider a connected noneulerian graph of minimum degree
+four on at least three vertices.  Five vertices would have degree sum at
+least twenty.  Four vertices and degree sum at most sixteen force the
+Eulerian sequence \((4,4,4,4)\).  Hence \(J\) is a three-vertex triangle.
+The only possible degree sequences and edge-multiplicity triples are
+\[
+\begin{array}{c|c|r|r|r}
+\text{multiplicities}&\text{degrees}&\text{cyclic-order states}
+ &\text{clean}&\text{delete only}\\ \hline
+(3,2,2)&(5,5,4)&432&432&0\\
+(3,3,2)&(6,5,5)&8{,}640&8{,}640&0\\
+(4,3,1)&(7,5,4)&12{,}960&12{,}744&216
+\end{array}                                               \tag{26i}
+\]
+The primary checker enumerates every cyclic order modulo rotation and
+reversal and every nowhere-zero \(K\)-flow.  It integrates the three
+walks, exhausts their relative translations, and tests both alternatives.
+A separately written checker compares the literal two-element \(K_4\)
+endpoint sets rather than the primary alternating-form equation and
+reproduces every row.  There are no residual states.
+
+Finally, by the interaction dictionary, a deleting flow is realized by
+component maps.  Toggling the omitted low colour on that circuit removes
+the entire circuit and yields a strictly smaller extendable projection,
+which is impossible at a cardinality minimum.
+\end{proof}
+
+\begin{remark}
+The complete replay, literal-endpoint independent checker, frozen outputs,
+and hash ledger are in
+\path{scratch/two-occurrence-clean-delete-frontier-20260729/}.
+Interaction loops are outside the theorem: graph looplessness does not
+prevent two occurrences of one complement component on the same support
+circuit.
+\end{remark}
+
 \begin{theorem}[minimum projections through size fifteen]
 \label{thm:sizefifteen}
 Under the hypotheses of Theorem~\ref{thm:sizeten}, every
@@ -2407,7 +2677,10 @@ unbounded branch: every one-circuit boundary directly cleans.  The
 remaining open frontier therefore begins with several circuits lacking
 the separate per-circuit balance of
 Corollary~\ref{cor:multicircuittensor}; larger such states need not admit
-the same finite strategy.
+the same finite strategy.  Theorem~\ref{thm:twooccurrencesixteen} removes
+the loopless two-occurrence branch through size sixteen, so a surviving
+size-sixteen state must have an interaction loop or a component with more
+than two occurrences.
 
 Proposition~\ref{prop:zerodualprice} rules out the most direct LP repair
 of this gap.  The rainbow quotient shore itself carries zero coefficient
@@ -2417,15 +2690,23 @@ complement components.  This both yields
 Corollary~\ref{cor:supportdensity} and identifies the missing geometric
 object: a descent proof must transport interior distance, blossom, or
 Kempe-pairing information across a neutral recolouring.
+Proposition~\ref{prop:densityrigidity} completely describes the zero-slack
+boundary of this argument.  There the complement is a forest and all
+colour loads and affine witnesses are exactly balanced; an uncleanable
+case cannot occur below support twenty-four.  What remains is therefore
+either this rigid large equality regime or positive dual slack.
 
 Proposition~\ref{prop:colorload} supplies the first dynamic coupling to
 global minimality.  A concentrated inside/outside derivative colour
 profile forces an explicit strict descent after one legal common map
 switch.  The remaining implication is exact but open: rainbow-oddness is
 a parity condition, whereas (15l) is a load inequality that can be
-shielded by colour-balanced interior vertices.  One must either show that
-some witness necessarily defeats that shielding or exploit the interior
-path geometry which creates it.
+shielded by colour-balanced interior vertices.
+Proposition~\ref{prop:rainbowloadcounterstate} realizes that shielding
+already on the cube, so local rainbow forcing is false.  Because its
+projection is not globally minimum, a proof must either extract a
+load violation from genuinely global information or exploit the interior
+path geometry directly.
 
 \begin{proposition}[static exchange has no further local boundary force]
 \label{prop:staticinflation}
@@ -2674,18 +2955,32 @@ finite audits check the six-map recomputation algebra but are not a
 substitute for human review.  A hostile Codex audit separately checked
 the primal/dual formulation, the every-optimal-dual quantifier, the
 density argument, the recomputation laws, and the package hash ledger.
+The exact density-slack decomposition and equality classification were
+derived by Codex agents and are displayed in
+Proposition~\ref{prop:densityrigidity}.  Two arithmetic audits and a
+hostile logical audit checked the identity, forest inference, colour and
+topology counts, witness balance, size corollary, and hash ledger.
 The six-map colour-load inequality and its constructive descent were
 also derived by Codex agents.  Its complete functional proof is displayed
 in Proposition~\ref{prop:colorload}; two independently structured finite
 audits check the map/count identities and boundary conversion, and a
 hostile Codex audit checked every logical step and the frozen ledger.
+Codex agents also found the cube counterstate in
+Proposition~\ref{prop:rainbowloadcounterstate}.  A separate hostile audit
+reconstructed its canonical graph, flow, complement stars, six-map table,
+rainbow and load calculations, local minimality, Tait colouring, two
+checkers, and hash ledger.
 Codex agents also derived the
 two-occurrence interaction dictionary and Petersen descent.  A separate
 hostile audit checked the complete ten-orbit table, the analytic
 60-flow and 320-map counts, the literal Petersen realization, the
 globally minimum clean descendant, both smaller-size enumerators, and the
 package ledger.  This is likewise agent review rather than independent
-human verification.  The size-fifteen primary package freezes
+human verification.  Codex agents also proved
+Theorem~\ref{thm:twooccurrencesixteen}; two exact checkers independently
+reproduce its 22,032-state partition, and a hostile audit checked the
+complete graph-shape reduction, semantics, counts, and hash ledger.  The
+size-fifteen primary package freezes
 all eight shape counts and 6,036 residual rows.  A separately written
 induction checker canonicalizes every residual and links it to the
 matching-robust inverse-extension family.  The single-circuit anchor

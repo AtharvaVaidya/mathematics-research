@@ -51,6 +51,13 @@ deletion reaches a clean global minimum of size five.  Consequently any
 counterexample to the
 proposed minimum-projection selection principle has minimum support at
 least sixteen.
+The package
+`scratch/two-occurrence-clean-delete-frontier-20260729/` closes the
+loopless two-occurrence subclass at that next size: a complete shape
+reduction and two exact checkers classify 22,032 support-sixteen-or-less
+states as 21,816 clean and 216 delete-only, with no residual.  This does
+not settle interaction loops, higher occurrence multiplicities, or the
+general size-sixteen case.
 
 The unrestricted boundary dichotomy nevertheless fails sharply at size
 fourteen: an explicit \(7+7\) state has an 18-vertex
@@ -90,7 +97,14 @@ It also proves
 \(|E-h|\ge |h|-|M_c|\) for each affine colour and
 \(|h|\le6|V|/7\) in cubic graphs.  Consequently a viable dual descent
 must transport interior distance or Kempe-pairing information; the scalar
-quotient-cut price cannot be its potential.  The dynamic package
+quotient-cut price cannot be its potential.  The equality package
+`scratch/minimum-projection-density-equality-rigidity-20260729/`
+gives the exact slack decomposition
+\(4|E-h|-3|h|=\sum_c(A_c+U_c)\).
+At zero slack the complement is a forest, support is divisible by
+twelve, all relevant colour loads are equal, every affine witness is
+exactly balanced, and an uncleanable minimum projection has support at
+least 24.  Positive slack remains open.  The dynamic package
 `scratch/minimum-projection-sixmap-color-load-frontier-20260729/`
 sharpens this to an exact sufficient descent test.  For a
 six-map-integrable witness shore \(Y\), global minimality requires
@@ -102,7 +116,12 @@ equivalently
 \(k_a(\overline Y)+k_b(Y)\le2(|V|-|h|)\).
 Violation explicitly produces a legal recolouring and a strict
 colour-avoiding binary-cycle descent.  The unresolved implication is
-whether rainbow-oddness must force such a violation.  The
+whether global-minimum structure must force such a violation.  Local
+rainbow parity alone does not: the audited cube package
+`scratch/minimum-projection-rainbow-load-counterstate-20260729/`
+has a rainbow-odd six-map-integrable 6-circuit, two complementary
+3-stars, and satisfies every load inequality.  The cube is
+Tait-colourable, so the displayed projection is not minimum.  The
 size-fourteen Kempe theorem is in
 `scratch/minimum-projection-through14-cleanability-20260729/` and
 `scratch/minimum-projection-size14-kempe-escape-20260729/`.  Larger support
