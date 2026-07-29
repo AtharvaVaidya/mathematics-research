@@ -1,0 +1,103 @@
+{
+  "scope": "proof-mining diagnostic outside the cyclically-4 theorem; the one path-core UNSAT result is solver output without a proof certificate",
+  "three_edge_connected_census": {
+    "6": {
+      "graphs": 2,
+      "junction_orbits": 2
+    },
+    "8": {
+      "graphs": 4,
+      "junction_orbits": 14
+    },
+    "10": {
+      "graphs": 14,
+      "junction_orbits": 140
+    },
+    "12": {
+      "graphs": 57,
+      "junction_orbits": 2164
+    },
+    "14": {
+      "graphs": 341,
+      "junction_orbits": 45295
+    },
+    "total_graphs": 418,
+    "total_junction_orbits": 47615
+  },
+  "path_core_search": {
+    "path_core_safe_sat": 47614,
+    "path_core_ansatz_unsat_uncertified": 1
+  },
+  "smallest_diagnostic_failure": {
+    "order": 14,
+    "graph_index": 223,
+    "graph6": "M?AA@B_HaIR?E_EO?",
+    "girth": 4,
+    "junctions": [
+      3,
+      4
+    ],
+    "cyclic_three_edge_cut": {
+      "edge_indices": [
+        12,
+        17,
+        20
+      ],
+      "edges": [
+        [
+          0,
+          11
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          7,
+          13
+        ]
+      ],
+      "shore": [
+        3,
+        4,
+        11,
+        12,
+        13
+      ],
+      "shore_junctions": 2,
+      "shore_connectors": 3
+    }
+  },
+  "seven_state_repair": {
+    "added_star_state": [
+      6,
+      10,
+      18
+    ],
+    "all_three_edge_connected_junction_orbits_safe_sat": 47615,
+    "explicit_repair_edge_labels": [
+      3,
+      24,
+      6,
+      9,
+      5,
+      18,
+      10,
+      17,
+      5,
+      3,
+      12,
+      17,
+      20,
+      3,
+      9,
+      5,
+      24,
+      3,
+      6,
+      17,
+      9
+    ]
+  },
+  "target_counterexample": false
+}

@@ -1,0 +1,1 @@
+PASS explicit path-core atom completions atoms=2 words_per_atom=1296

@@ -1,0 +1,380 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\wt}{\operatorname{wt}}
+\newcommand{\xor}{\mathbin{\oplus}}
+\newcommand{\FiveCDC}{\textsc{FiveCDC}}
+
+\title{A Six-State Boundary Lemma for Two Blanu\v{s}a Six-Poles\\
+\large Provisional computational note---not a resolution of \FiveCDC}
+\author{Atharva Vaidya}
+\date{Draft of 29 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We isolate a finite positive boundary relation for two ordered six-poles
+obtained by deleting two vertices from the two Blanu\v{s}a snarks.  Edges are
+labelled by the ten weight-two vectors of $\F_2^5$, the standard flow encoding
+of five labelled even subgraphs covering every edge twice.  Six particular
+three-edge boundary states have the property that every ordered concatenation
+of two such states extends through either six-pole, for every port order.
+This gives a constructive composition lemma.  A solver-free proof table lists
+all $2\cdot36^2=2592$ internal extensions, and a separately implemented checker
+verifies the graph encodings and every parity equation.  As one application,
+a canonical census verifies the hypothesis for 9,278 independent
+junction-set orbits in cyclically 4-edge-connected simple cubic macros of
+order at most 14.  This is a restricted local and finite result; it neither
+proves nor disproves the Five-Cycle Double Cover Conjecture.
+\end{abstract}
+
+\paragraph{Status warning.}
+This draft has not been peer reviewed or independently checked by a human.
+A bounded literature audit found no exact antecedent for the stated local
+relation, but that audit does not establish novelty.  Section~\ref{sec:ai}
+discloses the use of generative AI.
+
+\section{Five labelled even subgraphs as a duad flow}
+
+All graphs in the theorem below are finite.  For a graph $G$, an
+\emph{even subgraph} means an edge subset having even degree at every vertex;
+it need not be connected and may be empty.  This is the convention under
+which a labelled five-cycle double cover is a tuple
+$(C_0,\ldots,C_4)$ of even subgraphs such that every edge belongs to exactly
+two members of the tuple.
+
+Let
+\[
+ D=\{x\in\F_2^5:\wt(x)=2\}.
+\]
+We identify a vector supported on $\{i,j\}$ with the duad $ij$.
+
+\begin{proposition}[standard duad formulation]\label{prop:duad}
+A graph $G$ has five labelled even subgraphs covering every edge exactly twice
+if and only if there is a map $\lambda:E(G)\to D$ such that
+\[
+ \bigoplus_{e\ni v}\lambda(e)=0
+ \qquad\text{for every }v\in V(G),
+\]
+where a loop is counted twice in the incidence sum.
+\end{proposition}
+
+\begin{proof}
+Given $(C_0,\ldots,C_4)$, let the $i$th coordinate of $\lambda(e)$ indicate
+whether $e\in C_i$.  Exact double coverage gives $\wt(\lambda(e))=2$, and
+even degree in every $C_i$ gives the displayed xor equation coordinate by
+coordinate.  Conversely, take $C_i$ to be the edges whose labels have
+$i$th coordinate one.  The xor equations make every $C_i$ even and the
+weight-two condition gives exact double coverage.
+\end{proof}
+
+Proposition~\ref{prop:duad} is background, not a novelty claim.  Equivalent
+weight-two flow formulations occur in the FiveCDC literature; see, in
+particular, Hu\v{s}ek and \v{S}\'amal~\cite{husek-samal-2026}.
+
+\section{Ordered six-poles and their boundary relations}
+
+An ordered six-pole $X$ consists here of a cubic graph fragment with six
+ordered semiedges.  Its internal vertices have degree three after semiedges
+are counted.  A word $w=(w_1,\ldots,w_6)\in D^6$ is \emph{extendable through
+$X$} if the internal edges can be labelled from $D$ so that the xor of
+incident labels is zero at every internal vertex.  Let
+\[
+ R_X=\{w\in D^6:w\text{ is extendable through }X\}.
+\]
+
+The two fragments are fixed by the following machine-independent data.  The
+graph6 strings encode the source graphs; vertices are numbered from zero.
+After deletion, the verifier canonically relabels the remaining vertices and
+recovers the displayed ordered port vertices.
+
+\begin{center}
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+atom & source graph6 & deleted source vertices & ordered ports after relabelling\\
+\midrule
+$A$ & \texttt{Q??CA?\_CCOW\_Q\_M?AD@A\_@K?F??} & $4,9$ &
+$(8,10,11,3,13,14)$\\
+$B$ & \texttt{Q???C@?GCoOoDO[?CcAO\_?k?J??} & $13,16$ &
+$(1,2,3,6,8,9)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Each fragment has 16 internal vertices, 21 internal edges, and six
+semiedges.
+
+\section{The six path states}
+
+Fix the coordinate $0$ and put $Y=\{1,2,3,4\}$.  If
+$\{a,b\}\subset Y$ and $\{c,d\}=Y\setminus\{a,b\}$, define the unordered
+three-duad state
+\[
+ P_{ab}=\{0a,0b,cd\}.
+\]
+Thus the six states are
+\[
+\begin{array}{lll}
+\{01,02,34\},&\{01,03,24\},&\{01,04,23\},\\
+\{02,03,14\},&\{02,04,13\},&\{03,04,12\}.
+\end{array}
+\]
+Let $\mathcal P_{\rm ord}\subset D^3$ contain all orderings of these
+states.  It has $6\cdot3!=36$ members.
+
+\begin{lemma}[two-atom path universality]\label{lem:local}
+For each $X\in\{A,B\}$,
+\[
+ \mathcal P_{\rm ord}\times\mathcal P_{\rm ord}\subseteq R_X.
+\]
+In particular, every one of the $36^2=1296$ ordered boundary words extends
+through each atom.
+\end{lemma}
+
+\begin{proof}[Finite proof certificate]
+The file \texttt{path-atom-witnesses.json} in the accompanying frozen
+artifact contains one row for each of the 1,296 boundary words and each atom.
+A row contains the boundary word followed by 21 internal duads in the listed
+internal-edge order.  For every row, direct inspection consists only of:
+\begin{enumerate}
+  \item checking that each boundary and internal label is a five-bit integer
+        of Hamming weight two;
+  \item placing the six boundary labels on the displayed ordered ports; and
+  \item xoring the three incident labels at each of the 16 internal vertices.
+\end{enumerate}
+All resulting vertex xors are zero.  Hence each row is an explicit extension.
+The accompanying solver-free program \texttt{verify\_frontier.py} performs
+exactly these checks after reconstructing both source graphs from their
+graph6 strings.  It imports no producer module and calls no SAT solver.
+\end{proof}
+
+\begin{remark}
+This is a checkable computer-assisted proof: the table supplies witnesses,
+not an assertion that a search returned ``satisfiable.''  It is not yet a
+compact hand proof of all 2,592 rows.  A symmetry reduction to a small set of
+conceptual cases remains desirable.
+\end{remark}
+
+\section{The composition lemma}
+
+Let $M$ be a cubic macro graph whose vertices are partitioned into
+\emph{junctions} and \emph{connectors}.  Suppose the connectors are paired.
+Replace each pair by either $A$ or $B$, attaching the three incident macro
+edges of the first connector to the first port block and those of the second
+connector to the second block, in arbitrary orders.  Junctions and macro
+edges remain.
+
+\begin{theorem}[six-state composition]\label{thm:composition}
+Suppose the macro edges have labels in $D$ such that:
+\begin{enumerate}
+  \item the three labels incident with every junction xor to zero; and
+  \item the unordered labels incident with every connector form one of the
+        six states $P_{ab}$.
+\end{enumerate}
+Then every connector matching, every assignment of $A$ or $B$ to the pairs,
+every ordering of each three-port block, and either orientation of each pair
+produces an expanded graph with five labelled even subgraphs covering every
+edge exactly twice.
+\end{theorem}
+
+\begin{proof}
+Consider one matched connector pair.  Its ordered six boundary labels form
+an element of $\mathcal P_{\rm ord}\times\mathcal P_{\rm ord}$.  By
+Lemma~\ref{lem:local}, choose the saved internal completion for the selected
+atom and port orders.  Make this choice independently for every pair.
+
+The two occurrences of every surviving macro edge retain the same label.
+The vertex xor is zero at each junction by hypothesis and at each atom vertex
+by the selected local completion.  The result is therefore a $D$-valued
+flow on the expanded graph.  Proposition~\ref{prop:duad} converts it to the
+required five even subgraphs.
+\end{proof}
+
+\section{A finite cyclically 4-edge-connected application}
+
+A connected cubic macro is called cyclically 4-edge-connected if no edge cut
+of size at most three has a cycle on both shores.  For every even, nonempty,
+independent junction set, connector vertices are paired arbitrarily in the
+expansion above.
+
+\begin{theorem}[verified macro frontier]\label{thm:census}
+For each cyclically 4-edge-connected simple cubic macro of order
+$6,8,10,12$, or $14$, and each automorphism orbit of even nonempty independent
+junction sets, there is a macro-edge labelling satisfying the hypotheses of
+Theorem~\ref{thm:composition}.  Consequently every associated expansion has
+a five-cycle double cover, for all connector matchings, atom choices, and
+port orders.
+\end{theorem}
+
+\begin{proof}[Reproducible finite census]
+The source graphs are the canonical output of
+\texttt{geng -cq -d3 -D3 n}.  Shore enumeration applies the stated cyclic
+edge-connectivity definition, full automorphism groups act on the junction
+sets, and the artifact stores a positive macro-edge witness for every
+representative.  The counts are:
+\[
+\begin{array}{c|rrrrr|r}
+n&6&8&10&12&14&\text{total}\\ \hline
+\text{connected cubic sources}&2&5&19&85&509&620\\
+\text{cyclically 4-connected macros}&1&2&5&18&84&110\\
+\text{junction-set orbits}&1&5&32&445&8795&9278.
+\end{array}
+\]
+For every saved witness, direct xor checks establish the two hypotheses of
+Theorem~\ref{thm:composition}.  The independent verifier rebuilds the census,
+automorphism orbits, and all witness checks.
+\end{proof}
+
+\section{Scope and limitations}
+
+Theorem~\ref{thm:census} is not a reduction of general FiveCDC to macros of
+order at most 14.  No induction showing that every cyclically
+4-edge-connected cubic macro has a six-state labelling is known.  Indeed, a
+diagnostic enlargement to all 3-edge-connected macros through order 14 has
+one six-state failure on a macro with a nontrivial cyclic 3-edge cut; adding
+one compatible star state repairs the diagnostic census.  That negative
+diagnostic is not a FiveCDC counterexample and is not used in any theorem
+above.
+
+No target graph was found for which the direct five-coordinate SAT/XOR
+formula is unsatisfiable.  Therefore this note provides neither an UNSAT
+certificate nor a disproof of FiveCDC.  It also does not address the
+orientable FiveCDC conjecture.
+
+\section{Relation to prior work and novelty status}
+
+Multipoles, their semiedge states, and their use in snark reductions are
+standard~\cite{nedela-skoviera,fiol-vilaltella}.  Hu\v{s}ek and
+\v{S}\'amal~\cite{husek-samal-counting} give the closest general framework:
+ordered
+multipoles, circuit-double-cover boundaries, multiplicity vectors, and linear
+gluing.  Their boundaries remember path identities in circuit double covers
+with an unrestricted number of circuits.  Our boundary instead fixes five
+named even subgraphs and assigns each semiedge the two names containing it.
+
+Normal and Petersen edge colorings provide another related five-color
+language~\cite{mazzuoccolo-mkrtchyan,pirot-sereni-skrekovski}, but their edge
+labels and local normality conditions are not the weight-two $\F_2^5$ flow
+condition used here.
+
+Our bounded search of primary sources found no publication containing
+Lemma~\ref{lem:local} for these two ordered Blanu\v{s}a fragments.  The honest
+status is therefore \emph{possible local novelty, not established novelty}.
+Old theses, unpublished tables, and differently named multipole computations
+remain material gaps in the audit.
+
+\section{Artifact and checking instructions}
+
+The frozen artifact directory is
+\[
+\texttt{cyclic4-hybrid-universal-through14-20260729}.
+\]
+Its \texttt{SHA256SUMS} file has SHA-256 digest
+\[
+\texttt{2fd36f21f18796c15760321806152fe60f37d5ba40575a11c26dc76c9c31f3d7}.
+\]
+From that directory, run
+\[
+\texttt{python3 verify.py}.
+\]
+The expected terminal lines include:
+\begin{verbatim}
+PASS SHA-256 ledger
+PASS cyclically-4 hybrid path-core frontier through order 14
+cyclic4_macros=110 junction_orbits=9278
+macro_witnesses=9278 atom_completions=2592
+all_matchings_all_atom_types_all_port_orders=true
+target_unsat=0 target_resolution=false
+PASS frozen cyclically-4 hybrid package
+\end{verbatim}
+
+\section{AI-use and review disclosure}\label{sec:ai}
+
+The human researcher selected the conjecture, set the research and publication
+direction, and requested explicit certification and honest disclosure.
+Collaborating OpenAI Codex agents wrote essentially all search programs and
+checker code, generated the witness tables, conducted the bounded literature
+search, and drafted this manuscript.  The phrase ``independent verifier''
+means a separately implemented code path; it does not mean an independently
+authored human verification.  As of the date on the title page, no human
+expert has line-by-line verified the proof, reproduced the computation from a
+clean checkout, or assessed the novelty claim.  These facts should remain in
+any public version, updated only to record reviews that actually occurred.
+
+\small
+\begin{thebibliography}{99}
+
+\bibitem{fiol-vilaltella}
+M. A. Fiol and J. Vilaltella,
+Some results on the structure of multipoles in the study of snarks,
+\emph{Electronic Journal of Combinatorics} 22(1) (2015), P1.45.
+\url{https://doi.org/10.37236/3629}
+
+\bibitem{hoffmann-ostenhof}
+A. Hoffmann-Ostenhof,
+A note on 5-cycle double covers,
+\emph{Graphs and Combinatorics} 29 (2013), 977--979.
+\url{https://arxiv.org/abs/1209.0096}
+
+\bibitem{huck-kochol}
+A. Huck and M. Kochol,
+Five cycle double covers of some cubic graphs,
+\emph{Journal of Combinatorial Theory, Series B} 64 (1995), 119--125.
+
+\bibitem{husek-samal-counting}
+R. Hu\v{s}ek and R. \v{S}\'amal,
+Counting circuit double covers,
+\emph{Journal of Graph Theory} 108 (2025), 374--395.
+\url{https://arxiv.org/abs/2303.10615}
+
+\bibitem{husek-samal-cayley}
+R. Hu\v{s}ek and R. \v{S}\'amal,
+Homomorphisms of Cayley graphs and Cycle Double Covers,
+\emph{Electronic Journal of Combinatorics} 27(2) (2020), P2.2.
+\url{https://arxiv.org/abs/1901.03112}
+
+\bibitem{husek-samal-2026}
+R. Hu\v{s}ek and R. \v{S}\'amal,
+Exponentially Many Circuit Double Covers,
+arXiv:2607.24724 (2026).
+\url{https://arxiv.org/abs/2607.24724}
+
+\bibitem{mazzuoccolo-mkrtchyan}
+G. Mazzuoccolo and V. Mkrtchyan,
+Normal 6-edge-colorings of some bridgeless cubic graphs,
+\emph{Discrete Applied Mathematics} (2020).
+\url{https://arxiv.org/abs/1903.06043}
+
+\bibitem{nedela-skoviera}
+R. Nedela and M. \v{S}koviera,
+Decompositions and reductions of snarks,
+\emph{Journal of Graph Theory} 22 (1996), 253--279.
+\url{https://doi.org/10.1002/(SICI)1097-0118(199607)22:3%3C253::AID-JGT6%3E3.0.CO;2-L}
+
+\bibitem{pirot-sereni-skrekovski}
+F. Pirot, J.-S. Sereni, and R. \v{S}krekovski,
+Variations on the Petersen colouring conjecture,
+\emph{Electronic Journal of Combinatorics} 27(1) (2020), P1.8.
+\url{https://arxiv.org/abs/1905.07913}
+
+\end{thebibliography}
+
+\end{document}
