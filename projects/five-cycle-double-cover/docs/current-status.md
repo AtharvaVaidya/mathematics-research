@@ -1,6 +1,6 @@
 # Current-status audit
 
-Search date: **2026-07-28**.
+Search date: **2026-07-29**.
 
 ## Classification
 
@@ -11,6 +11,39 @@ ordinary cycle double cover conjecture was announced as proved; the proof
 yields an 8-cycle double cover for every bridgeless graph.  Sang-il Oum's
 exposition dated 2026-07-24 states the five-coordinate strengthening
 separately as Conjecture 18.
+
+## 2026-07-29 resolution-frontier update
+
+The exact surviving obligation is existential.  In the cubic reduction,
+Hušek--Šámal's Theorem 3.16 and Conjecture 3.19 ask for **some**
+nowhere-zero \(\mathbb F_2^3\)-flow having a functional whose kernel
+components satisfy the required parity condition.  Equivalently, in the
+project's two-cycle language, some extendable binary projection must have
+a clean extension.  A graph whose mandatory exact-two/XOR formula is
+independently certified UNSAT would settle the conjecture negatively.
+Neither object is presently known.
+
+The proposed shortcut “choose a cardinality-minimum extendable projection”
+is now refuted.  The frozen strict-lock construction is a simple connected
+bridgeless nonplanar cubic graph on 162 vertices and 243 edges.  It has a
+unique globally minimum extendable projection, of size 54 and consisting
+of two 27-circuits, and that projection has no clean extension.  The graph
+itself has two explicit standard FiveCDC certificates, including a direct
+assignment to the mandatory exact-two/XOR variables.  Thus this is a
+counterexample to a proof strategy, not to FiveCDC.
+
+The construction, a complete human proof, primary and independently
+written checkers, canonical graph encodings, literal certificates, and
+hashes are frozen in:
+
+- `scratch/minimum-projection-strict-parity-lock-20260729/`; and
+- `scratch/minimum-projection-strict-lock-minimized-independent-audit-20260729/`.
+
+The focused AI-disclosed manuscript is
+`preprint-minimum-selection-counterexample/main.pdf`; the expanded research
+draft is `preprint-minimum-fano-projection/main.pdf`.  Both explicitly state
+that FiveCDC remains open and that no literature-wide priority claim has
+been established.
 
 Primary/current sources:
 

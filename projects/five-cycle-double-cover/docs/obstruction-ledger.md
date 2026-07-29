@@ -1560,3 +1560,55 @@ deletion certificates are frozen and independently parsed.  Therefore no
 counterexample has minimum size twelve either.  The theorem gives no universal
 minimum-support bound and does not settle FiveCDC.  See
 `scratch/minimum-projection-through12-clean-or-delete-20260729/`.
+
+## O68 — No counterexample to minimum-projection selection has support at
+most fifteen
+
+Status: **CLOSED / EXACT FINITE BOUNDARY THEOREM**.
+
+The size-thirteen classifiers enumerate 189,998,862 charge-valid states.
+Of 159,369,966 dirty states, 159,362,292 clean directly and 7,674 have a
+strict circuit deletion.  At size fourteen there are 2,255,478,176 dirty
+states: 2,255,331,588 clean directly, 146,364 delete strictly, and 224
+residual \(7+7\) states all have matching-robust Kempe deletion
+certificates.  At size fifteen there are 31,088,622,592 dirty states:
+31,086,255,789 clean directly, 2,360,767 delete strictly, and all 6,036
+residual \(7+8\) states have realization-robust inverse Kempe escapes.
+
+Thus global minimum projections of size at most fifteen are cleanable.
+This was genuine finite structural progress, but it supplied no universal
+support bound.
+
+## O69 — Every globally minimum extendable projection is cleanable
+
+Status: **FAILED APPROACH / EXACT 162-VERTEX STRICT-LOCK COUNTERMODEL**.
+
+The retained simple connected bridgeless cubic graph has 162 vertices and
+243 edges.  Its unique globally minimum extendable projection has size 54,
+is the union of two 27-circuits, and has no clean extension.  An exhaustive
+\(2^{14}\)-placement search proves that eight parity locks are necessary
+and sufficient in the construction, with 180 minimum lock sets.
+
+The graph has a direct FiveCDC assignment and a second compositional
+FiveCDC.  Hence it refutes the minimum-selection proof strategy but not
+FiveCDC.  Canonical graph encodings, a complete human proof, two
+independently written audits, literal certificates, and hashes are in
+`scratch/minimum-projection-strict-parity-lock-20260729/` and
+`scratch/minimum-projection-strict-lock-minimized-independent-audit-20260729/`.
+
+## O70 — Four affine rebases exhaust the minimum-projection exchange
+
+Status: **FAILED INTERMEDIATE MODEL / EXACT FULL-FLOW CORRECTION**.
+
+The four low flows \(s+c\,h\) attached to one extension do not exhaust
+competing extendable projections.  The exact master problem ranges over
+every low flow \(s'\), its zero set \(M=Z(s')\), and every
+\(\partial M\)-join \(J\subseteq E-M\), with cost \(|M|+|J|\).
+The retained 278-vertex graph has a displayed projection of size fourteen
+satisfying all four static affine inequalities but a full-flow competitor
+of cost seven.  Both checkers lift and verify the literal flows.
+
+The correction is frozen in
+`scratch/minimum-projection-full-flow-exchange-20260729/`.  It explains
+why the static exchange argument was incomplete; the later strict lock
+also proves that even a true master optimum need not clean.

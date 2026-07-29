@@ -11,8 +11,19 @@ The project does **not** currently claim a resolution.  Every result is
 classified using the status vocabulary in the lab protocol.  In particular,
 finite searches are not evidence of the universal statement.
 
-The newest publication-candidate update is
-`preprint-minimum-fano-projection/`.  It proves a simultaneous
+The newest focused publication candidate is
+`preprint-minimum-selection-counterexample/`.  It gives a human-checkable
+construction of a 162-vertex simple connected bridgeless cubic graph whose
+unique globally minimum extendable Fano projection is uncleanable.  The same
+graph has two independently checked standard FiveCDC certificates, so the
+result refutes a natural proof strategy and **does not** resolve FiveCDC.
+The concise manuscript, canonical graph, complete construction proof,
+literal certificates, primary and independent checkers, artifact hashes,
+and explicit AI-use disclosure are all included.  Novelty and priority
+remain provisional pending independent human literature review.
+
+The expanded companion draft is `preprint-minimum-fano-projection/`.  It
+proves a simultaneous
 minimum-support exchange theorem and an exact boundary-cleaning
 theorem for every support shape through size fifteen in connected
 bridgeless loopless cubic graphs.  The checker exhausts

@@ -3641,3 +3641,63 @@ cardinality-minimum extendable projection of size at most twelve is
 cleanable.  See
 `scratch/minimum-projection-through12-clean-or-delete-20260729/` and
 `scratch/minimum-projection-size12-independent-audit-20260729/`.
+
+## Exact minimum-projection classification through size fifteen
+
+Audit date: **2026-07-29**.
+
+The complete boundary classifiers and their independent shape-specific
+audits give:
+
+| size | charge-valid | dirty | direct clean | strict deletion | residual before Kempe |
+|---:|---:|---:|---:|---:|---:|
+| 13 | 189,998,862 | 159,369,966 | 159,362,292 | 7,674 | 0 |
+| 14 | 2,616,134,989 | 2,255,478,176 | 2,255,331,588 | 146,364 | 224 |
+| 15 | 35,247,202,556 | 31,088,622,592 | 31,086,255,789 | 2,360,767 | 6,036 |
+
+All 224 size-fourteen residuals have literal matching-robust Kempe deletion
+escapes.  All 6,036 size-fifteen residuals have realization-robust inverse
+Kempe lifts to the size-fourteen escape classification.  Therefore every
+globally minimum extendable projection of size at most fifteen is cleanable.
+The packages are
+`scratch/minimum-projection-through13-clean-or-delete-20260729/`,
+`scratch/minimum-projection-through14-cleanability-20260729/`, and
+`scratch/minimum-projection-size15-exact-frontier-20260729/`.
+
+## Exact full-flow master exchange audit
+
+Audit date: **2026-07-29**.
+
+The primary and independent checkers in
+`scratch/minimum-projection-full-flow-exchange-20260729/` verify the exact
+normal form
+\[
+h=Z(s')\mathbin{\dot\cup}J,\qquad
+\partial J=\partial Z(s'),\qquad
+\mu(G)=\min(|Z(s')|+|J|).
+\]
+They also replay a 278-vertex witness in which all four affine rebases of
+one extension satisfy their static shortest-join inequalities, while a
+different low-flow branch gives a projection of cost seven instead of
+fourteen.  This is a correction to the search model, not a FiveCDC result.
+
+## Strict-lock minimum-selection counterexample and positive FiveCDC
+
+Audit date: **2026-07-29**.
+
+The primary and independent packages reconstruct the same 162-vertex,
+243-edge simple connected bridgeless cubic graph.  They prove that its
+unique globally minimum extendable projection has size 54 and is
+uncleanable.  They separately verify:
+
+- the exact \(2^{14}\) lock-placement search and the minimum of eight locks;
+- the unique two-circuit optimum and the absence of a clean extension;
+- a compositional FiveCDC; and
+- a direct 243-edge exact-two/XOR FiveCDC assignment, including all
+  \(162\cdot5\) vertex parity equations and the complete generated CNF.
+
+All artifact hashes replay.  This is a certified counterexample to the
+minimum-projection selection conjecture, while the positive FiveCDC
+certificates prove that it is not a counterexample to the primary target.
+See `scratch/minimum-projection-strict-parity-lock-20260729/` and
+`scratch/minimum-projection-strict-lock-minimized-independent-audit-20260729/`.

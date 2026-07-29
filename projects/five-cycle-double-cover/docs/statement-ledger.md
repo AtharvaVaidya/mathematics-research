@@ -60,6 +60,49 @@ take coordinate-wise unions of component covers for the reverse implication.
 Thus a minimum counterexample is connected.  This normalization does not
 discard isolated vertices semantically.
 
+## Exact cubic flow normal form
+
+For a loopless cubic graph, FiveCDC is equivalent to the existence of a
+nowhere-zero flow
+\[
+f:E(G)\longrightarrow\mathbb F_2^3\setminus\{0\}
+\]
+and a nonzero functional \(\mu\) for which every component of the
+\(\mu\)-kernel subgraph has even boundary multiplicity in each of the four
+affine value classes.  This is Hušek--Šámal's component-parity
+characterization.  Writing \(f=(h,s)\) with
+\(h:E\to\mathbb F_2\) and \(s:E\to\mathbb F_2^2\), it says equivalently
+that some extendable binary projection \(h\) has an extension for which no
+component of \(G-h\) is rainbow-odd.
+
+The quantifier over the flow is essential.  The project has exact positive
+FiveCDC graphs carrying displayed flows for which all seven functional
+projections are dirty.  Therefore a fixed-flow statement is not equivalent
+to FiveCDC.
+
+## Exact full-flow projection optimization
+
+For an arbitrary \(\mathbb F_2^2\)-flow \(s'\), let \(M=Z(s')\).  A binary
+projection is extendable exactly when it has the form
+\[
+                 h=M\mathbin{\dot\cup}J,
+\]
+where \(J\subseteq E-M\) and
+\(\partial J=\partial M\).  Hence
+\[
+\mu(G)=
+\min_{\substack{s'\text{ an }\mathbb F_2^2\text{-flow}\\
+                 J\subseteq E-Z(s'),\ \partial J=\partial Z(s')}}
+       \bigl(|Z(s')|+|J|\bigr)
+\]
+is the exact minimum extendable-projection size.  For a fixed feasible
+zero set \(M\), cleanability is equivalent to the existence of a second
+\(\partial M\)-join disjoint from \(M\cup J\).  This characterization is
+proved and replayed in
+`scratch/minimum-projection-full-flow-exchange-20260729/`.
+It is a normal form, not a solution: the strict-lock graph proves that an
+optimum triple need not admit the second join.
+
 ## Literature links
 
 See `docs/current-status.md` for the dated status audit, primary sources,

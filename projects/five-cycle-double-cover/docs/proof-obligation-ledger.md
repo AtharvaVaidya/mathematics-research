@@ -1621,19 +1621,17 @@ Open obligations:
      are not exhaustive.
      Status: **RADIUS ONE REFUTED / MULTI-SWITCH SELECTION OPEN**.
 
-101. **Minimum extendable projection selection:** every non-Tait cubic
-     graph has a minimum-cardinality extendable binary projection that is
-     cleanable.  Global minimality proves four simultaneous
-     shortest-\(T_c\)-join inequalities, one for each affine class.  The
-     exact frozen census has zero failures among 147,539 minimum
-     projections, and the certified 130-vertex stress graph has minimum
-     size 42 with all 11,264 minima cleanable.
+101. **Minimum extendable projection selection is false:** the strict-lock
+     graph is simple, connected, bridgeless, cubic, and has 162 vertices.
+     Its unique globally minimum extendable projection has size 54, is the
+     union of two 27-circuits, and has no clean extension.  Primary and
+     independently written checkers reconstruct the graph, prove uniqueness
+     and uncleanability, and verify both a compositional FiveCDC and a direct
+     exact-two/XOR certificate.
 
-     The Petersen one-matching example proves that no argument using only
-     one shortest join can suffice.  The missing step is to exploit all
-     four synchronized affine classes to rule out a rainbow-odd component
-     or to find a counterexample to the selection principle.
-     Status: **OPEN / STRONG EXACT FINITE EVIDENCE, NO UNIVERSAL PROOF**.
+     This closes the proposed minimum-selection route negatively.  It does
+     not refute FiveCDC because the same graph has a FiveCDC.
+     Status: **CLOSED / UNIVERSAL SELECTION CLAIM REFUTED**.
 
 102. **Do not conflate minimum value class with minimum coordinate
      projection:** the order-130 graph has \(\rho_3=5\), no packing
@@ -1642,7 +1640,7 @@ Open obligations:
      potential must state which of these two parameters it minimizes.
      Status: **SEMANTIC DISTINCTION CLOSED / VALUE-CLASS ROUTE REFUTED**.
 
-103. **Minimum-projection sizes at most twelve:** every globally minimum
+103. **Minimum-projection sizes at most fifteen:** every globally minimum
      extendable projection in this range is cleanable.  The four-colour
      circuit corollary gives the complete support-shape list.  A direct
      boundary repair applies independent \(\mathrm{GL}(2,2)\) maps to the
@@ -1659,13 +1657,37 @@ Open obligations:
      13,788,824 dirty boundary states: 13,788,432 clean directly and 392
      admit a strict circuit deletion, with zero residuals.  Literal
      omitted-colour deletion certificates are frozen for all 392.
+
+     At size thirteen, the exact classifiers cover 189,998,862
+     charge-valid states; all 159,369,966 dirty states either clean directly
+     or admit a strict deletion.  At size fourteen, 224 residual \(7+7\)
+     states survive direct cleaning and deletion, but all have a
+     matching-robust Kempe deletion escape.  At size fifteen, all 6,036
+     residual \(7+8\) states are excluded by realization-robust inverse
+     Kempe lifts from the size-fourteen classification.  No residual remains
+     through size fifteen.
      Status: **CLOSED / HUMAN PROOFS PLUS EXACT FINITE CLASSIFICATION**.
 
-104. **Minimum-size-thirteen boundary and universal dichotomy:** test the
-     clean-or-delete-a-circuit statement on the complete size-thirteen
-     shape list.  In parallel, prove the dichotomy for arbitrary support
-     size using the quotient Eulerian multigraph and its fixed transition
-     system, or find the smallest abstract counterstate.  Any surviving
-     state must then be tested against all strict support replacements and
-     graph realizability.
-     Status: **OPEN / NEXT STRUCTURAL FRONTIER**.
+104. **Universal clean-or-reduce dichotomy is false:** finite boundary
+     cleaning and Kempe-reduction arguments close support sizes through
+     fifteen, but the strict-lock graph has a unique dirty minimum of size
+     54.  Therefore no universal theorem can assert that every dirty
+     extendable projection cleans or has a smaller extendable replacement.
+     Status: **CLOSED / REFUTED BY THE 162-VERTEX STRICT LOCK**.
+
+105. **Full-flow master characterization:** prove that every extendable
+     projection is \(Z(s')\mathbin{\dot\cup}J\), where \(s'\) is a low
+     \(\mathbb F_2^2\)-flow and \(J\subseteq E-Z(s')\) is a
+     \(\partial Z(s')\)-join, and characterize cleaning by a second join
+     disjoint from \(Z(s')\cup J\).  The proof and two literal audits are
+     frozen.  The 278-vertex example also proves that the four affine
+     rebases of one extension are not all master branches.
+     Status: **CLOSED / EXACT NORMAL FORM, NOT A FIVECDC RESOLUTION**.
+
+106. **Do not revive a minimum-selection proof without a new invariant:**
+     the surviving exact obligation is item 99, namely an existential
+     H--S-good flow or a target-standard certified UNSAT graph.  Any new
+     minimization potential must distinguish the strict-lock optimum or
+     explain how to move to a different flow despite losing projection
+     minimality.
+     Status: **OPEN / EQUIVALENT RESOLUTION FRONTIER**.
