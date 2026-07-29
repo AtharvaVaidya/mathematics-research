@@ -3032,3 +3032,38 @@ controls, but those are not censuses.
 
 See `scratch/fano-binary-packing-repair-frontier-20260728.md` and
 `search/fano-binary-repair-connected-countermodel-108v-20260728/`.
+
+## Six-point one-hole affine normal form
+
+Audit date: **2026-07-29**.
+
+Let \(W=\mathbb F_2^3\).  For a fixed nowhere-zero \(W\)-flow \(f\) on
+a finite loopless cubic multigraph and fixed disjoint pairs \(R,M\) in
+\(\binom W2\), the existence of a compatible coordinate-triangle
+labelling supported on \(W-R\) and omitting \(M\) is exactly an affine
+\(\mathbb F_2\)-system with three potential bits per vertex.  Identifying
+the two members of the unused pair \(M\) then gives a standard FiveCDC.
+The local list profiles are exactly
+\[
+ (4,2,2,2,2,2,2)\quad\text{(parallel)},\qquad
+ (4,4,2,2,2,1,1)\quad\text{(skew)}.
+\]
+
+The form is strictly broader than the five-point/component-parity test
+for a fixed flow.  On a checked simple connected bridgeless cubic
+34-vertex example, all 56 five-point systems fail while 8 of the 420
+six-point one-hole systems pass; all eight are skew of affine dimension
+one.  A complete 900-\(\mathrm{GL}(3,2)\)-orbit census on graph6
+`K??FEaKR@oE_` partitions the flows as 566 five-point successes, 252
+additional six-hole successes, 18 further generally five-colourable
+compatible potentials, and 64 fixed-flow failures.
+
+Existence of some \(f,R,M\) is equivalent to standard FiveCDC, not a
+proof of it.  Universal selection remains open, and no orientable claim
+is made.  The possible novelty is limited to this fixed-flow
+six-support/missing-duad normal form, its local tables, and the strict
+fixed-flow separation; prior Desargues and \(F_i/A_i\) colouring
+equivalences and the Hušek--Šámal eight-coordinate/five-set criterion
+are explicitly credited.  See
+`scratch/six-point-one-hole-affine-20260729/` and
+`preprint-six-point-one-hole-affine/`.

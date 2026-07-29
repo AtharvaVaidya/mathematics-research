@@ -103,6 +103,47 @@ proved and replayed in
 It is a normal form, not a solution: the strict-lock graph proves that an
 optimum triple need not admit the second join.
 
+## Exact six-point one-hole affine normal form
+
+Let \(G\) be a finite loopless cubic multigraph,
+\(W=\mathbb F_2^3\), and
+\(f:E(G)\to W-\{0\}\) a fixed flow.  For disjoint pairs
+\(R,M\in\binom W2\), put \(S=W-R\).  At a vertex \(v\), let
+\(H_v\) be the Fano plane of its three incident flow values and define
+\[
+\mathcal A_{H_v}(R,M)=
+\{t\in W:\Delta_{H_v}(t)\subseteq S,
+                 M\nsubseteq\Delta_{H_v}(t)\}.
+\]
+A compatible coordinate-triangle cover supported in \(S\) and not
+using \(M\) exists if and only if vertex potentials satisfy
+\[
+t_v\in\mathcal A_{H_v}(R,M),\qquad
+t_u+t_v+s_{u,e}+s_{v,e}\in\langle f(e)\rangle
+\quad(e=uv).
+\]
+Every local list is affine.  Its seven sizes are
+\((4,2,2,2,2,2,2)\) when \(R,M\) are parallel and
+\((4,4,2,2,2,1,1)\) when they are skew.  A fixed failure \(Ax=b\) has
+the exact parity certificate \(y^{\mathsf T}A=0\),
+\(y^{\mathsf T}b=1\).
+
+Identifying the two coordinates in the unused pair \(M\) gives a
+standard FiveCDC.  Conversely, every standard FiveCDC embeds in five
+members of a six-set and supplies some \(f,R,M\).  Therefore the
+graph-level existential statement is exactly FiveCDC.  This statement is
+for loopless cubic multigraphs; it does not silently extend to loops or
+to unsuppressed higher-degree vertices, and it makes no orientability
+claim.
+
+The prior-art boundary is explicit: no novelty is claimed for the
+Desargues-configuration/\(F_i,A_i\) colourings of
+Král--Máčajová--Pangrác--Raspaud--Sereni--Škoviera or for the
+Hušek--Šámal eight-coordinate and five-set/component-parity criterion.
+The provisional new content is the fixed-flow six-support/missing-duad
+affine system, its two local orbit tables, and the strict fixed-flow
+separation.  See `scratch/six-point-one-hole-affine-20260729/`.
+
 ## Literature links
 
 See `docs/current-status.md` for the dated status audit, primary sources,

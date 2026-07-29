@@ -3701,3 +3701,42 @@ minimum-projection selection conjecture, while the positive FiveCDC
 certificates prove that it is not a counterexample to the primary target.
 See `scratch/minimum-projection-strict-parity-lock-20260729/` and
 `scratch/minimum-projection-strict-lock-minimized-independent-audit-20260729/`.
+
+## Six-point one-hole affine audits
+
+Audit date: **2026-07-29**.
+
+The frozen package
+`scratch/six-point-one-hole-affine-20260729/` contains two primary
+Python audits and two independently structured JavaScript replays:
+
+```sh
+python3 scratch/six-point-one-hole-affine-20260729/audit_six_point_one_hole_affine.py
+node scratch/six-point-one-hole-affine-20260729/verify_six_point_one_hole_affine.mjs
+python3 scratch/six-point-one-hole-affine-20260729/audit_all_flows_12v.py
+node scratch/six-point-one-hole-affine-20260729/verify_all_flows_12v.mjs
+```
+
+All four reports return `PASS`.  The local audit covers all 2,940
+\((R,M,H)\) cases: 420 disjoint pair-pair configurations, split as 84
+parallel and 336 skew, with 6,720 admitted triangles.  On the retained
+34-vertex flow, both implementations obtain zero soluble five-point
+systems among 56 and eight soluble six-point one-hole systems among 420;
+all eight are skew of dimension one.  They also replay the literal
+14-pair-type cover and two displayed five-row dual contradictions.
+
+On graph6 `K??FEaKR@oE_`, the complete all-flow census has 900
+\(\mathrm{GL}(3,2)\)-orbits representing 150,192 labelled flows:
+
+| fixed-flow class | orbits | labelled flows |
+|---|---:|---:|
+| five-point, six-hole, and general success | 566 | 94,080 |
+| no five-point; six-hole and general success | 252 | 42,336 |
+| no five-point or six-hole; general success | 18 | 3,024 |
+| no five-point, six-hole, or general success | 64 | 10,752 |
+
+`SHA256SUMS` and `REFERENCE-SHA256SUMS` both replay.  The SHA-256 digest
+of the package ledger itself is
+`8e89160b7eac0f7aaf5c4fe1b369bddbf89ae7f013211b4022257dfc09258349`.
+These are exact fixed-flow computations, not a FiveCDC resolution or a
+graph-level UNSAT certificate.

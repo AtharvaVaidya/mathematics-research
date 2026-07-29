@@ -1691,3 +1691,18 @@ Open obligations:
      explain how to move to a different flow despite losing projection
      minimality.
      Status: **OPEN / EQUIVALENT RESOLUTION FRONTIER**.
+
+107. **Six-point one-hole selection:** for fixed \(f,R,M\), the
+     compatible six-support labelling that omits \(M\) is exactly an
+     affine \(\mathbb F_2\)-system.  The local list theorem, quotient to
+     five coordinates, converse embedding, and left-kernel certificate
+     are proved.  Two implementations independently replay the strict
+     34-vertex fixed-flow separation and the 900-orbit 12-vertex census.
+
+     The remaining universal assertion is to select some \(f,R,M\) on
+     every graph in a sound cubic reduction class.  By the converse
+     embedding theorem, that assertion is equivalent to standard
+     FiveCDC.  The finite fibre frontiers do not prove it, and one failed
+     fixed system is not a graph obstruction.
+     Status: **FIXED-FLOW CHARACTERIZATION CLOSED / UNIVERSAL SELECTION
+     OPEN**.

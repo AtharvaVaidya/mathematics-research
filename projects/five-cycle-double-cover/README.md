@@ -725,3 +725,29 @@ The Petersen, cube, and Heawood reductions, together with the sharp
 \(K_{3,3}\) boundary obstruction, are assembled in the explicitly
 AI-disclosed working preprint
 `preprint-fivecdc-four-pole-reductions/`.
+
+## Six-point one-hole affine compression
+
+Audit date: **2026-07-29**.
+
+For a fixed nowhere-zero \(\mathbb F_2^3\)-flow \(f\), a fixed omitted
+coordinate pair \(R\), and a disjoint pair \(M\) to be merged, existence
+of a compatible pair labelling supported on the other six coordinates
+and omitting \(M\) is exactly an affine binary system with three
+potential bits per graph vertex.  The complete local profiles are
+\((4,2,2,2,2,2,2)\) in the parallel orbit and
+\((4,4,2,2,2,1,1)\) in the skew orbit.
+
+Two independently structured checkers replay the local table, a strict
+34-vertex fixed-flow separation (0 of 56 five-point restrictions but 8
+of 420 six-point one-hole choices), and a complete 900-orbit all-flow
+census on one 12-vertex graph.  Existentially selecting \(f,R,M\) is
+exactly standard FiveCDC, so this is a new fixed-flow normal form and
+finite evidence, not a resolution.  The possible novelty claim is
+provisional and excludes the prior Desargues/\(F_i,A_i\) colouring
+framework of Král--Máčajová--Pangrác--Raspaud--Sereni--Škoviera and the
+Hušek--Šámal eight-coordinate/five-set criterion.
+
+The AI-disclosed standalone draft is
+`preprint-six-point-one-hole-affine/`; the frozen exact package is
+`scratch/six-point-one-hole-affine-20260729/`.
