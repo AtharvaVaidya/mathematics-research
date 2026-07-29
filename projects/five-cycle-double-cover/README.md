@@ -12,7 +12,19 @@ classified using the status vocabulary in the lab protocol.  In particular,
 finite searches are not evidence of the universal statement.
 
 The newest publication-candidate update is
-`preprint-husek-samal-reconfiguration/`.  It proves a human-checkable
+`preprint-minimum-fano-projection/`.  It proves a simultaneous
+minimum-support exchange theorem and, by a complete four-/five-cycle
+boundary analysis, proves that every minimum extendable projection of size
+at most five is cleanable.  Thus any counterexample to the proposed
+minimum-projection selection principle has minimum size at least six.  Its
+exact finite evidence now includes 147,539 minima on frozen sources through
+order 28, 433,730 minima on 7,661 retained order-34/order-40 strong-snark
+rows, and a certified 130-vertex case with minimum size 42 and 11,264
+cleanable minima.  The manuscript includes full proofs, exact replay
+packages, and an AI-use disclosure.  This remains a partial theorem and
+does **not** resolve FiveCDC.
+
+The earlier `preprint-husek-samal-reconfiguration/` proves a human-checkable
 packing-to-switch lemma and gives an exact cyclically 4-edge-connected
 26-vertex snark flow showing that a packable value class can still require
 two simple-cycle switches to reach the Hušek--Šámal component condition.

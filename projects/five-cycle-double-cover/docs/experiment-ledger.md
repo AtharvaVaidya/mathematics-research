@@ -3527,3 +3527,30 @@ digest is
 The same graph has \(\rho_3=5\) for the distinct minimum nonzero
 value-class parameter, while its minimum packing-certificate size is six.
 The exact package is `search/minimum-projection-n130-20260729/`.
+
+## Minimum-projection strong-snark scan
+
+Audit date: **2026-07-29**.
+
+An exact SAT implementation scanned the seven literal retained order-34
+strong-snark rows and all 7,654 literal retained order-40 rows.  Every graph
+has minimum extendable-projection size ten.  The scan exhausts 371 and
+433,359 minimum projections respectively, with zero uncleanable minima.
+The input SHA-256 digests are
+
+```text
+2f087d5cbd1e97b1e10e7a5a064fe83d037872f838372e4d317c9d3f912fbf1f
+61d7b01786e983084a6255bb0afe22a503cbb8645fe186b8a962d60609224e1d
+```
+
+and the concatenated result digest is
+
+```text
+becb7e4b648c000ec874509bccdf389df24f6f0d82bce2da49ba10d5b10d38e3
+```
+
+The reference linear-algebra implementation independently agrees on all
+seven order-34 rows and the first five order-40 rows.  The complete
+order-40 result uses the exact SAT scanner; graph-population completeness
+is inherited from the upstream source.  See
+`scratch/minimum-projection-known-strong-snarks-20260729/`.

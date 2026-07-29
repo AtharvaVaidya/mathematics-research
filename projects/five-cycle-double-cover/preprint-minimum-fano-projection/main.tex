@@ -35,7 +35,7 @@
 Five-Cycle Double Cover Conjecture}
 \author{Atharva Vaidya\\
 \small AI-assisted research note for independent human verification}
-\date{July 28, 2026}
+\date{July 29, 2026}
 
 \begin{document}
 \maketitle
@@ -45,8 +45,8 @@ Five-Cycle Double Cover Conjecture}
 \parbox{0.91\textwidth}{
 \textbf{Resolution status.}
 The five-cycle double cover conjecture remains unresolved.
-This note proves an exchange theorem and an exact finite census, and
-isolates a candidate selection principle.  It proves neither the
+This note proves an exchange theorem, settles the minimum-support cases
+through size five, and gives exact finite censuses.  It proves neither the
 conjecture nor its negation.
 }}
 \end{center}
@@ -72,6 +72,15 @@ Thus every circuit component of \(h\) contains all four affine colours,
 and every support-shortening cycle meets all four classes.  The proof is
 the addition of the Fano value \((1,c)\) along \(C\).
 
+We also prove, without computation, that every globally minimum
+extendable projection of size at most five is cleanable.  If such an
+extension were dirty, its projection would be a single four- or five-cycle.
+Classifying the possible component shores and applying independent
+\(\operatorname{GL}(2,2)\) transformations on the two complementary
+components constructs a nowhere-zero \(\F_2^2\)-flow, contradicting
+non-Tait-colourability.  Thus a counterexample to the proposed
+minimum-projection selection principle must have minimum size at least six.
+
 We perform an exact canonical census of all \(41{,}301\) connected simple
 cubic graphs of order \(18\).  Among the \(39{,}866\) bridgeless graphs,
 exactly \(179\) are not Tait-colourable, and every minimum-cardinality
@@ -82,6 +91,9 @@ uses frozen canonically generated sources: \(14{,}009\) cyclically
 extendable projections in those files are cleanable.  Completeness of the
 source populations is inherited from their upstream generation packages;
 the result on the literal frozen files is checked directly.
+An additional exact SAT scan covers seven retained order-\(34\) and
+\(7{,}654\) retained order-\(40\) strong-snark rows.  All \(433{,}730\)
+minimum projections in those files have size ten and are cleanable.
 
 The universal statement suggested by this computation is recorded as an
 open conjecture.  The missing step is to derive a colour-avoiding strict
@@ -120,6 +132,8 @@ priority for either formulation.
 The contribution of this note is narrower:
 \begin{enumerate}
   \item a minimum-support exchange theorem, with a complete proof;
+  \item a human-checkable theorem settling minimum projection sizes at
+        most five;
   \item elementary consequences for four simultaneous shortest
         \(T\)-joins;
   \item a reproducible canonical order-\(18\) census and an expanded
@@ -139,7 +153,7 @@ where \(h:E\to\F_2\) and \(s:E\to K\) are flows.  We identify a binary
 flow with its support.
 
 \begin{definition}
-A nonzero binary cycle \(h\) is \emph{extendable} if there is a flow
+A binary cycle \(h\), possibly zero, is \emph{extendable} if there is a flow
 \(s:E\to K\) for which \(f=(h,s)\) is nowhere zero.
 \end{definition}
 
@@ -297,6 +311,113 @@ If a circuit component \(D\) omitted \(M_c\), then \(D\) would be a binary
 cycle avoiding \(M_c\), but
 \(|D\cap h|=|D|>|D-h|=0\), contrary to (6).
 \end{proof}
+
+\begin{theorem}[minimum projections through size five]
+\label{thm:sizefive}
+Let \(G\) be a connected bridgeless loopless cubic graph; parallel edges
+are allowed.  If \(G\) is not Tait-colourable and its minimum extendable
+projection has size at most five, then every minimum extendable projection
+is cleanable.  If \(G\) is Tait-colourable, the zero projection is a clean
+minimum.
+\end{theorem}
+
+\begin{proof}
+The Tait case follows by taking a nowhere-zero \(K\)-flow as the low
+coordinate: its zero affine class is empty, so the equal cut parities in
+(4) are all even.  Assume henceforth that \(G\) is non-Tait, choose a
+minimum extendable \(h\), and fix an arbitrary extension \(f=(h,s)\).
+
+By Corollary~\ref{cor:fourcolour}, every circuit component of \(h\) meets
+all four \(M_c\).  Since \(G\) is loopless, \(|h|\le5\) therefore forces
+\(h\) to be one ordinary circuit \(D\) of length \(n=4\) or \(5\); a
+parallel two-circuit cannot meet four classes.  Write
+\[
+ v_0,e_0,v_1,e_1,\ldots,v_{n-1},e_{n-1},v_0,
+ \qquad e_i=v_iv_{i+1},
+\]
+cyclically, and put \(c_i=s(e_i)\).  Adjacent \(c_i\)'s are distinct:
+otherwise the third edge at their common vertex would have full flow
+value zero.
+
+Let \(K_0=G-h\).  Every component of \(K_0\) contains a vertex of \(D\),
+by connectedness.  Suppose the extension is dirty.  For a dirty component
+\(W\), membership along \(D\) toggles oddly on each of the four affine
+colour classes.
+
+If \(n=4\), the four colours occur once each, so membership toggles on
+every \(e_i\).  The components of \(K_0\) are exactly the two alternating
+vertex pairs.  Indeed, separating either pair further would create a
+component whose cut sees exactly two affine colours oddly, contrary to
+(4).
+
+If \(n=5\), rotate and rename the colours so their cyclic word is
+\(A,B,A,C,D\).  Put
+\[
+ z_i=1[v_i\in W],\qquad y_i=z_i+z_{i+1}.
+\]
+Dirtiness says
+\[
+ y_1=y_3=y_4=1,\qquad y_0+y_2=1.
+\]
+Up to complement, the solutions are \(W=\{v_2,v_4\}\) and
+\(W=\{v_1,v_4\}\).  Summing the common odd cut parity over all
+\(K_0\)-components shows that the number of dirty components is even.
+The only component-compatible shore disjoint from either displayed dirty
+shore is its complement: exhaustive substitution in the preceding four
+equations also gives the clean pair \(\{v_1,v_2\}\) and its complement,
+both of which intersect either dirty partition.  Hence \(K_0\) again has
+exactly two components.
+
+Let \(k_i\) be the unique \(K_0\)-edge incident with \(v_i\), and put
+\[
+ d_i=s(k_i)=c_{i-1}+c_i\ne0.
+\]
+On each of the two \(K_0\)-components, apply an independently chosen
+element of \(\operatorname{GL}(2,2)\) to every low flow value.  This
+preserves internal conservation and nonzeroness.  We now choose nonzero
+values \(r_i\) on \(e_i\) so that
+\[
+                         r_{i-1}+r_i=g_i,                 \tag{9}
+\]
+where \(g_i\) is the transformed value on \(k_i\).
+
+For \(n=4\), the boundary values on each alternating pair agree:
+\(d_0=d_2=x\) and \(d_1=d_3=y\).  Map \(x\) and \(y\), independently, to
+the same nonzero \(\alpha\).  If
+\(\{\alpha,\beta,\gamma\}=K-\{0\}\), assigning \(\beta,\gamma\)
+alternately to the edges of \(D\) satisfies (9).
+
+For \(n=5\), translate the affine colour names so \(A=0\), write
+\(B=x,C=y,D=x+y\), and normalize \(x=1,y=2,x+y=3\).  Thus
+\[
+                         d=(3,1,1,2,1).
+\]
+The complete repairs for the two component partitions are
+\[
+\begin{array}{c|c|c}
+K_0\text{-components on }v_i& (g_0,\ldots,g_4)&(r_0,\ldots,r_4)\\
+\hline
+\{0,1,3\}\mid\{2,4\}&(3,1,2,2,2)&(2,3,1,3,1)\\
+\{0,2,3\}\mid\{1,4\}&(3,3,1,2,3)&(1,2,3,1,2).
+\end{array}
+\]
+In each row the three-terminal component uses the identity.  On the
+two-terminal component, both original boundary values are \(1\), which an
+invertible linear map sends respectively to \(2\) or \(3\).  Direct
+cyclic substitution verifies (9).
+
+We have constructed a nowhere-zero \(K\)-flow on every edge of \(G\).
+At a cubic vertex its three incident values are therefore the three
+distinct nonzero elements of \(K\), giving a Tait colouring.  This
+contradicts the hypothesis.  Thus the arbitrary extension of \(h\) was
+clean, and in particular \(h\) is cleanable.
+\end{proof}
+
+\begin{remark}
+The finite case split and the two repair rows are independently replayed
+by \path{verify.py} in the bundled size-five theorem package.
+Theorem~\ref{thm:sizefive} leaves the minimum-size-six boundary open.
+\end{remark}
 
 \begin{corollary}[rainbow shortcut]\label{cor:shortcut}
 Every binary cycle \(C\) satisfying \(|C\cap h|>|C-h|\) meets all four
@@ -481,6 +602,46 @@ identification with complete graph classes uses the documented upstream
 canonical-generation and filtering packages; this replay does not
 independently regenerate those populations.
 
+\subsection{Retained strong snarks of orders \(34\) and \(40\)}
+
+A separate exact scan covers the literal retained strong-snark files at
+orders \(34\) and \(40\):
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+order & graph6 rows & minimum projections & uncleanable\\
+\midrule
+34 & \(7\) & \(371\) & \(0\)\\
+40 & \(7{,}654\) & \(433{,}359\) & \(0\)\\
+\midrule
+total & \(7{,}661\) & \(433{,}730\) & \(0\)\\
+\bottomrule
+\end{tabular}
+\caption{Exact minimum-projection scan on the frozen strong-snark rows.}
+\end{table}
+Every row has minimum extendable-projection size ten.  An ordinary-CNF
+solver encodes the two low binary cycles, coverage on \(E-h\), product
+variables for \(p_e\wedge q_e\), and an XOR chain imposing even product
+parity on every component cut.  Every even projection through weight
+twelve is enumerated as a vertex-disjoint union of circuits, which is
+exhaustive for a cubic graph.  All rows reach their first extendable level
+at weight ten.
+
+The order-\(34\) output and the first five order-\(40\) rows were reproduced
+independently by the linear-algebra scanner used in the earlier census.
+The full order-\(40\) claim uses the exact SAT implementation.  The
+concatenated result digest is
+\begin{center}
+\texttt{becb7e4b648c000ec874509bccdf389df24f6f0d82bce2da49ba10d5b10d38e3}.
+\end{center}
+Inputs, frozen output, both scanner implementations, and the replay script
+are under \path{scratch/}, in the subdirectory
+\path{minimum-projection-known-strong-snarks-20260729/}.
+As before, the unconditional statement concerns the literal bundled rows;
+completeness of the named graph populations is inherited from upstream
+provenance.
+
 \subsection{A certified 130-vertex parameter-separation test}
 
 The retained 130-vertex exchange graph gives a substantially larger exact
@@ -517,6 +678,9 @@ python3 verify.py
 
 The exchange theorem converts global support minimality into four ordinary
 geodesic conditions: one shortest join for each affine value class.
+Theorem~\ref{thm:sizefive} closes the first two possible nonzero support
+sizes: a counterexample to Conjecture~\ref{conj:minimum} must have minimum
+projection size at least six.
 The useful feature is simultaneity.  A cycle that would shorten the
 projection is allowed to be blocked by one colour, but
 Corollary~\ref{cor:shortcut} forces it to be blocked by all four.
@@ -550,8 +714,9 @@ supplied, the correct status is a frontier result.
 
 This research route, proof draft, checker, computation, and exposition were
 developed by OpenAI Codex agents under Atharva Vaidya's direction.  The
-minimum-projection exchange proof is displayed in full so that it can be
-checked without trusting an AI system.  The order-\(18\) result is
+minimum-projection exchange proof and the size-at-most-five proof are
+displayed in full so that they can be checked without trusting an AI
+system.  The order-\(18\) result is
 reproducible from canonical generation and exhaustive cycle-space
 enumeration.  The expanded census exactly replays frozen sources but
 inherits their population provenance.  Both remain computational results

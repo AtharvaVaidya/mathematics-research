@@ -1529,3 +1529,21 @@ extendable Fano projection.  It proves that any positive argument must
 use their simultaneous flow constraints rather than a generic
 one-matching shortest-\(T\)-join theorem.  See
 `scratch/petersen-minimum-tjoin-countermodel-20260729/`.
+
+## O67 — A counterexample to minimum-projection selection has support at
+most five
+
+Status: **CLOSED / HUMAN THEOREM EXCLUDES THE RANGE**.
+
+For a globally minimum extendable projection \(h\), every circuit component
+meets all four affine value classes.  Hence \(|h|\le5\) forces one four- or
+five-cycle.  If an extension is dirty, exact classification of its
+component shores leaves two complementary components.  Independent
+\(\operatorname{GL}(2,2)\) changes on those components, followed by an
+explicit nonzero assignment on the projection cycle, produce a
+nowhere-zero \(\mathbb F_2^2\)-flow and therefore a Tait colouring.
+
+Thus no non-Tait counterexample to the minimum-projection selection
+principle has minimum size at most five.  The theorem does not settle size
+six or FiveCDC.  See
+`scratch/minimum-projection-size5-theorem-20260729/`.

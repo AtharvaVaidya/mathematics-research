@@ -16,6 +16,23 @@ are not independent human verification or peer review.
 
 ## Minimum-class correction and MNP family update (2026-07-29)
 
+- `scratch/minimum-projection-size5-theorem-20260729/` contains the full
+  human proof that every globally minimum extendable projection of size at
+  most five is cleanable.  A dirty lift on the forced four- or five-cycle
+  support is repaired, component by component, into a nowhere-zero
+  \(\mathbb F_2^2\)-flow, contradicting non-Tait-colourability.  Its
+  dependency-free checker exhausts the boundary partitions and checks the
+  explicit \(\operatorname{GL}(2,2)\) repair table.  Consequently any
+  counterexample to the minimum-projection selection principle has minimum
+  size at least six.
+- `scratch/minimum-projection-known-strong-snarks-20260729/` freezes an
+  exact SAT scan of seven retained order-34 and 7,654 retained order-40
+  graph6 rows.  Every row has minimum projection size ten, and all 433,730
+  minimum projections are cleanable.  The package includes literal inputs
+  and outputs, two implementations, exact hashes, and replay scripts.  The
+  linear implementation independently cross-checks all order-34 rows and
+  the first five order-40 rows; completeness of the named graph populations
+  is inherited from upstream provenance.
 - `search/minimum-fano-class-nonpacking-130v-20260729/` proves
   \(\rho_3=5\) for the retained 130-vertex graph by an explicit
   nowhere-zero Fano flow and the existing doubly checked flow-resistance
@@ -46,10 +63,10 @@ are not independent human verification or peer review.
   two shortest containing cycles with neither complement terminal-even.
   This closes a tempting one-matching shortcut but does not realize the
   four synchronized affine classes.
-- `preprint-minimum-fano-projection/` is the corresponding eight-page
-  working preprint.  It contains the human exchange proof, both exact
-  census reports, the Petersen limitation, checksums, and an explicit
-  AI-use and human-review disclosure.
+- `preprint-minimum-fano-projection/` is the corresponding working
+  preprint.  It contains the human exchange and size-at-most-five proofs,
+  all exact census reports, the Petersen limitation, checksums, and an
+  explicit AI-use and human-review disclosure.
 - `search/minimum-projection-n130-20260729/` certifies that the retained
   130-vertex graph has minimum extendable projection size \(42\), exactly
   11,264 minimum supports, and no unclean minimum.  One LRAT proves the

@@ -4,10 +4,10 @@ This directory contains a short AI-assisted working preprint about a
 minimum-support route to the standard five-cycle double cover conjecture.
 
 **Resolution status:** FiveCDC remains open. The paper proves a
-human-checkable exchange theorem, reports a reproducible canonical
-order-18 census and an expanded frozen-source replay through order 28,
-and states the remaining universal selection principle as an explicit
-conjecture. It claims neither a proof nor a counterexample.
+human-checkable exchange theorem and a complete minimum-projection theorem
+through support size five, reports exact finite censuses, and states the
+remaining universal selection principle as an explicit conjecture. It
+claims neither a proof nor a counterexample.
 
 Build from this directory with:
 
@@ -35,6 +35,13 @@ The expected canonical hard-record SHA-256 is:
 82b01cc2f01d4f50f7745f4bdb1b3dc46ade798d452a9d4f11d4a91d738a7834
 ```
 
+Replay the dependency-free case split and explicit low-flow repairs for
+the size-at-most-five theorem with:
+
+```sh
+python3 scratch/minimum-projection-size5-theorem-20260729/verify.py
+```
+
 Run the expanded exact replay with:
 
 ```sh
@@ -46,6 +53,18 @@ and a separate 12,892-row hard order-22 source. All 147,539 minimum
 extendable projections in those literal files are cleanable. The broader
 population completeness statements are inherited from the documented
 upstream generation packages.
+
+The retained order-34/order-40 strong-snark scan is:
+
+```sh
+python3 scratch/minimum-projection-known-strong-snarks-20260729/verify.py
+```
+
+It checks frozen outputs for 7,661 literal graph6 rows and 433,730 minimum
+projections, all cleanable and all of minimum size ten. The bundled package
+contains its exact SAT scanner and a second linear-algebra implementation;
+the latter cross-checks all seven order-34 rows and the first five order-40
+rows. Population completeness beyond the literal files is inherited.
 
 The certified 130-vertex stress test is:
 

@@ -1641,3 +1641,20 @@ Open obligations:
      with every minimum cleanable.  Any proof using a cardinality
      potential must state which of these two parameters it minimizes.
      Status: **SEMANTIC DISTINCTION CLOSED / VALUE-CLASS ROUTE REFUTED**.
+
+103. **Minimum-projection sizes at most five:** every globally minimum
+     extendable projection in this range is cleanable.  The four-colour
+     circuit corollary reduces the support to one four- or five-cycle.
+     A complete shore classification and explicit componentwise
+     \(\operatorname{GL}(2,2)\) repair show that a dirty extension would
+     Tait-colour the graph.
+     Status: **CLOSED / HUMAN-CHECKABLE THEOREM**.
+
+104. **Minimum-size-six boundary:** classify the proper six-edge affine
+     colour words and dirty component partitions left by the four
+     simultaneous shortest-join inequalities.  Either repair all such
+     configurations by neutral low-coordinate transformations, derive a
+     strict support exchange, or realize a genuine uncleanable global
+     minimum.  This is the first support size not covered by the small
+     theorem.
+     Status: **OPEN / NEXT STRUCTURAL FRONTIER**.
