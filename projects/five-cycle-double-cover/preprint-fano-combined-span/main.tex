@@ -4,6 +4,7 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{booktabs,array}
 \usepackage{xcolor}
+\usepackage{xurl}
 \usepackage[hidelinks]{hyperref}
 
 \newtheorem{theorem}{Theorem}[section]
@@ -23,7 +24,7 @@
 \newcommand{\im}{\operatorname{im}}
 
 \title{Line-preserving deformations of Fano flows:\\
-span, quadratic obstructions, and unbounded kernel complexity}
+span, quadratic obstructions, and structural limits}
 \author{AI-assisted research draft for independent human verification\\
 \small Human author attribution to be supplied before submission}
 \date{28 July 2026}
@@ -38,9 +39,10 @@ span, quadratic obstructions, and unbounded kernel complexity}
   OpenAI Codex agents (GPT-5-series models, accessed in July 2026)
   developed the fixed-line formulation, found the telescoping potential,
   derived the two-cycle normal form, the Petersen example, and the
-  cotree--diamond iteration, wrote the search and checking programs, and
-  drafted this manuscript under human direction.  The checkers and the
-  present proof exposition are themselves
+  cotree--diamond iteration, constructed the cyclically
+  four-edge-connected order-60 example, wrote the search and checking
+  programs, and drafted this manuscript under human direction.  The
+  checkers and the present proof exposition are themselves
   AI-assisted; ``independent'' below means logically separate code, not
   independent human verification.  No human author or referee is represented
   as having certified the results.  This draft must not be submitted until a
@@ -84,6 +86,17 @@ lift would force a Tait colouring of the Petersen graph.  The same graph
 has an explicit five-cycle double cover, so the example is not a
 counterexample to that conjecture.  The manuscript and all calculations
 are AI-assisted and await independent human review.
+
+More strongly, we construct a simple nonplanar cubic graph of order 60
+and cyclic edge-connectivity at least four with a fixed nowhere-zero
+\(\F_2^3\)-flow for which all seven functional projections are
+uncleanable.  Two completion-sound four-pole profiles cover the seven
+functionals, and a solver-independent checker proves the finite local
+classifications by exhaustive binary-cycle enumeration and Gaussian
+elimination.  The same graph has an explicit five-cycle double cover.
+Thus even in the usual reduced domain, the flow must be selected
+existentially; the result is not a counterexample to the FiveCDC
+conjecture.
 \end{abstract}
 
 \section{Scope and background}
@@ -125,6 +138,16 @@ fixed functional projection, combined-image identity, and quadratic
 normal form are different.  Thus the general fact that ``Petersen is an
 obstruction to a constrained flow extension'' is not new; only the
 specific statements proved here are provisionally claimed as new.
+
+Hu\v{s}ek and \v{S}\'amal give an exact component-parity criterion for a
+five-cycle double cover derived from a nowhere-zero
+\(\F_2^3\)-flow \cite[Theorem~3.16]{husek2026}.  Their
+Conjecture~3.19 asks existentially for a flow and a functional satisfying
+that criterion, and is equivalent to FiveCDC in their framework.  Our
+normal form below recovers the fixed-projection lifting equations.  The
+order-60 construction in Section~\ref{sec:order60} shows that the
+existential quantifier over flows cannot be replaced by ``for every
+flow'', even under cyclic four-edge-connectivity.
 
 For further separation from the motivating conjecture, a five-cycle
 double cover (5-CDC) is a list of five even edge-subsets in which every
@@ -725,6 +748,146 @@ classification is supplied as a reproducible computational audit, not
 needed for Theorem~\ref{thm:petersen}.
 \end{remark}
 
+\section{A cyclically four-edge-connected fixed-flow obstruction}
+\label{sec:order60}
+
+We now show that the Petersen phenomenon cannot be removed merely by
+passing to the usual cyclically four-edge-connected domain.  The result is
+stronger in the number of failed projections but remains deliberately
+separate from FiveCDC.
+
+\begin{theorem}\label{thm:order60}
+There is a simple nonplanar cubic graph \(G\) of order \(60\), with cyclic
+edge-connectivity at least four, and a nowhere-zero
+\(\F_2^3\)-flow \(f\) such that no nonzero functional projection
+\(\mu\circ f\) has a clean fixed-projection lift.
+Nevertheless \(G\) has a five-cycle double cover.
+\end{theorem}
+
+We give a deterministic construction before proving the theorem.
+Identify the elements of \(\F_2^3\) with the three-bit integers
+\(0,\ldots,7\), using bitwise xor for addition.  Begin with the order-32
+graph whose graph6 record is
+\begin{center}
+\path|_??G@EOGG?GB_AO_g_?CP_??C??O????[O?CA?AG??CA??@???A?O??C???????G????g???@W???E????@c|.
+\end{center}
+In graph6 edge order, assign the 48 values
+\begin{verbatim}
+3 6 2 7 5 7 2 7 5 2 1 7 2 4 6 5
+6 6 5 3 6 5 5 5 6 3 6 3 6 3 5 6
+3 2 4 4 1 1 6 7 2 3 1 2 6 6 2 4.
+\end{verbatim}
+Their xor is zero at every vertex.
+
+For the first block \(A\), delete the endpoints \(6,7\) of edge 2 and
+apply the linear value permutation
+\[
+                  T_A=(0,4,3,7,1,5,2,6).
+\]
+For the second block \(B\), delete the endpoints \(8,9\) of edge 6 and
+apply
+\[
+                  T_B=(0,7,3,4,5,2,6,1).
+\]
+Each tuple lists the images of \(0,\ldots,7\).  The sorted ports, displayed
+as old vertex/value pairs before and after the maps, are
+\[
+\begin{array}{c|c|c}
+ &\text{before}&\text{after}\\ \hline
+A&(2,6),(13,4),(15,6),(25,4)&(2,2),(13,1),(15,2),(25,1)\\
+B&(0,7),(2,7),(3,5),(11,5)&(0,1),(2,1),(3,2),(11,2).
+\end{array}
+\]
+Relabel the retained vertices of \(A\) increasingly by \(0,\ldots,29\)
+and those of \(B\) by \(30,\ldots,59\).  Match port indices by
+\[
+                     (A_0,B_2),(A_1,B_0),(A_2,B_3),(A_3,B_1).
+                                                        \tag{8.1}
+\]
+The four resulting edges and values are
+\[
+        (2,33):2,\quad(11,30):1,\quad(13,39):2,\quad(23,32):1.
+                                                        \tag{8.2}
+\]
+Thus the construction is completely specified by the displayed data.
+
+\begin{lemma}[local obstruction]\label{lem:pole}
+Cut the four joining edges in (8.1) into semiedges.  If the local
+two-cycle formula is infeasible on either pole for a functional \(\mu\),
+after imposing the component equations only on factor components which
+touch no factor-valued semiedge, then no completion has a global clean
+fixed-projection lift for \(\mu\).
+\end{lemma}
+
+\begin{proof}
+The restriction of a global binary cycle to a pole has even incidence at
+every retained vertex, and hence is a binary pole cycle.  Global coverage
+of the kernel factor restricts to coverage of every proper edge and
+semiedge occurrence.  A local factor component touching no factor-valued
+semiedge is also a complete global factor component contained in the
+pole.  Its product-parity equation (4.3) is therefore among the global
+cleanliness equations.  A global solution would consequently restrict to
+a local one.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:order60}]
+The two exact local bad-functional profiles, after the displayed linear
+maps, are
+\[
+                \operatorname{bad}(A)=\{5,6,7\},\qquad
+                \operatorname{bad}(B)=\{1,2,3,4,5\}.    \tag{8.3}
+\]
+Their union contains all seven nonzero functionals.  Lemma~\ref{lem:pole}
+therefore proves the fixed-flow assertion.
+
+For completeness, the finite proof of (8.3) is as follows.  Each pole has
+43 proper edges, four semiedges, and binary pole-cycle dimension 17.
+For each functional, enumerate all \(2^{17}\) first cycles \(p\).  With
+\(p\) fixed, write the second cycle \(q\) in a computed cycle-space basis.
+Coverage forces \(q(e)=1\) whenever a kernel-factor edge is absent from
+\(p\), while every closed-component equation becomes
+\[
+              \sum_{e\in\delta(X):\,p(e)=1}q(e)=0.
+                                                        \tag{8.4}
+\]
+These are linear equations over \(\F_2\), decided by ordinary Gaussian
+elimination.  The companion checker performs this exhaustive calculation
+and obtains exactly (8.3).
+
+The same program reconstructs \(G\), checks 90 distinct edges and degree
+three, nonzero flow values and conservation, and exhausts all
+\[
+            {90\choose1}+{90\choose2}+{90\choose3}=121575
+                                                        \tag{8.5}
+\]
+edge subsets.  None separates two cyclic components.  Nauty
+\texttt{planarg} independently classifies the displayed graph as
+nonplanar.
+
+Finally, in graph6 edge order, the following five-bit weight-two labels
+give a five-cycle double cover:
+\begin{verbatim}
+3 20 5 20 17 9 5 12 12 9 12 5 5 6 5
+3 24 5 10 9 17 24 12 20 9 17 24 18 9 17
+3 18 24 10 24 24 10 18 9 17 10 18 24 9 9
+6 6 10 9 6 3 5 12 20 18 10 24 17 3 3
+17 18 5 5 10 17 9 24 20 12 12 20 24 18 18
+10 24 3 3 24 17 9 18 10 24 9 17 10 18 24.
+\end{verbatim}
+Weight two gives exact double coverage.  Xor zero at each vertex gives
+even degree in every coordinate.  The checker verifies both conditions
+directly, completing the proof.
+\end{proof}
+
+\begin{remark}
+The proof of (8.3) is computer-assisted but solver-independent.  It does
+not claim that a human manually inspected roughly two million cycle
+choices.  Rather, the short exhaustive program and the reduction to
+linear systems constitute the finite certificate.  The exact graph6
+records, canonicalization command, construction tables, and checker
+output are preserved in the companion note.
+\end{remark}
+
 \section{Reproducibility and logical status}
 
 The companion directory
@@ -765,14 +928,28 @@ defect in every displayed component.
 The universal assertion in Theorem~\ref{thm:unbounded} rests on the
 displayed induction, not on exhaustive flow enumeration.
 
+The order-60 theorem is replayed without a SAT solver by
+\begin{verbatim}
+c++ -O3 -std=c++20 \
+  scratch/verify_fano_cyclic4_allseven_order60.cpp \
+  -o /tmp/verify-fano-order60
+/tmp/verify-fano-order60
+\end{verbatim}
+The checker reconstructs both poles and the glued graph, derives the two
+profiles in (8.3), exhausts (8.5), and checks the displayed five-cover.
+The companion human note is
+\path|scratch/fano-cyclic4-allseven-order60-20260728.md|.
+
 \section{What is and is not new}
 
 The literature search for this draft covered the primary sources cited
-above and keyword/full-text searches through 26 July 2026.  We did not
+above and keyword/full-text searches through 28 July 2026.  We did not
 find the combined-image theorem, the potential (3.8), the exact
 fixed-projection normal form (4.1)--(4.3), or the simple-contraction
 obstruction in those sources.  Targeted searches through 28 July 2026
-also did not locate the unbounded kernel-line component theorem.
+also did not locate the unbounded kernel-line component theorem or the
+cyclically four-edge-connected fixed-flow obstruction of
+Theorem~\ref{thm:order60}.
 We therefore regard these as
 \emph{plausibly new}, not as established priority claims.
 
@@ -787,9 +964,11 @@ publishable unit is instead the following coherent package:
         telescoping certificate;
   \item an exact quadratic formulation explaining why that identity
         does not automatically integrate to a valid switch sequence; and
-  \item two structural limitations: a matching-contraction obstruction
-        instantiated by a small fixed-projection counterexample, and an
-        infinite family excluding every bounded-component normal form.
+  \item three structural limitations: a matching-contraction obstruction
+        instantiated by a small fixed-projection counterexample, an
+        infinite family excluding every bounded-component normal form,
+        and a cyclically four-edge-connected flow on which all seven fixed
+        projections fail.
 \end{enumerate}
 
 This is suitable at most as a short technical note until expert review

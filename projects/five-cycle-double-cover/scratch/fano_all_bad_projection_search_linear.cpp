@@ -20,9 +20,12 @@
 #include <fstream>
 #include <iostream>
 #include <queue>
+#include <random>
 #include <ranges>
+#include <set>
 #include <stdexcept>
 #include <string>
+#include <unordered_map>
 #include <unordered_set>
 #include <utility>
 #include <vector>
@@ -506,14 +509,159 @@ void audit_graph(
   std::cout << "]}" << std::endl;
 }
 
+Mask coefficient_cycle(
+    Mask coefficients,
+    const std::vector<Mask> &basis) {
+  Mask cycle = 0;
+  while (coefficients) {
+    const int coordinate = std::countr_zero(coefficients);
+    coefficients &= coefficients - 1;
+    cycle ^= basis[coordinate];
+  }
+  return cycle;
+}
+
+void sample_covering_spaces(
+    const std::string &source,
+    int row_index,
+    const std::string &row,
+    std::uint64_t requested,
+    std::uint64_t seed) {
+  const Graph graph = decode_graph6(row);
+  if (!is_bridgeless(graph)) return;
+  const std::vector<Mask> basis = cycle_basis(graph);
+  const std::vector<Mask> cycles = enumerate_cycles(basis);
+  const Mask all_edges = (Mask{1} << graph.edges.size()) - 1;
+  if (is_tait_colorable(graph)) {
+    std::cout << "{\"source\":\"" << source << "\",\"row\":" << row_index
+              << ",\"order\":" << graph.order
+              << ",\"cycles\":" << cycles.size()
+              << ",\"sampled_covering_spaces\":0"
+              << ",\"max_bad_in_sample\":0"
+              << ",\"all_seven_obstruction\":false"
+              << ",\"tait_colorable\":true}" << std::endl;
+    return;
+  }
+
+  std::vector<Mask> edge_coefficients(graph.edges.size(), 0);
+  for (int coordinate = 0; coordinate < static_cast<int>(basis.size());
+       ++coordinate) {
+    Mask support = basis[coordinate];
+    while (support) {
+      const int edge = std::countr_zero(support);
+      support &= support - 1;
+      edge_coefficients[edge] |= Mask{1} << coordinate;
+    }
+  }
+
+  const int dimension = static_cast<int>(basis.size());
+  const Mask coefficient_mask = (Mask{1} << dimension) - 1;
+  std::mt19937_64 generator(
+      seed ^ (std::uint64_t{0x9e3779b97f4a7c15} *
+              static_cast<std::uint64_t>(row_index + 1)));
+  std::uniform_int_distribution<Mask> distribution(1, coefficient_mask);
+  std::unordered_map<Mask, bool> clean_cache;
+  std::set<std::array<Mask, 7>> seen_spaces;
+  std::array<Mask, 7> best_span{};
+  int best_bad = -1;
+  std::uint64_t attempts = 0;
+  const std::uint64_t attempt_limit =
+      std::max<std::uint64_t>(requested * 100000, 1000000);
+
+  while (seen_spaces.size() < requested && attempts < attempt_limit) {
+    ++attempts;
+    const Mask first_coefficients = distribution(generator);
+    const Mask second_coefficients = distribution(generator);
+    const Mask third_coefficients = distribution(generator);
+    if (binary_rank({
+            first_coefficients,
+            second_coefficients,
+            third_coefficients,
+        }) != 3) {
+      continue;
+    }
+    const Mask first = coefficient_cycle(first_coefficients, basis);
+    const Mask second = coefficient_cycle(second_coefficients, basis);
+    const Mask third = coefficient_cycle(third_coefficients, basis);
+    std::array<Mask, 7> span{
+        first,
+        second,
+        third,
+        first ^ second,
+        first ^ third,
+        second ^ third,
+        first ^ second ^ third,
+    };
+    std::ranges::sort(span);
+    Mask cover = 0;
+    for (const Mask projection : span) cover |= projection;
+    if (cover != all_edges || !seen_spaces.insert(span).second) continue;
+
+    int bad_count = 0;
+    for (const Mask projection : span) {
+      const auto found = clean_cache.find(projection);
+      bool clean = false;
+      if (found != clean_cache.end()) {
+        clean = found->second;
+      } else {
+        clean = projection_clean(
+            graph,
+            basis,
+            cycles,
+            edge_coefficients,
+            projection,
+            all_edges);
+        clean_cache.emplace(projection, clean);
+      }
+      bad_count += !clean;
+    }
+    if (bad_count > best_bad) {
+      best_bad = bad_count;
+      best_span = span;
+    }
+    if (bad_count == 7) break;
+  }
+
+  std::cout << "{\"source\":\"" << source << "\",\"row\":" << row_index
+            << ",\"order\":" << graph.order
+            << ",\"cycles\":" << cycles.size()
+            << ",\"sampled_covering_spaces\":" << seen_spaces.size()
+            << ",\"attempted_triples\":" << attempts
+            << ",\"projection_decisions\":" << clean_cache.size()
+            << ",\"max_bad_in_sample\":" << std::max(best_bad, 0)
+            << ",\"all_seven_obstruction\":"
+            << (best_bad == 7 ? "true" : "false")
+            << ",\"tait_colorable\":false"
+            << ",\"witness_hex\":[";
+  if (best_bad >= 0) {
+    for (std::size_t index = 0; index < best_span.size(); ++index) {
+      if (index) std::cout << ',';
+      std::cout << "\"0x" << std::hex << best_span[index] << std::dec
+                << "\"";
+    }
+  }
+  std::cout << "]}" << std::endl;
+}
+
 int main(int argc, char **argv) {
   if (argc < 2) {
-    std::cerr << "usage: fano-linear [--closest] FILE.g6 [...]" << std::endl;
+    std::cerr
+        << "usage: fano-linear [--closest] FILE.g6 [...]\n"
+        << "       fano-linear --sample N SEED FILE.g6 [...]"
+        << std::endl;
     return 1;
   }
   try {
+    const bool sample = std::string(argv[1]) == "--sample";
     const bool compute_closest = std::string(argv[1]) == "--closest";
-    const int first_argument = compute_closest ? 2 : 1;
+    if (sample && argc < 5)
+      throw std::runtime_error(
+          "--sample requires N, SEED, and at least one input file");
+    const std::uint64_t sample_count =
+        sample ? std::stoull(argv[2]) : 0;
+    const std::uint64_t sample_seed =
+        sample ? std::stoull(argv[3]) : 0;
+    const int first_argument = sample ? 4 : (compute_closest ? 2 : 1);
     if (first_argument == argc) throw std::runtime_error("missing input file");
     for (int argument = first_argument; argument < argc; ++argument) {
       std::ifstream stream(argv[argument]);
@@ -522,8 +670,17 @@ int main(int argc, char **argv) {
       int row_index = 0;
       while (std::getline(stream, row)) {
         if (!row.empty()) {
-          audit_graph(
-              argv[argument], row_index, row, compute_closest);
+          if (sample) {
+            sample_covering_spaces(
+                argv[argument],
+                row_index,
+                row,
+                sample_count,
+                sample_seed);
+          } else {
+            audit_graph(
+                argv[argument], row_index, row, compute_closest);
+          }
         }
         ++row_index;
       }

@@ -6,14 +6,17 @@ This directory contains a cautious short-paper draft built around:
    `../docs/fano-combined-line-span.md`;
 2. the exact two-cycle quadratic normal form;
 3. a general simple-contraction obstruction; and
-4. an unbounded-component cotree-diamond separation; and
+4. an unbounded-component cotree-diamond separation;
 5. the Petersen fixed-line certificate in
-   `../search/fano-two-cycle-petersen-countermodel-20260726/`.
+   `../search/fano-two-cycle-petersen-countermodel-20260726/`; and
+6. the cyclically 4-edge-connected order-60 all-seven fixed-flow
+   obstruction in
+   `../scratch/fano-cyclic4-allseven-order60-20260728.md`.
 
 The paper is explicitly **not** a proof or disproof of the five-cycle
-double cover conjecture. The displayed Petersen graph has a positive
-five-cycle double cover, and every member of the unbounded-component
-family does as well.
+double cover conjecture. The displayed Petersen and order-60 graphs have
+positive five-cycle double covers, and every member of the
+unbounded-component family does as well.
 
 Files:
 

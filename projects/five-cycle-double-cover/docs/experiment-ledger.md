@@ -3353,6 +3353,32 @@ including the tempting at-most-two route.  It is not a FiveCDC
 counterexample; every member of the construction has a literal
 standard five-cover.
 
+## Order-60 cyclic-4 all-seven fixed-flow construction
+
+Audit date: **2026-07-28**.
+
+Random sampling of 22,000 covering three-spaces on 44 independent
+cyclically 4-edge-connected snarks of orders 30, 32, and 34 found maximum
+bad-projection counts \(0,2,3,4\), but no all-seven example.  A focused
+10,000-space sample on each of three maximum-four hosts again stopped at
+four.  These samples are discovery evidence only.
+
+Exact closest-space classification on the fourth record of
+`Generated_graphs.32.05.sn.cyc4-circ_flownr_5.g6` found a covering
+three-space with five bad projections.  All 48 adjacent-vertex-deletion
+four-poles were then classified by a completion-sound local formula.
+Two poles with profiles of sizes three and five were linearly relabelled
+so their bad sets became \(\{5,6,7\}\) and
+\(\{1,2,3,4,5\}\), with matching port values.  Their four-edge join is a
+simple cubic order-60 graph.
+
+The retained solver-independent checker replaces all discovery SAT calls.
+For each pole and functional it enumerates 131,072 first cycles and applies
+binary Gaussian elimination to the second.  It verifies the union of local
+profiles, the nowhere-zero flow, all 121,575 prospective cyclic cuts of
+sizes at most three, and a positive FiveCDC witness.  The result is an
+exact counterexample to arbitrary fixed-flow cleaning, not to FiveCDC.
+
 ## Equal-profile plateau Laplacian audit
 
 Audit date: **2026-07-28**.

@@ -1429,3 +1429,26 @@ Thus this core cannot generate the desired cyclically 4-edge-connected
 seven-projection obstruction by union of local UNSAT profiles.  Different
 cores and the FiveCDC conjecture remain open.  See
 `scratch/fano-six-bad-threecut-lock-20260728.md`.
+
+## O62 — Every fixed Fano flow on a cyclically 4-edge-connected cubic
+graph has a clean projection
+
+Status: **FAILED APPROACH / EXACT ORDER-60 COUNTERMODEL**.
+
+Two explicitly relabelled deleted-edge four-poles from one order-32 flow
+have completion-sound local bad-functional profiles
+\(\{5,6,7\}\) and \(\{1,2,3,4,5\}\).  Gluing equal-valued ports gives a
+simple cubic order-60 graph with a nowhere-zero \(\mathbb F_2^3\)-flow.
+Because every local closed factor component remains a global component,
+the union of the two profiles proves that none of the seven fixed
+functional projections can be cleaned.
+
+A solver-independent C++ checker enumerates all \(2^{17}\) first pole
+cycles for each local functional and decides the remaining cycle by exact
+binary Gaussian elimination.  It also checks all 121,575 edge sets of
+sizes one through three, proving cyclic edge-connectivity at least four.
+The same graph has an explicit semantically checked standard FiveCDC.
+Thus the result refutes only universal cleaning of an arbitrary fixed
+flow.  It confirms that the existential flow choice in the
+Hušek--Šámal formulation cannot be dropped.  See
+`scratch/fano-cyclic4-allseven-order60-20260728.md`.

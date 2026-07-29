@@ -234,6 +234,20 @@ resolution.
   `12 x 456`, `12 x 137`, `3 x empty`.  Every obstructive pole retains a
   cyclic shore behind a three-boundary, excluding that core from
   cyclically-4 all-seven local-obstruction compositions.
+- `scratch/fano-cyclic4-allseven-order60-20260728.md` gives the complete
+  order-60 construction and the human local-to-global reduction.  Two
+  relabelled four-poles have completion-sound bad profiles `567` and
+  `12345`, so the displayed fixed flow has no clean functional projection.
+- `scratch/verify_fano_cyclic4_allseven_order60.cpp` is the
+  solver-independent replay: it exhausts 131,072 first pole cycles per
+  local projection, solves the remaining equations by binary elimination,
+  checks all 121,575 edge sets of sizes one through three, and verifies a
+  literal standard FiveCDC.  The graph is cyclically 4-edge-connected but
+  is not a FiveCDC counterexample.
+- `scratch/search_fano_order32_near_pole_profiles.py` and the optional
+  `--sample` mode of `scratch/fano_all_bad_projection_search_linear.cpp`
+  preserve the CaDiCaL-assisted discovery provenance; neither is in the
+  theorem's trust base.
 
 These are exact human-checkable or independently replayable advances.  They
 do not prove or disprove FiveCDC, and no target UNSAT certificate exists in

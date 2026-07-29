@@ -17,18 +17,25 @@ The plausible novelty is moderate and quite specific:
   projection and its product-boundary cleaning equations; and
 - the cotree-diamond theorem showing that the minimum number of
   components in a Fano-line subgraph is unbounded even on
-  FiveCDC-positive graphs; and
+  FiveCDC-positive graphs;
 - the simple-contraction obstruction, with the displayed Petersen flow
-  as a minimal-looking, human-checkable illustration.
+  as a minimal-looking, human-checkable illustration; and
+- the explicit cyclically 4-edge-connected order-60 flow on which all
+  seven fixed functional projections fail, with a completion-sound
+  four-pole proof and solver-independent exhaustive checker.
 
 The Petersen graph itself is not novel, and “Petersen obstructs a
-constrained flow condition” is not new. The publication case rests on
-the linear-versus-quadratic mechanism as a coherent package.
+constrained flow condition” is not new. The order-60 theorem materially
+sharpens the structural boundary: it shows that the existential choice of
+the flow in the Hušek--Šámal formulation cannot be replaced by an
+arbitrary Jaeger 8-flow, even in the cyclically 4-edge-connected domain.
+The publication case rests on this result together with the
+linear-versus-quadratic mechanism as a coherent package.
 
 ## Primary literature checked
 
 The audit used keyword search and direct full-text inspection where an
-open manuscript was available, through 26 July 2026.
+open manuscript was available, through 28 July 2026.
 
 1. F. Jaeger, *Flows and generalized coloring theorems in graphs*,
    JCTB 26 (1979), 205–216.
@@ -67,12 +74,16 @@ open manuscript was available, through 26 July 2026.
    arXiv:2606.24685 (2026).
    <https://arxiv.org/abs/2606.24685>
 
+10. R. Hušek and R. Šámal, *Exponentially Many Circuit Double Covers*,
+    arXiv:2607.24724 (2026).
+    <https://arxiv.org/abs/2607.24724>
+
 Targeted searches for combinations of “Fano flow,” “kernel line,”
 “functional projection,” “line-preserving,” “affine coset,” “binary
 cycle,” “switching,” “Petersen,” “line subgraph components,”
-“connected kernel,” and “cotree diamond” did not locate the exact
-statements in the draft.  Search-engine coverage is imperfect; this is
-not a priority determination.
+“connected kernel,” “cotree diamond,” and “cyclically 4-edge-connected”
+did not locate the exact statements in the draft.  Search-engine coverage
+is imperfect; this is not a priority determination.
 
 ## Closest overlap
 
@@ -95,6 +106,12 @@ Petersen’s exceptional role is new. Before submission, a human expert
 should determine whether the two conditions admit a useful formal
 implication in any special case.
 
+Hušek--Šámal is the closest direct FiveCDC neighbour.  Their Theorem 3.16
+states the component condition independently, and their Conjecture 3.19
+makes the flow choice existential.  The order-60 theorem is best
+understood as proving that this quantifier is necessary, not as evidence
+against their conjecture.
+
 ## Publication judgment
 
 Current rating: **promising short note, not yet submission-ready**.
@@ -111,6 +128,9 @@ Reasons in favour:
   a direct proof and explicit sharp witnesses.
 - The Petersen instance is fully finite and has a human proof, while
   CNF/DRAT and exhaustive enumeration remain as redundant audits.
+- The order-60 theorem reaches the natural cyclic-connectivity reduction,
+  has a short human local-to-global lemma, and replaces discovery SAT with
+  an exact standard-library elimination checker.
 
 Reasons for caution:
 
@@ -118,6 +138,9 @@ Reasons for caution:
 - The terminology is project-internal and needs polishing against the
   established Fano-flow literature.
 - The relation to 5-CDC is motivational and indirect.
+- The order-60 local profiles are a finite computer-assisted proof, not a
+  short handwritten classification; the checker itself still needs an
+  independent human code audit or a proof-certificate translation.
 - The literature audit is not a substitute for MathSciNet/Zentralblatt
   review or consultation with specialists.
 - The most eye-catching example is classical and has a nearby 2025
@@ -125,19 +148,22 @@ Reasons for caution:
 
 ## Minimum bar before public submission
 
-1. A graph theorist independently rederive Theorems 3.1, 4.1, 5.1, and
-   6.1 from the definitions.
+1. A graph theorist independently rederive the combined-image, quadratic
+   normal-form, unbounded-component, and matching-contraction theorems
+   from the definitions.
 2. A human verify every row of the potential identity and the
    cut-space duality step.
 3. A second person reconstruct the Petersen matching contractions and
    Tait obstruction without using the checker.
-4. Rerun all artifacts in a clean environment and archive exact
+4. A human audit the order-60 local-to-global lemma and independently
+   reimplement or proof-certificate-check the two pole profiles.
+5. Rerun all artifacts in a clean environment and archive exact
    versions/checksums.
-5. Expand the literature review using MathSciNet or Zentralblatt and,
+6. Expand the literature review using MathSciNet or Zentralblatt and,
    ideally, ask authors working on Fano flows or non-conflicting flows
    about prior overlap.
-6. Replace the author placeholder and let the human author rewrite the
+7. Replace the author placeholder and let the human author rewrite the
    claims in their own scholarly voice.
-7. Keep the full AI-use disclosure. Do not call the checkers
+8. Keep the full AI-use disclosure. Do not call the checkers
    “independent verification” without the qualifier that they are
    separately written but AI-assisted.

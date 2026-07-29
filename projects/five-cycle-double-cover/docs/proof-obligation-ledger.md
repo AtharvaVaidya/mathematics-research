@@ -1567,8 +1567,9 @@ Open obligations:
     four-terminal state-alignment problem remains open.
     Status: **EXACT COMPOSITION THEOREM / NAIVE CAP GLUING REFUTED**.
 
-98. **A cyclically-4 all-seven clean-projection obstruction needs a new
-    core:** the order-18 six-bad flow on
+98. **A cyclically-4 all-seven clean-projection obstruction exists, so
+    fixed-flow cleaning is false in the reduced domain:** the order-18
+    six-bad flow on
     `Q???C@?K@O@aDAw?GW?J?_g?Y??` is split by the cyclic three-cut
     \(e_{14},e_{18},e_{26}\).  Exact local pole profiles are
     \(\{4,5,6\}\) on the twelve deletions inside one shore,
@@ -1576,9 +1577,27 @@ Open obligations:
     cut-edge deletions.  Every obstructive pole retains the opposite
     cyclic shore behind a three-boundary, so no
     \(\mathrm{GL}(3,2)\)-relabelled multi-pole composition of this core
-    can be cyclically 4-edge-connected.  The retained cyclic-4 censuses
-    through order 28 still find no all-seven obstruction, but this is
-    finite evidence.  Prove that every cyclically 4-edge-connected cubic
-    flow has a clean projection, or find a genuinely cyclically-4
-    countermodel from a different construction.
-    Status: **OPEN / ONE CORE FAMILY EXCLUDED EXACTLY**.
+    can be cyclically 4-edge-connected.
+
+    A different construction now settles the stronger question negatively.
+    Two order-32 deleted-edge poles, after explicit
+    \(\mathrm{GL}(3,2)\) relabellings, have completion-sound local bad
+    profiles \(\{5,6,7\}\) and \(\{1,2,3,4,5\}\).  Gluing their four ports
+    gives a simple cubic order-60 graph.  A solver-independent checker
+    exhausts each \(2^{17}\)-element pole cycle space, verifies that the
+    profiles cover all seven functionals, and tests all 121,575 edge sets
+    of sizes at most three to prove cyclic edge-connectivity at least four.
+    The graph nevertheless has an explicit standard FiveCDC.
+    Status: **CLOSED / UNIVERSAL FIXED-FLOW CLAIM REFUTED**.
+
+99. **Existential flow selection is now the exact Fano-flow obligation:**
+    Hušek--Šámal Conjecture 3.19 asks for the existence of a nowhere-zero
+    \(\mathbb F_2^3\)-flow and a functional satisfying the component
+    parity condition.  The order-60 theorem proves that an arbitrary
+    nowhere-zero flow cannot be used, even on a cyclically
+    4-edge-connected graph.  Its explicit FiveCDC supplies a good flow
+    derived from five coordinate labels, while the displayed bad flow
+    blocks every functional.  Find a universal exchange/selection theorem
+    taking a bad flow to some good flow, or produce a graph on which the
+    existential formula is certificate-checked UNSAT.
+    Status: **OPEN / EQUIVALENT TO FIVECDC IN THE CUBIC REDUCTION**.

@@ -56,6 +56,15 @@ copied into a separate clean clone; it was not modified or committed.
   locally obstructive pole retains a cyclic shore behind a three-boundary.
   This excludes that core from any cyclically-4 multi-pole all-seven
   construction; it is not a FiveCDC result.
+- The order-60 cyclically-4 all-seven fixed-flow obstruction: two explicit
+  order-32 deleted-edge poles have completion-sound local profiles `567`
+  and `12345`, whose union blocks every functional of the glued
+  nowhere-zero \(\mathbb F_2^3\)-flow.  A solver-independent C++ checker
+  exhausts each 131,072-element pole cycle space by binary Gaussian
+  elimination, checks all 121,575 edge subsets of size at most three for
+  cyclic separation, and validates an explicit standard FiveCDC.  Thus the
+  theorem refutes arbitrary fixed-flow cleaning even in the reduced
+  cyclically-4 domain, but is positively not a FiveCDC counterexample.
 - The square-local quantifier boundary: one planar order-eight good state
   has 72 legal local lifts and none good in any coordinate, while an
   alternate state lifts. Both order-six graphs satisfy the stronger

@@ -2887,3 +2887,37 @@ all-seven fixed-flow obstruction from this core.  It does not rule out a
 different core and is not a FiveCDC result.  The human proof and
 solver-independent checker are in
 `scratch/fano-six-bad-threecut-lock-20260728.md`.
+
+## Cyclically 4-edge-connected all-seven fixed-flow obstruction
+
+Audit date: **2026-07-28**.
+
+A different core and a completion-sound pole composition now produce the
+previously missing auxiliary countermodel.  Two order-32 deleted-edge
+four-poles, after explicit \(\mathrm{GL}(3,2)\) relabellings, have exact
+local bad-functional profiles
+\[
+                    \{5,6,7\}\quad\hbox{and}\quad
+                    \{1,2,3,4,5\}.
+\]
+Their four equal-valued ports glue to a simple cubic order-60 graph with a
+nowhere-zero \(\mathbb F_2^3\)-flow.  A closed dirty factor component
+inside a pole remains a global component under every completion, so the
+profile union proves that none of the seven functional projections of
+this fixed flow can be cleaned.
+
+The solver-independent checker enumerates all \(2^{17}\) binary first
+cycles for each pole/functional and decides the remaining linear system by
+Gaussian elimination.  It reconstructs the graph, validates flow
+conservation, checks every one of the 121,575 edge sets of size at most
+three for cyclic separation, and validates an explicit standard FiveCDC.
+Nauty independently gives the canonical graph6 record and confirms
+nonplanarity.
+
+This is not a FiveCDC counterexample.  It refutes the stronger assertion
+that every chosen nowhere-zero three-bit flow has a clean projection even
+in the cyclically 4-edge-connected domain.  The remaining exact obligation
+is existential flow selection or repair, matching Hušek--Šámal Conjecture
+3.19.  See
+`scratch/fano-cyclic4-allseven-order60-20260728.md` and
+`scratch/verify_fano_cyclic4_allseven_order60.cpp`.
