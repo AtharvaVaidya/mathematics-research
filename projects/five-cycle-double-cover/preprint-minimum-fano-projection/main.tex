@@ -46,7 +46,7 @@ Five-Cycle Double Cover Conjecture}
 \textbf{Resolution status.}
 The five-cycle double cover conjecture remains unresolved.
 This note proves an exchange theorem, settles the minimum-support cases
-through size eleven, and gives exact finite censuses.  It proves neither the
+through size twelve, and gives exact finite censuses.  It proves neither the
 conjecture nor its negation.
 }}
 \end{center}
@@ -88,8 +88,11 @@ failure, however, an explicit boundary certificate makes the six-circuit
 low-valued and nowhere zero, so deleting it from the first-coordinate
 support produces an extendable projection of size five.  Global minimality
 excludes all 14.  Thus every minimum extendable projection of size at most
-eleven is cleanable, and a counterexample to the proposed selection
-principle must have minimum size at least twelve.
+eleven is cleanable.  At size twelve, 13,788,824 dirty boundary states
+either clean directly or admit a strict circuit deletion; two independent
+enumerators agree exactly.  Thus every minimum extendable projection of
+size at most twelve is cleanable, and a counterexample to the proposed
+selection principle must have minimum size at least thirteen.
 
 We perform an exact canonical census of all \(41{,}301\) connected simple
 cubic graphs of order \(18\).  Among the \(39{,}866\) bridgeless graphs,
@@ -143,7 +146,7 @@ The contribution of this note is narrower:
 \begin{enumerate}
   \item a minimum-support exchange theorem, with a complete proof;
   \item a human proof through size five and an exact boundary extension
-        through size eleven;
+        through size twelve;
   \item four simultaneous shortest-join consequences;
   \item a reproducible canonical order-\(18\) census and an expanded
         exact replay on frozen sources through order \(28\); and
@@ -763,6 +766,61 @@ cumulative checker and all 14 certificates are in the bundled
 through-eleven package.
 \end{remark}
 
+\subsection{Clean or delete at size twelve}
+
+Propositions~\ref{prop:directrepair} and
+\ref{prop:deletecircuit} give a useful dichotomy: it is enough to find
+component maps and circuit starts that either make every affine cut parity
+even, or make one whole support circuit low-valued and nowhere zero.  The
+first branch cleans the projection; the second strictly shortens it and is
+therefore impossible for a global minimum.
+
+\begin{theorem}[minimum projections through size twelve]
+\label{thm:sizetwelve}
+Under the hypotheses of Theorem~\ref{thm:sizeten}, every
+cardinality-minimum extendable projection of size at most twelve is
+cleanable.
+\end{theorem}
+
+\begin{proof}
+Only total size twelve remains.  The complete circuit-length list is
+\[
+                12,\qquad4+8,\qquad5+7,\qquad6+6,\qquad4+4+4. \tag{17}
+\]
+For each shape, the exact classifier enumerates the same word orbits and
+charge-valid component partitions as before.  It first exhausts every
+component map and relative circuit start for direct cleanliness.  If that
+fails, it tests whether the integrated word on a circuit omits a colour.
+Translating that circuit by the omitted colour makes all of its low values
+nonzero, giving the hypothesis of
+Proposition~\ref{prop:deletecircuit}.  The mutually exclusive counts are
+\[
+\begin{array}{c|r|r|r|r}
+\text{shape}&\text{words}&\text{dirty}&\text{direct clean}&
+\text{delete}\\
+\hline
+12&1014&11{,}465{,}978&11{,}465{,}978&0\\
+4+8&66&773{,}721&773{,}717&4\\
+5+7&64&738{,}969&738{,}763&206\\
+6+6&66&774{,}196&774{,}014&182\\
+4+4+4&3&35{,}960&35{,}960&0
+\end{array}
+\]
+There are zero states in neither branch.  The 392 deletion states have
+literal component maps, integrated circuit words, and omitted-colour
+certificates in the frozen output.  Since a globally minimum projection
+cannot take the deletion branch, every size-twelve minimum is cleanable.
+\end{proof}
+
+\begin{remark}
+The primary C++ classifier and certificate parser are bundled in the
+through-twelve clean-or-delete package.  A separately written C++ exact
+cover auditor independently regenerates the word orbits, valid component
+blocks, map search, clean decisions, and all 392 deletion decisions.  The
+two implementations agree on every table entry.  This is independent
+agent replication, not human peer review.
+\end{remark}
+
 \begin{corollary}[rainbow shortcut]\label{cor:shortcut}
 Every binary cycle \(C\) satisfying \(|C\cap h|>|C-h|\) meets all four
 sets \(M_c\).
@@ -812,8 +870,8 @@ component of an \emph{uncleanable globally minimum-support projection},
 derive a negative colour-avoiding cycle after allowable neutral
 recolouring, using the four simultaneous shortest-\(T_c\)-join
 inequalities of Corollary~\ref{cor:tjoin}.  No proof of this statement is
-given here.  By Theorem~\ref{thm:sizeeleven}, any counterexample to this
-selection principle has minimum support at least twelve.
+given here.  By Theorem~\ref{thm:sizetwelve}, any counterexample to this
+selection principle has minimum support at least thirteen.
 
 \section{Exact finite census}\label{sec:census}
 
@@ -1023,11 +1081,11 @@ python3 verify.py
 
 The exchange theorem converts global support minimality into four ordinary
 geodesic conditions: one shortest join for each affine value class.
-Theorems~\ref{thm:sizefive}, \ref{thm:sizeseven}, \ref{thm:sizeten}, and
-\ref{thm:sizeeleven} close every possible nonzero support size through
-eleven:
+Theorems~\ref{thm:sizefive}, \ref{thm:sizeseven}, \ref{thm:sizeten},
+\ref{thm:sizeeleven}, and \ref{thm:sizetwelve} close every possible
+nonzero support size through twelve:
 a counterexample to Conjecture~\ref{conj:minimum} must have minimum
-projection size at least twelve.
+projection size at least thirteen.
 The useful feature is simultaneity.  A cycle that would shorten the
 projection is allowed to be blocked by one colour, but
 Corollary~\ref{cor:shortcut} forces it to be blocked by all four.
@@ -1067,7 +1125,9 @@ can be checked without trusting an AI system.  Those boundary
 classifications and the stronger direct-cleaning theorem through size ten
 are also regenerated by dependency-free exact checkers.  The
 through-eleven checker freezes every first direct-repair failure and its
-smaller-support certificate.
+smaller-support certificate.  The through-twelve package freezes all 392
+new circuit-deletion certificates and includes a separately implemented
+full census.
 The order-\(18\) result is
 reproducible from canonical generation and exhaustive cycle-space
 enumeration.  The expanded census exactly replays frozen sources but

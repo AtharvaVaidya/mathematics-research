@@ -11,11 +11,13 @@ The manuscript proves:
 
 1. the simultaneous minimum-projection exchange theorem;
 2. exact cleanability of every cardinality-minimum extendable projection
-   of size at most eleven;
+   of size at most twelve;
 3. the first failure, at support shape \(5+6\), of the stronger direct
    componentwise-\(\mathrm{GL}(2,2)\) cleaning statement; and
 4. a size-five replacement certificate excluding every such failure from
-   global minimality.
+   global minimality; and
+5. an exhaustive size-twelve clean-or-delete theorem, independently
+   reproduced by two exact enumerators.
 
 This is a partial theorem about the Hušek--Šámal flow criterion.  It does
 not resolve the Five-Cycle Double Cover Conjecture.
@@ -50,7 +52,7 @@ parallel work.
 
 ## Publication judgment
 
-The exchange theorem, through-eleven boundary theorem, and sharp
+The exchange theorem, through-twelve boundary theorem, and sharp
 triangle-expanded-Petersen countermodel form a coherent, reproducible
 research note.  The result is suitable for public circulation as an
 AI-assisted preprint **after** a graph theorist:

@@ -5,7 +5,7 @@ minimum-support route to the standard five-cycle double cover conjecture.
 
 **Resolution status:** FiveCDC remains open. The paper proves a
 human-checkable exchange theorem and a complete minimum-projection theorem
-through support size eleven, reports exact finite censuses, and states the
+through support size twelve, reports exact finite censuses, and states the
 remaining universal selection principle as an explicit conjecture. It
 claims neither a proof nor a counterexample.
 
@@ -42,11 +42,13 @@ the size-at-most-five theorem with:
 python3 scratch/minimum-projection-size5-theorem-20260729/verify.py
 ```
 
-Replay the cumulative cleanability theorem through size eleven with:
+Replay the cumulative cleanability theorem through size twelve with:
 
 ```sh
 python3 scratch/minimum-projection-through11-cleanability-20260729/verify_through10.py
 python3 scratch/minimum-projection-through11-cleanability-20260729/verify.py
+python3 scratch/minimum-projection-through12-clean-or-delete-20260729/verify_output.py
+python3 scratch/minimum-projection-size12-independent-audit-20260729/replay.py
 ```
 
 The dependency-free checker exhausts every support shape allowed by the
@@ -58,7 +60,11 @@ word/partition states are directly cleaned through size ten.  At size
 eleven, 14 direct-repair failures occur in the \(5+6\) shape, but every
 one has a checked size-five replacement and therefore cannot be globally
 minimum.  A second independently written implementation reproduced all
-size-eleven counts and the 14 replacement certificates.
+size-eleven counts and the 14 replacement certificates.  At size twelve,
+13,788,824 dirty states split into 13,788,432 direct repairs and 392
+strict circuit-deletion certificates, with zero residuals.  A separately
+written word-orbit/exact-cover auditor reproduces the entire size-twelve
+census.
 
 Run the expanded exact replay with:
 

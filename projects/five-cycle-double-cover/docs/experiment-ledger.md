@@ -3573,7 +3573,7 @@ projection of size at most seven is cleanable.  This is an exhaustive
 boundary theorem, not graph sampling.  See
 `scratch/minimum-projection-through7-cleanability-20260729/`.
 
-## Exact minimum-projection classification through size eleven
+## Exact minimum-projection classification through size twelve
 
 Audit date: **2026-07-29**.
 
@@ -3619,3 +3619,25 @@ cleanable minima.  This is an exact finite boundary theorem, not a sampled
 graph census, but it gives no universal bound on minimum support and does
 not resolve FiveCDC.  See
 `scratch/minimum-projection-through11-cleanability-20260729/`.
+
+At size twelve the complete shape list is \(12,4+8,5+7,6+6,4+4+4\).
+The primary C++ classifier and an independently written word-orbit /
+valid-block exact-cover classifier agree on every count:
+
+| shape | dirty states | direct clean | strict circuit deletion | residual |
+|---|---:|---:|---:|---:|
+| \(12\) | 11,465,978 | 11,465,978 | 0 | 0 |
+| \(4+8\) | 773,721 | 773,717 | 4 | 0 |
+| \(5+7\) | 738,969 | 738,763 | 206 | 0 |
+| \(6+6\) | 774,196 | 774,014 | 182 | 0 |
+| \(4+4+4\) | 35,960 | 35,960 | 0 | 0 |
+
+The 392 direct-clean failures have literal component-map and
+omitted-colour certificates.  Translating the indicated circuit by the
+omitted colour makes all of its low values nonzero, so deleting it from
+the first-coordinate support gives a strictly smaller extendable
+projection.  Global minimality excludes this branch.  Hence every
+cardinality-minimum extendable projection of size at most twelve is
+cleanable.  See
+`scratch/minimum-projection-through12-clean-or-delete-20260729/` and
+`scratch/minimum-projection-size12-independent-audit-20260729/`.

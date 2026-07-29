@@ -18,9 +18,10 @@ are not independent human verification or peer review.
 
 - `scratch/minimum-projection-size5-theorem-20260729/` contains the full
   human proof for minimum sizes at most five.  The cumulative package
-  `scratch/minimum-projection-through11-cleanability-20260729/` extends
-  this through size eleven.  Its exact affine boundary classifier enumerates
-  every support shape forced by minimum exchange and directly cleans all
+  `scratch/minimum-projection-through12-clean-or-delete-20260729/` and
+  `scratch/minimum-projection-size12-independent-audit-20260729/` extend
+  this through size twelve.  The exact affine boundary classifiers enumerate
+  every support shape forced by minimum exchange and directly clean all
   125,178 valid dirty canonical word/partition states using independent
   \(\operatorname{GL}(2,2)\) maps on complement components and repaired
   low values on the projection circuits.  The dependency-free replay and
@@ -29,9 +30,11 @@ are not independent human verification or peer review.
   the first 14 direct-repair failures, all in the \(5+6\) shape, and
   constructs a size-five extendable replacement for every one.  A
   separately written valid-block checker reproduces all size-eleven
-  counts and replacements.  Consequently any
+  counts and replacements.  At size twelve, two independent enumerators
+  classify all 13,788,824 dirty states: 13,788,432 clean directly and 392
+  admit a strict circuit deletion, with zero residuals.  Consequently any
   counterexample to the minimum-projection selection principle has minimum
-  size at least twelve.
+  size at least thirteen.
 - `scratch/minimum-projection-known-strong-snarks-20260729/` freezes an
   exact SAT scan of seven retained order-34 and 7,654 retained order-40
   graph6 rows.  Every row has minimum projection size ten, and all 433,730
@@ -71,7 +74,7 @@ are not independent human verification or peer review.
   This closes a tempting one-matching shortcut but does not realize the
   four synchronized affine classes.
 - `preprint-minimum-fano-projection/` is the corresponding working
-  preprint.  It contains the human exchange and size-through-eleven proofs,
+  preprint.  It contains the human exchange and size-through-twelve proofs,
   all exact census reports, the Petersen limitation, checksums, and an
   explicit AI-use and human-review disclosure.
 - `search/minimum-projection-n130-20260729/` certifies that the retained

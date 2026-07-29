@@ -1642,7 +1642,7 @@ Open obligations:
      potential must state which of these two parameters it minimizes.
      Status: **SEMANTIC DISTINCTION CLOSED / VALUE-CLASS ROUTE REFUTED**.
 
-103. **Minimum-projection sizes at most eleven:** every globally minimum
+103. **Minimum-projection sizes at most twelve:** every globally minimum
      extendable projection in this range is cleanable.  The four-colour
      circuit corollary gives the complete support-shape list.  A direct
      boundary repair applies independent \(\mathrm{GL}(2,2)\) maps to the
@@ -1655,13 +1655,17 @@ Open obligations:
      certified size-five extendable replacement and is therefore
      nonminimum.  A separate valid-block implementation reproduces the
      size-eleven classification and replacement oracle.
+     At size twelve, two independent exact classifiers agree on all
+     13,788,824 dirty boundary states: 13,788,432 clean directly and 392
+     admit a strict circuit deletion, with zero residuals.  Literal
+     omitted-colour deletion certificates are frozen for all 392.
      Status: **CLOSED / HUMAN PROOFS PLUS EXACT FINITE CLASSIFICATION**.
 
-104. **Minimum-size-twelve boundary:** treat the support types \(12\),
-     \(4+8\), \(5+7\), \(6+6\), and \(4+4+4\).  Test the
-     clean-or-delete-a-circuit dichotomy suggested by the 14 size-eleven
-     failures: either directly clean the fixed support, or make one entire
-     circuit low-valued and nonzero so it can be deleted from the first
-     coordinate.  Convert any surviving state into a realizability and
-     full global-minimality test.
+104. **Minimum-size-thirteen boundary and universal dichotomy:** test the
+     clean-or-delete-a-circuit statement on the complete size-thirteen
+     shape list.  In parallel, prove the dichotomy for arbitrary support
+     size using the quotient Eulerian multigraph and its fixed transition
+     system, or find the smallest abstract counterstate.  Any surviving
+     state must then be tested against all strict support replacements and
+     graph realizability.
      Status: **OPEN / NEXT STRUCTURAL FRONTIER**.

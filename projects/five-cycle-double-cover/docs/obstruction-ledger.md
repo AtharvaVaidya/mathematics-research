@@ -1531,7 +1531,7 @@ one-matching shortest-\(T\)-join theorem.  See
 `scratch/petersen-minimum-tjoin-countermodel-20260729/`.
 
 ## O67 — No counterexample to minimum-projection selection has support at
-most eleven
+most twelve
 
 Status: **CLOSED / HUMAN THEOREM EXCLUDES THE RANGE**.
 
@@ -1551,6 +1551,12 @@ realizations are the triangle-expanded Petersen graph
 uncleanable, but its minimum extendable support is five and clean.
 
 Thus no counterexample to the minimum-projection selection principle has
-minimum size at most eleven.  The theorem gives no universal
+minimum size at most eleven.
+
+At size twelve, two independent exact classifiers agree on 13,788,824
+dirty boundary states.  Of these, 13,788,432 clean directly and 392 admit
+a strict circuit deletion; zero survive both branches.  The 392 literal
+deletion certificates are frozen and independently parsed.  Therefore no
+counterexample has minimum size twelve either.  The theorem gives no universal
 minimum-support bound and does not settle FiveCDC.  See
-`scratch/minimum-projection-through11-cleanability-20260729/`.
+`scratch/minimum-projection-through12-clean-or-delete-20260729/`.
