@@ -1,0 +1,15 @@
+{
+  "cycle_space_dimension": 7,
+  "disagreements": [],
+  "edges": 18,
+  "elapsed_seconds": 5.7,
+  "flow_gl_orbits": 900,
+  "graph6": "K??FEaKR@oE_",
+  "parallel_flags_per_flow": 21,
+  "schema": "six-point-parallel-component-criterion-audit-v1",
+  "scope": "Independent finite audit of a general theorem; it is not a FiveCDC resolution.",
+  "soluble_systems": 4856,
+  "status": "PASS",
+  "systems_checked": 18900,
+  "vertices": 12
+}

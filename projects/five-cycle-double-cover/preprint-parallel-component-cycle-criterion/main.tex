@@ -1,0 +1,641 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\geometry{margin=1in}
+\setlength{\emergencystretch}{2em}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\A}{\mathcal A}
+\newcommand{\Q}{\mathcal Q}
+\newcommand{\C}{\mathcal C}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\FiveCDC}{\textup{FiveCDC}}
+\newcommand{\one}{\mathbf 1}
+\numberwithin{equation}{section}
+
+\title{Parallel Six-Point Compression and a\\
+Component--Cycle Span Criterion for\\
+Five-Cycle Double Covers}
+\author{Atharva Vaidya\\
+\small AI-assisted research draft for independent human verification}
+\date{July 29, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fcolorbox{red!70!black}{red!4}{
+\parbox{0.91\textwidth}{
+\textbf{Resolution status, trust boundary, and AI use.}
+The standard five-cycle double cover conjecture remains open.  This
+manuscript proves an exact reformulation for loopless cubic multigraphs:
+after a nowhere-zero \(\F_2^3\)-flow, a Fano plane, and a direction have
+been chosen, a parallel six-point compression is soluble exactly when an
+explicit component defect belongs to a circuit-switch span.  Existentially
+choosing those data is equivalent to \FiveCDC; no universal choice is
+proved.  The orientable conjecture is not considered.
+
+OpenAI Codex agents using GPT-5-series models, under Atharva Vaidya's
+direction, discovered the formulation, derived the proofs, wrote the
+producer and checking programs, ran the computations, conducted an
+AI-assisted prior-art comparison, and drafted this manuscript.  The
+checker is structurally independent of the discovery implementation, but
+it is also AI-authored.  No human peer review or priority determination is
+claimed.  A human author must check every argument, rerun or independently
+reimplement the audits, complete a specialist literature review, and
+accept scholarly responsibility before submission.
+}}
+\end{center}
+
+\begin{abstract}
+Let \(W=\F_2^3\), let \(G\) be a finite connected loopless cubic
+multigraph, and fix a nowhere-zero \(W\)-flow \(f\).  A companion
+six-point one-hole construction asks for a coordinate-pair labelling
+supported on six points of \(W\), avoiding one additional pair which is
+then merged.  We give a purely combinatorial characterization for the
+21 translation classes in which the omitted pair and merge pair are
+parallel.
+
+Fix a two-plane \(H\le W\) and \(0\ne d\in H\).  The edges with values in
+\(H\) form components \(Q\) of degree one or three; the complementary
+edges form circuits on their leaves.  A cut defect
+\(\beta_H\in\F_2^{\Q}\) is determined by any one outside value.  Each
+outside circuit \(C\) supplies a switch vector
+\(\gamma_C^d\), recording the components in which \(C\) has an odd
+number of leaves whose inside-edge value differs from \(d\).  We prove
+that the parallel six-point system is soluble if and only if
+\[
+                  \beta_H\in\Span_{\F_2}\{\gamma_C^d:C\}.
+\]
+These columns are literal flow moves.  Adding \(d\) to every edge of a
+chosen outside circuit preserves a nowhere-zero flow and leaves its
+\(H\)-edge subgraph fixed; it changes \(\beta_H\) by exactly
+\(\gamma_C^d\).  Thus the parallel system is soluble exactly when a set
+of whole-circuit \(d\)-switches reaches the Hu\v{s}ek--\v{S}\'amal
+five-point condition \(\beta_H=0\).  Equivalently, on every outside
+circuit one chooses one of two \(d\)-paired colour classes so that the
+chosen edges become Eulerian after the \(H\)-components are contracted.
+
+We also prove that existentially choosing \(f,H,d\) in this criterion is
+equivalent to the existence of a standard five-cycle double cover.  We
+explain precisely how this differs from Hu\v{s}ek--\v{S}\'amal,
+Theorem~3.16: their five-point condition is the special case
+\(\beta_H=0\), whereas the circuit columns can cancel a nonzero defect.
+The graph-level existential statements are nevertheless equivalent.
+
+A standard-library checker independently generates all 900
+\(\mathrm{GL}(3,2)\)-orbits of nowhere-zero flows on a rigid
+12-vertex graph and compares the original affine and reduced decisions
+on all 18,900 parallel systems, with no disagreement.  A separate
+AI-authored SAT census records an odd 21-flag selector in every feasible
+star fibre of all 4,461 simple biconnected cubic graphs through order 16.
+These computations audit and motivate the reformulation; they do not
+resolve the universal conjecture.
+\end{abstract}
+
+\section{Definitions, conventions, and exact scope}
+
+A \emph{cycle} in this paper is an Eulerian edge-subset, not necessarily
+connected or \(2\)-regular.  A labelled five-cycle double cover is an
+indexed family \((C_1,\ldots,C_5)\) of cycles such that every edge lies
+in exactly two members.  Empty members are allowed, so ``five'' means
+``at most five.''  This agrees with the formulation of
+Hu\v{s}ek--\v{S}\'amal~\cite[Definition~1.2]{HusekSamal2026}.
+We work with finite connected loopless cubic multigraphs.  Parallel
+edges are distinct; loops are excluded.  General-graph reductions and
+the orientable variant are outside the present statement.
+
+Put \(W=\F_2^3\), written additively.  A map
+\[
+                      f:E(G)\longrightarrow W-\{0\}
+\]
+is a nowhere-zero \(W\)-flow when
+\[
+                      \sum_{e\ni v}f(e)=0
+                      \qquad(v\in V(G)).
+\]
+At a cubic vertex the three incident values are distinct and form the
+nonzero part of a unique two-plane \(L_v\le W\).
+
+The companion preprint~\cite{VaidyaSixPoint2026} proves the following
+potential description.  A compatible pair labelling assigns
+\[
+                       P_e\in\binom W2,\qquad
+                       \sum_{x\in P_e}x=f(e),
+\]
+such that each coordinate has even local degree.  For an incidence
+\(e\ni v\), put \(p=f(e)\) and choose either of the other two incident
+flow values \(s_{v,e}\).  All compatible labellings are parameterized
+by potentials \(t_v\in W\), with
+\begin{equation}
+ P_{v,e}=t_v+s_{v,e}+\langle p\rangle,                       \label{eq:side}
+\end{equation}
+subject to
+\begin{equation}
+ t_u+t_v+s_{u,e}+s_{v,e}\in\langle f(e)\rangle
+ \qquad(e=uv).                                               \label{eq:edgecompat}
+\end{equation}
+The choice of \(s_{v,e}\) does not affect the pair.
+
+Choose disjoint pairs \(R,M\in\binom W2\).  The six-point one-hole
+system additionally requires every local triangle to avoid the points
+of \(R\) and every edge label to differ from \(M\).  Identifying the two
+members of the unused pair \(M\) then gives five coordinate names
+\cite{VaidyaSixPoint2026}.  Translation of all eight points preserves
+the problem.
+
+We study the \emph{parallel} classes.  After translation they have the
+unique normal form
+\begin{equation}
+ R=\langle d\rangle=\{0,d\},\qquad
+ M=a+\langle d\rangle=\{a,a+d\},\qquad
+ H=\langle a,d\rangle,                                      \label{eq:normal}
+\end{equation}
+where \(H\le W\) is a two-plane and \(0\ne d\in H\).  There are seven
+planes and three nonzero directions in each, hence 21 parallel flags
+\((d,H)\).
+
+\begin{remark}[provisional novelty statement]
+Hu\v{s}ek--\v{S}\'amal already prove an exact flow formulation of
+\FiveCDC and the component criterion discussed in
+Section~\ref{sec:HS}.  The companion preprint already proves the general
+six-point affine system and its parallel/skew local tables.  The possible
+additional contribution here is narrower: the component--circuit
+elimination of the \emph{parallel} six-point system, the exact
+whole-circuit switch normal form relating it back to Theorem~3.16, and
+the elementary proof that the parallel subclass alone remains graph-level
+exact.  We have not found this precise factorization in the cited sources,
+but our search is incomplete and we make no claim of priority.
+\end{remark}
+
+\section{The component and circuit data}
+
+Fix \(f,H,d\) as above and set
+\begin{equation}
+ E_H=\{e:f(e)\in H\},\qquad F=E(G)-E_H.                     \label{eq:EH}
+\end{equation}
+At a vertex \(v\), either \(L_v=H\), in which case its \(E_H\)-degree is
+three, or \(L_v\cap H\) is a line, in which case its \(E_H\)-degree is
+one.  Call the latter vertices \emph{leaves}.  The graph \(F\) has
+degree two at every leaf and degree zero elsewhere, so its nonempty
+components are circuits.  Write \(\Q\) for the components of
+\((V(G),E_H)\) and \(\C\) for the \(F\)-circuits.
+
+For a leaf \(v\), let \(p_v\) be the value of its unique incident
+\(E_H\)-edge.  For \(Q\in\Q\) and \(C\in\C\), define
+\begin{equation}
+ \gamma_C^d(Q)=
+ \left|\{v\in V(Q)\cap V(C):p_v\ne d\}\right|\pmod2.         \label{eq:gamma}
+\end{equation}
+
+Choose any \(w\in W-H\), and define
+\begin{equation}
+ \beta_H(Q)=
+ \left|\delta_G(Q)\cap F\cap f^{-1}(w)\right|\pmod2.         \label{eq:beta}
+\end{equation}
+The next lemma makes this well defined.
+
+\begin{lemma}[outside-value independence]\label{lem:beta}
+For every \(Q\in\Q\), the value in \eqref{eq:beta} is independent of
+the choice \(w\in W-H\).
+\end{lemma}
+
+\begin{proof}
+Every vertex has degree one or three in \(Q\).  The handshaking lemma
+therefore gives \(|V(Q)|\equiv0\pmod2\).  Since \(G\) is cubic,
+\[
+ |\delta_G(Q)|\equiv 3|V(Q)|\equiv0\pmod2.
+\]
+Every edge of \(\delta_G(Q)\) lies in \(F\), hence has one of the four
+values outside \(H\).  Write \(H=\{0,p,q,p+q\}\) and choose
+\(w_0\notin H\).  Let \(n_0,n_p,n_q,n_{p+q}\) be the four boundary
+multiplicities modulo two.  Their sum is zero by the preceding
+even-cardinality equation.  Summing the flow equations over the
+vertices of \(Q\) gives
+\[
+ n_0w_0+n_p(w_0+p)+n_q(w_0+q)+n_{p+q}(w_0+p+q)=0.
+\]
+Comparing coefficients in the basis \((w_0,p,q)\) shows
+\[
+ n_p=n_q=n_{p+q}=n_0.
+\]
+Thus all four outside colour classes have the same boundary parity.
+\end{proof}
+
+\section{The parallel component criterion}
+
+The local lists for the parallel normal form
+\eqref{eq:normal}, proved in the companion paper, are
+\begin{equation}
+\A_L(R,M)=
+\begin{cases}
+W-H,&L=H,\\
+M,&d\in L,\ L\ne H,\\
+R,&d\notin L.
+\end{cases}                                                  \label{eq:locallist}
+\end{equation}
+For completeness, this table can be checked directly.  A local
+triangle \((t+L)-\{t\}\) must avoid \(R\) and must not have \(M\) as a
+side.  If \(d\in L\), the two omitted points lie in one \(L\)-coset; if
+\(d\notin L\), they lie in opposite cosets.  Separating \(L=H\) from
+the other cases gives \eqref{eq:locallist}.
+
+\begin{theorem}[parallel component criterion]\label{thm:component}
+For a fixed nowhere-zero \(W\)-flow \(f\) and parallel flag \((d,H)\),
+the six-point one-hole potential system
+\eqref{eq:side}--\eqref{eq:locallist} is soluble if and only if
+\begin{equation}
+             \beta_H\in
+             \Span_{\F_2}\{\gamma_C^d:C\in\C\}
+             \subseteq\F_2^{\Q}.                            \label{eq:span}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Choose \(b\notin H\).  Let \(v\) be a leaf, with inside-edge value
+\(p_v\).  By \eqref{eq:locallist},
+\[
+                         y_v:=t_v+p_v\in M.
+\]
+Thus there is a unique \(z_v\in\F_2\) such that
+\begin{equation}
+                         y_v=a+z_vd.                         \label{eq:y}
+\end{equation}
+
+Consider an \(F\)-edge of value \(q\) joining leaves \(u,v\).  At
+either endpoint, formula \eqref{eq:side}, using \(p_u\) or \(p_v\) as
+the other incident value, writes its side as
+\(y+\langle q\rangle\).  The endpoint sides agree exactly when
+\[
+                         y_u+y_v\in\langle q\rangle.
+\]
+The left side belongs to \(H\), while \(q\notin H\), so this holds
+exactly when \(y_u=y_v\).  Hence \(z_v\) is a single common variable
+\(z_C\) on each circuit \(C\in\C\).
+
+We now encode sides on the \(E_H\)-edges.  An outside pair of difference
+\(p\in H-\{0\}\) is one of the two cosets of
+\(\langle p\rangle\) in \(b+H\).  Give
+\(b+\langle p\rangle\) port bit one and the other pair port bit zero.
+At a degree-three \(E_H\)-vertex, the four potentials \(t\in b+H\)
+give precisely the four even-parity triples of incident port bits.
+Equivalently, writing \(t=b+h\) and the incident values as
+\(p,q,p+q\), a direct substitution in \eqref{eq:side} shows that the
+three port bits have xor zero.
+
+At a leaf \(v\), write either incident outside value as \(q=b+h\).
+The port bit on the \(p_v\)-edge equals one precisely when
+\begin{equation}
+                     a+h+z_Cd\in\langle p_v\rangle.          \label{eq:leafport}
+\end{equation}
+At \(z_C=0\), condition \eqref{eq:leafport} holds exactly when one of
+the two incident \(F\)-edge values is \(b+a\).  Adding \(d\) toggles
+the condition exactly when \(p_v\ne d\).  Consequently the forced
+leaf bit is
+\begin{equation}
+ \ell_v(z_C)=c_v+z_C\one[p_v\ne d],                          \label{eq:ell}
+\end{equation}
+where \(c_v=1\) precisely when an incident outside edge has value
+\(b+a\).
+
+Within a connected component \(Q\) of \(E_H\), common edge port bits
+satisfying xor zero at every degree-three vertex exist exactly when
+\begin{equation}
+                  \sum_{\substack{v\in V(Q)\\v\ {\rm leaf}}}
+                  \ell_v(z_{C(v)})=0.                        \label{eq:component}
+\end{equation}
+Necessity follows by summing all vertex equations.  For sufficiency,
+solve edge bits successively along a spanning tree of \(Q\); the only
+remaining equation is \eqref{eq:component}.  A single edge between two
+leaves has the same equality condition, and a component without leaves
+has no obstruction.
+
+The coefficient of \(z_C\) in \eqref{eq:component} is
+\(\gamma_C^d(Q)\).  Its constant term counts incidences in \(Q\) of
+\((b+a)\)-valued \(F\)-edges.  An edge internal to \(Q\) contributes
+twice and a boundary edge once, so the constant term is
+\(\beta_H(Q)\), by Lemma~\ref{lem:beta}.  Thus all component equations
+are the binary system
+\[
+                    \sum_{C\in\C}\gamma_C^d z_C=\beta_H.
+\]
+It is soluble exactly when \eqref{eq:span} holds.
+\end{proof}
+
+\section{The circuit-switch normal form}
+
+Contract every component \(Q\in\Q\) to one vertex, retaining the
+resulting loops and parallel edges.  For \(C\in\C\) and \(x\notin H\),
+let
+\[
+                   \delta_C^x\in\F_2^{\Q}
+\]
+be the odd-degree boundary vector of the \(x\)-valued edges of \(C\) in
+this quotient.
+
+\begin{theorem}[whole-circuit switch normal form]\label{thm:switch}
+For \(z=(z_C:C\in\C)\in\F_2^\C\), define
+\begin{equation}
+ f^z(e)=
+ \begin{cases}
+ f(e)+z_Cd,&e\in E(C),\ C\in\C,\\
+ f(e),&e\in E_H.
+ \end{cases}                                                 \label{eq:switch}
+\end{equation}
+Then \(f^z\) is a nowhere-zero \(W\)-flow,
+\(E_H(f^z)=E_H(f)\), and
+\begin{equation}
+             \beta_H(f^z)=
+             \beta_H(f)+\sum_{C\in\C}z_C\gamma_C^d.          \label{eq:betaswitch}
+\end{equation}
+Consequently the parallel six-point system for \((f,d,H)\) is soluble
+if and only if a set of whole outside-circuit \(d\)-switches produces a
+flow \(f^z\) satisfying the Hu\v{s}ek--\v{S}\'amal five-point condition
+\(\beta_H(f^z)=0\).
+\end{theorem}
+
+\begin{proof}
+Every leaf of \(E_H\) is incident with two edges of its unique
+\(F\)-circuit, so a selected circuit adds \(d+d=0\) to the flow sum
+there.  It changes no edge at a degree-three \(E_H\)-vertex.  Therefore
+\(f^z\) is a flow.  A value outside \(H\), when translated by
+\(d\in H\), remains outside \(H\) and in particular remains nonzero.
+Thus \(f^z\) is nowhere zero and its \(H\)-valued edge set is unchanged.
+
+Fix \(w\notin H\).  On a selected circuit, adding \(d\) swaps the
+\(w\)- and \((w+d)\)-valued edge classes.  The change of the defect is
+therefore \(\delta_C^w+\delta_C^{w+d}\).  At a leaf \(v\in C\), its two
+outside values differ by \(p_v\); they meet the \(d\)-pair
+\(\{w,w+d\}\) in odd parity exactly when \(p_v\ne d\).  After internal
+edges of each \(Q\) cancel twice, this boundary difference is
+\(\gamma_C^d\).  Summing over selected circuits proves
+\eqref{eq:betaswitch}.  Finally,
+\[
+ \beta_H(f^z)=0
+ \quad\Longleftrightarrow\quad
+ \beta_H(f)\in\Span\{\gamma_C^d:C\in\C\},
+\]
+so Theorem~\ref{thm:component} proves the last assertion.
+\end{proof}
+
+\begin{proposition}[circuit-colour dictionary]\label{prop:dictionary}
+For every \(C\in\C\), every \(d\in H-\{0\}\), and every \(w\notin H\),
+\begin{equation}
+ \gamma_C^d=\delta_C^w+\delta_C^{w+d},
+ \qquad
+ \beta_H=\sum_{C\in\C}\delta_C^w.                            \label{eq:dictionary}
+\end{equation}
+Consequently, the parallel system for \((d,H)\) is soluble if and only
+if one can choose independently on each circuit \(C\) either the
+\(w\)-valued or the \((w+d)\)-valued edges so that the union of all
+chosen edges is Eulerian in the contracted quotient.
+\end{proposition}
+
+\begin{proof}
+At a leaf \(v\in C\), the two incident outside values differ by
+\(p_v\).  Their intersection with the \(d\)-pair
+\(\{w,w+d\}\) has even size if \(p_v=d\) and odd size otherwise.
+Summing this incidence parity over the leaves of \(C\) in each \(Q\),
+with internal edges counted twice, proves the first identity.  The
+second identity is just \eqref{eq:beta} split circuit by circuit.
+
+Now \(\beta_H\) belongs to the span of the \(\gamma_C^d\) exactly when
+there are \(z_C\in\F_2\) with
+\[
+ 0=\beta_H+\sum_C z_C\gamma_C^d
+  =\sum_C\bigl((1+z_C)\delta_C^w+
+                     z_C\delta_C^{w+d}\bigr).
+\]
+This says precisely that the selected union has zero boundary vector.
+\end{proof}
+
+\section{The parallel normal form is graph-level exact}
+
+\begin{theorem}[exact parallel reformulation]\label{thm:exact}
+A finite connected loopless cubic multigraph \(G\) has a standard
+five-cycle double cover if and only if there are a nowhere-zero
+\(W\)-flow \(f\), a two-plane \(H\le W\), and
+\(0\ne d\in H\) satisfying \eqref{eq:span}.
+\end{theorem}
+
+\begin{proof}
+A five-cycle double cover is equivalently an edge labelling by
+two-subsets of five coordinate names such that each name has even local
+degree.  At a cubic vertex the three duads must be the three sides of a
+triangle on three names: parity makes their symmetric difference empty,
+and no two can coincide.  Conversely such duad labels recover the five
+Eulerian coordinate edge-sets.
+
+Suppose first that \(G\) has such a labelling.  Inject the five coordinate
+names into \(W\), leaving three unused points
+\[
+                              B=\{u,v,w\}.
+\]
+Give an edge labelled \(\{x,y\}\) the value \(x+y\).  The local triangle
+condition makes this a nowhere-zero \(W\)-flow.  Put
+\begin{equation}
+             R=\{u,v\},\qquad d=u+v,\qquad
+             M=\{w,w+d\}.                                  \label{eq:unused}
+\end{equation}
+These pairs are parallel and disjoint.  Indeed, \(w\ne u,v\);
+\(w+d=u\) would imply \(w=v\), and \(w+d=v\) would imply \(w=u\).
+Every original triangle avoids \(R\), and no original edge label equals
+\(M\), because \(u,v,w\) are unused.  Thus the original labelling is a
+solution of this parallel six-point system.  Translating by \(u\) puts
+\eqref{eq:unused} in the normal form \eqref{eq:normal}, with
+\[
+                             H=\langle d,w+u\rangle.
+\]
+Theorem~\ref{thm:component} gives \eqref{eq:span}.
+
+Conversely, Theorems~\ref{thm:component} and~\ref{thm:switch} give a
+whole-circuit switched flow \(f^z\) satisfying \(\beta_H(f^z)=0\).
+By Hu\v{s}ek--\v{S}\'amal Theorem~3.16 and Observation~3.15, this
+already gives a five-cycle double cover.
+
+There is also a direct compression proof.  A solution of a parallel
+system gives compatible duad labels on the six points \(W-R\), with
+\(M\) unused.  Identify the two endpoints of \(M\).  No used duad
+collapses, because \(M\) itself is unused.  Each unmerged coordinate
+retains even local degree, and the merged coordinate has degree equal
+modulo two to the sum of the two old degrees.  The quotient labels
+therefore give five Eulerian edge-subsets covering every edge exactly
+twice.
+\end{proof}
+
+\section{Exact relation to Hu\v{s}ek--\v{S}\'amal}
+\label{sec:HS}
+
+Hu\v{s}ek--\v{S}\'amal fix a nonzero functional
+\(\mu\in W^*\), an outside value \(w\) with \(\mu(w)=1\), and set
+\[
+ F_{\rm HS}=\{e:\mu(f(e))=1\},\qquad
+ M_{\rm HS}=f^{-1}(w),\qquad
+ Z=\{v:v\hbox{ meets }M_{\rm HS}\}.
+\]
+With \(H=\ker\mu\), their graph
+\((V,E\setminus F_{\rm HS})\) is exactly our \((V,E_H)\).
+For a component \(Q\in\Q\),
+\[
+ |Z\cap V(Q)|
+ \equiv|\delta_G(Q)\cap f^{-1}(w)|
+ =\beta_H(Q)\pmod2,
+\]
+because an internal \(w\)-edge contributes two endpoints and a boundary
+\(w\)-edge contributes one.
+
+Their Theorem~3.16 states that their fixed-flow five-point system is
+soluble exactly when every such component contains an even number of
+vertices of \(Z\)~\cite[Theorem~3.16]{HusekSamal2026}.  In our notation,
+this is
+\begin{equation}
+                              \beta_H=0.                     \label{eq:HS}
+\end{equation}
+It is the clean-defect special case of
+Theorem~\ref{thm:component}: if \eqref{eq:HS} holds, then
+\eqref{eq:span} holds for all three nonzero \(d\in H\).
+For a fixed \(f,H\), our six-point system can also be soluble when
+\(\beta_H(f)\ne0\), because the circuit columns can cancel the defect.
+Theorem~\ref{thm:switch} gives the exact relationship: this is the
+closure of the Hu\v{s}ek--\v{S}\'amal test under legal additions of
+\(d\) on whole outside circuits.  The switched flow \(f^z\) has the
+same \(E_H\)-components and satisfies \(\beta_H(f^z)=0\).  In the
+coordinate-pair picture, the same freedom comes from allowing a sixth
+coordinate and forbidding one merge pair rather than requiring three
+coordinates to be empty.
+
+The distinction must not be overstated.  Hu\v{s}ek--\v{S}\'amal already
+prove that the existence of some flow and plane satisfying
+\eqref{eq:HS} is equivalent to \FiveCDC
+\cite[Observation~3.15 and Conjecture~3.19]{HusekSamal2026}.
+Theorem~\ref{thm:exact} gives another existentially equivalent normal
+form, not a stronger graph-level existence theorem.  Their
+Theorem~3.16 also counts the solutions of the fixed-flow five-point
+system; the present theorem records solubility, not an analogous count.
+
+\section{Computational audits}
+\label{sec:computation}
+
+The proofs above are elementary and do not depend on computation.  The
+following two experiments have different trust boundaries and are
+reported separately.
+
+\subsection{Independent fixed-flow regression audit}
+
+The standard-library program \texttt{verify.py} in the accompanying
+directory:
+\begin{enumerate}
+\item decodes the rigid 12-vertex cubic graph
+      \texttt{K??FEaKR@oE\_} and checks connectedness and bridgelessness;
+\item independently constructs its binary cycle space and all 900
+      \(\mathrm{GL}(3,2)\)-orbits of nowhere-zero \(W\)-flows;
+\item for each of the 21 flags, constructs the original vertex-potential
+      affine system directly from local triangles and edge equations;
+\item asserts that its scalar local affine rows recover the literal
+      allowed potential set exactly;
+\item separately constructs the component system of
+      Theorem~\ref{thm:component}; and
+\item checks both decisions, Lemma~\ref{lem:beta},
+      \eqref{eq:dictionary}, and the switch update
+      \eqref{eq:betaswitch} on all \(900\cdot21=18{,}900\) systems.
+\end{enumerate}
+The result is 18,900 agreements and 4,856 soluble systems.  This is a
+finite regression audit, not a proof of the general theorem.
+
+\subsection{Star-fibre selector census}
+
+For a vertex-star packing \(P\), let \(f_P\) be its
+fundamental-completion flow and let
+\[
+ \chi_{d,H}(P)=
+ \one\!\left[\beta_H(P)\in
+       \Span\{\gamma_C^d(P):C\in\C(P,H)\}\right].
+\]
+A possible universal selection target is to choose \(P\) with
+\begin{equation}
+       \bigoplus_{\substack{H\le W,\ \dim H=2\\0\ne d\in H}}
+       \chi_{d,H}(P)=1.                                     \label{eq:selector}
+\end{equation}
+The xor in \eqref{eq:selector} has 21 terms and is
+\(\mathrm{GL}(3,2)\)-invariant.  It implies that at least one parallel
+system is soluble.  Universal existence of such a packing is open.
+
+An AI-authored lazy-SAT producer exhaustively searched every feasible
+rooted star fibre in every simple biconnected cubic graph through order
+16.  The corpus has 4,461 graphs and 50,894 feasible rooted fibres; a
+packing satisfying \eqref{eq:selector} was retained for every one.  The
+producer uses exactly-one omission colourings, lazy connectivity cuts,
+literal spanning-tree checks, fundamental completions, and binary affine
+elimination.  This census is frozen separately at
+\[
+\texttt{../output/six-point-parallel-selector-through16/}.
+\]
+Its manifest and exact command are recorded in the accompanying
+\texttt{README.md}.  The producer and the semantic checks are AI-authored,
+and the exhaustive run does not have an independently checked SAT proof
+certificate.  The result is therefore finite computational evidence, not
+a theorem for arbitrary order and not independent human verification.
+
+\section{Open selection problem}
+
+Theorems~\ref{thm:component} and~\ref{thm:exact} isolate the remaining
+universal problem without solving it.  For each plane \(H\), the defect
+\(\beta_H\) depends only on the contracted \(E_H\)-component quotient,
+while the three directions \(d\in H-\{0\}\) change the circuit columns.
+One must select a flow---or, in the star-fibre approach, a packing---for
+which at least one of the 21 defects lies in its corresponding span.
+
+The parity selector \eqref{eq:selector} is deliberately stronger than
+existence of one soluble flag.  Its finite success suggests searching
+for a local exchange formula under basis exchanges of the three
+spanning trees.  No such formula is proved here.  In particular, the
+fixed-flow characterizations do not eliminate the existential quantifier
+which carries the original difficulty of \FiveCDC.
+
+\section*{Reproducibility and disclosure}
+
+From this directory, run the fixed-flow checker and rebuild:
+\begin{verbatim}
+python3 verify.py --output RESULT.json
+SOURCE_DATE_EPOCH=1785283200 tectonic main.tex
+shasum -a 256 -c SHA256SUMS
+\end{verbatim}
+The selector package has its own frozen sources, corpus, result, census,
+and manifest.  See \texttt{README.md} for its exact check command.
+
+Every proof and program in this package was produced with material
+assistance from OpenAI Codex agents using GPT-5-series models under
+human direction.  ``Independent'' refers only to separation between
+implementations and derivations inside the AI-assisted project.  It does
+not mean independent human verification.  The literature comparison,
+including the interpretation of Hu\v{s}ek--\v{S}\'amal
+Theorem~3.16, was also AI-assisted and was checked against arXiv
+version~1 dated July 27, 2026.  Specialist review remains necessary.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
