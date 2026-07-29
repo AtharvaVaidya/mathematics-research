@@ -131,6 +131,17 @@ Petersen graph.  Its displayed two-\(5\)-circuit support has no clean
 extension, but every extension strictly deletes one circuit and reaches
 a clean global minimum of size five.
 
+For general several-circuit states we reduce fixed-map cleanliness to an
+affine XOR system with two binary variables per relative circuit
+translation.  Every inconsistency has a dual component-union witness.
+Postcomposing precisely those component maps by one common element of
+\(\operatorname{GL}(2,2)\) preserves integrability.  A new six-map parity
+identity proves that one of the six choices always neutralizes that
+particular witness.  The proof is a four-by-four quadratic table followed
+by cancellation on cyclic selected and unselected runs.  This is
+single-witness neutralization, not simultaneous cleaning: the sharp
+size-fourteen state shows that another witness can remain or appear.
+
 At size fifteen the primary exact classifier enumerates \(26{,}492\)
 word orbits and \(35{,}247{,}202{,}556\) charge-valid abstract states
 over all eight support shapes.  Of the \(31{,}088{,}622{,}592\) dirty
@@ -284,6 +295,9 @@ The contribution of this note is narrower:
         several-circuit state, together with the Petersen
         two-occurrence boundary showing why the balance hypothesis cannot
         simply be dropped;
+  \item an affine-XOR duality theorem for general several-circuit
+        cleaning and a six-map identity that legally neutralizes any one
+        chosen dual inconsistency witness;
   \item four simultaneous shortest-join consequences;
   \item a general inflation theorem showing that those four inequalities,
         at one fixed flow, do not force one-round Kempe descent;
@@ -943,10 +957,116 @@ total was zero.  Thus every circuit equation remains consistent.
 
 \begin{remark}
 The proposition turns every failed translation system into six
-coordinated feasible map choices.  A universal proof still needs a
-well-founded progress statement: one of these choices must clean, make
-some circuit omit a colour, or decrease an invariant.  No such invariant
-is proved here.
+coordinated feasible map choices.  The next proposition proves that these
+choices can always neutralize the particular dual witness that produced
+them.  A universal proof still needs a well-founded progress statement,
+because a different witness may appear after the switch.
+\end{remark}
+
+\begin{proposition}[six-map witness neutralization]
+\label{prop:sixmapneutralization}
+Let \(Y\) be the component union supplied by
+Proposition~\ref{prop:dualcut}.  For
+\(U\in\operatorname{GL}(2,2)\), postcompose by \(U\) the component maps
+inside \(Y\), reintegrate on every support circuit, and let
+\[
+ F_Y(U)=
+ \sum_{W_a\subseteq Y} b_a(U)
+ =
+ \sum_{e\in\delta(Y)\cap h}q(r_e^U).                    \tag{15c}
+\]
+The value is independent of the permitted circuit translations.  If
+\(\{I,\rho,\rho^2\}\) is the order-three subgroup of
+\(\operatorname{GL}(2,2)\) and
+\(\tau_1,\tau_2,\tau_3\) are its three involutions, then
+\[
+\begin{aligned}
+ F_Y(I)+F_Y(\rho)+F_Y(\rho^2)&=0,\\
+ F_Y(\tau_1)+F_Y(\tau_2)+F_Y(\tau_3)&=0.
+\end{aligned}                                           \tag{15d}
+\]
+Consequently, if \(Y\) is a dual inconsistency witness before the switch,
+so \(F_Y(I)=1\), then one of the six legal choices of \(U\) preserves the
+dual balance of \(Y\) but changes its right-hand-side sum to zero.
+\end{proposition}
+
+\begin{proof}
+It is enough to work on one oriented support circuit.  At its \(i\)-th
+vertex put \(\epsilon_i=1\) when the containing complement component lies
+in \(Y\), and put
+\[
+                    g_i=L_{\pi_i}d_i=r_{i-1}+r_i.
+\]
+The dual balance in Proposition~\ref{prop:dualcut} is equivalently
+\[
+                         \bigoplus_{\epsilon_i=1}g_i=0.  \tag{15e}
+\]
+Choose cyclic edge potentials \(p_i\in K\) satisfying
+\[
+                         p_{i-1}+p_i=\epsilon_i g_i.     \tag{15f}
+\]
+Equation (15e) is exactly the condition that this integration closes.
+After the maps inside \(Y\) are postcomposed by \(U\), one compatible
+support word is
+\[
+                         r_i^U=r_i+(U+I)p_i.             \tag{15g}
+\]
+Indeed its derivative is \(Ug_i\) at a selected vertex and \(g_i\)
+otherwise.  The selected derivative xor after the switch is
+\(U\bigoplus_{\epsilon_i=1}g_i=0\); thus the balance of \(Y\) persists.
+Proposition~\ref{prop:affineclean} then also shows that \(F_Y(U)\) is
+unchanged by arbitrary independent translations of the support circuits.
+
+It remains to sum \(q(r_i^U)\) on the circuit edges crossing between
+selected and unselected vertices.  Identify \(K\) with
+\(\{0,1,2,3\}\), with \(q(3)=1\) and \(q(0)=q(1)=q(2)=0\).  Direct
+evaluation of the four possible \(r,p\) gives, for either of the
+three-element sets of maps in (15d),
+\[
+\begin{array}{c|cccc}
+H(r,p)&p=0&p=1&p=2&p=3\\ \hline
+r=0&0&1&1&0\\
+r=1&0&1&0&1\\
+r=2&0&0&1&1\\
+r=3&1&1&1&1
+\end{array}
+\qquad
+H(r,p)=q(r+p)+{\bf1}_{p\ne0},                            \tag{15h}
+\]
+where
+\[
+ H(r,p)=\sum_{U\in\{I,\rho,\rho^2\}}q(r+(U+I)p)
+       =\sum_{U\in\{\tau_1,\tau_2,\tau_3\}}q(r+(U+I)p).
+\]
+Hence either three-map sum of the present circuit's contribution to
+\(F_Y\) is
+\[
+ \sum_{e_i\in\delta(Y)}
+       \bigl(q(r_i+p_i)+{\bf1}_{p_i\ne0}\bigr).           \tag{15i}
+\]
+Put \(b_i=r_i+p_i\).  Equations (15f) and
+\(r_{i-1}+r_i=g_i\) show that \(b_i\) is constant across each consecutive
+run of selected vertices.  Its two \(q(b_i)\) terms on the flanking cut
+edges therefore cancel.  Likewise \(p_i\) is constant across every run of
+unselected vertices, so the two flanking
+\({\bf1}_{p_i\ne0}\) terms cancel.  Thus (15i) is zero on every circuit,
+proving (15d).
+
+Finally \(F_Y(I)=1\) and the first identity in (15d) force at least one of
+\(F_Y(\rho),F_Y(\rho^2)\) to be zero.  The post-switch balance already
+proved means that the same selected row combination remains in the left
+kernel, now with zero right-hand side.  It is therefore no longer an
+inconsistency witness.
+\end{proof}
+
+\begin{remark}
+Proposition~\ref{prop:sixmapneutralization} removes any \emph{chosen}
+Farkas witness at every boundary size, but it does not remove all witnesses
+simultaneously.  The size-fourteen state in
+Proposition~\ref{prop:sizefourteenfailure} has neither a clean nor a
+deletion choice, so repeated witness neutralization cannot be assumed to
+terminate without a new monotone invariant or additional realization
+information.
 \end{remark}
 
 \begin{theorem}[minimum projections through size eleven]
@@ -2203,7 +2323,12 @@ obstruction identity, and the circuitwise-balanced corollary displayed
 above.  A separate hostile agent audit checked the expansion grouping,
 the leaf cancellation, all no-leaf graphs through seven tensor vertices,
 and all 4,096 three-vertex tensors; this remains agent review, not
-independent human verification.  Codex agents also derived the
+independent human verification.  Codex agents also derived the fixed-map
+quadratic reduction and the six-map witness-neutralization identity.
+A separately written hostile checker recomputed the 16-entry local table
+and verified both identities on 126,258 balanced circuit rows through
+length eight.  This is an independent implementation by another agent,
+not independent human review.  Codex agents also derived the
 two-occurrence interaction dictionary and Petersen descent.  A separate
 hostile audit checked the complete ten-orbit table, the analytic
 60-flow and 320-map counts, the literal Petersen realization, the

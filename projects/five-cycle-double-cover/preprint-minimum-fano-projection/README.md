@@ -161,12 +161,23 @@ outputs, and hash ledger.
 The human-checkable reduction showing that, for fixed component maps,
 cleaning is an affine XOR system is written in full at
 `scratch/minimum-projection-fixed-map-affine-cleaning-20260729/README.md`.
-It also derives dual-cut feasible moves and records the exact
-size-fourteen counterstate.  The Kempe escapes show how internal
-two-colour paths supply additional information absent from the abstract
-map-choice implication.  The unresolved frontier starts at support size
-sixteen and, structurally, in multi-circuit states that are not
-circuitwise balanced.
+The companion derivation
+`scratch/clean-or-delete-quadratic-reduction-20260729.md` also derives the
+dual system and the new identity in one notation.  The manuscript now proves a
+six-map parity identity: postcomposing the maps on the components selected
+by any one dual inconsistency witness preserves circuit integrability, and
+one of the six \(\operatorname{GL}(2,2)\) choices changes that witness's
+obstruction bit from one to zero.  The independent audit at
+`scratch/clean-or-delete-quadratic-reduction-audit-20260729/` recomputes
+the 16-entry local table and checks both identities on 126,258 balanced
+circuit rows through length eight.  This neutralizes one chosen witness
+only; it is not a simultaneous cleaning or termination theorem.
+
+The same reduction records the exact size-fourteen counterstate.  The
+Kempe escapes show how internal two-colour paths supply additional
+information absent from the abstract map-choice implication.  The
+unresolved frontier starts at support size sixteen and, structurally, in
+multi-circuit states that are not circuitwise balanced.
 
 The exact standard convention and general-to-cubic/snark reductions are
 proved in

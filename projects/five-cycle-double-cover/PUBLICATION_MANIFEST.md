@@ -95,6 +95,19 @@ are not independent human verification or peer review.
   circuit-deletion alternative, and dual-cut coordinated feasible moves.
   It also records the sharp size-fourteen failure of the unrestricted
   map-choice implication.
+- `scratch/clean-or-delete-quadratic-reduction-20260729.md` gives the
+  companion algebraic proof of the quadratic parity collapse, translation
+  linearization, exact dual obstruction, deletion certificate, and
+  six-map witness-neutralization identity.
+- `scratch/clean-or-delete-quadratic-reduction-audit-20260729/`
+  independently audits the new six-map witness-neutralization theorem.
+  The theorem proves that a common \(\operatorname{GL}(2,2)\) switch on
+  the components selected by any one dual inconsistency witness preserves
+  circuit integrability and can change that witness's obstruction bit
+  from one to zero.  The checker recomputes the 16-entry quadratic table
+  and verifies both three-map identities on 126,258 balanced circuit rows
+  through length eight.  This is a single-witness theorem only; it does
+  not prove simultaneous cleanliness or termination.
 - `scratch/minimum-projection-size14-dichotomy-counterstate-20260729/`
   gives the first total-support counterstate to unrestricted clean or
   delete.  Its \(7+7\) word/partition has 320 normalized feasible map
@@ -160,7 +173,8 @@ are not independent human verification or peer review.
   four synchronized affine classes.
 - `preprint-minimum-fano-projection/` is the corresponding working
   preprint.  It contains the human exchange and size-through-fifteen
-  proofs, the universal tensor argument, the sharp size-fourteen
+  proofs, the universal tensor argument, the six-map
+  witness-neutralization proof, the sharp size-fourteen
   support-preserving method counterstate, the Kempe escapes, all exact
   census reports, the Petersen limitation, checksums, and an explicit
   AI-use and human-review disclosure.

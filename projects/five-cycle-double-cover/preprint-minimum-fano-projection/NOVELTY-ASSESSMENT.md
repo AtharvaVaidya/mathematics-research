@@ -48,7 +48,11 @@ The manuscript proves:
 13. a conditional orbit-reflecting \(K_{3,3}-e\) inflation theorem that
     transfers any hypothetical goal-free dynamic boundary orbit to one
     satisfying all four recomputed exchange inequalities at every
-    reachable state.
+    reachable state; and
+14. a six-map quadratic parity identity proving that every individual
+    dual witness to failure of the fixed-map affine cleaning system can
+    be neutralized by a legal common \(\operatorname{GL}(2,2)\) switch on
+    its selected component union.
 
 This is a partial theorem about the Hušek--Šámal flow criterion.  It does
 not resolve the Five-Cycle Double Cover Conjecture.
@@ -97,6 +101,13 @@ isotropic-system theory.  The manuscript therefore makes no priority
 claim for that lemma pending expert comparison with Bouchet's and
 Traldi's frameworks.
 
+The six-map witness-neutralization identity is likewise presented as a
+new result of this project, not as an established priority claim.  Its
+proof is elementary and fully displayed, and an independent agent
+recomputed its local table and exhaustively tested 126,258 balanced
+circuit rows.  A specialist should still compare it with switching
+identities in binary isotropic-system and circuit-partition theory.
+
 ## Publication judgment
 
 The exchange theorem, through-fifteen boundary theorem, the universal
@@ -119,7 +130,10 @@ dropped: direct cleaning fails, but strict deletion succeeds for every
 extension.  The two-terminal theorem also excludes an
 unbounded dynamic-trap class without computation, while the conditional
 \(K_{3,3}-e\) theorem cleanly separates boundary-orbit obstruction from
-the metric exchange inequalities.  A targeted web/arXiv screen found no
+the metric exchange inequalities.  The six-map identity adds a genuine
+unbounded algebraic fact: any chosen affine dual obstruction can be
+removed legally, while the size-fourteen counterstate proves that this
+does not imply simultaneous removal.  A targeted web/arXiv screen found no
 theorem stated in the language of minimum extendable Fano projections, but
 this does not establish priority.  The result is suitable for public
 circulation as an explicitly provisional AI-assisted working preprint.
@@ -149,11 +163,14 @@ theorem to higher-degree vertices.
 OpenAI Codex agents under Atharva Vaidya's direction discovered the proof
 route, counterstates, size-fourteen and size-fifteen Kempe escapes, the
 relative-\(\mathrm{GL}(2,2)\) tensor proof, the Petersen interaction
-dictionary and descent, and the static-inflation obstruction; proposed
+dictionary and descent, the six-map witness-neutralization identity, and
+the static-inflation obstruction; proposed
 the two-terminal cleaning and orbit-reflecting
 \(K_{3,3}-e\) lemmas; wrote the exact
 classifiers, exhaustive certificate builders, and independent checkers;
 performed the preliminary literature screen; and drafted the manuscript
 and this assessment.  A hostile agent audit of the inflation proof passed
-after correcting its terminal-distance exposition.  Agent agreement is
+after correcting its terminal-distance exposition.  A separate hostile
+agent audit recomputed the six-map table and checked both identities on
+126,258 balanced circuit rows through length eight.  Agent agreement is
 not independent human verification or peer review.

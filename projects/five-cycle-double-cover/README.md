@@ -68,9 +68,14 @@ does **not** resolve FiveCDC.
 The fixed-map translation search is reduced by a displayed human proof to
 an affine XOR system in
 `scratch/minimum-projection-fixed-map-affine-cleaning-20260729/README.md`;
-the note derives dual-cut feasible moves and records the exact
-size-fourteen failure of the unrestricted map-choice statement.  The
-size-fourteen Kempe theorem is in
+the note derives dual-cut feasible moves.  A new human proof shows that a
+legal common \(\operatorname{GL}(2,2)\) switch can neutralize any one
+chosen dual witness.  The independent package
+`scratch/clean-or-delete-quadratic-reduction-audit-20260729/` recomputes
+the 16-entry table and checks both six-map identities on 126,258 balanced
+circuit rows.  This is not a simultaneous-cleaning theorem: the same note
+records the exact size-fourteen failure of the unrestricted map-choice
+statement.  The size-fourteen Kempe theorem is in
 `scratch/minimum-projection-through14-cleanability-20260729/` and
 `scratch/minimum-projection-size14-kempe-escape-20260729/`.  Larger support
 sizes remain uncontrolled in general; the unresolved structural frontier
