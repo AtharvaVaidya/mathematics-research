@@ -1,0 +1,352 @@
+{
+  "candidate_swaps_checked": 1037514,
+  "d_min_only_complete_safe_plateau_ball_radius": 3,
+  "d_min_only_lower_escape_distance": 4,
+  "d_min_only_safe_plateau_layer_histogram": {
+    "0": 1,
+    "1": 13,
+    "2": 108,
+    "3": 836
+  },
+  "d_min_only_safe_plateau_states": 958,
+  "d_min_only_target_class_by_source_layer": {
+    "0:higher_4": 38,
+    "0:higher_6": 14,
+    "0:safe_plateau": 13,
+    "1:higher_4": 508,
+    "1:higher_6": 174,
+    "1:safe_plateau": 197,
+    "2:higher_4": 4275,
+    "2:higher_6": 1317,
+    "2:higher_8": 8,
+    "2:safe_plateau": 1885,
+    "2:success_only": 1,
+    "3:higher_4": 32535,
+    "3:higher_6": 8995,
+    "3:higher_8": 103,
+    "3:lower_and_success": 32,
+    "3:safe_plateau": 17162,
+    "3:success_only": 135
+  },
+  "d_min_only_terminal_success_escape_exchanges": [
+    {
+      "coordinates": [
+        0,
+        2
+      ],
+      "edge_endpoints": [
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          20
+        ]
+      ],
+      "full_edge_ids": [
+        6,
+        24
+      ],
+      "local_edge_positions": [
+        3,
+        21
+      ]
+    },
+    {
+      "coordinates": [
+        1,
+        2
+      ],
+      "edge_endpoints": [
+        [
+          2,
+          3
+        ],
+        [
+          22,
+          23
+        ]
+      ],
+      "full_edge_ids": [
+        2,
+        31
+      ],
+      "local_edge_positions": [
+        1,
+        28
+      ]
+    },
+    {
+      "coordinates": [
+        0,
+        2
+      ],
+      "edge_endpoints": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          22
+        ]
+      ],
+      "full_edge_ids": [
+        2,
+        28
+      ],
+      "local_edge_positions": [
+        1,
+        25
+      ]
+    }
+  ],
+  "d_min_only_terminal_success_escape_path": [
+    {
+      "kernel_sizes": [
+        26,
+        27,
+        25
+      ],
+      "lexicographic_psi": [
+        2,
+        78
+      ],
+      "omitted_internal_masks": [
+        95184251351218348,
+        47576007214007363,
+        1354929510630160
+      ],
+      "parallel_successful_flags": 0,
+      "profile_h1_through_h7": [
+        8,
+        2,
+        8,
+        8,
+        6,
+        10,
+        10
+      ]
+    },
+    {
+      "kernel_sizes": [
+        26,
+        27,
+        24
+      ],
+      "lexicographic_psi": [
+        2,
+        77
+      ],
+      "omitted_internal_masks": [
+        95184251353315492,
+        47576007214007363,
+        1354929508533016
+      ],
+      "parallel_successful_flags": 0,
+      "profile_h1_through_h7": [
+        6,
+        2,
+        6,
+        8,
+        8,
+        8,
+        10
+      ]
+    },
+    {
+      "kernel_sizes": [
+        26,
+        25,
+        21
+      ],
+      "lexicographic_psi": [
+        2,
+        72
+      ],
+      "omitted_internal_masks": [
+        95184251353315492,
+        47576007482442817,
+        1354929240097562
+      ],
+      "parallel_successful_flags": 0,
+      "profile_h1_through_h7": [
+        2,
+        6,
+        8,
+        12,
+        6,
+        4,
+        8
+      ]
+    },
+    {
+      "kernel_sizes": [
+        24,
+        25,
+        21
+      ],
+      "lexicographic_psi": [
+        4,
+        70
+      ],
+      "omitted_internal_masks": [
+        95184251319761062,
+        47576007482442817,
+        1354929273651992
+      ],
+      "parallel_successful_flags": 1,
+      "profile_h1_through_h7": [
+        4,
+        6,
+        6,
+        8,
+        6,
+        4,
+        6
+      ]
+    }
+  ],
+  "d_min_only_with_terminal_span_success_escape_distance": 3,
+  "graph6": "ghe?GC@@G??@?@??_@I??A?C_?G??G@?CA?@?C?G_??_@?@???@?@??_?C?G??C@?O??C?A??G????G????C????@??O??G?????_????H????_@?????G_????@G??_?C@",
+  "legal_exchange_arcs_checked": 67392,
+  "lexicographic_psi_immediate_neighbours": {
+    "equal": 10,
+    "higher": 52,
+    "legal": 65,
+    "lower": 3,
+    "psi_histogram": {
+      "(2, 76)": 1,
+      "(2, 77)": 2,
+      "(2, 78)": 10,
+      "(4, 73)": 1,
+      "(4, 74)": 5,
+      "(4, 75)": 7,
+      "(4, 76)": 10,
+      "(4, 77)": 7,
+      "(4, 78)": 4,
+      "(4, 79)": 4,
+      "(6, 73)": 1,
+      "(6, 75)": 5,
+      "(6, 77)": 3,
+      "(6, 78)": 3,
+      "(6, 79)": 1,
+      "(6, 82)": 1
+    },
+    "span_successful": 0
+  },
+  "lexicographic_psi_shortest_escape_exchange": {
+    "coordinates": [
+      0,
+      2
+    ],
+    "edge_endpoints": [
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        20
+      ]
+    ],
+    "full_edge_ids": [
+      6,
+      24
+    ],
+    "local_edge_positions": [
+      3,
+      21
+    ]
+  },
+  "lexicographic_psi_shortest_escape_path": [
+    {
+      "kernel_sizes": [
+        26,
+        27,
+        25
+      ],
+      "lexicographic_psi": [
+        2,
+        78
+      ],
+      "omitted_internal_masks": [
+        95184251351218348,
+        47576007214007363,
+        1354929510630160
+      ],
+      "parallel_successful_flags": 0,
+      "profile_h1_through_h7": [
+        8,
+        2,
+        8,
+        8,
+        6,
+        10,
+        10
+      ]
+    },
+    {
+      "kernel_sizes": [
+        26,
+        27,
+        24
+      ],
+      "lexicographic_psi": [
+        2,
+        77
+      ],
+      "omitted_internal_masks": [
+        95184251353315492,
+        47576007214007363,
+        1354929508533016
+      ],
+      "parallel_successful_flags": 0,
+      "profile_h1_through_h7": [
+        6,
+        2,
+        6,
+        8,
+        8,
+        8,
+        10
+      ]
+    }
+  ],
+  "lexicographic_psi_with_terminal_span_success_escape_distance": 1,
+  "old_d_min_only_plateau_states": 958,
+  "old_states_excluded_by_terminal_success": 0,
+  "order": 40,
+  "root": 0,
+  "schema": "jaeger-order40-three-orderings-audit-v2",
+  "spokes_in_coordinate_order": [
+    3,
+    0,
+    5
+  ],
+  "start_kernel_sizes": [
+    26,
+    27,
+    25
+  ],
+  "start_lexicographic_psi": [
+    2,
+    78
+  ],
+  "start_omitted_internal_masks": [
+    95184251351218348,
+    47576007214007363,
+    1354929510630160
+  ],
+  "start_parallel_successful_flags": 0,
+  "start_profile_h1_through_h7": [
+    8,
+    2,
+    8,
+    8,
+    6,
+    10,
+    10
+  ]
+}

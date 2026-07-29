@@ -7,6 +7,50 @@ STRENGTHENING OF THE PLATEAU ROUTE.  THE FULL PLATEAU COMPONENT
 ESCAPE STATEMENT REMAINS OPEN.  THIS IS NOT A FIVE-CYCLE DOUBLE COVER
 COUNTEREXAMPLE.**
 
+## Augmented-order correction (2026-07-29)
+
+The theorem below is correct for the displayed \(d_{\min}\)-only
+ordering.  Two later orders must be distinguished.  If a successful
+parallel span flag is declared terminal but \(d_{\min}\) remains the
+only numeric score, the corrected checker in
+`jaeger-plateau-augmented-radius-order40-20260729/` finds exact
+lower-or-success escape distance three.  Under the project's current
+lexicographic potential
+\[
+                  \Psi=(d_{\min},S),\qquad S=\sum_i|K_i|,
+\]
+the exact augmented escape distance is instead **one**: the first
+exchange keeps \(d_{\min}=2\) and all 21 flags failing, but changes the
+kernel-size triple from \((26,27,25)\) to \((26,27,24)\), so
+\(S\) drops from \(78\) to \(77\).
+
+The shortest augmented path uses omitted masks
+
+```text
+(95184251351218348, 47576007214007363, 1354929510630160)
+(95184251353315492, 47576007214007363, 1354929508533016)
+(95184251353315492, 47576007482442817, 1354929240097562)
+(95184251319761062, 47576007482442817, 1354929273651992)
+```
+
+The first three states have \(d_{\min}=2\) and zero successful flags.
+Their kernel sums are \(78,77,72\), respectively.  The endpoint has
+profile \((4,6,6,8,6,4,6)\), hence larger \(d_{\min}=4\), kernel sum
+70, and one successful flag.  The exchanges use coordinate pairs and
+graph edge IDs
+
+```text
+(0,2): (6,24)
+(1,2): (2,31)
+(0,2): (2,28)
+```
+
+Thus this example proves the old \(d_{\min}\)-only distance-four
+statement below.  It has distance three for \(d_{\min}\) plus terminal
+success, but distance one for lexicographic \(\Psi\) plus terminal
+success.  It is not a radius-two or radius-three obstruction for the
+current lexicographic order.
+
 ## 1. Precise claim and conclusion
 
 Fix a vertex-star packing state \(s=(T_0,T_1,T_2)\).  Two states are
