@@ -173,6 +173,17 @@ are not independent human verification or peer review.
   Tait-colourable and four of its six switches clean the state, so the
   displayed projection is not globally minimum.  This is an audited
   proof-method counterstate, not a FiveCDC counterexample.
+- `scratch/minimum-projection-rainbow-load-survivor-20260729/`
+  strengthens that local counterstate to a fully goal-free
+  support-fourteen boundary.  None of its component-map tuples cleans or
+  deletes; it has a rainbow-odd six-map-integrable witness and satisfies
+  every load inequality.  A 278-vertex simple bridgeless cubic inflation
+  makes the fixed projection uncleanable and attains all four exact
+  static shortest-join optima.  Exact contraction, weighted base
+  enumeration, and an explicit lift prove that the graph's actual
+  minimum projection size is seven.  Both implementations, two hostile
+  audits, corrected replay instructions, outputs, and ledger pass.  This
+  isolates dynamic global minimality; it is not a FiveCDC counterexample.
 - `scratch/minimum-projection-size14-dichotomy-counterstate-20260729/`
   gives the first total-support counterstate to unrestricted clean or
   delete.  Its \(7+7\) word/partition has 320 normalized feasible map

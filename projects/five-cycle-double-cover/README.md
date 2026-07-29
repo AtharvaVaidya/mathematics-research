@@ -155,6 +155,16 @@ The package contains two differently structured inequality checks, a full
 boundary-profile reconfiguration census, exact hashes, and an explicit
 AI-use/human-review warning.
 
+The combined static-filter survivor is in
+`scratch/minimum-projection-rainbow-load-survivor-20260729/`.
+Its support-fourteen boundary is goal-free under every component map,
+has a rainbow six-map witness, and satisfies every load inequality.  A
+278-vertex simple bridgeless cubic realization makes that fixed
+projection uncleanable and attains all four static shortest-join bounds,
+but exact weighted contraction and lift prove true minimum seven.  Thus
+all currently known static consequences can hold simultaneously outside
+the globally minimum domain.
+
 The dynamic frontier is now sharpened in
 `scratch/minimum-projection-dynamic-kempe-frontier-20260729/`.  A
 human-checkable theorem there proves direct cleaning for a two-terminal

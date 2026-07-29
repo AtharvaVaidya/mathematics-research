@@ -192,6 +192,13 @@ model, so six is the first local counterstate.  The cube is
 Tait-colourable and four of its six map switches already clean the state;
 the projection is not globally minimum.  Thus the counterstate isolates,
 rather than bypasses, the missing global hypothesis.
+A stronger support-fourteen survivor has no clean or deletion outcome
+under any component-map tuple, satisfies all nine load inequalities, and
+has a 278-vertex realization attaining all four complete static
+shortest-join optima.  Its fixed projection is uncleanable, but its exact
+global minimum is seven.  Hence the known static consequences of
+minimality are collectively insufficient; a proof must use the actual
+minimum dynamically.
 
 At size fifteen the primary exact classifier enumerates \(26{,}492\)
 word orbits and \(35{,}247{,}202{,}556\) charge-valid abstract states
@@ -375,7 +382,9 @@ The contribution of this note is narrower:
         need not violate it;
   \item four simultaneous shortest-join consequences;
   \item a general inflation theorem showing that those four inequalities,
-        at one fixed flow, do not force one-round Kempe descent;
+        at one fixed flow, do not force one-round Kempe descent, together
+        with a smallest goal-free boundary survivor satisfying the load
+        and all four static shortest-join filters;
   \item a reproducible canonical order-\(18\) census and an expanded
         exact replay on frozen sources through order \(28\); and
   \item a precise conjectural step that would turn this route into a proof.
@@ -2783,6 +2792,85 @@ are in
 \path{scratch/general-kempe-descent-static-exchange-obstruction-20260729/}.
 \end{remark}
 
+\begin{proposition}[a goal-free survivor of every static filter]
+\label{prop:staticfiltersurvivor}
+There is a simple connected bridgeless cubic graph on 278 vertices with
+an uncleanable extendable projection \(h\) of size fourteen such that:
+\begin{enumerate}
+  \item \(h\) has a rainbow-odd six-map-integrable witness shore, but
+        none of its six common switches cleans or deletes a support
+        circuit;
+  \item all nine colour-load inequalities hold; and
+  \item for every \(c\in K\), the shortest \(T_c\)-join in \(G-M_c\)
+        has size \(|h|-|M_c|\).
+\end{enumerate}
+Nevertheless the graph's exact minimum extendable-projection size is
+seven.  Thus the conjunction of all listed static consequences of global
+minimality does not imply cleaning or deletion.
+\end{proposition}
+
+\begin{proof}
+Begin with two support 7-circuits, low words and component word
+\[
+\begin{split}
+r&=\texttt{3231320}\mid\texttt{1320320},\\
+\pi&=\texttt{01234444413024}.
+\end{split}
+\]
+Choose the union of component blocks \(0,1,3\).  The derivative word is
+\(\texttt{3112212}\mid\texttt{1212312}\); the selected derivatives on
+each circuit are one copy each of \(1,2,3\), so every common linear map
+is integrable.  Direct integration of the six maps gives obstruction
+bits
+\[
+                         (1,1,0,1,0,1),
+\]
+and every resulting support circuit still uses all four colours.  Hence
+none of the six choices cleans or deletes.  The selected derivative
+counts are \((2,2,2)\), the outside counts are \((4,4,0)\), and the
+18-vertex base realization has four off-support vertices, so the largest
+load is \(6\le8\).
+
+Replace each of the thirteen base complement edges by a chain of five
+two-poles from the proof of Proposition~\ref{prop:staticinflation}.  The
+old-endpoint distance is sixteen, larger than \(|h|=14\); therefore all
+four complete exchange families hold.  Exact shortest-join calculation
+sharpens this to
+\[
+\begin{array}{c|rrrr}
+c&0&1&2&3\\ \hline
+|M_c|&3&2&4&5\\
+\text{shortest \(T_c\)-join}&11&12&10&9\\
+\text{containing cycle}&14&14&14&14 .
+\end{array}
+\]
+
+Every low flow with fixed projection \(h\) contracts through the
+two-pole chains to a base low flow with the same component cut parities.
+The exact 1,024-cycle base enumeration has 15,360 extensions of \(h\)
+and no clean one, so the inflated projection is uncleanable.
+
+For an arbitrary full flow, contraction gives a nowhere-zero base flow.
+An old support edge with first coordinate one costs one inflated support
+edge, while a contracted complement edge with first coordinate one
+forces both terminal links of its chain into the inflated support and
+costs at least two.  Exhausting the 1,024 base binary cycles and the
+66,207 simultaneously missed sets gives weighted minimum seven.
+Conversely an explicit base flow supported on the first 7-circuit is
+even on every replaced complement edge and lifts through all chains with
+support still seven.  This proves the exact global minimum.
+\end{proof}
+
+\begin{remark}
+The through-thirteen boundary theorem makes support fourteen smallest
+for a state with no clean or deletion component-map tuple.  The full
+six-map table, 18- and 278-vertex constructions, two exact
+implementations, hostile audit, outputs, and ledger are in the
+rainbow-load-survivor package under \path{scratch/}.  The example is a
+proof-method obstruction, not a globally minimum projection or a
+FiveCDC counterexample.
+\end{remark}
+
 \begin{proposition}[a directly clean unbounded class]
 \label{prop:twoterminalclean}
 Let \(H=\supp(h)\) be one circuit.  If every component \(W\) of
@@ -2992,6 +3080,12 @@ The static-exchange package contains the human proof of
 Proposition~\ref{prop:staticinflation}, a primary full-cycle checker, a
 separate shortest-\(T\)-join checker for the four inequalities, and the
 complete boundary-profile Kempe graph for its example.
+Codex agents also combined that inflation with the size-fourteen
+counterstate to obtain Proposition~\ref{prop:staticfiltersurvivor}.
+Two exact implementations and two hostile audits checked the abstract
+map census, 18- and 278-vertex graphs, all four joins, contraction
+uncleanability, weighted lower bound, explicit size-seven lift, corrected
+replay instructions, frozen outputs, and hash ledger.
 Separate packages also check the first failure of the unrestricted
 dichotomy, its 40-case map certificate, and its exhaustive 18-vertex
 realization analysis.  The standard graph-class reduction and its

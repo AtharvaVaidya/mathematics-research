@@ -275,6 +275,17 @@ The full-cycle and shortest-\(T\)-join checkers verify the four inequalities
 by different methods; an agent hostile audit passed after correcting the
 terminal-distance exposition, but no independent human has reviewed it.
 
+The stronger realized survivor is frozen in
+`scratch/minimum-projection-rainbow-load-survivor-20260729/`.
+Its support-fourteen boundary has no clean or deletion component-map
+outcome, a rainbow-odd six-map witness, and all nine load inequalities.
+A 278-vertex simple bridgeless cubic inflation makes the fixed projection
+uncleanable and attains all four exact static shortest-join bounds.
+Contraction and weighted base enumeration nevertheless prove that the
+graph's actual minimum projection size is seven.  Thus every presently
+listed static filter can hold simultaneously without reaching a clean
+state; actual global minimality must enter dynamically.
+
 The next dynamic boundary is isolated in
 `scratch/minimum-projection-dynamic-kempe-frontier-20260729/`.  A complete
 human proof shows that when the support is one circuit and every complement

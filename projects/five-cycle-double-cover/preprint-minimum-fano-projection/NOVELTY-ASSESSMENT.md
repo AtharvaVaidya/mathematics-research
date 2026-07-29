@@ -71,7 +71,11 @@ The manuscript proves:
     complement components do not force a colour-load violation; and
 20. an exact four-dual slack decomposition and rigidity theorem at
     \(|h|=6|V|/7\), forcing a forest complement, divisibility by twelve,
-    equinumerous colours, and exactly balanced affine witnesses.
+    equinumerous colours, and exactly balanced affine witnesses; and
+21. a smallest fully goal-free support-fourteen boundary survivor with a
+    278-vertex realization satisfying every load and static shortest-join
+    filter, whose fixed projection is uncleanable but whose exact global
+    minimum is seven.
 
 This is a partial theorem about the Hušek--Šámal flow criterion.  It does
 not resolve the Five-Cycle Double Cover Conjecture.
@@ -164,6 +168,12 @@ deduction within this project-specific dual framework.  It has not
 received a literature-wide novelty comparison, and no priority claim is
 made for either the slack decomposition or its equality classification.
 
+The realized static-filter survivor is a stronger failed-approach
+certificate built from the project's size-fourteen counterstate and
+two-pole inflation.  Its exact minima and joins are computationally
+checkable, but it has not received a literature-wide novelty screen and
+no priority claim is made.
+
 ## Publication judgment
 
 The exchange theorem, through-fifteen boundary theorem, the universal
@@ -217,6 +227,11 @@ the actual global-minimum implication open.
 The equality theorem sharply isolates one global regime: any uncleanable
 case at zero density slack has support at least twenty-four and a rigid
 forest/balanced-colour structure.  Positive slack remains uncontrolled.
+The support-fourteen survivor then shows that rainbow parity, all six
+map choices, every load inequality, and all four complete static
+shortest-join optima can coexist with an uncleanable fixed projection.
+Its true minimum seven excludes it from the conjectured domain and makes
+dynamic use of actual global minimality the remaining distinction.
 A formal venue submission should wait until a graph theorist:
 
 - checks the flow-to-cleanliness semantics line by line;
@@ -248,7 +263,7 @@ its exact cyclic-dynamics obstruction, the shortest-join zero-price and
 support-density theorems, the six-map colour-load inequality and
 constructive descent, the support-sixteen two-occurrence theorem, and the
 cube rainbow-load counterstate, the equality-rigidity theorem, and the
-static-inflation obstruction;
+static-filter survivor and inflation obstruction;
 proposed
 the two-terminal cleaning and orbit-reflecting
 \(K_{3,3}-e\) lemmas; wrote the exact
@@ -277,3 +292,7 @@ ledger.
 An eighth hostile audit checked the four-dual slack identity, equality
 implications, bridge/forest step, colour and topology counts, exact
 witness balance, support-24 corollary, both arithmetic audits, and ledger.
+Two further hostile audits checked the support-fourteen survivor's map
+census, realized graphs, joins, contraction argument, weighted minimum
+and explicit lift; one caught and the final package corrected a replay
+path inconsistency before publication.

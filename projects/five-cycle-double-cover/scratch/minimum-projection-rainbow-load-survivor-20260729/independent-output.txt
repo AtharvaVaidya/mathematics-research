@@ -1,0 +1,4 @@
+ABSTRACT_INDEPENDENT maps=6 clean=0 delete=0 obstruction_bits=(1, 1, 0, 1, 0, 1) max_load=6 bound=8
+BASE_INDEPENDENT cycle_space=1024 semantic_states=384064 target_extensions=15360 target_clean=0 weighted_minimum=7 weighted_minima=6
+INFLATED_INDEPENDENT vertices=278 edges=417 class_sizes=(3, 2, 4, 5) joins=(11, 12, 10, 9) containing_cycles=(14,14,14,14)
+PASS independent rainbow/load survivor audit
