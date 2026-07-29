@@ -129,6 +129,26 @@ are not independent human verification or peer review.
   proofs, the sharp size-fourteen support-preserving method counterstate,
   the Kempe escape, all exact census reports, the Petersen limitation,
   checksums, and an explicit AI-use and human-review disclosure.
+- `scratch/cubic-reduction-standard-fivecdc-20260729/` fixes the exact
+  indexed even-subgraph convention and proves that the universal standard
+  assertion is equivalent across finite bridgeless multigraphs, loopless
+  cubic multigraphs, simple cubic graphs, and strong snarks.  It includes
+  loops by incidence multiplicity, separates the orientable conclusion,
+  and freezes an exhaustive local \(D_5\)-label checker.  A hostile second
+  audit checked the structural reductions by hand.  No novelty is claimed
+  for these standard graph-class reductions.
+- `scratch/general-kempe-descent-static-exchange-obstruction-20260729/`
+  proves a general coloured \(K_4-e\) inflation theorem.  It preserves the
+  support, complement-component partition, and all two-colour boundary
+  pairings while making all four static minimum-exchange inequalities
+  hold.  Its explicit 230-vertex simple bridgeless cubic state defeats all
+  97 nonempty one-round fixed-colour path multiswitches but reaches a
+  strict deletion after two recomputed switches.  The graph is
+  Tait-colourable and has minimum projection zero, so this is a
+  proof-method obstruction, not a FiveCDC or minimum-projection
+  counterexample.  A full-cycle checker, a separate shortest-\(T\)-join
+  checker, a complete boundary-profile reconfiguration census, exact
+  hashes, a human proof, and a hostile agent audit are included.
 - `search/minimum-projection-n130-20260729/` certifies that the retained
   130-vertex graph has minimum extendable projection size \(42\), exactly
   11,264 minimum supports, and no unclean minimum.  One LRAT proves the
@@ -139,7 +159,9 @@ are not independent human verification or peer review.
   from minimum nonzero value class.
 
 These are proof-strategy results in the cubic setting, not a proof or
-disproof of FiveCDC.  No arbitrary-degree reduction is supplied.
+disproof of FiveCDC.  The standard universal conjecture reduces to that
+setting, but the size-through-fourteen projection theorem remains a cubic
+statement and larger supports are open.
 
 ## Rooted-resolution update (2026-07-28)
 

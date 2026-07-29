@@ -60,8 +60,26 @@ size-fourteen failure of the unrestricted map-choice statement.  The
 size-fourteen Kempe theorem is in
 `scratch/minimum-projection-through14-cleanability-20260729/` and
 `scratch/minimum-projection-size14-kempe-escape-20260729/`.  Larger
-supports remain uncontrolled, and no arbitrary-degree reduction is
-claimed.
+supports remain uncontrolled.  The exact standard convention and a
+self-contained graph-class reduction are now frozen in
+`scratch/cubic-reduction-standard-fivecdc-20260729/`: the universal
+assertion for arbitrary finite bridgeless multigraphs is equivalent to its
+restriction to loopless cubic multigraphs, simple cubic graphs, and strong
+snarks.  This does not extend the minimum-projection boundary theorem
+itself beyond cubic graphs.
+
+The static-exchange limitation is isolated in
+`scratch/general-kempe-descent-static-exchange-obstruction-20260729/`.
+A human proof shows that coloured \(K_4-e\) two-pole inflation can preserve
+all local two-colour boundary pairings while forcing the four initial
+minimum-exchange inequalities.  The 230-vertex witness defeats every
+one-round fixed-colour path multiswitch and then escapes in two rounds.
+It is Tait-colourable with minimum projection zero.  Hence it rules out
+only a static one-round proof strategy: a viable general argument must use
+the dynamic reapplication of exchange after each neutral recolouring.
+The package contains two differently structured inequality checks, a full
+boundary-profile reconfiguration census, exact hashes, and an explicit
+AI-use/human-review warning.
 
 The earlier `preprint-husek-samal-reconfiguration/` proves a human-checkable
 packing-to-switch lemma and gives an exact cyclically 4-edge-connected

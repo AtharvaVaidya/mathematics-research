@@ -48,8 +48,9 @@ The five-cycle double cover conjecture remains unresolved.
 This note proves an exchange theorem, settles the minimum-support cases
 through size fourteen for finite connected bridgeless loopless cubic
 multigraphs (parallel edges allowed), and gives exact finite censuses.  It
-proves neither the conjecture nor its negation, and supplies no reduction
-from arbitrary higher-degree graphs to the cubic theorem.
+proves neither the conjecture nor its negation.  The standard conjecture
+for finite bridgeless multigraphs reduces to the cubic setting by
+Proposition~\ref{prop:cubicreduction}.
 }}
 \end{center}
 
@@ -125,6 +126,19 @@ cleanable, so this is a counterexample to the unrestricted boundary
 dichotomy, not to the minimum-projection principle or FiveCDC.  The new
 theorem escapes only after a support-neutral Kempe recolouring.
 
+We also delimit what the four initial exchange inequalities can prove.
+A \(K_4-e\) two-pole inflation preserves the support, complement
+components, and all two-colour boundary path pairings, while making every
+non-support traversal arbitrarily long.  Once every support circuit uses
+all four affine colours, sufficiently long inflation forces all four
+exchange inequalities for any displayed boundary realization.  An
+explicit 230-vertex simple bridgeless cubic example satisfies the
+inequalities and defeats every one-round fixed-colour Kempe multiswitch,
+but reaches a strict circuit deletion in two rounds.  Thus the unresolved
+step must exploit the \emph{dynamic} reapplication of the exchange theorem
+after neutral recolouring, not only its four inequalities at the initial
+flow.
+
 We perform an exact canonical census of all \(41{,}301\) connected simple
 cubic graphs of order \(18\).  Among the \(39{,}866\) bridgeless graphs,
 exactly \(179\) are not Tait-colourable, and every minimum-cardinality
@@ -143,7 +157,9 @@ The universal statement suggested by this computation is recorded as an
 open conjecture.  The missing step is to derive a colour-avoiding strict
 exchange from a rainbow-odd component, possibly after support-neutral
 recolouring.  We make no claim of a FiveCDC resolution or of priority for
-the flow formulation.
+the flow formulation.  An elementary incidence-cluster construction proves
+that resolving the cubic conjecture would resolve the standard conjecture
+for arbitrary finite bridgeless multigraphs.
 \end{abstract}
 
 \tableofcontents
@@ -159,12 +175,56 @@ and Preissmann, asserts that every bridgeless graph has such a cover with
 at most five members~\cite{Celmins1985,Preissmann1981}.
 
 We work with the cubic flow formulation in
-\cite[Conjecture~3.19]{HusekSamal2026}.  No general-to-cubic reduction is
-proved in this note.  All theoretical statements below apply to finite
-loopless cubic multigraphs unless ``simple'' is stated.  Parallel edges
-are distinct edge objects.  A loop would contribute twice to vertex
-degree; loops are excluded here to keep the cut notation literal.  The
-finite census is restricted to simple graphs.
+\cite[Conjecture~3.19]{HusekSamal2026}.  All projection and boundary
+theorems below apply to finite loopless cubic multigraphs unless
+``simple'' is stated.  Parallel edges are distinct edge objects.  A loop
+would contribute twice to vertex degree; loops are excluded from those
+theorems to keep the cut notation literal.  The finite census is restricted
+to simple graphs.
+
+\begin{proposition}[standard graph-class reduction]
+\label{prop:cubicreduction}
+The standard FiveCDC assertion for finite bridgeless multigraphs, with
+loops and parallel edges allowed, is equivalent to its restriction to
+finite bridgeless loopless cubic multigraphs.
+\end{proposition}
+
+\begin{proof}
+Only the reduction to the cubic class needs proof.  Discard isolated
+vertices.  At a vertex \(v\) of incidence degree \(d(v)\), make a cycle
+\(Z_v\) of \(d(v)\) new vertices and assign the incidences at \(v\)
+bijectively to them.  When \(d(v)=2\), \(Z_v\) is the two-edge parallel
+cycle.  Replace every original nonloop edge by an edge joining its two
+assigned cluster vertices.  Replace an original loop by an edge joining
+the two distinct cluster vertices assigned its two incidences.  Every
+cluster vertex now has two cluster-edge incidences and one old-edge
+incidence, so the expansion \(X(G)\) is loopless and cubic.
+
+Every cluster edge lies on \(Z_v\).  An old edge arising from a loop has
+an alternative path in its cluster.  For a nonloop old edge \(e=uv\),
+bridgelessness gives a \(u\)-to-\(v\) path in \(G-e\); joining consecutive
+attachments inside the clusters lifts it to an alternative path between
+the ends of \(e\) in \(X(G)\).  Thus \(X(G)\) is bridgeless.
+
+Let \((D_1,\ldots,D_5)\) be a five-cycle double cover of \(X(G)\), and
+let \(C_i\) consist of the old edges in \(D_i\), identified with the
+original edges of \(G\).  Sum modulo two the degree equations for \(D_i\)
+over all vertices of \(Z_v\).  Every cluster edge is counted twice and
+cancels, leaving an even number of selected original incidences at \(v\).
+An original loop contributes its two incidences, exactly as required.
+Hence every \(C_i\) is Eulerian.  Exact double coverage is inherited
+edge by edge, so \((C_1,\ldots,C_5)\) covers \(G\).
+\end{proof}
+
+\begin{remark}[reduction scope]
+This proposition reduces the universal graph class; it does not identify
+several boundary occurrences at a higher-degree vertex inside the
+minimum-projection argument.  A separate self-contained reduction package
+also proves that a minimum cubic counterexample could be taken simple,
+non-3-edge-colourable, of girth at least five, and cyclically
+4-edge-connected.  These standard reductions are not used to infer the
+finite census populations below.
+\end{remark}
 
 Hu\v{s}ek and \v{S}\'amal prove that the cubic FiveCDC problem is equivalent
 to selecting a nowhere-zero \(\F_2^3\)-flow with an additional parity
@@ -180,6 +240,8 @@ The contribution of this note is narrower:
         through size fourteen, plus a sharp size-fourteen counterstate
         to the unrestricted support-preserving boundary method;
   \item four simultaneous shortest-join consequences;
+  \item a general inflation theorem showing that those four inequalities,
+        at one fixed flow, do not force one-round Kempe descent;
   \item a reproducible canonical order-\(18\) census and an expanded
         exact replay on frozen sources through order \(28\); and
   \item a precise conjectural step that would turn this route into a proof.
@@ -1163,8 +1225,10 @@ The path argument uses the split-occurrence boundary model, automatic in a
 cubic graph: every circuit occurrence is a distinct vertex with one
 incident complement edge carrying \(d_i\).  If several occurrences are
 identified at one higher-degree vertex, only their xor is visible to the
-complement two-colour subgraph.  No arbitrary-degree reduction is proved
-here.
+complement two-colour subgraph.  Thus the path theorem itself is not a
+higher-degree boundary theorem.  Proposition~\ref{prop:cubicreduction}
+instead replaces the graph by a new cubic expansion and pushes a completed
+cover back.
 
 A separately written \(7+7\) census regenerates all 333 word orbits,
 \(91{,}481{,}505\) charge-valid states, \(80{,}104{,}020\) dirty
@@ -1199,7 +1263,8 @@ projection that is cleanable.
 The stronger statement that every minimum projection is cleanable also
 survives the finite census in Section~\ref{sec:census}, but it is not needed.
 Conjecture~\ref{conj:minimum}, together with the Hu\v{s}ek--\v{S}\'amal
-equivalence, would imply the cubic FiveCDC conjecture.
+equivalence and Proposition~\ref{prop:cubicreduction}, would imply the
+standard FiveCDC conjecture for every finite bridgeless multigraph.
 
 Proposition~\ref{prop:sizefourteenfailure} shows that componentwise maps,
 circuit translations, and whole-circuit deletion do not by themselves
@@ -1468,6 +1533,81 @@ forgets: two-colour subgraphs inside a cubic complement pair the boundary
 occurrences by paths, and a matching-robust Kempe switch reaches a strict
 deletion.  Larger boundary states need not admit the same finite strategy.
 
+\begin{proposition}[static exchange has no further local boundary force]
+\label{prop:staticinflation}
+Let \(G\) be a finite connected simple bridgeless cubic graph, let \(H\)
+be a 2-regular binary cycle, and let \(f=(h,s)\) be a nowhere-zero
+\(\F_2^3\)-flow with \(\supp(h)=H\).  Suppose every circuit component of
+\(H\) contains every value of \(s|_H:E(H)\to\F_2^2\).
+There are a simple connected bridgeless cubic graph \(G'\) and a
+nowhere-zero flow \(f'=(h',s')\) on \(G'\), with
+\(\supp(h')=H\) and \(s'|_H=s|_H\), carrying the same support circuits,
+complement-component partition, and two-colour boundary path pairings,
+for which
+\[
+ C\cap M_c=\varnothing
+ \quad\Longrightarrow\quad
+ |C\cap H|\leq |C-H|                                   \tag{27}
+\]
+for every \(c\in\F_2^2\) and every binary cycle \(C\) of \(G'\), where
+\(M_c=\{e\in H:s'(e)=c\}\).
+\end{proposition}
+
+\begin{proof}
+Let \(e=uv\notin H\) have nonzero low colour \(t=s(e)\), and let
+\(\{t,x,y\}=\F_2^2-\{0\}\).  Delete \(e\), add vertices \(a,b,p,q\), and
+add
+\[
+ ua,bv,pq\text{ of colour }t,\qquad
+ ap,bq\text{ of colour }x,\qquad aq,bp\text{ of colour }y. \tag{28}
+\]
+Give every new edge first coordinate zero and retain \(f\) on every
+unreplaced edge.  Every new vertex sees the three nonzero low colours, so
+both flow equations are preserved and the resulting flow is nowhere zero.
+For either pair \(\{t,x\}\) or \(\{t,y\}\), the
+bichromatic path joins the old endpoints \(u,v\); the \(\{x,y\}\)
+component is internal.  Hence the substitution preserves every original
+two-colour boundary pairing.  Every \(u\)-to-\(v\) traversal through the
+two-pole, including the attachment edges, has length at least four.
+Chaining \(k\) copies gives old-endpoint distance \(L=3k+1\), while
+preserving simplicity, cubicity, connectedness, and bridgelessness.
+
+Apply the same chain length to every edge of \(G-H\), choosing
+\(L\geq|H|\).  Decompose a binary cycle avoiding \(M_c\) into
+edge-disjoint circuits.  A circuit contained in one replacement chain
+uses no support edge.  Every other circuit either traverses a chain from
+one old endpoint to the other and hence uses at least \(L\) non-support
+edges, or is a circuit component of \(H\).  The latter is impossible
+because every component of \(H\) meets \(M_c\).  Thus each remaining
+circuit \(D\)
+satisfies
+\[
+ |D-H|\geq L\geq|H|\geq|D\cap H|.
+\]
+Summing over the circuit decomposition proves (27).
+\end{proof}
+
+\begin{remark}[a one-round obstruction, not a minimum counterexample]
+The bundled literal instance has 230 vertices, 345 edges, and support
+equal to two 8-circuits.  Two checkers establish all four families (27):
+one exhausts \(2^{22}\) base binary cycles and the other independently
+solves the four shortest-\(T\)-join problems in the inflated graph.  The
+affine-class sizes are \((6,5,3,2)\), the four join sizes are
+\((10,11,13,14)\), and the four minimum containing-cycle sizes are 16.
+All 97 nonempty charge-restoring one-round fixed-colour path
+multiswitches fail to clean or delete even after every componentwise
+affine repair.  Nevertheless, switching the
+\(\{1,2\}\)-paths with boundary endpoints \(1\!-\!10\) and \(4\!-\!15\),
+then recomputing and switching the \(\{1,3\}\)-path \(5\!-\!6\), makes
+colour 2 absent from the first support circuit and permits its deletion.
+The graph is Tait-colourable, so its actual minimum projection is empty.
+The example therefore refutes neither Conjecture~\ref{conj:minimum} nor
+FiveCDC.  It shows that the force of global minimality must be used
+dynamically after each support-neutral recolouring.  The proof and replay
+are in
+\path{scratch/general-kempe-descent-static-exchange-obstruction-20260729/}.
+\end{remark}
+
 The four-colour simultaneity cannot be replaced by a theorem about one
 matching.  In the Petersen graph with edge set
 \[
@@ -1510,14 +1650,25 @@ The size-fourteen primary package freezes all seven shape counts and the
 regenerates all 333 word orbits and \(91{,}481{,}505\) charge-valid
 states, while the Kempe package freezes 724 matching-robust deletion rows
 and checks them with an independently structured literal verifier.
+The static-exchange package contains the human proof of
+Proposition~\ref{prop:staticinflation}, a primary full-cycle checker, a
+separate shortest-\(T\)-join checker for the four inequalities, and the
+complete boundary-profile Kempe graph for its example.
 Separate packages also check the first failure of the unrestricted
 dichotomy, its 40-case map certificate, and its exhaustive 18-vertex
-realization analysis.
+realization analysis.  The standard graph-class reduction and its
+\(D_5\)-label checker were likewise written by Codex agents; a separate
+hostile agent audited the structural proof, which is still not independent
+human review.
 The order-\(18\) result is
 reproducible from canonical generation and exhaustive cycle-space
 enumeration.  The expanded census exactly replays frozen sources but
 inherits their population provenance.  Both remain computational results
 and should be independently rerun.
+The static-exchange proposition and example were found, formalized, and
+hostilely audited by Codex agents.  That audit corrected the distinction
+between the gadget's internal-terminal distance and its old-endpoint
+traversal distance; it is still not independent human review.
 
 Hu\v{s}ek and \v{S}\'amal's flow criterion and
 Hoffmann-Ostenhof's matching/join formulation are prior work.  This draft

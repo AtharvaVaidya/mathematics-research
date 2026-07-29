@@ -1,0 +1,8 @@
+INFLATED_GRAPH vertices=230 edges=345 simple=yes cubic=yes connected=yes bridgeless=yes
+BASE_CYCLE_ENUMERATION dimension=22 cycles=4194304 weighted_margins=10,10,6,9
+STATIC_EXCHANGE all_four_classes=yes minimum_containing_size=16,16,16,16
+ONE_ROUND balanced_subsets=31,63,3 successful=0
+TWO_ROUND first=12:{1-10,4-15} second=13:{5-6} final_derivative=32112311|21213131
+STRICT_DESCENT final_base=31013010|23103210 omitted=2 deleted_size=8
+TAIT_COLOURABLE=yes global_minimum_projection_size=0
+PASS: static four-class exchange plus one-round Kempe descent is insufficient; the literal two-round escape is verified

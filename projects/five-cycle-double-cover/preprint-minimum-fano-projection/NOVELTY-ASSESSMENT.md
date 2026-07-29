@@ -25,7 +25,12 @@ The manuscript proves:
 7. a complete size-fourteen primary census whose only 224 residuals all
    have shape \(7+7\), an independent full \(7+7\) census, and a
    pairing-robust Kempe path theorem that sends every residual to a
-   strict size-seven deletion.
+   strict size-seven deletion; and
+8. a general \(K_4-e\) inflation theorem showing that all four static
+   exchange inequalities can be forced without changing the local
+   two-colour boundary pairings, together with an explicit state that
+   defeats every one-round fixed-colour Kempe move but escapes in two
+   rounds.
 
 This is a partial theorem about the Hušek--Šámal flow criterion.  It does
 not resolve the Five-Cycle Double Cover Conjecture.
@@ -63,7 +68,11 @@ parallel work.
 The exchange theorem, through-fourteen boundary theorem, the
 triangle-expanded-Petersen direct-repair countermodel, and the sharp
 size-fourteen clean-or-delete countermodel form a coherent, reproducible
-research note.  The new size-fourteen ingredient is not merely a larger
+research note.  The static-inflation theorem further identifies a precise
+proof-method boundary: the initial shortest-join inequalities have no
+additional universal local boundary force once every support circuit uses
+all four colours; any general descent must reapply them dynamically.
+The new size-fourteen ingredient is not merely a larger
 census: its two-colour path-switch argument quantifies over every possible
 terminal pairing in an unknown cubic realization and is checked by 724
 literal deletion rows.  A targeted web/arXiv screen found no theorem
@@ -83,13 +92,20 @@ as an AI-assisted preprint **after** a graph theorist:
 
 Until that review, the GitHub draft should remain explicitly provisional
 and should not be described as a FiveCDC resolution.  The theorem is
-cubic; no arbitrary-degree reduction is supplied.
+cubic.  A separate elementary incidence-cluster theorem shows that the
+standard universal FiveCDC assertion reduces from arbitrary finite
+bridgeless multigraphs to loopless cubic multigraphs, and the usual local
+reductions reach strong snarks.  No novelty is claimed for those standard
+graph-class reductions, and they do not extend the size-fourteen boundary
+theorem to higher-degree vertices.
 
 ## AI-use disclosure
 
 OpenAI Codex agents under Atharva Vaidya's direction discovered the proof
-route, counterstates, and size-fourteen Kempe escape; wrote the exact
+route, counterstates, size-fourteen Kempe escape, and static-inflation
+obstruction; wrote the exact
 classifiers, exhaustive certificate builders, and independent checkers;
 performed the preliminary literature screen; and drafted the manuscript
-and this assessment.  Agent agreement is not independent human
-verification or peer review.
+and this assessment.  A hostile agent audit of the inflation proof passed
+after correcting its terminal-distance exposition.  Agent agreement is
+not independent human verification or peer review.

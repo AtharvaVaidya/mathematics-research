@@ -8,8 +8,10 @@ human-checkable exchange theorem and a complete minimum-projection theorem
 through support size fourteen for connected bridgeless loopless cubic
 graphs, reports exact finite censuses, and states the remaining universal
 selection principle as an explicit conjecture. It claims neither a proof
-nor a counterexample to FiveCDC and supplies no reduction from arbitrary
-higher-degree graphs to the cubic theorem.
+nor a counterexample to FiveCDC. An elementary incidence-cluster theorem
+reduces the standard conjecture for arbitrary finite bridgeless multigraphs
+to the cubic setting, but the minimum-projection theorem itself remains
+cubic.
 
 Build from this directory with:
 
@@ -61,6 +63,10 @@ python3 scratch/minimum-projection-through14-cleanability-20260729/verify_summar
 python3 scratch/minimum-projection-size14-7p7-independent-audit-20260729/replay_full_census.py
 python3 scratch/minimum-projection-size14-7p7-independent-audit-20260729/independent_audit.py
 python3 scratch/minimum-projection-size14-kempe-escape-20260729/verify_all_certificates.py
+python3 scratch/cubic-reduction-standard-fivecdc-20260729/verify_local_relations.py
+python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/verify.py
+python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/independent_audit.py
+python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/kempe_state_graph.py
 ```
 
 The dependency-free checker exhausts every support shape allowed by the
@@ -113,6 +119,29 @@ It also derives dual-cut feasible moves and records the exact
 size-fourteen counterstate.  The Kempe escape shows how internal
 two-colour paths supply additional information absent from the abstract
 map-choice implication.  Larger supports remain uncontrolled.
+
+The exact standard convention and general-to-cubic/snark reductions are
+proved in
+`scratch/cubic-reduction-standard-fivecdc-20260729/README.md`.  Its
+pushforward proof includes loops by incidence multiplicity.  A hostile
+second audit checked the structural reductions separately from the finite
+\(D_5\)-label checker.  The reduction is standard in character and is not
+claimed as novel.
+
+The proof-method boundary is sharpened in
+`scratch/general-kempe-descent-static-exchange-obstruction-20260729/`.
+Its human proof shows that a chain of coloured \(K_4-e\) two-poles
+preserves the support, complement-component partition, and every
+two-colour boundary pairing while forcing all four static exchange
+inequalities.  The literal 230-vertex example defeats all 97 nonempty
+one-round fixed-colour path multiswitches, but a checked two-round sequence
+reaches a strict circuit deletion.  The graph is Tait-colourable and its
+minimum projection is empty, so this is not a counterexample to the
+selection conjecture or FiveCDC.  It proves that the unresolved argument
+must use the exchange theorem dynamically after neutral recolourings.
+The full-cycle and shortest-\(T\)-join checkers verify the four inequalities
+by different methods; an agent hostile audit passed after correcting the
+terminal-distance exposition, but no independent human has reviewed it.
 
 Run the expanded exact replay with:
 
