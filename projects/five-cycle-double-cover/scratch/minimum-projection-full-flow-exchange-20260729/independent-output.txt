@@ -1,0 +1,1 @@
+PASS: relative_gain=7 M=1,5 J=0,2,3,4,6 difference_coordinates_are_flows=1 master_local_rows=42 inflated_vertices=278 inflated_edges=417 inflated_supports=14,7 bridgeless=1
