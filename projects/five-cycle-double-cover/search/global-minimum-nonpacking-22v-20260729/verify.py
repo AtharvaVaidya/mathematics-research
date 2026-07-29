@@ -338,6 +338,14 @@ def main():
     assert len(minimum_supports) == 222
     assert sum(1 << e for e in SOURCE_M) in minimum_supports
     assert sum(1 << e for e in TARGET_M) in minimum_supports
+    nonpacking_minimum_supports = 0
+    for support_mask in minimum_supports:
+        support = {
+            e for e in range(len(EDGES)) if (support_mask >> e) & 1
+        }
+        _, packing_witnesses, _ = packing_cycle_statistics(cycles, support)
+        nonpacking_minimum_supports += int(packing_witnesses == 0)
+    assert nonpacking_minimum_supports == 11
 
     # Explicit nowhere-zero F_2^3 lifts and the neutral value-1 switch.
     assert flow_values_are_valid(SOURCE_VALUES)
@@ -424,6 +432,7 @@ def main():
             "exact_zero_size": minimum,
             "ordered_F2_2_states": minimum_states,
             "distinct_supports": len(minimum_supports),
+            "nonpacking_supports": nonpacking_minimum_supports,
         },
         "nonpacking_minimizer": {
             "support": sorted(SOURCE_M),

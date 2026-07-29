@@ -26,8 +26,9 @@ with indexed edges
 The standard-library checker proves by complete enumeration of the
 `4096^2 = 16,777,216` ordered binary-cycle pairs that the least possible
 exact-zero support of an \(\mathbb F_2^2\)-flow has size two.  It finds
-19,440 ordered minimum states and 222 distinct minimum supports.  This
-also lower-bounds any designated value class in a nowhere-zero
+19,440 ordered minimum states and 222 distinct minimum supports.  Exactly
+11 of those 222 supports fail the two-join packing test.  This also
+lower-bounds any designated value class in a nowhere-zero
 \(\mathbb F_2^3\)-flow: quotienting by that value produces an
 \(\mathbb F_2^2\)-flow whose exact-zero set is precisely the class.
 
