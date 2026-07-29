@@ -76,6 +76,13 @@ copied into a separate clean clone; it was not modified or committed.
   deletion pole also has full boundary and retains a girth-six proper core.
   Arbitrary-port insertion of either pole preserves FiveCDC and
   bridgelessness.  Neither configuration is known to be unavoidable.
+- A solver-free Petersen no-go for a tempting perfect-matching
+  strengthening.  The three incident pair labels define a unique local
+  \(K_5\)-triangle at every cubic vertex.  Relative to any perfect matching
+  of Petersen, at most two of the five matching edges can join equal local
+  triangles, and two is attained.  The proof reduces all 6,240 xor-zero
+  spoke words to six symmetry rows and checks 6,000 literal FiveCDC
+  labellings.  This rules out only the strengthening, not FiveCDC.
 - The standalone nine-page, explicitly AI-disclosed working preprint
   `preprint-fivecdc-four-pole-reductions/`, with deterministic PDF,
   checksum ledger, replay instructions, and human-review gate.  It combines

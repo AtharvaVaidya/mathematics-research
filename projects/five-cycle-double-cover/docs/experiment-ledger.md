@@ -3323,3 +3323,34 @@ the coordinate Laplacians are
 10 and -14.  This exact sign reversal rules out a profile-only formula and
 universal sub/superharmonicity for total defect.  It does not refute the
 topology-sensitive plateau theorem.
+
+## Petersen matching/local-triangle strengthening no-go
+
+Audit date: **2026-07-28**.
+
+At every cubic vertex of a \(D_5\) labelling, the three incident
+two-subsets are the edges of a unique triangle in \(K_5\).  The
+strengthening asking for a perfect matching whose every edge joins equal
+endpoint triangles is false already on Petersen.
+
+Fix the standard spoke matching.  The outer and inner complementary
+5-cycles read the same five spoke labels in the orders
+\((0,1,2,3,4)\) and \((0,2,4,1,3)\).  The standard-library checker
+enumerates all 6,240 xor-zero spoke words and every closed lift of both
+orders through \(L(K_5)\).  Quotienting by \(S_5\) on colours and
+\(\operatorname{AGL}(1,5)\) on spoke indices leaves six rows.  Exactly
+3,000 words lift in both orders and yield 6,000 literal fixed-matching
+FiveCDC labellings.  Their equal-triangle matching-edge distribution is
+
+```text
+equal endpoints       0       1       2
+labellings          2400    2400    1200
+```
+
+Thus the sharp maximum is two of five.  Petersen automorphisms are
+transitive on its six perfect matchings, so this covers every matching.
+The six-row proof table and checker are
+`scratch/petersen-matching-triangle-defect-20260728.md` and
+`scratch/verify_petersen_matching_triangle_defect.py`.  This is a
+counterexample to a stronger compression lemma, not a FiveCDC
+counterexample.
