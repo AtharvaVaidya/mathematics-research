@@ -1530,21 +1530,27 @@ use their simultaneous flow constraints rather than a generic
 one-matching shortest-\(T\)-join theorem.  See
 `scratch/petersen-minimum-tjoin-countermodel-20260729/`.
 
-## O67 — A counterexample to minimum-projection selection has support at
-most seven
+## O67 — No counterexample to minimum-projection selection has support at
+most eleven
 
 Status: **CLOSED / HUMAN THEOREM EXCLUDES THE RANGE**.
 
 For a globally minimum extendable projection \(h\), every circuit component
-meets all four affine value classes.  Hence \(|h|\le7\) forces one circuit.
-The four-/five-cycle cases admit a direct human Tait-repair contradiction.
-At sizes six and seven, an exhaustive affine boundary classifier either
-finds the same componentwise \(\operatorname{GL}(2,2)\) Tait repair or
-leaves a state with exactly two complement components.  The human
-combined-line span theorem cleans every such residual state by one valid
-switch.
+meets all four affine value classes.  An exact direct boundary oracle
+exhausts every resulting support shape through total size ten.  It applies
+an independent \(\operatorname{GL}(2,2)\) map inside each complement
+component, solves the circuit vertex equations with arbitrary low values
+on \(h\), and tests the repaired affine cut parities.  All 125,178 valid
+dirty canonical word/partition states are cleaned.
 
-Thus no non-Tait counterexample to the minimum-projection selection
-principle has minimum size at most seven.  The theorem does not settle size
-eight or FiveCDC.  See
-`scratch/minimum-projection-through7-cleanability-20260729/`.
+At size eleven there are 14 direct-repair failures, all in the \(5+6\)
+shape.  Each has an explicit boundary certificate for a size-five
+extendable replacement, so none is globally minimum.  All 14 minimal
+realizations are the triangle-expanded Petersen graph
+`Kt?G?DIPOqCo`; its target size-eleven projection is genuinely
+uncleanable, but its minimum extendable support is five and clean.
+
+Thus no counterexample to the minimum-projection selection principle has
+minimum size at most eleven.  The theorem gives no universal
+minimum-support bound and does not settle FiveCDC.  See
+`scratch/minimum-projection-through11-cleanability-20260729/`.

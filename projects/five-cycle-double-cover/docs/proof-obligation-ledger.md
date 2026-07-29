@@ -1642,19 +1642,26 @@ Open obligations:
      potential must state which of these two parameters it minimizes.
      Status: **SEMANTIC DISTINCTION CLOSED / VALUE-CLASS ROUTE REFUTED**.
 
-103. **Minimum-projection sizes at most seven:** every globally minimum
+103. **Minimum-projection sizes at most eleven:** every globally minimum
      extendable projection in this range is cleanable.  The four-colour
-     circuit corollary reduces the support to one circuit.  The four- and
-     five-edge cases have a direct human repair.  Exhaustive exact boundary
-     classifiers at sizes six and seven leave only states with two
-     complement components, which the human combined-line span theorem
-     cleans by one valid switch.
+     circuit corollary gives the complete support-shape list.  A direct
+     boundary repair applies independent \(\mathrm{GL}(2,2)\) maps to the
+     complement components, permits zero low values on projection edges,
+     and solves every circuit recurrence.  The exact checker cleans all
+     125,178 valid dirty canonical states through the shapes \(10\),
+     \(4+6\), and \(5+5\), with an independently reproduced size-ten
+     classification.  At size eleven, the exact boundary checker finds
+     14 direct-repair failures in 11 orbits, but every one admits a
+     certified size-five extendable replacement and is therefore
+     nonminimum.  A separate valid-block implementation reproduces the
+     size-eleven classification and replacement oracle.
      Status: **CLOSED / HUMAN PROOFS PLUS EXACT FINITE CLASSIFICATION**.
 
-104. **Minimum-size-eight boundary:** treat both possible support types:
-     one eight-cycle or two four-cycles.  The one-circuit classifier already
-     develops genuine three-component residuals, so the two-component span
-     corollary no longer closes the boundary.  Derive a valid multi-component
-     switch/recolouring theorem, exploit the shortest-join inequalities, or
-     realize a genuine uncleanable global minimum.
+104. **Minimum-size-twelve boundary:** treat the support types \(12\),
+     \(4+8\), \(5+7\), \(6+6\), and \(4+4+4\).  Test the
+     clean-or-delete-a-circuit dichotomy suggested by the 14 size-eleven
+     failures: either directly clean the fixed support, or make one entire
+     circuit low-valued and nonzero so it can be deleted from the first
+     coordinate.  Convert any surviving state into a realizability and
+     full global-minimality test.
      Status: **OPEN / NEXT STRUCTURAL FRONTIER**.

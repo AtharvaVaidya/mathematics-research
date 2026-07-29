@@ -46,7 +46,7 @@ Five-Cycle Double Cover Conjecture}
 \textbf{Resolution status.}
 The five-cycle double cover conjecture remains unresolved.
 This note proves an exchange theorem, settles the minimum-support cases
-through size seven, and gives exact finite censuses.  It proves neither the
+through size eleven, and gives exact finite censuses.  It proves neither the
 conjecture nor its negation.
 }}
 \end{center}
@@ -73,18 +73,23 @@ and every support-shortening cycle meets all four classes.  The proof is
 the addition of the Fano value \((1,c)\) along \(C\).
 
 We first prove, without computation, that every globally minimum
-extendable projection of size at most five is cleanable.  If such an
-extension were dirty, its projection would be a single four- or five-cycle.
-Classifying the possible component shores and applying independent
-\(\operatorname{GL}(2,2)\) transformations on the two complementary
-components constructs a nowhere-zero \(\F_2^2\)-flow, contradicting
-non-Tait-colourability.  A second exact theorem settles sizes six and
-seven.  An
-exhaustive affine/dihedral boundary quotient either gives the same Tait
-repair or leaves only states with two complement components, all cleaned
-by a proved one-switch span theorem.  Thus a
-counterexample to the proposed minimum-projection selection principle must
-have minimum size at least eight.
+extendable projection of size at most five is cleanable.  We then give a
+stronger direct boundary repair.  Independently on every component of
+\(G-h\), apply an element of \(\operatorname{GL}(2,2)\) to the low-flow
+values; on every circuit of \(h\), solve the resulting cyclic vertex
+equations while allowing zero low values, since the first coordinate is
+one there.  Cleanliness becomes four explicit cut-parity equations per
+component.  An exact affine/dihedral quotient exhausts every support shape,
+proper four-colour circuit word, and component partition through total
+support size ten.  All \(125{,}178\) valid dirty canonical states admit a
+direct repair.  At size eleven the same test first fails: there are
+14 failed \(5+6\) boundary states, in 11 full symmetry orbits.  For every
+failure, however, an explicit boundary certificate makes the six-circuit
+low-valued and nowhere zero, so deleting it from the first-coordinate
+support produces an extendable projection of size five.  Global minimality
+excludes all 14.  Thus every minimum extendable projection of size at most
+eleven is cleanable, and a counterexample to the proposed selection
+principle must have minimum size at least twelve.
 
 We perform an exact canonical census of all \(41{,}301\) connected simple
 cubic graphs of order \(18\).  Among the \(39{,}866\) bridgeless graphs,
@@ -137,8 +142,8 @@ priority for either formulation.
 The contribution of this note is narrower:
 \begin{enumerate}
   \item a minimum-support exchange theorem, with a complete proof;
-  \item a human proof through size five and an exact extension through
-        size seven;
+  \item a human proof through size five and an exact boundary extension
+        through size eleven;
   \item four simultaneous shortest-join consequences;
   \item a reproducible canonical order-\(18\) census and an expanded
         exact replay on frozen sources through order \(28\); and
@@ -541,7 +546,7 @@ n&\text{valid dirty pairs}&\text{failed linear repairs}&
 \text{failures with more than two components}\\
 \hline
 6&2712&432&0\\
-7&26880&5376&0.
+7&26880&5376&0
 \end{array}
 \]
 Every dirty state either produces a
@@ -556,10 +561,10 @@ they give the three representatives
 \hline
 010123&001001\\
 010232&001010\\
-012013&000101.
+012013&000101
 \end{array}
 \]
-with 144 labeled states per orbit.  At size seven there is no residual
+There are 144 labeled states per orbit.  At size seven there is no residual
 normal form after the two-component theorem.  The dependency-free
 enumerator regenerates all words, partitions, conservation tests, dirty
 states, and linear repairs rather than trusting the stored counts.
@@ -574,6 +579,188 @@ The exact classifications, proof of semantics, size-six representatives,
 and full standalone span proof are bundled in the cumulative through-seven
 package.  This is a finite boundary theorem, not a search over sampled
 graphs.
+\end{remark}
+
+\subsection{Direct component repair through size ten}
+
+The preceding Tait repair required every new low value to be nonzero.
+For the original three-bit flow this is unnecessarily restrictive on
+\(h\): an edge of \(h\) has first coordinate one and therefore remains
+nonzero even when its low value is zero.  Exploiting this observation
+gives a stronger repair.
+
+\begin{proposition}[direct boundary repair certificate]
+\label{prop:directrepair}
+Let \(f=(h,s)\) be a nowhere-zero \(\F_2\times K\)-flow.  Index the
+vertices and edges of each circuit of \(h\) cyclically, put
+\[
+ c_i=s(e_i),\qquad d_i=c_{i-1}+c_i,
+\]
+and let \(\pi_i\) denote the component \(W_{\pi_i}\) of \(G-h\) containing
+the circuit vertex \(v_i\).  Suppose there are maps
+\(L_a\in\operatorname{GL}(2,2)\) and values \(r_i\in K\) such that
+\[
+                    r_{i-1}+r_i=L_{\pi_i}d_i              \tag{13}
+\]
+on every circuit, and, for every component \(W_a\) and every \(c\in K\),
+\[
+ \bigl|\{e_i\in\delta(W_a):r_i=c\}\bigr|\equiv0\pmod2.    \tag{14}
+\]
+Then \(h\) is cleanable.
+\end{proposition}
+
+\begin{proof}
+Apply \(L_a\) to the low value of every edge in \(W_a\).  At a vertex
+outside \(h\), all three incident edges lie in the same component, so
+linearity preserves the flow equation.  At a circuit vertex \(v_i\), the
+unique edge outside \(h\) receives value \(L_{\pi_i}d_i\), and (13) is
+exactly the missing vertex equation.  Every edge outside \(h\) retains a
+nonzero low value because \(L_a\) is invertible.  Every edge of \(h\) has
+full value \((1,r_i)\), which is nonzero even if \(r_i=0\).  The repaired
+flow is therefore nowhere zero.  Equation (14) is precisely the clean
+affine-class cut condition, component by component.
+\end{proof}
+
+\begin{theorem}[minimum projections through size ten]
+\label{thm:sizeten}
+Let \(G\) be a connected bridgeless loopless cubic graph; parallel edges
+are allowed.  Every cardinality-minimum extendable projection of size at
+most ten is cleanable.
+\end{theorem}
+
+\begin{proof}
+The zero projection is clean.  For a nonzero minimum projection,
+Corollary~\ref{cor:fourcolour} says that every circuit component uses all
+four affine colours and hence has length at least four.  The possible
+length partitions through total size ten are therefore
+\[
+\begin{gathered}
+4,5,6,7,8,9,10,\\
+4+4,\quad4+5,\quad4+6,\quad5+5.                         \tag{15}
+\end{gathered}
+\]
+
+For a fixed shape, the exact checker enumerates every proper cyclic word
+on \(K\) using all four colours on every circuit, modulo the global affine
+action and the exact dihedral action on each circuit (including circuit
+interchange when the lengths agree).  For every canonical word it
+enumerates every set partition \(\pi\) of the circuit vertices.  It retains
+exactly those partitions satisfying component conservation
+\[
+                 \bigoplus_{\pi_i=a}d_i=0
+\]
+and the four equal affine cut parities, with at least one dirty component.
+It then exhausts all six choices of \(L_a\) independently for every
+component and all four starting values independently on every circuit;
+equation (13) forces the remaining \(r_i\)'s.  Finally it tests (14)
+literally.
+
+The complete counts are
+\[
+\begin{array}{c|r|r|r}
+\text{shape}&\text{canonical words}&\text{valid dirty states}&
+\text{failed direct repairs}\\
+\hline
+4&1&1&0\\
+5&1&2&0\\
+6&5&27&0\\
+7&7&116&0\\
+8&26&1386&0\\
+9&49&8840&0\\
+10&151&102{,}290&0\\
+4+4&2&114&0\\
+4+5&2&372&0\\
+4+6&11&7798&0\\
+5+5&6&4232&0
+\end{array}
+\]
+These are all shapes in (15), and every retained boundary state has a
+certificate of Proposition~\ref{prop:directrepair}.  Hence every minimum
+projection in the stated range is cleanable.
+\end{proof}
+
+\begin{remark}
+The dependency-free replay is the \texttt{verify.py} program in the
+bundled through-ten direct-cleaning package.
+It regenerates the words, partitions, conservation tests, and repairs.
+A separately written through-nine package agrees on the overlapping
+range, and two independent agent runs reproduced the size-ten counts.
+These checks are not independent human peer review.
+\end{remark}
+
+\subsection{The first direct-repair failures and size eleven}
+
+The direct-cleaning statement in Theorem~\ref{thm:sizeten} is not
+universal.  A second elementary certificate explains why its first
+failures nevertheless cannot be globally minimum.
+
+\begin{proposition}[circuit-deletion certificate]
+\label{prop:deletecircuit}
+Let \(f=(h,s)\) be a nowhere-zero \(\F_2\times K\)-flow, and let \(D\) be
+a circuit component of \(h\).  Suppose component maps \(L_a\) and values
+\(r_i\) satisfy the vertex equations (13), and suppose \(r_i\ne0\) on
+every edge of \(D\).  Then \(h-D\) is extendable.
+\end{proposition}
+
+\begin{proof}
+Use first coordinate one on \(h-D\) and zero on \(D\).  On all circuit
+edges use the low values \(r_i\), and inside each component of \(G-h\)
+use \(L_as\).  The proof of Proposition~\ref{prop:directrepair} verifies
+all vertex equations and nonzeroness off \(D\).  On \(D\), the first
+coordinate is now zero but the assumed low value is nonzero.  The result
+is therefore a nowhere-zero flow with first-coordinate support \(h-D\).
+\end{proof}
+
+\begin{theorem}[minimum projections through size eleven]
+\label{thm:sizeeleven}
+Under the hypotheses of Theorem~\ref{thm:sizeten}, every
+cardinality-minimum extendable projection of size at most eleven is
+cleanable.
+\end{theorem}
+
+\begin{proof}
+Only total size eleven remains.  The four-colour circuit condition gives
+the three shapes
+\[
+                         11,\qquad4+7,\qquad5+6.          \tag{16}
+\]
+The same exact boundary enumeration used above gives
+\[
+\begin{array}{c|r|r|r|r}
+\text{shape}&\text{canonical words}&\text{charge-valid}&
+\text{dirty}&\text{failed direct repairs}\\
+\hline
+11&345&1{,}183{,}710&919{,}764&0\\
+4+7&17&57{,}500&46{,}786&0\\
+5+6&26&87{,}884&71{,}170&14
+\end{array}
+\]
+The 14 literal failures form 11 orbits under the full affine, dihedral,
+and component-renaming action.  For each failure, the checker exhausts
+the same component maps and independent circuit starts and finds a
+certificate satisfying (13) in which every low value on the six-circuit
+is nonzero.  Proposition~\ref{prop:deletecircuit} then produces an
+extendable projection supported only on the five-circuit.  Its size is
+five, contradicting the assumed global minimality of the size-eleven
+projection.  Hence every globally minimum size-eleven state is directly
+cleanable.
+\end{proof}
+
+\begin{remark}[sharp direct-repair countermodel]
+The 14 failed boundary states are realizable.  Replacing each two-vertex
+component block by an edge and each three-vertex block by a claw yields,
+in all 14 cases, the same simple bridgeless non-Tait graph on 12 vertices,
+with graph6 encoding
+\[
+                         \texttt{Kt?G?DIPOqCo}.
+\]
+It is the triangle-expanded Petersen graph.  Exact cycle-space enumeration
+shows that the displayed size-eleven \(5+6\) projection is extendable but
+uncleanable, while the minimum extendable-projection size is five and all
+six size-five minima are cleanable.  Thus it refutes the direct-repair
+strengthening, not FiveCDC or the minimum-projection conjecture.  The
+cumulative checker and all 14 certificates are in the bundled
+through-eleven package.
 \end{remark}
 
 \begin{corollary}[rainbow shortcut]\label{cor:shortcut}
@@ -625,7 +812,8 @@ component of an \emph{uncleanable globally minimum-support projection},
 derive a negative colour-avoiding cycle after allowable neutral
 recolouring, using the four simultaneous shortest-\(T_c\)-join
 inequalities of Corollary~\ref{cor:tjoin}.  No proof of this statement is
-given here.
+given here.  By Theorem~\ref{thm:sizeeleven}, any counterexample to this
+selection principle has minimum support at least twelve.
 
 \section{Exact finite census}\label{sec:census}
 
@@ -835,10 +1023,11 @@ python3 verify.py
 
 The exchange theorem converts global support minimality into four ordinary
 geodesic conditions: one shortest join for each affine value class.
-Theorems~\ref{thm:sizefive} and~\ref{thm:sizeseven} close the first four
-possible nonzero support sizes: a counterexample to
-Conjecture~\ref{conj:minimum} must have minimum projection size at least
-eight.
+Theorems~\ref{thm:sizefive}, \ref{thm:sizeseven}, \ref{thm:sizeten}, and
+\ref{thm:sizeeleven} close every possible nonzero support size through
+eleven:
+a counterexample to Conjecture~\ref{conj:minimum} must have minimum
+projection size at least twelve.
 The useful feature is simultaneity.  A cycle that would shorten the
 projection is allowed to be blocked by one colour, but
 Corollary~\ref{cor:shortcut} forces it to be blocked by all four.
@@ -875,7 +1064,10 @@ developed by OpenAI Codex agents under Atharva Vaidya's direction.  The
 minimum-projection exchange proof, the size-at-most-five proof, and the
 span proof used at sizes six and seven are displayed in full so that they
 can be checked without trusting an AI system.  Those boundary
-classifications are also regenerated by a dependency-free exact checker.
+classifications and the stronger direct-cleaning theorem through size ten
+are also regenerated by dependency-free exact checkers.  The
+through-eleven checker freezes every first direct-repair failure and its
+smaller-support certificate.
 The order-\(18\) result is
 reproducible from canonical generation and exhaustive cycle-space
 enumeration.  The expanded census exactly replays frozen sources but

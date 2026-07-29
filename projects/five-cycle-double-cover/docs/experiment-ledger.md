@@ -3572,3 +3572,50 @@ one valid line-preserving switch.  Thus every globally minimum extendable
 projection of size at most seven is cleanable.  This is an exhaustive
 boundary theorem, not graph sampling.  See
 `scratch/minimum-projection-through7-cleanability-20260729/`.
+
+## Exact minimum-projection classification through size eleven
+
+Audit date: **2026-07-29**.
+
+The stronger boundary oracle keeps the independent
+\(\mathrm{GL}(2,2)\) map on every component of \(G-h\), but permits zero
+low values on \(h\), where the first Fano coordinate is one.  It solves
+the cyclic vertex equations and checks every repaired affine cut parity
+literally.  Minimum exchange forces every circuit component of \(h\) to
+use all four affine values, so the complete support-shape list through ten
+is
+\[
+4,5,6,7,8,9,10,\quad4+4,\quad4+5,\quad4+6,\quad5+5.
+\]
+
+The dependency-free replay exhausts every canonical proper circuit word
+and every set partition of its boundary vertices.  Across all shapes it
+finds 125,178 valid dirty canonical word/partition states and zero failed
+direct repairs.  The new size-ten rows are:
+
+| support shape | canonical words | valid dirty | failures |
+|---|---:|---:|---:|
+| \(10\) | 151 | 102,290 | 0 |
+| \(4+6\) | 11 | 7,798 | 0 |
+| \(5+5\) | 6 | 4,232 | 0 |
+
+Two agents independently reproduced these size-ten counts.  At size
+eleven the shapes \(11\) and \(4+7\) have respectively
+345/919,764 and 17/46,786 canonical-word/dirty-state counts, with no
+direct failures.  Shape \(5+6\) has 26 words, 71,170 dirty states, and
+14 direct failures in 11 full symmetry orbits.  Every failure has an
+explicit component-map/circuit-start certificate making the entire
+six-circuit low-valued and nonzero.  Deleting that circuit from the first
+coordinate gives an extendable projection of size five, contradicting
+size-eleven global minimality.
+
+A separately written valid-block enumerator reproduces all size-eleven
+counts and all 14 smaller-support replacements.  Consequently every
+globally minimum extendable projection of size at most eleven is
+cleanable.  The 14 failed boundary states all realize the same
+triangle-expanded Petersen graph `Kt?G?DIPOqCo`; its target size-eleven
+projection is uncleanable, but its exact minimum is five with six
+cleanable minima.  This is an exact finite boundary theorem, not a sampled
+graph census, but it gives no universal bound on minimum support and does
+not resolve FiveCDC.  See
+`scratch/minimum-projection-through11-cleanability-20260729/`.

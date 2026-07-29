@@ -5,7 +5,7 @@ minimum-support route to the standard five-cycle double cover conjecture.
 
 **Resolution status:** FiveCDC remains open. The paper proves a
 human-checkable exchange theorem and a complete minimum-projection theorem
-through support size seven, reports exact finite censuses, and states the
+through support size eleven, reports exact finite censuses, and states the
 remaining universal selection principle as an explicit conjecture. It
 claims neither a proof nor a counterexample.
 
@@ -42,16 +42,23 @@ the size-at-most-five theorem with:
 python3 scratch/minimum-projection-size5-theorem-20260729/verify.py
 ```
 
-Replay the cumulative exact boundary theorem through size seven with:
+Replay the cumulative cleanability theorem through size eleven with:
 
 ```sh
-python3 scratch/minimum-projection-through7-cleanability-20260729/verify.py
+python3 scratch/minimum-projection-through11-cleanability-20260729/verify_through10.py
+python3 scratch/minimum-projection-through11-cleanability-20260729/verify.py
 ```
 
-The size-six/seven proof combines exhaustive affine boundary
-classification with a displayed telescoping span theorem. Every boundary
-state not eliminated by a componentwise \(\mathrm{GL}(2,2)\) Tait repair
-has exactly two complement components, and one valid line switch cleans it.
+The dependency-free checker exhausts every support shape allowed by the
+minimum-exchange theorem through size ten.  For every proper affine word
+and every conserved component partition, it constructs independent
+\(\mathrm{GL}(2,2)\) maps on the complement components and new low values
+on the projection circuits.  All 125,178 valid dirty canonical
+word/partition states are directly cleaned through size ten.  At size
+eleven, 14 direct-repair failures occur in the \(5+6\) shape, but every
+one has a checked size-five replacement and therefore cannot be globally
+minimum.  A second independently written implementation reproduced all
+size-eleven counts and the 14 replacement certificates.
 
 Run the expanded exact replay with:
 
