@@ -3554,3 +3554,21 @@ seven order-34 rows and the first five order-40 rows.  The complete
 order-40 result uses the exact SAT scanner; graph-population completeness
 is inherited from the upstream source.  See
 `scratch/minimum-projection-known-strong-snarks-20260729/`.
+
+## Exact minimum-projection boundary classification through size seven
+
+Audit date: **2026-07-29**.
+
+The dependency-free classifier exhausts every proper four-colour cyclic
+word, every set partition of its boundary vertices, all component
+conservation/dirty conditions, and every componentwise
+\(\mathrm{GL}(2,2)\) low-flow repair.  At size six it finds 2,712 valid
+dirty pairs and 432 failed linear repairs; at size seven it finds 26,880
+valid dirty pairs and 5,376 failed repairs.  Every failed state at both
+sizes has exactly two complement components.
+
+The human combined-line span theorem then cleans every residual state by
+one valid line-preserving switch.  Thus every globally minimum extendable
+projection of size at most seven is cleanable.  This is an exhaustive
+boundary theorem, not graph sampling.  See
+`scratch/minimum-projection-through7-cleanability-20260729/`.

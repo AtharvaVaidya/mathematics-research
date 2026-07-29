@@ -14,10 +14,12 @@ finite searches are not evidence of the universal statement.
 The newest publication-candidate update is
 `preprint-minimum-fano-projection/`.  It proves a simultaneous
 minimum-support exchange theorem and, by a complete four-/five-cycle
-boundary analysis, proves that every minimum extendable projection of size
-at most five is cleanable.  Thus any counterexample to the proposed
-minimum-projection selection principle has minimum size at least six.  Its
-exact finite evidence now includes 147,539 minima on frozen sources through
+boundary analysis followed by exact six-/seven-cycle quotients, proves
+that every minimum extendable projection of size at most seven is
+cleanable.  The latter quotient uses a human telescoping span theorem to
+clean every residual two-component state.  Thus any counterexample to the
+proposed minimum-projection selection principle has minimum size at least
+eight.  Its exact finite evidence now includes 147,539 minima on frozen sources through
 order 28, 433,730 minima on 7,661 retained order-34/order-40 strong-snark
 rows, and a certified 130-vertex case with minimum size 42 and 11,264
 cleanable minima.  The manuscript includes full proofs, exact replay

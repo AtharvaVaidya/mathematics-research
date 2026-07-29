@@ -5,7 +5,7 @@ minimum-support route to the standard five-cycle double cover conjecture.
 
 **Resolution status:** FiveCDC remains open. The paper proves a
 human-checkable exchange theorem and a complete minimum-projection theorem
-through support size five, reports exact finite censuses, and states the
+through support size seven, reports exact finite censuses, and states the
 remaining universal selection principle as an explicit conjecture. It
 claims neither a proof nor a counterexample.
 
@@ -41,6 +41,17 @@ the size-at-most-five theorem with:
 ```sh
 python3 scratch/minimum-projection-size5-theorem-20260729/verify.py
 ```
+
+Replay the cumulative exact boundary theorem through size seven with:
+
+```sh
+python3 scratch/minimum-projection-through7-cleanability-20260729/verify.py
+```
+
+The size-six/seven proof combines exhaustive affine boundary
+classification with a displayed telescoping span theorem. Every boundary
+state not eliminated by a componentwise \(\mathrm{GL}(2,2)\) Tait repair
+has exactly two complement components, and one valid line switch cleans it.
 
 Run the expanded exact replay with:
 

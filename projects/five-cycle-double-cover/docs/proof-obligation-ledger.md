@@ -1642,19 +1642,19 @@ Open obligations:
      potential must state which of these two parameters it minimizes.
      Status: **SEMANTIC DISTINCTION CLOSED / VALUE-CLASS ROUTE REFUTED**.
 
-103. **Minimum-projection sizes at most five:** every globally minimum
+103. **Minimum-projection sizes at most seven:** every globally minimum
      extendable projection in this range is cleanable.  The four-colour
-     circuit corollary reduces the support to one four- or five-cycle.
-     A complete shore classification and explicit componentwise
-     \(\operatorname{GL}(2,2)\) repair show that a dirty extension would
-     Tait-colour the graph.
-     Status: **CLOSED / HUMAN-CHECKABLE THEOREM**.
+     circuit corollary reduces the support to one circuit.  The four- and
+     five-edge cases have a direct human repair.  Exhaustive exact boundary
+     classifiers at sizes six and seven leave only states with two
+     complement components, which the human combined-line span theorem
+     cleans by one valid switch.
+     Status: **CLOSED / HUMAN PROOFS PLUS EXACT FINITE CLASSIFICATION**.
 
-104. **Minimum-size-six boundary:** classify the proper six-edge affine
-     colour words and dirty component partitions left by the four
-     simultaneous shortest-join inequalities.  Either repair all such
-     configurations by neutral low-coordinate transformations, derive a
-     strict support exchange, or realize a genuine uncleanable global
-     minimum.  This is the first support size not covered by the small
-     theorem.
+104. **Minimum-size-eight boundary:** treat both possible support types:
+     one eight-cycle or two four-cycles.  The one-circuit classifier already
+     develops genuine three-component residuals, so the two-component span
+     corollary no longer closes the boundary.  Derive a valid multi-component
+     switch/recolouring theorem, exploit the shortest-join inequalities, or
+     realize a genuine uncleanable global minimum.
      Status: **OPEN / NEXT STRUCTURAL FRONTIER**.

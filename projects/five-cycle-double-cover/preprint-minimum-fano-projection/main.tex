@@ -46,7 +46,7 @@ Five-Cycle Double Cover Conjecture}
 \textbf{Resolution status.}
 The five-cycle double cover conjecture remains unresolved.
 This note proves an exchange theorem, settles the minimum-support cases
-through size five, and gives exact finite censuses.  It proves neither the
+through size seven, and gives exact finite censuses.  It proves neither the
 conjecture nor its negation.
 }}
 \end{center}
@@ -72,14 +72,19 @@ Thus every circuit component of \(h\) contains all four affine colours,
 and every support-shortening cycle meets all four classes.  The proof is
 the addition of the Fano value \((1,c)\) along \(C\).
 
-We also prove, without computation, that every globally minimum
+We first prove, without computation, that every globally minimum
 extendable projection of size at most five is cleanable.  If such an
 extension were dirty, its projection would be a single four- or five-cycle.
 Classifying the possible component shores and applying independent
 \(\operatorname{GL}(2,2)\) transformations on the two complementary
 components constructs a nowhere-zero \(\F_2^2\)-flow, contradicting
-non-Tait-colourability.  Thus a counterexample to the proposed
-minimum-projection selection principle must have minimum size at least six.
+non-Tait-colourability.  A second exact theorem settles sizes six and
+seven.  An
+exhaustive affine/dihedral boundary quotient either gives the same Tait
+repair or leaves only states with two complement components, all cleaned
+by a proved one-switch span theorem.  Thus a
+counterexample to the proposed minimum-projection selection principle must
+have minimum size at least eight.
 
 We perform an exact canonical census of all \(41{,}301\) connected simple
 cubic graphs of order \(18\).  Among the \(39{,}866\) bridgeless graphs,
@@ -132,10 +137,9 @@ priority for either formulation.
 The contribution of this note is narrower:
 \begin{enumerate}
   \item a minimum-support exchange theorem, with a complete proof;
-  \item a human-checkable theorem settling minimum projection sizes at
-        most five;
-  \item elementary consequences for four simultaneous shortest
-        \(T\)-joins;
+  \item a human proof through size five and an exact extension through
+        size seven;
+  \item four simultaneous shortest-join consequences;
   \item a reproducible canonical order-\(18\) census and an expanded
         exact replay on frozen sources through order \(28\); and
   \item a precise conjectural step that would turn this route into a proof.
@@ -416,7 +420,160 @@ clean, and in particular \(h\) is cleanable.
 \begin{remark}
 The finite case split and the two repair rows are independently replayed
 by \path{verify.py} in the bundled size-five theorem package.
-Theorem~\ref{thm:sizefive} leaves the minimum-size-six boundary open.
+\end{remark}
+
+\subsection{A line-switch lemma and the size-six/seven boundary}
+
+We need one support-preserving fact.  Identify the seven nonzero full flow
+values with \(1,\ldots,7\) under bitwise addition, so that
+\[
+ L=\{1,2,3\}=\{(0,t):t\in K-\{0\}\},\qquad
+ A=\{4,5,6,7\}=\{(1,c):c\in K\}.
+\]
+Let \({\cal K}\) be the components of \(G-h\), and let
+\(r\in\F_2^{\cal K}\) indicate the rainbow-odd components.  For
+\(t\in L\), put \(N_t=f^{-1}(t)\) and \(P_t=\{4,4+t\}\).  If \(C\) is a
+binary cycle of \(G-N_t\), define
+\[
+ \tau_t(C)_W
+   =|C\cap\delta(W)\cap f^{-1}(P_t)|\pmod2
+   \qquad(W\in{\cal K}).                                \tag{10}
+\]
+Adding \(t\) along \(C\) is a valid line-preserving switch: avoiding
+\(N_t\) prevents a zero value, and (10) is its change to the defect
+vector.
+
+\begin{proposition}[combined-line span]\label{prop:span}
+\[
+ r\in\sum_{t\in L}\operatorname{im}\tau_t.              \tag{11}
+\]
+Consequently, if \(G-h\) has at most two components, then \(h\) is
+cleanable by at most one valid line-preserving switch.
+\end{proposition}
+
+\begin{proof}
+Suppose (11) fails.  There is a vector
+\(y\in\F_2^{\cal K}\) with
+\[
+ y\cdot r=1,\qquad y\cdot\tau_t(C)=0
+ \quad(t\in L,\ C\text{ a cycle of }G-N_t).
+\]
+Let \(U\) be the union of the components selected by \(y\), and let
+\(u:V(G)\to\F_2\) indicate \(U\).  Cycle--cut orthogonality says that
+\[
+ R_t=\delta(U)\cap f^{-1}(P_t)
+\]
+is a cut in \(G-N_t\).  Choose a vertex indicator \(x_t\) for that cut,
+and write \(q=(u,x_1,x_2,x_3)\).
+
+Define
+\[
+ {\cal A}(q)=
+ \bigl(u(x_2+x_3),\ u(x_1+x_3),\
+ x_1x_2+x_1x_3+x_2x_3\bigr)\in\F_2^3.
+\]
+Across an edge, the only possible nonzero differences of
+\((u;x_1x_2x_3)\), indexed by its flow value, are
+\[
+\begin{array}{c|ccccccc}
+f(e)&1&2&3&4&5&6&7\\
+\hline
+\Delta q&(0;100)&(0;010)&(0;001)&(1;111)&
+(1;100)&(1;010)&(1;001).
+\end{array}
+\]
+The zero difference is also allowed in every column.  Direct substitution
+gives the pointwise identity
+\[
+ \bigl({\cal A}(q_v)+{\cal A}(q_w)\bigr)\cdot f(vw)
+ =
+ \begin{cases}
+ 1,&f(vw)=4\text{ and }u(v)\ne u(w),\\
+ 0,&\text{otherwise}.
+ \end{cases}                                           \tag{12}
+\]
+Summing (12) over all edges and regrouping at vertices makes its left side
+\[
+ \sum_v{\cal A}(q_v)\cdot\left(\sum_{e\ni v}f(e)\right)=0
+\]
+by flow conservation.  The right side is
+\(|\delta(U)\cap f^{-1}(4)|=y\cdot r=1\), a contradiction.  This proves
+(11).
+
+Every vector in every image of \(\tau_t\) has even Hamming weight, since
+an affine edge between two \(G-h\) components is counted at both ends.
+For one component the even-weight space is zero.  For two components it
+is one-dimensional; if \(r\ne0\), (11) forces one of the three image
+spaces to contain its unique nonzero vector.  The corresponding single
+valid switch kills \(r\).  A single switch has no mixed-switch quadratic
+correction, completing the proof.
+\end{proof}
+
+\begin{theorem}[minimum projections through size seven]
+\label{thm:sizeseven}
+Under the hypotheses of Theorem~\ref{thm:sizefive}, every minimum
+extendable projection of size at most seven is cleanable.
+\end{theorem}
+
+\begin{proof}
+Only sizes six and seven remain.  The four-colour circuit corollary forces
+\(h\) to be one circuit
+\[
+ v_0,e_0,v_1,e_1,\ldots,v_{n-1},e_{n-1},v_0,
+ \qquad n\in\{6,7\}.
+\]
+Put \(c_i=s(e_i)\), and encode the component of \(G-h\) containing \(v_i\)
+by \(\pi_i\).  The \(c_i\)'s form a proper cyclic word using all four
+affine colours.  Conservation on every component \(W\) gives
+\[
+ \sum_{\pi_i=W}(c_{i-1}+c_i)=0,
+\]
+and its four affine cut parities are either all zero or all one.
+
+The exact finite boundary classifier enumerates every such word and every
+set partition \(\pi\).  For each
+state it also enumerates one independent element of
+\(\operatorname{GL}(2,2)\) on the low flow values of every component and
+solves the \(n\) cycle equations.  Its complete counts are
+\[
+\begin{array}{c|r|r|r}
+n&\text{valid dirty pairs}&\text{failed linear repairs}&
+\text{failures with more than two components}\\
+\hline
+6&2712&432&0\\
+7&26880&5376&0.
+\end{array}
+\]
+Every dirty state either produces a
+nowhere-zero \(K\)-flow on all of \(G\), contradicting the non-Tait
+hypothesis, or has exactly two components of \(G-h\).  At size six the
+failed states may additionally be quotiented by the affine group on the
+four colours, the dihedral group of the cycle, and component relabelling;
+they give the three representatives
+\[
+\begin{array}{c|c}
+(c_0,\ldots,c_5)&(\pi_0,\ldots,\pi_5)\\
+\hline
+010123&001001\\
+010232&001010\\
+012013&000101.
+\end{array}
+\]
+with 144 labeled states per orbit.  At size seven there is no residual
+normal form after the two-component theorem.  The dependency-free
+enumerator regenerates all words, partitions, conservation tests, dirty
+states, and linear repairs rather than trusting the stored counts.
+
+Proposition~\ref{prop:span} makes every failed state clean by one valid
+switch.  Hence no dirty size-six or size-seven global minimum is
+uncleanable.
+\end{proof}
+
+\begin{remark}
+The exact classifications, proof of semantics, size-six representatives,
+and full standalone span proof are bundled in the cumulative through-seven
+package.  This is a finite boundary theorem, not a search over sampled
+graphs.
 \end{remark}
 
 \begin{corollary}[rainbow shortcut]\label{cor:shortcut}
@@ -678,9 +835,10 @@ python3 verify.py
 
 The exchange theorem converts global support minimality into four ordinary
 geodesic conditions: one shortest join for each affine value class.
-Theorem~\ref{thm:sizefive} closes the first two possible nonzero support
-sizes: a counterexample to Conjecture~\ref{conj:minimum} must have minimum
-projection size at least six.
+Theorems~\ref{thm:sizefive} and~\ref{thm:sizeseven} close the first four
+possible nonzero support sizes: a counterexample to
+Conjecture~\ref{conj:minimum} must have minimum projection size at least
+eight.
 The useful feature is simultaneity.  A cycle that would shorten the
 projection is allowed to be blocked by one colour, but
 Corollary~\ref{cor:shortcut} forces it to be blocked by all four.
@@ -714,9 +872,11 @@ supplied, the correct status is a frontier result.
 
 This research route, proof draft, checker, computation, and exposition were
 developed by OpenAI Codex agents under Atharva Vaidya's direction.  The
-minimum-projection exchange proof and the size-at-most-five proof are
-displayed in full so that they can be checked without trusting an AI
-system.  The order-\(18\) result is
+minimum-projection exchange proof, the size-at-most-five proof, and the
+span proof used at sizes six and seven are displayed in full so that they
+can be checked without trusting an AI system.  Those boundary
+classifications are also regenerated by a dependency-free exact checker.
+The order-\(18\) result is
 reproducible from canonical generation and exhaustive cycle-space
 enumeration.  The expanded census exactly replays frozen sources but
 inherits their population provenance.  Both remain computational results

@@ -17,14 +17,15 @@ are not independent human verification or peer review.
 ## Minimum-class correction and MNP family update (2026-07-29)
 
 - `scratch/minimum-projection-size5-theorem-20260729/` contains the full
-  human proof that every globally minimum extendable projection of size at
-  most five is cleanable.  A dirty lift on the forced four- or five-cycle
-  support is repaired, component by component, into a nowhere-zero
-  \(\mathbb F_2^2\)-flow, contradicting non-Tait-colourability.  Its
-  dependency-free checker exhausts the boundary partitions and checks the
-  explicit \(\operatorname{GL}(2,2)\) repair table.  Consequently any
+  human proof for minimum sizes at most five.  The cumulative package
+  `scratch/minimum-projection-through7-cleanability-20260729/` extends this
+  through size seven.  Its exact affine boundary classifier enumerates
+  2,712 dirty size-six and 26,880 dirty size-seven states.  Every state not
+  eliminated by a componentwise \(\operatorname{GL}(2,2)\) Tait repair has
+  exactly two complement components; the bundled human telescoping span
+  proof cleans each by one valid line switch.  Consequently any
   counterexample to the minimum-projection selection principle has minimum
-  size at least six.
+  size at least eight.
 - `scratch/minimum-projection-known-strong-snarks-20260729/` freezes an
   exact SAT scan of seven retained order-34 and 7,654 retained order-40
   graph6 rows.  Every row has minimum projection size ten, and all 433,730
@@ -64,7 +65,7 @@ are not independent human verification or peer review.
   This closes a tempting one-matching shortcut but does not realize the
   four synchronized affine classes.
 - `preprint-minimum-fano-projection/` is the corresponding working
-  preprint.  It contains the human exchange and size-at-most-five proofs,
+  preprint.  It contains the human exchange and size-through-seven proofs,
   all exact census reports, the Petersen limitation, checksums, and an
   explicit AI-use and human-review disclosure.
 - `search/minimum-projection-n130-20260729/` certifies that the retained
