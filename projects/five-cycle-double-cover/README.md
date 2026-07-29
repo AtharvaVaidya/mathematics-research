@@ -82,6 +82,15 @@ forty reduced states are strongly connected.  An explicit gain-four
 exchange cycle excludes the displayed orbit from global minimality in its
 18-vertex realization.  Thus witness neutralization alone cannot supply a
 monotone proof; global-minimum data must enter essentially.  The
+shortest-join package
+`scratch/minimum-projection-tjoin-dual-zero-price-20260729/` now proves
+that every quotient shore already has coefficient zero in every optimal
+dual, so every positive dual shore must split a complement component.
+It also proves
+\(|E-h|\ge |h|-|M_c|\) for each affine colour and
+\(|h|\le6|V|/7\) in cubic graphs.  Consequently a viable dual descent
+must transport interior distance or Kempe-pairing information; the scalar
+quotient-cut price cannot be its potential.  The
 size-fourteen Kempe theorem is in
 `scratch/minimum-projection-through14-cleanability-20260729/` and
 `scratch/minimum-projection-size14-kempe-escape-20260729/`.  Larger support

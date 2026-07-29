@@ -118,6 +118,18 @@ are not independent human verification or peer review.
   find a positive gain on all 160 state/translation pairs in the fixed
   18-vertex realization.  This proves only that global-minimum
   information must enter a termination argument.
+- `scratch/minimum-projection-tjoin-dual-zero-price-20260729/` gives a
+  human-checkable shortest-\(T_c\)-join duality proof that every shore
+  which is a union of components of \(G-h\) has coefficient zero in
+  every optimal dual.  Thus all positive dual shores split complement
+  components, the rainbow neutralization witness is already zero-priced,
+  and the aggregate four-dual optimum is always \(3|h|\).  The same
+  load count proves
+  \(|E-h|\ge |h|-|M_c|\) for every affine colour and
+  \(|h|\le6|V|/7\) in cubic graphs.  Two separately structured finite
+  checkers audit the six-map algebra and cut-parity identities; the
+  universal theorem itself is the displayed LP proof and remains subject
+  to expert human review.
 - `scratch/minimum-projection-size14-dichotomy-counterstate-20260729/`
   gives the first total-support counterstate to unrestricted clean or
   delete.  Its \(7+7\) word/partition has 320 normalized feasible map

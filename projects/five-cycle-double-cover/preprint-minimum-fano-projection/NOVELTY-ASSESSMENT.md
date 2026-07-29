@@ -56,7 +56,10 @@ The manuscript proves:
 15. an exact strongly connected neutralization dynamics on the forty
     reduced states of the size-fourteen countermodel, with a displayed
     four-step cycle and a human-checkable gain-four exchange descent in
-    its 18-vertex realization.
+    its 18-vertex realization; and
+16. a shortest-\(T\)-join dual theorem forcing every positive dual shore
+    to split a component of the projection complement, together with the
+    cubic support-density bound \(|h|\le 6|V|/7\).
 
 This is a partial theorem about the Hušek--Šámal flow criterion.  It does
 not resolve the Five-Cycle Double Cover Conjecture.
@@ -117,6 +120,13 @@ nonconstant monotone termination potential.  It makes no literature-wide
 priority claim and does not address dynamics under a genuinely global
 minimum.
 
+The zero-price and density results use standard
+Edmonds--Johnson \(T\)-join duality inside the project-specific
+minimum-projection framework.  They have not received a literature-wide
+novelty screen.  The manuscript claims the displayed deduction as a
+checkable contribution of this project, but makes no priority claim
+pending specialist review.
+
 ## Publication judgment
 
 The exchange theorem, through-fifteen boundary theorem, the universal
@@ -149,6 +159,11 @@ A targeted web/arXiv screen found no
 theorem stated in the language of minimum extendable Fano projections, but
 this does not establish priority.  The result is suitable for public
 circulation as an explicitly provisional AI-assisted working preprint.
+The dual theorem further localizes the unresolved step: quotient shores
+carry zero price in every optimum, positive dual mass lives on shores that
+split complement components, and the resulting load count gives
+\(|h|\le6|V|/7\) in cubic graphs.  This is substantive progress on the
+proof architecture, not a resolution.
 A formal venue submission should wait until a graph theorist:
 
 - checks the flow-to-cleanliness semantics line by line;
@@ -176,8 +191,8 @@ OpenAI Codex agents under Atharva Vaidya's direction discovered the proof
 route, counterstates, size-fourteen and size-fifteen Kempe escapes, the
 relative-\(\mathrm{GL}(2,2)\) tensor proof, the Petersen interaction
 dictionary and descent, the six-map witness-neutralization identity, and
-its exact cyclic-dynamics obstruction, and the static-inflation
-obstruction; proposed
+its exact cyclic-dynamics obstruction, the shortest-join zero-price and
+support-density theorems, and the static-inflation obstruction; proposed
 the two-terminal cleaning and orbit-reflecting
 \(K_{3,3}-e\) lemmas; wrote the exact
 classifiers, exhaustive certificate builders, and independent checkers;
@@ -188,5 +203,8 @@ agent audit recomputed the six-map table and checked both identities on
 126,258 balanced circuit rows through length eight.  A third hostile
 audit independently regenerated the forty-state dynamics, proved the
 four-cycle minimal by adjacency powers, and checked the literal
-gain-four graph cycle.  Agent agreement is not independent human
+gain-four graph cycle.  A fourth hostile audit checked the
+shortest-join primal/dual pair, the every-optimal-dual quantifier, the
+zero-price and density deductions, the six-map formulas, checker
+independence, and the frozen hash ledger.  Agent agreement is not independent human
 verification or peer review.

@@ -1,0 +1,1 @@
+PASS: GL_maps=6 pointwise_rows=32 cyclic_derivative_checks=768 class_size_rows=559232

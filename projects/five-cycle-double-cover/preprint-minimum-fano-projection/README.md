@@ -181,6 +181,22 @@ at one state for every relative translation, so the orbit is excluded
 from global minimality in that realization.  The conclusion is a
 failed-approach certificate, not a FiveCDC counterexample.
 
+The complementary LP boundary is isolated in
+`scratch/minimum-projection-tjoin-dual-zero-price-20260729/`.  A
+human-checkable shortest-\(T_c\)-join duality proof shows that every cut
+which is a union of components of \(G-h\) has coefficient zero in every
+optimal dual, for all four affine colours.  Hence the rainbow witness cut
+is already zero-priced; a neutralizing switch removes four zero
+variables, and the aggregate four-dual optimum remains \(3|h|\).  Every
+positive dual shore must instead split a complement component.  The same
+proof gives
+\[
+ |E-h|\ge |h|-|M_c|\quad(c\in\mathbb F_2^2),\qquad
+ |h|\le 6|V|/7
+\]
+in a cubic graph.  Thus any viable dual descent must transport interior
+metric or Kempe-pairing information.
+
 The same reduction records the exact size-fourteen counterstate.  The
 Kempe escapes show how internal two-colour paths supply additional
 information absent from the abstract map-choice implication.  The
