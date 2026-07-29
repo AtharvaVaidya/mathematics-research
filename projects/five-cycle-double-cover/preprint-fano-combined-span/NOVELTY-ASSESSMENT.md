@@ -1,6 +1,6 @@
 # Provisional novelty and publication assessment
 
-Date: 2026-07-26
+Date: 2026-07-28
 
 ## Bottom line
 
@@ -15,6 +15,9 @@ The plausible novelty is moderate and quite specific:
 - the explicit quadratic telescoping potential proving that theorem;
 - the exact two-binary-cycle normal form for fixed functional
   projection and its product-boundary cleaning equations; and
+- the cotree-diamond theorem showing that the minimum number of
+  components in a Fano-line subgraph is unbounded even on
+  FiveCDC-positive graphs; and
 - the simple-contraction obstruction, with the displayed Petersen flow
   as a minimal-looking, human-checkable illustration.
 
@@ -66,8 +69,10 @@ open manuscript was available, through 26 July 2026.
 
 Targeted searches for combinations of “Fano flow,” “kernel line,”
 “functional projection,” “line-preserving,” “affine coset,” “binary
-cycle,” “switching,” and “Petersen” did not locate the exact statements
-in the draft.
+cycle,” “switching,” “Petersen,” “line subgraph components,”
+“connected kernel,” and “cotree diamond” did not locate the exact
+statements in the draft.  Search-engine coverage is imperfect; this is
+not a priority determination.
 
 ## Closest overlap
 
@@ -102,6 +107,8 @@ Reasons in favour:
   misleading proof strategy.
 - The structural obstruction theorem is more informative than a bare
   SAT counterexample.
+- The unbounded-component theorem is a short infinite construction with
+  a direct proof and explicit sharp witnesses.
 - The Petersen instance is fully finite and has a human proof, while
   CNF/DRAT and exhaustive enumeration remain as redundant audits.
 

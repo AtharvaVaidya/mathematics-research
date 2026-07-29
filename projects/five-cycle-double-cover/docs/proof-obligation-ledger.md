@@ -1543,3 +1543,13 @@ Open obligations:
     finite unavoidable family of such poles.  Neither known configuration
     is proved unavoidable.
     Status: **OPEN / exact local theorem available**.
+
+96. **Bounded-component Fano-line normal forms are impossible:** iterated
+    cotree-diamond expansion produces FiveCDC-positive simple bridgeless
+    cubic graphs \(G_d\) such that every Fano line of every nowhere-zero
+    \(\mathbb F_2^3\)-flow has at least \(d+1\) components.  The component
+    growth is a human induction, and explicit flows attain equality.
+    Thus the valid at-most-two-component cleaning corollary cannot be made
+    universal by proving a bounded-component selection lemma.  The
+    unbounded global parity-selection problem remains.
+    Status: **STRONGER ROUTE REFUTED / FiveCDC OPEN**.

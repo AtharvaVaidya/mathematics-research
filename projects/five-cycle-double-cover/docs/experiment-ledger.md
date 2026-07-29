@@ -3310,6 +3310,47 @@ and
 This is an exact bounded-radius no-go, not a trapped plateau or a FiveCDC
 counterexample.
 
+## Unbounded Fano-line component number
+
+Audit date: **2026-07-28**.
+
+The connected-kernel cotree-diamond construction admits a sharp
+iteration.  Let \(D_T(H)\) replace every cotree edge of a non-Tait cubic
+graph \(H\) by a diamond \(K_4-e\).  Suppressing any three-bit flow on
+\(D_T(H)\) gives a flow on \(H\).  For a fixed Fano line, its binary
+quotient has nonempty even support, since zero support would Tait-colour
+\(H\).  That support meets the cotree.  Every outside-line cotree diamond
+then contains an isolated internal line component, while no replacement
+can merge two old line components.  Therefore
+\[
+ \kappa_L(f_{D_T(H)})\ge \kappa_L(f_H)+1.
+\]
+
+Starting with Petersen and iterating gives FiveCDC-positive simple
+bridgeless cubic graphs of orders \(10,34,106,322,\ldots\) on which every
+line of every nowhere-zero \(\mathbb F_2^3\)-flow has at least
+\(1,2,3,4,\ldots\) components respectively.  The same local duad rule
+used in the connected-kernel separator lifts FiveCDC at every step.
+Choosing each tree to contain all but one edge of a displayed quotient
+circuit and using the explicit diamond flow lift attains equality.
+
+The human induction is
+`scratch/unbounded-fano-line-components-20260728.md`.  The construction
+audit `scratch/verify_unbounded_fano_line_components.py` checks depths
+zero through three, including exact component profiles
+
+```text
+10:  (10)
+34:  (4,30)
+106: (4,12,90)
+322: (4,12,36,270).
+```
+
+This refutes every universal constant-component Fano-line normal form,
+including the tempting at-most-two route.  It is not a FiveCDC
+counterexample; every member of the construction has a literal
+standard five-cover.
+
 ## Equal-profile plateau Laplacian audit
 
 Audit date: **2026-07-28**.

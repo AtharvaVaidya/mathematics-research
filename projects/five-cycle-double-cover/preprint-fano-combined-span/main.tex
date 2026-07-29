@@ -23,10 +23,10 @@
 \newcommand{\im}{\operatorname{im}}
 
 \title{Line-preserving deformations of Fano flows:\\
-a universal span identity and a Petersen obstruction}
+span, quadratic obstructions, and unbounded kernel complexity}
 \author{AI-assisted research draft for independent human verification\\
 \small Human author attribution to be supplied before submission}
-\date{26 July 2026}
+\date{28 July 2026}
 
 \begin{document}
 \maketitle
@@ -37,9 +37,10 @@ a universal span identity and a Petersen obstruction}
   \textbf{AI-assistance disclosure.}
   OpenAI Codex agents (GPT-5-series models, accessed in July 2026)
   developed the fixed-line formulation, found the telescoping potential,
-  derived the two-cycle normal form and the Petersen example, wrote the
-  search and checking programs, and drafted this manuscript under human
-  direction.  The checkers and the present proof exposition are themselves
+  derived the two-cycle normal form, the Petersen example, and the
+  cotree--diamond iteration, wrote the search and checking programs, and
+  drafted this manuscript under human direction.  The checkers and the
+  present proof exposition are themselves
   AI-assisted; ``independent'' below means logically separate code, not
   independent human verification.  No human author or referee is represented
   as having certified the results.  This draft must not be submitted until a
@@ -68,6 +69,12 @@ product-parity equations on its components.  This yields a general
 obstruction when the kernel factor is a perfect matching whose simple
 contraction \(Q\) satisfies
 \(|E(Q)|<4\,\operatorname{girth}(Q)\).
+
+We also prove that no bounded-component kernel-line normal form can be
+universal.  Iterated cotree--diamond expansion gives simple bridgeless
+cubic graphs \(G_d\), all with explicit five-cycle double covers, such
+that every Fano line in every nowhere-zero \(\F_2^3\)-flow has at least
+\(d+1\) components.  Explicit flows attain equality.
 
 Finally, we display a nowhere-zero \(\F_2^3\)-flow on the Petersen graph
 with two prescribed lines that cannot be cleaned while their functional
@@ -452,6 +459,123 @@ exactly
 Proposition~\ref{prop:normal} supplies the clean lift.
 \end{proof}
 
+\section{No bounded-component kernel-line normal form}
+\label{sec:unbounded}
+
+The preceding at-most-two-component corollary is useful but cannot be
+turned into a universal proof by replacing two with any fixed constant.
+
+Let \(H\) be a simple cubic graph, let \(T\) be a spanning tree, and
+replace every cotree edge \(uv\) by four private vertices \(a,b,c,d\)
+and the seven edges
+\[
+                   ua,\ ac,\ ad,\ bc,\ bd,\ cd,\ bv.   \tag{5.1}
+\]
+The private vertices induce the diamond \(K_4-ab\).  Denote the resulting
+graph by \(D_T(H)\).
+
+\begin{lemma}[component growth]\label{lem:component-growth}
+Suppose \(H\) is not Tait-colourable.  Every nowhere-zero
+\(\F_2^3\)-flow \(f'\) on \(D_T(H)\) suppresses to a nowhere-zero flow
+\(f\) on \(H\), and for every Fano line \(L\),
+\[
+                       \kappa_L(f')\ge\kappa_L(f)+1,    \tag{5.2}
+\]
+where \(\kappa_L\) is the number of components of the subgraph induced
+by the \(L\)-valued edges.
+\end{lemma}
+
+\begin{proof}
+Conservation over the four private vertices of a diamond says that its
+two boundary values are equal.  Use their nonzero common value on the
+suppressed edge.  Conservation at the old vertices is preserved, giving
+the flow \(f\).
+
+Let \(h:\F_2^3\to\F_2\) have kernel \(L\cup\{0\}\).  The support of
+\(h\circ f\) is an even edge-subset of \(H\).  It is nonempty: otherwise
+all values of \(f\) belong to \(L\), and at every cubic vertex they are
+the three distinct nonzero elements of \(L\), which is a Tait colouring.
+A nonempty even edge-subset cannot be contained in the tree \(T\), so
+some cotree edge has suppressed value outside \(L\).
+
+In the corresponding diamond both boundary edges are outside \(L\).
+The four private vertices nevertheless have positive odd degree in the
+line subgraph, so their line-valued edges contain at least one component
+isolated from the rest of \(D_T(H)\).
+
+Replacing a line-valued edge cannot merge two old line components: every
+line-valued path between old vertices projects, after suppressing
+diamonds, to a walk of line-valued edges in \(H\).  Thus the components
+containing old vertices number at least \(\kappa_L(f)\), and the isolated
+diamond component supplies one more.  This proves (5.2).
+\end{proof}
+
+\begin{theorem}[unbounded kernel-line complexity]
+\label{thm:unbounded}
+There are simple bridgeless cubic graphs \(G_d\), \(d\ge0\), each having
+a standard five-cycle double cover, such that every nowhere-zero
+\(\F_2^3\)-flow \(f\) and every Fano line \(L\) satisfy
+\[
+                              \kappa_L(f)\ge d+1.       \tag{5.3}
+\]
+Equality is attained.  Their orders begin
+\[
+                         10,34,106,322,\ldots
+\]
+and satisfy \(n_{d+1}=3n_d+4\).
+\end{theorem}
+
+\begin{proof}
+Let \(G_0\) be the Petersen graph.  Given \(G_d\), choose a spanning tree
+\(T_d\) and put \(G_{d+1}=D_{T_d}(G_d)\).  The construction preserves
+simplicity and cubicity.  It preserves bridgelessness because every
+boundary edge lies on a lifted old circuit and every internal diamond
+edge lies on a triangle.  It also preserves non-Tait-colourability:
+suppressing the equal boundary colours of a hypothetical Tait colouring
+would colour the preceding graph.  Lemma~\ref{lem:component-growth},
+starting from the trivial bound one, proves (5.3).
+
+A five-cycle double cover lifts locally.  If a replaced edge has
+two-coordinate label \(\ell=\{i,j\}\), choose \(k\notin\ell\), put
+\(r=\{i,k\}\), \(s=\{j,k\}\), and label the seven edges in (5.1)
+\[
+                         \ell,r,s,s,r,\ell,\ell.        \tag{5.4}
+\]
+The three incident labels at every private vertex have empty symmetric
+difference, proving both parity and exact double coverage.  Petersen has
+the explicit cover displayed later in (7.6), after relabelling its edges,
+so every \(G_d\) has a cover.
+
+For sharpness fix \(L=\{1,2,3\}\).  In the Petersen edge order
+\[
+\begin{gathered}
+(0,1),(1,2),(2,3),(3,4),(0,4),(0,5),(1,6),(2,7),\\
+(3,8),(4,9),(5,7),(7,9),(6,9),(6,8),(5,8),
+\end{gathered}
+\]
+the flow
+\[
+              5,1,3,1,2,7,4,2,2,3,3,1,2,6,4          \tag{5.5}
+\]
+has a connected \(L\)-subgraph and one circuit as its outside-line
+support.  At each stage choose \(T_d\) to contain all but one edge of
+that circuit; the remaining path extends to a spanning tree.
+
+For a line value, lift the diamond entirely inside \(L\).  For an outside
+value \(x\), choose distinct outside values \(y,z\ne x\) and use
+\[
+                         x,y,x+y,z,x+z,y+z,x.           \tag{5.6}
+\]
+The outside support replaces one circuit edge by a four-edge path and
+remains a circuit.  The three line-valued internal edges in that diamond
+form one isolated star, while all line-valued diamonds connect their old
+ends.  Exactly one line component is therefore added at every stage,
+giving equality in (5.3).
+
+Finally, a cubic graph on \(n\) vertices has \(n/2+1\) cotree edges.
+Each adds four vertices, so \(n_{d+1}=n_d+4(n_d/2+1)=3n_d+4\).
+\end{proof}
+
 \section{A structural matching-contraction obstruction}
 \label{sec:obstruction}
 
@@ -465,7 +589,7 @@ Suppose \(F_\mu\) is a perfect matching of a cubic graph \(G\), and let
 \[
  Q\text{ is simple},\qquad
  |E(Q)|<4\,\operatorname{girth}(Q),\qquad
- G\text{ is not Tait-colourable},                       \tag{5.1}
+ G\text{ is not Tait-colourable},                       \tag{6.1}
 \]
 then no clean nowhere-zero flow \(f'\) can have
 \(\mu\circ f'=\mu\circ f\).
@@ -479,7 +603,7 @@ each vertex of \(Q\), so each is an even subgraph.
 
 Every nonempty even subgraph of a finite simple graph contains a cycle,
 and therefore has at least \(\operatorname{girth}(Q)\) edges.  The strict
-inequality in (5.1) implies that one of the four affine colours is absent.
+inequality in (6.1) implies that one of the four affine colours is absent.
 Choose this absent colour as the base \(b\) in (4.1), and write
 \[
                          f'=b\,h+s,\qquad s:E(G)\to K.
@@ -487,7 +611,7 @@ Choose this absent colour as the base \(b\) in (4.1), and write
 On an affine edge, \(s\ne0\), since \(f'\ne b\).  On an edge of
 \(F_\mu\), \(h=0\) and \(s=f'\ne0\).  Hence \(s\) is a nowhere-zero
 \(K\cong\F_2^2\)-flow on all of \(G\), which is a Tait colouring.  This
-contradicts (5.1).
+contradicts (6.1).
 \end{proof}
 
 \section{The Petersen fixed-line obstruction}
@@ -506,16 +630,16 @@ We now give all data needed for a finite example.  The graph has vertices
 5&1\!-\!8&4&13&6\!-\!9&6\\
 6&2\!-\!3&2&14&7\!-\!9&5\\
 7&2\!-\!7&4&&&
-\end{array}                                             \tag{6.1}
+\end{array}                                             \tag{7.1}
 \]
 The three incident values at vertices \(0,\ldots,9\) are, respectively,
 \[
 \begin{gathered}
 (6,3,5),(5,1,4),(6,2,4),(2,5,7),(3,5,6),\\
 (5,6,3),(5,3,6),(1,4,5),(4,7,3),(3,6,5).
-\end{gathered}                                           \tag{6.2}
+\end{gathered}                                           \tag{7.2}
 \]
-Each triple has XOR zero, so (6.1) is a nowhere-zero
+Each triple has XOR zero, so (7.1) is a nowhere-zero
 \(\F_2^3\)-flow.  The edge list is a labelling of the Petersen graph;
 its nauty-canonical graph6 encoding is
 \[
@@ -523,7 +647,7 @@ its nauty-canonical graph6 encoding is
 \]
 
 \begin{theorem}[two failed prescribed lines]\label{thm:petersen}
-For the flow (6.1), neither \(L=\{1,2,3\}\) nor
+For the flow (7.1), neither \(L=\{1,2,3\}\) nor
 \(L=\{1,6,7\}\) can be made clean by a nowhere-zero
 \(\F_2^3\)-flow having the same corresponding functional projection.
 \end{theorem}
@@ -532,30 +656,30 @@ For the flow (6.1), neither \(L=\{1,2,3\}\) nor
 For \(L=\{1,2,3\}\), the kernel factor consists of edge identifiers
 \[
                          \{1,4,6,11,12\};
-                                                        \tag{6.3}
+                                                        \tag{7.3}
 \]
 for \(L=\{1,6,7\}\), it consists of
 \[
-                         \{0,4,9,10,13\}.               \tag{6.4}
+                         \{0,4,9,10,13\}.               \tag{7.4}
 \]
 In each case the five edges are pairwise disjoint and cover all ten
-vertices.  Contracting them in the graph (6.1), the remaining ten edges
+vertices.  Contracting them in the graph (7.1), the remaining ten edges
 join every pair of contracted vertices exactly once.  Thus \(Q=K_5\).
 
 The Petersen graph is not Tait-colourable.  For a self-contained finite
-check, its perfect matchings in the edge indexing (6.1) are exactly
+check, its perfect matchings in the edge indexing (7.1) are exactly
 \[
 \begin{gathered}
 (0,3,8,12,14),\quad (0,4,9,10,13),\\
 (1,4,6,11,12),\quad (1,5,7,8,13),\\
 (2,3,7,9,11),\quad (2,5,6,10,14).
-                                                        \tag{6.5}
+                                                        \tag{7.5}
 \end{gathered}
 \]
 Exhaustiveness follows by branching on the three edges incident with
 vertex \(0\); each initial choice has the two completions displayed in
-(6.5).  Direct deletion shows that the complement of every matching in
-(6.5) is two 5-cycles.  In a Tait colouring, one colour class is a
+(7.5).  Direct deletion shows that the complement of every matching in
+(7.5) is two 5-cycles.  In a Tait colouring, one colour class is a
 perfect matching and its complement alternates the other two colours on
 even cycles, a contradiction.
 
@@ -563,12 +687,12 @@ Now \(K_5\) is simple, has ten edges, and has girth three, so
 \[
                             10<4\cdot3.
 \]
-Theorem~\ref{thm:obstruction} applied to (6.3) and (6.4) proves both
+Theorem~\ref{thm:obstruction} applied to (7.3) and (7.4) proves both
 claims.
 \end{proof}
 
 \begin{remark}[not a 5-CDC counterexample]
-The following five Eulerian edge-id sets cover every edge of (6.1)
+The following five Eulerian edge-id sets cover every edge of (7.1)
 exactly twice:
 \[
 \begin{aligned}
@@ -577,10 +701,10 @@ exactly twice:
 &\{0,2,6,8,11,13\},\\
 &\{1,2,4,5,10,11,12,14\},\\
 &\{6,7,9,12,13,14\}.
-\end{aligned}                                           \tag{6.6}
+\end{aligned}                                           \tag{7.6}
 \]
 Even degree at every vertex and double coverage can both be checked
-directly from (6.1).  Thus (6.6) is a positive 5-CDC of the example.
+directly from (7.1).  Thus (7.6) is a positive 5-CDC of the example.
 \end{remark}
 
 \begin{remark}[the surviving existential branch]
@@ -588,7 +712,7 @@ The other five lines of the displayed flow have clean lifts with fixed
 functional projection.  A complete classification of the 64 possible
 binary projections on the Petersen graph finds 57 feasible projections;
 the failures are the zero cycle and the six ten-edge complements of the
-perfect matchings in (6.5).  The six nonzero failures have rank five and
+perfect matchings in (7.5).  The six nonzero failures have rank five and
 their only dependence is their total XOR.  Consequently, the
 three-dimensional projection space of any nowhere-zero
 \(\F_2^3\)-flow on the Petersen graph contains at most three of them, so
@@ -626,13 +750,25 @@ six-matchings proof that Petersen is non-Tait.  The computational package
 serves to catch transcription errors and to support the broader
 classification in the last remark.
 
+The unbounded construction is replayed separately by
+\begin{verbatim}
+python3 scratch/verify_unbounded_fano_line_components.py
+\end{verbatim}
+using only the Python standard library.  It constructs depths zero
+through three, checks the graph and spanning-tree data, every flow and
+five-cover equation, and exact line-component counts \(1,2,3,4\).
+The universal assertion in Theorem~\ref{thm:unbounded} rests on the
+displayed induction, not on exhaustive flow enumeration.
+
 \section{What is and is not new}
 
 The literature search for this draft covered the primary sources cited
 above and keyword/full-text searches through 26 July 2026.  We did not
 find the combined-image theorem, the potential (3.8), the exact
 fixed-projection normal form (4.1)--(4.3), or the simple-contraction
-obstruction in those sources.  We therefore regard these as
+obstruction in those sources.  Targeted searches through 28 July 2026
+also did not locate the unbounded kernel-line component theorem.
+We therefore regard these as
 \emph{plausibly new}, not as established priority claims.
 
 The broader setting is not new: Fano colourings, line counts, their
@@ -646,8 +782,9 @@ publishable unit is instead the following coherent package:
         telescoping certificate;
   \item an exact quadratic formulation explaining why that identity
         does not automatically integrate to a valid switch sequence; and
-  \item a structural contraction obstruction, instantiated by a small
-        fully checkable fixed-projection counterexample.
+  \item two structural limitations: a matching-contraction obstruction
+        instantiated by a small fixed-projection counterexample, and an
+        infinite family excluding every bounded-component normal form.
 \end{enumerate}
 
 This is suitable at most as a short technical note until expert review

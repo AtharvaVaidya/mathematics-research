@@ -83,6 +83,14 @@ copied into a separate clean clone; it was not modified or committed.
   triangles, and two is attained.  The proof reduces all 6,240 xor-zero
   spoke words to six symmetry rows and checks 6,000 literal FiveCDC
   labellings.  This rules out only the strengthening, not FiveCDC.
+- A human-checkable infinite separation for every bounded-component
+  Fano-line normal form.  Iterated cotree-diamond expansion gives
+  FiveCDC-positive simple bridgeless cubic graphs \(G_d\) for which every
+  Fano line in every nowhere-zero three-bit flow has at least \(d+1\)
+  components; an explicit flow attains equality.  A standard-library
+  checker constructs depths zero through three, of orders
+  \(10,34,106,322\), and verifies the graph, cover, flow, and component
+  data.  This closes a stronger route, not FiveCDC.
 - The standalone nine-page, explicitly AI-disclosed working preprint
   `preprint-fivecdc-four-pole-reductions/`, with deterministic PDF,
   checksum ledger, replay instructions, and human-review gate.  It combines
@@ -300,9 +308,10 @@ copied into a separate clean clone; it was not modified or committed.
   This screen is finite evidence on one construction family, not a
   universal theorem.
 - The universal combined-line span identity, exact two-cycle quadratic
-  normal form, triangle-expansion invariance theorem, and the complete
-  Petersen prescribed-line countermodel package.  These are
-  human-checkable partial results and do not resolve five-CDC.
+  normal form, unbounded Fano-line component theorem,
+  triangle-expansion invariance theorem, and the complete Petersen
+  prescribed-line countermodel package.  These are human-checkable
+  partial results and do not resolve five-CDC.
 - The exact some-good-line census through all connected simple bridgeless
   cubic graphs of order \(18\), together with retained strict snarks at
   orders \(20,22,24\) and ten targeted cyclically-5-connected order-\(26\)
@@ -330,7 +339,7 @@ The five previously curated compiled PDFs have SHA-256 digests:
 ```text
 863f24bcad7780067e5c264e2253e673ea4b9d50e94f28a6cf6cf389cc20bcb0  output/pdf/two-connected-countermodels-five-cdc-preprint.pdf
 7a88cd04139344babf371c6b949d26b50e6733ac8db5a6a495f842e4e706dafc  output/pdf/four-universally-separated-marks-preprint-20260726.pdf
-9612a080fa5eca945c82d0c266cc94d62adeea6493ee6d10e7aa03805687e5e0  preprint-fano-combined-span/main.pdf
+ecf88157f201cc55bd4a496111e33f0146ad2cc2d102b46a40be386ff1e5cd29  preprint-fano-combined-span/main.pdf
 8d0da87f5e07abf1dc5cc25e05f16faeb442a7dead8754f7b8bb4b88596f9b95  preprint-rooted-four-cut/output/pdf/main.pdf
 ab74a5c3b3bf996c19a032ca8aac2fe0463a65d0409564ba4b3acd866f3e2177  preprint-d5-surface-kempe/main.pdf
 ```
