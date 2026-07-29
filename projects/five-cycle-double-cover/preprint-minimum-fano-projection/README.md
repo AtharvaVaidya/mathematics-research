@@ -4,9 +4,10 @@ This directory contains a short AI-assisted working preprint about a
 minimum-support route to the standard five-cycle double cover conjecture.
 
 **Resolution status:** FiveCDC remains open. The paper proves a
-human-checkable exchange theorem, reports a reproducible exhaustive
-order-18 census, and states the remaining universal selection principle as
-an explicit conjecture. It claims neither a proof nor a counterexample.
+human-checkable exchange theorem, reports a reproducible canonical
+order-18 census and an expanded frozen-source replay through order 28,
+and states the remaining universal selection principle as an explicit
+conjecture. It claims neither a proof nor a counterexample.
 
 Build from this directory with:
 
@@ -33,6 +34,18 @@ The expected canonical hard-record SHA-256 is:
 ```text
 82b01cc2f01d4f50f7745f4bdb1b3dc46ade798d452a9d4f11d4a91d738a7834
 ```
+
+Run the expanded exact replay with:
+
+```sh
+python3 scratch/minimum-projection-census-through28-20260729/verify_summary.py
+```
+
+It checks 14,009 frozen cyclically-4 non-Tait records through order 28
+and a separate 12,892-row hard order-22 source. All 147,539 minimum
+extendable projections in those literal files are cleanable. The broader
+population completeness statements are inherited from the documented
+upstream generation packages.
 
 The prose, proof route, checker, and research workflow were developed by
 OpenAI Codex agents under Atharva Vaidya's direction. The disclosure in the

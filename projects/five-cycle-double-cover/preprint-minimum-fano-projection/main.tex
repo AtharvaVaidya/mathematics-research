@@ -72,13 +72,16 @@ Thus every circuit component of \(h\) contains all four affine colours,
 and every support-shortening cycle meets all four classes.  The proof is
 the addition of the Fano value \((1,c)\) along \(C\).
 
-We then perform an exact census of all \(41{,}301\) connected simple cubic
-graphs of order \(18\).  Among the \(39{,}866\) bridgeless graphs, exactly
-\(179\) are not Tait-colourable.  Full cycle-space enumeration shows that
-every minimum-cardinality extendable projection of every one of these
-\(179\) graphs has a clean lift satisfying the Hu\v{s}ek--\v{S}\'amal
-component parity condition.  The canonical record digest is
-\texttt{82b01cc2f01d4f50f7745f4bdb1b3dc46ade798d452a9d4f11d4a91d738a7834}.
+We perform an exact canonical census of all \(41{,}301\) connected simple
+cubic graphs of order \(18\).  Among the \(39{,}866\) bridgeless graphs,
+exactly \(179\) are not Tait-colourable, and every minimum-cardinality
+extendable projection on all \(179\) is cleanable.  A second exact replay
+uses frozen canonically generated sources: \(14{,}009\) cyclically
+4-edge-connected non-Tait records through order \(28\), and a separate
+\(12{,}892\)-record hard order-\(22\) source.  All \(147{,}539\) minimum
+extendable projections in those files are cleanable.  Completeness of the
+source populations is inherited from their upstream generation packages;
+the result on the literal frozen files is checked directly.
 
 The universal statement suggested by this computation is recorded as an
 open conjecture.  The missing step is to derive a colour-avoiding strict
@@ -119,7 +122,8 @@ The contribution of this note is narrower:
   \item a minimum-support exchange theorem, with a complete proof;
   \item elementary consequences for four simultaneous shortest
         \(T\)-joins;
-  \item a reproducible exhaustive order-\(18\) census; and
+  \item a reproducible canonical order-\(18\) census and an expanded
+        exact replay on frozen sources through order \(28\); and
   \item a precise conjectural step that would turn this route into a proof.
 \end{enumerate}
 The last item is open.
@@ -345,9 +349,9 @@ recolouring, using the four simultaneous shortest-\(T_c\)-join
 inequalities of Corollary~\ref{cor:tjoin}.  No proof of this statement is
 given here.
 
-\section{Exact order-\(18\) census}\label{sec:census}
+\section{Exact finite census}\label{sec:census}
 
-\subsection{Method}
+\subsection{Canonical order-\(18\) method}
 
 The accompanying checker uses canonical generation rather than sampling.
 For order \(18\), the command
@@ -426,6 +430,57 @@ cycle-space module:\\
 This is a finite theorem.  It is evidence for
 Conjecture~\ref{conj:minimum}, not a proof of it.
 
+\subsection{Expanded frozen-source replay}
+
+A separate C++ classifier implements the same extendability and
+cleanability semantics by Gaussian elimination over \(\F_2\).  It replays
+two previously frozen graph6 populations:
+\begin{enumerate}
+  \item \(14{,}009\) cyclically 4-edge-connected non-Tait records of even
+        orders \(10\) through \(28\); and
+  \item \(12{,}892\) bridgeless non-Tait rows from a broader hard
+        order-\(22\) source.
+\end{enumerate}
+The exact results are:
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+frozen source & graphs & minimum projections & uncleanable\\
+\midrule
+cyclically 4, orders \(10\)--\(28\) & \(14{,}009\) & \(92{,}754\) & \(0\)\\
+hard order \(22\) & \(12{,}892\) & \(54{,}785\) & \(0\)\\
+\midrule
+total & \(26{,}901\) & \(147{,}539\) & \(0\)\\
+\bottomrule
+\end{tabular}
+\caption{Exact minimum-extendable-projection replay on frozen sources.}
+\end{table}
+
+For the cyclically 4 source the minimum-size profile is
+\[
+                       5:14007,\qquad 6:1,\qquad 9:1.
+\]
+For the hard order-\(22\) source it is
+\[
+ 5:11776,\quad 6:1025,\quad 7:55,\quad 8:20,\quad 9:6,\quad 10:10.
+\]
+These counts refer to graphs; the third column of the table counts all
+minimum projections on those graphs.
+
+From the project root, run:
+\begin{verbatim}
+cd scratch/minimum-projection-census-through28-20260729
+python3 verify_summary.py
+\end{verbatim}
+The replay compiles the classifier, verifies every input digest and every
+emitted graph6 row, and checks all aggregates above.  Its checksum ledger is
+the \texttt{SHA256SUMS} file in that package.
+The unconditional claim here concerns the literal frozen files.  Their
+identification with complete graph classes uses the documented upstream
+canonical-generation and filtering packages; this replay does not
+independently regenerate those populations.
+
 \section{Discussion}
 
 The exchange theorem converts global support minimality into four ordinary
@@ -435,6 +490,23 @@ projection is allowed to be blocked by one colour, but
 Corollary~\ref{cor:shortcut} forces it to be blocked by all four.
 Likewise, disconnected projections are severely constrained because every
 circuit component must contain every colour.
+
+The four-colour simultaneity cannot be replaced by a theorem about one
+matching.  In the Petersen graph with edge set
+\[
+\{03,06,09,14,16,18,25,26,27,37,38,47,49,58,59\},
+\]
+the matching \(M=\{06,14,25\}\) is contained in exactly two
+minimum-cardinality binary cycles:
+\[
+\{06,09,14,18,25,26,49,58\},\qquad
+\{06,09,14,16,25,27,47,59\}.
+\]
+Both have size eight, and in both cases the components of the complement
+have \(M\)-endpoint parities \(1,0,1\).  Exhausting all \(2^{15}\) edge
+subsets proves minimality.  The complete finite replay is in
+\path{scratch/petersen-minimum-tjoin-countermodel-20260729/}.  This
+obstruction does not realize four synchronized affine classes.
 
 What is not yet understood is how the common rainbow-odd cut interacts with
 the four shortest-join duals.  A publishable resolution would need either a
@@ -449,8 +521,9 @@ developed by OpenAI Codex agents under Atharva Vaidya's direction.  The
 minimum-projection exchange proof is displayed in full so that it can be
 checked without trusting an AI system.  The order-\(18\) result is
 reproducible from canonical generation and exhaustive cycle-space
-enumeration; it is still a computational result and should be independently
-rerun.
+enumeration.  The expanded census exactly replays frozen sources but
+inherits their population provenance.  Both remain computational results
+and should be independently rerun.
 
 Hu\v{s}ek and \v{S}\'amal's flow criterion and
 Hoffmann-Ostenhof's matching/join formulation are prior work.  This draft

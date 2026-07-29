@@ -46,6 +46,10 @@ are not independent human verification or peer review.
   two shortest containing cycles with neither complement terminal-even.
   This closes a tempting one-matching shortcut but does not realize the
   four synchronized affine classes.
+- `preprint-minimum-fano-projection/` is the corresponding eight-page
+  working preprint.  It contains the human exchange proof, both exact
+  census reports, the Petersen limitation, checksums, and an explicit
+  AI-use and human-review disclosure.
 
 These are proof-strategy results, not a proof or disproof of FiveCDC.
 

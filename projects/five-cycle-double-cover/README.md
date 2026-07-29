@@ -293,6 +293,10 @@ proof cannot use only one of the four affine matchings: a literal Petersen
 matching has two shortest containing cycles, and both leave odd terminal
 components.  These are finite evidence and an auxiliary obstruction, not
 a universal proof.
+The eight-page working preprint in
+`preprint-minimum-fano-projection/` now includes both exact censuses, the
+human exchange proof, the Petersen limitation, full reproducibility
+instructions, and an explicit AI-use disclosure.
 
 The new coordinate-factor lemma in
 `docs/flow-resistance-weak-oddness.md` proves directly that
