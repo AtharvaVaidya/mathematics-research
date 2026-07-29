@@ -47,6 +47,12 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
 
 ## H--S reconfiguration and binary-repair update (2026-07-28)
 
+- `scratch/husek-samal-fixed-pair-packing-switch-equivalence-20260728.md`
+  proves a two-way, fixed-\((\lambda,a)\) theorem: legal binary
+  \(a\)-switches are in bijection with the \(T_a\)-joins in
+  \(G-M_a\), and one reaches the Hušek--Šámal component condition exactly
+  when \(M_a\) packs two edge-disjoint \(T_a\)-joins.  The proof allows
+  parallel edges and does not assume connectedness or bridgelessness.
 - `preprint-husek-samal-reconfiguration/` is an eight-page working
   preprint with a page-one AI-use disclosure and human-review gate.  Its
   strengthened strict order-26 theorem shows that an H--S-bad flow can
