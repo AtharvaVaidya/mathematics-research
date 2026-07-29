@@ -154,8 +154,9 @@ edges
 \[
  rs,\ ar,\ bs,\ as,\ br.                                 \tag{13}
 \]
-Give the two old-endpoint terminal links, \(rs\), and every link between
-consecutive poles colour \(t\).  If
+Give \(rs\) in every pole and every link of the whole replacement chain
+colour \(t\): this includes the first old-endpoint link \(u a\), every
+inter-pole link \(b a\), and the final old-endpoint link \(b v\).  If
 \(\{x,y\}=K-\{0,t\}\), give \(ar,bs\) colour \(x\) and \(as,br\)
 colour \(y\).
 
