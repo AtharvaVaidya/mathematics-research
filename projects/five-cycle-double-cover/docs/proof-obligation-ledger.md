@@ -1620,3 +1620,24 @@ Open obligations:
      25,230 strict order-26 and 689 strong order-34 radius-one traps, but
      are not exhaustive.
      Status: **RADIUS ONE REFUTED / MULTI-SWITCH SELECTION OPEN**.
+
+101. **Minimum extendable projection selection:** every non-Tait cubic
+     graph has a minimum-cardinality extendable binary projection that is
+     cleanable.  Global minimality proves four simultaneous
+     shortest-\(T_c\)-join inequalities, one for each affine class.  The
+     exact frozen census has zero failures among 147,539 minimum
+     projections, and the certified 130-vertex stress graph has minimum
+     size 42 with all 11,264 minima cleanable.
+
+     The Petersen one-matching example proves that no argument using only
+     one shortest join can suffice.  The missing step is to exploit all
+     four synchronized affine classes to rule out a rainbow-odd component
+     or to find a counterexample to the selection principle.
+     Status: **OPEN / STRONG EXACT FINITE EVIDENCE, NO UNIVERSAL PROOF**.
+
+102. **Do not conflate minimum value class with minimum coordinate
+     projection:** the order-130 graph has \(\rho_3=5\), no packing
+     \(\rho_3\)-minimum class, and minimum extendable projection size 42
+     with every minimum cleanable.  Any proof using a cardinality
+     potential must state which of these two parameters it minimizes.
+     Status: **SEMANTIC DISTINCTION CLOSED / VALUE-CLASS ROUTE REFUTED**.

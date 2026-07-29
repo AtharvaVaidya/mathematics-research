@@ -50,6 +50,14 @@ are not independent human verification or peer review.
   working preprint.  It contains the human exchange proof, both exact
   census reports, the Petersen limitation, checksums, and an explicit
   AI-use and human-review disclosure.
+- `search/minimum-projection-n130-20260729/` certifies that the retained
+  130-vertex graph has minimum extendable projection size \(42\), exactly
+  11,264 minimum supports, and no unclean minimum.  One LRAT proves the
+  size-\(\le41\) formula UNSAT; a second blocks all listed size-42
+  supports and proves enumeration completeness.  Both are accepted by C
+  `lrat-check` and verified CakeML `cake_lpr`.  The same graph has
+  \(\rho_3=5\), so the package explicitly separates minimum projection
+  from minimum nonzero value class.
 
 These are proof-strategy results, not a proof or disproof of FiveCDC.
 

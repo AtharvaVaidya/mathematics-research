@@ -1494,3 +1494,38 @@ an explicit standard FiveCDC.  Hence this refutes connected binary repair
 but leaves open the cyclically 4-edge-connected, girth-ten version that
 would suffice for FiveCDC.  See
 `search/fano-binary-repair-connected-countermodel-108v-20260728/`.
+
+## O65 — Some globally minimum Fano value class packs
+
+Status: **FAILED APPROACH / CERTIFIED ORDER-130 COUNTERMODEL**.
+
+The retained 130-vertex simple bridgeless cubic graph has
+\(\rho_3=5\): an explicit nowhere-zero \(\mathbb F_2^3\)-flow has a
+designated five-edge value class, and the separately checked
+\(r_f\ge5\) LRAT gives the lower bound.  The complete
+exact-zero-matching/two-cycle CNF at size at most five is UNSAT, with its
+LRAT accepted by C and CakeML.  Therefore no globally minimum Fano value
+class packs two boundary joins.
+
+A size-six packing certificate and explicit FiveCDC exist.  Thus the
+result refutes only minimum-value-class selection.  It does not refute
+minimum-coordinate-projection selection: the latter parameter is exactly
+42 on the same graph, with all 11,264 minima cleanable.  See
+`search/minimum-fano-class-nonpacking-130v-20260729/` and
+`search/minimum-projection-n130-20260729/`.
+
+## O66 — One shortest cycle containing one affine matching is clean
+
+Status: **FAILED INTERMEDIATE LEMMA / PETERSEN COUNTERMODEL**.
+
+In the literal Petersen graph, the matching \(M=\{06,14,25\}\) is
+contained in exactly two minimum binary cycles, both of size eight.  For
+each minimum, the components of the complement have \(M\)-endpoint
+parities \((1,0,1)\).  A dependency-free checker exhausts all
+\(2^{15}\) edge subsets.
+
+This does not realize the four synchronized affine matchings of an
+extendable Fano projection.  It proves that any positive argument must
+use their simultaneous flow constraints rather than a generic
+one-matching shortest-\(T\)-join theorem.  See
+`scratch/petersen-minimum-tjoin-countermodel-20260729/`.

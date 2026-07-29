@@ -47,6 +47,18 @@ extendable projections in those literal files are cleanable. The broader
 population completeness statements are inherited from the documented
 upstream generation packages.
 
+The certified 130-vertex stress test is:
+
+```sh
+python3 search/minimum-projection-n130-20260729/verify.py
+```
+
+It proves minimum extendable-projection size 42, exhausts exactly 11,264
+minimum supports, and checks that all are cleanable. Two LRAT certificates
+establish the lower bound and enumeration completeness. The same graph has
+minimum nonzero Fano value-class size \(\rho_3=5\), showing that the two
+minimization parameters are distinct.
+
 The prose, proof route, checker, and research workflow were developed by
 OpenAI Codex agents under Atharva Vaidya's direction. The disclosure in the
 paper must remain. Before public submission, the draft requires

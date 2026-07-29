@@ -298,6 +298,17 @@ The eight-page working preprint in
 human exchange proof, the Petersen limitation, full reproducibility
 instructions, and an explicit AI-use disclosure.
 
+The certified large-graph stress test in
+`search/minimum-projection-n130-20260729/` separates the two minimization
+parameters completely.  On the retained 130-vertex graph the minimum
+extendable projection size is 42, there are exactly 11,264 minimum
+supports, and every one is cleanable.  Two CNF/LRAT pairs prove the
+size-\(\le41\) lower bound and completeness of the list, with both C and
+verified CakeML proof checks.  On the same graph the minimum nonzero Fano
+value-class size is only \(\rho_3=5\), and no such size-five class packs.
+Thus the graph refutes minimum-value-class selection while strongly
+passing the distinct minimum-projection test.
+
 The new coordinate-factor lemma in
 `docs/flow-resistance-weak-oddness.md` proves directly that
 \(\omega_{\rm w}(G)\le2r_f(G)\) for loopless cubic multigraphs.  Huck's

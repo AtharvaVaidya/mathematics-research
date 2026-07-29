@@ -481,6 +481,38 @@ identification with complete graph classes uses the documented upstream
 canonical-generation and filtering packages; this replay does not
 independently regenerate those populations.
 
+\subsection{A certified 130-vertex parameter-separation test}
+
+The retained 130-vertex exchange graph gives a substantially larger exact
+stress test.  A three-coordinate CNF uses binary-cycle variables
+\((h_e,p_e,q_e)\), the three parity equations at every vertex, the
+nowhere-zero clauses \(h_e\vee p_e\vee q_e\), and a sequential cardinality
+counter.  Its certified results are
+\[
+ \min |h|=42,\qquad
+ \#\{h:|h|=42,\ h\text{ extendable}\}=11264,
+\]
+and every one of those 11,264 supports is cleanable.  The size-\(\le41\)
+CNF has 7,760 variables and 16,218 clauses.  A second CNF blocks every
+listed size-42 support and proves enumeration completeness.  Both UNSAT
+LRATs are accepted by C \texttt{lrat-check} and verified CakeML
+\texttt{cake\_lpr}; every positive clean lift is also checked directly.
+
+On the same graph the different parameter
+\[
+ \rho_3(G)=
+ \min_{f,\ a\ne0}|f^{-1}(a)|
+\]
+equals five, while no size-five value class packs two boundary joins.
+Thus minimizing one nonzero Fano value class and minimizing an entire
+coordinate projection are not interchangeable.  The former selection
+principle fails on this graph; the latter passes all 11,264 minimum cases.
+To replay the package, run:
+\begin{verbatim}
+cd search/minimum-projection-n130-20260729
+python3 verify.py
+\end{verbatim}
+
 \section{Discussion}
 
 The exchange theorem converts global support minimality into four ordinary
@@ -534,6 +566,7 @@ line, rerun the census in a clean environment, audit the bibliography, and
 decide authorship and venue policy under the applicable AI-disclosure
 rules.
 
+\small
 \bibliographystyle{plain}
 \bibliography{references}
 

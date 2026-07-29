@@ -3494,3 +3494,36 @@ vertex-transitive girth-ten graph.  Three deterministic MCMC runs sampled
 queries SAT.  The graph is Tait-colourable.  One switch, two joins, the
 girth and cyclic-cut metadata, and the constructed standard FiveCDC are
 frozen in a solver-free certificate.
+
+## Minimum Fano projection census and 130-vertex stress test
+
+Audit date: **2026-07-29**.
+
+The exact minimum-extendable-projection classifier was replayed on two
+frozen sources:
+
+- 14,009 cyclically 4-edge-connected non-Tait records through order 28,
+  with 92,754 minimum projections; and
+- 12,892 hard order-22 records, with 54,785 minimum projections.
+
+Every one of the 147,539 minimum projections is cleanable.  The replay
+checks all source digests and literal graph6 rows.  Completeness of the
+graph populations is inherited from the documented upstream generation
+packages.  The public source and hashes are in
+`scratch/minimum-projection-census-through28-20260729/`.
+
+On the retained 130-vertex minimum-zero exchange graph, the minimum
+extendable projection size is exactly 42.  The size-at-most-41 CNF is
+UNSAT.  Complete blocking enumeration gives exactly 11,264 size-42
+supports; every one has a directly checked clean extension, and blocking
+all of them makes the bound-42 CNF UNSAT.  Both LRATs pass C
+`lrat-check` and verified CakeML `cake_lpr`.  The sorted projection-set
+digest is
+
+```text
+045e75af5313a246d03d2a606cb7da4eb2bd9be4a418dd05a75e7d1b4aaa8f04
+```
+
+The same graph has \(\rho_3=5\) for the distinct minimum nonzero
+value-class parameter, while its minimum packing-certificate size is six.
+The exact package is `search/minimum-projection-n130-20260729/`.
