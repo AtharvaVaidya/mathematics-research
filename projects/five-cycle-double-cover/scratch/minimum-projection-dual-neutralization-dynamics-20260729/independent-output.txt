@@ -1,0 +1,8 @@
+PASS: independent literal-word audit
+states=40 dual_witnesses_per_state=4
+directed_certificates=320 unique_directed_edges=136
+all_states_mutually_reachable=true
+explicit_neutralization_cycle_length=4
+exchange_valid_state_translations=0
+exchange_max_gain_histogram=3:18,4:86,5:40,6:12,7:4
+exchange_minimax_histogram=3:10,4:30

@@ -141,6 +141,11 @@ particular witness.  The proof is a four-by-four quadratic table followed
 by cancellation on cyclic selected and unselected runs.  This is
 single-witness neutralization, not simultaneous cleaning: the sharp
 size-fourteen state shows that another witness can remain or appear.
+Indeed, its forty reduced map states are strongly connected under legal
+neutralizations and contain a displayed four-step cycle.  A human-visible
+exchange cycle excludes that orbit from global minimality in its
+18-vertex realization.  Thus any convergence theorem must use
+global-minimum data essentially.
 
 At size fifteen the primary exact classifier enumerates \(26{,}492\)
 word orbits and \(35{,}247{,}202{,}556\) charge-valid abstract states
@@ -297,7 +302,9 @@ The contribution of this note is narrower:
         simply be dropped;
   \item an affine-XOR duality theorem for general several-circuit
         cleaning and a six-map identity that legally neutralizes any one
-        chosen dual inconsistency witness;
+        chosen dual inconsistency witness, together with an exact
+        four-step cycle proving that this move alone has no monotone
+        termination argument;
   \item four simultaneous shortest-join consequences;
   \item a general inflation theorem showing that those four inequalities,
         at one fixed flow, do not force one-round Kempe descent;
@@ -1067,6 +1074,88 @@ Proposition~\ref{prop:sizefourteenfailure} has neither a clean nor a
 deletion choice, so repeated witness neutralization cannot be assumed to
 terminate without a new monotone invariant or additional realization
 information.
+\end{remark}
+
+\begin{proposition}[cyclic neutralization dynamics]
+\label{prop:neutralizationcycle}
+On the size-fourteen state of
+Proposition~\ref{prop:sizefourteenfailure}, legal applications of
+Proposition~\ref{prop:sixmapneutralization} contain a directed four-cycle.
+Consequently no scalar potential can strictly decrease under every legal
+witness-neutralizing switch.  In fact, the exact directed graph on the
+forty reduced integrable map states is strongly connected, so every
+potential weakly nonincreasing on all such switches is constant.
+
+The cycle occurs entirely outside the global-minimum domain of the
+displayed 18-vertex realization.  At one of its states, for every relative
+circuit translation there is an explicit binary cycle avoiding one affine
+class and meeting six support edges but only two nonsupport edges.
+\end{proposition}
+
+\begin{proof}
+Use the notation
+\[
+                    k=(u_1,u_2,u_3,a,b)
+\]
+from the proof of Proposition~\ref{prop:sizefourteenfailure}; its forty
+states have nonzero entries, \(a\ne b\), and
+\(b=3+u_1+u_2+u_3\).  Let \(U\) interchange \(1\) and \(2\) in \(K\).
+In the following table, \(Q\) lists the five component obstruction bits,
+and \(T\) lists
+\((T_{x,A},T_{x,B})\) for \(x=0,\ldots,4\):
+\[
+\begin{array}{c|c|c|c|c}
+k&Q&T&S&\text{normalized target}\\ \hline
+11112&00101&33/11/11/11/22&12&22112\\
+22112&00011&33/22/22/11/22&013&21121\\
+21121&00101&33/22/11/11/11&012&21212\\
+21212&00011&33/22/11/22/22&13&11112
+\end{array}                                               \tag{15j}
+\]
+In each row the xor of the \(T_x\)'s selected by \(S\) is zero on both
+circuits.  The selected \(Q\)-sum is one in the source and zero in the
+target.  Apply \(U\) on the named components; if \(0\in S\), follow by
+the common normalization \(U^{-1}=U\).  Direct substitution in the five
+keys gives the displayed target.  Thus every arrow is legal, neutralizes
+its chosen witness, and the fourth returns to the first.  This proves the
+strict-potential assertion without computation.
+
+For the stronger finite statement, the two bundled checkers independently
+enumerate the forty keys, their four dual witnesses each, and all six map
+choices.  Both obtain 320 witness-switch certificates, 136 distinct
+directed state pairs, and mutual reachability of all forty states.  Paths
+in both directions force a weakly nonincreasing potential to take equal
+values everywhere.
+
+Finally take state \(k=21212\).  The integrated low word on the second
+support circuit is
+\[
+                              \texttt{2313010}+z
+\]
+for an arbitrary relative translation \(z\).  In the edge numbering of
+the displayed realization, the binary cycle
+\[
+                         C=\{8,9,10,11,12,13,25,26\}     \tag{15k}
+\]
+uses the last six support values \(\texttt{313010}+z\), which omit
+\(2+z\), and two complement edges.  Hence \(C\cap M_{2+z}=\varnothing\)
+while
+\[
+                         |C\cap h|-|C-h|=6-2=4.
+\]
+The exchange theorem excludes this state at a global minimum for every
+relative translation.  Exact cycle-space enumeration separately finds a
+positive exchange gain for all forty states and all four translations,
+but that larger finite fact is not needed for the displayed descent.
+\end{proof}
+
+\begin{remark}
+Proposition~\ref{prop:neutralizationcycle} is a no-go theorem for a proof
+that iterates Proposition~\ref{prop:sixmapneutralization} using only its
+abstract state.  It neither rules out a potential incorporating the four
+shortest-join inequalities nor weakens the minimum-projection conjecture.
+It shows that global-minimum data must enter any convergence argument
+essentially.
 \end{remark}
 
 \begin{theorem}[minimum projections through size eleven]
@@ -2328,7 +2417,11 @@ quadratic reduction and the six-map witness-neutralization identity.
 A separately written hostile checker recomputed the 16-entry local table
 and verified both identities on 126,258 balanced circuit rows through
 length eight.  This is an independent implementation by another agent,
-not independent human review.  Codex agents also derived the
+not independent human review.  Codex agents also found the exact
+neutralization cycle and wrote its two dynamics checkers.  The four-arrow
+cycle and the gain-four exchange descent are displayed for direct human
+checking; the forty-state strong-connectivity and 160-profile exchange
+census remain computational claims.  Codex agents also derived the
 two-occurrence interaction dictionary and Petersen descent.  A separate
 hostile audit checked the complete ten-orbit table, the analytic
 60-flow and 320-map counts, the literal Petersen realization, the

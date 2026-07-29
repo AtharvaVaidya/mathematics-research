@@ -52,7 +52,11 @@ The manuscript proves:
 14. a six-map quadratic parity identity proving that every individual
     dual witness to failure of the fixed-map affine cleaning system can
     be neutralized by a legal common \(\operatorname{GL}(2,2)\) switch on
-    its selected component union.
+    its selected component union; and
+15. an exact strongly connected neutralization dynamics on the forty
+    reduced states of the size-fourteen countermodel, with a displayed
+    four-step cycle and a human-checkable gain-four exchange descent in
+    its 18-vertex realization.
 
 This is a partial theorem about the Hušek--Šámal flow criterion.  It does
 not resolve the Five-Cycle Double Cover Conjecture.
@@ -107,6 +111,11 @@ proof is elementary and fully displayed, and an independent agent
 recomputed its local table and exhaustively tested 126,258 balanced
 circuit rows.  A specialist should still compare it with switching
 identities in binary isotropic-system and circuit-partition theory.
+The dynamics result is best viewed as an exact failed-approach
+certificate: it proves that the single-witness theorem alone has no
+nonconstant monotone termination potential.  It makes no literature-wide
+priority claim and does not address dynamics under a genuinely global
+minimum.
 
 ## Publication judgment
 
@@ -133,7 +142,10 @@ unbounded dynamic-trap class without computation, while the conditional
 the metric exchange inequalities.  The six-map identity adds a genuine
 unbounded algebraic fact: any chosen affine dual obstruction can be
 removed legally, while the size-fourteen counterstate proves that this
-does not imply simultaneous removal.  A targeted web/arXiv screen found no
+does not imply simultaneous removal.  Its exact four-cycle makes the
+failure of naive iteration literal, and the displayed exchange descent
+shows precisely where the missing global-minimum information enters.
+A targeted web/arXiv screen found no
 theorem stated in the language of minimum extendable Fano projections, but
 this does not establish priority.  The result is suitable for public
 circulation as an explicitly provisional AI-assisted working preprint.
@@ -164,7 +176,8 @@ OpenAI Codex agents under Atharva Vaidya's direction discovered the proof
 route, counterstates, size-fourteen and size-fifteen Kempe escapes, the
 relative-\(\mathrm{GL}(2,2)\) tensor proof, the Petersen interaction
 dictionary and descent, the six-map witness-neutralization identity, and
-the static-inflation obstruction; proposed
+its exact cyclic-dynamics obstruction, and the static-inflation
+obstruction; proposed
 the two-terminal cleaning and orbit-reflecting
 \(K_{3,3}-e\) lemmas; wrote the exact
 classifiers, exhaustive certificate builders, and independent checkers;
@@ -172,5 +185,8 @@ performed the preliminary literature screen; and drafted the manuscript
 and this assessment.  A hostile agent audit of the inflation proof passed
 after correcting its terminal-distance exposition.  A separate hostile
 agent audit recomputed the six-map table and checked both identities on
-126,258 balanced circuit rows through length eight.  Agent agreement is
-not independent human verification or peer review.
+126,258 balanced circuit rows through length eight.  A third hostile
+audit independently regenerated the forty-state dynamics, proved the
+four-cycle minimal by adjacency powers, and checked the literal
+gain-four graph cycle.  Agent agreement is not independent human
+verification or peer review.

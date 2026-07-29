@@ -75,7 +75,14 @@ chosen dual witness.  The independent package
 the 16-entry table and checks both six-map identities on 126,258 balanced
 circuit rows.  This is not a simultaneous-cleaning theorem: the same note
 records the exact size-fourteen failure of the unrestricted map-choice
-statement.  The size-fourteen Kempe theorem is in
+statement.  The dynamics package
+`scratch/minimum-projection-dual-neutralization-dynamics-20260729/`
+then exhibits a legal four-step neutralization cycle and proves that all
+forty reduced states are strongly connected.  An explicit gain-four
+exchange cycle excludes the displayed orbit from global minimality in its
+18-vertex realization.  Thus witness neutralization alone cannot supply a
+monotone proof; global-minimum data must enter essentially.  The
+size-fourteen Kempe theorem is in
 `scratch/minimum-projection-through14-cleanability-20260729/` and
 `scratch/minimum-projection-size14-kempe-escape-20260729/`.  Larger support
 sizes remain uncontrolled in general; the unresolved structural frontier

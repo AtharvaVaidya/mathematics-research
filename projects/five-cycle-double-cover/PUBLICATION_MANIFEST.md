@@ -108,6 +108,16 @@ are not independent human verification or peer review.
   and verifies both three-map identities on 126,258 balanced circuit rows
   through length eight.  This is a single-witness theorem only; it does
   not prove simultaneous cleanliness or termination.
+- `scratch/minimum-projection-dual-neutralization-dynamics-20260729/`
+  gives the exact limit of iterating that theorem without extra data.
+  On the size-fourteen counterstate its forty reduced map states form one
+  strongly connected directed graph under legal witness neutralizations,
+  with 320 switch certificates, 136 directed state pairs, and a displayed
+  four-step cycle.  A human-checkable graph cycle has exchange gain
+  \(6-2=4\) at one state for every relative translation; both checkers
+  find a positive gain on all 160 state/translation pairs in the fixed
+  18-vertex realization.  This proves only that global-minimum
+  information must enter a termination argument.
 - `scratch/minimum-projection-size14-dichotomy-counterstate-20260729/`
   gives the first total-support counterstate to unrestricted clean or
   delete.  Its \(7+7\) word/partition has 320 normalized feasible map

@@ -171,7 +171,15 @@ obstruction bit from one to zero.  The independent audit at
 `scratch/clean-or-delete-quadratic-reduction-audit-20260729/` recomputes
 the 16-entry local table and checks both identities on 126,258 balanced
 circuit rows through length eight.  This neutralizes one chosen witness
-only; it is not a simultaneous cleaning or termination theorem.
+only; it is not a simultaneous cleaning or termination theorem.  The
+exact dynamics package
+`scratch/minimum-projection-dual-neutralization-dynamics-20260729/`
+shows why: the forty reduced map states of the size-fourteen boundary
+form one strongly connected neutralization graph and contain a displayed
+four-step cycle.  A literal graph cycle gives an exchange gain \(6-2=4\)
+at one state for every relative translation, so the orbit is excluded
+from global minimality in that realization.  The conclusion is a
+failed-approach certificate, not a FiveCDC counterexample.
 
 The same reduction records the exact size-fourteen counterstate.  The
 Kempe escapes show how internal two-colour paths supply additional
