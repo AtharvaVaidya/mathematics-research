@@ -1,0 +1,1 @@
+{"cycle_sizes": [64, 82, 94, 71, 79], "edges": 195, "every_edge_multiplicity": 2, "order": 130, "standard_fivecdc": true, "status": "PASS"}
