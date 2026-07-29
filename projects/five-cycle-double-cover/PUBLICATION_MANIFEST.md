@@ -14,6 +14,30 @@ OpenAI Codex agents, directed by Atharva Vaidya, generated or revised the
 arguments, programs, computations, audits, and prose. Agent cross-checks
 are not independent human verification or peer review.
 
+## Minimum-class correction and MNP family update (2026-07-29)
+
+- `search/minimum-fano-class-nonpacking-130v-20260729/` proves
+  \(\rho_3=5\) for the retained 130-vertex graph by an explicit
+  nowhere-zero Fano flow and the existing doubly checked flow-resistance
+  LRAT.  A second doubly checked LRAT proves that no size-five class
+  packs.  This refutes the auxiliary claim that some globally minimum
+  Fano value class must pack, while the retained size-six certificate
+  and FiveCDC keep the graph positive for the original conjecture.
+- `scratch/husek-samal-minimum-class-theory-20260729.md` has been
+  corrected accordingly.  Its exchange inequalities remain valid, but
+  the minimum-class route is now stated only as a possible
+  reduced-domain experiment.
+- `search/mnp-minimum-support-packing-20260729/` proves an infinite
+  positive packing theorem for the explicit figure-derived reconstruction
+  \(\widehat H_n\): the displayed size-\(n\) support packs two disjoint
+  boundary joins for all \(n\ge2\).  Conditional on transcription identity
+  with the Mattiolo--Negrini--Pagani family and their theorem
+  \(r_f(H_n)=n\), it lifts to a globally minimum nonzero Fano value class.
+  The graph identity and novelty assessment still require independent
+  human review.
+
+These are proof-strategy results, not a proof or disproof of FiveCDC.
+
 ## Rooted-resolution update (2026-07-28)
 
 - `ROOTED_RESOLUTION_FRONTIER_20260728.md` states the exact current

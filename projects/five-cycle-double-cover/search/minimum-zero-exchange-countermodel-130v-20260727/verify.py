@@ -7,12 +7,14 @@ from collections import deque
 from itertools import combinations
 import hashlib
 import json
+import os
 from pathlib import Path
 import subprocess
 
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
+REPOSITORY = HERE.parents[3]
 CORE_GRAPH6 = (
     "{??????O@?B?D?EGGSAK?H_?HG?Ao@A_??????????????C?G?C???M???B_???"
     "[???????????????????O?C??C????B_????M?????[_???????????????????????"
@@ -21,6 +23,34 @@ CORE_GRAPH6 = (
     "G???C????????B_????????M?????????["
 )
 MARKS = ((22, 26), (30, 34), (38, 42), (46, 50), (54, 58))
+
+
+def locate_checker(relative: Path) -> Path:
+    roots = []
+    configured = os.environ.get("FIVECDC_TOOLS")
+    if configured:
+        roots.append(Path(configured).expanduser().resolve())
+    roots.extend([REPOSITORY / ".tools", ROOT / ".tools"])
+    result = subprocess.run(
+        ["git", "rev-parse", "--git-common-dir"],
+        cwd=REPOSITORY,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if result.returncode == 0:
+        common = Path(result.stdout.strip())
+        if not common.is_absolute():
+            common = (REPOSITORY / common).resolve()
+        roots.append(common.parent / ".tools")
+    for tools_root in roots:
+        candidate = tools_root / relative
+        if candidate.is_file():
+            return candidate
+    raise FileNotFoundError(
+        f"proof checker {relative} not found under any of: "
+        + ", ".join(map(str, roots))
+    )
 
 
 def parse_graph6(text: str) -> tuple[int, list[tuple[int, int]]]:
@@ -513,22 +543,23 @@ def main() -> None:
     assert actual_extension[0] == expected_extension[0]
     assert sorted(actual_extension[1]) == sorted(expected_extension[1])
 
+    checkers = (
+        (
+            "lrat-check",
+            locate_checker(Path("cert-checkers/drat-trim/lrat-check")),
+        ),
+        (
+            "cake_lpr",
+            locate_checker(Path("cert-checkers/cake_lpr/cake_lpr")),
+        ),
+    )
     proof_results = {}
     for stem in ("flow-at-most-four-zero", "extension-at-most-five"):
         cnf = HERE / f"{stem}.cnf"
         proof = HERE / f"{stem}.lrat"
         assert proof.is_file() and proof.stat().st_size > 0
         proof_results[stem] = {}
-        for name, checker in (
-            (
-                "lrat-check",
-                ROOT / ".tools/cert-checkers/drat-trim/lrat-check",
-            ),
-            (
-                "cake_lpr",
-                ROOT / ".tools/cert-checkers/cake_lpr/cake_lpr",
-            ),
-        ):
+        for name, checker in checkers:
             result = subprocess.run(
                 [str(checker), str(cnf), str(proof)],
                 capture_output=True,

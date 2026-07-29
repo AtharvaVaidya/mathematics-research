@@ -2,8 +2,8 @@
 
 Date: 2026-07-29
 
-Status: rigorous reformulations, exchange/cut lemmas, and one exact finite
-auxiliary countermodel.  No FiveCDC resolution is claimed.
+Status: rigorous reformulations, exchange/cut lemmas, and two exact finite
+auxiliary countermodels.  No FiveCDC resolution is claimed.
 
 Scope: finite loopless cubic graphs; parallel edges cause no essential
 change.  The matching language would need reformulation for loops.
@@ -24,16 +24,21 @@ Primary references:
    nonpacking.  The complete public package is
    `search/global-minimum-nonpacking-22v-20260729/`.
 
-2. **The sharp cardinal-minimum statement still alive is existential:**
-   some global-minimum value class packs.  Equivalently, the
-   lexicographic minimum of
+2. **Even the existential cardinal-minimum statement is false:** it is
+   not true that some global-minimum Fano value class must pack.  On the
+   certified 130-vertex graph,
+   \[
+                         \rho_3(G)=5,
+   \]
+   while every size-five value class is nonpacking.  A size-six class
+   does pack and gives an explicit FiveCDC.  Thus the lexicographic
+   minimum of
    \[
                  \bigl(|M|,\delta(M)\bigr)                 \tag{1}
    \]
-   has second coordinate zero, where \(\delta(M)\) is the least
-   Hušek–Šámal odd-component count attainable while retaining \(M\).
-   This statement implies FiveCDC.  It is not presently known to follow
-   from FiveCDC and should not be called equivalent to FiveCDC.
+   can have positive second coordinate when its first coordinate is
+   forced to be \(\rho_3(G)\).  The complete public package is
+   `search/minimum-fano-class-nonpacking-130v-20260729/`.
 
 3. **Minimizing the Hušek–Šámal defect over all flows is not a
    simplification.**  For
@@ -54,14 +59,19 @@ Primary references:
    quotient-color class is deleted.  This yields three simultaneous
    odd cut barriers around every \(a\)-edge.
 
-5. A lexicographic minimizer of (1) satisfies an even sharper
+5. A lexicographic minimizer of (1) still satisfies a sharp
    neutral-exchange obstruction: every size-neutral legal kernel switch
    toggles at most as many dirty components as clean components.  This
-   is the precise remaining gate for a neutral-exchange proof.
+   is useful structural information, but the 130-vertex graph proves
+   that these inequalities alone cannot force packing.
 
 The order-22 every-minimizer countermodel has girth five and cyclic
 edge-connectivity three.  It does **not** refute every-minimizer packing
 on the cyclically 4-edge-connected or girth-at-least-10 domains.
+The 130-vertex existential countermodel has girth four and cyclic
+edge-connectivity three.  It therefore leaves the same reduced domains
+open, provided a sound reduction or a genuinely restricted theorem is
+supplied.
 
 ## 2. Setup and the fixed-pair packing bridge
 
@@ -275,7 +285,7 @@ Thus a nonpacking matching has a normalized forest-supported obstruction
 with a positive even number of bad components, each behind a saturated
 odd \(T\)-cut.
 
-## 6. The sharp surviving minimum-class lemma
+## 6. The minimum-class selection principle is false
 
 Define
 \[
@@ -283,7 +293,7 @@ Define
  \min\{\delta(M_a(f)):f\text{ is NZ},\ a\ne0,\
                          |M_a(f)|=\rho_3(G)\}.              \tag{26}
 \]
-The exact surviving target is
+The formerly proposed target was
 \[
  \boxed{\qquad \delta_\rho(G)=0. \qquad}                   \tag{27}
 \]
@@ -294,23 +304,47 @@ Equivalently:
 Equivalently again, a lexicographic minimizer of (1) has packing defect
 zero.
 
-By (7), (27) implies an H–S-good flow and therefore FiveCDC.  The converse
-is not presently justified: a FiveCDC supplies some packing value class,
-but no argument shows that its size must equal \(\rho_3(G)\).
+Statement (27) is false.  The public 130-vertex package
 
-The order-22 witness disproves only
+```text
+search/minimum-fano-class-nonpacking-130v-20260729/
+```
+
+contains a nowhere-zero \(\mathbb F_2^3\)-flow with distinguished class
 \[
-                \text{“every }\rho_3\text{-minimizer packs.”}           \tag{28}
+                         M=\{35,48,97,135,148\}.            \tag{28}
 \]
-On that same graph, the bad minimum support \(\{14,30\}\) has a neutral
-switch to the packing minimum support \(\{3,30\}\), so (27) holds there.
-The APX36 exact computation likewise finds \(\rho_3=2\) and all 598
-minimum supports packing, even though the originally displayed fixed flow
-has all seven classes nonpacking.
+Direct xor checks verify the flow and the exact value class.  Hence
+\(\rho_3\le5\).  The independently generated and doubly checked LRAT
+refutation for an arbitrary \(\mathbb F_2^2\)-flow with at most four
+zeros proves \(r_f\ge5\), and (14) gives \(\rho_3\ge5\).  Thus
+\(\rho_3=5\).
+
+A second independently generated and doubly checked LRAT refutation
+for the complete exact-zero-matching/two-cycle encoding with
+\(|M|\le5\) proves that no size-five class packs.  Therefore
+\[
+                          \delta_\rho(G)>0.                 \tag{28a}
+\]
+The same graph has a size-six packing certificate and an explicit
+standard FiveCDC.  This cleanly separates minimum Fano liftability
+(one boundary \(T\)-join) from packing (two edge-disjoint boundary
+\(T\)-joins).
+
+The order-22 witness had already disproved only “every
+\(\rho_3\)-minimizer packs”: its bad minimum support \(\{14,30\}\) has a
+neutral switch to the packing co-minimum support \(\{3,30\}\).  APX36
+similarly has \(\rho_3=2\) with all 598 minimum supports packing.  Those
+positive finite observations did not justify (27).
+
+By (7), (27) would have implied an H–S-good flow and therefore FiveCDC,
+but the reverse implication was never justified.  Its failure does not
+bear on the truth of FiveCDC.
 
 ## 7. Exact neutral-exchange optimality system
 
-Choose a triple \((f,a,\lambda)\) lexicographically as follows:
+For structural analysis, choose a triple \((f,a,\lambda)\)
+lexicographically as follows:
 
 1. minimize \(|M_a(f)|=\rho_3(G)\);
 2. among those triples minimize \(d_\lambda(f)\);
@@ -421,13 +455,14 @@ and the cut size is even.  If both shores contain cycles in a cyclically
 5-edge-connected graph, its size is at least six.
 
 The simultaneous data (20)–(21), (25), (32)–(42) are a rigorous
-minimal-counterexample normal form.  None alone proves (27).
+minimum-class normal form.  The 130-vertex theorem proves that no
+unrestricted argument can force (27) from this normal form.
 
-### A precise neutral-circuit lemma that would suffice
+### A precise restricted neutral-circuit lemma
 
-The following is a clean remaining proof target on any proposed restricted
-domain (for example cyclically 4-edge-connected graphs of girth at least
-10):
+The following remains a possible proof target only on a proposed
+restricted domain not containing the 130-vertex countermodel (for example
+cyclically 4-edge-connected graphs of girth at least 10):
 
 > **Neutral-circuit target.**  In every positive-defect lexicographic
 > minimizer above, there exist \(0\ne t\in\ker\lambda\) and a circuit
@@ -441,7 +476,8 @@ domain (for example cyclically 4-edge-connected graphs of girth at least
 > \]
 
 Switching on \(C\) preserves the global minimum class size and strictly
-decreases the secondary defect, a contradiction.
+decreases the secondary defect.  A universal theorem of this form is
+false by (28a); any proof must use the additional domain hypotheses.
 
 The exact obstruction to (43) is also explicit: for every circuit and
 kernel direction, either the class-size inequality (39) is strict, or
@@ -553,8 +589,9 @@ are false local rules.
 
 This displayed flow is not globally class-minimal.  A separate exact
 computation finds \(\rho_3=2\), 598 distinct global-minimum supports,
-and all 598 packing.  It is positive finite evidence for (27), not a
-proof, and is not part of the order-22 package cited above.
+and all 598 packing.  It was a positive instance of the then-proposed
+property (27), not evidence strong enough to justify it, and is not part
+of the order-22 package cited above.
 
 ### The 144-vertex score-zero flow
 
@@ -591,9 +628,10 @@ fixed-pair theorem: an affine switch can clean one line while splitting
 and merging components on the other six.  No monotonicity formula for
 that total has been proved.
 
-## 10. Recommended next theorem/search target
+## 10. Recommended restricted theorem/search target
 
-The viable route is no longer “every minimum class packs.”  It is:
+Neither “every minimum class packs” nor “some minimum class packs” is a
+viable unrestricted route.  A reduced-domain experiment may still:
 
 1. choose a lexicographic \((|M|,\delta)\)-minimizer;
 2. use the three simultaneous bridge-barrier forests (20);
@@ -601,8 +639,8 @@ The viable route is no longer “every minimum class packs.”  It is:
    (24)–(25);
 4. exploit the four-odd affine boundary pattern (41) on every dirty
    component; and
-5. prove a neutral exchange violating (33), ideally first in the
-   cyclically 4-edge-connected, girth-at-least-10 domain.
+5. test whether the extra cyclic-connectivity and girth hypotheses force
+   a neutral exchange violating (33).
 
 An exact computational screen should search directly for lexicographic
 states satisfying all blocker conditions:
@@ -613,9 +651,11 @@ states satisfying all blocker conditions:
 - every neutral kernel cycle obeying (33); and
 - no one-for-one exchange (44) decreasing \(\delta\).
 
-Finding such a state would refute the proposed neutral-circuit lemma, not
-FiveCDC.  Proving none exists in a soundly reduced domain would be a real
-advance toward (27).
+Finding such a state in the restricted domain would refute the restricted
+neutral-circuit lemma, not FiveCDC.  Proving none exists would be useful
+only after either proving that a smallest FiveCDC counterexample lies in
+that domain or embedding the restricted result into a separate complete
+argument.
 
 ## AI-use disclosure
 

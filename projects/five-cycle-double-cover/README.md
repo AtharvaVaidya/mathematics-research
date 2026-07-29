@@ -258,10 +258,27 @@ extending minimum support.  This once suggested a universal exchange
 lemma, but that unrestricted lemma is now refuted by the certified
 130-vertex graph in
 `search/minimum-zero-exchange-countermodel-130v-20260727/`: it has
-\(r_f=r_M=5\), no matching/four-flow extension of size at most five, and
-an explicit extension of size six.  The graph itself has a checked
-standard five-cover, so it is a route countermodel rather than a Five-CDC
-counterexample.
+\(r_f=r_M=5\), no matching/four-flow packing certificate of size at most
+five, and an explicit packing certificate of size six.  The later
+Fano-lift audit in
+`search/minimum-fano-class-nonpacking-130v-20260729/` exhibits a
+nowhere-zero \(\mathbb F_2^3\)-flow with a value class of size five.
+Thus \(\rho_3=5\), but every \(\rho_3\)-minimum class is nonpacking: even
+the existential minimum-Fano-class selection principle is false.  This
+distinguishes one-join Fano liftability from two-join packing.  The graph
+itself has a checked standard five-cover, so it is a route countermodel
+rather than a Five-CDC counterexample.
+
+The conditional infinite-family package
+`search/mnp-minimum-support-packing-20260729/` gives a complementary
+positive theorem.  In the figure-derived reconstruction
+\(\widehat H_n\) of the Mattiolo--Negrini--Pagani family, the displayed
+minimum exact-zero matching of size \(n\) packs two boundary joins for
+every \(n\ge2\), and lifts to a globally minimum nonzero Fano value
+class.  The tile parity proof and recurrence are human-checkable and
+replay through arbitrary finite prefixes; global minimality imports the
+published equality \(r_f(H_n)=n\), and graph identity remains explicitly
+conditional on independent verification of the figure transcription.
 
 The new coordinate-factor lemma in
 `docs/flow-resistance-weak-oddness.md` proves directly that

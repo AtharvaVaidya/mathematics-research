@@ -85,6 +85,15 @@ marks, checks all positive witnesses by direct semantics, regenerates both
 CNFs independently, and runs both `lrat-check` and CakeML `cake_lpr` on
 both LRATs.
 
+It looks for the proof checkers under `.tools` at the repository or project
+root.  For a separate worktree or a nonstandard installation, point it to
+the directory containing `cert-checkers/`:
+
+```sh
+FIVECDC_TOOLS=/absolute/path/to/.tools \
+  python3 search/minimum-zero-exchange-countermodel-130v-20260727/verify.py
+```
+
 Regenerate every artifact and proof with:
 
 ```sh
