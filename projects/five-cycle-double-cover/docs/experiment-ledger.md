@@ -3231,3 +3231,63 @@ neighbourhood of one order-36 state, finds the exact 0/13/50 split among
 63 legal moves, and independently replays a distance-two same-level escape.
 All three results are exact for their stated domains and are not a
 resolution of FiveCDC.
+
+## Heawood four-pole full-boundary audit
+
+Audit date: **2026-07-28**.
+
+The independent standard-library checker parses graph6 `KhEGHC@AI?_P`,
+reconstructs the ordered 16-edge proper core and ports \((0,3,8,11)\),
+checks simplicity, connectedness, bridgelessness, and girth six, then
+verifies the displayed ten certificate rows.  Their 120 coordinate
+permutations cover exactly all 640 xor-zero ordered boundary words.  The
+frozen result JSON is byte-equal to fresh checker output, and the four-file
+checksum ledger passes.
+
+This is a complete finite boundary theorem plus a human gluing reduction;
+no SAT solver or UNSAT certificate is involved.
+
+## Fixed-label square-selection cut audit
+
+Audit date: **2026-07-28**.
+
+The triangular-prism checker enumerates all 540 indexed FiveCDC pair
+labellings.  For the two chosen matching edges in one three-edge cut, every
+labelling gives labels meeting in exactly one coordinate, as forced by the
+human cut-parity identity.  It separately reconstructs the explicit
+downstairs and square-local lifted tree states, both with profile
+\((2,0,2)\).  The result is an exact no-go only for the proposed fixed-label
+selection bridge.
+
+## Radius-three plateau separator audit
+
+Audit date: **2026-07-28**.
+
+The independent standard-library checker reconstructs a simple
+3-edge-connected cubic order-40 graph and literal star state with
+\(d_{\min}=2\).  Its complete same-level breadth-first layers through
+radius three contain 1, 13, 108, and 836 states.  Across 1,037,514
+candidate exchanges, 67,392 are legal oriented arcs; no defect-zero
+boundary leaves layers zero through two, while 32 such arcs leave layer
+three.  An explicit shortest four-exchange path reaches defect zero.
+Canonical digests of the complete radius-three ball and all scored legal
+arcs are
+`51aa4f3ff1efa9bebcffe0f2869919c7bd25d60c2047f8b5383b8be90d435c58`
+and
+`d2ad5a4bb090e43efffba60e51dec5c66037cf10465b7c43f86a2c5b3407c4ce`.
+This is an exact bounded-radius no-go, not a trapped plateau or a FiveCDC
+counterexample.
+
+## Equal-profile plateau Laplacian audit
+
+Audit date: **2026-07-28**.
+
+The derived standard-library checker exhausts both reciprocal-exchange
+neighbourhoods of two adjacent order-40 states with identical ordered
+profile \((8,2,8,8,6,10,10)\).  Their legal degrees are 65 and 63, while
+the coordinate Laplacians are
+`(-12,140,-6,-6,28,-40,-94)` and
+`(-16,134,-6,-2,34,-58,-100)`.  The resulting total-defect Laplacians are
+10 and -14.  This exact sign reversal rules out a profile-only formula and
+universal sub/superharmonicity for total defect.  It does not refute the
+topology-sensitive plateau theorem.

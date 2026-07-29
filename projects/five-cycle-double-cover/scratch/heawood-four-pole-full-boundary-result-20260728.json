@@ -1,0 +1,31 @@
+{
+  "all_boundary_words_extend": true,
+  "all_internal_vertex_parities_checked": true,
+  "certificate_rows": 10,
+  "certificate_sha256": "6194c3b62d5608a93d4f0b9c5c3edd57d7ad3219cc6db7c1ff0b432412c3bda1",
+  "classification": "EXACT_FINITE_BOUNDARY_THEOREM",
+  "coordinate_permutations": 120,
+  "graph": {
+    "bridgeless": true,
+    "connected": true,
+    "girth": 6,
+    "order": 12,
+    "ports": 4,
+    "proper_edges": 16,
+    "simple": true
+  },
+  "graph6": "KhEGHC@AI?_P",
+  "orbit_sizes": {
+    "AA": 10,
+    "AT2": 60,
+    "AT3": 60,
+    "AT4": 60,
+    "T2T2": 30,
+    "T2T3": 120,
+    "T2T4": 120,
+    "T3T3": 30,
+    "T3T4": 120,
+    "T4T4": 30
+  },
+  "xor_zero_boundary_words": 640
+}

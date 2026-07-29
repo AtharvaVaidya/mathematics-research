@@ -1,0 +1,3 @@
+d78edcce951c916a66e42777c484fe438465a9befcd0e44c33638a1051a0b819  scratch/fivecdc-heawood-full-four-pole-theorem-20260728.md
+dd35bd6a8fbfd4d56d44ed3b157152764cfee6bf1559a0ade094dcfd9e8788f9  scratch/verify_heawood_four_pole_full_boundary_20260728.py
+f5e51be9f4a3c6af801032dd1971ff831ee34e974a1d8b3da442bf5c96b1de13  scratch/heawood-four-pole-full-boundary-result-20260728.json

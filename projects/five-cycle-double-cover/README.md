@@ -451,5 +451,30 @@ are all replayed by a separately written checker.  For the exchange
 route, a 36-vertex state proves that even the sorted seven-defect profile
 need not decrease in one legal exchange: its 63 legal neighbours split as
 0 lower, 13 equal, and 50 higher.  A checked two-exchange same-level escape
-still reaches defect zero.  Thus the whole-fibre square implication and the
-full plateau-component theorem both remain open.
+still reaches defect zero.  A 40-vertex state has exact plateau escape
+distance four: complete enumeration of its 958-state radius-three ball
+finds no earlier descending boundary.  Two adjacent equal-profile states
+on that graph have total-defect Laplacians \(+10\) and \(-14\), refuting
+profile-only averaging and universal sub/superharmonicity of total defect.
+On the square side, a human
+three-edge-cut lemma and a triangular-prism witness show that no choice of
+downstairs five-cover can always make the two deleted labels equal or
+disjoint, even when a good tree-local lift exists.  Thus the whole-fibre
+square implication and the full unbounded plateau-component theorem both
+remain open.
+
+A genuinely different non-covering reduction is now proved for the Heawood
+graph.  Delete two adjacent Heawood vertices to obtain a 12-vertex,
+four-port, girth-six pole.  Every one of the 640 xor-zero ordered boundary
+words over the ten pair labels extends through this pole.  Ten displayed
+\(S_5\)-orbit rows prove the boundary theorem, and an independent
+standard-library checker verifies every internal parity and all 640 words.
+Consequently the pole may replace two independent edges of any
+FiveCDC-positive cubic graph using any of the \(4!\) port bijections while
+preserving standard FiveCDC and bridgelessness.  This is another sound
+minimal-counterexample pruning rule, not a universal reduction.  See
+`scratch/fivecdc-heawood-full-four-pole-theorem-20260728.md`.
+The Petersen and Heawood reductions, together with the sharp
+\(K_{3,3}\)-minus-adjacent-vertices boundary obstruction, are assembled in
+the explicitly AI-disclosed working preprint
+`preprint-fivecdc-four-pole-reductions/`.

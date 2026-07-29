@@ -14,11 +14,14 @@ python3 scratch/verify_jaeger_star_parity_descent_countermodel.py
 python3 scratch/verify_jaeger_reciprocal_exchange_defect_formula.py
 python3 scratch/verify_jaeger_fano_min_immediate_descent_countermodel.py
 python3 scratch/verify_jaeger_sorted_profile_local_no_go_order36.py
+python3 scratch/verify_jaeger_plateau_escape_radius4_order40.py
+python3 scratch/verify_jaeger_plateau_profile_laplacian_no_go.py
 python3 scratch/verify_jaeger_kernel_closure_typea_countermodel.py
 python3 scratch/verify_jaeger_star_exact_parity_triangle_lift.py
 python3 scratch/verify_jaeger_star_square_any_coordinate_lift_countermodel.py
 python3 scratch/verify_jaeger_star_square_order6_controls.py
 python3 scratch/verify_jaeger_star_square_existential_order8.py
+python3 scratch/verify_jaeger_square_fixed_label_selection_cut_no_go.py
 python3 scratch/search_jaeger_star_square_existential_census.py --order 10
 python3 scratch/search_jaeger_star_square_existential_census.py --order 12
 clang++ -O3 -std=c++20 \
@@ -76,6 +79,15 @@ for the C++ search and
 `81545f6d0fc1331783a3d7e1d9f267961172a3398a05c635096c093d6638a791`
 for the independent checker.
 
+The triangular-prism command independently enumerates all 540 indexed
+five-cover pair labellings and verifies that the two selected matching edges
+always meet in exactly one coordinate. It also reconstructs the displayed
+profile-\((2,0,2)\) star state and its profile-\((2,0,2)\) square-local
+lift. The human proof is the three-edge-cut parity identity. Expected
+note/checker SHA-256 values are
+`c7fe3f077c695582b4288dcca6cbed726ed885d1976bf3225bfa2f39913c60d5` /
+`fba5be96ab40091e19f9e40a38b1eb5342ada638ef234944562ea304ccad3398`.
+
 The sorted-profile command reconstructs the literal 36-vertex state,
 checks all 867 exchange candidates and the exact \(0/13/50\)
 lower/equal/higher split among 63 legal neighbours, then replays a
@@ -84,6 +96,28 @@ two-exchange same-\(d_{\min}\) escape. Expected SHA-256 values are
 for the note and
 `9b595f2a83371f08792e967d12d49b9050e6ca5766330bb87a7b0be6d4f48178`
 for the independent checker.
+
+The radius-four command reconstructs the literal simple 3-edge-connected
+cubic order-40 state and its complete level-two ball through radius three.
+It must report layer sizes \(1,13,108,836\), 1,037,514 candidate exchanges,
+67,392 legal oriented arcs, no descending boundary before layer three, and
+32 descending arcs from layer three. It independently replays a shortest
+four-exchange escape. Expected SHA-256 values are
+`c751e430c4d381a3238f9257c810e58a2ab00ce0d3bab666a04ea08b5256b6fe`
+for the note and
+`db9382bd873ee741658e5178b671c223103140d9952be568512a96d3e61fa4dc`
+for the checker. The hashes of the canonical radius-three ball and all
+scored legal arcs are
+`51aa4f3ff1efa9bebcffe0f2869919c7bd25d60c2047f8b5383b8be90d435c58`
+and
+`d2ad5a4bb090e43efffba60e51dec5c66037cf10465b7c43f86a2c5b3407c4ce`.
+
+The profile-Laplacian command checks two adjacent states with the identical
+ordered profile \((8,2,8,8,6,10,10)\). It exhausts their 65- and 63-neighbour
+exchange neighbourhoods and must report total-defect Laplacians \(10\) and
+\(-14\). Expected note/checker SHA-256 values are
+`8f804b9fd2e6f094be3165729d0c6845c81aa04094a4c994e207e8cc6bc6037b` /
+`24b59ad26f9f35d0589854111db5ced3923f659961199245bdefbb15ee8c9624`.
 
 ## Symmetric Fano-minimum descent through order 14
 

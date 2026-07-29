@@ -6,7 +6,7 @@ copied into a separate clean clone; it was not modified or committed.
 
 ## Included
 
-- The 32-page, explicitly AI-disclosed working preprint
+- The 34-page, explicitly AI-disclosed working preprint
   `preprint-jaeger-fivecdc-frontier/`, with LaTeX source, rendered PDF,
   references, human-review gate, validation record, and checksum manifest.
   It presents the fixed-fibre feasibility theorem, exact five-point
@@ -19,7 +19,10 @@ copied into a separate clean clone; it was not modified or committed.
   fixed-state square lifting.  It now also gives the equal-or-disjoint
   fixed-cover square-extension lemma, a complete whole-fibre square census
   through downstairs order 14, and an exact order-36 countermodel to
-  one-step descent of the sorted seven-defect profile.
+  one-step descent of the sorted seven-defect profile.  The current version
+  adds the triangular-prism three-cut obstruction to fixed-label square
+  selection and a complete 958-state radius-three plateau separator whose
+  shortest descending path has length four.
 - The Jaeger fixed-fibre reproducibility package: complete Type A/B
   support-five and support-six census streams through order 14; literal
   fixed-coordinate witnesses for 31 order-44 graphs and all 1,364 roots;
@@ -60,6 +63,27 @@ copied into a separate clean clone; it was not modified or committed.
   on all 550 labelled boundary assignments.  No target UNSAT result was
   found.  `LOCAL_FRONTIER_SHA256SUMS_20260728` freezes the compact direct,
   square, sorted-profile, and retained order-14 certificate artifacts.
+- The full-boundary Heawood four-pole package: a ten-row human certificate,
+  frozen 640-word result, and independent standard-library checker.  It
+  proves that deleting adjacent Heawood vertices gives a girth-six pole
+  through which every xor-zero ordered four-port boundary word extends.
+  Arbitrary-port insertion therefore preserves FiveCDC and bridgelessness.
+  The configuration is not known to be unavoidable.
+- The standalone eight-page, explicitly AI-disclosed working preprint
+  `preprint-fivecdc-four-pole-reductions/`, with deterministic PDF,
+  checksum ledger, replay instructions, and human-review gate.  It combines
+  the Petersen repeated-pair and Heawood full-boundary theorems, and gives
+  \(K_{3,3}\) minus adjacent vertices as a sharp obstruction to the tempting
+  universal bipartite-pole generalization.  A complete checker verifies its
+  580/640 boundary count and exact 60-word missing orbit.
+- The fixed-label square-selection and radius-three plateau no-go packages.
+  The first uses a human three-edge-cut parity lemma plus all 540 indexed
+  FiveCDC labellings of the triangular prism.  The second reconstructs all
+  1,037,514 candidate exchanges around a literal order-40 state and proves
+  exact plateau escape distance four.  A companion equal-profile
+  adjacent-state certificate gives total-defect Laplacians \(+10\) and
+  \(-14\), refuting profile-only averaging.  These results close only
+  intermediate strategies; none is a FiveCDC counterexample.
 - The parity-element/kernel-closure package: a human linear-algebra and
   cographic-base reformulation; exact positive star-fibre frontiers through
   order 14; an independently exhausted generic Type-A countermodel; and a
@@ -286,7 +310,7 @@ copied into a separate clean clone; it was not modified or committed.
   checker sources, result summaries, and the original SHA-256 ledger.
 - The native-XOR five-CDC encoder and its unit test.
 
-The five compiled PDFs have SHA-256 digests:
+The five previously curated compiled PDFs have SHA-256 digests:
 
 ```text
 863f24bcad7780067e5c264e2253e673ea4b9d50e94f28a6cf6cf389cc20bcb0  output/pdf/two-connected-countermodels-five-cdc-preprint.pdf

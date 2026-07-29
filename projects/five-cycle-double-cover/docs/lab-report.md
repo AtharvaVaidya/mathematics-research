@@ -1297,10 +1297,31 @@ five-cover extends across the square exactly for equal or disjoint deleted
 edge labels.  The order-14 layer contains 572,880 explicit witnesses,
 independently reconstructed by a separate checker.  Conversely,
 sorted-profile one-step descent fails on an explicit 36-vertex state, but a
-two-step same-level escape exists.
+two-step same-level escape exists.  The triangular-prism three-cut lemma
+also refutes the proposed fixed-label selection bridge while preserving a
+good tree-local lift.  An order-40 state has exact plateau escape distance
+four: its complete radius-three level set has 958 states and no earlier
+descending boundary.  Two adjacent states with the same ordered defect
+profile have total-defect Laplacians \(+10\) and \(-14\), so the natural
+profile-only averaging/subharmonicity repair also fails.
 
 Acceptance-gate verdict remains unchanged: **no universal proof and no
 independently certified target UNSAT instance**.  The live obligations are
 the universal whole-fibre square selection lemma, the full
 same-\(d_{\min}\) plateau-boundary theorem, and genuinely non-covering
 substitution/reduction rules not subsumed by the Petersen certificate.
+
+## 12. Heawood full-boundary reducible configuration
+
+The Heawood-minus-adjacent-vertices four-pole realizes the complete
+xor-zero \(D_5\) boundary language: all 640 ordered words extend.  A
+human-sized ten-row orbit table and a separately written standard-library
+checker establish the claim.  The resulting arbitrary-port insertion
+theorem preserves both standard FiveCDC and bridgelessness.
+
+This is stronger locally than the Petersen certificate because it realizes
+every globally necessary four-port boundary word, not only the
+\((q,q,r,r)\) words arising in the basic two-edge insertion.  Its global
+use remains conditional on finding the pole in a candidate or constructing
+the candidate by the insertion.  It is therefore a sound pruning theorem,
+not a resolution.

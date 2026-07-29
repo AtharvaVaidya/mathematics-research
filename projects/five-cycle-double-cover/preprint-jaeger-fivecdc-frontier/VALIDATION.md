@@ -6,7 +6,7 @@ Resolution status: FiveCDC remains unresolved.
 
 The manuscript compiled successfully with
 `SOURCE_DATE_EPOCH=1785271878 tectonic main.tex`, reproducing the committed
-PDF byte for byte. `pdfinfo` reported 32 US-letter pages, no encryption, no
+PDF byte for byte. `pdfinfo` reported 34 US-letter pages, no encryption, no
 forms, and no JavaScript.
 All pages were rendered with Poppler at 120 dpi and visually inspected.
 There were no clipped lines, overflowing tables, broken glyphs, or unreadable
@@ -48,6 +48,22 @@ The following cited checkers all exited zero in the final validation pass:
   57 breadth-first states; note/checker SHA-256
   `5d1737becf817615190a875808c5dff12d8cb14c7b8736d3f6967f49c4fb745e` /
   `9b595f2a83371f08792e967d12d49b9050e6ca5766330bb87a7b0be6d4f48178`.
+- `verify_jaeger_plateau_escape_radius4_order40.py`: PASS; the literal
+  simple 3-edge-connected cubic order-40 state has a complete radius-three
+  level-two ball of 958 states in layers \(1,13,108,836\). The checker
+  reconstructs 1,037,514 candidate exchanges and 67,392 legal oriented arcs,
+  finds no descending boundary before layer three and exactly 32 descending
+  arcs from that layer, and replays a shortest four-exchange escape. Thus
+  only the radius-three strengthening is refuted; note/checker SHA-256
+  `c751e430c4d381a3238f9257c810e58a2ab00ce0d3bab666a04ea08b5256b6fe` /
+  `db9382bd873ee741658e5178b671c223103140d9952be568512a96d3e61fa4dc`.
+- `verify_jaeger_plateau_profile_laplacian_no_go.py`: PASS; two adjacent
+  states with identical ordered profile \((8,2,8,8,6,10,10)\) have legal
+  degrees 65 and 63 and total-defect Laplacians \(10\) and \(-14\).
+  This refutes profile-only averaging and universal sub/superharmonicity of
+  total defect, not the full plateau theorem; note/checker SHA-256
+  `8f804b9fd2e6f094be3165729d0c6845c81aa04094a4c994e207e8cc6bc6037b` /
+  `24b59ad26f9f35d0589854111db5ced3923f659961199245bdefbb15ee8c9624`.
 - `verify_jaeger_triangle_expansion_descent_structure.py`: PASS; the six
   lifted profiles and their common contraction are reconstructed.
 - `verify_jaeger_triangle_expanded_fixedtrap_descent.py`: PASS; all thirteen
@@ -123,6 +139,14 @@ The following cited checkers all exited zero in the final validation pass:
   search/checker SHA-256
   `f457fbf60bf5f2b94828bcf6295e0bf289b70205c55b70ab81d35de2fbc9697e` /
   `81545f6d0fc1331783a3d7e1d9f267961172a3398a05c635096c093d6638a791`.
+- `verify_jaeger_square_fixed_label_selection_cut_no_go.py`: PASS; all 540
+  indexed FiveCDC labellings of the triangular prism were generated, and
+  the two selected edges in the three-edge cut always have one-point
+  intersecting labels. The exact-good downstairs state and exact-good
+  square-local lift both have profile \((2,0,2)\), so only the fixed-label
+  selection bridge is refuted; note/checker SHA-256
+  `c7fe3f077c695582b4288dcca6cbed726ed885d1976bf3225bfa2f39913c60d5` /
+  `fba5be96ab40091e19f9e40a38b1eb5342ada638ef234944562ea304ccad3398`.
 - `verify_jaeger_five_point_frontier.py`: PASS; 587 graphs, 944,974
   placements, and all 804,204 feasible fibres successful.
 - `verify_jaeger_star_thinning_countermodel_34v.py`: PASS; both

@@ -24,14 +24,25 @@ give an exact Cartesian-product theorem with one \(S_3\) Cayley factor per
 triangle, but the defect is not a product potential. A 36-vertex exact
 countermodel shows that even the sorted seven-defect profile need not
 decrease in one exchange; it nevertheless has a checked two-exchange
-same-level escape. A further solver-free order-eight example
+same-level escape. A 40-vertex exact state goes further: its complete
+958-state radius-three same-level ball has no earlier descending boundary,
+and its shortest escape has length four. This refutes every radius-three
+plateau shortcut, but the state escapes and the unbounded component theorem
+remains open. Two adjacent states with that same ordered profile have
+total-defect Laplacians \(+10\) and \(-14\), so profile-only averaging and
+universal sub/superharmonicity of total defect also fail. A further
+solver-free order-eight example
 shows that one fixed good state need not have a good square-local lift in
 any coordinate; an alternate good state for the same graph and square does
 lift. The paper proves an exact fixed-cover square-extension criterion:
 the deleted edge labels must be equal or disjoint. Complete whole-fibre
 censuses through downstairs order 14 find compatible state-and-lift choices
 in all 633,204 graph/root/smoothing instances tested, so the whole-fibre
-square reduction remains open rather than refuted.
+square reduction remains open rather than refuted. A human three-edge-cut
+argument on the triangular prism proves that no choice of a downstairs
+five-cover can always make the two deleted labels equal or disjoint, even
+though that literal tree state has a good square-local lift. Thus the fixed-
+cover label criterion cannot supply the missing tree-state selection lemma.
 
 **Priority correction:** Hušek and Šámal, *Exponentially Many Circuit
 Double Covers*, arXiv:2607.24724v1 (submitted July 27, 2026), independently

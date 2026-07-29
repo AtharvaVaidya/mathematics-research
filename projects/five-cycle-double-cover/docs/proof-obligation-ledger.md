@@ -1504,16 +1504,25 @@ Open obligations:
     disjoint.  Complete censuses have zero failures through downstairs
     order 14, including an independently replayed 572,880-witness final
     layer, so any simple 3-edge-connected cubic countermodel to the stronger
-    local-selection statement has order at least 16.
+    local-selection statement has order at least 16.  The fixed-label
+    shortcut is false: on a three-edge cut all three pair labels intersect
+    pairwise once, and the triangular prism has the tree-local antecedent
+    and conclusion while no FiveCDC makes the selected pair equal or
+    disjoint.
     Status: **OPEN / exact finite frontier**.
 
 93. **Full plateau-component boundary:** prove that every positive
     same-\(d_{\min}\) exchange component has an edge to a lower level.
     Immediate scalar descent, fixed-kernel exposure, and immediate
     lexicographic descent of the sorted seven-defect profile are all false.
-    The new order-36 sorted-profile local minimum escapes in two same-level
-    moves, so it is not a trapped component.
-    Status: **OPEN / three one-step strengthenings refuted**.
+    The order-36 sorted-profile local minimum escapes in two same-level
+    moves.  A stronger order-40 separator has exact plateau escape distance
+    four: its complete radius-three ball has 958 states and no earlier
+    descending boundary.  It too escapes.  Furthermore, two adjacent
+    equal-profile states have total-defect Laplacians \(10\) and \(-14\),
+    refuting profile-only averaging and universal sub/superharmonicity.
+    Neither witness is a trapped component.
+    Status: **OPEN / one-step and radius-three strengthenings refuted**.
 
 94. **Minimal-counterexample substitution reduction:** characterize
     non-covering multipoles whose boundary relation is universally
@@ -1521,3 +1530,12 @@ Open obligations:
     Petersen four-pole substitution are now soundly positive and cannot
     generate a smallest counterexample from a positive base.
     Status: **OPEN beyond the proved operations**.
+
+95. **Exploit full-boundary four-poles globally:** the
+    Heawood-minus-adjacent-vertices pole realizes all 640 xor-zero
+    \(D_5\) boundary words and therefore gives an arbitrary-port
+    FiveCDC/bridgelessness-preserving insertion.  Prove that every minimal
+    counterexample contains a reducible full-boundary pole, or find a finite
+    unavoidable family of such poles.  The single Heawood configuration is
+    not known to be unavoidable.
+    Status: **OPEN / exact local theorem available**.

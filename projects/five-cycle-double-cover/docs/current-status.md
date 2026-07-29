@@ -2737,4 +2737,50 @@ potential.  On the explicit order-36 state, all 867 reciprocal candidates
 are reconstructed; 63 are legal, with 0 lexicographically lower, 13 equal,
 and 50 higher neighbours.  A two-exchange path within \(d_{\min}=2\)
 reaches defect zero, so the full same-level-component theorem survives.
+
+Two further exact quantifier barriers are now frozen.  In every FiveCDC,
+the labels on a three-edge cut form, up to \(S_5\),
+\(\{0,1\},\{0,2\},\{1,2\}\), so any two intersect once.  On the triangular
+prism this prevents the two selected square-smoothing edges from ever
+having equal or disjoint labels, although an exact-good star state and
+exact-good square-local lift both exist.  Hence fixed-label selection
+cannot prove the still-open whole-fibre implication.
+
+For descent, a literal order-40 state has exact plateau escape distance
+four.  Its complete level-two ball through radius three has layer sizes
+\(1,13,108,836\); all 1,037,514 candidate swaps and 67,392 legal oriented
+arcs are independently reconstructed.  No descending boundary occurs
+before layer three, and an explicit fourth exchange reaches defect zero.
+This refutes only every radius-three strengthening.  The full unbounded
+same-level-component theorem remains open.
+
+The natural averaging repair is also false.  Two adjacent states with the
+same ordered profile \((8,2,8,8,6,10,10)\) have 65 and 63 legal neighbours,
+but the graph Laplacian of total defect is \(+10\) at one and \(-14\) at
+the other.  Hence total defect is neither universally subharmonic nor
+superharmonic, and its Laplacian is not determined by the current profile.
+The universal plateau divergence identity only moves the unknown sign to
+the exterior boundary; a surviving proof must retain fundamental-cycle and
+quotient-boundary incidence data.
 See the exact notes and independent checkers under `scratch/`.
+
+## Full-boundary Heawood four-pole reduction
+
+Audit date: **2026-07-28**.
+
+Deleting two adjacent vertices of the Heawood graph gives the frozen
+12-vertex four-pole `KhEGHC@AI?_P`, with ordered ports
+\((0,3,8,11)\).  Its proper core is simple, connected, bridgeless, and has
+girth six.  Every ordered four-tuple of pair labels with xor zero extends
+through the pole.  There are 640 such boundary words; ten displayed orbit
+representatives and their internal labels cover them under all 120
+coordinate permutations.  The independent checker validates the edge
+table, graph metadata, all internal parities, orbit sizes, and exact
+coverage.
+
+It follows that replacing two independent edges of a FiveCDC-positive cubic
+graph by this pole preserves standard FiveCDC for every one of the \(4!\)
+port bijections.  A separate edge-by-edge lemma proves that the substitution
+also preserves bridgelessness.  This is a non-covering, non-Petersen
+reducible configuration.  It does not imply that every prospective
+counterexample contains such a pole, so FiveCDC remains unresolved.

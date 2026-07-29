@@ -125,12 +125,22 @@ seven-plane update under a reciprocal tree exchange.  Two explicit
 inside one fixed odd-kernel triple is valid; active same-level motion is
 sometimes necessary.  A 36-vertex state further shows that even the complete
 sorted seven-defect profile need not decrease in one exchange, although an
-exact two-exchange same-level escape exists.  For square expansion, we prove
+exact two-exchange same-level escape exists.  A 40-vertex state has exact
+plateau escape distance four: its complete radius-three same-level ball has
+958 states and no earlier descending boundary.  Thus no universal
+bounded-radius-three replacement for the full plateau-component statement is
+possible.  Moreover, two adjacent equal-profile states have opposite signs
+for the graph Laplacian of total defect, ruling out profile-only averaging
+and universal sub/superharmonicity of that potential.  For square expansion,
+we prove
 that a fixed five-cover extends exactly when the two deleted edge labels are
 equal or disjoint, and a solver-free whole-fibre census finds compatible
 state-and-lift choices in every simple 3-edge-connected cubic instance
 through downstairs order \(14\).  These are finite results and exact no-go
-statements, not a universal selection theorem.
+statements, not a universal selection theorem.  A three-edge-cut argument
+on the triangular prism also proves that the fixed-cover criterion cannot
+serve as the missing state-selection lemma, even though the same instance
+has a good tree-local square lift.
 \end{abstract}
 
 \tableofcontents
@@ -1387,6 +1397,43 @@ which is impossible.  This proves~(6.22).  The criterion is deliberately
 for a fixed outside five-labelling; it does not identify which exact-good
 tree state should be selected.
 
+In fact, no choice of a downstairs five-cover can always arrange~(6.22).
+
+\begin{proposition}[three-cut obstruction to fixed-label selection]
+\label{prop:square-cut-nogo}
+There are a simple 3-edge-connected cubic graph \(H\), a root \(r\), and
+independent nonroot edges \(e,f\) such that the relevant star fibre has an
+exact-good state and a good square-local lift, but no five-cycle double
+cover of \(H\) gives \(e,f\) equal or disjoint labels.
+\end{proposition}
+
+\begin{proof}
+For any three-edge cut
+\(\delta(X)=\{g_0,g_1,g_2\}\), every Eulerian coordinate meets the cut
+evenly.  Hence its three pair labels satisfy
+\[
+                         P_0\symdiff P_1\symdiff P_2=\varnothing.
+                                                               \tag{6.23}
+\]
+Since all have size two, \(P_2=P_0\symdiff P_1\) gives
+\[
+ 2=|P_0\symdiff P_1|=4-2|P_0\cap P_1|,
+\]
+and cyclic symmetry shows that every pair intersects in exactly one point.
+
+Now take the triangular prism, root one vertex of a triangular face, and
+let \(e,f\) be the two nonroot matching edges in the three-edge cut around
+that face.  The cut lemma excludes equal or disjoint labels in every
+FiveCDC.  The reproduction note displays a star state of profile
+\((2,0,2)\) and a square-local lift with the same profile.  Thus the
+tree-local antecedent and conclusion both hold while fixed-label selection
+fails.
+\end{proof}
+
+This proposition isolates the quantifier gap exactly: a tree-local lift
+fixes outside tree memberships, but the lifted odd kernels and the
+compatible five-labelling on old edges can change.
+
 A standard-library, solver-free census tests that remaining selection
 quantifier on every simple 3-edge-connected cubic graph of orders ten and
 twelve.  For every labelled root and every eligible independent edge pair,
@@ -1797,6 +1844,54 @@ inserting \(57\) same-level states in deterministic order.  Thus neither
 the scalar score nor its sorted refinement is a discrete-convex one-step
 potential; the full plateau-component statement still survives.
 
+The distance needed to cross a same-level plateau is not bounded by three.
+The literal 40-vertex state in the reproducibility package has
+\[
+                         (d_1,\ldots,d_7)=(8,2,8,8,6,10,10).
+\]
+Complete breadth-first reconstruction of its level-two ball through radius
+three gives layer sizes
+\[
+                         1,\quad 13,\quad 108,\quad 836.
+\]
+For all \(958\) states, the checker tests
+\(958\cdot3\cdot19^2=1{,}037{,}514\) candidate reciprocal exchanges and
+finds \(67{,}392\) legal oriented arcs.  No score-zero boundary edge leaves
+the first three layers; exactly \(32\) such oriented edges leave the last
+layer.  Hence every plateau path to a lower score has length at least four.
+An explicit four-exchange path ends at profile
+\((4,6,6,8,8,10,0)\), proving equality.
+
+This is a complete finite separator, not a trapped component: the displayed
+state escapes, and the full same-level component was not enumerated.  It
+therefore refutes only the assertion that three neutral layers always
+suffice.  The unbounded plateau-component statement remains open.
+
+Nor can the missing boundary sign be recovered from the current defect
+profile by averaging total defect.  Two adjacent states on the same
+40-vertex graph have the identical ordered profile
+\[
+                         (8,2,8,8,6,10,10),
+\]
+but legal degrees \(65\) and \(63\).  Direct summation over their complete
+neighbourhoods gives coordinate Laplacians
+\[
+\begin{aligned}
+\Delta d(s)&=(-12,140,-6,-6,28,-40,-94),\\
+\Delta d(t)&=(-16,134,-6,-2,34,-58,-100).
+\end{aligned}
+\]
+For \(D=\sum_h d_h\), this yields
+\[
+                         \Delta D(s)=10,\qquad\Delta D(t)=-14.
+\]
+Consequently \(\Delta D\) is neither determined by the ordered current
+profile nor universally one-signed.  Summing a Laplacian over a finite
+plateau still gives the ordinary boundary-divergence identity, but the
+unknown exterior sign remains.  Any successful argument along this route
+must retain realization data such as the incidences between fundamental
+cycles and quotient boundaries.
+
 Nonroot triangle expansion also does not turn the finite theorem into an
 induction.  The expanded fibre graph is the Cartesian product of the
 contracted fibre graph and the transposition Cayley graph of \(S_3\), but
@@ -1953,6 +2048,12 @@ The evidence and no-go results sharply delimit plausible approaches:
       the sorted seven-defect profile: the order-36 state above has
       \(0/13/50\) lower/equal/higher legal neighbours.  Its exact two-step
       same-level escape leaves the full plateau-component problem open.
+\item One cannot replace the full plateau-component theorem by a universal
+      radius-three search: the order-40 state above has exact plateau escape
+      distance four, certified by its complete 958-state radius-three ball.
+\item One cannot force the boundary sign by averaging total defect from the
+      current ordered profile: two adjacent equal-profile order-40 states
+      have total-defect Laplacians \(10\) and \(-14\).
 \item One cannot repair immediate descent by moving only among realizations
       of one fixed odd-kernel triple: the second order-16 state has no such
       neighbour.  A successful universal descent argument must exploit the
@@ -1964,6 +2065,10 @@ The evidence and no-go results sharply delimit plausible approaches:
       whole-fibre existential square implication is still open, though the
       fixed-cover criterion~(6.22) is exact and the stronger local-selection
       statement has no countermodel through downstairs order fourteen.
+\item One cannot bridge that gap by choosing a different downstairs
+      five-cover whose two deleted labels satisfy~(6.22):
+      Proposition~\ref{prop:square-cut-nogo} rules this out on the
+      triangular prism, although the required tree-local lift exists.
 \end{enumerate}
 
 The current computations support Problem~\ref{prob:kernel}, but they do not
@@ -2046,6 +2151,20 @@ Sorted-profile one-step no-go &
 {\footnotesize\texttt{local\_no\_go\_order36.py}} &
 literal exhaustive\\
 \addlinespace
+Radius-three plateau no-go &
+{\footnotesize\texttt{scratch/jaeger-plateau-radius-three-}}\par
+{\footnotesize\texttt{no-go-order40.md}};
+{\footnotesize\texttt{scratch/verify\_jaeger\_plateau\_escape\_}}\par
+{\footnotesize\texttt{radius4\_order40.py}} &
+complete 958-state ball + literal replay\\
+\addlinespace
+Profile-Laplacian averaging no-go &
+{\footnotesize\texttt{scratch/jaeger-plateau-profile-}}\par
+{\footnotesize\texttt{laplacian-no-go.md}};
+{\footnotesize\texttt{scratch/verify\_jaeger\_plateau\_profile\_}}\par
+{\footnotesize\texttt{laplacian\_no\_go.py}} &
+human divergence identity + exhaustive neighbourhoods\\
+\addlinespace
 Triangle-expanded descent controls &
 {\footnotesize\texttt{output/jaeger-fano-min-descent-}}\par
 {\footnotesize\texttt{triangle-expansions-16v/}};
@@ -2094,6 +2213,13 @@ Square-lift finite boundary &
 {\footnotesize\texttt{scratch/verify\_jaeger\_star\_square\_}}\par
 {\footnotesize\texttt{existential\_order14.py}} &
 human fixed-cover lemma + certificate census through order 14\\
+\addlinespace
+Fixed-label square-selection no-go &
+{\footnotesize\texttt{scratch/jaeger-square-fixed-label-}}\par
+{\footnotesize\texttt{selection-cut-no-go.md}};
+{\footnotesize\texttt{scratch/verify\_jaeger\_square\_fixed\_}}\par
+{\footnotesize\texttt{label\_selection\_cut\_no\_go.py}} &
+human cut proof + exhaustive control\\
 \addlinespace
 Simultaneous triangle product &
 {\footnotesize\texttt{scratch/jaeger-simultaneous-triangle-}}\par

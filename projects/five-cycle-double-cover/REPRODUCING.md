@@ -1007,6 +1007,9 @@ or target may produce a different executable even from identical source.
 shasum -a 256 -c scratch/direct-fivecdc-curated-SHA256SUMS-20260728.txt
 python3 scratch/verify_petersen_four_pole_extension_theorem_20260728.py
 python3 scratch/verify_jaeger_sorted_profile_local_no_go_order36.py
+python3 scratch/verify_jaeger_plateau_escape_radius4_order40.py
+python3 scratch/verify_jaeger_plateau_profile_laplacian_no_go.py
+python3 scratch/verify_jaeger_square_fixed_label_selection_cut_no_go.py
 python3 scratch/search_jaeger_star_square_existential_census.py --order 10
 python3 scratch/search_jaeger_star_square_existential_census.py --order 12
 clang++ -O3 -std=c++20 \
@@ -1023,6 +1026,12 @@ The Petersen checker must report 13 certificate rows, 100 ordered label
 pairs, 550 boundary assignments, and all internal parities true.  The
 sorted-profile checker must report 867 candidates, 63 legal exchanges, a
 0/13/50 lower/equal/higher split, and a distance-two same-level escape.
+The plateau checker must report a 958-state complete radius-three ball in
+layers 1, 13, 108, and 836, with minimum escape distance four.  The
+profile-Laplacian checker must report identical ordered profiles, legal
+degrees 65 and 63, and total-defect Laplacians 10 and -14.  The
+triangular-prism checker must enumerate 540 FiveCDC labellings and verify
+that the chosen three-cut labels always intersect in one coordinate.
 The square censuses must report 6,300 and 53,352 instances with zero
 failures and witness digests
 `1ae75f2864163e8ec6b04c0d92f012f00375ab55f92cc1284ad8233d4c42ab8f`
@@ -1036,3 +1045,14 @@ The direct portfolio contains no UNSAT result.  Its large redundant graph
 and model streams are intentionally excluded from the compact publication
 package; their hashes and exact run counts are frozen in
 `scratch/direct-fivecdc-counterexample-branch-report-20260728.md`.
+
+The Heawood full-boundary theorem has a separate compact replay:
+
+```sh
+shasum -a 256 -c scratch/heawood-four-pole-SHA256SUMS-20260728.txt
+python3 scratch/verify_heawood_four_pole_full_boundary_20260728.py
+```
+
+Expected output includes a 12-vertex simple connected bridgeless girth-six
+pole, ten certificate rows, 120 coordinate permutations, and all 640
+xor-zero boundary words extended.

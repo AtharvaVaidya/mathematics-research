@@ -1311,3 +1311,59 @@ positive for every port bijection.  The latter has a 13-row pair-label
 certificate independently checked on all 550 boundary assignments.  These
 operations cannot produce a counterexample from a positive base; they do
 not prove that every graph reduces by such operations.
+
+## O55 — Generate counterexamples by arbitrary-port Heawood insertion
+
+Status: **FAILED COUNTEREXAMPLE FAMILY / FULL-BOUNDARY POSITIVE THEOREM**.
+
+The Heawood four-pole obtained by deleting adjacent vertices extends all
+640 xor-zero ordered \(D_5\) boundary words.  Its ten-row orbit certificate
+is independently checked, and an edge-by-edge argument proves arbitrary
+port insertion preserves bridgelessness.  Hence this genuine non-covering,
+girth-six substitution cannot create a FiveCDC counterexample from a
+positive base.  The theorem does not make the configuration unavoidable.
+
+## O56 — Select a square-compatible downstairs FiveCDC by relabelling
+
+Status: **FAILED APPROACH / HUMAN THREE-CUT OBSTRUCTION**.
+
+For any three-edge cut, coordinatewise Eulerian cut parity implies that
+its three weight-two labels xor to zero.  Consequently they are
+\(\{0,1\},\{0,2\},\{1,2\}\) up to \(S_5\), and intersect pairwise once.
+On the triangular prism, choose the two nonroot matching edges in the same
+three-cut.  No FiveCDC can label them equally or disjointly, even though an
+explicit star state and square-local lift both have exact-good profile
+\((2,0,2)\).  This kills only the fixed-label selection bridge, not the
+whole-fibre square implication or FiveCDC.  See
+`scratch/jaeger-square-fixed-label-selection-cut-no-go.md`.
+
+## O57 — Bound every same-level plateau escape by three
+
+Status: **FAILED APPROACH / EXACT ORDER-40 SEPARATOR**.
+
+The literal state in
+`scratch/jaeger-plateau-radius-three-no-go-order40.md` has \(d_{\min}=2\)
+and complete same-level ball layer sizes \(1,13,108,836\) through radius
+three.  Exhausting 1,037,514 candidate swaps finds 67,392 legal oriented
+arcs, with no defect-zero boundary before layer three.  A displayed fourth
+exchange reaches defect zero, so the exact plateau escape distance is four.
+The state escapes and its full plateau component is not claimed trapped;
+the unbounded component theorem and FiveCDC remain open.
+
+## O58 — Force plateau descent by profile-only defect averaging
+
+Status: **FAILED APPROACH / EXACT ADJACENT-STATE COUNTERMODEL**.
+
+Two adjacent order-40 star states have the identical ordered profile
+\((8,2,8,8,6,10,10)\) but legal degrees 65 and 63.  Complete incident
+enumeration gives coordinate Laplacians
+\[
+(-12,140,-6,-6,28,-40,-94)
+\quad\hbox{and}\quad
+(-16,134,-6,-2,34,-58,-100),
+\]
+so the Laplacian of total defect is respectively \(+10\) and \(-14\).
+Thus it is neither a function of the current ordered profile nor
+universally one-signed.  Summing over a plateau gives only the ordinary
+boundary-divergence identity and does not determine the exterior sign.
+See `scratch/jaeger-plateau-profile-laplacian-no-go.md`.

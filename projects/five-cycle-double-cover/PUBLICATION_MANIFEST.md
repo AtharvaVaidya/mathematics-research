@@ -47,7 +47,7 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
 
 ## Jaeger fixed-fibre and five-point lifting update (2026-07-28)
 
-- `preprint-jaeger-fivecdc-frontier/` is a 32-page working preprint with
+- `preprint-jaeger-fivecdc-frontier/` is a 34-page working preprint with
   an explicit unresolved-status box, detailed AI-use disclosure,
   reproducibility table, human-review gate, and rendered PDF.
 - `scratch/jaeger-support5-component-criterion.md` proves the exact
@@ -112,6 +112,22 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
   0 lower, 13 equal, and 50 higher; a checked two-exchange same-level path
   reaches defect zero, so the full plateau-component statement remains
   open.
+- `scratch/jaeger-square-fixed-label-selection-cut-no-go.md` proves by
+  three-edge-cut parity that the relevant triangular-prism edge labels
+  always intersect once in every FiveCDC.  Its independent checker
+  enumerates all 540 indexed labellings and also reconstructs exact-good
+  downstairs and square-local lifted tree states.  Thus only the
+  fixed-label selection bridge is refuted.
+- `scratch/jaeger-plateau-radius-three-no-go-order40.md` and its independent
+  checker reconstruct a complete 958-state same-level ball with layers
+  \(1,13,108,836\), test 1,037,514 candidate swaps, and prove exact plateau
+  escape distance four.  The state escapes; the full unbounded component
+  theorem remains open.
+- `scratch/jaeger-plateau-profile-laplacian-no-go.md` gives two adjacent
+  equal-profile states whose total-defect Laplacians have opposite signs,
+  \(+10\) and \(-14\).  Its exhaustive checker verifies both complete
+  neighbourhoods.  This refutes profile-only averaging and universal
+  sub/superharmonicity of total defect, not topology-sensitive descent.
 - `output/jaeger-fano-min-descent-triangle-expansions-16v/` retains the
   exact thirteen-fibre control: 17,297,280 states, maximum
   \(d_{\min}=4\), and no trapped positive same-level component.  Its
@@ -172,6 +188,36 @@ not addressed.
 This update provides two sound positive reductions and finite encoder
 controls.  It contains no UNSAT target, no counterexample, and no claimed
 resolution.
+
+## Heawood full-boundary and local-barrier update (2026-07-28)
+
+- `preprint-fivecdc-four-pole-reductions/` is an eight-page standalone
+  working preprint with a prominent unresolved-status box, detailed AI-use
+  disclosure, complete Petersen and Heawood certificate tables,
+  deterministic rendered PDF, checksum ledger, and human-review gate.
+- `scratch/fivecdc-heawood-full-four-pole-theorem-20260728.md` proves that
+  the four-pole obtained by deleting adjacent vertices of the Heawood graph
+  extends every xor-zero ordered boundary word over the ten pair labels.
+  Its ten orbit rows cover all 640 words under \(S_5\).
+- `scratch/verify_heawood_four_pole_full_boundary_20260728.py` independently
+  checks the graph metadata, all internal vertex parities, the ten orbit
+  sizes, all 120 coordinate permutations, and exact 640-word coverage.
+- Arbitrary-port insertion of this pole into two independent edges
+  preserves both standard FiveCDC and bridgelessness.  This is a
+  non-covering, non-Petersen positive reduction, but the pole is not known
+  to be unavoidable in a minimal counterexample.
+- `scratch/verify_k33_four_pole_boundary_20260728.py` exhausts the
+  \(K_{2,2}\) pole left by adjacent deletion in \(K_{3,3}\).  It verifies
+  640 admissible xor-zero words, exactly 580 extensions, and one exact
+  60-word missing \(S_5\)-orbit represented by `02 02 03 03`; the preprint
+  also gives a direct human nonextension proof.
+- `LOCAL_FRONTIER_SHA256SUMS_20260728` now also freezes the Heawood theorem,
+  triangular-prism fixed-label no-go, and order-40 radius-three plateau
+  separator and profile-Laplacian no-go.
+
+These are exact human-checkable or independently replayable advances.  They
+do not prove or disprove FiveCDC, and no target UNSAT certificate exists in
+this update.
 
 ## Five-pole path-extension and ear frontier
 

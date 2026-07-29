@@ -43,6 +43,9 @@ check at least the following.
     equal-or-disjoint fixed-cover extension lemma by hand, then replay the
     order-10 and order-12 whole-fibre censuses (6,300 and 53,352 instances)
     and the independently checked 572,880-row order-14 witness corpus.
+    Verify the triangular-prism three-edge-cut obstruction by hand and
+    preserve the distinction between fixed outside labels and fixed outside
+    tree memberships.
     Preserve the distinction between failure for one selected state, a
     fixed outside five-labelling, and the still-open whole-fibre implication.
 11. Audit the symmetric Fano-minimum score in the C++ whole-state enumerator.
@@ -52,7 +55,13 @@ check at least the following.
    neighbourhoods used to refute immediate descent and fixed-kernel
    exposure, the order-36 sorted-profile neighbourhood, and the distinction
    between inactive and active same-level moves. Verify the two-exchange
-   escape before concluding that the full plateau statement survives.
+   escape. Independently reconstruct the complete 958-state radius-three
+   ball for the order-40 plateau witness and its four-exchange shortest
+   escape; check that it refutes only a bounded-radius strengthening, not
+   the full component statement. Check the equal-profile adjacent-state
+   Laplacian calculation and the boundary-divergence identity; do not infer
+   that failure of profile-only averaging rules out topology-sensitive
+   plateau arguments.
    Verify the four-case proof of the simultaneous-triangle Cartesian
    product, especially swaps involving two different triangle gadgets; do
    not infer that the defect is a product potential.

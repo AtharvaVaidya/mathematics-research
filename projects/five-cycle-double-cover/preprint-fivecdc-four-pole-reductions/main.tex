@@ -1,0 +1,582 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\geometry{margin=0.92in}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\xor}{\mathbin{\oplus}}
+\newcommand{\FiveCDC}{\textup{FiveCDC}}
+\newcommand{\Dfive}{D_5}
+
+\title{Two Exact Four-Pole Reductions for the\\
+Standard Five-Cycle Double Cover Conjecture}
+\author{Atharva Vaidya\\
+\small AI-assisted working preprint for independent human verification}
+\date{July 28, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fcolorbox{red!65!black}{red!4}{
+\parbox{0.91\textwidth}{
+\textbf{Resolution status.}
+The standard five-cycle double cover conjecture remains open.
+This note proves two positive substitution reductions.  It proves neither
+the conjecture nor its negation, and it makes no claim about the orientable
+five-cycle double cover conjecture.
+}}
+\end{center}
+
+\begin{center}
+\fcolorbox{orange!70!black}{yellow!10}{
+\parbox{0.91\textwidth}{
+\textbf{AI-use disclosure.}
+OpenAI Codex agents, under Atharva Vaidya's direction, selected and tested
+the poles, found the finite label certificates, wrote the checking programs,
+and drafted substantial portions of this manuscript.  The certificate
+tables and source code are supplied for independent human checking.
+AI assistance is not peer review.  No human specialist has yet certified
+the literature comparison or accepted scholarly responsibility for a
+submission.
+}}
+\end{center}
+
+\begin{abstract}
+Write \(\Dfive=\binom{[5]}2\subseteq\F_2^5\).  A standard five-cycle
+double cover of a cubic graph is equivalently a \(\Dfive\)-label on every
+edge whose three incident labels xor to zero at each vertex.  This makes a
+cubic four-pole an exact finite boundary relation.
+
+We give two human-checkable positive relations.  First, the four-pole
+obtained by deleting adjacent vertices from the Petersen graph extends
+every boundary word that is a permutation of \((q,q,r,r)\), for arbitrary
+\(q,r\in\Dfive\).  A 13-row certificate covers the three intersection
+types of \(q,r\) and all port placements.  Second, a four-pole obtained by
+deleting adjacent vertices from the Heawood graph has the full boundary
+relation: it extends every ordered
+\((A_0,A_1,A_2,A_3)\in\Dfive^4\) with xor zero.  A 10-row certificate,
+together with the global \(S_5\) action, covers all 640 admissible words.
+
+It follows that replacing two independent edges of any FiveCDC-positive
+cubic graph by either pole preserves FiveCDC for every bijection from the
+four exposed endpoints to the four ports.  We prove separately that the
+operation preserves simplicity and bridgelessness under the stated
+hypotheses.  Thus neither substitution can manufacture a minimum
+counterexample from a smaller positive graph.  The Petersen certificate
+establishes only the repeated-pair interface needed by this insertion,
+whereas the Heawood certificate proves the complete xor-zero boundary
+relation.
+
+The tempting extension to all bridgeless bipartite cubic graphs is false:
+deleting adjacent vertices from \(K_{3,3}\) gives \(K_{2,2}\), whose
+ordered boundary relation has 580 of the 640 admissible words and misses
+one 60-word orbit.  We give a direct proof of that obstruction.  All claims
+here are local positive reductions or scope boundaries, not a resolution
+of FiveCDC.
+\end{abstract}
+
+\tableofcontents
+
+\section{Status, conventions, and prior-art boundary}
+
+A standard five-cycle double cover of a finite graph is a family of at
+most five Eulerian edge-subsets in which every edge occurs exactly twice.
+Equivalently, one may require exactly five indexed subsets and allow empty
+members.  An Eulerian edge-subset need not be connected or 2-regular.
+Recent papers continue to state FiveCDC as open
+\cite{Oum2026,HusekSamal2026}; special cases are known
+\cite{LiuEtAl2023}.
+
+Graphs in the two insertion theorems below are finite and undirected.
+The input and output graphs are simple and cubic.  The pair-label
+equivalence itself also works for multigraphs if parallel edges are kept
+as distinct edge objects and a loop contributes two incidences at its
+endpoint.  The finite pole certificates are for the displayed simple
+cores only; no computational conclusion is extrapolated to arbitrary
+multigraphs.
+
+M\'a\v cajov\'a, Mazzuoccolo, and Tabarelli introduced the relevant
+CDC-colouring language for multipoles and the ten boundary types of a
+four-pole \cite{MacajovaEtAl2026}.  That boundary framework, including its
+use in minimum-counterexample reductions, is prior work and is not claimed
+here.  The present contribution is the two explicit extension certificates
+and the resulting insertion lemmas.  We have not completed a specialist
+search capable of deciding whether either particular pole theorem, or a
+more general theorem implying it, already occurs in the literature.
+Accordingly no novelty or priority claim is made.  The authors of the
+four-pole literature should be consulted before public submission.
+
+The orientable five-cycle double cover conjecture adds a direction
+condition: every edge must be traversed once in each direction.  No
+orientation variables or directed compatibility conditions occur below,
+so none of the results imply an orientable statement.
+
+\section{Pair labels and exact boundary relations}
+
+Put
+\[
+  [5]=\{0,1,2,3,4\},\qquad
+  \Dfive=\binom{[5]}2\subseteq\F_2^5.
+\]
+We identify a pair with its weight-two characteristic vector.
+
+\begin{proposition}[pair-label equivalence]\label{prop:labels}
+For a finite graph \(G\), the following are equivalent.
+\begin{enumerate}
+\item There are five Eulerian edge-subsets
+      \(C_0,\ldots,C_4\) containing every edge exactly twice.
+\item Every edge has a label \(L(e)\in\Dfive\), and the xor of the labels
+      on the edge incidences at every vertex is zero.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Given the five subsets, set
+\[
+                   L(e)=\{i:e\in C_i\}.
+\]
+Exact double coverage gives \(|L(e)|=2\).  In coordinate \(i\), the
+vertex xor equation is exactly the even-degree condition for \(C_i\).
+Conversely, the coordinate supports of a pair labelling are Eulerian by
+the vertex equations, and every edge belongs to its two label coordinates.
+\end{proof}
+
+At a cubic vertex, three labels \(A,B,C\in\Dfive\) have
+\(A\xor B\xor C=0\) if and only if they are the three edges of a triangle
+in \(K_5\).
+
+\begin{definition}
+A \emph{terminal-distinct cubic four-pole} is a proper graph with four
+specified degree-two vertices, called ports, and every other vertex of
+degree three.  Completing each port with one semiedge makes every vertex
+cubic.  Its ordered boundary relation \(\mathcal R_5(P)\) is the set of
+four semiedge-label words that extend to a \(\Dfive\)-labelling of all
+proper edges with xor zero at every completed vertex.
+\end{definition}
+
+\begin{lemma}[boundary parity]\label{lem:boundary-parity}
+Every \((A_0,A_1,A_2,A_3)\in\mathcal R_5(P)\) satisfies
+\[
+                         A_0\xor A_1\xor A_2\xor A_3=0.       \tag{2.1}
+\]
+\end{lemma}
+
+\begin{proof}
+Xor all internal vertex equations.  Each proper edge occurs at two
+endpoints and cancels.  Only the four semiedge labels remain.
+\end{proof}
+
+\begin{lemma}[ten full-boundary types]\label{lem:ten-types}
+The 640 ordered words in \(\Dfive^4\) satisfying \((2.1)\) form ten orbits
+under the simultaneous \(S_5\) action on coordinates.
+\end{lemma}
+
+\begin{proof}
+View the four pair labels as four ordered edges of a loopless multigraph on
+the five coordinate vertices.  Equation~(2.1) says that every coordinate
+has even degree.  Ignoring edge order, the possibilities are four parallel
+edges, two doubled adjacent pairs, two doubled disjoint pairs, or one
+simple four-cycle.  The first has one ordered-edge orbit.  Each of the
+other three shapes has three orbits, determined by the induced partition
+or opposite-position pair among the four boundary positions.  Hence there
+are \(1+3+3+3=10\) orbits.  Their sizes in the table of
+Section~\ref{sec:heawood} sum to 640.
+\end{proof}
+
+\section{A generic insertion lemma}
+
+Let \(P\) be a connected terminal-distinct cubic four-pole with ordered
+port set \(T\).  Let \(G\) be a cubic graph and let
+\[
+                         e=ab,\qquad f=cd
+\]
+be independent edges.  For an arbitrary bijection
+\(\pi:\{a,b,c,d\}\to T\), define
+\[
+        G\star_{\pi}P
+        =\bigl(G-\{e,f\}\bigr)\cup P
+          \cup\{z\pi(z):z\in\{a,b,c,d\}\}.              \tag{3.1}
+\]
+There is no restriction on which ports receive the two ends of one old
+edge.
+
+\begin{definition}
+The pole \(P\) is \emph{repeated-pair universal} if, for all
+\(q,r\in\Dfive\), every ordered placement of the multiset
+\((q,q,r,r)\) belongs to \(\mathcal R_5(P)\).  It is
+\emph{full-boundary} if equality holds in Lemma~\ref{lem:boundary-parity}.
+\end{definition}
+
+Every full-boundary pole is repeated-pair universal.
+
+\begin{theorem}[positive insertion]\label{thm:insertion}
+If \(G\) has a standard FiveCDC and \(P\) is repeated-pair universal, then
+\(G\star_\pi P\) has a standard FiveCDC for every port bijection \(\pi\).
+\end{theorem}
+
+\begin{proof}
+Take a \(\Dfive\)-labelling of \(G\), and let \(q=L(e)\) and \(r=L(f)\).
+Label the new joining edges at \(a,b\) by \(q\) and those at \(c,d\) by
+\(r\).  In the ordered port convention this is some placement of
+\((q,q,r,r)\), so it extends through \(P\).  Every old vertex retains
+the same local equation it had in \(G\).  Proposition~\ref{prop:labels}
+converts the resulting labelling into a standard FiveCDC.
+\end{proof}
+
+\begin{lemma}[simplicity and bridgelessness]\label{lem:bridgeless}
+Suppose \(G\) is connected, simple, cubic, and bridgeless; \(e,f\) are
+independent; and the proper core of \(P\) is connected, simple, and
+bridgeless.  Then \(G\star_\pi P\) is connected, simple, cubic, and
+bridgeless for every \(\pi\).
+\end{lemma}
+
+\begin{proof}
+Cubicity and simplicity follow directly from fresh, terminal-distinct pole
+vertices and four distinct exposed endpoints.
+
+Put \(H=G-\{e,f\}\).  Every component of \(H\) contains at least two
+exposed endpoints: a component containing exactly one would have a
+one-edge boundary in \(G\), making that edge a bridge.  Joining all
+components to the connected pole makes the output connected.
+
+Every proper pole edge lies on a circuit inside the bridgeless core.  For a
+joining edge \(z\pi(z)\), choose another exposed endpoint \(z'\) in the
+same component of \(H\).  A \(z\)-to-\(z'\) path in that component, the
+joining edge at \(z'\), and a path in the pole from \(\pi(z')\) to
+\(\pi(z)\) close a circuit through \(z\pi(z)\).
+
+Finally let \(g\) be an old edge of \(H\).  If it is not a bridge in its
+\(H\)-component, it already lies on a circuit.  Otherwise deleting \(g\)
+splits that component into shores \(X,Y\).  Each shore contains an exposed
+endpoint; if \(X\) did not, then \(\delta_G(X)=\{g\}\), contradicting
+bridgelessness of \(G\).  Paths in \(X,Y\), two joining edges, and a path
+through the pole close a circuit through \(g\).  Every output edge is
+therefore on a circuit.
+\end{proof}
+
+\begin{corollary}[minimal-counterexample pruning]\label{cor:prune}
+If a graph made by the insertion \((3.1)\) is a FiveCDC counterexample,
+then the smaller graph \(G\) is already a counterexample.  In particular,
+neither pole certified below can create a minimum counterexample from a
+smaller FiveCDC-positive graph.
+\end{corollary}
+
+\section{The Petersen repeated-pair certificate}\label{sec:petersen}
+
+Use the Petersen graph6 record
+\[
+                         \texttt{ICOf@pSb?}
+\]
+and delete the adjacent vertices \(0,3\).  Keep the original vertex names.
+The ordered ports are
+\[
+                         (6,9,7,8),                       \tag{4.1}
+\]
+and the ordered proper edges are
+\[
+\begin{aligned}
+ &(1,4),(1,6),(1,8),(2,5),(2,6),\\
+ &(2,7),(4,7),(4,9),(5,8),(5,9).
+\end{aligned}                                             \tag{4.2}
+\]
+The proper core is simple, connected, bridgeless, and has girth five.
+
+\begin{theorem}[Petersen repeated-pair extension]\label{thm:petersen}
+For all \(q,r\in\Dfive\), every ordered placement of
+\((q,q,r,r)\) on the ports \((4.1)\) extends through the Petersen pole.
+\end{theorem}
+
+\begin{proof}
+Under \(S_5\), an ordered pair \(q,r\) is of one of three kinds: equal,
+distinct with one common coordinate, or disjoint.  Representatives are
+\((01,01)\), \((01,02)\), and \((01,23)\).  For unequal labels there are
+six placements of the two copies of each label.  The following 13 rows
+give the boundary labels in port order \((4.1)\), followed by labels on
+the ten proper edges in order \((4.2)\).
+
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\small
+\begin{longtable}{@{}>{\ttfamily\raggedright\arraybackslash}p{0.22\textwidth}
+                       >{\ttfamily\raggedright\arraybackslash}p{0.70\textwidth}@{}}
+\toprule
+\normalfont Port labels & \normalfont Proper-edge labels\\
+\midrule
+\endfirsthead
+\toprule
+\normalfont Port labels & \normalfont Proper-edge labels\\
+\midrule
+\endhead
+01 01 01 01 & 01 02 12 01 12 02 12 02 02 12\\
+01 01 02 02 & 01 02 12 02 12 01 12 02 01 12\\
+01 02 01 02 & 02 03 23 34 13 14 04 24 03 04\\
+01 02 02 01 & 34 03 04 01 13 03 23 24 14 04\\
+02 01 01 02 & 34 03 04 02 23 03 13 14 24 04\\
+02 01 02 01 & 01 03 13 34 23 24 04 14 03 04\\
+02 02 01 01 & 02 01 12 01 12 02 12 01 02 12\\
+01 01 23 23 & 01 02 12 01 12 02 03 13 13 03\\
+01 23 01 23 & 01 02 12 01 12 02 12 02 13 03\\
+01 23 23 01 & 01 02 12 01 12 02 03 13 02 12\\
+23 01 01 23 & 01 02 12 01 03 13 03 13 13 03\\
+23 01 23 01 & 01 02 12 01 03 13 12 02 02 12\\
+23 23 01 01 & 01 02 12 01 03 13 03 13 02 12\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Every entry has weight two.  At each of the eight completed pole vertices,
+the xor of its three incident labels is zero; this is checked directly
+from \((4.1)\)--\((4.2)\).  Applying a simultaneous coordinate
+permutation preserves these equations.  The three intersection types and
+the displayed placements exhaust all \(q,r\), proving the theorem.
+\end{proof}
+
+\begin{remark}[certified scope]
+The 13-row theorem proves exactly the interface required by
+Theorem~\ref{thm:insertion}.  It is not presented here as a classification
+of all 640 xor-zero boundary words.  The Heawood theorem below has that
+stronger, full-boundary conclusion.
+\end{remark}
+
+\section{The Heawood full-boundary certificate}\label{sec:heawood}
+
+The Heawood four-pole has graph6 record
+\[
+                         \texttt{KhEGHC@AI?\_P}.
+\]
+Its ordered ports are
+\[
+                         (0,3,8,11),                       \tag{5.1}
+\]
+and its ordered proper edges are
+\[
+\begin{aligned}
+ &(0,1),(1,2),(2,3),(3,4),(0,5),(4,5),(5,6),(2,7),\\
+ &(6,7),(7,8),(4,9),(8,9),(1,10),(9,10),(6,11),(10,11).
+\end{aligned}                                             \tag{5.2}
+\]
+This proper core is simple, connected, bridgeless, and has girth six.
+
+\begin{theorem}[Heawood full boundary]\label{thm:heawood}
+For every \(A_0,A_1,A_2,A_3\in\Dfive\) satisfying
+\[
+                         A_0\xor A_1\xor A_2\xor A_3=0,
+\]
+the Heawood four-pole has a \(\Dfive\)-labelling with those labels on the
+ordered ports \((5.1)\).
+\end{theorem}
+
+\begin{proof}
+The table contains one representative of each orbit in
+Lemma~\ref{lem:ten-types}.  The middle column gives labels on the ports
+\((5.1)\); the last column gives labels on the sixteen edges \((5.2)\).
+
+\begingroup
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.08}
+\scriptsize
+\begin{longtable}{@{}l
+ >{\ttfamily\raggedright\arraybackslash}p{0.18\textwidth}
+ >{\ttfamily\raggedright\arraybackslash}p{0.66\textwidth}@{}}
+\toprule
+Type & \normalfont Port labels & \normalfont Proper-edge labels\\
+\midrule
+\endfirsthead
+\toprule
+Type & \normalfont Port labels & \normalfont Proper-edge labels\\
+\midrule
+\endhead
+\texttt{AA} & 02 02 02 02 &
+01 02 01 12 12 02 01 12 02 01 01 12 12 02 12 01\\
+\texttt{AT2} & 02 02 03 03 &
+01 02 03 23 12 02 01 23 03 02 03 23 12 02 13 01\\
+\texttt{AT3} & 02 03 02 03 &
+01 02 04 34 12 14 24 24 34 23 13 03 12 01 23 02\\
+\texttt{AT4} & 02 03 03 02 &
+01 02 01 13 12 01 02 12 01 02 03 23 12 02 12 01\\
+\texttt{T2T2} & 02 02 13 13 &
+01 02 01 12 12 02 01 12 02 01 01 03 12 13 12 23\\
+\texttt{T2T3} & 02 03 12 13 &
+01 02 01 13 12 01 02 12 01 02 03 01 12 13 12 23\\
+\texttt{T2T4} & 02 03 13 12 &
+01 02 04 34 12 13 23 24 12 14 14 34 12 13 13 23\\
+\texttt{T3T3} & 02 13 02 13 &
+01 02 01 03 12 02 01 12 02 01 23 12 12 13 12 23\\
+\texttt{T3T4} & 02 13 03 12 &
+01 02 03 01 12 02 01 23 03 02 12 23 12 13 13 23\\
+\texttt{T4T4} & 02 13 13 02 &
+01 02 01 03 12 01 02 12 24 14 13 34 12 14 04 24\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Every displayed label has weight two.  Completing the ports in order,
+the xor of the three incident labels is zero at each of the twelve
+vertices.  Thus every row is a direct positive certificate.
+
+The orbit sizes in the displayed order are
+\[
+                 10,60,60,60,30,120,120,30,120,30,
+\]
+whose sum is 640.  Lemma~\ref{lem:ten-types} proves that these are all
+admissible boundary orbits.  A simultaneous coordinate permutation of a
+row preserves label weight and every vertex xor equation, so all 640 words
+extend.
+\end{proof}
+
+\begin{corollary}[two non-covering reductions]\label{cor:two-poles}
+The insertion theorem and the bridgelessness lemma apply to both the
+Petersen and Heawood poles, with every one of the \(4!\) port bijections.
+Neither construction is a graph cover or lift.
+\end{corollary}
+
+\section{A sharp scope boundary: \(K_{3,3}\)}
+
+The Heawood graph is cubic, bipartite, and bridgeless.  It is therefore
+natural to ask whether deleting the ends of any edge from any bridgeless
+bipartite cubic graph always gives a full-boundary four-pole.  The smallest
+example shows that this statement is false.
+
+\begin{proposition}[\(K_{3,3}\) obstruction]\label{prop:k33}
+Delete adjacent vertices from \(K_{3,3}\).  The proper four-pole is
+\(K_{2,2}\).  Order its ports with the two vertices of one bipartition
+first and the two vertices of the other bipartition second.  Its boundary
+relation contains 580 of the 640 xor-zero words and misses exactly the
+60-word orbit represented by
+\[
+                              (02,02,03,03).              \tag{6.1}
+\]
+In particular it is not full-boundary.
+\end{proposition}
+
+\begin{proof}
+The exact count and uniqueness of the missing orbit follow from the
+standard-library finite replay described in Section~\ref{sec:replay}.
+Here is a direct proof that \((6.1)\) does not extend.
+
+Let the two first-part vertices be \(x_0,x_1\), and let \(y\) be either
+second-part vertex.  At \(x_0\), the two proper-edge labels have xor \(02\).
+Therefore they are
+\[
+                         \{0,t_0\},\ \{2,t_0\}
+\]
+in some order, where \(t_0\notin\{0,2\}\).  The same reasoning at \(x_1\)
+shows that its two proper-edge labels are
+\[
+                         \{0,t_1\},\ \{2,t_1\}
+\]
+in some order, with \(t_1\notin\{0,2\}\).
+
+The two proper edges incident with \(y\), one from each first-part vertex,
+must have xor \(03\).  If their entries from \(\{0,2\}\) agree, their xor
+is contained in \(\{t_0,t_1\}\), which cannot contain coordinate \(0\).
+If those entries differ, their xor contains both \(0\) and \(2\), so it
+cannot equal \(03\).  This contradicts the vertex equation at \(y\).
+\end{proof}
+
+\begin{remark}
+Direct exact checks give full boundary for the adjacent-deletion poles of
+the cube, Heawood, M\"obius--Kantor, Pappus, and Desargues graphs, while
+\(K_{3,3}\) gives the obstruction above.  These named examples do not
+support a theorem for all larger bipartite cubic graphs.  A proof would
+need an additional structural hypothesis, and no such hypothesis is
+claimed here.
+\end{remark}
+
+\section{Replay, trust boundary, and limitations}\label{sec:replay}
+
+The compact source artifacts are:
+\begin{verbatim}
+scratch/fivecdc-petersen-four-pole-extension-theorem-20260728.md
+scratch/verify_petersen_four_pole_extension_theorem_20260728.py
+scratch/fivecdc-heawood-full-four-pole-theorem-20260728.md
+scratch/verify_heawood_four_pole_full_boundary_20260728.py
+scratch/heawood-four-pole-full-boundary-result-20260728.json
+scratch/heawood-four-pole-SHA256SUMS-20260728.txt
+scratch/verify_k33_four_pole_boundary_20260728.py
+\end{verbatim}
+Run, from the repository root:
+\begin{verbatim}
+python3 scratch/verify_petersen_four_pole_extension_theorem_20260728.py
+python3 scratch/verify_heawood_four_pole_full_boundary_20260728.py
+python3 scratch/verify_k33_four_pole_boundary_20260728.py
+sha256sum -c scratch/heawood-four-pole-SHA256SUMS-20260728.txt
+\end{verbatim}
+
+The Petersen checker verifies the 13 displayed rows and checks all 100
+ordered choices of \(q,r\), all distinct placements encountered by that
+ordered enumeration, all 120 coordinate permutations, and every internal
+parity equation.  The Heawood checker is separately written and uses only
+the Python standard library.  It parses the graph6 record, verifies the
+frozen edge table, simplicity, connectivity, bridgelessness, and girth,
+checks every displayed row, enumerates all \(10^4\) boundary words, retains
+the 640 xor-zero words, and verifies exact coverage by the ten coordinate
+orbits.  Its frozen JSON must equal the fresh output.
+The \(K_{3,3}\) checker exhausts all \(10^4\) proper-edge labellings of
+\(K_{2,2}\), obtains exactly 580 boundary words, and verifies that the
+60 missing admissible words are precisely the \(S_5\)-orbit of
+\((02,02,03,03)\).
+
+These are positive finite certificates.  They do not rely on a SAT solver,
+and no UNSAT proof trace is relevant.  A human can check each row by
+placing its edge labels on the displayed edge list and xoring the three
+labels at every completed vertex.  The \(K_{3,3}\) negative statement has
+both the two-line structural obstruction in Proposition~\ref{prop:k33}
+and the complete finite boundary checker.
+
+The limitations are decisive.
+\begin{enumerate}
+\item Neither insertion theorem supplies a decomposition of every
+      bridgeless graph into reducible pieces.
+\item A minimum counterexample may contain neither displayed pole.
+\item Full boundary for one Heawood pole does not imply full boundary for
+      general four-poles, bipartite poles, or high-connectivity poles.
+\item The results concern standard Eulerian edge-subsets, not orientable
+      cycle double covers.
+\item No literature novelty claim is made without specialist review.
+\item FiveCDC remains unresolved.
+\end{enumerate}
+
+\section*{AI-use statement}
+
+The first-page disclosure is part of this manuscript and must remain in
+any derivative circulation.  OpenAI Codex agents materially contributed
+to the mathematical search, finite certificates, checking software,
+literature triage, and prose.  The human-readable proofs and complete
+tables are included so that a reader need not accept an opaque model
+output.  A human author should independently verify the tables, rerun the
+checkers, complete the prior-art comparison, and accept ordinary scholarly
+responsibility before submission.  AI systems must not be listed as
+authors.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
