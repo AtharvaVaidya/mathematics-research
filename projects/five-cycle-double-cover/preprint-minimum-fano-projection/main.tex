@@ -31,8 +31,9 @@
 \newcommand{\symdiff}{\mathbin{\triangle}}
 \newcommand{\FiveCDC}{\textup{FiveCDC}}
 
-\title{Minimum Extendable Fano Projections and the\\
-Five-Cycle Double Cover Conjecture}
+\title{Minimum Extendable Fano Projections for\\
+Five-Cycle Double Covers:\\
+Exact Frontiers and Failure of Minimum Selection}
 \author{Atharva Vaidya\\
 \small AI-assisted research note for independent human verification}
 \date{July 29, 2026}
@@ -48,8 +49,11 @@ The five-cycle double cover conjecture remains unresolved.
 This note proves an exchange theorem, settles the minimum-support cases
 through size fifteen for finite connected bridgeless loopless cubic
 multigraphs (parallel edges allowed), and gives exact finite censuses.  It
-proves neither the conjecture nor its negation.  The standard conjecture
-for finite bridgeless multigraphs reduces to the cubic setting by
+also constructs a 162-vertex graph whose unique minimum extendable
+projection is not cleanable, refuting the proposed minimum-selection
+route.  That graph has an explicit five-cycle double cover.  Thus the
+note proves neither FiveCDC nor its negation.  The standard conjecture for
+finite bridgeless multigraphs reduces to the cubic setting by
 Proposition~\ref{prop:cubicreduction}.  This status is distinct from the
 ordinary cycle double cover theorem proved in July 2026.
 }}
@@ -198,8 +202,34 @@ under any component-map tuple, satisfies all nine load inequalities, and
 has a 278-vertex realization attaining all four complete static
 shortest-join optima.  Its fixed projection is uncleanable, but its exact
 global minimum is seven.  Hence the known static consequences of
-minimality are collectively insufficient; a proof must use the actual
-minimum dynamically.
+minimality are collectively insufficient.  This initially points toward
+dynamic use of the actual minimum; the strict-lock construction below
+shows that even full global minimality does not force cleaning.
+
+We therefore give the exact global optimization, not only its four
+affine branches.  Choose any low \(\F_2^2\)-flow \(s'\), let \(M\) be
+its exact zero set, and choose \(J\subseteq E-M\) with
+\(\partial J=\partial M\).  Every extendable projection, uniquely in
+this branch, is \(M\mathbin{\dot\cup}J\), and hence
+\[
+ \mu(G)=\min_{s',J}\bigl(|M|+|J|\bigr).
+\]
+For a feasible cubic branch \(M\) is a matching and the inner problem is
+an ordinary shortest-\(\partial M\)-join problem.  Cleanliness is exactly
+the existence of a second \(\partial M\)-join disjoint from
+\(M\cup J\).  Two independent checkers reconstruct the 278-vertex
+survivor and its coupled support-seven competitor.
+
+The resulting minimum-selection principle is nevertheless false.  A
+strict parity-lock two-pole has conditional projection minima
+\((a_0,a_1)=(7,5)\).  Substituting eight copies into an 18-vertex dirty
+base gives a simple connected bridgeless nonplanar cubic graph on 162
+vertices and 243 edges.  Its unique globally minimum projection has size
+54, is the union of two 27-circuits, and has no clean extension.
+The mandatory FiveCDC exact-two/XOR formula is SAT on this graph, and a
+short compositional proof glues five-covers of the base and lock closure.
+Thus the construction refutes minimum selection as a proof strategy but
+is positively not a FiveCDC counterexample.
 
 At size fifteen the primary exact classifier enumerates \(26{,}492\)
 word orbits and \(35{,}247{,}202{,}556\) charge-valid abstract states
@@ -245,9 +275,9 @@ exchange inequalities for any displayed boundary realization.  An
 explicit 230-vertex simple bridgeless cubic example satisfies the
 inequalities and defeats every one-round fixed-colour Kempe multiswitch,
 but reaches a strict circuit deletion in two rounds.  Thus the unresolved
-step must exploit the \emph{dynamic} reapplication of the exchange theorem
-after neutral recolouring, not only its four inequalities at the initial
-flow.
+step at this stage cannot use only the four inequalities at the initial
+flow.  The later strict-lock theorem goes further and rules out universal
+repair of a globally minimum projection itself.
 
 Two further structural results sharpen that dynamic frontier.  The tensor
 theorem directly cleans every one-circuit support, strictly subsuming the
@@ -273,13 +303,14 @@ An additional exact SAT scan covers seven retained order-\(34\) and
 \(7{,}654\) retained order-\(40\) strong-snark rows.  All \(433{,}730\)
 minimum projections in those files have size ten and are cleanable.
 
-The universal statement suggested by this computation is recorded as an
-open conjecture.  The missing step is to derive a colour-avoiding strict
-exchange from a rainbow-odd component, possibly after support-neutral
-recolouring.  We make no claim of a FiveCDC resolution or of priority for
-the flow formulation.  An elementary incidence-cluster construction proves
-that resolving the cubic conjecture would resolve the standard conjecture
-for arbitrary finite bridgeless multigraphs.
+The 162-vertex strict-lock graph proves that the universal statement
+suggested by these computations is false beyond the tested range.
+Its explicit FiveCDC shows exactly why this is a proof-method result:
+the required clean projection exists but is not globally minimum.  We
+make no claim of a FiveCDC resolution or of priority for the flow
+formulation.  An elementary incidence-cluster construction proves that
+resolving the cubic FiveCDC assertion would resolve the standard
+conjecture for arbitrary finite bridgeless multigraphs.
 \end{abstract}
 
 \tableofcontents
@@ -391,11 +422,16 @@ The contribution of this note is narrower:
         at one fixed flow, do not force one-round Kempe descent, together
         with a smallest goal-free boundary survivor satisfying the load
         and all four static shortest-join filters;
+  \item an exact full-flow master formulation as a minimum over low-flow
+        zero matchings and shortest joins, in which cleanliness is
+        precisely a second edge-disjoint join;
+  \item a strict parity-lock construction of a 162-vertex graph whose
+        unique minimum projection is uncleanable, together with an
+        explicit five-cycle double cover of that graph;
   \item a reproducible canonical order-\(18\) census and an expanded
-        exact replay on frozen sources through order \(28\); and
-  \item a precise conjectural step that would turn this route into a proof.
+        exact replay on frozen sources through order \(28\).
 \end{enumerate}
-The last item is open.
+FiveCDC itself remains open.
 
 \section{Extendable and clean Fano projections}
 
@@ -2407,60 +2443,192 @@ sets \(M_c\).
 If \(C\) omitted one class \(M_c\), it would contradict (6).
 \end{proof}
 
-\section{The exact missing step}
+\section{The full-flow problem and failure of minimum selection}
 
 Theorem~\ref{thm:exchange} suggests the following selection principle.
 
-\begin{conjecture}[minimum extendable projection]\label{conj:minimum}
+\begin{conjecture}[minimum extendable projection; false]\label{conj:minimum}
 Every bridgeless cubic graph has a minimum-cardinality extendable
 projection that is cleanable.
 \end{conjecture}
 
-The stronger statement that every minimum projection is cleanable also
-survives the finite census in Section~\ref{sec:census}, but it is not needed.
-Conjecture~\ref{conj:minimum}, together with the Hu\v{s}ek--\v{S}\'amal
-equivalence and Proposition~\ref{prop:cubicreduction}, would imply the
-standard FiveCDC conjecture for every finite bridgeless multigraph.
+This statement, together with the Hu\v{s}ek--\v{S}\'amal equivalence and
+Proposition~\ref{prop:cubicreduction}, would imply the standard FiveCDC
+conjecture for every finite bridgeless multigraph.  It survives all
+finite tests through support fifteen, but
+Theorem~\ref{thm:strictlock} below refutes it.  Because the constructed
+minimum projection is unique, the stronger assertion that every minimum
+projection is cleanable fails at the same time.
 
-Proposition~\ref{prop:sizefourteenfailure} shows that componentwise maps,
-circuit translations, and whole-circuit deletion do not by themselves
-prove this conjecture.  A valid boundary can defeat every such move even
-when its projection is uncleanable under all extensions.  What excludes
-the example at size fourteen is additional realization structure: the
-two-colour subgraphs inside complement components supply Kempe paths, and
-Theorem~\ref{thm:sizefourteen} uses them to reach a strict deletion.
-For larger supports no universal choice of such paths and subsequent maps
-is known.  A remaining argument may require a general Kempe descent, the
-full four-colour exchange inequalities, or both.
+\begin{proposition}[full-flow master exchange]\label{prop:fullmaster}
+Let \(\mu(G)\) be the minimum cardinality of an extendable projection and,
+for a low flow \(s':E\to K\), let \(Z(s')=\{e:s'(e)=0\}\).  Then
+\[
+ \mu(G)=
+ \min_{\substack{s'\ {\rm a}\ K{\rm\mbox{-}flow}\\
+                  J\subseteq E-Z(s')\\
+                  \partial J=\partial Z(s')}}
+       \bigl(|Z(s')|+|J|\bigr),
+\]
+where \(\partial A\) denotes the set of odd-degree vertices of an edge
+set \(A\).  Every feasible \(Z(s')\) is a matching.  For a feasible
+triple \(M=Z(s')\), \(J_1=J\), and
+\(h'=M\mathbin{\dot\cup}J_1\), the extension \((h',s')\) is clean if and
+only if there is a second \(\partial M\)-join
+\[
+                     J_2\subseteq E-(M\cup J_1).
+\]
+\end{proposition}
 
-Suppose a minimum projection \(h\) is not cleanable.  Every extension then
-has a rainbow-odd component \(W\) of \(G-h\), so all four \(M_c\)'s cross
-\(\delta(W)\) oddly.  A direct proof of
-Conjecture~\ref{conj:minimum} would need to derive either
-\begin{enumerate}
-  \item a binary cycle \(C\) avoiding some \(M_c\) and satisfying
-        \(|C\cap h|>|C-h|\), contradicting
-        Theorem~\ref{thm:exchange}; or
-  \item a sequence of support-neutral low-coordinate recolourings followed
-        by such a strict exchange.
-\end{enumerate}
+\begin{proof}
+If \((h',s')\) is nowhere zero and \(M=Z(s')\), then \(M\subseteq h'\).
+Put \(J=h'-M\).  Since \(h'\) is a binary cycle, the disjoint edge sets
+satisfy \(\partial J=\partial M\).  Conversely, given \(s'\), \(M\), and
+such a \(J\), the edge set \(h'=M\mathbin{\dot\cup}J\) is a binary cycle.
+The flow \((h',s')\) is nowhere zero because the low coordinate vanishes
+exactly on \(M\), where the first coordinate is one.  These constructions
+are inverse and preserve the displayed objective.
 
-The second possibility cannot currently be discarded.  Small exact
-examples have four disjoint colour classes meeting every immediately
-component-reducing cycle, while a support-preserving recolouring escapes
-the trap.  Other examples show that a fixed nowhere-zero Fano flow can
-have all seven of its functional projections dirty.  These are
-proof-strategy obstructions, not FiveCDC counterexamples.  They rule out
-an argument that fixes an arbitrary initial flow or assumes one elementary
-switch always suffices.
+At a cubic vertex, a low flow has zero on either zero, one, or all three
+incident edges.  The last case is impossible in a feasible triple:
+\(\partial M\) contains the vertex, while the disjoint \(J\) has degree
+zero there.  Hence \(M\) is a matching.  For fixed \(M\), the inner
+minimization is the standard shortest-\(\partial M\)-join problem in
+\(G-M\).
 
-The unresolved human proof obligation is precise: from a rainbow-odd
-component of an \emph{uncleanable globally minimum-support projection},
-derive a negative colour-avoiding cycle after allowable neutral
-recolouring, using the four simultaneous shortest-\(T_c\)-join
-inequalities of Corollary~\ref{cor:tjoin}.  No proof of this statement is
-given here.  By Theorem~\ref{thm:sizefifteen}, any counterexample to this
-selection principle has minimum support at least sixteen.
+It remains to prove the last assertion.  Let \(W\) be a component of
+\(G-h'\), and let \(n_c\) be the parity of the number of cut edges with
+low value \(c\in K\).  Low-flow conservation gives
+\(n_1=n_2=n_3\).  Since \(h'\) is a binary cycle and
+\(\delta(W)\subseteq h'\), cut parity gives
+\(n_0+n_1+n_2+n_3=0\); hence all four parities are equal.  Moreover
+\[
+ n_0=|M\cap\delta(W)|=|\partial M\cap W|\pmod2.
+\]
+Thus the extension is clean precisely when every component of \(G-h'\)
+contains an even number of \(\partial M\)-vertices.  By the elementary
+\(T\)-join existence criterion, this is equivalent to a
+\(\partial M\)-join contained in \(G-h'\), which is the asserted \(J_2\).
+\end{proof}
+
+In this form Conjecture~\ref{conj:minimum} says exactly that some optimum
+master triple admits the second join.  For a fixed extension
+\((h,s)\), the four branches in Corollary~\ref{cor:tjoin} are only the
+low flows \(s'=s+ch\), \(c\in K\).  They do not exhaust the master
+minimum.  In the 278-vertex graph of
+Proposition~\ref{prop:staticfiltersurvivor}, all four of those branches
+have cost fourteen, while a coupled low flow has
+\[
+                 M=\{1,5\},\qquad J=\{0,2,3,4,6\},
+\]
+in the frozen base-edge order and therefore cost seven.  Its difference
+from the displayed flow uses five nonzero Fano values, so it is not a
+constant-vector circuit switch.  The complete proof and two independently
+structured literal-graph checkers are in
+\path{scratch/minimum-projection-}\allowbreak
+\path{full-flow-exchange-20260729/}.
+
+\begin{theorem}[strict-lock counterexample to minimum selection]
+\label{thm:strictlock}
+There is a simple connected bridgeless nonplanar cubic graph \(G\) with
+\[
+                         |V(G)|=162,\qquad |E(G)|=243
+\]
+whose unique minimum-cardinality extendable projection \(H\) has size
+54, is the disjoint union of two 27-circuits, and is not cleanable.
+Nevertheless \(G\) has a five-cycle double cover.
+\end{theorem}
+
+\begin{proof}
+Start with the audited 18-vertex base \(B\) from
+Proposition~\ref{prop:staticfiltersurvivor} before inflation.  In its
+frozen edge order the target \(h=\{0,\ldots,13\}\) is the union of two
+7-circuits.  Exact enumeration of the \(2^{10}\)-element cycle space
+finds 1,008 extendable projections.  The target has 15,360 ordered
+low-flow extensions and none is clean.
+
+Let \(S\) be the simple bridgeless cubic graph with canonical graph6
+encoding
+\[
+\texttt{Q???C@?K?WEOM?\_aGo?I\_\_W@G\_?}
+\]
+and distinguish edge \(e_\ast=5=(5,10)\) in the frozen order.  If
+\(a_b(e_\ast)\) is the minimum projection size of a nowhere-zero
+\(\F_2^3\)-flow on \(S\), conditional on the first bit of \(e_\ast\)
+being \(b\), exact cycle-space enumeration gives
+\[
+                         a_0(e_\ast)=7,\qquad a_1(e_\ast)=5.
+\]
+The \(a_1\)-minimum support is unique and is the 5-circuit
+\(\{5,13,14,16,17\}\).  Delete \(e_\ast\) and attach one external link
+at each exposed endpoint.  The resulting two-pole has effective costs
+\[
+                              w_0=7,\qquad w_1=6.
+\]
+Indeed the odd case removes the projected edge \(e_\ast\) and adds two
+projected links.  An explicit first-coordinate-preserving shear sends
+the displayed odd terminal value to any prescribed odd terminal value,
+so the same support attains the bound in every odd terminal class.
+
+For \(L\subseteq h\), replace precisely the base edges in \(L\) by fresh
+copies of this two-pole.  If \(k\) is another extendable terminal
+projection of \(B\), its cost relative to the target is
+\[
+ \Delta_L(k)=
+ |L\cap(h-k)|-|(h-L)\cap(h-k)|+|k-h|.
+\]
+Testing all 1,008 extendable \(k\) against all \(2^{14}\) sets \(L\)
+shows that eight locks are necessary and sufficient; there are 180
+minimum placements.  For
+\[
+                         L=\{0,2,3,4,7,8,9,10\}
+\]
+the minimum value of \(\Delta_L(k)\) over \(k\ne h\) is one.
+
+The substituted graph has \(18+8\cdot18=162\) vertices and
+\(27+8\cdot27=243\) edges.  Direct checks establish simplicity,
+cubicity, connectivity, and bridgelessness; the base is a nonplanar
+minor.  Contracting any nowhere-zero flow through the eight poles gives
+a nowhere-zero flow on \(B\), so the local costs and the displayed
+\(\Delta_L\) bound every projection below by
+\[
+                              14+5\cdot8=54.
+\]
+The target lift attains this value.  Equality forces terminal support
+\(h\), and the unique local odd minimum then forces a unique literal
+projection \(H\), consisting of two 27-circuits.
+
+Every extension of \(H\) contracts to an extension of \(h\).  The old
+components of \(B-h\) persist, and the two terminal links replacing a
+base support edge carry its contracted value.  Hence cleanliness upstairs
+would imply cleanliness of the contracted base extension, contradicting
+the 15,360-extension calculation.  Thus \(H\) is uncleanable.
+
+Finally, the graph has a human-checkable five-cover.  Fix two-subset
+edge labels giving five-cycle double covers of \(B\) and \(S\).  For each
+substitution, permute the five labels on its copy of \(S\) so that the
+label on \(e_\ast\) equals the label on the replaced base edge.  Delete
+both old edges and give both terminal links that common two-subset label.
+At every exposed vertex a like-labelled incidence is replaced by a
+like-labelled incidence, so all five parities remain even; every new edge
+still has exactly two labels.  The resulting 243-label certificate and
+a separately generated satisfying assignment of the mandatory
+exact-two/XOR formula are both checked literally.
+\end{proof}
+
+The lock placement and both graph constructions were independently
+reimplemented.  They canonicalize to the identical graph6 row.  The
+primary package, complete edge list, five-cover certificates, and ledger
+are in
+\path{scratch/minimum-projection-}\allowbreak
+\path{strict-parity-lock-20260729/};
+the separately written audit is in the sibling strict-lock independent
+audit package.
+This theorem closes the proposed minimum-selection route negatively.
+FiveCDC must select a nonminimum clean projection on this graph.
+Theorem~\ref{thm:sizefifteen} remains informative: no such counterexample
+can have minimum support at most fifteen, whereas this witness has minimum
+support 54.
 
 \section{Exact finite census}\label{sec:census}
 
@@ -2540,8 +2708,9 @@ cycle-space module:\\
 \texttt{7e5ea2599e7533f041ea88de5c6f5c7a3bf542cedc33d78728439d43ce8861e8}
 \end{center}
 
-This is a finite theorem.  It is evidence for
-Conjecture~\ref{conj:minimum}, not a proof of it.
+This finite theorem explains why minimum selection was initially
+plausible, but Theorem~\ref{thm:strictlock} disproves the universal
+statement beyond the tested range.
 
 \subsection{Expanded frozen-source replay}
 
@@ -2674,9 +2843,11 @@ Theorems~\ref{thm:sizefive}, \ref{thm:sizeseven}, \ref{thm:sizeten},
 \ref{thm:sizeeleven}, \ref{thm:sizetwelve}, and
 \ref{thm:sizethirteen}, together with
 Theorems~\ref{thm:sizefourteen} and \ref{thm:sizefifteen} close every
-possible nonzero support size through fifteen:
-a counterexample to Conjecture~\ref{conj:minimum} must have minimum
-projection size at least sixteen.
+possible nonzero support size through fifteen.  Thus
+Theorem~\ref{thm:strictlock}, whose minimum projection has size 54, is
+consistent with the sharp proven lower frontier: no counterexample to
+the false selection principle has minimum projection size at most
+fifteen.
 The useful feature is simultaneity.  A cycle that would shorten the
 projection is allowed to be blocked by one colour, but
 Corollary~\ref{cor:shortcut} forces it to be blocked by all four.
@@ -3002,12 +3173,12 @@ subsets proves minimality.  The complete finite replay is in
 \path{scratch/petersen-minimum-tjoin-countermodel-20260729/}.  This
 obstruction does not realize four synchronized affine classes.
 
-What is not yet understood is how the positive \emph{interior} shores of
-the four shortest-join duals transform under neutral recolouring.
-A publishable resolution would need either an interior cut/cycle
-contradiction, a neutral-reconfiguration theorem transporting those duals,
-or an exact counterexample to Conjecture~\ref{conj:minimum}.  Until one of
-those is supplied, the correct status is a frontier result.
+Theorem~\ref{thm:strictlock} supplies the exact counterexample to
+Conjecture~\ref{conj:minimum}: the positive interior-shore information and
+even full global minimality do not force cleaning.  The surviving FiveCDC
+problem is therefore not to repair a minimum projection universally, but
+to select a possibly nonminimum clean projection.  No theorem in this
+note carries out that selection for every bridgeless graph.
 
 \section*{AI-use and verification disclosure}
 
@@ -3092,6 +3263,21 @@ Two exact implementations and two hostile audits checked the abstract
 map census, 18- and 278-vertex graphs, all four joins, contraction
 uncleanability, weighted lower bound, explicit size-seven lift, corrected
 replay instructions, frozen outputs, and hash ledger.
+Codex agents also derived the full-flow master formulation in
+Proposition~\ref{prop:fullmaster}.  One hostile audit supplied the omitted
+cut-parity derivation and extended the independent checker to reconstruct
+the full 278-vertex graph before publication.  The strict parity lock and
+the 162-vertex graph in Theorem~\ref{thm:strictlock} were then found and
+minimized by Codex agents.  Primary and independently written packages
+enumerate the two 18-vertex cycle spaces and all \(2^{14}\) lock
+placements, construct the same canonical 162-vertex graph, prove the
+unique size-54 minimum and contraction obstruction, and check multiple
+literal FiveCDC certificates.  A third hostile implementation separately
+reconstructed the graph, minimum, dirty-extension counts, and a satisfying
+FiveCDC assignment.  An initial exploratory solver call used a malformed
+three-input XOR API and was discarded; no datum from that call appears in
+the frozen certificates.  These are exact agent-produced computations and
+human-readable reductions, not independent human peer review.
 Separate packages also check the first failure of the unrestricted
 dichotomy, its 40-case map certificate, and its exhaustive 18-vertex
 realization analysis.  The standard graph-class reduction and its

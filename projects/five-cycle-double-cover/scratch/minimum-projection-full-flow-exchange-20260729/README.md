@@ -86,15 +86,17 @@ python3 independent_audit.py
 shasum -a 256 -c SHA256SUMS
 ```
 
-The characterization and its relation to the still-open clean-selection
-step are proved in `HUMAN-PROOF.md`.
+The characterization and its relation to the minimum-selection route are
+proved in `HUMAN-PROOF.md`.
 
 ## Scope and AI-use disclosure
 
 The characterization does not prove that an optimal triple
 \((s',M,J)\) has a second \(\partial M\)-join disjoint from \(J\).
-That is exactly the remaining clean-selection obligation and is
-equivalent to the minimum-projection route to FiveCDC.
+That was exactly the minimum-selection route to FiveCDC proposed in this
+project.  The later strict parity-lock package refutes it by constructing
+a unique optimum with no second join.  Its graph still has an explicit
+FiveCDC, so the FiveCDC conjecture itself remains open.
 
 OpenAI Codex agents under Atharva Vaidya's direction derived the
 relative and master formulations, identified the survivor's full-flow

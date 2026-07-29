@@ -232,13 +232,18 @@ equivalent to a second \(T\)-join
 \]
 Thus \(J_1,J_2\) are edge-disjoint and both avoid \(M\).
 
-The minimum-projection selection conjecture is therefore exactly:
+The project-proposed minimum-projection selection principle is therefore
+exactly:
 
 > among the optimum triples in (13), some triple has a second
 > \(\partial M\)-join \(J_2\) disjoint from \(M\cup J_1\).
 
-The full-flow characterization makes the remaining obligation precise;
-it does not prove it.
+The full-flow characterization makes that proof obligation precise; it
+does not prove it.  The later strict parity-lock construction in
+`../minimum-projection-strict-parity-lock-20260729/` refutes the principle:
+its unique optimum triple has no such second join.  That graph nevertheless
+has an explicit FiveCDC, so the failure is in minimum selection rather
+than in FiveCDC.
 
 ## 6. The 278-vertex static survivor
 

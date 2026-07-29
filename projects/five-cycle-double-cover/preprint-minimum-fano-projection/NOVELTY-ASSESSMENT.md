@@ -75,7 +75,15 @@ The manuscript proves:
 21. a smallest fully goal-free support-fourteen boundary survivor with a
     278-vertex realization satisfying every load and static shortest-join
     filter, whose fixed projection is uncleanable but whose exact global
-    minimum is seven.
+    minimum is seven;
+22. an exact full-flow master formulation expressing minimum extendable
+    projection size as a joint minimization over low-flow zero matchings
+    and shortest joins, with cleanliness equivalent to a second disjoint
+    join; and
+23. a strict parity-lock construction of a simple bridgeless cubic graph
+    on 162 vertices whose unique minimum extendable projection has size
+    54 and is uncleanable, together with an explicit FiveCDC of that
+    graph.
 
 This is a partial theorem about the Hušek--Šámal flow criterion.  It does
 not resolve the Five-Cycle Double Cover Conjecture.
@@ -190,16 +198,29 @@ two-pole inflation.  Its exact minima and joins are computationally
 checkable, but it has not received a literature-wide novelty screen and
 no priority claim is made.
 
+The full-flow master formula is an elementary reformulation once the
+Hušek--Šámal criterion is fixed, so the project claims only the displayed
+deduction and not priority. The strict parity-lock construction is a
+sharply scoped computational theorem: it refutes the project-proposed
+minimum-selection principle, not any named conjecture found in the
+literature screen. Targeted exact-phrase searches found no established
+“minimum extendable projection” or “minimum projection selection”
+conjecture. This does not rule out equivalent prior work under different
+terminology, unpublished work, or parallel work following the July 2026
+preprints. Publication must therefore say “counterexample to a natural
+proof strategy” and must not claim priority pending specialist review.
+
 ## Publication judgment
 
 The exchange theorem, through-fifteen boundary theorem, the universal
 one-circuit tensor theorem, the
 triangle-expanded-Petersen direct-repair countermodel, and the sharp
 size-fourteen clean-or-delete countermodel form a coherent, reproducible
-research note.  The static-inflation theorem further identifies a precise
+research note. The static-inflation theorem further identifies a precise
 proof-method boundary: the initial shortest-join inequalities have no
 additional universal local boundary force once every support circuit uses
-all four colours; any general descent must reapply them dynamically.
+all four colours. The new strict-lock theorem goes farther: even a unique
+global minimum need not be cleanable.
 The size-fourteen and size-fifteen advances are not merely larger
 censuses.  At size fourteen the two-colour path-switch argument quantifies
 over every possible terminal pairing in an unknown cubic realization; at
@@ -237,17 +258,21 @@ state through support sixteen.  It does not raise the general
 through-fifteen theorem: interaction loops and higher occurrence
 multiplicities remain uncontrolled at size sixteen.
 The cube counterstate then rules out the simplest attempted implication
-from rainbow parity to the colour-load inequality.  Because the cube is
-Tait-colourable and the displayed projection is not minimum, it leaves
-the actual global-minimum implication open.
+from rainbow parity to the colour-load inequality. The later strict-lock
+construction closes the actual global-minimum implication negatively.
 The equality theorem sharply isolates one global regime: any uncleanable
 case at zero density slack has support at least twenty-four and a rigid
 forest/balanced-colour structure.  Positive slack remains uncontrolled.
 The support-fourteen survivor then shows that rainbow parity, all six
 map choices, every load inequality, and all four complete static
 shortest-join optima can coexist with an uncleanable fixed projection.
-Its true minimum seven excludes it from the conjectured domain and makes
-dynamic use of actual global minimality the remaining distinction.
+The master formulation explains the missing coupled branches, and the
+162-vertex strict-lock graph finally makes the dirty projection the unique
+global optimum. Since that graph has an explicit FiveCDC, the result is a
+decisive proof-method counterexample rather than a resolution of FiveCDC.
+This exact, reproducible, narrowly framed theorem is suitable for public
+circulation as a provisional AI-assisted preprint after the disclosure and
+priority cautions above.
 A formal venue submission should wait until a graph theorist:
 
 - checks the flow-to-cleanliness semantics line by line;
@@ -278,8 +303,9 @@ dictionary and descent, the six-map witness-neutralization identity, and
 its exact cyclic-dynamics obstruction, the shortest-join zero-price and
 support-density theorems, the six-map colour-load inequality and
 constructive descent, the support-sixteen two-occurrence theorem, and the
-cube rainbow-load counterstate, the equality-rigidity theorem, and the
-static-filter survivor and inflation obstruction;
+cube rainbow-load counterstate, the equality-rigidity theorem, the
+static-filter survivor and inflation obstruction, the full-flow master
+formulation, the strict parity lock, and the 162-vertex construction;
 proposed
 the two-terminal cleaning and orbit-reflecting
 \(K_{3,3}-e\) lemmas; wrote the exact
@@ -312,3 +338,13 @@ Two further hostile audits checked the support-fourteen survivor's map
 census, realized graphs, joins, contraction argument, weighted minimum
 and explicit lift; one caught and the final package corrected a replay
 path inconsistency before publication.
+Primary and independently written strict-lock implementations enumerate
+the two 18-vertex cycle spaces and all \(2^{14}\) lock placements,
+construct the same canonical 162-vertex graph, prove its unique size-54
+minimum and contraction obstruction, and verify literal FiveCDC
+certificates. A third hostile implementation separately reconstructed the
+graph and a satisfying FiveCDC assignment. An initial exploratory
+three-input XOR API call was malformed and discarded; no datum from that
+call appears in the frozen certificates. These checks are agent-produced
+computations and human-readable reductions, not independent human peer
+review.

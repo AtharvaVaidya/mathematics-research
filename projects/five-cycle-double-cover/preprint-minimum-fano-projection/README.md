@@ -6,20 +6,37 @@ minimum-support route to the standard five-cycle double cover conjecture.
 **Resolution status:** FiveCDC remains open. The paper proves a
 human-checkable exchange theorem and a complete minimum-projection theorem
 through support size fifteen for connected bridgeless loopless cubic
-graphs, reports exact finite censuses, and states the remaining universal
-selection principle as an explicit conjecture. It claims neither a proof
-nor a counterexample to FiveCDC. An elementary incidence-cluster theorem
-reduces the standard conjecture for arbitrary finite bridgeless multigraphs
-to the cubic setting, but the minimum-projection theorem itself remains
-cubic. This is distinct from the ordinary Cycle Double Cover Conjecture,
-whose July 2026 proof gives an eight-subgraph cover rather than the
-five-subgraph bound.
+graphs, reports exact finite censuses, and refutes the proposed universal
+minimum-selection principle. The refutation is a simple bridgeless cubic
+graph on 162 vertices whose unique minimum extendable projection is
+uncleanable. That graph has an explicit FiveCDC, so the result is a
+counterexample to a proof strategy, not to FiveCDC. An elementary
+incidence-cluster theorem reduces the standard conjecture for arbitrary
+finite bridgeless multigraphs to the cubic setting, but the
+minimum-projection theorem itself remains cubic. This is distinct from
+the ordinary Cycle Double Cover Conjecture, whose July 2026 proof gives an
+eight-subgraph cover rather than the five-subgraph bound.
 
 Build from this directory with:
 
 ```sh
 SOURCE_DATE_EPOCH=1785283200 tectonic main.tex
 ```
+
+Replay the full-flow master formulation and the strict-lock construction
+from the project root with:
+
+```sh
+python3 scratch/minimum-projection-full-flow-exchange-20260729/verify.py
+python3 scratch/minimum-projection-full-flow-exchange-20260729/independent_audit.py
+python3 scratch/minimum-projection-strict-parity-lock-20260729/verify.py
+python3 scratch/minimum-projection-strict-lock-minimized-independent-audit-20260729/independent_audit.py
+```
+
+The two strict-lock implementations independently construct the same
+canonical 162-vertex graph, prove the unique size-54 minimum, check the
+contraction obstruction, and verify literal FiveCDC certificates. See
+the package READMEs for the exact frozen commands and SHA-256 ledgers.
 
 Run the exhaustive order-18 checker from the project root with:
 
@@ -235,8 +252,9 @@ equivalently
 \]
 Violation constructively returns a legal common map switch and a strict
 colour-avoiding binary-cycle descent.  Two independent audits and a
-hostile proof audit pass.  It remains open whether rainbow-oddness must
-force such a violation.
+hostile proof audit pass.  The later strict-lock example shows that
+rainbow-oddness need not lead to a clean globally minimum projection by
+any universal argument.
 
 The local implication is false.  The audited package
 `scratch/minimum-projection-rainbow-load-counterstate-20260729/`
@@ -245,14 +263,17 @@ graph with two complementary 3-stars.  All nine load inequalities hold,
 and lengths four and five are impossible in the same minimal two-tree
 model.  The cube is Tait-colourable and four of the six switches already
 clean the state, so its displayed projection is not globally minimum.
-This rules out a local parity-to-load proof, not the global-minimum
-conjecture or FiveCDC.
+This rules out a local parity-to-load proof.  The strict-lock construction
+below separately refutes the global-minimum selection principle, while
+leaving FiveCDC open.
 
 The same reduction records the exact size-fourteen counterstate.  The
 Kempe escapes show how internal two-colour paths supply additional
 information absent from the abstract map-choice implication.  The
-unresolved frontier starts at support size sixteen and, structurally, in
-multi-circuit states that are not circuitwise balanced.
+through-fifteen finite frontier starts at support size sixteen and,
+structurally, in multi-circuit states that are not circuitwise balanced;
+the strict-lock example later shows that this frontier cannot extend to
+all support sizes.
 
 The exact standard convention and general-to-cubic/snark reductions are
 proved in
@@ -271,8 +292,9 @@ inequalities.  The literal 230-vertex example defeats all 97 nonempty
 one-round fixed-colour path multiswitches, but a checked two-round sequence
 reaches a strict circuit deletion.  The graph is Tait-colourable and its
 minimum projection is empty, so this is not a counterexample to the
-selection conjecture or FiveCDC.  It proves that the unresolved argument
-must use the exchange theorem dynamically after neutral recolourings.
+strict-lock theorem below and is not a counterexample to FiveCDC.  It
+proves that the static argument alone must use the exchange theorem
+dynamically after neutral recolourings.
 The full-cycle and shortest-\(T\)-join checkers verify the four inequalities
 by different methods; an agent hostile audit passed after correcting the
 terminal-distance exposition, but no independent human has reviewed it.
@@ -286,7 +308,36 @@ uncleanable and attains all four exact static shortest-join bounds.
 Contraction and weighted base enumeration nevertheless prove that the
 graph's actual minimum projection size is seven.  Thus every presently
 listed static filter can hold simultaneously without reaching a clean
-state; actual global minimality must enter dynamically.
+state.  The full-flow master formulation and strict lock below then show
+that even actual global minimality does not universally force cleaning.
+
+The exact optimization is frozen in
+`scratch/minimum-projection-full-flow-exchange-20260729/`. If \(s'\) is
+any low \(\mathbb F_2^2\)-flow, \(M=Z(s')\), and
+\(J\subseteq E-M\) satisfies \(\partial J=\partial M\), then every
+extendable projection occurs uniquely as \(M\mathbin{\dot\cup}J\), and
+\[
+  \mu(G)=\min_{s',J}(|M|+|J|).
+\]
+For fixed \(M\), the inner problem is a shortest-\(\partial M\)-join
+problem. The projection is clean exactly when there is a second
+\(\partial M\)-join disjoint from \(M\cup J\). The proof is fully
+displayed in the paper and two differently structured checkers verify the
+278-vertex example.
+
+The minimum-selection principle is refuted in
+`scratch/minimum-projection-strict-parity-lock-20260729/` and
+`scratch/minimum-projection-strict-lock-minimized-independent-audit-20260729/`.
+Eight copies of a strict parity-lock two-pole are substituted into an
+18-vertex dirty base. The resulting simple connected bridgeless
+nonplanar cubic graph has 162 vertices and 243 edges. Its unique minimum
+extendable projection has size 54, consists of two 27-circuits, and every
+extension is dirty. Exhaustive lock optimization checks all 1,008 base
+supports and all \(2^{14}\) placements; eight locks are necessary, with
+180 minimizing placements. The graph nevertheless has a FiveCDC,
+verified both by an exact-two/XOR satisfying assignment and by a
+human-checkable label-substitution argument. This closes the proposed
+minimum-selection route negatively, not FiveCDC.
 
 The next dynamic boundary is isolated in
 `scratch/minimum-projection-dynamic-kempe-frontier-20260729/`.  A complete
@@ -345,8 +396,11 @@ OpenAI Codex agents under Atharva Vaidya's direction. This includes the
 universal tensor lemma and obstruction identity, the size-fifteen census
 and induction lift, the Petersen interaction dictionary and descent, the
 two-terminal cleaning lemma, the orbit-reflecting \(K_{3,3}-e\) use, and
-their checkers and internal hostile audits. The
-disclosure in the paper must remain. Before public submission, the draft requires
-line-by-line review by a human graph theorist, a clean independent census
-rerun, bibliography audit, and a venue-specific authorship/disclosure
-decision.
+the full-flow master formulation, the strict parity lock, the 162-vertex
+construction, and their checkers and internal hostile audits. An initial
+exploratory three-input XOR API call was malformed and discarded; every
+published FiveCDC witness comes from the corrected encoding and is checked
+directly. The disclosure in the paper must remain. Before formal venue
+submission, the draft requires line-by-line review by a human graph
+theorist, a clean independent census rerun, bibliography audit, and a
+venue-specific authorship/disclosure decision.
