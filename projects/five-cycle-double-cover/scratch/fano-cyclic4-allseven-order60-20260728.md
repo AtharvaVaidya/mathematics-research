@@ -179,6 +179,84 @@ exact double coverage, and xor zero around each vertex gives even degree in
 each coordinate.  These two facts are exactly the standard FiveCDC
 conditions.
 
+## A checked bad-to-good flow repair
+
+The positive cover does more than show that some unrelated good flow
+exists.  Label its five cycle slots by
+\[
+                   000,\ 001,\ 010,\ 011,\ 100.
+\]
+If edge \(e\) belongs to the two slots labelled \(i,j\), put
+\(g(e)=i+j\).  This is the nowhere-zero flow induced by the cover in the
+Hušek--Šámal construction.
+
+The displayed all-seven-bad flow has a one-switch repair.  Add
+\(7=111\) on the simple cycle with graph6 edge ids
+
+```text
+1,2,8,11,18,22,24,26,27,30,31,33,35,37,39,40,42,43,45,62,65,67,73,74,75.
+```
+
+None of those 25 edges initially has value 7.  The resulting assignment
+is therefore still nowhere-zero, and its seven odd-component counts are
+\[
+                         (10,6,6,8,8,6,0).
+\]
+It satisfies the Hušek--Šámal condition for functional \(7=111\).
+Thus the obstruction is maximally bad inside all seven fixed projection
+fibres but lies at flow-reconfiguration distance one from a good flow.
+
+There is also an explicit path from \(f\) to the particular cover-induced
+flow \(g\).  A switch \((a,C)\) replaces \(f(e)\) by
+\(f(e)+a\) on \(C\).  It preserves flow conservation, and is nowhere-zero
+provided no edge of \(C\) currently has value \(a\).  In graph6 edge ids,
+this is the adjacency used by Cranston et al.,
+*Reconfiguration of Nowhere-zero Flows*,
+[arXiv:2606.24685](https://arxiv.org/abs/2606.24685).  The exact switches
+are:
+
+```text
+ 1: a=1  C=13,15,17,22,23,28,31,32,34,36,37,45,49,51,52,54,56,57,60,61,62,64,70,71,73,74,75
+ 2: a=6  C=0,17,19,20,24,25
+ 3: a=7  C=3,6,7,10,12,14,15,43,45,52,53,54,55,57,58,59,60,63,68,69
+ 4: a=2  C=2,3,4,28,32,35,36,44,45,46,63,64,68,69,73,76,78,80,81
+ 5: a=5  C=3,5,6,10,43,45,46,62,63,65,66,68,70,72
+ 6: a=3  C=64,65,67,70,71
+ 7: a=6  C=35,36,39,41,42
+ 8: a=7  C=18,22,24,26,27,28,29
+ 9: a=5  C=1,2,16,22,25,26
+10: a=5  C=1,4,6,7,8,9
+11: a=4  C=47,77,78,86,87,89
+12: a=7  C=82,83,86,88,89
+13: a=1  C=82,83,86,88,89
+```
+
+After switch 11, functional \(4=100\) already has zero odd components,
+so the flow is good in the exact sense of Theorem 3.16.  The last two
+switches reach \(g\) exactly.  The numbers of edges still differing from
+\(g\), including the initial state, are
+
+```text
+74,63,59,51,44,34,29,24,19,15,9,5,5,0.
+```
+
+The seven odd-component counts at the initial flow, after switch 11, and
+at the target are respectively
+\[
+ (8,8,4,6,6,8,6),\quad
+ (8,10,4,0,10,14,16),\quad
+ (10,10,4,0,10,16,14).
+\]
+The standard-library checker independently reconstructs the graph and both
+flows, verifies every switch support is one connected 2-regular subgraph,
+checks the no-zero condition before every switch and flow conservation
+after it, recomputes all fourteen seven-functional profiles, and checks
+equality with the cover-induced target.
+
+These paths are certificates for one graph, not a universal repair
+theorem.  They do show that the all-seven obstruction and a good flow lie
+in the same \(\mathbb F_2^3\)-flow-reconfiguration component.
+
 ## Reproduction
 
 From `projects/five-cycle-double-cover/`:
@@ -187,6 +265,7 @@ From `projects/five-cycle-double-cover/`:
 c++ -O3 -std=c++20 scratch/verify_fano_cyclic4_allseven_order60.cpp \
   -o /tmp/verify-fano-order60
 /tmp/verify-fano-order60
+python3 scratch/verify_fano_order60_flow_repair.py
 ```
 
 The expected one-line JSON result includes

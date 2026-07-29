@@ -229,6 +229,66 @@ int dot_bit(const int functional, const int value) {
       static_cast<unsigned>(functional & value));
 }
 
+int husek_samal_defect(const Graph& graph,
+                       const std::vector<int>& flow,
+                       const int functional) {
+  // Components of the kernel side K_mu={e:mu(f(e))=0}.
+  std::vector<int> component(graph.vertices, -1);
+  int component_count = 0;
+  for (int root = 0; root < graph.vertices; ++root) {
+    if (component[root] >= 0) continue;
+    component[root] = component_count++;
+    std::vector<int> stack = {root};
+    while (!stack.empty()) {
+      const int vertex = stack.back();
+      stack.pop_back();
+      for (const int edge : graph.incidence[vertex]) {
+        if (dot_bit(functional, flow[edge])) continue;
+        const auto [u, v] = graph.edges[edge];
+        const int other = u ^ v ^ vertex;
+        if (component[other] < 0) {
+          component[other] = component[root];
+          stack.push_back(other);
+        }
+      }
+    }
+  }
+  int affine_value = 0;
+  for (int value = 1; value <= 7; ++value) {
+    if (dot_bit(functional, value)) {
+      affine_value = value;
+      break;
+    }
+  }
+  if (!affine_value) {
+    throw std::runtime_error("zero functional in H-S defect");
+  }
+  std::vector<int> odd(component_count, 0);
+  for (int edge = 0; edge < static_cast<int>(flow.size()); ++edge) {
+    if (flow[edge] != affine_value) continue;
+    const auto [u, v] = graph.edges[edge];
+    odd[component[u]] ^= 1;
+    odd[component[v]] ^= 1;
+  }
+  return std::count(odd.begin(), odd.end(), 1);
+}
+
+std::array<int, 7> husek_samal_profile(
+    const Graph& graph, const std::vector<int>& flow) {
+  std::array<int, 7> result{};
+  for (int functional = 1; functional <= 7; ++functional) {
+    result[functional - 1] =
+        husek_samal_defect(graph, flow, functional);
+  }
+  return result;
+}
+
+bool husek_samal_good(const Graph& graph,
+                      const std::vector<int>& flow) {
+  const auto profile = husek_samal_profile(graph, flow);
+  return std::find(profile.begin(), profile.end(), 0) != profile.end();
+}
+
 std::vector<int> support_components(
     const Graph& graph, const std::vector<int>& flow,
     const int functional) {
@@ -421,6 +481,119 @@ bool connected_circuit_repair_stream(
       used[start] = false;
     }
     if (found) return true;
+  }
+  return false;
+}
+
+std::vector<int> switched_flow(const std::vector<int>& flow,
+                               Key circuit, int value);
+
+bool husek_samal_circuit_repair_stream(
+    const Graph& graph, const std::vector<int>& flow,
+    int* repair_value, Key* repair_circuit, std::uint64_t* tested,
+    std::uint64_t* circuits_seen) {
+  const auto initial_classes = classes(flow);
+  std::vector<bool> used(graph.vertices, false);
+  std::vector<int> path;
+  for (int t = 1; t <= 7; ++t) {
+    bool found = false;
+    std::function<void(int, int, Key)> visit =
+        [&](const int start, const int vertex, const Key support) {
+          if (found) return;
+          for (const int edge : graph.incidence[vertex]) {
+            const auto [u, v] = graph.edges[edge];
+            const int other = u ^ v ^ vertex;
+            if (other == start) {
+              if (path.size() < 3 || path[1] >= vertex) continue;
+              Key circuit = support;
+              insert(circuit, edge);
+              ++*circuits_seen;
+              if ((circuit.lo & initial_classes[t - 1].lo) ||
+                  (circuit.hi & initial_classes[t - 1].hi)) {
+                continue;
+              }
+              ++*tested;
+              const std::vector<int> candidate =
+                  switched_flow(flow, circuit, t);
+              if (husek_samal_good(graph, candidate)) {
+                *repair_value = t;
+                *repair_circuit = circuit;
+                found = true;
+              }
+              continue;
+            }
+            if (other < start || used[other]) continue;
+            used[other] = true;
+            path.push_back(other);
+            Key next = support;
+            insert(next, edge);
+            visit(start, other, next);
+            path.pop_back();
+            used[other] = false;
+            if (found) return;
+          }
+        };
+    for (int start = 0; start < graph.vertices && !found; ++start) {
+      used[start] = true;
+      path = {start};
+      visit(start, start, Key{});
+      used[start] = false;
+    }
+    if (found) return true;
+  }
+  return false;
+}
+
+struct FlowSwitch {
+  int value = 0;
+  Key circuit;
+};
+
+std::vector<FlowSwitch> legal_flow_switches(
+    const Graph& graph, const std::vector<Key>& circuits,
+    const std::vector<int>& flow) {
+  const auto value_classes = classes(flow);
+  std::vector<FlowSwitch> result;
+  for (int value = 1; value <= 7; ++value) {
+    for (const Key circuit : circuits) {
+      if ((circuit.lo & value_classes[value - 1].lo) ||
+          (circuit.hi & value_classes[value - 1].hi)) {
+        continue;
+      }
+      result.push_back({value, circuit});
+    }
+  }
+  return result;
+}
+
+bool husek_samal_radius_two_repair(
+    const Graph& graph, const std::vector<Key>& circuits,
+    const std::vector<int>& flow, FlowSwitch* first_repair,
+    FlowSwitch* second_repair, std::uint64_t* first_neighbors,
+    std::uint64_t* second_neighbors) {
+  const std::vector<FlowSwitch> first_moves =
+      legal_flow_switches(graph, circuits, flow);
+  for (const FlowSwitch& first : first_moves) {
+    ++*first_neighbors;
+    const std::vector<int> after_first =
+        switched_flow(flow, first.circuit, first.value);
+    if (husek_samal_good(graph, after_first)) {
+      *first_repair = first;
+      *second_repair = FlowSwitch{};
+      return true;
+    }
+    const std::vector<FlowSwitch> second_moves =
+        legal_flow_switches(graph, circuits, after_first);
+    for (const FlowSwitch& second : second_moves) {
+      ++*second_neighbors;
+      const std::vector<int> after_second =
+          switched_flow(after_first, second.circuit, second.value);
+      if (husek_samal_good(graph, after_second)) {
+        *first_repair = first;
+        *second_repair = second;
+        return true;
+      }
+    }
   }
   return false;
 }
@@ -793,6 +966,71 @@ int rewire_search(const int samples, const std::uint64_t seed,
   std::cout << "{\"status\":\"REWIRE_DONE\",\"generated\":" << generated
             << ",\"simple\":" << simple << ",\"premise\":" << premise
             << ",\"bad\":" << bad << "}" << std::endl;
+  return 0;
+}
+
+int husek_samal_rewire_search(const int samples,
+                              const std::uint64_t seed,
+                              const bool require_girth_five) {
+  std::mt19937_64 random(seed);
+  std::uint64_t generated = 0, simple = 0, premise = 0, bad = 0;
+  std::uint64_t legal_tested = 0, circuits_seen = 0;
+  std::uint64_t maximum_tested = 0;
+  for (int sample = 0; sample < samples; ++sample) {
+    ++generated;
+    Graph graph;
+    std::vector<int> flow;
+    if (!random_signature_graph(random, &graph, &flow)) continue;
+    ++simple;
+    if (!cyclically_four(graph, require_girth_five)) continue;
+    ++premise;
+    const auto initial_profile = husek_samal_profile(graph, flow);
+    if (std::find(initial_profile.begin(), initial_profile.end(), 0) !=
+        initial_profile.end()) {
+      continue;
+    }
+    ++bad;
+    int repair_value = 0;
+    Key repair_circuit;
+    std::uint64_t tested = 0, seen = 0;
+    const bool repair = husek_samal_circuit_repair_stream(
+        graph, flow, &repair_value, &repair_circuit, &tested, &seen);
+    legal_tested += tested;
+    circuits_seen += seen;
+    maximum_tested = std::max(maximum_tested, tested);
+    if (!repair) {
+      std::cout << "{\"status\":\"HS_REWIRE_COUNTERMODEL\","
+                << "\"sample\":" << sample
+                << ",\"require_girth_five\":"
+                << (require_girth_five ? "true" : "false")
+                << ",\"initial_profile\":[";
+      for (int index = 0; index < 7; ++index) {
+        if (index) std::cout << ',';
+        std::cout << initial_profile[index];
+      }
+      std::cout << "],\"circuits_seen\":" << seen
+                << ",\"legal_switches_tested\":" << tested
+                << ",\"edges\":[";
+      for (int edge = 0; edge < static_cast<int>(graph.edges.size());
+           ++edge) {
+        if (edge) std::cout << ',';
+        std::cout << '[' << graph.edges[edge].first << ','
+                  << graph.edges[edge].second << ',' << flow[edge] << ']';
+      }
+      std::cout << "]}" << std::endl;
+      return 3;
+    }
+  }
+  std::cout << "{\"status\":\"HS_REWIRE_DONE\",\"generated\":"
+            << generated << ",\"simple\":" << simple
+            << ",\"premise\":" << premise << ",\"hs_bad\":" << bad
+            << ",\"require_girth_five\":"
+            << (require_girth_five ? "true" : "false")
+            << ",\"circuits_seen_before_repairs\":" << circuits_seen
+            << ",\"legal_switches_tested_before_repairs\":"
+            << legal_tested
+            << ",\"maximum_legal_switches_before_repair\":"
+            << maximum_tested << "}" << std::endl;
   return 0;
 }
 
@@ -1243,6 +1481,88 @@ int circuit_repair_audit(const std::string& path,
   return 0;
 }
 
+int husek_samal_circuit_audit(const std::string& path,
+                              const bool stop_at_first) {
+  std::ifstream input(path);
+  std::string record, flow_line;
+  if (!input || !std::getline(input, record) ||
+      !std::getline(input, flow_line)) {
+    throw std::runtime_error("cannot read H-S circuit-audit state");
+  }
+  Graph graph = decode_graph6(record);
+  std::vector<int> flow;
+  std::stringstream parser(flow_line);
+  std::string item;
+  while (std::getline(parser, item, ',')) {
+    flow.push_back(std::stoi(item));
+  }
+  if (flow.size() != graph.edges.size()) {
+    throw std::runtime_error("H-S state has wrong flow length");
+  }
+  const auto initial_profile = husek_samal_profile(graph, flow);
+  if (std::find(initial_profile.begin(), initial_profile.end(), 0) !=
+      initial_profile.end()) {
+    throw std::runtime_error("H-S state is already good");
+  }
+  const std::vector<Key> circuits = all_circuits(graph);
+  const auto initial_classes = classes(flow);
+  std::uint64_t legal = 0, repairs = 0;
+  int first_value = 0;
+  Key first_circuit;
+  std::array<int, 7> first_profile{};
+  for (int value = 1; value <= 7; ++value) {
+    for (const Key circuit : circuits) {
+      if ((circuit.lo & initial_classes[value - 1].lo) ||
+          (circuit.hi & initial_classes[value - 1].hi)) {
+        continue;
+      }
+      ++legal;
+      const std::vector<int> candidate =
+          switched_flow(flow, circuit, value);
+      const auto candidate_profile =
+          husek_samal_profile(graph, candidate);
+      if (std::find(candidate_profile.begin(), candidate_profile.end(), 0) !=
+          candidate_profile.end()) {
+        ++repairs;
+        if (!first_value) {
+          first_value = value;
+          first_circuit = circuit;
+          first_profile = candidate_profile;
+        }
+        if (stop_at_first) break;
+      }
+    }
+    if (stop_at_first && first_value) break;
+  }
+  std::cout << "{\"status\":\"HS_CIRCUIT_AUDIT\","
+            << "\"graph6\":\"" << record << "\",\"vertices\":"
+            << graph.vertices << ",\"circuits\":" << circuits.size()
+            << ",\"initial_profile\":[";
+  for (int index = 0; index < 7; ++index) {
+    if (index) std::cout << ',';
+    std::cout << initial_profile[index];
+  }
+  std::cout << "],\"legal_switches_tested\":" << legal
+            << ",\"good_switches\":" << repairs
+            << ",\"complete\":" << (stop_at_first ? "false" : "true")
+            << ",\"first_value\":" << first_value
+            << ",\"first_profile\":[";
+  for (int index = 0; index < 7; ++index) {
+    if (index) std::cout << ',';
+    std::cout << first_profile[index];
+  }
+  std::cout << "],\"first_circuit\":[";
+  bool comma = false;
+  for (int edge = 0; edge < static_cast<int>(flow.size()); ++edge) {
+    if (!selected(first_circuit, edge)) continue;
+    if (comma) std::cout << ',';
+    comma = true;
+    std::cout << edge;
+  }
+  std::cout << "]}" << std::endl;
+  return repairs ? 0 : 3;
+}
+
 // Search a stronger operation than the target lemma: X may be any binary
 // cycle, possibly disconnected.  SAT therefore disproves nothing; UNSAT
 // for all (t,b) pairs certifies no connected-circuit repair.
@@ -1425,6 +1745,151 @@ int apx_sample_search(const std::string& path, const int samples,
   return 0;
 }
 
+int husek_samal_sample_search(const std::string& path,
+                              const int samples,
+                              const std::uint64_t seed,
+                              const int stop_after_bad) {
+  std::ifstream input(path);
+  if (!input) throw std::runtime_error("cannot open " + path);
+  std::mt19937_64 random(seed);
+  std::string record;
+  std::uint64_t graphs = 0, flows = 0, flow_trials = 0, bad = 0;
+  std::uint64_t legal_tested = 0, circuits_seen = 0;
+  std::uint64_t maximum_tested = 0;
+  while (std::getline(input, record)) {
+    if (record.empty()) continue;
+    Graph graph = decode_graph6(record);
+    ++graphs;
+    for (int sample = 0; sample < samples; ++sample) {
+      const std::vector<int> flow =
+          random_flow(graph, random, &flow_trials);
+      ++flows;
+      const auto initial_profile = husek_samal_profile(graph, flow);
+      if (std::find(initial_profile.begin(), initial_profile.end(), 0) !=
+          initial_profile.end()) {
+        continue;
+      }
+      ++bad;
+      int repair_value = 0;
+      Key repair_circuit;
+      std::uint64_t tested = 0, seen = 0;
+      const bool repair = husek_samal_circuit_repair_stream(
+          graph, flow, &repair_value, &repair_circuit, &tested, &seen);
+      legal_tested += tested;
+      circuits_seen += seen;
+      maximum_tested = std::max(maximum_tested, tested);
+      if (!repair) {
+        std::cout << "{\"status\":\"HS_SAMPLE_COUNTERMODEL\","
+                  << "\"graph6\":\"" << record
+                  << "\",\"vertices\":" << graph.vertices
+                  << ",\"sample\":" << sample
+                  << ",\"initial_profile\":[";
+        for (int index = 0; index < 7; ++index) {
+          if (index) std::cout << ',';
+          std::cout << initial_profile[index];
+        }
+        std::cout << "],\"circuits_seen\":" << seen
+                  << ",\"legal_switches_tested\":" << tested
+                  << ",\"flow\":[";
+        for (int edge = 0; edge < static_cast<int>(flow.size()); ++edge) {
+          if (edge) std::cout << ',';
+          std::cout << flow[edge];
+        }
+        std::cout << "]}" << std::endl;
+        return 3;
+      }
+      if (stop_after_bad > 0 &&
+          bad >= static_cast<std::uint64_t>(stop_after_bad)) {
+        std::cout << "{\"status\":\"HS_SAMPLE_DONE\",\"graphs\":"
+                  << graphs << ",\"flows\":" << flows
+                  << ",\"hs_bad\":" << bad
+                  << ",\"flow_trials\":" << flow_trials
+                  << ",\"circuits_seen_before_repairs\":"
+                  << circuits_seen
+                  << ",\"legal_switches_tested_before_repairs\":"
+                  << legal_tested
+                  << ",\"maximum_legal_switches_before_repair\":"
+                  << maximum_tested << "}" << std::endl;
+        return 0;
+      }
+    }
+  }
+  std::cout << "{\"status\":\"HS_SAMPLE_DONE\",\"graphs\":" << graphs
+            << ",\"flows\":" << flows << ",\"hs_bad\":" << bad
+            << ",\"flow_trials\":" << flow_trials
+            << ",\"circuits_seen_before_repairs\":" << circuits_seen
+            << ",\"legal_switches_tested_before_repairs\":"
+            << legal_tested
+            << ",\"maximum_legal_switches_before_repair\":"
+            << maximum_tested << "}" << std::endl;
+  return 0;
+}
+
+int husek_samal_radius_two_sample_search(
+    const std::string& path, const int samples,
+    const std::uint64_t seed) {
+  std::ifstream input(path);
+  if (!input) throw std::runtime_error("cannot open " + path);
+  std::mt19937_64 random(seed);
+  std::string record;
+  std::uint64_t graphs = 0, flows = 0, flow_trials = 0, bad = 0;
+  std::uint64_t first_traps = 0, first_neighbors = 0;
+  std::uint64_t second_neighbors = 0;
+  while (std::getline(input, record)) {
+    if (record.empty()) continue;
+    Graph graph = decode_graph6(record);
+    const std::vector<Key> circuits = all_circuits(graph);
+    ++graphs;
+    for (int sample = 0; sample < samples; ++sample) {
+      const std::vector<int> flow =
+          random_flow(graph, random, &flow_trials);
+      ++flows;
+      if (husek_samal_good(graph, flow)) continue;
+      ++bad;
+      FlowSwitch first, second;
+      std::uint64_t local_first = 0, local_second = 0;
+      const bool repair = husek_samal_radius_two_repair(
+          graph, circuits, flow, &first, &second,
+          &local_first, &local_second);
+      first_neighbors += local_first;
+      second_neighbors += local_second;
+      first_traps += second.value != 0;
+      if (!repair) {
+        const auto initial_profile = husek_samal_profile(graph, flow);
+        std::cout << "{\"status\":\"HS_RADIUS2_COUNTERMODEL\","
+                  << "\"graph6\":\"" << record
+                  << "\",\"vertices\":" << graph.vertices
+                  << ",\"sample\":" << sample
+                  << ",\"circuits\":" << circuits.size()
+                  << ",\"initial_profile\":[";
+        for (int index = 0; index < 7; ++index) {
+          if (index) std::cout << ',';
+          std::cout << initial_profile[index];
+        }
+        std::cout << "],\"first_neighbors_exhausted\":"
+                  << local_first
+                  << ",\"second_neighbors_exhausted\":"
+                  << local_second << ",\"flow\":[";
+        for (int edge = 0; edge < static_cast<int>(flow.size()); ++edge) {
+          if (edge) std::cout << ',';
+          std::cout << flow[edge];
+        }
+        std::cout << "]}" << std::endl;
+        return 3;
+      }
+    }
+  }
+  std::cout << "{\"status\":\"HS_RADIUS2_SAMPLE_DONE\",\"graphs\":"
+            << graphs << ",\"flows\":" << flows
+            << ",\"hs_bad\":" << bad
+            << ",\"radius1_traps\":" << first_traps
+            << ",\"flow_trials\":" << flow_trials
+            << ",\"first_neighbors_tested\":" << first_neighbors
+            << ",\"second_neighbors_tested\":" << second_neighbors
+            << "}" << std::endl;
+  return 0;
+}
+
 int pair_deletion_search(const std::string& path, const int samples,
                          const std::uint64_t seed,
                          const bool require_lift) {
@@ -1558,6 +2023,17 @@ int main(int argc, char** argv) {
       return circuit_repair_audit(
           argv[2], std::string(argv[1]) == "--circuit-first");
     }
+    if (std::string(argv[1]) == "--hs-circuit-audit" ||
+        std::string(argv[1]) == "--hs-circuit-first") {
+      return husek_samal_circuit_audit(
+          argv[2], std::string(argv[1]) == "--hs-circuit-first");
+    }
+    if (std::string(argv[1]) == "--hs-rewire40" ||
+        std::string(argv[1]) == "--hs-rewire40-girth5") {
+      return husek_samal_rewire_search(
+          std::stoi(argv[2]), std::stoull(argv[3]),
+          std::string(argv[1]) == "--hs-rewire40-girth5");
+    }
     if (std::string(argv[1]) == "--rewire40" ||
         std::string(argv[1]) == "--rewire40-cyclic4") {
       return rewire_search(std::stoi(argv[2]), std::stoull(argv[3]),
@@ -1583,6 +2059,14 @@ int main(int argc, char** argv) {
     }
     if (std::string(argv[1]) == "--apx-sample") {
       return apx_sample_search(
+          argv[2], std::stoi(argv[3]), std::stoull(argv[4]));
+    }
+    if (std::string(argv[1]) == "--hs-sample") {
+      return husek_samal_sample_search(
+          argv[2], std::stoi(argv[3]), std::stoull(argv[4]), 0);
+    }
+    if (std::string(argv[1]) == "--hs-radius2-sample") {
+      return husek_samal_radius_two_sample_search(
           argv[2], std::stoi(argv[3]), std::stoull(argv[4]));
     }
     if (std::string(argv[1]) == "--pair-bad") {

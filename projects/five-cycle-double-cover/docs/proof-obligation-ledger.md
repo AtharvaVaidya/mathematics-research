@@ -1601,3 +1601,22 @@ Open obligations:
     taking a bad flow to some good flow, or produce a graph on which the
     existential formula is certificate-checked UNSAT.
     Status: **OPEN / EQUIVALENT TO FIVECDC IN THE CUBIC REDUCTION**.
+
+100. **Direct H--S radius-one domination is false even on a strict
+     snark; finite multi-switch reachability remains open:** the frozen
+     order-26 graph is simple cubic, cyclically 4-edge-connected, has
+     girth five, and is non-Tait.  Its flow profile is
+     \((8,8,4,6,6,6,4)\).  Two independent enumerators agree on all
+     8,797 simple cycles and 1,604 legal switches, with no good
+     neighbour.  The graph has a checked FiveCDC, and the flow has exact
+     H--S distance two.
+
+     A human lemma covers every packable value class: if
+     \(M_a\) has disjoint \(T\)-joins \(J_1,J_2\), then for
+     \(J_0=F_\mu-M_a\) the even switch
+     \(J_0\triangle J_1\) reaches a good flow, component by component.
+     The unresolved state is therefore an all-seven-nonpacking flow and
+     the problem of reaching a packing state.  Radius-two samples repair
+     25,230 strict order-26 and 689 strong order-34 radius-one traps, but
+     are not exhaustive.
+     Status: **RADIUS ONE REFUTED / MULTI-SWITCH SELECTION OPEN**.

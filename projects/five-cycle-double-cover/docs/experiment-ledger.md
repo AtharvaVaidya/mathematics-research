@@ -3423,3 +3423,33 @@ The six-row proof table and checker are
 `scratch/verify_petersen_matching_triangle_defect.py`.  This is a
 counterexample to a stronger compression lemma, not a FiveCDC
 counterexample.
+
+## Direct H--S one-switch and radius-two boundary
+
+Audit date: **2026-07-28**.
+
+`scratch/search_fano_reduced_one_switch_binary.cpp` now has a direct
+Hušek--Šámal component-defect mode, separate from its two-\(T\)-join
+packing oracle.  On the frozen strict order-26 state it counts 8,797
+simple cycles, 1,604 legal switches, and zero H--S-good switches.  The
+independent Python replay obtains the same totals, proves girth five and
+cyclic edge-connectivity at least four, exhausts the Tait-colouring
+search negatively, and checks a positive FiveCDC.
+
+The strict state has exact distance two.  Its first switch gives profile
+\((2,8,4,6,6,6,10)\), and its second gives
+\((2,4,4,6,4,0,6)\).  A larger Tait-colourable cyclic-4 girth-five
+control has 941,438 cycles and 48,544 legal one-switch neighbours, none
+good.  The older connected composition control has 6,780 cycles and
+1,844 legal neighbours, none good, but has five cyclic 2-edge cuts.
+
+Seeded radius-two samples then tested:
+
+- 28,000 flows on all 280 retained strict order-26 snarks:
+  26,443 H--S-bad and 25,230 radius-one traps, all radius-two repaired;
+- 700 flows on seven retained strong order-34 snarks:
+  695 H--S-bad and 689 radius-one traps, all radius-two repaired.
+
+The respective second-neighbour counts were 4,432,803 and 1,594,834.
+These runs do not enumerate the flow spaces or independently establish
+completeness of the graph lists.

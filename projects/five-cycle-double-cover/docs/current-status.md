@@ -2921,3 +2921,44 @@ is existential flow selection or repair, matching Hušek--Šámal Conjecture
 3.19.  See
 `scratch/fano-cyclic4-allseven-order60-20260728.md` and
 `scratch/verify_fano_cyclic4_allseven_order60.cpp`.
+
+## Direct Hušek--Šámal reconfiguration boundary
+
+Audit date: **2026-07-28**.
+
+For a nowhere-zero \(\mathbb F_2^3\)-flow \(f\), write
+\(K_\mu=\{e:\langle\mu,f(e)\rangle=0\}\), and let \(d_\mu(f)\) count
+the components of \(K_\mu\) containing an odd number of endpoints of
+one affine value class.  Hušek--Šámal goodness is \(d_\mu(f)=0\) for
+some nonzero \(\mu\).
+
+The proposed radius-one theorem is false even in the strict-snark
+domain.  A retained order-26 simple cubic cyclically 4-edge-connected
+non-Tait graph of girth five has a nowhere-zero flow with profile
+\((8,8,4,6,6,6,4)\).  Two independent implementations enumerate all
+8,797 simple cycles and all 1,604 legal cycle--value switches; none is
+good.  A standard-library checker also exhausts Tait colourings,
+validates cyclic cuts of sizes at most three, and checks an explicit
+FiveCDC.  The displayed flow has exact H--S distance two, with checked
+intermediate profiles
+\[
+              (2,8,4,6,6,6,10),\qquad(2,4,4,6,4,0,6).
+\]
+Thus this closes only the radius-one proof route.
+
+There is nevertheless a human packing-to-switch theorem.  If a value
+class \(M_a\) has two disjoint \(\partial M_a\)-joins \(J_1,J_2\), take
+\(\mu(a)=1\), \(F=\{e:\mu(f(e))=1\}\), and \(J_0=F-M_a\).  The even
+subgraph \(C=J_0\triangle J_1\) avoids \(M_a\); switching \(a\) on its
+simple-cycle components changes \(F\) to \(M_a\cup J_1\), whose
+complement contains \(J_2\).  Hence a finite legal switch sequence is
+H--S-good.  The order-60 one-cycle repair is a literal instance.
+
+Seeded radius-two reconnaissance on all 280 retained strict order-26
+snarks sampled 28,000 flows and repaired all 25,230 radius-one traps.
+A second run on seven retained strong order-34 snarks sampled 700 flows
+and repaired all 689 radius-one traps.  These are samples, not censuses.
+The exact surviving problem is finite-radius or unrestricted
+reconfiguration of all-seven-nonpacking flows, or direct existential
+flow selection.  See
+`scratch/husek-samal-one-switch-reduced-frontier-20260728.md`.

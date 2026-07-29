@@ -1452,3 +1452,22 @@ Thus the result refutes only universal cleaning of an arbitrary fixed
 flow.  It confirms that the existential flow choice in the
 Hušek--Šámal formulation cannot be dropped.  See
 `scratch/fano-cyclic4-allseven-order60-20260728.md`.
+
+## O63 — Direct H--S radius-one domination on the reduced snark domain
+
+Status: **FAILED APPROACH / EXACT STRICT ORDER-26 COUNTERMODEL**.
+
+The graph6 record
+`Y?HI@e??GC?Ba??CO???ACG??BH?G?g?C??O??GI??@??C@?A?C??C@_`
+is simple cubic, cyclically 4-edge-connected, non-Tait, and has girth
+five.  Its displayed nowhere-zero \(\mathbb F_2^3\)-flow has defect
+profile \((8,8,4,6,6,6,4)\).  Complete simple-cycle enumeration gives
+8,797 cycles and 1,604 legal value switches; every neighbour remains
+dirty.  A separately written standard-library checker agrees and also
+checks an explicit FiveCDC.
+
+The state is not a multi-switch obstruction: a displayed two-switch
+path reaches profile \((2,4,4,6,4,0,6)\), so its exact distance is two.
+This refutes radius one even under every elementary minimum-counterexample
+restriction, but not FiveCDC or unrestricted H--S reconfiguration.  See
+`scratch/husek-samal-one-switch-reduced-frontier-20260728.md`.

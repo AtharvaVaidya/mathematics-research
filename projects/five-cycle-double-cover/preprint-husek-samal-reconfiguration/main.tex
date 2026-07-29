@@ -1,0 +1,571 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\geometry{margin=1in}
+\setlength{\emergencystretch}{2em}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\bd}{\partial}
+\newcommand{\Comp}{\operatorname{Comp}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\HS}{\mathrm{HS}}
+\newcommand{\symdiff}{\mathbin{\triangle}}
+\numberwithin{equation}{section}
+
+\title{A Radius-One Obstruction in Reconfiguring\\
+Nowhere-Zero Flows toward Five-Cycle Double Covers}
+\author{Atharva Vaidya\\
+\small AI-assisted research draft for independent human verification}
+\date{July 28, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fcolorbox{red!65!black}{red!4}{
+\parbox{0.91\textwidth}{
+\textbf{Status and AI-use disclosure.}
+The standard five-cycle double cover conjecture remains open.  This
+manuscript proves a short packing-to-switch lemma and gives exact finite
+counterexamples only to a proposed radius-one reconfiguration lemma.
+It proves neither FiveCDC nor its negation.
+
+OpenAI Codex agents using GPT-5-series models, under human direction,
+formulated the auxiliary question and the packing-to-switch lemma, found
+the finite examples, wrote the search and both checking programs,
+performed the computations, drafted the proof and this manuscript, and
+conducted an AI-assisted literature search.  The ``independent checker''
+is independent of the discovery implementation, not independent of AI.
+No human author, referee, or cited researcher is represented as having
+verified these results.  Before submission, a human author must inspect
+every proof, independently rerun and preferably reimplement the
+enumerations, audit the graph and cover certificates, review the
+literature, and accept ordinary scholarly responsibility.
+}}
+\end{center}
+
+\begin{abstract}
+Hu\v{s}ek and \v{S}\'amal recently gave a component-parity condition on
+a nowhere-zero \(\F_2^3\)-flow which is equivalent, after choosing the
+flow, to the existence of a five-cycle double cover.  Cranston, Li, Su,
+Wang, and Xu study reconfiguration of nowhere-zero flows by changes
+supported on cycles.  We test the direct radius-one synthesis of these
+ideas.
+
+First we prove a human-checkable bridge.  If one value-class matching of
+a cubic \(\F_2^3\)-flow admits two edge-disjoint joins in its complement,
+then an explicitly determined even support, and therefore a finite
+sequence of legal simple-cycle switches, reaches a flow satisfying the
+Hu\v{s}ek--\v{S}\'amal condition.  Connectedness of that support is
+exactly what makes one switch sufficient.
+
+We then give an exact 26-vertex obstruction to radius one.  The graph is
+simple, cubic, cyclically \(4\)-edge-connected, has girth five, and is
+not Tait-colourable.  For the displayed nowhere-zero flow, a
+standard-library checker exhausts all \(8{,}797\) simple cycles and all
+\(1{,}604\) legal cycle--value switches; none reaches the component
+condition.  An explicit two-switch path does reach it, proving that the
+displayed flow has exact distance two.  An independently checked
+five-cycle double cover of the same graph confirms that this is not a
+counterexample to FiveCDC.
+
+For calibration we record a cyclically \(4\)-edge-connected,
+girth-five, Tait-colourable 40-vertex radius-one obstruction, and a
+60-vertex positive control repaired by one \(25\)-edge cycle.  The
+latter is also a literal instance of the packing-to-switch lemma.  All
+finite claims are accompanied by solver-independent, certificate-based
+checking code.  Possible novelty is stated conservatively and remains
+subject to specialist prior-art review.
+\end{abstract}
+
+\section{Scope and relation to prior work}
+
+A \emph{five-cycle double cover} (FiveCDC) of a finite graph is an
+indexed list \(C_0,\ldots,C_4\) of Eulerian edge-subsets such that every
+edge lies in exactly two members.  Eulerian means even degree at every
+vertex; neither connectedness nor \(2\)-regularity is required.  Empty
+members are allowed, so this is the usual ``at most five'' convention.
+Only the standard, unoriented conjecture is considered here.
+
+Hu\v{s}ek and \v{S}\'amal state FiveCDC as
+Conjecture~1.9 and give an equivalent flow-selection formulation as
+Conjecture~3.19 in \cite{HusekSamal2026}.  In particular, their
+Theorem~3.16 supplies the component-parity criterion used below.  Thus
+FiveCDC remains open, and the remaining universal issue is to select a
+suitable nowhere-zero \(\F_2^3\)-flow.
+
+Cranston, Li, Su, Wang, and Xu define adjacency of nowhere-zero flows by
+requiring their difference to be supported on a cycle
+\cite{CranstonEtAl2026}.  In the exponent-two group \(\F_2^3\), a
+difference supported on a simple cycle has one constant nonzero value
+around that cycle.  The switches below are precisely this special case,
+with legality made explicit so that no zero edge is created.
+
+Our contribution has deliberately narrow scope:
+\begin{enumerate}
+\item a direct proof that a two-join packing yields a finite legal switch
+      sequence to a Hu\v{s}ek--\v{S}\'amal-good flow;
+\item an exact strict 26-vertex countermodel to the assertion that one
+      simple-cycle switch always suffices, together with an exact
+      distance-two path and a positive FiveCDC certificate; and
+\item one 40-vertex negative and one 60-vertex positive control.
+\end{enumerate}
+No reduction from FiveCDC to a universal radius-one assertion is claimed
+here, and no statement about orientable cycle double covers is made.
+
+\section{Flows, component defects, and switches}
+
+Put \(W=\F_2^3\), written additively, and identify \(W\) with
+\(\{0,\ldots,7\}\) by binary coordinates.  Let \(G\) be a finite simple
+cubic graph.  A map
+\[
+                 f:E(G)\longrightarrow W-\{0\}
+\]
+is a nowhere-zero flow if
+\[
+                 \sum_{e\ni v}f(e)=0
+                 \qquad(v\in V(G)).
+\]
+At a cubic vertex the three incident values are nonzero and pairwise
+distinct.  Consequently each value class
+\[
+                 M_a(f)=\{e:f(e)=a\},\qquad a\ne0,
+\]
+is a matching.
+
+For a nonzero linear functional \(\mu\in W^*\), identified with its
+binary dot-product vector, define
+\begin{equation}
+\begin{split}
+ F_\mu(f)&=\{e:\mu(f(e))=1\},\\
+ K_\mu(f)&=\{e:\mu(f(e))=0\}=E(G)-F_\mu(f).
+\end{split}
+\end{equation}
+For \(r\in W\) with \(\mu(r)=1\), let
+\[
+ Z_r(f)=\bd M_r(f)
+\]
+be the endpoints of the matching \(M_r(f)\).  Define
+\begin{equation}
+ d_\mu(f)=
+ \#\left\{Q\in\Comp(V(G),K_\mu(f)):
+                    |Q\cap Z_r(f)|\ \text{is odd}\right\}.
+\end{equation}
+
+\begin{lemma}[affine-value independence]\label{lem:affine}
+The component parities in \emph{(2.2)} do not depend on the choice of
+\(r\) satisfying \(\mu(r)=1\).
+\end{lemma}
+
+\begin{proof}
+Fix a component \(Q\) of \(K_\mu(f)\).  The parity of
+\(|Q\cap Z_r(f)|\) equals the parity of the number of \(r\)-valued edges
+in \(\delta(Q)\), since an internal matching edge contributes two
+endpoints.  Every edge in \(\delta(Q)\) has \(\mu\)-value one.
+
+Write \(\ker\mu=\{0,p,q,p+q\}\), so the four affine values are
+\(r,r+p,r+q,r+p+q\).  Let their boundary multiplicities modulo two be
+\(n_0,n_p,n_q,n_{p+q}\).  Summing the flow equations on \(Q\) gives
+\[
+ n_0r+n_p(r+p)+n_q(r+q)+n_{p+q}(r+p+q)=0.
+\]
+Comparing coefficients in the basis \((r,p,q)\) gives
+\[
+ n_0+n_p+n_q+n_{p+q}=0,\quad
+ n_p+n_{p+q}=0,\quad n_q+n_{p+q}=0.
+\]
+Hence all four multiplicities are equal.  This proves the claim.
+\end{proof}
+
+\begin{definition}
+The flow \(f\) is \emph{H--S-good} if \(d_\mu(f)=0\) for some
+\(\mu\ne0\).  Its defect profile is
+\[
+                       d(f)=(d_1(f),\ldots,d_7(f)).
+\]
+\end{definition}
+
+By Theorem~3.16 and Observation~3.15 of
+\cite{HusekSamal2026}, an H--S-good flow produces a standard FiveCDC.
+Their Conjecture~3.19 asserts that every bridgeless cubic graph has some
+H--S-good flow and is equivalent to FiveCDC.
+
+\begin{definition}[legal simple-cycle switch]
+Let \(a\in W-\{0\}\), and let \(C\) be a simple cycle of \(G\) such that
+\(C\cap M_a(f)=\varnothing\).  Define
+\begin{equation}
+ f^{a,C}(e)=
+ \begin{cases}
+ f(e)+a,&e\in E(C),\\
+ f(e),&e\notin E(C).
+ \end{cases}
+\end{equation}
+\end{definition}
+
+The cycle equation preserves flow conservation, and
+\(C\cap M_a(f)=\varnothing\) is exactly the condition preventing a zero
+value.  We write \(\dist_{\HS}(f)\) for the minimum number of legal
+simple-cycle switches needed to reach an H--S-good flow, when such a
+sequence exists.
+
+\section{A human packing-to-switch lemma}
+
+For an edge set \(J\), write \(\bd J\) for the set of vertices having odd
+degree in \(J\).  A \(T\)-join is an edge set \(J\) with \(\bd J=T\).
+
+\begin{theorem}[packing-to-switch]\label{thm:packing}
+Fix \(a\ne0\) and \(\mu(a)=1\).  Put
+\[
+ F=F_\mu(f),\qquad M=M_a(f),\qquad J_0=F-M.
+\]
+Suppose \(G-M\) contains two edge-disjoint \(\bd M\)-joins
+\(J_1,J_2\).  Then switching \(a\) on
+\begin{equation}
+                       C=J_0\symdiff J_1
+\end{equation}
+produces an H--S-good flow.  The support \(C\) is a disjoint union of
+legal simple cycles, so this operation is a legal finite sequence of
+simple-cycle switches.  If \(C\) is connected, one switch suffices.
+\end{theorem}
+
+\begin{proof}
+The binary characteristic function \(\mu\circ f\) is a flow, so \(F\)
+is Eulerian.  Because \(M\subseteq F\),
+\[
+                         \bd J_0=\bd(F-M)=\bd M.
+\]
+Thus \(J_0\) and \(J_1\) have the same boundary, and
+\(C=J_0\symdiff J_1\) is Eulerian.  Both avoid \(M\), hence so does
+\(C\).
+
+In a cubic graph every vertex has degree zero or two in an Eulerian edge
+set.  Every nonempty connected component of \(C\) is therefore a simple
+cycle.  Switch \(a\) on all these components.  Since \(\mu(a)=1\), the
+new affine support is
+\begin{equation}
+\begin{split}
+ F\symdiff C
+   &=F\symdiff\bigl((F-M)\symdiff J_1\bigr)\\
+   &=M\cup J_1.
+\end{split}
+\end{equation}
+The union is disjoint because \(J_1\subseteq E(G-M)\).
+
+The matching \(M_a\) itself is unchanged: the support avoids \(M_a\), and
+an edge with old value different from \(a\) cannot acquire value \(a\)
+after adding \(a\), since that would force its old value to be zero.
+Consequently every component switch remains legal when the components
+are performed sequentially.
+
+Finally, \(J_2\) avoids both \(M\) and \(J_1\), so by (3.2) it lies in
+the new zero-side \(K_\mu\).  Restricting the equality
+\(\bd J_2=\bd M\) to any component \(Q\) of this zero-side and applying
+the handshaking lemma gives
+\[
+                       |Q\cap\bd M|\equiv0\pmod2.
+\]
+By Lemma~\ref{lem:affine}, this is the H--S condition for \(\mu\).
+\end{proof}
+
+\begin{remark}
+The theorem exposes the radius-one gap.  A packing gives an Eulerian
+switch support canonically, but that support may have several cycle
+components.  The theorem guarantees a finite reconfiguration sequence;
+it guarantees one step only when the support is connected.
+\end{remark}
+
+\section{The direct radius-one assertion}
+
+The most direct strengthening suggested by
+Theorem~\ref{thm:packing} is:
+
+\begin{quote}
+\emph{For every simple cubic cyclically \(4\)-edge-connected graph and
+every nowhere-zero \(W\)-flow \(f\), either \(f\) is H--S-good or one
+legal simple-cycle switch from \(f\) is H--S-good.}
+\end{quote}
+
+This statement concerns the current H--S component condition, not a
+fixed five-cover and not an older all-value-class nonpacking condition.
+The following exact countermodel refutes it.
+
+\section{An exact strict 26-vertex countermodel}
+
+Graph6 orders the edges lexicographically by second endpoint and then by
+first endpoint.  Consider the graph
+\begin{center}
+\ttfamily\small
+Y?HI@e??GC?Ba??CO???ACG??BH?G?g?C??O??GI??@??C@?A?C??C@\_
+\end{center}
+and the following flow values in that edge order:
+\begin{equation}
+\begin{split}
+(&7,5,3,7,1,3,2,3,5,5,2,6,1,4,7,2,3,7,6,5,\\
+ &4,1,6,4,4,6,2,5,6,4,2,1,4,3,3,2,6,7,1).
+\end{split}
+\end{equation}
+
+\begin{theorem}[strict radius-one countermodel]\label{thm:counter}
+The graph and flow in \emph{(5.1)} have the following properties.
+\begin{enumerate}
+\item The graph is simple, cubic, cyclically \(4\)-edge-connected, has
+      girth five, and has no Tait \(3\)-edge-colouring.
+\item The displayed values form a nowhere-zero \(W\)-flow with profile
+      \[
+                           (8,8,4,6,6,6,4).
+      \]
+\item The graph has \(8{,}797\) simple cycles and exactly \(1{,}604\)
+      legal cycle--value switches from this flow.  None is H--S-good.
+      The minimum defect at radius at most one is two.
+\item The graph has the explicit standard FiveCDC given below.
+\item The displayed flow has exact H--S distance two.
+\end{enumerate}
+\end{theorem}
+
+\paragraph{FiveCDC certificate.}
+Encode a pair of cover coordinates by a five-bit integer.  In graph6
+edge order, the labels are
+\begin{equation}
+\begin{split}
+(&12,6,20,12,6,3,5,3,18,9,17,3,17,24,3,18,18,9,17,9,\\
+ &17,24,10,18,10,18,24,24,24,10,10,18,10,24,10,18,10,18,24).
+\end{split}
+\end{equation}
+Every label in (5.2) has Hamming weight two.  For each of the five bit
+positions and each vertex, an even number of incident labels contain
+that bit.  Thus the five bit-coordinate edge sets are Eulerian and every
+edge belongs to exactly two of them.
+
+\paragraph{Exact distance-two certificate.}
+Starting from (5.1), perform
+\begin{equation}
+\begin{array}{c@{\qquad}l}
+ a=1&
+ C=(1,2,3,7,8,9,10,11,13,15,16,19,20,27,28,29),\\[2mm]
+ a=5&
+ C=(0,1,2,4,6,7,8,9,10,11,15,30,32,33).
+\end{array}
+\end{equation}
+Both supports are simple cycles and avoid the current value class being
+added.  The successive profiles are
+\begin{equation}
+                (2,8,4,6,6,6,10),\qquad(2,4,4,6,4,0,6).
+\end{equation}
+Thus (5.3) gives an H--S-good flow after two steps.
+
+\begin{proof}[Certificate proof of Theorem~\ref{thm:counter}]
+The supplied standard-library checker decodes graph6 from first
+principles.  It verifies distinct edges, degree three, connectedness,
+the 26 vertex flow equations, and all 39 nonzero values.  It examines every deletion
+of one, two, or three edges and rejects a deletion as a cyclic cut only
+after constructing all components and confirming that at least two
+contain cycles.  It independently computes girth and exhaustively
+backtracks over proper three-edge-colourings.
+
+For completeness of the radius-one enumeration, the checker performs a
+depth-first enumeration of simple cycles.  The minimum vertex of a cycle
+is its unique allowed starting vertex.  The two possible traversal
+directions are quotiented by retaining the direction whose second vertex
+is smaller than its final vertex.  Hence each undirected simple cycle is
+generated exactly once.  For each generated cycle and each
+\(a\in W-\{0\}\), the checker tests legality directly and, when legal,
+recomputes the full seven-entry defect profile from graph components.
+The resulting exact totals are \(8{,}797\) cycles, \(1{,}604\) legal
+switches, and zero clean neighbours.  This proves
+\(\dist_{\HS}(f)\geq2\).  Direct verification of (5.3)--(5.4) proves
+\(\dist_{\HS}(f)\leq2\).
+
+Finally, the checker tests every weight and every vertex-coordinate
+parity in (5.2).  These finite checks prove all five assertions.
+\end{proof}
+
+\begin{remark}
+Theorem~\ref{thm:counter} is a counterexample only to the radius-one
+auxiliary statement.  Its explicit FiveCDC proves that it is not a
+FiveCDC counterexample.
+\end{remark}
+
+\section{Forty- and sixty-vertex controls}
+
+Two controls separate radius-one failure from the existence of a cover
+and from the packing-to-switch mechanism.
+
+\subsection{A Tait-colourable 40-vertex negative control}
+
+There is a simple cubic, cyclically \(4\)-edge-connected graph of girth
+five with a nowhere-zero flow having profile
+\begin{equation}
+                         (6,8,10,4,10,6,6).
+\end{equation}
+The checker exhausts \(941{,}438\) simple cycles and \(48{,}544\) legal
+cycle--value switches.  None is H--S-good, and the minimum defect at
+radius at most one is two.  In contrast to
+Theorem~\ref{thm:counter}, this graph has a displayed Tait
+three-edge-colouring; its three colour-pair \(2\)-factors give a
+three-cycle double cover.  This is therefore a clean negative control
+for the reconfiguration assertion, not for FiveCDC.
+
+\subsection{A 60-vertex positive control and the packing lemma}
+
+The 60-vertex control is simple cubic and cyclically
+\(4\)-edge-connected.  Its starting profile is
+\begin{equation}
+                         (8,8,4,6,6,8,6).
+\end{equation}
+Switching \(a=7\) on the \(25\)-edge simple cycle
+\begin{equation}
+\begin{split}
+C=(1,2,8,11,18,22,24,26,27,30,31,33,35,37,39,40,\\
+\hspace{31mm}42,43,45,62,65,67,73,74,75)
+\end{split}
+\end{equation}
+gives profile
+\begin{equation}
+                         (10,6,6,8,8,6,0).
+\end{equation}
+Thus this state is repaired in one step.
+
+The repair also instantiates Theorem~\ref{thm:packing}.  For the
+value-\(7\) matching, two edge-disjoint \(\bd M_7\)-joins in
+\(G-M_7\) are
+\begin{equation}
+\begin{split}
+J_1={}&(1,2,13,16,18,20,26,32,35,44,46,49,50,53,57,60,61,\\
+      &\qquad62,63,64,69,71,72,73,75,81,83),\\
+J_2={}&(3,6,7,10,12,14,17,19,22,24,27,29,34,37,40,41,43,\\
+      &\qquad45,47,48,55,56,74,80,82,85,86,87,88).
+\end{split}
+\end{equation}
+With \(F=F_7(f)\), the checker verifies
+\begin{equation}
+             C=(F-M_7)\symdiff J_1,\qquad
+             J_2\cap(M_7\cup J_1)=\varnothing.
+\end{equation}
+Equations (6.3)--(6.6) are therefore a literal connected-support case
+of the human lemma.
+
+\begin{table}[t]
+\centering
+\caption{The three principal exact computations.  ``Legal'' counts
+cycle--value pairs, not merely cycles.}
+\begin{tabular}{@{}rrrrrl@{}}
+\toprule
+order & cycles & legal & initial minimum & radius-one minimum & outcome\\
+\midrule
+26 & \(8{,}797\)   & \(1{,}604\)  & \(4\) & \(2\) & no repair; distance \(2\)\\
+40 & \(941{,}438\) & \(48{,}544\) & \(4\) & \(2\) & no repair; Tait control\\
+60 & ---           & ---          & \(4\) & \(0\) & displayed one-switch repair\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Verification architecture}
+
+The principal checker is
+\[
+\texttt{scratch/verify\_husek\_samal\_one\_switch\_boundary.py}.
+\]
+It uses only the Python standard library.  Its graph6 decoder, flow
+checker, component-defect routine, simple-cycle generator, switch
+routine, cyclic-cut enumeration, girth computation, Tait-colouring
+backtracker, and FiveCDC checker are implemented locally.  No SAT solver
+or opaque mathematical library is used.
+
+The 60-vertex construction has a second checker,
+\[
+\texttt{scratch/verify\_fano\_order60\_flow\_repair.py}.
+\]
+It reconstructs the graph from two 32-vertex pole recipes, verifies the
+one-switch repair and the two joins, and separately follows a
+13-switch path to the flow induced by an explicit FiveCDC.  The two
+programs share no imported project module.
+
+The frozen artifact hashes at the time of this draft are:
+\begin{center}
+\scriptsize
+\begin{tabular}{@{}p{0.70\textwidth}p{0.25\textwidth}@{}}
+\toprule
+SHA-256 & file\\
+\midrule
+\nolinkurl{ac51aaf266178eb764fcada85b25e17dc2c18c129413abb51a2b309513ea415d}
+& boundary checker\\
+\nolinkurl{09f9bdc797948b49cf6b7a3080160e07111dad718f0e07ae00a2a9c0958b9a6e}
+& independent 60-vertex replay\\
+\nolinkurl{1c8c0b5959fb7e8f7333b44860a519e1351f366e0a78ab5be8a061287f9dfd46}
+& order-26 retained state\\
+\nolinkurl{6e1dc5fb3b290fe8364559844ed419ee6dda1ec974b2ad3aebfd21442c8fe6aa}
+& order-40 retained state\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+From the project root, the exact replay commands are
+\begin{verbatim}
+python3 scratch/verify_husek_samal_one_switch_boundary.py
+python3 scratch/verify_fano_order60_flow_repair.py
+\end{verbatim}
+
+\section{What remains open}
+
+The finite countermodels show only that radius one is not a universal
+domination bound for H--S-good flows, even in a strict reduced-looking
+class.  They leave open all of the following:
+\begin{enumerate}
+\item whether every nowhere-zero \(\F_2^3\)-flow can reach an H--S-good
+      flow by some finite legal cycle-switch sequence;
+\item whether a larger universal radius exists;
+\item whether every bridgeless graph has some initially H--S-good flow,
+      the equivalent formulation of FiveCDC in
+      \cite{HusekSamal2026}; and
+\item the standard FiveCDC conjecture itself.
+\end{enumerate}
+
+The 26-vertex state has exact distance two, but this is one instance,
+not evidence of a universal radius-two theorem.  Likewise, the
+packing-to-switch lemma resolves states possessing an appropriate
+packing by a finite sequence; it supplies no universal packing theorem.
+
+\section{Novelty and responsibility boundary}
+
+The cited papers establish the H--S component criterion and the general
+cycle-supported reconfiguration framework.  We make no novelty claim
+for either.  The elementary packing-to-switch bridge, the exact
+radius-one formulation, and the three finite certificates may be new,
+but that assessment is provisional.  The search and literature review
+were AI-assisted and not exhaustive in the scholarly sense.  Priority
+and publishability require review by specialists in cycle double covers,
+nowhere-zero flows, and flow reconfiguration.
+
+The human part of Theorem~\ref{thm:packing} is fully displayed.  The
+finite theorems reduce to explicit data and short, inspectable exhaustive
+programs, but those programs and this prose were generated with AI
+assistance.  Reproducibility is not peer review, and implementation
+independence is not human independence.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
