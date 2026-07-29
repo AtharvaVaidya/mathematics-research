@@ -197,6 +197,22 @@ proof gives
 in a cubic graph.  Thus any viable dual descent must transport interior
 metric or Kempe-pairing information.
 
+The dynamic coupling is frozen in
+`scratch/minimum-projection-sixmap-color-load-frontier-20260729/`.
+For every six-map-integrable component union \(Y\), global minimality
+forces
+\[
+ O_a+N_b\le |E-h|-\tfrac12|h|\qquad(a,b\ne0),
+\]
+equivalently
+\[
+ k_a(\overline Y)+k_b(Y)\le2(|V|-|h|).
+\]
+Violation constructively returns a legal common map switch and a strict
+colour-avoiding binary-cycle descent.  Two independent audits and a
+hostile proof audit pass.  It remains open whether rainbow-oddness must
+force such a violation.
+
 The same reduction records the exact size-fourteen counterstate.  The
 Kempe escapes show how internal two-colour paths supply additional
 information absent from the abstract map-choice implication.  The

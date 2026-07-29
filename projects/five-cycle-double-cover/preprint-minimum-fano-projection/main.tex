@@ -162,6 +162,22 @@ for a cubic graph.  Hence an LP descent must transport metric or
 path-pairing information inside complement components, not merely a
 quotient-cut price.
 
+We also obtain an exact dynamic exchange test.  Every nonzero functional
+\(\alpha\) on the low \(\F_2^2\)-flow takes value one on at least
+\(|h|/2\) complement edges.  If \(Y\) is a six-map-integrable union of
+complement components, and \(N_b,O_a\) count complement edges of colours
+\(b,a\ne0\) inside and outside \(Y\), respectively, then
+\[
+                 O_a+N_b\le |E-h|-\tfrac12|h|
+                 \qquad(a,b\ne0).
+\]
+Violation explicitly returns a legal common map switch and a strict
+colour-avoiding binary-cycle descent.  In boundary form this is
+\(k_a(\overline Y)+k_b(Y)\le2(|V|-|h|)\).  The unresolved implication is
+now concrete: prove that some rainbow-odd witness violates this load
+bound, or use the interior geometry that lets all nine inequalities
+survive.
+
 At size fifteen the primary exact classifier enumerates \(26{,}492\)
 word orbits and \(35{,}247{,}202{,}556\) charge-valid abstract states
 over all eight support shapes.  Of the \(31{,}088{,}622{,}592\) dirty
@@ -323,6 +339,9 @@ The contribution of this note is narrower:
   \item a shortest-join dual theorem forcing every positive dual shore
         to split a complement component, with the support-density bound
         \(|h|\le6|V|/7\) in cubic graphs;
+  \item a six-map colour-load inequality coupling a neutral recolouring
+        to the dynamically recomputed exchange inequalities, with an
+        explicit strict descent whenever the bound fails;
   \item four simultaneous shortest-join consequences;
   \item a general inflation theorem showing that those four inequalities,
         at one fixed flow, do not force one-round Kempe descent;
@@ -1198,6 +1217,82 @@ corresponding optimal join has size \(|h|-|M_c^U|\).  Summing over \(c\)
 gives \(4|h|-|h|=3|h|\).
 \end{proof}
 
+\begin{proposition}[six-map colour-load inequality]
+\label{prop:colorload}
+Assume \(h\) is globally minimum.  Let \(Y\) be a union of components of
+\(G-h\) such that postcomposing the low flow on \(Y\) by every
+\(U\in\operatorname{GL}(2,2)\) is integrable on the support circuits.  For nonzero
+\(a,b\in K\), let \(N_b\) be the number of colour-\(b\) complement edges
+inside \(Y\), let \(O_a\) be the number of colour-\(a\) complement edges
+outside \(Y\), and put \(m=|E-h|\).  Then
+\[
+                       O_a+N_b\le m-\frac{|h|}{2}
+                       \qquad(a,b\ne0).                   \tag{15l}
+\]
+If (15l) fails, its proof explicitly constructs a legal common map
+switch and a binary cycle giving a strict projection descent.
+
+Equivalently, let \(k_b(Y)\) count support vertices in \(Y\) whose unique
+incident complement edge has low colour \(b\).  Then
+\[
+                k_a(\overline Y)+k_b(Y)
+                         \le2\bigl(|V|-|h|\bigr)
+                         \qquad(a,b\ne0).                 \tag{15m}
+\]
+\end{proposition}
+
+\begin{proof}
+For a nonzero functional \(\alpha:K\to\F_2\), both
+\[
+ C_\alpha=\{e:\alpha(s_e)=1\},
+ \qquad C'_\alpha=h\mathbin\triangle C_\alpha
+\]
+are binary cycles.  Put
+\[
+ a_\alpha=|C_\alpha\cap h|,
+ \qquad m_\alpha=|C_\alpha-h|.
+\]
+The first cycle avoids each \(M_c\) with \(\alpha(c)=0\), while the
+second avoids each \(M_c\) with \(\alpha(c)=1\).  Applying the
+minimum-projection exchange inequality to both cycles gives
+\[
+                     a_\alpha\le m_\alpha,\qquad
+                     |h|-a_\alpha\le m_\alpha,
+\]
+and hence \(m_\alpha\ge|h|/2\).
+
+Fix \(a,b\ne0\), choose the functional with
+\(\ker\alpha=\{0,a\}\), and choose
+\(U\in\operatorname{GL}(2,2)\) with \(U(b)=a\).
+After switching \(Y\), the number of complement edges on which
+\(\alpha\) is one is exactly
+\[
+                         m_\alpha^U=m-O_a-N_b.
+\]
+The switched flow has the same globally minimum projection, so the
+preceding half-load inequality applies again and proves (15l).  If
+(15l) fails, then \(m_\alpha^U<|h|/2\).  According as
+\(a_\alpha^U>|h|/2\) or not, \(C_\alpha^U\) or
+\(h\mathbin\triangle C_\alpha^U\) uses more support than complement
+edges and avoids two entire low-colour classes.  Either avoided class
+therefore certifies a legal strict descent.
+
+For the boundary form, let \(n_Y\) be the number of off-support vertices
+inside \(Y\).  Every such cubic vertex sees the three distinct nonzero
+low colours, while every support vertex has one complement incidence.
+Double-counting colour incidences gives
+\[
+                  2N_b=n_Y+k_b(Y),\qquad
+                  2O_a=n_{\overline Y}+k_a(\overline Y).
+\]
+Since \(h\) is 2-regular on its support,
+\[
+  n_Y+n_{\overline Y}=|V|-|h|,
+  \qquad 2m=3(|V|-|h|)+|h|.
+\]
+Substitution in (15l) is exactly (15m).
+\end{proof}
+
 \begin{remark}
 Proposition~\ref{prop:sixmapneutralization} removes any \emph{chosen}
 Farkas witness at every boundary size, but it does not remove all witnesses
@@ -1242,7 +1337,7 @@ k&Q&T&S&\text{normalized target}\\ \hline
 22112&00011&33/22/22/11/22&013&21121\\
 21121&00101&33/22/11/11/11&012&21212\\
 21212&00011&33/22/11/22/22&13&11112
-\end{array}                                               \tag{15l}
+\end{array}                                               \tag{15n}
 \]
 In each row the xor of the \(T_x\)'s selected by \(S\) is zero on both
 circuits.  The selected \(Q\)-sum is one in the source and zero in the
@@ -1267,7 +1362,7 @@ support circuit is
 for an arbitrary relative translation \(z\).  In the edge numbering of
 the displayed realization, the binary cycle
 \[
-                         C=\{8,9,10,11,12,13,25,26\}     \tag{15m}
+                         C=\{8,9,10,11,12,13,25,26\}     \tag{15o}
 \]
 uses the last six support values \(\texttt{313010}+z\), which omit
 \(2+z\), and two complement edges.  Hence \(C\cap M_{2+z}=\varnothing\)
@@ -2323,6 +2418,15 @@ Corollary~\ref{cor:supportdensity} and identifies the missing geometric
 object: a descent proof must transport interior distance, blossom, or
 Kempe-pairing information across a neutral recolouring.
 
+Proposition~\ref{prop:colorload} supplies the first dynamic coupling to
+global minimality.  A concentrated inside/outside derivative colour
+profile forces an explicit strict descent after one legal common map
+switch.  The remaining implication is exact but open: rainbow-oddness is
+a parity condition, whereas (15l) is a load inequality that can be
+shielded by colour-balanced interior vertices.  One must either show that
+some witness necessarily defeats that shielding or exploit the interior
+path geometry which creates it.
+
 \begin{proposition}[static exchange has no further local boundary force]
 \label{prop:staticinflation}
 Let \(G\) be a finite connected simple bridgeless cubic graph, let \(H\)
@@ -2570,6 +2674,11 @@ finite audits check the six-map recomputation algebra but are not a
 substitute for human review.  A hostile Codex audit separately checked
 the primal/dual formulation, the every-optimal-dual quantifier, the
 density argument, the recomputation laws, and the package hash ledger.
+The six-map colour-load inequality and its constructive descent were
+also derived by Codex agents.  Its complete functional proof is displayed
+in Proposition~\ref{prop:colorload}; two independently structured finite
+audits check the map/count identities and boundary conversion, and a
+hostile Codex audit checked every logical step and the frozen ledger.
 Codex agents also derived the
 two-occurrence interaction dictionary and Petersen descent.  A separate
 hostile audit checked the complete ten-orbit table, the analytic

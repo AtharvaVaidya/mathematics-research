@@ -90,7 +90,19 @@ It also proves
 \(|E-h|\ge |h|-|M_c|\) for each affine colour and
 \(|h|\le6|V|/7\) in cubic graphs.  Consequently a viable dual descent
 must transport interior distance or Kempe-pairing information; the scalar
-quotient-cut price cannot be its potential.  The
+quotient-cut price cannot be its potential.  The dynamic package
+`scratch/minimum-projection-sixmap-color-load-frontier-20260729/`
+sharpens this to an exact sufficient descent test.  For a
+six-map-integrable witness shore \(Y\), global minimality requires
+\[
+ O_a+N_b\le |E-h|-\tfrac12|h|
+ \quad\text{for every nonzero }a,b,
+\]
+equivalently
+\(k_a(\overline Y)+k_b(Y)\le2(|V|-|h|)\).
+Violation explicitly produces a legal recolouring and a strict
+colour-avoiding binary-cycle descent.  The unresolved implication is
+whether rainbow-oddness must force such a violation.  The
 size-fourteen Kempe theorem is in
 `scratch/minimum-projection-through14-cleanability-20260729/` and
 `scratch/minimum-projection-size14-kempe-escape-20260729/`.  Larger support

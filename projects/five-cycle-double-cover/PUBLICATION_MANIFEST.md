@@ -130,6 +130,19 @@ are not independent human verification or peer review.
   checkers audit the six-map algebra and cut-parity identities; the
   universal theorem itself is the displayed LP proof and remains subject
   to expert human review.
+- `scratch/minimum-projection-sixmap-color-load-frontier-20260729/`
+  couples the legal six-map witness switch to dynamically recomputed
+  global-minimum exchange.  If \(N_b\) and \(O_a\) are complement-edge
+  colour loads inside and outside a six-map-integrable component union,
+  then
+  \(O_a+N_b\le |E-h|-|h|/2\) for every nonzero \(a,b\).
+  Equivalently,
+  \(k_a(\overline Y)+k_b(Y)\le2(|V|-|h|)\) in boundary-occurrence
+  language.  Any violation explicitly constructs a legal recolouring
+  and a strict colour-avoiding projection descent.  The full human proof,
+  two independent finite audits, hostile logical audit, outputs, and
+  hash ledger pass.  Rainbow parity is not yet proved to force a
+  violation.
 - `scratch/minimum-projection-size14-dichotomy-counterstate-20260729/`
   gives the first total-support counterstate to unrestricted clean or
   delete.  Its \(7+7\) word/partition has 320 normalized feasible map
