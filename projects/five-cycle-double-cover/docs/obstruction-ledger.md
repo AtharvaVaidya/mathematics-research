@@ -1383,3 +1383,24 @@ core is \(C_4\), whose exact relation misses the 60-word orbit represented
 by `02 02 03 03`.  Thus cube insertion cannot create a counterexample from
 a positive base.  The theorem does not show that the cube pole is
 unavoidable in a minimal counterexample.
+
+## O60 — Glue arbitrary clean Fano cap flows across a small cut
+
+Status: **FAILED APPROACH / EXACT SIGNED-PARTITION COMPOSITION LAW**.
+
+The exact shore state for a fixed Fano line is a partition of the
+line-valued terminals by internal line connectivity, with one affine
+defect bit per block.  Global components are the components of the
+bipartite block graph formed by the line-valued cut edges, and each must
+have zero xor defect.  For four line terminals this already gives 47
+parity-compatible signed states, so a boundary value word alone is
+incomplete.
+
+The failure is literal at a two-cut.  Two displayed \(K_4\) cap flows have
+clean selected lines and signed endpoint states \((0,0)\) and \((1,1)\).
+Joining corresponding cap ends makes two dirty global components.  The
+eight-vertex glued graph is simple, bridgeless, cubic, Tait-colourable, and
+has an explicit FiveCDC.  Therefore the example refutes only fixed-flow
+cap gluing; a valid reduction may change flows but must align the full
+signed states.  The proof, tables, and independent replay are in
+`scratch/fano-clean-line-signed-partitions-20260728.md`.

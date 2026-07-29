@@ -43,6 +43,12 @@ copied into a separate clean clone; it was not modified or committed.
   exhausts all 221 perfect matchings and all relevant binary cycle spaces;
   an explicit standard five-cover and 6,699 repairing switches show this
   is a route countermodel, not a FiveCDC counterexample.
+- The clean-line signed-partition cut algebra: a human proof that fixed-line
+  gluing is controlled by the shore connectivity partitions and their
+  affine defect bits, exact state and compatibility tables through four
+  terminals, a 29,750-instance Petersen replay, 546 checks on the
+  unbounded-component diamond family, and an explicit eight-vertex no-go
+  to independently choosing clean cap flows.
 - The square-local quantifier boundary: one planar order-eight good state
   has 72 legal local lifts and none good in any coordinate, while an
   alternate state lifts. Both order-six graphs satisfy the stronger

@@ -2823,3 +2823,40 @@ bijection.  This is a sharper local reduction than the Heawood result;
 the Heawood pole remains distinct for its girth-six core.  Neither
 configuration is known to be unavoidable, so this theorem does not resolve
 FiveCDC.
+
+## Exact signed-partition algebra for clean Fano lines
+
+Audit date: **2026-07-28**.
+
+For a fixed nonzero functional \(\mu\), a cut shore is now represented by
+the partition of its line-valued boundary incidences into internal line
+components, together with one affine-color defect bit on each block.
+Closed shore components must already have zero defect.  On gluing, make a
+bipartite multigraph whose vertices are the two shore partitions and whose
+edges are the line-valued cut edges.  The global line is clean exactly when
+both shore states are admissible and the xor of the block bits is zero in
+every component of this bipartite graph.
+
+This is an exact human-checkable composition theorem, not a heuristic.  For
+\(m=0,1,2,3,4\) line-valued terminals, boundary conservation leaves
+\[
+                         1,\ 1,\ 3,\ 11,\ 47
+\]
+signed states, and respectively
+\[
+                         1,\ 1,\ 7,\ 79,\ 1283
+\]
+compatible ordered pairs for either fixed total parity.  The checker
+reconstructs the tables, every covering binary three-space of Petersen, all
+29,750 Petersen flow/functional/cut comparisons, and 546 diamond-interface
+comparisons in the unbounded-component family through order 322.
+
+The richer state is necessary.  Two explicit clean \(K_4\) cap flows have
+two-terminal states \((0,0)\) and \((1,1)\).  Gluing their cap ends produces
+an eight-vertex simple bridgeless cubic graph on which the selected line is
+dirty.  The same graph has an explicit Tait/FiveCDC witness.  Thus
+cap-by-cap fixed-flow induction is unsound unless the full signed
+connectivity states are aligned.  This freezes a proof-strategy no-go; it
+does not obstruct changing the shore flows and does not resolve the
+four-pole or FiveCDC selection problem.  See
+`scratch/fano-clean-line-signed-partitions-20260728.md`.

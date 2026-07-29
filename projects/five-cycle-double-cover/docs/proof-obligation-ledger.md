@@ -1553,3 +1553,16 @@ Open obligations:
     universal by proving a bounded-component selection lemma.  The
     unbounded global parity-selection problem remains.
     Status: **STRONGER ROUTE REFUTED / FiveCDC OPEN**.
+
+97. **Small-cut Fano composition requires signed connectivity states:**
+    for a fixed line, partition its line-valued cut terminals by shore
+    components and attach one affine defect bit to every block.  Gluing is
+    clean exactly when closed shore components are clean and every
+    component of the bipartite block graph has zero xor defect.  The state
+    counts through four terminals are \(1,1,3,11,47\).  Explicit clean
+    \(K_4\) cap flows with endpoint states \((0,0)\) and \((1,1)\) glue to
+    a dirty selected line on an eight-vertex Tait graph, so independently
+    chosen clean cap flows do not suffice.  A valid minimal-counterexample
+    reduction must prove compatibility after flow selection; the
+    four-terminal state-alignment problem remains open.
+    Status: **EXACT COMPOSITION THEOREM / NAIVE CAP GLUING REFUTED**.
