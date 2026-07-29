@@ -1,0 +1,562 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\geometry{margin=0.93in}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  citecolor=blue!50!black,
+  urlcolor=blue!50!black,
+  pdftitle={A Counterexample to Minimum Fano-Projection Selection},
+  pdfauthor={Atharva Vaidya}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\symdiff}{\mathbin{\triangle}}
+\newcommand{\FiveCDC}{\textup{FiveCDC}}
+\newcommand{\bd}{\partial}
+\newcommand{\dotcupx}{\mathbin{\dot\cup}}
+
+\title{A Counterexample to Minimum Fano-Projection Selection\\
+\large for Five-Cycle Double Covers}
+\author{Atharva Vaidya\\
+\small AI-assisted research note for independent human verification}
+\date{July 29, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fcolorbox{red!65!black}{red!4}{
+\parbox{0.91\textwidth}{
+\textbf{Scope and resolution status.}
+This paper disproves a proposed \emph{proof method}: selecting a
+cardinality-minimum binary projection of a nowhere-zero
+\(\F_2^3\)-flow need not yield the component parity required by the
+Hu\v{s}ek--\v{S}\'amal criterion.  The constructed graph itself has an
+explicit five-cycle double cover.  No counterexample to \FiveCDC, and no
+resolution of \FiveCDC, is claimed.
+}}
+\end{center}
+
+\begin{abstract}
+Write a nowhere-zero \(\F_2^3\)-flow on a cubic graph as
+\(f=(h,s)\), where \(h\) is a binary flow and
+\(s\) is an \(\F_2^2\)-flow.  Call \(h\) an extendable projection.
+A recent flow criterion for the five-cycle double cover conjecture
+requires an extendable projection with a component-parity property,
+called clean here.  A natural proposed selection principle was that some
+cardinality-minimum extendable projection should be cleanable.
+
+We give a finite simple connected bridgeless cubic counterexample.
+The graph has \(162\) vertices and \(243\) edges.  Its unique globally
+minimum extendable projection has \(54\) edges, is the disjoint union of
+two \(27\)-circuits, and has no clean extension.  The construction starts
+from an \(18\)-vertex uncleanable projection and replaces eight support
+edges by an \(18\)-vertex two-pole.  Exact cycle-space enumeration proves
+that this two-pole has effective costs \(w_0=7\) and \(w_1=6\), with a
+unique minimum support in the \(1\)-terminal state.  A transparent
+weighted contraction argument then proves global minimality and
+uniqueness; uncleanability descends under contraction.
+
+The negative result is strictly about the selection method.  We give a
+human compositional five-cycle-double-cover construction for the same
+graph and a second literal assignment for the mandatory SAT/XOR
+encoding.  Two independently written standard-library checkers reproduce
+the conditional minima, all \(2^{14}\) lock placements, the
+uncleanability census, the canonical graph, and both positive cover
+certificates.
+\end{abstract}
+
+\section{Conventions and the selection principle}
+
+All graphs in the theorem are finite, loopless, and cubic.  Parallel
+edges would cause no difficulty in the flow statements, but the witness
+is simple.  Edges are distinct objects.  A \emph{binary cycle} is an
+Eulerian edge set, possibly empty or disconnected.  Thus ``five
+Eulerian subgraphs'' and ``at most five, after appending empty members''
+are equivalent conventions.
+
+Over a group of characteristic two, orientations may be suppressed:
+a flow \(f:E(G)\to\F_2^k\) satisfies
+\[
+                    \sum_{e\ni v} f(e)=0
+                    \qquad(v\in V(G)).
+\]
+It is nowhere zero if \(f(e)\ne0\) for every edge.  Put
+\(K=\F_2^2\) and write
+\[
+                         f=(h,s):E(G)\longrightarrow
+                         \F_2\times K.                    \tag{1}
+\]
+The support of the binary flow \(h\) is again denoted by \(h\).
+
+\begin{definition}
+A binary cycle \(h\) is \emph{extendable} if there is a \(K\)-flow
+\(s\) for which \((h,s)\) is nowhere zero.  Its minimum possible
+cardinality is
+\[
+        \mu(G)=\min\{|h|:h\text{ is an extendable projection}\}.
+\]
+\end{definition}
+
+Fix an extension \((h,s)\).  For \(c\in K\), let
+\[
+                         M_c=\{e\in h:s(e)=c\}.            \tag{2}
+\]
+At a cubic vertex no two incident edges can have the same nonzero full
+value, so every \(M_c\) is a matching.  The four matchings partition
+\(h\).
+
+Let \(W\) be a component of \(G-h\), and put
+\[
+       n_c(W)=|\delta(W)\cap M_c|\pmod2.
+\]
+Cut conservation for the three coordinates implies that the four
+parities \(n_c(W)\) are equal.  This gives the following terminology.
+
+\begin{definition}
+An extension \((h,s)\) is \emph{clean} if \(n_c(W)=0\) for every
+component \(W\) of \(G-h\), for one and hence every \(c\in K\).
+The projection \(h\) is \emph{cleanable} if it has a clean extension.
+\end{definition}
+
+Hu\v{s}ek and \v{S}\'amal prove that, for cubic graphs, existence of a
+clean extension is equivalent to existence of a five-cycle double
+cover~\cite[Theorem~3.16 and Conjecture~3.19]{HusekSamal2026}.
+Their formulation is related to Hoffmann-Ostenhof's necessary and
+sufficient condition for a prescribed \(2\)-regular subgraph to occur
+in a five-cycle double cover~\cite{HoffmannOstenhof2013}.
+The selection statement refuted here is
+\begin{equation}
+\begin{split}
+\textit{Every bridgeless cubic graph has a cleanable
+cardinality-minimum}\\[-2mm]
+\textit{extendable projection.}
+\end{split}
+\tag{S}
+\end{equation}
+Statement (S) is not the \FiveCDC\ conjecture itself.
+
+\section{The full-flow master lemma}
+
+The following elementary characterization makes ``globally minimum''
+literal; in particular, it compares different low flows, not merely
+four affine rebases of one fixed extension.
+
+\begin{lemma}[full-flow master lemma]\label{lem:master}
+Let \(G\) be a finite loopless cubic graph.  For a \(K\)-flow \(s'\),
+write \(Z(s')=\{e:s'(e)=0\}\).  Then
+\[
+ \mu(G)=
+ \min_{\substack{s'\text{ a }K\text{-flow}\\
+                  J\subseteq E-Z(s')\\
+                  \bd J=\bd Z(s')}}
+       \bigl(|Z(s')|+|J|\bigr),                            \tag{3}
+\]
+where an infeasible inner problem has value \(+\infty\).
+Every feasible zero set \(Z(s')\) is a matching.
+\end{lemma}
+
+\begin{proof}
+Let \(M=Z(s')\), and suppose
+\(J\subseteq E-M\) with \(\bd J=\bd M\).  Then
+\(h'=M\dotcupx J\) has even degree at every vertex.  The flow
+\((h',s')\) is nowhere zero: the low value vanishes exactly on \(M\),
+where the first coordinate is one.
+
+Conversely, from any nowhere-zero \((h',s')\), its exact low zero set
+\(M\) is contained in \(h'\).  Put \(J=h'-M\).  The sets are disjoint
+and, since \(h'\) is binary, \(\bd J=\bd M\).  These constructions are
+inverse and preserve the objective \(|h'|=|M|+|J|\), proving (3).
+
+At a cubic vertex the zero-degree of a \(K\)-flow is \(0,1\), or \(3\):
+two zero incident values force the third to be zero.  Degree \(3\) is
+incompatible with a disjoint \(J\) having the same boundary.  Hence a
+feasible \(M\) is a matching.
+\end{proof}
+
+For fixed \(M\), the inner problem is the ordinary shortest
+\(\bd M\)-join problem in \(G-M\), with its standard odd-cut dual.  The
+same dictionary isolates cleanliness.
+
+\begin{lemma}[the missing second join]\label{lem:cleanjoin}
+For a feasible triple \((s',M,J_1)\) in Lemma~\ref{lem:master}, put
+\(h=M\dotcupx J_1\).  The extension \((h,s')\) is clean if and only if
+there is a second \(\bd M\)-join
+\[
+                          J_2\subseteq G-h.                \tag{4}
+\]
+\end{lemma}
+
+\begin{proof}
+A \(\bd M\)-join exists in a graph precisely when each component
+contains an even number of vertices of \(\bd M\).  For a component
+\(W\) of \(G-h\),
+\[
+ |W\cap\bd M|\equiv|M\cap\delta(W)|=n_0(W)\pmod2.
+\]
+The four cut-colour parities are equal by conservation, so their common
+vanishing is exactly the component condition for the join in (4).
+\end{proof}
+
+Thus (S) asserts that some optimum branch of the disjunctive
+optimization (3) admits the extra packing (4).  The graph below shows
+that this need not happen.
+
+\section{An uncleanable base projection}
+
+Let \(B\) be the \(18\)-vertex cubic graph whose first fourteen edges
+are two disjoint \(7\)-circuits:
+\[
+ (i,i+1\bmod7)\ (0\le i<7),\qquad
+ (7+i,7+(i+1\bmod7))\ (0\le i<7).
+\]
+The remaining thirteen edges, in order, are
+\[
+\begin{gathered}
+(0,11),(1,9),(2,12),(3,10),\\
+(14,4),(14,5),(14,15),(15,6),(15,16),\\
+(16,13),(16,17),(17,7),(17,8).
+\end{gathered}                                             \tag{5}
+\]
+Let \(T=\{0,\ldots,13\}\), the union of the two \(7\)-circuits.
+The low word
+\[
+             \texttt{3231320|1320320|3112213212312}       \tag{6}
+\]
+extends \(T\) to a nowhere-zero \(\F_2^3\)-flow.
+
+\begin{proposition}[base obstruction]\label{prop:base}
+The projection \(T\) has \(15{,}360\) ordered low-coordinate extensions
+and none is clean.
+\end{proposition}
+
+\begin{proof}[Exact finite proof]
+The cycle-space dimension of \(B\) is
+\(27-18+1=10\).  Enumerate its \(1{,}024\) binary cycles \(p,q\).
+The pair extends \(T\) precisely when
+\[
+                         E(B)-T\subseteq p\cup q.          \tag{7}
+\]
+There are \(15{,}360\) ordered pairs satisfying (7).  The five
+components of \(B-T\), restricted to vertices \(0,\ldots,13\), have
+label word
+\[
+                         \texttt{01234444413024}.          \tag{8}
+\]
+For every retained pair and every component, the checker xors the four
+cut-colour incidence rows.  No pair makes all rows zero.  This is a
+complete enumeration of all extensions by (7), not a sample or a
+solver heuristic.
+\end{proof}
+
+The projection \(T\) is not globally minimum on \(B\).  We next make it
+uniquely minimum without changing the contraction obstruction.
+
+\section{A strict two-pole lock}
+
+Let \(S\) be the simple bridgeless cubic graph with graph6 encoding
+\[
+             \texttt{Q???C@?K?WEOM?\_aGo?I\_\_W@G\_?}.    \tag{9}
+\]
+Its ordered edges are
+\[
+\begin{split}
+&(0,7),(1,8),(2,9),(3,9),(4,10),(5,10),(2,11),(3,11),(6,11),\\
+&(2,12),(3,12),(4,12),(0,13),(6,13),(10,13),(1,14),(5,14),\\
+&(6,14),(5,15),(7,15),(9,15),(0,16),(7,16),(8,16),\\
+&(1,17),(4,17),(8,17).
+\end{split}                                                \tag{10}
+\]
+Distinguish edge \(e_*=e_5=(5,10)\).  For \(b\in\{0,1\}\), let
+\(a_b\) be the minimum first-coordinate support size of a nowhere-zero
+\(\F_2^3\)-flow on \(S\), conditional on the first bit of \(e_*\)
+being \(b\).
+
+\begin{lemma}[strict lock]\label{lem:lock}
+\[
+                            a_0=7,\qquad a_1=5.            \tag{11}
+\]
+The \(a_1\)-minimum support is unique and equals
+\[
+                           \{5,13,14,16,17\},              \tag{12}
+\]
+the \(5\)-circuit \(5-10-13-6-14-5\).
+\end{lemma}
+
+\begin{proof}[Exact finite proof]
+The cycle space of \(S\) again has dimension ten.  A binary cycle \(h\)
+is extendable precisely when two cycles \(p,q\) satisfy
+\(h\cup p\cup q=E(S)\).  Enumerating the \(1{,}024\) choices of \(h\)
+and the \(70{,}780\) distinct exact zero sets generated by ordered
+\((p,q)\) gives (11).  There are nine \(a_0\)-minimum supports, with
+\(6{,}336\) ordered extensions.  In the \(b=1\) branch, (12) is the
+only minimum support and has \(240\) ordered extensions.  A second
+checker constructs the cycle space by incidence-matrix elimination,
+rather than fundamental circuits, and obtains the same counts.
+\end{proof}
+
+Delete \(e_*\), expose its endpoints, and attach one new terminal link
+at each endpoint when the pole replaces an edge.  If the common
+terminal first bit is \(0\), the least projected cost is
+\[
+                              w_0=a_0=7.
+\]
+If it is \(1\), deletion removes the marked projected edge and the two
+links add two, so
+\[
+                              w_1=a_1-1+2=6.               \tag{13}
+\]
+This is the strict parity lock \(w_0>w_1\).
+
+For completeness, the frozen full flow
+\[
+\begin{split}
+(4,6,2,6,4,5,4,2,6,6,4,2,2,3,1,2,7,5,2,6,4,6,2,4,4,6,2)
+\end{split}                                                \tag{14}
+\]
+attains (12), with the first coordinate represented by the least
+significant bit.  Its marked value is \((1,2)\in\F_2\times K\).
+For any desired odd terminal value \((1,t)\), the invertible map
+\[
+                 \Phi_t(x,\ell)=(x,\ell+x(2+t))           \tag{15}
+\]
+preserves the first coordinate and sends \((1,2)\) to \((1,t)\).
+Thus the same unique projected pole support lifts every odd terminal
+value required by the base flow.
+
+\section{Eight locks and the 162-vertex theorem}
+
+For \(L\subseteq T\), replace the base edges in \(L\) by disjoint fresh
+copies of the pole \(S-e_*\); leave every other base edge unchanged.
+The target terminal support \(T\) has cost
+\[
+                              14+5|L|.                    \tag{16}
+\]
+For another extendable terminal projection \(H\), put
+\(O=T-H\) and \(A=H-T\).  The cost difference is
+\[
+ \Delta_L(H)
+   =|O\cap L|-|O-L|+|A|
+   =2|O\cap L|-|O|+|A|.                                  \tag{17}
+\]
+Indeed, omitting a locked target edge costs one, omitting an unlocked
+target edge saves one, and adding a non-target base edge costs one.
+
+\begin{proposition}[lock-placement audit]\label{prop:placements}
+Among all \(2^{14}=16{,}384\) subsets \(L\), precisely \(2{,}280\)
+make \(\Delta_L(H)>0\) for every extendable \(H\ne T\).
+No such set has size at most seven.  Exactly \(180\) have size eight.
+For
+\[
+                         L=\{0,2,3,4,7,8,9,10\},          \tag{18}
+\]
+the minimum strict gap is one.
+\end{proposition}
+
+\begin{proof}[Exact finite proof]
+The base cycle-space enumeration gives \(1{,}008\) extendable terminal
+supports.  Formula (17) is evaluated for all \(16{,}384\) lock masks
+against the other \(1{,}007\) supports.  The asserted counts and gap
+follow.  An independent checker enumerates lock sets by combinations
+within each cardinality and reproduces the same \(180\) minimum masks.
+\end{proof}
+
+\begin{theorem}\label{thm:main}
+There is a simple connected bridgeless cubic graph \(G\) on \(162\)
+vertices and \(243\) edges whose unique globally minimum extendable
+projection has size \(54\) and has no clean extension.  The projection
+is the disjoint union of two \(27\)-circuits.
+\end{theorem}
+
+\begin{proof}
+Use the eight substitutions in (18).  Each pole contributes \(18\)
+fresh vertices and replaces one edge by \(28\), so
+\[
+ |V(G)|=18+8\cdot18=162,\qquad
+ |E(G)|=27+8\cdot27=243.                                 \tag{19}
+\]
+The construction is simple and cubic.  The base and closure are
+bridgeless; equivalently, the literal checker deletes every edge of
+\(G\) in turn and retains connectivity.
+
+Any nowhere-zero flow on \(G\) contracts through every pole.  Summing
+conservation over the pole interior shows that its two nonzero terminal
+values agree.  Restoring \(e_*\) gives a nowhere-zero flow on \(S\),
+and contracting all poles gives one on \(B\).  Lemma~\ref{lem:lock}
+and (17) therefore lower-bound every projection.
+
+The transformed flows (14)--(15) lift (6) and attain
+\[
+                             14+5\cdot8=54.
+\]
+Proposition~\ref{prop:placements} forces equality to have terminal
+support \(T\).  Equality in each pole then forces the unique local
+support (12).  Hence the literal \(54\)-edge projection is unique.
+Four locked edges lie on each original \(7\)-circuit, and every
+replacement changes one support edge into a \(6\)-edge path.  Each
+therefore expands to length \(7+4\cdot5=27\).
+
+It remains to prove uncleanability.  Deleting the \(54\)-edge support
+leaves the five old components in (8) and eight pole-interior
+components.  Suppose an extension upstairs were clean.  Contract its
+poles.  On every old component, a replaced support edge contributes
+exactly the colour on its endpoint link; this is the colour of the
+contracted edge.  Thus all old component cut-colour parities are
+unchanged by contraction.  A clean extension upstairs would therefore
+give a clean extension of \(T\) on \(B\), contradicting
+Proposition~\ref{prop:base}.
+\end{proof}
+
+\section{The graph still has a five-cycle double cover}
+
+For every edge \(e\) and index \(i\in\{0,\ldots,4\}\), introduce
+\(x_{e,i}\in\{0,1\}\).  The standard mandatory encoding is
+\[
+ \sum_{i=0}^4x_{e,i}=2\quad(e\in E),\qquad
+ \sum_{e\ni v}x_{e,i}=0\pmod2\quad(v\in V,\ 0\le i<5).    \tag{20}
+\]
+The \(i\)-th selected edge set is Eulerian, and the edge equations give
+exact double coverage.  Conversely every indexed five-cycle double
+cover gives such an assignment.  At a cubic vertex the three incident
+two-subset labels are the three pairs on some three-element subset of
+\(\{0,\ldots,4\}\).
+
+There is a short human construction for \(G\).  In the edge orders
+(5) and (10), the following rows are five-cover pair labels:
+\[
+\begin{array}{ll}
+B:&
+\texttt{34 23 24 14 13 12 13 03 04 02 01 04 03 02}\\
+ &\texttt{14 24 34 12 34 23 24 23 34 23 24 23 34},\\[1mm]
+S:&
+\texttt{24 23 12 13 13 01 14 34 13 24 14 12 04 34}\\
+ &\texttt{03 34 13 14 03 02 23 02 04 24 24 23 34}.
+\end{array}                                                \tag{21}
+\]
+Each pair records the two cover indices containing that edge.  Direct
+inspection at each cubic vertex checks that the three incident pairs
+form a triangle.
+
+For a replaced base edge with pair \(P\), permute the five indices on
+its copy of \(S\) so that the pair on \(e_*\) becomes \(P\).  Delete
+the base edge and \(e_*\), and label both new terminal links by \(P\).
+At every exposed endpoint, a removed incidence is replaced by the same
+pair, so all five parity equations remain even.  Applying this operation
+independently to the eight locks proves:
+
+\begin{proposition}\label{prop:positive}
+The graph \(G\) of Theorem~\ref{thm:main} has a five-cycle double cover.
+\end{proposition}
+
+The artifact package also contains a separately generated literal
+assignment for all \(243\) edges.  It is checked directly against (20)
+and against a \(1{,}215\)-variable, \(6{,}885\)-clause CNF expansion.
+The five class sizes in one independent certificate are
+\[
+                         (92,109,97,94,94),                \tag{22}
+\]
+whose sum is \(2|E(G)|=486\).  This is a positive SAT certificate, not
+an UNSAT claim.
+
+\section{Verification and trust boundary}
+
+The primary package freezes the labelled \(243\)-edge list, canonical
+graph6 and sparse6 encodings, two five-cover certificates, the checker
+source, replay output, and a SHA-256 ledger.  A second package rebuilds
+the graph in a different edge order.  Its cycle-space code uses
+incidence-matrix row reduction instead of fundamental circuits, its
+bridge test uses Tarjan low links instead of repeated edge deletion, and
+its lock enumeration is organized by combinations instead of integer
+masks.  The two constructed graphs canonicalize to the same graph6
+record.
+
+\begin{center}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Quantity & Independently reproduced value\\
+\midrule
+Closure cycles & \(1{,}024\)\\
+Closure exact low-zero sets & \(70{,}780\)\\
+\((a_0,a_1)\) & \((7,5)\)\\
+Base extendable supports & \(1{,}008\)\\
+Base extensions of \(T\) & \(15{,}360\)\\
+Clean base extensions & \(0\)\\
+Lock masks & \(16{,}384\)\\
+Minimum eight-lock masks & \(180\)\\
+Order and size of \(G\) & \(162,243\)\\
+\(\mu(G)\) and minimum-support ties & \(54,1\)\\
+Components of \(G-H\) & \(13\)\\
+FiveCDC XOR rows & \(810\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The human argument reduces the theorem to these finite counts and
+literal certificates.  It does not replace exact enumeration of the two
+ten-dimensional cycle spaces or of the \(2^{14}\) lock masks.  The
+checkers use only the Python standard library; canonicalization uses
+Brendan McKay's \texttt{labelg}.  Full reproduction commands and frozen
+digests accompany the source.
+
+\section{Relation to prior work and novelty caution}
+
+The ordinary Cycle Double Cover Conjecture is distinct from the
+five-member strengthening.  OpenAI announced a proof of the ordinary
+conjecture in July 2026~\cite{OpenAI2026CDC}; expositions by Oum and
+Geelen clarify that argument~\cite{Oum2026CDC,Geelen2026CDC}.  Oum
+records the five-member version separately.  The present graph has a
+five-member cover, so it conflicts with none of those results.
+
+Hu\v{s}ek and \v{S}\'amal give the immediate clean-flow criterion and
+state the five-member problem in that language~\cite{HusekSamal2026}.
+Hoffmann-Ostenhof gives an earlier prescribed-subgraph
+characterization~\cite{HoffmannOstenhof2013}.  Jin, Mazzuoccolo, and
+Steffen study other Fano-flow conjectures through cores, joins, and weak
+oddness, and notably illustrate that natural strengthening principles in
+this area can fail~\cite{JinMazzuoccoloSteffen2018}.  Their objectives
+are not the minimum extendable binary projection \(\mu(G)\) used here.
+
+The master lemma is an elementary reparameterization of nowhere-zero
+\(\F_2^3\)-flows by an exact zero set and a join; no priority is claimed
+for that identity.  The specific strict-lock construction and the
+\(162\)-vertex counterexample appear new to this project, but the
+literature screen was performed immediately after the Hu\v{s}ek--\v{S}\'amal
+preprint appeared.  It cannot establish priority or exclude unpublished
+parallel work.  Expert comparison and independent human peer review are
+required before any novelty claim.
+
+\section*{AI-use disclosure}
+
+OpenAI Codex agents, directed by Atharva Vaidya, developed the
+minimum-projection route, found and minimized the strict two-pole lock,
+implemented the enumerations, generated the certificates, and drafted
+this manuscript.  Separate Codex agents wrote independent checkers and
+performed hostile audits.  Atharva Vaidya directed the project and is
+responsible for deciding whether and how to disseminate the result.
+The work has not received independent human peer review.  All finite
+claims, source code, literal graph encodings, and positive cover
+certificates are supplied for human verification.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
