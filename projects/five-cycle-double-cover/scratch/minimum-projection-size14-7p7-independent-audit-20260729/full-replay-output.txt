@@ -1,0 +1,11 @@
+completed_shards=1/8
+completed_shards=2/8
+completed_shards=3/8
+completed_shards=4/8
+completed_shards=5/8
+completed_shards=6/8
+completed_shards=7/8
+completed_shards=8/8
+FINAL words=333 charge_valid=91481505 dirty=80104020 direct_failures=37463 dichotomy_failures=224
+failure_set_sha256=eec4d091247385ab4aef5c567e52377062d6a7eae8f68e988069c1a3920215ca
+PASS: independent word-orbit and valid-block exact-cover census reproduces the complete primary 7+7 table and all 224 failures

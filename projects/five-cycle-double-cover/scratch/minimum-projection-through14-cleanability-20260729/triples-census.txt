@@ -1,0 +1,4 @@
+4+4+6 progress=22/22 dirty=5408156 failures=0
+RESULT shape=4+4+6 canonical_words=22 charge_valid=6078286 dirty=5408156 direct_clean=5408156 delete_branch=0 dichotomy_failures=0
+4+5+5 progress=14/14 dirty=3401666 failures=0
+RESULT shape=4+5+5 canonical_words=14 charge_valid=3831414 dirty=3401666 direct_clean=3401596 delete_branch=70 dichotomy_failures=0

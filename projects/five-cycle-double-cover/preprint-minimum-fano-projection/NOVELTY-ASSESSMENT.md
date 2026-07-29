@@ -11,17 +11,21 @@ The manuscript proves:
 
 1. the simultaneous minimum-projection exchange theorem;
 2. exact cleanability of every cardinality-minimum extendable projection
-   of size at most thirteen;
+   of size at most fourteen in connected bridgeless loopless cubic graphs;
 3. the first failure, at support shape \(5+6\), of the stronger direct
-   componentwise-\(\mathrm{GL}(2,2)\) cleaning statement; and
+   componentwise-\(\mathrm{GL}(2,2)\) cleaning statement;
 4. a size-five replacement certificate excluding every such failure from
-   global minimality; and
+   global minimality;
 5. exhaustive size-twelve and size-thirteen clean-or-delete theorems,
-   each independently reproduced by two exact enumerators; and
+   each independently reproduced by two exact enumerators;
 6. a sharp size-fourteen counterstate to the unrestricted
    clean-or-delete boundary lemma, together with a simple bridgeless
    cubic realization whose displayed projection is uncleanable but whose
-   four global minima are all cleanable.
+   four global minima are all cleanable; and
+7. a complete size-fourteen primary census whose only 224 residuals all
+   have shape \(7+7\), an independent full \(7+7\) census, and a
+   pairing-robust Kempe path theorem that sends every residual to a
+   strict size-seven deletion.
 
 This is a partial theorem about the Hušek--Šámal flow criterion.  It does
 not resolve the Five-Cycle Double Cover Conjecture.
@@ -56,14 +60,20 @@ parallel work.
 
 ## Publication judgment
 
-The exchange theorem, through-thirteen boundary theorem, the
+The exchange theorem, through-fourteen boundary theorem, the
 triangle-expanded-Petersen direct-repair countermodel, and the sharp
 size-fourteen clean-or-delete countermodel form a coherent, reproducible
-research note.  The result is suitable for public circulation as an
-AI-assisted preprint **after** a graph theorist:
+research note.  The new size-fourteen ingredient is not merely a larger
+census: its two-colour path-switch argument quantifies over every possible
+terminal pairing in an unknown cubic realization and is checked by 724
+literal deletion rows.  A targeted web/arXiv screen found no theorem
+stated in the language of minimum extendable Fano projections, but this
+does not establish priority.  The result is suitable for public circulation
+as an AI-assisted preprint **after** a graph theorist:
 
 - checks the flow-to-cleanliness semantics line by line;
 - audits both finite classifiers in a clean environment;
+- checks the split-occurrence Kempe lemma and matching-hitting implication;
 - repeats the literature search using MathSciNet, zbMATH, and expert
   contacts;
 - confirms authorship and disclosure policy for the chosen venue; and
@@ -72,12 +82,14 @@ AI-assisted preprint **after** a graph theorist:
   Šámal.
 
 Until that review, the GitHub draft should remain explicitly provisional
-and should not be described as a FiveCDC resolution.
+and should not be described as a FiveCDC resolution.  The theorem is
+cubic; no arbitrary-degree reduction is supplied.
 
 ## AI-use disclosure
 
 OpenAI Codex agents under Atharva Vaidya's direction discovered the proof
-route and counterstates, wrote the exact classifiers and independent
-checkers, performed the preliminary literature screen, and drafted the
-manuscript and this assessment.  Agent agreement is not independent human
+route, counterstates, and size-fourteen Kempe escape; wrote the exact
+classifiers, exhaustive certificate builders, and independent checkers;
+performed the preliminary literature screen; and drafted the manuscript
+and this assessment.  Agent agreement is not independent human
 verification or peer review.

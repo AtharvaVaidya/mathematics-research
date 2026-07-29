@@ -1,0 +1,25 @@
+14 shard=1/12 progress=25 dirty=6362742 failures=0
+14 shard=1/12 progress=50 dirty=12135790 failures=0
+14 shard=1/12 progress=75 dirty=18483382 failures=0
+14 shard=1/12 progress=100 dirty=24352382 failures=0
+14 shard=1/12 progress=125 dirty=30055520 failures=0
+14 shard=1/12 progress=150 dirty=35950682 failures=0
+14 shard=1/12 progress=175 dirty=41812664 failures=0
+14 shard=1/12 progress=200 dirty=48099642 failures=0
+14 shard=1/12 progress=225 dirty=53859204 failures=0
+14 shard=1/12 progress=250 dirty=59654986 failures=0
+14 shard=1/12 progress=275 dirty=65415000 failures=0
+14 shard=1/12 progress=300 dirty=71173060 failures=0
+14 shard=1/12 progress=325 dirty=76950070 failures=0
+14 shard=1/12 progress=350 dirty=82718766 failures=0
+14 shard=1/12 progress=375 dirty=88655054 failures=0
+14 shard=1/12 progress=400 dirty=94624944 failures=0
+14 shard=1/12 progress=425 dirty=100699212 failures=0
+14 shard=1/12 progress=450 dirty=106828436 failures=0
+14 shard=1/12 progress=475 dirty=112465206 failures=0
+14 shard=1/12 progress=500 dirty=118232520 failures=0
+14 shard=1/12 progress=525 dirty=124034498 failures=0
+14 shard=1/12 progress=550 dirty=129731264 failures=0
+14 shard=1/12 progress=575 dirty=135529390 failures=0
+14 shard=1/12 progress=600 dirty=141361710 failures=0
+RESULT shape=14 canonical_words=7382 shard=1/12 selected_words=616 charge_valid=169529600 dirty=145154582 direct_clean=145154582 delete_branch=0 dichotomy_failures=0

@@ -5,9 +5,11 @@ minimum-support route to the standard five-cycle double cover conjecture.
 
 **Resolution status:** FiveCDC remains open. The paper proves a
 human-checkable exchange theorem and a complete minimum-projection theorem
-through support size thirteen, reports exact finite censuses, and states the
-remaining universal selection principle as an explicit conjecture. It
-claims neither a proof nor a counterexample.
+through support size fourteen for connected bridgeless loopless cubic
+graphs, reports exact finite censuses, and states the remaining universal
+selection principle as an explicit conjecture. It claims neither a proof
+nor a counterexample to FiveCDC and supplies no reduction from arbitrary
+higher-degree graphs to the cubic theorem.
 
 Build from this directory with:
 
@@ -42,7 +44,7 @@ the size-at-most-five theorem with:
 python3 scratch/minimum-projection-size5-theorem-20260729/verify.py
 ```
 
-Replay the cumulative cleanability theorem through size thirteen with:
+Replay the cumulative cleanability theorem through size fourteen with:
 
 ```sh
 python3 scratch/minimum-projection-through11-cleanability-20260729/verify_through10.py
@@ -55,6 +57,10 @@ python3 scratch/minimum-projection-size14-dichotomy-counterstate-20260729/verify
 python3 scratch/minimum-projection-size14-dichotomy-counterstate-20260729/analyze_realization.py
 python3 scratch/minimum-projection-size14-independent-audit-20260729/verify_abstract.py
 python3 scratch/minimum-projection-size14-independent-audit-20260729/verify_realization.py
+python3 scratch/minimum-projection-through14-cleanability-20260729/verify_summary.py
+python3 scratch/minimum-projection-size14-7p7-independent-audit-20260729/replay_full_census.py
+python3 scratch/minimum-projection-size14-7p7-independent-audit-20260729/independent_audit.py
+python3 scratch/minimum-projection-size14-kempe-escape-20260729/verify_all_certificates.py
 ```
 
 The dependency-free checker exhausts every support shape allowed by the
@@ -74,23 +80,39 @@ census.  At size thirteen, two independently written exact classifiers
 agree on all five support shapes and all 189,998,862 charge-valid states.
 Of the 159,369,966 dirty states, 159,362,292 clean directly and 7,674
 admit a strict circuit deletion; again there are zero residuals.
-The unrestricted boundary dichotomy first fails at size fourteen, on an
-explicit \(7+7\) state.  Its 18-vertex simple bridgeless cubic realization
+At size fourteen the primary exact classifier enumerates 9,481 word
+orbits and 2,616,134,989 charge-valid states.  Among 2,255,478,176 dirty
+states, 2,255,331,588 clean directly and 146,364 admit strict circuit
+deletion, leaving 224 residuals.  Every residual has shape \(7+7\).
+A separately written full \(7+7\) enumerator independently reproduces
+all 333 word orbits, 91,481,505 charge-valid states, and the identical
+224-row failure set.  A human-checkable two-colour path-switch lemma and
+724 literal matching-robust certificates give every residual a strict
+size-seven deletion escape in every cubic realization.  Hence every
+globally minimum extendable projection of size at most fourteen is
+cleanable.
+
+The unrestricted boundary dichotomy still first fails at size fourteen,
+on an explicit \(7+7\) state.  Its 18-vertex simple bridgeless cubic realization
 has 15,360 ordered extensions of the displayed projection and none is
 clean.  Exact cycle-space enumeration nevertheless finds minimum
 projection size five, four minimum supports, and all four cleanable.  This
-is a sharp counterexample to the boundary method, not to FiveCDC.
+is a sharp counterexample to the support-preserving boundary method, not
+to FiveCDC; the new theorem first changes the low flow along one or two
+Kempe paths and only then deletes a circuit.
 The size-fourteen package includes `HUMAN-PROOF.md`, which proves the
 failure by four affine-line constraints without relying on its 40-row
-finite certificate.
+finite certificate.  The Kempe package has its own human proof, exhaustive
+certificate builder, independently structured literal checker, frozen
+outputs, and hash ledger.
 
 The human-checkable reduction showing that, for fixed component maps,
 cleaning is an affine XOR system is written in full at
 `scratch/minimum-projection-fixed-map-affine-cleaning-20260729/README.md`.
 It also derives dual-cut feasible moves and records the exact
-size-fourteen counterstate.  A surviving proof must use global
-minimum-exchange information beyond the unrestricted map-choice
-implication, which is now refuted.
+size-fourteen counterstate.  The Kempe escape shows how internal
+two-colour paths supply additional information absent from the abstract
+map-choice implication.  Larger supports remain uncontrolled.
 
 Run the expanded exact replay with:
 

@@ -46,8 +46,10 @@ Five-Cycle Double Cover Conjecture}
 \textbf{Resolution status.}
 The five-cycle double cover conjecture remains unresolved.
 This note proves an exchange theorem, settles the minimum-support cases
-through size thirteen, and gives exact finite censuses.  It proves neither the
-conjecture nor its negation.
+through size fourteen for finite connected bridgeless loopless cubic
+multigraphs (parallel edges allowed), and gives exact finite censuses.  It
+proves neither the conjecture nor its negation, and supplies no reduction
+from arbitrary higher-degree graphs to the cubic theorem.
 }}
 \end{center}
 
@@ -96,15 +98,32 @@ written exact classifiers agree on all five support shapes and all
 \(189{,}998{,}862\) charge-valid states.  Of the \(159{,}369{,}966\)
 dirty states, \(159{,}362{,}292\) clean directly and \(7{,}674\) admit
 a strict circuit deletion; there are zero residuals.  Thus every minimum
-extendable projection of size at most thirteen is cleanable, and a
+extendable projection of size at most thirteen is cleanable.
+
+At size fourteen the primary exact classifier enumerates \(9{,}481\)
+word orbits and \(2{,}616{,}134{,}989\) charge-valid states.  Of the
+\(2{,}255{,}478{,}176\) dirty states, \(2{,}255{,}331{,}588\) clean
+directly and \(146{,}364\) admit a strict circuit deletion.  The 224
+residuals all have shape \(7+7\).  A separately written full
+\(7+7\) enumerator independently reproduces all 333 word orbits,
+\(91{,}481{,}505\) charge-valid states, and the identical residual set.
+We prove a two-colour path-switch lemma for the split-occurrence boundary
+model and give 724 literal deletion rows that meet every possible
+four- or six-terminal path pairing.  Every residual therefore has a strict
+size-seven deletion escape in every cubic realization.  Thus every
+minimum extendable projection of size at most fourteen is cleanable, and a
 counterexample to the proposed selection principle must have minimum size
-at least fourteen.  This boundary method is sharp: at size fourteen an
-explicit \(7+7\) state is neither directly cleanable nor circuit-deletable.
+at least fifteen.
+
+The support-preserving boundary method is nevertheless sharp: at size
+fourteen an explicit \(7+7\) state is neither directly cleanable nor
+circuit-deletable.
 It has a simple bridgeless cubic realization on 18 vertices whose displayed
 size-fourteen projection is uncleanable under every extension.  The graph's
 minimum projection size is nevertheless five and all four minima are
 cleanable, so this is a counterexample to the unrestricted boundary
-dichotomy, not to the minimum-projection principle or FiveCDC.
+dichotomy, not to the minimum-projection principle or FiveCDC.  The new
+theorem escapes only after a support-neutral Kempe recolouring.
 
 We perform an exact canonical census of all \(41{,}301\) connected simple
 cubic graphs of order \(18\).  Among the \(39{,}866\) bridgeless graphs,
@@ -158,8 +177,8 @@ The contribution of this note is narrower:
 \begin{enumerate}
   \item a minimum-support exchange theorem, with a complete proof;
   \item a human proof through size five and an exact boundary extension
-        through size thirteen, plus a sharp size-fourteen counterstate
-        to the unrestricted boundary method;
+        through size fourteen, plus a sharp size-fourteen counterstate
+        to the unrestricted support-preserving boundary method;
   \item four simultaneous shortest-join consequences;
   \item a reproducible canonical order-\(18\) census and an expanded
         exact replay on frozen sources through order \(28\); and
@@ -875,7 +894,7 @@ cumulative checker and all 14 certificates are in the bundled
 through-eleven package.
 \end{remark}
 
-\subsection{Clean or delete at sizes twelve and thirteen}
+\subsection{Clean or delete and Kempe escape through size fourteen}
 
 Propositions~\ref{prop:directrepair} and
 \ref{prop:deletecircuit} give a useful dichotomy: it is enough to find
@@ -1054,6 +1073,111 @@ written package exhausts all \(6^5\) full map assignments and independently
 reconstructs the graph, cycle space, extension counts, and four minima.
 \end{remark}
 
+\begin{theorem}[minimum projections through size fourteen]
+\label{thm:sizefourteen}
+Under the hypotheses of Theorem~\ref{thm:sizeten}, every
+cardinality-minimum extendable projection of size at most fourteen is
+cleanable.
+\end{theorem}
+
+\begin{proof}
+Only total size fourteen remains.  Since every circuit component contains
+all four affine colours, the complete shape list is
+\[
+\begin{gathered}
+14,\quad4+10,\quad5+9,\quad6+8,\quad7+7,\\
+4+4+6,\quad4+5+5.                                      \tag{22}
+\end{gathered}
+\]
+The primary exact classifier applies the same component-map, relative-start,
+cleaning, and deletion tests as above.  Its mutually exclusive counts are
+\[
+\begin{array}{c|r|r|r|r|r}
+\text{shape}&\text{words}&\text{dirty}&\text{direct clean}&
+\text{delete}&\text{residual}\\
+\hline
+14&7382&1{,}748{,}842{,}896&1{,}748{,}842{,}896&0&0\\
+4+10&416&100{,}736{,}602&100{,}735{,}166&1436&0\\
+5+9&505&121{,}073{,}174&121{,}032{,}843&40{,}331&0\\
+6+8&809&195{,}911{,}662&195{,}844{,}374&67{,}288&0\\
+7+7&333&80{,}104{,}020&80{,}066{,}557&37{,}239&224\\
+4+4+6&22&5{,}408{,}156&5{,}408{,}156&0&0\\
+4+5+5&14&3{,}401{,}666&3{,}401{,}596&70&0
+\end{array}                                             \tag{23}
+\]
+The seven rows comprise \(9{,}481\) word orbits and
+\(2{,}616{,}134{,}989\) charge-valid states.  The
+\(2{,}255{,}478{,}176\) dirty states split into
+\(2{,}255{,}331{,}588\) direct repairs, \(146{,}364\) strict
+circuit deletions, and 224 residuals.  The deletion rows contradict
+global minimality by Proposition~\ref{prop:deletecircuit}.  Every residual
+has shape \(7+7\), with 46 states of component-size profile
+\(6+2+2+2+2\) and 178 of profile \(4+4+2+2+2\).
+
+It remains to exclude those 224 states.  Fix two distinct nonzero low
+colours \(x,y\), put \(\Delta=x+y\), and consider one component \(W\)
+of \(G-h\).  Retain the edges of \(W\) whose low value is \(x\) or \(y\).
+There is a linear functional \(\ell:K\to\F_2\) satisfying
+\[
+                 \ell(x)=\ell(y)=1,\qquad\ell(\Delta)=0. \tag{24}
+\]
+Applying \(\ell\) to the low-flow equation shows that every vertex of
+\(W\) away from \(h\) has even retained degree.  At the split boundary
+occurrence \(i\), the unique complement edge has low value \(d_i\).
+Consequently the odd boundary vertices are exactly the occurrences with
+\(d_i\in\{x,y\}\), and the retained subgraph pairs them by paths.
+
+Interchange \(x\) and \(y\) on one such path.  Each internal flow equation
+is unchanged, every complement value remains nonzero, and both endpoint
+derivatives change by \(\Delta\).  Since both endpoints belong to the same
+complement component, its boundary charge is unchanged.
+If the endpoints lie on the same support circuit, its two changes cancel.
+If they lie on different support circuits, the certificate names another
+component whose selected two-colour subgraph has exactly two odd boundary
+occurrences, one on each circuit.  Its forced path supplies a second switch
+by \(\Delta\), restoring both circuit closure equations.
+
+The pairing of terminals depends on the unknown realization inside \(W\).
+For each residual the finite certificate therefore stores a set \(S\) of
+successful endpoint pairs such that
+\[
+                    M\cap S\ne\varnothing
+       \quad\text{for every perfect matching \(M\) of the terminals}. \tag{25}
+\]
+There are three possible perfect matchings on four terminals and fifteen
+on six.  For every pair in \(S\), the certificate gives the primary and
+auxiliary endpoints, all component maps, both integrated circuit words,
+and a colour omitted from one circuit.  Translating by that omitted colour
+and deleting the circuit produces an extendable projection of size seven.
+
+The exhaustive builder verifies all normalized map choices and produces
+724 literal deletion rows.  A separately structured checker verifies
+(25), every path-switch boundary update, every component map and circuit
+integration, and every omitted-colour deletion.  Hence every possible
+internal path pairing yields a strict deletion.  No residual is globally
+minimum, which proves the theorem.
+\end{proof}
+
+\begin{remark}[scope and independent replication]
+The path argument uses the split-occurrence boundary model, automatic in a
+cubic graph: every circuit occurrence is a distinct vertex with one
+incident complement edge carrying \(d_i\).  If several occurrences are
+identified at one higher-degree vertex, only their xor is visible to the
+complement two-colour subgraph.  No arbitrary-degree reduction is proved
+here.
+
+A separately written \(7+7\) census regenerates all 333 word orbits,
+\(91{,}481{,}505\) charge-valid states, \(80{,}104{,}020\) dirty
+states, and the same 224 residual rows using a valid-block exact-cover
+implementation.  Its sorted failure-set digest agrees with the primary
+census.  This is independent agent replication, not independent human
+peer review.  Only the \(7+7\) branch has an independently implemented full
+state census.  For the other six shapes---\(14\), \(4+10\), \(5+9\),
+\(6+8\), \(4+4+6\), and \(4+5+5\)---the word-orbit counts, charge-valid
+partition counts, and all direct-clean/delete decisions currently rest on
+the primary classifier.
+\end{remark}
+
 \begin{corollary}[rainbow shortcut]\label{cor:shortcut}
 Every binary cycle \(C\) satisfying \(|C\cap h|>|C-h|\) meets all four
 sets \(M_c\).
@@ -1081,10 +1205,12 @@ Proposition~\ref{prop:sizefourteenfailure} shows that componentwise maps,
 circuit translations, and whole-circuit deletion do not by themselves
 prove this conjecture.  A valid boundary can defeat every such move even
 when its projection is uncleanable under all extensions.  What excludes
-the example is global minimality: a different size-five projection exists.
-The remaining argument must therefore use the full four-colour exchange
-inequalities, not only their consequence that every support circuit is
-four-coloured.
+the example at size fourteen is additional realization structure: the
+two-colour subgraphs inside complement components supply Kempe paths, and
+Theorem~\ref{thm:sizefourteen} uses them to reach a strict deletion.
+For larger supports no universal choice of such paths and subsequent maps
+is known.  A remaining argument may require a general Kempe descent, the
+full four-colour exchange inequalities, or both.
 
 Suppose a minimum projection \(h\) is not cleanable.  Every extension then
 has a rainbow-odd component \(W\) of \(G-h\), so all four \(M_c\)'s cross
@@ -1112,12 +1238,12 @@ component of an \emph{uncleanable globally minimum-support projection},
 derive a negative colour-avoiding cycle after allowable neutral
 recolouring, using the four simultaneous shortest-\(T_c\)-join
 inequalities of Corollary~\ref{cor:tjoin}.  No proof of this statement is
-given here.  By Theorem~\ref{thm:sizethirteen}, any counterexample to this
-selection principle has minimum support at least fourteen.
+given here.  By Theorem~\ref{thm:sizefourteen}, any counterexample to this
+selection principle has minimum support at least fifteen.
 
 \section{Exact finite census}\label{sec:census}
 
-\subsection{Canonical order-\(18\) method}
+\subsection{Canonical order-18 method}
 
 The accompanying checker uses canonical generation rather than sampling.
 For order \(18\), the command
@@ -1247,7 +1373,7 @@ identification with complete graph classes uses the documented upstream
 canonical-generation and filtering packages; this replay does not
 independently regenerate those populations.
 
-\subsection{Retained strong snarks of orders \(34\) and \(40\)}
+\subsection{Retained strong snarks of orders 34 and 40}
 
 A separate exact scan covers the literal retained strong-snark files at
 orders \(34\) and \(40\):
@@ -1325,20 +1451,22 @@ The exchange theorem converts global support minimality into four ordinary
 geodesic conditions: one shortest join for each affine value class.
 Theorems~\ref{thm:sizefive}, \ref{thm:sizeseven}, \ref{thm:sizeten},
 \ref{thm:sizeeleven}, \ref{thm:sizetwelve}, and
-\ref{thm:sizethirteen} close every possible
-nonzero support size through thirteen:
+\ref{thm:sizethirteen}, together with
+Theorem~\ref{thm:sizefourteen}, close every possible
+nonzero support size through fourteen:
 a counterexample to Conjecture~\ref{conj:minimum} must have minimum
-projection size at least fourteen.
+projection size at least fifteen.
 The useful feature is simultaneity.  A cycle that would shorten the
 projection is allowed to be blocked by one colour, but
 Corollary~\ref{cor:shortcut} forces it to be blocked by all four.
 Likewise, disconnected projections are severely constrained because every
 circuit component must contain every colour.
 The size-fourteen state (19) shows that this numerical frontier is sharp
-for the clean-or-delete boundary method.  Its realization also shows why
-the exchange theorem cannot be discarded: boundary conservation and
-four-colour use alone admit an uncleanable projection, while a smaller
-cleanable projection elsewhere in the same graph saves the conjecture.
+for the support-preserving clean-or-delete boundary method.
+Theorem~\ref{thm:sizefourteen} also shows exactly what that abstract state
+forgets: two-colour subgraphs inside a cubic complement pair the boundary
+occurrences by paths, and a matching-robust Kempe switch reaches a strict
+deletion.  Larger boundary states need not admit the same finite strategy.
 
 The four-colour simultaneity cannot be replaced by a theorem about one
 matching.  In the Petersen graph with edge set
@@ -1377,9 +1505,14 @@ smaller-support certificate.  The through-twelve package freezes all 392
 new circuit-deletion certificates and includes a separately implemented
 full census.  The matching through-thirteen packages independently
 reproduce all five new shapes and freeze all 7,674 deletion certificates.
-The size-fourteen package independently checks the first failure of the
-unrestricted dichotomy, its 40-case map certificate, and its exhaustive
-18-vertex realization analysis.
+The size-fourteen primary package freezes all seven shape counts and the
+224 residual rows.  A separately written full \(7+7\) enumerator
+regenerates all 333 word orbits and \(91{,}481{,}505\) charge-valid
+states, while the Kempe package freezes 724 matching-robust deletion rows
+and checks them with an independently structured literal verifier.
+Separate packages also check the first failure of the unrestricted
+dichotomy, its 40-case map certificate, and its exhaustive 18-vertex
+realization analysis.
 The order-\(18\) result is
 reproducible from canonical generation and exhaustive cycle-space
 enumeration.  The expanded census exactly replays frozen sources but

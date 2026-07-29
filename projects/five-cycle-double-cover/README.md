@@ -14,7 +14,8 @@ finite searches are not evidence of the universal statement.
 The newest publication-candidate update is
 `preprint-minimum-fano-projection/`.  It proves a simultaneous
 minimum-support exchange theorem and an exact boundary-cleaning
-theorem for every support shape through size thirteen.  The checker exhausts
+theorem for every support shape through size fourteen in connected
+bridgeless loopless cubic graphs.  The checker exhausts
 proper affine circuit words, complement-component partitions, independent
 componentwise \(\mathrm{GL}(2,2)\) maps, and repaired circuit values.  It
 directly cleans all 125,178 valid dirty canonical states through size ten.
@@ -23,17 +24,28 @@ a size-five extendable replacement for each, excluding all of them by
 global minimality.  At size twelve, two independent enumerators classify
 all 13,788,824 dirty
 states: 13,788,432 clean directly and 392 admit a strict circuit deletion,
-so none survives global minimality.  Thus any counterexample to the
-proposed minimum-projection selection principle has minimum size at least
-fourteen.  At size thirteen, two independent exact classifiers agree on
+so none survives global minimality.  At size thirteen, two independent exact classifiers agree on
 all 189,998,862 charge-valid states: 159,369,966 are dirty, 159,362,292
 clean directly, and the remaining 7,674 admit a strict circuit deletion,
-with zero residuals.  At size fourteen the unrestricted boundary
-dichotomy fails sharply: an explicit \(7+7\) state has an 18-vertex
+with zero residuals.  At size fourteen the primary exact classifier
+enumerates 9,481 word orbits and 2,616,134,989 charge-valid states.
+Among 2,255,478,176 dirty states, 2,255,331,588 clean directly and
+146,364 admit strict circuit deletion, leaving 224 residuals, all of
+shape \(7+7\).  A second full \(7+7\) enumerator independently reproduces
+all 333 word orbits, 91,481,505 charge-valid states, and the same 224
+rows.  A graph-independent Kempe path argument in the split-occurrence
+model, backed by 724 literal matching-robust certificates, gives every
+residual a strict size-seven deletion escape.  Thus no residual can be
+globally minimum, and any counterexample to the proposed selection
+principle has minimum support at least fifteen.
+
+The unrestricted boundary dichotomy nevertheless fails sharply at size
+fourteen: an explicit \(7+7\) state has an 18-vertex
 simple bridgeless cubic realization whose size-fourteen projection has
 15,360 extensions and no clean one.  The same graph has four cleanable
 global minima of size five, so this refutes the proof method, not
-FiveCDC.  Its exact finite evidence also includes
+FiveCDC; the new theorem escapes only after a support-neutral Kempe
+recolouring.  Its exact finite evidence also includes
 147,539 minima on frozen sources through
 order 28, 433,730 minima on 7,661 retained order-34/order-40 strong-snark
 rows, and a certified 130-vertex case with minimum size 42 and 11,264
@@ -44,8 +56,12 @@ The fixed-map translation search is reduced by a displayed human proof to
 an affine XOR system in
 `scratch/minimum-projection-fixed-map-affine-cleaning-20260729/README.md`;
 the note derives dual-cut feasible moves and records the exact
-size-fourteen failure of the unrestricted map-choice statement.  Any
-surviving proof must use the full global minimum-exchange inequalities.
+size-fourteen failure of the unrestricted map-choice statement.  The
+size-fourteen Kempe theorem is in
+`scratch/minimum-projection-through14-cleanability-20260729/` and
+`scratch/minimum-projection-size14-kempe-escape-20260729/`.  Larger
+supports remain uncontrolled, and no arbitrary-degree reduction is
+claimed.
 
 The earlier `preprint-husek-samal-reconfiguration/` proves a human-checkable
 packing-to-switch lemma and gives an exact cyclically 4-edge-connected

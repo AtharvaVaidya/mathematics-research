@@ -23,7 +23,12 @@ are not independent human verification or peer review.
   this through size twelve; the matching
   `scratch/minimum-projection-through13-clean-or-delete-20260729/` and
   `scratch/minimum-projection-size13-independent-audit-20260729/` packages
-  extend it through size thirteen.  The exact affine boundary classifiers enumerate
+  extend it through size thirteen.  The new
+  `scratch/minimum-projection-through14-cleanability-20260729/`,
+  `scratch/minimum-projection-size14-7p7-independent-audit-20260729/`,
+  and `scratch/minimum-projection-size14-kempe-escape-20260729/` packages
+  extend the minimum-projection theorem through size fourteen in connected
+  bridgeless loopless cubic graphs.  The exact affine boundary classifiers enumerate
   every support shape forced by minimum exchange and directly clean all
   125,178 valid dirty canonical word/partition states using independent
   \(\operatorname{GL}(2,2)\) maps on complement components and repaired
@@ -39,8 +44,17 @@ are not independent human verification or peer review.
   two independent implementations agree on all five support shapes and
   all 189,998,862 charge-valid states.  Of 159,369,966 dirty states,
   159,362,292 clean directly and 7,674 admit a strict circuit deletion,
-  again with zero residuals.  Consequently any counterexample to the
-  minimum-projection selection principle has minimum size at least fourteen.
+  again with zero residuals.  At size fourteen the primary exact classifier
+  enumerates 9,481 word orbits and 2,616,134,989 charge-valid states.
+  Of 2,255,478,176 dirty states, 2,255,331,588 clean directly and
+  146,364 admit strict circuit deletion, leaving 224 residuals, all in
+  shape \(7+7\).  A separately written full \(7+7\) census reproduces
+  all 333 word orbits, 91,481,505 charge-valid states, and exactly the
+  same residual set.  A split-occurrence two-colour path lemma and 724
+  literal matching-robust deletion rows send every residual to a
+  size-seven extendable projection.  Consequently any counterexample to
+  the minimum-projection selection principle in this cubic setting has
+  minimum size at least fifteen.
 - `scratch/minimum-projection-fixed-map-affine-cleaning-20260729/README.md`
   gives a complete human-checkable derivation of the one-bit cut defect,
   the affine XOR cleaning system for fixed component maps, the
@@ -62,6 +76,16 @@ are not independent human verification or peer review.
   realization, \(K_{3,3}\) subdivision, 1,024-cycle space, 15,360 target
   extensions, and four cleanable minima without importing the primary
   checker or its output.
+- `scratch/minimum-projection-size14-kempe-escape-20260729/` proves the
+  split-occurrence path-switch lemma and freezes pairing-robust strategies
+  for all 224 residual \(7+7\) states.  Its exhaustive builder and a
+  separately structured literal checker verify 724 deletion rows that hit
+  every possible four- or six-terminal path pairing.
+- `scratch/minimum-projection-size14-7p7-independent-audit-20260729/`
+  independently regenerates the complete \(7+7\) census by a valid-block
+  exact-cover implementation and separately reconstructs the Kempe
+  strategies.  Its sorted 224-row failure digest agrees with the primary
+  census.
 - `scratch/minimum-projection-known-strong-snarks-20260729/` freezes an
   exact SAT scan of seven retained order-34 and 7,654 retained order-40
   graph6 rows.  Every row has minimum projection size ten, and all 433,730
@@ -101,10 +125,10 @@ are not independent human verification or peer review.
   This closes a tempting one-matching shortcut but does not realize the
   four synchronized affine classes.
 - `preprint-minimum-fano-projection/` is the corresponding working
-  preprint.  It contains the human exchange and size-through-thirteen proofs,
-  the sharp size-fourteen method counterstate, all exact census reports,
-  the Petersen limitation, checksums, and an explicit AI-use and
-  human-review disclosure.
+  preprint.  It contains the human exchange and size-through-fourteen
+  proofs, the sharp size-fourteen support-preserving method counterstate,
+  the Kempe escape, all exact census reports, the Petersen limitation,
+  checksums, and an explicit AI-use and human-review disclosure.
 - `search/minimum-projection-n130-20260729/` certifies that the retained
   130-vertex graph has minimum extendable projection size \(42\), exactly
   11,264 minimum supports, and no unclean minimum.  One LRAT proves the
@@ -114,7 +138,8 @@ are not independent human verification or peer review.
   \(\rho_3=5\), so the package explicitly separates minimum projection
   from minimum nonzero value class.
 
-These are proof-strategy results, not a proof or disproof of FiveCDC.
+These are proof-strategy results in the cubic setting, not a proof or
+disproof of FiveCDC.  No arbitrary-degree reduction is supplied.
 
 ## Rooted-resolution update (2026-07-28)
 
