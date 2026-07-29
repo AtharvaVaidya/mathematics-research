@@ -103,9 +103,14 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
   two deleted pair labels extend exactly when they are equal or disjoint.
   Complete solver-free whole-fibre censuses at orders ten and twelve check
   6,300 and 53,352 labelled instances with zero failures.  The order-14
-  certificate census adds 572,880 explicit witnesses, each reconstructed
-  by a separately written standard-library checker, so any countermodel to
-  the local-selection statement in this class has order at least 16.
+  and order-16 certificate censuses add 572,880 and 7,737,408 explicit
+  witnesses, each reconstructed by separately written standard-library
+  checkers.  The order-16 layer covers all 2,828 canonical simple
+  three-edge-connected graphs and 45,248 labelled roots.  Thus any
+  countermodel to the local-selection statement in this class has order at
+  least 18.  A complete 41,301-record regeneration additionally identifies
+  exactly three order-18 snarks and replays all 12,474 of their positive
+  instances.
 - `scratch/jaeger-sorted-profile-local-no-go-order36.md` and its
   independent checker refute one-step lexicographic descent of the complete
   sorted seven-defect profile.  The exact 63-neighbour split is
@@ -189,12 +194,19 @@ This update provides two sound positive reductions and finite encoder
 controls.  It contains no UNSAT target, no counterexample, and no claimed
 resolution.
 
-## Heawood full-boundary and local-barrier update (2026-07-28)
+## Minimum cube/Heawood full-boundary and local-barrier update (2026-07-28)
 
-- `preprint-fivecdc-four-pole-reductions/` is an eight-page standalone
+- `preprint-fivecdc-four-pole-reductions/` is a nine-page standalone
   working preprint with a prominent unresolved-status box, detailed AI-use
-  disclosure, complete Petersen and Heawood certificate tables,
+  disclosure, complete Petersen, cube, and Heawood certificate tables,
   deterministic rendered PDF, checksum ledger, and human-review gate.
+- `scratch/fivecdc-minimum-full-boundary-cube-four-pole-20260728.md`
+  proves that deleting adjacent cube vertices gives a six-vertex
+  full-boundary pole.  A ten-row human certificate and separately written
+  checker cover all 640 admissible words.  The degree identity
+  \(2m=3n-4\), together with the exact \(K_{2,2}\) obstruction, proves
+  that six is the minimum possible order in the connected simple
+  terminal-distinct cubic class.
 - `scratch/fivecdc-heawood-full-four-pole-theorem-20260728.md` proves that
   the four-pole obtained by deleting adjacent vertices of the Heawood graph
   extends every xor-zero ordered boundary word over the ten pair labels.
@@ -211,9 +223,10 @@ resolution.
   640 admissible xor-zero words, exactly 580 extensions, and one exact
   60-word missing \(S_5\)-orbit represented by `02 02 03 03`; the preprint
   also gives a direct human nonextension proof.
-- `LOCAL_FRONTIER_SHA256SUMS_20260728` now also freezes the Heawood theorem,
-  triangular-prism fixed-label no-go, and order-40 radius-three plateau
-  separator and profile-Laplacian no-go.
+- `LOCAL_FRONTIER_SHA256SUMS_20260728` now also freezes the cube and Heawood
+  theorems, triangular-prism fixed-label no-go, order-40 radius-three
+  plateau separator and profile-Laplacian no-go, and the nested order-16
+  and order-18-snark certificate manifests.
 
 These are exact human-checkable or independently replayable advances.  They
 do not prove or disprove FiveCDC, and no target UNSAT certificate exists in

@@ -1367,3 +1367,19 @@ Thus it is neither a function of the current ordered profile nor
 universally one-signed.  Summing over a plateau gives only the ordinary
 boundary-divergence identity and does not determine the exterior sign.
 See `scratch/jaeger-plateau-profile-laplacian-no-go.md`.
+
+## O59 — Generate counterexamples by arbitrary-port cube insertion
+
+Status: **FAILED COUNTEREXAMPLE FAMILY / MINIMUM FULL-BOUNDARY POSITIVE
+THEOREM**.
+
+The four-pole obtained by deleting adjacent vertices from the cube extends
+all 640 xor-zero ordered \(D_5\) boundary words.  Its ten-row orbit
+certificate is independently checked, and the generic insertion proof
+shows that every port bijection preserves FiveCDC and bridgelessness.
+Moreover this six-vertex core is minimum-order among connected simple
+terminal-distinct cubic full-boundary four-poles: the unique order-four
+core is \(C_4\), whose exact relation misses the 60-word orbit represented
+by `02 02 03 03`.  Thus cube insertion cannot create a counterexample from
+a positive base.  The theorem does not show that the cube pole is
+unavoidable in a minimal counterexample.

@@ -13,13 +13,15 @@
 //
 // Usage:
 //   search_symmetric_local_traps [steps-per-root] [seed] [root]
-//       [level|kernel] < graph6-stream
+//       [level|kernel|local] < graph6-stream
 //
 // Omit root (or pass -1) to inspect every root.  A fixed root is useful for
 // broad randomized scans of large canonical snark collections.  The default
 // `level` replay follows every same-d_min exchange.  The stronger `kernel`
 // replay follows only exchanges preserving all three odd kernels and asks
 // whether that neutral realization component exposes a descending exchange.
+// The `local` mode only scans complete incident neighbourhoods for singleton
+// strict traps.
 
 #define JAEGER_FIXED_FIBRE_NO_MAIN
 #include "search_jaeger_fixed_fibre_sat.cpp"
@@ -373,8 +375,9 @@ int main(int argc, char** argv) {
       argc >= 3 ? std::strtoull(argv[2], nullptr, 10) : 1;
   const int requested_root = argc >= 4 ? std::atoi(argv[3]) : -1;
   const std::string replay_mode = argc >= 5 ? argv[4] : "level";
-  if (replay_mode != "level" && replay_mode != "kernel") {
-    throw std::runtime_error("replay mode must be level or kernel");
+  if (replay_mode != "level" && replay_mode != "kernel" &&
+      replay_mode != "local") {
+    throw std::runtime_error("replay mode must be level, kernel, or local");
   }
   std::mt19937_64 random(seed);
   std::string graph6;
@@ -394,10 +397,30 @@ int main(int argc, char** argv) {
       throw std::runtime_error("requested root is outside the graph");
     }
     for (int root = first_root; root < last_root; ++root) {
-      RootModel model = feasible_root_model(graph, root);
+      RootModel model;
+      try {
+        model = feasible_root_model(graph, root);
+      } catch (const std::runtime_error& error) {
+        if (std::string(error.what()) == "vertex-star fibre is infeasible") {
+          continue;
+        }
+        throw;
+      }
       StarState state = model.initial;
       std::unordered_set<StarState, StarStateHash> seen;
       std::unordered_set<StarState, StarStateHash> escaped_plateau_states;
+      std::unordered_map<StarState, std::array<int, 7>, StarStateHash>
+          profile_cache;
+      auto cached_profile = [&](const StarState& query) {
+        const auto known = profile_cache.find(query);
+        if (known != profile_cache.end()) return known->second;
+        const auto profile = profile_of(graph, model, query);
+        profile_cache.emplace(query, profile);
+        return profile;
+      };
+      auto cached_score = [&](const StarState& query) {
+        return minimum_score(cached_profile(query));
+      };
       std::uint64_t positive_sampled = 0;
       std::uint64_t plateau_replays = 0;
       std::size_t largest_replayed_plateau = 0;
@@ -411,7 +434,7 @@ int main(int argc, char** argv) {
       for (int step = 0; step < steps; ++step) {
         if (seen.insert(state).second) {
           ++sampled_states;
-          const auto profile = profile_of(graph, model, state);
+          const auto profile = cached_profile(state);
           const int score = minimum_score(profile);
           positive_sampled += score > 0;
           const auto next = neighbours(graph, model, state);
@@ -421,8 +444,7 @@ int main(int argc, char** argv) {
           std::vector<int> next_scores;
           next_scores.reserve(next.size());
           for (const auto& neighbour : next) {
-            const int neighbour_score =
-                minimum_score(profile_of(graph, model, neighbour));
+            const int neighbour_score = cached_score(neighbour);
             next_scores.push_back(neighbour_score);
             lower += neighbour_score < score;
             equal += neighbour_score == score;
@@ -452,6 +474,7 @@ int main(int argc, char** argv) {
             smallest_neutral_profile = profile;
           }
           if (score > 0 && lower == 0 && equal > 0 &&
+              replay_mode != "local" &&
               !escaped_plateau_states.contains(state)) {
             ++plateau_replays;
             constexpr std::size_t plateau_limit = 100000;
@@ -472,8 +495,7 @@ int main(int argc, char** argv) {
               queue.pop_front();
               for (const StarState& neighbour :
                    neighbours(graph, model, current)) {
-                const int neighbour_score =
-                    minimum_score(profile_of(graph, model, neighbour));
+                const int neighbour_score = cached_score(neighbour);
                 if (neighbour_score < score) {
                   escaped = true;
                   escape_distance = distance + 1;
@@ -540,8 +562,7 @@ int main(int argc, char** argv) {
           int best = -1;
           std::vector<int> best_indices;
           for (int index = 0; index < static_cast<int>(next.size()); ++index) {
-            const int candidate =
-                minimum_score(profile_of(graph, model, next[index]));
+            const int candidate = cached_score(next[index]);
             if (candidate > best) {
               best = candidate;
               best_indices.clear();

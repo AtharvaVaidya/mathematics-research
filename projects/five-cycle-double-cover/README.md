@@ -445,9 +445,11 @@ FiveCDC UNSAT certificate exists in this portfolio.
 
 For the square route, a fixed outside five-cover extends across the square
 exactly when the two deleted edge labels are equal or disjoint.  Complete
-whole-fibre censuses through order 14 check 633,204 labelled
-root/edge-pair instances with zero failures; the 572,880 order-14 witnesses
-are all replayed by a separately written checker.  For the exchange
+whole-fibre censuses through order 16 check 8,370,612 labelled
+root/edge-pair instances with zero failures.  The 572,880 order-14 and
+7,737,408 order-16 witnesses are replayed by separately written
+standard-library checkers.  All three order-18 snarks add 12,474 checked
+instances with zero failures.  For the exchange
 route, a 36-vertex state proves that even the sorted seven-defect profile
 need not decrease in one legal exchange: its 63 legal neighbours split as
 0 lower, 13 equal, and 50 higher.  A checked two-exchange same-level escape
@@ -463,18 +465,26 @@ disjoint, even when a good tree-local lift exists.  Thus the whole-fibre
 square implication and the full unbounded plateau-component theorem both
 remain open.
 
-A genuinely different non-covering reduction is now proved for the Heawood
-graph.  Delete two adjacent Heawood vertices to obtain a 12-vertex,
-four-port, girth-six pole.  Every one of the 640 xor-zero ordered boundary
-words over the ten pair labels extends through this pole.  Ten displayed
-\(S_5\)-orbit rows prove the boundary theorem, and an independent
-standard-library checker verifies every internal parity and all 640 words.
-Consequently the pole may replace two independent edges of any
-FiveCDC-positive cubic graph using any of the \(4!\) port bijections while
-preserving standard FiveCDC and bridgelessness.  This is another sound
-minimal-counterexample pruning rule, not a universal reduction.  See
+A genuinely different non-covering reduction is now proved in two forms.
+Deleting adjacent vertices from the cube gives a six-vertex, seven-edge
+four-pole through which every one of the 640 xor-zero ordered boundary
+words extends.  Ten displayed \(S_5\)-orbit rows prove the claim.  This
+pole has minimum possible order among connected simple terminal-distinct
+cubic full-boundary four-poles: the only order-four core is \(C_4\), the
+\(K_{3,3}\)-minus-adjacent-vertices pole, and its exact boundary relation
+misses the 60-word orbit represented by `02 02 03 03`.  See
+`scratch/fivecdc-minimum-full-boundary-cube-four-pole-20260728.md`.
+
+Deleting two adjacent Heawood vertices similarly gives a 12-vertex,
+four-port full-boundary pole whose proper core has girth six.  Independent
+standard-library checkers verify both ten-row tables, every internal
+parity, and exact coverage of all 640 words.  Consequently either pole may
+replace two independent edges of any FiveCDC-positive cubic graph using
+any of the \(4!\) port bijections while preserving standard FiveCDC and
+bridgelessness.  These are sound minimal-counterexample pruning rules, not
+a universal reduction: neither pole is proved unavoidable.  See
 `scratch/fivecdc-heawood-full-four-pole-theorem-20260728.md`.
-The Petersen and Heawood reductions, together with the sharp
-\(K_{3,3}\)-minus-adjacent-vertices boundary obstruction, are assembled in
-the explicitly AI-disclosed working preprint
+The Petersen, cube, and Heawood reductions, together with the sharp
+\(K_{3,3}\) boundary obstruction, are assembled in the explicitly
+AI-disclosed working preprint
 `preprint-fivecdc-four-pole-reductions/`.

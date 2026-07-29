@@ -1502,9 +1502,11 @@ Open obligations:
     some (pair-dependent) good state with a good local lift.  A fixed
     outside five-cover extends exactly when the deleted labels are equal or
     disjoint.  Complete censuses have zero failures through downstairs
-    order 14, including an independently replayed 572,880-witness final
-    layer, so any simple 3-edge-connected cubic countermodel to the stronger
-    local-selection statement has order at least 16.  The fixed-label
+    order 16, including independently replayed 572,880- and
+    7,737,408-witness layers at orders 14 and 16.  All three order-18
+    snarks also pass all 12,474 labelled instances.  Thus any simple
+    3-edge-connected cubic countermodel to the stronger local-selection
+    statement has order at least 18.  The fixed-label
     shortcut is false: on a three-edge cut all three pair labels intersect
     pairwise once, and the triangular prism has the tree-local antecedent
     and conclusion while no FiveCDC makes the selected pair equal or
@@ -1531,11 +1533,13 @@ Open obligations:
     generate a smallest counterexample from a positive base.
     Status: **OPEN beyond the proved operations**.
 
-95. **Exploit full-boundary four-poles globally:** the
-    Heawood-minus-adjacent-vertices pole realizes all 640 xor-zero
-    \(D_5\) boundary words and therefore gives an arbitrary-port
-    FiveCDC/bridgelessness-preserving insertion.  Prove that every minimal
-    counterexample contains a reducible full-boundary pole, or find a finite
-    unavoidable family of such poles.  The single Heawood configuration is
-    not known to be unavoidable.
+95. **Exploit full-boundary four-poles globally:** both the
+    cube-minus-adjacent-vertices and Heawood-minus-adjacent-vertices poles
+    realize all 640 xor-zero \(D_5\) boundary words and therefore give
+    arbitrary-port FiveCDC/bridgelessness-preserving insertions.  The cube
+    pole is minimum-order in the connected simple terminal-distinct cubic
+    class; the Heawood pole has a girth-six core.  Prove that every minimal
+    counterexample contains a reducible full-boundary pole, or find a
+    finite unavoidable family of such poles.  Neither known configuration
+    is proved unavoidable.
     Status: **OPEN / exact local theorem available**.

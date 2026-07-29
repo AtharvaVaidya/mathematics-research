@@ -1292,10 +1292,12 @@ labelled cases.  These theorems make the tested lift and Petersen-product
 layers logically redundant as counterexample searches from positive bases.
 
 The Jaeger branch now has two sharper exact boundaries.  Whole-fibre square
-lifting has no countermodel through downstairs order 14, and a fixed
+lifting has no countermodel through downstairs order 16, and a fixed
 five-cover extends across the square exactly for equal or disjoint deleted
-edge labels.  The order-14 layer contains 572,880 explicit witnesses,
-independently reconstructed by a separate checker.  Conversely,
+edge labels.  The order-14 and order-16 layers contain 572,880 and
+7,737,408 explicit witnesses, independently reconstructed by separate
+checkers.  All three order-18 snarks add 12,474 verified instances.
+Conversely,
 sorted-profile one-step descent fails on an explicit 36-vertex state, but a
 two-step same-level escape exists.  The triangular-prism three-cut lemma
 also refutes the proposed fixed-label selection bridge while preserving a
@@ -1325,3 +1327,26 @@ every globally necessary four-port boundary word, not only the
 use remains conditional on finding the pole in a candidate or constructing
 the candidate by the insertion.  It is therefore a sound pruning theorem,
 not a resolution.
+
+## 13. Minimum full-boundary reducible configuration
+
+Deleting adjacent vertices from the cube produces a six-vertex,
+seven-edge, simple connected bridgeless four-pole.  A ten-row orbit table
+extends every one of the 640 xor-zero \(D_5\) boundary words, and an
+independent standard-library checker verifies the literal graph, all
+vertex equations, the ten orbit sizes, and exact boundary coverage.
+
+This order is best possible in the connected simple terminal-distinct
+cubic class.  The degree identity \(2m=3n-4\) forces even \(n\ge4\).
+At \(n=4\), the core must be \(C_4\), equivalently the pole obtained from
+\(K_{3,3}\) by deleting adjacent vertices.  Its relation contains 580 of
+the 640 admissible words and misses exactly the orbit of
+\((02,02,03,03)\); the nonextension has both a direct human proof and an
+independent exhaustive replay.  Thus the cube certificate proves the
+sharp minimum \(n=6\).
+
+Arbitrary-port cube insertion preserves standard FiveCDC and
+bridgelessness under the generic gluing lemmas.  As with the Heawood pole,
+no argument yet makes this configuration unavoidable in a minimal
+counterexample.  The result is therefore a complete local theorem, not a
+resolution of FiveCDC.

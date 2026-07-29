@@ -41,8 +41,10 @@ check at least the following.
     state's successful lift. Audit the order-six statewise controls and the
     complete 672-instance order-eight whole-fibre census. Check the
     equal-or-disjoint fixed-cover extension lemma by hand, then replay the
-    order-10 and order-12 whole-fibre censuses (6,300 and 53,352 instances)
-    and the independently checked 572,880-row order-14 witness corpus.
+    order-10 and order-12 whole-fibre censuses (6,300 and 53,352 instances),
+    the independently checked 572,880-row order-14 witness corpus, all
+    16 shards of the 7,737,408-row order-16 corpus, and the 12,474-row
+    three-snark order-18 addendum.
     Verify the triangular-prism three-edge-cut obstruction by hand and
     preserve the distinction between fixed outside labels and fixed outside
     tree memberships.

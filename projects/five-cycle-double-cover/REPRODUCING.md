@@ -1041,6 +1041,44 @@ The order-14 checker must report 341 retained graphs, 4,774 roots, 572,880
 witnesses, 24,268 distinct downstairs states, and corpus digest
 `26dfe990a6655170f5fdcb6faf1424db279b57e8d094269417b7330fb5affd41`.
 
+The complete order-16 certificate corpus is checked shard by shard:
+
+```sh
+shasum -a 256 -c scratch/jaeger-star-square-order16-SHA256SUMS
+for corpus in scratch/output/square-order16-20260728/witnesses-*.tsv.gz
+do
+  range=${corpus##*witnesses-}
+  range=${range%.tsv.gz}
+  start=${range%-*}
+  end=${range#*-}
+  python3 scratch/verify_jaeger_star_square_existential_order16.py \
+    --start "$start" --end "$end" "$corpus"
+done
+```
+
+The 16 disjoint replays must total 4,060 canonical records, 2,828 retained
+simple three-edge-connected graphs, 45,248 labelled roots, 7,737,408
+witnesses, and 309,472 distinct downstairs states.  The manifest SHA-256
+is
+`29846948baac39e7645faba85972142d4fa32790f4a161822ecd8a0855646bc7`.
+
+The first non-three-edge-colourable layer beyond that complete census has
+a separate replay:
+
+```sh
+shasum -a 256 -c scratch/jaeger-star-square-snarks18-SHA256SUMS
+python3 scratch/verify_jaeger_star_square_snarks18.py \
+  scratch/output/square-snarks18-20260728/w-0.tsv.gz \
+  scratch/output/square-snarks18-20260728/w-1.tsv.gz \
+  scratch/output/square-snarks18-20260728/w-2.tsv.gz
+```
+
+It must regenerate all 41,301 canonical order-18 connected cubic records,
+identify exactly three snarks under the stated simple/3-edge-connected/
+girth-at-least-five/non-Tait convention, and verify all 12,474 witnesses.
+Its manifest SHA-256 is
+`12486317023771d929c27abfcafec1727af31be5c4592b1fc6076d602600ab54`.
+
 The direct portfolio contains no UNSAT result.  Its large redundant graph
 and model streams are intentionally excluded from the compact publication
 package; their hashes and exact run counts are frozen in
@@ -1056,3 +1094,19 @@ python3 scratch/verify_heawood_four_pole_full_boundary_20260728.py
 Expected output includes a 12-vertex simple connected bridgeless girth-six
 pole, ten certificate rows, 120 coordinate permutations, and all 640
 xor-zero boundary words extended.
+
+The minimum-order cube full-boundary theorem and its sharp order-four
+obstruction have independent compact replays:
+
+```sh
+python3 scratch/verify_cube_four_pole_full_boundary_20260728.py
+python3 scratch/verify_k33_four_pole_boundary_20260728.py
+```
+
+The cube replay must report a six-vertex, seven-edge simple connected
+bridgeless proper core, ten certificate rows, and exact coverage of all
+640 xor-zero boundary words.  The \(K_{3,3}\) replay must report 580
+extended words and the exact missing 60-word orbit represented by
+`02 02 03 03`.  Together with the degree identity
+\(2m=3n-4\), these checks certify that order six is sharp in the connected
+simple terminal-distinct cubic four-pole class.

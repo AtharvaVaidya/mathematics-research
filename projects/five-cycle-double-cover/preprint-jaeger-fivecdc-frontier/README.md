@@ -36,8 +36,9 @@ shows that one fixed good state need not have a good square-local lift in
 any coordinate; an alternate good state for the same graph and square does
 lift. The paper proves an exact fixed-cover square-extension criterion:
 the deleted edge labels must be equal or disjoint. Complete whole-fibre
-censuses through downstairs order 14 find compatible state-and-lift choices
-in all 633,204 graph/root/smoothing instances tested, so the whole-fibre
+censuses through downstairs order 16 find compatible state-and-lift choices
+in all 8,370,612 graph/root/smoothing instances tested. All three order-18
+snarks add 12,474 independently replayed positive instances, so the whole-fibre
 square reduction remains open rather than refuted. A human three-edge-cut
 argument on the triangular prism proves that no choice of a downstairs
 five-cover can always make the two deleted labels equal or disjoint, even

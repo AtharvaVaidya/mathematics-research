@@ -136,7 +136,9 @@ we prove
 that a fixed five-cover extends exactly when the two deleted edge labels are
 equal or disjoint, and a solver-free whole-fibre census finds compatible
 state-and-lift choices in every simple 3-edge-connected cubic instance
-through downstairs order \(14\).  These are finite results and exact no-go
+through downstairs order \(16\), with all \(7{,}737{,}408\) order-16
+witnesses independently replayed.  All three order-18 snarks add
+\(12{,}474\) checked instances.  These are finite results and exact no-go
 statements, not a universal selection theorem.  A three-edge-cut argument
 on the triangular prism also proves that the fixed-cover criterion cannot
 serve as the missing state-selection lemma, even though the same instance
@@ -1475,10 +1477,33 @@ The corpus uses \(24{,}268\) distinct downstairs states and has SHA-256
 \[
 \texttt{26dfe990a6655170f5fdcb6faf1424db279b57e8d094269417b7330fb5affd41}.
 \]
+
+At order sixteen, the complete canonical stream has \(4{,}060\) connected
+simple cubic records, of which an independent deletion test retains
+\(2{,}828\) three-edge-connected graphs.  Sixteen disjoint certificate
+shards cover
+\[
+\begin{array}{c|rrrr}
+\text{order}&\text{3-edge-connected graphs}&\text{roots}
+ &\text{edge-pair witnesses}&\text{failures}\\ \hline
+16&2{,}828&45{,}248&7{,}737{,}408&0.
+\end{array}
+\]
+A separately written standard-library checker replays every witness; the
+shards collectively use \(309{,}472\) distinct downstairs states.  Their
+manifest has SHA-256
+\[
+\texttt{29846948baac39e7645faba85972142d4fa32790f4a161822ecd8a0855646bc7}.
+\]
+Finally, a complete \(41{,}301\)-record order-18 regeneration identifies
+exactly three snarks under the stated simple, three-edge-connected,
+girth-at-least-five, non-Tait convention.  All \(12{,}474\) of their
+root/pair instances have independently replayed witnesses.
+
 Thus any countermodel to this stronger local-selection statement in the
-simple 3-edge-connected cubic class has downstairs order at least sixteen.
-This is a finite certificate census, not a proof of the whole-fibre
-implication.
+simple 3-edge-connected cubic class has downstairs order at least eighteen,
+and no order-18 snark is one.  This is a finite certificate census, not a
+proof of the whole-fibre implication.
 
 \section{A certified obstruction to direction thinning}
 
@@ -2064,7 +2089,8 @@ The evidence and no-go results sharply delimit plausible approaches:
       may change, by Proposition~\ref{prop:square-lift-nogo}.  The
       whole-fibre existential square implication is still open, though the
       fixed-cover criterion~(6.22) is exact and the stronger local-selection
-      statement has no countermodel through downstairs order fourteen.
+      statement has no countermodel through downstairs order sixteen;
+      all three order-18 snarks pass as well.
 \item One cannot bridge that gap by choosing a different downstairs
       five-cover whose two deleted labels satisfy~(6.22):
       Proposition~\ref{prop:square-cut-nogo} rules this out on the
@@ -2211,8 +2237,12 @@ Square-lift finite boundary &
 {\footnotesize\texttt{scratch/search\_jaeger\_star\_square\_}}\par
 {\footnotesize\texttt{existential\_census.py}};
 {\footnotesize\texttt{scratch/verify\_jaeger\_star\_square\_}}\par
-{\footnotesize\texttt{existential\_order14.py}} &
-human fixed-cover lemma + certificate census through order 14\\
+{\footnotesize\texttt{existential\_order14.py}};
+{\footnotesize\texttt{scratch/verify\_jaeger\_star\_square\_}}\par
+{\footnotesize\texttt{existential\_order16.py}};
+{\footnotesize\texttt{scratch/verify\_jaeger\_star\_square\_}}\par
+{\footnotesize\texttt{snarks18.py}} &
+human fixed-cover lemma + certificate census through order 16\\
 \addlinespace
 Fixed-label square-selection no-go &
 {\footnotesize\texttt{scratch/jaeger-square-fixed-label-}}\par

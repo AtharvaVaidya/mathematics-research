@@ -32,6 +32,19 @@ geng -cq -d3 -D3 14 |
   gzip -9 >/tmp/square-order14-witnesses.tsv.gz
 python3 scratch/verify_jaeger_star_square_existential_order14.py \
   /tmp/square-order14-witnesses.tsv.gz
+shasum -a 256 -c scratch/jaeger-star-square-order16-SHA256SUMS
+for corpus in scratch/output/square-order16-20260728/witnesses-*.tsv.gz
+do
+  range=${corpus##*witnesses-}
+  range=${range%.tsv.gz}
+  python3 scratch/verify_jaeger_star_square_existential_order16.py \
+    --start "${range%-*}" --end "${range#*-}" "$corpus"
+done
+shasum -a 256 -c scratch/jaeger-star-square-snarks18-SHA256SUMS
+python3 scratch/verify_jaeger_star_square_snarks18.py \
+  scratch/output/square-snarks18-20260728/w-0.tsv.gz \
+  scratch/output/square-snarks18-20260728/w-1.tsv.gz \
+  scratch/output/square-snarks18-20260728/w-2.tsv.gz
 ```
 
 The exact-triangle command checks the separate two-way theorem for the surviving
@@ -78,6 +91,16 @@ Expected program SHA-256 values are
 for the C++ search and
 `81545f6d0fc1331783a3d7e1d9f267961172a3398a05c635096c093d6638a791`
 for the independent checker.
+
+The order-16 manifest must verify all 16 certificate shards.  Their
+independent replays total 2,828 retained graphs, 45,248 roots, 7,737,408
+witnesses, and 309,472 distinct downstairs states.  The manifest SHA-256
+is
+`29846948baac39e7645faba85972142d4fa32790f4a161822ecd8a0855646bc7`.
+The order-18 checker must regenerate 41,301 canonical connected cubic
+records, identify exactly three snarks, and replay all 12,474 witnesses.
+Its manifest SHA-256 is
+`12486317023771d929c27abfcafec1727af31be5c4592b1fc6076d602600ab54`.
 
 The triangular-prism command independently enumerates all 540 indexed
 five-cover pair labellings and verifies that the two selected matching edges

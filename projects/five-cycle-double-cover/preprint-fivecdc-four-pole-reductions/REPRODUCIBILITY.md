@@ -5,6 +5,7 @@ Run these commands from the repository root:
 ```sh
 python3 scratch/verify_petersen_four_pole_extension_theorem_20260728.py
 python3 scratch/verify_heawood_four_pole_full_boundary_20260728.py
+python3 scratch/verify_cube_four_pole_full_boundary_20260728.py
 python3 scratch/verify_k33_four_pole_boundary_20260728.py
 sha256sum -c scratch/heawood-four-pole-SHA256SUMS-20260728.txt
 ```
@@ -25,6 +26,11 @@ The Heawood replay must report:
 The fresh Heawood JSON output must equal
 `scratch/heawood-four-pole-full-boundary-result-20260728.json`.
 
+The cube replay must report a six-vertex, seven-edge simple connected
+bridgeless proper core, 10 certificate rows, and exact coverage of all 640
+xor-zero words. Its checker is paired with the human minimum-order proof in
+`scratch/fivecdc-minimum-full-boundary-cube-four-pole-20260728.md`.
+
 The `K3,3` replay must report 640 admissible xor-zero words, 580 extended
 words, and the exact 60-word missing orbit represented by `02 02 03 03`.
 Its SHA-256 is
@@ -40,6 +46,6 @@ SOURCE_DATE_EPOCH=1785271878 tectonic main.tex
 Run the same command twice and compare `main.pdf` byte for byte. The
 committed hashes are recorded in `SHA256SUMS` after the verified build.
 
-Trust boundary: both pole claims are positive finite certificates checked by
+Trust boundary: all three pole claims are positive finite certificates checked by
 standard-library programs. No SAT solver or UNSAT proof trace is involved.
 The `K3,3` nonextension also has a separate human proof in the manuscript.

@@ -2727,10 +2727,15 @@ For square expansion, a fixed five-labelling extends if and only if the two
 deleted pair labels are equal or disjoint.  The stronger whole-fibre
 state-and-lift statement has zero failures in complete solver-free censuses
 through downstairs order 12: 6,300 instances at order 10 and 53,352 at
-order 12.  A certificate census at order 14 adds all 572,880 labelled
-instances; a separately written checker reconstructs every witness.  A
-future countermodel in the simple 3-edge-connected cubic class therefore
-has downstairs order at least 16.
+order 12.  Certificate censuses add all 572,880 labelled instances at
+order 14 and all 7,737,408 at order 16; separately written checkers
+reconstruct every witness.  The order-16 corpus covers 2,828 canonical
+simple three-edge-connected graphs, 45,248 labelled roots, and 309,472
+distinct selected downstairs states.  All three order-18 snarks under the
+explicit simple/3-edge-connected/girth-at-least-five/non-Tait convention
+also pass all 12,474 root/pair instances.  A future countermodel in the
+complete simple three-edge-connected cubic class therefore has downstairs
+order at least 18.
 
 Finally, the sorted seven-defect profile is not a one-step descent
 potential.  On the explicit order-36 state, all 867 reciprocal candidates
@@ -2784,3 +2789,37 @@ port bijections.  A separate edge-by-edge lemma proves that the substitution
 also preserves bridgelessness.  This is a non-covering, non-Petersen
 reducible configuration.  It does not imply that every prospective
 counterexample contains such a pole, so FiveCDC remains unresolved.
+
+## Minimum-order cube full-boundary four-pole
+
+Audit date: **2026-07-28**.
+
+Deleting adjacent vertices \(0,1\) from the cube leaves the ordered ports
+\((2,3,4,7)\) and the seven-edge proper core
+\[
+(2,3),(2,6),(3,5),(4,5),(4,7),(5,6),(6,7).
+\]
+The core is simple, connected, and bridgeless.  A ten-row human certificate
+has the same orbit-size vector
+\[
+10,60,60,60,30,120,120,30,120,30
+\]
+as the Heawood certificate, and its coordinate-permutation orbits cover
+exactly all 640 xor-zero boundary words.  A separately written
+standard-library checker reconstructs the graph and verifies every row,
+orbit, and word.
+
+The order is sharp in the connected simple terminal-distinct cubic
+four-pole class.  If the proper core has \(n\) vertices and \(m\) edges,
+then \(2m=3n-4\), so \(n\) is even and \(n\ge4\).  At \(n=4\) all proper
+vertices have degree two; connectedness and simplicity force \(C_4\).
+This is the \(K_{3,3}\)-minus-adjacent-vertices pole, whose independently
+checked relation has 580 of 640 admissible words and misses exactly the
+60-word orbit represented by `02 02 03 03`.  Hence the six-vertex cube
+pole is minimum.
+
+The generic insertion and bridgelessness lemmas apply for every port
+bijection.  This is a sharper local reduction than the Heawood result;
+the Heawood pole remains distinct for its girth-six core.  Neither
+configuration is known to be unavoidable, so this theorem does not resolve
+FiveCDC.

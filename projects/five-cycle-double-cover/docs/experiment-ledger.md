@@ -3226,6 +3226,20 @@ reconstructs every witness; the corpus uses 24,268 distinct downstairs
 states and has SHA-256
 `26dfe990a6655170f5fdcb6faf1424db279b57e8d094269417b7330fb5affd41`.
 
+At order 16, the complete 4,060-record canonical stream contains 2,828
+simple three-edge-connected graphs.  Sixteen disjoint certificate shards
+cover 45,248 labelled roots and 7,737,408 eligible edge-pair instances
+with zero failures.  A separately written standard-library checker
+reconstructs every witness; all shard replays pass and collectively use
+309,472 distinct downstairs states.  The frozen manifest SHA-256 is
+`29846948baac39e7645faba85972142d4fa32790f4a161822ecd8a0855646bc7`.
+
+A complete 41,301-record order-18 regeneration independently identifies
+the three snarks under the explicit simple cubic, three-edge-connected,
+girth-at-least-five, non-three-edge-colourable convention.  All 12,474
+root/pair instances have replayed witnesses.  Its manifest SHA-256 is
+`12486317023771d929c27abfcafec1727af31be5c4592b1fc6076d602600ab54`.
+
 The sorted-profile checker exhausts the complete 867-candidate
 neighbourhood of one order-36 state, finds the exact 0/13/50 split among
 63 legal moves, and independently replays a distance-two same-level escape.
@@ -3246,6 +3260,24 @@ checksum ledger passes.
 
 This is a complete finite boundary theorem plus a human gluing reduction;
 no SAT solver or UNSAT certificate is involved.
+
+## Minimum-order cube four-pole full-boundary audit
+
+Audit date: **2026-07-28**.
+
+The standard-library checker reconstructs the cube from its literal
+12-edge table, deletes adjacent vertices \(0,1\), and verifies the ordered
+six-vertex, seven-edge proper core with ports \((2,3,4,7)\).  It checks
+simplicity, connectedness, bridgelessness edge by edge, every vertex parity
+in the displayed ten certificate rows, the ten \(S_5\)-orbit sizes, and
+exact coverage of all 640 xor-zero boundary words.
+
+The companion \(K_{3,3}\) checker verifies that the only order-four core,
+\(C_4=K_{2,2}\), extends 580 words and misses exactly the 60-word orbit
+represented by `02 02 03 03`.  Together with the human degree count
+\(2m=3n-4\), the two replays certify the sharp order-six minimum in the
+connected simple terminal-distinct cubic class.  This is a positive local
+boundary theorem, not a FiveCDC resolution.
 
 ## Fixed-label square-selection cut audit
 

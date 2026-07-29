@@ -18,7 +18,7 @@ copied into a separate clean clone; it was not modified or committed.
   certified no-gos to immediate descent, fixed-kernel exposure, and
   fixed-state square lifting.  It now also gives the equal-or-disjoint
   fixed-cover square-extension lemma, a complete whole-fibre square census
-  through downstairs order 14, and an exact order-36 countermodel to
+  through downstairs order 16, and an exact order-36 countermodel to
   one-step descent of the sorted seven-defect profile.  The current version
   adds the triangular-prism three-cut obstruction to fixed-label square
   selection and a complete 958-state radius-three plateau separator whose
@@ -49,9 +49,11 @@ copied into a separate clean clone; it was not modified or committed.
   statewise rule.  The fixed-cover label criterion is proved exactly:
   the two deleted labels must be equal or disjoint.  Complete solver-free
   whole-fibre censuses have zero failures in 672 order-eight, 6,300
-  order-ten, 53,352 order-twelve, and 572,880 order-fourteen labelled
-  instances.  The final layer retains every explicit witness and a
-  separately written checker reconstructs them all.
+  order-ten, 53,352 order-twelve, 572,880 order-fourteen, and 7,737,408
+  order-sixteen labelled instances.  The order-14 and order-16 layers
+  retain every explicit witness and separately written checkers reconstruct
+  them all.  All three order-18 snarks add 12,474 replayed positive
+  instances.
 - The compact direct FiveCDC package: an exact-two CNF with explicit XOR
   gates, semantic and reconstruction checkers, deterministic 2-lift and
   Petersen-substitution generators, seven compact audit summaries, and a
@@ -62,20 +64,26 @@ copied into a separate clean clone; it was not modified or committed.
   port bijection.  The latter has a displayed 13-row certificate checked
   on all 550 labelled boundary assignments.  No target UNSAT result was
   found.  `LOCAL_FRONTIER_SHA256SUMS_20260728` freezes the compact direct,
-  square, sorted-profile, and retained order-14 certificate artifacts.
-- The full-boundary Heawood four-pole package: a ten-row human certificate,
-  frozen 640-word result, and independent standard-library checker.  It
-  proves that deleting adjacent Heawood vertices gives a girth-six pole
-  through which every xor-zero ordered four-port boundary word extends.
-  Arbitrary-port insertion therefore preserves FiveCDC and bridgelessness.
-  The configuration is not known to be unavoidable.
-- The standalone eight-page, explicitly AI-disclosed working preprint
+  square, sorted-profile, retained order-14, complete order-16, and
+  order-18-snark certificate artifacts.
+- The minimum cube and girth-six Heawood full-boundary four-pole package:
+  two ten-row human certificates and independent standard-library checkers.
+  Deleting adjacent cube vertices gives a six-vertex pole through which
+  every xor-zero ordered four-port boundary word extends.  It is
+  minimum-order in the connected simple terminal-distinct cubic class:
+  the unique order-four core is \(C_4=K_{2,2}\), whose exact relation
+  misses the 60-word orbit represented by `02 02 03 03`.  The Heawood
+  deletion pole also has full boundary and retains a girth-six proper core.
+  Arbitrary-port insertion of either pole preserves FiveCDC and
+  bridgelessness.  Neither configuration is known to be unavoidable.
+- The standalone nine-page, explicitly AI-disclosed working preprint
   `preprint-fivecdc-four-pole-reductions/`, with deterministic PDF,
   checksum ledger, replay instructions, and human-review gate.  It combines
-  the Petersen repeated-pair and Heawood full-boundary theorems, and gives
-  \(K_{3,3}\) minus adjacent vertices as a sharp obstruction to the tempting
-  universal bipartite-pole generalization.  A complete checker verifies its
-  580/640 boundary count and exact 60-word missing orbit.
+  the Petersen repeated-pair theorem with the cube and Heawood
+  full-boundary theorems, and gives \(K_{3,3}\) minus adjacent vertices as
+  both the sharp order-four obstruction and a counterexample to the
+  tempting universal bipartite-pole generalization.  A complete checker
+  verifies its 580/640 boundary count and exact 60-word missing orbit.
 - The fixed-label square-selection and radius-three plateau no-go packages.
   The first uses a human three-edge-cut parity lemma plus all 540 indexed
   FiveCDC labellings of the triangular prism.  The second reconstructs all

@@ -33,7 +33,7 @@
 \newcommand{\FiveCDC}{\textup{FiveCDC}}
 \newcommand{\Dfive}{D_5}
 
-\title{Two Exact Four-Pole Reductions for the\\
+\title{Three Exact Four-Pole Reductions for the\\
 Standard Five-Cycle Double Cover Conjecture}
 \author{Atharva Vaidya\\
 \small AI-assisted working preprint for independent human verification}
@@ -47,7 +47,7 @@ Standard Five-Cycle Double Cover Conjecture}
 \parbox{0.91\textwidth}{
 \textbf{Resolution status.}
 The standard five-cycle double cover conjecture remains open.
-This note proves two positive substitution reductions.  It proves neither
+This note proves three positive substitution reductions.  It proves neither
 the conjecture nor its negation, and it makes no claim about the orientable
 five-cycle double cover conjecture.
 }}
@@ -73,30 +73,34 @@ double cover of a cubic graph is equivalently a \(\Dfive\)-label on every
 edge whose three incident labels xor to zero at each vertex.  This makes a
 cubic four-pole an exact finite boundary relation.
 
-We give two human-checkable positive relations.  First, the four-pole
+We give three human-checkable positive relations.  First, the four-pole
 obtained by deleting adjacent vertices from the Petersen graph extends
 every boundary word that is a permutation of \((q,q,r,r)\), for arbitrary
 \(q,r\in\Dfive\).  A 13-row certificate covers the three intersection
-types of \(q,r\) and all port placements.  Second, a four-pole obtained by
+types of \(q,r\) and all port placements.  Second, deleting adjacent
+vertices from the cube gives a six-vertex full-boundary four-pole.  It is
+minimum-order among connected simple terminal-distinct full-boundary poles.
+Third, a four-pole obtained by
 deleting adjacent vertices from the Heawood graph has the full boundary
 relation: it extends every ordered
 \((A_0,A_1,A_2,A_3)\in\Dfive^4\) with xor zero.  A 10-row certificate,
 together with the global \(S_5\) action, covers all 640 admissible words.
 
 It follows that replacing two independent edges of any FiveCDC-positive
-cubic graph by either pole preserves FiveCDC for every bijection from the
-four exposed endpoints to the four ports.  We prove separately that the
+cubic graph by any of the three poles preserves FiveCDC for every bijection
+from the four exposed endpoints to the four ports.  We prove separately that the
 operation preserves simplicity and bridgelessness under the stated
-hypotheses.  Thus neither substitution can manufacture a minimum
+hypotheses.  Thus none of these substitutions can manufacture a minimum
 counterexample from a smaller positive graph.  The Petersen certificate
 establishes only the repeated-pair interface needed by this insertion,
-whereas the Heawood certificate proves the complete xor-zero boundary
-relation.
+whereas the cube and Heawood certificates prove the complete xor-zero
+boundary relation.
 
 The tempting extension to all bridgeless bipartite cubic graphs is false:
 deleting adjacent vertices from \(K_{3,3}\) gives \(K_{2,2}\), whose
 ordered boundary relation has 580 of the 640 admissible words and misses
-one 60-word orbit.  We give a direct proof of that obstruction.  All claims
+one 60-word orbit.  This also proves the order-six lower bound for the cube
+pole.  We give a direct proof of that obstruction.  All claims
 here are local positive reductions or scope boundaries, not a resolution
 of FiveCDC.
 \end{abstract}
@@ -113,7 +117,7 @@ Recent papers continue to state FiveCDC as open
 \cite{Oum2026,HusekSamal2026}; special cases are known
 \cite{LiuEtAl2023}.
 
-Graphs in the two insertion theorems below are finite and undirected.
+Graphs in the three pole reductions below are finite and undirected.
 The input and output graphs are simple and cubic.  The pair-label
 equivalence itself also works for multigraphs if parallel edges are kept
 as distinct edge objects and a loop contributes two incidences at its
@@ -125,9 +129,9 @@ M\'a\v cajov\'a, Mazzuoccolo, and Tabarelli introduced the relevant
 CDC-colouring language for multipoles and the ten boundary types of a
 four-pole \cite{MacajovaEtAl2026}.  That boundary framework, including its
 use in minimum-counterexample reductions, is prior work and is not claimed
-here.  The present contribution is the two explicit extension certificates
+here.  The present contribution is the three explicit extension certificates
 and the resulting insertion lemmas.  We have not completed a specialist
-search capable of deciding whether either particular pole theorem, or a
+search capable of deciding whether any particular pole theorem, or a
 more general theorem implying it, already occurs in the literature.
 Accordingly no novelty or priority claim is made.  The authors of the
 four-pole literature should be consulted before public submission.
@@ -451,8 +455,8 @@ row preserves label weight and every vertex xor equation, so all 640 words
 extend.
 \end{proof}
 
-\begin{corollary}[two non-covering reductions]\label{cor:two-poles}
-The insertion theorem and the bridgelessness lemma apply to both the
+\begin{corollary}[Petersen and Heawood reductions]\label{cor:two-poles}
+The insertion theorem and the bridgelessness lemma apply to the
 Petersen and Heawood poles, with every one of the \(4!\) port bijections.
 Neither construction is a graph cover or lift.
 \end{corollary}
@@ -510,6 +514,97 @@ need an additional structural hypothesis, and no such hypothesis is
 claimed here.
 \end{remark}
 
+\section{The minimum full-boundary pole: the cube}
+
+Use the cube edge set
+\[
+\begin{split}
+ &(0,1),(0,3),(0,4),(1,2),(1,7),(2,3),\\
+ &(2,6),(3,5),(4,5),(4,7),(5,6),(6,7),
+\end{split}
+\]
+and delete the adjacent vertices \(0,1\).  The ordered ports are
+\[
+                         (2,3,4,7),                         \tag{7.1}
+\]
+and the ordered proper edges are
+\[
+ (2,3),(2,6),(3,5),(4,5),(4,7),(5,6),(6,7).               \tag{7.2}
+\]
+The six-vertex proper core is simple, connected, and bridgeless.
+
+\begin{theorem}[minimum full-boundary pole]\label{thm:cube}
+The cube pole \((7.1)\)--\((7.2)\) has the full boundary relation.
+Moreover, no connected simple terminal-distinct cubic full-boundary
+four-pole has fewer than six proper vertices.
+\end{theorem}
+
+\begin{proof}
+The table has one representative of each orbit in
+Lemma~\ref{lem:ten-types}.  Its last column gives labels on the seven
+proper edges in the order~\((7.2)\).
+
+\begingroup
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.08}
+\small
+\begin{longtable}{@{}l
+ >{\ttfamily\raggedright\arraybackslash}p{0.20\textwidth}
+ >{\ttfamily\raggedright\arraybackslash}p{0.55\textwidth}@{}}
+\toprule
+Type & \normalfont Port labels & \normalfont Proper-edge labels\\
+\midrule
+\endfirsthead
+\toprule
+Type & \normalfont Port labels & \normalfont Proper-edge labels\\
+\midrule
+\endhead
+\texttt{AA} & 02 02 02 02 & 12 01 01 12 01 02 12\\
+\texttt{AT2} & 02 02 03 03 & 01 12 12 02 23 01 02\\
+\texttt{AT3} & 02 03 02 03 & 23 03 02 12 01 01 13\\
+\texttt{AT4} & 02 03 03 02 & 01 12 13 34 04 14 24\\
+\texttt{T2T2} & 02 02 13 13 & 24 04 04 14 34 01 14\\
+\texttt{T2T3} & 02 03 12 13 & 23 03 02 24 14 04 34\\
+\texttt{T2T4} & 02 03 13 12 & 23 03 02 12 23 01 13\\
+\texttt{T3T3} & 02 13 02 13 & 03 23 01 12 01 02 03\\
+\texttt{T3T4} & 02 13 03 12 & 23 03 12 02 23 01 13\\
+\texttt{T4T4} & 02 13 13 02 & 03 23 01 12 23 02 03\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+At each of the six completed vertices, the xor of its three incident
+labels is zero.  The orbit sizes are the same
+\[
+                 10,60,60,60,30,120,120,30,120,30
+\]
+as in the Heawood table, and sum to all 640 admissible boundary words.
+Coordinate permutations preserve every equation, proving full boundary.
+
+For minimality, let the proper core have \(n\) vertices and \(m\) edges.
+Four vertices have degree two and all others degree three, so
+\[
+                              2m=3n-4.
+\]
+Thus \(n\) is even and \(n\ge4\).  At \(n=4\), all four vertices are ports,
+so a connected simple core is 2-regular and hence is \(C_4\).  This is the
+\(K_{2,2}\) pole of Proposition~\ref{prop:k33}, which is not full-boundary.
+The displayed order-six pole therefore has minimum order.
+\end{proof}
+
+\begin{corollary}[minimum full-boundary insertion]
+The insertion theorem and the bridgelessness lemma apply to the cube pole
+for every one of the \(4!\) port bijections.  This construction is not a
+graph cover or lift.
+\end{corollary}
+
+\begin{remark}
+The cube theorem is the smallest full-boundary certificate in the stated
+simple terminal-distinct class.  The Heawood theorem remains distinct in
+providing a girth-six proper core.  Neither pole is known to be unavoidable
+in a minimum counterexample.
+\end{remark}
+
 \section{Replay, trust boundary, and limitations}\label{sec:replay}
 
 The compact source artifacts are:
@@ -520,12 +615,15 @@ scratch/fivecdc-heawood-full-four-pole-theorem-20260728.md
 scratch/verify_heawood_four_pole_full_boundary_20260728.py
 scratch/heawood-four-pole-full-boundary-result-20260728.json
 scratch/heawood-four-pole-SHA256SUMS-20260728.txt
+scratch/fivecdc-minimum-full-boundary-cube-four-pole-20260728.md
+scratch/verify_cube_four_pole_full_boundary_20260728.py
 scratch/verify_k33_four_pole_boundary_20260728.py
 \end{verbatim}
 Run, from the repository root:
 \begin{verbatim}
 python3 scratch/verify_petersen_four_pole_extension_theorem_20260728.py
 python3 scratch/verify_heawood_four_pole_full_boundary_20260728.py
+python3 scratch/verify_cube_four_pole_full_boundary_20260728.py
 python3 scratch/verify_k33_four_pole_boundary_20260728.py
 sha256sum -c scratch/heawood-four-pole-SHA256SUMS-20260728.txt
 \end{verbatim}
@@ -542,7 +640,13 @@ orbits.  Its frozen JSON must equal the fresh output.
 The \(K_{3,3}\) checker exhausts all \(10^4\) proper-edge labellings of
 \(K_{2,2}\), obtains exactly 580 boundary words, and verifies that the
 60 missing admissible words are precisely the \(S_5\)-orbit of
-\((02,02,03,03)\).
+\((02,02,03,03)\).  Its SHA-256 is
+\[
+\texttt{1601e5eaeac1a3f059ab1ab219a05c7fec3e53de9679ac5ef54319fe14e908cf}.
+\]
+The cube checker separately verifies the literal six-vertex core,
+edge-by-edge bridgelessness, all ten certificate rows, the ten orbit sizes,
+and exact 640-word coverage.
 
 These are positive finite certificates.  They do not rely on a SAT solver,
 and no UNSAT proof trace is relevant.  A human can check each row by
@@ -553,10 +657,10 @@ and the complete finite boundary checker.
 
 The limitations are decisive.
 \begin{enumerate}
-\item Neither insertion theorem supplies a decomposition of every
+\item None of the three certified insertions supplies a decomposition of every
       bridgeless graph into reducible pieces.
-\item A minimum counterexample may contain neither displayed pole.
-\item Full boundary for one Heawood pole does not imply full boundary for
+\item A minimum counterexample may contain none of the displayed poles.
+\item Full boundary for the cube and Heawood poles does not imply full boundary for
       general four-poles, bipartite poles, or high-connectivity poles.
 \item The results concern standard Eulerian edge-subsets, not orientable
       cycle double covers.

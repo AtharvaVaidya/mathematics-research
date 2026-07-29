@@ -1,6 +1,6 @@
-# Two exact four-pole reductions for FiveCDC
+# Three exact four-pole reductions for FiveCDC
 
-This directory contains a standalone AI-assisted working preprint about two
+This directory contains a standalone AI-assisted working preprint about three
 positive substitutions for the **standard** five-cycle double cover
 conjecture.
 
@@ -8,14 +8,16 @@ Resolution status: FiveCDC remains open. The manuscript proves that:
 
 - the Petersen four-pole extends every repeated-pair boundary placement
   `(q,q,r,r)`;
+- the cube-minus-adjacent-vertices pole is a minimum-order simple connected
+  full-boundary pole;
 - the Heawood four-pole extends all 640 xor-zero `D5` boundary words; and
-- inserting either pole in place of two independent edges of a
+- inserting any of the three poles in place of two independent edges of a
   FiveCDC-positive cubic graph preserves FiveCDC, simplicity, and
   bridgelessness under the stated hypotheses.
 
-It also gives `K3,3` minus adjacent vertices as a sharp counterexample to
-the tempting claim that every bridgeless bipartite cubic adjacent-deletion
-pole is full-boundary.
+It also gives `K3,3` minus adjacent vertices as both the sharp order-four
+obstruction and a counterexample to the tempting claim that every
+bridgeless bipartite cubic adjacent-deletion pole is full-boundary.
 
 Build:
 
