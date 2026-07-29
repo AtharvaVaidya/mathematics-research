@@ -53,6 +53,13 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
   \(G-M_a\), and one reaches the Hušek--Šámal component condition exactly
   when \(M_a\) packs two edge-disjoint \(T_a\)-joins.  The proof allows
   parallel edges and does not assume connectedness or bridgelessness.
+- `scratch/husek-samal-perfect-kernel-transition-csp-20260728.md`
+  treats the special case in which the selected binary kernel is a
+  perfect matching.  Contracting that matching gives a 4-regular
+  transition multigraph; clean fixed-projection lifts are exactly its
+  six-state vertex assignments followed by a consistent affine XOR
+  system.  Petersen shows that this special CSP is not universally
+  feasible.
 - `preprint-husek-samal-reconfiguration/` is an eight-page working
   preprint with a page-one AI-use disclosure and human-review gate.  Its
   strengthened strict order-26 theorem shows that an H--S-bad flow can
