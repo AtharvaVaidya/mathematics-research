@@ -1,0 +1,108 @@
+{
+  "emergent_port_symmetry": {
+    "group": "full S6 on the six ordered ports",
+    "note": "This is symmetry of the proved boundary relation; it is stronger than, and does not assert, graph automorphisms.",
+    "representatives": [
+      [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      [
+        3,
+        3,
+        3,
+        3,
+        5,
+        5
+      ],
+      [
+        3,
+        3,
+        3,
+        3,
+        12,
+        12
+      ],
+      [
+        3,
+        3,
+        3,
+        5,
+        10,
+        12
+      ],
+      [
+        3,
+        3,
+        5,
+        5,
+        6,
+        6
+      ],
+      [
+        3,
+        3,
+        5,
+        5,
+        9,
+        9
+      ],
+      [
+        3,
+        3,
+        5,
+        5,
+        10,
+        10
+      ],
+      [
+        3,
+        3,
+        5,
+        5,
+        24,
+        24
+      ],
+      [
+        3,
+        3,
+        5,
+        6,
+        9,
+        10
+      ],
+      [
+        3,
+        3,
+        5,
+        9,
+        20,
+        24
+      ],
+      [
+        3,
+        5,
+        6,
+        9,
+        17,
+        24
+      ]
+    ],
+    "s5_times_s6_orbits": 11,
+    "xor_zero_multisets": 385
+  },
+  "network_consequence": "Every finite network formed from copies of the F10 six-pole by attaching every port to a trivalent junction has a FiveCDC.",
+  "relation": {
+    "description": "exactly the ordered six-duad words with total xor zero",
+    "negative_s5_orbits": 0,
+    "ordered_duad_words": 1000000,
+    "ordered_xor_zero_words": 62560,
+    "positive_s5_orbits": 571,
+    "s5_coordinate_orbits": 571
+  },
+  "schema": "f10-full-six-port-d5-relation-summary-v1"
+}

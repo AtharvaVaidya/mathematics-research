@@ -1,0 +1,4 @@
+PASS independent F10 six-port relation audit
+ordered_duad_words=1000000 xor_zero=62560 S5_orbits=571 positive=571 negative=0
+directly checked 571 witnesses, 248385 edge labels, and 164448 vertex xor equations
+emergent_relation_symmetry=S6 S5xS6_orbits=11
