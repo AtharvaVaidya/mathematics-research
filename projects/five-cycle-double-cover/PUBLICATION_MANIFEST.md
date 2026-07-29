@@ -60,6 +60,13 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
   six-state vertex assignments followed by a consistent affine XOR
   system.  Petersen shows that this special CSP is not universally
   feasible.
+- `scratch/husek-samal-shortest-projection-obstruction-12v-20260728.md`
+  gives a self-contained 12-vertex counterexample to choosing a shortest
+  binary cycle first and then extending it to a nowhere-zero
+  \(\mathbb F_2^3\)-flow.  The graph is a Petersen triangle expansion;
+  its unique shortest cycle cannot be a flow coordinate, although the
+  graph has a FiveCDC.  The accompanying projection--resistance lemma
+  proves the obstruction without SAT.
 - `preprint-husek-samal-reconfiguration/` is an eight-page working
   preprint with a page-one AI-use disclosure and human-review gate.  Its
   strengthened strict order-26 theorem shows that an H--S-bad flow can
