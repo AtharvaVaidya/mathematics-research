@@ -1,0 +1,467 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\geometry{margin=1in}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\symdiff}{\mathbin{\triangle}}
+\newcommand{\FiveCDC}{\textup{FiveCDC}}
+
+\title{Minimum Extendable Fano Projections and the\\
+Five-Cycle Double Cover Conjecture}
+\author{Atharva Vaidya\\
+\small AI-assisted research note for independent human verification}
+\date{July 28, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fcolorbox{red!65!black}{red!4}{
+\parbox{0.91\textwidth}{
+\textbf{Resolution status.}
+The five-cycle double cover conjecture remains unresolved.
+This note proves an exchange theorem and an exact finite census, and
+isolates a new candidate selection principle.  It proves neither the
+conjecture nor its negation.
+}}
+\end{center}
+
+\begin{abstract}
+Hu\v{s}ek and \v{S}\'amal recently expressed the five-cycle double cover
+conjecture as the problem of selecting a nowhere-zero
+\(\F_2^3\)-flow with a component-parity property.  We study the support
+\(h\) of one binary coordinate of such a flow.  Call \(h\)
+\emph{extendable} if it occurs as a coordinate of some nowhere-zero
+\(\F_2^3\)-flow.
+
+We prove a simultaneous exchange theorem for a minimum-cardinality
+extendable projection.  Write the flow as \(f=(h,s)\), with
+\(s:E\to\F_2^2\), and partition \(h\) into the four affine value classes
+\(M_c=\{e\in h:s(e)=c\}\).  For every \(c\), the projection \(h\) is a
+minimum-cardinality binary cycle containing \(M_c\).  Equivalently, every
+binary cycle \(C\) avoiding \(M_c\) satisfies
+\[
+                         |C\cap h|\le |C-h|.
+\]
+Thus every circuit component of \(h\) contains all four affine colours,
+and every support-shortening cycle meets all four classes.  The proof is
+the addition of the Fano value \((1,c)\) along \(C\).
+
+We then perform an exact census of all \(41{,}301\) connected simple cubic
+graphs of order \(18\).  Among the \(39{,}866\) bridgeless graphs, exactly
+\(179\) are not Tait-colourable.  Full cycle-space enumeration shows that
+every minimum-cardinality extendable projection of every one of these
+\(179\) graphs has a clean lift satisfying the Hu\v{s}ek--\v{S}\'amal
+component parity condition.  The canonical record digest is
+\texttt{82b01cc2f01d4f50f7745f4bdb1b3dc46ade798d452a9d4f11d4a91d738a7834}.
+
+The universal statement suggested by this computation is recorded as an
+open conjecture.  The missing step is to derive a colour-avoiding strict
+exchange from a rainbow-odd component, possibly after support-neutral
+recolouring.  We make no claim of a FiveCDC resolution or of priority for
+the flow formulation.
+\end{abstract}
+
+\tableofcontents
+
+\section{Status, conventions, and contribution boundary}
+
+A binary cycle of a graph is an Eulerian edge set; it may be empty or
+disconnected.  A \(k\)-cycle double cover is an indexed family of \(k\)
+binary cycles in which every edge occurs exactly twice.  Empty members may
+be appended, so ``at most five'' and ``five, allowing empty members'' are
+equivalent.  The five-cycle double cover conjecture, attributed to Celmins
+and Preissmann, asserts that every bridgeless graph has such a cover with
+at most five members~\cite{Celmins1985,Preissmann1981}.
+
+We work with the cubic flow formulation in
+\cite[Conjecture~3.19]{HusekSamal2026}.  No general-to-cubic reduction is
+proved in this note.  All theoretical statements below apply to finite
+loopless cubic multigraphs unless ``simple'' is stated.  Parallel edges
+are distinct edge objects.  A loop would contribute twice to vertex
+degree; loops are excluded here to keep the cut notation literal.  The
+finite census is restricted to simple graphs.
+
+Hu\v{s}ek and \v{S}\'amal prove that the cubic FiveCDC problem is equivalent
+to selecting a nowhere-zero \(\F_2^3\)-flow with an additional parity
+condition~\cite[Theorem~3.16 and Conjecture~3.19]{HusekSamal2026}.  Their
+criterion is related to the prescribed-cycle formulation of
+Hoffmann-Ostenhof~\cite{HoffmannOstenhof2013}.  We claim no novelty or
+priority for either formulation.
+
+The contribution of this note is narrower:
+\begin{enumerate}
+  \item a minimum-support exchange theorem, with a complete proof;
+  \item elementary consequences for four simultaneous shortest
+        \(T\)-joins;
+  \item a reproducible exhaustive order-\(18\) census; and
+  \item a precise conjectural step that would turn this route into a proof.
+\end{enumerate}
+The last item is open.
+
+\section{Extendable and clean Fano projections}
+
+Let \(G=(V,E)\) be a loopless cubic graph and put \(K=\F_2^2\).
+Write a three-bit flow as
+\[
+                 f=(h,s):E\longrightarrow \F_2\times K,       \tag{1}
+\]
+where \(h:E\to\F_2\) and \(s:E\to K\) are flows.  We identify a binary
+flow with its support.
+
+\begin{definition}
+A nonzero binary cycle \(h\) is \emph{extendable} if there is a flow
+\(s:E\to K\) for which \(f=(h,s)\) is nowhere zero.
+\end{definition}
+
+Writing \(s=(p,q)\), extendability has the following elementary form:
+\[
+                         E-h\subseteq p\cup q,                 \tag{2}
+\]
+where \(p\) and \(q\) are binary cycles.  Indeed, an edge of \(E-h\) has
+first coordinate zero and therefore needs a nonzero low coordinate.
+
+Fix an extension \(f=(h,s)\).  For \(c\in K\), put
+\[
+                         M_c=\{e\in h:s(e)=c\}.                \tag{3}
+\]
+
+\begin{proposition}\label{prop:matching}
+Every \(M_c\) is a matching, and the four sets \(M_c\) partition \(h\).
+\end{proposition}
+
+\begin{proof}
+The partition statement is immediate.  If two edges incident with a cubic
+vertex both had flow value \((1,c)\), their sum would be zero and flow
+conservation would force the third incident edge to have value zero,
+contrary to nowhere-zeroness.
+\end{proof}
+
+Let \(W\) be a component of the spanning subgraph \((V,E-h)\).  Every edge
+of \(\delta(W)\) belongs to \(h\).  If
+\[
+                    n_c(W)=|\delta(W)\cap M_c|\pmod 2,
+\]
+then cut conservation for the first coordinate and the two low coordinates
+gives
+\[
+              \sum_{c\in K}n_c(W)=0,\qquad
+              \sum_{c\in K}n_c(W)c=0.                         \tag{4}
+\]
+The \(3\times4\) binary matrix in (4) has one-dimensional kernel, generated
+by the all-ones vector.  Hence the four parities \(n_c(W)\) are equal.
+
+\begin{definition}
+An extension is \emph{clean} if \(n_c(W)=0\) for every component \(W\)
+of \((V,E-h)\), for one, and hence every, \(c\in K\).
+A projection \(h\) is \emph{cleanable} if it has a clean extension.
+A component with all four parities equal to one is \emph{rainbow-odd}.
+\end{definition}
+
+If \(s=(p,q)\), the class \(M_{11}\) on \(\delta(W)\) is
+\(\delta(W)\cap p\cap q\).  Thus cleanability is exactly the existence of
+binary cycles \(p,q\) satisfying (2) and
+\[
+             |\delta(W)\cap p\cap q|\equiv0\pmod2             \tag{5}
+\]
+for every component \(W\) of \((V,E-h)\).  By
+\cite[Theorem~3.16]{HusekSamal2026}, existence of such an \(h\) is
+equivalent to the cubic FiveCDC assertion.  In the Tait-colourable case one
+may take \(h=\varnothing\) and a nowhere-zero \(K\)-flow.
+
+\section{The minimum-projection exchange theorem}
+
+Assume now that \(G\) is not Tait-colourable, so an extendable projection
+cannot be empty.  Choose \(h\) of minimum cardinality among all extendable
+projections, and fix any extension \(f=(h,s)\).
+
+\begin{theorem}[minimum-projection exchange]\label{thm:exchange}
+For every \(c\in K\) and every binary cycle \(C\) with
+\(C\cap M_c=\varnothing\),
+\[
+                         |C\cap h|\le |C-h|.                    \tag{6}
+\]
+Equivalently, \(h\) is a minimum-cardinality binary cycle containing
+\(M_c\), simultaneously for all four \(c\in K\).
+\end{theorem}
+
+\begin{proof}
+Fix \(c\in K\), put \(t=(1,c)\), and add \(t\) to the flow value on every
+edge of \(C\):
+\[
+ f'(e)=
+ \begin{cases}
+   f(e)+t,&e\in C,\\
+   f(e),&e\notin C.
+ \end{cases}                                                   \tag{7}
+\]
+Since \(C\) is a binary cycle, the added function is a flow.  The only
+edges that could become zero in (7) are those whose old value was \(t\),
+and these are exactly the edges of \(M_c\).  The hypothesis
+\(C\cap M_c=\varnothing\) therefore makes \(f'\) nowhere zero.
+
+The first coordinate of \(f'\) is \(h\symdiff C\).  This is another
+extendable projection, so minimality gives
+\[
+ |h|\le |h\symdiff C|
+     =|h|+|C-h|-|C\cap h|.
+\]
+This is (6).
+
+For the equivalent statement, rebase the low coordinates by replacing
+\(s\) with the flow \(s+ch\).  Its exact zero set is \(M_c\): outside
+\(h\), the low value was already nonzero, while on \(h\) it vanishes
+exactly when \(s(e)=c\).
+
+Let \(h'\) be any binary cycle containing \(M_c\).  The flow
+\((h',s+ch)\) is nowhere zero.  On an edge outside \(h'\), its low value is
+nonzero because every zero lies in \(M_c\subseteq h'\); on an edge of
+\(h'\), its first coordinate is one.  Thus \(h'\) is extendable, and
+\(|h|\le |h'|\).
+
+Conversely, if \(C\cap M_c=\varnothing\), then
+\(h\symdiff C\) contains \(M_c\).  Applying the minimum-containing
+property to \(h\symdiff C\) recovers (6).
+\end{proof}
+
+\subsection{Shortest joins and four-colour consequences}
+
+Let \(T_c\) be the set of endpoints of \(M_c\).  Removing \(M_c\) from a
+binary cycle containing \(M_c\) produces a \(T_c\)-join in \(G-M_c\), and
+adjoining \(M_c\) reverses the correspondence.  Therefore
+Theorem~\ref{thm:exchange} has the following form.
+
+\begin{corollary}\label{cor:tjoin}
+For every \(c\in K\), the edge set
+\[
+                              J_c=h-M_c
+\]
+is a shortest \(T_c\)-join in \(G-M_c\).
+\end{corollary}
+
+This is not the already-refuted principle that a cardinality-minimum
+exact-zero matching must extend to a FiveCDC certificate.  Here the
+objective is the cardinality of the whole binary cycle
+\(M_c\cup J_c\), and the same projection is optimal after all four affine
+rebases.
+
+\begin{corollary}[flow-resistance bound]\label{cor:resistance}
+Let \(r_f(G)\) be the minimum number of zero edges in an
+\(\F_2^2\)-flow on \(G\).  Every extendable projection satisfies
+\[
+                              |h|\ge4r_f(G).                    \tag{8}
+\]
+\end{corollary}
+
+\begin{proof}
+For each \(c\), the rebased low flow \(s+ch\) has exact zero set \(M_c\).
+Hence \(|M_c|\ge r_f(G)\).  The four \(M_c\)'s partition \(h\).
+\end{proof}
+
+\begin{corollary}[four-colour circuits]\label{cor:fourcolour}
+Every circuit component of \(h\) contains at least one edge of each of the
+four sets \(M_c\).
+\end{corollary}
+
+\begin{proof}
+If a circuit component \(D\) omitted \(M_c\), then \(D\) would be a binary
+cycle avoiding \(M_c\), but
+\(|D\cap h|=|D|>|D-h|=0\), contrary to (6).
+\end{proof}
+
+\begin{corollary}[rainbow shortcut]\label{cor:shortcut}
+Every binary cycle \(C\) satisfying \(|C\cap h|>|C-h|\) meets all four
+sets \(M_c\).
+\end{corollary}
+
+\begin{proof}
+If \(C\) omitted one class \(M_c\), it would contradict (6).
+\end{proof}
+
+\section{The exact missing step}
+
+Theorem~\ref{thm:exchange} suggests the following selection principle.
+
+\begin{conjecture}[minimum extendable projection]\label{conj:minimum}
+Every bridgeless cubic graph has a minimum-cardinality extendable
+projection that is cleanable.
+\end{conjecture}
+
+The stronger statement that every minimum projection is cleanable also
+survives the finite census in Section~\ref{sec:census}, but it is not needed.
+Conjecture~\ref{conj:minimum}, together with the Hu\v{s}ek--\v{S}\'amal
+equivalence, would imply the cubic FiveCDC conjecture.
+
+Suppose a minimum projection \(h\) is not cleanable.  Every extension then
+has a rainbow-odd component \(W\) of \(G-h\), so all four \(M_c\)'s cross
+\(\delta(W)\) oddly.  A direct proof of
+Conjecture~\ref{conj:minimum} would need to derive either
+\begin{enumerate}
+  \item a binary cycle \(C\) avoiding some \(M_c\) and satisfying
+        \(|C\cap h|>|C-h|\), contradicting
+        Theorem~\ref{thm:exchange}; or
+  \item a sequence of support-neutral low-coordinate recolourings followed
+        by such a strict exchange.
+\end{enumerate}
+
+The second possibility cannot currently be discarded.  Small exact
+examples have four disjoint colour classes meeting every immediately
+component-reducing cycle, while a support-preserving recolouring escapes
+the trap.  Other examples show that a fixed nowhere-zero Fano flow can
+have all seven of its functional projections dirty.  These are
+proof-strategy obstructions, not FiveCDC counterexamples.  They rule out
+an argument that fixes an arbitrary initial flow or assumes one elementary
+switch always suffices.
+
+The unresolved human proof obligation is precise: from a rainbow-odd
+component of an \emph{uncleanable globally minimum-support projection},
+derive a negative colour-avoiding cycle after allowable neutral
+recolouring, using the four simultaneous shortest-\(T_c\)-join
+inequalities of Corollary~\ref{cor:tjoin}.  No proof of this statement is
+given here.
+
+\section{Exact order-\(18\) census}\label{sec:census}
+
+\subsection{Method}
+
+The accompanying checker uses canonical generation rather than sampling.
+For order \(18\), the command
+\[
+\texttt{geng -cq -d3 -D3 18}
+\]
+generates every connected simple cubic graph once.  The checker then:
+\begin{enumerate}
+  \item tests bridgelessness by deleting every edge and checking
+        connectivity;
+  \item tests Tait colourability by exhaustive backtracking;
+  \item enumerates the entire binary cycle space;
+  \item processes nonzero projections \(h\) by increasing cardinality;
+  \item quotients pairs of cycles \((p,q)\) by their exact semantic state
+        \((p\cup q,p\cap q)\);
+  \item tests extendability by \(E-h\subseteq p\cup q\); and
+  \item computes the components of \(G-h\) and tests (5) on every
+        component.
+\end{enumerate}
+
+For a connected cubic graph of order \(18\), the binary cycle-space
+dimension is
+\[
+                  |E|-|V|+1=27-18+1=10.
+\]
+Thus all \(2^{10}=1024\) binary cycles are enumerated.  Equal
+union/intersection pairs have exactly the same coverage and component
+parity behaviour, so the semantic quotient loses no information.
+No snark or cyclic-connectivity reduction is used.
+
+\subsection{Results and reproducibility}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lr}
+\toprule
+class & count\\
+\midrule
+connected simple cubic graphs & \(41{,}301\)\\
+bridgeless graphs & \(39{,}866\)\\
+bridgeless non-Tait graphs & \(179\)\\
+\bottomrule
+\end{tabular}
+\caption{Complete order-\(18\) population.}
+\end{table}
+
+Every minimum-cardinality extendable projection of every one of the
+\(179\) non-Tait graphs is cleanable.  The minimum-size histogram is
+\[
+             5:166,\qquad 6:11,\qquad 7:1,\qquad 8:1.
+\]
+The checker hashes, in canonical graph order, the graph6 string, minimum
+size, number of minimum extendable projections, and number of cleanable
+minimum projections.  The resulting SHA-256 is
+\begin{center}
+\texttt{82b01cc2f01d4f50f7745f4bdb1b3dc46ade798d452a9d4f11d4a91d738a7834}.
+\end{center}
+
+From the project root, run:
+\begin{verbatim}
+python3 scratch/check_husek_samal_minimum_projection_frontier.py \
+  --order 18
+\end{verbatim}
+The checker requires Python, the sibling cycle-space module
+\path{scratch/search_fano_all_bad_projection_subspaces.py}, and
+nauty \texttt{geng} on \texttt{PATH}.  It has no SAT solver, network, or
+nonstandard Python-package dependency.  The relevant source hashes are
+\begin{center}
+\small
+frontier checker:\\
+\texttt{37e972782863c7a9506f6d339159ddaca3865363107704f86365c1a9b77a30c3}\\[2pt]
+cycle-space module:\\
+\texttt{7e5ea2599e7533f041ea88de5c6f5c7a3bf542cedc33d78728439d43ce8861e8}
+\end{center}
+
+This is a finite theorem.  It is evidence for
+Conjecture~\ref{conj:minimum}, not a proof of it.
+
+\section{Discussion}
+
+The exchange theorem converts global support minimality into four ordinary
+geodesic conditions: one shortest join for each affine value class.
+The useful feature is simultaneity.  A cycle that would shorten the
+projection is allowed to be blocked by one colour, but
+Corollary~\ref{cor:shortcut} forces it to be blocked by all four.
+Likewise, disconnected projections are severely constrained because every
+circuit component must contain every colour.
+
+What is not yet understood is how the common rainbow-odd cut interacts with
+the four shortest-join duals.  A publishable resolution would need either a
+cut/cycle contradiction, a neutral-reconfiguration theorem, or an exact
+counterexample to Conjecture~\ref{conj:minimum}.  Until one of those is
+supplied, the correct status is a frontier result.
+
+\section*{AI-use and verification disclosure}
+
+This research route, proof draft, checker, computation, and exposition were
+developed by OpenAI Codex agents under Atharva Vaidya's direction.  The
+minimum-projection exchange proof is displayed in full so that it can be
+checked without trusting an AI system.  The order-\(18\) result is
+reproducible from canonical generation and exhaustive cycle-space
+enumeration; it is still a computational result and should be independently
+rerun.
+
+Hu\v{s}ek and \v{S}\'amal's flow criterion and
+Hoffmann-Ostenhof's matching/join formulation are prior work.  This draft
+makes no claim of a FiveCDC resolution and no priority claim for the
+minimum-projection viewpoint pending expert literature review.  Before
+public submission, a human graph theorist should check the proof line by
+line, rerun the census in a clean environment, audit the bibliography, and
+decide authorship and venue policy under the applicable AI-disclosure
+rules.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

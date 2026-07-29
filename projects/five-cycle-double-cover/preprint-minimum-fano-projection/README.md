@@ -1,0 +1,42 @@
+# Minimum extendable Fano projections
+
+This directory contains a short AI-assisted working preprint about a
+minimum-support route to the standard five-cycle double cover conjecture.
+
+**Resolution status:** FiveCDC remains open. The paper proves a
+human-checkable exchange theorem, reports a reproducible exhaustive
+order-18 census, and states the remaining universal selection principle as
+an explicit conjecture. It claims neither a proof nor a counterexample.
+
+Build from this directory with:
+
+```sh
+tectonic main.tex
+```
+
+Run the exhaustive order-18 checker from the project root with:
+
+```sh
+python3 scratch/check_husek_samal_minimum_projection_frontier.py \
+  --order 18
+```
+
+The checker requires:
+
+- Python 3;
+- nauty `geng` on `PATH`; and
+- `scratch/search_fano_all_bad_projection_subspaces.py`.
+
+It has no SAT-solver, network, or nonstandard Python-package dependency.
+The expected canonical hard-record SHA-256 is:
+
+```text
+82b01cc2f01d4f50f7745f4bdb1b3dc46ade798d452a9d4f11d4a91d738a7834
+```
+
+The prose, proof route, checker, and research workflow were developed by
+OpenAI Codex agents under Atharva Vaidya's direction. The disclosure in the
+paper must remain. Before public submission, the draft requires
+line-by-line review by a human graph theorist, a clean independent census
+rerun, bibliography audit, and a venue-specific authorship/disclosure
+decision.
