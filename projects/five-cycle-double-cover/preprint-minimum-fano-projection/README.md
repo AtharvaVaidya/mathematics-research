@@ -70,6 +70,8 @@ python3 scratch/minimum-projection-size15-induction-audit-20260729/audit_inducti
 python3 scratch/minimum-projection-size15-anchor-single-audit-20260729/audit_anchor_shards.py \
   scratch/minimum-projection-size15-exact-frontier-20260729/15-shard16-*.txt
 python3 scratch/minimum-projection-single-circuit-tensor-frontier-20260729/independent_audit.py
+python3 scratch/minimum-projection-two-occurrence-interaction-20260729/verify.py
+python3 scratch/minimum-projection-two-occurrence-interaction-20260729/independent_audit.py
 python3 scratch/cubic-reduction-standard-fivecdc-20260729/verify_local_relations.py
 python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/verify.py
 python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/independent_audit.py
@@ -128,6 +130,19 @@ complement component is charge-balanced separately on each circuit.
 Ordinary boundary conservation requires only total balance across all
 circuits, so this corollary does not settle the general multi-circuit
 case.
+
+That stronger per-circuit hypothesis cannot simply be omitted.  When every
+complement component has two support occurrences, feasible component-map
+images are exactly nowhere-zero \(\mathbb F_2^2\)-flows on the interaction
+multigraph whose vertices are support circuits.  The two occurrences are
+clean exactly when they traverse the same unoriented edge of the \(K_4\)
+on the low colours.  The Petersen graph, with its two 5-circuits as
+support and perfect matching as complement, gives the smallest loopless
+two-occurrence abstract failure of direct cleaning.  All 60 interaction
+flows fail to clean, but every one omits a colour on one support circuit
+and strictly deletes it.  An explicit deletion reaches a globally minimum
+size-five clean projection.  This is a sharp boundary-method obstruction,
+not a FiveCDC counterexample.
 
 The unrestricted boundary dichotomy still first fails at size fourteen,
 on an explicit \(7+7\) state.  Its 18-vertex simple bridgeless cubic realization
@@ -231,8 +246,9 @@ minimization parameters are distinct.
 The prose, proof route, checker, and research workflow were developed by
 OpenAI Codex agents under Atharva Vaidya's direction. This includes the
 universal tensor lemma and obstruction identity, the size-fifteen census
-and induction lift, the two-terminal cleaning lemma, the orbit-reflecting
-\(K_{3,3}-e\) use, and their checkers and internal hostile audits. The
+and induction lift, the Petersen interaction dictionary and descent, the
+two-terminal cleaning lemma, the orbit-reflecting \(K_{3,3}-e\) use, and
+their checkers and internal hostile audits. The
 disclosure in the paper must remain. Before public submission, the draft requires
 line-by-line review by a human graph theorist, a clean independent census
 rerun, bibliography audit, and a venue-specific authorship/disclosure

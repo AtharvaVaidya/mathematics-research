@@ -77,6 +77,18 @@ are not independent human verification or peer review.
   settle the general multi-circuit case.  A separately written finite
   audit checks the cancellation expansion through seven tensor vertices,
   all 4,096 three-vertex tensor instances, and the boundary identities.
+- `scratch/minimum-projection-two-occurrence-interaction-20260729/`
+  identifies two-occurrence complement components with edges of an
+  interaction multigraph on the support circuits.  Feasible map images
+  are exactly its nowhere-zero \(\mathbb F_2^2\)-flows, and cleanliness
+  means that the two occurrences traverse the same unoriented edge of
+  \(K_4\).  The Petersen graph gives the smallest loopless abstract
+  direct-cleaning failure in this subclass: all 60 interaction flows
+  fail to clean, but every one strictly deletes a support circuit.  An
+  explicit deletion reaches a globally minimum size-five clean
+  projection.  The human ten-orbit table, primary and independent
+  checkers, smaller-size census, hostile audit, and hash ledger pass.
+  This is a proof-boundary result, not a FiveCDC counterexample.
 - `scratch/minimum-projection-fixed-map-affine-cleaning-20260729/README.md`
   gives a complete human-checkable derivation of the one-bit cut defect,
   the affine XOR cleaning system for fixed component maps, the

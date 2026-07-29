@@ -125,6 +125,11 @@ implies that every charge-valid one-support-circuit boundary state is
 directly cleanable, with no bound on the circuit length or number of
 complement components.  It also cleans several support circuits whenever
 every component is charge-balanced separately on each circuit.
+The latter hypothesis is sharp for direct cleaning: a two-occurrence
+interaction-flow dictionary reduces the first abstract failure to the
+Petersen graph.  Its displayed two-\(5\)-circuit support has no clean
+extension, but every extension strictly deletes one circuit and reaches
+a clean global minimum of size five.
 
 At size fifteen the primary exact classifier enumerates \(26{,}492\)
 word orbits and \(35{,}247{,}202{,}556\) charge-valid abstract states
@@ -276,7 +281,9 @@ The contribution of this note is narrower:
         to the unrestricted support-preserving boundary method;
   \item a universal tensor theorem that directly cleans every
         one-support-circuit state and every circuitwise-balanced
-        several-circuit state;
+        several-circuit state, together with the Petersen
+        two-occurrence boundary showing why the balance hypothesis cannot
+        simply be dropped;
   \item four simultaneous shortest-join consequences;
   \item a general inflation theorem showing that those four inequalities,
         at one fixed flow, do not force one-round Kempe descent;
@@ -1478,6 +1485,99 @@ Corollary~\ref{cor:multicircuittensor} is a structural subclass theorem,
 not a replacement for the multi-circuit census below.
 \end{remark}
 
+\begin{proposition}[Petersen boundary of the tensor repair]
+\label{prop:petersentwooccurrence}
+Suppose every component of the complement of a support cycle \(H\)
+has exactly two support-boundary occurrences.  Contract the support
+circuits to vertices and the complement components to edges, obtaining
+an interaction multigraph \(J\), with a loop when both occurrences lie
+on the same circuit.
+
+The feasible images of the component derivatives under independent
+\(\operatorname{GL}(2,2)\) maps are exactly the nowhere-zero \(K\)-flows
+on \(J\).  After integration, either occurrence of an interaction edge
+\(a\) traverses an unoriented edge \(\{x,x+t_a\}\) of the \(K_4\) on
+the four low colours.  Component \(a\) is clean exactly when its two
+occurrences traverse the same \(K_4\)-edge.
+
+This subclass is not always directly cleanable.  On the Petersen graph,
+take its two disjoint \(5\)-circuits as \(H\) and its perfect matching
+as the five complement components.  In their cyclic orders the component
+words are
+\[
+                         01234\mid03142.                \tag{26g}
+\]
+This support has no clean extension.  Every extension, however, omits a
+low colour on exactly one of the two support circuits and therefore admits
+a strict circuit deletion.  In particular, the extension
+\[
+       t=11123,\qquad s|_H=10130\mid13210
+\]
+deletes the first circuit by adding \((1,2)\), leaving the low word
+\(32312\).  The resulting support has size five, is globally minimum,
+and is clean.
+\end{proposition}
+
+\begin{proof}
+The two derivative occurrences belonging to one complement component
+have the same nonzero value, by component conservation.  Give that common
+value to the corresponding edge of \(J\).  Circuit closure is precisely
+the flow equation at the corresponding vertex of \(J\), with loops counted
+twice.  Conversely, every nowhere-zero \(K\)-flow on \(J\) is obtained,
+because a component map can send its original nonzero derivative to any
+prescribed nonzero value.
+
+If the integrated value immediately before an occurrence is \(x\), the
+two adjacent support values are \(x\) and \(x+t_a\).  The parity vector
+seen by the two occurrences of component \(a\) is zero exactly when these
+two unordered pairs agree.  This proves the two dictionaries.
+
+For (26g), \(J\) has two vertices joined by five parallel edges.  Its
+flows are the tuples
+\[
+ (t_0,\ldots,t_4)\in\{1,2,3\}^5,\qquad
+                    t_0+\cdots+t_4=0.                 \tag{26h}
+\]
+Their colour multiplicities have pattern \((3,1,1)\), so there are
+\(3\cdot 5!/(3!1!1!)=60\).  The global
+\(\operatorname{GL}(2,2)\cong S_3\) action is free, and the ten orbit
+representatives have the following numbers of integrated colours on the
+two circuits:
+\[
+\begin{array}{c|cccccccccc}
+t&
+11123&11213&11231&12113&12131&
+12223&12232&12311&12322&12333\\ \hline
+\#A/\#B&
+3/4&4/3&3/4&4/3&4/3&3/4&4/3&3/4&4/3&3/4 .
+\end{array}
+\]
+Each entry follows by five successive xors in the two orders (26g).
+If an extension were clean, the two circuits would traverse the same five
+assigned \(K_4\)-edges.  Their vertex sets would both be the union of the
+endpoints of those edges and would have equal cardinality, contradicting
+the table.  The same table shows that every flow deletes exactly one
+circuit.
+
+The displayed words integrate the first row.  After its stated deletion,
+the second \(5\)-circuit is the support.  Petersen is non-Tait-colourable
+and has girth five, so no extendable projection has size below five.
+The complement of the remaining circuit is connected, hence its only
+component has empty cut and the projection is clean.
+\end{proof}
+
+\begin{remark}[exact minimality within the subclass]
+Two independently structured enumerators check every loopless
+two-occurrence multi-circuit boundary of total size four, six, and eight;
+every flowable state is cleanable.  Thus (26g) is the smallest
+two-occurrence abstract counterstate to direct cleaning.  The full orbit
+table, literal Petersen realization, descended flow, exact census, two
+checkers, and hash ledger are in
+\path{scratch/minimum-projection-two-occurrence-interaction-20260729/}.
+This is a boundary-method obstruction, not a minimum-projection or
+FiveCDC counterexample.
+\end{remark}
+
 \begin{theorem}[minimum projections through size fifteen]
 \label{thm:sizefifteen}
 Under the hypotheses of Theorem~\ref{thm:sizeten}, every
@@ -2103,7 +2203,13 @@ obstruction identity, and the circuitwise-balanced corollary displayed
 above.  A separate hostile agent audit checked the expansion grouping,
 the leaf cancellation, all no-leaf graphs through seven tensor vertices,
 and all 4,096 three-vertex tensors; this remains agent review, not
-independent human verification.  The size-fifteen primary package freezes
+independent human verification.  Codex agents also derived the
+two-occurrence interaction dictionary and Petersen descent.  A separate
+hostile audit checked the complete ten-orbit table, the analytic
+60-flow and 320-map counts, the literal Petersen realization, the
+globally minimum clean descendant, both smaller-size enumerators, and the
+package ledger.  This is likewise agent review rather than independent
+human verification.  The size-fifteen primary package freezes
 all eight shape counts and 6,036 residual rows.  A separately written
 induction checker canonicalizes every residual and links it to the
 matching-robust inverse-extension family.  The single-circuit anchor

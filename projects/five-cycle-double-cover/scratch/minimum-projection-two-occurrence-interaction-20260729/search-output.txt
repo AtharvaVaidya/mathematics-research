@@ -1,0 +1,7 @@
+PASS shape=3+3 pairings=15 flowable=6 cleanable=6
+PASS shape=3+5 pairings=105 flowable=60 cleanable=60
+PASS shape=4+4 pairings=105 flowable=105 cleanable=105
+PASS shape=3+3+4 pairings=945 flowable=450 cleanable=450
+PASS shape=3+7 pairings=945 flowable=630 cleanable=630
+PASS shape=4+6 pairings=945 flowable=945 cleanable=945
+COUNTERSTATE shape=5+5 pairing=0123403142 flow=11123 flow_count=60

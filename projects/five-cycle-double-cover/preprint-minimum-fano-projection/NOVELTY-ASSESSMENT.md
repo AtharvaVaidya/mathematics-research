@@ -15,32 +15,37 @@ The manuscript proves:
 3. a universal relative-\(\mathrm{GL}(2,2)\) tensor theorem implying
    direct cleanability of every one-support-circuit boundary state, and
    of every several-circuit state with circuitwise component balance;
-4. the first failure, at support shape \(5+6\), of the stronger direct
+4. an interaction-multigraph dictionary for two-occurrence complement
+   components and the Petersen system as the smallest loopless abstract
+   failure of direct cleaning in that subclass, together with a complete
+   strict descent to a clean global minimum;
+5. the first failure in the all-four-colour minimum-projection census, at
+   support shape \(5+6\), of the stronger direct
    componentwise-\(\mathrm{GL}(2,2)\) cleaning statement;
-5. a size-five replacement certificate excluding every such failure from
+6. a size-five replacement certificate excluding every such failure from
    global minimality;
-6. exhaustive size-twelve and size-thirteen clean-or-delete theorems,
+7. exhaustive size-twelve and size-thirteen clean-or-delete theorems,
    each independently reproduced by two exact enumerators;
-7. a sharp size-fourteen counterstate to the unrestricted
+8. a sharp size-fourteen counterstate to the unrestricted
    clean-or-delete boundary lemma, together with a simple bridgeless
    cubic realization whose displayed projection is uncleanable but whose
    four global minima are all cleanable; and
-8. a complete size-fourteen primary census whose only 224 residuals all
+9. a complete size-fourteen primary census whose only 224 residuals all
    have shape \(7+7\), an independent full \(7+7\) census, and a
    pairing-robust Kempe path theorem that sends every residual to a
    strict size-seven deletion; and
-9. a complete size-fifteen primary census of 35,247,202,556
+10. a complete size-fifteen primary census of 35,247,202,556
    charge-valid states whose only 6,036 residuals all have shape \(7+8\),
    together with an independently written induction audit and
    realization-robust inverse Kempe lifts;
-10. a general \(K_4-e\) inflation theorem showing that all four static
+11. a general \(K_4-e\) inflation theorem showing that all four static
    exchange inequalities can be forced without changing the local
    two-colour boundary pairings, together with an explicit state that
    defeats every one-round fixed-colour Kempe move but escapes in two
    rounds;
-11. an unbounded two-terminal cleaning theorem for one-circuit supports;
+12. an unbounded two-terminal cleaning theorem for one-circuit supports;
    and
-12. a conditional orbit-reflecting \(K_{3,3}-e\) inflation theorem that
+13. a conditional orbit-reflecting \(K_{3,3}-e\) inflation theorem that
     transfers any hypothetical goal-free dynamic boundary orbit to one
     satisfying all four recomputed exchange inequalities at every
     reachable state.
@@ -108,8 +113,10 @@ over every possible terminal pairing in an unknown cubic realization; at
 size fifteen the inverse-smoothing audit links every residual to the
 size-fourteen family, and a separate matching-game checker verifies every
 residual directly.  The tensor theorem removes the entire
-one-circuit branch by a short human argument.  The two-terminal theorem
-also excludes an
+one-circuit branch by a short human argument.  The Petersen interaction
+system shows sharply why circuitwise component balance cannot simply be
+dropped: direct cleaning fails, but strict deletion succeeds for every
+extension.  The two-terminal theorem also excludes an
 unbounded dynamic-trap class without computation, while the conditional
 \(K_{3,3}-e\) theorem cleanly separates boundary-orbit obstruction from
 the metric exchange inequalities.  A targeted web/arXiv screen found no
@@ -141,8 +148,9 @@ theorem to higher-degree vertices.
 
 OpenAI Codex agents under Atharva Vaidya's direction discovered the proof
 route, counterstates, size-fourteen and size-fifteen Kempe escapes, the
-relative-\(\mathrm{GL}(2,2)\) tensor proof, and the static-inflation
-obstruction; proposed the two-terminal cleaning and orbit-reflecting
+relative-\(\mathrm{GL}(2,2)\) tensor proof, the Petersen interaction
+dictionary and descent, and the static-inflation obstruction; proposed
+the two-terminal cleaning and orbit-reflecting
 \(K_{3,3}-e\) lemmas; wrote the exact
 classifiers, exhaustive certificate builders, and independent checkers;
 performed the preliminary literature screen; and drafted the manuscript

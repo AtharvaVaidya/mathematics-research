@@ -43,7 +43,12 @@ admit a strict circuit deletion, and 6,036 residual \(7+8\) states are
 all covered by realization-robust inverse Kempe lifts from size fourteen.
 A human-checkable relative-\(\operatorname{GL}(2,2)\) tensor theorem
 independently proves direct cleaning for every charge-valid one-circuit
-boundary at arbitrary length.  Consequently any counterexample to the
+boundary at arbitrary length.  Its circuitwise-balanced multi-circuit
+corollary is sharp for direct cleaning: the Petersen graph gives the
+smallest loopless two-occurrence abstract failure, but all 60 of its
+interaction flows strictly delete a support circuit and an explicit
+deletion reaches a clean global minimum of size five.  Consequently any
+counterexample to the
 proposed minimum-projection selection principle has minimum support at
 least sixteen.
 
@@ -74,7 +79,10 @@ size-fifteen census, independent lift audit, anchor audit, and universal
 tensor proof are in the corresponding
 `scratch/minimum-projection-size15-*` and
 `scratch/minimum-projection-single-circuit-tensor-frontier-20260729/`
-packages.  The exact standard convention and a
+packages.  The Petersen interaction dictionary, two exact checkers, and
+complete descent are in
+`scratch/minimum-projection-two-occurrence-interaction-20260729/`.
+The exact standard convention and a
 self-contained graph-class reduction are now frozen in
 `scratch/cubic-reduction-standard-fivecdc-20260729/`: the universal
 assertion for arbitrary finite bridgeless multigraphs is equivalent to its
