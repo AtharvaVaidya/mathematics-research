@@ -1404,3 +1404,28 @@ has an explicit FiveCDC.  Therefore the example refutes only fixed-flow
 cap gluing; a valid reduction may change flows but must align the full
 signed states.  The proof, tables, and independent replay are in
 `scratch/fano-clean-line-signed-partitions-20260728.md`.
+
+## O61 — Compose the order-18 six-bad Fano flow into a cyclic-4
+all-seven obstruction
+
+Status: **FAILED BUILDING-BLOCK ROUTE / EXACT THREE-CUT LOCK**.
+
+The graph6 core `Q???C@?K@O@aDAw?GW?J?_g?Y??` was mistakenly treated
+during exploration as cyclically 4-edge-connected.  It has the cyclic
+three-cut with edge ids \(14,18,26\), splitting it into connected
+nine-vertex shores with twelve induced edges each.
+
+For all 27 adjacent-vertex-deletion four-poles, a standard-library
+enumerator reconstructs the 1024 binary pole cycles and evaluates the
+exact completion-sound two-cycle formula.  The twelve internal deletions
+on the two sides have respective local UNSAT profiles
+\(\{4,5,6\}\) and \(\{1,3,7\}\); the three cut-edge deletions have empty
+profile.  Every nonempty-profile pole retains the opposite cyclic shore
+behind three boundary incidences.  Hence any completion with a cyclic
+outside, including every multi-pole macro, has a cyclic three-cut.
+Linear relabelling changes the functional names but not this topology.
+
+Thus this core cannot generate the desired cyclically 4-edge-connected
+seven-projection obstruction by union of local UNSAT profiles.  Different
+cores and the FiveCDC conjecture remain open.  See
+`scratch/fano-six-bad-threecut-lock-20260728.md`.

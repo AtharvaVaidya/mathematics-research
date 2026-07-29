@@ -1566,3 +1566,19 @@ Open obligations:
     reduction must prove compatibility after flow selection; the
     four-terminal state-alignment problem remains open.
     Status: **EXACT COMPOSITION THEOREM / NAIVE CAP GLUING REFUTED**.
+
+98. **A cyclically-4 all-seven clean-projection obstruction needs a new
+    core:** the order-18 six-bad flow on
+    `Q???C@?K@O@aDAw?GW?J?_g?Y??` is split by the cyclic three-cut
+    \(e_{14},e_{18},e_{26}\).  Exact local pole profiles are
+    \(\{4,5,6\}\) on the twelve deletions inside one shore,
+    \(\{1,3,7\}\) on the twelve inside the other, and empty on the three
+    cut-edge deletions.  Every obstructive pole retains the opposite
+    cyclic shore behind a three-boundary, so no
+    \(\mathrm{GL}(3,2)\)-relabelled multi-pole composition of this core
+    can be cyclically 4-edge-connected.  The retained cyclic-4 censuses
+    through order 28 still find no all-seven obstruction, but this is
+    finite evidence.  Prove that every cyclically 4-edge-connected cubic
+    flow has a clean projection, or find a genuinely cyclically-4
+    countermodel from a different construction.
+    Status: **OPEN / ONE CORE FAMILY EXCLUDED EXACTLY**.

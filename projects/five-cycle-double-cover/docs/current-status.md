@@ -2860,3 +2860,30 @@ connectivity states are aligned.  This freezes a proof-strategy no-go; it
 does not obstruct changing the shore flows and does not resolve the
 four-pole or FiveCDC selection problem.  See
 `scratch/fano-clean-line-signed-partitions-20260728.md`.
+
+## Three-cut lock in the order-18 six-bad Fano flow
+
+Audit date: **2026-07-28**.
+
+The order-18 flow on
+`Q???C@?K@O@aDAw?GW?J?_g?Y??` has now been corrected from an exploratory
+cyclically-4 description.  Its graph has the cyclic three-cut consisting
+of edge ids \(14,18,26\), namely
+\((2,13),(5,15),(6,17)\).  The two connected shores each have nine
+vertices and twelve induced edges.
+
+Deleting the endpoints of all 27 edges and directly enumerating each
+1024-element binary pole cycle space gives exact completion-sound local
+UNSAT profiles.  The twelve deletions inside one shore have profile
+\(\{4,5,6\}\), the twelve inside the other have profile
+\(\{1,3,7\}\), and the three cut-edge deletions have empty profile.
+Every deletion with a nonempty profile retains the opposite cyclic shore
+behind a three-boundary.  Therefore any multi-pole completion using these
+local obstructions has a cyclic three-cut; \(\mathrm{GL}(3,2)\) relabelling
+does not alter the lock.
+
+This closes the attempted construction of a cyclically 4-edge-connected
+all-seven fixed-flow obstruction from this core.  It does not rule out a
+different core and is not a FiveCDC result.  The human proof and
+solver-independent checker are in
+`scratch/fano-six-bad-threecut-lock-20260728.md`.

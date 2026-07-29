@@ -227,6 +227,13 @@ resolution.
   theorems, triangular-prism fixed-label no-go, order-40 radius-three
   plateau separator and profile-Laplacian no-go, and the nested order-16
   and order-18-snark certificate manifests.
+- `scratch/fano-six-bad-threecut-lock-20260728.md` corrects the
+  order-18 six-bad-flow core: edge ids 14, 18, and 26 form a cyclic
+  three-cut.  Its standard-library checker enumerates every 1024-element
+  deleted-edge pole cycle space and verifies the exact local profile split
+  `12 x 456`, `12 x 137`, `3 x empty`.  Every obstructive pole retains a
+  cyclic shore behind a three-boundary, excluding that core from
+  cyclically-4 all-seven local-obstruction compositions.
 
 These are exact human-checkable or independently replayable advances.  They
 do not prove or disprove FiveCDC, and no target UNSAT certificate exists in

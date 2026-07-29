@@ -49,6 +49,13 @@ copied into a separate clean clone; it was not modified or committed.
   terminals, a 29,750-instance Petersen replay, 546 checks on the
   unbounded-component diamond family, and an explicit eight-vertex no-go
   to independently choosing clean cap flows.
+- The order-18 six-bad-flow three-cut correction: a human proof and
+  solver-independent enumerator showing that edge ids 14, 18, and 26 form
+  a cyclic three-cut, that the 27 deleted-edge pole profiles split as
+  twelve `456`, twelve `137`, and three empty profiles, and that every
+  locally obstructive pole retains a cyclic shore behind a three-boundary.
+  This excludes that core from any cyclically-4 multi-pole all-seven
+  construction; it is not a FiveCDC result.
 - The square-local quantifier boundary: one planar order-eight good state
   has 72 legal local lifts and none good in any coordinate, while an
   alternate state lifts. Both order-six graphs satisfy the stronger
