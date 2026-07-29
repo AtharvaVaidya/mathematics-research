@@ -80,6 +80,24 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
 These are auxiliary publishable-candidate results, not a resolution.
 Novelty remains provisional pending specialist review.
 
+## KMNS girth-construction audit (2026-07-28)
+
+- `search/kmns-girth-claim-obstruction-20260728/` records a local
+  obstruction in the literal Figure 4 construction of Karabáš,
+  Máčajová, Nedela, and Škoviera (2022).
+- The ordinary proof exhibits connector-terminal paths of lengths
+  \(4,3,3\).  Across the \((3,3,1)\)-pole \(Z\), every one of the 18
+  connector identifications therefore closes a cycle of length at most
+  nine.
+- A standard-library checker reconstructs the corrected Figure 2
+  Petersen graph and exhausts all 18 identifications.  It reports bounds
+  eight or nine, with best possible local upper bound nine.
+
+This is a candidate gap report awaiting human confirmation of the authors'
+multipole convention and intent.  It concerns only the displayed
+construction: it does not refute their broader existence theorem, does not
+exclude a repaired superposition, and has no implication for FiveCDC.
+
 ## Jaeger fixed-fibre and five-point lifting update (2026-07-28)
 
 - `preprint-jaeger-fivecdc-frontier/` is a 34-page working preprint with
