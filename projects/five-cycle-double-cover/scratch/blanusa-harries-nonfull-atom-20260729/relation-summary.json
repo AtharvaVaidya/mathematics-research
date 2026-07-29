@@ -1,0 +1,85 @@
+{
+  "direct_pairing_consequence": {
+    "all_diagonal_words_positive": true,
+    "proof": "Choose one fixed duad on every paired port; every atom then sees a positive diagonal boundary word.",
+    "status": "all networks obtained only by pairwise port identifications are positive"
+  },
+  "negative_orbit_classification": {
+    "multiplicity_2_1_1_1_1": {
+      "duad_multigraph_type": "K4 minus one edge, with the opposite edge doubled",
+      "orbit_ids": [
+        200,
+        201,
+        206,
+        207,
+        254,
+        255,
+        318,
+        319
+      ]
+    },
+    "multiplicity_2_2_2": {
+      "all_duad_triples": "triangle",
+      "missing_port_pair_partitions": {
+        "80": "02|14|35",
+        "81": "02|15|34",
+        "117": "04|12|35",
+        "118": "05|12|34",
+        "143": "03|14|25",
+        "144": "03|15|24",
+        "147": "04|13|25",
+        "148": "05|13|24"
+      },
+      "nontriangle_triple_missing_orbits": 0,
+      "orbit_ids": [
+        80,
+        81,
+        117,
+        118,
+        143,
+        144,
+        147,
+        148
+      ],
+      "simple_three_duad_types_with_no_missing_positional_orbit": [
+        "3-star",
+        "P4",
+        "P3 plus a disjoint edge"
+      ]
+    }
+  },
+  "relation": {
+    "negative_ordered_words_after_s5_expansion": 1440,
+    "negative_s5_orbits": 16,
+    "ordered_xor_zero_duad_words": 62560,
+    "positive_ordered_words": 61120,
+    "positive_s5_orbits": 555,
+    "s5_coordinate_orbits": 571
+  },
+  "schema": "blanusa-sixpole-exact-relation-summary-v1",
+  "six_pole": {
+    "deleted_source_vertices": [
+      13,
+      16
+    ],
+    "internal_edges": 21,
+    "ports": [
+      1,
+      2,
+      3,
+      6,
+      8,
+      9
+    ],
+    "source_graph6": "Q???C@?GCoOoDO[?CcAO_?k?J??",
+    "vertices": 16
+  },
+  "verification": {
+    "negative_certificate": "one 121-variable, 1476-clause selector CNF with an LRAT proof",
+    "negative_checkers": [
+      "lrat-check",
+      "cake_lpr"
+    ],
+    "positive_certificate": "555 explicit edge-duad labelings checked directly at every vertex"
+  }
+}

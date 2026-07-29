@@ -1,0 +1,1 @@
+representatives=571 sat=555 unsat_uncertified=16 variables=295 solve_seconds=0.0537054

@@ -1,0 +1,11 @@
+c parsed a formula with 121 variables and 1476 clauses
+c VERIFIED
+c allocated 1024 9963 1210
+c Added clauses = 1820.  Deleted clauses = 1044.  Max live clauses = 1667
+c verification time = 0.00 secs
+s VERIFIED UNSAT
+PASS exact 16-vertex Blanusa six-pole relation
+positive_s5_orbits=555 negative_s5_orbits=16
+positive_witnesses=555 checked_vertex_xors=44400
+negative_selector_cnf=121_variables,1476_clauses
+negative_LRAT=lrat-check_PASS,cake_lpr_PASS

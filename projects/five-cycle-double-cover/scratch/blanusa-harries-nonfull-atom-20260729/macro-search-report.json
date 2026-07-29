@@ -1,0 +1,161 @@
+{
+  "conclusion": "all 1296 port orderings are satisfiable for the full relation: 400 already in the three-label restriction, and the other 896 by direct full-relation witnesses",
+  "full_relation_search_on_transition_unsat_orderings": {
+    "first_sat_ordering": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        1,
+        0,
+        3
+      ],
+      [
+        1,
+        0,
+        2
+      ]
+    ],
+    "first_sat_witness": {
+      "0-1": 17,
+      "0-2": 20,
+      "0-3": 18,
+      "1-0": 17,
+      "1-2": 12,
+      "1-3": 10,
+      "2-0": 24,
+      "2-1": 9,
+      "2-3": 24,
+      "3-0": 9,
+      "3-1": 24,
+      "3-2": 24
+    },
+    "nonsat": [],
+    "statuses": {
+      "sat": 896
+    }
+  },
+  "macro": {
+    "atoms": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "incidence_graph": "K4,4 minus the diagonal perfect matching",
+    "junctions": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "port_orderings": 1296,
+    "proper_three_edge_colourings": 24
+  },
+  "relation": {
+    "diagonal_word_checks": {
+      "10": true,
+      "12": true,
+      "17": true,
+      "18": true,
+      "20": true,
+      "24": true,
+      "3": true,
+      "5": true,
+      "6": true,
+      "9": true
+    },
+    "diagonal_words_all_positive": true,
+    "negative_ordered_words": 1440,
+    "negative_s5_orbits": 16
+  },
+  "schema": "blanusa-useful-atom-k44-macro-search-v1",
+  "scope": "relation-level search only; not a graph-level UNSAT claim",
+  "three_label_transition_search": {
+    "first_unsat_ordering": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        1,
+        0,
+        2
+      ]
+    ],
+    "sat_orderings": 400,
+    "unsat_orderings": 896
+  }
+}

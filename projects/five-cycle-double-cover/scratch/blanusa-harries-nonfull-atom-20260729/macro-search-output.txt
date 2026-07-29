@@ -1,0 +1,1 @@
+{"full_statuses":{"sat":896},"transition_sat":400,"transition_unsat":896}
