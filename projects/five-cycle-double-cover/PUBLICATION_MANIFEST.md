@@ -87,11 +87,17 @@ Novelty remains provisional pending specialist review.
   Máčajová, Nedela, and Škoviera (2022).
 - The ordinary proof exhibits connector-terminal paths of lengths
   \(4,3,3\).  Across the \((3,3,1)\)-pole \(Z\), every one of the 18
-  connector identifications therefore closes a cycle of length at most
-  nine.
+  structural connector identifications (36 ordered junctions before
+  quotienting by the symmetry of the two isolated edges) therefore closes
+  a cycle of length at most nine.
 - A standard-library checker reconstructs the corrected Figure 2
-  Petersen graph and exhausts all 18 identifications.  It reports bounds
-  eight or nine, with best possible local upper bound nine.
+  Petersen graph, exhausts all 20 admissible decycling triples and all
+  60 distinguished-terminal choices, and checks all 18 structural
+  identifications.  It reports bounds eight or nine, with largest certified
+  per-identification upper bound nine.
+- A separately prompted Codex agent blind-audited the paper transcription,
+  multipole convention, proof, and checker and found the narrow claim sound.
+  This is an AI cross-check, not independent human review.
 
 This is a candidate gap report awaiting human confirmation of the authors'
 multipole convention and intent.  It concerns only the displayed

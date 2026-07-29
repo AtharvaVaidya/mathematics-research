@@ -2,15 +2,17 @@
 """Check the local girth obstruction in the literal KMNS Figure 4 gluing.
 
 This script uses only the Python standard library.  It independently checks
-the corrected Petersen graph underlying Figure 2, the three short terminal
-paths that survive the F_g construction, and all 18 identifications of the
-two size-three connectors with a Z multipole.
+the corrected Petersen graph underlying Figure 2, all decycling
+distance-two triples and distinguished-u choices, the three short terminal
+paths that survive the F_g construction, and all 18 structural
+identifications (36 ordered junctions before quotienting by the symmetry of
+the two isolated edges) of the two size-three connectors with a Z multipole.
 """
 
 from __future__ import annotations
 
 from collections import deque
-from itertools import permutations
+from itertools import combinations, permutations
 import json
 
 
@@ -98,6 +100,80 @@ def verify_path(rows: list[list[int]], path: tuple[int, ...]) -> int:
     return len(path) - 1
 
 
+def induced_acyclic(rows: list[list[int]], deleted: frozenset[int]) -> bool:
+    """Check by a spanning-forest traversal that the surviving graph is acyclic."""
+    seen: set[int] = set()
+    for root in range(len(rows)):
+        if root in deleted or root in seen:
+            continue
+        seen.add(root)
+        stack = [(root, -1)]
+        while stack:
+            vertex, parent = stack.pop()
+            for other in rows[vertex]:
+                if other in deleted or other == parent:
+                    continue
+                if other in seen:
+                    return False
+                seen.add(other)
+                stack.append((other, vertex))
+    return True
+
+
+def shortest_distance(
+    rows: list[list[int]], source: int, target: int,
+    deleted: frozenset[int],
+) -> int:
+    assert source not in deleted and target not in deleted
+    distance = {source: 0}
+    queue = deque([source])
+    while queue:
+        vertex = queue.popleft()
+        if vertex == target:
+            return distance[vertex]
+        for other in rows[vertex]:
+            if other in deleted or other in distance:
+                continue
+            distance[other] = distance[vertex] + 1
+            queue.append(other)
+    raise AssertionError("connector terminals became disconnected")
+
+
+def audit_decycling_triples(rows: list[list[int]]) -> list[dict[str, object]]:
+    """Enumerate all allowed triples and every distinguished deleted vertex."""
+    allowed = []
+    for triple_tuple in combinations(range(len(rows)), 3):
+        triple = frozenset(triple_tuple)
+        # Petersen diameter is two, so pairwise distance two is equivalent
+        # here to independence.
+        if any(right in rows[left]
+               for left, right in combinations(triple_tuple, 2)):
+            continue
+        if not induced_acyclic(rows, triple):
+            continue
+        allowed.append(triple_tuple)
+    assert len(allowed) == 20
+
+    records: list[dict[str, object]] = []
+    for triple_tuple in allowed:
+        triple = frozenset(triple_tuple)
+        for distinguished in triple_tuple:
+            terminals = tuple(rows[distinguished])
+            distances = sorted(
+                shortest_distance(rows, left, right, triple)
+                for left, right in combinations(terminals, 2)
+            )
+            assert distances == [3, 3, 4]
+            records.append({
+                "triple": list(triple_tuple),
+                "distinguished_u": distinguished,
+                "terminals": list(terminals),
+                "terminal_distance_multiset": distances,
+            })
+    assert len(records) == 60
+    return records
+
+
 def distance_upper_bounds(rows: list[list[int]]) -> tuple[tuple[int, ...], ...]:
     result = [[0] * 3 for _ in range(3)]
     for path in SURVIVING_PATHS:
@@ -144,6 +220,7 @@ def main() -> int:
     assert connected(rows)
     assert all(len(row) == 3 for row in rows)
     assert girth(rows) == 5
+    triple_records = audit_decycling_triples(rows)
     distances = distance_upper_bounds(rows)
     assert distances == ((0, 4, 3), (4, 0, 3), (3, 3, 0))
 
@@ -180,10 +257,14 @@ def main() -> int:
             "girth": girth(rows),
         },
         "connector_terminal_order": list(TERMINALS),
+        "decycling_distance_two_triples": 20,
+        "distinguished_triple_choices_checked": len(triple_records),
+        "distinguished_triple_records": triple_records,
         "surviving_paths": [list(path) for path in SURVIVING_PATHS],
         "terminal_distance_upper_bounds": [list(row) for row in distances],
-        "identifications_checked": len(records),
-        "best_possible_local_girth_upper_bound": 9,
+        "ordered_connector_junctions_represented": 36,
+        "structural_identifications_checked": len(records),
+        "largest_certified_per_identification_upper_bound": 9,
         "records": records,
     }
     print(json.dumps(result, indent=2, sort_keys=True))

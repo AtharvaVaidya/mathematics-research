@@ -1,6 +1,7 @@
 # A local obstruction in the literal KMNS girth construction
 
-Status: candidate gap report for human audit, 28 July 2026.
+Status: AI-blind-audited candidate gap report for human audit,
+28 July 2026.
 
 This note records a local obstruction found while trying to instantiate the
 construction in Theorem 5.1 and Figures 2--4 of:
@@ -13,9 +14,9 @@ colouring defect of snarks,” *Discrete Mathematics* 345 (2022), 113040,
 The conclusion established here is deliberately narrow:
 
 > Under the ordinary multipole-gluing convention and the literal \(F_g\) and
-> \(Z\) pieces of Figures 3--4, every identification of either pair of
-> \(F_g\) connectors with a \(Z\) supervertex creates a cycle of length at
-> most \(9\).
+> \(Z\) pieces of Figures 3--4, every structural identification of either
+> pair of \(F_g\) connectors with a \(Z\) supervertex creates a cycle of
+> length at most \(9\).
 
 Consequently, this literal construction does not produce a graph of girth
 \(10\), regardless of the order in which semiedges in those connectors are
@@ -65,7 +66,10 @@ After the two size-three connectors are joined to connectors of two copies
 of \(F_g\), \(z\) is adjacent to one selected terminal in each \(F_g\), and
 the two isolated edges pair the two remaining terminals on one side with
 the two remaining terminals on the other side. There are
-\(3\cdot3\cdot2=18\) such local identifications.
+\(3\cdot3\cdot2=18\) distinct structural identifications after quotienting
+by the symmetry that interchanges the two isolated edges of \(Z\). If those
+two edges are temporarily distinguished, there are \(3!\cdot3!=36\)
+ordered connector junctions.
 
 ## Human-checkable obstruction
 
@@ -90,6 +94,17 @@ v5 - 8 - 9 - 6            length 3
 Therefore, in each \(F_g\) connector the three terminal-pair distances have
 the universal upper bounds \(4,3,3\). Call the terminal opposite the
 length-4 pair \(c\).
+
+The example loses no generality.  View the Petersen graph as the Kneser
+graph \(KG(5,2)\).  A triple of vertices at pairwise distance \(2\) is a
+three-member pairwise-intersecting family of 2-subsets.  Such a family is
+either a three-edge star or a triangle on three ground points.  Direct
+deletion shows that precisely the 20 star triples are decycling; they form
+one orbit under the natural \(S_5\) automorphism group.  The stabilizer of a
+star is transitive on its three edges, so the distinguished choice of
+\(u_i\) also loses no generality.  Equivalently, a direct check of all
+20 decycling triples and all three choices of \(u_i\) gives the same
+terminal-distance multiset \(\{3,3,4\}\).
 
 Now join one connector from each of two copies of \(F_g\) through \(Z\).
 
@@ -130,10 +145,14 @@ The standard-library checker:
 
 1. reconstructs the corrected Figure 2 Petersen graph;
 2. verifies simplicity, cubicity, connectedness, and girth \(5\);
-3. checks the three displayed surviving paths;
-4. enumerates all \(18\) possible \(Z\)-connector identifications; and
-5. verifies that every case has a displayed local-cycle upper bound at
-   most \(9\), with the best achievable bound equal to \(9\).
+3. enumerates all 20 decycling distance-two triples and all 60
+   distinguished-\(u_i\) choices, obtaining terminal-distance multiset
+   \(\{3,3,4\}\) every time;
+4. checks the three displayed surviving paths;
+5. enumerates all 18 structural \(Z\)-connector identifications, representing
+   all 36 ordered junctions up to interchanging the two isolated edges; and
+6. verifies that every case has a displayed local-cycle upper bound at
+   most \(9\), with largest certified per-identification upper bound \(9\).
 
 The calculation uses only path and cycle upper bounds. If an \(F_g\)
 contains an even shorter terminal path, the conclusion only becomes
@@ -156,11 +175,14 @@ proves that the literal construction cannot produce one.
 
 ## AI-use disclosure
 
-OpenAI Codex, using a GPT model, was used substantively in this investigation:
-it inspected the paper figures and text, found and corrected the Figure 2
+OpenAI Codex, using GPT models, was used substantively in this investigation:
+agents inspected the paper figures and text, found and corrected the Figure 2
 transcription error in the experimental generator, constructed and tested
 candidate port wirings, identified the local \(Z\)-connector obstruction,
-and drafted the checker and this note. The finite calculation is reproduced
-by the standard-library program, and the mathematical argument above is
-intended to be checkable without trusting the model. No claim of novelty or
-correctness should be made without independent human review.
+and drafted the checker and this note. A separately prompted Codex agent
+blind-audited the paper transcription, multipole convention, proof, and
+checker; that is an AI cross-check, not independent human review or peer
+review. The finite calculation is reproduced by the standard-library
+program, and the mathematical argument above is intended to be checkable
+without trusting a model. No claim of novelty or final correctness should
+be made without independent human review.
