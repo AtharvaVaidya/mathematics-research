@@ -35,6 +35,17 @@ are not independent human verification or peer review.
   \(r_f(H_n)=n\), it lifts to a globally minimum nonzero Fano value class.
   The graph identity and novelty assessment still require independent
   human review.
+- `scratch/minimum-projection-census-through28-20260729/` exactly replays
+  the minimum-extendable-projection test on 14,009 frozen cyclically-4
+  non-Tait records through order 28 and 12,892 frozen order-22 hard
+  records.  All 147,539 minimum projections are cleanable.  Completeness
+  of the graph populations is inherited from the documented upstream
+  canonical-generation packages.
+- `scratch/petersen-minimum-tjoin-countermodel-20260729/` gives a
+  dependency-free \(2^{15}\)-subset proof that a single matching can have
+  two shortest containing cycles with neither complement terminal-even.
+  This closes a tempting one-matching shortcut but does not realize the
+  four synchronized affine classes.
 
 These are proof-strategy results, not a proof or disproof of FiveCDC.
 

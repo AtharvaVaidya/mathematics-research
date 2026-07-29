@@ -280,6 +280,20 @@ replay through arbitrary finite prefixes; global minimality imports the
 published equality \(r_f(H_n)=n\), and graph identity remains explicitly
 conditional on independent verification of the figure transcription.
 
+The exact finite census in
+`scratch/minimum-projection-census-through28-20260729/` tests the separate
+minimum-extendable-projection conjecture.  Every minimum projection is
+cleanable on all 14,009 frozen cyclically-4 non-Tait records through
+order 28 and all 12,892 frozen order-22 hard records, covering 147,539
+minimum projections in total.  Population completeness is inherited
+from the cited upstream canonical-generation packages; the claim about
+the literal frozen files is replayed exactly.  The adjacent
+`scratch/petersen-minimum-tjoin-countermodel-20260729/` explains why a
+proof cannot use only one of the four affine matchings: a literal Petersen
+matching has two shortest containing cycles, and both leave odd terminal
+components.  These are finite evidence and an auxiliary obstruction, not
+a universal proof.
+
 The new coordinate-factor lemma in
 `docs/flow-resistance-weak-oddness.md` proves directly that
 \(\omega_{\rm w}(G)\le2r_f(G)\) for loopless cubic multigraphs.  Huck's
