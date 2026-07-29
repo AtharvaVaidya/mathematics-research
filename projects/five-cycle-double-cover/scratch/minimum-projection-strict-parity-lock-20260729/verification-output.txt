@@ -1,0 +1,8 @@
+LOCK closure_order=18 closure_edges=27 cut_edge=5 endpoints=5,10 cycles=1024 missing=70780 liftable=1008 a0=7 a1=5 odd_minimum_supports=1
+BASE cycles=1024 missing=66207 liftable=1008 target_extensions=15360 target_clean=0
+PLACEMENTS total=16384 uniquely_optimal=2280 minimum_locks=8 minimizers=180 chosen=0,2,3,4,7,8,9,10 gap=1
+GRAPH vertices=162 edges=243 simple=1 cubic=1 connected=1 bridgeless=1 nonplanar_by_base_minor=1 target_support=54 support_circuits=27,27 complement_components=13
+MINIMUM exact_mu=54 unique_projection=1 all_minimum_extensions_clean=0
+FIVECDC compositional_sizes=(79, 90, 106, 106, 105) direct_sat_sizes=(99, 93, 101, 95, 98) exact_two=1 parity=1
+CANONICAL graph6_sha256=af07f960f5324e323e42eeb53b3a5721ef43a689ac5e09620349e34671aca5af sparse6_sha256=16dfaac18985d41c3c90c56b9f218ab71b38c2a2235b956f0cb6aae21622e20d
+PASS unique globally minimum uncleanable projection; graph has a FiveCDC
