@@ -82,6 +82,22 @@ not resolve the Five-Cycle Double Cover Conjecture.
 
 ## Primary-source screen
 
+The ordinary Cycle Double Cover Conjecture is no longer open.  OpenAI's
+July 2026 proof constructs an eight-subgraph double cover, and the human
+expositions of Oum and Geelen verify and clarify that argument:
+
+- OpenAI, *A Proof of the Cycle Double Cover Conjecture* (July 2026),
+  <https://cdn.openai.com/pdf/04d1d1e4-bc75-476a-97cf-49055cd98d31/cdc_proof.pdf>;
+- Sang-il Oum, *A proof of the cycle double cover conjecture by OpenAI:
+  An exposition*, arXiv:2607.16356v2,
+  <https://arxiv.org/abs/2607.16356>;
+- Jim Geelen, *OpenAI's proof of the Cycle Double Cover Theorem*,
+  arXiv:2607.15399, <https://arxiv.org/abs/2607.15399>.
+
+Oum states the five-coordinate strengthening separately as Conjecture 18.
+Thus the July 2026 theorem changes the surrounding literature but does not
+settle the FiveCDC target of this manuscript.
+
 The immediate source is:
 
 - Radek Hušek and Robert Šámal, *Exponentially Many Circuit Double

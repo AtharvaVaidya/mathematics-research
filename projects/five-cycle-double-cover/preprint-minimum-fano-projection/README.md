@@ -11,7 +11,9 @@ selection principle as an explicit conjecture. It claims neither a proof
 nor a counterexample to FiveCDC. An elementary incidence-cluster theorem
 reduces the standard conjecture for arbitrary finite bridgeless multigraphs
 to the cubic setting, but the minimum-projection theorem itself remains
-cubic.
+cubic. This is distinct from the ordinary Cycle Double Cover Conjecture,
+whose July 2026 proof gives an eight-subgraph cover rather than the
+five-subgraph bound.
 
 Build from this directory with:
 
