@@ -65,6 +65,15 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
 - The order-108 graph has exactly two cyclic 2-edge cuts.  Therefore it
   is not a FiveCDC counterexample and does not refute the surviving
   cyclically-4, girth-ten binary-repair lemma.
+- `search/fano-binary-repair-cyclic4-countermodel-144v-20260728/`
+  freezes the next exact boundary: a simple cubic, cyclically-4,
+  non-Tait order-144 graph and flow on which all seven starting packing
+  tests and all 21 normalized binary-cycle repairs are UNSAT.  Twenty-nine
+  individual LRATs are accepted by both `lrat-check` and verified CakeML
+  `cake_lpr`, and a clean-room checker reconstructs every clause.
+- The order-144 graph has girth five and an explicit checked standard
+  FiveCDC.  It refutes only the cyclically-4-only repair statement; the
+  girth-at-least-ten BPR lemma and FiveCDC remain open.
 - `verify_order80_girth10_binary_repair.py` supplies a solver-free
   positive girth-ten control on a Tait-colourable order-80 graph.
 

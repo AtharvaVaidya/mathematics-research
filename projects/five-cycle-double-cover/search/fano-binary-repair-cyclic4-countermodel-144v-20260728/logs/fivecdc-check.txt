@@ -1,0 +1,7 @@
+VALID FIVE-CYCLE DOUBLE COVER
+host: n=144 m=216 simple=true cubic=true connected=true
+cycle edge counts: [93, 96, 69, 84, 90]
+nontrivial component vertex counts: [[5, 5, 5, 5, 5, 5, 5, 6, 13, 13, 26], [5, 5, 5, 5, 16, 23, 37], [19, 50], [5, 5, 5, 7, 11, 24, 27], [5, 40, 45]]
+every vertex degree is even in every C_i
+every edge multiplicity is exactly 2
+witness_sha256=1257b645601e17187838c7716a2cc1a02e70bf022702d5e08869ec3e95d37b28

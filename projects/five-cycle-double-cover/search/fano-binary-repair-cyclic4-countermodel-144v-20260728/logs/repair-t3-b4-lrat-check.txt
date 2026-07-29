@@ -1,0 +1,8 @@
+$ /Users/atharvavaidya/Documents/conjectures/.tools/cert-checkers/drat-trim/lrat-check /private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/cnf/repair-t3-b4.cnf /private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/lrat/repair-t3-b4.lrat
+c parsed a formula with 648 variables and 3233 clauses
+c VERIFIED
+c allocated 1024 32733 6480
+c Added clauses = 3928.  Deleted clauses = 393.  Max live clauses = 3535
+c verification time = 0.00 secs
+
+exit_code=0

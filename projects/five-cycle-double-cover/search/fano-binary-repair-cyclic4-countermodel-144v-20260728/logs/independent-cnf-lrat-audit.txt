@@ -1,0 +1,13 @@
+{
+  "schema": "fano-binary-repair-cyclic4-order144-audit-v1",
+  "order": 144,
+  "edges": 216,
+  "nowhere_zero_F2_3_flow": true,
+  "initial_nonpacking_instances_unsat": 7,
+  "normalized_binary_repair_instances_unsat": 21,
+  "tait_coloring_instance_unsat": true,
+  "cnf_semantics_reconstructed_independently": true,
+  "lrat_check_verified": 29,
+  "cake_lpr_verified": 29,
+  "scope": "counterexample to the cyclically-4-only binary repair auxiliary statement; girth is 5, and an explicit FiveCDC shows this is not a FiveCDC counterexample"
+}

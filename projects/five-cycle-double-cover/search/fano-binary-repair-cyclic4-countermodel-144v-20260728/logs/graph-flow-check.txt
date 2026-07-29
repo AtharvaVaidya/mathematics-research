@@ -1,0 +1,13 @@
+status verified
+order 144
+edges 216
+girth 5
+class_sizes 33 31 31 33 34 26 28
+simple true
+cubic true
+connected true
+bridgeless true
+cyclic_cut_count_1 0
+cyclic_cut_count_2 0
+cyclic_cut_count_3 0
+cyclically4 true

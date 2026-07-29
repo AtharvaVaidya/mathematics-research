@@ -1,0 +1,123 @@
+$ /opt/homebrew/bin/cadical --lrat --no-binary /private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/cnf/repair-t7-b2.cnf /private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/lrat/repair-t7-b2.lrat
+c --- [ banner ] -------------------------------------------------------------
+c
+c CaDiCaL SAT Solver
+c Copyright (c) 2016-2026
+c A. Biere, M. Fleury, N. Froleyks, K. Fazekas, F. Pollitt, T. Faller
+c JKU Linz, University of Freiburg, TU Wien
+c
+c Version 3.0.1
+c Apple clang version 21.0.0 (clang-2100.0.123.102) -Wall -Wextra -O3 -DNDEBUG -DNCLOSEFROM
+c Sun Jul 19 15:40:55 UTC 2026 Darwin Tahoe-arm64.local 25.4.0 arm64
+c
+c --- [ proof tracing ] ------------------------------------------------------
+c
+c opening file to write '/private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/lrat/repair-t7-b2.lrat'
+c writing non-binary proof trace to '/private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/lrat/repair-t7-b2.lrat'
+c
+c --- [ parsing input ] ------------------------------------------------------
+c
+c reading DIMACS file from '/private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/cnf/repair-t7-b2.cnf'
+c opening file to read '/private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/cnf/repair-t7-b2.cnf'
+c found 'p cnf 648 3310' header
+c parsed 3310 clauses in 0.00 seconds process time
+c
+c --- [ options ] ------------------------------------------------------------
+c
+c   --binary=false                 (different from default 'true')
+c   --lrat=true                    (different from default 'false')
+c
+c --- [ solving ] ------------------------------------------------------------
+c
+c time measured in process time since initialization
+c
+c  seconds  reduction conflicts       size tier2     variables
+c         MB    restarts   redundant    glue  trail      remaining
+c          level     rate       size/glu tier1 irredundant
+c
+c *  0.00  0  0 0   0  0    0    0 0.0 0 0 2 6  0% 3170 620 96%
+c )  0.00  0  0 0   0  0    0    0 0.0 0 0 2 6  0% 3170 620 96%
+c {  0.00  0  0 0   0  0    0    0 0.0 0 0 2 6  0% 3170 620 96%
+c -  0.00  0 27 1   2  2  301  229 1.8 6 3 2 6 34% 3170 620 96%
+c -  0.00  0 38 2  34  3  735  562 1.8 6 3 2 6 42% 3170 620 96%
+c i  0.00  0 37 2  47  3  917  708 1.8 6 3 2 6 41% 3170 615 95%
+c i  0.01  0 37 2  54  3  981  762 1.8 6 3 2 6 41% 3170 611 94%
+c i  0.01  0 37 2  54  3  995  772 1.8 6 3 2 6 41% 3170 610 94%
+c i  0.01  0 37 2  54  3 1002  777 1.8 6 3 2 6 41% 3170 601 93%
+c O  0.01  0 36 2  54  3 1003  778 1.8 6 3 2 6 41% 3170 601 93%
+c i  0.01  0 36 2  54  3 1006  779 1.8 6 3 2 6 41% 3170 600 93%
+c }  0.01  0 36 2  54  3 1011  780 1.8 6 3 2 6 41% 3170 586 90%
+c 0  0.01  0 36 2  54  3 1011  780 1.8 6 3 2 6 41% 3170 586 90%
+c
+c --- [ closing proof ] ------------------------------------------------------
+c
+c LRAT proof file '/private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/lrat/repair-t7-b2.lrat' closed
+c LRAT 1132 added clauses 72.52%
+c LRAT 429 deleted clauses 27.48%
+c LRAT 90069 bytes (0.09 MB)
+c
+c --- [ result ] -------------------------------------------------------------
+c
+s UNSATISFIABLE
+c
+c --- [ run-time profiling ] -------------------------------------------------
+c
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c
+c         0.00   99.44% search
+c         0.00   96.96% unstable
+c         0.00   16.73% parse
+c         0.00    2.32% lucky
+c         0.00    0.00% simplify
+c   =================================
+c         0.00   82.51% solve
+c
+c last line shows process time for solving
+c (percentage relative to total process time)
+c
+c --- [ statistics ] ---------------------------------------------------------
+c
+c chronological:               305        30.17 %  of conflicts
+c conflicts:                  1011    225820.86    per second
+c decisions:                  3067    685056.96    per second
+c fixed:                        62         9.57 %  of all variables
+c learned:                     899        88.92 %  per conflict
+c learned_lits:               6479       100.00 %  learned literals
+c minimized:                     0         0.00 %  learned literals
+c shrunken:                    911        14.06 %  learned literals
+c minishrunken:                444         6.85 %  learned literals
+c otfs:                         92         9.10 %  of conflict
+c propagations:              27201         6.08 M  per second
+c reduced:                      20         1.98 %  per conflict
+c rephased:                      1      1011.00    interval
+c restarts:                     54        18.72    interval
+c subsumed:                     93         2.29 %  of all clauses
+c strengthened:                 92         2.26 %  of all clauses
+c ticks:                    162153         5.96    propagation
+c
+c seconds are measured in process time for solving
+c
+c --- [ glue usage ] ---------------------------------------------------------
+c
+c focused glue 2 used 619 clauses 30.18% accumulated 75.08% tier1
+c focused glue 3 used 224 clauses 10.92% accumulated 86.00% tier2
+c
+c stable glue 2 used 0 clauses 0.000% accumulated 0.000% tier1
+c stable glue 3 used 0 clauses 0.000% accumulated 0.000%
+c stable glue 4 used 0 clauses 0.000% accumulated 0.000%
+c stable glue 5 used 0 clauses 0.000% accumulated 0.000%
+c stable glue 6 used 0 clauses 0.000% accumulated 0.000% tier2
+c
+c
+c --- [ resources ] ----------------------------------------------------------
+c
+c total process time since initialization:         0.01    seconds
+c total real time since initialization:            0.01    seconds
+c maximum resident set size of process:            3.44    MB
+c
+c --- [ shutting down ] ------------------------------------------------------
+c
+c exit 20
+
+exit_code=20

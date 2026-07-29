@@ -283,6 +283,29 @@ These data show abundance, not universality.  They neither sample the
 minimum-counterexample girth-ten snark domain nor supply a compactness
 argument.
 
+### Cyclically-4 boundary
+
+A subsequent fixed-host flow search closes the next relaxed boundary.  The
+package
+`search/fano-binary-repair-cyclic4-countermodel-144v-20260728/`
+contains a simple connected cubic graph of order 144 and a nowhere-zero
+\(\mathbb F_2^3\)-flow for which:
+
+- the graph is non-3-edge-colourable and cyclically 4-edge-connected;
+- none of the seven initial value classes packs; and
+- all 21 normalized binary-cycle repair incidences fail.
+
+The seven initial failures, the 21 repair failures, and non-Taitness have
+individual CNFs and 29 LRAT proofs.  Both `lrat-check` and the
+CakeML-generated verified checker `cake_lpr` accept every proof.  A
+clean-room program reconstructs every CNF clause from the displayed
+semantics.  A separate structural checker exhausts every one-, two-, and
+three-edge deletion, and an explicit standard FiveCDC is checked directly.
+
+The host has girth **five**.  Thus this is an exact counterexample to the
+cyclically-4-only repair statement, but it does not refute BPR as stated in
+Section 2 and is not a FiveCDC counterexample.
+
 ## 7. A solver-free girth-ten positive control
 
 `order80-girth10-binary-repair-state.txt` freezes one sampled
