@@ -11,8 +11,6 @@ from itertools import combinations
 import json
 from pathlib import Path
 
-import networkx as nx
-
 
 HERE = Path(__file__).resolve().parent
 CERTIFICATE = HERE / "fullh-order34-local-trap-certificate.jsonl"
@@ -20,6 +18,19 @@ PLANES = (0x0F, 0x33, 0x55, 0x69, 0x99, 0xA5, 0xC3)
 FNV_OFFSET = 1469598103934665603
 FNV_PRIME = 1099511628211
 WORD_MASK = (1 << 64) - 1
+K33_LEFT = (25, 28, 31)
+K33_RIGHT = (26, 29, 32)
+K33_PATHS = (
+    (25, 26),
+    (25, 29),
+    (25, 24, 23, 33, 32),
+    (28, 27, 26),
+    (28, 29),
+    (28, 32),
+    (31, 26),
+    (31, 30, 29),
+    (31, 32),
+)
 
 
 def parse_graph6(record):
@@ -282,19 +293,88 @@ def three_edge_colourable(n, edges, inc):
     return search(0, 0)
 
 
+def vertex_components(n, edges, removed=()):
+    removed = set(removed)
+    adjacency = [[] for _ in range(n)]
+    for edge, (left, right) in enumerate(edges):
+        if edge in removed:
+            continue
+        adjacency[left].append(right)
+        adjacency[right].append(left)
+    answer = []
+    unseen = set(range(n))
+    while unseen:
+        root = min(unseen)
+        unseen.remove(root)
+        component = [root]
+        for vertex in component:
+            for neighbor in adjacency[vertex]:
+                if neighbor in unseen:
+                    unseen.remove(neighbor)
+                    component.append(neighbor)
+        answer.append(tuple(component))
+    return tuple(answer)
+
+
+def connected(n, edges, removed=()):
+    return len(vertex_components(n, edges, removed)) == 1
+
+
+def girth(n, edges):
+    adjacency = [[] for _ in range(n)]
+    for edge, (left, right) in enumerate(edges):
+        adjacency[left].append((right, edge))
+        adjacency[right].append((left, edge))
+    best = len(edges) + 1
+    for omitted, (source, target) in enumerate(edges):
+        distance = [-1] * n
+        distance[source] = 0
+        queue = deque([source])
+        while queue and distance[target] < 0:
+            vertex = queue.popleft()
+            for neighbor, edge in adjacency[vertex]:
+                if edge == omitted or distance[neighbor] >= 0:
+                    continue
+                distance[neighbor] = distance[vertex] + 1
+                queue.append(neighbor)
+        if distance[target] >= 0:
+            best = min(best, distance[target] + 1)
+    return best
+
+
+def check_k33_subdivision(edges):
+    edge_set = {tuple(sorted(edge)) for edge in edges}
+    branch_vertices = set(K33_LEFT + K33_RIGHT)
+    seen_internal = set()
+    endpoint_pairs = set()
+    for path in K33_PATHS:
+        assert path[0] in K33_LEFT and path[-1] in K33_RIGHT
+        assert all(
+            tuple(sorted(pair)) in edge_set
+            for pair in zip(path, path[1:])
+        )
+        internal = set(path[1:-1])
+        assert internal.isdisjoint(branch_vertices)
+        assert internal.isdisjoint(seen_internal)
+        seen_internal.update(internal)
+        endpoint_pairs.add((path[0], path[-1]))
+    assert endpoint_pairs == {
+        (left, right) for left in K33_LEFT for right in K33_RIGHT
+    }
+
+
 def cyclic_cut_size(n, edges):
     def separates(cut):
-        removed = set(cut)
-        graph = nx.Graph()
-        graph.add_nodes_from(range(n))
-        graph.add_edges_from(
-            endpoints for edge, endpoints in enumerate(edges)
-            if edge not in removed
-        )
+        components = vertex_components(n, edges, cut)
         cyclic = 0
-        for vertices in nx.connected_components(graph):
-            subgraph = graph.subgraph(vertices)
-            if subgraph.number_of_edges() >= subgraph.number_of_nodes():
+        removed = set(cut)
+        for vertices in components:
+            shore = set(vertices)
+            edge_count = sum(
+                edge not in removed and left in shore and right in shore
+                for edge, (left, right) in enumerate(edges)
+            )
+            if edge_count >= len(vertices):
                 cyclic += 1
         return cyclic >= 2
 
@@ -314,14 +394,10 @@ def main():
     assert all(left != right for left, right in edges)
     assert all(len(row) == 3 for row in inc)
 
-    graph = nx.Graph()
-    graph.add_nodes_from(range(n))
-    graph.add_edges_from(edges)
-    assert nx.is_connected(graph)
-    assert nx.edge_connectivity(graph) >= 2
-    assert min(len(cycle) for cycle in nx.cycle_basis(graph)) == 5
-    planar, _ = nx.check_planarity(graph)
-    assert not planar
+    assert connected(n, edges)
+    assert all(connected(n, edges, (edge,)) for edge in range(len(edges)))
+    assert girth(n, edges) == 5
+    check_k33_subdivision(edges)
     cut_size, cut = cyclic_cut_size(n, edges)
     assert cut_size == 4
     assert tuple(certificate["cyclic_cut_witness"]) == cut

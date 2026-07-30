@@ -66,6 +66,19 @@ The frozen flow, indexed by edge ID, is
 Every value is nonzero, the XOR of the three incident values is zero at
 every vertex, and the values span all of \(\mathbb F_2^3\).
 
+Nonplanarity has the following explicit \(K_{3,3}\)-subdivision
+certificate.  Its branch bipartition is
+\[
+ \{25,28,31\}\mid\{26,29,32\},
+\]
+and its nine internally vertex-disjoint paths are
+```text
+25-26, 25-29, 25-24-23-33-32,
+28-27-26, 28-29, 28-32,
+31-26, 31-30-29, 31-32.
+```
+The independent checker verifies these paths edge by edge.
+
 For a plane \(H\), the semantic checker contracts every connected component
 of the \(H\)-valued edges.  For an outside representative \(d\), it forms
 the target boundary of the \(d\)-valued edges.  Each outside circuit and
@@ -193,8 +206,8 @@ exactly this incidence-parity check, without using the full-\(H\) code.
 
 ## Exact replay
 
-Run from the repository root.  A C++20 compiler and Python 3 with NetworkX
-3.x are required.
+Run from the repository root.  A C++20 compiler and stock Python 3 are
+required; the independent checker has no third-party Python dependencies.
 
 ```sh
 c++ -std=c++20 -O2 \
