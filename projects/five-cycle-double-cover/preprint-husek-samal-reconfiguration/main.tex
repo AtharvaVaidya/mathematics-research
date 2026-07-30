@@ -35,7 +35,7 @@
 \newcommand{\symdiff}{\mathbin{\triangle}}
 \numberwithin{equation}{section}
 
-\title{A Radius-One Obstruction in Reconfiguring\\
+\title{Exact Obstructions in Reconfiguring\\
 Nowhere-Zero Flows toward Five-Cycle Double Covers}
 \author{Atharva Vaidya\\
 \small AI-assisted research draft for independent human verification}
@@ -49,7 +49,7 @@ Nowhere-Zero Flows toward Five-Cycle Double Covers}
 \parbox{0.91\textwidth}{
 \textbf{Status and AI-use disclosure.}
 The standard five-cycle double cover conjecture remains open.  This
-manuscript proves a difference-rank normal form, a short
+manuscript proves difference-rank and four-move normal forms, a short
 packing-to-switch lemma, and exact finite counterexamples only to
 proposed auxiliary flow-reconfiguration lemmas.
 It proves neither FiveCDC nor its negation.
@@ -78,9 +78,16 @@ of these ideas.
 
 For fixed-value moves on arbitrary Eulerian edge-sets, we first prove
 that unrestricted distance equals the rank of the edgewise difference
-values and give an exact criterion for legal distance two.  A smallest
-\(K_{3,3}\) example and a smallest cube bad-to-good example have
-unrestricted distance two but legal distance three.
+values and give exact criteria for prescribed legal two- and four-move
+factorizations.  A
+smallest \(K_{3,3}\) example and a smallest cube bad-to-good example have
+unrestricted distance two but legal distance three.  On a certified
+girth-ten non-Tait graph, a Jaeger-derived bad flow and a
+FiveCDC-derived good flow have difference rank three but exact legal
+Eulerian-support distance five.  The five supports have 63 connected
+components in total, so for the connected-cycle adjacency in the cited
+reconfiguration papers the certificate proves only
+\(5\leq d\leq63\).
 
 We next prove a human-checkable bridge.  If one value-class matching of
 a cubic \(\F_2^3\)-flow admits two edge-disjoint joins in its complement,
@@ -138,12 +145,28 @@ requiring their difference to be supported on a cycle
 difference supported on a simple cycle has one constant nonzero value
 around that cycle.  The switches below are precisely this special case,
 with legality made explicit so that no zero edge is created.
+Cranston et al.\ also use an auxiliary relation \(\mathcal F^*\) in
+which the difference may be supported on an even subgraph.  Its
+different circuit components may carry different values.  Our
+Eulerian-support move permits a disconnected support but requires one
+fixed value on all of it.  Thus, for the relations used here,
+\[
+ \text{connected-cycle adjacency}
+ \ \subseteq\ \text{fixed-value Eulerian-support adjacency}
+ \ \subseteq\ \mathcal F^*\text{ adjacency}.
+\]
+The exact distance-five lower bound below is only for the middle
+relation.  It implies a lower bound for connected-cycle distance, but no
+lower bound for the broader \(\mathcal F^*\) distance.
 
 Our contribution has deliberately narrow scope:
 \begin{enumerate}
 \item an exact normal form for two fixed-value Eulerian-set moves,
       including smallest \(K_{3,3}\) and cube obstructions to legal
       distance two;
+\item an exact rank-three criterion for a prescribed four-move order,
+      and a certified pair of flows with zero-allowing distance three
+      but legal Eulerian-support distance five;
 \item a direct proof that a two-join packing yields a finite legal switch
       sequence to a Hu\v{s}ek--\v{S}\'amal-good flow;
 \item an exact strict 26-vertex countermodel to the assertion that one
@@ -194,10 +217,11 @@ be the endpoints of the matching \(M_r(f)\).  Define
  d_\mu(f)=
  \#\left\{Q\in\Comp(V(G),K_\mu(f)):
                     |Q\cap Z_r(f)|\ \text{is odd}\right\}.
+\label{eq:defect}
 \end{equation}
 
 \begin{lemma}[affine-value independence]\label{lem:affine}
-The component parities in \emph{(2.2)} do not depend on the choice of
+The component parities in \eqref{eq:defect} do not depend on the choice of
 \(r\) satisfying \(\mu(r)=1\).
 \end{lemma}
 
@@ -361,6 +385,174 @@ small-order proof, machine-readable witnesses, and standard-library
 checker are in
 {\footnotesize\path{scratch/flow-rank-two-legal-order-20260729/}}.
 
+\section{A rank-three four-move normal form}
+\label{sec:rank-three}
+
+The rank-two criterion is edge-local because the move memberships are
+unique.  With four ordered constants spanning \(W\), every edge has two
+possible membership words.  Their common choice variable is governed by
+one binary incidence system.
+
+\begin{theorem}[rank-three four-move criterion]
+\label{thm:rank-three-four}
+Let \(G\) be a finite multigraph, with loops counted twice in incidence
+sums, and let \(f,g\) be nowhere-zero \(W\)-flows.  Fix an ordered
+four-tuple
+\[
+ (a_1,a_2,a_3,a_4)\in(W-\{0\})^4
+\]
+spanning \(W\), and define
+\[
+ A:\F_2^4\longrightarrow W,\qquad
+ A z=\sum_{j=1}^4z_ja_j.
+\]
+Let \(d\) be the unique nonzero member of \(\ker A\), put \(h=f+g\),
+and choose one preimage \(z^0(e)\in A^{-1}(h(e))\) for every edge.
+At each vertex write
+\begin{equation}
+ \sum_{e\ni v}z^0(e)=q_vd,\qquad q_v\in\F_2.
+\label{eq:rank3-demand}
+\end{equation}
+For an edge \(e\), let \(L_e\subseteq\F_2\) contain precisely the
+choices \(y\) for which all four prefixes
+\begin{equation}
+ f(e)+\sum_{j=1}^k\bigl(z_j^0(e)+yd_j\bigr)a_j,
+ \qquad 1\leq k\leq4.
+\label{eq:rank3-prefix}
+\end{equation}
+are nonzero.
+
+There is a legal realization using the four constants in the prescribed
+order if and only if bits \(y_e\in L_e\) solve
+\begin{equation}
+                         By=q.
+\label{eq:rank3-incidence}
+\end{equation}
+where \(B\) is the unoriented vertex-edge incidence matrix over
+\(\F_2\).
+
+Equivalently, reject if some \(L_e\) is empty.  Otherwise force
+\(y_e=1\) on \(P=\{e:L_e=\{1\}\}\), leave
+\(F=\{e:L_e=\{0,1\}\}\) free, and put
+\(q'=q+B1_P\).  Equation~\eqref{eq:rank3-incidence} is soluble exactly when every
+connected component of the spanning subgraph \((V,F)\), including
+isolated vertices, contains an even number of vertices on which
+\(q'\) is one.
+\end{theorem}
+
+\begin{proof}
+Flow conservation gives
+\[
+ A\sum_{e\ni v}z^0(e)=\sum_{e\ni v}h(e)=0,
+\]
+so the sum lies in \(\ker A=\langle d\rangle\), proving that
+\eqref{eq:rank3-demand} is defined.  Every preimage of \(h(e)\) is uniquely
+\(z^0(e)+y_ed\).  Thus the four supports are Eulerian precisely when
+\[
+ 0=\sum_{e\ni v}\bigl(z^0(e)+y_ed\bigr)
+   =\bigl(q_v+(By)_v\bigr)d
+\]
+at every vertex.  Since \(d\ne0\), this is
+\eqref{eq:rank3-incidence}; condition
+\eqref{eq:rank3-prefix} is exactly edgewise legality.
+
+After substituting the forced-one variables, the remaining system is
+\(B_Fy_F=q'\).  Incidence columns generate exactly the vectors of even
+parity on each free-edge component.  Necessity is the handshake lemma.
+For sufficiency, choose a spanning tree in each component and eliminate
+the demands from its leaves toward a root.  Loop columns are zero, and
+parallel edges remain separate columns, so the same proof covers both.
+\end{proof}
+
+\begin{proposition}[an exact distance-five pair]
+\label{prop:distance-five}
+There is a simple connected cubic non-Tait graph \(G\) of order \(890\)
+and girth ten, with nowhere-zero \(W\)-flows \(f,g\), such that:
+\begin{enumerate}
+\item \(f\) is H--S-bad and \(g\) is induced by an explicit FiveCDC
+      and is H--S-good;
+\item the values of \(f+g\) span \(W\), so the zero-allowing
+      fixed-value Eulerian-support distance is three;
+\item the legal fixed-value Eulerian-support distance from \(f\) to
+      \(g\) is exactly five; and
+\item for connected simple-cycle adjacency,
+      \(5\leq\dist(f,g)\leq63\).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Take the Foster graph with LCF string
+\[
+                 [17,-9,37,-37,9,-17]^{15}.
+\]
+Delete vertex \(0\), and substitute the resulting \(89\)-vertex
+three-pole for every vertex of the Petersen graph.  The checker
+reconstructs the resulting \(890\)-vertex, \(1335\)-edge graph and
+verifies simplicity, cubicity, girth ten, edge-connectivity three,
+cyclic edge-connectivity three, and non-Tait-colourability.  The last
+property also has a short reduction: parity in each odd-order pole
+forces its three boundary colours to be distinct, which would contract
+to a Tait colouring of the Petersen graph.
+
+The frozen Jaeger state gives a nowhere-zero flow \(f\) with odd-kernel
+sizes
+\[
+                         (506,507,526)
+\]
+and H--S profile
+\[
+                 (174,192,138,184,130,140,110).
+\]
+Its seven entries are positive.  The displayed FiveCDC, after assigning
+its five coordinates the points \((0,1,2,3,4)\) of \(W\), gives a flow
+\(g\) with profile
+\[
+                 (142,160,132,0,148,130,150).
+\]
+
+The difference values have rank three, and
+Theorem~\ref{thm:rank-normal} gives zero-allowing distance three.
+All \(168\) ordered bases are illegal.  The independent implementation
+of Theorem~\ref{thm:rank-three-four} exhausts all \(1848\) ordered
+spanning four-tuples: \(1176\) have an empty local list \(L_e\), and
+the remaining \(672\) fail the free-component parity condition.
+Thus no legal path has at most four moves.
+
+Five legal moves use constants
+\[
+                         (5,1,6,2,7)
+\]
+on Eulerian supports of sizes
+\[
+                         (566,608,565,610,604).
+\]
+The bitmasks in the certificate verify every vertex parity and every
+intermediate nonzero value and end exactly at \(g\).  This proves
+Eulerian-support distance five.  Those supports have respectively
+\[
+                         (14,11,10,14,14)
+\]
+connected components.  Each is a simple cycle, and the components of a
+legal Eulerian support may be switched sequentially in any order.
+Hence the same data give a 63-step connected-cycle path.  Every
+connected-cycle move is an Eulerian-support move, which gives the lower
+bound five.
+\end{proof}
+
+The source and independently written standard-library checkers, exact
+flows, five support masks, component lists, and full proof ledger are in
+\[
+\texttt{scratch/petersen-foster-girth10-nontait-20260729/}
+\]
+and
+\[
+\texttt{scratch/rank3-fourmove-normal-form-20260729/}.
+\]
+This proposition is a distance statement for one selected pair.  It
+does not say that \(f\) is five moves from the set of all H--S-good
+flows, does not give a distance-five lower bound in \(\mathcal F^*\),
+and does not advance the existential flow-selection conjecture.
+
 \section{A human packing-to-switch lemma}
 
 For an edge set \(J\), write \(\bd J\) for the set of vertices having odd
@@ -401,6 +593,7 @@ new affine support is
    &=F\symdiff\bigl((F-M)\symdiff J_1\bigr)\\
    &=M\cup J_1.
 \end{split}
+\label{eq:packing-new-support}
 \end{equation}
 The union is disjoint because \(J_1\subseteq E(G-M)\).
 
@@ -410,7 +603,8 @@ after adding \(a\), since that would force its old value to be zero.
 Consequently every component switch remains legal when the components
 are performed sequentially.
 
-Finally, \(J_2\) avoids both \(M\) and \(J_1\), so by (3.2) it lies in
+Finally, \(J_2\) avoids both \(M\) and \(J_1\), so by
+\eqref{eq:packing-new-support} it lies in
 the new zero-side \(K_\mu\).  Restricting the equality
 \(\bd J_2=\bd M\) to any component \(Q\) of this zero-side and applying
 the handshaking lemma gives
@@ -456,10 +650,11 @@ and the following flow values in that edge order:
 (&5,1,5,4,4,4,7,1,6,7,3,1,6,4,3,2,3,2,6,1,\\
  &2,5,5,2,7,6,3,2,5,7,1,1,7,6,5,3,1,7,6).
 \end{split}
+\label{eq:strict-flow}
 \end{equation}
 
 \begin{theorem}[strict radius-one countermodel]\label{thm:counter}
-The graph and flow in \emph{(5.1)} have the following properties.
+The graph and flow in \eqref{eq:strict-flow} have the following properties.
 \begin{enumerate}
 \item The graph is simple, cubic, cyclically \(4\)-edge-connected, has
       girth five, and has no Tait \(3\)-edge-colouring.
@@ -485,14 +680,15 @@ edge order, the labels are
 (&3,20,5,17,3,5,6,3,3,5,10,6,3,5,3,6,5,9,10,12,\\
  &6,18,24,12,20,6,18,6,20,18,6,6,18,20,6,5,5,6,3).
 \end{split}
+\label{eq:strict-fivecdc}
 \end{equation}
-Every label in (5.2) has Hamming weight two.  For each of the five bit
+Every label in \eqref{eq:strict-fivecdc} has Hamming weight two.  For each of the five bit
 positions and each vertex, an even number of incident labels contain
 that bit.  Thus the five bit-coordinate edge sets are Eulerian and every
 edge belongs to exactly two of them.
 
 \paragraph{Exact distance-two certificate.}
-Starting from (5.1), perform
+Starting from \eqref{eq:strict-flow}, perform
 \begin{equation}
 \begin{array}{c@{\qquad}l}
  a=4&
@@ -500,13 +696,15 @@ Starting from (5.1), perform
  a=4&
  C=(6,12,14,15,34,35).
 \end{array}
+\label{eq:strict-path}
 \end{equation}
 Both supports are simple cycles and avoid the current value class being
 added.  The successive profiles are
 \begin{equation}
                 (4,6,4,2,4,4,4),\qquad(4,6,4,0,6,4,4).
+\label{eq:strict-path-profiles}
 \end{equation}
-Thus (5.3) gives an H--S-good flow after two steps.
+Thus \eqref{eq:strict-path} gives an H--S-good flow after two steps.
 
 \paragraph{Packing certificate.}
 The value-4 matching is
@@ -520,7 +718,8 @@ J_1={}&(0,2,6,7,8,9,12,16,17)
 \end{align*}
 are disjoint, avoid \(M_4\), and both have boundary
 \(\partial M_4\).  The even support furnished by
-Theorem~\ref{thm:packing} has exactly the two components in (5.3).
+Theorem~\ref{thm:packing} has exactly the two components in
+\eqref{eq:strict-path}.
 Hence this certificate explains the distance-two repair while proving
 that packability alone does not force a radius-one neighbour.
 
@@ -543,11 +742,13 @@ generated exactly once.  For each generated cycle and each
 recomputes the full seven-entry defect profile from graph components.
 The resulting exact totals are \(9{,}213\) cycles, \(1{,}485\) legal
 switches, and zero clean neighbours.  This proves
-\(\dist_{\HS}(f)\geq2\).  Direct verification of (5.3)--(5.4) proves
+\(\dist_{\HS}(f)\geq2\).  Direct verification of
+\eqref{eq:strict-path}--\eqref{eq:strict-path-profiles} proves
 \(\dist_{\HS}(f)\leq2\).
 
 Finally, the checker verifies the matching and both join boundaries,
-and tests every weight and every vertex-coordinate parity in (5.2).
+and tests every weight and every vertex-coordinate parity in
+\eqref{eq:strict-fivecdc}.
 These finite checks prove all six assertions.
 \end{proof}
 
@@ -583,6 +784,7 @@ The 60-vertex control is simple cubic and cyclically
 \(4\)-edge-connected.  Its starting profile is
 \begin{equation}
                          (8,8,4,6,6,8,6).
+\label{eq:order60-start-profile}
 \end{equation}
 Switching \(a=7\) on the \(25\)-edge simple cycle
 \begin{equation}
@@ -590,10 +792,12 @@ Switching \(a=7\) on the \(25\)-edge simple cycle
 C=(1,2,8,11,18,22,24,26,27,30,31,33,35,37,39,40,\\
 \hspace{31mm}42,43,45,62,65,67,73,74,75)
 \end{split}
+\label{eq:order60-cycle}
 \end{equation}
 gives profile
 \begin{equation}
                          (10,6,6,8,8,6,0).
+\label{eq:order60-end-profile}
 \end{equation}
 Thus this state is repaired in one step.
 
@@ -607,13 +811,16 @@ J_1={}&(1,2,13,16,18,20,26,32,35,44,46,49,50,53,57,60,61,\\
 J_2={}&(3,6,7,10,12,14,17,19,22,24,27,29,34,37,40,41,43,\\
       &\qquad45,47,48,55,56,74,80,82,85,86,87,88).
 \end{split}
+\label{eq:order60-joins}
 \end{equation}
 With \(F=F_7(f)\), the checker verifies
 \begin{equation}
              C=(F-M_7)\symdiff J_1,\qquad
              J_2\cap(M_7\cup J_1)=\varnothing.
+\label{eq:order60-packing-identity}
 \end{equation}
-Equations (6.3)--(6.6) are therefore a literal connected-support case
+Equations~\eqref{eq:order60-cycle}--\eqref{eq:order60-packing-identity}
+are therefore a literal connected-support case
 of the human lemma.
 
 \begin{table}[t]
@@ -819,6 +1026,15 @@ and the FiveCDC certificate.  Its verifier SHA-256 is
 \nolinkurl{7c4a9d165416392399aa53ca6226573f459bae07e31dd1a76332b636d0b1be17}.
 \end{center}
 
+The rank-three distance-five pair is checked twice.  The source-side
+standard-library verifier reconstructs the graph, both flows, all 168
+three-move orders, all 1848 four-move orders, the five-move path, its
+63 circuit components, and all 2640 legal reciprocal-exchange
+neighbours.  A separately written checker rederives
+Theorem~\ref{thm:rank-three-four}, tests its component criterion against
+16384 loop/parallel-edge instances, and repeats the 1848-order
+classification using two different affine lifts.
+
 The frozen artifact hashes at the time of this draft are:
 \begin{center}
 \scriptsize
@@ -836,6 +1052,12 @@ SHA-256 & file\\
 & packable order-26 retained state\\
 \nolinkurl{6e1dc5fb3b290fe8364559844ed419ee6dda1ec974b2ad3aebfd21442c8fe6aa}
 & order-40 retained state\\
+\nolinkurl{450a066619b5b21f7bf64ca239b9f2798219af6b695ee619bfbf844883e25476}
+& distance-five certificate\\
+\nolinkurl{2cc3ca1397b08ed8ba555c569d2aaf13e57354a5e847d6447cd6242d1c4530a2}
+& distance-five source checker\\
+\nolinkurl{c0021e2c4cc081918a9edcdb8f1925f9d9c858cf48861d9577178ac952d9a9cf}
+& independent rank-three checker\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -847,6 +1069,9 @@ python3 scratch/verify_husek_samal_one_switch_boundary.py
 python3 scratch/verify_fano_order60_flow_repair.py
 python3 \
   scratch/jaeger-order40-augmented-radius-two-counterexample-20260729/verify.py
+python3 \
+  scratch/petersen-foster-girth10-nontait-20260729/verify_reconfiguration.py
+python3 scratch/rank3-fourmove-normal-form-20260729/verify.py
 \end{verbatim}
 
 \section{What remains open}
@@ -870,6 +1095,13 @@ that the finite sequence in the packing-to-switch lemma cannot always be
 replaced by one circuit.  The lemma supplies no universal packing
 theorem.
 
+Proposition~\ref{prop:distance-five} rules out a four-move bound only
+for the broader fixed-value Eulerian-support distance between one
+selected pair.  It neither computes the distance from its starting
+flow to the set of all H--S-good flows nor gives exact connected-cycle
+distance.  In particular, it is not a counterexample to eventual
+cycle-switch reachability.
+
 Likewise, Proposition~\ref{prop:jaeger-three} disproves a universal
 radius-two assertion only in the separate reciprocal-exchange state
 graph.  It gives no universal radius-three bound and no reduction of
@@ -889,6 +1121,7 @@ disconnected Eulerian support.  Relative to the auxiliary even-support
 adjacency of Cranston et al., it is narrower in value pattern.  We make no novelty claim
 for either.  The elementary packing-to-switch bridge, the exact
 radius-one formulation, the rank-two legal-order criterion, the
+rank-three four-move criterion and certified distance-five pair, the
 reciprocal-exchange obstruction, and the finite certificates may be
 new, but that assessment is provisional.
 The radius-two reciprocal assertion was formulated inside this

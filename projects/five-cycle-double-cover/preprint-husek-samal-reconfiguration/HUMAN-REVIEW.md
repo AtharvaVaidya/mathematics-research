@@ -5,7 +5,8 @@ checkers pass.
 
 A human author should:
 
-1. Check the difference-rank and rank-two legal-order proofs line by line.
+1. Check the difference-rank, rank-two legal-order, and rank-three
+   four-move proofs line by line.
 2. Manually verify the \(K_{3,3}\) and cube flow tables, six blockers,
    component-parity statuses, and three-step paths; independently audit the
    complete small-order and cube flow censuses.
@@ -22,10 +23,16 @@ A human author should:
    nonplanar metadata, and the explicit FiveCDC.
 10. Check that no prose conflates reciprocal exchanges of three-tree
    states with legal simple-cycle switches of a fixed flow.
-11. Ask specialists to review the novelty and the relationship with
+11. Independently reconstruct the Petersen--Foster graph and both frozen
+    flows; replay all 168 three-move and 1,848 four-move cases and the
+    explicit five-move path.
+12. Confirm that every statement distinguishes arbitrary Eulerian-support
+    moves from connected-cycle adjacency, for which only
+    \(5\le d\le63\) is certified.
+13. Ask specialists to review the novelty and the relationship with
     Hušek–Šámal, Esperet et al., and Cranston–Li–Su–Wang–Xu.
-12. Confirm the current publication status and bibliographic metadata of
+14. Confirm the current publication status and bibliographic metadata of
     arXiv:2607.24724, arXiv:2512.17342, and arXiv:2606.24685.
-13. Revise authorship and accept full scholarly responsibility.
+15. Revise authorship and accept full scholarly responsibility.
 
 AI-use disclosure appears prominently on page one and must not be removed.

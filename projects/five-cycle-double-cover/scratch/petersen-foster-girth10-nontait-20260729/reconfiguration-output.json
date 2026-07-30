@@ -1,0 +1,226 @@
+{
+  "bad_flow_hs_good": false,
+  "bad_flow_hs_profile": [
+    174,
+    192,
+    138,
+    184,
+    130,
+    140,
+    110
+  ],
+  "bad_flow_nowhere_zero": true,
+  "bad_flow_parallel_successful_flags": 0,
+  "bad_flow_value_counts": {
+    "1": 148,
+    "2": 152,
+    "3": 226,
+    "4": 140,
+    "5": 219,
+    "6": 214,
+    "7": 236
+  },
+  "classification": "EXACT_FLOW_RECONFIGURATION_AND_JAEGER_AUDIT",
+  "connected_simple_cycle_distance_lower_bound": 5,
+  "connected_simple_cycle_distance_upper_bound": 63,
+  "difference_value_rank": 3,
+  "good_flow_hs_good": true,
+  "good_flow_hs_profile": [
+    142,
+    160,
+    132,
+    0,
+    148,
+    130,
+    150
+  ],
+  "good_flow_point_assignment": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "jaeger_kernel_sizes": [
+    506,
+    507,
+    526
+  ],
+  "jaeger_neighbourhood": {
+    "augmented_escape_distance": 1,
+    "candidate_reciprocal_pairs": 591408,
+    "distinct_neighbour_potentials": 87,
+    "first_minimum_profile": [
+      180,
+      184,
+      114,
+      184,
+      130,
+      146,
+      92
+    ],
+    "first_minimum_swap_local_positions": [
+      545,
+      1194
+    ],
+    "legal_reciprocal_neighbours": 2640,
+    "minimum_neighbour_potential": [
+      92,
+      1533
+    ],
+    "strictly_lower_neighbours": 822
+  },
+  "legal_eulerian_support_fixed_value_distance": 5,
+  "legal_path_constants": [
+    5,
+    1,
+    6,
+    2,
+    7
+  ],
+  "legal_path_intermediate_profiles": [
+    [
+      140,
+      186,
+      144,
+      156,
+      114,
+      180,
+      112
+    ],
+    [
+      148,
+      172,
+      112,
+      158,
+      114,
+      182,
+      136
+    ],
+    [
+      170,
+      132,
+      124,
+      132,
+      180,
+      178,
+      152
+    ],
+    [
+      136,
+      106,
+      186,
+      132,
+      180,
+      164,
+      128
+    ],
+    [
+      142,
+      160,
+      132,
+      0,
+      148,
+      130,
+      150
+    ]
+  ],
+  "legal_path_support_cycle_component_counts": [
+    14,
+    11,
+    10,
+    14,
+    14
+  ],
+  "legal_path_support_cycle_lengths": [
+    [
+      10,
+      12,
+      14,
+      18,
+      20,
+      24,
+      26,
+      28,
+      28,
+      30,
+      32,
+      34,
+      52,
+      238
+    ],
+    [
+      10,
+      10,
+      10,
+      12,
+      14,
+      16,
+      26,
+      26,
+      34,
+      179,
+      271
+    ],
+    [
+      10,
+      10,
+      10,
+      10,
+      16,
+      28,
+      32,
+      46,
+      46,
+      357
+    ],
+    [
+      10,
+      10,
+      10,
+      12,
+      14,
+      18,
+      18,
+      20,
+      26,
+      28,
+      34,
+      42,
+      46,
+      322
+    ],
+    [
+      10,
+      10,
+      10,
+      10,
+      12,
+      12,
+      18,
+      20,
+      20,
+      24,
+      32,
+      62,
+      64,
+      300
+    ]
+  ],
+  "legal_path_support_sizes": [
+    566,
+    608,
+    565,
+    610,
+    604
+  ],
+  "short_path_exhaustion": {
+    "four_tuples_with_global_parity_blocker": 672,
+    "four_tuples_with_local_blocker": 1176,
+    "legal_four_move_paths": 0,
+    "legal_three_move_paths": 0,
+    "rank_three_ordered_bases": 168,
+    "rank_three_ordered_four_tuples": 1848
+  },
+  "zero_allowing_fixed_value_distance": 3
+}
