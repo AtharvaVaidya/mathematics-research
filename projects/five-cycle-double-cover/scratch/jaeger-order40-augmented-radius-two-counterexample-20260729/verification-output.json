@@ -1,0 +1,131 @@
+{
+  "candidate_swaps": 1083,
+  "exact_augmented_escape_distance": 3,
+  "first_neighbour_histogram": [
+    {"arcs": 24, "parallel_successful_flags": 0, "psi": [2, 60]},
+    {"arcs": 23, "parallel_successful_flags": 0, "psi": [2, 61]},
+    {"arcs": 7, "parallel_successful_flags": 0, "psi": [2, 62]},
+    {"arcs": 6, "parallel_successful_flags": 0, "psi": [2, 63]},
+    {"arcs": 7, "parallel_successful_flags": 0, "psi": [2, 64]},
+    {"arcs": 3, "parallel_successful_flags": 0, "psi": [2, 65]},
+    {"arcs": 1, "parallel_successful_flags": 0, "psi": [2, 66]},
+    {"arcs": 1, "parallel_successful_flags": 0, "psi": [2, 67]},
+    {"arcs": 7, "parallel_successful_flags": 0, "psi": [4, 62]},
+    {"arcs": 3, "parallel_successful_flags": 0, "psi": [4, 63]},
+    {"arcs": 6, "parallel_successful_flags": 0, "psi": [4, 64]},
+    {"arcs": 3, "parallel_successful_flags": 0, "psi": [4, 65]},
+    {"arcs": 1, "parallel_successful_flags": 0, "psi": [4, 67]},
+    {"arcs": 1, "parallel_successful_flags": 0, "psi": [4, 68]}
+  ],
+  "graph6": "ghe?GC@@G??@?@??_@I??A?C_?G??G@?CA?@?C?G_??_@?@???@?@??_?C?G??C@?O??C?A??G????G????C????@??O??G?????_????H????_@?????G_????@G??_?C@",
+  "legal_first_neighbours": 93,
+  "legal_second_arcs_from_safe_equal_first_neighbours": 2196,
+  "literal_escape_path": [
+    {
+      "coordinates": [0, 1],
+      "full_edge_exchange": [13, 12],
+      "kernel_sizes": [20, 20, 20],
+      "local_exchange": [10, 9],
+      "parallel_successful_flags": 0,
+      "profile": [4, 6, 2, 6, 6, 6, 2],
+      "psi": [2, 60],
+      "theorem_3_16_component_parity_success": false
+    },
+    {
+      "coordinates": [0, 1],
+      "full_edge_exchange": [43, 46],
+      "kernel_sizes": [20, 20, 20],
+      "local_exchange": [40, 43],
+      "parallel_successful_flags": 0,
+      "profile": [4, 6, 4, 6, 2, 4, 2],
+      "psi": [2, 60],
+      "theorem_3_16_component_parity_success": false
+    },
+    {
+      "coordinates": [0, 2],
+      "full_edge_exchange": [18, 20],
+      "kernel_sizes": [20, 20, 21],
+      "local_exchange": [15, 17],
+      "parallel_successful_flags": 3,
+      "profile": [6, 6, 6, 6, 4, 4, 0],
+      "psi": [0, 61],
+      "theorem_3_16_component_parity_success": true
+    }
+  ],
+  "lower_or_successful_endpoint_through_radius_two": false,
+  "new_unique_distance_two_targets": 1852,
+  "omitted_masks": [
+    74750917167123596,
+    60249003513889361,
+    9115267394842914
+  ],
+  "root": 0,
+  "safe_equal_first_neighbours": 24,
+  "schema": "jaeger-augmented-radius-two-counterexample-v1",
+  "scope": "auxiliary_descent_statement_not_fivecdc",
+  "second_arc_histogram": [
+    {"arcs": 606, "parallel_successful_flags": 0, "psi": [2, 60]},
+    {"arcs": 510, "parallel_successful_flags": 0, "psi": [2, 61]},
+    {"arcs": 174, "parallel_successful_flags": 0, "psi": [2, 62]},
+    {"arcs": 156, "parallel_successful_flags": 0, "psi": [2, 63]},
+    {"arcs": 142, "parallel_successful_flags": 0, "psi": [2, 64]},
+    {"arcs": 68, "parallel_successful_flags": 0, "psi": [2, 65]},
+    {"arcs": 22, "parallel_successful_flags": 0, "psi": [2, 66]},
+    {"arcs": 14, "parallel_successful_flags": 0, "psi": [2, 67]},
+    {"arcs": 6, "parallel_successful_flags": 0, "psi": [2, 68]},
+    {"arcs": 1, "parallel_successful_flags": 0, "psi": [2, 69]},
+    {"arcs": 4, "parallel_successful_flags": 0, "psi": [4, 60]},
+    {"arcs": 29, "parallel_successful_flags": 0, "psi": [4, 61]},
+    {"arcs": 153, "parallel_successful_flags": 0, "psi": [4, 62]},
+    {"arcs": 82, "parallel_successful_flags": 0, "psi": [4, 63]},
+    {"arcs": 117, "parallel_successful_flags": 0, "psi": [4, 64]},
+    {"arcs": 53, "parallel_successful_flags": 0, "psi": [4, 65]},
+    {"arcs": 23, "parallel_successful_flags": 0, "psi": [4, 66]},
+    {"arcs": 16, "parallel_successful_flags": 0, "psi": [4, 67]},
+    {"arcs": 14, "parallel_successful_flags": 0, "psi": [4, 68]},
+    {"arcs": 3, "parallel_successful_flags": 0, "psi": [4, 69]},
+    {"arcs": 2, "parallel_successful_flags": 0, "psi": [6, 66]},
+    {"arcs": 1, "parallel_successful_flags": 0, "psi": [6, 68]}
+  ],
+  "seed_kernel_sizes": [20, 20, 20],
+  "seed_parallel_successful_flags": 0,
+  "seed_profile": [4, 6, 2, 6, 6, 6, 2],
+  "seed_psi": [2, 60],
+  "seed_theorem_3_16_component_parity_success": false,
+  "seed_theorem_3_16_defects_for_four_matching_values": [
+    [4, 4, 4, 4],
+    [6, 6, 6, 6],
+    [2, 2, 2, 2],
+    [6, 6, 6, 6],
+    [6, 6, 6, 6],
+    [6, 6, 6, 6],
+    [2, 2, 2, 2]
+  ],
+  "semantic_dependency": "jaeger-lift13-girth10-augmented-trap-20260729/independent_verify.py",
+  "standard_fivecdc_checked": true,
+  "standard_fivecdc_coordinate_sizes": [27, 25, 15, 30, 23],
+  "standard_fivecdc_edge_labels": [
+    20, 24, 9, 5, 3, 17, 24, 18, 10, 9,
+    3, 5, 20, 5, 6, 12, 12, 6, 20, 17,
+    18, 3, 9, 10, 10, 3, 10, 9, 10, 3,
+    3, 9, 10, 17, 3, 10, 18, 9, 24, 24,
+    17, 17, 9, 24, 10, 18, 9, 17, 24, 24,
+    20, 9, 12, 3, 5, 12, 6, 24, 18, 10
+  ],
+  "structure": {
+    "cyclic_three_edge_cuts": 0,
+    "cyclically_four_edge_connected": true,
+    "disconnecting_cut_counts_through_three": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 40
+    },
+    "edges": 60,
+    "girth": 5,
+    "order": 40,
+    "simple_cubic": true,
+    "three_edge_connected": true
+  },
+  "unique_second_targets": 1895
+}

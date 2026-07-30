@@ -55,6 +55,19 @@ the size of a union because runs can overlap, and the sample is not a
 complete enumeration of the graph's state space. Therefore this package
 does not prove that every trap escapes within radius two or three.
 
+## Subsequent exact radius-two counterexample
+
+The universal radius-two proposal is now known to be false. The separate
+package
+`../jaeger-order40-augmented-radius-two-counterexample-20260729/`
+exhausts the first two layers around a cyclically four-edge-connected
+order-40 state and finds no lower-`Psi` or successful state, followed by
+an exact escape at distance three.
+
+Its three exchanges are disjoint, with coordinate pairs `(01,01,02)`.
+Thus the 196/196 result here must be read only as the deterministic sample
+reported above, not as evidence elevated to a conjectural theorem.
+
 ## Frozen data
 
 - `producer.cpp`: the exact C++ discovery program.
@@ -109,10 +122,9 @@ The earlier exact witness package proves that the graph itself has a
 standard FiveCDC. These traps therefore obstruct a particular naive
 descent lemma, not the conjecture.
 
-The portfolio supports a possible full-lexicographic radius-two escape
-phenomenon on this sample, but it is not remotely sufficient to publish
-that phenomenon as a theorem. A publishable claim would require either a
-proof for all states/graphs or a clearly scoped exhaustive finite census.
+The portfolio records a full-lexicographic radius-two phenomenon on this
+sample. The exact order-40 counterstate shows it does not extend to a
+universal theorem.
 
 ## AI-use disclosure
 

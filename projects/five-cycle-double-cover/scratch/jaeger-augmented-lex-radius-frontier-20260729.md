@@ -1,4 +1,4 @@
-# Augmented lexicographic radius-two/radius-three frontier
+# Augmented lexicographic radius-three frontier
 
 Date: **2026-07-29**
 
@@ -27,17 +27,20 @@ such that every \(s_q\), \(q<t\), is safe at level \(\Psi(s_0)\), and
 the endpoint either has a successful flag or has strictly smaller
 \(\Psi\).
 
-The strongest statement consistent with every current exact check is:
+The strongest bounded statement consistent with every current exact
+check is:
 
-> **Augmented lexicographic radius-two obligation.**  Every positive
+> **Augmented lexicographic radius-three obligation.**  Every positive
 > safe Jaeger star state has an augmented escape path of length at
-> most two.
+> most three.
 
-The weaker radius-three obligation replaces two by three.  Either
-statement implies the full equal-\(\Psi\) plateau-boundary theorem.
-Radius one is false: the frozen Möbius--Kantor state and the frozen
-130-vertex girth-ten lift state are augmented immediate traps, and
-both have exact escape distance two.
+The stronger radius-two obligation is false.  The independently checked
+package
+`jaeger-order40-augmented-radius-two-counterexample-20260729/`
+gives a cyclically four-edge-connected cubic graph and a state of exact
+augmented escape distance three.  Radius one is also false: the frozen
+Möbius--Kantor state and the frozen 130-vertex girth-ten lift state are
+augmented immediate traps, and both have exact escape distance two.
 
 The order-40 state previously described as having augmented distance
 three is not a counterexample to radius two in this order.  Its
@@ -121,6 +124,15 @@ components of \(E_h^0\triangle Y_h^t\) and, on every new component
 \]
 The 21 terminal span flags are then recomputed from these new
 components and the outside-circuit switch spaces.
+
+This separates two notions that must not be conflated.  By
+Hušek--Šámal Theorem 3.16, a zero entry of the seven-component profile
+is direct component-parity success for the **current** nowhere-zero
+\(\mathbb F_2^3\)-flow.  A positive parallel span flag is a separate
+certificate that allowed whole-circuit switches reach a zero defect.
+The radius-two counterexample has positive profile and zero flags at
+every state through distance two.  Its distance-three endpoint has a
+zero profile entry and, additionally, three successful flags.
 
 ## 3. Eliminating adaptive fundamental circuits
 
@@ -216,7 +228,9 @@ frozen girth-ten escape realizes `AA` with `(0,0),(0,1)`.  Across the
 eight independently replayed girth-ten sample traps, both `AA` and
 `AB` occur, and second-step activity patterns `(0,1)`, `(1,0)`, and
 `(1,1)` occur.  Hence neither a fixed coordinate word nor a
-fixed “both steps active” assumption can prove the obligation.
+fixed “both steps active” assumption can prove an escape statement.
+The order-40 counterexample proves that the full 32-template
+radius-two obligation cannot be discharged at all.
 
 ## 5. Exact finite frontier and remaining human step
 
@@ -226,31 +240,41 @@ The following evidence uses the lexicographic \(\Psi\) above.
 - All eight traps in the frozen 130-vertex girth-ten package have
   exact distance two; the checker exhausts 98,304 reciprocal
   candidates and all 3,220 legal first neighbourhoods.
-- A separate trap-directed sample at ten representative roots of the
-  same girth-ten lift found 165 augmented immediate traps.  Independent
-  replay found a two-exchange escape for every sampled trap.  This is
-  randomized state sampling, not a state-space census.
+- The expanded frozen lift portfolio contains 196 sampled augmented
+  immediate traps.  Independent replay found a two-exchange escape for
+  every sampled trap.  This is randomized state sampling, not a
+  state-space census.
+- Two seeded runs on all seven retained order-34 strong snarks found
+  169 further augmented immediate traps; exact independent replay found
+  distance two for all 169.
 - The corrected order-40 state has lexicographic escape distance one.
+- A different state on that same order-40 graph has exact escape
+  distance three.  It has 93 legal first neighbors, of which 24 are
+  safe and equal.  Exhausting all 2,196 legal arcs from those 24 states
+  finds no lower or span-successful endpoint.  The third exchange of a
+  literal path reaches profile minimum zero.
 
-Thus no radius-three counterexample is known, and the evidence
-currently supports the stronger radius-two obligation.  The precise
-human proof obligation is:
+Thus radius two is false and no radius-three counterexample is known.
+The precise surviving human proof obligation is:
 
 > Given a positive state \(s\) with zero successful flags and no
-> lower-\(\Psi\) or span-successful neighbour, prove that some safe
-> equal-\(\Psi\) reciprocal neighbour \(s'\) has a neighbour \(s''\)
-> with either \(\Psi(s'')<\Psi(s)\) or a successful span flag.
+> lower-\(\Psi\) or span-successful neighbour, prove that there are
+> safe equal-\(\Psi\) reciprocal neighbors \(s',s''\) such that
+> \(s''\) has a neighbor \(s'''\) with either
+> \(\Psi(s''')<\Psi(s)\) or a successful span flag.
 
 Equations (3)--(7) reduce this statement to exact circuit,
-component-boundary, and outside-span data for the two word types `AA`
-and `AB`.  What is missing is a graph-order-independent argument that
-forces one favourable realization of those data.  No current averaging
-or matroid-connectivity lemma supplies it.
+component-boundary, and outside-span data for the four length-three word
+types `AAA`, `AAB`, `ABA`, and `ABC`.  What is missing is a
+graph-order-independent argument that forces one favourable realization
+of those data.  No current averaging or matroid-connectivity lemma
+supplies it.
 
 ## AI-use disclosure
 
 OpenAI Codex agents, directed by Atharva Vaidya, derived and checked
 the multi-exchange formulas, classified the path skeletons, ran the
 finite searches, found the order mismatch in the earlier order-40
-artifact, and drafted this note.  The universal radius-two and
-radius-three statements remain unproved.
+artifact, found the exact radius-two counterexample, and drafted this
+note.  The radius-two statement is false; the universal radius-three
+statement remains unproved.
