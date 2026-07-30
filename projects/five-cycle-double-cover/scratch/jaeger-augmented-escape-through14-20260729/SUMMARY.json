@@ -1,0 +1,28 @@
+{
+  "claim": "Every augmented trap in every rooted-star three-tree fibre of every canonical simple 3-edge-connected cubic graph through order 14 has exact augmented escape distance two.",
+  "definitions": {
+    "augmented_trap": "A positive state with zero successful parallel span flags and no legal reciprocal-exchange neighbour having either lower lexicographic Psi or a positive successful-flag count.",
+    "escape": "A legal reciprocal-exchange path whose endpoint has lower lexicographic Psi or a positive successful-flag count.",
+    "potential": "Psi=(minimum Fano component defect, sum of the three odd-kernel sizes)"
+  },
+  "result": {
+    "augmented_trap_rows": 187,
+    "augmented_traps": 557,
+    "distance_histogram": {
+      "2": 557
+    },
+    "legal_second_arcs_examined_before_first_certificate": 4210,
+    "maximum_safe_first_states_examined_before_first_certificate": 4,
+    "old_objective_traps": 14643,
+    "safe_first_states_examined_before_first_certificate": 659,
+    "source_rows": 1287
+  },
+  "scope": {
+    "canonical_graphs": 419,
+    "graph_class": "all simple 3-edge-connected cubic graphs through order 14",
+    "rooted_orbit_fibres": 3567,
+    "states": 529150122
+  },
+  "status": "EXACT FINITE FRONTIER; NOT A PROOF OR DISPROOF OF FIVECDC",
+  "trust_boundary": "The audit reuses the frozen graph/state semantic checker and the exhaustive old-trap corpus from jaeger-high-girth-local-trap-frontier-20260729. A full 529,150,122-state reproduction is available in that dependency; this package exactly rechecks the incident and radius-two neighbourhoods of its 14,643 frozen old traps."
+}
