@@ -91,6 +91,7 @@ python3 scratch/minimum-projection-size15-anchor-single-audit-20260729/audit_anc
 python3 scratch/minimum-projection-single-circuit-tensor-frontier-20260729/independent_audit.py
 python3 scratch/minimum-projection-two-occurrence-interaction-20260729/verify.py
 python3 scratch/minimum-projection-two-occurrence-interaction-20260729/independent_audit.py
+sh scratch/two-occurrence-clean-delete-through18-20260729/run_all.sh
 python3 scratch/cubic-reduction-standard-fivecdc-20260729/verify_local_relations.py
 python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/verify.py
 python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/independent_audit.py
@@ -164,15 +165,16 @@ size-five clean projection.  This is a sharp boundary-method obstruction,
 not a FiveCDC counterexample.
 
 The interaction analysis now extends in
-`scratch/two-occurrence-clean-delete-frontier-20260729/`.
-Every loopless two-occurrence state of total support at most sixteen has
+`scratch/two-occurrence-clean-delete-through18-20260729/`.
+Every loopless two-occurrence state of total support at most eighteen has
 a clean interaction flow or a strict support-circuit deletion.  A human
-shape reduction leaves only the three multiplicity profiles
-\((3,2,2)\), \((3,3,2)\), and \((4,3,1)\); two independent exact
-checkers classify all 22,032 cyclic-order states as 21,816 clean and 216
-delete-only, with no residual.  Thus every globally minimum state in
-this subclass is cleanable.  Interaction loops and general occurrence
-multiplicities remain open at size sixteen.
+shape reduction leaves six triangle profiles and seven connected
+bridgeless four-vertex multiplicity profiles.  Two independently
+structured exact checkers classify all 1,041,984 cyclic-order states as
+1,035,036 clean and 6,948 delete-only, with no residual.  Thus every
+globally minimum state in this subclass is cleanable.  Interaction loops
+and general occurrence multiplicities remain open already at size
+sixteen.
 
 The unrestricted boundary dichotomy still first fails at size fourteen,
 on an explicit \(7+7\) state.  Its 18-vertex simple bridgeless cubic realization

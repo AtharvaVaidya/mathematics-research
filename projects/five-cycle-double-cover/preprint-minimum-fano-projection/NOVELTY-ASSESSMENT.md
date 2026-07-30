@@ -64,8 +64,9 @@ The manuscript proves:
     inside/outside derivative profile into an explicit legal recolouring
     and strict projection descent; and
 18. a loopless two-occurrence clean-or-delete theorem through total
-    support sixteen, with a complete human shape reduction and two
-    independent exact checks of the three residual profiles; and
+    support eighteen, with a complete human shape reduction and two
+    independently structured exact checks of thirteen finite profiles;
+    and
 19. a smallest cube-graph counterstate showing that local rainbow parity,
     cyclic closure, all-four support colours, and minimally connected
     complement components do not force a colour-load violation; and
@@ -174,7 +175,7 @@ has been completed.  In particular, the project does not claim that its
 inequality, boundary-incidence form, or six-map application has
 established priority.
 
-The support-sixteen two-occurrence result is a specialized finite
+The support-eighteen two-occurrence result is a specialized finite
 extension of the interaction-flow dictionary developed in this project.
 Its reduction is elementary and its residual census exact, but it has
 not received a literature-wide novelty screen.  No priority claim is
@@ -254,7 +255,7 @@ strict descent.  It narrows the remaining proof obligation to whether
 rainbow-oddness forces a load violation or whether surviving interior
 geometry is reducible.
 The two-occurrence theorem separately removes every loopless interaction
-state through support sixteen.  It does not raise the general
+state through support eighteen.  It does not raise the general
 through-fifteen theorem: interaction loops and higher occurrence
 multiplicities remain uncontrolled at size sixteen.
 The cube counterstate then rules out the simplest attempted implication
@@ -302,7 +303,7 @@ relative-\(\mathrm{GL}(2,2)\) tensor proof, the Petersen interaction
 dictionary and descent, the six-map witness-neutralization identity, and
 its exact cyclic-dynamics obstruction, the shortest-join zero-price and
 support-density theorems, the six-map colour-load inequality and
-constructive descent, the support-sixteen two-occurrence theorem, and the
+constructive descent, the support-eighteen two-occurrence theorem, and the
 cube rainbow-load counterstate, the equality-rigidity theorem, the
 static-filter survivor and inflation obstruction, the full-flow master
 formulation, the strict parity lock, and the 162-vertex construction;

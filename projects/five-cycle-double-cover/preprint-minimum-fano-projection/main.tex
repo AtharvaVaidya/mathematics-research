@@ -246,15 +246,15 @@ proof.  Therefore every minimum extendable projection of size at most
 fifteen is cleanable, and a counterexample to the proposed selection
 principle must have minimum size at least sixteen.
 
-In the loopless two-occurrence interaction subclass we also close the
-next size.  A human reduction leaves only the three parallel-triangle
-profiles with multiplicities
-\((3,2,2)\), \((3,3,2)\), and \((4,3,1)\).
-Two independent exact checks exhaust their 22,032 cyclic-order states:
-21,816 admit a clean interaction flow and the other 216 strictly delete
-a support circuit.  Thus every globally minimum state in this subclass
-is clean through support sixteen.  Interaction loops and arbitrary
-occurrence multiplicities remain open at size sixteen.
+In the loopless two-occurrence interaction subclass we close the
+frontier through support eighteen.  A human reduction leaves six
+parallel-triangle profiles and seven connected bridgeless four-vertex
+multiplicity profiles.  Two independently structured exact checks
+exhaust all \(1{,}041{,}984\) cyclic-order states: \(1{,}035{,}036\)
+admit a clean interaction flow and the other \(6{,}948\) strictly
+delete a support circuit.  Thus every globally minimum state in this
+subclass is clean through support eighteen.  Interaction loops and
+arbitrary occurrence multiplicities remain open already at size sixteen.
 
 The support-preserving boundary method is nevertheless sharp: at size
 fourteen an explicit \(7+7\) state is neither directly cleanable nor
@@ -401,8 +401,8 @@ The contribution of this note is narrower:
         two-occurrence boundary showing why the balance hypothesis cannot
         simply be dropped;
   \item a loopless two-occurrence clean-or-delete theorem through total
-        support sixteen, reduced by hand to three finite interaction
-        profiles and independently checked;
+        support eighteen, reduced by hand to thirteen finite interaction
+        profiles and checked by two independently structured programs;
   \item an affine-XOR duality theorem for general several-circuit
         cleaning and a six-map identity that legally neutralizes any one
         chosen dual inconsistency witness, together with an exact
@@ -2270,12 +2270,12 @@ This is a boundary-method obstruction, not a minimum-projection or
 FiveCDC counterexample.
 \end{remark}
 
-\begin{theorem}[loopless two-occurrence frontier through sixteen]
-\label{thm:twooccurrencesixteen}
+\begin{theorem}[loopless two-occurrence frontier through eighteen]
+\label{thm:twooccurrenceeighteen}
 Suppose every complement component has exactly two support-boundary
 occurrences, the interaction multigraph \(J\) of
 Proposition~\ref{prop:petersentwooccurrence} is loopless, the total
-support is at most sixteen, and \(J\) admits a nowhere-zero \(K\)-flow.
+support is at most eighteen, and \(J\) admits a nowhere-zero \(K\)-flow.
 Then some such flow either cleans the state or omits a low colour on a
 whole support circuit and hence strictly deletes that circuit.
 Consequently every cardinality-minimum extendable projection in this
@@ -2301,24 +2301,68 @@ apply the same zero-xor construction independently at its two leaves.
 
 It remains to consider a connected noneulerian graph of minimum degree
 four on at least three vertices.  Five vertices would have degree sum at
-least twenty.  Four vertices and degree sum at most sixteen force the
-Eulerian sequence \((4,4,4,4)\).  Hence \(J\) is a three-vertex triangle.
-The only possible degree sequences and edge-multiplicity triples are
+least twenty, so \(J\) has at most four vertices.
+
+For three vertices, write the positive triangle multiplicities as
+\((a,b,c)\).  After the preceding degree and Eulerian reductions, the
+complete finite list through degree sum eighteen is
 \[
-\begin{array}{c|c|r|r|r}
-\text{multiplicities}&\text{degrees}&\text{cyclic-order states}
- &\text{clean}&\text{delete only}\\ \hline
-(3,2,2)&(5,5,4)&432&432&0\\
-(3,3,2)&(6,5,5)&8{,}640&8{,}640&0\\
-(4,3,1)&(7,5,4)&12{,}960&12{,}744&216
-\end{array}                                               \tag{26i}
+\begin{gathered}
+ (3,2,2),\ (3,3,2),\ (4,3,1),\\
+ (5,2,2),\ (4,4,1),\ (4,3,2).
+\end{gathered}                                             \tag{26i}\label{eq:twoocc-triangles}
 \]
-The primary checker enumerates every cyclic order modulo rotation and
-reversal and every nowhere-zero \(K\)-flow.  It integrates the three
-walks, exhausts their relative translations, and tests both alternatives.
-A separately written checker compares the literal two-element \(K_4\)
-endpoint sets rather than the primary alternating-form equation and
-reproduces every row.  There are no residual states.
+Indeed, the other positive partitions of at most nine edges have a
+degree-two or degree-three vertex or have all three degrees even.
+
+For four vertices the only remaining degree multiset is
+\((5,5,4,4)\).  Writing the multiplicities in the order
+\((01,02,03,12,13,23)\), enumeration of the nonnegative solutions
+modulo all \(24\) vertex permutations gives nine orbits.  One is
+disconnected, one has a bridge and therefore no nowhere-zero flow, and
+the seven finite cases are
+\[
+\begin{gathered}
+(0,1,3,3,1,1),\ (0,1,3,3,2,0),\
+(0,1,3,4,1,0),\\
+(0,2,2,2,2,1),\ (0,2,2,2,3,0),\\
+(1,1,2,2,1,2),\ (1,1,2,3,1,1).
+\end{gathered}                                             \tag{26j}\label{eq:twoocc-fourvertex}
+\]
+A standard-library enumerator checks the complete 90-row labelled
+degree solution and this orbit reduction.
+
+For the thirteen profiles in
+\eqref{eq:twoocc-triangles}--\eqref{eq:twoocc-fourvertex}, the exact census
+is
+\[
+\begin{array}{c|r|r|r}
+\text{profile}&\text{cyclic-order states}&\text{clean}
+ &\text{delete only}\\ \hline
+T(3,2,2)&432&432&0\\
+T(3,3,2)&8{,}640&8{,}640&0\\
+T(4,3,1)&12{,}960&12{,}744&216\\
+T(5,2,2)&388{,}800&388{,}800&0\\
+T(4,4,1)&362{,}880&356{,}256&6{,}624\\
+T(4,3,2)&259{,}200&259{,}200&0\\
+Q(0,1,3,3,1,1)&1{,}296&1{,}296&0\\
+Q(0,1,3,3,2,0)&1{,}296&1{,}296&0\\
+Q(0,1,3,4,1,0)&1{,}296&1{,}188&108\\
+Q(0,2,2,2,2,1)&1{,}296&1{,}296&0\\
+Q(0,2,2,2,3,0)&1{,}296&1{,}296&0\\
+Q(1,1,2,2,1,2)&1{,}296&1{,}296&0\\
+Q(1,1,2,3,1,1)&1{,}296&1{,}296&0\\ \hline
+\text{total}&1{,}041{,}984&1{,}035{,}036&6{,}948
+\end{array}                                                \tag{26k}\label{eq:twoocc-census}
+\]
+The primary checker enumerates every distinctly labelled-edge cyclic
+order modulo rotation and reversal and every nowhere-zero \(K\)-flow.
+It integrates the local walks, exhausts their relative translations,
+and tests the alternating-form cleaning equations and deletion.
+A separately written checker constructs the literal two-element
+\(K_4\) endpoint sets instead of using that equation.  The two
+implementations reproduce every row of \eqref{eq:twoocc-census}; there are no
+residual states.
 
 Finally, by the interaction dictionary, a deleting flow is realized by
 component maps.  Toggling the omitted low colour on that circuit removes
@@ -2329,7 +2373,7 @@ which is impossible at a cardinality minimum.
 \begin{remark}
 The complete replay, literal-endpoint independent checker, frozen outputs,
 and hash ledger are in
-\path{scratch/two-occurrence-clean-delete-frontier-20260729/}.
+\path{scratch/two-occurrence-clean-delete-through18-20260729/}.
 Interaction loops are outside the theorem: graph looplessness does not
 prevent two occurrences of one complement component on the same support
 circuit.
@@ -2863,10 +2907,11 @@ unbounded branch: every one-circuit boundary directly cleans.  The
 remaining open frontier therefore begins with several circuits lacking
 the separate per-circuit balance of
 Corollary~\ref{cor:multicircuittensor}; larger such states need not admit
-the same finite strategy.  Theorem~\ref{thm:twooccurrencesixteen} removes
-the loopless two-occurrence branch through size sixteen, so a surviving
-size-sixteen state must have an interaction loop or a component with more
-than two occurrences.
+the same finite strategy.  Theorem~\ref{thm:twooccurrenceeighteen} removes
+the loopless two-occurrence branch through size eighteen.  This does not
+move the unrestricted frontier beyond size fifteen: a surviving state at
+size sixteen may already have an interaction loop or a component with
+more than two occurrences.
 
 Proposition~\ref{prop:zerodualprice} rules out the most direct LP repair
 of this gap.  The rainbow quotient shore itself carries zero coefficient
@@ -3242,9 +3287,12 @@ hostile audit checked the complete ten-orbit table, the analytic
 globally minimum clean descendant, both smaller-size enumerators, and the
 package ledger.  This is likewise agent review rather than independent
 human verification.  Codex agents also proved
-Theorem~\ref{thm:twooccurrencesixteen}; two exact checkers independently
-reproduce its 22,032-state partition, and a hostile audit checked the
-complete graph-shape reduction, semantics, counts, and hash ledger.  The
+Theorem~\ref{thm:twooccurrenceeighteen}; two independently structured
+exact checkers reproduce its \(1{,}041{,}984\)-state partition, including
+the \(1{,}019{,}952\) new support-eighteen states.  A separate agent audit
+checked the graph-shape reduction, semantics, counts, implementation
+independence, and hash ledger.  This is agent review, not independent
+human verification.  The
 size-fifteen primary package freezes
 all eight shape counts and 6,036 residual rows.  A separately written
 induction checker canonicalizes every residual and links it to the
