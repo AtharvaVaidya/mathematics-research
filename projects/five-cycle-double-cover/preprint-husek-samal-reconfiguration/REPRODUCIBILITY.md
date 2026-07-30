@@ -8,11 +8,15 @@ sha256sum \
   scratch/verify_husek_samal_one_switch_boundary.py \
   scratch/verify_fano_order60_flow_repair.py \
   scratch/husek-samal-packable-one-switch-countermodel-order26.txt \
-  scratch/husek-samal-one-switch-countermodel-order40.txt
+  scratch/husek-samal-one-switch-countermodel-order40.txt \
+  scratch/jaeger-order40-augmented-radius-two-counterexample-20260729/verify.py \
+  scratch/jaeger-order40-augmented-radius-two-counterexample-20260729/verification-output.json \
+  scratch/jaeger-order40-augmented-radius-two-counterexample-20260729/canonical-graph6.txt
 
 python3 scratch/verify_husek_samal_packable_one_switch_countermodel.py
 python3 scratch/verify_husek_samal_one_switch_boundary.py
 python3 scratch/verify_fano_order60_flow_repair.py
+python3 scratch/jaeger-order40-augmented-radius-two-counterexample-20260729/verify.py
 ```
 
 Frozen hashes used by the manuscript are regenerated after every revision

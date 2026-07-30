@@ -13,10 +13,15 @@ A human author should:
    separate program.
 5. Replay the exact distance-two path manually or independently.
 6. Audit the 40- and 60-vertex controls.
-7. Ask specialists to review the novelty and the relationship with
+7. Independently replay the Jaeger-star radius-two neighborhood
+   exhaustion, the three reciprocal exchanges, the canonical and
+   nonplanar metadata, and the explicit FiveCDC.
+8. Check that no prose conflates reciprocal exchanges of three-tree
+   states with legal simple-cycle switches of a fixed flow.
+9. Ask specialists to review the novelty and the relationship with
    Hušek–Šámal and Cranston–Li–Su–Wang–Xu.
-8. Confirm the current publication status and bibliographic metadata of
+10. Confirm the current publication status and bibliographic metadata of
    arXiv:2607.24724 and arXiv:2606.24685.
-9. Revise authorship and accept full scholarly responsibility.
+11. Revise authorship and accept full scholarly responsibility.
 
 AI-use disclosure appears prominently on page one and must not be removed.

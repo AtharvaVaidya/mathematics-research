@@ -50,7 +50,8 @@ Nowhere-Zero Flows toward Five-Cycle Double Covers}
 \textbf{Status and AI-use disclosure.}
 The standard five-cycle double cover conjecture remains open.  This
 manuscript proves a short packing-to-switch lemma and gives exact finite
-counterexamples only to a proposed radius-one reconfiguration lemma.
+counterexamples only to a proposed radius-one flow-reconfiguration lemma
+and a separate radius-two Jaeger-star reciprocal-exchange lemma.
 It proves neither FiveCDC nor its negation.
 
 OpenAI Codex agents using GPT-5-series models, under human direction,
@@ -101,6 +102,12 @@ latter is also a literal instance of the packing-to-switch lemma.  All
 finite claims are accompanied by solver-independent, certificate-based
 checking code.  Possible novelty is stated conservatively and remains
 subject to specialist prior-art review.
+
+As a distinct calibration, we give a cyclically \(4\)-edge-connected
+40-vertex Jaeger-star state with exact augmented reciprocal-exchange
+distance three.  This disproves a project-created radius-two shortcut,
+but uses a different state graph from simple-cycle switching.  The same
+graph has an explicit FiveCDC.
 \end{abstract}
 
 \section{Scope and relation to prior work}
@@ -134,7 +141,9 @@ Our contribution has deliberately narrow scope:
       simple-cycle switch always suffices even when a value class already
       packs, together with an exact distance-two path and a positive
       FiveCDC certificate; and
-\item one 40-vertex negative and one 60-vertex positive control.
+\item one 40-vertex negative and one 60-vertex positive control; and
+\item an exact 40-vertex countermodel to a separate radius-two
+      reciprocal-exchange assertion for Jaeger-star tree states.
 \end{enumerate}
 No reduction from FiveCDC to a universal radius-one assertion is claimed
 here, and no statement about orientable cycle double covers is made.
@@ -504,6 +513,157 @@ order & cycles & legal & initial minimum & radius-one minimum & outcome\\
 \end{tabular}
 \end{table}
 
+\section{A Jaeger-star reciprocal-exchange radius-two obstruction}
+\label{sec:jaeger}
+
+This section uses a different adjacency relation from the legal
+simple-cycle switches above.  Let \(r\) be a cubic vertex with incident
+edges \(s_0,s_1,s_2\), and partition
+\[
+                   E(G-r)=A_0\sqcup A_1\sqcup A_2
+\]
+so that
+\[
+                  T_i=\{s_i\}\cup(E(G-r)-A_i)
+\]
+is a spanning tree for each \(i\).  Let \(K_i\subseteq T_i\) be the
+unique edge set having odd degree at every vertex, and define
+\[
+ f(e)_i=1\quad\Longleftrightarrow\quad e\notin K_i.
+\]
+A \emph{reciprocal exchange} swaps one edge of \(A_i\) with one edge of
+\(A_j\), provided both changed sets still define trees.  We order states
+lexicographically by
+\[
+                 \Psi=\left(\min_{\mu\ne0}d_\mu(f),
+                         |K_0|+|K_1|+|K_2|\right).
+\]
+The auxiliary search also declares a state terminal when one of 21
+parallel whole-circuit span systems certifies a switch to an H--S-good
+flow.  This is more permissive than direct H--S goodness and is kept
+separate from it below.
+
+\begin{proposition}[exact reciprocal-exchange distance three]
+\label{prop:jaeger-three}
+There is a simple cubic, \(3\)-edge-connected, cyclically
+\(4\)-edge-connected, nonplanar graph of order \(40\) and girth five
+with a rooted Jaeger-star state such that:
+\begin{enumerate}
+\item its kernel sizes are \((20,20,20)\), its H--S defect profile is
+      \((4,6,2,6,6,6,2)\), \(\Psi=(2,60)\), and all 21 parallel span
+      flags fail;
+\item no lower-\(\Psi\), H--S-good, or parallel-span-successful state is
+      reachable by at most two legal reciprocal exchanges; and
+\item a displayed sequence of three reciprocal exchanges reaches an
+      H--S-good flow.
+\end{enumerate}
+The same graph has an explicit standard FiveCDC.
+\end{proposition}
+
+\paragraph{Exact data.}
+The labeled graph6 record used for the state is
+\begin{center}
+\scriptsize
+\nolinkurl{ghe?GC@@G??@?@??_@I??A?C_?G??G@?CA?@?C?G_??_@?@???@?@??_?C?G??C@?O??C?A??G????G????C????@??O??G?????_????H????_@?????G_????@G??_?C@}.
+\end{center}
+Nauty/Traces \texttt{labelg -q} gives the canonical record
+\begin{center}
+\scriptsize
+\nolinkurl{gs?GO???G?_????D?@_?G?ACC?OC@?GC?A@G?O??A???CO??G?O???c??O_????O???@C???A_???Q????__@????A?????_???Ga????WG????GG????CG????CI????OC}.
+\end{center}
+At root \(0\), in labeled graph6 edge order after deleting its three
+incident edges, the omitted-class masks are
+\[
+ (74750917167123596,\ 60249003513889361,\ 9115267394842914).
+\]
+
+For each \(\mu\ne0\), the checker evaluates all four matching values
+\(r\) with \(\mu(r)=1\), exactly as in Theorem~3.16 of
+\cite{HusekSamal2026}.  At the seed the resulting component-defect
+matrix is
+\[
+\begin{pmatrix}
+4&4&4&4\\
+6&6&6&6\\
+2&2&2&2\\
+6&6&6&6\\
+6&6&6&6\\
+6&6&6&6\\
+2&2&2&2
+\end{pmatrix}.
+\]
+Thus no zero profile entry is hidden by a choice of affine matching
+value.
+
+\paragraph{Exhaustive radius-two certificate.}
+There are \(3\cdot19^2=1083\) candidate first swaps and exactly \(93\)
+legal neighbors.  None is lower or successful; \(24\) are safe with the
+same \(\Psi\).  Exhausting every legal neighborhood of those \(24\)
+states checks \(2196\) second arcs, with no lower \(\Psi\), no zero
+H--S defect, and no successful parallel span flag.  These arcs have
+\(1895\) distinct targets, \(1852\) of them new at distance two.
+
+The local-position swaps
+\[
+                    (10,9),\qquad(40,43),\qquad(15,17)
+\]
+exchange full graph edges
+\[
+                    (13,12),\qquad(43,46),\qquad(18,20).
+\]
+The successive exact data are
+\begin{center}
+\small
+\begin{tabular}{@{}ccllc@{}}
+\toprule
+state & kernel sizes & profile & \(\Psi\) & span flags\\
+\midrule
+seed & \((20,20,20)\) & \((4,6,2,6,6,6,2)\) & \((2,60)\) & 0\\
+1 & \((20,20,20)\) & \((4,6,2,6,6,6,2)\) & \((2,60)\) & 0\\
+2 & \((20,20,20)\) & \((4,6,4,6,2,4,2)\) & \((2,60)\) & 0\\
+3 & \((20,20,21)\) & \((6,6,6,6,4,4,0)\) & \((0,61)\) & 3\\
+\bottomrule
+\end{tabular}
+\end{center}
+The zero in the last profile is direct Theorem~3.16 component-parity
+success for the current flow.  The three span flags are a separate
+additional fact.  Hence the exact augmented reciprocal-exchange
+distance is three.
+
+\paragraph{FiveCDC-positive caveat.}
+In labeled graph6 edge order, the following five-bit labels all have
+weight two:
+\begin{equation}
+\begin{split}
+(&20,24,9,5,3,17,24,18,10,9,3,5,20,5,6,12,12,6,20,17,\\
+ &18,3,9,10,10,3,10,9,10,3,3,9,10,17,3,10,18,9,24,24,\\
+ &17,17,9,24,10,18,9,17,24,24,20,9,12,3,5,12,6,24,18,10).
+\end{split}
+\end{equation}
+Their xor is zero around every vertex.  Therefore their five bit
+coordinates are Eulerian and cover every edge exactly twice.  This
+proves directly that the graph is FiveCDC-positive.
+
+\begin{proof}
+The independent standard-library checker decodes both graph and state,
+checks the tree and odd-kernel definitions, exhausts all zero-, one-,
+two-, and three-edge cuts, and computes girth.  It then performs the
+literal finite enumerations and parity calculations just stated.
+Nauty/Traces \texttt{planarg -v} independently reports the graph as
+nonplanar.  Direct vertex-coordinate parity checks verify the displayed
+FiveCDC.  The exhaustive lower bound through radius two and the literal
+three-exchange path prove the exact distance.
+\end{proof}
+
+\begin{remark}
+Proposition~\ref{prop:jaeger-three} concerns reciprocal exchanges of
+three-tree states.  It is not a statement about the simple-cycle-switch
+distance \(\dist_{\HS}\) used in
+Theorem~\ref{thm:counter}, and it does not imply that this graph is hard
+for every flow.  Its role is solely to invalidate a project-created
+radius-two shortcut.
+\end{remark}
+
 \section{Verification architecture}
 
 The principal checker is
@@ -529,6 +689,17 @@ It reconstructs the graph from two 32-vertex pole recipes, verifies the
 one-switch repair and the two joins, and separately follows a
 13-switch path to the flow induced by an explicit FiveCDC.  The two
 programs share no imported project module.
+
+The reciprocal-exchange obstruction is frozen in
+\[
+\texttt{scratch/jaeger-order40-augmented-radius-two-counterexample-20260729/}.
+\]
+Its independently written Python checker reconstructs every first and
+second neighborhood, all 28 Theorem~3.16 defects, the three-step path,
+and the FiveCDC certificate.  Its verifier SHA-256 is
+\begin{center}
+\nolinkurl{7c4a9d165416392399aa53ca6226573f459bae07e31dd1a76332b636d0b1be17}.
+\end{center}
 
 The frozen artifact hashes at the time of this draft are:
 \begin{center}
@@ -556,6 +727,8 @@ From the project root, the exact replay commands are
 python3 scratch/verify_husek_samal_packable_one_switch_countermodel.py
 python3 scratch/verify_husek_samal_one_switch_boundary.py
 python3 scratch/verify_fano_order60_flow_repair.py
+python3 \
+  scratch/jaeger-order40-augmented-radius-two-counterexample-20260729/verify.py
 \end{verbatim}
 
 \section{What remains open}
@@ -579,16 +752,23 @@ that the finite sequence in the packing-to-switch lemma cannot always be
 replaced by one circuit.  The lemma supplies no universal packing
 theorem.
 
+Likewise, Proposition~\ref{prop:jaeger-three} disproves a universal
+radius-two assertion only in the separate reciprocal-exchange state
+graph.  It gives no universal radius-three bound and no reduction of
+FiveCDC to such a bound.
+
 \section{Novelty and responsibility boundary}
 
 The cited papers establish the H--S component criterion and the general
 cycle-supported reconfiguration framework.  We make no novelty claim
 for either.  The elementary packing-to-switch bridge, the exact
-radius-one formulation, and the three finite certificates may be new,
-but that assessment is provisional.  The search and literature review
-were AI-assisted and not exhaustive in the scholarly sense.  Priority
-and publishability require review by specialists in cycle double covers,
-nowhere-zero flows, and flow reconfiguration.
+radius-one formulation, the reciprocal-exchange obstruction, and the
+finite certificates may be new, but that assessment is provisional.
+The radius-two reciprocal assertion was formulated inside this
+AI-assisted project rather than in the cited literature.  The search and
+literature review were AI-assisted and not exhaustive in the scholarly
+sense.  Priority and publishability require review by specialists in
+cycle double covers, nowhere-zero flows, and flow reconfiguration.
 
 The human part of Theorem~\ref{thm:packing} is fully displayed.  The
 finite theorems reduce to explicit data and short, inspectable exhaustive
