@@ -354,13 +354,26 @@ does not prove or disprove FiveCDC, and it makes no orientable claim.
   its unique shortest cycle cannot be a flow coordinate, although the
   graph has a FiveCDC.  The accompanying projection--resistance lemma
   proves the obstruction without SAT.
-- `preprint-husek-samal-reconfiguration/` is an eight-page working
+- `preprint-husek-samal-reconfiguration/` is a twelve-page working
   preprint with a page-one AI-use disclosure and human-review gate.  Its
   strengthened strict order-26 theorem shows that an H--S-bad flow can
   already have a packable value class yet have no good simple-cycle
   neighbour.  A solver-free checker exhausts 9,213 cycles and 1,485 legal
   switches, checks the two joins, exact distance two, graph premises, and
   an explicit FiveCDC.
+- `scratch/flow-rank-two-legal-order-20260729/` proves a
+  human-checkable exact normal form for fixed-value moves on arbitrary
+  Eulerian edge-sets.  Unrestricted distance equals the rank of the
+  edgewise difference values; in rank two, one explicit overlap fibre
+  decides each of the six possible move orders.  The package gives a
+  smallest connected simple-cubic blocked pair on \(K_{3,3}\) and a
+  smallest cube bad-to-good shared-coordinate pair, both of exact legal
+  distance three.  Its standard-library checker replays the flow tables,
+  all blockers, exact paths, small-order and cube flow censuses, and
+  explicit positive FiveCDCs.  This is a candidate auxiliary result,
+  not a proof or disproof of FiveCDC; it cites and distinguishes the
+  standard cycle-supported reconfiguration work of Esperet et al. and
+  Cranston et al.
 - `scratch/fano-binary-packing-repair-frontier-20260728.md` proves the
   exact 21-incidence symmetry and SAT/XOR formulation for binary repair.
 - `search/fano-binary-repair-connected-countermodel-108v-20260728/`

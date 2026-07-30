@@ -3,10 +3,13 @@
 This is an AI-assisted research draft about an auxiliary reconfiguration
 route toward the Five-Cycle Double Cover Conjecture.
 
-It proves a human-checkable packing-to-switch lemma and records an exact
-26-vertex countermodel showing that a packable value class can still
-require two circuit switches, plus 40- and 60-vertex controls.  It also
-records an exact distance-three obstruction to a separate radius-two
+It proves a human-checkable packing-to-switch lemma and an exact
+difference-rank normal form for fixed-value Eulerian moves.  The latter
+includes a smallest \(K_{3,3}\) rank-two legal-order obstruction and a
+smallest cube bad-to-good shared-coordinate obstruction.  The manuscript
+also records an exact 26-vertex countermodel showing that a packable value
+class can still require two circuit switches, 40- and 60-vertex controls,
+and an exact distance-three obstruction to a separate radius-two
 Jaeger-star reciprocal-exchange claim. It does **not** resolve FiveCDC.
 
 Build:
@@ -22,6 +25,7 @@ python3 scratch/verify_husek_samal_packable_one_switch_countermodel.py
 python3 scratch/verify_husek_samal_one_switch_boundary.py
 python3 scratch/verify_fano_order60_flow_repair.py
 python3 scratch/jaeger-order40-augmented-radius-two-counterexample-20260729/verify.py
+python3 scratch/flow-rank-two-legal-order-20260729/verify.py
 ```
 
 The manuscript and all checking artifacts require independent human

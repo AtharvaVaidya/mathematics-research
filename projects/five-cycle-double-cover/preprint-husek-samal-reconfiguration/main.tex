@@ -39,7 +39,7 @@
 Nowhere-Zero Flows toward Five-Cycle Double Covers}
 \author{Atharva Vaidya\\
 \small AI-assisted research draft for independent human verification}
-\date{July 28, 2026}
+\date{July 29, 2026}
 
 \begin{document}
 \maketitle
@@ -49,15 +49,15 @@ Nowhere-Zero Flows toward Five-Cycle Double Covers}
 \parbox{0.91\textwidth}{
 \textbf{Status and AI-use disclosure.}
 The standard five-cycle double cover conjecture remains open.  This
-manuscript proves a short packing-to-switch lemma and gives exact finite
-counterexamples only to a proposed radius-one flow-reconfiguration lemma
-and a separate radius-two Jaeger-star reciprocal-exchange lemma.
+manuscript proves a difference-rank normal form, a short
+packing-to-switch lemma, and exact finite counterexamples only to
+proposed auxiliary flow-reconfiguration lemmas.
 It proves neither FiveCDC nor its negation.
 
 OpenAI Codex agents using GPT-5-series models, under human direction,
-formulated the auxiliary question and the packing-to-switch lemma, found
-the finite examples, wrote the search and both checking programs,
-performed the computations, drafted the proof and this manuscript, and
+formulated the auxiliary questions and lemmas, found
+the finite examples, wrote the search and checking programs,
+performed the computations, drafted the proofs and this manuscript, and
 conducted an AI-assisted literature search.  The ``independent checker''
 is independent of the discovery implementation, not independent of AI.
 No human author, referee, or cited researcher is represented as having
@@ -71,12 +71,18 @@ literature, and accept ordinary scholarly responsibility.
 \begin{abstract}
 Hu\v{s}ek and \v{S}\'amal recently gave a component-parity condition on
 a nowhere-zero \(\F_2^3\)-flow which is equivalent, after choosing the
-flow, to the existence of a five-cycle double cover.  Cranston, Li, Su,
-Wang, and Xu study reconfiguration of nowhere-zero flows by changes
-supported on cycles.  We test the direct radius-one synthesis of these
-ideas.
+flow, to the existence of a five-cycle double cover.  Esperet et al.\
+and Cranston et al.\ study reconfiguration of nowhere-zero flows by
+changes supported on cycles.  We test the direct radius-one synthesis
+of these ideas.
 
-First we prove a human-checkable bridge.  If one value-class matching of
+For fixed-value moves on arbitrary Eulerian edge-sets, we first prove
+that unrestricted distance equals the rank of the edgewise difference
+values and give an exact criterion for legal distance two.  A smallest
+\(K_{3,3}\) example and a smallest cube bad-to-good example have
+unrestricted distance two but legal distance three.
+
+We next prove a human-checkable bridge.  If one value-class matching of
 a cubic \(\F_2^3\)-flow admits two edge-disjoint joins in its complement,
 then an explicitly determined even support, and therefore a finite
 sequence of legal simple-cycle switches, reaches a flow satisfying the
@@ -128,13 +134,16 @@ suitable nowhere-zero \(\F_2^3\)-flow.
 
 Cranston, Li, Su, Wang, and Xu define adjacency of nowhere-zero flows by
 requiring their difference to be supported on a cycle
-\cite{CranstonEtAl2026}.  In the exponent-two group \(\F_2^3\), a
+\cite{EsperetEtAl2026,CranstonEtAl2026}.  In the exponent-two group \(\F_2^3\), a
 difference supported on a simple cycle has one constant nonzero value
 around that cycle.  The switches below are precisely this special case,
 with legality made explicit so that no zero edge is created.
 
 Our contribution has deliberately narrow scope:
 \begin{enumerate}
+\item an exact normal form for two fixed-value Eulerian-set moves,
+      including smallest \(K_{3,3}\) and cube obstructions to legal
+      distance two;
 \item a direct proof that a two-join packing yields a finite legal switch
       sequence to a Hu\v{s}ek--\v{S}\'amal-good flow;
 \item an exact strict 26-vertex countermodel to the assertion that one
@@ -242,6 +251,115 @@ The cycle equation preserves flow conservation, and
 value.  We write \(\dist_{\HS}(f)\) for the minimum number of legal
 simple-cycle switches needed to reach an H--S-good flow, when such a
 sequence exists.
+
+\section{A rank-two normal form for fixed-value Eulerian moves}
+\label{sec:rank-two}
+
+For this section only, permit one move to have an arbitrary Eulerian
+edge-set \(C\), possibly disconnected: choose \(a\in W-\{0\}\) and
+replace \(f\) by \(f+a1_C\).  Call the move legal when the new flow is
+nowhere-zero.  This is a coarser one-step relation than the
+simple-cycle relation above.  Every legal fixed-value Eulerian move
+nevertheless decomposes into legal simple-cycle switches by splitting
+\(C\) into edge-disjoint circuits: during the decomposition, every edge
+has either its old nonzero value or its final nonzero value.
+
+\begin{theorem}[difference-rank normal form]\label{thm:rank-normal}
+Let \(f,g\) be nowhere-zero \(W\)-flows, put \(h=f+g\), and let
+\[
+ D=\operatorname{span}\{h(e):e\in E(G)\}.
+\]
+If zero-valued intermediate flows are permitted, the minimum number of
+fixed-value Eulerian moves from \(f\) to \(g\) is \(\dim D\).
+\end{theorem}
+
+\begin{proof}
+If \(k\) moves use constants \(a_1,\ldots,a_k\), every value \(h(e)\)
+lies in their span, so \(k\geq\dim D\).  Conversely, choose a basis
+\(a_1,\ldots,a_r\) of \(D\) and write
+\[
+ h(e)=\sum_{i=1}^r\lambda_i(e)a_i.
+\]
+Since \(h\) is a flow, each binary coordinate
+\(\lambda_i\circ h\) is a flow.  Hence
+\(C_i=\{e:\lambda_i(e)=1\}\) is Eulerian.  Adding \(a_i\) on \(C_i\)
+for \(i=1,\ldots,r\) adds exactly \(h\).
+\end{proof}
+
+The legality issue has a complete answer in rank two.  Write
+\[
+ D-\{0\}=\{a,b,a+b\},\qquad H_w=\{e:h(e)=w\}.
+\]
+
+\begin{theorem}[rank-two legal-order criterion]\label{thm:rank-two}
+For the ordered basis \((a,b)\), the only two-move factorization is
+\[
+ f\xrightarrow{\,a,\ H_a\cup H_{a+b}\,}
+ f+a1_{H_a\cup H_{a+b}}
+ \xrightarrow{\,b,\ H_b\cup H_{a+b}\,}g.
+\]
+It is legal if and only if
+\begin{equation}\label{eq:rank-two-blocker}
+                 H_{a+b}\cap f^{-1}(a)=\varnothing.
+\end{equation}
+Consequently all six ordered bases are blocked if and only if all six
+directed transitions
+\[
+ (f(e),g(e))=(u,v),\qquad
+ u,v\in D-\{0\},\quad u\ne v,
+\]
+occur.
+\end{theorem}
+
+\begin{proof}
+The two supports are the unique binary coordinate supports of \(h\) in
+the basis \((a,b)\), and hence are Eulerian.  An edge of \(H_a\) cannot
+have \(f(e)=a\), since then \(g(e)=0\).  Thus the first intermediate
+flow vanishes exactly on the set in
+\eqref{eq:rank-two-blocker}.  The second endpoint is the nowhere-zero
+flow \(g\).  Finally, a blocker in
+\eqref{eq:rank-two-blocker} has
+\((f(e),g(e))=(a,b)\); varying the ordered basis gives precisely the six
+displayed transitions.
+\end{proof}
+
+These statements are elementary but useful in delimiting the
+reconfiguration strategy.  On \(K_{3,3}\), with graph6 record
+\texttt{EFz\_}, the flows
+\[
+\begin{split}
+f&=(1,2,3,2,3,1,3,1,2),\\
+g&=(1,3,2,2,1,3,3,2,1)
+\end{split}
+\]
+in the canonical edge order have difference
+\((0,1,1,0,2,2,0,3,3)\) and realize all six directed transitions.
+Thus their unrestricted distance is two but their legal distance is
+three.  A three-step path is obtained by adding constants \(4,3,6\)
+on the circuits
+\[
+ \{1,2,4,5\},\quad \{1,2,7,8\},\quad \{1,2,4,5\},
+\]
+respectively.  This is smallest among connected simple cubic graphs;
+the only order-four graph is \(K_4\), where the six-transition pattern
+is impossible.  The supplied checker also exhausts all 210 flows of
+\(K_4\).
+
+A stronger bad-to-good example occurs on the cube
+\(\texttt{G?zTb\_}\).  It has a displayed H--S-bad flow \(f\) and
+H--S-good flow \(g\) with rank-two difference, the same nonempty binary
+coordinate circuit, all six two-move orders blocked, and a legal
+three-circuit path.  Exact enumeration gives 5,712 nowhere-zero flows
+on the cube, of which 1,344 are H--S-bad and 4,368 are H--S-good.
+All flows on the three connected simple cubic graphs through order six
+are H--S-good, so the cube example is the smallest bad-to-good instance
+in that domain.  Both graphs are Tait-colourable and have explicit
+FiveCDCs; they obstruct only the two-move shortcut.
+
+The complete edge tables, component defects, three-step paths,
+small-order proof, machine-readable witnesses, and standard-library
+checker are in
+{\footnotesize\path{scratch/flow-rank-two-legal-order-20260729/}}.
 
 \section{A human packing-to-switch lemma}
 
@@ -760,10 +878,19 @@ FiveCDC to such a bound.
 \section{Novelty and responsibility boundary}
 
 The cited papers establish the H--S component criterion and the general
-cycle-supported reconfiguration framework.  We make no novelty claim
+cycle-supported reconfiguration framework.  In particular,
+Esperet et al.\ prove the general flow decomposition into
+cycle-supported flows and a complementary-projection connectivity
+lemma \cite{EsperetEtAl2026}; Cranston et al.\ also introduce an
+auxiliary adjacency permitting even support
+\cite{CranstonEtAl2026}.  Over \(\F_2^3\), our move has the same
+fixed-value pattern as standard cycle adjacency but permits a
+disconnected Eulerian support.  Relative to the auxiliary even-support
+adjacency of Cranston et al., it is narrower in value pattern.  We make no novelty claim
 for either.  The elementary packing-to-switch bridge, the exact
-radius-one formulation, the reciprocal-exchange obstruction, and the
-finite certificates may be new, but that assessment is provisional.
+radius-one formulation, the rank-two legal-order criterion, the
+reciprocal-exchange obstruction, and the finite certificates may be
+new, but that assessment is provisional.
 The radius-two reciprocal assertion was formulated inside this
 AI-assisted project rather than in the cited literature.  The search and
 literature review were AI-assisted and not exhaustive in the scholarly

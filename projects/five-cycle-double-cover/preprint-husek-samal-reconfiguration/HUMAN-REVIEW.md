@@ -5,23 +5,27 @@ checkers pass.
 
 A human author should:
 
-1. Check the packing-to-switch proof line by line.
-2. Independently decode the order-26 graph6 record and check the displayed
+1. Check the difference-rank and rank-two legal-order proofs line by line.
+2. Manually verify the \(K_{3,3}\) and cube flow tables, six blockers,
+   component-parity statuses, and three-step paths; independently audit the
+   complete small-order and cube flow censuses.
+3. Check the packing-to-switch proof line by line.
+4. Independently decode the order-26 graph6 record and check the displayed
    flow, two joins, and FiveCDC labels.
-3. Reimplement the simple-cycle and legal-switch enumeration independently.
-4. Verify the cyclic-connectivity, girth, and non-Tait claims with a
+5. Reimplement the simple-cycle and legal-switch enumeration independently.
+6. Verify the cyclic-connectivity, girth, and non-Tait claims with a
    separate program.
-5. Replay the exact distance-two path manually or independently.
-6. Audit the 40- and 60-vertex controls.
-7. Independently replay the Jaeger-star radius-two neighborhood
+7. Replay the exact distance-two path manually or independently.
+8. Audit the 40- and 60-vertex controls.
+9. Independently replay the Jaeger-star radius-two neighborhood
    exhaustion, the three reciprocal exchanges, the canonical and
    nonplanar metadata, and the explicit FiveCDC.
-8. Check that no prose conflates reciprocal exchanges of three-tree
+10. Check that no prose conflates reciprocal exchanges of three-tree
    states with legal simple-cycle switches of a fixed flow.
-9. Ask specialists to review the novelty and the relationship with
-   Hušek–Šámal and Cranston–Li–Su–Wang–Xu.
-10. Confirm the current publication status and bibliographic metadata of
-   arXiv:2607.24724 and arXiv:2606.24685.
-11. Revise authorship and accept full scholarly responsibility.
+11. Ask specialists to review the novelty and the relationship with
+    Hušek–Šámal, Esperet et al., and Cranston–Li–Su–Wang–Xu.
+12. Confirm the current publication status and bibliographic metadata of
+    arXiv:2607.24724, arXiv:2512.17342, and arXiv:2606.24685.
+13. Revise authorship and accept full scholarly responsibility.
 
 AI-use disclosure appears prominently on page one and must not be removed.
