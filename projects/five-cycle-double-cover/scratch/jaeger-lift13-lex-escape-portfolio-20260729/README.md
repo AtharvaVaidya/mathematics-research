@@ -17,6 +17,10 @@ The frozen trap-directed producer was run on the 130-vertex girth-10
   `0,13,26,39,52,65,78,91,104,117`; and
 - seed 307, 300 steps, at roots `0,39,91`.
 
+The graph has exact oddness zero and is Tait-colourable.  This portfolio is
+therefore a high-girth positive control, not evidence sampled from the
+snark or minimal-counterexample domain.
+
 Across the 13 runs:
 
 ```text

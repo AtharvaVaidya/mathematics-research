@@ -17,6 +17,11 @@ vertex 0, and order its edges by the graph6 convention
 (u,v) with u < v, sorted by (v,u).
 ```
 
+The retained project metadata gives exact oddness zero: this graph is
+Tait-colourable.  It is therefore a high-girth positive control, **not** a
+snark-domain test.  None of the local-trap conclusions below should be
+extrapolated to a smallest-counterexample class on the basis of girth alone.
+
 The three root-spoke edge IDs are `(4,39,70)`. Delete the root and its
 spokes. Number the remaining 192 internal edges in their induced order.
 Their omitted-tree labels are the 192 entries in
