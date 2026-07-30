@@ -27,6 +27,20 @@ review and independent mathematical review are required before scholarly
 submission.  On its own it is best viewed as a reproducible negative lemma or
 preprint appendix, not as a resolution of FiveCDC.
 
+## Prior-art boundary
+
+Hušek and Šámal, *Exponentially Many Circuit Double Covers*,
+[arXiv:2607.24724](https://arxiv.org/abs/2607.24724), Theorem 3.16 and
+Conjecture 3.19, already give the underlying exact flow criterion: for a
+nowhere-zero \(\mathbb F_2^3\)-flow, FiveCDC is equivalent to choosing the
+flow so that each relevant component contains an even number of endpoints
+of the distinguished value class.  The full-\(H\) systems used here are a
+restricted circuit-switching reconfiguration of that prior criterion.
+Neither the flow equivalence nor the component-parity theorem is claimed as
+new here.  The scoped contribution of this package is only the explicit
+order-34 local trap, its complete one-move census, and its exact two-move
+escape.
+
 ## Frozen graph and flow
 
 The graph6 record is
