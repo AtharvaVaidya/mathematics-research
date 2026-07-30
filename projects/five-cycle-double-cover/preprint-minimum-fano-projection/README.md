@@ -16,6 +16,13 @@ finite bridgeless multigraphs to the cubic setting, but the
 minimum-projection theorem itself remains cubic. This is distinct from
 the ordinary Cycle Double Cover Conjecture, whose July 2026 proof gives an
 eight-subgraph cover rather than the five-subgraph bound.
+At the first unrestricted support size, the paper also completes one
+fixed \(8+8\) word orbit: an 8,046,330-state census leaves eight direct
+residuals, six are removed by a matching-observed one-round
+\(\{1,3\}\)-Kempe strategy, and two have explicit 42-vertex Tait
+obstructions to that one-round game. This does not cover other
+support-sixteen word orbits, and the displayed projections are not
+globally minimum.
 
 Build from this directory with:
 
@@ -94,6 +101,9 @@ python3 scratch/minimum-projection-two-occurrence-interaction-20260729/independe
 sh scratch/two-occurrence-clean-delete-through18-20260729/run_all.sh
 python3 scratch/support16-loop-higheroccurrence-reduction-20260729/verify.py
 python3 scratch/support16-loop-theorem-blind-audit-20260729/audit.py
+sh scratch/unrestricted-support16-interaction-frontier-20260729/run_all.sh
+python3 scratch/support16-residual-fourterminal-matching-game-20260729/matching_game.py
+python3 scratch/support16-residual-fourterminal-matching-game-20260729/realization_audit.py
 python3 scratch/cubic-reduction-standard-fivecdc-20260729/verify_local_relations.py
 python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/verify.py
 python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/independent_audit.py
@@ -187,6 +197,30 @@ finite census.  Together, the two theorems cover all two-occurrence
 states through support sixteen and all loopless states through support
 eighteen.  General occurrence multiplicities remain open at size
 sixteen.
+
+The fixed-word package
+`scratch/unrestricted-support16-interaction-frontier-20260729/`
+then completes the single \(8+8\) orbit represented by
+`01010123|01012302`. Its exact canonical census classifies 8,046,330
+charge-valid component partitions as 8,041,808 directly clean, 4,514
+strict-delete-only, and eight residual. This is one word orbit, not a
+full support-sixteen census.
+
+The companion matching package
+`scratch/support16-residual-fourterminal-matching-game-20260729/`
+quantifies in the order
+\(\exists P\,\forall M(P)\,\exists S(M)\): choose one colour pair,
+observe every component's abstract terminal matching for that pair, then
+choose a nonempty charge-closed path subset. The fixed pair
+\(\{1,3\}\) rescues all matchings for six residuals. Each of the two
+\(8+2+2+2+2\) survivors has one adverse matching for each of the three
+colour pairs, and both adverse triples are simultaneously realized on
+simple connected bridgeless cubic graphs with 42 vertices and 63 edges.
+Both graphs are Tait-colourable, so their minimum projection is empty.
+The result excludes only this one-round, one-colour-pair,
+support-preserving game; it is not a minimum-projection theorem and not a
+FiveCDC counterexample. The matching certificate SHA-256 is
+`96a5ff4201c411c278e03ea9941a0665669575bb07da73aeff59d0cca38c6966`.
 
 The unrestricted boundary dichotomy still first fails at size fourteen,
 on an explicit \(7+7\) state.  Its 18-vertex simple bridgeless cubic realization
@@ -408,7 +442,9 @@ minimization parameters are distinct.
 The prose, proof route, checker, and research workflow were developed by
 OpenAI Codex agents under Atharva Vaidya's direction. This includes the
 universal tensor lemma and obstruction identity, the size-fifteen census
-and induction lift, the Petersen interaction dictionary and descent, the
+and induction lift, the fixed-word support-sixteen census and matching
+game, its two literal 42-vertex realizations, the Petersen interaction
+dictionary and descent, the
 two-terminal cleaning lemma, the orbit-reflecting \(K_{3,3}-e\) use, and
 the full-flow master formulation, the strict parity lock, the 162-vertex
 construction, and their checkers and internal hostile audits. An initial
@@ -418,3 +454,11 @@ directly. The disclosure in the paper must remain. Before formal venue
 submission, the draft requires line-by-line review by a human graph
 theorist, a clean independent census rerun, bibliography audit, and a
 venue-specific authorship/disclosure decision.
+
+The fixed-word support-sixteen result also has a clean-room agent replay
+in
+`scratch/support16-residual-fourterminal-matching-game-blind-audit-20260729/`.
+It reconstructs all eight residual states, the
+\(\exists P\,\forall M\,\exists S(M)\) quantifiers, both literal
+42-vertex graphs, and their Tait colourings without importing the
+candidate checkers. This remains agent review, not human peer review.

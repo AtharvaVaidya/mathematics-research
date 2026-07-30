@@ -84,7 +84,12 @@ The manuscript proves:
 23. a strict parity-lock construction of a simple bridgeless cubic graph
     on 162 vertices whose unique minimum extendable projection has size
     54 and is uncleanable, together with an explicit FiveCDC of that
-    graph.
+    graph; and
+24. an exact census of one fixed \(8+8\) support-sixteen word orbit:
+    8,046,330 charge-valid states, eight direct residuals, a
+    matching-observed \(\{1,3\}\) reduction robust for six residuals,
+    and two graph-realizable one-round obstructions on 42-vertex
+    Tait-colourable graphs.
 
 This is a partial theorem about the Hušek--Šámal flow criterion.  It does
 not resolve the Five-Cycle Double Cover Conjecture.
@@ -125,6 +130,35 @@ The prescribed-cycle antecedent is:
 - Arthur Hoffmann-Ostenhof, *A Note on 5-Cycle Double Covers*, Graphs and
   Combinatorics 29 (2013), 977--979,
   <https://doi.org/10.1007/s00373-012-1169-8>.
+
+Important adjacent primary sources now cited in the manuscript are:
+
+- Dezheng Xie and Cun-Quan Zhang, *Flows, flow-pair covers and cycle
+  double covers*, Discrete Mathematics 309 (2009), 4682--4689,
+  <https://doi.org/10.1016/j.disc.2008.05.056>.  This gives an earlier
+  flow-pair formulation of 5CDC and treats orientable 5CDC separately.
+- Jack Edmonds and Ellis L. Johnson, *Matching, Euler tours and the
+  Chinese postman*, Mathematical Programming 5 (1973), 88--124,
+  <https://doi.org/10.1007/BF01580113>.  This is the standard source for
+  the \(T\)-join polyhedral machinery used by the dual results.
+- Edita Máčajová and Martin Škoviera, *Fano colourings of cubic graphs
+  and the Fulkerson Conjecture*, Theoretical Computer Science 349
+  (2005), 112--120,
+  <https://doi.org/10.1016/j.tcs.2005.09.034>, and Ligang Jin,
+  Giuseppe Mazzuoccolo, and Eckhard Steffen, *Cores, joins and the
+  Fano-flow conjectures*, arXiv:1601.05762,
+  <https://arxiv.org/abs/1601.05762>.  Their “Fano flow” terminology
+  concerns Fano-plane lines at vertices, not minimum coordinate support.
+- M. A. Fiol and J. Vilaltella, *Some results on the structure of
+  multipoles in the study of snarks*, Electronic Journal of
+  Combinatorics 22 (2015), P1.45,
+  <https://doi.org/10.37236/3629>.  Multipole boundary states and their
+  parity lemma are prior work.
+- Siyan Liu, Rong-Xia Hao, Rong Luo, and Cun-Quan Zhang, *5-Cycle
+  Double Covers, 4-Flows, and Catlin Reduction*, SIAM Journal on
+  Discrete Mathematics 37 (2023), 253--267,
+  <https://doi.org/10.1137/22M1472425>.  This is adjacent 4-flow and
+  superposition work, not an exact minimum-projection theorem.
 
 The \(K_{3,3}\) input used by the dynamic inflation is prior work:
 
@@ -181,6 +215,19 @@ interaction-flow dictionary developed in this project.  Its reductions
 are elementary and its residual censuses exact, but it has not received
 a literature-wide novelty screen.  No priority claim is made pending
 comparison with multipole-flow and circuit-partition literature.
+
+The support-sixteen fixed-word matching theorem is apparently new after
+the bounded primary-source screen, but only in its exact narrow form.
+The multipole parity framework, bichromatic path pairing, and Kempe
+switches are known.  No exact match was found for the eight residual
+words, the quantifier order
+\(\exists P\,\forall M(P)\,\exists S(M)\), the six-of-eight robust
+reduction, or the two 42-vertex simultaneous adverse realizations.
+Because these objects are project-specific and the Hušek--Šámal
+framework was only two days old, this is not a priority determination.
+The publication must say “apparently new after a bounded search” and
+must state that the result covers one word orbit, one round, and
+nonminimum displayed projections.
 
 The rainbow-load counterstate is a failed-approach certificate rather
 than a positive theorem.  Its cube realization and length-four-to-six
@@ -258,6 +305,13 @@ The two-occurrence theorems separately remove every such interaction
 state through support sixteen and every loopless state through support
 eighteen.  They do not raise the general through-fifteen theorem:
 higher occurrence multiplicities remain uncontrolled at size sixteen.
+The new fixed-word theorem samples that higher-occurrence frontier
+exactly. Six of eight direct residuals succumb after observing a
+bichromatic terminal matching, while two 42-vertex Tait realizations
+defeat every legal one-round response for all three colour pairs. Its
+value is a precise method boundary; because both graphs have empty
+minimum projection, it supplies no evidence for a FiveCDC counterexample
+and no extension of the through-fifteen minimum theorem.
 The cube counterstate then rules out the simplest attempted implication
 from rainbow parity to the colour-load inequality. The later strict-lock
 construction closes the actual global-minimum implication negatively.
@@ -306,7 +360,9 @@ support-density theorems, the six-map colour-load inequality and
 constructive descent, the two-occurrence support frontier, and the
 cube rainbow-load counterstate, the equality-rigidity theorem, the
 static-filter survivor and inflation obstruction, the full-flow master
-formulation, the strict parity lock, and the 162-vertex construction;
+formulation, the strict parity lock, and the 162-vertex construction,
+the fixed-word support-sixteen census and matching game, and both
+42-vertex literal realizations;
 proposed
 the two-terminal cleaning and orbit-reflecting
 \(K_{3,3}-e\) lemmas; wrote the exact

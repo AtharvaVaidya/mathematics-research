@@ -1,0 +1,1443 @@
+{
+  "fixed_derivative": "31111131|21113132",
+  "fixed_word": "01010123|01012302",
+  "game": {
+    "adverse_triples": [
+      {
+        "all_changed_states": "feasible=320 clean=0 delete=0",
+        "legal_nonempty_subsets_12_13_23": [
+          31,
+          63,
+          3
+        ],
+        "partition": "0001234000314200",
+        "path_counts_12_13_23": [
+          6,
+          7,
+          3
+        ]
+      },
+      {
+        "all_changed_states": "feasible=320 clean=0 delete=0",
+        "legal_nonempty_subsets_12_13_23": [
+          31,
+          63,
+          3
+        ],
+        "partition": "0123444444130244",
+        "path_counts_12_13_23": [
+          6,
+          7,
+          3
+        ]
+      }
+    ],
+    "cross_colour_mixing": false,
+    "matching_unobserved_rescues": 0,
+    "positive_witness_stream_sha256": "c0389f2fbe2d070db6244bf6326b4038a5f4d0ddbfcf2d4e5184e32608d55d6c",
+    "quantifiers": "exists one colour pair P; for every componentwise abstract perfect-matching tuple M for P; after observing M, exists a nonempty circuit-closed subset S(M), then component maps and relative circuit translation",
+    "robust_matching_rows": 66,
+    "robust_states": 6,
+    "states": [
+      {
+        "existing_displayed": 0,
+        "pairs": [
+          {
+            "bad": 1,
+            "colours": [
+              1,
+              2
+            ],
+            "component_matching_counts": [
+              15,
+              1,
+              1,
+              1,
+              1
+            ],
+            "full_reachable_transition_states": 127,
+            "joint_matchings": 15,
+            "rescued": 14,
+            "terminal_sizes": [
+              6,
+              2,
+              2,
+              2,
+              0
+            ]
+          },
+          {
+            "bad": 1,
+            "colours": [
+              1,
+              3
+            ],
+            "component_matching_counts": [
+              15,
+              1,
+              1,
+              1,
+              1
+            ],
+            "full_reachable_transition_states": 255,
+            "joint_matchings": 15,
+            "rescued": 14,
+            "terminal_sizes": [
+              6,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "bad": 1,
+            "colours": [
+              2,
+              3
+            ],
+            "component_matching_counts": [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            "full_reachable_transition_states": 7,
+            "joint_matchings": 3,
+            "rescued": 2,
+            "terminal_sizes": [
+              4,
+              0,
+              0,
+              0,
+              2
+            ]
+          }
+        ],
+        "partition": "0001234000314200",
+        "per_circuit_matrix": [
+          [
+            4,
+            4
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "profile": [
+          8,
+          2,
+          2,
+          2,
+          2
+        ],
+        "robust_pairs": []
+      },
+      {
+        "existing_displayed": 0,
+        "pairs": [
+          {
+            "bad": 1,
+            "colours": [
+              1,
+              2
+            ],
+            "component_matching_counts": [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            "full_reachable_transition_states": 63,
+            "joint_matchings": 3,
+            "rescued": 2,
+            "terminal_sizes": [
+              4,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "bad": 0,
+            "colours": [
+              1,
+              3
+            ],
+            "component_matching_counts": [
+              3,
+              1,
+              1,
+              1,
+              3
+            ],
+            "full_reachable_transition_states": 255,
+            "joint_matchings": 9,
+            "rescued": 9,
+            "terminal_sizes": [
+              4,
+              2,
+              2,
+              2,
+              4
+            ]
+          },
+          {
+            "bad": 1,
+            "colours": [
+              2,
+              3
+            ],
+            "component_matching_counts": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "full_reachable_transition_states": 3,
+            "joint_matchings": 1,
+            "rescued": 0,
+            "terminal_sizes": [
+              2,
+              0,
+              2,
+              0,
+              2
+            ]
+          }
+        ],
+        "partition": "0001234003144422",
+        "per_circuit_matrix": [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "profile": [
+          5,
+          4,
+          3,
+          2,
+          2
+        ],
+        "robust_pairs": [
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      {
+        "existing_displayed": 0,
+        "pairs": [
+          {
+            "bad": 1,
+            "colours": [
+              1,
+              2
+            ],
+            "component_matching_counts": [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            "full_reachable_transition_states": 63,
+            "joint_matchings": 3,
+            "rescued": 2,
+            "terminal_sizes": [
+              4,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "bad": 0,
+            "colours": [
+              1,
+              3
+            ],
+            "component_matching_counts": [
+              15,
+              1,
+              1,
+              1,
+              1
+            ],
+            "full_reachable_transition_states": 255,
+            "joint_matchings": 15,
+            "rescued": 15,
+            "terminal_sizes": [
+              6,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "bad": 1,
+            "colours": [
+              2,
+              3
+            ],
+            "component_matching_counts": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "full_reachable_transition_states": 3,
+            "joint_matchings": 1,
+            "rescued": 0,
+            "terminal_sizes": [
+              2,
+              0,
+              2,
+              0,
+              2
+            ]
+          }
+        ],
+        "partition": "0012344041300022",
+        "per_circuit_matrix": [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "profile": [
+          6,
+          3,
+          3,
+          2,
+          2
+        ],
+        "robust_pairs": [
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      {
+        "existing_displayed": 0,
+        "pairs": [
+          {
+            "bad": 1,
+            "colours": [
+              1,
+              2
+            ],
+            "component_matching_counts": [
+              1,
+              1,
+              1,
+              1,
+              3
+            ],
+            "full_reachable_transition_states": 63,
+            "joint_matchings": 3,
+            "rescued": 2,
+            "terminal_sizes": [
+              2,
+              2,
+              2,
+              2,
+              4
+            ]
+          },
+          {
+            "bad": 0,
+            "colours": [
+              1,
+              3
+            ],
+            "component_matching_counts": [
+              3,
+              1,
+              1,
+              1,
+              3
+            ],
+            "full_reachable_transition_states": 255,
+            "joint_matchings": 9,
+            "rescued": 9,
+            "terminal_sizes": [
+              4,
+              2,
+              2,
+              2,
+              4
+            ]
+          },
+          {
+            "bad": 1,
+            "colours": [
+              2,
+              3
+            ],
+            "component_matching_counts": [
+              1,
+              1,
+              1,
+              1,
+              3
+            ],
+            "full_reachable_transition_states": 7,
+            "joint_matchings": 3,
+            "rescued": 2,
+            "terminal_sizes": [
+              2,
+              0,
+              0,
+              0,
+              4
+            ]
+          }
+        ],
+        "partition": "0012344044130244",
+        "per_circuit_matrix": [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "profile": [
+          6,
+          4,
+          2,
+          2,
+          2
+        ],
+        "robust_pairs": [
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      {
+        "existing_displayed": 0,
+        "pairs": [
+          {
+            "bad": 1,
+            "colours": [
+              1,
+              2
+            ],
+            "component_matching_counts": [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            "full_reachable_transition_states": 63,
+            "joint_matchings": 3,
+            "rescued": 2,
+            "terminal_sizes": [
+              4,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "bad": 0,
+            "colours": [
+              1,
+              3
+            ],
+            "component_matching_counts": [
+              3,
+              1,
+              1,
+              1,
+              3
+            ],
+            "full_reachable_transition_states": 255,
+            "joint_matchings": 9,
+            "rescued": 9,
+            "terminal_sizes": [
+              4,
+              2,
+              2,
+              2,
+              4
+            ]
+          },
+          {
+            "bad": 1,
+            "colours": [
+              2,
+              3
+            ],
+            "component_matching_counts": [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            "full_reachable_transition_states": 7,
+            "joint_matchings": 3,
+            "rescued": 2,
+            "terminal_sizes": [
+              4,
+              0,
+              0,
+              0,
+              2
+            ]
+          }
+        ],
+        "partition": "0012344400314200",
+        "per_circuit_matrix": [
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "profile": [
+          6,
+          4,
+          2,
+          2,
+          2
+        ],
+        "robust_pairs": [
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      {
+        "existing_displayed": 0,
+        "pairs": [
+          {
+            "bad": 1,
+            "colours": [
+              1,
+              2
+            ],
+            "component_matching_counts": [
+              1,
+              1,
+              1,
+              1,
+              3
+            ],
+            "full_reachable_transition_states": 63,
+            "joint_matchings": 3,
+            "rescued": 2,
+            "terminal_sizes": [
+              2,
+              2,
+              2,
+              2,
+              4
+            ]
+          },
+          {
+            "bad": 0,
+            "colours": [
+              1,
+              3
+            ],
+            "component_matching_counts": [
+              1,
+              1,
+              1,
+              1,
+              15
+            ],
+            "full_reachable_transition_states": 255,
+            "joint_matchings": 15,
+            "rescued": 15,
+            "terminal_sizes": [
+              2,
+              2,
+              2,
+              2,
+              6
+            ]
+          },
+          {
+            "bad": 1,
+            "colours": [
+              2,
+              3
+            ],
+            "component_matching_counts": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "full_reachable_transition_states": 3,
+            "joint_matchings": 1,
+            "rescued": 0,
+            "terminal_sizes": [
+              2,
+              0,
+              2,
+              0,
+              2
+            ]
+          }
+        ],
+        "partition": "0012344403144422",
+        "per_circuit_matrix": [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "profile": [
+          6,
+          3,
+          3,
+          2,
+          2
+        ],
+        "robust_pairs": [
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      {
+        "existing_displayed": 0,
+        "pairs": [
+          {
+            "bad": 1,
+            "colours": [
+              1,
+              2
+            ],
+            "component_matching_counts": [
+              1,
+              1,
+              1,
+              1,
+              3
+            ],
+            "full_reachable_transition_states": 63,
+            "joint_matchings": 3,
+            "rescued": 2,
+            "terminal_sizes": [
+              2,
+              2,
+              2,
+              2,
+              4
+            ]
+          },
+          {
+            "bad": 0,
+            "colours": [
+              1,
+              3
+            ],
+            "component_matching_counts": [
+              3,
+              1,
+              1,
+              1,
+              3
+            ],
+            "full_reachable_transition_states": 255,
+            "joint_matchings": 9,
+            "rescued": 9,
+            "terminal_sizes": [
+              4,
+              2,
+              2,
+              2,
+              4
+            ]
+          },
+          {
+            "bad": 1,
+            "colours": [
+              2,
+              3
+            ],
+            "component_matching_counts": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "full_reachable_transition_states": 3,
+            "joint_matchings": 1,
+            "rescued": 0,
+            "terminal_sizes": [
+              2,
+              0,
+              2,
+              0,
+              2
+            ]
+          }
+        ],
+        "partition": "0123444441300022",
+        "per_circuit_matrix": [
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        "profile": [
+          5,
+          4,
+          3,
+          2,
+          2
+        ],
+        "robust_pairs": [
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      {
+        "existing_displayed": 1,
+        "pairs": [
+          {
+            "bad": 1,
+            "colours": [
+              1,
+              2
+            ],
+            "component_matching_counts": [
+              1,
+              1,
+              1,
+              1,
+              15
+            ],
+            "full_reachable_transition_states": 127,
+            "joint_matchings": 15,
+            "rescued": 14,
+            "terminal_sizes": [
+              0,
+              2,
+              2,
+              2,
+              6
+            ]
+          },
+          {
+            "bad": 1,
+            "colours": [
+              1,
+              3
+            ],
+            "component_matching_counts": [
+              1,
+              1,
+              1,
+              1,
+              15
+            ],
+            "full_reachable_transition_states": 255,
+            "joint_matchings": 15,
+            "rescued": 14,
+            "terminal_sizes": [
+              2,
+              2,
+              2,
+              2,
+              6
+            ]
+          },
+          {
+            "bad": 1,
+            "colours": [
+              2,
+              3
+            ],
+            "component_matching_counts": [
+              1,
+              1,
+              1,
+              1,
+              3
+            ],
+            "full_reachable_transition_states": 7,
+            "joint_matchings": 3,
+            "rescued": 2,
+            "terminal_sizes": [
+              2,
+              0,
+              0,
+              0,
+              4
+            ]
+          }
+        ],
+        "partition": "0123444444130244",
+        "per_circuit_matrix": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "profile": [
+          8,
+          2,
+          2,
+          2,
+          2
+        ],
+        "robust_pairs": []
+      }
+    ]
+  },
+  "graphs": {
+    "realizations": [
+      {
+        "all_97_legal_subsets_fail": true,
+        "bridgeless": true,
+        "connected": true,
+        "cubic": true,
+        "edges": 63,
+        "flow": true,
+        "labelled_graph6": "ihCGKC??G?_@?@??_?G@@C???C???W??[G????O???@_??F@????A??????W???F?_????A???????W????[_????O????C??????G???E?G???A?C??????C??C???_??B?????A_?????PG",
+        "minimum_projection_size": 0,
+        "partition": "0001234000314200",
+        "path_systems": {
+          "12": [
+            [
+              0,
+              1,
+              7
+            ],
+            [
+              0,
+              2,
+              15
+            ],
+            [
+              0,
+              8,
+              9
+            ],
+            [
+              1,
+              3,
+              11
+            ],
+            [
+              2,
+              4,
+              13
+            ],
+            [
+              3,
+              5,
+              10
+            ]
+          ],
+          "13": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              2,
+              7
+            ],
+            [
+              0,
+              9,
+              14
+            ],
+            [
+              1,
+              3,
+              11
+            ],
+            [
+              2,
+              4,
+              13
+            ],
+            [
+              3,
+              5,
+              10
+            ],
+            [
+              4,
+              6,
+              12
+            ]
+          ],
+          "23": [
+            [
+              0,
+              0,
+              8
+            ],
+            [
+              0,
+              14,
+              15
+            ],
+            [
+              4,
+              6,
+              12
+            ]
+          ]
+        },
+        "simple": true,
+        "tait_colouring": "121212123212121233311223331122333112233311223333113321222131132",
+        "vertices": 42
+      },
+      {
+        "all_97_legal_subsets_fail": true,
+        "bridgeless": true,
+        "connected": true,
+        "cubic": true,
+        "edges": 63,
+        "flow": true,
+        "labelled_graph6": "ihCGKC??G?_@?@??_?G@@_???A???W??\\????A????@_??FG?????O?????W???FC?????C???????W????[G????@?????C?????G???E?G???A?C??????C??C???_??B?????A_?????PG",
+        "minimum_projection_size": 0,
+        "partition": "0123444444130244",
+        "path_systems": {
+          "12": [
+            [
+              1,
+              1,
+              10
+            ],
+            [
+              2,
+              2,
+              13
+            ],
+            [
+              3,
+              3,
+              11
+            ],
+            [
+              4,
+              4,
+              15
+            ],
+            [
+              4,
+              5,
+              7
+            ],
+            [
+              4,
+              8,
+              9
+            ]
+          ],
+          "13": [
+            [
+              0,
+              0,
+              12
+            ],
+            [
+              1,
+              1,
+              10
+            ],
+            [
+              2,
+              2,
+              13
+            ],
+            [
+              3,
+              3,
+              11
+            ],
+            [
+              4,
+              4,
+              7
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              4,
+              9,
+              14
+            ]
+          ],
+          "23": [
+            [
+              0,
+              0,
+              12
+            ],
+            [
+              4,
+              6,
+              8
+            ],
+            [
+              4,
+              14,
+              15
+            ]
+          ]
+        },
+        "simple": true,
+        "tait_colouring": "121212123121212133311223331122333112233311223333223312111232231",
+        "vertices": 42
+      }
+    ]
+  },
+  "schema": "support16-fourterminal-matching-game-blind-audit-v1",
+  "scope": {
+    "ai_disclosure_present": true,
+    "candidate_hashes": {
+      "../unrestricted-support16-interaction-frontier-20260729/residuals.tsv": "2c9cca62de4ce06bca6ababfbfced4878133b22c6f52d55417fd4e9afa28096e",
+      "HUMAN-PROOF.md": "80531764e7f6771248423f0fda87ad4df10d1da2678cdb4e759a9bd02f780044",
+      "README.md": "ca55a9ca25d296f91be37ba39224ee4de2f24e0d4b150d89d4ed25dea2488a0b",
+      "matching-game-certificate.json": "96a5ff4201c411c278e03ea9941a0665669575bb07da73aeff59d0cca38c6966",
+      "matching_game.py": "29d1b3f014674975d6ce1bfe721c00a1e3375fa7cfd1c1f1df58abc0480060ac",
+      "realization_audit.py": "3563c810ce0e288600545c2599acc9ad72941d42d0af97b684a9f9ade5171f78"
+    },
+    "candidate_ledger_sha256": "d7987e9e47f9a4f2372b62a80e5b8c6374360b847ba7be9063aa40da1b7a166d",
+    "ledger_matches": true,
+    "published_residual_tsv_sha256": "2c9cca62de4ce06bca6ababfbfced4878133b22c6f52d55417fd4e9afa28096e",
+    "scope_disclaimers_present": true,
+    "unledgered_files": []
+  },
+  "source_states": [
+    {
+      "existing_displayed": 0,
+      "partition": "0001234000314200",
+      "per_circuit_matrix": [
+        [
+          4,
+          4
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "profile": [
+        8,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "existing_displayed": 0,
+      "partition": "0001234003144422",
+      "per_circuit_matrix": [
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "profile": [
+        5,
+        4,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "existing_displayed": 0,
+      "partition": "0012344041300022",
+      "per_circuit_matrix": [
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "profile": [
+        6,
+        3,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "existing_displayed": 0,
+      "partition": "0012344044130244",
+      "per_circuit_matrix": [
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "profile": [
+        6,
+        4,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "existing_displayed": 0,
+      "partition": "0012344400314200",
+      "per_circuit_matrix": [
+        [
+          2,
+          4
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "profile": [
+        6,
+        4,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "existing_displayed": 0,
+      "partition": "0012344403144422",
+      "per_circuit_matrix": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "profile": [
+        6,
+        3,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "existing_displayed": 0,
+      "partition": "0123444441300022",
+      "per_circuit_matrix": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "profile": [
+        5,
+        4,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "existing_displayed": 1,
+      "partition": "0123444444130244",
+      "per_circuit_matrix": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "profile": [
+        8,
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "stored_certificate": {
+    "all_stored_map_base_and_relative_witnesses_valid": true,
+    "stored_bad_rows_replayed": 18,
+    "stored_matching_rows_replayed": 160,
+    "stored_matching_unobserved_actions_replayed": 240,
+    "stored_rescue_witnesses_replayed": 142
+  },
+  "verdict": {
+    "eight_state_one_round_game": "PASS",
+    "fivecdc": "NOT_RESOLVED",
+    "minimum_projection_obstruction": "NO: both realized graphs are Tait-colourable and have minimum projection size zero",
+    "six_matching_robust_reductions": "PASS",
+    "two_simultaneously_realized_adverse_triples": "PASS"
+  }
+}

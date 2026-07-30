@@ -1,0 +1,15 @@
+WORD word=01010123|01012302 derivative=31111131|21113132
+RESIDUAL key=01010123|01012302|0012344403144422 profile=6+3+3+2+2 matrix=2/1,1/1,1/2,1/1,3/3 interaction_loop=0 higher_occurrence=1
+RESIDUAL key=01010123|01012302|0001234003144422 profile=5+4+3+2+2 matrix=4/1,1/1,1/2,1/1,1/3 interaction_loop=0 higher_occurrence=1
+RESIDUAL key=01010123|01012302|0123444444130244 profile=8+2+2+2+2 matrix=1/1,1/1,1/1,1/1,4/4 interaction_loop=0 higher_occurrence=1
+RESIDUAL key=01010123|01012302|0012344044130244 profile=6+4+2+2+2 matrix=3/1,1/1,1/1,1/1,2/4 interaction_loop=0 higher_occurrence=1
+RESIDUAL key=01010123|01012302|0123444441300022 profile=5+4+3+2+2 matrix=1/3,1/1,1/2,1/1,4/1 interaction_loop=0 higher_occurrence=1
+RESIDUAL key=01010123|01012302|0012344041300022 profile=6+3+3+2+2 matrix=3/3,1/1,1/2,1/1,2/1 interaction_loop=0 higher_occurrence=1
+RESIDUAL key=01010123|01012302|0012344400314200 profile=6+4+2+2+2 matrix=2/4,1/1,1/1,1/1,3/1 interaction_loop=0 higher_occurrence=1
+RESIDUAL key=01010123|01012302|0001234000314200 profile=8+2+2+2+2 matrix=4/4,1/1,1/1,1/1,1/1 interaction_loop=0 higher_occurrence=1
+RESULT charge_valid=8046330 covered_loopless_pairs=0 eligible=8046330 clean=8041808 delete_only=4514 residual=8 initially_clean=845732 searched_dirty=7200598 classified_fnv64=17068633071306477955 residual_fnv64=6039899158318007243
+FIRST_RESIDUAL key=01010123|01012302|0001234000314200
+LARGEST_BLOCK_HIST size2=2835 size3=113400 size4=2044665 size5=2772000 size6=1847580 size7=859824 size8=288135 size9=86496 size10=25616 size11=4160 size12=1486 size13=80 size14=52 size16=1
+RESIDUAL_PROFILES 5+4+3+2+2=2 6+3+3+2+2=2 6+4+2+2+2=2 8+2+2+2+2=2
+CATEGORY_OUTCOMES loop_only=2835/0/0 higher_only=3060801/2872/8 loop_and_higher=4978172/1642/0
+PASS exact fixed-word unrestricted census

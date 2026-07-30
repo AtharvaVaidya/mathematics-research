@@ -1,0 +1,3 @@
+PARTITIONS charge_valid=8046330 derivative_multiplicities=(10, 2, 4)
+PAIR_SUBCASE all_pair_partitions=2835 loopless_cross_pair_partitions=0 loop_only_partitions=2835
+PASS independent partition-count recurrence

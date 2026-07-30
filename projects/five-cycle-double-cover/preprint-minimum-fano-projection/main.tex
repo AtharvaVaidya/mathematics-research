@@ -49,7 +49,10 @@ The five-cycle double cover conjecture remains unresolved.
 This note proves an exchange theorem, settles the minimum-support cases
 through size fifteen for finite connected bridgeless loopless cubic
 multigraphs (parallel edges allowed), and gives exact finite censuses.  It
-also constructs a 162-vertex graph whose unique minimum extendable
+also completes a one-round matching-game analysis on the eight residual states in
+one fixed support-sixteen word orbit, without settling the unrestricted
+support-sixteen case.  It also constructs a 162-vertex graph whose unique
+minimum extendable
 projection is not cleanable, refuting the proposed minimum-selection
 route.  That graph has an explicit five-cycle double cover.  Thus the
 note proves neither FiveCDC nor its negation.  The standard conjecture for
@@ -256,6 +259,20 @@ census has zero residuals.  Thus every globally minimum state in these
 subclasses is cleanable.  Arbitrary occurrence multiplicities remain
 open already at size sixteen.
 
+For one fixed \(8+8\) support-word orbit at size sixteen, an exact
+canonical census goes beyond the two-occurrence subclass.  Of
+\(8{,}046{,}330\) charge-valid component partitions, \(8{,}041{,}808\)
+clean directly, \(4{,}514\) delete a circuit, and eight are residual.
+In a one-colour-pair matching game, six of those eight admit a
+\(\{1,3\}\)-Kempe strategy after observing every abstract terminal
+matching.  The two \(8+2+2+2+2\) residuals admit jointly realizable adverse
+matchings for all three colour pairs; two explicit 42-vertex simple
+bridgeless cubic realizations are Tait-colourable and defeat every legal
+one-round move in the stated game.  This is a theorem about one word
+orbit and one-round support-preserving play.  The displayed projections
+are not globally minimum, and the result is neither a FiveCDC
+counterexample nor a general support-sixteen theorem.
+
 The support-preserving boundary method is nevertheless sharp: at size
 fourteen an explicit \(7+7\) state is neither directly cleanable nor
 circuit-deletable.
@@ -387,7 +404,10 @@ to selecting a nowhere-zero \(\F_2^3\)-flow with an additional parity
 condition~\cite[Theorem~3.16 and Conjecture~3.19]{HusekSamal2026}.  Their
 criterion is related to the prescribed-cycle formulation of
 Hoffmann-Ostenhof~\cite{HoffmannOstenhof2013}.  We claim no novelty or
-priority for either formulation.
+priority for either formulation.  Earlier integer-flow-pair
+characterizations distinguish standard and orientable 5CDC
+conditions~\cite{XieZhang2009}; 4-flow and Catlin-reduction methods give
+further sufficient conditions and snark families~\cite{LiuHaoLuoZhang2023}.
 
 The contribution of this note is narrower:
 \begin{enumerate}
@@ -404,6 +424,10 @@ The contribution of this note is narrower:
         through support sixteen, including interaction loops, and all
         loopless states through support eighteen, reduced by hand to
         seventeen finite interaction profiles and exactly checked;
+  \item an exact census of one \(8+8\) support-sixteen word orbit and a
+        matching-observed one-round Kempe dichotomy on its eight
+        residuals: six universal reductions and two explicit
+        42-vertex Tait obstructions to that narrowly specified game;
   \item an affine-XOR duality theorem for general several-circuit
         cleaning and a six-map identity that legally neutralizes any one
         chosen dual inconsistency witness, together with an exact
@@ -443,6 +467,11 @@ Write a three-bit flow as
 \]
 where \(h:E\to\F_2\) and \(s:E\to K\) are flows.  We identify a binary
 flow with its support.
+The established term \emph{Fano flow} usually records which lines of the
+Fano plane occur at cubic vertices~\cite{MacajovaSkoviera2005,
+JinMazzuoccoloSteffen2016}.  Our \emph{Fano projection} instead means one
+chosen coordinate support in the Hu\v{s}ek--\v{S}\'amal criterion; no
+minimum-support result from the former terminology is being invoked.
 
 \begin{definition}
 A binary cycle \(h\), possibly zero, is \emph{extendable} if there is a flow
@@ -603,7 +632,7 @@ positive dual shore splits the interior of at least one component of
 \end{proposition}
 
 \begin{proof}
-The Edmonds--Johnson \(T\)-join polyhedron and
+The Edmonds--Johnson \(T\)-join polyhedron~\cite{EdmondsJohnson1973} and
 Corollary~\ref{cor:tjoin} give the displayed optimum with
 \(\chi_{J_c}\) as an optimal primal solution.  Complementary slackness
 therefore says
@@ -2581,6 +2610,184 @@ anchor-audit, and one-circuit tensor packages.  These computational claims
 are exact agent-produced certificates, not independent human peer review.
 \end{remark}
 
+\subsection{One fixed-word support-sixteen matching frontier}
+
+We next isolate one exactly completed subcase at the first unrestricted
+support size.  This uses the standard multipole viewpoint, in which a
+three-edge-colouring induces a parity-constrained state on the
+semiedges~\cite{FiolVilaltella2015}, and the usual two-colour Kempe
+switch~\cite{BelcastroHaas2012}.  The result below concerns one
+canonical support-word orbit and one round of one-colour-pair path
+switches only.
+
+Fix two support \(8\)-circuits with low word and boundary derivative word
+\[
+ c=\texttt{01010123}\mid\texttt{01012302},\qquad
+ d=\texttt{31111131}\mid\texttt{21113132}.               \tag{26o}
+\]
+For a pair \(P=\{x,y\}\subseteq K-\{0\}\), put
+\(\Delta=x+y\).  In a complement component \(W\), the \(x,y\)-coloured
+subgraph has odd boundary set
+\[
+                 T_W(P)=\{i\in\partial W:d_i\in P\}.      \tag{26p}
+\]
+Its path components pair the terminals; write this perfect matching as
+\(M_W(P)\).  Nature may supply any abstract perfect matching on every
+set \(T_W(P)\).  After observing them, one may switch a nonempty subset
+\(S\) of the displayed paths, all for the same pair \(P\), and then
+choose arbitrary feasible component maps and relative circuit
+translations.  Call \(S\) charge-closed when it contains an even number
+of paths whose endpoints lie on different support circuits.  The precise
+quantifier order of the matching-observed game is
+\[
+\boxed{
+\begin{gathered}
+\exists P\ \ \forall\bigl(M_W(P)\bigr)_W\\
+\exists\,\varnothing\ne S\subseteq\mathop{\dot\bigcup}_W M_W(P):\\
+S\text{ is charge-closed and the new state cleans or deletes}.
+\end{gathered}
+}                                                          \tag{26q}
+\]
+Only matchings for the single chosen \(P\) occur in one play.
+
+\begin{proposition}[fixed-word support-sixteen matching frontier]
+\label{prop:supportsixteenfixedword}
+For the one word orbit represented by \((26o)\), the exact canonical
+component-partition census has
+\[
+\begin{array}{c|r}
+\text{outcome}&\text{states}\\ \hline
+\text{directly clean}&8{,}041{,}808\\
+\text{strict circuit deletion only}&4{,}514\\
+\text{neither direct outcome}&8\\ \hline
+\text{charge-valid total}&8{,}046{,}330 .
+\end{array}                                                \tag{26r}
+\]
+The eight residual component words are
+\[
+\begin{array}{ll}
+\texttt{0001234000314200}&\texttt{0001234003144422}\\
+\texttt{0012344041300022}&\texttt{0012344044130244}\\
+\texttt{0012344400314200}&\texttt{0012344403144422}\\
+\texttt{0123444441300022}&\texttt{0123444444130244}.
+\end{array}                                                \tag{26s}
+\]
+Six of them satisfy \((26q)\) with the fixed pair \(P=\{1,3\}\).
+The remaining two are precisely
+\[
+ \pi_A=\texttt{0001234000314200},\qquad
+ \pi_B=\texttt{0123444444130244},                          \tag{26t}
+\]
+both of profile \(8+2+2+2+2\).  For each of the three pairs
+\(\{1,2\},\{1,3\},\{2,3\}\), each state has a jointly graph-realizable
+adverse matching under which no nonempty charge-closed one-round path
+subset cleans or deletes.  Each adverse triple has a simple connected
+bridgeless cubic realization on 42 vertices and 63 edges.
+Both realizations are Tait-colourable, so their actual minimum projection
+is empty.
+\end{proposition}
+
+\begin{proof}
+The fixed-word classifier canonically generates every charge-valid set
+partition of the sixteen derivative occurrences in (26o), exhausts
+independent \(\operatorname{GL}(2,2)\) maps on its blocks and all relative
+circuit translations, and tests direct cleaning and strict deletion.
+The word orbit has 512 normalized images and trivial stabilizer.  The
+mutually exclusive totals are (26r).  A separately written evaluator
+replays the eight rows (26s); every row has exactly 320 feasible map
+tuples and zero clean and zero deletion tuples.
+
+Switching a displayed path adds \(\Delta\) at its two endpoints.  A path
+with both endpoints on one support circuit preserves both circuit
+charges; a cross-circuit path changes both charges by \(\Delta\).
+Consequently a path subset is legal exactly when it contains an even
+number of cross-circuit paths, proving the charge-closed test in (26q).
+The exact matching enumeration gives:
+\[
+\begin{array}{c|c|c}
+\text{residual profile}&\text{number of residuals}
+ &\{1,3\}\text{ matchings rescued}\\ \hline
+5+4+3+2+2&2&9/9\\
+6+3+3+2+2&2&15/15\\
+6+4+2+2+2&2&9/9\\
+8+2+2+2+2&2&14/15 .
+\end{array}                                                \tag{26u}
+\]
+For the first six rows the numerator equals the denominator for the
+single fixed pair \(\{1,3\}\), so (26q) holds even when Nature is allowed
+every abstract matching, including matchings not supplied by a particular
+graph realization.
+
+For either row in (26t), the rescued/total counts for
+\(\{1,2\},\{1,3\},\{2,3\}\) are respectively
+\[
+                         14/15,\qquad14/15,\qquad2/3.     \tag{26v}
+\]
+The unique adverse systems have respectively \(6,7,3\) paths and
+\(31,63,3\) nonempty charge-closed subsets.  Literal replay of all 97
+subsets leaves exactly 320 feasible map tuples and no clean or deletion
+tuple after every switch.
+
+It remains to show that the three adverse matchings can occur
+simultaneously.  Use a properly three-edge-coloured \(K_4-e\) two-pole for
+every two-occurrence component.  For the eight-occurrence component take
+ten vertices \(0,\ldots,9\) and the following internal colour matchings:
+\[
+\begin{array}{c|l}
+1&24,\ 67,\ 89\\
+2&06,\ 13,\ 28,\ 59\\
+3&03,\ 19,\ 48,\ 57 .
+\end{array}                                                \tag{26w}
+\]
+Vertices \(0,\ldots,7\) carry the eight semiedges, whose colours are
+\(1,1,3,1,2,1,3,2\).  Attach them to support occurrences in the orders
+\[
+\begin{array}{c|l}
+\pi_A&2,1,0,7,8,9,14,15\\
+\pi_B&4,5,6,7,8,9,14,15 .
+\end{array}                                                \tag{26x}
+\]
+Following the three bichromatic path systems in (26w) gives exactly the
+unique adverse matching in (26v) for every colour pair.  Joining these
+multipoles to the two support circuits gives the two asserted
+42-vertex graphs.  A literal graph audit checks distinct edges,
+degree three, connectedness, bridgelessness, the full flow equations,
+all three induced matching systems, and all 97 one-round subsets.
+It also supplies a Tait colouring of each graph, proving that the zero
+projection is extendable and minimum.
+\end{proof}
+
+\begin{remark}[scope and verification boundary]
+Proposition~\ref{prop:supportsixteenfixedword} completes one canonical
+\(8+8\) word orbit, not the other \(8+8\) word orbits or the other support
+shapes of size sixteen.  Its adverse graphs have nonminimum displayed
+projections.  The result excludes only one support-preserving round using
+one colour pair; it says nothing against a second Kempe round, a
+support-changing exchange, or additional restrictions forced by global
+minimality.  In particular it is neither a FiveCDC counterexample nor a
+general minimum-projection theorem at size sixteen.
+
+The complete census, residual file, human reduction, two checkers,
+literal graph encodings, Tait colourings, and hash ledgers are in the two
+packages
+\begin{center}
+\small
+\path{scratch/unrestricted-support16-interaction-frontier-20260729/}\\
+\path{scratch/support16-residual-fourterminal-matching-game-20260729/}.
+\end{center}
+A clean-room agent audit, which imports neither candidate checker, is in
+\begin{center}
+\small
+\path{scratch/support16-residual-fourterminal-matching-game-blind-audit-20260729/}.
+\end{center}
+The matching certificate has the following SHA-256, split across two
+lines:
+\begin{center}
+\texttt{96a5ff4201c411c278e03ea9941a0665}\\
+\texttt{669575bb07da73aeff59d0cca38c6966}.
+\end{center}
+\end{remark}
+
 \begin{corollary}[rainbow shortcut]\label{cor:shortcut}
 Every binary cycle \(C\) satisfying \(|C\cap h|>|C-h|\) meets all four
 sets \(M_c\).
@@ -3015,6 +3222,13 @@ the same finite strategy.  Theorems~\ref{thm:twooccurrenceeighteen} and
 through size sixteen and the loopless branch through size eighteen.  This
 does not move the unrestricted frontier beyond size fifteen: a surviving
 state at size sixteen may have a component with more than two occurrences.
+Proposition~\ref{prop:supportsixteenfixedword} examines exactly one such
+fixed-word frontier.  A matching-observed \(\{1,3\}\) path choice removes
+six of its eight direct residuals, but two literal \(8+2+2+2+2\) systems
+defeat every one-round choice for every colour pair.  Because both
+realizations are Tait-colourable, this is a clean separation between the
+one-round boundary game and the globally minimum problem, not an extension
+of Theorem~\ref{thm:sizefifteen}.
 
 Proposition~\ref{prop:zerodualprice} rules out the most direct LP repair
 of this gap.  The rainbow quotient shore itself carries zero coefficient
@@ -3326,7 +3540,11 @@ Conjecture~\ref{conj:minimum}: the positive interior-shore information and
 even full global minimality do not force cleaning.  The surviving FiveCDC
 problem is therefore not to repair a minimum projection universally, but
 to select a possibly nonminimum clean projection.  No theorem in this
-note carries out that selection for every bridgeless graph.
+note carries out that selection for every bridgeless graph.  In particular,
+the exact support-sixteen fixed-word census and matching game of
+Proposition~\ref{prop:supportsixteenfixedword} do not change the resolution
+status: they cover one word orbit, and their two adverse examples have
+empty minimum projection.
 
 \section*{AI-use and verification disclosure}
 
@@ -3409,6 +3627,19 @@ census completed all sixteen shards and found zero failures; an
 independent parser checks aggregation and agreement with the
 zero-sum-partition recurrence, but it is not an independently implemented
 full candidate census.
+Codex agents also generated the \(8{,}046{,}330\)-state fixed-word
+support-sixteen census, formulated the matching-observed game in
+Proposition~\ref{prop:supportsixteenfixedword}, generated its complete
+certificate, found both terminal reattachments, and wrote the literal
+graph audits.  The primary census and separately written residual
+evaluator agree on all eight residuals.  The matching checker and graph
+audit pass with the frozen digest displayed above.  A clean-room agent
+audit independently reconstructs the eight states, all matching
+quantifiers and counts, both 42-vertex graphs, their induced path systems,
+and their Tait colourings without importing either candidate checker.
+These are exact
+agent-produced computations and a human-readable finite reduction, not
+independent human peer review.
 The static-exchange package contains the human proof of
 Proposition~\ref{prop:staticinflation}, a primary full-cycle checker, a
 separate shortest-\(T\)-join checker for the four inequalities, and the
@@ -3457,13 +3688,15 @@ displayed human proofs rather than the finite tests.  The \(K_{3,3}\)
 Kempe-class fact is prior work of Belcastro and Haas.
 
 Hu\v{s}ek and \v{S}\'amal's flow criterion and
-Hoffmann-Ostenhof's matching/join formulation are prior work.  This draft
-makes no claim of a FiveCDC resolution and no priority claim for the
-minimum-projection viewpoint pending expert literature review.  Before
-public submission, a human graph theorist should check the proof line by
-line, rerun the census in a clean environment, audit the bibliography, and
-decide authorship and venue policy under the applicable AI-disclosure
-rules.
+Hoffmann-Ostenhof's matching/join formulation are prior work.  So are the
+Xie--Zhang flow-pair formulation, Edmonds--Johnson \(T\)-join duality,
+Fano-flow terminology, the multipole parity framework, and ordinary
+edge-Kempe switching.  This draft makes no claim of a FiveCDC resolution
+and no priority claim for the minimum-projection viewpoint pending expert
+literature review.  Before public submission, a human graph theorist
+should check the proof line by line, rerun the census in a clean
+environment, audit the bibliography, and decide authorship and venue
+policy under the applicable AI-disclosure rules.
 
 \small
 \bibliographystyle{plain}
