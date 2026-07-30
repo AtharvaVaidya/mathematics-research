@@ -1,0 +1,28 @@
+{
+  "disjoint_legal_second_circuit_changed": 133,
+  "disjoint_paths": 194,
+  "disjoint_second_alone_legal": 144,
+  "first_activity_histogram": {
+    "(False, False)": 181,
+    "(False, True)": 8,
+    "(True, False)": 5,
+    "(True, True)": 2
+  },
+  "first_any_active": 15,
+  "first_both_inactive": 181,
+  "minimum_active_path_side_circuit_length": 10,
+  "minimum_path_side_circuit_length": 10,
+  "path_sides": 784,
+  "records": 196,
+  "scope": "196_frozen_sampled_augmented_traps_not_full_state_space",
+  "second_activity_histogram": {
+    "(False, True)": 55,
+    "(True, False)": 101,
+    "(True, True)": 40
+  },
+  "second_any_active": 196,
+  "shared_position_paths": 2,
+  "status": "PASS",
+  "terminal_by_flags": 39,
+  "terminal_by_lower": 186
+}

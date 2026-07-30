@@ -1,0 +1,1 @@
+PASS triples=1216865 three_edge_cuts=130 cyclic_three_edge_cuts=0 bridge_occurrences=75660 distinct_four_edge_cuts=25155 cyclic_four_edge_cuts=0

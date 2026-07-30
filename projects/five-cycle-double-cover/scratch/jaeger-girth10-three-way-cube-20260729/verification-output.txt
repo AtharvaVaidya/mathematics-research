@@ -1,0 +1,8 @@
+PASS: girth-10 proper-subset-safe three-way cube
+  graph: simple cubic, 3-edge-connected, girth 10
+  cyclically 5-edge-connected audit: PASS
+  cube: all 8 states legal; 7 proper subsets nonterminal
+  full triple: Psi (2,210) -> (2,209)
+  path circuit lengths: ((32,10),(29,11),(11,16))
+  seed augmented-trap neighbourhood: 12,288/382/90
+  global distance-two escape outside cube: verified
