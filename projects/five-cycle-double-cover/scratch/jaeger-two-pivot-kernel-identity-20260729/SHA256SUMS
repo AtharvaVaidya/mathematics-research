@@ -1,0 +1,9 @@
+a5df0be1ce52c022235223263b8c6aaf12163a7cd40c40bf14aa766cbd67990c  ./HUMAN-PROOF.md
+6d1407ae71779513a8c2c46ce5b108eac8b437915112e844964db983e77a6226  ./README.md
+c84e629af207d6f873f9a0bf491f446eb2a2c12d74f87bfdae0972a987925a3a  ./radius3-cube-output.txt
+65c330e26ca20340261b4bb7044e814718a7c5b5a1225224ca713d62cb52e5fb  ./verification-output.txt
+694e497c72b90c8e124c3e4781f2b417b64698bd5a3637257d2f6cdba3682c6a  ./verify.py
+feb9dee81999c52fa4bd4c37c0aa082ca6abcb37ff7b04c6aa808150473d8b9b  ./verify_radius3_cube.py
+5a3e9925ecc1776ba3c7deae90667dd7040e055737ba1dcc1089c8f78468840c  ../jaeger-lift13-girth10-augmented-trap-20260729/independent_verify.py
+472ff6cb91531fd62a9402810f498b0987e13798bb76050e13aacfc4d8db564c  ../jaeger-lift13-lex-escape-portfolio-20260729/raw/lift13-r65-s211.jsonl
+7c4a9d165416392399aa53ca6226573f459bae07e31dd1a76332b636d0b1be17  ../jaeger-order40-augmented-radius-two-counterexample-20260729/verify.py
