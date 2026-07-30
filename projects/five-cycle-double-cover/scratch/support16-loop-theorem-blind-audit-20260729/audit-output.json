@@ -1,0 +1,67 @@
+{
+  "marked_words": {
+    "dirty_words": {"4": 24, "5": 120, "6": 480},
+    "loop_failure_orbits": [0, 0, 7],
+    "loop_failure_raw_instances": [0, 0, 1080],
+    "loop_length6_orbits": [
+      {"marks": [1, 2], "raw_instances": 288, "word": "010123"},
+      {"marks": [1, 3], "raw_instances": 144, "word": "010123"},
+      {"marks": [2, 5], "raw_instances": 144, "word": "010123"},
+      {"marks": [1, 2], "raw_instances": 144, "word": "010213"},
+      {"marks": [1, 5], "raw_instances": 144, "word": "010232"},
+      {"marks": [0, 2], "raw_instances": 144, "word": "012013"},
+      {"marks": [1, 4], "raw_instances": 72, "word": "012013"}
+    ],
+    "loop_tested": [48, 360, 2304],
+    "triple_failure_orbits": [0, 0, 2],
+    "triple_failure_raw_instances": [0, 0, 576],
+    "triple_length6_orbits": [
+      {"marks": [0, 1, 3], "raw_instances": 288, "word": "010213"},
+      {"marks": [1, 4, 5], "raw_instances": 288, "word": "010213"}
+    ],
+    "triple_tested": [0, 360, 2112]
+  },
+  "paired_ports": {
+    "patterns": {"5:3": 10, "5:5": 1, "7:3": 105, "7:5": 21, "7:7": 1},
+    "residual": 0
+  },
+  "profiles": {
+    "profiles": [
+      {"loops_checked_literally": 1, "name": "457-a", "normalized_flows": 138, "order_counts": [3, 12, 180], "residual": 0, "selected_clean": 0, "selected_delete": 6480, "states": 6480},
+      {"loops_checked_literally": 2, "name": "457-b", "normalized_flows": 126, "order_counts": [3, 12, 90], "residual": 0, "selected_clean": 0, "selected_delete": 3240, "states": 3240},
+      {"loops_checked_literally": 1, "name": "556-a", "normalized_flows": 138, "order_counts": [12, 12, 30], "residual": 0, "selected_clean": 168, "selected_delete": 4152, "states": 4320},
+      {"loops_checked_literally": 2, "name": "556-b", "normalized_flows": 180, "order_counts": [12, 12, 16], "residual": 0, "selected_clean": 12, "selected_delete": 2292, "states": 2304}
+    ],
+    "stream_sha256": "8168cff38b861ac162ada05f89bb9f6986d9fe12d1ae3eb9b1bbb02682826228"
+  },
+  "schema": "support16-loop-theorem-blind-audit-v1",
+  "scope": {
+    "ai_disclosure_present": true,
+    "candidate_hashes": {
+      "HUMAN-PROOF.md": "104cddcead47f35f4d58d68c178bf217b56304393ca2a1f29abe13652a1f859a",
+      "README.md": "d4d96c24263f965bea3b3530349f8d29aab3cb193c1acf1475a7bb5ba61b372c",
+      "verify.py": "1448dc8cec614b078cc22808781b7744f6f35aed17bc087e3cbe8390170c1fa6"
+    },
+    "ledger_matches": true,
+    "scope_disclaimers_present": true,
+    "unledgered_generated_files": []
+  },
+  "shape_reduction": {
+    "elimination_counts": {"all_even": 123, "residual": 4, "short_loop": 24, "two_vertex_paired_port": 32, "unflowable": 29},
+    "examined_loop_allocations": 563,
+    "flowable_connected_three_vertex_shapes": 51,
+    "imported_dependencies": ["the prior loopless theorem", "the universal one-circuit tensor theorem"],
+    "residual_count": 4,
+    "residual_shapes": [
+      "((4, 0), (5, 0), (7, 1), 2, 2, 3)",
+      "((4, 0), (5, 0), (7, 2), 3, 1, 2)",
+      "((5, 0), (5, 0), (6, 1), 3, 2, 2)",
+      "((5, 0), (5, 0), (6, 2), 4, 1, 1)"
+    ]
+  },
+  "verdict": {
+    "bounded_loop_theorem": "PASS_CONDITIONAL_ON_IMPORTED_RESULTS",
+    "higher_occurrence_no_go": "OUT_OF_SCOPE_FOR_THIS_BLIND_AUDIT except for the local length-6 triple failure-orbit census",
+    "publication_gap": "No finite-enumeration gap found.  The theorem statement still depends on the previously proved loopless theorem and universal one-circuit tensor theorem; cite/freeze those dependencies when publishing."
+  }
+}

@@ -246,15 +246,15 @@ proof.  Therefore every minimum extendable projection of size at most
 fifteen is cleanable, and a counterexample to the proposed selection
 principle must have minimum size at least sixteen.
 
-In the loopless two-occurrence interaction subclass we close the
-frontier through support eighteen.  A human reduction leaves six
-parallel-triangle profiles and seven connected bridgeless four-vertex
-multiplicity profiles.  Two independently structured exact checks
-exhaust all \(1{,}041{,}984\) cyclic-order states: \(1{,}035{,}036\)
-admit a clean interaction flow and the other \(6{,}948\) strictly
-delete a support circuit.  Thus every globally minimum state in this
-subclass is clean through support eighteen.  Interaction loops and
-arbitrary occurrence multiplicities remain open already at size sixteen.
+In the two-occurrence interaction subclass we close every state through
+support sixteen, including interaction loops, and every loopless state
+through support eighteen.  The loopless support-eighteen census has
+\(1{,}041{,}984\) cyclic-order states: \(1{,}035{,}036\) clean and
+\(6{,}948\) delete-only.  A separate human shape reduction leaves four
+loop profiles through support sixteen; an exact \(16{,}344\)-state
+census has zero residuals.  Thus every globally minimum state in these
+subclasses is cleanable.  Arbitrary occurrence multiplicities remain
+open already at size sixteen.
 
 The support-preserving boundary method is nevertheless sharp: at size
 fourteen an explicit \(7+7\) state is neither directly cleanable nor
@@ -400,9 +400,10 @@ The contribution of this note is narrower:
         several-circuit state, together with the Petersen
         two-occurrence boundary showing why the balance hypothesis cannot
         simply be dropped;
-  \item a loopless two-occurrence clean-or-delete theorem through total
-        support eighteen, reduced by hand to thirteen finite interaction
-        profiles and checked by two independently structured programs;
+  \item a two-occurrence clean-or-delete theorem covering all states
+        through support sixteen, including interaction loops, and all
+        loopless states through support eighteen, reduced by hand to
+        seventeen finite interaction profiles and exactly checked;
   \item an affine-XOR duality theorem for general several-circuit
         cleaning and a six-map identity that legally neutralizes any one
         chosen dual inconsistency witness, together with an exact
@@ -2374,9 +2375,111 @@ which is impossible at a cardinality minimum.
 The complete replay, literal-endpoint independent checker, frozen outputs,
 and hash ledger are in
 \path{scratch/two-occurrence-clean-delete-through18-20260729/}.
-Interaction loops are outside the theorem: graph looplessness does not
-prevent two occurrences of one complement component on the same support
-circuit.
+Graph looplessness does not prevent two occurrences of one complement
+component on the same support circuit.  The following theorem closes that
+case through support sixteen.
+\end{remark}
+
+\begin{theorem}[two-occurrence loops through sixteen]
+\label{thm:twooccurrenceloopsixteen}
+Suppose every complement component has exactly two support-boundary
+occurrences, the total support is at most sixteen, and the interaction
+multigraph \(J\) of Proposition~\ref{prop:petersentwooccurrence} admits a
+nowhere-zero \(K\)-flow.  Loops in \(J\) are allowed.  Then some feasible
+flow cleans the state or strictly deletes a support circuit.
+Consequently every cardinality-minimum extendable projection in this
+subclass is cleanable.
+\end{theorem}
+
+\begin{proof}
+If \(J\) is loopless, apply
+Theorem~\ref{thm:twooccurrenceeighteen}; assume it has a loop.  Delete
+the loops but retain all vertices, and work componentwise in the
+resulting core.  On a one-vertex component, giving every loop one fixed
+nonzero value makes its local walk alternate between two points and
+deletes.  We may therefore assume the core is connected on at least two
+vertices.  Since every interaction edge has two occurrences, the total
+support is even.  If a local walk omits a colour it deletes, so every
+surviving support circuit has length at least four.  There are
+consequently at most four interaction vertices.
+
+First record the local loop move.  If the two occurrences of a loop have
+value \(t\ne0\) at derivative positions \(i<j\), change its component
+map so that their common value becomes \(s\ne0,t\).  With
+\(\Delta=t+s\), the integrated support word changes by
+\[
+ c'_k=c_k+\Delta\quad(i\le k<j),\qquad c'_k=c_k
+ \quad\hbox{otherwise}.                                  \tag{26l}
+\]
+This is a legal graph move: in the loop component the \(t,s\)-subgraph
+has exactly the two displayed odd boundary vertices, whose joining path
+may be switched.  Up to affine colour and dihedral circuit symmetry,
+the only dirty words of lengths four and five are
+\(\texttt{0123}\) and \(\texttt{01023}\).  Their equal-derivative pairs
+are respectively two and three pairs; direct substitution in (26l)
+gives a word using at most three colours in every case.  Thus a loop on
+a circuit of length at most five deletes.
+
+If all circuit lengths are even, put one fixed nonzero value on every
+interaction edge, loops included.  Every vertex xor vanishes and every
+local walk alternates between two points, so it deletes.  Four vertices
+therefore force lengths \(4+4+4+4\) and are done.
+
+For two vertices the loopless core is a parallel bundle.  In the only
+remaining odd case, the shorter circuit has length five or seven.  At
+length five it has five ports and no surviving loop.  At length seven
+it has \(3,5,\) or \(7\) ports; one port is a bridge and is not flowable.
+For the other cases, a finite paired-port check chooses zero-xor port
+values and arbitrary nonzero loop values.  Modulo rotation and reversal,
+the exact pattern counts for \((\text{length},\text{ports})\) are
+\[
+ (5,3):10,\quad(5,5):1,\quad
+ (7,3):105,\quad(7,5):21,\quad(7,7):1.                  \tag{26m}
+\]
+Every one of these \(138\) patterns has a flow whose local walk omits a
+colour.
+
+For three vertices, the only length triples surviving the preceding
+reductions are \(4+5+7\) and \(5+5+6\).  Every loop lies on the unique
+long circuit.  Removing one or two loops leaves, up to the exchange of
+equal-length vertices, precisely the four core-multiplicity profiles
+shown below.  More loops leave a bridge or a separate one-circuit
+component.  If \(\delta_v\) denotes the loopless-core degree at \(v\),
+the multiplicities follow from
+\[
+ 2m_{01}=\delta_0+\delta_1-\delta_2,\quad
+ 2m_{02}=\delta_0+\delta_2-\delta_1,\quad
+ 2m_{12}=\delta_1+\delta_2-\delta_0 .
+\]
+The exact literal-endpoint census is
+\[
+\begin{array}{c|c|c|r|r|r|r}
+\text{lengths}&(m_{01},m_{02},m_{12})&\text{loops}
+ &\text{states}&\text{clean}&\text{delete only}&\text{residual}\\ \hline
+4+5+7&(2,2,3)&1&6{,}480&0&6{,}480&0\\
+4+5+7&(3,1,2)&2&3{,}240&0&3{,}240&0\\
+5+5+6&(3,2,2)&1&4{,}320&168&4{,}152&0\\
+5+5+6&(4,1,1)&2&2{,}304&12&2{,}292&0\\ \hline
+\text{total}&&&16{,}344&180&16{,}164&0
+\end{array}                                                \tag{26n}
+\]
+The checker distinctly labels parallel edges, enumerates cyclic orders
+modulo rotation and reversal and all normalized nowhere-zero \(K\)-flows,
+integrates every local walk, exhausts relative translations, and compares
+the two literal \(K_4\)-edges of every interaction edge.  The preceding
+one-, two-, three-, and four-vertex reduction is exhaustive, proving the
+claim.  As in Theorem~\ref{thm:twooccurrenceeighteen}, deletion contradicts
+cardinality minimality.
+\end{proof}
+
+\begin{remark}
+The human reduction, exact verifier, first local failures at length six,
+and hash ledger are in
+\path{scratch/support16-loop-higheroccurrence-reduction-20260729/}.
+This combines with Theorem~\ref{thm:twooccurrenceeighteen} to cover all
+two-occurrence states through support sixteen and all loopless such
+states through support eighteen.  Higher occurrence multiplicities are
+not covered.
 \end{remark}
 
 \begin{theorem}[minimum projections through size fifteen]
@@ -2907,11 +3010,11 @@ unbounded branch: every one-circuit boundary directly cleans.  The
 remaining open frontier therefore begins with several circuits lacking
 the separate per-circuit balance of
 Corollary~\ref{cor:multicircuittensor}; larger such states need not admit
-the same finite strategy.  Theorem~\ref{thm:twooccurrenceeighteen} removes
-the loopless two-occurrence branch through size eighteen.  This does not
-move the unrestricted frontier beyond size fifteen: a surviving state at
-size sixteen may already have an interaction loop or a component with
-more than two occurrences.
+the same finite strategy.  Theorems~\ref{thm:twooccurrenceeighteen} and
+\ref{thm:twooccurrenceloopsixteen} remove the entire two-occurrence branch
+through size sixteen and the loopless branch through size eighteen.  This
+does not move the unrestricted frontier beyond size fifteen: a surviving
+state at size sixteen may have a component with more than two occurrences.
 
 Proposition~\ref{prop:zerodualprice} rules out the most direct LP repair
 of this gap.  The rainbow quotient shore itself carries zero coefficient
@@ -3292,7 +3395,12 @@ exact checkers reproduce its \(1{,}041{,}984\)-state partition, including
 the \(1{,}019{,}952\) new support-eighteen states.  A separate agent audit
 checked the graph-shape reduction, semantics, counts, implementation
 independence, and hash ledger.  This is agent review, not independent
-human verification.  The
+human verification.  Codex agents also proved
+Theorem~\ref{thm:twooccurrenceloopsixteen}; its human reduction and exact
+checker cover the \(16{,}344\) finite loop-profile states, and a
+separately written blind audit reconstructs the marked-word orbits,
+shape list, literal endpoint tests, and ledger.  This too is agent
+review, not independent human verification.  The
 size-fifteen primary package freezes
 all eight shape counts and 6,036 residual rows.  A separately written
 induction checker canonicalizes every residual and links it to the

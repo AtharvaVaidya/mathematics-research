@@ -92,6 +92,8 @@ python3 scratch/minimum-projection-single-circuit-tensor-frontier-20260729/indep
 python3 scratch/minimum-projection-two-occurrence-interaction-20260729/verify.py
 python3 scratch/minimum-projection-two-occurrence-interaction-20260729/independent_audit.py
 sh scratch/two-occurrence-clean-delete-through18-20260729/run_all.sh
+python3 scratch/support16-loop-higheroccurrence-reduction-20260729/verify.py
+python3 scratch/support16-loop-theorem-blind-audit-20260729/audit.py
 python3 scratch/cubic-reduction-standard-fivecdc-20260729/verify_local_relations.py
 python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/verify.py
 python3 scratch/general-kempe-descent-static-exchange-obstruction-20260729/independent_audit.py
@@ -172,8 +174,18 @@ shape reduction leaves six triangle profiles and seven connected
 bridgeless four-vertex multiplicity profiles.  Two independently
 structured exact checkers classify all 1,041,984 cyclic-order states as
 1,035,036 clean and 6,948 delete-only, with no residual.  Thus every
-globally minimum state in this subclass is cleanable.  Interaction loops
-and general occurrence multiplicities remain open already at size
+globally minimum state in this subclass is cleanable.
+
+The companion package
+`scratch/support16-loop-higheroccurrence-reduction-20260729/`
+removes the loop restriction through support sixteen.  A human shape
+reduction leaves four finite loop profiles; an exact literal-endpoint
+census classifies all 16,344 states as 180 clean-selected and 16,164
+delete-selected, with no residual.  A separately written blind audit
+reconstructs the marked-word orbits, the four-profile reduction, and the
+finite census.  Together, the two theorems cover all two-occurrence
+states through support sixteen and all loopless states through support
+eighteen.  General occurrence multiplicities remain open at size
 sixteen.
 
 The unrestricted boundary dichotomy still first fails at size fourteen,
