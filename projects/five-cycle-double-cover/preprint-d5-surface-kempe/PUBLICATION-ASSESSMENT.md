@@ -90,6 +90,13 @@ review is complete.
   fact that any prescribed 2-regular subgraph of a cubic subdivision with a
   nowhere-zero 4-flow belongs to a 4-CDC.  Accordingly, the Tait
   prescribed-circuit existence result in this note is not claimed as new.
+- X. Li, R.-X. Hao, R. Luo, and C.-Q. Zhang, *Non-separating cycles and
+  5-cycle double covers*, Discrete Mathematics 348 (2025), 114515,
+  DOI:10.1016/j.disc.2025.114515.  This is close prior art for sufficient
+  conditions under which a prescribed non-separating cycle is contained in
+  a 5-CDC.  The publisher text inspected here does not state the present
+  six-state typed root-to-cap signature or its internal/external gluing
+  condition, but that negative search observation is not a novelty proof.
 - G. Brinkmann, J. Goedgebeur, J. Hagglund, and K. Markstrom,
   *Generation and Properties of Snarks*, JCTB 103 (2013), 468--488.
   Observation 6.6 subsumes the existential rooted-through-28 statement;
