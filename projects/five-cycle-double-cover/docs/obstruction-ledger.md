@@ -1612,3 +1612,39 @@ The correction is frozen in
 `scratch/minimum-projection-full-flow-exchange-20260729/`.  It explains
 why the static exchange argument was incomplete; the later strict lock
 also proves that even a true master optimum need not clean.
+
+## O71 — Local parity and residual symmetry force safe cut relations
+
+Status: **FAILED INDUCTION / EXACT ABSTRACT RELATION COUNTERMODELS**.
+
+For normalized two- and three-edge boundaries, the root/cap natural join is
+an exact finite relational operation.  Nevertheless, the complete
+residual-stabilizer orbit audit contains unsafe nonvacuous pairs satisfying
+all stated boundary-parity, local cap-triangle, external-mode, and symmetry
+axioms.  The smallest two-cut pair has the root orbit of singleton factors
+`02,03,04,12,13,14` and the cap orbit of `(empty,{02},{12})`; all 36 joins
+cover at most one physical pair.  The smallest three-cut pair is the
+singleton root `{{01}}` and cap `(empty,{01},{02})`.
+
+No such pair is the pair of complete relations of connected shores through
+host order ten; extra companion states repair every bounded realizable
+cross-pair.  Thus a proof must force companion states from graph
+realizability or switch closure.  See
+`scratch/d5-cut-signature-natural-join-20260801/`.
+
+## O72 — One fixed-coordinate Eulerian complement always repairs reentry
+
+Status: **FAILED STRENGTHENING / 12 EXACT ORDER-14 DELIMITERS**.
+
+Among 72 order-14 rooted interfaces whose ordinary Kempe orbit has no
+simultaneous external flow, 60 are immediately repaired by one simple
+weight-four complement circuit.  Twelve interfaces on two Tait-colourable
+low-girth graphs resist every Eulerian support in every fixed-coordinate
+eligible cycle space.  All 12 nevertheless escape by two complement moves,
+and each has a root/cap-disjoint five-circuit into an ordinary Kempe orbit
+containing a simultaneous flow.
+
+These rows refute only immediate one-support rescue.  They are not FiveCDC
+counterexamples and do not refute the enlarged-orbit lemma in the actual
+non-Tait marked-girth cap domain.  See
+`scratch/d5-complement-circuit-external-frontier-20260801/`.

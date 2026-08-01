@@ -47,26 +47,41 @@ certificates, and large finite computations.
     treat the unique internal factor and the two external factors separately,
     and verify that deleting the caps joins the two rooted factor paths.
     Then check the double-star intersection corollary.
-15. The finite rooted-certificate proof boundary: the Tait case is analytic;
+15. The exact cut-relation theorem: verify the two boundary normal forms,
+    uniqueness of each boundary path, the restriction/gluing bijection, and
+    the intersection formula for the external physical-pair mask.  Check
+    separately that maximal-antichain reduction preserves existence but
+    coordinatewise union over unrelated flows does not.
+16. The complement-translation lemma: labels on the Eulerian support remain
+    weight two, vertex xor is unchanged, and a factor toggles exactly when
+    it contains the omitted coordinate.  Check the classification of all
+    constant circuit translations and the affine cycle-space coset
+    description without importing any connectivity conclusion.
+17. The finite rooted-certificate proof boundary: the Tait case is analytic;
     the non-Tait case through order 28 depends on the documented complete Snarkhunter streams
     and on the literal positive-flow checker, not on accepting SAT answers.
     Check separately that Brinkmann--Goedgebeur--Hagglund--Markstrom,
     Observation 6.6, strictly subsumes the existential cutoff; no novelty is
     claimed for the order-28 theorem.
-16. The relevant-cap theorem: recheck all three restored-cut cases, cap
+18. The extended interface certificate: check global `S5` symmetry only as
+    an explanation of the producer, then verify the retained positive flows
+    directly.  Treat order 16 as the complete regenerated census, orders
+    18--26 as complete only under the documented Snarkhunter source boundary,
+    and order 34 as seven literal rows with no completeness claim.
+19. The relevant-cap theorem: recheck all three restored-cut cases, cap
     3-edge-connectivity and bridgelessness, the marked-girth lift, and the
     (W_1,\ldots,W_4) count yielding (n^2\ge46n-147).  Then check the
     Alon--Hoory--Linial application to \(K-r\), including the exact threshold
     and parity step, and the external-mode Tait-cap argument separately.
-17. The adjacent-port lemma: after normalizing the cap labels to
+20. The adjacent-port lemma: after normalizing the cap labels to
     `01,02,12`, check the six possible root labels and the displayed
     external-factor choices.  Verify that adjacency, not merely simultaneous
     activity, places the root and port in the same factor component.
-18. The Petersen--Foster fixed-flow delimiter: distinguish the typed mask of
+21. The Petersen--Foster fixed-flow delimiter: distinguish the typed mask of
     one flow from the aggregate exact signature, replay all six factors active
     at the root, and verify that physical port 2 has no external state only in
     the displayed flow.  Check both blocker arcs and the marked-girth scope.
-19. The all-edge Petersen--Foster certificate: reconstruct all 1,335
+22. The all-edge Petersen--Foster certificate: reconstruct all 1,335
     eliminations, replay the literal `D5` labels and `Y_01` paths, and audit
     the ordinary two-root insertion implication separately from the finite
     data.
@@ -99,6 +114,9 @@ sh scratch/d5-tait-prescribed-circuit-lift-blind-audit-20260731/run_all.sh
 (cd scratch/d5-typed-cap-double-star-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-simultaneous-external-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-typed-cap-orbit-external-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-cut-signature-natural-join-20260801 && ./run_all.sh && ./run_abstract.sh && ./run_census.sh)
+(cd scratch/d5-complement-circuit-external-frontier-20260801 && ./run_all.sh)
+(cd scratch/d5-rooted-interface-frontier-through34-20260801 && ./run_all.sh)
 (cd scratch/d5-root-pair-census-20260731 && ./run_all.sh)
 (cd scratch/d5-existential-external-order58-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-external-kempe-splice-frontier-20260731 && ./run_all.sh)
@@ -131,7 +149,15 @@ extremal table and is deliberately not part of the self-contained theorem.
 The simultaneous-external package has separate C++ and Python
 implementations through order 12 and a third orbit-based order-14 audit;
 all agree on the all-flow quantifier.  The orbit package separately checks
-the first failures of stronger per-orbit claims.  The
+the first failures of stronger per-orbit claims.  The cut-relation package
+does a literal direct-vs-glued replay on complete 324-flow and 27-flow
+examples and independently checks both frozen cross-orbit complement
+translations; its through-order-10 relation census is bounded evidence.
+The complement-circuit package runs the complete order-12/order-14 audit,
+then exhausts every fixed-coordinate Eulerian support and depth-two rescue
+on the 12 strict rows; its standalone checker rebuilds a 432-state bad orbit
+and the displayed escape independently.
+The
 Petersen--Foster checker validates six literal 1,335-edge flows and all six
 typed component claims on one interface.
 

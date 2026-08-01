@@ -1706,3 +1706,48 @@ Open obligations:
      fixed system is not a graph obstruction.
      Status: **FIXED-FLOW CHARACTERIZATION CLOSED / UNIVERSAL SELECTION
      OPEN**.
+
+108. **Separated small-cut composition is an exact natural join:** after
+     normalizing a two-cut to `(01,01)` or a three-cut to `(01,02,12)`,
+     retain the root-path factor set and the cap's three correlated external
+     factor sets for each partial flow.  Matching boundary words glue
+     bijectively, and a physical pair is externally covered exactly when the
+     corresponding root/cap factor sets intersect.  Inclusion-maximal
+     antichain compression preserves existence.  The human proof and literal
+     324-flow/27-flow replay are frozen in
+     `scratch/d5-cut-signature-natural-join-20260801/`.
+     Status: **CLOSED COMPOSITION THEOREM / UNIVERSAL COMPATIBILITY OPEN**.
+
+109. **Parity and residual symmetry do not force relation compatibility:**
+     complete abstract orbit enumeration produces nonvacuous unsafe
+     two-cut and three-cut relation pairs satisfying the stated boundary,
+     local cap-triangle, external-mode, and residual-`S5` axioms.  Connected
+     shores through order ten never realize a forbidden pair as their
+     complete relations; companion states repair all 24,039 realizable
+     cross-pairs.  Any induction must prove a realizability or switch-closure
+     theorem forcing those companions.
+     Status: **LOCAL-AXIOM INDUCTION REFUTED / COMPANION-STATE LEMMA OPEN**.
+
+110. **Four-coordinate complement translations cross ordinary Kempe
+     orbits:** complementing labels inside `[5]-{h}` on an Eulerian support
+     whose labels avoid `h` preserves the `D5` flow and toggles exactly the
+     factors containing `h`.  Ordinary weight-two component switches and
+     these weight-four complements are the complete nonidentity constant
+     translations on one circuit.  At order 14, 60 of 72 bad orbit
+     interfaces repair immediately; 12 resist every single fixed-`h`
+     Eulerian support, yet all 12 have a disjoint five-circuit into a good
+     ordinary Kempe orbit.  The exact remaining lemma asks for such a good
+     enlarged-orbit edge on every proper non-Tait marked-girth cap.
+     Status: **SWITCHING THEOREM CLOSED / ONE-STEP RESCUE REFUTED /
+     ENLARGED-ORBIT LEMMA OPEN**.
+
+111. **Extended finite rooted-interface certificate:** all three rooted
+     predicates—double star, aggregate external coverage, and one-flow
+     simultaneous external coverage—hold on all 2,674,404 interfaces in the
+     complete biconnected simple cubic order-16 census, retained canonical
+     cyclically-4 non-Tait streams through order 26, and seven literal
+     order-34 strong-snark rows.  A separately written checker validates
+     124,081 explicit flows and every interface.  Completeness above order
+     16 remains the documented source-generator boundary; order 34 is not
+     exhaustive.
+     Status: **CLOSED FINITE POSITIVE THEOREM / NO UNIVERSAL CUTOFF**.

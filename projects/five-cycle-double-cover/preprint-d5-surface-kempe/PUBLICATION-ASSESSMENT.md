@@ -32,6 +32,22 @@ The strongest publishable-looking content is:
   interfaces, with separate Python through order 12 and an independent
   orbit-based order-14 replay, plus exact counterexamples to stronger
   per-orbit claims;
+- the compact 124,081-flow certificate and separately written semantic
+  checker covering 2,674,404 rooted interfaces: the complete biconnected
+  simple cubic order-16 census, retained canonical cyclically-4 non-Tait
+  streams through order 26, and seven explicitly scoped order-34 rows;
+- the human-checkable exact natural-join theorem for separated two- and
+  three-edge cuts, its antichain compression, and its literal complete
+  replays on 324-flow and 27-flow examples;
+- the complete residual-symmetry abstract relation audit, including minimal
+  unsafe two-cut and three-cut pairs proving that parity and local
+  cap-triangle axioms alone cannot support the desired finite-state
+  induction;
+- the weight-four complement-translation lemma, including its exact factor
+  action, complete classification among constant circuit translations,
+  checked transitions across ordinary Kempe orbits, and 12 sharp order-14
+  countermodels to immediate one-Eulerian-support rescue which nevertheless
+  all escape to a good Kempe orbit after one disjoint five-circuit;
 - the compact 30,858-flow certificate explicitly reproducing independent-root feasibility
   for all 14,009 canonical non-Tait graphs through order 28 (10,689,351
   root pairs), a result existentially subsumed by Brinkmann et al. through
@@ -82,6 +98,11 @@ review is complete.
   arXiv:2607.24724v1.  Theorem 3.16 and Conjecture 3.19 give current
   unrooted flow-only context; they do not turn the rooted transition
   certificate or typed-cap premise into a FiveCDC theorem.
+- R. Hušek and R. Šámal, *Counting Circuit Double Covers*, J. Graph Theory
+  108 (2025), 374--395.  Its ordered-multipole boundaries and linear
+  gluing representations are clear prior art for finite-state composition.
+  The present natural join is an exact rooted `D5` specialization and is
+  not advertised as originating the general signature method.
 - D. Král', E. Máčajová, O. Pangrác, A. Raspaud, J.-S. Sereni, and
   M. Škoviera, *Projective, Affine, and Abelian Colorings of Cubic Graphs*,
   European J. Combin. 30 (2009), 53-69.  Configuration homomorphisms and
@@ -140,7 +161,9 @@ This is a targeted check, not a systematic prior-art review.
    10.
 5. Search specifically for prior typed multipole signatures, local
    transition-boundary connectivity encodings, and triangle-state transport
-   criteria.
+   criteria, and for weight-four constant translations in restricted
+   nowhere-zero flow spaces.  Treat Hušek--Šámal's ordered-multipole linear
+   representation as prior art for the general finite-state gluing idea.
 6. Archive exact source, reports, `geng` version, compiler version, and
    checksums at an immutable commit or DOI.
 7. Decide whether the note should lead with the exact switch formula, the

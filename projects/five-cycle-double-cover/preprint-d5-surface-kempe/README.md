@@ -56,6 +56,36 @@ third implementation rechecks order 14.  Explicit orbit counterexamples
 show why the statement must quantify over all flows, not every Kempe orbit.
 Its universal form remains open.
 
+A compact explicit-flow certificate now extends this finite interface
+frontier to every biconnected simple cubic graph of order 16, the retained
+canonical cyclically-4 non-Tait streams through order 26, and seven literal
+order-34 strong-snark rows.  A separately written checker validates 124,081
+flows and all 2,674,404 proper interfaces.  Completeness above order 16
+depends on the documented retained-corpus provenance, and no complete
+order-34 claim is made.
+
+The August 1 update refines cut gluing from a six-bit union to an exact
+finite relation.  For a separated two- or three-edge cut, a root state and
+a cap-state triple glue by a literal set-intersection formula; the proof is
+included in the manuscript and `scratch/d5-cut-signature-natural-join-20260801`.
+The independent replay checks every one of 324 normalized flows on a
+two-cut example and 27 on a three-cut example.  A bounded census crosses
+all 24,039 exact relation pairs arising from biconnected cubic hosts through
+order 10 and finds no bad pair.  This is not an induction theorem for
+arbitrary poles.  A complete residual-symmetry audit gives explicit unsafe
+abstract two-cut and three-cut relation pairs satisfying every stated local
+parity and cap-triangle axiom.  Hence any induction must use graph
+realizability or switch closure to force compatible companion states; local
+Boolean axioms alone cannot prove the desired join.  The same update proves a weight-four complement
+translation on Eulerian subgraphs.  It can cross ordinary Kempe orbits.  Of
+72 bad order-14 orbit interfaces, one simple complement immediately repairs
+60; 12 resist every one-step fixed-coordinate Eulerian support, but all 12
+have a root/cap-disjoint five-circuit into a good Kempe orbit.  This proves a
+sharp one-step delimiter, not connectivity of the enlarged flow graph or
+FiveCDC.  Multipole boundary representations
+are established prior art; novelty of this exact rooted specialization is
+provisional.
+
 The relevant minimum-obstruction domain is now sharply separated from that
 small unrestricted census.  A self-contained edge-rooted
 nonbacktracking-walk proof shows that every cap cut from an eliminated
@@ -111,6 +141,9 @@ sh scratch/d5-tait-prescribed-circuit-lift-blind-audit-20260731/run_all.sh
 (cd scratch/d5-typed-cap-double-star-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-simultaneous-external-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-typed-cap-orbit-external-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-cut-signature-natural-join-20260801 && ./run_all.sh && ./run_abstract.sh && ./run_census.sh)
+(cd scratch/d5-complement-circuit-external-frontier-20260801 && ./run_all.sh)
+(cd scratch/d5-rooted-interface-frontier-through34-20260801 && ./run_all.sh)
 (cd scratch/d5-root-pair-census-20260731 && ./run_all.sh)
 (cd scratch/d5-existential-external-order58-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-external-port-coverage-frontier-20260731 && ./run_all.sh)

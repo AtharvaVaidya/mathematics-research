@@ -1,6 +1,6 @@
 # Current-status audit
 
-Search date: **2026-07-29**.
+Search date: **2026-08-01**.
 
 ## Classification
 
@@ -11,6 +11,54 @@ ordinary cycle double cover conjecture was announced as proved; the proof
 yields an 8-cycle double cover for every bridgeless graph.  Sang-il Oum's
 exposition dated 2026-07-24 states the five-coordinate strengthening
 separately as Conjecture 18.
+
+## 2026-08-01 rooted cut and reconfiguration update
+
+The exact separated two-/three-cut interface is now a finite relational
+natural join.  After normalizing the boundary word to `(01,01)` or
+`(01,02,12)`, a root shore records the factors whose unique boundary path
+contains the root, and a cap shore records one such factor set for each
+external physical port pair.  Partial flows glue bijectively, and the
+external mask of the glued flow is exactly the set of nonempty intersections
+between the root set and the three cap sets.  A human proof and a direct
+324-flow/27-flow replay are frozen in
+`scratch/d5-cut-signature-natural-join-20260801/`.
+
+That package also closes a tempting abstract induction negatively.  Exact
+residual-`S5` enumeration gives explicit unsafe two-cut and three-cut
+relation pairs satisfying all boundary-parity, local cap-triangle, and
+symmetry axioms.  None is realized as a complete relation pair by connected
+shores through host order ten; companion states repair every one of 24,039
+realizable cross-pairs.  The surviving theorem must therefore use graph
+realizability or switch closure, not local Boolean axioms alone.
+
+A second human theorem enlarges ordinary component Kempe switching.  If an
+Eulerian edge set uses labels avoiding one coordinate `h`, complementing
+each of its labels inside the other four coordinates preserves the `D5`
+flow and toggles exactly the four factors containing `h`.  Together with
+ordinary weight-two switches, these are all nontrivial constant translations
+on a circuit.  Complete order-14 enumeration finds 72 Kempe-orbit-bad rooted
+interfaces: 60 are immediately repaired by one simple complement circuit;
+12 resist every one-step fixed-coordinate Eulerian support.  All 12 still
+have a root/cap-disjoint five-circuit into a good Kempe orbit.  The strict
+rows are low-girth Tait graphs, not candidates in the reduced non-Tait
+marked-girth domain.  The audited package is
+`scratch/d5-complement-circuit-external-frontier-20260801/`.
+
+The positive interface census now has a compact certificate beyond the
+order-14 development frontier.  A separately written checker validates
+124,081 explicit flows and all 2,674,404 proper interfaces on the complete
+biconnected simple cubic order-16 census, retained canonical cyclically-4
+non-Tait streams through order 26, and seven literal order-34 strong-snark
+rows.  Canonical completeness above order 16 is a documented source
+boundary, and no complete order-34 claim is made.  See
+`scratch/d5-rooted-interface-frontier-through34-20260801/`.
+
+These results identify a sharper open lemma—every proper cap in the
+minimum-counterexample domain has a good ordinary Kempe orbit or a
+boundary-preserving complement edge to one—but do not prove it.  No graph
+has an independently certified UNSAT FiveCDC formula, and no universal
+proof has been obtained.
 
 ## 2026-07-29 resolution-frontier update
 

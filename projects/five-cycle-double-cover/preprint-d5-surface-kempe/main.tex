@@ -35,7 +35,7 @@
 \title{Coloured Surfaces, Rooted Transitions, and Kempe Surgery for
 \(D_5\)-Flows:\\Structural Lemmas and Finite Evidence}
 \author{Working research note for independent human verification}
-\date{July 31, 2026}
+\date{August 1, 2026}
 
 \begin{document}
 \maketitle
@@ -117,6 +117,13 @@ interface also has one individual flow whose external root factors
 collectively meet all three cap ports; independent enumeration reaches
 order 12 and a third implementation rechecks order 14.  This all-flow
 property is not orbitwise, and its universal form is open.  In the
+same rooted language, a compact positive certificate and separately written
+semantic checker cover all 1,301,664 interfaces on the 3,874 biconnected
+simple cubic graphs of order 16, all interfaces in retained canonical
+cyclically-four non-Tait streams through order 26, and seven literal strong
+snarks of order 34: 2,674,404 interfaces in total.  The latter rows depend
+on the documented corpus boundary and do not constitute a complete
+order-34 theorem.  In the
 marked-girth domain actually
 forced by edge elimination, a nontrivial three-cut must separate the roots;
 a self-contained edge-rooted nonbacktracking-walk count shows that each
@@ -132,6 +139,21 @@ although one individual flow misses external coverage at one port.  Thus
 the marked-girth blockers do not force externality without changing the
 flow.  Literal certificates also make all 1,335 edge eliminations of this
 named graph root-good; this remains a one-graph finite result.
+For separated two- and three-edge cuts we refine the six-state union to an
+exact finite relation and prove a natural-join formula for rooted external
+coverage.  A literal checker exhausts two complete cut examples and a
+bounded census finds no bad pair among 24,039 realizable relation pairs
+through host order ten.  We also give a human-checkable weight-four
+complement translation: on an Eulerian subgraph whose labels omit one
+coordinate, complementing every label inside the other four coordinates
+preserves the flow and toggles exactly the four factors containing the
+omitted coordinate.  Explicit translations cross the previously isolated
+Kempe-orbit barriers.  A complete order-14 audit finds 12 interfaces where
+no single fixed-coordinate Eulerian complement immediately works; every one
+nevertheless has a disjoint complement five-circuit into a good Kempe orbit.
+This refutes the one-step strengthening but leaves an exact enlarged-orbit
+lemma open.  Neither the natural join nor this enlarged move proves that
+every realizable cap pair is compatible.
 Finally,
 exhaustive computations show that all 33,598 terminal
 equal-Euler-characteristic Kempe plateaus on the 480 biconnected simple
@@ -158,6 +180,14 @@ Theorem~3.16 and Conjecture~3.19 provide unrooted flow-only context; the
 linear rooted-transition certificate below is a separate elementary
 connectivity encoding.  We do not claim that encoding as new without a
 specialist prior-art review.
+
+Finite boundary representations and the gluing of circuit double covers on
+ordered multipoles are established tools~\cite{HusekSamal2025}.  The exact
+rooted \(D_5\) relations below specialize that general philosophy; we make
+no novelty claim for finite-state composition as such.  The weight-four
+translation law and the particular rooted state quotient appear distinct
+in the sources checked for this draft, but this is a bounded negative
+search, not proof of priority.
 
 The orientable five-cycle-double-cover conjecture adds directed Eulerian
 orientations so that each edge is used once in each direction.  It is a
@@ -1489,6 +1519,174 @@ the double-star shore offers whichever mode the other shore realizes.
 Apply Proposition~\ref{prop:typed-port-gluing}.
 \end{proof}
 
+\subsection{Exact cut relations and complement translations}
+
+The six-bit signature above deliberately unions states realized by different
+flows.  For composition it is useful to retain the correlations within one
+flow.  Let a two- or three-edge cut separate a proper root edge \(r\) from
+the cap vertex \(z\), and suppose the cut is disjoint from the three cap
+edges.  Cut the edges into corresponding ordered semiedges on a root pole
+\(R\) and a cap pole \(Z\).  Xoring all vertex equations on either shore
+shows that the boundary labels xor to zero.  Up to a coordinate permutation,
+the ordered boundary word is therefore
+\[
+       (01,01)\quad\hbox{for a two-cut},\qquad
+       (01,02,12)\quad\hbox{for a three-cut}.                \tag{20a}
+\]
+For a fixed pair \(P\), either zero or two boundary semiedges are active in
+\(Y_P\).  In the latter case the active subgraph on either pole has a unique
+path between those semiedges.
+
+For a partial flow \(q_R\), let \(\rho(q_R)\) be the set of factors \(P\)
+whose boundary path contains \(r\).  For a partial cap flow \(q_Z\) and a
+physical cap pair \(j\in\{ab,ac,bc\}\), let \(\epsilon_j(q_Z)\) be the set
+of factors whose boundary path contains \(z\), uses physical pair \(j\),
+and is external at \(z\).  Retain the exact relations
+\[
+ \mathcal R=\{\rho(q_R):q_R\text{ has the fixed boundary word}\},
+ \qquad
+ \mathcal E=\{(\epsilon_{ab},\epsilon_{ac},\epsilon_{bc})(q_Z):
+ q_Z\text{ has that word}\}.                               \tag{20b}
+\]
+
+\begin{theorem}[rooted cut natural join]\label{thm:rooted-cut-natural-join}
+Partial flows on the two poles with the same ordered boundary word glue
+bijectively to whole \(D_5\)-flows having that word on the cut.  For a glued
+pair \((q_R,q_Z)\), the external physical-pair mask is exactly
+\[
+ \bigl\{j:\rho(q_R)\cap\epsilon_j(q_Z)\ne\varnothing\bigr\}. \tag{20c}
+\]
+Consequently, one glued flow externally covers all three physical ports if
+and only if some \((\rho,\epsilon)\in\mathcal R\times\mathcal E\) makes at
+least two of the three intersections in \emph{(20c)} nonempty.
+\end{theorem}
+
+\begin{proof}
+Matching boundary labels turn each corresponding semiedge pair back into
+one labelled edge.  All vertex equations were already satisfied, so this
+is a whole flow; restriction is the inverse operation.
+
+Fix \(P\).  If the whole \(Y_P\)-circuit through \(r\) crosses the cut, its
+restriction to \(R\) is the unique boundary path, and hence
+\(P\in\rho(q_R)\).  The circuit reaches \(z\) in external physical mode
+\(j\) precisely when its restriction to \(Z\) is the boundary path recorded
+by \(P\in\epsilon_j(q_Z)\).  Conversely, two such paths have matching
+active boundary semiedges and glue to one factor circuit through \(r,z\).
+This proves (20c).  Two distinct pairs among \(ab,ac,bc\) cover all three
+ports, proving the last assertion.
+\end{proof}
+
+For existence questions, inclusion-dominated relation rows may be deleted:
+if \(\rho\subseteq\rho'\), then \(\rho'\) succeeds against every cap row
+against which \(\rho\) succeeds, and the analogous assertion holds
+coordinatewise for cap triples.  Keeping only inclusion-maximal rows is
+therefore an exact antichain compression.  It is not sound to replace a
+relation by the coordinatewise union of rows realized by unrelated flows.
+
+There is also a legal translation not generated by ordinary pairwise Kempe
+switches.  It is elementary, but it changes the relevant flow orbit.
+
+\begin{lemma}[complement translation]\label{lem:complement-translation}
+Let \(q\) be a \(D_5\)-flow, fix \(h\in[5]\), and let \(C\) be an Eulerian
+edge-subset all of whose labels avoid \(h\).  Put \(S=[5]\setminus\{h\}\)
+and define
+\[
+ q'(e)=\begin{cases}q(e)\mathbin\triangle S,&e\in C,\\q(e),&e\notin C.
+ \end{cases}                                                \tag{20d}
+\]
+Then \(q'\) is a \(D_5\)-flow.  For every \(P\in D_5\),
+\[
+             Y_P(q')=Y_P(q)\mathbin\triangle C
+             \quad\Longleftrightarrow\quad h\in P,          \tag{20e}
+\]
+while \(Y_P(q')=Y_P(q)\) when \(h\notin P\).
+\end{lemma}
+
+\begin{proof}
+Every old label on \(C\) is a two-subset of the four-set \(S\), so its
+symmetric difference with \(S\) is again a two-subset.  At each vertex an
+even number of incident labels is changed by the same vector \(S\), so the
+flow equation is preserved.  For \(e\in C\), membership in \(Y_P\) changes
+by \(|S\cap P|\bmod2\).  Since \(|P|=2\), this parity is one exactly when
+\(h\in P\), proving (20e).
+\end{proof}
+
+\begin{proposition}[constant circuit translations]
+Suppose a fixed vector \(t\in\F_2^5\) is added to every label on a circuit,
+and every old and new label has weight two.  Apart from \(t=0\), exactly two
+cases are possible:
+\begin{enumerate}
+ \item \(|t|=2\) and every circuit label crosses \(t\); the circuit is a
+ component of \(Y_t\), so this is an ordinary component Kempe switch;
+ \item \(|t|=4\) and every circuit label avoids the coordinate outside
+ \(t\); this is Lemma~\ref{lem:complement-translation}.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For every old label \(A\),
+\[
+       |A\mathbin\triangle t|=2+|t|-2|A\cap t|=2.
+\]
+Thus \(|t|\) is even; in five coordinates only \(0,2,4\) remain.  If \(|t|=2\),
+the equation forces \(|A\cap t|=1\), so every circuit edge is active in
+\(Y_t\).  At every circuit vertex those two edges exhaust the active degree,
+and the circuit is a component.  If \(|t|=4\), the equation forces
+\(|A\cap t|=2\), so \(A\subseteq t\), which is exactly the complement case.
+\end{proof}
+
+The affine description behind the lemma is sometimes useful.  With
+\(H_h=\{e:h\notin q(e)\}\), write
+\[
+ Y_{hi}=A\cup B,
+ \quad A=\{e:h\in q(e),\ i\notin q(e)\},
+ \quad B=\{e:h\notin q(e),\ i\in q(e)\}.
+\]
+All fixed-\(h\) complement translations replace \(B\) by \(B\triangle C\)
+for an Eulerian \(C\subseteq H_h\).  Thus the reachable \(hi\)-parts in
+\(H_h\) form exactly the affine cycle-space coset of \(B\), or equivalently
+all \(X\subseteq H_h\) with \(\partial X=\partial B\).  Turning this linear
+description into the required rooted connectivity theorem remains open.
+
+A complete order-12 and order-14 audit supplies a sharp delimiter.  Among
+\(8{,}341{,}704\) ordinary-Kempe-orbit/rooted-interface pairs at order 14,
+72 orbits have no simultaneous external flow.  A single simple complement
+circuit immediately repairs 60.  On the remaining 12, every arbitrary
+Eulerian support in every fixed-\(h\) cycle space still fails immediately.
+All 12 nevertheless admit two successive complement translations, and each
+has a root/cap-disjoint five-circuit leading to an ordinary Kempe orbit that
+contains a simultaneous flow.  Thus universal immediate one-translation
+rescue is false, while the exact quotient-distance-one statement survives
+this finite census.  The two graphs supporting the 12 delimiters are
+Tait-colourable and have girth at most four, so they lie outside the
+non-Tait marked-girth cap domain.
+
+The companion checker exhausts the literal 324 normalized flows of a
+two-cut example and 27 flows of a three-cut example and verifies (20c)
+against direct whole-graph traversal.  It also checks complement translations
+that cross the ordinary Kempe-orbit delimiters at orders 12 and 14.  A
+bounded pole census through order ten finds 7 root and 9 cap relations for
+two-cuts, and 108 root and 222 cap relations for three-cuts; all
+\(63+23{,}976\) cross-pairs admit a joined flow externally covering all
+three ports.  These are finite results.
+
+Parity, local cap-triangle legality, and residual boundary symmetry do not
+by themselves imply compatibility.  The complete abstract orbit audit
+finds a two-cut forbidden pair whose root relation is the orbit of
+\(\{02\}\) and whose cap relation is the orbit of
+\((\varnothing,\{02\},\{12\})\); all 36 joins cover at most one physical
+pair.  For a three-cut, the singleton relations
+\[
+       \mathcal R=\{\{01\}\},\qquad
+       \mathcal E=\{(\varnothing,\{01\},\{02\})\}           \tag{20f}
+\]
+join only on physical pair \(ac\).  Both patterns satisfy the stated local
+axioms.  Neither pair occurs as the complete relations of the connected
+shores in the order-ten census: whenever one forbidden state orbit occurs,
+additional companion states repair the join.  Thus the exact missing lemma
+must use graph realizability or switch closure to force such companions;
+finite Boolean algebra and \(S_5\)-invariance alone are insufficient.
+
 \begin{proposition}[typed-cap finite frontier through order 14]
 \label{prop:typed-cap-frontier}
 For every biconnected simple cubic graph generated by
@@ -1566,6 +1764,38 @@ enumeration independently reaches order 12, and a third orbit-based audit
 independently rechecked order 14.  No finite cutoff principle is known, so
 the universal one-flow premise remains open and this proposition does not
 resolve FiveCDC.
+
+\begin{proposition}[certificate-checked extended interface frontier]
+\label{prop:extended-interface-frontier}
+Every proper cap/root interface satisfies the double-star,
+aggregate-external, and one-flow simultaneous-external predicates on each
+of the following finite inputs:
+\[
+\begin{array}{lrrr}
+\toprule
+\text{input}&\text{graphs}&\text{interfaces}&\text{flows}\\
+\midrule
+\text{all biconnected cubic, order 16}&3{,}874&1{,}301{,}664&65{,}185\\
+\text{cyclic-4 non-Tait, orders 18--26}&1{,}491&1{,}361{,}316&57{,}899\\
+\text{seven retained strong-snark rows, order 34}&7&11{,}424&997\\
+\midrule
+\text{total}&5{,}372&2{,}674{,}404&124{,}081\\
+\bottomrule
+\end{array}                                                    \tag{21}
+\]
+\end{proposition}
+
+The first row is regenerated by \texttt{geng} with the documented order-16
+options.  The second
+uses the retained Snarkhunter canonical streams at orders 18, 20, 22, 24,
+and 26; their completeness depends on the documented generator boundary.
+The order-34 row is deliberately a claim about seven literal retained
+graphs, not a complete strong-snark census.  The primary search emits only
+the explicit flows needed by the predicates.  A separately written Python
+checker decodes every graph, verifies every weight-two label and vertex xor,
+reconstructs all factor components, checks the graph premises, and exhausts
+all interfaces from those witnesses.  This is a finite positive certificate,
+not a cutoff or a universal theorem.
 
 \subsection{The relevant-cap cutoff}
 
@@ -1901,6 +2131,10 @@ python3 scratch/check_d5_capped_ladder_delay_family.py
 (cd scratch/d5-typed-cap-double-star-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-simultaneous-external-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-typed-cap-orbit-external-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-cut-signature-natural-join-20260801 &&
+ ./run_all.sh && ./run_abstract.sh && ./run_census.sh)
+(cd scratch/d5-complement-circuit-external-frontier-20260801 && ./run_all.sh)
+(cd scratch/d5-rooted-interface-frontier-through34-20260801 && ./run_all.sh)
 (cd scratch/d5-root-pair-census-20260731 && ./run_all.sh)
 (cd scratch/d5-existential-external-order58-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-external-port-coverage-frontier-20260731 && ./run_all.sh)
@@ -1936,6 +2170,20 @@ order 14 and a separately structured Python enumeration through order 12;
 a third orbit-based implementation independently rechecks its order-14
 all-flow quantifier.  The orbit package also retains the first failures of
 the stronger orbitwise double-star, simultaneous, and aggregate assertions.
+The cut-relation package independently enumerates partial and whole flows on
+one two-cut and one three-cut example, checks the natural-join mask against
+direct whole-graph connectivity for every word, and exhausts the bounded
+relation census through host order ten.  Its complement-translation rows
+are checked directly from the displayed labels and circuits.
+The complement-circuit package separately performs the complete order-12
+and order-14 orbit/interface census, exhausts the full fixed-coordinate
+cycle spaces on all 12 strict rows, checks depth-two escapes, and replays one
+432-state delimiter without relying on the census traversal.
+The extended-interface package emits 124,081 positive flows and uses a
+separately written graph6/flow/component checker to exhaust 2,674,404 proper
+interfaces.  It also verifies the stated graph properties, but canonical
+corpus completeness beyond regenerated order 16 remains a source-generator
+boundary.
 The order-58 package independently replays the degree-deficit profiles,
 the edge-rooted walk count, the exact polynomial cutoff, and scoped
 18-cage controls.  The splice package proves the pointwise factor identity
@@ -1971,8 +2219,13 @@ The human-checkable results in this note are:
  \item the linear rooted-transition characterization and its exact
  native-XOR and CNF size counts; and
  \item the typed-port gluing proposition and double-star corollary; and
+ \item the exact separated-cut natural join, antichain compression, and
+ complement-translation lemma; and
  \item the one-flow simultaneous-external frontier through order 14,
  with its all-flow/orbitwise quantifier boundary; and
+ \item the certificate-checked extended rooted-interface frontier on the
+ complete order-16 census and the explicitly scoped retained streams through
+ order 34; and
  \item the relevant-cap order-58 cutoff, Tait-cap gluing theorem,
  adjacent-port external-state lemma, and the six-flow full-signature
  Petersen--Foster control.
@@ -1997,13 +2250,15 @@ This project used OpenAI Codex agents extensively under human direction.
 The agents proposed the \(D_5\) and coloured-surface viewpoints, formulated
 the triangle-state and rooted-transition models, identified the typed-cap
 internal/external obstruction and adjacent-port table, derived candidate
-lemmas and proofs, wrote
+lemmas and proofs, derived the exact cut relation and complement translation,
+wrote
 and ran the enumeration programs, searched for counterexamples to
 intermediate claims, produced the finite certificates, and drafted this
 manuscript.  In particular, agents found the order-12 triangle-state
 witness, proved the typed gluing lemma, and implemented both the C++ and
 Python cap censuses.  Agents also designed the compact rooted certificate,
-generated its 30,858 flows, derived the relevant-cap walk bound, and found
+generated its 30,858 flows, extended the interface certificate with 124,081
+explicit flows, derived the relevant-cap walk bound, and found
 the Petersen--Foster typed witnesses.  The semantic checker rejected an
 early exploratory Petersen--Foster witness whose labels and edges used
 different orderings; that witness was discarded, the labels were remapped
