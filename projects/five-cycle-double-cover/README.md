@@ -40,6 +40,17 @@ proof includes the easily missed external pair `34`, and a standard-library
 replay exhausts all normalized circuit-label supports.  This is a local
 route delimiter, not a double-star theorem or a FiveCDC resolution.
 
+The companion typed-cap package
+`scratch/d5-typed-cap-double-star-frontier-20260731/` proves the exact
+three-cut gluing lemma and completely checks the six-state signatures of
+all biconnected simple cubic graphs through order 14 with two independent
+implementations through order 10.  A supplemental exact C++ census through
+order 16 covers all 1,301,664 rooted interfaces and again finds a double
+star in every signature; a monolithic run and four shards agree, but use
+the same implementation.  The universal double-star assertion remains
+unproved, and the finite census is far below the order-56 cap forced in the
+surviving marked-girth obstruction branch.
+
 The newest focused publication candidate is
 `preprint-minimum-selection-counterexample/`.  It gives a human-checkable
 construction of a 162-vertex simple connected bridgeless cubic graph whose
