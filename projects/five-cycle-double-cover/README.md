@@ -30,6 +30,16 @@ while its 38-vertex realization remains Tait-colourable and always
 Kempe-descends to deletion.  These results sharpen the proof frontier and
 rule out tempting shortcuts; none resolves FiveCDC.
 
+The typed-cap follow-up
+`scratch/d5-internal-circuit-translation-no-go-20260731/` proves a small
+human-checkable mode-amplification obstruction.  Uniformly translating
+every label on an existing internal root-to-cap factor circuit cannot make
+that same circuit genuinely external: if it is external afterward, it was
+already external for some factor beforehand.  The corrected six-case
+proof includes the easily missed external pair `34`, and a standard-library
+replay exhausts all normalized circuit-label supports.  This is a local
+route delimiter, not a double-star theorem or a FiveCDC resolution.
+
 The newest focused publication candidate is
 `preprint-minimum-selection-counterexample/`.  It gives a human-checkable
 construction of a 162-vertex simple connected bridgeless cubic graph whose
