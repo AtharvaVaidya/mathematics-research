@@ -58,6 +58,10 @@ certificates, and large finite computations.
     (W_1,\ldots,W_4) count yielding (n^2\ge46n-147).  Then check the
     Alon--Hoory--Linial application to \(K-r\), including the exact threshold
     and parity step, and the external-mode Tait-cap argument separately.
+17. The adjacent-port lemma: after normalizing the cap labels to
+    `01,02,12`, check the six possible root labels and the displayed
+    external-factor choices.  Verify that adjacency, not merely simultaneous
+    activity, places the root and port in the same factor component.
 
 ## Small certificates
 

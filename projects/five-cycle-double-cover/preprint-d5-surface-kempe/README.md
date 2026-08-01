@@ -54,7 +54,10 @@ cutoff, and the published Alon--Hoory--Linial irregular Moore bound sharpens
 it: every cap cut from an eliminated girth-ten parent has order at least 56
 and conditionally forces parent order at least 112.  If both shore caps are Tait-colourable,
 external-mode states make them glue root-good; the exact remaining branch
-of this strategy has a non-Tait cap of order at least 56.  Six explicit checked flows give
+of this strategy has a non-Tait cap of order at least 56.  A six-case
+human lemma also proves that any selected port adjacent to the root is
+automatically covered by an external state, leaving only vertex-disjoint
+root/port pairs.  Six explicit checked flows give
 the full typed signature on one 890-vertex Petersen--Foster high-girth
 non-Tait control.  None of these statements proves the universal
 double-star premise.
@@ -94,6 +97,7 @@ sh scratch/d5-tait-prescribed-circuit-lift-blind-audit-20260731/run_all.sh
 (cd scratch/d5-typed-cap-double-star-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-root-pair-census-20260731 && ./run_all.sh)
 (cd scratch/d5-relevant-cap-order56-cutoff-20260731 && ./run_all.sh)
+(cd scratch/d5-external-port-coverage-frontier-20260731 && python3 -B check_local_lemmas.py)
 (cd scratch/petersen-foster-full-typed-cap-signature-20260731 && ./run_all.sh)
 python3 scratch/verify_d5_surface_chi_plateaus_order12.py
 python3 scratch/verify_d5_root_euler_potential_reports.py

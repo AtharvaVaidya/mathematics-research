@@ -117,8 +117,11 @@ forced by edge elimination, a nontrivial three-cut must separate the roots;
 a self-contained nonbacktracking-walk count gives a first cutoff, and the
 irregular Moore bound sharpens it so that each resulting cap has order at
 least 56 and the parent has order at least 112.  Two Tait caps always glue
-by external-mode states, leaving a non-Tait cap of order at least 56 as the
-exact surviving branch of this strategy.  One 890-vertex non-Tait girth-ten
+by external-mode states.  In any cap carrying a \(D_5\)-flow, a physical
+port adjacent to the root is automatically covered by an external state;
+the proof is a six-case local table.  The exact surviving branch therefore
+has a non-Tait cap of order at least 56 and concerns only ports independent
+of the root.  One 890-vertex non-Tait girth-ten
 control has the full six-state signature by six explicit checked flows.
 Finally,
 exhaustive computations show that all 33,598 terminal
@@ -1653,9 +1656,42 @@ intersecting pair both modes are external, so
 Proposition~\ref{prop:typed-port-gluing} applies.
 \end{proof}
 
+\begin{proposition}[adjacent ports are external]
+\label{prop:adjacent-port-external}
+Let \((A,z,r)\) be a rooted cap carrying a \(D_5\)-flow.  If the proper
+root edge \(r\) shares an endpoint with a physical port \(a\), then some
+external factor circuit contains \(r\) and \(a\).
+\end{proposition}
+
+\begin{proof}
+Normalize the connector triangle as
+\[
+                 q(a)=01,\qquad q(b)=02,\qquad q(c)=12.
+\]
+At the common endpoint of \(r\) and \(a\), the local-triangle lemma makes
+\(q(r)\) one of
+\[
+                         02,03,04,12,13,14.
+\]
+The external factor pairs through physical port \(a\) are
+\(03,04,13,14\).  In the displayed root-label order, choose respectively
+\[
+                         03,04,03,13,03,04.
+\]
+The chosen pair meets both \(q(a)\) and \(q(r)\) oddly, so the adjacent
+edges \(a,r\) lie in one factor component.  At \(z\), factors \(03,04\)
+use ports \(a,b\) and leave \(12\) inactive, while factors \(13,14\) use
+ports \(a,c\) and leave \(02\) inactive.  The inactive label is disjoint
+from the factor pair in either case, which is exactly external mode.
+\end{proof}
+
 The exact surviving three-cut branch therefore has at least one non-Tait
-cap, and that cap has order at least 56.  This is a restriction, not a proof
-that its typed signature contains a double star.
+cap, and that cap has order at least 56.  Minimality supplies a \(D_5\)-flow
+on each cap, so Proposition~\ref{prop:adjacent-port-external} settles any
+selected port adjacent to its root.  Ports vertex-disjoint from the root
+remain open.  This is a restriction, not a proof that the cap's typed
+signature contains a double star or even that its external states cover
+all three ports.
 
 As a positive calibration, replace every Petersen vertex by the three-pole
 obtained from the Foster graph by deleting one vertex.  The resulting
@@ -1819,8 +1855,9 @@ The human-checkable results in this note are:
  \item the linear rooted-transition characterization and its exact
  native-XOR and CNF size counts; and
  \item the typed-port gluing proposition and double-star corollary; and
- \item the relevant-cap order-56 cutoff, Tait-cap gluing theorem, and the
- six-flow full-signature Petersen--Foster control.
+ \item the relevant-cap order-56 cutoff, Tait-cap gluing theorem,
+ adjacent-port external-state lemma, and the six-flow full-signature
+ Petersen--Foster control.
 \end{enumerate}
 The cube topology change is a short explicit certificate.  The
 12-state contraction trap, typed-cap order-14 frontier, and plateau tables
@@ -1840,7 +1877,8 @@ of the exact code and reports.
 This project used OpenAI Codex agents extensively under human direction.
 The agents proposed the \(D_5\) and coloured-surface viewpoints, formulated
 the triangle-state and rooted-transition models, identified the typed-cap
-internal/external obstruction, derived candidate lemmas and proofs, wrote
+internal/external obstruction and adjacent-port table, derived candidate
+lemmas and proofs, wrote
 and ran the enumeration programs, searched for counterexamples to
 intermediate claims, produced the finite certificates, and drafted this
 manuscript.  In particular, agents found the order-12 triangle-state

@@ -51,6 +51,15 @@ the same implementation.  The universal double-star assertion remains
 unproved, and the finite census is far below the order-56 cap forced in the
 surviving marked-girth obstruction branch.
 
+The external-coverage follow-up
+`scratch/d5-external-port-coverage-frontier-20260731/` proves by a
+six-entry local table that any cap port adjacent to the root is covered by
+an external factor state in every `D5` flow.  It also proves a necessary
+two-arc foreign-coordinate blocker condition for an internal state that has
+no external companion, and records exact positive SAT development probes.
+The remaining selected port is vertex-disjoint from the root; the blocker
+condition has not yet been turned into a marked-girth contradiction.
+
 The newest focused publication candidate is
 `preprint-minimum-selection-counterexample/`.  It gives a human-checkable
 construction of a 162-vertex simple connected bridgeless cubic graph whose

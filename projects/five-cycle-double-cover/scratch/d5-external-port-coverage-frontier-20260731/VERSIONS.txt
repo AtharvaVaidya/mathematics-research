@@ -1,0 +1,10 @@
+Development environment used for the retained local audit and SAT probes:
+
+Python 3.14.5
+CaDiCaL 3.0.1
+shasum 6.02
+
+The human lemmas and check_local_lemmas.py use only the Python standard
+library.  probe.py, batch_probe.py, and sample_probe.py additionally require
+CaDiCaL and import the frozen sibling root-transition source identified in
+CENSUS.md.

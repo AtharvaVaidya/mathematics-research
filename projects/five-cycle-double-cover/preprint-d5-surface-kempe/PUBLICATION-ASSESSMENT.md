@@ -36,7 +36,8 @@ The strongest publishable-looking content is:
 - the human marked-root cap decomposition and elementary cutoff, sharpened
   by the published irregular Moore bound to cap order 56 and conditional
   parent order 112, together with
-  the analytic Tait-cap gluing theorem;
+  the analytic Tait-cap gluing theorem and the six-case adjacent-port
+  external-state lemma;
 - the six-flow full typed signature on one 890-vertex Petersen--Foster
   high-girth non-Tait control, stated only as one-interface calibration;
 - the complete order-14 terminal-plateau census and fixed-distance descent
@@ -51,7 +52,10 @@ finite censuses may be new.  The rooted equivalence itself is elementary and
 should not be called deep merely because it identifies the right frontier.
 The triangle-state transport theorem may be new, but only a bounded source
 audit has been performed.  The universal typed-cap double-star premise is
-open; its order-14 frontier is evidence, not a reduction theorem.
+open; its order-14 frontier is evidence, not a reduction theorem.  The
+adjacent-port lemma is elementary and should not be advertised as a deep or
+categorically novel result; its value is to remove an exact edge case from
+the independent-root cap obligation.
 No categorical novelty claim is justified until a specialist prior-art
 review is complete.
 

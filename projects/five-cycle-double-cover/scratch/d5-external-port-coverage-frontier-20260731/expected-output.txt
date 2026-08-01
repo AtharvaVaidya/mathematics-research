@@ -1,0 +1,4 @@
+ADJACENT_PORT root_labels=6 external_candidates=4 PASS
+CIRCUIT_WORD states=6 directed_legal_steps=18 PASS
+CUBE_INVERSE_INSERTION y01_components=2 endpoints_separate PASS
+PASS
