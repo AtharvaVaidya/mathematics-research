@@ -974,7 +974,18 @@ The draft-PR update additionally publishes:
   cut analysis, elementary nonbacktracking proof, and Alon--Hoory--Linial
   sharpening showing that relevant caps start at order 56 and conditionally
   force parent order at least 112, together with the Tait-cap gluing theorem
-  and arithmetic replay; and
+  and arithmetic replay;
+- `scratch/d5-typed-cap-double-star-frontier-20260731/` — the human typed-port
+  gluing lemma and complete 138,144-interface census through order 14, with
+  an independent implementation through order 10.  A supplemental C++ run
+  checks all 1,301,664 rooted interfaces at order 16 and has a deterministic
+  aggregate replay; its monolithic and four-shard executions use the same
+  implementation, so order 16 is recorded as finite evidence rather than
+  promoted to the independently checked theorem;
+- `scratch/d5-internal-circuit-translation-no-go-20260731/` — a six-case
+  human proof and exhaustive standard-library replay showing that uniform
+  translation on one fixed internal factor circuit cannot manufacture a
+  genuinely new external mode on that same circuit; and
 - `scratch/petersen-foster-full-typed-cap-signature-20260731/` — six literal
   1,335-edge flows proving one high-girth non-Tait Petersen--Foster interface
   has the full six-state typed signature.
