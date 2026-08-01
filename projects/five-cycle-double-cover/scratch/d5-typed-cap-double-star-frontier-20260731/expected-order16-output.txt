@@ -1,0 +1,9 @@
+graphs=3874 interfaces=1301664 covered=1301664 double_star=1301664 distinct=7
+15 0,1,2,3 cover=1 double_star=1
+47 0,1,2,3,5 cover=1 double_star=1
+51 0,1,4,5 cover=1 double_star=1
+59 0,1,3,4,5 cover=1 double_star=1
+60 2,3,4,5 cover=1 double_star=1
+62 1,2,3,4,5 cover=1 double_star=1
+63 0,1,2,3,4,5 cover=1 double_star=1
+NO_DISJOINT_COVERED_MASKS

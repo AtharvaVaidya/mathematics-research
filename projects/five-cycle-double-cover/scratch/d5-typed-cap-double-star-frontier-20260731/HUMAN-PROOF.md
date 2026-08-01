@@ -144,6 +144,32 @@ behind the gluing lemma.  The order-12 and order-14 claims rely on the C++
 complete run, the open source, and deterministic reproduction; they do
 not have a second full implementation in this package.
 
+### Supplemental order-16 computation
+
+The same C++ enumerator was also run on the complete stream
+
+```text
+geng -Cq -d3 -D3 16
+```
+
+of 3,874 biconnected simple cubic graphs.  It checked 1,301,664 rooted
+interfaces, with every signature covering all three ports and containing
+a double star.  The exact mask set remained
+
+```text
+15, 47, 51, 59, 60, 62, 63.
+```
+
+A monolithic run and a four-shard run agreed on the totals, but both used
+the same implementation.  `run_order16.sh` deterministically replays the
+monolithic computation against `expected-order16-output.txt`; it is kept
+separate from the faster default regression.  This is an additional
+single-implementation finite datum, not an independently certified
+extension of the theorem above.  Moreover, the marked-girth cutoff proved
+elsewhere forces any relevant cap in the surviving obstruction branch to
+have order at least 56, so the unrestricted order-16 screen does not enter
+that branch.
+
 ## 4. Exact limitation
 
 The universal double-star statement is **not proved**.  It is stronger
