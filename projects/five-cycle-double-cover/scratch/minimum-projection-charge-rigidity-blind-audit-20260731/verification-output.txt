@@ -1,0 +1,18 @@
+polarization / symplectic checks: 384
+complete three-meta-block tensor systems: 4096
+balanced tables (total, rigid, max-degree<=2, mapped-kernel checks): (270763, 258478, 1144, 274885)
+two-column <=3-nonzero-row tables: 321
+boundary blocks=3 shape=2+2: raw=729 admissible=117 rigid=117 component-map-trials=117
+boundary blocks=3 shape=2+3: raw=4374 admissible=378 rigid=378 component-map-trials=378
+boundary blocks=3 shape=2+4: raw=45927 admissible=4113 rigid=4113 component-map-trials=6297
+boundary blocks=3 shape=3+3: raw=26244 admissible=1836 rigid=1836 component-map-trials=1836
+boundary blocks=3 shape=2+2+2: raw=19683 admissible=1989 rigid=1989 component-map-trials=1989
+boundary blocks=3 shape=2+5: raw=393660 admissible=28620 rigid=28620 component-map-trials=53580
+boundary blocks=3 shape=3+4: raw=275562 admissible=19170 rigid=19170 component-map-trials=24786
+boundary blocks=3 shape=2+2+3: raw=118098 admissible=8586 rigid=8586 component-map-trials=8586
+boundary blocks=4 shape=2+2: raw=2304 admissible=216 rigid=216 component-map-trials=216
+boundary blocks=4 shape=2+3: raw=18432 admissible=720 rigid=720 component-map-trials=720
+boundary blocks=4 shape=2+4: raw=258048 admissible=10368 rigid=10368 component-map-trials=30128
+boundary blocks=4 shape=3+3: raw=147456 admissible=4032 rigid=4032 component-map-trials=4032
+boundary blocks=4 shape=2+2+2: raw=110592 admissible=5184 rigid=5184 component-map-trials=5184
+NO COUNTEREXAMPLE FOUND; ALL INDEPENDENT AUDIT CHECKS PASSED

@@ -1,0 +1,12 @@
+balanced charge-matrix audit
+  raw matrices through 3x3: 270756
+  balanced matrices: 297
+  charge-rigid matrices: 297
+  balanced max-degree-two matrices: 75
+  deterministic balanced 4x4 matrices: 100000
+  sampled max-degree-two 4x4 matrices: 279
+boundary shape 2+2 (raw, admissible, rigid): (6561, 117, 117)
+boundary shape 2+3 (raw, admissible, rigid): (59049, 378, 378)
+boundary shape 3+3 prefix (raw, admissible, rigid): (150000, 552, 552)
+two-circuit <=3-row charge matrices: 20
+ALL CHARGE-RIGIDITY CHECKS PASSED

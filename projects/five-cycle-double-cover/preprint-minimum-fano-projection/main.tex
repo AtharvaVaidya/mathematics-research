@@ -36,7 +36,7 @@ Five-Cycle Double Covers:\\
 Exact Frontiers and Failure of Minimum Selection}
 \author{Atharva Vaidya\\
 \small AI-assisted research note for independent human verification}
-\date{July 29, 2026}
+\date{July 31, 2026}
 
 \begin{document}
 \maketitle
@@ -133,6 +133,17 @@ implies that every charge-valid one-support-circuit boundary state is
 directly cleanable, with no bound on the circuit length or number of
 complement components.  It also cleans several support circuits whenever
 every component is charge-balanced separately on each circuit.
+More generally, the block--circuit charges form an
+\(\F_2^2\)-valued incidence matrix.  We prove that direct cleaning still
+holds whenever, on each connected incidence component, its scalar block
+kernel consists only of the unavoidable all-ones dependency.  This
+charge-rigidity theorem is unbounded in circuit length, circuit count,
+component count, and occurrence multiplicity.  In particular it covers
+every charge-incidence graph of maximum degree two.  All (6{,}268)
+literal direct residual rows in the completed size-fourteen and
+size-fifteen censuses and the fixed-word size-sixteen census lie just
+outside this theorem: each has the same five-block, two-circuit Petersen
+charge core with excess kernel nullity two.
 The latter hypothesis is sharp for direct cleaning: a two-occurrence
 interaction-flow dictionary reduces the first abstract failure to the
 Petersen graph.  Its displayed two-\(5\)-circuit support has no clean
@@ -417,9 +428,11 @@ The contribution of this note is narrower:
         to the unrestricted support-preserving boundary method;
   \item a universal tensor theorem that directly cleans every
         one-support-circuit state and every circuitwise-balanced
-        several-circuit state, together with the Petersen
-        two-occurrence boundary showing why the balance hypothesis cannot
-        simply be dropped;
+        several-circuit state, and an unbounded charge-rigidity theorem
+        which permits nonzero per-circuit charges whenever each connected
+        charge component has only its unavoidable scalar dependency,
+        together with the Petersen boundary showing why an extra
+        dependency matters;
   \item a two-occurrence clean-or-delete theorem covering all states
         through support sixteen, including interaction loops, and all
         loopless states through support eighteen, reduced by hand to
@@ -2207,6 +2220,129 @@ Corollary~\ref{cor:multicircuittensor} is a structural subclass theorem,
 not a replacement for the multi-circuit census below.
 \end{remark}
 
+The circuitwise-balance hypothesis can be weakened exactly when the
+remaining block--circuit charges have no extra scalar dependency.  Put
+$K=\mathbb F_2^2$.  For a complement component $a$ and support circuit
+$D_j$, define its charge on that circuit by
+\[
+ \Delta_{a,j}=
+ \bigoplus_{\substack{\pi_i=a\\ i\text{ on }D_j}}d_i\in K.       \tag{26g}
+\]
+Both the row xors and the column xors of $\Delta$ are zero.  Let
+$\mathcal I(\Delta)$ be the bipartite graph on the complement components
+and support circuits, joining $a$ to $j$ exactly when
+$\Delta_{a,j}\ne0$; retain isolated component nodes and discard isolated
+circuit nodes.  For a connected component $\Gamma$ of
+$\mathcal I(\Delta)$, with component-node set $A_\Gamma$ and circuit-node
+set $J_\Gamma$, define
+\[
+ \partial_\Gamma:\mathbb F_2^{A_\Gamma}\longrightarrow K^{J_\Gamma},
+ \qquad
+ (s_a)_a\longmapsto
+ \left(\bigoplus_{a\in A_\Gamma}s_a\Delta_{a,j}\right)_{j\in J_\Gamma}.
+                                                               \tag{26h}
+\]
+The all-ones vector ${\bf1}_\Gamma$ lies in
+$\ker\partial_\Gamma$ by column balance.  Call the boundary state
+\emph{charge-rigid} when
+$\ker\partial_\Gamma=\langle{\bf1}_\Gamma\rangle$ for every $\Gamma$.
+For an isolated component node this equality holds automatically.
+
+\begin{theorem}[charge-rigid multi-circuit cleaning]
+\label{thm:chargerigid}
+Every charge-rigid boundary state has a directly clean extension.
+There is no bound here on the number or lengths of the support circuits,
+the number of complement components, or their occurrence multiplicities.
+\end{theorem}
+
+\begin{proof}
+Choose one map $L_\Gamma\in\operatorname{GL}(K)$ for every charge
+component and assign this same map to every $a\in A_\Gamma$.  The
+transformed derivative at occurrence $i$ is
+$t_i=L_\Gamma d_i$, where $\pi_i\in A_\Gamma$.  These derivatives
+integrate around every support circuit.  Indeed, all nonzero entries in
+column $j$ belong to the unique charge component containing the circuit
+node $j$, and their xor is zero.  Thus
+\[
+ \bigoplus_{i\text{ on }D_j}t_i
+ =L_\Gamma\left(\bigoplus_a\Delta_{a,j}\right)=0.
+\]
+Choose one integration on every circuit.  Translating all its low values
+by an arbitrary $z_j\in K$ gives every other integration.
+
+As above, let $q(x_1,x_2)=x_1x_2$ and let
+$B(x,y)=q(x+y)+q(x)+q(y)$.  Write $Q_a$ for the common parity of the four
+low cut colours at component $a$.  Under the circuit translations,
+\[
+ Q_a(z)=Q_a(0)+\sum_j B(z_j,L_\Gamma\Delta_{a,j})
+ \qquad(a\in A_\Gamma).                                  \tag{26i}
+\]
+A scalar selection $(s_a)$ of these rows is a left dependency precisely
+when, for each circuit $j$,
+\[
+             \bigoplus_a s_aL_{\Gamma(a)}\Delta_{a,j}=0.
+\]
+All nonzero terms in this equation lie in the unique charge component
+containing $j$; inside it the common invertible map $L_\Gamma$ cancels.
+Consequently the full left kernel of (26i) is the direct product of the
+$\ker\partial_\Gamma$.  Charge rigidity and the standard consistency
+criterion for binary linear systems therefore say that (26i) is solvable
+if and only if
+\[
+             R_\Gamma:=\sum_{a\in A_\Gamma}Q_a(0)=0
+             \qquad\text{for every }\Gamma.             \tag{26j}
+\]
+
+It remains to choose the maps so that (26j) holds.  Regard each charge
+component $\Gamma$ as one meta-component.  It has zero transformed
+derivative charge separately on every support circuit: for the circuit
+node in $\Gamma$ this is column balance, and away from $\Gamma$ every
+entry is zero.  Apply Corollary~\ref{cor:multicircuittensor} to these
+meta-components; its proof uses only the induced partition of boundary
+occurrences and therefore applies to this coarsening.  It supplies one
+map $L_\Gamma$ for each $\Gamma$ such
+that every meta-component obstruction vanishes.  That obstruction is
+exactly $R_\Gamma$: support incidences internal to the meta-component are
+counted twice and cancel, while external incidences give the sum of the
+constituent $Q_a$'s.  Hence (26j) holds.  Solve (26i) for the translations
+$z_j$; then every $Q_a$ is zero, which is direct cleaning.
+\end{proof}
+
+\begin{corollary}
+\label{cor:chargecycle}
+If $\mathcal I(\Delta)$ has maximum degree at most two, then the boundary
+state is directly cleanable.  In particular, a two-support-circuit state
+is directly cleanable when at most three complement components have
+nonzero charge on either circuit.
+\end{corollary}
+
+\begin{proof}
+Balance excludes degree one, so every nontrivial charge component of
+maximum degree two is a cycle.  The two nonzero charges at each node are
+equal; connectivity forces one common nonzero charge around the cycle.
+A scalar block dependency must therefore select both neighboring block
+rows at every circuit node or neither, so it is constant.  Theorem
+\ref{thm:chargerigid} applies.
+
+For two support circuits, every nonzero row is $(x,x)$.  With at most
+three such rows, balance leaves either two equal nonzero vectors or the
+three distinct nonzero vectors of $K$.  In either case the scalar kernel
+is generated by the all-ones vector.  All-zero rows are isolated nodes,
+so the theorem again applies.
+\end{proof}
+
+The bound three in Corollary~\ref{cor:chargecycle} cannot simply be
+deleted.  All 224 direct residuals in the complete support-$14$ census,
+all 6,036 in the complete support-$15$ census, and all eight in the
+published fixed-word support-$16$ subcase have the same active charge
+core: five component nodes, two circuit nodes, charge rank two, and
+kernel dimension three.  Thus all 6,268 have excess nullity two and lie
+just outside Theorem~\ref{thm:chargerigid}.  The literal residual parser
+and a separately written audit checker are archived in the two
+charge-rigidity scratch packages dated 20260731.
+This finite statement audits the frozen residual lists; it does not
+extend their completeness beyond the ranges stated.
+
 \begin{proposition}[Petersen boundary of the tensor repair]
 \label{prop:petersentwooccurrence}
 Suppose every component of the complement of a support cycle \(H\)
@@ -2227,7 +2363,7 @@ take its two disjoint \(5\)-circuits as \(H\) and its perfect matching
 as the five complement components.  In their cyclic orders the component
 words are
 \[
-                         01234\mid03142.                \tag{26g}
+                         01234\mid03142.                \tag{26k}
 \]
 This support has no clean extension.  Every extension, however, omits a
 low colour on exactly one of the two support circuits and therefore admits
@@ -2254,11 +2390,11 @@ two adjacent support values are \(x\) and \(x+t_a\).  The parity vector
 seen by the two occurrences of component \(a\) is zero exactly when these
 two unordered pairs agree.  This proves the two dictionaries.
 
-For (26g), \(J\) has two vertices joined by five parallel edges.  Its
+For (26k), \(J\) has two vertices joined by five parallel edges.  Its
 flows are the tuples
 \[
  (t_0,\ldots,t_4)\in\{1,2,3\}^5,\qquad
-                    t_0+\cdots+t_4=0.                 \tag{26h}
+                    t_0+\cdots+t_4=0.                 \tag{26l}
 \]
 Their colour multiplicities have pattern \((3,1,1)\), so there are
 \(3\cdot 5!/(3!1!1!)=60\).  The global
@@ -2274,7 +2410,7 @@ t&
 3/4&4/3&3/4&4/3&4/3&3/4&4/3&3/4&4/3&3/4 .
 \end{array}
 \]
-Each entry follows by five successive xors in the two orders (26g).
+Each entry follows by five successive xors in the two orders (26k).
 If an extension were clean, the two circuits would traverse the same five
 assigned \(K_4\)-edges.  Their vertex sets would both be the union of the
 endpoints of those edges and would have equal cardinality, contradicting
@@ -2291,7 +2427,7 @@ component has empty cut and the projection is clean.
 \begin{remark}[exact minimality within the subclass]
 Two independently structured enumerators check every loopless
 two-occurrence multi-circuit boundary of total size four, six, and eight;
-every flowable state is cleanable.  Thus (26g) is the smallest
+every flowable state is cleanable.  Thus (26k) is the smallest
 two-occurrence abstract counterstate to direct cleaning.  The full orbit
 table, literal Petersen realization, descended flow, exact census, two
 checkers, and hash ledger are in
@@ -2340,7 +2476,7 @@ complete finite list through degree sum eighteen is
 \begin{gathered}
  (3,2,2),\ (3,3,2),\ (4,3,1),\\
  (5,2,2),\ (4,4,1),\ (4,3,2).
-\end{gathered}                                             \tag{26i}\label{eq:twoocc-triangles}
+\end{gathered}                                             \tag{26m}\label{eq:twoocc-triangles}
 \]
 Indeed, the other positive partitions of at most nine edges have a
 degree-two or degree-three vertex or have all three degrees even.
@@ -2357,7 +2493,7 @@ the seven finite cases are
 (0,1,3,4,1,0),\\
 (0,2,2,2,2,1),\ (0,2,2,2,3,0),\\
 (1,1,2,2,1,2),\ (1,1,2,3,1,1).
-\end{gathered}                                             \tag{26j}\label{eq:twoocc-fourvertex}
+\end{gathered}                                             \tag{26n}\label{eq:twoocc-fourvertex}
 \]
 A standard-library enumerator checks the complete 90-row labelled
 degree solution and this orbit reduction.
@@ -2383,7 +2519,7 @@ Q(0,2,2,2,3,0)&1{,}296&1{,}296&0\\
 Q(1,1,2,2,1,2)&1{,}296&1{,}296&0\\
 Q(1,1,2,3,1,1)&1{,}296&1{,}296&0\\ \hline
 \text{total}&1{,}041{,}984&1{,}035{,}036&6{,}948
-\end{array}                                                \tag{26k}\label{eq:twoocc-census}
+\end{array}                                                \tag{26o}\label{eq:twoocc-census}
 \]
 The primary checker enumerates every distinctly labelled-edge cyclic
 order modulo rotation and reversal and every nowhere-zero \(K\)-flow.
@@ -2438,14 +2574,14 @@ map so that their common value becomes \(s\ne0,t\).  With
 \(\Delta=t+s\), the integrated support word changes by
 \[
  c'_k=c_k+\Delta\quad(i\le k<j),\qquad c'_k=c_k
- \quad\hbox{otherwise}.                                  \tag{26l}
+ \quad\hbox{otherwise}.                                  \tag{26p}
 \]
 This is a legal graph move: in the loop component the \(t,s\)-subgraph
 has exactly the two displayed odd boundary vertices, whose joining path
 may be switched.  Up to affine colour and dihedral circuit symmetry,
 the only dirty words of lengths four and five are
 \(\texttt{0123}\) and \(\texttt{01023}\).  Their equal-derivative pairs
-are respectively two and three pairs; direct substitution in (26l)
+are respectively two and three pairs; direct substitution in (26p)
 gives a word using at most three colours in every case.  Thus a loop on
 a circuit of length at most five deletes.
 
@@ -2463,7 +2599,7 @@ values and arbitrary nonzero loop values.  Modulo rotation and reversal,
 the exact pattern counts for \((\text{length},\text{ports})\) are
 \[
  (5,3):10,\quad(5,5):1,\quad
- (7,3):105,\quad(7,5):21,\quad(7,7):1.                  \tag{26m}
+ (7,3):105,\quad(7,5):21,\quad(7,7):1.                  \tag{26q}
 \]
 Every one of these \(138\) patterns has a flow whose local walk omits a
 colour.
@@ -2490,7 +2626,7 @@ The exact literal-endpoint census is
 5+5+6&(3,2,2)&1&4{,}320&168&4{,}152&0\\
 5+5+6&(4,1,1)&2&2{,}304&12&2{,}292&0\\ \hline
 \text{total}&&&16{,}344&180&16{,}164&0
-\end{array}                                                \tag{26n}
+\end{array}                                                \tag{26r}
 \]
 The checker distinctly labels parallel edges, enumerates cyclic orders
 modulo rotation and reversal and all normalized nowhere-zero \(K\)-flows,
@@ -3570,7 +3706,16 @@ obstruction identity, and the circuitwise-balanced corollary displayed
 above.  A separate hostile agent audit checked the expansion grouping,
 the leaf cancellation, all no-leaf graphs through seven tensor vertices,
 and all 4,096 three-vertex tensors; this remains agent review, not
-independent human verification.  Codex agents also derived the fixed-map
+independent human verification.  Codex agents also derived
+Theorem~\ref{thm:chargerigid}.  A separately written clean-room checker
+audited simultaneous integrability and the componentwise
+translation-kernel decomposition, enumerated all 270,763 balanced charge
+tables with one through four rows and columns, and reconstructed clean
+extensions for all 85,329 admissible small boundary states in its
+circuit-balanced census.  A second independent parser reproduced the
+five-block, two-circuit charge profile of all $224+6{,}036+8$ frozen
+residual rows.  These are agent-produced checks, not independent human
+verification or peer review.  Codex agents also derived the fixed-map
 quadratic reduction and the six-map witness-neutralization identity.
 A separately written hostile checker recomputed the 16-entry local table
 and verified both identities on 126,258 balanced circuit rows through

@@ -23,6 +23,15 @@ residuals, six are removed by a matching-observed one-round
 obstructions to that one-round game. This does not cover other
 support-sixteen word orbits, and the displayed projections are not
 globally minimum.
+The paper now also proves an unbounded charge-rigidity theorem: a
+multi-circuit boundary directly cleans whenever every connected
+block--circuit charge matrix has only its unavoidable all-ones scalar
+kernel.  A clean-room implementation audited the proof's integrability,
+left-kernel decomposition, and small boundary cases.  All 6,268 frozen
+direct residual rows at support fourteen, fifteen, and the fixed-word
+support-sixteen frontier instead share one five-block, two-circuit
+Petersen charge core with excess nullity two.  This isolates the next
+obstruction but does not resolve FiveCDC.
 
 Build from this directory with:
 
@@ -98,6 +107,10 @@ python3 scratch/minimum-projection-size15-anchor-single-audit-20260729/audit_anc
 python3 scratch/minimum-projection-single-circuit-tensor-frontier-20260729/independent_audit.py
 python3 scratch/minimum-projection-two-occurrence-interaction-20260729/verify.py
 python3 scratch/minimum-projection-two-occurrence-interaction-20260729/independent_audit.py
+python3 scratch/minimum-projection-charge-rigidity-20260731/verify.py
+python3 scratch/minimum-projection-charge-rigidity-20260731/audit_known_residuals.py
+python3 scratch/minimum-projection-charge-rigidity-blind-audit-20260731/independent_checker.py
+python3 scratch/minimum-projection-charge-rigidity-blind-audit-20260731/residual_profile_check.py
 sh scratch/two-occurrence-clean-delete-through18-20260729/run_all.sh
 python3 scratch/support16-loop-higheroccurrence-reduction-20260729/verify.py
 python3 scratch/support16-loop-theorem-blind-audit-20260729/audit.py
@@ -162,6 +175,19 @@ complement component is charge-balanced separately on each circuit.
 Ordinary boundary conservation requires only total balance across all
 circuits, so this corollary does not settle the general multi-circuit
 case.
+
+The charge-rigidity theorem weakens that circuitwise-balance hypothesis.
+Write the xor charge of complement component \(a\) on support circuit
+\(j\) as \(D_{a,j}\in\mathbb F_2^2\), and join \(a\) to \(j\) when this
+charge is nonzero.  On every connected incidence component, consider the
+binary map sending a scalar selection of block rows to their charge sum
+in every circuit column.  If its kernel is exactly the span of the
+all-ones selection, then a single tensor choice kills every component-sum
+obstruction and the remaining circuit translations solve all block
+parities.  The manuscript gives this proof in full.  The independent
+audit exhaustively checks all balanced charge tables through \(4\times4\)
+and reconstructs clean extensions for 85,329 small admissible boundary
+states; these computations support, but do not replace, the proof.
 
 That stronger per-circuit hypothesis cannot simply be omitted.  When every
 complement component has two support occurrences, feasible component-map

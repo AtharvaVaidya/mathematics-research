@@ -1,6 +1,6 @@
 # Provisional novelty assessment
 
-Date: 2026-07-29
+Date: 2026-07-31
 
 Status: **PLAUSIBLY NEW PARTIAL THEOREM / PRIORITY NOT ESTABLISHED /
 HUMAN LITERATURE REVIEW REQUIRED**.
@@ -89,7 +89,12 @@ The manuscript proves:
     8,046,330 charge-valid states, eight direct residuals, a
     matching-observed \(\{1,3\}\) reduction robust for six residuals,
     and two graph-realizable one-round obstructions on 42-vertex
-    Tait-colourable graphs.
+    Tait-colourable graphs; and
+25. an unbounded charge-rigidity theorem proving direct cleaning whenever
+    every connected block--circuit charge matrix has only its unavoidable
+    all-ones scalar kernel, together with an independently implemented
+    audit and the identification of one five-block, two-circuit Petersen
+    charge core in all 6,268 currently frozen direct residual rows.
 
 This is a partial theorem about the Hušek--Šámal flow criterion.  It does
 not resolve the Five-Cycle Double Cover Conjecture.
@@ -169,12 +174,22 @@ The \(K_{3,3}\) input used by the dynamic inflation is prior work:
   colour pair.  The project claims novelty only for its conditional
   orbit-reflecting use of the edge-deleted pole, not for that fact.
 
-A targeted arXiv search on 29 July 2026 for combinations of “minimum
+A targeted arXiv search, updated on 31 July 2026, for combinations of “minimum
 extendable projection,” “minimum support,” “Fano projection,”
 “componentwise GL(2,2),” and “five-cycle double cover” found no matching
 prior theorem.  Because the Hušek--Šámal preprint itself was only two days
 old, this search cannot establish priority or rule out unpublished
 parallel work.
+
+A second bounded search for “block-circuit charge matrix,”
+“charge-rigidity,” and the equivalent scalar-kernel formulation found no
+matching graph-theoretic theorem.  The new charge-rigidity theorem is
+therefore apparently new after a bounded primary-source screen.  Its
+proof is elementary and fully displayed, and a clean-room agent audit
+checked the two fragile steps: simultaneous circuit integrability and the
+componentwise decomposition of the translation left kernel.  This does
+not establish priority; terminology may differ in the extensive
+circuit-partition, isotropic-system, flow, and multipole literature.
 
 The later relative-\(\mathrm{GL}(2,2)\) tensor proof has not received a
 literature-wide novelty screen.  Its Euler-tour, interlacement, and
@@ -291,6 +306,12 @@ A targeted web/arXiv screen found no
 theorem stated in the language of minimum extendable Fano projections, but
 this does not establish priority.  The result is suitable for public
 circulation as an explicitly provisional AI-assisted working preprint.
+The charge-rigidity theorem adds a genuinely unbounded several-circuit
+subclass with a proof checkable line by line.  Its residual audit also
+compresses 6,268 finite failures to a single excess-nullity-two algebraic
+core.  This is publication-worthy as partial structural progress, but it
+does not yet supply a selection or descent theorem that reaches every
+bridgeless graph.
 The dual theorem further localizes the unresolved step: quotient shores
 carry zero price in every optimum, positive dual mass lives on shores that
 split complement components, and the resulting load count gives
@@ -361,8 +382,9 @@ constructive descent, the two-occurrence support frontier, and the
 cube rainbow-load counterstate, the equality-rigidity theorem, the
 static-filter survivor and inflation obstruction, the full-flow master
 formulation, the strict parity lock, and the 162-vertex construction,
-the fixed-word support-sixteen census and matching game, and both
-42-vertex literal realizations;
+the fixed-word support-sixteen census and matching game, both
+42-vertex literal realizations, and the charge-rigidity theorem and
+Petersen charge-core audit;
 proposed
 the two-terminal cleaning and orbit-reflecting
 \(K_{3,3}-e\) lemmas; wrote the exact
@@ -405,3 +427,11 @@ three-input XOR API call was malformed and discarded; no datum from that
 call appears in the frozen certificates. These checks are agent-produced
 computations and human-readable reductions, not independent human peer
 review.
+The charge-rigidity proof was separately audited by another Codex agent.
+Its clean-room checker enumerated all 270,763 balanced charge tables with
+one through four rows and columns, compared 274,885 mapped-kernel
+decompositions, and reconstructed cleanings for all 85,329 admissible
+small boundary states in its circuit-balanced census.  A second parser
+independently reproduced the (224+6{,}036+8) residual charge profiles.
+These are agent-produced checks, not independent human verification or
+peer review.
