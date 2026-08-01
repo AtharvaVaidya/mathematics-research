@@ -9,8 +9,9 @@ Identify a label in
 \]
 
 with its weight-two incidence vector in \(\mathbb F_2^5\).  Addition is
-symmetric difference.  A `D5`-flow on a cubic graph assigns one label to each
-edge so that the three labels incident with every vertex have xor zero.
+symmetric difference.  A `D5`-flow on a loopless cubic graph assigns one
+label to each edge so that the three labels incident with every vertex have
+xor zero.
 
 For a coordinate pair \(P\), write
 
@@ -23,8 +24,10 @@ are circuits.
 
 Let \(z\) be a cap vertex with physical ports \(a,b,c\).  Suppose a circuit
 component \(K\) of \(Y_P(q)\) contains the root, contains \(a,b\), and does not
-contain \(c\).  Assume this witness is internal, meaning \(P=q(c)\).  A global
-coordinate permutation lets us normalize
+contain \(c\).  Assume this witness is internal, meaning \(P=q(c)\).  At
+\(z\), xor zero gives \(q(a)\triangle q(b)=q(c)\).  Since all three labels
+have weight two, \(q(a)\) and \(q(b)\) meet in exactly one coordinate.  A
+global coordinate permutation therefore lets us normalize
 
 \[
  q(a)=01,\qquad q(b)=02,\qquad q(c)=P=12.                 \tag{1}
@@ -32,7 +35,7 @@ coordinate permutation lets us normalize
 
 Thus every label on \(K\) crosses the cut \(12\mid034\).
 
-For one even vector \(h\in\mathbb F_2^5\), define \(q^h\) by
+For one vector \(h\in\mathbb F_2^5\), define \(q^h\) by
 
 \[
  q^h(e)=
@@ -42,8 +45,12 @@ For one even vector \(h\in\mathbb F_2^5\), define \(q^h\) by
  \end{cases}                                               \tag{2}
 \]
 
+If even one translated weight-two label remains weight two, then Hamming
+weight parity forces \(|h|\) to be even.  Thus every legal uniform
+translation is covered by the even vectors used below.
+
 The inactive port \(c\) is not in \(K\), so its label remains \(12\).  Hence
-the external coordinate pairs after the translation are precisely
+the candidate external coordinate pairs after the translation are precisely
 
 \[
                          03,\quad04,\quad34.                \tag{3}
@@ -143,10 +150,29 @@ mode.  Any successful proof of universal external coverage must therefore do
 something genuinely global, such as change the relevant factor component or
 move through a sequence of interacting component switches.
 
+The same conclusion holds for any finite sequence of uniform translations
+supported on exactly the same edge set \(E(K)\).  Symmetric differences add,
+so the sequence collapses to the single net shift \(h\) handled by
+Theorem 3.1.  A successful sequence must therefore change its support at
+some stage, not merely change the vector translated on the fixed circuit.
+
 The theorem assumes an initial `D5`-flow and an internal root-to-cap factor
 circuit.  It proves no such flow or circuit exists in an arbitrary cap.  In
 particular it is not a proof of the double-star premise, rooted universality,
 or FiveCDC.
+
+## Prior-art boundary
+
+The equivalence between five-cycle double covers and edge-colouring by the
+ten points of the Desargues configuration is established in Theorem 7.1 of
+Král, Máčajová, Pangrác, Raspaud, Sereni, and Škoviera,
+[*Projective, affine, and abelian colorings of cubic graphs*](https://irma.math.unistra.fr/~sereni/Articles/KMP%2B08.pdf)
+(2008).  The
+present `D5` notation is that known labelling in binary form.  Adding a fixed
+group element on a circuit is also standard flow-switching machinery.  A
+targeted search did not locate the exact normalized cap-specific six-case
+observation above, but that is not enough to establish novelty; it may be
+folklore or implicit in earlier switching arguments.
 
 ## AI-use and novelty disclosure
 

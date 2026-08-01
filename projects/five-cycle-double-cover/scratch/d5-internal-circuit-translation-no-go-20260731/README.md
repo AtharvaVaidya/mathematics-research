@@ -7,8 +7,9 @@ Five-Cycle Double Cover proof or disproof**.
 
 This package isolates one failed route for the typed-cap problem.  Start with
 a `D5`-flow whose factor circuit through the root and cap vertex is in internal
-mode.  Modify that same circuit by adding one fixed even vector to every edge
-label.  If the modified circuit is an external factor circuit, then it was
+mode.  Modify that same circuit by adding one fixed vector to every edge label
+(legality automatically forces the vector to have even weight).  If the
+modified circuit is an external factor circuit, then it was
 already an external factor circuit before the modification (possibly for a
 different coordinate pair).
 
@@ -17,6 +18,9 @@ existing circuit** as a source of genuinely new external modes.  It does not
 rule out sequences of component switches that change the circuit, and it does
 not prove external port coverage, a double-star signature, rooted universality,
 or FiveCDC.
+
+More generally, any sequence of uniform translations supported on that same
+fixed circuit collapses to one net translation and has the same limitation.
 
 ## Files
 
