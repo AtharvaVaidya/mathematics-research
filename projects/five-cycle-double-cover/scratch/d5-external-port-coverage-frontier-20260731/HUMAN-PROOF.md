@@ -188,7 +188,98 @@ out intersection two and therefore makes the state external.  What remains
 missing is a bounded construction that forces both the needed `Y_L`
 connectivity and the inequality.
 
-## 5. Exact minimum-counterexample scope
+## 5. A fixed-flow counterexample in the marked-girth geometry
+
+The local blocker condition really can survive all of the graph geometry
+available in this branch.  Here is a compact, independently replayable
+example.
+
+Let `F` be the Foster graph in LCF notation
+
+```text
+[17,-9,37,-37,9,-17]^15.
+```
+
+Delete vertex zero from ten copies of `F`.  Each resulting 89-vertex
+3-pole has ports formerly adjacent to `0`, namely vertices `1,17,89` in
+the zero-based LCF numbering.  Substitute these ten 3-poles for the vertices
+of the Petersen graph, joining their ports in the displayed Petersen edge
+order used by `check_pf_fixed_flow_counterexample.py`.  Sorting all edges
+lexicographically gives a simple cubic graph `A` with 890 vertices and 1335
+edges.  Its canonical reconstruction SHA-256 is
+
+```text
+3fe0630cb52d5a0b29a473faff02389195c7e119ea8f7a6f95f3ba9c38272282
+```
+
+The checker directly verifies connectedness after deleting any one or any
+two edges, and verifies girth ten.  It also checks that the Petersen macro
+is not 3-edge-colourable.  For completeness, this implies that `A` is
+non-Tait: in any hypothetical 3-edge-colouring, the parity lemma applied to
+an odd 89-vertex 3-pole says that its three boundary edges receive the three
+different colours.  Contracting all ten 3-poles would therefore give a
+3-edge-colouring of the Petersen graph, a contradiction.
+
+Take cap vertex `z=0`, whose three incident edge indices are `0,1,2`, and
+root edge `r=552=(363,400)`.  The checker verifies that `A-z` is connected,
+bridgeless, and has girth ten, and that deleting `r` from `A-z` leaves it
+connected with girth ten.  Thus this is the exact local marked-girth and
+3-connectivity geometry, although it is not asserted to be an actual shore
+of a minimum FiveCDC obstruction.
+
+The file `pf-fixed-flow-labels.b85` is a base-85/zlib encoding of 1335 label
+bytes.  Its decoded SHA-256 is
+
+```text
+6390ba1039116351e8e4343264f9881e4d1541dc028a661db848be9c695fdc9a
+```
+
+The checker verifies that every byte has weight two and that the xor of the
+three incident labels is zero at every vertex.  Hence the bytes are a valid
+`D5` flow, not merely SAT output.  In five-bit notation, the cap labels are
+`18,6,20`, corresponding to `14,12,24`, and the root label is `18=14`.
+
+There are exactly six coordinate pairs for which the root is active.  A
+direct walk in each factor gives the complete table:
+
+| factor pair | root-component edges | cap slots in component | state |
+|---:|---:|:---:|:---:|
+| `01` (`3`) | 449 | `0,1` | external |
+| `04` (`17`) | 273 | none | none |
+| `12` (`6`) | 523 | `0,2` | internal |
+| `13` (`10`) | 463 | none | none |
+| `24` (`20`) | 46 | none | none |
+| `34` (`24`) | 48 | none | none |
+
+Thus the fixed typed signature is bit mask `6`: the physical pair `01` is
+external and physical pair `02` is internal.  Physical port slot `2` has no
+external state anywhere in this displayed flow.
+
+For the internal factor `P=12`, both root-to-cap arcs exhibit exactly the
+blockers predicted by Lemma 3.1.  Their lengths include the root edge:
+
+| arc | terminal port edge | length | outside `0` | outside `3` | outside `4` |
+|---:|---:|---:|---:|---:|---:|
+| 0 | 0 | 355 | 109 | 115 | 131 |
+| 1 | 2 | 169 | 50 | 64 | 55 |
+
+In particular, neither high girth nor 3-edge-connectivity makes the foreign
+blockers disappear or forces them into an immediate small-cut contradiction.
+
+This certificate refutes the strengthening
+
+> every displayed `D5` flow in the marked-girth cap geometry externally
+> covers all three physical ports,
+
+and any proof step that attempts to derive externality solely from the
+presence of the two blockers in that same flow.  It does **not** refute the
+existential target that *some* `D5` flow covers every port: the sibling
+full-signature certificate checks six flows on this same graph, including
+the displayed one, whose aggregate exact signature is `63`.  A successful
+proof may therefore need to change the flow or exploit genuinely additional
+global structure.
+
+## 6. Exact minimum-counterexample scope
 
 In the existing edge-elimination branch, a relevant cap `A` is simple and
 3-edge-connected.  Its core `K=A-z` is connected and bridgeless, has girth
@@ -197,20 +288,21 @@ at least nine, and `K-r` has girth at least ten.  The cap has order at least
 counterexample and is bridgeless, it has at least one `D5` flow.
 
 Lemma 2.1 therefore settles every selected physical port adjacent to the
-root.  A failure of universal external port coverage in this branch must
+root.  A failure of existential external port coverage in this branch must
 use a non-Tait cap (the Tait case was proved separately), a selected port
 edge vertex-disjoint from the root, and, whenever that pair is represented
 only internally, the two-arc blockers in Lemma 3.1.
 
-No contradiction with the marked-girth or 3-connectivity hypotheses is
-proved here.  A signature could also fail to realize the selected physical
+Section 5 proves that no contradiction with the marked-girth or
+3-connectivity hypotheses follows from those blockers alone in an arbitrary
+fixed flow.  A signature could also fail to realize the selected physical
 port at all, in which case Lemma 3.1 has no internal witness to start from.
-These are the exact remaining gaps.
+Flow-changing arguments and this no-state case are the exact remaining gaps.
 
 ## AI-use disclosure
 
 OpenAI Codex agents, under human direction, found the adjacent-port table,
 the six-state circuit-word representation, the two-arc blocker condition,
-and the SAT probes.  The proofs are displayed in full, but they have not
-undergone independent human peer review.  No novelty or FiveCDC resolution
-claim is made.
+the fixed-flow counterexample, and the SAT probes.  The proofs and a complete
+semantic replay are supplied, but they have not undergone independent human
+peer review.  No novelty or FiveCDC resolution claim is made.

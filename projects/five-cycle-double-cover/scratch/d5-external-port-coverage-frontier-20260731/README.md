@@ -13,6 +13,11 @@ three physical ports.
 - A cube flow shows that the standard inverse switch-and-suppress operation
   does not automatically apply to every flow on an inverse-inserted parent;
   this is a delimiter for that operation, not a universal no-go theorem.
+- A replayable Petersen--Foster certificate gives a stronger delimiter in
+  the exact marked-girth geometry: one valid displayed `D5` flow externally
+  covers only two of the three physical ports.  Its two foreign blockers
+  persist on long root-to-cap arcs.  This refutes arbitrary-flow and
+  blocker-only externality arguments, not existential external coverage.
 
 `probe.py` also implements the fixed-factor SAT test for an external state.
 It imports the frozen root-transition CNF, adds two clauses forbidding the
@@ -27,12 +32,17 @@ Run the local table audit with:
 ./run_all.sh
 ```
 
+The quick replay also reconstructs the 890-vertex Petersen--Foster graph,
+checks its graph/core geometry, decodes and checks the fixed flow certificate,
+enumerates all six root-active factors, and audits the two blocker arcs.
+
 The exact optional SAT replay commands and development environment versions
 are in `CENSUS.md` and `VERSIONS.txt`.  The complete retained-corpus replay
 takes several minutes; the Petersen--Foster sample is slower and is kept out
 of the quick local regression.
 
-The universal external-coverage statement remains open.  In particular,
-the blocker lemma has not been converted into a contradiction with marked
-girth or 3-connectivity, and it does not address a port for which no rooted
-state exists at all.  This package does not resolve FiveCDC.
+The universal *existential* external-coverage statement remains open.  The
+fixed-flow certificate proves that the blocker lemma cannot by itself be
+converted into a contradiction with marked girth or 3-connectivity: a proof
+must be able to change the flow or use additional global information.  This
+package does not resolve FiveCDC.

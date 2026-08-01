@@ -39,7 +39,10 @@ The strongest publishable-looking content is:
   the analytic Tait-cap gluing theorem and the six-case adjacent-port
   external-state lemma;
 - the six-flow full typed signature on one 890-vertex Petersen--Foster
-  high-girth non-Tait control, stated only as one-interface calibration;
+  high-girth non-Tait control, together with one fixed flow of typed mask 6
+  showing that marked-girth blockers alone do not force external coverage;
+- the literal positive certificates for all 1,335 edge eliminations of that
+  one named graph, independently replayed from the graph semantics;
 - the complete order-14 terminal-plateau census and fixed-distance descent
   census; and
 - the complete 195-edge elimination screen on a 130-vertex cyclically
@@ -55,7 +58,10 @@ audit has been performed.  The universal typed-cap double-star premise is
 open; its order-14 frontier is evidence, not a reduction theorem.  The
 adjacent-port lemma is elementary and should not be advertised as a deep or
 categorically novel result; its value is to remove an exact edge case from
-the independent-root cap obligation.
+the independent-root cap obligation.  The Petersen--Foster mask-6 witness
+is a counterexample only to arbitrary-fixed-flow and blocker-only
+strengthenings; the same cap has aggregate typed mask 63.  The all-edge
+certificate is likewise one named finite control, not a family theorem.
 No categorical novelty claim is justified until a specialist prior-art
 review is complete.
 

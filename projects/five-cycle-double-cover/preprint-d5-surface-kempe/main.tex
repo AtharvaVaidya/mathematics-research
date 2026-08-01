@@ -122,7 +122,11 @@ port adjacent to the root is automatically covered by an external state;
 the proof is a six-case local table.  The exact surviving branch therefore
 has a non-Tait cap of order at least 56 and concerns only ports independent
 of the root.  One 890-vertex non-Tait girth-ten
-control has the full six-state signature by six explicit checked flows.
+control has the full six-state signature by six explicit checked flows,
+although one individual flow misses external coverage at one port.  Thus
+the marked-girth blockers do not force externality without changing the
+flow.  Literal certificates also make all 1,335 edge eliminations of this
+named graph root-good; this remains a one-graph finite result.
 Finally,
 exhaustive computations show that all 33,598 terminal
 equal-Euler-characteristic Kempe plateaus on the 480 biconnected simple
@@ -1702,6 +1706,17 @@ checker verifies the graph, core restrictions, every vertex xor, and every
 factor component.  This one-interface witness neither proves a census nor
 the universal double-star premise.
 
+The full signature is an aggregate over different flows.  In one retained
+flow the fixed typed signature has mask 6: one physical pair is external,
+one is internal, and the third physical port has no external state.  A
+second checker verifies both foreign-coordinate blockers on both arcs of the
+internal root circuit.  The cap is non-Tait and satisfies the exact
+3-connectivity and marked-girth geometry above.  Consequently, those
+blockers alone cannot force externality in an arbitrary fixed flow; an
+existential proof must change the flow or use additional global structure.
+The aggregate mask 63 means this is not a counterexample to external
+coverage, rooted feasibility, or FiveCDC.
+
 \subsection{Exact finite plateau results}
 
 The state enumeration quotients only by the global \(S_5\) action.  Graphs
@@ -1782,6 +1797,16 @@ checker reconstructs every reduction, enumerates the parent's
 3-edge-cuts, verifies all \(D_5\) equations, and checks factor
 connectivity.  This is one graph, not a universal theorem.
 
+For the 890-vertex Petersen--Foster graph above, a second literal package
+checks all 1,335 edge eliminations.  Every reduced 888-vertex graph has a
+displayed \(D_5\)-flow whose \(Y_{01}\)-component contains the two
+artificial roots.  A solver-independent checker reconstructs every
+elimination, verifies reduced bridgelessness and girth nine, checks every
+label xor and the displayed transition path.  The ordinary two-root
+insertion lemma then lifts each witness.  This is a complete positive certificate for one
+named graph, not an extension to its substitution family or to arbitrary
+graphs.
+
 \subsection{Reproducibility and independent checks}
 
 The complete reports, producers, and focused independent verifiers are in
@@ -1798,7 +1823,9 @@ python3 scratch/check_d5_capped_ladder_delay_family.py
 (cd scratch/d5-typed-cap-double-star-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-root-pair-census-20260731 && ./run_all.sh)
 (cd scratch/d5-relevant-cap-order56-cutoff-20260731 && ./run_all.sh)
+(cd scratch/d5-external-port-coverage-frontier-20260731 && ./run_all.sh)
 (cd scratch/petersen-foster-full-typed-cap-signature-20260731 && ./run_all.sh)
+(cd scratch/petersen-foster-all-eliminations-20260731 && ./run_all.sh)
 
 python3 scratch/verify_d5_surface_chi_plateaus_order12.py
 python3 scratch/verify_d5_root_euler_potential_reports.py

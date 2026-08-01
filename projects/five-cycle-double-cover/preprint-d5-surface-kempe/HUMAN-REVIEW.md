@@ -62,6 +62,14 @@ certificates, and large finite computations.
     `01,02,12`, check the six possible root labels and the displayed
     external-factor choices.  Verify that adjacency, not merely simultaneous
     activity, places the root and port in the same factor component.
+18. The Petersen--Foster fixed-flow delimiter: distinguish the typed mask of
+    one flow from the aggregate exact signature, replay all six factors active
+    at the root, and verify that physical port 2 has no external state only in
+    the displayed flow.  Check both blocker arcs and the marked-girth scope.
+19. The all-edge Petersen--Foster certificate: reconstruct all 1,335
+    eliminations, replay the literal `D5` labels and `Y_01` paths, and audit
+    the ordinary two-root insertion implication separately from the finite
+    data.
 
 ## Small certificates
 

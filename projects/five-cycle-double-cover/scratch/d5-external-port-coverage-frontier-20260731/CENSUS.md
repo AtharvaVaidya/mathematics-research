@@ -86,3 +86,11 @@ not an independently certified finite theorem.  None of the three complete
 corpora lies in the relevant marked-girth cap domain, whose cap-order cutoff
 is 56.  Only the ten explicitly labelled Petersen--Foster samples enter that
 local geometry; they are not a census.
+
+The separately retained `pf-fixed-flow-labels.b85` certificate is different:
+`check_pf_fixed_flow_counterexample.py` is a standard-library semantic
+checker which reconstructs the graph and verifies every flow equation and
+factor component.  It proves a negative statement about one fixed flow, not
+about the existential SAT queries above.  In particular, the same graph has
+other flows realizing the exact aggregate signature `63`; there is no
+contradiction between the fixed-flow counterexample and these positive probes.
