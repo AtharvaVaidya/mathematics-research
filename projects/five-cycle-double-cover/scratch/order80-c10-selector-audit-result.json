@@ -1,0 +1,11 @@
+{
+  "common_colour_cases_isomorphic": 60,
+  "mark_set_records": 74940,
+  "minimum_good_selectors_per_mark_set": 94,
+  "no_good_mark_sets": 0,
+  "perfect_transversals_per_case": 1249,
+  "representative_selector_evaluations": 319744,
+  "saved_all_c10_colourings_checked": 20,
+  "status": "PASS_INDEPENDENT_ISOMORPHISM_AUDIT",
+  "unique_edge_mark_sets": 74415
+}

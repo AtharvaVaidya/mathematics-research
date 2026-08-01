@@ -1,0 +1,147 @@
+{
+  "claim_scope": "context-free nonlinear pair recolouring of one supplied Oum eight-cover; not FiveCDC",
+  "date": "2026-07-31",
+  "graph_and_old_cover": {
+    "bridgeless_edge_deletions": 18,
+    "connected": true,
+    "distinct_old_pairs": 15,
+    "edges": 18,
+    "flow_values_used": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "graph6": "K`o_kP_COK?F",
+    "old_pair_edge_multiplicities": {
+      "01": 2,
+      "02": 2,
+      "03": 1,
+      "04": 1,
+      "05": 1,
+      "12": 1,
+      "13": 2,
+      "14": 1,
+      "15": 1,
+      "23": 1,
+      "24": 1,
+      "25": 1,
+      "34": 1,
+      "35": 1,
+      "45": 1
+    },
+    "potential": [
+      3,
+      2,
+      5,
+      4,
+      1,
+      6,
+      7,
+      0,
+      6,
+      7,
+      3,
+      2
+    ],
+    "simple": true,
+    "used_old_coordinates": 6,
+    "vertices": 12
+  },
+  "positive_control": {
+    "fivecdc_edge_labels_by_tait_colour": [
+      "01",
+      "02",
+      "12"
+    ],
+    "fivecdc_exists": true,
+    "old_pair_types_split_by_global_context": [
+      "01"
+    ],
+    "proper_tait_colouring": [
+      0,
+      1,
+      1,
+      1,
+      2,
+      0,
+      2,
+      2,
+      1,
+      1,
+      2,
+      0,
+      0,
+      2,
+      0,
+      0,
+      2,
+      1
+    ]
+  },
+  "rigidity_certificate": {
+    "k6_cycle_space_dimension": 10,
+    "k6_to_r5_homomorphisms": 0,
+    "minimum_full_rank_rigidity_order": 12,
+    "pair_columns": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "12",
+      "13",
+      "14",
+      "15",
+      "23",
+      "24",
+      "25",
+      "34",
+      "35",
+      "45"
+    ],
+    "r5_clique_witness_decimal": [
+      0,
+      3,
+      5,
+      9,
+      17
+    ],
+    "r5_maximum_clique": 5,
+    "r5_vertices": 32,
+    "rank_pivot_columns_zero_based": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "triangle_rank": 10,
+    "triangle_row_count": 12,
+    "triangle_row_hex": [
+      "0x0023",
+      "0x0045",
+      "0x0089",
+      "0x0111",
+      "0x0206",
+      "0x040a",
+      "0x0812",
+      "0x0260",
+      "0x10c0",
+      "0x2140",
+      "0x4c00",
+      "0x7000"
+    ],
+    "triangle_row_xor": 0
+  },
+  "schema": "fivecdc-eight-to-five-local-rule-rigidity-v1",
+  "status": "PASS"
+}

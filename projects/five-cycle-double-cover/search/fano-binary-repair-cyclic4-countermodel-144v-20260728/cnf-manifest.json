@@ -1,0 +1,314 @@
+{
+  "edges": 216,
+  "instances": [
+    {
+      "clauses": 1137,
+      "kind": "packing",
+      "name": "packing-value-1",
+      "path": "cnf/packing-value-1.cnf",
+      "sha256": "706b730da95e16aba5132150c3e21ff9327ce7132992c435e0a5d2c0ba1f94fd",
+      "value": 1,
+      "variables": 432
+    },
+    {
+      "clauses": 1151,
+      "kind": "packing",
+      "name": "packing-value-2",
+      "path": "cnf/packing-value-2.cnf",
+      "sha256": "c2479f910c087020972116f229b64a8da2903bb4c350c68dd8b5dcd0373903d4",
+      "value": 2,
+      "variables": 432
+    },
+    {
+      "clauses": 1151,
+      "kind": "packing",
+      "name": "packing-value-3",
+      "path": "cnf/packing-value-3.cnf",
+      "sha256": "e343362d60aa69bb8121685d0df1abc1892df6fa5bc3e69d861f07b45e48ef45",
+      "value": 3,
+      "variables": 432
+    },
+    {
+      "clauses": 1137,
+      "kind": "packing",
+      "name": "packing-value-4",
+      "path": "cnf/packing-value-4.cnf",
+      "sha256": "790e5517f87e8413dfa3afd8557b96f7e91d6f06e9fcad0b0231f33007295dca",
+      "value": 4,
+      "variables": 432
+    },
+    {
+      "clauses": 1130,
+      "kind": "packing",
+      "name": "packing-value-5",
+      "path": "cnf/packing-value-5.cnf",
+      "sha256": "6cfd208ba77dd8db4e961ec817daee49525b0b153d1cc08fcedadbc061384f1f",
+      "value": 5,
+      "variables": 432
+    },
+    {
+      "clauses": 1186,
+      "kind": "packing",
+      "name": "packing-value-6",
+      "path": "cnf/packing-value-6.cnf",
+      "sha256": "e463380614b4ea32640eba3e6adeae54e86f8987e0f4d29853f67ff33cebf057",
+      "value": 6,
+      "variables": 432
+    },
+    {
+      "clauses": 1172,
+      "kind": "packing",
+      "name": "packing-value-7",
+      "path": "cnf/packing-value-7.cnf",
+      "sha256": "fbd5ee7cf763a91cde55450ada2895d732e8d3ff36526024e6e3628a8bf46925",
+      "value": 7,
+      "variables": 432
+    },
+    {
+      "clauses": 3277,
+      "kind": "repair",
+      "name": "repair-t1-b2",
+      "other_target": 3,
+      "path": "cnf/repair-t1-b2.cnf",
+      "sha256": "c8cbb366fc4993007b7482d9f621797b620419c3f9dc42b7055a732edb455d7b",
+      "switch": 1,
+      "target": 2,
+      "variables": 648
+    },
+    {
+      "clauses": 3407,
+      "kind": "repair",
+      "name": "repair-t1-b4",
+      "other_target": 5,
+      "path": "cnf/repair-t1-b4.cnf",
+      "sha256": "96bf7b963a952e95f508de91202b0f1b73542155a47d1f4c32b6620687da7bf8",
+      "switch": 1,
+      "target": 4,
+      "variables": 648
+    },
+    {
+      "clauses": 3069,
+      "kind": "repair",
+      "name": "repair-t1-b6",
+      "other_target": 7,
+      "path": "cnf/repair-t1-b6.cnf",
+      "sha256": "dabcb3c45d28e8fb37f461ad0e20cda31d00fbfe195988f8745c420b8d357950",
+      "switch": 1,
+      "target": 6,
+      "variables": 648
+    },
+    {
+      "clauses": 3311,
+      "kind": "repair",
+      "name": "repair-t2-b1",
+      "other_target": 3,
+      "path": "cnf/repair-t2-b1.cnf",
+      "sha256": "8b71dcb6af41560eee3dc006cd155de222a4e6045c12c27ec8e02347743427e0",
+      "switch": 2,
+      "target": 1,
+      "variables": 648
+    },
+    {
+      "clauses": 3181,
+      "kind": "repair",
+      "name": "repair-t2-b4",
+      "other_target": 6,
+      "path": "cnf/repair-t2-b4.cnf",
+      "sha256": "ab908419132b154633ae9e8c5e3730fb5f73fe3bfa58715527028f526cdbfe04",
+      "switch": 2,
+      "target": 4,
+      "variables": 648
+    },
+    {
+      "clauses": 3259,
+      "kind": "repair",
+      "name": "repair-t2-b5",
+      "other_target": 7,
+      "path": "cnf/repair-t2-b5.cnf",
+      "sha256": "c68d02bd117eff33d25c72fe1bf8bf89e6045229241b9c1d13a8800127ddf926",
+      "switch": 2,
+      "target": 5,
+      "variables": 648
+    },
+    {
+      "clauses": 3311,
+      "kind": "repair",
+      "name": "repair-t3-b1",
+      "other_target": 2,
+      "path": "cnf/repair-t3-b1.cnf",
+      "sha256": "6bd0ba153b20f6e77a363e772ae4eefe34c2ecb47e7409a6c4ed9a21322f3451",
+      "switch": 3,
+      "target": 1,
+      "variables": 648
+    },
+    {
+      "clauses": 3233,
+      "kind": "repair",
+      "name": "repair-t3-b4",
+      "other_target": 7,
+      "path": "cnf/repair-t3-b4.cnf",
+      "sha256": "dfb80130791b23fb139ca069b38ebabd987e0df4c35de2bb1eee1f29c8be190c",
+      "switch": 3,
+      "target": 4,
+      "variables": 648
+    },
+    {
+      "clauses": 3207,
+      "kind": "repair",
+      "name": "repair-t3-b5",
+      "other_target": 6,
+      "path": "cnf/repair-t3-b5.cnf",
+      "sha256": "62d695ec99e68ad13c2bc9c4d82947f3aa6554e48af865b17a0d91fe474dbf13",
+      "switch": 3,
+      "target": 5,
+      "variables": 648
+    },
+    {
+      "clauses": 3407,
+      "kind": "repair",
+      "name": "repair-t4-b1",
+      "other_target": 5,
+      "path": "cnf/repair-t4-b1.cnf",
+      "sha256": "af998406e6d143f8e354cf58de02bda64e833d044082bc31b9593a45764909ef",
+      "switch": 4,
+      "target": 1,
+      "variables": 648
+    },
+    {
+      "clauses": 3147,
+      "kind": "repair",
+      "name": "repair-t4-b2",
+      "other_target": 6,
+      "path": "cnf/repair-t4-b2.cnf",
+      "sha256": "51ab69489dbba27534edd3a5f449853416c0ea15e440c6c067a111aa68616914",
+      "switch": 4,
+      "target": 2,
+      "variables": 648
+    },
+    {
+      "clauses": 3199,
+      "kind": "repair",
+      "name": "repair-t4-b3",
+      "other_target": 7,
+      "path": "cnf/repair-t4-b3.cnf",
+      "sha256": "052ea6e1552a708110ca54df416e41c9847257fafd5d9d034350688b655ef874",
+      "switch": 4,
+      "target": 3,
+      "variables": 648
+    },
+    {
+      "clauses": 3390,
+      "kind": "repair",
+      "name": "repair-t5-b1",
+      "other_target": 4,
+      "path": "cnf/repair-t5-b1.cnf",
+      "sha256": "2d99246cd48ae5d8efbf8610bae7aa3c8be5e87d943c30c1166b832a8eafc6cc",
+      "switch": 5,
+      "target": 1,
+      "variables": 648
+    },
+    {
+      "clauses": 3208,
+      "kind": "repair",
+      "name": "repair-t5-b2",
+      "other_target": 7,
+      "path": "cnf/repair-t5-b2.cnf",
+      "sha256": "55052ce5ba81be7ee5602084244b91eaa826bcce53955c0242b9e30bbf40d037",
+      "switch": 5,
+      "target": 2,
+      "variables": 648
+    },
+    {
+      "clauses": 3156,
+      "kind": "repair",
+      "name": "repair-t5-b3",
+      "other_target": 6,
+      "path": "cnf/repair-t5-b3.cnf",
+      "sha256": "1ca92a039a88c1e1ab68a5070d3999a24908f76397f593e600945dc21248e5bd",
+      "switch": 5,
+      "target": 3,
+      "variables": 648
+    },
+    {
+      "clauses": 3188,
+      "kind": "repair",
+      "name": "repair-t6-b1",
+      "other_target": 7,
+      "path": "cnf/repair-t6-b1.cnf",
+      "sha256": "3f89a7d172d4b5432765db3a2e48a7ee9308dce42f755f66224c856ee88f73b2",
+      "switch": 6,
+      "target": 1,
+      "variables": 648
+    },
+    {
+      "clauses": 3266,
+      "kind": "repair",
+      "name": "repair-t6-b2",
+      "other_target": 4,
+      "path": "cnf/repair-t6-b2.cnf",
+      "sha256": "4ba72f9e93f9feafe07daf21f94d6e0f2706e3e07ca40225340e417c9a957b9b",
+      "switch": 6,
+      "target": 2,
+      "variables": 648
+    },
+    {
+      "clauses": 3292,
+      "kind": "repair",
+      "name": "repair-t6-b3",
+      "other_target": 5,
+      "path": "cnf/repair-t6-b3.cnf",
+      "sha256": "6a28fde01a9251dbaa141c81f2ba8daa9d22c6581e6684791c92a274e7cbfa8f",
+      "switch": 6,
+      "target": 3,
+      "variables": 648
+    },
+    {
+      "clauses": 3154,
+      "kind": "repair",
+      "name": "repair-t7-b1",
+      "other_target": 6,
+      "path": "cnf/repair-t7-b1.cnf",
+      "sha256": "3afbb19c888b4db330586056b320267fa860abc113ede0368910c2f50607fa4a",
+      "switch": 7,
+      "target": 1,
+      "variables": 648
+    },
+    {
+      "clauses": 3310,
+      "kind": "repair",
+      "name": "repair-t7-b2",
+      "other_target": 5,
+      "path": "cnf/repair-t7-b2.cnf",
+      "sha256": "f3015e3bb10e08b3177b27b2bfdb71999abe5158967e80c18797dc0fe07480c0",
+      "switch": 7,
+      "target": 2,
+      "variables": 648
+    },
+    {
+      "clauses": 3284,
+      "kind": "repair",
+      "name": "repair-t7-b3",
+      "other_target": 4,
+      "path": "cnf/repair-t7-b3.cnf",
+      "sha256": "e2b441f1a5dfd8fbeda5047cd0b1b4b83e908135b1d77aa79ec4ff09813a137e",
+      "switch": 7,
+      "target": 3,
+      "variables": 648
+    },
+    {
+      "clauses": 2160,
+      "kind": "tait",
+      "name": "tait-coloring",
+      "path": "cnf/tait-coloring.cnf",
+      "sha256": "64fd37483afc5e6670a889cf02245304becd9349dd768ab1beea6d07176ebe7e",
+      "variables": 648
+    }
+  ],
+  "order": 144,
+  "packing_instances": 7,
+  "repair_instances": 21,
+  "schema": "fano-binary-repair-cyclic4-order144-cnf-manifest-v1",
+  "state": "countermodel-order144.txt",
+  "state_sha256": "e1837e5d9008eb8d21a844195cdb9c020dde81ba782c92b239076a050a30e5e8",
+  "tait_instances": 1
+}

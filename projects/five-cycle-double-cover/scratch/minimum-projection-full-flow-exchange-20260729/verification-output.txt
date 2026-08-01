@@ -1,0 +1,1 @@
+PASS: base_vertices=18 base_edges=27 inflated_vertices=278 inflated_edges=417 display_support=14 competitor_support=7 gain=7 zero_matching=1,5 join=0,2,3,4,6 difference_nonzero_values=[2, 3, 4, 5, 6]

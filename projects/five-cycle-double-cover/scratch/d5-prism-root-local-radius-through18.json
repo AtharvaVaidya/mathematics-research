@@ -1,0 +1,67 @@
+{
+  "schema": "d5-prism-root-local-radius-through18-v1",
+  "status": "PASS",
+  "graph_class": "circular ladder (prism) C_n square K_2",
+  "scope": {
+    "rung_counts": [3, 4, 5, 6, 7, 8, 9],
+    "vertex_orders": [6, 8, 10, 12, 14, 16, 18],
+    "all_normalized_d5_flows": true,
+    "all_unordered_root_edge_pairs": true,
+    "root_component_fixed_point_reached": true
+  },
+  "results": [
+    {
+      "rungs": 3,
+      "graph6": "E{Sw",
+      "flows_mod_s5": 5,
+      "initially_bad_state_root_pairs": 0,
+      "maximum_root_switch_distance": 0
+    },
+    {
+      "rungs": 4,
+      "graph6": "Gl`HGs",
+      "flows_mod_s5": 35,
+      "initially_bad_state_root_pairs": 90,
+      "maximum_root_switch_distance": 2
+    },
+    {
+      "rungs": 5,
+      "graph6": "IheAHCPBG",
+      "flows_mod_s5": 121,
+      "initially_bad_state_root_pairs": 685,
+      "maximum_root_switch_distance": 2
+    },
+    {
+      "rungs": 6,
+      "graph6": "KhEKAC`CGO_p",
+      "flows_mod_s5": 645,
+      "initially_bad_state_root_pairs": 10017,
+      "maximum_root_switch_distance": 3
+    },
+    {
+      "rungs": 7,
+      "graph6": "MhCKK@@GG_`@@@?o_",
+      "flows_mod_s5": 3171,
+      "initially_bad_state_root_pairs": 109627,
+      "maximum_root_switch_distance": 3
+    },
+    {
+      "rungs": 8,
+      "graph6": "OhCGKE?OH?a@A@@?_OGB@",
+      "flows_mod_s5": 17371,
+      "initially_bad_state_root_pairs": 1116528,
+      "maximum_root_switch_distance": 4
+    },
+    {
+      "rungs": 9,
+      "graph6": "QhCGGE@_A?c@C@A?__GC@?OC?oG",
+      "flows_mod_s5": 96437,
+      "initially_bad_state_root_pairs": 10257273,
+      "maximum_root_switch_distance": 4
+    }
+  ],
+  "observed_formula_for_rungs_4_through_9": "floor(rungs / 2)",
+  "root_local_counterexample_found": false,
+  "fivecdc_counterexample": false,
+  "searcher": "scratch/audit_d5_root_switch_distance.cpp"
+}

@@ -1,0 +1,384 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\geometry{margin=1in}
+\setlength{\emergencystretch}{2em}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Dfive}{D_5}
+\newcommand{\FiveCDC}{\textup{FiveCDC}}
+\newcommand{\xor}{\mathbin{\oplus}}
+\numberwithin{equation}{section}
+
+\title{A Full Five-Cycle-Double-Cover Boundary Relation\\
+for a 288-Vertex Six-Pole}
+\author{Atharva Vaidya\\
+\small AI-assisted research draft for independent human verification}
+\date{July 29, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fcolorbox{red!65!black}{red!4}{
+\parbox{0.91\textwidth}{
+\textbf{Resolution status, novelty status, and trust boundary.}
+The standard Five-Cycle Double Cover Conjecture remains open.  This note
+proves a computer-assisted boundary lemma for one concrete six-pole and
+deduces, by a short human argument, a positive theorem for every trivalent
+network of copies of that pole.  It is neither a proof nor a disproof of
+the general conjecture, and it does not concern the orientable variant.
+
+The novelty claim is provisional.  Searches made before release did not
+locate this exact \(D_5\) boundary relation, but the literature contains
+substantial adjacent work on FiveCDC superpositions and multipoles.
+Specialist prior-art review may show that the network theorem is known or
+subsumed by a stronger result.
+
+OpenAI Codex agents, under Atharva Vaidya's direction, selected the
+experiment, wrote the programs, discovered and proved the network
+consequence, checked the artifacts, and drafted this note.  The independent
+checker is implementation-independent, not independent of AI.  No human
+peer review is claimed.  A human author must check the proof and provenance,
+rerun or reimplement the finite audit, review prior art, and accept
+scholarly responsibility before journal or arXiv submission.
+}}
+\end{center}
+
+\begin{abstract}
+Let
+\[
+        \Dfive=\binom{\{0,1,2,3,4\}}2
+\]
+be the ten duads, represented by their five-bit characteristic vectors.
+A \(\Dfive\)-labelling of a cubic graph is a five-cycle double cover
+exactly when the xor of the three incident labels is zero at every vertex.
+We compute the complete six-port boundary relation of a concrete
+288-vertex \((3,3)\)-pole retained from the \(g=10\) construction
+of Karab\'a\v{s}, M\'a\v{c}ajov\'a, Nedela, and \v{S}koviera.
+
+The relation is maximal subject to the global parity obstruction: an
+ordered boundary word \((b_0,\ldots,b_5)\in\Dfive^6\) extends through the
+pole if and only if \(b_0\xor\cdots\xor b_5=0\).  The positive direction
+is certified by 571 explicit internal labellings, one for every orbit of
+the 62,560 admissible boundary words under coordinate permutations.
+An independently written standard-library checker exhausts the
+one-million-word universe and directly checks every certificate; no
+negative SAT conclusion is used.
+
+The full relation has a simple all-size consequence.  In every finite
+network obtained by attaching all ports of any number of copies of the
+pole to trivalent junctions, the connector--junction incidence multigraph
+is cubic bipartite.  Three perfect matchings give compatible triangle-duad
+labels at every junction and a zero-xor boundary word at every pole.
+Consequently every such network has a five-cycle double cover.
+\end{abstract}
+
+\section{The exact claim and its scope}
+
+A \emph{cycle} here means an Eulerian edge-subset: every vertex has even
+degree in it.  It may be empty or disconnected.  A \emph{five-cycle double
+cover} is an indexed family \(C_0,\ldots,C_4\) of such subsets in which
+every edge occurs in exactly two members.  Allowing empty members makes
+``five'' mean ``at most five.''  Parallel edges, when present, are distinct
+edge objects.  The pole used below is loopless; the network construction
+may create repeated macro-incidences but no incidence loops.
+
+The standard conjecture, attributed to Celmins and Preissmann, says that
+every finite bridgeless graph has such a cover \cite{LiuEtAl2023}.  It
+remains open.  In particular, the theorem in this note only eliminates a
+concrete superposition family from a counterexample search.
+
+Karab\'a\v{s} et al. construct cyclically 5-edge-connected snarks of
+prescribed girth and oddness two by superposition
+\cite[Theorem~5.1]{KarabasEtAl2022}.  Our retained \(F_{10}\) pole is the
+concrete \(g=10\) instance built with the 70-vertex Harries \((3,10)\)-cage:
+the construction first forms their graph \(K_M\), then deletes the two
+specified trivalent vertices \(u_1,u_3\), retaining their incident edges
+as two ordered three-port connectors.  The resulting pole has 288 vertices,
+429 internal edges, and six semiedges.
+
+For reproducibility, this note treats the exact topology in
+\texttt{f10-atom.txt} as the formal definition.  Its SHA-256 digest is
+\begin{center}
+\small\texttt{484503e6318f419457e5160e9f3f7605002621661e82456d57f200c8b6750742}.
+\end{center}
+The first line records \(288\), \(429\), and \(6\); the second line gives
+the six port vertices, grouped as \((0,2,3)\) and \((13,15,16)\); the
+remaining lines are the internal edges.  The package records the
+construction function from which this frozen topology was exported; the
+certificate theorem itself depends only on the frozen topology.
+
+\section{Duad labellings and FiveCDC}
+
+Represent each \(a\in\Dfive\) by its characteristic vector in
+\(\mathbb F_2^5\).  Thus every \(a\) has Hamming weight two.
+
+\begin{lemma}[duad equivalence]
+\label{lem:duad}
+Let \(G\) be a finite loopless graph.  The following data are equivalent:
+\begin{enumerate}
+\item five Eulerian edge-subsets \(C_0,\ldots,C_4\) covering every edge
+      exactly twice;
+\item a map \(\lambda:E(G)\to\Dfive\) such that
+      \[
+          \mathop{\xor}_{e\ni v}\lambda(e)=0
+          \qquad\text{for every }v\in V(G).
+          \tag{2.1}
+      \]
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Given the five subsets, label an edge by the two indices of the subsets
+which contain it.  The \(i\)-th coordinate of (2.1) says exactly that
+\(C_i\) has even degree at \(v\).  Conversely, from a duad labelling put
+\(C_i=\{e:i\in\lambda(e)\}\).  Weight two gives exact double coverage,
+and the coordinate equations give the Eulerian condition.
+\end{proof}
+
+For a cubic vertex, (2.1) says that the three incident duads form a
+coordinate triangle.  For example,
+\[
+                 01\xor 02\xor 12=0.             \tag{2.2}
+\]
+For a pole, a boundary word records the labels assigned to its semiedges.
+It is \emph{extendible} if labels can be assigned to all internal edges so
+that (2.1) holds at every pole vertex, counting its incident semiedge.
+
+\section{The complete boundary relation}
+
+Write \(P\) for the frozen 288-vertex pole and
+\[
+ R_P=\{(b_0,\ldots,b_5)\in\Dfive^6:
+              (b_0,\ldots,b_5)\text{ is extendible through }P\}.
+\]
+
+\begin{theorem}[full \(F_{10}\) boundary relation]
+\label{thm:boundary}
+\[
+ R_P=\{(b_0,\ldots,b_5)\in\Dfive^6:
+                 b_0\xor\cdots\xor b_5=0\}.       \tag{3.1}
+\]
+\end{theorem}
+
+\begin{proof}
+For necessity, xor (2.1) over all 288 pole vertices.  Every internal edge
+appears twice and cancels, leaving precisely the six boundary labels.
+
+The converse is a finite, positive certificate.  There are \(10^6\)
+ordered words in \(\Dfive^6\), of which 62,560 have total xor zero.
+The symmetric group \(S_5\) acts simultaneously on the five coordinates
+of all six duads.  Direct canonicalization partitions the 62,560 admissible
+words into 571 orbits.
+
+The frozen file \texttt{s5-representatives.json} contains one canonical
+word from each orbit.  The corresponding row of
+\texttt{boundary-witnesses.jsonl} contains 435 duads: first the labels of
+the 429 internal edges in frozen order, then the six boundary labels.  For
+each of the 571 rows, the checker verifies that every entry is a duad, that
+the claimed boundary is the orbit representative, and that the three
+labels incident with each of the 288 vertices xor to zero.  A permutation
+of the five coordinates carries a verified witness to a witness for every
+other word in the same orbit.  Hence every word satisfying (3.1) extends.
+\end{proof}
+
+\begin{remark}[what is and is not trusted]
+The proof uses no solver's assertion of unsatisfiability.  CaDiCaL was used
+only as a producer of positive labellings.  The checker is an independently
+written Python program using only the standard library.  It reconstructs
+the entire one-million-word universe, recomputes the 571 orbits, and
+directly checks 248,385 edge labels and 164,448 vertex equations.  A full
+replay also recompiles and reruns the producer.  The witness file has
+SHA-256 digest
+\[
+\small\texttt{3e7328b4d02a459f6d1f85b8f357aa5ee70c38d81138bcea5b8ecaef84b2961d}.
+\]
+\end{remark}
+
+\begin{corollary}[emergent port symmetry]
+The boundary relation \(R_P\) is invariant under the full symmetric group
+\(S_6\) on the ports.
+\end{corollary}
+
+\begin{proof}
+Condition (3.1) is invariant under every permutation of its six entries.
+\end{proof}
+
+This is symmetry of the relation, not a claim that every port permutation
+is induced by an automorphism of the underlying pole.  Quotienting the
+relation by \(S_5\times S_6\) leaves 11 orbits.
+
+\section{Every trivalent network is positive}
+
+\begin{definition}
+An \emph{\(F_{10}\) trivalent network} is obtained from finitely many
+disjoint copies of \(P\) by attaching every port to exactly one new
+trivalent junction, with exactly three port edges incident with every
+junction.  A junction may receive several ports from the same pole or
+from the same connector triple.
+\end{definition}
+
+\begin{theorem}[universal network theorem]
+\label{thm:network}
+Every finite \(F_{10}\) trivalent network has a five-cycle double cover.
+\end{theorem}
+
+\begin{proof}
+Form a bipartite incidence multigraph \(H\).  Its left vertices are the
+two connector triples of every copy of \(P\); its right vertices are the
+trivalent junctions; and its edges are the individual port-to-junction
+incidences.  Every left vertex has degree three because a connector has
+three ports, and every right vertex has degree three by construction.
+Repeated incidences give parallel edges, which are retained separately.
+Thus \(H\) is a cubic bipartite multigraph.
+
+Every cubic bipartite multigraph is 3-edge-colourable.  Indeed, for a set
+\(S\) of vertices in one part, its \(3|S|\) incident edges end in
+\(N(S)\), which can receive at most \(3|N(S)|\) of them.  Hall's condition
+holds, so \(H\) has a perfect matching.  Removing it leaves a 2-regular
+bipartite multigraph, whose even cycles split into two further perfect
+matchings.  Call the three colours \(a,b,c\).
+
+Map these colours to the triangle duads
+\[
+                  q_a=01,\qquad q_b=02,\qquad q_c=12.
+\]
+At every junction each colour occurs once, so (2.2) gives the vertex
+condition.  At every connector each colour also occurs once.  The two
+connectors belonging to one pole therefore contain each of
+\(q_a,q_b,q_c\) exactly twice across their six ports, and their total xor
+is zero.  By Theorem~\ref{thm:boundary}, this boundary word extends through
+that pole.  Choose an extension independently for every pole.  The
+resulting duad labelling satisfies (2.1) at every vertex of the expanded
+network.  Lemma~\ref{lem:duad} converts it to a five-cycle double cover.
+\end{proof}
+
+\begin{remark}
+The positive labelling does not require the expanded graph to be simple,
+connected, bridgeless, or high-girth.  Those restrictions matter only when
+the network is proposed as a candidate counterexample.
+\end{remark}
+
+\section{Reproducibility}
+
+The complete package is publicly available in the draft repository and is
+also located, relative to this source tree, in
+\begin{center}
+\texttt{scratch/f10-boundary-relation-20260729/}.
+\end{center}
+The public review location is
+\href{https://github.com/AtharvaVaidya/mathematics-research/pull/5}
+{\texttt{github.com/AtharvaVaidya/mathematics-research/pull/5}}.
+From that directory, the fast independent audit is
+\begin{verbatim}
+shasum -a 256 -c SHA256SUMS
+python3 verify_boundary_relation.py \
+  f10-atom.txt s5-representatives.json \
+  boundary-witnesses.jsonl relation-summary.json
+\end{verbatim}
+On the frozen package it reports
+\begin{verbatim}
+ordered_duad_words=1000000 xor_zero=62560 S5_orbits=571
+positive=571 negative=0
+directly checked 571 witnesses, 248385 edge labels,
+and 164448 vertex xor equations
+\end{verbatim}
+The package ledger itself has SHA-256 digest
+\[
+\small\texttt{5b3abc755f6879dc4c938d5da7f2ae507e47457cc735fe80c9ea58a4226ed6f6}.
+\]
+
+The command \texttt{python3 verify.py} performs an end-to-end replay.  It
+first invokes the independent checker, then regenerates the orbit census,
+compiles the C++20 producer, reruns all 571 positive SAT queries, and checks
+the newly produced witnesses directly.  This replay currently expects the
+CaDiCaL headers and static library in the Homebrew paths recorded by the
+script.  The direct checker has no non-standard dependency.
+
+\section{Relationship to prior work and remaining questions}
+
+The pole topology comes from Karab\'a\v{s} et al.
+\cite{KarabasEtAl2022}.  Their theorem concerns girth, oddness, colouring
+defect, and proper superposition; it does not state the exact
+\(\Dfive\)-boundary relation proved here.  More broadly, Liu, Hao, Luo,
+and Zhang give sufficient conditions for superpositions to have a
+five-cycle double cover and verify several snark families
+\cite{LiuEtAl2023}.  M\'a\v{c}ajov\'a and \v{S}koviera develop the modern
+formalism of proper multipoles and superposition
+\cite{MacajovaSkoviera2021}.  These are the closest sources found in the
+initial search and must be compared in depth before asserting novelty.
+
+The contribution claimed by this draft is therefore deliberately narrow
+and provisional:
+\begin{enumerate}
+\item the explicit complete \(\Dfive\) boundary relation of one frozen
+      288-vertex six-pole;
+\item independently checkable positive witnesses for all boundary orbits;
+\item the short cubic-bipartite incidence proof covering every trivalent
+      network of copies of that pole.
+\end{enumerate}
+The most natural next question is whether the same full boundary relation
+holds for a structural class of the \(F_g\) poles, rather than only this
+concrete \(g=10\) instance.  A negative answer would also be useful:
+non-full boundary relations are potential building blocks for
+certificate-producing counterexample searches.
+
+\section*{Acknowledgment and AI-use disclosure}
+
+This manuscript is an openly AI-assisted research artifact.  OpenAI Codex
+agents made material contributions to the mathematical search, software,
+proof derivation, verification design, literature search, and prose.  The
+repository history and frozen certificates are provided so that the claims
+can be assessed without trusting the AI system.  The named human has not,
+by publication of this draft alone, represented that the work has passed
+independent expert review.
+
+\begin{thebibliography}{9}
+
+\bibitem{KarabasEtAl2022}
+J.~Karab\'a\v{s}, E.~M\'a\v{c}ajov\'a, R.~Nedela, and M.~\v{S}koviera,
+\emph{Girth, oddness, and colouring defect of snarks},
+Discrete Mathematics 345 (2022), Article 113040.
+\href{https://doi.org/10.1016/j.disc.2022.113040}
+{doi:10.1016/j.disc.2022.113040}.
+
+\bibitem{LiuEtAl2023}
+S.~Liu, R.-X.~Hao, R.~Luo, and C.-Q.~Zhang,
+\emph{5-Cycle Double Covers, 4-Flows, and Catlin Reduction},
+SIAM Journal on Discrete Mathematics 37 (2023), 253--267.
+\href{https://doi.org/10.1137/22M1472425}
+{doi:10.1137/22M1472425}.
+
+\bibitem{MacajovaSkoviera2021}
+E.~M\'a\v{c}ajov\'a and M.~\v{S}koviera,
+\emph{Superposition of snarks revisited},
+European Journal of Combinatorics 91 (2021), Article 103220.
+\href{https://doi.org/10.1016/j.ejc.2020.103220}
+{doi:10.1016/j.ejc.2020.103220}.
+
+\end{thebibliography}
+
+\end{document}

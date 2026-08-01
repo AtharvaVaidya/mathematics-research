@@ -1,0 +1,2 @@
+s UNSATISFIABLE
+{"clauses":1476,"negative_orbits":16,"variables":121}

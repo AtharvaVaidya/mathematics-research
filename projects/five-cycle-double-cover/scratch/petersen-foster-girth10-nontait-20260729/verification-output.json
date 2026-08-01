@@ -1,0 +1,79 @@
+{
+  "bridgeless": true,
+  "classification": "VERIFIED_POSITIVE_NONTait_TEST_GRAPH",
+  "connected": true,
+  "construction": "Petersen vertex substitution by Foster-minus-vertex-0",
+  "cubic": true,
+  "cyclic_edge_connectivity": 3,
+  "cyclic_three_edge_cut": [
+    [
+      88,
+      445
+    ],
+    [
+      0,
+      89
+    ],
+    [
+      16,
+      356
+    ]
+  ],
+  "edge_connectivity": 3,
+  "edges": 1335,
+  "explicit_ten_cycle": [
+    0,
+    81,
+    80,
+    79,
+    78,
+    77,
+    4,
+    3,
+    2,
+    1
+  ],
+  "fivecdc": true,
+  "fivecdc_edge_masks": 1335,
+  "fivecdc_labels_sha256": "441f2c328ff9631c3a7c9fe48ef39c6b029297a66676d7214131671dfc72b863",
+  "fivecdc_subgraph_edge_counts": [
+    517,
+    502,
+    552,
+    571,
+    528
+  ],
+  "girth": 10,
+  "graph6_sha256_with_newline": "c89a74ee736367cb6571600ee748f68e4eb4667787f57b1c05ccba6ee49cbd47",
+  "petersen_matching_complement_component_sizes": [
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      5
+    ]
+  ],
+  "petersen_perfect_matchings": 6,
+  "simple": true,
+  "tait_colourable": false,
+  "tait_proof": "odd-pole parity lemma plus Petersen matching audit",
+  "vertices": 890
+}

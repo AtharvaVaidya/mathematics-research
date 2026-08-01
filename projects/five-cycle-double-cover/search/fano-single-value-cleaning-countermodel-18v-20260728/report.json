@@ -1,0 +1,519 @@
+{
+  "Oum_potential_audit": {
+    "compatibility_rows": 57,
+    "exhaustive": true,
+    "first_five_color_witness": null,
+    "first_witness": null,
+    "five_color_merge_exists": false,
+    "free_dimension_after_translation_gauge": 1,
+    "maximum_clique_size_profile": {
+      "6": 2
+    },
+    "maximum_missing_pair_matching": 2,
+    "merge_exists": false,
+    "potential_solutions_after_translation_gauge": 2,
+    "potential_solutions_before_translation_gauge": 16,
+    "potential_solutions_examined": 2,
+    "rank_after_translation_gauge": 53,
+    "stopping_criterion": "five-color",
+    "used_pair_count_profile": {
+      "19": 2
+    }
+  },
+  "cleaning_pair_exists": false,
+  "construction": "search/fano-single-value-cleaning-countermodel-18v-20260728/construction.json",
+  "edges": 27,
+  "flow_values_by_edge": [
+    1,
+    2,
+    3,
+    4,
+    3,
+    7,
+    2,
+    6,
+    4,
+    6,
+    3,
+    5,
+    4,
+    1,
+    5,
+    2,
+    4,
+    6,
+    1,
+    2,
+    3,
+    7,
+    6,
+    2,
+    6,
+    6,
+    4
+  ],
+  "functional_value_rows": [
+    {
+      "cycle_basis_dimension_G_minus_M_t": 5,
+      "factor_components": 3,
+      "line": [
+        2,
+        4,
+        6
+      ],
+      "mu": 1,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 6,
+      "separating_dual_mask": 3,
+      "switch_value": 2,
+      "tau_image_basis_masks": [
+        3
+      ],
+      "tau_image_rank": 1,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 5,
+      "factor_components": 3,
+      "line": [
+        2,
+        4,
+        6
+      ],
+      "mu": 1,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 6,
+      "separating_dual_mask": 2,
+      "switch_value": 4,
+      "tau_image_basis_masks": [
+        5
+      ],
+      "tau_image_rank": 1,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 4,
+      "factor_components": 3,
+      "line": [
+        2,
+        4,
+        6
+      ],
+      "mu": 1,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 6,
+      "separating_dual_mask": 3,
+      "switch_value": 6,
+      "tau_image_basis_masks": [
+        3
+      ],
+      "tau_image_rank": 1,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 7,
+      "factor_components": 8,
+      "line": [
+        1,
+        4,
+        5
+      ],
+      "mu": 2,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 51,
+      "separating_dual_mask": 1,
+      "switch_value": 1,
+      "tau_image_basis_masks": [
+        130,
+        60,
+        24,
+        12
+      ],
+      "tau_image_rank": 4,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 5,
+      "factor_components": 8,
+      "line": [
+        1,
+        4,
+        5
+      ],
+      "mu": 2,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 51,
+      "separating_dual_mask": 2,
+      "switch_value": 4,
+      "tau_image_basis_masks": [
+        24,
+        9
+      ],
+      "tau_image_rank": 2,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 8,
+      "factor_components": 8,
+      "line": [
+        1,
+        4,
+        5
+      ],
+      "mu": 2,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 51,
+      "separating_dual_mask": 65,
+      "switch_value": 5,
+      "tau_image_basis_masks": [
+        150,
+        113,
+        54,
+        18,
+        6
+      ],
+      "tau_image_rank": 5,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 6,
+      "factor_components": 7,
+      "line": [
+        3,
+        4,
+        7
+      ],
+      "mu": 3,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 58,
+      "separating_dual_mask": 32,
+      "switch_value": 3,
+      "tau_image_basis_masks": [
+        66,
+        20,
+        12
+      ],
+      "tau_image_rank": 3,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 5,
+      "factor_components": 7,
+      "line": [
+        3,
+        4,
+        7
+      ],
+      "mu": 3,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 58,
+      "separating_dual_mask": 2,
+      "switch_value": 4,
+      "tau_image_basis_masks": [
+        33,
+        9
+      ],
+      "tau_image_rank": 2,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 8,
+      "factor_components": 7,
+      "line": [
+        3,
+        4,
+        7
+      ],
+      "mu": 3,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 58,
+      "separating_dual_mask": 33,
+      "switch_value": 7,
+      "tau_image_basis_masks": [
+        111,
+        33,
+        24,
+        10,
+        6
+      ],
+      "tau_image_rank": 5,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 7,
+      "factor_components": 6,
+      "line": [
+        1,
+        2,
+        3
+      ],
+      "mu": 4,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 27,
+      "separating_dual_mask": 6,
+      "switch_value": 1,
+      "tau_image_basis_masks": [
+        39,
+        15,
+        6
+      ],
+      "tau_image_rank": 3,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 5,
+      "factor_components": 6,
+      "line": [
+        1,
+        2,
+        3
+      ],
+      "mu": 4,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 27,
+      "separating_dual_mask": 1,
+      "switch_value": 2,
+      "tau_image_basis_masks": [
+        18,
+        10
+      ],
+      "tau_image_rank": 2,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 6,
+      "factor_components": 6,
+      "line": [
+        1,
+        2,
+        3
+      ],
+      "mu": 4,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 27,
+      "separating_dual_mask": 2,
+      "switch_value": 3,
+      "tau_image_basis_masks": [
+        53,
+        20,
+        5
+      ],
+      "tau_image_rank": 3,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 5,
+      "factor_components": 9,
+      "line": [
+        2,
+        5,
+        7
+      ],
+      "mu": 5,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 243,
+      "separating_dual_mask": 1,
+      "switch_value": 2,
+      "tau_image_basis_masks": [
+        136,
+        24
+      ],
+      "tau_image_rank": 2,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 8,
+      "factor_components": 9,
+      "line": [
+        2,
+        5,
+        7
+      ],
+      "mu": 5,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 243,
+      "separating_dual_mask": 6,
+      "switch_value": 5,
+      "tau_image_basis_masks": [
+        326,
+        160,
+        102,
+        39,
+        6
+      ],
+      "tau_image_rank": 5,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 8,
+      "factor_components": 9,
+      "line": [
+        2,
+        5,
+        7
+      ],
+      "mu": 5,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 243,
+      "separating_dual_mask": 2,
+      "switch_value": 7,
+      "tau_image_basis_masks": [
+        340,
+        113,
+        17,
+        12,
+        5
+      ],
+      "tau_image_rank": 5,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 7,
+      "factor_components": 7,
+      "line": [
+        1,
+        6,
+        7
+      ],
+      "mu": 6,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 15,
+      "separating_dual_mask": 27,
+      "switch_value": 1,
+      "tau_image_basis_masks": [
+        86,
+        24,
+        9
+      ],
+      "tau_image_rank": 3,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 4,
+      "factor_components": 7,
+      "line": [
+        1,
+        6,
+        7
+      ],
+      "mu": 6,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 15,
+      "separating_dual_mask": 4,
+      "switch_value": 6,
+      "tau_image_basis_masks": [
+        33,
+        3
+      ],
+      "tau_image_rank": 2,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 8,
+      "factor_components": 7,
+      "line": [
+        1,
+        6,
+        7
+      ],
+      "mu": 6,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 15,
+      "separating_dual_mask": 33,
+      "switch_value": 7,
+      "tau_image_basis_masks": [
+        80,
+        57,
+        10,
+        6
+      ],
+      "tau_image_rank": 4,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 6,
+      "factor_components": 6,
+      "line": [
+        3,
+        5,
+        6
+      ],
+      "mu": 7,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 36,
+      "separating_dual_mask": 14,
+      "switch_value": 3,
+      "tau_image_basis_masks": [
+        58,
+        6
+      ],
+      "tau_image_rank": 2,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 8,
+      "factor_components": 6,
+      "line": [
+        3,
+        5,
+        6
+      ],
+      "mu": 7,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 36,
+      "separating_dual_mask": 5,
+      "switch_value": 5,
+      "tau_image_basis_masks": [
+        34,
+        23,
+        10,
+        5
+      ],
+      "tau_image_rank": 4,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    },
+    {
+      "cycle_basis_dimension_G_minus_M_t": 4,
+      "factor_components": 6,
+      "line": [
+        3,
+        5,
+        6
+      ],
+      "mu": 7,
+      "r_mu_in_image_tau_t": false,
+      "rainbow_defect_mask": 36,
+      "separating_dual_mask": 7,
+      "switch_value": 6,
+      "tau_image_basis_masks": [
+        5,
+        3
+      ],
+      "tau_image_rank": 2,
+      "witness_binary_cycle_mask": null,
+      "witness_edge_ids": null
+    }
+  ],
+  "schema": "fano-single-value-line-cleaning-audit-v1",
+  "vertices": 18
+}

@@ -1,0 +1,55 @@
+{
+  "date": "2026-07-28",
+  "status": "FINITE_EXACT_CENSUS_NO_COUNTERMODEL",
+  "claim_boundary": "All 31 retained order-44 oddness-4 snarks pass every vertex-star test. This is not a universal proof and is not a proof of FiveCDC.",
+  "target": {
+    "fibre": "tree multiplicity one on the three edges incident with a selected vertex, and two on every other edge",
+    "support": [0, 4, 5, 6, 7],
+    "missing_points": [1, 2, 3],
+    "special_direction_plane": [0, 1, 2, 3],
+    "normal_coordinate_bit": 2
+  },
+  "counts": {
+    "input_graphs": 31,
+    "vertices_per_graph": 44,
+    "vertex_star_fibres": 1364,
+    "feasible_fibres": 1364,
+    "sat_supported_fibres": 1364,
+    "unsat_supported_fibres": 0,
+    "independently_verified_literal_witnesses": 1364
+  },
+  "hashes": {
+    "input_graph6_sha256": "d701f0cffce5aaba17315d2d9d3851bb747c4e1ece3e2cf188522237b388a0ef",
+    "producer_source_sha256": "97ae2f25bc96ea713f36d4fdf44aff11ab2b2131401e6c6c4893ec6c8f35a4dd",
+    "compiled_producer_sha256": "fa3756a9ca1e9aad46443bcc405835d4c58960400bf19b55f2e994dd47ae305b",
+    "runner_source_sha256": "d39aba9bea918f623580cf2126c0640b37e57bf2312cbfa2976719556c5e5f99",
+    "independent_verifier_source_sha256": "8bce6420794a74978a97993feb3f956168afd0e9959371bdd35f54682d67ca3f",
+    "literal_witness_jsonl_sha256": "3ff25437d5e32fff7c60ceca695a6476d6c7d2404c1e8551bf14987f228cd4b4",
+    "independent_verification_json_sha256": "803055d00e601547ee7e59135089849796dc12367302a233822dde7075a1b560",
+    "normalized_semantic_witness_sha256": "abb8bab730e873a6648d6e56987b6595f95162b2a3e7bd07d592b8d300790800"
+  },
+  "artifacts": {
+    "input": "search/known_snarks/source/snarks_44.04.oddness4.cyc4.g6",
+    "producer": "scratch/search_jaeger_special_fibres_sat.cpp",
+    "runner": "scratch/run_jaeger_coordinate_five_order44.py",
+    "independent_verifier": "scratch/verify_jaeger_coordinate_five_order44.py",
+    "literal_witnesses": "output/jaeger-coordinate-five-order44/witnesses.jsonl",
+    "independent_verification": "output/jaeger-coordinate-five-order44/verification.json"
+  },
+  "toolchain": {
+    "compiler": "Apple clang 21.0.0",
+    "solver": "CaDiCaL 3.0.1",
+    "python": "standard library only for runner and independent verifier"
+  },
+  "independent_checks": [
+    "short graph6 decoding and exact 44-vertex, 66-edge simple cubic structure",
+    "connectivity and one-edge-deletion bridgelessness",
+    "each of the 44 vertex stars occurs exactly once per graph",
+    "three spanning trees and the prescribed edge multiplicities",
+    "fundamental completions reconstructed from cotree parity",
+    "Eulerian completion parity and cotree containment",
+    "emitted nowhere-zero flow values equal reconstructed values",
+    "every pair label is supported on {0,4,5,6,7} and xors to the edge flow",
+    "every point has even incident multiplicity at every vertex"
+  ]
+}

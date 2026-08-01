@@ -1,0 +1,1 @@
+PASS: prescribed-circuit Tait lift; graphs=6; edge_pairs=1596; inverse_insertions=1596

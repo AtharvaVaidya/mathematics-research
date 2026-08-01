@@ -1,0 +1,47 @@
+Human-checkable certificate note for the order-144 auxiliary countermodel
+=======================================================================
+
+Claim
+-----
+The 144-vertex graph encoded by the first line of
+`countermodel-order144.txt` has a standard five-cycle
+double cover (where a "cycle" means an Eulerian edge subset and need not
+be connected).
+
+Certificate
+-----------
+`fivecdc.witness`
+
+The witness repeats the graph6 string, lists all 216 undirected edges in
+lexicographic endpoint order, numbered 0 through 215, and gives five
+increasing lists C1,...,C5 of edge numbers.
+
+Direct finite proof
+-------------------
+For each list C_i, count at each vertex the listed edges incident with
+that vertex.  Every such count is even (in this cubic graph it is 0 or
+2), so every C_i is an Eulerian edge subset.  Next count, for each edge
+number 0,...,215, the lists that contain it.  Every count is exactly two.
+These two finite checks prove that C1,...,C5 are a five-cycle double
+cover by definition.
+
+The independent Python-stdlib checker performs exactly these checks; it
+does not invoke a SAT solver or import project code:
+
+  python3 verify_fivecdc.py fivecdc.witness countermodel-order144.txt
+
+Expected leading line:
+
+  VALID FIVE-CYCLE DOUBLE COVER
+
+The CaDiCaL program `find_fivecdc.cpp` was used only to
+discover the certificate.  Its SAT variables x[e,i] mean e is in C_i.
+Its clauses enforce exactly two true variables per edge and even parity
+at each cubic vertex.  The explicit satisfying assignment embodied in
+the witness, not trust in the solver, establishes the claim.
+
+Consequence
+-----------
+Although the same host has score zero for the investigated binary-cycle
+repair statement, it is not a counterexample to the standard Five-Cycle
+Double Cover Conjecture.

@@ -1,0 +1,116 @@
+$ /opt/homebrew/bin/cadical --lrat --no-binary /private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/cnf/repair-t4-b1.cnf /private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/lrat/repair-t4-b1.lrat
+c --- [ banner ] -------------------------------------------------------------
+c
+c CaDiCaL SAT Solver
+c Copyright (c) 2016-2026
+c A. Biere, M. Fleury, N. Froleyks, K. Fazekas, F. Pollitt, T. Faller
+c JKU Linz, University of Freiburg, TU Wien
+c
+c Version 3.0.1
+c Apple clang version 21.0.0 (clang-2100.0.123.102) -Wall -Wextra -O3 -DNDEBUG -DNCLOSEFROM
+c Sun Jul 19 15:40:55 UTC 2026 Darwin Tahoe-arm64.local 25.4.0 arm64
+c
+c --- [ proof tracing ] ------------------------------------------------------
+c
+c opening file to write '/private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/lrat/repair-t4-b1.lrat'
+c writing non-binary proof trace to '/private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/lrat/repair-t4-b1.lrat'
+c
+c --- [ parsing input ] ------------------------------------------------------
+c
+c reading DIMACS file from '/private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/cnf/repair-t4-b1.cnf'
+c opening file to read '/private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/cnf/repair-t4-b1.cnf'
+c found 'p cnf 648 3407' header
+c parsed 3407 clauses in 0.00 seconds process time
+c
+c --- [ options ] ------------------------------------------------------------
+c
+c   --binary=false                 (different from default 'true')
+c   --lrat=true                    (different from default 'false')
+c
+c --- [ solving ] ------------------------------------------------------------
+c
+c time measured in process time since initialization
+c
+c  seconds  reduction conflicts       size tier2     variables
+c         MB    restarts   redundant    glue  trail      remaining
+c          level     rate       size/glu tier1 irredundant
+c
+c *  0.00  0  0 0   0  0    0    0 0.0 0 0 2 6  0% 3242 615 95%
+c )  0.00  0  0 0   0  0    0    0 0.0 0 0 2 6  0% 3242 615 95%
+c {  0.00  0  0 0   0  0    0    0 0.0 0 0 2 6  0% 3242 615 95%
+c i  0.00  0 20 0   0  1  220  160 2.0 4 2 2 6 35% 3242 598 92%
+c i  0.00  0 20 0   0  1  230  167 2.0 4 2 2 6 35% 3242 596 92%
+c i  0.00  0 20 0   0  1  239  171 2.0 4 2 2 6 35% 3242 594 92%
+c i  0.00  0 19 0   0  1  241  171 2.0 4 2 2 6 35% 3242 587 91%
+c }  0.00  0 19 0   0  1  243  171 2.0 4 2 2 6 35% 3242 569 88%
+c 0  0.00  0 19 0   0  1  243  171 2.0 4 2 2 6 35% 3242 569 88%
+c
+c --- [ closing proof ] ------------------------------------------------------
+c
+c LRAT proof file '/private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/lrat/repair-t4-b1.lrat' closed
+c LRAT 407 added clauses 55.91%
+c LRAT 321 deleted clauses 44.09%
+c LRAT 25749 bytes (0.02 MB)
+c
+c --- [ result ] -------------------------------------------------------------
+c
+s UNSATISFIABLE
+c
+c --- [ run-time profiling ] -------------------------------------------------
+c
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c
+c         0.00   97.61% search
+c         0.00   85.76% parse
+c         0.00   84.57% unstable
+c         0.00   12.28% lucky
+c         0.00    0.00% simplify
+c   =================================
+c         0.00   48.47% solve
+c
+c last line shows process time for solving
+c (percentage relative to total process time)
+c
+c --- [ statistics ] ---------------------------------------------------------
+c
+c chronological:                87        35.80 %  of conflicts
+c conflicts:                   243    264130.43    per second
+c decisions:                   296    321739.13    per second
+c fixed:                        79        12.19 %  of all variables
+c learned:                     208        85.60 %  per conflict
+c learned_lits:               1281       100.00 %  learned literals
+c minimized:                     0         0.00 %  learned literals
+c shrunken:                    207        16.16 %  learned literals
+c minishrunken:                219        17.10 %  learned literals
+c otfs:                         25        10.29 %  of conflict
+c propagations:               3606         3.92 M  per second
+c subsumed:                     32         0.93 %  of all clauses
+c strengthened:                 25         0.73 %  of all clauses
+c ticks:                     26085         7.23    propagation
+c
+c seconds are measured in process time for solving
+c
+c --- [ glue usage ] ---------------------------------------------------------
+c
+c focused glue 2 used 92 clauses 30.36% accumulated 79.86% tier1
+c focused glue 3 used 41 clauses 13.53% accumulated 93.39% tier2
+c
+c stable glue 2 used 0 clauses 0.000% accumulated 0.000% tier1
+c stable glue 3 used 0 clauses 0.000% accumulated 0.000%
+c stable glue 4 used 0 clauses 0.000% accumulated 0.000%
+c stable glue 5 used 0 clauses 0.000% accumulated 0.000%
+c stable glue 6 used 0 clauses 0.000% accumulated 0.000% tier2
+c
+c
+c --- [ resources ] ----------------------------------------------------------
+c
+c total process time since initialization:         0.00    seconds
+c total real time since initialization:            0.00    seconds
+c maximum resident set size of process:            2.83    MB
+c
+c --- [ shutting down ] ------------------------------------------------------
+c
+c exit 20
+
+exit_code=20

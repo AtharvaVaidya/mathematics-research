@@ -1,0 +1,7 @@
+PASS cyclically-4 hybrid path-core frontier through order 14
+cyclic4_macros=110 junction_orbits=9278
+girth_at_least_5_macros=12 junction_orbits=455
+macro_witnesses=9278 atom_completions=2592
+cyclic_three_cut_diagnostic_repair=checked
+all_matchings_all_atom_types_all_port_orders=true
+target_unsat=0 target_resolution=false

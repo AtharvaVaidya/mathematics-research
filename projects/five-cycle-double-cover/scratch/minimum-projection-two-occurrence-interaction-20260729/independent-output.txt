@@ -1,0 +1,5 @@
+PASS: independent two-occurrence/Petersen audit
+proper_words=240 flows=60 word_pairs=960 clean=0 deletion=960 profiles=3/4,4/3
+perfect_matchings=6 complement_profiles=5+5,5+5,5+5,5+5,5+5,5+5
+graph simple_cubic_bridgeless=yes tait=no
+descent_support=5 complement_connected=yes low=323121321011123

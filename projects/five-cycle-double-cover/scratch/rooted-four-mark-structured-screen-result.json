@@ -1,0 +1,63 @@
+{
+  "schema": "rooted-four-mark-structured-screen-v1",
+  "date": "2026-07-26",
+  "classification": "EXACT_STRUCTURED_FINITE_SCREEN_NOT_A_UNIVERSAL_THEOREM",
+  "source_family": {
+    "generator": "scratch/generate_marked_three_sums.py",
+    "labelled_rows": 13824,
+    "order": 38,
+    "required_mark_edges": [
+      [0, 1],
+      [2, 3],
+      [4, 5],
+      [6, 7]
+    ]
+  },
+  "producer_command": "python3 scratch/generate_marked_three_sums.py | scratch/tait_all_coloring_mark_separation --target 4 --required-edge-ends 0-1,2-3,4-5,6-7 --marked-cyclic-connectivity 4 --progress 0",
+  "producer_result": {
+    "rows": 13824,
+    "universally_separated_required_mark_rows_before_marked_cut_filter": 288,
+    "marked_cut_compliant_witness_rows": 240,
+    "partial_colouring_search_record_calls": 587123
+  },
+  "consumer": {
+    "path": "scratch/analyze_rooted_four_mark_batch.py",
+    "command_suffix": "| python3 scratch/analyze_rooted_four_mark_batch.py",
+    "independent_operations": [
+      "graph6 decoding",
+      "connected simple cubic assertions",
+      "fundamental binary cycle basis",
+      "Gaussian elimination of the all-four-mark trace",
+      "Gray-order enumeration of the affine cycle fibre",
+      "componentwise marked-parity check",
+      "intersection of every valid cycle edge set"
+    ]
+  },
+  "consumer_result": {
+    "rows": 240,
+    "total_componentwise_even_all_mark_cycles": 3818240,
+    "rows_with_a_forced_unmarked_edge": 0
+  },
+  "unfiltered_universal_separation_control": {
+    "rows": 288,
+    "total_componentwise_even_all_mark_cycles": 4620800,
+    "rows_with_a_forced_unmarked_edge": 0,
+    "scope": "The same cycle consumer run before imposing the marked cyclic-cut filter."
+  },
+  "four_cut_repair_diagnostic": {
+    "generator": "scratch/generate_rooted_four_cut_repairs.py",
+    "generated_simple_connected_cubic_rows": 512,
+    "universally_separated_required_mark_rows": 0,
+    "current_source_replay": "PASS: 512 rows, zero universally separated required-mark rows",
+    "interpretation": "One cross-shore switch repairs the old 3+1 two-cut to a four-cut but destroys universal separation in every generated row."
+  },
+  "hashes": {
+    "cycle_consumer_sha256": "af96166ef053f2ef65e56f0552136c2417bb8a6fcfd506884e1c349e34ce2302",
+    "three_sum_generator_sha256": "255fb20b25ccf4275868dd7228899373df1a65100f77b7bee3afdd6cd23bd56c",
+    "tait_checker_source_sha256": "a00c2f53a3b95a06a7e8767aae2eb2bfa794fc95eeeba18bcac34aea6a12072a",
+    "tait_checker_binary_sha256": "2e9d51a213f91d176112acf8a63f12149d3f55f7574a8c187de5fa0bf3105025",
+    "four_cut_repair_generator_sha256": "f81ab01cc37c3902f21b08f327981b3cae6d0d02127fc587e3c3bfe667f8fadf",
+    "four_cut_repair_generator_historical_sha256": "637b25902c832eb21fba01a45958a67c47f9f2902d47c43a1a0f33f3f31ee073"
+  },
+  "scope_warning": "The 240 rows form one structured labelled construction family. Zero forced edges is not a proof of the rooted four-mark theorem. The producer's colouring count is a search trace because rows may stop at the first required-mark conflict."
+}

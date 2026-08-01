@@ -1,0 +1,49 @@
+{
+  "schema": "mnp-reconstructed-minimum-support-packing-verification-v1",
+  "status": "PASS",
+  "scope": "finite checks on the conditional figure-derived reconstruction",
+  "command": "python3 verify.py --max-n 20",
+  "checked_n": [2, 20],
+  "finite_checks": {
+    "literal_H2_base": true,
+    "literal_open_tile_all_40_vertex_parities": true,
+    "recursive_graph_and_packing_through_20": true,
+    "frozen_H2_H5_edge_exact_regression": true,
+    "simple_connected_cubic_bridgeless_girth5_through_20": true,
+    "matching_and_two_edge_disjoint_boundary_joins_through_20": true,
+    "closed_form_counts_through_20": true
+  },
+  "frozen_edge_list_sha256": {
+    "H2": "db8aa26a5ec4541b1200a3b9093e657068d6d0141aa79f0d4ecca50671aaada2",
+    "H3": "f1899ad038b83d3db6fce659d97b9e676860e74e00b5ee2d974bf17a2d468541",
+    "H4": "258a986aa053ff572bad1c1a049f72ad4cae3b2d9631143ed46016aa8e1ff76d",
+    "H5": "f1d9b9a18c543e8a37045d04bcb1d69859762aab6e0dba860b27aaa28b9bbc0f"
+  },
+  "endpoint_n20": {
+    "vertices": 802,
+    "edges": 1203,
+    "girth": 5,
+    "M": 20,
+    "J1": 243,
+    "J2": 246,
+    "R": 694,
+    "edge_list_sha256": "03c701d20d88586e39488bfd4c50dacb5ce1516445725790a84d7e92ea3902af"
+  },
+  "larger_prefix_smoke": {
+    "command": "python3 verify.py --max-n 100",
+    "status": "PASS",
+    "endpoint": {
+      "vertices": 4002,
+      "edges": 6003,
+      "M": 100,
+      "J1": 1203,
+      "J2": 1126,
+      "R": 3574
+    }
+  },
+  "imported_not_machine_reproved": {
+    "MNP_flow_resistance_theorem": "r_f(H_n)=n",
+    "MNP_exact_zero_support": "{epsilon_1,...,epsilon_n}",
+    "reconstruction_identity": "conditional on audited figure transcription"
+  }
+}

@@ -1,0 +1,9 @@
+order=4 connected_cubic=1 non_tait=0 cyclically4_non_tait=0
+order=6 connected_cubic=2 non_tait=0 cyclically4_non_tait=0
+order=8 connected_cubic=5 non_tait=0 cyclically4_non_tait=0
+order=10 connected_cubic=19 non_tait=2 cyclically4_non_tait=1
+order=12 connected_cubic=85 non_tait=5 cyclically4_non_tait=0
+order=14 connected_cubic=509 non_tait=34 cyclically4_non_tait=0
+order=16 connected_cubic=4060 non_tait=212 cyclically4_non_tait=0
+qualifying=[(10, 'ICOf@pSb?')]
+CERTIFIED: Petersen is the only cyclically-4 non-Tait simple cubic graph below order 18

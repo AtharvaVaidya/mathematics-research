@@ -1,0 +1,36 @@
+{
+  "all_terminal_plateaus_root_universal": true,
+  "case": "order20",
+  "edges": 30,
+  "equal_surface_chi_plateaus": 55,
+  "first_failure": null,
+  "graph6": "S?AI???OWCKC?IGQ@_S_?CO?A?HO?c_?G",
+  "schema": "d5-surface-chi-target-orbit-v1",
+  "states_mod_global_s5": 18893,
+  "surface_chi_range": [
+    -6,
+    -1
+  ],
+  "terminal_plateau_coordinate_support_ranges": [
+    {
+      "count": 2,
+      "maximum_used_coordinates": 5,
+      "minimum_used_coordinates": 4
+    }
+  ],
+  "terminal_plateau_failures": 0,
+  "terminal_plateau_histogram": [
+    {
+      "count": 1,
+      "size": 640,
+      "surface_chi": -2
+    },
+    {
+      "count": 1,
+      "size": 481,
+      "surface_chi": -1
+    }
+  ],
+  "terminal_surface_chi_plateaus": 2,
+  "vertices": 20
+}

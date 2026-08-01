@@ -1,0 +1,4 @@
+labelg canonical graph6: Gs@ipo
+planarg output: planar
+order: 8
+size: 12

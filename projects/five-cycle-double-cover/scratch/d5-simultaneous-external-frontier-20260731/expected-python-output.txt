@@ -1,0 +1,6 @@
+PYTHON_SIMULTANEOUS order=4 graphs=1 representative_flows=18 interfaces=12 PASS
+PYTHON_SIMULTANEOUS order=6 graphs=2 representative_flows=138 interfaces=72 PASS
+PYTHON_SIMULTANEOUS order=8 graphs=5 representative_flows=1464 interfaces=360 PASS
+PYTHON_SIMULTANEOUS order=10 graphs=18 representative_flows=18012 interfaces=2160 PASS
+PYTHON_SIMULTANEOUS order=12 graphs=81 representative_flows=309678 interfaces=14580 PASS
+PYTHON_SIMULTANEOUS_FRONTIER PASS

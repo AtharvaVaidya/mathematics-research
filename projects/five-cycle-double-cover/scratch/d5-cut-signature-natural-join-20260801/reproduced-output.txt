@@ -1,0 +1,7 @@
+BOUNDARY two_pole_equal=10 three_pole_ordered_triangles=60 PASS
+TRANSLATION legal_weight2=60 legal_weight4=30 factor_toggle_law=PASS
+TWO_CUT graph6=GCXmd_ cut=7,10 boundary=03,03 root_flows=18 cap_flows=18 direct_flows=324 product=324 root_states=4->1 cap_states=18->18 external_masks=3,5,6,7 PASS
+THREE_CUT graph6=GCZJd_ cut=2,3,6 boundary=03,05,06 root_flows=3 cap_flows=9 direct_flows=27 product=27 root_states=3->3 cap_states=9->9 external_masks=3,5,6,7 PASS
+ORDER12_COMPLEMENT graph6=K?`@EQgLAcAo missing=4 cycle=0,3,5 typed=32->10 external=4->3 PASS
+ORDER14_COMPLEMENT graph6=M??CBAPqB_B_H_B_? missing=3 cycle=0,6,8,18,20 typed=19->51 external=1->5 PASS
+PASS

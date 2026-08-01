@@ -1,0 +1,5 @@
+k=3: admissible_count_vectors=28 bad=0
+k=5: admissible_count_vectors=168 bad=0
+k=7: admissible_count_vectors=588 bad=0
+k=9: admissible_count_vectors=1568 bad=28
+INDEPENDENT PASS

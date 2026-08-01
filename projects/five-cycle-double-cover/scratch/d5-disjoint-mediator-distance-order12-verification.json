@@ -1,0 +1,79 @@
+{
+  "complete_required_state_root_pairs": 3970092,
+  "complete_rows_regenerated": 81,
+  "focused_direct_radius_two_replays": [
+    {
+      "flows_mod_global_s5": 592,
+      "graph6": "K??FEb_F?wD_",
+      "index": 1,
+      "kempe_orbits_mod_global_s5": 64,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 12,
+      "minimum_switch_distance_histogram": {
+        "0": 86976,
+        "1": 3600
+      },
+      "required_state_root_pairs": 90576,
+      "states_with_disjoint_intersecting_circuit_requirements": 592
+    },
+    {
+      "flows_mod_global_s5": 466,
+      "graph6": "K??FEbGL@WB_",
+      "index": 2,
+      "kempe_orbits_mod_global_s5": 8,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 66,
+      "minimum_switch_distance_histogram": {
+        "0": 68922,
+        "1": 2232,
+        "2": 144
+      },
+      "required_state_root_pairs": 71298,
+      "states_with_disjoint_intersecting_circuit_requirements": 466
+    },
+    {
+      "flows_mod_global_s5": 296,
+      "graph6": "K?AEDDWX@oB_",
+      "index": 10,
+      "kempe_orbits_mod_global_s5": 128,
+      "maximum_minimum_switch_distance": 0,
+      "maximum_orbit": 4,
+      "minimum_switch_distance_histogram": {
+        "0": 45288
+      },
+      "required_state_root_pairs": 45288,
+      "states_with_disjoint_intersecting_circuit_requirements": 296
+    },
+    {
+      "flows_mod_global_s5": 976,
+      "graph6": "K?`CRAWK`gGg",
+      "index": 76,
+      "kempe_orbits_mod_global_s5": 4,
+      "maximum_minimum_switch_distance": 2,
+      "maximum_orbit": 432,
+      "minimum_switch_distance_histogram": {
+        "0": 115888,
+        "1": 29648,
+        "2": 2064
+      },
+      "required_state_root_pairs": 147600,
+      "states_with_disjoint_intersecting_circuit_requirements": 976
+    },
+    {
+      "flows_mod_global_s5": 488,
+      "graph6": "K?`CPagPagEG",
+      "index": 81,
+      "kempe_orbits_mod_global_s5": 8,
+      "maximum_minimum_switch_distance": 1,
+      "maximum_orbit": 144,
+      "minimum_switch_distance_histogram": {
+        "0": 70728,
+        "1": 3936
+      },
+      "required_state_root_pairs": 74664,
+      "states_with_disjoint_intersecting_circuit_requirements": 488
+    }
+  ],
+  "scope": "All census identities and arithmetic are checked; five deterministic boundary/extremal rows are semantically replayed by direct radius-two expansion.",
+  "status": "PASS"
+}

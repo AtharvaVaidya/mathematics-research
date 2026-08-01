@@ -1,0 +1,5 @@
+COLOUR 0 matching=6 shortest_t_join=10 containing_cycle=16
+COLOUR 1 matching=5 shortest_t_join=11 containing_cycle=16
+COLOUR 2 matching=3 shortest_t_join=13 containing_cycle=16
+COLOUR 3 matching=2 shortest_t_join=14 containing_cycle=16
+PASS: independent metric-closure T-join audit proves all four full binary-cycle exchange inequalities

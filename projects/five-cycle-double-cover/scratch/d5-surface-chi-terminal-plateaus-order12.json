@@ -1,0 +1,5988 @@
+{
+  "claim_tested": "Every terminal equal-surface-chi Kempe plateau is root-universal.",
+  "implication": "For every audited state and root pair, a root-good state is reachable along a surface-chi-nondecreasing Kempe path.",
+  "rows": [
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 592,
+      "graph6": "K??FEb_F?wD_",
+      "kempe_orbits_mod_global_s5": 64,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 4,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 24,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 36,
+          "plateau_size": 12,
+          "surface_chi": 0
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 4,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 60,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 64,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 466,
+      "graph6": "K??FEbGL@WB_",
+      "kempe_orbits_mod_global_s5": 8,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 7,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 13,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 6,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 8,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 645,
+      "graph6": "K??FEagT@WB_",
+      "kempe_orbits_mod_global_s5": 1,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 42,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 1,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 9,
+          "plateau_size": 1,
+          "surface_chi": 0
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 9,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 443,
+      "graph6": "K??FEaKY@gB_",
+      "kempe_orbits_mod_global_s5": 22,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 5,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 2,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 4,
+          "plateau_size": 20,
+          "surface_chi": -1
+        },
+        {
+          "count": 9,
+          "plateau_size": 1,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 122,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 8,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 4,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 7,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 9,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 9,
+      "terminal_surface_chi_plateaus": 22,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 32,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 34,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 414,
+      "graph6": "K??FEaKR@oE_",
+      "kempe_orbits_mod_global_s5": 35,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 32,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 3,
+          "plateau_size": 56,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 84,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 3,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 34,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 34,
+      "terminal_surface_chi_plateaus": 38,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 20,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 6,
+          "plateau_size": 5,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 26,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 623,
+      "graph6": "K?AEF@oM?w@o",
+      "kempe_orbits_mod_global_s5": 28,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 176,
+          "surface_chi": -2
+        },
+        {
+          "count": 20,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 6,
+          "plateau_size": 5,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 31,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 26,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 26,
+      "terminal_surface_chi_plateaus": 28,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 24,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 4,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 40,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 372,
+      "graph6": "K?AEB`gHcoB_",
+      "kempe_orbits_mod_global_s5": 42,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 24,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 4,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 40,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 34,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 72,
+          "surface_chi": 0
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 3,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 40,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 40,
+      "terminal_surface_chi_plateaus": 44,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 380,
+      "graph6": "K?AEEHaM@oB_",
+      "kempe_orbits_mod_global_s5": 32,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 10,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 14,
+          "plateau_size": 12,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 24,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 30,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 32,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 760,
+      "graph6": "K?AEEDcF@oF?",
+      "kempe_orbits_mod_global_s5": 16,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 20,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 36,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 72,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 14,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 16,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 296,
+      "graph6": "K?AEDDWX@oB_",
+      "kempe_orbits_mod_global_s5": 128,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 28,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 60,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 36,
+          "plateau_size": 4,
+          "surface_chi": 0
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 4,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 28,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 96,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 128,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 296,
+      "graph6": "K?ABF@ce?sB_",
+      "kempe_orbits_mod_global_s5": 128,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 28,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 60,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 36,
+          "plateau_size": 4,
+          "surface_chi": 0
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 4,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 28,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 96,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 128,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 303,
+      "graph6": "K?ABEb_J?sB_",
+      "kempe_orbits_mod_global_s5": 17,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 9,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 5,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 1,
+          "plateau_size": 176,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 29,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 13,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 2,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 17,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 284,
+      "graph6": "K?ABEagE`gH_",
+      "kempe_orbits_mod_global_s5": 16,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 8,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 64,
+          "surface_chi": -1
+        },
+        {
+          "count": 4,
+          "plateau_size": 10,
+          "surface_chi": 0
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 14,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 16,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 16,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 32,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 2,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 6,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 226,
+      "graph6": "K?ABE`Ke@gDO",
+      "kempe_orbits_mod_global_s5": 46,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 18,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 16,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 16,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 20,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 32,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 40,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 2,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 18,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 20,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 6,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 6,
+      "terminal_surface_chi_plateaus": 46,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 267,
+      "graph6": "K?ABE`Ke@WEO",
+      "kempe_orbits_mod_global_s5": 40,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 10,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 5,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 9,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 4,
+          "plateau_size": 8,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 19,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 26,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 3,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 5,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 38,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 52,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 6,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 10,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 14,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 24,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 40,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 8,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 24,
+          "plateau_size": 2,
+          "surface_chi": 0
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 32,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 388,
+      "graph6": "K?ABBb_e?[B_",
+      "kempe_orbits_mod_global_s5": 48,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 12,
+          "surface_chi": -2
+        },
+        {
+          "count": 8,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 4,
+          "surface_chi": -1
+        },
+        {
+          "count": 6,
+          "plateau_size": 24,
+          "surface_chi": -1
+        },
+        {
+          "count": 24,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 7,
+          "surface_chi": 0
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 2,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 12,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 32,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 32,
+      "terminal_surface_chi_plateaus": 48,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?ABBb_E_wP_",
+      "kempe_orbits_mod_global_s5": 64,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 12,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 24,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 20,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 8,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 12,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 50,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 64,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?ABB`gc_wP_",
+      "kempe_orbits_mod_global_s5": 64,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 12,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 24,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 20,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 8,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 12,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 50,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 64,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 380,
+      "graph6": "K?ABB`gEcgP_",
+      "kempe_orbits_mod_global_s5": 32,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 10,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 14,
+          "plateau_size": 12,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 24,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 30,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 32,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 380,
+      "graph6": "K?ABCqWUBGCo",
+      "kempe_orbits_mod_global_s5": 32,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 10,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 14,
+          "plateau_size": 12,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 24,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 30,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 32,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?ABArOb@WEO",
+      "kempe_orbits_mod_global_s5": 64,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 12,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 24,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 20,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 8,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 12,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 50,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 64,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 299,
+      "graph6": "K?ABApok?[P_",
+      "kempe_orbits_mod_global_s5": 4,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 7,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 13,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 26,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 3,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 4,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 598,
+      "graph6": "K?ABApoMCWOo",
+      "kempe_orbits_mod_global_s5": 2,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 40,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 78,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 2,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 4,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 16,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 249,
+      "graph6": "K?ABApoc`WP_",
+      "kempe_orbits_mod_global_s5": 24,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 12,
+          "surface_chi": -2
+        },
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 24,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 7,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 48,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 4,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 14,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 6,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 16,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 16,
+      "terminal_surface_chi_plateaus": 24,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 4,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 16,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 249,
+      "graph6": "K?ABArCe@gDO",
+      "kempe_orbits_mod_global_s5": 24,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 12,
+          "surface_chi": -2
+        },
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 24,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 7,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 48,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 4,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 14,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 6,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 16,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 16,
+      "terminal_surface_chi_plateaus": 24,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 122,
+      "graph6": "K?ABCiWRB_DO",
+      "kempe_orbits_mod_global_s5": 32,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 5,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 10,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 10,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 5,
+          "plateau_size": 8,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 16,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 5,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 26,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 32,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 488,
+      "graph6": "K?ABCiKU@oKO",
+      "kempe_orbits_mod_global_s5": 8,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 20,
+          "surface_chi": -1
+        },
+        {
+          "count": 3,
+          "plateau_size": 36,
+          "surface_chi": 0
+        },
+        {
+          "count": 3,
+          "plateau_size": 72,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 144,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 7,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 8,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 122,
+      "graph6": "K?ABEDoM?wP_",
+      "kempe_orbits_mod_global_s5": 32,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 5,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 10,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 10,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 5,
+          "plateau_size": 8,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 16,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 5,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 26,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 32,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?ABEDWM?wS_",
+      "kempe_orbits_mod_global_s5": 64,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 12,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 24,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 20,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 8,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 12,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 50,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 64,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 4,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 16,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 249,
+      "graph6": "K?ABEESU@WF?",
+      "kempe_orbits_mod_global_s5": 24,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 12,
+          "surface_chi": -2
+        },
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 24,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 7,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 48,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 4,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 14,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 6,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 16,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 16,
+      "terminal_surface_chi_plateaus": 24,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 4,
+          "plateau_size": 6,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 12,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 498,
+      "graph6": "K?ABBFOe@WB_",
+      "kempe_orbits_mod_global_s5": 12,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 72,
+          "surface_chi": -1
+        },
+        {
+          "count": 4,
+          "plateau_size": 6,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 22,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 144,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 12,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 42,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 3,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 8,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 8,
+      "terminal_surface_chi_plateaus": 12,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?ABBFOb@oB_",
+      "kempe_orbits_mod_global_s5": 16,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 4,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 6,
+          "plateau_size": 12,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 24,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 48,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 15,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 16,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 380,
+      "graph6": "K?ABBFCe@oB_",
+      "kempe_orbits_mod_global_s5": 32,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 10,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 14,
+          "plateau_size": 12,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 24,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 30,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 32,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 16,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 40,
+          "surface_chi": -1
+        },
+        {
+          "count": 4,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 5,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 23,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 435,
+      "graph6": "K?ABCfOY?wD_",
+      "kempe_orbits_mod_global_s5": 25,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 16,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 40,
+          "surface_chi": -1
+        },
+        {
+          "count": 4,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 156,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 5,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 17,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 23,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 23,
+      "terminal_surface_chi_plateaus": 25,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 6,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 40,
+          "surface_chi": -1
+        },
+        {
+          "count": 6,
+          "plateau_size": 1,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 3,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 15,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 348,
+      "graph6": "K?ABCfOR@oD_",
+      "kempe_orbits_mod_global_s5": 17,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 6,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 40,
+          "surface_chi": -1
+        },
+        {
+          "count": 6,
+          "plateau_size": 1,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 29,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 78,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 3,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 15,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 15,
+      "terminal_surface_chi_plateaus": 17,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 5,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 18,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 9,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 2,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 8,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 291,
+      "graph6": "K?ABCfGT@oD_",
+      "kempe_orbits_mod_global_s5": 9,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 5,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 14,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 18,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 100,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 9,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 46,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 2,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 2,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 8,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 8,
+      "terminal_surface_chi_plateaus": 11,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 362,
+      "graph6": "K?ABCeWU@WK_",
+      "kempe_orbits_mod_global_s5": 18,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 5,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 3,
+          "plateau_size": 12,
+          "surface_chi": -2
+        },
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 20,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 76,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 43,
+          "surface_chi": 0
+        },
+        {
+          "count": 3,
+          "plateau_size": 10,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 13,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 7,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 9,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 18,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 12,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": 0
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 16,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 334,
+      "graph6": "K?ABCdWT@WT?",
+      "kempe_orbits_mod_global_s5": 45,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 11,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 12,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 6,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 4,
+          "plateau_size": 7,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 24,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 32,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 40,
+          "surface_chi": -1
+        },
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 14,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 30,
+          "surface_chi": 0
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 11,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 16,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 16,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 16,
+      "terminal_surface_chi_plateaus": 45,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 358,
+      "graph6": "K?ABCfCY?wF?",
+      "kempe_orbits_mod_global_s5": 4,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 40,
+          "surface_chi": -2
+        },
+        {
+          "count": 1,
+          "plateau_size": 80,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 15,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 30,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 3,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 4,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 267,
+      "graph6": "K?ABCfCU@WF?",
+      "kempe_orbits_mod_global_s5": 40,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 10,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 5,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 9,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 4,
+          "plateau_size": 8,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 19,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 26,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 3,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 5,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 38,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 52,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 6,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 10,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 14,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 24,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 40,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?ABAdoi?wP_",
+      "kempe_orbits_mod_global_s5": 16,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 4,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 6,
+          "plateau_size": 12,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 24,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 48,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 15,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 16,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 122,
+      "graph6": "K?ABAdgi?wQ_",
+      "kempe_orbits_mod_global_s5": 32,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 5,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 10,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 10,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 5,
+          "plateau_size": 8,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 16,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 5,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 26,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 32,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 299,
+      "graph6": "K?ABAfCi?wF?",
+      "kempe_orbits_mod_global_s5": 4,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 7,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 13,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 26,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 3,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 4,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 24,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 4,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 40,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 372,
+      "graph6": "K?AB?vOTDOD_",
+      "kempe_orbits_mod_global_s5": 42,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 24,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 4,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 40,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 34,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 72,
+          "surface_chi": 0
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 3,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 40,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 40,
+      "terminal_surface_chi_plateaus": 44,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 4,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 16,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 249,
+      "graph6": "K?AB?tos@WP_",
+      "kempe_orbits_mod_global_s5": 24,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 12,
+          "surface_chi": -2
+        },
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 24,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 7,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 48,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 4,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 14,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 6,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 16,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 16,
+      "terminal_surface_chi_plateaus": 24,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 296,
+      "graph6": "K?ABCN_U?wF?",
+      "kempe_orbits_mod_global_s5": 128,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 28,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 60,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 36,
+          "plateau_size": 4,
+          "surface_chi": 0
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 4,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 28,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 96,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 128,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 390,
+      "graph6": "K?ABCNOY?wF?",
+      "kempe_orbits_mod_global_s5": 36,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 11,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 1,
+          "plateau_size": 40,
+          "surface_chi": -2
+        },
+        {
+          "count": 10,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 80,
+          "surface_chi": -1
+        },
+        {
+          "count": 5,
+          "plateau_size": 3,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 10,
+          "surface_chi": 0
+        },
+        {
+          "count": 5,
+          "plateau_size": 6,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 20,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 12,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 23,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 36,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?BD?qcKaoHG",
+      "kempe_orbits_mod_global_s5": 16,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 4,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 6,
+          "plateau_size": 12,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 24,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 48,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 15,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 16,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?BD?pck?sHG",
+      "kempe_orbits_mod_global_s5": 64,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 12,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 24,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 20,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 8,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 12,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 50,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 64,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?BD?pSw@SBG",
+      "kempe_orbits_mod_global_s5": 16,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 4,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 6,
+          "plateau_size": 12,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 24,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 48,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 15,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 16,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 321,
+      "graph6": "K?`@F@gd?sAo",
+      "kempe_orbits_mod_global_s5": 28,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 10,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 3,
+          "plateau_size": 12,
+          "surface_chi": -2
+        },
+        {
+          "count": 3,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -1
+        },
+        {
+          "count": 3,
+          "plateau_size": 7,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 32,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 66,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 14,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 49,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 9,
+          "surface_chi": 1
+        },
+        {
+          "count": 2,
+          "plateau_size": 10,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 13,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 13,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 28,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 273,
+      "graph6": "K?`@Eb_M?k@o",
+      "kempe_orbits_mod_global_s5": 65,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 3,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 43,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 7,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 4,
+          "plateau_size": 3,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 32,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 36,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 56,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 9,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 12,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 39,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 5,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 3,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 43,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 19,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 65,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 246,
+      "graph6": "K?`@Eb_J?sAo",
+      "kempe_orbits_mod_global_s5": 46,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 26,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 4,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 3,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 60,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 26,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 7,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 26,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 18,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 46,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 16,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 32,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 2,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 6,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 226,
+      "graph6": "K?`@Eb_F?[EO",
+      "kempe_orbits_mod_global_s5": 46,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 18,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 16,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 16,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 20,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 32,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 40,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 2,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 18,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 20,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 6,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 6,
+      "terminal_surface_chi_plateaus": 46,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 8,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 32,
+          "surface_chi": -1
+        },
+        {
+          "count": 4,
+          "plateau_size": 5,
+          "surface_chi": 0
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 14,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 239,
+      "graph6": "K?`@E`gh?sAo",
+      "kempe_orbits_mod_global_s5": 26,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 9,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 8,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 32,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 64,
+          "surface_chi": -1
+        },
+        {
+          "count": 4,
+          "plateau_size": 5,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 35,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 7,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 8,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 3,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 14,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 14,
+      "terminal_surface_chi_plateaus": 26,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 16,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 32,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 2,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 6,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 226,
+      "graph6": "K?`@E`gFCcCo",
+      "kempe_orbits_mod_global_s5": 46,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 18,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 16,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 16,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 20,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 32,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 40,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 2,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 18,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 20,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 6,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 6,
+      "terminal_surface_chi_plateaus": 46,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 25,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 50,
+          "surface_chi": 0
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 4,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 150,
+      "graph6": "K?`@E`gFCKEO",
+      "kempe_orbits_mod_global_s5": 4,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 25,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 50,
+          "surface_chi": 0
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 4,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 4,
+      "terminal_surface_chi_plateaus": 4,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 18,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 9,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 36,
+          "surface_chi": -1
+        },
+        {
+          "count": 9,
+          "plateau_size": 1,
+          "surface_chi": 0
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 29,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 258,
+      "graph6": "K?`@E`gEcKE_",
+      "kempe_orbits_mod_global_s5": 92,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 3,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 48,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 18,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 9,
+          "plateau_size": 4,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 9,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 27,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 36,
+          "surface_chi": -1
+        },
+        {
+          "count": 9,
+          "plateau_size": 1,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 36,
+          "surface_chi": 0
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 3,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 48,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 12,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 29,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 29,
+      "terminal_surface_chi_plateaus": 92,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 267,
+      "graph6": "K?`@E`Wh?kDO",
+      "kempe_orbits_mod_global_s5": 40,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 10,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 5,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 9,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 4,
+          "plateau_size": 8,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 19,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 26,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 3,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 5,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 38,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 52,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 6,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 10,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 14,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 24,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 40,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?`@EaKY?kEO",
+      "kempe_orbits_mod_global_s5": 64,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 12,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 24,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 20,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 8,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 12,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 50,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 64,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 122,
+      "graph6": "K?`@EaKX?sEO",
+      "kempe_orbits_mod_global_s5": 32,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 5,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 10,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 10,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 5,
+          "plateau_size": 8,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 16,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 5,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 26,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 32,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 122,
+      "graph6": "K?`@EROM?kCo",
+      "kempe_orbits_mod_global_s5": 32,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 5,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 10,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 10,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 5,
+          "plateau_size": 8,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 16,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 5,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 26,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 32,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 4,
+          "plateau_size": 6,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 12,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 498,
+      "graph6": "K?`@EQgLAcAo",
+      "kempe_orbits_mod_global_s5": 12,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 72,
+          "surface_chi": -1
+        },
+        {
+          "count": 4,
+          "plateau_size": 6,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 22,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 144,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 12,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 42,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 3,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 8,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 8,
+      "terminal_surface_chi_plateaus": 12,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 488,
+      "graph6": "K?`@EQK[?kEO",
+      "kempe_orbits_mod_global_s5": 8,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 20,
+          "surface_chi": -1
+        },
+        {
+          "count": 3,
+          "plateau_size": 36,
+          "surface_chi": 0
+        },
+        {
+          "count": 3,
+          "plateau_size": 72,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 144,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 7,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 8,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?`@Cr_T?[EO",
+      "kempe_orbits_mod_global_s5": 64,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 12,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 24,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 20,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 8,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 12,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 50,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 64,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?`@CrGX?kEO",
+      "kempe_orbits_mod_global_s5": 16,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 4,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 6,
+          "plateau_size": 12,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 24,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 48,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 15,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 16,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 488,
+      "graph6": "K?`@CrGT@KEO",
+      "kempe_orbits_mod_global_s5": 8,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 20,
+          "surface_chi": -1
+        },
+        {
+          "count": 3,
+          "plateau_size": 36,
+          "surface_chi": 0
+        },
+        {
+          "count": 3,
+          "plateau_size": 72,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 144,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 7,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 8,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 122,
+      "graph6": "K?`@CrCY?kEO",
+      "kempe_orbits_mod_global_s5": 32,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 5,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 10,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 10,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 5,
+          "plateau_size": 8,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 16,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 5,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 26,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 32,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?`DAagK_iH_",
+      "kempe_orbits_mod_global_s5": 16,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 4,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 6,
+          "plateau_size": 12,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 24,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 48,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 15,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 16,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 4,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 16,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 249,
+      "graph6": "K?`D@`gE_iW_",
+      "kempe_orbits_mod_global_s5": 24,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 12,
+          "surface_chi": -2
+        },
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 24,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 7,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 48,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 4,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 14,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 6,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 16,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 16,
+      "terminal_surface_chi_plateaus": 24,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 4,
+          "surface_chi": 1
+        }
+      ],
+      "all_five_terminal_plateaus_with_static_universal_state": 16,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 249,
+      "graph6": "K?`D@`cS_wPG",
+      "kempe_orbits_mod_global_s5": 24,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 12,
+          "surface_chi": -2
+        },
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -1
+        },
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -1
+        },
+        {
+          "count": 2,
+          "plateau_size": 24,
+          "surface_chi": -1
+        },
+        {
+          "count": 8,
+          "plateau_size": 2,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 7,
+          "surface_chi": 0
+        },
+        {
+          "count": 1,
+          "plateau_size": 48,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 4,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 14,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 6,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 16,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 5
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 16,
+      "terminal_surface_chi_plateaus": 24,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 190,
+      "graph6": "K?`D@bAJAgBG",
+      "kempe_orbits_mod_global_s5": 64,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 12,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 24,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 20,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 8,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 12,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 50,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 64,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 122,
+      "graph6": "K?`D@`ae?iH_",
+      "kempe_orbits_mod_global_s5": 32,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 5,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 10,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 10,
+          "plateau_size": 4,
+          "surface_chi": 0
+        },
+        {
+          "count": 5,
+          "plateau_size": 8,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 16,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 3,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 5,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 4
+        },
+        {
+          "count": 26,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 32,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 299,
+      "graph6": "K?`D@aQY?wGg",
+      "kempe_orbits_mod_global_s5": 4,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 7,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 13,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 26,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 3,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 4,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 299,
+      "graph6": "K?`@`ago_YI_",
+      "kempe_orbits_mod_global_s5": 4,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 7,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 13,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 26,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 3,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 4,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 976,
+      "graph6": "K?`CRAWK`gGg",
+      "kempe_orbits_mod_global_s5": 4,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 112,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 216,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 432,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 3,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 4,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?`CPbGHb_Ag",
+      "kempe_orbits_mod_global_s5": 16,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 4,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 6,
+          "plateau_size": 12,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 24,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 48,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 15,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 16,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 380,
+      "graph6": "K?`CPag[?kGg",
+      "kempe_orbits_mod_global_s5": 32,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 2,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 10,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 14,
+          "plateau_size": 12,
+          "surface_chi": 0
+        },
+        {
+          "count": 6,
+          "plateau_size": 24,
+          "surface_chi": 1
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 2,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 30,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 32,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 244,
+      "graph6": "K?`CPagXAcAg",
+      "kempe_orbits_mod_global_s5": 16,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 4,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 6,
+          "plateau_size": 12,
+          "surface_chi": 0
+        },
+        {
+          "count": 4,
+          "plateau_size": 24,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 48,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 4,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 15,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 16,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 488,
+      "graph6": "K?`CPagWagAg",
+      "kempe_orbits_mod_global_s5": 8,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 20,
+          "surface_chi": -1
+        },
+        {
+          "count": 3,
+          "plateau_size": 36,
+          "surface_chi": 0
+        },
+        {
+          "count": 3,
+          "plateau_size": 72,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 144,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 7,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 8,
+      "vertices": 12
+    },
+    {
+      "all_five_terminal_plateau_chi_size_histogram": [],
+      "all_five_terminal_plateaus_with_static_universal_state": 0,
+      "all_terminal_plateaus_root_universal": true,
+      "edges": 18,
+      "first_failure": null,
+      "flows_mod_global_s5": 488,
+      "graph6": "K?`CPagPagEG",
+      "kempe_orbits_mod_global_s5": 8,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 20,
+          "surface_chi": -1
+        },
+        {
+          "count": 3,
+          "plateau_size": 36,
+          "surface_chi": 0
+        },
+        {
+          "count": 3,
+          "plateau_size": 72,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 144,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_plateau_coordinate_support_range_histogram": [
+        {
+          "count": 1,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 3
+        },
+        {
+          "count": 7,
+          "maximum_used_coordinates": 5,
+          "minimum_used_coordinates": 4
+        }
+      ],
+      "terminal_plateaus_without_missing_coordinate": 0,
+      "terminal_surface_chi_plateaus": 8,
+      "vertices": 12
+    }
+  ],
+  "schema": "d5-surface-chi-terminal-plateau-order12-v1",
+  "scope": "Complete finite order-12 audit only; not a universal proof.",
+  "status": "PASS",
+  "summary": {
+    "all_five_terminal_plateau_chi_size_histogram": [
+      {
+        "count": 194,
+        "plateau_size": 1,
+        "surface_chi": -1
+      },
+      {
+        "count": 16,
+        "plateau_size": 4,
+        "surface_chi": -1
+      },
+      {
+        "count": 2,
+        "plateau_size": 5,
+        "surface_chi": -1
+      },
+      {
+        "count": 1,
+        "plateau_size": 9,
+        "surface_chi": -1
+      },
+      {
+        "count": 3,
+        "plateau_size": 16,
+        "surface_chi": -1
+      },
+      {
+        "count": 2,
+        "plateau_size": 18,
+        "surface_chi": -1
+      },
+      {
+        "count": 2,
+        "plateau_size": 25,
+        "surface_chi": -1
+      },
+      {
+        "count": 2,
+        "plateau_size": 32,
+        "surface_chi": -1
+      },
+      {
+        "count": 1,
+        "plateau_size": 36,
+        "surface_chi": -1
+      },
+      {
+        "count": 2,
+        "plateau_size": 40,
+        "surface_chi": -1
+      },
+      {
+        "count": 34,
+        "plateau_size": 1,
+        "surface_chi": 0
+      },
+      {
+        "count": 92,
+        "plateau_size": 2,
+        "surface_chi": 0
+      },
+      {
+        "count": 4,
+        "plateau_size": 5,
+        "surface_chi": 0
+      },
+      {
+        "count": 8,
+        "plateau_size": 6,
+        "surface_chi": 0
+      },
+      {
+        "count": 1,
+        "plateau_size": 9,
+        "surface_chi": 0
+      },
+      {
+        "count": 3,
+        "plateau_size": 32,
+        "surface_chi": 0
+      },
+      {
+        "count": 2,
+        "plateau_size": 50,
+        "surface_chi": 0
+      },
+      {
+        "count": 2,
+        "plateau_size": 1,
+        "surface_chi": 1
+      },
+      {
+        "count": 7,
+        "plateau_size": 2,
+        "surface_chi": 1
+      },
+      {
+        "count": 2,
+        "plateau_size": 3,
+        "surface_chi": 1
+      },
+      {
+        "count": 24,
+        "plateau_size": 4,
+        "surface_chi": 1
+      },
+      {
+        "count": 8,
+        "plateau_size": 5,
+        "surface_chi": 1
+      },
+      {
+        "count": 8,
+        "plateau_size": 12,
+        "surface_chi": 1
+      }
+    ],
+    "all_five_terminal_plateaus_with_static_universal_state": 404,
+    "failed_terminal_plateaus": 0,
+    "flows_mod_global_s5": 25960,
+    "graphs": 81,
+    "kempe_orbits_mod_global_s5": 2650,
+    "maximum_plateau_size": 432,
+    "surface_chi_max": 2,
+    "surface_chi_min": -3,
+    "terminal_plateau_chi_size_histogram": [
+      {
+        "count": 56,
+        "plateau_size": 1,
+        "surface_chi": -3
+      },
+      {
+        "count": 457,
+        "plateau_size": 1,
+        "surface_chi": -2
+      },
+      {
+        "count": 63,
+        "plateau_size": 4,
+        "surface_chi": -2
+      },
+      {
+        "count": 14,
+        "plateau_size": 12,
+        "surface_chi": -2
+      },
+      {
+        "count": 2,
+        "plateau_size": 40,
+        "surface_chi": -2
+      },
+      {
+        "count": 1,
+        "plateau_size": 176,
+        "surface_chi": -2
+      },
+      {
+        "count": 194,
+        "plateau_size": 1,
+        "surface_chi": -1
+      },
+      {
+        "count": 547,
+        "plateau_size": 2,
+        "surface_chi": -1
+      },
+      {
+        "count": 12,
+        "plateau_size": 3,
+        "surface_chi": -1
+      },
+      {
+        "count": 35,
+        "plateau_size": 4,
+        "surface_chi": -1
+      },
+      {
+        "count": 2,
+        "plateau_size": 5,
+        "surface_chi": -1
+      },
+      {
+        "count": 120,
+        "plateau_size": 6,
+        "surface_chi": -1
+      },
+      {
+        "count": 7,
+        "plateau_size": 7,
+        "surface_chi": -1
+      },
+      {
+        "count": 12,
+        "plateau_size": 8,
+        "surface_chi": -1
+      },
+      {
+        "count": 1,
+        "plateau_size": 9,
+        "surface_chi": -1
+      },
+      {
+        "count": 1,
+        "plateau_size": 14,
+        "surface_chi": -1
+      },
+      {
+        "count": 3,
+        "plateau_size": 16,
+        "surface_chi": -1
+      },
+      {
+        "count": 2,
+        "plateau_size": 18,
+        "surface_chi": -1
+      },
+      {
+        "count": 3,
+        "plateau_size": 19,
+        "surface_chi": -1
+      },
+      {
+        "count": 19,
+        "plateau_size": 20,
+        "surface_chi": -1
+      },
+      {
+        "count": 19,
+        "plateau_size": 24,
+        "surface_chi": -1
+      },
+      {
+        "count": 2,
+        "plateau_size": 25,
+        "surface_chi": -1
+      },
+      {
+        "count": 3,
+        "plateau_size": 26,
+        "surface_chi": -1
+      },
+      {
+        "count": 1,
+        "plateau_size": 27,
+        "surface_chi": -1
+      },
+      {
+        "count": 5,
+        "plateau_size": 32,
+        "surface_chi": -1
+      },
+      {
+        "count": 3,
+        "plateau_size": 36,
+        "surface_chi": -1
+      },
+      {
+        "count": 7,
+        "plateau_size": 40,
+        "surface_chi": -1
+      },
+      {
+        "count": 4,
+        "plateau_size": 56,
+        "surface_chi": -1
+      },
+      {
+        "count": 2,
+        "plateau_size": 60,
+        "surface_chi": -1
+      },
+      {
+        "count": 3,
+        "plateau_size": 64,
+        "surface_chi": -1
+      },
+      {
+        "count": 1,
+        "plateau_size": 66,
+        "surface_chi": -1
+      },
+      {
+        "count": 2,
+        "plateau_size": 72,
+        "surface_chi": -1
+      },
+      {
+        "count": 1,
+        "plateau_size": 76,
+        "surface_chi": -1
+      },
+      {
+        "count": 2,
+        "plateau_size": 80,
+        "surface_chi": -1
+      },
+      {
+        "count": 1,
+        "plateau_size": 100,
+        "surface_chi": -1
+      },
+      {
+        "count": 1,
+        "plateau_size": 176,
+        "surface_chi": -1
+      },
+      {
+        "count": 34,
+        "plateau_size": 1,
+        "surface_chi": 0
+      },
+      {
+        "count": 92,
+        "plateau_size": 2,
+        "surface_chi": 0
+      },
+      {
+        "count": 11,
+        "plateau_size": 3,
+        "surface_chi": 0
+      },
+      {
+        "count": 339,
+        "plateau_size": 4,
+        "surface_chi": 0
+      },
+      {
+        "count": 7,
+        "plateau_size": 5,
+        "surface_chi": 0
+      },
+      {
+        "count": 8,
+        "plateau_size": 6,
+        "surface_chi": 0
+      },
+      {
+        "count": 24,
+        "plateau_size": 7,
+        "surface_chi": 0
+      },
+      {
+        "count": 2,
+        "plateau_size": 9,
+        "surface_chi": 0
+      },
+      {
+        "count": 5,
+        "plateau_size": 10,
+        "surface_chi": 0
+      },
+      {
+        "count": 156,
+        "plateau_size": 12,
+        "surface_chi": 0
+      },
+      {
+        "count": 2,
+        "plateau_size": 14,
+        "surface_chi": 0
+      },
+      {
+        "count": 2,
+        "plateau_size": 22,
+        "surface_chi": 0
+      },
+      {
+        "count": 2,
+        "plateau_size": 26,
+        "surface_chi": 0
+      },
+      {
+        "count": 1,
+        "plateau_size": 29,
+        "surface_chi": 0
+      },
+      {
+        "count": 2,
+        "plateau_size": 30,
+        "surface_chi": 0
+      },
+      {
+        "count": 3,
+        "plateau_size": 32,
+        "surface_chi": 0
+      },
+      {
+        "count": 2,
+        "plateau_size": 34,
+        "surface_chi": 0
+      },
+      {
+        "count": 1,
+        "plateau_size": 35,
+        "surface_chi": 0
+      },
+      {
+        "count": 24,
+        "plateau_size": 36,
+        "surface_chi": 0
+      },
+      {
+        "count": 3,
+        "plateau_size": 38,
+        "surface_chi": 0
+      },
+      {
+        "count": 1,
+        "plateau_size": 39,
+        "surface_chi": 0
+      },
+      {
+        "count": 6,
+        "plateau_size": 40,
+        "surface_chi": 0
+      },
+      {
+        "count": 1,
+        "plateau_size": 43,
+        "surface_chi": 0
+      },
+      {
+        "count": 1,
+        "plateau_size": 46,
+        "surface_chi": 0
+      },
+      {
+        "count": 6,
+        "plateau_size": 48,
+        "surface_chi": 0
+      },
+      {
+        "count": 1,
+        "plateau_size": 49,
+        "surface_chi": 0
+      },
+      {
+        "count": 2,
+        "plateau_size": 50,
+        "surface_chi": 0
+      },
+      {
+        "count": 3,
+        "plateau_size": 52,
+        "surface_chi": 0
+      },
+      {
+        "count": 2,
+        "plateau_size": 72,
+        "surface_chi": 0
+      },
+      {
+        "count": 1,
+        "plateau_size": 78,
+        "surface_chi": 0
+      },
+      {
+        "count": 1,
+        "plateau_size": 84,
+        "surface_chi": 0
+      },
+      {
+        "count": 1,
+        "plateau_size": 112,
+        "surface_chi": 0
+      },
+      {
+        "count": 1,
+        "plateau_size": 122,
+        "surface_chi": 0
+      },
+      {
+        "count": 2,
+        "plateau_size": 144,
+        "surface_chi": 0
+      },
+      {
+        "count": 1,
+        "plateau_size": 156,
+        "surface_chi": 0
+      },
+      {
+        "count": 2,
+        "plateau_size": 1,
+        "surface_chi": 1
+      },
+      {
+        "count": 7,
+        "plateau_size": 2,
+        "surface_chi": 1
+      },
+      {
+        "count": 2,
+        "plateau_size": 3,
+        "surface_chi": 1
+      },
+      {
+        "count": 24,
+        "plateau_size": 4,
+        "surface_chi": 1
+      },
+      {
+        "count": 9,
+        "plateau_size": 5,
+        "surface_chi": 1
+      },
+      {
+        "count": 11,
+        "plateau_size": 6,
+        "surface_chi": 1
+      },
+      {
+        "count": 3,
+        "plateau_size": 7,
+        "surface_chi": 1
+      },
+      {
+        "count": 84,
+        "plateau_size": 8,
+        "surface_chi": 1
+      },
+      {
+        "count": 1,
+        "plateau_size": 9,
+        "surface_chi": 1
+      },
+      {
+        "count": 8,
+        "plateau_size": 10,
+        "surface_chi": 1
+      },
+      {
+        "count": 8,
+        "plateau_size": 12,
+        "surface_chi": 1
+      },
+      {
+        "count": 15,
+        "plateau_size": 13,
+        "surface_chi": 1
+      },
+      {
+        "count": 6,
+        "plateau_size": 14,
+        "surface_chi": 1
+      },
+      {
+        "count": 1,
+        "plateau_size": 15,
+        "surface_chi": 1
+      },
+      {
+        "count": 1,
+        "plateau_size": 17,
+        "surface_chi": 1
+      },
+      {
+        "count": 1,
+        "plateau_size": 20,
+        "surface_chi": 1
+      },
+      {
+        "count": 62,
+        "plateau_size": 24,
+        "surface_chi": 1
+      },
+      {
+        "count": 1,
+        "plateau_size": 31,
+        "surface_chi": 1
+      },
+      {
+        "count": 1,
+        "plateau_size": 40,
+        "surface_chi": 1
+      },
+      {
+        "count": 2,
+        "plateau_size": 42,
+        "surface_chi": 1
+      },
+      {
+        "count": 21,
+        "plateau_size": 72,
+        "surface_chi": 1
+      },
+      {
+        "count": 2,
+        "plateau_size": 216,
+        "surface_chi": 1
+      },
+      {
+        "count": 7,
+        "plateau_size": 16,
+        "surface_chi": 2
+      },
+      {
+        "count": 4,
+        "plateau_size": 26,
+        "surface_chi": 2
+      },
+      {
+        "count": 1,
+        "plateau_size": 29,
+        "surface_chi": 2
+      },
+      {
+        "count": 1,
+        "plateau_size": 30,
+        "surface_chi": 2
+      },
+      {
+        "count": 1,
+        "plateau_size": 42,
+        "surface_chi": 2
+      },
+      {
+        "count": 8,
+        "plateau_size": 48,
+        "surface_chi": 2
+      },
+      {
+        "count": 1,
+        "plateau_size": 78,
+        "surface_chi": 2
+      },
+      {
+        "count": 5,
+        "plateau_size": 144,
+        "surface_chi": 2
+      },
+      {
+        "count": 1,
+        "plateau_size": 432,
+        "surface_chi": 2
+      }
+    ],
+    "terminal_plateau_coordinate_support_range_histogram": [
+      {
+        "count": 56,
+        "maximum_used_coordinates": 3,
+        "minimum_used_coordinates": 3
+      },
+      {
+        "count": 31,
+        "maximum_used_coordinates": 4,
+        "minimum_used_coordinates": 3
+      },
+      {
+        "count": 37,
+        "maximum_used_coordinates": 5,
+        "minimum_used_coordinates": 3
+      },
+      {
+        "count": 506,
+        "maximum_used_coordinates": 4,
+        "minimum_used_coordinates": 4
+      },
+      {
+        "count": 1609,
+        "maximum_used_coordinates": 5,
+        "minimum_used_coordinates": 4
+      },
+      {
+        "count": 420,
+        "maximum_used_coordinates": 5,
+        "minimum_used_coordinates": 5
+      }
+    ],
+    "terminal_plateaus_without_missing_coordinate": 420,
+    "terminal_surface_chi_plateaus": 2659
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "schema": "order80-cvt-stable8-marked-girth-v1",
+  "classification": "EXACT_FINITE_NEGATIVE_CONTROL",
+  "warning": "This covers the 33 vertex-transitive cubic graphs of order 80 in the cited census, not all cubic graphs of order 80 and not the five-cycle double cover conjecture.",
+  "census": {
+    "name": "Potočnik-Spiga-Verret cubic vertex-transitive census, graph6/sparse6 conversion",
+    "article": "https://arxiv.org/abs/1201.5317",
+    "conversion_repository": "https://github.com/kguo-sagecode/cubic-vertextransitive-graphs",
+    "conversion_commit": "68c592d4790ab1737f04d86d3102c4999bbc6c09",
+    "file": "cubicvt4-300g6.txt",
+    "file_sha256": "4bac89beec1465265318266117c38a2c1680e73a21efd322411207cef5313088",
+    "order80_rows": 33,
+    "order80_census_lines_inclusive": [396, 428]
+  },
+  "ordinary_girth_by_order_index": [
+    4, 6, 8, 8, 6, 6, 4, 6, 6, 6, 6, 6, 4, 6, 6, 6, 6,
+    6, 6, 8, 8, 4, 6, 6, 4, 4, 4, 8, 5, 10, 4, 8, 8
+  ],
+  "girth_at_least_seven_records": [
+    {
+      "order_index": 3,
+      "ordinary_girth": 8,
+      "short_cycle_counts": {"8": 40},
+      "summed_requirement": 80,
+      "best_eight_edge_incidence_capacity": 32,
+      "marked_subdivision_girth_ten_feasible": false
+    },
+    {
+      "order_index": 4,
+      "ordinary_girth": 8,
+      "short_cycle_counts": {"8": 40},
+      "summed_requirement": 80,
+      "best_eight_edge_incidence_capacity": 32,
+      "marked_subdivision_girth_ten_feasible": false
+    },
+    {
+      "order_index": 20,
+      "ordinary_girth": 8,
+      "short_cycle_counts": {"8": 10},
+      "summed_requirement": 20,
+      "best_eight_edge_incidence_capacity": 8,
+      "marked_subdivision_girth_ten_feasible": false
+    },
+    {
+      "order_index": 21,
+      "ordinary_girth": 8,
+      "short_cycle_counts": {"8": 10},
+      "summed_requirement": 20,
+      "best_eight_edge_incidence_capacity": 8,
+      "marked_subdivision_girth_ten_feasible": false
+    },
+    {
+      "order_index": 28,
+      "ordinary_girth": 8,
+      "short_cycle_counts": {"8": 20},
+      "summed_requirement": 40,
+      "best_eight_edge_incidence_capacity": 16,
+      "marked_subdivision_girth_ten_feasible": false
+    },
+    {
+      "order_index": 30,
+      "ordinary_girth": 10,
+      "short_cycle_counts": {},
+      "summed_requirement": 0,
+      "best_eight_edge_incidence_capacity": 0,
+      "marked_subdivision_girth_ten_feasible": true
+    },
+    {
+      "order_index": 32,
+      "ordinary_girth": 8,
+      "short_cycle_counts": {"8": 80},
+      "summed_requirement": 160,
+      "best_eight_edge_incidence_capacity": 48,
+      "marked_subdivision_girth_ten_feasible": false
+    },
+    {
+      "order_index": 33,
+      "ordinary_girth": 8,
+      "short_cycle_counts": {"8": 40},
+      "summed_requirement": 80,
+      "best_eight_edge_incidence_capacity": 32,
+      "marked_subdivision_girth_ten_feasible": false
+    }
+  ],
+  "sole_marked_girth_candidate": {
+    "order_index": 30,
+    "census_line": 425,
+    "sparse6": ":~?@O_GA?_WEA_wIB`GUC`WYFaGeE`waHagmKbWiJbGuMbxAPchMSdWyNcHEQcxQTd`w^dpyWHHceeaaZIAe[GHsidaEVIx_aGxcbeaUZHxolfQolfqAaHYOfhae`IikkjrAqLZOvOjWxkRh?mrq}N{DBpCVFQ[hJrCtM",
+    "vertices": 80,
+    "edges": 120,
+    "connected": true,
+    "simple": true,
+    "cubic": true,
+    "ordinary_girth": 10,
+    "normalized_tait_colourings": 426256,
+    "universally_separated_eight_edge_matchings": 0,
+    "universally_separated_seven_edge_matchings": 0,
+    "colourings_with_at_least_two_C10_bichromatic_factors": 20,
+    "colourings_with_three_C10_bichromatic_factors": 20
+  },
+  "cross_checks": {
+    "short_cycle_enumerator_matches_networkx_simple_cycles_on_connected_graph_atlas_graphs": 994,
+    "scipy_milp_agrees_with_each_of_the_seven_summed_incidence_infeasibility_results": true,
+    "networkx_version": "3.4.2",
+    "scipy_version": "1.15.3",
+    "tait_search_short_graph_parser_regression": {
+      "graph_order": 24,
+      "normalized_tait_colourings": 36,
+      "required_mark_edges": [[0, 1], [2, 3], [20, 23]],
+      "witnesses": 1
+    }
+  },
+  "artifacts": {
+    "marked_girth_script": "scratch/check_order80_cvt_marked_girth.py",
+    "marked_girth_script_sha256": "89414b33428e56fa7ce2034e6ada7b4f834242ef46facde46dded200194f5d57",
+    "tait_search_source": "scratch/tait_all_coloring_mark_separation.cpp",
+    "tait_search_source_sha256": "a00c2f53a3b95a06a7e8767aae2eb2bfa794fc95eeeba18bcac34aea6a12072a",
+    "tested_tait_search_binary_sha256": "2e9d51a213f91d176112acf8a63f12149d3f55f7574a8c187de5fa0bf3105025"
+  }
+}

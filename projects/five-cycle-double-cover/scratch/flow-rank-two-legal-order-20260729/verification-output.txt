@@ -1,0 +1,11 @@
+PASS: constant-Eulerian-set rank-two legal-order package
+  unrestricted minimum: human proof = difference-value rank
+  rank-two iff criterion: six ordered overlap fibres checked
+  K3,3: smallest simple-cubic obstruction; legal distance 3
+  cube: bad f -> good g, shared nonempty coordinate, distance 3
+  small exact flow census: C~ 210, EFz_ 1092, EUxo 1050
+  all 2,352 small-census flows are component-parity good
+  cube flows: 5,712 = 1,344 bad + 4,368 good
+  fixed cube f: 996 good rank<=2 targets; 4 blocked, 992 reachable
+  shared coordinate and all six move supports are connected circuits
+  both witness graphs: explicit Tait-derived FiveCDCs PASS

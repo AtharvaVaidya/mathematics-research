@@ -1,0 +1,10 @@
+ADJACENT_PORT root_labels=6 external_candidates=4 PASS
+CIRCUIT_WORD states=6 directed_legal_steps=18 PASS
+CUBE_INVERSE_INSERTION y01_components=2 endpoints_separate PASS
+PASS
+PF_GRAPH vertices=890 edges=1335 simple=1 cubic=1 edge_connectivity=3 girth=10 non_tait=1 PASS
+PF_CORE vertices=889 degree2=3 degree3=886 connected=1 bridgeless=1 girth=10 root_deleted_connected=1 root_deleted_girth=10 PASS
+PF_FLOW labels=1335 weight_two=1 vertex_xor=1 sha256=6390ba1039116351e8e4343264f9881e4d1541dc028a661db848be9c695fdc9a PASS
+PF_ROOT_FACTORS active_pairs=6 fixed_typed_mask=6 external_physical_pair=01 missing_external_port=2 PASS
+PF_BLOCKERS arc_lengths=355,169 arc0_outside=0:109,3:115,4:131 arc1_outside=0:50,3:64,4:55 PASS
+PASS

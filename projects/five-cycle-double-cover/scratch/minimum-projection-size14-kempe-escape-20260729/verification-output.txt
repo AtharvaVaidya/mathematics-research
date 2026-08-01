@@ -1,0 +1,9 @@
+states=224
+profiles=46*(6+2+2+2+2),178*(4+4+2+2+2)
+four-terminal strategies on six-blocks=20
+literal deletion rows=724
+PASS: every perfect matching hits a checked deletion row
+PASS profile-6+2+2+2+2: 15 literal Kempe-deletion certificates
+PASS profile-4+4+2+2+2-block0: 6 literal Kempe-deletion certificates
+PASS profile-4+4+2+2+2-block4: 6 literal Kempe-deletion certificates
+PASS: every listed Kempe endpoint pairing deletes a 7-circuit

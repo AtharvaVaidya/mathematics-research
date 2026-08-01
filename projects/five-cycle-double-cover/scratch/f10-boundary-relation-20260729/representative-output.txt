@@ -1,0 +1,1 @@
+ordered_xor_zero_words=62560 s5_orbits=571

@@ -1,0 +1,14 @@
+c parsed a formula with 4444 variables and 251803 clauses
+c WARNING hint already satisfied in lemma with index 432166
+c WARNING hint already satisfied in lemma with index 432215
+c WARNING hint already satisfied in lemma with index 432255
+c WARNING hint already satisfied in lemma with index 432260
+c WARNING hint already satisfied in lemma with index 432261
+c WARNING hint already satisfied in lemma with index 432268
+c WARNING hint already satisfied in lemma with index 432353
+c WARNING hint already satisfied in lemma with index 432361
+c WARNING hint already satisfied in lemma with index 432378
+c VERIFIED
+c allocated 1024 2549503 44440
+c Added clauses = 588798.  Deleted clauses = 350322.  Max live clauses = 251836
+c verification time = 0.66 secs

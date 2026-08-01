@@ -1,0 +1,5 @@
+ABSTRACT size=2 stabilizer=12 boundary_factors=6 root_states=64 root_orbits=13 root_relations=2^13-1 cap_states=478 cap_orbits=51 cap_relations=2^51-1 bad_orbit_edges=281 good_orbit_edges=382 nondegenerate_bad=110 sha256=6b53629b54ba655c7ee954fa33fde0c81840e55bba31f6cb629c5c7742682de6 PASS
+MINIMAL size=2 score=1,2,36,12 root=[["02"],["03"],["04"],["12"],["13"],["14"]] cap=[[[],["02"],["12"]],[[],["03"],["13"]],[[],["04"],["14"]],[[],["12"],["02"]],[[],["13"],["03"]],[[],["14"],["04"]]] join_hist={"0":24,"2":6,"4":6} unsafe=1 PASS
+ABSTRACT size=3 stabilizer=2 boundary_factors=9 root_states=238 root_orbits=138 root_relations=2^138-1 cap_states=1774 cap_orbits=922 cap_relations=2^922-1 bad_orbit_edges=74985 good_orbit_edges=52251 nondegenerate_bad=65295 sha256=ca4664f3c13f2bf3d4928f00e71aaf269d6aa5c4805638c435127e56f8c42916 PASS
+MINIMAL size=3 score=1,2,1,2 root=[["01"]] cap=[[[],["01"],["02"]]] join_hist={"2":1} unsafe=1 PASS
+ABSTRACT_LOCAL_AXIOMS finite_closure_theorem=FALSE PASS

@@ -1,0 +1,4 @@
+5+10 shard=15/16 progress=25 dirty=30179712 failures=0
+5+10 shard=15/16 progress=50 dirty=59020160 failures=0
+5+10 shard=15/16 progress=75 dirty=88533792 failures=0
+RESULT shape=5+10 canonical_words=1489 shard=15/16 selected_words=93 charge_valid=123231729 dirty=109824556 direct_clean=109785802 delete_branch=38754 dichotomy_failures=0

@@ -1,0 +1,80 @@
+{
+  "schema": "six-point-one-hole-affine-package-v1",
+  "date": "2026-07-29",
+  "status": "PARTIAL STRUCTURAL PROGRESS",
+  "resolution": "FiveCDC remains open",
+  "theorem": {
+    "scope": "finite loopless cubic multigraphs",
+    "fixed_flow_statement": "For fixed nowhere-zero F2^3-flow f and disjoint omitted/merge pairs R,M, existence of a compatible six-point cover omitting M is exactly an affine GF(2) system with three bits per graph vertex.",
+    "graph_level_statement": "Existence of some f,R,M is equivalent to standard FiveCDC.",
+    "local_profiles": {
+      "parallel": [4, 2, 2, 2, 2, 2, 2],
+      "skew": [4, 4, 2, 2, 2, 1, 1]
+    },
+    "dual_failure_certificate": "A fixed system Ax=b is inconsistent iff there is y with y^T A=0 and y^T b=1."
+  },
+  "local_exact_audit": {
+    "disjoint_pair_pair_configurations": 420,
+    "parallel_configurations": 84,
+    "skew_configurations": 336,
+    "fano_plane_rows": 2940,
+    "admitted_local_triangles": 6720,
+    "python": "PASS",
+    "javascript": "PASS"
+  },
+  "strict_34_vertex_flow": {
+    "reference_sha256": "e3160e5f6b2985823a3421e9f3b1a4582c9c8be4b9abfd1f0e2312d311eb8358",
+    "graph_premises": "simple cubic connected bridgeless",
+    "five_point_passes_among_56": 0,
+    "six_point_one_hole_passes_among_420": 8,
+    "all_passes": "skew, affine dimension 1",
+    "literal_allowed_pair_types_used": 14,
+    "sample_five_point_dual_certificate_rows": 5,
+    "sample_failed_six_hole_dual_certificate_rows": 5
+  },
+  "all_flow_12_vertex_census": {
+    "graph6": "K??FEaKR@oE_",
+    "flow_orbits": 900,
+    "labelled_flows": 150192,
+    "orbit_profile": {
+      "five=1,six_hole=1,general=1": 566,
+      "five=0,six_hole=1,general=1": 252,
+      "five=0,six_hole=0,general=1": 18,
+      "five=0,six_hole=0,general=0": 64
+    },
+    "labelled_flow_profile": {
+      "five=1,six_hole=1,general=1": 94080,
+      "five=0,six_hole=1,general=1": 42336,
+      "five=0,six_hole=0,general=1": 3024,
+      "five=0,six_hole=0,general=0": 10752
+    },
+    "python": "PASS",
+    "javascript": "PASS"
+  },
+  "jaeger_selection_frontier": {
+    "complete_through_order_14": {
+      "graphs": 587,
+      "patterns": 944974,
+      "feasible_type_a_b_fibres": 804204,
+      "five_point_good_fibres": 804204,
+      "therefore_six_hole_good_fibres": 804204
+    },
+    "retained_order_38_star_fibres": {
+      "graphs": 705,
+      "fibres": 26790,
+      "five_point_good": 26790,
+      "evidence": "producer semantic checks; no independent literal replay retained"
+    },
+    "retained_order_44_star_fibres": {
+      "graphs": 31,
+      "fibres": 1364,
+      "five_point_good": 1364,
+      "evidence": "independent literal replay PASS"
+    }
+  },
+  "warnings": [
+    "The universal star-fibre selection lemma is unproved.",
+    "A fixed-flow six-hole obstruction is not a graph-level FiveCDC obstruction.",
+    "The orientable variant is not considered."
+  ]
+}

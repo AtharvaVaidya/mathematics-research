@@ -1,0 +1,1456 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\geometry{margin=1in}
+\setlength{\emergencystretch}{2em}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\bd}{\partial}
+\newcommand{\Comp}{\operatorname{Comp}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\HS}{\mathrm{HS}}
+\newcommand{\symdiff}{\mathbin{\triangle}}
+\numberwithin{equation}{section}
+
+\title{Exact Obstructions in Reconfiguring\\
+Nowhere-Zero Flows toward Five-Cycle Double Covers}
+\author{Atharva Vaidya\\
+\small AI-assisted research draft for independent human verification}
+\date{July 31, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fcolorbox{red!65!black}{red!4}{
+\parbox{0.91\textwidth}{
+\textbf{Status and AI-use disclosure.}
+The standard five-cycle double cover conjecture remains open.  This
+manuscript proves difference-rank and four-move normal forms, a short
+packing-to-switch lemma, and exact finite counterexamples only to
+proposed auxiliary flow-reconfiguration lemmas.
+It proves neither FiveCDC nor its negation.
+
+OpenAI Codex agents using GPT-5-series models, under human direction,
+formulated the auxiliary questions and lemmas, found
+the finite examples, wrote the search and checking programs,
+performed the computations, drafted the proofs and this manuscript, and
+conducted an AI-assisted literature search.  The ``independent checker''
+is independent of the discovery implementation, not independent of AI.
+No human author, referee, or cited researcher is represented as having
+verified these results.  Before submission, a human author must inspect
+every proof, independently rerun and preferably reimplement the
+enumerations, audit the graph and cover certificates, review the
+literature, and accept ordinary scholarly responsibility.
+}}
+\end{center}
+
+\begin{abstract}
+Hu\v{s}ek and \v{S}\'amal recently gave a component-parity condition on
+a nowhere-zero \(\F_2^3\)-flow which is equivalent, after choosing the
+flow, to the existence of a five-cycle double cover.  Esperet et al.\
+and Cranston et al.\ study reconfiguration of nowhere-zero flows by
+changes supported on cycles.  We test the direct radius-one synthesis
+of these ideas.
+
+For fixed-value moves on arbitrary Eulerian edge-sets, we first prove
+that unrestricted distance equals the rank of the edgewise difference
+values and give exact criteria for prescribed legal two- and four-move
+factorizations.  A
+smallest \(K_{3,3}\) example and a smallest cube bad-to-good example have
+unrestricted distance two but legal distance three.  On a certified
+girth-ten non-Tait graph, a Jaeger-derived bad flow and a
+FiveCDC-derived good flow have difference rank three but exact legal
+Eulerian-support distance five.  The five supports have 63 connected
+components in total, so for the connected-cycle adjacency in the cited
+reconfiguration papers the certificate proves only
+\(5\leq d\leq63\).
+
+We next prove a human-checkable bridge.  If one value-class matching of
+a cubic \(\F_2^3\)-flow admits two edge-disjoint joins in its complement,
+then an explicitly determined even support, and therefore a finite
+sequence of legal simple-cycle switches, reaches a flow satisfying the
+Hu\v{s}ek--\v{S}\'amal condition.  Connectedness of that support is
+exactly what makes one switch sufficient.
+
+We also analyze the residual blockers of one such join.  Every blocker
+whose nonmatching cut has size three, five, or seven has an occurring
+partner-free flow direction, and cycle--cut orthogonality then gives a
+legal switch making that old shore terminal-even.  Under the natural
+all-in condition we derive an exact aggregate-gain formula: from zero
+tight count, fixed-residual lexicographic descent occurs exactly when old
+even four-cuts are parity-protected and one global integer gain is
+positive.  A certified girth-ten cyclically-4 Tait control shows that the
+reduced cut-space coordination obstruction can still block all three
+directions of one \((5,1)\) shore.  Thus the local theorem is unconditional
+but the non-Tait global coordination step remains open.
+An 18-vertex Blanu\v{s}a snark sharpens the warning: one
+lexicographically optimal representative is blocked at both of its odd
+residual components in all six partner-free directions.  The other two
+optimal representatives for the same target class do admit descent, so
+the example refutes an arbitrary-optimum shortcut, not selection among
+all optima and not FiveCDC.
+
+We then give an exact 26-vertex obstruction to radius one.  The graph is
+simple, cubic, cyclically \(4\)-edge-connected, has girth five, and is
+not Tait-colourable.  One displayed value class already admits two
+edge-disjoint boundary joins.  Nevertheless, for the displayed
+nowhere-zero flow, a standard-library checker exhausts all \(9{,}213\)
+simple cycles and all \(1{,}485\) legal cycle--value switches; none
+reaches the component condition.  The packing construction splits into
+two circuit components, and switching both reaches the condition.  Thus
+the displayed flow has exact distance two.  An independently checked
+five-cycle double cover of the same graph confirms that this is not a
+counterexample to FiveCDC.
+
+For calibration we record a cyclically \(4\)-edge-connected,
+girth-five, Tait-colourable 40-vertex radius-one obstruction, and a
+60-vertex positive control repaired by one \(25\)-edge cycle.  The
+latter is also a literal instance of the packing-to-switch lemma.  All
+finite claims are accompanied by solver-independent, certificate-based
+checking code.  Possible novelty is stated conservatively and remains
+subject to specialist prior-art review.
+
+As a distinct calibration, we give a cyclically \(4\)-edge-connected
+40-vertex Jaeger-star state with exact augmented reciprocal-exchange
+distance three.  This disproves a project-created radius-two shortcut,
+but uses a different state graph from simple-cycle switching.  The same
+graph has an explicit FiveCDC.
+\end{abstract}
+
+\section{Scope and relation to prior work}
+
+A \emph{five-cycle double cover} (FiveCDC) of a finite graph is an
+indexed list \(C_0,\ldots,C_4\) of Eulerian edge-subsets such that every
+edge lies in exactly two members.  Eulerian means even degree at every
+vertex; neither connectedness nor \(2\)-regularity is required.  Empty
+members are allowed, so this is the usual ``at most five'' convention.
+Only the standard, unoriented conjecture is considered here.
+
+Hu\v{s}ek and \v{S}\'amal state FiveCDC as
+Conjecture~1.9 and give an equivalent flow-selection formulation as
+Conjecture~3.19 in \cite{HusekSamal2026}.  In particular, their
+Theorem~3.16 supplies the component-parity criterion used below.  Thus
+FiveCDC remains open, and the remaining universal issue is to select a
+suitable nowhere-zero \(\F_2^3\)-flow.
+
+Cranston, Li, Su, Wang, and Xu define adjacency of nowhere-zero flows by
+requiring their difference to be supported on a cycle
+\cite{EsperetEtAl2026,CranstonEtAl2026}.  In the exponent-two group \(\F_2^3\), a
+difference supported on a simple cycle has one constant nonzero value
+around that cycle.  The switches below are precisely this special case,
+with legality made explicit so that no zero edge is created.
+Cranston et al.\ also use an auxiliary relation \(\mathcal F^*\) in
+which the difference may be supported on an even subgraph.  Its
+different circuit components may carry different values.  Our
+Eulerian-support move permits a disconnected support but requires one
+fixed value on all of it.  Thus, for the relations used here,
+\[
+ \text{connected-cycle adjacency}
+ \ \subseteq\ \text{fixed-value Eulerian-support adjacency}
+ \ \subseteq\ \mathcal F^*\text{ adjacency}.
+\]
+The exact distance-five lower bound below is only for the middle
+relation.  It implies a lower bound for connected-cycle distance, but no
+lower bound for the broader \(\mathcal F^*\) distance.
+
+Our contribution has deliberately narrow scope:
+\begin{enumerate}
+\item an exact normal form for two fixed-value Eulerian-set moves,
+      including smallest \(K_{3,3}\) and cube obstructions to legal
+      distance two;
+\item an exact rank-three criterion for a prescribed four-move order,
+      and a certified pair of flows with zero-allowing distance three
+      but legal Eulerian-support distance five;
+\item a direct proof that a two-join packing yields a finite legal switch
+      sequence to a Hu\v{s}ek--\v{S}\'amal-good flow;
+\item the partner-free single-shore switch theorem and the exact
+      aggregate-gain characterization for fixed-residual descent, together
+      with a certified high-girth Tait control for the remaining reduced
+      cut-space obstruction;
+\item an exact strict 26-vertex countermodel to the assertion that one
+      simple-cycle switch always suffices even when a value class already
+      packs, together with an exact distance-two path and a positive
+      FiveCDC certificate; and
+\item one 40-vertex negative and one 60-vertex positive control; and
+\item an exact 40-vertex countermodel to a separate radius-two
+      reciprocal-exchange assertion for Jaeger-star tree states.
+\end{enumerate}
+No reduction from FiveCDC to a universal radius-one assertion is claimed
+here, and no statement about orientable cycle double covers is made.
+
+\section{Flows, component defects, and switches}
+
+Put \(W=\F_2^3\), written additively, and identify \(W\) with
+\(\{0,\ldots,7\}\) by binary coordinates.  Let \(G\) be a finite simple
+cubic graph.  A map
+\[
+                 f:E(G)\longrightarrow W-\{0\}
+\]
+is a nowhere-zero flow if
+\[
+                 \sum_{e\ni v}f(e)=0
+                 \qquad(v\in V(G)).
+\]
+At a cubic vertex the three incident values are nonzero and pairwise
+distinct.  Consequently each value class
+\[
+                 M_a(f)=\{e:f(e)=a\},\qquad a\ne0,
+\]
+is a matching.
+
+For a nonzero linear functional \(\mu\in W^*\), identified with its
+binary dot-product vector, define
+\begin{equation}
+\begin{split}
+ F_\mu(f)&=\{e:\mu(f(e))=1\},\\
+ K_\mu(f)&=\{e:\mu(f(e))=0\}=E(G)-F_\mu(f).
+\end{split}
+\end{equation}
+For \(r\in W\) with \(\mu(r)=1\), let
+\[
+ Z_r(f)=\bd M_r(f)
+\]
+be the endpoints of the matching \(M_r(f)\).  Define
+\begin{equation}
+ d_\mu(f)=
+ \#\left\{Q\in\Comp(V(G),K_\mu(f)):
+                    |Q\cap Z_r(f)|\ \text{is odd}\right\}.
+\label{eq:defect}
+\end{equation}
+
+\begin{lemma}[affine-value independence]\label{lem:affine}
+The component parities in \eqref{eq:defect} do not depend on the choice of
+\(r\) satisfying \(\mu(r)=1\).
+\end{lemma}
+
+\begin{proof}
+Fix a component \(Q\) of \(K_\mu(f)\).  The parity of
+\(|Q\cap Z_r(f)|\) equals the parity of the number of \(r\)-valued edges
+in \(\delta(Q)\), since an internal matching edge contributes two
+endpoints.  Every edge in \(\delta(Q)\) has \(\mu\)-value one.
+
+Write \(\ker\mu=\{0,p,q,p+q\}\), so the four affine values are
+\(r,r+p,r+q,r+p+q\).  Let their boundary multiplicities modulo two be
+\(n_0,n_p,n_q,n_{p+q}\).  Summing the flow equations on \(Q\) gives
+\[
+ n_0r+n_p(r+p)+n_q(r+q)+n_{p+q}(r+p+q)=0.
+\]
+Comparing coefficients in the basis \((r,p,q)\) gives
+\[
+ n_0+n_p+n_q+n_{p+q}=0,\quad
+ n_p+n_{p+q}=0,\quad n_q+n_{p+q}=0.
+\]
+Hence all four multiplicities are equal.  This proves the claim.
+\end{proof}
+
+\begin{definition}
+The flow \(f\) is \emph{H--S-good} if \(d_\mu(f)=0\) for some
+\(\mu\ne0\).  Its defect profile is
+\[
+                       d(f)=(d_1(f),\ldots,d_7(f)).
+\]
+\end{definition}
+
+By Theorem~3.16 and Observation~3.15 of
+\cite{HusekSamal2026}, an H--S-good flow produces a standard FiveCDC.
+Their Conjecture~3.19 asserts that every bridgeless cubic graph has some
+H--S-good flow and is equivalent to FiveCDC.
+
+\begin{definition}[legal simple-cycle switch]
+Let \(a\in W-\{0\}\), and let \(C\) be a simple cycle of \(G\) such that
+\(C\cap M_a(f)=\varnothing\).  Define
+\begin{equation}
+ f^{a,C}(e)=
+ \begin{cases}
+ f(e)+a,&e\in E(C),\\
+ f(e),&e\notin E(C).
+ \end{cases}
+\end{equation}
+\end{definition}
+
+The cycle equation preserves flow conservation, and
+\(C\cap M_a(f)=\varnothing\) is exactly the condition preventing a zero
+value.  We write \(\dist_{\HS}(f)\) for the minimum number of legal
+simple-cycle switches needed to reach an H--S-good flow, when such a
+sequence exists.
+
+\section{A rank-two normal form for fixed-value Eulerian moves}
+\label{sec:rank-two}
+
+For this section only, permit one move to have an arbitrary Eulerian
+edge-set \(C\), possibly disconnected: choose \(a\in W-\{0\}\) and
+replace \(f\) by \(f+a1_C\).  Call the move legal when the new flow is
+nowhere-zero.  This is a coarser one-step relation than the
+simple-cycle relation above.  Every legal fixed-value Eulerian move
+nevertheless decomposes into legal simple-cycle switches by splitting
+\(C\) into edge-disjoint circuits: during the decomposition, every edge
+has either its old nonzero value or its final nonzero value.
+
+\begin{theorem}[difference-rank normal form]\label{thm:rank-normal}
+Let \(f,g\) be nowhere-zero \(W\)-flows, put \(h=f+g\), and let
+\[
+ D=\operatorname{span}\{h(e):e\in E(G)\}.
+\]
+If zero-valued intermediate flows are permitted, the minimum number of
+fixed-value Eulerian moves from \(f\) to \(g\) is \(\dim D\).
+\end{theorem}
+
+\begin{proof}
+If \(k\) moves use constants \(a_1,\ldots,a_k\), every value \(h(e)\)
+lies in their span, so \(k\geq\dim D\).  Conversely, choose a basis
+\(a_1,\ldots,a_r\) of \(D\) and write
+\[
+ h(e)=\sum_{i=1}^r\lambda_i(e)a_i.
+\]
+Since \(h\) is a flow, each binary coordinate
+\(\lambda_i\circ h\) is a flow.  Hence
+\(C_i=\{e:\lambda_i(e)=1\}\) is Eulerian.  Adding \(a_i\) on \(C_i\)
+for \(i=1,\ldots,r\) adds exactly \(h\).
+\end{proof}
+
+The legality issue has a complete answer in rank two.  Write
+\[
+ D-\{0\}=\{a,b,a+b\},\qquad H_w=\{e:h(e)=w\}.
+\]
+
+\begin{theorem}[rank-two legal-order criterion]\label{thm:rank-two}
+For the ordered basis \((a,b)\), the only two-move factorization is
+\[
+ f\xrightarrow{\,a,\ H_a\cup H_{a+b}\,}
+ f+a1_{H_a\cup H_{a+b}}
+ \xrightarrow{\,b,\ H_b\cup H_{a+b}\,}g.
+\]
+It is legal if and only if
+\begin{equation}\label{eq:rank-two-blocker}
+                 H_{a+b}\cap f^{-1}(a)=\varnothing.
+\end{equation}
+Consequently all six ordered bases are blocked if and only if all six
+directed transitions
+\[
+ (f(e),g(e))=(u,v),\qquad
+ u,v\in D-\{0\},\quad u\ne v,
+\]
+occur.
+\end{theorem}
+
+\begin{proof}
+The two supports are the unique binary coordinate supports of \(h\) in
+the basis \((a,b)\), and hence are Eulerian.  An edge of \(H_a\) cannot
+have \(f(e)=a\), since then \(g(e)=0\).  Thus the first intermediate
+flow vanishes exactly on the set in
+\eqref{eq:rank-two-blocker}.  The second endpoint is the nowhere-zero
+flow \(g\).  Finally, a blocker in
+\eqref{eq:rank-two-blocker} has
+\((f(e),g(e))=(a,b)\); varying the ordered basis gives precisely the six
+displayed transitions.
+\end{proof}
+
+These statements are elementary but useful in delimiting the
+reconfiguration strategy.  On \(K_{3,3}\), with graph6 record
+\texttt{EFz\_}, the flows
+\[
+\begin{split}
+f&=(1,2,3,2,3,1,3,1,2),\\
+g&=(1,3,2,2,1,3,3,2,1)
+\end{split}
+\]
+in the canonical edge order have difference
+\((0,1,1,0,2,2,0,3,3)\) and realize all six directed transitions.
+Thus their unrestricted distance is two but their legal distance is
+three.  A three-step path is obtained by adding constants \(4,3,6\)
+on the circuits
+\[
+ \{1,2,4,5\},\quad \{1,2,7,8\},\quad \{1,2,4,5\},
+\]
+respectively.  This is smallest among connected simple cubic graphs;
+the only order-four graph is \(K_4\), where the six-transition pattern
+is impossible.  The supplied checker also exhausts all 210 flows of
+\(K_4\).
+
+A stronger bad-to-good example occurs on the cube
+\(\texttt{G?zTb\_}\).  It has a displayed H--S-bad flow \(f\) and
+H--S-good flow \(g\) with rank-two difference, the same nonempty binary
+coordinate circuit, all six two-move orders blocked, and a legal
+three-circuit path.  Exact enumeration gives 5,712 nowhere-zero flows
+on the cube, of which 1,344 are H--S-bad and 4,368 are H--S-good.
+All flows on the three connected simple cubic graphs through order six
+are H--S-good, so the cube example is the smallest bad-to-good instance
+in that domain.  Both graphs are Tait-colourable and have explicit
+FiveCDCs; they obstruct only the two-move shortcut.
+
+The complete edge tables, component defects, three-step paths,
+small-order proof, machine-readable witnesses, and standard-library
+checker are in
+{\footnotesize\path{scratch/flow-rank-two-legal-order-20260729/}}.
+
+\section{A rank-three four-move normal form}
+\label{sec:rank-three}
+
+The rank-two criterion is edge-local because the move memberships are
+unique.  With four ordered constants spanning \(W\), every edge has two
+possible membership words.  Their common choice variable is governed by
+one binary incidence system.
+
+\begin{theorem}[rank-three four-move criterion]
+\label{thm:rank-three-four}
+Let \(G\) be a finite multigraph, with loops counted twice in incidence
+sums, and let \(f,g\) be nowhere-zero \(W\)-flows.  Fix an ordered
+four-tuple
+\[
+ (a_1,a_2,a_3,a_4)\in(W-\{0\})^4
+\]
+spanning \(W\), and define
+\[
+ A:\F_2^4\longrightarrow W,\qquad
+ A z=\sum_{j=1}^4z_ja_j.
+\]
+Let \(d\) be the unique nonzero member of \(\ker A\), put \(h=f+g\),
+and choose one preimage \(z^0(e)\in A^{-1}(h(e))\) for every edge.
+At each vertex write
+\begin{equation}
+ \sum_{e\ni v}z^0(e)=q_vd,\qquad q_v\in\F_2.
+\label{eq:rank3-demand}
+\end{equation}
+For an edge \(e\), let \(L_e\subseteq\F_2\) contain precisely the
+choices \(y\) for which all four prefixes
+\begin{equation}
+ f(e)+\sum_{j=1}^k\bigl(z_j^0(e)+yd_j\bigr)a_j,
+ \qquad 1\leq k\leq4.
+\label{eq:rank3-prefix}
+\end{equation}
+are nonzero.
+
+There is a legal realization using the four constants in the prescribed
+order if and only if bits \(y_e\in L_e\) solve
+\begin{equation}
+                         By=q.
+\label{eq:rank3-incidence}
+\end{equation}
+where \(B\) is the unoriented vertex-edge incidence matrix over
+\(\F_2\).
+
+Equivalently, reject if some \(L_e\) is empty.  Otherwise force
+\(y_e=1\) on \(P=\{e:L_e=\{1\}\}\), leave
+\(F=\{e:L_e=\{0,1\}\}\) free, and put
+\(q'=q+B1_P\).  Equation~\eqref{eq:rank3-incidence} is soluble exactly when every
+connected component of the spanning subgraph \((V,F)\), including
+isolated vertices, contains an even number of vertices on which
+\(q'\) is one.
+\end{theorem}
+
+\begin{proof}
+Flow conservation gives
+\[
+ A\sum_{e\ni v}z^0(e)=\sum_{e\ni v}h(e)=0,
+\]
+so the sum lies in \(\ker A=\langle d\rangle\), proving that
+\eqref{eq:rank3-demand} is defined.  Every preimage of \(h(e)\) is uniquely
+\(z^0(e)+y_ed\).  Thus the four supports are Eulerian precisely when
+\[
+ 0=\sum_{e\ni v}\bigl(z^0(e)+y_ed\bigr)
+   =\bigl(q_v+(By)_v\bigr)d
+\]
+at every vertex.  Since \(d\ne0\), this is
+\eqref{eq:rank3-incidence}; condition
+\eqref{eq:rank3-prefix} is exactly edgewise legality.
+
+After substituting the forced-one variables, the remaining system is
+\(B_Fy_F=q'\).  Incidence columns generate exactly the vectors of even
+parity on each free-edge component.  Necessity is the handshake lemma.
+For sufficiency, choose a spanning tree in each component and eliminate
+the demands from its leaves toward a root.  Loop columns are zero, and
+parallel edges remain separate columns, so the same proof covers both.
+\end{proof}
+
+\begin{proposition}[an exact distance-five pair]
+\label{prop:distance-five}
+There is a simple connected cubic non-Tait graph \(G\) of order \(890\)
+and girth ten, with nowhere-zero \(W\)-flows \(f,g\), such that:
+\begin{enumerate}
+\item \(f\) is H--S-bad and \(g\) is induced by an explicit FiveCDC
+      and is H--S-good;
+\item the values of \(f+g\) span \(W\), so the zero-allowing
+      fixed-value Eulerian-support distance is three;
+\item the legal fixed-value Eulerian-support distance from \(f\) to
+      \(g\) is exactly five; and
+\item for connected simple-cycle adjacency,
+      \(5\leq\dist(f,g)\leq63\).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Take the Foster graph with LCF string
+\[
+                 [17,-9,37,-37,9,-17]^{15}.
+\]
+Delete vertex \(0\), and substitute the resulting \(89\)-vertex
+three-pole for every vertex of the Petersen graph.  The checker
+reconstructs the resulting \(890\)-vertex, \(1335\)-edge graph and
+verifies simplicity, cubicity, girth ten, edge-connectivity three,
+cyclic edge-connectivity three, and non-Tait-colourability.  The last
+property also has a short reduction: parity in each odd-order pole
+forces its three boundary colours to be distinct, which would contract
+to a Tait colouring of the Petersen graph.
+
+The frozen Jaeger state gives a nowhere-zero flow \(f\) with odd-kernel
+sizes
+\[
+                         (506,507,526)
+\]
+and H--S profile
+\[
+                 (174,192,138,184,130,140,110).
+\]
+Its seven entries are positive.  The displayed FiveCDC, after assigning
+its five coordinates the points \((0,1,2,3,4)\) of \(W\), gives a flow
+\(g\) with profile
+\[
+                 (142,160,132,0,148,130,150).
+\]
+
+The difference values have rank three, and
+Theorem~\ref{thm:rank-normal} gives zero-allowing distance three.
+All \(168\) ordered bases are illegal.  The independent implementation
+of Theorem~\ref{thm:rank-three-four} exhausts all \(1848\) ordered
+spanning four-tuples: \(1176\) have an empty local list \(L_e\), and
+the remaining \(672\) fail the free-component parity condition.
+Thus no legal path has at most four moves.
+
+Five legal moves use constants
+\[
+                         (5,1,6,2,7)
+\]
+on Eulerian supports of sizes
+\[
+                         (566,608,565,610,604).
+\]
+The bitmasks in the certificate verify every vertex parity and every
+intermediate nonzero value and end exactly at \(g\).  This proves
+Eulerian-support distance five.  Those supports have respectively
+\[
+                         (14,11,10,14,14)
+\]
+connected components.  Each is a simple cycle, and the components of a
+legal Eulerian support may be switched sequentially in any order.
+Hence the same data give a 63-step connected-cycle path.  Every
+connected-cycle move is an Eulerian-support move, which gives the lower
+bound five.
+\end{proof}
+
+The source and independently written standard-library checkers, exact
+flows, five support masks, component lists, and full proof ledger are in
+\[
+\texttt{scratch/petersen-foster-girth10-nontait-20260729/}
+\]
+and
+\[
+\texttt{scratch/rank3-fourmove-normal-form-20260729/}.
+\]
+This proposition is a distance statement for one selected pair.  It
+does not say that \(f\) is five moves from the set of all H--S-good
+flows, does not give a distance-five lower bound in \(\mathcal F^*\),
+and does not advance the existential flow-selection conjecture.
+
+\section{A human packing-to-switch lemma}
+
+For an edge set \(J\), write \(\bd J\) for the set of vertices having odd
+degree in \(J\).  A \(T\)-join is an edge set \(J\) with \(\bd J=T\).
+
+\begin{theorem}[packing-to-switch]\label{thm:packing}
+Fix \(a\ne0\) and \(\mu(a)=1\).  Put
+\[
+ F=F_\mu(f),\qquad M=M_a(f),\qquad J_0=F-M.
+\]
+Suppose \(G-M\) contains two edge-disjoint \(\bd M\)-joins
+\(J_1,J_2\).  Then switching \(a\) on
+\begin{equation}
+                       C=J_0\symdiff J_1
+\end{equation}
+produces an H--S-good flow.  The support \(C\) is a disjoint union of
+legal simple cycles, so this operation is a legal finite sequence of
+simple-cycle switches.  If \(C\) is connected, one switch suffices.
+\end{theorem}
+
+\begin{proof}
+The binary characteristic function \(\mu\circ f\) is a flow, so \(F\)
+is Eulerian.  Because \(M\subseteq F\),
+\[
+                         \bd J_0=\bd(F-M)=\bd M.
+\]
+Thus \(J_0\) and \(J_1\) have the same boundary, and
+\(C=J_0\symdiff J_1\) is Eulerian.  Both avoid \(M\), hence so does
+\(C\).
+
+In a cubic graph every vertex has degree zero or two in an Eulerian edge
+set.  Every nonempty connected component of \(C\) is therefore a simple
+cycle.  Switch \(a\) on all these components.  Since \(\mu(a)=1\), the
+new affine support is
+\begin{equation}
+\begin{split}
+ F\symdiff C
+   &=F\symdiff\bigl((F-M)\symdiff J_1\bigr)\\
+   &=M\cup J_1.
+\end{split}
+\label{eq:packing-new-support}
+\end{equation}
+The union is disjoint because \(J_1\subseteq E(G-M)\).
+
+The matching \(M_a\) itself is unchanged: the support avoids \(M_a\), and
+an edge with old value different from \(a\) cannot acquire value \(a\)
+after adding \(a\), since that would force its old value to be zero.
+Consequently every component switch remains legal when the components
+are performed sequentially.
+
+Finally, \(J_2\) avoids both \(M\) and \(J_1\), so by
+\eqref{eq:packing-new-support} it lies in
+the new zero-side \(K_\mu\).  Restricting the equality
+\(\bd J_2=\bd M\) to any component \(Q\) of this zero-side and applying
+the handshaking lemma gives
+\[
+                       |Q\cap\bd M|\equiv0\pmod2.
+\]
+By Lemma~\ref{lem:affine}, this is the H--S condition for \(\mu\).
+\end{proof}
+
+\begin{remark}
+The theorem exposes the radius-one gap.  A packing gives an Eulerian
+switch support canonically, but that support may have several cycle
+components.  The theorem guarantees a finite reconfiguration sequence;
+it guarantees one step only when the support is connected.
+\end{remark}
+
+\section{Residual blockers and an exact aggregate-gain gate}
+
+Fix a nonzero target value \(b\), put \(M=M_b(f)\), \(H=G-M\), and let
+\(J\subseteq H\) be a \(T=\bd M\)-join.  Then
+\[
+                         \mathcal F=M\mathbin{\dot\cup}J
+\]
+is Eulerian.  For a component \(Q\) of \(G-\mathcal F\), put
+\[
+ k_Q=|\delta_H(Q)|=|\delta_J(Q)|,\qquad
+ q_Q=|\delta_M(Q)|,\qquad d_Q=k_Q+q_Q.
+\]
+Call \(Q\) odd when \(q_Q\) is odd.  Summing the flow equations over its
+shore gives
+\begin{equation}
+                 \bigoplus_{e\in\delta_H(Q)}f(e)=b.          \label{eq:blocker-cut-xor}
+\end{equation}
+In particular \(k_Q\) is odd and at least three.  The profile
+\((k_Q,q_Q)=(3,1)\) is called tight.  The coordinatewise-minimal non-tight
+odd profiles are \((3,3)\) and \((5,1)\).
+
+For fixed \(b\), the six values outside \(\{0,b\}\) form three partner
+pairs \(\{u,u+b\}\).  An occurring value \(t\) on
+\(\delta_H(Q)\) is \emph{partner-free} when \(b+t\) does not occur there.
+
+\begin{lemma}[partner-free direction]\label{lem:partner-free}
+If \(k_Q\in\{3,5,7\}\), then \(\delta_H(Q)\) has a partner-free occurring
+value.  If \(k_Q=3\), every occurring value is partner-free.  The bound is
+sharp for this criterion at \(k_Q=9\).
+\end{lemma}
+
+\begin{proof}
+Quotient \(W\) by \(\langle b\rangle\).  The three partner pairs map to
+the three nonzero vectors \(c_1,c_2,c_3\in\F_2^2\), with
+\(c_1+c_2+c_3=0\).  If \(n_i\) is the total multiplicity in the \(i\)-th
+pair, the projection of \eqref{eq:blocker-cut-xor} says that the three
+parities \(n_i\bmod2\) are equal.  Their sum is odd, so all three are odd.
+If no occurring value were partner-free, both members of every pair would
+occur; then every \(n_i\) would be an odd integer at least three, forcing
+\(k_Q\ge9\).  When \(k_Q=3\), every \(n_i=1\).  Sharpness is witnessed,
+for \(b=1\), by the multiset \(2,2,3,4,4,5,6,6,7\).
+\end{proof}
+
+\begin{theorem}[single-shore parity kill]\label{thm:single-shore-kill}
+Let \(Q\) be odd and let \(t\) be partner-free on its \(H\)-cut.  There is
+a legal binary \(t\)-switch support \(X\subseteq G-M_t\) such that the old
+shore \(Q\) has even target-cut parity after the switch.
+\end{theorem}
+
+\begin{proof}
+Put \(P_t=M_b\cup M_{b+t}\), \(L=G-M_t\), and
+\(S=\delta_M(Q)\).  Partner-freeness gives
+\(P_t\cap\delta_G(Q)=S\).  On \(Z_1(L;\F_2)\), consider
+\(X\mapsto|X\cap S|\bmod2\).
+
+If this functional vanished on the cycle space, cycle--cut orthogonality
+would give a shore \(U\) with \(\delta_L(U)=S\).  The full cut
+\(\delta_G(U)\) would consist of the odd number \(q_Q\) of \(b\)-edges in
+\(S\), together with some \(t\)-edges.  Its flow xor would be \(b\) or
+\(b+t\), both nonzero, contradicting the flow cut equation.  Thus some
+binary cycle \(X\subseteq L\) meets \(S\) oddly.  It is a legal
+\(t\)-switch because it contains no \(t\)-valued edge.  Under this switch,
+membership in the target class changes exactly on \(P_t\cap X\), so the
+target-cut parity of \(Q\) changes by \(|X\cap S|=1\).
+\end{proof}
+
+The theorem concerns the old shore only.  It is independent of how a new
+join is chosen, but it does not prevent a crossing or proper subshore from
+becoming odd.
+
+We now record the exact fixed-residual calculation.  Let
+\(X\subseteq G-M_t\) be a legal switch and put
+\[
+ D^-=X\cap M_b,\qquad D^+=X\cap M_{b+t}.
+\]
+Assume the \emph{all-in} condition \(D^+\subseteq J\).  Then
+\[
+ M'=(M-D^-)\mathbin{\dot\cup}D^+\subseteq\mathcal F,
+ \qquad J'=\mathcal F-M'
+\]
+is a valid new join, and the residual components and their \(d_C\)'s stay
+fixed.  For each old residual component define
+\[
+ q'_C=q_C-|D^-\cap\delta(C)|+|D^+\cap\delta(C)|,\quad
+ \Delta_C=q'_C-q_C,\quad \epsilon_C=\Delta_C\pmod2.
+\]
+Let \(\mathcal O\) and \(\mathcal E\) be the old odd and even components,
+and use subscripts 0 and 1 for the value of \(\epsilon_C\).  Put
+\[
+ S(M,J)=\sum_{C\in\mathcal O}k_C.
+\]
+Splitting into the four parity cases gives
+\begin{equation}
+\begin{split}
+ S(M',J')-S(M,J)
+={}&-\sum_{C\in\mathcal O_0}\Delta_C
+    -\sum_{C\in\mathcal O_1}k_C\\
+ &+\sum_{C\in\mathcal E_1}(d_C-q'_C).                       \label{eq:aggregate-change}
+\end{split}
+\end{equation}
+Define the aggregate gain by
+\begin{equation}
+ \mathcal G(X)=
+ \sum_{C\in\mathcal O_1}k_C
+ +\sum_{C\in\mathcal O_0}\Delta_C
+ -\sum_{C\in\mathcal E_1}(d_C-q'_C).                       \label{eq:aggregate-gain}
+\end{equation}
+
+\begin{theorem}[exact fixed-residual descent gate]
+\label{thm:aggregate-gate}
+Suppose the old tight-component count is zero and the all-in condition
+holds.  Then, for
+\[
+ \Psi(M,J)=\bigl(\#\{\text{tight residual components}\},S(M,J)\bigr),
+\]
+the fixed-\(\mathcal F\) candidate satisfies
+\(\Psi(M',J')<_{\rm lex}\Psi(M,J)\) if and only if
+\begin{enumerate}
+ \item \(\epsilon_C=0\) for every old even component with \(d_C=4\); and
+ \item \(\mathcal G(X)>0\).
+\end{enumerate}
+If \(J\) realizes the globally optimized value \(\Psi^*(M)\), these two
+conditions imply \(\Psi^*(M')<\Psi^*(M)\).
+\end{theorem}
+
+\begin{proof}
+An old odd component cannot have \(d_C=4\), because the old tight count is
+zero.  With \(d_C\) fixed, a new tight component can therefore arise only
+from an old even four-cut whose parity flips.  Conversely, such a flip
+makes the component odd with \(d_C=4\); the alternative
+\((k'_C,q'_C)=(1,3)\) is excluded by the same cut-xor argument that gives
+\(k_C\ge3\), so the new profile is \((3,1)\) and is tight.  Hence the new
+tight count is zero exactly under condition 1.  Subject to that condition,
+both first coordinates vanish, and \eqref{eq:aggregate-change} says that
+the second coordinate decreases exactly when \(\mathcal G(X)>0\).
+Global reoptimization can only improve on the admissible join \(J'\).
+\end{proof}
+
+This criterion strictly weakens componentwise monotonicity: losses on a
+surviving odd component and newly odd components of cut size greater than
+four are allowed when compensated in the aggregate.
+
+For a partner-free direction, all-in supports form the cycle space of
+\[
+ L_t=G-\bigl(M_t\cup(M_{b+t}-J)\bigr).
+\]
+Writing
+\(a_C=(M_b\cup M_{b+t})\cap E(L_t)\cap\delta_G(C)\), the parity part of
+Theorem~\ref{thm:aggregate-gate} is feasible for a selected old odd shore
+\(Q\) exactly unless
+\begin{equation}
+ \exists\mathcal I\subseteq\{C\in\mathcal E:d_C=4\}:\quad
+ a_Q\mathbin{\triangle}\mathop{\triangle}_{C\in\mathcal I}a_C
+ \in B^1(L_t;\F_2),                                         \label{eq:reduced-cut-obstruction}
+\end{equation}
+where \(B^1\) is the binary cut space.  This is the exact reduced binary
+coordination obstruction; positivity of \(\mathcal G\) is a separate
+integer condition.
+
+The archived 80-vertex control shows that
+\eqref{eq:reduced-cut-obstruction} is real even under simplicity, girth
+ten, and cyclic edge connectivity at least four.  For one displayed
+\((5,1)\) blocker, all three partner-free directions fail: two have
+\(a_Q\in B^1(L_t)\), while the third has \(a_Q\triangle a_C\in B^1(L_t)\)
+for one protected even four-cut.  Independent reconstruction checks the
+graph, flow, cuts, complete fundamental-cycle bases, and every all-in
+cycle.  The same graph has an explicit proper 3-edge-colouring, so it is
+a Tait control rather than a counterexample in the non-Tait minimal domain.
+The unconditional result is Theorem~\ref{thm:single-shore-kill}; universal
+coordination in the non-Tait high-girth case remains open.
+
+\begin{proposition}[a representative-dependent non-Tait blocker]
+\label{prop:nontait-representative-blocker}
+There is a simple bridgeless cyclically \(4\)-edge-connected non-Tait
+cubic graph \(G\) of order \(18\), a nowhere-zero
+\(\F_2^3\)-flow, a target class \(M\), and a join \(J\) realizing the
+lexicographic optimum
+\[
+                         \Psi^*(M)=(0,8),
+\]
+such that both old odd residual components are blocked by
+\eqref{eq:reduced-cut-obstruction} in every partner-free direction.
+The two profiles are \((3,3)\) and \((5,1)\).
+
+The same target class has two other joins realizing \((0,8)\), and each
+admits an all-in fixed-residual switch to \((0,0)\).  Thus the assertion
+that an arbitrary optimum admits the reduced gate is false, while the
+assertion that some optimum admits it is not refuted.
+The host has girth five.  Among simple cyclically \(4\)-edge-connected
+non-Tait cubic hosts, order \(18\) is minimum for the precise
+arbitrary-optimum obstruction just stated.
+\end{proposition}
+
+\begin{proof}
+In the frozen edge order the labelled graph6 record is
+\begin{center}
+\nolinkurl{Q???C@?GCoOoDO[?CcAO_?k?J??},
+\end{center}
+and its canonical record is
+\begin{center}
+\nolinkurl{Qs??GODB?E@OOGG@G@@?_C?cO@_}.
+\end{center}
+The flow word is
+\[
+\begin{split}
+(&6,6,6,2,3,1,4,5,1,5,2,7,3,5,6,3,7,4,\\
+ &5,4,1,5,2,7,5,4,1).
+\end{split}
+\]
+Direct xor at the eighteen vertices checks the flow equations.  Put
+\[
+ M=\{5,8,20,26\},\qquad
+ J=\{4,7,10,11,12,14,18,21,23,24\}.
+\]
+Both sets have boundary
+\(\{4,6,7,9,10,11,15,17\}\), so
+\(M\mathbin{\dot\cup}J\) is Eulerian.  Its two odd residual shores are
+\[
+ C_0=\{0,7,10,11\},\qquad
+ C_1=\{1,2,5,8,9,13,14,16\},
+\]
+with the displayed profiles.  The complement \(G-M\) has cycle rank six.
+Adding every one of its \(2^6=64\) binary cycles to \(J\) gives all
+boundary joins; direct evaluation gives exactly three minimizers and
+lexicographic minimum \((0,8)\).
+
+Let \(C_2,C_3,C_4\) denote the old even four-cut residual shores, in the
+frozen certificate order, and put
+\[
+ W=\{1,2,4,6,8,9,13,14,15,16,17\}.
+\]
+For \(C_0\), the three partner-free directions \(3,5,7\) have the cut-space
+certificates
+\[
+\begin{array}{c|l}
+3&a_{C_0}\symdiff a_{C_4}=\{5\}=\delta_{L_3}(\{10\})\\
+5&a_{C_0}=\delta_{L_5}(\{4,11,17\})\\
+7&a_{C_0}\symdiff a_{C_2}=\{5,8,14,26\}=\delta_{L_7}(W).
+\end{array}
+\]
+For \(C_1\), the partner-free directions \(2,5,6\) have
+\[
+\begin{array}{c|l}
+2&a_{C_1}\symdiff a_{C_2}\symdiff a_{C_3}
+   =\{4,5\}=\delta_{L_2}(\{10\})\\
+5&a_{C_1}=\{20\}=\delta_{L_5}(\{15\})\\
+6&a_{C_1}\symdiff a_{C_3}\symdiff a_{C_4}
+   =\{5,8,26\}=\delta_{L_6}(W).
+\end{array}
+\]
+Every binary cycle meets a cut evenly.  Each identity therefore says
+that flipping the selected old odd shore forces either zero flip there or
+a forbidden flip at an old even four-cut.  These six literal identities
+are human-checkable certificates for the complete local stall.
+
+The other two optimum joins are
+\[
+ \{2,4,7,9,11,15,16,19,25\},\qquad
+ \{2,4,7,10,11,13,14,19,25\}.
+\]
+For each, direction \(3\) on
+\[
+ X=\{0,2,6,8,9,11,13,14,21,23\}
+\]
+passes the all-in and protected-cut tests and yields \((0,0)\).
+
+Finally, a direct perfect-matching enumeration finds twenty matchings;
+their complementary circuit lengths are \((5,13)\) sixteen times and
+\((9,9)\) four times.  Hence no complement is a union of even circuits,
+so \(G\) is non-Tait.  Exhaustive shore tests give cyclic connectivity
+four.  Canonical generation through order sixteen leaves only the
+Petersen graph in the stated non-Tait host domain.  Exhausting its
+28,560 nowhere-zero flows and all target joins finds no optimum with
+first coordinate zero and positive second coordinate.  This proves the
+minimum-order qualification.  All enumerations and the literal graph,
+flow, joins, cuts, and escapes are independently replayed in the package
+\path{scratch/bpr-second-coordinate-nontait-blocker-20260731/}.
+\end{proof}
+
+\section{The direct radius-one assertion}
+
+The most direct strengthening suggested by
+Theorem~\ref{thm:packing} is:
+
+\begin{quote}
+\emph{For every simple cubic cyclically \(4\)-edge-connected graph and
+every nowhere-zero \(W\)-flow \(f\), either \(f\) is H--S-good or one
+legal simple-cycle switch from \(f\) is H--S-good.}
+\end{quote}
+
+This statement concerns the current H--S component condition, not a
+fixed five-cover and not an older all-value-class nonpacking condition.
+The following exact countermodel refutes it.
+
+\section{An exact strict 26-vertex countermodel}
+
+Graph6 orders the edges lexicographically by second endpoint and then by
+first endpoint.  Consider the graph
+\begin{center}
+\ttfamily\small
+Y??G@cOOGC??P??Ap???`\_A??CIC???IC\_C?@??HO??A??B\_G????D?\_
+\end{center}
+and the following flow values in that edge order:
+\begin{equation}
+\begin{split}
+(&5,1,5,4,4,4,7,1,6,7,3,1,6,4,3,2,3,2,6,1,\\
+ &2,5,5,2,7,6,3,2,5,7,1,1,7,6,5,3,1,7,6).
+\end{split}
+\label{eq:strict-flow}
+\end{equation}
+
+\begin{theorem}[strict radius-one countermodel]\label{thm:counter}
+The graph and flow in \eqref{eq:strict-flow} have the following properties.
+\begin{enumerate}
+\item The graph is simple, cubic, cyclically \(4\)-edge-connected, has
+      girth five, and has no Tait \(3\)-edge-colouring.
+\item The displayed values form a nowhere-zero \(W\)-flow with profile
+      \[
+                           (6,6,4,6,2,4,4).
+      \]
+\item Its value-4 class packs two edge-disjoint boundary joins in its
+      complement.
+\item The graph has \(9{,}213\) simple cycles and exactly \(1{,}485\)
+      legal cycle--value switches from this flow.  None is H--S-good.
+      The minimum defect at radius at most one is two.
+\item The graph has the explicit standard FiveCDC given below.
+\item The displayed flow has exact H--S distance two.
+\end{enumerate}
+\end{theorem}
+
+\paragraph{FiveCDC certificate.}
+Encode a pair of cover coordinates by a five-bit integer.  In graph6
+edge order, the labels are
+\begin{equation}
+\begin{split}
+(&3,20,5,17,3,5,6,3,3,5,10,6,3,5,3,6,5,9,10,12,\\
+ &6,18,24,12,20,6,18,6,20,18,6,6,18,20,6,5,5,6,3).
+\end{split}
+\label{eq:strict-fivecdc}
+\end{equation}
+Every label in \eqref{eq:strict-fivecdc} has Hamming weight two.  For each of the five bit
+positions and each vertex, an even number of incident labels contain
+that bit.  Thus the five bit-coordinate edge sets are Eulerian and every
+edge belongs to exactly two of them.
+
+\paragraph{Exact distance-two certificate.}
+Starting from \eqref{eq:strict-flow}, perform
+\begin{equation}
+\begin{array}{c@{\qquad}l}
+ a=4&
+ C=(0,1,2,8,9,20,22,24,25,26,30,31,33),\\[2mm]
+ a=4&
+ C=(6,12,14,15,34,35).
+\end{array}
+\label{eq:strict-path}
+\end{equation}
+Both supports are simple cycles and avoid the current value class being
+added.  The successive profiles are
+\begin{equation}
+                (4,6,4,2,4,4,4),\qquad(4,6,4,0,6,4,4).
+\label{eq:strict-path-profiles}
+\end{equation}
+Thus \eqref{eq:strict-path} gives an H--S-good flow after two steps.
+
+\paragraph{Packing certificate.}
+The value-4 matching is
+\[
+                         M_4=(3,4,5,13).
+\]
+The two edge sets
+\begin{align*}
+J_0={}&(1,14,15,18,20,21,26,28,29,30,31,32,35,37,38),\\
+J_1={}&(0,2,6,7,8,9,12,16,17)
+\end{align*}
+are disjoint, avoid \(M_4\), and both have boundary
+\(\partial M_4\).  The even support furnished by
+Theorem~\ref{thm:packing} has exactly the two components in
+\eqref{eq:strict-path}.
+Hence this certificate explains the distance-two repair while proving
+that packability alone does not force a radius-one neighbour.
+
+\begin{proof}[Certificate proof of Theorem~\ref{thm:counter}]
+The supplied standard-library checker decodes graph6 from first
+principles.  It verifies distinct edges, degree three, connectedness,
+the 26 vertex flow equations, and all 39 nonzero values.  It examines every deletion
+of one, two, or three edges and rejects a deletion as a cyclic cut only
+after constructing all components and confirming that at least two
+contain cycles.  It independently computes girth and exhaustively
+backtracks over proper three-edge-colourings.
+
+For completeness of the radius-one enumeration, the checker performs a
+depth-first enumeration of simple cycles.  The minimum vertex of a cycle
+is its unique allowed starting vertex.  The two possible traversal
+directions are quotiented by retaining the direction whose second vertex
+is smaller than its final vertex.  Hence each undirected simple cycle is
+generated exactly once.  For each generated cycle and each
+\(a\in W-\{0\}\), the checker tests legality directly and, when legal,
+recomputes the full seven-entry defect profile from graph components.
+The resulting exact totals are \(9{,}213\) cycles, \(1{,}485\) legal
+switches, and zero clean neighbours.  This proves
+\(\dist_{\HS}(f)\geq2\).  Direct verification of
+\eqref{eq:strict-path}--\eqref{eq:strict-path-profiles} proves
+\(\dist_{\HS}(f)\leq2\).
+
+Finally, the checker verifies the matching and both join boundaries,
+and tests every weight and every vertex-coordinate parity in
+\eqref{eq:strict-fivecdc}.
+These finite checks prove all six assertions.
+\end{proof}
+
+\begin{remark}
+Theorem~\ref{thm:counter} is a counterexample only to the radius-one
+auxiliary statement.  Its explicit FiveCDC proves that it is not a
+FiveCDC counterexample.
+\end{remark}
+
+\section{Forty- and sixty-vertex controls}
+
+Two controls separate radius-one failure from the existence of a cover
+and from the packing-to-switch mechanism.
+
+\subsection{A Tait-colourable 40-vertex negative control}
+
+There is a simple cubic, cyclically \(4\)-edge-connected graph of girth
+five with a nowhere-zero flow having profile
+\begin{equation}
+                         (6,8,10,4,10,6,6).
+\end{equation}
+The checker exhausts \(941{,}438\) simple cycles and \(48{,}544\) legal
+cycle--value switches.  None is H--S-good, and the minimum defect at
+radius at most one is two.  In contrast to
+Theorem~\ref{thm:counter}, this graph has a displayed Tait
+three-edge-colouring; its three colour-pair \(2\)-factors give a
+three-cycle double cover.  This is therefore a clean negative control
+for the reconfiguration assertion, not for FiveCDC.
+
+\subsection{A 60-vertex positive control and the packing lemma}
+
+The 60-vertex control is simple cubic and cyclically
+\(4\)-edge-connected.  Its starting profile is
+\begin{equation}
+                         (8,8,4,6,6,8,6).
+\label{eq:order60-start-profile}
+\end{equation}
+Switching \(a=7\) on the \(25\)-edge simple cycle
+\begin{equation}
+\begin{split}
+C=(1,2,8,11,18,22,24,26,27,30,31,33,35,37,39,40,\\
+\hspace{31mm}42,43,45,62,65,67,73,74,75)
+\end{split}
+\label{eq:order60-cycle}
+\end{equation}
+gives profile
+\begin{equation}
+                         (10,6,6,8,8,6,0).
+\label{eq:order60-end-profile}
+\end{equation}
+Thus this state is repaired in one step.
+
+The repair also instantiates Theorem~\ref{thm:packing}.  For the
+value-\(7\) matching, two edge-disjoint \(\bd M_7\)-joins in
+\(G-M_7\) are
+\begin{equation}
+\begin{split}
+J_1={}&(1,2,13,16,18,20,26,32,35,44,46,49,50,53,57,60,61,\\
+      &\qquad62,63,64,69,71,72,73,75,81,83),\\
+J_2={}&(3,6,7,10,12,14,17,19,22,24,27,29,34,37,40,41,43,\\
+      &\qquad45,47,48,55,56,74,80,82,85,86,87,88).
+\end{split}
+\label{eq:order60-joins}
+\end{equation}
+With \(F=F_7(f)\), the checker verifies
+\begin{equation}
+             C=(F-M_7)\symdiff J_1,\qquad
+             J_2\cap(M_7\cup J_1)=\varnothing.
+\label{eq:order60-packing-identity}
+\end{equation}
+Equations~\eqref{eq:order60-cycle}--\eqref{eq:order60-packing-identity}
+are therefore a literal connected-support case
+of the human lemma.
+
+\begin{table}[t]
+\centering
+\caption{The three principal exact computations.  ``Legal'' counts
+cycle--value pairs, not merely cycles.}
+\begin{tabular}{@{}rrrrrl@{}}
+\toprule
+order & cycles & legal & initial minimum & radius-one minimum & outcome\\
+\midrule
+26 & \(9{,}213\)   & \(1{,}485\)  & \(2\) & \(2\) & packs; no one-switch repair\\
+40 & \(941{,}438\) & \(48{,}544\) & \(4\) & \(2\) & no repair; Tait control\\
+60 & ---           & ---          & \(4\) & \(0\) & displayed one-switch repair\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{A Jaeger-star reciprocal-exchange radius-two obstruction}
+\label{sec:jaeger}
+
+This section uses a different adjacency relation from the legal
+simple-cycle switches above.  Let \(r\) be a cubic vertex with incident
+edges \(s_0,s_1,s_2\), and partition
+\[
+                   E(G-r)=A_0\sqcup A_1\sqcup A_2
+\]
+so that
+\[
+                  T_i=\{s_i\}\cup(E(G-r)-A_i)
+\]
+is a spanning tree for each \(i\).  Let \(K_i\subseteq T_i\) be the
+unique edge set having odd degree at every vertex, and define
+\[
+ f(e)_i=1\quad\Longleftrightarrow\quad e\notin K_i.
+\]
+A \emph{reciprocal exchange} swaps one edge of \(A_i\) with one edge of
+\(A_j\), provided both changed sets still define trees.  We order states
+lexicographically by
+\[
+                 \Psi=\left(\min_{\mu\ne0}d_\mu(f),
+                         |K_0|+|K_1|+|K_2|\right).
+\]
+The auxiliary search also declares a state terminal when one of 21
+parallel whole-circuit span systems certifies a switch to an H--S-good
+flow.  This is more permissive than direct H--S goodness and is kept
+separate from it below.
+
+\begin{proposition}[exact reciprocal-exchange distance three]
+\label{prop:jaeger-three}
+There is a simple cubic, \(3\)-edge-connected, cyclically
+\(4\)-edge-connected, nonplanar graph of order \(40\) and girth five
+with a rooted Jaeger-star state such that:
+\begin{enumerate}
+\item its kernel sizes are \((20,20,20)\), its H--S defect profile is
+      \((4,6,2,6,6,6,2)\), \(\Psi=(2,60)\), and all 21 parallel span
+      flags fail;
+\item no lower-\(\Psi\), H--S-good, or parallel-span-successful state is
+      reachable by at most two legal reciprocal exchanges; and
+\item a displayed sequence of three reciprocal exchanges reaches an
+      H--S-good flow.
+\end{enumerate}
+The same graph has an explicit standard FiveCDC.
+\end{proposition}
+
+\paragraph{Exact data.}
+The labeled graph6 record used for the state is
+\begin{center}
+\scriptsize
+\nolinkurl{ghe?GC@@G??@?@??_@I??A?C_?G??G@?CA?@?C?G_??_@?@???@?@??_?C?G??C@?O??C?A??G????G????C????@??O??G?????_????H????_@?????G_????@G??_?C@}.
+\end{center}
+Nauty/Traces \texttt{labelg -q} gives the canonical record
+\begin{center}
+\scriptsize
+\nolinkurl{gs?GO???G?_????D?@_?G?ACC?OC@?GC?A@G?O??A???CO??G?O???c??O_????O???@C???A_???Q????__@????A?????_???Ga????WG????GG????CG????CI????OC}.
+\end{center}
+At root \(0\), in labeled graph6 edge order after deleting its three
+incident edges, the omitted-class masks are
+\[
+ (74750917167123596,\ 60249003513889361,\ 9115267394842914).
+\]
+
+For each \(\mu\ne0\), the checker evaluates all four matching values
+\(r\) with \(\mu(r)=1\), exactly as in Theorem~3.16 of
+\cite{HusekSamal2026}.  At the seed the resulting component-defect
+matrix is
+\[
+\begin{pmatrix}
+4&4&4&4\\
+6&6&6&6\\
+2&2&2&2\\
+6&6&6&6\\
+6&6&6&6\\
+6&6&6&6\\
+2&2&2&2
+\end{pmatrix}.
+\]
+Thus no zero profile entry is hidden by a choice of affine matching
+value.
+
+\paragraph{Exhaustive radius-two certificate.}
+There are \(3\cdot19^2=1083\) candidate first swaps and exactly \(93\)
+legal neighbors.  None is lower or successful; \(24\) are safe with the
+same \(\Psi\).  Exhausting every legal neighborhood of those \(24\)
+states checks \(2196\) second arcs, with no lower \(\Psi\), no zero
+H--S defect, and no successful parallel span flag.  These arcs have
+\(1895\) distinct targets, \(1852\) of them new at distance two.
+
+The local-position swaps
+\[
+                    (10,9),\qquad(40,43),\qquad(15,17)
+\]
+exchange full graph edges
+\[
+                    (13,12),\qquad(43,46),\qquad(18,20).
+\]
+The successive exact data are
+\begin{center}
+\small
+\begin{tabular}{@{}ccllc@{}}
+\toprule
+state & kernel sizes & profile & \(\Psi\) & span flags\\
+\midrule
+seed & \((20,20,20)\) & \((4,6,2,6,6,6,2)\) & \((2,60)\) & 0\\
+1 & \((20,20,20)\) & \((4,6,2,6,6,6,2)\) & \((2,60)\) & 0\\
+2 & \((20,20,20)\) & \((4,6,4,6,2,4,2)\) & \((2,60)\) & 0\\
+3 & \((20,20,21)\) & \((6,6,6,6,4,4,0)\) & \((0,61)\) & 3\\
+\bottomrule
+\end{tabular}
+\end{center}
+The zero in the last profile is direct Theorem~3.16 component-parity
+success for the current flow.  The three span flags are a separate
+additional fact.  Hence the exact augmented reciprocal-exchange
+distance is three.
+
+\paragraph{FiveCDC-positive caveat.}
+In labeled graph6 edge order, the following five-bit labels all have
+weight two:
+\begin{equation}
+\begin{split}
+(&20,24,9,5,3,17,24,18,10,9,3,5,20,5,6,12,12,6,20,17,\\
+ &18,3,9,10,10,3,10,9,10,3,3,9,10,17,3,10,18,9,24,24,\\
+ &17,17,9,24,10,18,9,17,24,24,20,9,12,3,5,12,6,24,18,10).
+\end{split}
+\end{equation}
+Their xor is zero around every vertex.  Therefore their five bit
+coordinates are Eulerian and cover every edge exactly twice.  This
+proves directly that the graph is FiveCDC-positive.
+
+\begin{proof}
+The independent standard-library checker decodes both graph and state,
+checks the tree and odd-kernel definitions, exhausts all zero-, one-,
+two-, and three-edge cuts, and computes girth.  It then performs the
+literal finite enumerations and parity calculations just stated.
+Nauty/Traces \texttt{planarg -v} independently reports the graph as
+nonplanar.  Direct vertex-coordinate parity checks verify the displayed
+FiveCDC.  The exhaustive lower bound through radius two and the literal
+three-exchange path prove the exact distance.
+\end{proof}
+
+\begin{remark}
+Proposition~\ref{prop:jaeger-three} concerns reciprocal exchanges of
+three-tree states.  It is not a statement about the simple-cycle-switch
+distance \(\dist_{\HS}\) used in
+Theorem~\ref{thm:counter}, and it does not imply that this graph is hard
+for every flow.  Its role is solely to invalidate a project-created
+radius-two shortcut.
+\end{remark}
+
+\section{Verification architecture}
+
+The principal checker is
+\[
+\texttt{scratch/verify\_husek\_samal\_packable\_one\_switch\_countermodel.py}.
+\]
+It uses only the Python standard library.  Its graph6 decoder, flow
+checker, component-defect routine, simple-cycle generator, switch
+routine, cyclic-cut enumeration, girth computation, Tait-colouring
+backtracker, and FiveCDC checker are implemented locally.  No SAT solver
+or opaque mathematical library is used.
+
+The 40-vertex negative control is checked by the separately written
+\[
+\texttt{scratch/verify\_husek\_samal\_one\_switch\_boundary.py}.
+\]
+
+The 60-vertex construction has a second checker,
+\[
+\texttt{scratch/verify\_fano\_order60\_flow\_repair.py}.
+\]
+It reconstructs the graph from two 32-vertex pole recipes, verifies the
+one-switch repair and the two joins, and separately follows a
+13-switch path to the flow induced by an explicit FiveCDC.  The two
+programs share no imported project module.
+
+The reciprocal-exchange obstruction is frozen in
+\[
+\texttt{scratch/jaeger-order40-augmented-radius-two-counterexample-20260729/}.
+\]
+Its independently written Python checker reconstructs every first and
+second neighborhood, all 28 Theorem~3.16 defects, the three-step path,
+and the FiveCDC certificate.  Its verifier SHA-256 is
+\begin{center}
+\nolinkurl{7c4a9d165416392399aa53ca6226573f459bae07e31dd1a76332b636d0b1be17}.
+\end{center}
+
+The rank-three distance-five pair is checked twice.  The source-side
+standard-library verifier reconstructs the graph, both flows, all 168
+three-move orders, all 1848 four-move orders, the five-move path, its
+63 circuit components, and all 2640 legal reciprocal-exchange
+neighbours.  A separately written checker rederives
+Theorem~\ref{thm:rank-three-four}, tests its component criterion against
+16384 loop/parallel-edge instances, and repeats the 1848-order
+classification using two different affine lifts.
+
+The frozen artifact hashes at the time of this draft are:
+\begin{center}
+\scriptsize
+\begin{tabular}{@{}p{0.70\textwidth}p{0.25\textwidth}@{}}
+\toprule
+SHA-256 & file\\
+\midrule
+\nolinkurl{9bdcb3a65f6dc07224f8a20c79e45e9085c9f73c55ead745ac64127decd76607}
+& packable-state checker\\
+\nolinkurl{ac51aaf266178eb764fcada85b25e17dc2c18c129413abb51a2b309513ea415d}
+& boundary checker\\
+\nolinkurl{09f9bdc797948b49cf6b7a3080160e07111dad718f0e07ae00a2a9c0958b9a6e}
+& independent 60-vertex replay\\
+\nolinkurl{5cd280e730e0dc336681c3768945b7c691e023cb4f957a7408ea306597053f45}
+& packable order-26 retained state\\
+\nolinkurl{6e1dc5fb3b290fe8364559844ed419ee6dda1ec974b2ad3aebfd21442c8fe6aa}
+& order-40 retained state\\
+\nolinkurl{450a066619b5b21f7bf64ca239b9f2798219af6b695ee619bfbf844883e25476}
+& distance-five certificate\\
+\nolinkurl{2cc3ca1397b08ed8ba555c569d2aaf13e57354a5e847d6447cd6242d1c4530a2}
+& distance-five source checker\\
+\nolinkurl{c0021e2c4cc081918a9edcdb8f1925f9d9c858cf48861d9577178ac952d9a9cf}
+& independent rank-three checker\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+From the project root, the exact replay commands are
+\begin{verbatim}
+python3 scratch/verify_husek_samal_packable_one_switch_countermodel.py
+python3 scratch/verify_husek_samal_one_switch_boundary.py
+python3 scratch/verify_fano_order60_flow_repair.py
+(cd scratch/bpr-second-coordinate-descent-20260731 && ./run_all.sh)
+(cd scratch/bpr-second-coordinate-descent-blind-audit-20260731 && \
+  python3 -B independent_checker.py)
+(cd scratch/bpr-second-coordinate-refined-gate-20260731 && ./run_all.sh)
+python3 \
+  scratch/jaeger-order40-augmented-radius-two-counterexample-20260729/verify.py
+python3 \
+  scratch/petersen-foster-girth10-nontait-20260729/verify_reconfiguration.py
+python3 scratch/rank3-fourmove-normal-form-20260729/verify.py
+\end{verbatim}
+
+\section{What remains open}
+
+The finite countermodels show only that radius one is not a universal
+domination bound for H--S-good flows, even in a strict reduced-looking
+class.  They leave open all of the following:
+\begin{enumerate}
+\item whether the reduced cut-space equations and positive aggregate gain
+      can always be coordinated in the non-Tait, cyclically-4, girth-ten
+      minimum-counterexample domain;
+\item whether, among all lexicographically optimal representatives for a
+      target value class, one can always choose a representative admitting
+      the reduced gate; Proposition~\ref{prop:nontait-representative-blocker}
+      shows that an arbitrary optimum need not do so;
+\item whether every nowhere-zero \(\F_2^3\)-flow can reach an H--S-good
+      flow by some finite legal cycle-switch sequence;
+\item whether a larger universal radius exists;
+\item whether every bridgeless graph has some initially H--S-good flow,
+      the equivalent formulation of FiveCDC in
+      \cite{HusekSamal2026}; and
+\item the standard FiveCDC conjecture itself.
+\end{enumerate}
+
+The 26-vertex state has exact distance two, but this is one instance,
+not evidence of a universal radius-two theorem.  It also shows sharply
+that the finite sequence in the packing-to-switch lemma cannot always be
+replaced by one circuit.  The lemma supplies no universal packing
+theorem.
+
+Proposition~\ref{prop:distance-five} rules out a four-move bound only
+for the broader fixed-value Eulerian-support distance between one
+selected pair.  It neither computes the distance from its starting
+flow to the set of all H--S-good flows nor gives exact connected-cycle
+distance.  In particular, it is not a counterexample to eventual
+cycle-switch reachability.
+
+Likewise, Proposition~\ref{prop:jaeger-three} disproves a universal
+radius-two assertion only in the separate reciprocal-exchange state
+graph.  It gives no universal radius-three bound and no reduction of
+FiveCDC to such a bound.
+
+\section{Novelty and responsibility boundary}
+
+The cited papers establish the H--S component criterion and the general
+cycle-supported reconfiguration framework.  In particular,
+Esperet et al.\ prove the general flow decomposition into
+cycle-supported flows and a complementary-projection connectivity
+lemma \cite{EsperetEtAl2026}; Cranston et al.\ also introduce an
+auxiliary adjacency permitting even support
+\cite{CranstonEtAl2026}.  Over \(\F_2^3\), our move has the same
+fixed-value pattern as standard cycle adjacency but permits a
+disconnected Eulerian support.  Relative to the auxiliary even-support
+adjacency of Cranston et al., it is narrower in value pattern.  We make no novelty claim
+for either.  The elementary packing-to-switch bridge, the exact
+radius-one formulation, the partner-free shore theorem, the exact
+aggregate-gain gate, the rank-two legal-order criterion, the
+rank-three four-move criterion and certified distance-five pair, the
+representative-dependent non-Tait blocker, the reciprocal-exchange
+obstruction, and the finite certificates may be new, but that assessment
+is provisional.
+The radius-two reciprocal assertion was formulated inside this
+AI-assisted project rather than in the cited literature.  The search and
+literature review were AI-assisted and not exhaustive in the scholarly
+sense.  Priority and publishability require review by specialists in
+cycle double covers, nowhere-zero flows, and flow reconfiguration.
+
+The human part of Theorem~\ref{thm:packing} is fully displayed.  The
+finite theorems reduce to explicit data and short, inspectable exhaustive
+programs, but those programs and this prose were generated with AI
+assistance.  Reproducibility is not peer review, and implementation
+independence is not human independence.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

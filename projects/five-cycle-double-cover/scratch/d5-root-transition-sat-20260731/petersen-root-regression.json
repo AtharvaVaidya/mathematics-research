@@ -1,0 +1,60 @@
+{
+  "elimination": null,
+  "graph_metadata": {
+    "bridge_edge_indices": [],
+    "bridgeless": true,
+    "edges": 15,
+    "girth": 5,
+    "graph_sha256": "f45679dc082d1e8a6bde97da8ebbfbc7d8ed74612866a45c9e2b071de3d16fae",
+    "loops": 0,
+    "parallel_edge_pairs": 0,
+    "vertices": 10
+  },
+  "result": {
+    "clauses": 665,
+    "cnf_sha256": "609d4faddbc6620bfb24fdbf176ac05351d06534363ec3215fb434459cf75ad2",
+    "graph_sha256": "f45679dc082d1e8a6bde97da8ebbfbc7d8ed74612866a45c9e2b071de3d16fae",
+    "labels": [
+      5,
+      9,
+      12,
+      17,
+      20,
+      9,
+      24,
+      10,
+      3,
+      3,
+      10,
+      6,
+      5,
+      17,
+      18
+    ],
+    "labels_sha256": "b62910549087dc886a1d0af0d5bd3b02f704070cc1d4bc519c392bee7b604d8f",
+    "root_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "roots": [
+      0,
+      5
+    ],
+    "selected_transition_path": [
+      0,
+      1,
+      7,
+      5
+    ],
+    "status": "SAT_MODEL_CHECKED",
+    "variables": 120
+  },
+  "source": "Petersen graph",
+  "status": "SAT_MODEL_CHECKED"
+}

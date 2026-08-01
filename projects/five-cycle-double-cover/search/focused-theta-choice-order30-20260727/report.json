@@ -1,0 +1,66 @@
+{
+  "schema": "focused-theta-choice-order30-two-implementation-report-v1",
+  "classification": "VERIFIED FINITE STRUCTURAL RESULT",
+  "date": "2026-07-27",
+  "scope": {
+    "graph_class": "the 139854 simple cubic snarks of order 30 and cyclic edge-connectivity at least 4 in the cited House of Graphs corpus",
+    "root_pairs": "every unordered pair of independent edges",
+    "question": "when G-V(R) has deficiency two, whether some maximum matching has a bridgeless (theta) complement",
+    "universal_claim": false,
+    "five_cdc_resolution": false,
+    "orientable_claim": false
+  },
+  "corpus": {
+    "source_page": "https://houseofgraphs.org/meta-directory/snarks",
+    "download_url": "https://houseofgraphs.org/data/snarks/Generated_graphs.30.04.sn.cyc4.g6.gz",
+    "gzip_sha256": "93b8abf7b907fee03b9ecb99b917d14c2cc4f97bc115c0e793635db22c408567",
+    "decompressed_sha256": "bc6f29ec50910eae345ced81f87800686deb069dd1cb383d73dbcc56765f247d",
+    "graphs": 139854,
+    "records_unique": true
+  },
+  "agreed_totals": {
+    "graphs": 139854,
+    "independent_root_pairs": 125868600,
+    "deficiency_zero": 124646796,
+    "deficiency_two_theta": 1221804,
+    "deficiency_two_all_dumbbell": 0,
+    "deficiency_two_boundary_six": 0,
+    "deficiency_two_boundary_eight": 1221804,
+    "near_perfect_matchings_checked_until_first_theta": 7814531
+  },
+  "primary": {
+    "language": "C++20",
+    "source": "primary_census.cpp",
+    "source_sha256": "d82dbfd6daa03d267f433184f823c43ceb52fcdbee5dc708de6bb0eda7183ae5",
+    "result": "artifacts/primary-result.json",
+    "result_sha256": "89927e5228460e2e4f4fc057091e7e101f416f310fb9d5c100fe145a6a8be657",
+    "log": "artifacts/primary.log",
+    "log_sha256": "942438ae498a4b43989f2d6ed38fdc0f1affe403bfcbdf81fd48b2761374b97c"
+  },
+  "independent_replay": {
+    "language": "Python 3 standard library",
+    "source": "independent_verifier.py",
+    "source_sha256": "d9fcfadba7249275ac8d4c68be40200ba648d413915a00cab29370bac1f59ccb",
+    "shard_count": 16,
+    "all_classifications": "PASS",
+    "result_sha256_by_shard": {
+      "0": "8ec2ece0aeb9bf265b3bd8f93a7cc7b222bd8cbb0cf5659192af798c275127fa",
+      "1": "d38b6013707ee1fa1c8b2ce4af65cebc2d00b7e667b6b4b5ee90b3017376e6cd",
+      "2": "a98821b6ce9e389883440d520cc01640fe6196acee1022103b41529676b8b937",
+      "3": "ce1b18739ea9644b038add639b1d3a88a8b88c9515804a66c0db7ec488f39f6c",
+      "4": "f9fca423f69433810b18099b40cf3a2bf3699fe57bd7921a016daebc577bf1db",
+      "5": "46979aa7cb85cffcec40edc0d48da551fcab1d0bc49302612734c50a9ca095f4",
+      "6": "cdfb6bea2172e1d18d9e312cabfdbbfbffa693a11eea4647592c1aca0bde4601",
+      "7": "af3b2fd04a2d5ba51e91e30f1e364a29371e5d8ed63e715a30eb838f9a3f0732",
+      "8": "3801046c24e94c15e64ec81586697634fae1b92e4a1b72b0432182151de7d059",
+      "9": "bb799a1330a4d720c19c157c759095b4bf09cada88c5556d856df56d7a5de419",
+      "10": "01b7d52b6ad3dd5d84bfd79d571f02bc3d5757c4c1e8c7e586126e494b55e9a8",
+      "11": "e9f55db219a99815d3d0eb0926c32ef70570e13450ebf393decc47a508371302",
+      "12": "16f24679b9dde348d0ad374271d93036019ef3fa5a295eba291185337e26161f",
+      "13": "911ef84554a1b4aa8770c5842ac23e3a01f470117ea90833eb26bde8efc5cd61",
+      "14": "d938f52bfafa5f312c7abde5a9f49ca341d2b6ca9cd8caee372dd537b892f5ca",
+      "15": "ff7d7734dccba40f47f8ffd39f47ae144a5889a9fbbecf1c3cefd1c793ab2dfa"
+    }
+  },
+  "warning": "Zero all-dumbbell pairs in this finite corpus is not a proof of the universal theta-choice lemma or the Five-Cycle Double Cover Conjecture."
+}

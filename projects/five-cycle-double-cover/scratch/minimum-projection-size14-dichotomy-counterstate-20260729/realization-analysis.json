@@ -1,0 +1,77 @@
+{
+  "bridgeless": true,
+  "connected": true,
+  "cubic": true,
+  "cycle_space_dimension": 10,
+  "cycle_space_size": 1024,
+  "displayed_extension_is_clean": false,
+  "edges": 27,
+  "labelled_graph6": "QhCKG?@OG_o@G@?O`_?C@??S@_G",
+  "minimum_extendable_projection_size": 5,
+  "minimum_projection_statistics": [
+    {
+      "clean_extensions": 120,
+      "edges": [
+        0,
+        9,
+        10,
+        14,
+        15
+      ],
+      "extensions": 120,
+      "is_cleanable": true
+    },
+    {
+      "clean_extensions": 120,
+      "edges": [
+        0,
+        1,
+        11,
+        14,
+        16
+      ],
+      "extensions": 120,
+      "is_cleanable": true
+    },
+    {
+      "clean_extensions": 120,
+      "edges": [
+        1,
+        2,
+        9,
+        15,
+        17
+      ],
+      "extensions": 120,
+      "is_cleanable": true
+    },
+    {
+      "clean_extensions": 120,
+      "edges": [
+        2,
+        10,
+        11,
+        16,
+        17
+      ],
+      "extensions": 120,
+      "is_cleanable": true
+    }
+  ],
+  "number_of_minimum_extendable_projections": 4,
+  "simple": true,
+  "tait_colourable": false,
+  "target_clean_extensions": 0,
+  "target_components": 5,
+  "target_deletable_extensions_by_circuit": [
+    1920,
+    1920
+  ],
+  "target_extensions": 15360,
+  "target_extensions_with_a_deletable_circuit": 3840,
+  "target_has_clean_extension": false,
+  "target_partition": "01234444413024",
+  "target_projection_size": 14,
+  "unique_low_missing_edge_sets": 66207,
+  "vertices": 18
+}

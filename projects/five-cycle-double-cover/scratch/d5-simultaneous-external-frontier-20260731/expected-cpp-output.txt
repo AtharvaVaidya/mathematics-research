@@ -1,0 +1,18 @@
+ORDER=4
+SIMULTANEOUS graphs=1 flows=2 interfaces=12 witnessed=12
+PASS
+ORDER=6
+SIMULTANEOUS graphs=2 flows=13 interfaces=72 witnessed=72
+PASS
+ORDER=8
+SIMULTANEOUS graphs=5 flows=128 interfaces=360 witnessed=360
+PASS
+ORDER=10
+SIMULTANEOUS graphs=18 flows=1525 interfaces=2160 witnessed=2160
+PASS
+ORDER=12
+SIMULTANEOUS graphs=81 flows=25960 interfaces=14580 witnessed=14580
+PASS
+ORDER=14
+SIMULTANEOUS graphs=480 flows=537418 interfaces=120960 witnessed=120960
+PASS

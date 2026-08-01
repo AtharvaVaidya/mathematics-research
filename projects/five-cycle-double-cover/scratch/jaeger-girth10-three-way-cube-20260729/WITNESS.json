@@ -1,0 +1,24 @@
+{
+  "cube_exchanges_local_positions": [
+    [0, 102],
+    [41, 153],
+    [178, 78]
+  ],
+  "discovery_record": {
+    "root": 0,
+    "seed": 211,
+    "step": 8
+  },
+  "graph": "lift13_petersen_girth10",
+  "omitted_masks": [
+    2710709620216634915848293450285226369454545162065165423373,
+    3146243476105896552537873342561025377768770821028239697922,
+    420148639064149295449622630361414668879039461370629391600
+  ],
+  "outside_cube_distance_two_escape": [
+    [0, 102],
+    [124, 153]
+  ],
+  "root": 0,
+  "schema": "jaeger-girth10-proper-subset-safe-three-way-cube-v1"
+}

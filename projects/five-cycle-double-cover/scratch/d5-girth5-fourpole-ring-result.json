@@ -1,0 +1,33 @@
+{
+  "schema": "d5-girth5-fourpole-ring-result-v1",
+  "status": "PASS",
+  "source_witness": {
+    "graph6": "O??CA?oI?X[?Q_cO?w?g_",
+    "vertices": 16,
+    "true_girth": 5,
+    "shortest_root_component_distance": 3,
+    "state_hex": "030305060605060503050603050306060305030506050603",
+    "roots": [0, 23]
+  },
+  "decomposition": {
+    "cut_size": 4,
+    "pole_vertices": 8,
+    "poles_isomorphic": true,
+    "cut_labels_hex": ["03", "03", "03", "03"]
+  },
+  "iteration": {
+    "construction": "8-vertex pole substituted over a doubled-cycle base",
+    "simple": true,
+    "girth_at_least": 5,
+    "cyclic_edge_connectivity_at_least": 4,
+    "pole_counts": [2, 3, 4, 5, 6],
+    "vertex_orders": [16, 24, 32, 40, 48],
+    "maximum_distance_between_internal_edges_in_opposite_poles": [
+      3, 1, 3, 1, 3
+    ]
+  },
+  "unbounded_radius_evidence": false,
+  "root_local_counterexample_found": false,
+  "fivecdc_counterexample": false,
+  "checker": "scratch/check_d5_girth5_fourpole_ring.py"
+}

@@ -1,0 +1,1768 @@
+{
+  "aggregate": {
+    "sampled_five_merge_bad": 1528,
+    "sampled_nowhere_zero_flows": 3500,
+    "sampled_one_circuit_repairable": 1528
+  },
+  "graph_rows": [
+    {
+      "displayed_repair": {
+        "circuit_length": 5,
+        "five_color_witness": {
+          "color_by_coordinate": [
+            0,
+            3,
+            2,
+            4,
+            1,
+            2,
+            3,
+            4
+          ],
+          "eight_cover_labels": [
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              5
+            ]
+          ],
+          "free_assignment_index": 0,
+          "potential_word": 2893073097481646404191221973424
+        },
+        "repair_mechanism": "pure-five-merge",
+        "switch_value": 1
+      },
+      "first_bad_flow_all_R5_bad": true,
+      "first_bad_flow_core_types": [
+        "K6"
+      ],
+      "first_bad_flow_potential_covers": 8,
+      "graph6": "ahc?GC@?G?_`_?C?g?G?@@?C?GGC?G?GCG?@??CG@??_??@G??@????_???GA??@????C???@G?_??G???@C????H??_@?G",
+      "graph_index": 0,
+      "graph_properties": {
+        "connected": true,
+        "cubic": true,
+        "edges": 51,
+        "girth": 5,
+        "no_cyclic_edge_cut_below_4": true,
+        "simple": true,
+        "vertices": 34
+      },
+      "sampled_five_merge_bad": 226,
+      "sampled_nowhere_zero_flows": 500,
+      "sampled_one_circuit_repairable": 226
+    },
+    {
+      "displayed_repair": {
+        "circuit_length": 5,
+        "five_color_witness": {
+          "color_by_coordinate": [
+            2,
+            0,
+            3,
+            2,
+            3,
+            1,
+            4,
+            4
+          ],
+          "eight_cover_labels": [
+            [
+              5,
+              7
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              5
+            ]
+          ],
+          "free_assignment_index": 12,
+          "potential_word": 3059043673379442868760314105728
+        },
+        "repair_mechanism": "pure-five-merge",
+        "switch_value": 1
+      },
+      "first_bad_flow_all_R5_bad": true,
+      "first_bad_flow_core_types": [
+        "K6"
+      ],
+      "first_bad_flow_potential_covers": 4,
+      "graph6": "ahc?GC@@G?_P?H??_?GG@_??O?I??GA?CG?@?A?G?@?_??@G??@????_???G?A?@????C???@G??_?G???@C????H??A@?G",
+      "graph_index": 1,
+      "graph_properties": {
+        "connected": true,
+        "cubic": true,
+        "edges": 51,
+        "girth": 5,
+        "no_cyclic_edge_cut_below_4": true,
+        "simple": true,
+        "vertices": 34
+      },
+      "sampled_five_merge_bad": 250,
+      "sampled_nowhere_zero_flows": 500,
+      "sampled_one_circuit_repairable": 250
+    },
+    {
+      "displayed_repair": {
+        "circuit_length": 13,
+        "five_color_witness": {
+          "color_by_coordinate": [
+            0,
+            2,
+            3,
+            4,
+            2,
+            3,
+            1,
+            4
+          ],
+          "eight_cover_labels": [
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "free_assignment_index": 0,
+          "potential_word": 1556180807273198027669789156608
+        },
+        "repair_mechanism": "pure-five-merge",
+        "switch_value": 1
+      },
+      "first_bad_flow_all_R5_bad": true,
+      "first_bad_flow_core_types": [
+        "K6"
+      ],
+      "first_bad_flow_potential_covers": 4,
+      "graph6": "ahc?GC@@G?_P?H??_?G?@??C??G?AGG?E???C??I???_G?@A??@?A??_??GG???@G???C??G?G?@??G??G?C??O?@???GCG",
+      "graph_index": 2,
+      "graph_properties": {
+        "connected": true,
+        "cubic": true,
+        "edges": 51,
+        "girth": 5,
+        "no_cyclic_edge_cut_below_4": true,
+        "simple": true,
+        "vertices": 34
+      },
+      "sampled_five_merge_bad": 208,
+      "sampled_nowhere_zero_flows": 500,
+      "sampled_one_circuit_repairable": 208
+    },
+    {
+      "displayed_repair": {
+        "circuit_length": 13,
+        "five_color_witness": {
+          "color_by_coordinate": [
+            3,
+            4,
+            3,
+            0,
+            1,
+            2,
+            4,
+            0
+          ],
+          "eight_cover_labels": [
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "free_assignment_index": 0,
+          "potential_word": 5047792451644667503247278925088
+        },
+        "repair_mechanism": "pure-five-merge",
+        "switch_value": 1
+      },
+      "first_bad_flow_all_R5_bad": true,
+      "first_bad_flow_core_types": [
+        "K6"
+      ],
+      "first_bad_flow_potential_covers": 2,
+      "graph6": "ahc?GC@@G?_P?H??_?G?@??C??G??GGAE???C??I???_G?@A??@?A??_?C?G???@G???C??C?G??_?G??C?C??G?@???GCG",
+      "graph_index": 3,
+      "graph_properties": {
+        "connected": true,
+        "cubic": true,
+        "edges": 51,
+        "girth": 5,
+        "no_cyclic_edge_cut_below_4": true,
+        "simple": true,
+        "vertices": 34
+      },
+      "sampled_five_merge_bad": 226,
+      "sampled_nowhere_zero_flows": 500,
+      "sampled_one_circuit_repairable": 226
+    },
+    {
+      "displayed_repair": {
+        "circuit_length": 5,
+        "five_color_witness": {
+          "color_by_coordinate": [
+            0,
+            3,
+            0,
+            1,
+            3,
+            2,
+            4,
+            4
+          ],
+          "eight_cover_labels": [
+            [
+              5,
+              6
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              6
+            ]
+          ],
+          "free_assignment_index": 1,
+          "potential_word": 1263784758309490667950807712328
+        },
+        "repair_mechanism": "pure-five-merge",
+        "switch_value": 1
+      },
+      "first_bad_flow_all_R5_bad": true,
+      "first_bad_flow_core_types": [
+        "K6"
+      ],
+      "first_bad_flow_potential_covers": 2,
+      "graph6": "ahc?GC@@G?_P?H??_?G?@??C??G??GGAE???C??I???_G?@?A?@A???_?C?G???@G???C??C?G??_?G??C?C??G?@???GCG",
+      "graph_index": 4,
+      "graph_properties": {
+        "connected": true,
+        "cubic": true,
+        "edges": 51,
+        "girth": 5,
+        "no_cyclic_edge_cut_below_4": true,
+        "simple": true,
+        "vertices": 34
+      },
+      "sampled_five_merge_bad": 225,
+      "sampled_nowhere_zero_flows": 500,
+      "sampled_one_circuit_repairable": 225
+    },
+    {
+      "displayed_repair": {
+        "circuit_length": 5,
+        "five_color_witness": {
+          "color_by_coordinate": [
+            3,
+            0,
+            0,
+            3,
+            1,
+            4,
+            2,
+            4
+          ],
+          "eight_cover_labels": [
+            [
+              4,
+              7
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "free_assignment_index": 1,
+          "potential_word": 2457254110908293604974810529896
+        },
+        "repair_mechanism": "pure-five-merge",
+        "switch_value": 1
+      },
+      "first_bad_flow_all_R5_bad": true,
+      "first_bad_flow_core_types": [
+        "K6"
+      ],
+      "first_bad_flow_potential_covers": 4,
+      "graph6": "ahc?GC@@G?_P?H??_?G?@??C??G?@G??C??P??@G?A?__?@_???C???g???GA??@A???C?G??G???GH????C??G?@???O_G",
+      "graph_index": 5,
+      "graph_properties": {
+        "connected": true,
+        "cubic": true,
+        "edges": 51,
+        "girth": 5,
+        "no_cyclic_edge_cut_below_4": true,
+        "simple": true,
+        "vertices": 34
+      },
+      "sampled_five_merge_bad": 198,
+      "sampled_nowhere_zero_flows": 500,
+      "sampled_one_circuit_repairable": 198
+    },
+    {
+      "displayed_repair": {
+        "circuit_length": 17,
+        "five_color_witness": {
+          "color_by_coordinate": [
+            3,
+            0,
+            1,
+            4,
+            0,
+            3,
+            2,
+            4
+          ],
+          "eight_cover_labels": [
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              7
+            ]
+          ],
+          "free_assignment_index": 0,
+          "potential_word": 4230266657161465927689303903312
+        },
+        "repair_mechanism": "pure-five-merge",
+        "switch_value": 1
+      },
+      "first_bad_flow_all_R5_bad": true,
+      "first_bad_flow_core_types": [
+        "K6"
+      ],
+      "first_bad_flow_potential_covers": 1,
+      "graph6": "ahc?GC@@G?_P?H??_?G?@??C??G?@G??C??P??@G???__G@_???C???g???GA??@A???C?G??G???OH????C??G?@???O_G",
+      "graph_index": 6,
+      "graph_properties": {
+        "connected": true,
+        "cubic": true,
+        "edges": 51,
+        "girth": 5,
+        "no_cyclic_edge_cut_below_4": true,
+        "simple": true,
+        "vertices": 34
+      },
+      "sampled_five_merge_bad": 195,
+      "sampled_nowhere_zero_flows": 500,
+      "sampled_one_circuit_repairable": 195
+    }
+  ],
+  "graphs": 7,
+  "schema": "strict-oum-order34-one-switch-replay-v1",
+  "scope_warning": "Exact replay for retained finite witnesses, but the 500 flows per graph were randomly sampled. This is not a flow census or a universal one-switch theorem.",
+  "small_R5_obstruction_audit": {
+    "K3_join_C5_maps_to_R5": false,
+    "K5_image": [
+      0,
+      3,
+      5,
+      9,
+      17,
+      0,
+      0,
+      0
+    ],
+    "K5_maps_to_R5": true,
+    "K6_maps_to_R5": false,
+    "common_neighborhood_edges": [
+      [
+        9,
+        17
+      ]
+    ],
+    "common_neighbors": [
+      6,
+      9,
+      17
+    ],
+    "normalized_triangle": [
+      0,
+      3,
+      5
+    ]
+  },
+  "source": "/Users/atharvavaidya/Documents/conjectures/search/strong_snarks/source/strongsnarks_34_5_cyc4.g6",
+  "source_sha256": "2f087d5cbd1e97b1e10e7a5a064fe83d037872f838372e4d317c9d3f912fbf1f",
+  "status": "PASS"
+}

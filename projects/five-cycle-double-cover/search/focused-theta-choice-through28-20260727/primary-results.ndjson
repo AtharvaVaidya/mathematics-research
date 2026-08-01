@@ -1,0 +1,10 @@
+{"order":10,"graphs":1,"pairs":75,"def0":60,"def2_theta":15,"def2_all_dumbbell":0,"def2_boundary6":0,"def2_boundary8":15,"near_matchings_checked":15,"first_witness":""}
+{"order":12,"graphs":0,"pairs":0,"def0":0,"def2_theta":0,"def2_all_dumbbell":0,"def2_boundary6":0,"def2_boundary8":0,"near_matchings_checked":0,"first_witness":""}
+{"order":14,"graphs":0,"pairs":0,"def0":0,"def2_theta":0,"def2_all_dumbbell":0,"def2_boundary6":0,"def2_boundary8":0,"near_matchings_checked":0,"first_witness":""}
+{"order":16,"graphs":0,"pairs":0,"def0":0,"def2_theta":0,"def2_all_dumbbell":0,"def2_boundary6":0,"def2_boundary8":0,"near_matchings_checked":0,"first_witness":""}
+{"order":18,"graphs":2,"pairs":594,"def0":569,"def2_theta":25,"def2_all_dumbbell":0,"def2_boundary6":0,"def2_boundary8":25,"near_matchings_checked":50,"first_witness":""}
+{"order":20,"graphs":6,"pairs":2250,"def0":2183,"def2_theta":67,"def2_all_dumbbell":0,"def2_boundary6":0,"def2_boundary8":67,"near_matchings_checked":101,"first_witness":""}
+{"order":22,"graphs":31,"pairs":14322,"def0":14047,"def2_theta":275,"def2_all_dumbbell":0,"def2_boundary6":0,"def2_boundary8":275,"near_matchings_checked":613,"first_witness":""}
+{"order":24,"graphs":155,"pairs":86490,"def0":85156,"def2_theta":1334,"def2_all_dumbbell":0,"def2_boundary6":0,"def2_boundary8":1334,"near_matchings_checked":4449,"first_witness":""}
+{"order":26,"graphs":1297,"pairs":859911,"def0":848725,"def2_theta":11186,"def2_all_dumbbell":0,"def2_boundary6":0,"def2_boundary8":11186,"near_matchings_checked":43157,"first_witness":""}
+{"order":28,"graphs":12517,"pairs":9725709,"def0":9617033,"def2_theta":108676,"def2_all_dumbbell":0,"def2_boundary6":0,"def2_boundary8":108676,"near_matchings_checked":512419,"first_witness":""}

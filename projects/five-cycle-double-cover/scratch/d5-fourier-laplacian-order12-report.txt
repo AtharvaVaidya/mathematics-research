@@ -1,0 +1,23 @@
+PASS: Fourier table, Gauss formula, and exact flow counts agree.
+exact flow-count comparisons:
+  ('C~', 4, 6, 180)
+  ('EFz_', 6, 9, 840)
+  ('Gl_XIS', 8, 12, 3960)
+  ('one loop', 1, 1, 10)
+  ('two parallel edges', 2, 2, 10)
+  ('parallel pair plus loop', 2, 3, 100)
+complete connected cubic simple census (bridgeless subset):
+  (4, 1, 1, {0: 1})
+  (6, 2, 2, {0: 2})
+  (8, 5, 5, {0: 5})
+  (10, 19, 18, {0: 18})
+  (12, 85, 81, {0: 81})
+first signed-rank sum divisible by 3:
+  ('C~', 4, 6, 18)
+first zero coefficient A_0 (None means no example in the census):
+  None
+first failure of the A_0-only v2 prediction:
+  ('EFz_', 6, {0: 32, 1: 60, 2: 36, 3: 9, 4: 1}, 4, 3, 840)
+first failure of the tropical grouped-term v2 prediction:
+  ('G?zTb_', 8, {0: 208, 1: 420, 2: 284, 3: 83, 4: 12, 5: 1}, 2, 3, 3960)
+CONCLUSION: the proposed mod-3 nonvanishing route fails already on K4; this is not a Five-Cycle Double Cover resolution.

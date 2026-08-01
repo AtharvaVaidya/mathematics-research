@@ -1,0 +1,22 @@
+{
+  "schema": "jaeger-fano-min-descent-targeted-order16-v1",
+  "status": "exact targeted finite result; not a full order-16 census",
+  "graph6": "O??CA?_ceOGgH_F?AK@P?",
+  "root": 13,
+  "objective": "min-seven-fano-planes",
+  "states": 953856,
+  "max_score": 4,
+  "failure": false,
+  "whole_state_enumerator": "scratch/search_jaeger_star_parity_descent.cpp",
+  "whole_state_enumerator_sha256": "c087d9de1e8193680f7293543a5d6bd3a3fe95515ca74df6aedc26a852dbe7a5",
+  "independent_local_replay": "scratch/verify_jaeger_fano_min_descent_order16_closure_no_go.py",
+  "independent_local_replay_sha256": "7a3432cd3574191d7b732f6f62a50263e64868d144196777e684473b5e642c63",
+  "explicit_state": {
+    "omitted_local_masks": [8413, 1725442, 363296],
+    "fano_profile_functionals_1_through_7": [4, 4, 4, 4, 4, 4, 4],
+    "candidate_reciprocal_exchanges": 147,
+    "legal_reciprocal_exchanges": 25,
+    "neighbour_minimum_histogram": {"2": 22, "4": 3}
+  },
+  "trust_boundary": "The C++ program exhausts the whole fibre. The independent Python checker replays the literal graph, explicit state, and all 147 incident exchange candidates, but does not independently enumerate all states."
+}

@@ -1,0 +1,26 @@
+{
+  "cube_bad_to_good": {
+    "exact_legal_path": [
+      {"constant": 1, "eulerian_edges": [0, 1, 4, 5, 6, 8]},
+      {"constant": 2, "eulerian_edges": [0, 2, 3, 5, 7, 8]},
+      {"constant": 1, "eulerian_edges": [0, 1, 6, 7, 9, 10]}
+    ],
+    "f": [6, 5, 3, 1, 3, 2, 7, 1, 6, 6, 2, 4],
+    "g": [4, 5, 1, 3, 2, 1, 7, 2, 5, 7, 3, 4],
+    "graph6": "G?zTb_",
+    "shared_functional": 4,
+    "shared_nonempty_coordinate_cycle": [0, 1, 6, 8, 9, 11],
+    "tait_colouring": [1, 2, 3, 2, 1, 3, 3, 2, 1, 3, 1, 2]
+  },
+  "k33_smallest_rank_two": {
+    "exact_legal_path": [
+      {"constant": 4, "eulerian_edges": [1, 2, 4, 5]},
+      {"constant": 3, "eulerian_edges": [1, 2, 7, 8]},
+      {"constant": 6, "eulerian_edges": [1, 2, 4, 5]}
+    ],
+    "f": [1, 2, 3, 2, 3, 1, 3, 1, 2],
+    "g": [1, 3, 2, 2, 1, 3, 3, 2, 1],
+    "graph6": "EFz_"
+  },
+  "schema": "constant-eulerian-set-rank-two-legal-order-v1"
+}

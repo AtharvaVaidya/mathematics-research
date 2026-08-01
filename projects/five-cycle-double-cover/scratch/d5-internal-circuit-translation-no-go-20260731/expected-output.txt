@@ -1,0 +1,10 @@
+LOCAL shift=empty targets=03,04
+LOCAL shift=12 targets=03,04
+LOCAL shift=03 targets=03,34
+LOCAL shift=0123 targets=03,34
+LOCAL shift=04 targets=04,34
+LOCAL shift=0124 targets=04,34
+SUPPORTS 16
+ADMISSIBLE_CASES 36
+COUNTEREXAMPLES 0
+PASS

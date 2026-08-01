@@ -1,0 +1,1 @@
+PASS: GL_matrices=6 literal_cut=rainbow inside_counts=111 outside_counts=111 load=2 threshold=4 clean_maps=4 dirty_maps=2

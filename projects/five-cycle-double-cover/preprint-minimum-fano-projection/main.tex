@@ -1,0 +1,3955 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\geometry{margin=1in}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\symdiff}{\mathbin{\triangle}}
+\newcommand{\FiveCDC}{\textup{FiveCDC}}
+
+\title{Minimum Extendable Fano Projections for\\
+Five-Cycle Double Covers:\\
+Exact Frontiers and Failure of Minimum Selection}
+\author{Atharva Vaidya\\
+\small AI-assisted research note for independent human verification}
+\date{July 31, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fcolorbox{red!65!black}{red!4}{
+\parbox{0.91\textwidth}{
+\textbf{Resolution status.}
+The five-cycle double cover conjecture remains unresolved.
+This note proves an exchange theorem, settles the minimum-support cases
+through size fifteen for finite connected bridgeless loopless cubic
+multigraphs (parallel edges allowed), and gives exact finite censuses.  It
+also completes a one-round matching-game analysis on the eight residual states in
+one fixed support-sixteen word orbit, without settling the unrestricted
+support-sixteen case.  It also constructs a 162-vertex graph whose unique
+minimum extendable
+projection is not cleanable, refuting the proposed minimum-selection
+route.  That graph has an explicit five-cycle double cover.  Thus the
+note proves neither FiveCDC nor its negation.  The standard conjecture for
+finite bridgeless multigraphs reduces to the cubic setting by
+Proposition~\ref{prop:cubicreduction}.  This status is distinct from the
+ordinary cycle double cover theorem proved in July 2026.
+}}
+\end{center}
+
+\begin{abstract}
+Hu\v{s}ek and \v{S}\'amal recently expressed the five-cycle double cover
+conjecture as the problem of selecting a nowhere-zero
+\(\F_2^3\)-flow with a component-parity property.  We study the support
+\(h\) of one binary coordinate of such a flow.  Call \(h\)
+\emph{extendable} if it occurs as a coordinate of some nowhere-zero
+\(\F_2^3\)-flow.
+
+We prove a simultaneous exchange theorem for a minimum-cardinality
+extendable projection.  Write the flow as \(f=(h,s)\), with
+\(s:E\to\F_2^2\), and partition \(h\) into the four affine value classes
+\(M_c=\{e\in h:s(e)=c\}\).  For every \(c\), the projection \(h\) is a
+minimum-cardinality binary cycle containing \(M_c\).  Equivalently, every
+binary cycle \(C\) avoiding \(M_c\) satisfies
+\[
+                         |C\cap h|\le |C-h|.
+\]
+Thus every circuit component of \(h\) contains all four affine colours,
+and every support-shortening cycle meets all four classes.  The proof is
+the addition of the Fano value \((1,c)\) along \(C\).
+
+We first prove, without computation, that every globally minimum
+extendable projection of size at most five is cleanable.  We then give a
+stronger direct boundary repair.  Independently on every component of
+\(G-h\), apply an element of \(\operatorname{GL}(2,2)\) to the low-flow
+values; on every circuit of \(h\), solve the resulting cyclic vertex
+equations while allowing zero low values, since the first coordinate is
+one there.  Cleanliness becomes four explicit cut-parity equations per
+component.  An exact affine/dihedral quotient exhausts every support shape,
+proper four-colour circuit word, and component partition through total
+support size ten.  All \(125{,}178\) valid dirty canonical states admit a
+direct repair.  At size eleven the same test first fails: there are
+14 failed \(5+6\) boundary states, in 11 full symmetry orbits.  For every
+failure, however, an explicit boundary certificate makes the six-circuit
+low-valued and nowhere zero, so deleting it from the first-coordinate
+support produces an extendable projection of size five.  Global minimality
+excludes all 14.  Thus every minimum extendable projection of size at most
+eleven is cleanable.  At size twelve, 13,788,824 dirty boundary states
+either clean directly or admit a strict circuit deletion; two independent
+enumerators agree exactly.  Thus every minimum extendable projection of
+size at most twelve is cleanable.  At size thirteen two independently
+written exact classifiers agree on all five support shapes and all
+\(189{,}998{,}862\) charge-valid states.  Of the \(159{,}369{,}966\)
+dirty states, \(159{,}362{,}292\) clean directly and \(7{,}674\) admit
+a strict circuit deletion; there are zero residuals.  Thus every minimum
+extendable projection of size at most thirteen is cleanable.
+
+At size fourteen the primary exact classifier enumerates \(9{,}481\)
+word orbits and \(2{,}616{,}134{,}989\) charge-valid states.  Of the
+\(2{,}255{,}478{,}176\) dirty states, \(2{,}255{,}331{,}588\) clean
+directly and \(146{,}364\) admit a strict circuit deletion.  The 224
+residuals all have shape \(7+7\).  A separately written full
+\(7+7\) enumerator independently reproduces all 333 word orbits,
+\(91{,}481{,}505\) charge-valid states, and the identical residual set.
+We prove a two-colour path-switch lemma for the split-occurrence boundary
+model and give 724 literal deletion rows that meet every possible
+four- or six-terminal path pairing.  Every residual therefore has a strict
+size-seven deletion escape in every cubic realization.  Thus every
+minimum extendable projection of size at most fourteen is cleanable.
+
+We next prove a universal relative-\(\operatorname{GL}(2,2)\) tensor
+lemma.  Given an arbitrary linear functional of \(L_a^{-1}L_b\) on every
+pair of complement components, component maps can always be chosen so
+that the resulting pair graph is Eulerian.  A short human proof uses a
+three-point linear functional on the six elements of
+\(\operatorname{GL}(2,2)\); after expanding an indicator polynomial,
+leaf terms vanish and nonempty cycle-union terms cancel in pairs.  This
+implies that every charge-valid one-support-circuit boundary state is
+directly cleanable, with no bound on the circuit length or number of
+complement components.  It also cleans several support circuits whenever
+every component is charge-balanced separately on each circuit.
+More generally, the block--circuit charges form an
+\(\F_2^2\)-valued incidence matrix.  We prove that direct cleaning still
+holds whenever, on each connected incidence component, its scalar block
+kernel consists only of the unavoidable all-ones dependency.  This
+charge-rigidity theorem is unbounded in circuit length, circuit count,
+component count, and occurrence multiplicity.  In particular it covers
+every charge-incidence graph of maximum degree two.  All (6{,}268)
+literal direct residual rows in the completed size-fourteen and
+size-fifteen censuses and the fixed-word size-sixteen census lie just
+outside this theorem: each has the same five-block, two-circuit Petersen
+charge core with excess kernel nullity two.
+We also show that the tempting next statement is false: four charged
+blocks alone do not force direct cleaning.  A smallest-block tensor uses
+four charged blocks and one zero-charge block, has a 20-occurrence literal
+realization, and admits a two-case human obstruction proof.  Its
+38-vertex simple bridgeless cubic realization is nevertheless
+Tait-colourable, and every extension either deletes a support circuit
+directly or does so after two complementary Kempe paths.  Thus the result
+is a sharp delimiter for direct cleaning, not a minimum-projection or
+FiveCDC counterexample.
+The latter hypothesis is sharp for direct cleaning: a two-occurrence
+interaction-flow dictionary reduces the first abstract failure to the
+Petersen graph.  Its displayed two-\(5\)-circuit support has no clean
+extension, but every extension strictly deletes one circuit and reaches
+a clean global minimum of size five.
+
+For general several-circuit states we reduce fixed-map cleanliness to an
+affine XOR system with two binary variables per relative circuit
+translation.  Every inconsistency has a dual component-union witness.
+Postcomposing precisely those component maps by one common element of
+\(\operatorname{GL}(2,2)\) preserves integrability.  A new six-map parity
+identity proves that one of the six choices always neutralizes that
+particular witness.  The proof is a four-by-four quadratic table followed
+by cancellation on cyclic selected and unselected runs.  This is
+single-witness neutralization, not simultaneous cleaning: the sharp
+size-fourteen state shows that another witness can remain or appear.
+Indeed, its forty reduced map states are strongly connected under legal
+neutralizations and contain a displayed four-step cycle.  A human-visible
+exchange cycle excludes that orbit from global minimality in its
+18-vertex realization.  Thus any convergence theorem must use
+global-minimum data essentially.
+
+We make that requirement precise in the four shortest-join duals.
+Every dual cut which is a union of components of \(G-h\) has coefficient
+zero in every optimal dual; all positive dual shores split the interior
+of a complement component.  The rainbow witness cut is therefore already
+zero-priced before neutralization, and the aggregate four-dual optimum is
+always \(3|h|\).  Double-counting the forced interior dual load gives the
+new density bounds
+\[
+                 |E-h|\ge |h|-|M_c|\quad(c\in K),\qquad
+                 |h|\le\tfrac67|V|
+\]
+for a cubic graph.  Hence an LP descent must transport metric or
+path-pairing information inside complement components, not merely a
+quotient-cut price.
+An exact slack decomposition shows that equality
+\(|h|=6|V|/7\) is rigid: \(G-h\) is a forest, all complement and
+boundary derivative colours are equinumerous, \(|h|\) is divisible by
+twelve, and every affine witness is exactly colour-balanced.  Any
+uncleanable equality obstruction has \(|h|\ge24\).
+
+We also obtain an exact dynamic exchange test.  Every nonzero functional
+\(\alpha\) on the low \(\F_2^2\)-flow takes value one on at least
+\(|h|/2\) complement edges.  If \(Y\) is a six-map-integrable union of
+complement components, and \(N_b,O_a\) count complement edges of colours
+\(b,a\ne0\) inside and outside \(Y\), respectively, then
+\[
+                 O_a+N_b\le |E-h|-\tfrac12|h|
+                 \qquad(a,b\ne0).
+\]
+Violation explicitly returns a legal common map switch and a strict
+colour-avoiding binary-cycle descent.  In boundary form this is
+\(k_a(\overline Y)+k_b(Y)\le2(|V|-|h|)\).  The unresolved implication is
+now concrete: prove that some rainbow-odd witness violates this load
+bound, or use the interior geometry that lets all nine inequalities
+survive.
+
+The first alternative is false from local boundary data alone.  On the
+cube graph, a displayed 6-circuit projection and its two complementary
+3-stars have a rainbow-odd, six-map-integrable witness, use all four
+support colours, and satisfy every colour-load inequality strictly.
+Lengths four and five are impossible in the corresponding two-tree
+model, so six is the first local counterstate.  The cube is
+Tait-colourable and four of its six map switches already clean the state;
+the projection is not globally minimum.  Thus the counterstate isolates,
+rather than bypasses, the missing global hypothesis.
+A stronger support-fourteen survivor has no clean or deletion outcome
+under any component-map tuple, satisfies all nine load inequalities, and
+has a 278-vertex realization attaining all four complete static
+shortest-join optima.  Its fixed projection is uncleanable, but its exact
+global minimum is seven.  Hence the known static consequences of
+minimality are collectively insufficient.  This initially points toward
+dynamic use of the actual minimum; the strict-lock construction below
+shows that even full global minimality does not force cleaning.
+
+We therefore give the exact global optimization, not only its four
+affine branches.  Choose any low \(\F_2^2\)-flow \(s'\), let \(M\) be
+its exact zero set, and choose \(J\subseteq E-M\) with
+\(\partial J=\partial M\).  Every extendable projection, uniquely in
+this branch, is \(M\mathbin{\dot\cup}J\), and hence
+\[
+ \mu(G)=\min_{s',J}\bigl(|M|+|J|\bigr).
+\]
+For a feasible cubic branch \(M\) is a matching and the inner problem is
+an ordinary shortest-\(\partial M\)-join problem.  Cleanliness is exactly
+the existence of a second \(\partial M\)-join disjoint from
+\(M\cup J\).  Two independent checkers reconstruct the 278-vertex
+survivor and its coupled support-seven competitor.
+
+The resulting minimum-selection principle is nevertheless false.  A
+strict parity-lock two-pole has conditional projection minima
+\((a_0,a_1)=(7,5)\).  Substituting eight copies into an 18-vertex dirty
+base gives a simple connected bridgeless nonplanar cubic graph on 162
+vertices and 243 edges.  Its unique globally minimum projection has size
+54, is the union of two 27-circuits, and has no clean extension.
+The mandatory FiveCDC exact-two/XOR formula is SAT on this graph, and a
+short compositional proof glues five-covers of the base and lock closure.
+Thus the construction refutes minimum selection as a proof strategy but
+is positively not a FiveCDC counterexample.
+
+At size fifteen the primary exact classifier enumerates \(26{,}492\)
+word orbits and \(35{,}247{,}202{,}556\) charge-valid abstract states
+over all eight support shapes.  Of the \(31{,}088{,}622{,}592\) dirty
+states, \(31{,}086{,}255{,}789\) clean directly and \(2{,}360{,}767\)
+admit a strict circuit deletion.  The remaining 6,036 states all have
+shape \(7+8\).  A separately written canonical audit identifies every
+one as a same-block one-occurrence extension of a frozen size-fourteen
+residual, and realization-robust inverse Kempe certificates cover all of
+them.  The 20,004-word one-circuit row independently agrees with a
+zero-sum-partition recurrence; all \(23{,}398{,}774{,}592\) dirty states
+also clean in the completed anchor census, in agreement with the tensor
+proof.  Therefore every minimum extendable projection of size at most
+fifteen is cleanable, and a counterexample to the proposed selection
+principle must have minimum size at least sixteen.
+
+In the two-occurrence interaction subclass we close every state through
+support sixteen, including interaction loops, and every loopless state
+through support eighteen.  The loopless support-eighteen census has
+\(1{,}041{,}984\) cyclic-order states: \(1{,}035{,}036\) clean and
+\(6{,}948\) delete-only.  A separate human shape reduction leaves four
+loop profiles through support sixteen; an exact \(16{,}344\)-state
+census has zero residuals.  Thus every globally minimum state in these
+subclasses is cleanable.  Arbitrary occurrence multiplicities remain
+open already at size sixteen.
+
+For one fixed \(8+8\) support-word orbit at size sixteen, an exact
+canonical census goes beyond the two-occurrence subclass.  Of
+\(8{,}046{,}330\) charge-valid component partitions, \(8{,}041{,}808\)
+clean directly, \(4{,}514\) delete a circuit, and eight are residual.
+In a one-colour-pair matching game, six of those eight admit a
+\(\{1,3\}\)-Kempe strategy after observing every abstract terminal
+matching.  The two \(8+2+2+2+2\) residuals admit jointly realizable adverse
+matchings for all three colour pairs; two explicit 42-vertex simple
+bridgeless cubic realizations are Tait-colourable and defeat every legal
+one-round move in the stated game.  This is a theorem about one word
+orbit and one-round support-preserving play.  The displayed projections
+are not globally minimum, and the result is neither a FiveCDC
+counterexample nor a general support-sixteen theorem.
+
+The support-preserving boundary method is nevertheless sharp: at size
+fourteen an explicit \(7+7\) state is neither directly cleanable nor
+circuit-deletable.
+It has a simple bridgeless cubic realization on 18 vertices whose displayed
+size-fourteen projection is uncleanable under every extension.  The graph's
+minimum projection size is nevertheless five and all four minima are
+cleanable, so this is a counterexample to the unrestricted boundary
+dichotomy, not to the minimum-projection principle or FiveCDC.  The new
+theorem escapes only after a support-neutral Kempe recolouring.
+
+We also delimit what the four initial exchange inequalities can prove.
+A \(K_4-e\) two-pole inflation preserves the support, complement
+components, and all two-colour boundary path pairings, while making every
+non-support traversal arbitrarily long.  Once every support circuit uses
+all four affine colours, sufficiently long inflation forces all four
+exchange inequalities for any displayed boundary realization.  An
+explicit 230-vertex simple bridgeless cubic example satisfies the
+inequalities and defeats every one-round fixed-colour Kempe multiswitch,
+but reaches a strict circuit deletion in two rounds.  Thus the unresolved
+step at this stage cannot use only the four inequalities at the initial
+flow.  The later strict-lock theorem goes further and rules out universal
+repair of a globally minimum projection itself.
+
+Two further structural results sharpen that dynamic frontier.  The tensor
+theorem directly cleans every one-circuit support, strictly subsuming the
+earlier two-terminal-component argument, and gives the circuitwise-balanced
+several-circuit corollary above.  Conversely, chains of the
+edge-deleted \(K_{3,3}\) two-pole reflect all boundary-changing Kempe
+moves.  They transfer any hypothetical goal-free boundary orbit to one in
+which all four exchange inequalities hold at every reachable state.  No
+goal-free base orbit is known, so this conditional transfer supplies
+neither a counterexample nor a resolution.
+
+We perform an exact canonical census of all \(41{,}301\) connected simple
+cubic graphs of order \(18\).  Among the \(39{,}866\) bridgeless graphs,
+exactly \(179\) are not Tait-colourable, and every minimum-cardinality
+extendable projection on all \(179\) is cleanable.  A second exact replay
+uses frozen canonically generated sources: \(14{,}009\) cyclically
+4-edge-connected non-Tait records through order \(28\), and a separate
+\(12{,}892\)-record hard order-\(22\) source.  All \(147{,}539\) minimum
+extendable projections in those files are cleanable.  Completeness of the
+source populations is inherited from their upstream generation packages;
+the result on the literal frozen files is checked directly.
+An additional exact SAT scan covers seven retained order-\(34\) and
+\(7{,}654\) retained order-\(40\) strong-snark rows.  All \(433{,}730\)
+minimum projections in those files have size ten and are cleanable.
+
+The 162-vertex strict-lock graph proves that the universal statement
+suggested by these computations is false beyond the tested range.
+Its explicit FiveCDC shows exactly why this is a proof-method result:
+the required clean projection exists but is not globally minimum.  We
+make no claim of a FiveCDC resolution or of priority for the flow
+formulation.  An elementary incidence-cluster construction proves that
+resolving the cubic FiveCDC assertion would resolve the standard
+conjecture for arbitrary finite bridgeless multigraphs.
+\end{abstract}
+
+\tableofcontents
+
+\section{Status, conventions, and contribution boundary}
+
+A binary cycle of a graph is an Eulerian edge set; it may be empty or
+disconnected.  A \(k\)-cycle double cover is an indexed family of \(k\)
+binary cycles in which every edge occurs exactly twice.  Empty members may
+be appended, so ``at most five'' and ``five, allowing empty members'' are
+equivalent.  The five-cycle double cover conjecture, attributed to Celmins
+and Preissmann, asserts that every bridgeless graph has such a cover with
+at most five members~\cite{Celmins1985,Preissmann1981}.
+The ordinary cycle double cover conjecture was proved in July 2026 by
+OpenAI, with independent human expositions by Oum and
+Geelen~\cite{OpenAI2026CDC,Oum2026CDC,Geelen2026CDC}.  That proof produces
+eight labelled Eulerian subgraphs; the stronger bound of five studied here
+remains Conjecture~18 in Oum's exposition.
+
+We work with the cubic flow formulation in
+\cite[Conjecture~3.19]{HusekSamal2026}.  All projection and boundary
+theorems below apply to finite loopless cubic multigraphs unless
+``simple'' is stated.  Parallel edges are distinct edge objects.  A loop
+would contribute twice to vertex degree; loops are excluded from those
+theorems to keep the cut notation literal.  The finite census is restricted
+to simple graphs.
+
+\begin{proposition}[standard graph-class reduction]
+\label{prop:cubicreduction}
+The standard FiveCDC assertion for finite bridgeless multigraphs, with
+loops and parallel edges allowed, is equivalent to its restriction to
+finite bridgeless loopless cubic multigraphs.
+\end{proposition}
+
+\begin{proof}
+Only the reduction to the cubic class needs proof.  Discard isolated
+vertices.  At a vertex \(v\) of incidence degree \(d(v)\), make a cycle
+\(Z_v\) of \(d(v)\) new vertices and assign the incidences at \(v\)
+bijectively to them.  When \(d(v)=2\), \(Z_v\) is the two-edge parallel
+cycle.  Replace every original nonloop edge by an edge joining its two
+assigned cluster vertices.  Replace an original loop by an edge joining
+the two distinct cluster vertices assigned its two incidences.  Every
+cluster vertex now has two cluster-edge incidences and one old-edge
+incidence, so the expansion \(X(G)\) is loopless and cubic.
+
+Every cluster edge lies on \(Z_v\).  An old edge arising from a loop has
+an alternative path in its cluster.  For a nonloop old edge \(e=uv\),
+bridgelessness gives a \(u\)-to-\(v\) path in \(G-e\); joining consecutive
+attachments inside the clusters lifts it to an alternative path between
+the ends of \(e\) in \(X(G)\).  Thus \(X(G)\) is bridgeless.
+
+Let \((D_1,\ldots,D_5)\) be a five-cycle double cover of \(X(G)\), and
+let \(C_i\) consist of the old edges in \(D_i\), identified with the
+original edges of \(G\).  Sum modulo two the degree equations for \(D_i\)
+over all vertices of \(Z_v\).  Every cluster edge is counted twice and
+cancels, leaving an even number of selected original incidences at \(v\).
+An original loop contributes its two incidences, exactly as required.
+Hence every \(C_i\) is Eulerian.  Exact double coverage is inherited
+edge by edge, so \((C_1,\ldots,C_5)\) covers \(G\).
+\end{proof}
+
+\begin{remark}[reduction scope]
+This proposition reduces the universal graph class; it does not identify
+several boundary occurrences at a higher-degree vertex inside the
+minimum-projection argument.  A separate self-contained reduction package
+also proves that a minimum cubic counterexample could be taken simple,
+non-3-edge-colourable, of girth at least five, and cyclically
+4-edge-connected.  These standard reductions are not used to infer the
+finite census populations below.
+\end{remark}
+
+Hu\v{s}ek and \v{S}\'amal prove that the cubic FiveCDC problem is equivalent
+to selecting a nowhere-zero \(\F_2^3\)-flow with an additional parity
+condition~\cite[Theorem~3.16 and Conjecture~3.19]{HusekSamal2026}.  Their
+criterion is related to the prescribed-cycle formulation of
+Hoffmann-Ostenhof~\cite{HoffmannOstenhof2013}.  We claim no novelty or
+priority for either formulation.  Earlier integer-flow-pair
+characterizations distinguish standard and orientable 5CDC
+conditions~\cite{XieZhang2009}; 4-flow and Catlin-reduction methods give
+further sufficient conditions and snark families~\cite{LiuHaoLuoZhang2023}.
+
+The contribution of this note is narrower:
+\begin{enumerate}
+  \item a minimum-support exchange theorem, with a complete proof;
+  \item a human proof through size five and an exact boundary extension
+        through size fifteen, plus a sharp size-fourteen counterstate
+        to the unrestricted support-preserving boundary method;
+  \item a universal tensor theorem that directly cleans every
+        one-support-circuit state and every circuitwise-balanced
+        several-circuit state, and an unbounded charge-rigidity theorem
+        which permits nonzero per-circuit charges whenever each connected
+        charge component has only its unavoidable scalar dependency,
+        together with the Petersen boundary showing why an extra
+        dependency matters;
+  \item a two-occurrence clean-or-delete theorem covering all states
+        through support sixteen, including interaction loops, and all
+        loopless states through support eighteen, reduced by hand to
+        seventeen finite interaction profiles and exactly checked;
+  \item an exact census of one \(8+8\) support-sixteen word orbit and a
+        matching-observed one-round Kempe dichotomy on its eight
+        residuals: six universal reductions and two explicit
+        42-vertex Tait obstructions to that narrowly specified game;
+  \item an affine-XOR duality theorem for general several-circuit
+        cleaning and a six-map identity that legally neutralizes any one
+        chosen dual inconsistency witness, together with an exact
+        four-step cycle proving that this move alone has no monotone
+        termination argument;
+  \item a shortest-join dual theorem forcing every positive dual shore
+        to split a complement component, with the support-density bound
+        \(|h|\le6|V|/7\) in cubic graphs and a complete rigidity theorem
+        at equality;
+  \item a six-map colour-load inequality coupling a neutral recolouring
+        to the dynamically recomputed exchange inequalities, with an
+        explicit strict descent whenever the bound fails, plus a smallest
+        cube-graph counterstate showing that local rainbow parity alone
+        need not violate it;
+  \item four simultaneous shortest-join consequences;
+  \item a general inflation theorem showing that those four inequalities,
+        at one fixed flow, do not force one-round Kempe descent, together
+        with a smallest goal-free boundary survivor satisfying the load
+        and all four static shortest-join filters;
+  \item an exact full-flow master formulation as a minimum over low-flow
+        zero matchings and shortest joins, in which cleanliness is
+        precisely a second edge-disjoint join;
+  \item a strict parity-lock construction of a 162-vertex graph whose
+        unique minimum projection is uncleanable, together with an
+        explicit five-cycle double cover of that graph;
+  \item a reproducible canonical order-\(18\) census and an expanded
+        exact replay on frozen sources through order \(28\).
+\end{enumerate}
+FiveCDC itself remains open.
+
+\section{Extendable and clean Fano projections}
+
+Let \(G=(V,E)\) be a loopless cubic graph and put \(K=\F_2^2\).
+Write a three-bit flow as
+\[
+                 f=(h,s):E\longrightarrow \F_2\times K,       \tag{1}
+\]
+where \(h:E\to\F_2\) and \(s:E\to K\) are flows.  We identify a binary
+flow with its support.
+The established term \emph{Fano flow} usually records which lines of the
+Fano plane occur at cubic vertices~\cite{MacajovaSkoviera2005,
+JinMazzuoccoloSteffen2016}.  Our \emph{Fano projection} instead means one
+chosen coordinate support in the Hu\v{s}ek--\v{S}\'amal criterion; no
+minimum-support result from the former terminology is being invoked.
+
+\begin{definition}
+A binary cycle \(h\), possibly zero, is \emph{extendable} if there is a flow
+\(s:E\to K\) for which \(f=(h,s)\) is nowhere zero.
+\end{definition}
+
+Writing \(s=(p,q)\), extendability has the following elementary form:
+\[
+                         E-h\subseteq p\cup q,                 \tag{2}
+\]
+where \(p\) and \(q\) are binary cycles.  Indeed, an edge of \(E-h\) has
+first coordinate zero and therefore needs a nonzero low coordinate.
+
+Fix an extension \(f=(h,s)\).  For \(c\in K\), put
+\[
+                         M_c=\{e\in h:s(e)=c\}.                \tag{3}
+\]
+
+\begin{proposition}\label{prop:matching}
+Every \(M_c\) is a matching, and the four sets \(M_c\) partition \(h\).
+\end{proposition}
+
+\begin{proof}
+The partition statement is immediate.  If two edges incident with a cubic
+vertex both had flow value \((1,c)\), their sum would be zero and flow
+conservation would force the third incident edge to have value zero,
+contrary to nowhere-zeroness.
+\end{proof}
+
+Let \(W\) be a component of the spanning subgraph \((V,E-h)\).  Every edge
+of \(\delta(W)\) belongs to \(h\).  If
+\[
+                    n_c(W)=|\delta(W)\cap M_c|\pmod 2,
+\]
+then cut conservation for the first coordinate and the two low coordinates
+gives
+\[
+              \sum_{c\in K}n_c(W)=0,\qquad
+              \sum_{c\in K}n_c(W)c=0.                         \tag{4}
+\]
+The \(3\times4\) binary matrix in (4) has one-dimensional kernel, generated
+by the all-ones vector.  Hence the four parities \(n_c(W)\) are equal.
+
+\begin{definition}
+An extension is \emph{clean} if \(n_c(W)=0\) for every component \(W\)
+of \((V,E-h)\), for one, and hence every, \(c\in K\).
+A projection \(h\) is \emph{cleanable} if it has a clean extension.
+A component with all four parities equal to one is \emph{rainbow-odd}.
+\end{definition}
+
+If \(s=(p,q)\), the class \(M_{11}\) on \(\delta(W)\) is
+\(\delta(W)\cap p\cap q\).  Thus cleanability is exactly the existence of
+binary cycles \(p,q\) satisfying (2) and
+\[
+             |\delta(W)\cap p\cap q|\equiv0\pmod2             \tag{5}
+\]
+for every component \(W\) of \((V,E-h)\).  By
+\cite[Theorem~3.16]{HusekSamal2026}, existence of such an \(h\) is
+equivalent to the cubic FiveCDC assertion.  In the Tait-colourable case one
+may take \(h=\varnothing\) and a nowhere-zero \(K\)-flow.
+
+\section{The minimum-projection exchange theorem}
+
+Assume now that \(G\) is not Tait-colourable, so an extendable projection
+cannot be empty.  Choose \(h\) of minimum cardinality among all extendable
+projections, and fix any extension \(f=(h,s)\).
+
+\begin{theorem}[minimum-projection exchange]\label{thm:exchange}
+For every \(c\in K\) and every binary cycle \(C\) with
+\(C\cap M_c=\varnothing\),
+\[
+                         |C\cap h|\le |C-h|.                    \tag{6}
+\]
+Equivalently, \(h\) is a minimum-cardinality binary cycle containing
+\(M_c\), simultaneously for all four \(c\in K\).
+\end{theorem}
+
+\begin{proof}
+Fix \(c\in K\), put \(t=(1,c)\), and add \(t\) to the flow value on every
+edge of \(C\):
+\[
+ f'(e)=
+ \begin{cases}
+   f(e)+t,&e\in C,\\
+   f(e),&e\notin C.
+ \end{cases}                                                   \tag{7}
+\]
+Since \(C\) is a binary cycle, the added function is a flow.  The only
+edges that could become zero in (7) are those whose old value was \(t\),
+and these are exactly the edges of \(M_c\).  The hypothesis
+\(C\cap M_c=\varnothing\) therefore makes \(f'\) nowhere zero.
+
+The first coordinate of \(f'\) is \(h\symdiff C\).  This is another
+extendable projection, so minimality gives
+\[
+ |h|\le |h\symdiff C|
+     =|h|+|C-h|-|C\cap h|.
+\]
+This is (6).
+
+For the equivalent statement, rebase the low coordinates by replacing
+\(s\) with the flow \(s+ch\).  Its exact zero set is \(M_c\): outside
+\(h\), the low value was already nonzero, while on \(h\) it vanishes
+exactly when \(s(e)=c\).
+
+Let \(h'\) be any binary cycle containing \(M_c\).  The flow
+\((h',s+ch)\) is nowhere zero.  On an edge outside \(h'\), its low value is
+nonzero because every zero lies in \(M_c\subseteq h'\); on an edge of
+\(h'\), its first coordinate is one.  Thus \(h'\) is extendable, and
+\(|h|\le |h'|\).
+
+Conversely, if \(C\cap M_c=\varnothing\), then
+\(h\symdiff C\) contains \(M_c\).  Applying the minimum-containing
+property to \(h\symdiff C\) recovers (6).
+\end{proof}
+
+\subsection{Shortest joins and four-colour consequences}
+
+Let \(T_c\) be the set of endpoints of \(M_c\).  Removing \(M_c\) from a
+binary cycle containing \(M_c\) produces a \(T_c\)-join in \(G-M_c\), and
+adjoining \(M_c\) reverses the correspondence.  Therefore
+Theorem~\ref{thm:exchange} has the following form.
+
+\begin{corollary}\label{cor:tjoin}
+For every \(c\in K\), the edge set
+\[
+                              J_c=h-M_c
+\]
+is a shortest \(T_c\)-join in \(G-M_c\).
+\end{corollary}
+
+This is not the already-refuted principle that a cardinality-minimum
+exact-zero matching must extend to a FiveCDC certificate.  Here the
+objective is the cardinality of the whole binary cycle
+\(M_c\cup J_c\), and the same projection is optimal after all four affine
+rebases.
+
+\begin{proposition}[zero dual price on quotient shores]
+\label{prop:zerodualprice}
+Fix \(c\in K\).  In \(G-M_c\), the standard odd-cut dual for the minimum
+\(T_c\)-join problem is
+\[
+\begin{array}{ll}
+\text{maximize}&\displaystyle
+ \sum_{\substack{S\subseteq V\\|S\cap T_c|\ {\rm odd}}}y_{c,S}\\[1mm]
+\text{subject to}&\displaystyle
+ \sum_{\substack{S:\ e\in\delta(S)\\|S\cap T_c|\ {\rm odd}}}
+ y_{c,S}\le1\quad(e\in E-M_c),\qquad y_{c,S}\ge0.
+\end{array}                                               \tag{8a}
+\]
+Its optimum is \(|J_c|=|h|-|M_c|\).  In every optimal dual,
+\[
+ y_{c,S}=0                                                \tag{8b}
+\]
+whenever \(S\) is a union of components of \(G-h\).  Consequently every
+positive dual shore splits the interior of at least one component of
+\(G-h\).
+\end{proposition}
+
+\begin{proof}
+The Edmonds--Johnson \(T\)-join polyhedron~\cite{EdmondsJohnson1973} and
+Corollary~\ref{cor:tjoin} give the displayed optimum with
+\(\chi_{J_c}\) as an optimal primal solution.  Complementary slackness
+therefore says
+\[
+ y_{c,S}>0\quad\Longrightarrow\quad
+                         |J_c\cap\delta(S)|=1.            \tag{8c}
+\]
+
+Now suppose \(S\) is a union of components of \(G-h\).  Its cut lies
+inside \(h\).  Put
+\[
+                    n_d=|\delta(S)\cap M_d|\pmod2
+                    \qquad(d\in K).
+\]
+Cut conservation for the three flow coordinates says
+\(\sum_dn_d=0\) and \(\sum_dn_dd=0\).  The resulting \(3\times4\)
+binary matrix has kernel generated by the all-ones vector, so the four
+bits \(n_d\) are equal.
+
+If they are all zero, then
+\(|S\cap T_c|\equiv|\delta(S)\cap M_c|\equiv0\), and \(S\) does not
+index a variable in (8a).  If they are all one, then \(S\) is
+\(T_c\)-odd but
+\[
+ |J_c\cap\delta(S)|
+ =\sum_{d\ne c}|\delta(S)\cap M_d|\ge3,                  \tag{8d}
+\]
+contradicting (8c) if \(y_{c,S}>0\).  Thus (8b) holds in every optimal
+dual.  A shore that splits no component of \(G-h\) is precisely such a
+component union.
+\end{proof}
+
+\begin{corollary}[support-density bound]\label{cor:supportdensity}
+For every \(c\in K\),
+\[
+              |E-h|\ge |J_c|=|h|-|M_c|.                 \tag{8e}
+\]
+Hence
+\[
+              |E-h|\ge\tfrac34|h|,
+ \qquad\text{and in a cubic graph}\qquad
+              |h|\le\tfrac67|V|.                        \tag{8f}
+\]
+\end{corollary}
+
+\begin{proof}
+Fix an optimal dual in (8a).  Every positive dual shore contains exactly
+one \(J_c\)-edge by (8c), and at least one complement edge by
+Proposition~\ref{prop:zerodualprice}; thus its cut in \(G-M_c\) has size
+at least two.  If \(\ell_c(e)\le1\) is the load on edge \(e\), then
+\[
+ 2|J_c|
+ \le\sum_Sy_{c,S}|\delta_{G-M_c}(S)|
+ =\sum_{e\in E-M_c}\ell_c(e)
+ \le |J_c|+|E-h|.                                      \tag{8g}
+\]
+The last inequality uses complementary-slackness tightness on every edge
+of \(J_c\) and unit capacity on every complement edge.  This proves
+(8e).  Choose \(c\) with \(|M_c|\le|h|/4\) to get the first inequality
+in (8f).  Finally substitute \(|E|=3|V|/2\).
+\end{proof}
+
+\begin{proposition}[rigidity at density equality]
+\label{prop:densityrigidity}
+Put \(m=|E-h|\), fix any optimal duals in (8a), and define
+\[
+\begin{split}
+ A_c&=\sum_Sy_{c,S}
+       \bigl(|\delta_{G-M_c}(S)|-2\bigr),\\
+ U_c&=\sum_{e\in E-h}\bigl(1-\ell_c(e)\bigr).
+\end{split}                                               \tag{8h}
+\]
+Then
+\[
+                         4m-3|h|=\sum_{c\in K}(A_c+U_c), \tag{8i}
+\]
+and every term on the right is nonnegative.
+
+If equality holds in (8f), equivalently \(4m=3|h|\), then:
+\begin{enumerate}
+  \item every positive dual shore has exactly one \(J_c\)-edge and one
+        complement edge in \(G-M_c\);
+  \item every complement edge is saturated in all four duals, and
+        \(G-h\) is a forest;
+  \item \(|h|\) is divisible by twelve,
+        \[
+        |V|-|h|=\frac{|h|}{6},\qquad
+        \#\operatorname{comp}(G-h)=\frac{5|h|}{12};
+        \tag{8j}
+        \]
+  \item each nonzero low colour occurs on exactly \(|h|/4\) complement
+        edges and at exactly \(|h|/3\) support-boundary incidences; and
+  \item every six-map-integrable component union, in particular every
+        affine-cleaning witness shore, has equal selected derivative
+        counts in the three nonzero colours, and equal outside counts.
+\end{enumerate}
+Consequently an uncleanable globally minimum projection at density
+equality must have \(|h|\ge24\).
+\end{proposition}
+
+\begin{proof}
+By (8c), every positive shore has exactly one \(J_c\)-edge and, by
+Proposition~\ref{prop:zerodualprice}, at least one complement edge.
+Thus \(A_c\ge0\); unit capacity gives \(U_c\ge0\).
+Double-counting weighted cut-edge incidences gives
+\[
+ 2|J_c|+A_c
+ =\sum_Sy_{c,S}|\delta_{G-M_c}(S)|
+ =\sum_{e\in E-M_c}\ell_c(e)
+ =|J_c|+m-U_c.
+                                                               \tag{8k}
+\]
+Hence \(m-|J_c|=A_c+U_c\).  Summing over the four colours and using
+\(\sum_c|J_c|=3|h|\) proves (8i).
+
+At equality every \(A_c\) and \(U_c\) vanishes.  The first two assertions
+about dual cuts and saturation follow immediately.  For any complement
+edge \(e\), saturation supplies a positive shore whose only complement
+crossing is \(e\).  Such a shore cannot cut a complement circuit in just
+one edge, so every complement edge is a bridge of \(G-h\), proving the
+forest assertion.
+
+Let \(m_t\) count complement edges of nonzero low colour \(t\).  The
+functional half-load argument in the proof of
+Proposition~\ref{prop:colorload} gives
+\[
+                    m-m_t\ge\frac{|h|}{2}.
+\]
+Since \(m=3|h|/4\) and \(\sum_tm_t=m\), all three \(m_t\) equal
+\(|h|/4\).  Put \(n=|V|-|h|\).  Cubicity gives \(n=|h|/6\).  If \(k_t\)
+is the number of colour-\(t\) complement incidences at support vertices,
+then
+\[
+                         2m_t=n+k_t,
+\]
+because every off-support cubic vertex sees the three nonzero colours
+once each.  Hence \(k_t=|h|/3\), proving divisibility by twelve.
+
+If the complement forest has \(q\) components, its support vertices are
+its leaves and its off-support vertices have degree three.  Summing the
+tree identity ``leaves = internal vertices \(+2\)'' gives
+\(n=|h|-2q\), hence \(q=5|h|/12\).
+
+Finally let \(a_t\) be the three selected derivative counts of a
+six-map-integrable component union.  The outside counts are
+\(|h|/3-a_t\), and (15m) gives
+\[
+ \max_ta_t+\max_t\bigl(|h|/3-a_t\bigr)\le2n=|h|/3.
+\]
+Thus \(\max_ta_t=\min_ta_t\), proving exact balance inside and outside.
+The only positive multiple of twelve below twenty-four is twelve, and
+Theorem~\ref{thm:sizefifteen} excludes an uncleanable minimum projection
+of that size.
+\end{proof}
+
+\begin{remark}
+The full proof, two arithmetic audits, frozen outputs, and hash ledger
+are in the density-equality-rigidity package under \path{scratch/}.
+Strict density slack \(4m-3|h|>0\) remains open.
+\end{remark}
+
+\begin{corollary}[flow-resistance bound]\label{cor:resistance}
+Let \(r_f(G)\) be the minimum number of zero edges in an
+\(\F_2^2\)-flow on \(G\).  Every extendable projection satisfies
+\[
+                              |h|\ge4r_f(G).                    \tag{8}
+\]
+\end{corollary}
+
+\begin{proof}
+For each \(c\), the rebased low flow \(s+ch\) has exact zero set \(M_c\).
+Hence \(|M_c|\ge r_f(G)\).  The four \(M_c\)'s partition \(h\).
+\end{proof}
+
+\begin{corollary}[four-colour circuits]\label{cor:fourcolour}
+Every circuit component of \(h\) contains at least one edge of each of the
+four sets \(M_c\).
+\end{corollary}
+
+\begin{proof}
+If a circuit component \(D\) omitted \(M_c\), then \(D\) would be a binary
+cycle avoiding \(M_c\), but
+\(|D\cap h|=|D|>|D-h|=0\), contrary to (6).
+\end{proof}
+
+\begin{theorem}[minimum projections through size five]
+\label{thm:sizefive}
+Let \(G\) be a connected bridgeless loopless cubic graph; parallel edges
+are allowed.  If \(G\) is not Tait-colourable and its minimum extendable
+projection has size at most five, then every minimum extendable projection
+is cleanable.  If \(G\) is Tait-colourable, the zero projection is a clean
+minimum.
+\end{theorem}
+
+\begin{proof}
+The Tait case follows by taking a nowhere-zero \(K\)-flow as the low
+coordinate: its zero affine class is empty, so the equal cut parities in
+(4) are all even.  Assume henceforth that \(G\) is non-Tait, choose a
+minimum extendable \(h\), and fix an arbitrary extension \(f=(h,s)\).
+
+By Corollary~\ref{cor:fourcolour}, every circuit component of \(h\) meets
+all four \(M_c\).  Since \(G\) is loopless, \(|h|\le5\) therefore forces
+\(h\) to be one ordinary circuit \(D\) of length \(n=4\) or \(5\); a
+parallel two-circuit cannot meet four classes.  Write
+\[
+ v_0,e_0,v_1,e_1,\ldots,v_{n-1},e_{n-1},v_0,
+ \qquad e_i=v_iv_{i+1},
+\]
+cyclically, and put \(c_i=s(e_i)\).  Adjacent \(c_i\)'s are distinct:
+otherwise the third edge at their common vertex would have full flow
+value zero.
+
+Let \(K_0=G-h\).  Every component of \(K_0\) contains a vertex of \(D\),
+by connectedness.  Suppose the extension is dirty.  For a dirty component
+\(W\), membership along \(D\) toggles oddly on each of the four affine
+colour classes.
+
+If \(n=4\), the four colours occur once each, so membership toggles on
+every \(e_i\).  The components of \(K_0\) are exactly the two alternating
+vertex pairs.  Indeed, separating either pair further would create a
+component whose cut sees exactly two affine colours oddly, contrary to
+(4).
+
+If \(n=5\), rotate and rename the colours so their cyclic word is
+\(A,B,A,C,D\).  Put
+\[
+ z_i=1[v_i\in W],\qquad y_i=z_i+z_{i+1}.
+\]
+Dirtiness says
+\[
+ y_1=y_3=y_4=1,\qquad y_0+y_2=1.
+\]
+Up to complement, the solutions are \(W=\{v_2,v_4\}\) and
+\(W=\{v_1,v_4\}\).  Summing the common odd cut parity over all
+\(K_0\)-components shows that the number of dirty components is even.
+The only component-compatible shore disjoint from either displayed dirty
+shore is its complement: exhaustive substitution in the preceding four
+equations also gives the clean pair \(\{v_1,v_2\}\) and its complement,
+both of which intersect either dirty partition.  Hence \(K_0\) again has
+exactly two components.
+
+Let \(k_i\) be the unique \(K_0\)-edge incident with \(v_i\), and put
+\[
+ d_i=s(k_i)=c_{i-1}+c_i\ne0.
+\]
+On each of the two \(K_0\)-components, apply an independently chosen
+element of \(\operatorname{GL}(2,2)\) to every low flow value.  This
+preserves internal conservation and nonzeroness.  We now choose nonzero
+values \(r_i\) on \(e_i\) so that
+\[
+                         r_{i-1}+r_i=g_i,                 \tag{9}
+\]
+where \(g_i\) is the transformed value on \(k_i\).
+
+For \(n=4\), the boundary values on each alternating pair agree:
+\(d_0=d_2=x\) and \(d_1=d_3=y\).  Map \(x\) and \(y\), independently, to
+the same nonzero \(\alpha\).  If
+\(\{\alpha,\beta,\gamma\}=K-\{0\}\), assigning \(\beta,\gamma\)
+alternately to the edges of \(D\) satisfies (9).
+
+For \(n=5\), translate the affine colour names so \(A=0\), write
+\(B=x,C=y,D=x+y\), and normalize \(x=1,y=2,x+y=3\).  Thus
+\[
+                         d=(3,1,1,2,1).
+\]
+The complete repairs for the two component partitions are
+\[
+\begin{array}{c|c|c}
+K_0\text{-components on }v_i& (g_0,\ldots,g_4)&(r_0,\ldots,r_4)\\
+\hline
+\{0,1,3\}\mid\{2,4\}&(3,1,2,2,2)&(2,3,1,3,1)\\
+\{0,2,3\}\mid\{1,4\}&(3,3,1,2,3)&(1,2,3,1,2).
+\end{array}
+\]
+In each row the three-terminal component uses the identity.  On the
+two-terminal component, both original boundary values are \(1\), which an
+invertible linear map sends respectively to \(2\) or \(3\).  Direct
+cyclic substitution verifies (9).
+
+We have constructed a nowhere-zero \(K\)-flow on every edge of \(G\).
+At a cubic vertex its three incident values are therefore the three
+distinct nonzero elements of \(K\), giving a Tait colouring.  This
+contradicts the hypothesis.  Thus the arbitrary extension of \(h\) was
+clean, and in particular \(h\) is cleanable.
+\end{proof}
+
+\begin{remark}
+The finite case split and the two repair rows are independently replayed
+by \path{verify.py} in the bundled size-five theorem package.
+\end{remark}
+
+\subsection{A line-switch lemma and the size-six/seven boundary}
+
+We need one support-preserving fact.  Identify the seven nonzero full flow
+values with \(1,\ldots,7\) under bitwise addition, so that
+\[
+ L=\{1,2,3\}=\{(0,t):t\in K-\{0\}\},\qquad
+ A=\{4,5,6,7\}=\{(1,c):c\in K\}.
+\]
+Let \({\cal K}\) be the components of \(G-h\), and let
+\(r\in\F_2^{\cal K}\) indicate the rainbow-odd components.  For
+\(t\in L\), put \(N_t=f^{-1}(t)\) and \(P_t=\{4,4+t\}\).  If \(C\) is a
+binary cycle of \(G-N_t\), define
+\[
+ \tau_t(C)_W
+   =|C\cap\delta(W)\cap f^{-1}(P_t)|\pmod2
+   \qquad(W\in{\cal K}).                                \tag{10}
+\]
+Adding \(t\) along \(C\) is a valid line-preserving switch: avoiding
+\(N_t\) prevents a zero value, and (10) is its change to the defect
+vector.
+
+\begin{proposition}[combined-line span]\label{prop:span}
+\[
+ r\in\sum_{t\in L}\operatorname{im}\tau_t.              \tag{11}
+\]
+Consequently, if \(G-h\) has at most two components, then \(h\) is
+cleanable by at most one valid line-preserving switch.
+\end{proposition}
+
+\begin{proof}
+Suppose (11) fails.  There is a vector
+\(y\in\F_2^{\cal K}\) with
+\[
+ y\cdot r=1,\qquad y\cdot\tau_t(C)=0
+ \quad(t\in L,\ C\text{ a cycle of }G-N_t).
+\]
+Let \(U\) be the union of the components selected by \(y\), and let
+\(u:V(G)\to\F_2\) indicate \(U\).  Cycle--cut orthogonality says that
+\[
+ R_t=\delta(U)\cap f^{-1}(P_t)
+\]
+is a cut in \(G-N_t\).  Choose a vertex indicator \(x_t\) for that cut,
+and write \(q=(u,x_1,x_2,x_3)\).
+
+Define
+\[
+ {\cal A}(q)=
+ \bigl(u(x_2+x_3),\ u(x_1+x_3),\
+ x_1x_2+x_1x_3+x_2x_3\bigr)\in\F_2^3.
+\]
+Across an edge, the only possible nonzero differences of
+\((u;x_1x_2x_3)\), indexed by its flow value, are
+\[
+\begin{array}{c|ccccccc}
+f(e)&1&2&3&4&5&6&7\\
+\hline
+\Delta q&(0;100)&(0;010)&(0;001)&(1;111)&
+(1;100)&(1;010)&(1;001).
+\end{array}
+\]
+The zero difference is also allowed in every column.  Direct substitution
+gives the pointwise identity
+\[
+ \bigl({\cal A}(q_v)+{\cal A}(q_w)\bigr)\cdot f(vw)
+ =
+ \begin{cases}
+ 1,&f(vw)=4\text{ and }u(v)\ne u(w),\\
+ 0,&\text{otherwise}.
+ \end{cases}                                           \tag{12}
+\]
+Summing (12) over all edges and regrouping at vertices makes its left side
+\[
+ \sum_v{\cal A}(q_v)\cdot\left(\sum_{e\ni v}f(e)\right)=0
+\]
+by flow conservation.  The right side is
+\(|\delta(U)\cap f^{-1}(4)|=y\cdot r=1\), a contradiction.  This proves
+(11).
+
+Every vector in every image of \(\tau_t\) has even Hamming weight, since
+an affine edge between two \(G-h\) components is counted at both ends.
+For one component the even-weight space is zero.  For two components it
+is one-dimensional; if \(r\ne0\), (11) forces one of the three image
+spaces to contain its unique nonzero vector.  The corresponding single
+valid switch kills \(r\).  A single switch has no mixed-switch quadratic
+correction, completing the proof.
+\end{proof}
+
+\begin{theorem}[minimum projections through size seven]
+\label{thm:sizeseven}
+Under the hypotheses of Theorem~\ref{thm:sizefive}, every minimum
+extendable projection of size at most seven is cleanable.
+\end{theorem}
+
+\begin{proof}
+Only sizes six and seven remain.  The four-colour circuit corollary forces
+\(h\) to be one circuit
+\[
+ v_0,e_0,v_1,e_1,\ldots,v_{n-1},e_{n-1},v_0,
+ \qquad n\in\{6,7\}.
+\]
+Put \(c_i=s(e_i)\), and encode the component of \(G-h\) containing \(v_i\)
+by \(\pi_i\).  The \(c_i\)'s form a proper cyclic word using all four
+affine colours.  Conservation on every component \(W\) gives
+\[
+ \sum_{\pi_i=W}(c_{i-1}+c_i)=0,
+\]
+and its four affine cut parities are either all zero or all one.
+
+The exact finite boundary classifier enumerates every such word and every
+set partition \(\pi\).  For each
+state it also enumerates one independent element of
+\(\operatorname{GL}(2,2)\) on the low flow values of every component and
+solves the \(n\) cycle equations.  Its complete counts are
+\[
+\begin{array}{c|r|r|r}
+n&\text{valid dirty pairs}&\text{failed linear repairs}&
+\text{failures with more than two components}\\
+\hline
+6&2712&432&0\\
+7&26880&5376&0
+\end{array}
+\]
+Every dirty state either produces a
+nowhere-zero \(K\)-flow on all of \(G\), contradicting the non-Tait
+hypothesis, or has exactly two components of \(G-h\).  At size six the
+failed states may additionally be quotiented by the affine group on the
+four colours, the dihedral group of the cycle, and component relabelling;
+they give the three representatives
+\[
+\begin{array}{c|c}
+(c_0,\ldots,c_5)&(\pi_0,\ldots,\pi_5)\\
+\hline
+010123&001001\\
+010232&001010\\
+012013&000101
+\end{array}
+\]
+There are 144 labeled states per orbit.  At size seven there is no residual
+normal form after the two-component theorem.  The dependency-free
+enumerator regenerates all words, partitions, conservation tests, dirty
+states, and linear repairs rather than trusting the stored counts.
+
+Proposition~\ref{prop:span} makes every failed state clean by one valid
+switch.  Hence no dirty size-six or size-seven global minimum is
+uncleanable.
+\end{proof}
+
+\begin{remark}
+The exact classifications, proof of semantics, size-six representatives,
+and full standalone span proof are bundled in the cumulative through-seven
+package.  This is a finite boundary theorem, not a search over sampled
+graphs.
+\end{remark}
+
+\subsection{Direct component repair through size ten}
+
+The preceding Tait repair required every new low value to be nonzero.
+For the original three-bit flow this is unnecessarily restrictive on
+\(h\): an edge of \(h\) has first coordinate one and therefore remains
+nonzero even when its low value is zero.  Exploiting this observation
+gives a stronger repair.
+
+\begin{proposition}[direct boundary repair certificate]
+\label{prop:directrepair}
+Let \(f=(h,s)\) be a nowhere-zero \(\F_2\times K\)-flow.  Index the
+vertices and edges of each circuit of \(h\) cyclically, put
+\[
+ c_i=s(e_i),\qquad d_i=c_{i-1}+c_i,
+\]
+and let \(\pi_i\) denote the component \(W_{\pi_i}\) of \(G-h\) containing
+the circuit vertex \(v_i\).  Suppose there are maps
+\(L_a\in\operatorname{GL}(2,2)\) and values \(r_i\in K\) such that
+\[
+                    r_{i-1}+r_i=L_{\pi_i}d_i              \tag{13}
+\]
+on every circuit, and, for every component \(W_a\) and every \(c\in K\),
+\[
+ \bigl|\{e_i\in\delta(W_a):r_i=c\}\bigr|\equiv0\pmod2.    \tag{14}
+\]
+Then \(h\) is cleanable.
+\end{proposition}
+
+\begin{proof}
+Apply \(L_a\) to the low value of every edge in \(W_a\).  At a vertex
+outside \(h\), all three incident edges lie in the same component, so
+linearity preserves the flow equation.  At a circuit vertex \(v_i\), the
+unique edge outside \(h\) receives value \(L_{\pi_i}d_i\), and (13) is
+exactly the missing vertex equation.  Every edge outside \(h\) retains a
+nonzero low value because \(L_a\) is invertible.  Every edge of \(h\) has
+full value \((1,r_i)\), which is nonzero even if \(r_i=0\).  The repaired
+flow is therefore nowhere zero.  Equation (14) is precisely the clean
+affine-class cut condition, component by component.
+\end{proof}
+
+\begin{theorem}[minimum projections through size ten]
+\label{thm:sizeten}
+Let \(G\) be a connected bridgeless loopless cubic graph; parallel edges
+are allowed.  Every cardinality-minimum extendable projection of size at
+most ten is cleanable.
+\end{theorem}
+
+\begin{proof}
+The zero projection is clean.  For a nonzero minimum projection,
+Corollary~\ref{cor:fourcolour} says that every circuit component uses all
+four affine colours and hence has length at least four.  The possible
+length partitions through total size ten are therefore
+\[
+\begin{gathered}
+4,5,6,7,8,9,10,\\
+4+4,\quad4+5,\quad4+6,\quad5+5.                         \tag{15}
+\end{gathered}
+\]
+
+For a fixed shape, the exact checker enumerates every proper cyclic word
+on \(K\) using all four colours on every circuit, modulo the global affine
+action and the exact dihedral action on each circuit (including circuit
+interchange when the lengths agree).  For every canonical word it
+enumerates every set partition \(\pi\) of the circuit vertices.  It retains
+exactly those partitions satisfying component conservation
+\[
+                 \bigoplus_{\pi_i=a}d_i=0
+\]
+and the four equal affine cut parities, with at least one dirty component.
+It then exhausts all six choices of \(L_a\) independently for every
+component and all four starting values independently on every circuit;
+equation (13) forces the remaining \(r_i\)'s.  Finally it tests (14)
+literally.
+
+The complete counts are
+\[
+\begin{array}{c|r|r|r}
+\text{shape}&\text{canonical words}&\text{valid dirty states}&
+\text{failed direct repairs}\\
+\hline
+4&1&1&0\\
+5&1&2&0\\
+6&5&27&0\\
+7&7&116&0\\
+8&26&1386&0\\
+9&49&8840&0\\
+10&151&102{,}290&0\\
+4+4&2&114&0\\
+4+5&2&372&0\\
+4+6&11&7798&0\\
+5+5&6&4232&0
+\end{array}
+\]
+These are all shapes in (15), and every retained boundary state has a
+certificate of Proposition~\ref{prop:directrepair}.  Hence every minimum
+projection in the stated range is cleanable.
+\end{proof}
+
+\begin{remark}
+The dependency-free replay is the \texttt{verify.py} program in the
+bundled through-ten direct-cleaning package.
+It regenerates the words, partitions, conservation tests, and repairs.
+A separately written through-nine package agrees on the overlapping
+range, and two independent agent runs reproduced the size-ten counts.
+These checks are not independent human peer review.
+\end{remark}
+
+\subsection{The first direct-repair failures and size eleven}
+
+The direct-cleaning statement in Theorem~\ref{thm:sizeten} is not
+universal.  A second elementary certificate explains why its first
+failures nevertheless cannot be globally minimum.
+
+\begin{proposition}[circuit-deletion certificate]
+\label{prop:deletecircuit}
+Let \(f=(h,s)\) be a nowhere-zero \(\F_2\times K\)-flow, and let \(D\) be
+a circuit component of \(h\).  Suppose component maps \(L_a\) and values
+\(r_i\) satisfy the vertex equations (13), and suppose \(r_i\ne0\) on
+every edge of \(D\).  Then \(h-D\) is extendable.
+\end{proposition}
+
+\begin{proof}
+Use first coordinate one on \(h-D\) and zero on \(D\).  On all circuit
+edges use the low values \(r_i\), and inside each component of \(G-h\)
+use \(L_as\).  The proof of Proposition~\ref{prop:directrepair} verifies
+all vertex equations and nonzeroness off \(D\).  On \(D\), the first
+coordinate is now zero but the assumed low value is nonzero.  The result
+is therefore a nowhere-zero flow with first-coordinate support \(h-D\).
+\end{proof}
+
+\begin{proposition}[fixed-map affine cleaning]\label{prop:affineclean}
+Fix component maps \(L_a\) for which the circuit equations (13) are
+consistent, and fix one solution \(r^0\).  Let \(\mathcal D\) be the set
+of circuit components of \(h\).  Every solution is of the form
+\[
+                       r_i=r_i^0+z_D\qquad(e_i\in D),
+\]
+with one independently chosen translation \(z_D\in K\) per circuit.
+For a component \(W_a\), define
+\[
+ b_a=\sum_{e_i\in\delta(W_a)}q(r_i^0),\qquad
+ t_{aD}=\bigoplus_{e_i\in\delta(W_a)\cap D}r_i^0,
+\]
+where \(q(x_1,x_2)=x_1x_2\), and put
+\(B(x,y)=x_1y_2+x_2y_1\).  Then the repaired extension is clean exactly
+when
+\[
+                         b_a+\sum_{D\in\mathcal D}B(t_{aD},z_D)=0
+                         \qquad\text{for every }a.        \tag{15a}
+\]
+In particular, cleanliness for fixed component maps is an affine linear
+system over \(\F_2\), with at most \(2(|\mathcal D|-1)\) scalar variables.
+\end{proposition}
+
+\begin{proof}
+The difference of two solutions of (13) is equal on consecutive edges,
+and hence is constant around each circuit.  Every circuit meets
+\(\delta(W_a)\) evenly.  Summing (13) at all circuit vertices in \(W_a\)
+also gives
+\(\bigoplus_{e_i\in\delta(W_a)}r_i=0\).
+Consequently the four parities in (14) are either all zero or all one:
+their total is zero, and their two \(K\)-coordinate sums are zero.
+
+The common defect bit equals
+\(\sum_{e_i\in\delta(W_a)}q(r_i)\).  Indeed,
+\({\bf1}_{x=0}=1+x_1+x_2+q(x)\), and the constant and linear sums vanish
+by the preceding two parity identities.  Substitute
+\(r_i=r_i^0+z_D\) and use
+\[
+ q(x+z)=q(x)+q(z)+B(x,z).
+\]
+The \(q(z_D)\) term occurs an even number of times on each circuit cut
+and cancels, leaving exactly (15a).  Finally
+\(\bigoplus_Dt_{aD}=0\), so translating every circuit by the same element
+changes no equation; one \(z_D\) may be fixed to zero.
+\end{proof}
+
+\begin{remark}
+This proposition is a human-checkable reduction of the translation search,
+not a universal solution.  If its affine system is inconsistent, binary
+linear duality gives a short XOR witness \(y\) with
+\(y^{\mathsf T}\Phi=0\) and \(y^{\mathsf T}b=1\).
+The exact remaining issue is to choose the component maps so that either
+this system is consistent or one integrated circuit word omits a colour,
+which triggers Proposition~\ref{prop:deletecircuit}.
+\end{remark}
+
+\begin{proposition}[dual-cut feasible move]\label{prop:dualcut}
+If the fixed-map system (15a) is inconsistent, there is a nonempty
+proper union \(Y\) of components of \(G-h\) such that, for every circuit
+\(D\) of \(h\),
+\[
+                    \bigoplus_{e_i\in\delta(Y)\cap D}r_i^0=0,
+                                                               \tag{15b}
+\]
+while an odd number of the circuits meet \(\delta(Y)\) oddly in each
+of the four low colours.  Moreover, for every \(T\in\operatorname{GL}(2,2)\),
+postcomposing all \(L_a\) with \(T\) for \(W_a\subseteq Y\), and changing
+no other component map, preserves circuit consistency.
+\end{proposition}
+
+\begin{proof}
+Let \(y\) be a dual XOR witness from the preceding remark and let \(Y\)
+be its selected component union.  Summing \(t_{aD}\) over the selected
+rows cancels support edges internal to \(Y\) twice and leaves exactly
+the left side of (15b).  Nondegeneracy of \(B\) and
+\(y^{\mathsf T}\Phi=0\) make this xor zero for every circuit.  Each
+circuit crosses \(\delta(Y)\) evenly, so zero colour xor forces its four
+cut-colour parities to be equal.  The identity
+\(y^{\mathsf T}b=1\) says that the sum of their \(q\)-parities is odd;
+hence an odd number of circuits are rainbow-odd on the cut.
+
+Finally, summing (13) over the circuit vertices in \(Y\) gives zero by
+(15b).  Postcomposition sends this partial sum to \(T(0)=0\); the
+complementary partial sum is also zero because the original circuit
+total was zero.  Thus every circuit equation remains consistent.
+\end{proof}
+
+\begin{remark}
+The proposition turns every failed translation system into six
+coordinated feasible map choices.  The next proposition proves that these
+choices can always neutralize the particular dual witness that produced
+them.  A universal proof still needs a well-founded progress statement,
+because a different witness may appear after the switch.
+\end{remark}
+
+\begin{proposition}[six-map witness neutralization]
+\label{prop:sixmapneutralization}
+Let \(Y\) be the component union supplied by
+Proposition~\ref{prop:dualcut}.  For
+\(U\in\operatorname{GL}(2,2)\), postcompose by \(U\) the component maps
+inside \(Y\), reintegrate on every support circuit, and let
+\[
+ F_Y(U)=
+ \sum_{W_a\subseteq Y} b_a(U)
+ =
+ \sum_{e\in\delta(Y)\cap h}q(r_e^U).                    \tag{15c}
+\]
+The value is independent of the permitted circuit translations.  If
+\(\{I,\rho,\rho^2\}\) is the order-three subgroup of
+\(\operatorname{GL}(2,2)\) and
+\(\tau_1,\tau_2,\tau_3\) are its three involutions, then
+\[
+\begin{aligned}
+ F_Y(I)+F_Y(\rho)+F_Y(\rho^2)&=0,\\
+ F_Y(\tau_1)+F_Y(\tau_2)+F_Y(\tau_3)&=0.
+\end{aligned}                                           \tag{15d}
+\]
+Consequently, if \(Y\) is a dual inconsistency witness before the switch,
+so \(F_Y(I)=1\), then one of the six legal choices of \(U\) preserves the
+dual balance of \(Y\) but changes its right-hand-side sum to zero.
+\end{proposition}
+
+\begin{proof}
+It is enough to work on one oriented support circuit.  At its \(i\)-th
+vertex put \(\epsilon_i=1\) when the containing complement component lies
+in \(Y\), and put
+\[
+                    g_i=L_{\pi_i}d_i=r_{i-1}+r_i.
+\]
+The dual balance in Proposition~\ref{prop:dualcut} is equivalently
+\[
+                         \bigoplus_{\epsilon_i=1}g_i=0.  \tag{15e}
+\]
+Choose cyclic edge potentials \(p_i\in K\) satisfying
+\[
+                         p_{i-1}+p_i=\epsilon_i g_i.     \tag{15f}
+\]
+Equation (15e) is exactly the condition that this integration closes.
+After the maps inside \(Y\) are postcomposed by \(U\), one compatible
+support word is
+\[
+                         r_i^U=r_i+(U+I)p_i.             \tag{15g}
+\]
+Indeed its derivative is \(Ug_i\) at a selected vertex and \(g_i\)
+otherwise.  The selected derivative xor after the switch is
+\(U\bigoplus_{\epsilon_i=1}g_i=0\); thus the balance of \(Y\) persists.
+Proposition~\ref{prop:affineclean} then also shows that \(F_Y(U)\) is
+unchanged by arbitrary independent translations of the support circuits.
+
+It remains to sum \(q(r_i^U)\) on the circuit edges crossing between
+selected and unselected vertices.  Identify \(K\) with
+\(\{0,1,2,3\}\), with \(q(3)=1\) and \(q(0)=q(1)=q(2)=0\).  Direct
+evaluation of the four possible \(r,p\) gives, for either of the
+three-element sets of maps in (15d),
+\[
+\begin{array}{c|cccc}
+H(r,p)&p=0&p=1&p=2&p=3\\ \hline
+r=0&0&1&1&0\\
+r=1&0&1&0&1\\
+r=2&0&0&1&1\\
+r=3&1&1&1&1
+\end{array}
+\qquad
+H(r,p)=q(r+p)+{\bf1}_{p\ne0},                            \tag{15h}
+\]
+where
+\[
+ H(r,p)=\sum_{U\in\{I,\rho,\rho^2\}}q(r+(U+I)p)
+       =\sum_{U\in\{\tau_1,\tau_2,\tau_3\}}q(r+(U+I)p).
+\]
+Hence either three-map sum of the present circuit's contribution to
+\(F_Y\) is
+\[
+ \sum_{e_i\in\delta(Y)}
+       \bigl(q(r_i+p_i)+{\bf1}_{p_i\ne0}\bigr).           \tag{15i}
+\]
+Put \(b_i=r_i+p_i\).  Equations (15f) and
+\(r_{i-1}+r_i=g_i\) show that \(b_i\) is constant across each consecutive
+run of selected vertices.  Its two \(q(b_i)\) terms on the flanking cut
+edges therefore cancel.  Likewise \(p_i\) is constant across every run of
+unselected vertices, so the two flanking
+\({\bf1}_{p_i\ne0}\) terms cancel.  Thus (15i) is zero on every circuit,
+proving (15d).
+
+Finally \(F_Y(I)=1\) and the first identity in (15d) force at least one of
+\(F_Y(\rho),F_Y(\rho^2)\) to be zero.  The post-switch balance already
+proved means that the same selected row combination remains in the left
+kernel, now with zero right-hand side.  It is therefore no longer an
+inconsistency witness.
+\end{proof}
+
+\begin{corollary}[dual invisibility of neutralization]
+\label{cor:dualinvisibility}
+Assume \(h\) is globally minimum.  For the witness shore \(Y\) in
+Proposition~\ref{prop:sixmapneutralization}, all four old shortest-join
+duals have
+\[
+                           y_{c,Y}=0\qquad(c\in K).       \tag{15j}
+\]
+After a neutralizing switch, \(Y\) is \(T_c\)-even for every recomputed
+colour class and disappears from all four dual programs.  Moreover, for
+every legal map choice \(U\),
+\[
+                     \sum_{c\in K}\max D_c(U)=3|h|.      \tag{15k}
+\]
+Thus neither the selected cut coefficient nor the aggregate four-dual
+optimum can be a decreasing neutralization potential.
+\end{corollary}
+
+\begin{proof}
+The shore \(Y\) is a union of components of \(G-h\), so (15j) is
+Proposition~\ref{prop:zerodualprice}.  Before the switch its four cut
+parities are all one; after neutralization they are all zero, giving the
+second assertion.  The switch keeps the projection \(h\) and produces
+another extension.  Its four classes \(M_c^U\) partition \(h\), while the
+corresponding optimal join has size \(|h|-|M_c^U|\).  Summing over \(c\)
+gives \(4|h|-|h|=3|h|\).
+\end{proof}
+
+\begin{proposition}[six-map colour-load inequality]
+\label{prop:colorload}
+Assume \(h\) is globally minimum.  Let \(Y\) be a union of components of
+\(G-h\) such that postcomposing the low flow on \(Y\) by every
+\(U\in\operatorname{GL}(2,2)\) is integrable on the support circuits.  For nonzero
+\(a,b\in K\), let \(N_b\) be the number of colour-\(b\) complement edges
+inside \(Y\), let \(O_a\) be the number of colour-\(a\) complement edges
+outside \(Y\), and put \(m=|E-h|\).  Then
+\[
+                       O_a+N_b\le m-\frac{|h|}{2}
+                       \qquad(a,b\ne0).                   \tag{15l}
+\]
+If (15l) fails, its proof explicitly constructs a legal common map
+switch and a binary cycle giving a strict projection descent.
+
+Equivalently, let \(k_b(Y)\) count support vertices in \(Y\) whose unique
+incident complement edge has low colour \(b\).  Then
+\[
+                k_a(\overline Y)+k_b(Y)
+                         \le2\bigl(|V|-|h|\bigr)
+                         \qquad(a,b\ne0).                 \tag{15m}
+\]
+\end{proposition}
+
+\begin{proof}
+For a nonzero functional \(\alpha:K\to\F_2\), both
+\[
+ C_\alpha=\{e:\alpha(s_e)=1\},
+ \qquad C'_\alpha=h\mathbin\triangle C_\alpha
+\]
+are binary cycles.  Put
+\[
+ a_\alpha=|C_\alpha\cap h|,
+ \qquad m_\alpha=|C_\alpha-h|.
+\]
+The first cycle avoids each \(M_c\) with \(\alpha(c)=0\), while the
+second avoids each \(M_c\) with \(\alpha(c)=1\).  Applying the
+minimum-projection exchange inequality to both cycles gives
+\[
+                     a_\alpha\le m_\alpha,\qquad
+                     |h|-a_\alpha\le m_\alpha,
+\]
+and hence \(m_\alpha\ge|h|/2\).
+
+Fix \(a,b\ne0\), choose the functional with
+\(\ker\alpha=\{0,a\}\), and choose
+\(U\in\operatorname{GL}(2,2)\) with \(U(b)=a\).
+After switching \(Y\), the number of complement edges on which
+\(\alpha\) is one is exactly
+\[
+                         m_\alpha^U=m-O_a-N_b.
+\]
+The switched flow has the same globally minimum projection, so the
+preceding half-load inequality applies again and proves (15l).  If
+(15l) fails, then \(m_\alpha^U<|h|/2\).  According as
+\(a_\alpha^U>|h|/2\) or not, \(C_\alpha^U\) or
+\(h\mathbin\triangle C_\alpha^U\) uses more support than complement
+edges and avoids two entire low-colour classes.  Either avoided class
+therefore certifies a legal strict descent.
+
+For the boundary form, let \(n_Y\) be the number of off-support vertices
+inside \(Y\).  Every such cubic vertex sees the three distinct nonzero
+low colours, while every support vertex has one complement incidence.
+Double-counting colour incidences gives
+\[
+                  2N_b=n_Y+k_b(Y),\qquad
+                  2O_a=n_{\overline Y}+k_a(\overline Y).
+\]
+Since \(h\) is 2-regular on its support,
+\[
+  n_Y+n_{\overline Y}=|V|-|h|,
+  \qquad 2m=3(|V|-|h|)+|h|.
+\]
+Substitution in (15l) is exactly (15m).
+\end{proof}
+
+\begin{proposition}[global minimality is essential for load forcing]
+\label{prop:rainbowloadcounterstate}
+There is a simple connected bridgeless planar cubic graph carrying a
+nowhere-zero \(\F_2^3\)-flow, a 6-circuit projection \(h\), and a
+component-union shore \(Y\) with all of the following properties:
+\begin{enumerate}
+  \item the four low-colour classes cross \(\delta(Y)\) oddly;
+  \item all six common \(\operatorname{GL}(2,2)\) switches on \(Y\) are
+        integrable;
+  \item every support colour occurs; and
+  \item all nine boundary-load inequalities (15m) hold.
+\end{enumerate}
+The graph is Tait-colourable, so the displayed \(h\) is not globally
+minimum.  Thus rainbow parity, cyclic closure, and minimally connected
+complement components do not imply a violation of (15m) without the
+global-minimum hypothesis.
+\end{proposition}
+
+\begin{proof}
+Take vertices \(0,\ldots,7\), support circuit
+\[
+  01,12,23,34,45,50,
+\]
+and complement edges
+\[
+  06,26,46,\qquad17,37,57.
+\]
+This is the cube graph, with canonical graph6 string
+\texttt{Gs@ipo}.  In the displayed edge order, take first coordinate
+\[
+                  111111000000
+\]
+and low coordinate
+\[
+                  102030123123.
+\]
+Direct xor at every vertex is zero and no full edge value vanishes.
+Removing \(h\) leaves the two 3-stars
+\[
+ W_0=\{0,2,4,6\},\qquad W_1=\{1,3,5,7\}.
+\]
+For \(Y=W_1\), the derivative word around the support circuit is
+\(\texttt{112233}\), while the shore word is
+\(\texttt{010101}\).  Each shore half has derivative xor
+\(1+2+3=0\), so every common linear switch is integrable.
+
+The cut is the whole support circuit.  Its support-colour counts are
+\((3,1,1,1)\), hence all four are odd.  Inside and outside \(Y\), the
+three nonzero complement-colour counts are both \((1,1,1)\).  Thus
+\[
+ O_a+N_b=2\le |E-h|-\frac{|h|}{2}=3
+\]
+for every \(a,b\ne0\); equivalently,
+\(k_a(\overline Y)+k_b(Y)=2\le4=2(|V|-|h|)\).
+Finally the edge-colour word
+\[
+                  121323231321
+\]
+is a Tait colouring in the same edge order.  Its associated
+nowhere-zero \(K\)-flow has first projection zero, proving that the
+displayed size-six projection is not minimum.
+\end{proof}
+
+\begin{remark}
+\begin{sloppypar}
+In the one-circuit model with two minimally connected cubic-tree
+components, lengths four and five force a load violation, whereas the
+displayed length-six state is safe.  An exact boundary census gives
+\(12,120,960\) states at lengths \(4,5,6\), with respectively
+\(0,0,888\) load-safe rows.  The rainbow-load counterstate package under
+\path{scratch/} contains the literal graph, full six-map table,
+independent checker, outputs, and hash ledger.
+\end{sloppypar}
+\end{remark}
+
+\begin{remark}
+Proposition~\ref{prop:sixmapneutralization} removes any \emph{chosen}
+Farkas witness at every boundary size, but it does not remove all witnesses
+simultaneously.  The size-fourteen state in
+Proposition~\ref{prop:sizefourteenfailure} has neither a clean nor a
+deletion choice, so repeated witness neutralization cannot be assumed to
+terminate without a new monotone invariant or additional realization
+information.
+\end{remark}
+
+\begin{proposition}[cyclic neutralization dynamics]
+\label{prop:neutralizationcycle}
+On the size-fourteen state of
+Proposition~\ref{prop:sizefourteenfailure}, legal applications of
+Proposition~\ref{prop:sixmapneutralization} contain a directed four-cycle.
+Consequently no scalar potential can strictly decrease under every legal
+witness-neutralizing switch.  In fact, the exact directed graph on the
+forty reduced integrable map states is strongly connected, so every
+potential weakly nonincreasing on all such switches is constant.
+
+The cycle occurs entirely outside the global-minimum domain of the
+displayed 18-vertex realization.  At one of its states, for every relative
+circuit translation there is an explicit binary cycle avoiding one affine
+class and meeting six support edges but only two nonsupport edges.
+\end{proposition}
+
+\begin{proof}
+Use the notation
+\[
+                    k=(u_1,u_2,u_3,a,b)
+\]
+from the proof of Proposition~\ref{prop:sizefourteenfailure}; its forty
+states have nonzero entries, \(a\ne b\), and
+\(b=3+u_1+u_2+u_3\).  Let \(U\) interchange \(1\) and \(2\) in \(K\).
+In the following table, \(Q\) lists the five component obstruction bits,
+and \(T\) lists
+\((T_{x,A},T_{x,B})\) for \(x=0,\ldots,4\):
+\[
+\begin{array}{c|c|c|c|c}
+k&Q&T&S&\text{normalized target}\\ \hline
+11112&00101&33/11/11/11/22&12&22112\\
+22112&00011&33/22/22/11/22&013&21121\\
+21121&00101&33/22/11/11/11&012&21212\\
+21212&00011&33/22/11/22/22&13&11112
+\end{array}                                               \tag{15n}
+\]
+In each row the xor of the \(T_x\)'s selected by \(S\) is zero on both
+circuits.  The selected \(Q\)-sum is one in the source and zero in the
+target.  Apply \(U\) on the named components; if \(0\in S\), follow by
+the common normalization \(U^{-1}=U\).  Direct substitution in the five
+keys gives the displayed target.  Thus every arrow is legal, neutralizes
+its chosen witness, and the fourth returns to the first.  This proves the
+strict-potential assertion without computation.
+
+For the stronger finite statement, the two bundled checkers independently
+enumerate the forty keys, their four dual witnesses each, and all six map
+choices.  Both obtain 320 witness-switch certificates, 136 distinct
+directed state pairs, and mutual reachability of all forty states.  Paths
+in both directions force a weakly nonincreasing potential to take equal
+values everywhere.
+
+Finally take state \(k=21212\).  The integrated low word on the second
+support circuit is
+\[
+                              \texttt{2313010}+z
+\]
+for an arbitrary relative translation \(z\).  In the edge numbering of
+the displayed realization, the binary cycle
+\[
+                         C=\{8,9,10,11,12,13,25,26\}     \tag{15o}
+\]
+uses the last six support values \(\texttt{313010}+z\), which omit
+\(2+z\), and two complement edges.  Hence \(C\cap M_{2+z}=\varnothing\)
+while
+\[
+                         |C\cap h|-|C-h|=6-2=4.
+\]
+The exchange theorem excludes this state at a global minimum for every
+relative translation.  Exact cycle-space enumeration separately finds a
+positive exchange gain for all forty states and all four translations,
+but that larger finite fact is not needed for the displayed descent.
+\end{proof}
+
+\begin{remark}
+Proposition~\ref{prop:neutralizationcycle} is a no-go theorem for a proof
+that iterates Proposition~\ref{prop:sixmapneutralization} using only its
+abstract state.  It neither rules out a potential incorporating the four
+shortest-join inequalities nor weakens the minimum-projection conjecture.
+It shows that global-minimum data must enter any convergence argument
+essentially.
+\end{remark}
+
+\begin{theorem}[minimum projections through size eleven]
+\label{thm:sizeeleven}
+Under the hypotheses of Theorem~\ref{thm:sizeten}, every
+cardinality-minimum extendable projection of size at most eleven is
+cleanable.
+\end{theorem}
+
+\begin{proof}
+Only total size eleven remains.  The four-colour circuit condition gives
+the three shapes
+\[
+                         11,\qquad4+7,\qquad5+6.          \tag{16}
+\]
+The same exact boundary enumeration used above gives
+\[
+\begin{array}{c|r|r|r|r}
+\text{shape}&\text{canonical words}&\text{charge-valid}&
+\text{dirty}&\text{failed direct repairs}\\
+\hline
+11&345&1{,}183{,}710&919{,}764&0\\
+4+7&17&57{,}500&46{,}786&0\\
+5+6&26&87{,}884&71{,}170&14
+\end{array}
+\]
+The 14 literal failures form 11 orbits under the full affine, dihedral,
+and component-renaming action.  For each failure, the checker exhausts
+the same component maps and independent circuit starts and finds a
+certificate satisfying (13) in which every low value on the six-circuit
+is nonzero.  Proposition~\ref{prop:deletecircuit} then produces an
+extendable projection supported only on the five-circuit.  Its size is
+five, contradicting the assumed global minimality of the size-eleven
+projection.  Hence every globally minimum size-eleven state is directly
+cleanable.
+\end{proof}
+
+\begin{remark}[sharp direct-repair countermodel]
+The 14 failed boundary states are realizable.  Replacing each two-vertex
+component block by an edge and each three-vertex block by a claw yields,
+in all 14 cases, the same simple bridgeless non-Tait graph on 12 vertices,
+with graph6 encoding
+\[
+                         \texttt{Kt?G?DIPOqCo}.
+\]
+It is the triangle-expanded Petersen graph.  Exact cycle-space enumeration
+shows that the displayed size-eleven \(5+6\) projection is extendable but
+uncleanable, while the minimum extendable-projection size is five and all
+six size-five minima are cleanable.  Thus it refutes the direct-repair
+strengthening, not FiveCDC or the minimum-projection conjecture.  The
+cumulative checker and all 14 certificates are in the bundled
+through-eleven package.
+\end{remark}
+
+\subsection{Clean or delete and Kempe escape through size fourteen}
+
+Propositions~\ref{prop:directrepair} and
+\ref{prop:deletecircuit} give a useful dichotomy: it is enough to find
+component maps and circuit starts that either make every affine cut parity
+even, or make one whole support circuit low-valued and nowhere zero.  The
+first branch cleans the projection; the second strictly shortens it and is
+therefore impossible for a global minimum.
+
+\begin{theorem}[minimum projections through size twelve]
+\label{thm:sizetwelve}
+Under the hypotheses of Theorem~\ref{thm:sizeten}, every
+cardinality-minimum extendable projection of size at most twelve is
+cleanable.
+\end{theorem}
+
+\begin{proof}
+Only total size twelve remains.  The complete circuit-length list is
+\[
+                12,\qquad4+8,\qquad5+7,\qquad6+6,\qquad4+4+4. \tag{17}
+\]
+For each shape, the exact classifier enumerates the same word orbits and
+charge-valid component partitions as before.  It first exhausts every
+component map and relative circuit start for direct cleanliness.  If that
+fails, it tests whether the integrated word on a circuit omits a colour.
+Translating that circuit by the omitted colour makes all of its low values
+nonzero, giving the hypothesis of
+Proposition~\ref{prop:deletecircuit}.  The mutually exclusive counts are
+\[
+\begin{array}{c|r|r|r|r}
+\text{shape}&\text{words}&\text{dirty}&\text{direct clean}&
+\text{delete}\\
+\hline
+12&1014&11{,}465{,}978&11{,}465{,}978&0\\
+4+8&66&773{,}721&773{,}717&4\\
+5+7&64&738{,}969&738{,}763&206\\
+6+6&66&774{,}196&774{,}014&182\\
+4+4+4&3&35{,}960&35{,}960&0
+\end{array}
+\]
+There are zero states in neither branch.  The 392 deletion states have
+literal component maps, integrated circuit words, and omitted-colour
+certificates in the frozen output.  Since a globally minimum projection
+cannot take the deletion branch, every size-twelve minimum is cleanable.
+\end{proof}
+
+\begin{remark}
+The primary C++ classifier and certificate parser are bundled in the
+through-twelve clean-or-delete package.  A separately written C++ exact
+cover auditor independently regenerates the word orbits, valid component
+blocks, map search, clean decisions, and all 392 deletion decisions.  The
+two implementations agree on every table entry.  This is independent
+agent replication, not human peer review.
+\end{remark}
+
+\begin{theorem}[minimum projections through size thirteen]
+\label{thm:sizethirteen}
+Under the hypotheses of Theorem~\ref{thm:sizeten}, every
+cardinality-minimum extendable projection of size at most thirteen is
+cleanable.
+\end{theorem}
+
+\begin{proof}
+Only total size thirteen remains.  Since every circuit component contains
+all four colours, the complete shape list is
+\[
+                13,\qquad4+9,\qquad5+8,\qquad6+7,\qquad4+4+5. \tag{18}
+\]
+The exact classifier applies the same clean-or-delete test as in
+Theorem~\ref{thm:sizetwelve}.  Its complete counts are
+\[
+\begin{array}{c|r|r|r|r|r}
+\text{shape}&\text{words}&\text{charge-valid}&\text{dirty}&
+\text{direct clean}&\text{delete}\\
+\hline
+13&2583&155{,}381{,}679&129{,}684{,}490&129{,}684{,}490&0\\
+4+9&130&7{,}753{,}918&6{,}657{,}654&6{,}657{,}594&60\\
+5+8&203&12{,}144{,}485&10{,}404{,}652&10{,}401{,}428&3224\\
+6+7&242&14{,}480{,}258&12{,}415{,}026&12{,}410{,}636&4390\\
+4+4+5&4&238{,}522&208{,}144&208{,}144&0
+\end{array}
+\]
+Thus \(159{,}369{,}966\) dirty states split into
+\(159{,}362{,}292\) direct repairs and \(7{,}674\) strict circuit
+deletions, with no residual state outside those branches.  Proposition
+\ref{prop:deletecircuit} excludes every deletion state from global
+minimality, proving the claim.
+\end{proof}
+
+\begin{remark}
+The primary size-thirteen package freezes one literal map, integrated
+word, deleted circuit, and omitted colour for every deletion state.
+A separately written valid-block/exact-cover implementation regenerates
+the word orbits, component partitions, map search, affine cleaning
+decisions, and deletion decisions.  The implementations agree on every
+table entry.  This is exact independent agent replication, not peer review.
+\end{remark}
+
+\begin{proposition}[sharp failure of unrestricted clean or delete]
+\label{prop:sizefourteenfailure}
+The clean-or-delete boundary statement used in
+Theorems~\ref{thm:sizetwelve} and \ref{thm:sizethirteen} is false at
+total support size fourteen.  A counterstate has two seven-circuits with
+\[
+\begin{split}
+(c_i)&=\texttt{0101023}\mid\texttt{0101232},\\
+(\pi_i)&=\texttt{01234444413024}.
+\end{split}                                               \tag{19}
+\]
+Every circuit uses all four colours and every component charge is zero,
+but no component-map tuple and relative circuit translation cleans the
+state or makes either circuit low-valued and nowhere zero.
+\end{proposition}
+
+\begin{proof}
+The derivative word is
+\(\texttt{3111121}\mid\texttt{2111311}\), from which the five zero block
+charges and dirtiness are checked directly.  Normalize the map of block
+zero to the identity, and put
+\[
+ u_i=L_i(1)\ (i=1,2,3),\qquad a=L_4(1),\qquad b=L_4(2).
+\]
+All five displayed elements are nonzero and \(a\ne b\).
+The transformed derivatives on the two circuits are
+\[
+(3,u_1,u_2,u_3,a,b,a),\qquad
+(b,a,u_1,u_3,3,u_2,a).
+\]
+Their two integrability equations coincide and reduce to
+\[
+                            b=3+u_1+u_2+u_3.             \tag{20}
+\]
+Zero-start integration gives
+\[
+\begin{split}
+r^A={}&(3,3+u_1,3+u_1+u_2,b,a+b,a,0),\\
+r^B={}&(b,a+b,3+u_2+u_3+a,3+u_2+a,u_2+a,a,0).
+\end{split}
+\]
+Both rows contain \(\{0,a,b,a+b\}=K\), so deletion is impossible.
+
+Let \(z\) translate the second circuit.  Cleanliness at blocks
+\(0,1,2,3\) respectively requires \(z\) to lie in
+\[
+\begin{array}{ll}
+u_2+a+\{0,3\},&
+3+a+b+\{0,u_1\},\\
+3+u_1+u_2+a+\{0,u_2\},&
+u_1+u_3+a+\{0,u_3\}.                                    \tag{21}
+\end{array}
+\]
+If \(z=u_2+a+3\), the third and fourth lines force
+\(u_1=u_2\) and \(u_3=3\); then (20) gives \(b=0\).
+If \(z=u_2+a\), the second and fourth lines force
+\(u_3=u_1\) and \(u_2=u_1\); the third then forces \(u_1=3\), and again
+(20) gives \(b=0\).  Both conclusions contradict invertibility of
+\(L_4\).  Thus no clean translation exists.
+\end{proof}
+
+\begin{remark}[realization and scope]
+The state (19) is realized by a simple connected bridgeless non-Tait
+cubic graph on 18 vertices, with canonical graph6 encoding
+\[
+                  \texttt{Qs???SC@GS@\_CDOoC@@@?O?CO?g}.
+\]
+The graph is nonplanar; the package displays a \(K_{3,3}\) subdivision.
+Exact enumeration of its \(2^{10}\)-element cycle space finds 15,360
+ordered extensions of the displayed size-fourteen projection and no
+clean one.  Nevertheless, the graph has minimum extendable-projection
+size five, exactly four minimum supports, and all four are cleanable.
+Thus Proposition~\ref{prop:sizefourteenfailure} refutes the unrestricted
+boundary lemma, not Conjecture~\ref{conj:minimum} or FiveCDC.  The
+complete certificate and graph audit are in the bundled size-fourteen
+dichotomy-counterstate package; it also independently replays all 1,296
+normalized map tuples and freezes the 40 effective cases.  A separately
+written package exhausts all \(6^5\) full map assignments and independently
+reconstructs the graph, cycle space, extension counts, and four minima.
+\end{remark}
+
+\begin{theorem}[minimum projections through size fourteen]
+\label{thm:sizefourteen}
+Under the hypotheses of Theorem~\ref{thm:sizeten}, every
+cardinality-minimum extendable projection of size at most fourteen is
+cleanable.
+\end{theorem}
+
+\begin{proof}
+Only total size fourteen remains.  Since every circuit component contains
+all four affine colours, the complete shape list is
+\[
+\begin{gathered}
+14,\quad4+10,\quad5+9,\quad6+8,\quad7+7,\\
+4+4+6,\quad4+5+5.                                      \tag{22}
+\end{gathered}
+\]
+The primary exact classifier applies the same component-map, relative-start,
+cleaning, and deletion tests as above.  Its mutually exclusive counts are
+\[
+\begin{array}{c|r|r|r|r|r}
+\text{shape}&\text{words}&\text{dirty}&\text{direct clean}&
+\text{delete}&\text{residual}\\
+\hline
+14&7382&1{,}748{,}842{,}896&1{,}748{,}842{,}896&0&0\\
+4+10&416&100{,}736{,}602&100{,}735{,}166&1436&0\\
+5+9&505&121{,}073{,}174&121{,}032{,}843&40{,}331&0\\
+6+8&809&195{,}911{,}662&195{,}844{,}374&67{,}288&0\\
+7+7&333&80{,}104{,}020&80{,}066{,}557&37{,}239&224\\
+4+4+6&22&5{,}408{,}156&5{,}408{,}156&0&0\\
+4+5+5&14&3{,}401{,}666&3{,}401{,}596&70&0
+\end{array}                                             \tag{23}
+\]
+The seven rows comprise \(9{,}481\) word orbits and
+\(2{,}616{,}134{,}989\) charge-valid states.  The
+\(2{,}255{,}478{,}176\) dirty states split into
+\(2{,}255{,}331{,}588\) direct repairs, \(146{,}364\) strict
+circuit deletions, and 224 residuals.  The deletion rows contradict
+global minimality by Proposition~\ref{prop:deletecircuit}.  Every residual
+has shape \(7+7\), with 46 states of component-size profile
+\(6+2+2+2+2\) and 178 of profile \(4+4+2+2+2\).
+
+It remains to exclude those 224 states.  Fix two distinct nonzero low
+colours \(x,y\), put \(\Delta=x+y\), and consider one component \(W\)
+of \(G-h\).  Retain the edges of \(W\) whose low value is \(x\) or \(y\).
+There is a linear functional \(\ell:K\to\F_2\) satisfying
+\[
+                 \ell(x)=\ell(y)=1,\qquad\ell(\Delta)=0. \tag{24}
+\]
+Applying \(\ell\) to the low-flow equation shows that every vertex of
+\(W\) away from \(h\) has even retained degree.  At the split boundary
+occurrence \(i\), the unique complement edge has low value \(d_i\).
+Consequently the odd boundary vertices are exactly the occurrences with
+\(d_i\in\{x,y\}\), and the retained subgraph pairs them by paths.
+
+Interchange \(x\) and \(y\) on one such path.  Each internal flow equation
+is unchanged, every complement value remains nonzero, and both endpoint
+derivatives change by \(\Delta\).  Since both endpoints belong to the same
+complement component, its boundary charge is unchanged.
+If the endpoints lie on the same support circuit, its two changes cancel.
+If they lie on different support circuits, the certificate names another
+component whose selected two-colour subgraph has exactly two odd boundary
+occurrences, one on each circuit.  Its forced path supplies a second switch
+by \(\Delta\), restoring both circuit closure equations.
+
+The pairing of terminals depends on the unknown realization inside \(W\).
+For each residual the finite certificate therefore stores a set \(S\) of
+successful endpoint pairs such that
+\[
+                    M\cap S\ne\varnothing
+       \quad\text{for every perfect matching \(M\) of the terminals}. \tag{25}
+\]
+There are three possible perfect matchings on four terminals and fifteen
+on six.  For every pair in \(S\), the certificate gives the primary and
+auxiliary endpoints, all component maps, both integrated circuit words,
+and a colour omitted from one circuit.  Translating by that omitted colour
+and deleting the circuit produces an extendable projection of size seven.
+
+The exhaustive builder verifies all normalized map choices and produces
+724 literal deletion rows.  A separately structured checker verifies
+(25), every path-switch boundary update, every component map and circuit
+integration, and every omitted-colour deletion.  Hence every possible
+internal path pairing yields a strict deletion.  No residual is globally
+minimum, which proves the theorem.
+\end{proof}
+
+\begin{remark}[scope and independent replication]
+The path argument uses the split-occurrence boundary model, automatic in a
+cubic graph: every circuit occurrence is a distinct vertex with one
+incident complement edge carrying \(d_i\).  If several occurrences are
+identified at one higher-degree vertex, only their xor is visible to the
+complement two-colour subgraph.  Thus the path theorem itself is not a
+higher-degree boundary theorem.  Proposition~\ref{prop:cubicreduction}
+instead replaces the graph by a new cubic expansion and pushes a completed
+cover back.
+
+A separately written \(7+7\) census regenerates all 333 word orbits,
+\(91{,}481{,}505\) charge-valid states, \(80{,}104{,}020\) dirty
+states, and the same 224 residual rows using a valid-block exact-cover
+implementation.  Its sorted failure-set digest agrees with the primary
+census.  This is independent agent replication, not independent human
+peer review.  Only the \(7+7\) branch has an independently implemented full
+state census.  For the other six shapes---\(14\), \(4+10\), \(5+9\),
+\(6+8\), \(4+4+6\), and \(4+5+5\)---the word-orbit counts, charge-valid
+partition counts, and all direct-clean/delete decisions currently rest on
+the primary classifier.
+\end{remark}
+
+\subsection{A universal tensor repair and the size-fifteen frontier}
+
+The one-circuit rows in the preceding finite tables are instances of a
+general algebraic theorem.
+
+\begin{theorem}[relative-\(\operatorname{GL}(2,2)\) tensor lemma]
+\label{thm:tensor}
+Put \({\cal G}=\operatorname{GL}(2,2)\).  Let \(V\) be finite.  Orient
+each unordered pair \(\{a,b\}\subseteq V\) once, and assign it an
+arbitrary linear functional
+\[
+             \phi_{ab}:\operatorname{Mat}_2(\F_2)\longrightarrow\F_2.
+\]
+There are maps \(L_a\in{\cal G}\) such that, for
+\[
+ w_{ab}=\phi_{ab}(L_a^{-1}L_b),\qquad
+ Q_a=\sum_{b\ne a}w_{ab},                               \tag{26}
+\]
+every \(Q_a\) is zero.
+\end{theorem}
+
+\begin{proof}
+Regard functions \({\cal G}\to\F_2\) as a six-dimensional vector space.
+Identify \(0=(0,0)\), \(1=(1,0)\), \(2=(0,1)\), and \(3=(1,1)\).
+Write a map as the string of its images of \(0,1,2,3\), and define
+\[
+ \lambda(f)=f(\texttt{0132})+f(\texttt{0213})+
+            f(\texttt{0321}).
+\]
+Then
+\[
+ \lambda(1)=1,\qquad
+ \lambda(M\mapsto M_{ij})=0\quad(1\le i,j\le2).          \tag{26a}
+\]
+For the second assertion, in column-major order the flattened matrices
+of the three displayed maps are
+\[
+ (1,0,1,1),\quad(0,1,1,0),\quad(1,1,0,1),
+\]
+whose sum is zero.
+
+For a fixed tensor instance, let
+\[
+                    F((L_a)_{a\in V})=\prod_{a\in V}(1+Q_a).
+\]
+This is the indicator of the desired assignments.  Apply
+\(\Lambda=\lambda^{\otimes V}\) after expanding \(F\).  An expansion
+choice selects at most one incident edge at each vertex.  Because the
+edge functions are Boolean, \(w_e^2=w_e\), so terms may be grouped by
+the simple graph \(H\) of distinct selected edges.
+
+If a nonempty \(H\) has a leaf, its grouped monomial depends on the map
+at that leaf through one linear coordinate function.  Multiplication by
+a fixed matrix is linear, and on \({\cal G}\)
+\[
+ \begin{pmatrix}p&q\\r&s\end{pmatrix}^{-1}
+ =\begin{pmatrix}s&q\\r&p\end{pmatrix}.
+\]
+Thus (26a) kills the monomial, regardless of which orientation was fixed
+for the leaf edge.
+
+Suppose instead that \(H\) has no leaf.  If \(S\) is the set of vertices
+that selected an edge, then
+\[
+ |E(H)|\le |S|\le |V(H)|\le |E(H)|.
+\]
+The last inequality is the minimum-degree-two bound, with \(V(H)\)
+containing only nonisolated vertices.  Equality holds throughout.
+Consequently \(H\) is a disjoint union of cycles, every vertex selects
+one edge, and every edge is selected exactly once.  Each cycle has two
+such selections, its two cyclic orientations.  A nonempty union of
+cycles therefore has coefficient \(2^{c(H)}=0\) in \(\F_2\).
+
+All nonconstant grouped terms are killed or cancel.  The constant term
+gives
+\[
+                         \Lambda(F)=\lambda(1)^{|V|}=1.
+\]
+Hence \(F\) is not the zero function, proving the theorem.
+\end{proof}
+
+\begin{corollary}[universal one-circuit direct cleaning]
+\label{cor:onecircuittensor}
+Every charge-valid abstract boundary state whose support is one circuit
+has a direct repair of Proposition~\ref{prop:directrepair}.  There is no
+bound on the circuit length, number of complement components, or
+component degrees in the abstract state.
+\end{corollary}
+
+\begin{proof}
+Use the notation of Proposition~\ref{prop:directrepair}, and assume the
+single support circuit is cut open in a fixed place.  For each component
+\(a\), conservation says
+\[
+                         \bigoplus_{\pi_i=a}d_i=0.        \tag{26b}
+\]
+Choose local maps \(L_a\) and put \(z_i=L_{\pi_i}d_i\).  For distinct
+components \(a,b\), define
+\[
+ w_{ab}=\sum_{\substack{j<i\\\pi_j=b,\ \pi_i=a}}
+                         B(z_j,z_i),                     \tag{26c}
+\]
+where \(B\) is the nondegenerate alternating form on \(\F_2^2\).
+The opposite ordering has the same value, since the sum of the two
+orderings is
+\[
+ B\left(\sum_{\pi_j=b}z_j,\sum_{\pi_i=a}z_i\right)=0
+\]
+by (26b).  Thus \(w_{ab}\) is symmetric and independent of the cut.
+For the latter assertion explicitly, moving one occurrence \((a,z)\)
+across the cut changes its pair bit with \(b\) by
+\(B(z,\sum_{\pi_i=b}z_i)=0\); the case of a \(b\)-occurrence is the same.
+For the orientation fixed on \(\{a,b\}\), preservation of \(B\) gives
+\[
+ B(L_bd_j,L_ad_i)=B(L_a^{-1}L_bd_j,d_i).
+\]
+Summing these terms defines a linear functional of the four matrix
+entries of \(L_a^{-1}L_b\), exactly as in Theorem~\ref{thm:tensor}.
+Reversing the chosen pair orientation is harmless because matrix
+inversion is linear on \({\cal G}\).
+
+It remains to identify the obstruction.  Integrate the \(z_i\)'s around
+the circuit, with an arbitrary base value, to obtain the \(r_i\)'s in
+(13).  Put \(q(x_1,x_2)=x_1x_2\); its polarization identity is
+\[
+                     q(x+y)+q(x)+q(y)=B(x,y).            \tag{26d}
+\]
+The common parity of the four low colours at component \(a\) is the
+parity of colour \(11\).  At the boundary occurrence \(i\), both support
+incidences \(e_{i-1},e_i\) must be counted; an edge whose two ends belong
+to the same component is thereby counted twice and cancels.  Hence this
+parity is
+\[
+ P_a=\sum_{\pi_i=a}\bigl(q(r_{i-1})+q(r_i)\bigr).
+\]
+Since \(r_i=r_{i-1}+z_i\), (26d) gives
+\[
+ P_a=\sum_{\pi_i=a}q(z_i)
+     +\sum_{\pi_i=a}B(r_{i-1},z_i).                     \tag{26e}
+\]
+After cutting the circuit, write
+\(r_{i-1}=r_*+\sum_{j<i}z_j\).  The base term in (26e) is
+\(B(r_*,\sum_{\pi_i=a}z_i)=0\) by (26b), so
+\[
+ P_a=\sum_{\pi_i=a}q(z_i)
+    +\sum_{\substack{j<i\\\pi_i=a}}B(z_j,z_i).
+\]
+Separate the last sum according to whether \(\pi_j=a\).  Applying
+\(q\) to the zero block sum in (26b) gives
+\[
+ 0=q\left(\sum_{\pi_i=a}z_i\right)
+  =\sum_{\pi_i=a}q(z_i)
+   +\sum_{\substack{j<i\\\pi_j=\pi_i=a}}B(z_j,z_i).
+\]
+Thus the \(q(z_i)\) terms and all same-block pairs cancel.  The remaining
+cross-component terms are exactly
+\[
+                              Q_a=\sum_{b\ne a}w_{ab}.
+\]
+Theorem~\ref{thm:tensor} chooses the maps so that all these common parity
+bits vanish.  Equations (13) and (14) then hold, so the state directly
+cleans.
+\end{proof}
+
+\begin{corollary}[circuitwise-balanced several-circuit repair]
+\label{cor:multicircuittensor}
+Suppose a boundary state has support circuits \(D_1,\ldots,D_t\) and
+satisfies
+\[
+        \bigoplus_{\substack{\pi_i=a\\i\text{ on }D_j}}d_i=0
+        \qquad\text{for every component \(a\) and circuit \(D_j\)}.
+                                                               \tag{26f}
+\]
+Then it is directly cleanable.
+\end{corollary}
+
+\begin{proof}
+Construct (26c) separately on every circuit.  For each unordered pair,
+sum its per-circuit linear functionals.  The total obstruction at a
+component is the sum of its per-circuit obstructions, hence is again the
+degree parity \(Q_a\) of one tensor instance.  Apply
+Theorem~\ref{thm:tensor} once to obtain a common map \(L_a\) for every
+circuit.  Condition (26f) makes each circuit integrable, since
+\[
+ \bigoplus_{i\text{ on }D_j}L_{\pi_i}d_i
+ =\bigoplus_a L_a
+   \left(\bigoplus_{\substack{\pi_i=a\\i\text{ on }D_j}}d_i\right)=0.
+\]
+Integrate the circuits independently.
+\end{proof}
+
+\begin{remark}
+Condition (26f) is stronger than ordinary component conservation, which
+requires only the xor over all support circuits to vanish.  Thus
+Corollary~\ref{cor:multicircuittensor} is a structural subclass theorem,
+not a replacement for the multi-circuit census below.
+\end{remark}
+
+The circuitwise-balance hypothesis can be weakened exactly when the
+remaining block--circuit charges have no extra scalar dependency.  Put
+$K=\mathbb F_2^2$.  For a complement component $a$ and support circuit
+$D_j$, define its charge on that circuit by
+\[
+ \Delta_{a,j}=
+ \bigoplus_{\substack{\pi_i=a\\ i\text{ on }D_j}}d_i\in K.       \tag{26g}
+\]
+Both the row xors and the column xors of $\Delta$ are zero.  Let
+$\mathcal I(\Delta)$ be the bipartite graph on the complement components
+and support circuits, joining $a$ to $j$ exactly when
+$\Delta_{a,j}\ne0$; retain isolated component nodes and discard isolated
+circuit nodes.  For a connected component $\Gamma$ of
+$\mathcal I(\Delta)$, with component-node set $A_\Gamma$ and circuit-node
+set $J_\Gamma$, define
+\[
+ \partial_\Gamma:\mathbb F_2^{A_\Gamma}\longrightarrow K^{J_\Gamma},
+ \qquad
+ (s_a)_a\longmapsto
+ \left(\bigoplus_{a\in A_\Gamma}s_a\Delta_{a,j}\right)_{j\in J_\Gamma}.
+                                                               \tag{26h}
+\]
+The all-ones vector ${\bf1}_\Gamma$ lies in
+$\ker\partial_\Gamma$ by column balance.  Call the boundary state
+\emph{charge-rigid} when
+$\ker\partial_\Gamma=\langle{\bf1}_\Gamma\rangle$ for every $\Gamma$.
+For an isolated component node this equality holds automatically.
+
+\begin{theorem}[charge-rigid multi-circuit cleaning]
+\label{thm:chargerigid}
+Every charge-rigid boundary state has a directly clean extension.
+There is no bound here on the number or lengths of the support circuits,
+the number of complement components, or their occurrence multiplicities.
+\end{theorem}
+
+\begin{proof}
+Choose one map $L_\Gamma\in\operatorname{GL}(K)$ for every charge
+component and assign this same map to every $a\in A_\Gamma$.  The
+transformed derivative at occurrence $i$ is
+$t_i=L_\Gamma d_i$, where $\pi_i\in A_\Gamma$.  These derivatives
+integrate around every support circuit.  Indeed, all nonzero entries in
+column $j$ belong to the unique charge component containing the circuit
+node $j$, and their xor is zero.  Thus
+\[
+ \bigoplus_{i\text{ on }D_j}t_i
+ =L_\Gamma\left(\bigoplus_a\Delta_{a,j}\right)=0.
+\]
+Choose one integration on every circuit.  Translating all its low values
+by an arbitrary $z_j\in K$ gives every other integration.
+
+As above, let $q(x_1,x_2)=x_1x_2$ and let
+$B(x,y)=q(x+y)+q(x)+q(y)$.  Write $Q_a$ for the common parity of the four
+low cut colours at component $a$.  Under the circuit translations,
+\[
+ Q_a(z)=Q_a(0)+\sum_j B(z_j,L_\Gamma\Delta_{a,j})
+ \qquad(a\in A_\Gamma).                                  \tag{26i}
+\]
+A scalar selection $(s_a)$ of these rows is a left dependency precisely
+when, for each circuit $j$,
+\[
+             \bigoplus_a s_aL_{\Gamma(a)}\Delta_{a,j}=0.
+\]
+All nonzero terms in this equation lie in the unique charge component
+containing $j$; inside it the common invertible map $L_\Gamma$ cancels.
+Consequently the full left kernel of (26i) is the direct product of the
+$\ker\partial_\Gamma$.  Charge rigidity and the standard consistency
+criterion for binary linear systems therefore say that (26i) is solvable
+if and only if
+\[
+             R_\Gamma:=\sum_{a\in A_\Gamma}Q_a(0)=0
+             \qquad\text{for every }\Gamma.             \tag{26j}
+\]
+
+It remains to choose the maps so that (26j) holds.  Regard each charge
+component $\Gamma$ as one meta-component.  It has zero transformed
+derivative charge separately on every support circuit: for the circuit
+node in $\Gamma$ this is column balance, and away from $\Gamma$ every
+entry is zero.  Apply Corollary~\ref{cor:multicircuittensor} to these
+meta-components; its proof uses only the induced partition of boundary
+occurrences and therefore applies to this coarsening.  It supplies one
+map $L_\Gamma$ for each $\Gamma$ such
+that every meta-component obstruction vanishes.  That obstruction is
+exactly $R_\Gamma$: support incidences internal to the meta-component are
+counted twice and cancel, while external incidences give the sum of the
+constituent $Q_a$'s.  Hence (26j) holds.  Solve (26i) for the translations
+$z_j$; then every $Q_a$ is zero, which is direct cleaning.
+\end{proof}
+
+\begin{corollary}
+\label{cor:chargecycle}
+If $\mathcal I(\Delta)$ has maximum degree at most two, then the boundary
+state is directly cleanable.  In particular, a two-support-circuit state
+is directly cleanable when at most three complement components have
+nonzero charge on either circuit.
+\end{corollary}
+
+\begin{proof}
+Balance excludes degree one, so every nontrivial charge component of
+maximum degree two is a cycle.  The two nonzero charges at each node are
+equal; connectivity forces one common nonzero charge around the cycle.
+A scalar block dependency must therefore select both neighboring block
+rows at every circuit node or neither, so it is constant.  Theorem
+\ref{thm:chargerigid} applies.
+
+For two support circuits, every nonzero row is $(x,x)$.  With at most
+three such rows, balance leaves either two equal nonzero vectors or the
+three distinct nonzero vectors of $K$.  In either case the scalar kernel
+is generated by the all-ones vector.  All-zero rows are isolated nodes,
+so the theorem again applies.
+\end{proof}
+
+The bound three in Corollary~\ref{cor:chargecycle} cannot simply be
+deleted.  All 224 direct residuals in the complete support-$14$ census,
+all 6,036 in the complete support-$15$ census, and all eight in the
+published fixed-word support-$16$ subcase have the same active charge
+core: five component nodes, two circuit nodes, charge rank two, and
+kernel dimension three.  Thus all 6,268 have excess nullity two and lie
+just outside Theorem~\ref{thm:chargerigid}.  The literal residual parser
+and a separately written audit checker are archived in the two
+charge-rigidity scratch packages dated 20260731.
+This finite statement audits the frozen residual lists; it does not
+extend their completeness beyond the ranges stated.
+
+\begin{proposition}[four charged blocks do not force direct cleaning]
+\label{prop:four-charge-countertensor}
+There is a realizable two-support-circuit boundary state with five
+complement blocks, exactly four of them carrying nonzero charge on the
+two circuits, and no directly clean extension.  No such countertensor
+exists on at most four complement blocks in the full arbitrary-occurrence
+tensor model.
+\end{proposition}
+
+\begin{proof}
+Use \(K=\F_2^2=\{0,1,2,3\}\), with xor addition, and the alternating form
+\(B(x,y)=x_1y_2+x_2y_1\).  Let blocks \(0,1,2,3\) have source charge one
+on each circuit and let block \(4\) have charge zero.  After fixing the
+common gauge, write \(t_0=1\) for the first transformed charge and
+\(t_1,t_2,t_3\ne0\) for the others.  Circuit integrability is
+\[
+                         t_1+t_2+t_3=1. \qquad\text{\rm(FC1)}
+\]
+Choose the map at block 4 and abbreviate
+\[
+ a=L_4(1),\qquad b=L_4(2),\qquad c=L_4(3)=a+b.
+\]
+In the pair order
+\[
+01,02,03,04,12,13,14,23,24,34
+\]
+take the four-entry matrix-functional masks
+\[
+                  0,0,0,0,0,0,10,0,8,2. \qquad\text{\rm(FC2)}
+\]
+Only the three edges from charged blocks \(1,2,3\) to block 4 are
+nonzero; their terms are respectively
+\[
+                         B(t_1,c),\qquad B(t_2,b),\qquad B(t_3,a).
+\]
+Let \(z\in K\) be the relative translation of the two circuits.  The
+clean equation at block 0 is \(B(z,1)=0\), hence \(z\in\{0,1\}\).
+
+If \(z=0\), the clean equations at blocks \(1,2,3\) force
+\((t_1,t_2,t_3)=(c,b,a)\), because a nonzero vector in the two-dimensional
+symplectic space is orthogonal only to itself.  Their xor is
+\(a+b+c=0\), contradicting (FC1).
+
+If \(z=1\), exactly one of \(a,b,c\) equals one.  For each of the other
+two values \(r\in\{2,3\}\), the corresponding clean equation is
+\(B(t,r+1)=0\), hence \(t=r+1\).  Those two forced charges are 2 and 3,
+whose xor is one.  The remaining charge is nonzero, so
+\(t_1+t_2+t_3=1+t_{\rm free}\ne1\), again contradicting (FC1).  The
+block-4 equation is then the xor of the other four equations and adds no
+escape.
+
+Each matrix-linear term in (FC2) is realized by the zero-charge word
+\[
+                         b(x),a(y),b(x),a(y).
+\]
+Start both circuits with the prefix
+\[
+                         0(1),1(1),2(1),3(1),
+\]
+and append the three required gadgets to the first circuit.  The resulting
+literal owner/derivative words are
+\[
+\begin{array}{c|c}
+A\text{ owners}&0123414142424343\\
+A\text{ derivatives}&1111313121211111\\
+B\text{ owners}&0123\\
+B\text{ derivatives}&1111.
+\end{array}
+\qquad\text{\rm(FC3)}
+\]
+Thus the tensor obstruction is a genuine 16+4 occurrence boundary
+state, not a relaxation.
+
+For the minimality assertion, the archived exact SAT generator fixes the
+common gauge and allows every four-bit matrix-linear functional on every
+block pair.  On four blocks it exhausts all 56 integrable gauge classes and
+all 208 clean targets; the generated 1,024-variable, 4,208-clause CNF is
+UNSAT and CaDiCaL checks its generated proof during the replay.  The
+five-block instance is SAT,
+and the independent literal enumeration checks all 7,776 map assignments,
+2,016 integrable assignments, and 32,256 start pairs against (FC3).
+These computations establish block-order minimality; they are not used in
+the preceding human proof of the five-block obstruction.
+\end{proof}
+
+The literal realization package also constructs a simple connected cubic
+graph on 38 vertices and 57 edges and checks connectedness after deletion
+of every edge.  Of its 336 gauge-integrable map assignments, 240 strictly
+delete a support circuit directly; each of the remaining 96 has two
+explicit same-colour-pair complement paths whose Kempe switches restore
+closure and then permit strict deletion.  A proper 3-edge-colouring is
+checked edge by edge, so the graph has empty, clean global minimum
+projection.  The full witness, direct proof, exact solver transcript,
+literal independent checker, realization replay, and SHA-256 ledger are
+in the scratch package dated 20260731.
+
+\begin{proposition}[Petersen boundary of the tensor repair]
+\label{prop:petersentwooccurrence}
+Suppose every component of the complement of a support cycle \(H\)
+has exactly two support-boundary occurrences.  Contract the support
+circuits to vertices and the complement components to edges, obtaining
+an interaction multigraph \(J\), with a loop when both occurrences lie
+on the same circuit.
+
+The feasible images of the component derivatives under independent
+\(\operatorname{GL}(2,2)\) maps are exactly the nowhere-zero \(K\)-flows
+on \(J\).  After integration, either occurrence of an interaction edge
+\(a\) traverses an unoriented edge \(\{x,x+t_a\}\) of the \(K_4\) on
+the four low colours.  Component \(a\) is clean exactly when its two
+occurrences traverse the same \(K_4\)-edge.
+
+This subclass is not always directly cleanable.  On the Petersen graph,
+take its two disjoint \(5\)-circuits as \(H\) and its perfect matching
+as the five complement components.  In their cyclic orders the component
+words are
+\[
+                         01234\mid03142.                \tag{26k}
+\]
+This support has no clean extension.  Every extension, however, omits a
+low colour on exactly one of the two support circuits and therefore admits
+a strict circuit deletion.  In particular, the extension
+\[
+       t=11123,\qquad s|_H=10130\mid13210
+\]
+deletes the first circuit by adding \((1,2)\), leaving the low word
+\(32312\).  The resulting support has size five, is globally minimum,
+and is clean.
+\end{proposition}
+
+\begin{proof}
+The two derivative occurrences belonging to one complement component
+have the same nonzero value, by component conservation.  Give that common
+value to the corresponding edge of \(J\).  Circuit closure is precisely
+the flow equation at the corresponding vertex of \(J\), with loops counted
+twice.  Conversely, every nowhere-zero \(K\)-flow on \(J\) is obtained,
+because a component map can send its original nonzero derivative to any
+prescribed nonzero value.
+
+If the integrated value immediately before an occurrence is \(x\), the
+two adjacent support values are \(x\) and \(x+t_a\).  The parity vector
+seen by the two occurrences of component \(a\) is zero exactly when these
+two unordered pairs agree.  This proves the two dictionaries.
+
+For (26k), \(J\) has two vertices joined by five parallel edges.  Its
+flows are the tuples
+\[
+ (t_0,\ldots,t_4)\in\{1,2,3\}^5,\qquad
+                    t_0+\cdots+t_4=0.                 \tag{26l}
+\]
+Their colour multiplicities have pattern \((3,1,1)\), so there are
+\(3\cdot 5!/(3!1!1!)=60\).  The global
+\(\operatorname{GL}(2,2)\cong S_3\) action is free, and the ten orbit
+representatives have the following numbers of integrated colours on the
+two circuits:
+\[
+\begin{array}{c|cccccccccc}
+t&
+11123&11213&11231&12113&12131&
+12223&12232&12311&12322&12333\\ \hline
+\#A/\#B&
+3/4&4/3&3/4&4/3&4/3&3/4&4/3&3/4&4/3&3/4 .
+\end{array}
+\]
+Each entry follows by five successive xors in the two orders (26k).
+If an extension were clean, the two circuits would traverse the same five
+assigned \(K_4\)-edges.  Their vertex sets would both be the union of the
+endpoints of those edges and would have equal cardinality, contradicting
+the table.  The same table shows that every flow deletes exactly one
+circuit.
+
+The displayed words integrate the first row.  After its stated deletion,
+the second \(5\)-circuit is the support.  Petersen is non-Tait-colourable
+and has girth five, so no extendable projection has size below five.
+The complement of the remaining circuit is connected, hence its only
+component has empty cut and the projection is clean.
+\end{proof}
+
+\begin{remark}[exact minimality within the subclass]
+Two independently structured enumerators check every loopless
+two-occurrence multi-circuit boundary of total size four, six, and eight;
+every flowable state is cleanable.  Thus (26k) is the smallest
+two-occurrence abstract counterstate to direct cleaning.  The full orbit
+table, literal Petersen realization, descended flow, exact census, two
+checkers, and hash ledger are in
+\path{scratch/minimum-projection-two-occurrence-interaction-20260729/}.
+This is a boundary-method obstruction, not a minimum-projection or
+FiveCDC counterexample.
+\end{remark}
+
+\begin{theorem}[loopless two-occurrence frontier through eighteen]
+\label{thm:twooccurrenceeighteen}
+Suppose every complement component has exactly two support-boundary
+occurrences, the interaction multigraph \(J\) of
+Proposition~\ref{prop:petersentwooccurrence} is loopless, the total
+support is at most eighteen, and \(J\) admits a nowhere-zero \(K\)-flow.
+Then some such flow either cleans the state or omits a low colour on a
+whole support circuit and hence strictly deletes that circuit.
+Consequently every cardinality-minimum extendable projection in this
+subclass is cleanable.
+\end{theorem}
+
+\begin{proof}
+The total support is the degree sum of \(J\).  Disconnected interaction
+components may be treated independently.  A vertex of degree at most
+three already deletes under every feasible flow, because its integrated
+closed walk visits at most three of the four points of \(K\).  If every
+degree is even, the constant nonzero flow makes every local walk
+alternate between two points and deletes.
+
+A connected two-vertex interaction graph is a parallel bundle.  For an
+even bundle, use the constant flow.  For an odd bundle of size at least
+three, give two consecutive edges distinct values \(b,c\) and every
+other edge \(a=b+c\).  Both vertex xors vanish, while the local walk
+starting before the exceptional pair has prefixes \(0,b,a\) and then
+alternates between \(a\) and \(0\), omitting \(c\).  A connected
+three-vertex graph which is not a triangle is a path of parallel bundles;
+apply the same zero-xor construction independently at its two leaves.
+
+It remains to consider a connected noneulerian graph of minimum degree
+four on at least three vertices.  Five vertices would have degree sum at
+least twenty, so \(J\) has at most four vertices.
+
+For three vertices, write the positive triangle multiplicities as
+\((a,b,c)\).  After the preceding degree and Eulerian reductions, the
+complete finite list through degree sum eighteen is
+\[
+\begin{gathered}
+ (3,2,2),\ (3,3,2),\ (4,3,1),\\
+ (5,2,2),\ (4,4,1),\ (4,3,2).
+\end{gathered}                                             \tag{26m}\label{eq:twoocc-triangles}
+\]
+Indeed, the other positive partitions of at most nine edges have a
+degree-two or degree-three vertex or have all three degrees even.
+
+For four vertices the only remaining degree multiset is
+\((5,5,4,4)\).  Writing the multiplicities in the order
+\((01,02,03,12,13,23)\), enumeration of the nonnegative solutions
+modulo all \(24\) vertex permutations gives nine orbits.  One is
+disconnected, one has a bridge and therefore no nowhere-zero flow, and
+the seven finite cases are
+\[
+\begin{gathered}
+(0,1,3,3,1,1),\ (0,1,3,3,2,0),\
+(0,1,3,4,1,0),\\
+(0,2,2,2,2,1),\ (0,2,2,2,3,0),\\
+(1,1,2,2,1,2),\ (1,1,2,3,1,1).
+\end{gathered}                                             \tag{26n}\label{eq:twoocc-fourvertex}
+\]
+A standard-library enumerator checks the complete 90-row labelled
+degree solution and this orbit reduction.
+
+For the thirteen profiles in
+\eqref{eq:twoocc-triangles}--\eqref{eq:twoocc-fourvertex}, the exact census
+is
+\[
+\begin{array}{c|r|r|r}
+\text{profile}&\text{cyclic-order states}&\text{clean}
+ &\text{delete only}\\ \hline
+T(3,2,2)&432&432&0\\
+T(3,3,2)&8{,}640&8{,}640&0\\
+T(4,3,1)&12{,}960&12{,}744&216\\
+T(5,2,2)&388{,}800&388{,}800&0\\
+T(4,4,1)&362{,}880&356{,}256&6{,}624\\
+T(4,3,2)&259{,}200&259{,}200&0\\
+Q(0,1,3,3,1,1)&1{,}296&1{,}296&0\\
+Q(0,1,3,3,2,0)&1{,}296&1{,}296&0\\
+Q(0,1,3,4,1,0)&1{,}296&1{,}188&108\\
+Q(0,2,2,2,2,1)&1{,}296&1{,}296&0\\
+Q(0,2,2,2,3,0)&1{,}296&1{,}296&0\\
+Q(1,1,2,2,1,2)&1{,}296&1{,}296&0\\
+Q(1,1,2,3,1,1)&1{,}296&1{,}296&0\\ \hline
+\text{total}&1{,}041{,}984&1{,}035{,}036&6{,}948
+\end{array}                                                \tag{26o}\label{eq:twoocc-census}
+\]
+The primary checker enumerates every distinctly labelled-edge cyclic
+order modulo rotation and reversal and every nowhere-zero \(K\)-flow.
+It integrates the local walks, exhausts their relative translations,
+and tests the alternating-form cleaning equations and deletion.
+A separately written checker constructs the literal two-element
+\(K_4\) endpoint sets instead of using that equation.  The two
+implementations reproduce every row of \eqref{eq:twoocc-census}; there are no
+residual states.
+
+Finally, by the interaction dictionary, a deleting flow is realized by
+component maps.  Toggling the omitted low colour on that circuit removes
+the entire circuit and yields a strictly smaller extendable projection,
+which is impossible at a cardinality minimum.
+\end{proof}
+
+\begin{remark}
+The complete replay, literal-endpoint independent checker, frozen outputs,
+and hash ledger are in
+\path{scratch/two-occurrence-clean-delete-through18-20260729/}.
+Graph looplessness does not prevent two occurrences of one complement
+component on the same support circuit.  The following theorem closes that
+case through support sixteen.
+\end{remark}
+
+\begin{theorem}[two-occurrence loops through sixteen]
+\label{thm:twooccurrenceloopsixteen}
+Suppose every complement component has exactly two support-boundary
+occurrences, the total support is at most sixteen, and the interaction
+multigraph \(J\) of Proposition~\ref{prop:petersentwooccurrence} admits a
+nowhere-zero \(K\)-flow.  Loops in \(J\) are allowed.  Then some feasible
+flow cleans the state or strictly deletes a support circuit.
+Consequently every cardinality-minimum extendable projection in this
+subclass is cleanable.
+\end{theorem}
+
+\begin{proof}
+If \(J\) is loopless, apply
+Theorem~\ref{thm:twooccurrenceeighteen}; assume it has a loop.  Delete
+the loops but retain all vertices, and work componentwise in the
+resulting core.  On a one-vertex component, giving every loop one fixed
+nonzero value makes its local walk alternate between two points and
+deletes.  We may therefore assume the core is connected on at least two
+vertices.  Since every interaction edge has two occurrences, the total
+support is even.  If a local walk omits a colour it deletes, so every
+surviving support circuit has length at least four.  There are
+consequently at most four interaction vertices.
+
+First record the local loop move.  If the two occurrences of a loop have
+value \(t\ne0\) at derivative positions \(i<j\), change its component
+map so that their common value becomes \(s\ne0,t\).  With
+\(\Delta=t+s\), the integrated support word changes by
+\[
+ c'_k=c_k+\Delta\quad(i\le k<j),\qquad c'_k=c_k
+ \quad\hbox{otherwise}.                                  \tag{26p}
+\]
+This is a legal graph move: in the loop component the \(t,s\)-subgraph
+has exactly the two displayed odd boundary vertices, whose joining path
+may be switched.  Up to affine colour and dihedral circuit symmetry,
+the only dirty words of lengths four and five are
+\(\texttt{0123}\) and \(\texttt{01023}\).  Their equal-derivative pairs
+are respectively two and three pairs; direct substitution in (26p)
+gives a word using at most three colours in every case.  Thus a loop on
+a circuit of length at most five deletes.
+
+If all circuit lengths are even, put one fixed nonzero value on every
+interaction edge, loops included.  Every vertex xor vanishes and every
+local walk alternates between two points, so it deletes.  Four vertices
+therefore force lengths \(4+4+4+4\) and are done.
+
+For two vertices the loopless core is a parallel bundle.  In the only
+remaining odd case, the shorter circuit has length five or seven.  At
+length five it has five ports and no surviving loop.  At length seven
+it has \(3,5,\) or \(7\) ports; one port is a bridge and is not flowable.
+For the other cases, a finite paired-port check chooses zero-xor port
+values and arbitrary nonzero loop values.  Modulo rotation and reversal,
+the exact pattern counts for \((\text{length},\text{ports})\) are
+\[
+ (5,3):10,\quad(5,5):1,\quad
+ (7,3):105,\quad(7,5):21,\quad(7,7):1.                  \tag{26q}
+\]
+Every one of these \(138\) patterns has a flow whose local walk omits a
+colour.
+
+For three vertices, the only length triples surviving the preceding
+reductions are \(4+5+7\) and \(5+5+6\).  Every loop lies on the unique
+long circuit.  Removing one or two loops leaves, up to the exchange of
+equal-length vertices, precisely the four core-multiplicity profiles
+shown below.  More loops leave a bridge or a separate one-circuit
+component.  If \(\delta_v\) denotes the loopless-core degree at \(v\),
+the multiplicities follow from
+\[
+ 2m_{01}=\delta_0+\delta_1-\delta_2,\quad
+ 2m_{02}=\delta_0+\delta_2-\delta_1,\quad
+ 2m_{12}=\delta_1+\delta_2-\delta_0 .
+\]
+The exact literal-endpoint census is
+\[
+\begin{array}{c|c|c|r|r|r|r}
+\text{lengths}&(m_{01},m_{02},m_{12})&\text{loops}
+ &\text{states}&\text{clean}&\text{delete only}&\text{residual}\\ \hline
+4+5+7&(2,2,3)&1&6{,}480&0&6{,}480&0\\
+4+5+7&(3,1,2)&2&3{,}240&0&3{,}240&0\\
+5+5+6&(3,2,2)&1&4{,}320&168&4{,}152&0\\
+5+5+6&(4,1,1)&2&2{,}304&12&2{,}292&0\\ \hline
+\text{total}&&&16{,}344&180&16{,}164&0
+\end{array}                                                \tag{26r}
+\]
+The checker distinctly labels parallel edges, enumerates cyclic orders
+modulo rotation and reversal and all normalized nowhere-zero \(K\)-flows,
+integrates every local walk, exhausts relative translations, and compares
+the two literal \(K_4\)-edges of every interaction edge.  The preceding
+one-, two-, three-, and four-vertex reduction is exhaustive, proving the
+claim.  As in Theorem~\ref{thm:twooccurrenceeighteen}, deletion contradicts
+cardinality minimality.
+\end{proof}
+
+\begin{remark}
+The human reduction, exact verifier, first local failures at length six,
+and hash ledger are in
+\path{scratch/support16-loop-higheroccurrence-reduction-20260729/}.
+This combines with Theorem~\ref{thm:twooccurrenceeighteen} to cover all
+two-occurrence states through support sixteen and all loopless such
+states through support eighteen.  Higher occurrence multiplicities are
+not covered.
+\end{remark}
+
+\begin{theorem}[minimum projections through size fifteen]
+\label{thm:sizefifteen}
+Under the hypotheses of Theorem~\ref{thm:sizeten}, every
+cardinality-minimum extendable projection of size at most fifteen is
+cleanable.
+\end{theorem}
+
+\begin{proof}
+Only total size fifteen remains.  The complete circuit-length list is
+\[
+\begin{gathered}
+15,\quad4+11,\quad5+10,\quad6+9,\quad7+8,\\
+4+4+7,\quad4+5+6,\quad5+5+5.
+\end{gathered}
+\]
+The primary exact classifier applies the same canonical word generation,
+charge-valid set-partition enumeration, component maps, relative circuit
+starts, direct-cleaning test, and strict-deletion test as above.  Its
+mutually exclusive counts are:
+
+\begin{center}
+\scriptsize
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+shape & words & charge-valid & dirty & direct clean & delete & residual\\
+\midrule
+\(4+4+7\)&34&45,252,514&40,901,504&40,901,444&60&0\\
+\(4+5+6\)&72&94,943,832&85,691,028&85,687,790&3,238&0\\
+\(5+5+5\)&20&26,498,996&23,865,564&23,865,124&440&0\\
+\(4+11\)&985&1,305,883,765&1,166,954,048&1,166,933,276&20,772&0\\
+\(5+10\)&1,489&1,975,366,285&1,762,347,048&1,761,806,487&540,561&0\\
+\(6+9\)&1,924&2,555,260,324&2,281,097,772&2,280,299,726&798,046&0\\
+\(7+8\)&1,964&2,609,251,412&2,328,991,036&2,327,987,350&997,650&6,036\\
+\(15\)&20,004&26,634,745,428&23,398,774,592&23,398,774,592&0&0\\
+\midrule
+total&26,492&35,247,202,556&31,088,622,592&
+31,086,255,789&2,360,767&6,036\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Corollary~\ref{cor:onecircuittensor} proves the \(15\) row without
+enumeration.  As an exact regression, sixteen completed anchor/Laplacian
+shards also test all \(23{,}398{,}774{,}592\) dirty one-circuit states
+and find zero failures.  A separately implemented zero-sum-partition
+recurrence reproduces the one-circuit charge-valid, initially clean, and
+dirty counts.
+
+For the other seven shapes, every deletion row contradicts global
+minimality by Proposition~\ref{prop:deletecircuit}.  Only the 6,036
+\(7+8\) residual rows remain.  They are handled by a finite,
+realization-independent lift from the size-fourteen Kempe certificates.
+Delete one removable repeated-colour occurrence whose two adjacent
+derivative occurrences lie in the same complement block.  If the old
+derivatives are \(a,b\), the shorter boundary replaces them by \(a+b\);
+charge conservation is unchanged and no two blocks are merged.
+
+For a fixed two-colour Kempe pair, terminal status is a linear functional
+of the derivative.  Every perfect matching of the old terminals collapses
+to one on the shorter boundary.  If both \(a,b\) are terminals and are
+matched to \(p,q\), the collapsed matching has the artificial pair
+\(pq\); switching its two actual old paths has the same boundary action
+as the short switch, apart from an explicitly tracked change of the
+reinserted support value.  The other cases merely delete the pair
+\(ab\), rename one terminal as \(a+b\), or leave the matching unchanged.
+Thus a matching-robust short certificate lifts after finitely checking
+the reinserted value, circuit closure, and final omitted-colour deletion.
+
+A separately written canonical induction checker verifies every one of
+the 6,036 emitted residual rows.  Each has between three and five
+same-block smoothing positions, and at least one of them smooths
+canonically to a frozen size-fourteen residual.  Thus each row is
+canonically equivalent to a member of the 6,180-state inverse-extension
+family.  A literal checker quantifies over every old perfect matching and
+verifies a successful one- or two-path lift for all 6,180 states; a
+redundant direct checker verifies the same realization-robust game on all
+6,036 emitted rows.  Hence every cubic realization of every size-fifteen
+residual has a strict deletion escape.  No residual can be globally
+minimum, proving the theorem.
+\end{proof}
+
+\begin{remark}[size-fifteen trust boundary]
+The tensor proof is human-checkable and independent of the one-circuit
+census.  The zero-sum recurrence independently checks its partition
+totals; the anchor parser checks shard completeness and zero failures but
+imports the primary word/partition generator.  The multi-circuit
+word-orbit counts, charge-valid partition counts, and clean/delete
+decisions rest on the primary classifier.  The residual induction checker
+is independently written, but takes the 6,036 primary residual rows as
+input.  It finds 5,200 fully canonical residual classes, with digest
+\[
+\texttt{f2c0c2b53322c72f00672e3f9c7d807aeb26a6ba771357a673c84c2fdaf96206}.
+\]
+All source, shard outputs, literal residuals, frozen totals, and hashes
+are in the bundled size-fifteen exact-frontier, induction-audit,
+anchor-audit, and one-circuit tensor packages.  These computational claims
+are exact agent-produced certificates, not independent human peer review.
+\end{remark}
+
+\subsection{One fixed-word support-sixteen matching frontier}
+
+We next isolate one exactly completed subcase at the first unrestricted
+support size.  This uses the standard multipole viewpoint, in which a
+three-edge-colouring induces a parity-constrained state on the
+semiedges~\cite{FiolVilaltella2015}, and the usual two-colour Kempe
+switch~\cite{BelcastroHaas2012}.  The result below concerns one
+canonical support-word orbit and one round of one-colour-pair path
+switches only.
+
+Fix two support \(8\)-circuits with low word and boundary derivative word
+\[
+ c=\texttt{01010123}\mid\texttt{01012302},\qquad
+ d=\texttt{31111131}\mid\texttt{21113132}.               \tag{26o}
+\]
+For a pair \(P=\{x,y\}\subseteq K-\{0\}\), put
+\(\Delta=x+y\).  In a complement component \(W\), the \(x,y\)-coloured
+subgraph has odd boundary set
+\[
+                 T_W(P)=\{i\in\partial W:d_i\in P\}.      \tag{26p}
+\]
+Its path components pair the terminals; write this perfect matching as
+\(M_W(P)\).  Nature may supply any abstract perfect matching on every
+set \(T_W(P)\).  After observing them, one may switch a nonempty subset
+\(S\) of the displayed paths, all for the same pair \(P\), and then
+choose arbitrary feasible component maps and relative circuit
+translations.  Call \(S\) charge-closed when it contains an even number
+of paths whose endpoints lie on different support circuits.  The precise
+quantifier order of the matching-observed game is
+\[
+\boxed{
+\begin{gathered}
+\exists P\ \ \forall\bigl(M_W(P)\bigr)_W\\
+\exists\,\varnothing\ne S\subseteq\mathop{\dot\bigcup}_W M_W(P):\\
+S\text{ is charge-closed and the new state cleans or deletes}.
+\end{gathered}
+}                                                          \tag{26q}
+\]
+Only matchings for the single chosen \(P\) occur in one play.
+
+\begin{proposition}[fixed-word support-sixteen matching frontier]
+\label{prop:supportsixteenfixedword}
+For the one word orbit represented by \((26o)\), the exact canonical
+component-partition census has
+\[
+\begin{array}{c|r}
+\text{outcome}&\text{states}\\ \hline
+\text{directly clean}&8{,}041{,}808\\
+\text{strict circuit deletion only}&4{,}514\\
+\text{neither direct outcome}&8\\ \hline
+\text{charge-valid total}&8{,}046{,}330 .
+\end{array}                                                \tag{26r}
+\]
+The eight residual component words are
+\[
+\begin{array}{ll}
+\texttt{0001234000314200}&\texttt{0001234003144422}\\
+\texttt{0012344041300022}&\texttt{0012344044130244}\\
+\texttt{0012344400314200}&\texttt{0012344403144422}\\
+\texttt{0123444441300022}&\texttt{0123444444130244}.
+\end{array}                                                \tag{26s}
+\]
+Six of them satisfy \((26q)\) with the fixed pair \(P=\{1,3\}\).
+The remaining two are precisely
+\[
+ \pi_A=\texttt{0001234000314200},\qquad
+ \pi_B=\texttt{0123444444130244},                          \tag{26t}
+\]
+both of profile \(8+2+2+2+2\).  For each of the three pairs
+\(\{1,2\},\{1,3\},\{2,3\}\), each state has a jointly graph-realizable
+adverse matching under which no nonempty charge-closed one-round path
+subset cleans or deletes.  Each adverse triple has a simple connected
+bridgeless cubic realization on 42 vertices and 63 edges.
+Both realizations are Tait-colourable, so their actual minimum projection
+is empty.
+\end{proposition}
+
+\begin{proof}
+The fixed-word classifier canonically generates every charge-valid set
+partition of the sixteen derivative occurrences in (26o), exhausts
+independent \(\operatorname{GL}(2,2)\) maps on its blocks and all relative
+circuit translations, and tests direct cleaning and strict deletion.
+The word orbit has 512 normalized images and trivial stabilizer.  The
+mutually exclusive totals are (26r).  A separately written evaluator
+replays the eight rows (26s); every row has exactly 320 feasible map
+tuples and zero clean and zero deletion tuples.
+
+Switching a displayed path adds \(\Delta\) at its two endpoints.  A path
+with both endpoints on one support circuit preserves both circuit
+charges; a cross-circuit path changes both charges by \(\Delta\).
+Consequently a path subset is legal exactly when it contains an even
+number of cross-circuit paths, proving the charge-closed test in (26q).
+The exact matching enumeration gives:
+\[
+\begin{array}{c|c|c}
+\text{residual profile}&\text{number of residuals}
+ &\{1,3\}\text{ matchings rescued}\\ \hline
+5+4+3+2+2&2&9/9\\
+6+3+3+2+2&2&15/15\\
+6+4+2+2+2&2&9/9\\
+8+2+2+2+2&2&14/15 .
+\end{array}                                                \tag{26u}
+\]
+For the first six rows the numerator equals the denominator for the
+single fixed pair \(\{1,3\}\), so (26q) holds even when Nature is allowed
+every abstract matching, including matchings not supplied by a particular
+graph realization.
+
+For either row in (26t), the rescued/total counts for
+\(\{1,2\},\{1,3\},\{2,3\}\) are respectively
+\[
+                         14/15,\qquad14/15,\qquad2/3.     \tag{26v}
+\]
+The unique adverse systems have respectively \(6,7,3\) paths and
+\(31,63,3\) nonempty charge-closed subsets.  Literal replay of all 97
+subsets leaves exactly 320 feasible map tuples and no clean or deletion
+tuple after every switch.
+
+It remains to show that the three adverse matchings can occur
+simultaneously.  Use a properly three-edge-coloured \(K_4-e\) two-pole for
+every two-occurrence component.  For the eight-occurrence component take
+ten vertices \(0,\ldots,9\) and the following internal colour matchings:
+\[
+\begin{array}{c|l}
+1&24,\ 67,\ 89\\
+2&06,\ 13,\ 28,\ 59\\
+3&03,\ 19,\ 48,\ 57 .
+\end{array}                                                \tag{26w}
+\]
+Vertices \(0,\ldots,7\) carry the eight semiedges, whose colours are
+\(1,1,3,1,2,1,3,2\).  Attach them to support occurrences in the orders
+\[
+\begin{array}{c|l}
+\pi_A&2,1,0,7,8,9,14,15\\
+\pi_B&4,5,6,7,8,9,14,15 .
+\end{array}                                                \tag{26x}
+\]
+Following the three bichromatic path systems in (26w) gives exactly the
+unique adverse matching in (26v) for every colour pair.  Joining these
+multipoles to the two support circuits gives the two asserted
+42-vertex graphs.  A literal graph audit checks distinct edges,
+degree three, connectedness, bridgelessness, the full flow equations,
+all three induced matching systems, and all 97 one-round subsets.
+It also supplies a Tait colouring of each graph, proving that the zero
+projection is extendable and minimum.
+\end{proof}
+
+\begin{remark}[scope and verification boundary]
+Proposition~\ref{prop:supportsixteenfixedword} completes one canonical
+\(8+8\) word orbit, not the other \(8+8\) word orbits or the other support
+shapes of size sixteen.  Its adverse graphs have nonminimum displayed
+projections.  The result excludes only one support-preserving round using
+one colour pair; it says nothing against a second Kempe round, a
+support-changing exchange, or additional restrictions forced by global
+minimality.  In particular it is neither a FiveCDC counterexample nor a
+general minimum-projection theorem at size sixteen.
+
+The complete census, residual file, human reduction, two checkers,
+literal graph encodings, Tait colourings, and hash ledgers are in the two
+packages
+\begin{center}
+\small
+\path{scratch/unrestricted-support16-interaction-frontier-20260729/}\\
+\path{scratch/support16-residual-fourterminal-matching-game-20260729/}.
+\end{center}
+A clean-room agent audit, which imports neither candidate checker, is in
+\begin{center}
+\small
+\path{scratch/support16-residual-fourterminal-matching-game-blind-audit-20260729/}.
+\end{center}
+The matching certificate has the following SHA-256, split across two
+lines:
+\begin{center}
+\texttt{96a5ff4201c411c278e03ea9941a0665}\\
+\texttt{669575bb07da73aeff59d0cca38c6966}.
+\end{center}
+\end{remark}
+
+\begin{corollary}[rainbow shortcut]\label{cor:shortcut}
+Every binary cycle \(C\) satisfying \(|C\cap h|>|C-h|\) meets all four
+sets \(M_c\).
+\end{corollary}
+
+\begin{proof}
+If \(C\) omitted one class \(M_c\), it would contradict (6).
+\end{proof}
+
+\section{The full-flow problem and failure of minimum selection}
+
+Theorem~\ref{thm:exchange} suggests the following selection principle.
+
+\begin{conjecture}[minimum extendable projection; false]\label{conj:minimum}
+Every bridgeless cubic graph has a minimum-cardinality extendable
+projection that is cleanable.
+\end{conjecture}
+
+This statement, together with the Hu\v{s}ek--\v{S}\'amal equivalence and
+Proposition~\ref{prop:cubicreduction}, would imply the standard FiveCDC
+conjecture for every finite bridgeless multigraph.  It survives all
+finite tests through support fifteen, but
+Theorem~\ref{thm:strictlock} below refutes it.  Because the constructed
+minimum projection is unique, the stronger assertion that every minimum
+projection is cleanable fails at the same time.
+
+\begin{proposition}[full-flow master exchange]\label{prop:fullmaster}
+Let \(\mu(G)\) be the minimum cardinality of an extendable projection and,
+for a low flow \(s':E\to K\), let \(Z(s')=\{e:s'(e)=0\}\).  Then
+\[
+ \mu(G)=
+ \min_{\substack{s'\ {\rm a}\ K{\rm\mbox{-}flow}\\
+                  J\subseteq E-Z(s')\\
+                  \partial J=\partial Z(s')}}
+       \bigl(|Z(s')|+|J|\bigr),
+\]
+where \(\partial A\) denotes the set of odd-degree vertices of an edge
+set \(A\).  Every feasible \(Z(s')\) is a matching.  For a feasible
+triple \(M=Z(s')\), \(J_1=J\), and
+\(h'=M\mathbin{\dot\cup}J_1\), the extension \((h',s')\) is clean if and
+only if there is a second \(\partial M\)-join
+\[
+                     J_2\subseteq E-(M\cup J_1).
+\]
+\end{proposition}
+
+\begin{proof}
+If \((h',s')\) is nowhere zero and \(M=Z(s')\), then \(M\subseteq h'\).
+Put \(J=h'-M\).  Since \(h'\) is a binary cycle, the disjoint edge sets
+satisfy \(\partial J=\partial M\).  Conversely, given \(s'\), \(M\), and
+such a \(J\), the edge set \(h'=M\mathbin{\dot\cup}J\) is a binary cycle.
+The flow \((h',s')\) is nowhere zero because the low coordinate vanishes
+exactly on \(M\), where the first coordinate is one.  These constructions
+are inverse and preserve the displayed objective.
+
+At a cubic vertex, a low flow has zero on either zero, one, or all three
+incident edges.  The last case is impossible in a feasible triple:
+\(\partial M\) contains the vertex, while the disjoint \(J\) has degree
+zero there.  Hence \(M\) is a matching.  For fixed \(M\), the inner
+minimization is the standard shortest-\(\partial M\)-join problem in
+\(G-M\).
+
+It remains to prove the last assertion.  Let \(W\) be a component of
+\(G-h'\), and let \(n_c\) be the parity of the number of cut edges with
+low value \(c\in K\).  Low-flow conservation gives
+\(n_1=n_2=n_3\).  Since \(h'\) is a binary cycle and
+\(\delta(W)\subseteq h'\), cut parity gives
+\(n_0+n_1+n_2+n_3=0\); hence all four parities are equal.  Moreover
+\[
+ n_0=|M\cap\delta(W)|=|\partial M\cap W|\pmod2.
+\]
+Thus the extension is clean precisely when every component of \(G-h'\)
+contains an even number of \(\partial M\)-vertices.  By the elementary
+\(T\)-join existence criterion, this is equivalent to a
+\(\partial M\)-join contained in \(G-h'\), which is the asserted \(J_2\).
+\end{proof}
+
+In this form Conjecture~\ref{conj:minimum} says exactly that some optimum
+master triple admits the second join.  For a fixed extension
+\((h,s)\), the four branches in Corollary~\ref{cor:tjoin} are only the
+low flows \(s'=s+ch\), \(c\in K\).  They do not exhaust the master
+minimum.  In the 278-vertex graph of
+Proposition~\ref{prop:staticfiltersurvivor}, all four of those branches
+have cost fourteen, while a coupled low flow has
+\[
+                 M=\{1,5\},\qquad J=\{0,2,3,4,6\},
+\]
+in the frozen base-edge order and therefore cost seven.  Its difference
+from the displayed flow uses five nonzero Fano values, so it is not a
+constant-vector circuit switch.  The complete proof and two independently
+structured literal-graph checkers are in
+\path{scratch/minimum-projection-}\allowbreak
+\path{full-flow-exchange-20260729/}.
+
+\begin{theorem}[strict-lock counterexample to minimum selection]
+\label{thm:strictlock}
+There is a simple connected bridgeless nonplanar cubic graph \(G\) with
+\[
+                         |V(G)|=162,\qquad |E(G)|=243
+\]
+whose unique minimum-cardinality extendable projection \(H\) has size
+54, is the disjoint union of two 27-circuits, and is not cleanable.
+Nevertheless \(G\) has a five-cycle double cover.
+\end{theorem}
+
+\begin{proof}
+Start with the audited 18-vertex base \(B\) from
+Proposition~\ref{prop:staticfiltersurvivor} before inflation.  In its
+frozen edge order the target \(h=\{0,\ldots,13\}\) is the union of two
+7-circuits.  Exact enumeration of the \(2^{10}\)-element cycle space
+finds 1,008 extendable projections.  The target has 15,360 ordered
+low-flow extensions and none is clean.
+
+Let \(S\) be the simple bridgeless cubic graph with canonical graph6
+encoding
+\[
+\texttt{Q???C@?K?WEOM?\_aGo?I\_\_W@G\_?}
+\]
+and distinguish edge \(e_\ast=5=(5,10)\) in the frozen order.  If
+\(a_b(e_\ast)\) is the minimum projection size of a nowhere-zero
+\(\F_2^3\)-flow on \(S\), conditional on the first bit of \(e_\ast\)
+being \(b\), exact cycle-space enumeration gives
+\[
+                         a_0(e_\ast)=7,\qquad a_1(e_\ast)=5.
+\]
+The \(a_1\)-minimum support is unique and is the 5-circuit
+\(\{5,13,14,16,17\}\).  Delete \(e_\ast\) and attach one external link
+at each exposed endpoint.  The resulting two-pole has effective costs
+\[
+                              w_0=7,\qquad w_1=6.
+\]
+Indeed the odd case removes the projected edge \(e_\ast\) and adds two
+projected links.  An explicit first-coordinate-preserving shear sends
+the displayed odd terminal value to any prescribed odd terminal value,
+so the same support attains the bound in every odd terminal class.
+
+For \(L\subseteq h\), replace precisely the base edges in \(L\) by fresh
+copies of this two-pole.  If \(k\) is another extendable terminal
+projection of \(B\), its cost relative to the target is
+\[
+ \Delta_L(k)=
+ |L\cap(h-k)|-|(h-L)\cap(h-k)|+|k-h|.
+\]
+Testing all 1,008 extendable \(k\) against all \(2^{14}\) sets \(L\)
+shows that eight locks are necessary and sufficient; there are 180
+minimum placements.  For
+\[
+                         L=\{0,2,3,4,7,8,9,10\}
+\]
+the minimum value of \(\Delta_L(k)\) over \(k\ne h\) is one.
+
+The substituted graph has \(18+8\cdot18=162\) vertices and
+\(27+8\cdot27=243\) edges.  Direct checks establish simplicity,
+cubicity, connectivity, and bridgelessness; the base is a nonplanar
+minor.  Contracting any nowhere-zero flow through the eight poles gives
+a nowhere-zero flow on \(B\), so the local costs and the displayed
+\(\Delta_L\) bound every projection below by
+\[
+                              14+5\cdot8=54.
+\]
+The target lift attains this value.  Equality forces terminal support
+\(h\), and the unique local odd minimum then forces a unique literal
+projection \(H\), consisting of two 27-circuits.
+
+Every extension of \(H\) contracts to an extension of \(h\).  The old
+components of \(B-h\) persist, and the two terminal links replacing a
+base support edge carry its contracted value.  Hence cleanliness upstairs
+would imply cleanliness of the contracted base extension, contradicting
+the 15,360-extension calculation.  Thus \(H\) is uncleanable.
+
+Finally, the graph has a human-checkable five-cover.  Fix two-subset
+edge labels giving five-cycle double covers of \(B\) and \(S\).  For each
+substitution, permute the five labels on its copy of \(S\) so that the
+label on \(e_\ast\) equals the label on the replaced base edge.  Delete
+both old edges and give both terminal links that common two-subset label.
+At every exposed vertex a like-labelled incidence is replaced by a
+like-labelled incidence, so all five parities remain even; every new edge
+still has exactly two labels.  The resulting 243-label certificate and
+a separately generated satisfying assignment of the mandatory
+exact-two/XOR formula are both checked literally.
+\end{proof}
+
+The lock placement and both graph constructions were independently
+reimplemented.  They canonicalize to the identical graph6 row.  The
+primary package, complete edge list, five-cover certificates, and ledger
+are in
+\path{scratch/minimum-projection-}\allowbreak
+\path{strict-parity-lock-20260729/};
+the separately written audit is in the sibling strict-lock independent
+audit package.
+This theorem closes the proposed minimum-selection route negatively.
+FiveCDC must select a nonminimum clean projection on this graph.
+Theorem~\ref{thm:sizefifteen} remains informative: no such counterexample
+can have minimum support at most fifteen, whereas this witness has minimum
+support 54.
+
+\section{Exact finite census}\label{sec:census}
+
+\subsection{Canonical order-18 method}
+
+The accompanying checker uses canonical generation rather than sampling.
+For order \(18\), the command
+\[
+\texttt{geng -cq -d3 -D3 18}
+\]
+generates every connected simple cubic graph once.  The checker then:
+\begin{enumerate}
+  \item tests bridgelessness by deleting every edge and checking
+        connectivity;
+  \item tests Tait colourability by exhaustive backtracking;
+  \item enumerates the entire binary cycle space;
+  \item processes nonzero projections \(h\) by increasing cardinality;
+  \item quotients pairs of cycles \((p,q)\) by their exact semantic state
+        \((p\cup q,p\cap q)\);
+  \item tests extendability by \(E-h\subseteq p\cup q\); and
+  \item computes the components of \(G-h\) and tests (5) on every
+        component.
+\end{enumerate}
+
+For a connected cubic graph of order \(18\), the binary cycle-space
+dimension is
+\[
+                  |E|-|V|+1=27-18+1=10.
+\]
+Thus all \(2^{10}=1024\) binary cycles are enumerated.  Equal
+union/intersection pairs have exactly the same coverage and component
+parity behaviour, so the semantic quotient loses no information.
+No snark or cyclic-connectivity reduction is used.
+
+\subsection{Results and reproducibility}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lr}
+\toprule
+class & count\\
+\midrule
+connected simple cubic graphs & \(41{,}301\)\\
+bridgeless graphs & \(39{,}866\)\\
+bridgeless non-Tait graphs & \(179\)\\
+\bottomrule
+\end{tabular}
+\caption{Complete order-\(18\) population.}
+\end{table}
+
+Every minimum-cardinality extendable projection of every one of the
+\(179\) non-Tait graphs is cleanable.  The minimum-size histogram is
+\[
+             5:166,\qquad 6:11,\qquad 7:1,\qquad 8:1.
+\]
+The checker hashes, in canonical graph order, the graph6 string, minimum
+size, number of minimum extendable projections, and number of cleanable
+minimum projections.  The resulting SHA-256 is
+\begin{center}
+\texttt{82b01cc2f01d4f50f7745f4bdb1b3dc46ade798d452a9d4f11d4a91d738a7834}.
+\end{center}
+
+From the project root, run:
+\begin{verbatim}
+python3 scratch/check_husek_samal_minimum_projection_frontier.py \
+  --order 18
+\end{verbatim}
+The checker requires Python, the sibling cycle-space module
+\path{scratch/search_fano_all_bad_projection_subspaces.py}, and
+nauty \texttt{geng} on \texttt{PATH}.  It has no SAT solver, network, or
+nonstandard Python-package dependency.  The relevant source hashes are
+\begin{center}
+\small
+frontier checker:\\
+\texttt{37e972782863c7a9506f6d339159ddaca3865363107704f86365c1a9b77a30c3}\\[2pt]
+cycle-space module:\\
+\texttt{7e5ea2599e7533f041ea88de5c6f5c7a3bf542cedc33d78728439d43ce8861e8}
+\end{center}
+
+This finite theorem explains why minimum selection was initially
+plausible, but Theorem~\ref{thm:strictlock} disproves the universal
+statement beyond the tested range.
+
+\subsection{Expanded frozen-source replay}
+
+A separate C++ classifier implements the same extendability and
+cleanability semantics by Gaussian elimination over \(\F_2\).  It replays
+two previously frozen graph6 populations:
+\begin{enumerate}
+  \item \(14{,}009\) cyclically 4-edge-connected non-Tait records of even
+        orders \(10\) through \(28\); and
+  \item \(12{,}892\) bridgeless non-Tait rows from a broader hard
+        order-\(22\) source.
+\end{enumerate}
+The exact results are:
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+frozen source & graphs & minimum projections & uncleanable\\
+\midrule
+cyclically 4, orders \(10\)--\(28\) & \(14{,}009\) & \(92{,}754\) & \(0\)\\
+hard order \(22\) & \(12{,}892\) & \(54{,}785\) & \(0\)\\
+\midrule
+total & \(26{,}901\) & \(147{,}539\) & \(0\)\\
+\bottomrule
+\end{tabular}
+\caption{Exact minimum-extendable-projection replay on frozen sources.}
+\end{table}
+
+For the cyclically 4 source the minimum-size profile is
+\[
+                       5:14007,\qquad 6:1,\qquad 9:1.
+\]
+For the hard order-\(22\) source it is
+\[
+ 5:11776,\quad 6:1025,\quad 7:55,\quad 8:20,\quad 9:6,\quad 10:10.
+\]
+These counts refer to graphs; the third column of the table counts all
+minimum projections on those graphs.
+
+From the project root, run:
+\begin{verbatim}
+cd scratch/minimum-projection-census-through28-20260729
+python3 verify_summary.py
+\end{verbatim}
+The replay compiles the classifier, verifies every input digest and every
+emitted graph6 row, and checks all aggregates above.  Its checksum ledger is
+the \texttt{SHA256SUMS} file in that package.
+The unconditional claim here concerns the literal frozen files.  Their
+identification with complete graph classes uses the documented upstream
+canonical-generation and filtering packages; this replay does not
+independently regenerate those populations.
+
+\subsection{Retained strong snarks of orders 34 and 40}
+
+A separate exact scan covers the literal retained strong-snark files at
+orders \(34\) and \(40\):
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+order & graph6 rows & minimum projections & uncleanable\\
+\midrule
+34 & \(7\) & \(371\) & \(0\)\\
+40 & \(7{,}654\) & \(433{,}359\) & \(0\)\\
+\midrule
+total & \(7{,}661\) & \(433{,}730\) & \(0\)\\
+\bottomrule
+\end{tabular}
+\caption{Exact minimum-projection scan on the frozen strong-snark rows.}
+\end{table}
+Every row has minimum extendable-projection size ten.  An ordinary-CNF
+solver encodes the two low binary cycles, coverage on \(E-h\), product
+variables for \(p_e\wedge q_e\), and an XOR chain imposing even product
+parity on every component cut.  Every even projection through weight
+twelve is enumerated as a vertex-disjoint union of circuits, which is
+exhaustive for a cubic graph.  All rows reach their first extendable level
+at weight ten.
+
+The order-\(34\) output and the first five order-\(40\) rows were reproduced
+independently by the linear-algebra scanner used in the earlier census.
+The full order-\(40\) claim uses the exact SAT implementation.  The
+concatenated result digest is
+\begin{center}
+\texttt{becb7e4b648c000ec874509bccdf389df24f6f0d82bce2da49ba10d5b10d38e3}.
+\end{center}
+Inputs, frozen output, both scanner implementations, and the replay script
+are under \path{scratch/}, in the subdirectory
+\path{minimum-projection-known-strong-snarks-20260729/}.
+As before, the unconditional statement concerns the literal bundled rows;
+completeness of the named graph populations is inherited from upstream
+provenance.
+
+\subsection{A certified 130-vertex parameter-separation test}
+
+The retained 130-vertex exchange graph gives a substantially larger exact
+stress test.  A three-coordinate CNF uses binary-cycle variables
+\((h_e,p_e,q_e)\), the three parity equations at every vertex, the
+nowhere-zero clauses \(h_e\vee p_e\vee q_e\), and a sequential cardinality
+counter.  Its certified results are
+\[
+ \min |h|=42,\qquad
+ \#\{h:|h|=42,\ h\text{ extendable}\}=11264,
+\]
+and every one of those 11,264 supports is cleanable.  The size-\(\le41\)
+CNF has 7,760 variables and 16,218 clauses.  A second CNF blocks every
+listed size-42 support and proves enumeration completeness.  Both UNSAT
+LRATs are accepted by C \texttt{lrat-check} and verified CakeML
+\texttt{cake\_lpr}; every positive clean lift is also checked directly.
+
+On the same graph the different parameter
+\[
+ \rho_3(G)=
+ \min_{f,\ a\ne0}|f^{-1}(a)|
+\]
+equals five, while no size-five value class packs two boundary joins.
+Thus minimizing one nonzero Fano value class and minimizing an entire
+coordinate projection are not interchangeable.  The former selection
+principle fails on this graph; the latter passes all 11,264 minimum cases.
+To replay the package, run:
+\begin{verbatim}
+cd search/minimum-projection-n130-20260729
+python3 verify.py
+\end{verbatim}
+
+\section{Discussion}
+
+The exchange theorem converts global support minimality into four ordinary
+geodesic conditions: one shortest join for each affine value class.
+Theorems~\ref{thm:sizefive}, \ref{thm:sizeseven}, \ref{thm:sizeten},
+\ref{thm:sizeeleven}, \ref{thm:sizetwelve}, and
+\ref{thm:sizethirteen}, together with
+Theorems~\ref{thm:sizefourteen} and \ref{thm:sizefifteen} close every
+possible nonzero support size through fifteen.  Thus
+Theorem~\ref{thm:strictlock}, whose minimum projection has size 54, is
+consistent with the sharp proven lower frontier: no counterexample to
+the false selection principle has minimum projection size at most
+fifteen.
+The useful feature is simultaneity.  A cycle that would shorten the
+projection is allowed to be blocked by one colour, but
+Corollary~\ref{cor:shortcut} forces it to be blocked by all four.
+Likewise, disconnected projections are severely constrained because every
+circuit component must contain every colour.
+The size-fourteen state (19) shows that this numerical frontier is sharp
+for the support-preserving clean-or-delete boundary method.
+Theorem~\ref{thm:sizefourteen} also shows exactly what that abstract state
+forgets: two-colour subgraphs inside a cubic complement pair the boundary
+occurrences by paths, and a matching-robust Kempe switch reaches a strict
+deletion.  Corollary~\ref{cor:onecircuittensor} removes one entire
+unbounded branch: every one-circuit boundary directly cleans.  The
+remaining open frontier therefore begins with several circuits lacking
+the separate per-circuit balance of
+Corollary~\ref{cor:multicircuittensor}; larger such states need not admit
+the same finite strategy.  Theorems~\ref{thm:twooccurrenceeighteen} and
+\ref{thm:twooccurrenceloopsixteen} remove the entire two-occurrence branch
+through size sixteen and the loopless branch through size eighteen.  This
+does not move the unrestricted frontier beyond size fifteen: a surviving
+state at size sixteen may have a component with more than two occurrences.
+Proposition~\ref{prop:supportsixteenfixedword} examines exactly one such
+fixed-word frontier.  A matching-observed \(\{1,3\}\) path choice removes
+six of its eight direct residuals, but two literal \(8+2+2+2+2\) systems
+defeat every one-round choice for every colour pair.  Because both
+realizations are Tait-colourable, this is a clean separation between the
+one-round boundary game and the globally minimum problem, not an extension
+of Theorem~\ref{thm:sizefifteen}.
+
+Proposition~\ref{prop:zerodualprice} rules out the most direct LP repair
+of this gap.  The rainbow quotient shore itself carries zero coefficient
+in every optimal shortest-join dual, before any witness-neutralizing
+switch.  The positive information is forced into cuts that split
+complement components.  This both yields
+Corollary~\ref{cor:supportdensity} and identifies the missing geometric
+object: a descent proof must transport interior distance, blossom, or
+Kempe-pairing information across a neutral recolouring.
+Proposition~\ref{prop:densityrigidity} completely describes the zero-slack
+boundary of this argument.  There the complement is a forest and all
+colour loads and affine witnesses are exactly balanced; an uncleanable
+case cannot occur below support twenty-four.  What remains is therefore
+either this rigid large equality regime or positive dual slack.
+
+Proposition~\ref{prop:colorload} supplies the first dynamic coupling to
+global minimality.  A concentrated inside/outside derivative colour
+profile forces an explicit strict descent after one legal common map
+switch.  The remaining implication is exact but open: rainbow-oddness is
+a parity condition, whereas (15l) is a load inequality that can be
+shielded by colour-balanced interior vertices.
+Proposition~\ref{prop:rainbowloadcounterstate} realizes that shielding
+already on the cube, so local rainbow forcing is false.  Because its
+projection is not globally minimum, a proof must either extract a
+load violation from genuinely global information or exploit the interior
+path geometry directly.
+
+\begin{proposition}[static exchange has no further local boundary force]
+\label{prop:staticinflation}
+Let \(G\) be a finite connected simple bridgeless cubic graph, let \(H\)
+be a 2-regular binary cycle, and let \(f=(h,s)\) be a nowhere-zero
+\(\F_2^3\)-flow with \(\supp(h)=H\).  Suppose every circuit component of
+\(H\) contains every value of \(s|_H:E(H)\to\F_2^2\).
+There are a simple connected bridgeless cubic graph \(G'\) and a
+nowhere-zero flow \(f'=(h',s')\) on \(G'\), with
+\(\supp(h')=H\) and \(s'|_H=s|_H\), carrying the same support circuits,
+complement-component partition, and two-colour boundary path pairings,
+for which
+\[
+ C\cap M_c=\varnothing
+ \quad\Longrightarrow\quad
+ |C\cap H|\leq |C-H|                                   \tag{27}
+\]
+for every \(c\in\F_2^2\) and every binary cycle \(C\) of \(G'\), where
+\(M_c=\{e\in H:s'(e)=c\}\).
+\end{proposition}
+
+\begin{proof}
+Let \(e=uv\notin H\) have nonzero low colour \(t=s(e)\), and let
+\(\{t,x,y\}=\F_2^2-\{0\}\).  Delete \(e\), add vertices \(a,b,p,q\), and
+add
+\[
+ ua,bv,pq\text{ of colour }t,\qquad
+ ap,bq\text{ of colour }x,\qquad aq,bp\text{ of colour }y. \tag{28}
+\]
+Give every new edge first coordinate zero and retain \(f\) on every
+unreplaced edge.  Every new vertex sees the three nonzero low colours, so
+both flow equations are preserved and the resulting flow is nowhere zero.
+For either pair \(\{t,x\}\) or \(\{t,y\}\), the
+bichromatic path joins the old endpoints \(u,v\); the \(\{x,y\}\)
+component is internal.  Hence the substitution preserves every original
+two-colour boundary pairing.  Every \(u\)-to-\(v\) traversal through the
+two-pole, including the attachment edges, has length at least four.
+Chaining \(k\) copies gives old-endpoint distance \(L=3k+1\), while
+preserving simplicity, cubicity, connectedness, and bridgelessness.
+
+Apply the same chain length to every edge of \(G-H\), choosing
+\(L\geq|H|\).  Decompose a binary cycle avoiding \(M_c\) into
+edge-disjoint circuits.  A circuit contained in one replacement chain
+uses no support edge.  Every other circuit either traverses a chain from
+one old endpoint to the other and hence uses at least \(L\) non-support
+edges, or is a circuit component of \(H\).  The latter is impossible
+because every component of \(H\) meets \(M_c\).  Thus each remaining
+circuit \(D\)
+satisfies
+\[
+ |D-H|\geq L\geq|H|\geq|D\cap H|.
+\]
+Summing over the circuit decomposition proves (27).
+\end{proof}
+
+\begin{remark}[a one-round obstruction, not a minimum counterexample]
+The bundled literal instance has 230 vertices, 345 edges, and support
+equal to two 8-circuits.  Two checkers establish all four families (27):
+one exhausts \(2^{22}\) base binary cycles and the other independently
+solves the four shortest-\(T\)-join problems in the inflated graph.  The
+affine-class sizes are \((6,5,3,2)\), the four join sizes are
+\((10,11,13,14)\), and the four minimum containing-cycle sizes are 16.
+All 97 nonempty charge-restoring one-round fixed-colour path
+multiswitches fail to clean or delete even after every componentwise
+affine repair.  Nevertheless, switching the
+\(\{1,2\}\)-paths with boundary endpoints \(1\!-\!10\) and \(4\!-\!15\),
+then recomputing and switching the \(\{1,3\}\)-path \(5\!-\!6\), makes
+colour 2 absent from the first support circuit and permits its deletion.
+The graph is Tait-colourable, so its actual minimum projection is empty.
+The example therefore refutes neither Conjecture~\ref{conj:minimum} nor
+FiveCDC.  It shows that the force of global minimality must be used
+dynamically after each support-neutral recolouring.  The proof and replay
+are in
+\path{scratch/general-kempe-descent-static-exchange-obstruction-20260729/}.
+\end{remark}
+
+\begin{proposition}[a goal-free survivor of every static filter]
+\label{prop:staticfiltersurvivor}
+There is a simple connected bridgeless cubic graph on 278 vertices with
+an uncleanable extendable projection \(h\) of size fourteen such that:
+\begin{enumerate}
+  \item \(h\) has a rainbow-odd six-map-integrable witness shore, but
+        none of its six common switches cleans or deletes a support
+        circuit;
+  \item all nine colour-load inequalities hold; and
+  \item for every \(c\in K\), the shortest \(T_c\)-join in \(G-M_c\)
+        has size \(|h|-|M_c|\).
+\end{enumerate}
+Nevertheless the graph's exact minimum extendable-projection size is
+seven.  Thus the conjunction of all listed static consequences of global
+minimality does not imply cleaning or deletion.
+\end{proposition}
+
+\begin{proof}
+Begin with two support 7-circuits, low words and component word
+\[
+\begin{split}
+r&=\texttt{3231320}\mid\texttt{1320320},\\
+\pi&=\texttt{01234444413024}.
+\end{split}
+\]
+Choose the union of component blocks \(0,1,3\).  The derivative word is
+\(\texttt{3112212}\mid\texttt{1212312}\); the selected derivatives on
+each circuit are one copy each of \(1,2,3\), so every common linear map
+is integrable.  Direct integration of the six maps gives obstruction
+bits
+\[
+                         (1,1,0,1,0,1),
+\]
+and every resulting support circuit still uses all four colours.  Hence
+none of the six choices cleans or deletes.  The selected derivative
+counts are \((2,2,2)\), the outside counts are \((4,4,0)\), and the
+18-vertex base realization has four off-support vertices, so the largest
+load is \(6\le8\).
+
+Replace each of the thirteen base complement edges by a chain of five
+two-poles from the proof of Proposition~\ref{prop:staticinflation}.  The
+old-endpoint distance is sixteen, larger than \(|h|=14\); therefore all
+four complete exchange families hold.  Exact shortest-join calculation
+sharpens this to
+\[
+\begin{array}{c|rrrr}
+c&0&1&2&3\\ \hline
+|M_c|&3&2&4&5\\
+\text{shortest \(T_c\)-join}&11&12&10&9\\
+\text{containing cycle}&14&14&14&14 .
+\end{array}
+\]
+
+Every low flow with fixed projection \(h\) contracts through the
+two-pole chains to a base low flow with the same component cut parities.
+The exact 1,024-cycle base enumeration has 15,360 extensions of \(h\)
+and no clean one, so the inflated projection is uncleanable.
+
+For an arbitrary full flow, contraction gives a nowhere-zero base flow.
+An old support edge with first coordinate one costs one inflated support
+edge, while a contracted complement edge with first coordinate one
+forces both terminal links of its chain into the inflated support and
+costs at least two.  Exhausting the 1,024 base binary cycles and the
+66,207 simultaneously missed sets gives weighted minimum seven.
+Conversely an explicit base flow supported on the first 7-circuit is
+even on every replaced complement edge and lifts through all chains with
+support still seven.  This proves the exact global minimum.
+\end{proof}
+
+\begin{remark}
+The through-thirteen boundary theorem makes support fourteen smallest
+for a state with no clean or deletion component-map tuple.  The full
+six-map table, 18- and 278-vertex constructions, two exact
+implementations, hostile audit, outputs, and ledger are in the
+rainbow-load-survivor package under \path{scratch/}.  The example is a
+proof-method obstruction, not a globally minimum projection or a
+FiveCDC counterexample.
+\end{remark}
+
+\begin{proposition}[a directly clean unbounded class]
+\label{prop:twoterminalclean}
+Let \(H=\supp(h)\) be one circuit.  If every component \(W\) of
+\((V,E-H)\) contains exactly two vertices of \(H\), then every extension
+\(f=(h,s)\) is cleanable by independent componentwise
+\(\operatorname{GL}(2,2)\) maps followed by reintegration of the low
+values on \(H\).
+\end{proposition}
+
+\begin{proof}
+At a vertex \(v_i\) of \(H\), let \(d_i\ne0\) be the low value on the
+unique edge of \(E-H\), and let \(s_{i-1},s_i\) be the low values on the
+two incident edges of \(H\).  Flow conservation gives
+\[
+                         d_i=s_{i-1}+s_i.                    \tag{29}
+\]
+Summing the low-flow equations over a complement component \(W\) shows
+that the xor of its boundary values \(d_i\) is zero.  There are exactly
+two, so they are equal.  Fix \(t\in\F_2^2-\{0\}\).  Independently on each
+\(W\), choose a linear automorphism sending its common boundary value to
+\(t\).  These maps preserve the low-flow equations inside \(W\).
+
+The circuit \(H\) has two vertices for every complement component and
+hence even length.  Thus (29), now with every \(d_i=t\), integrates around
+\(H\), and its edge values alternate between \(a\) and \(a+t\).
+At each of the two vertices of \(H\) in \(W\), the two support incidences
+therefore have one value \(a\) and one value \(a+t\).  Across the four
+incidences both values occur twice.  A support edge internal to \(W\) is
+counted twice; deleting its two equal copies does not change parity.
+Consequently every low value occurs evenly on \(\delta(W)\).  This holds
+for every \(W\), so the resulting extension is clean.
+\end{proof}
+
+\begin{proposition}[conditional orbit-reflecting inflation]
+\label{prop:dynamicinflation}
+Let a support-boundary state realized in a simple connected bridgeless
+cubic graph have no clean or circuit-deletion state in one connected
+component of its reconfiguration graph, where the moves include all
+charge-preserving two-colour Kempe path multiswitches and all feasible
+componentwise \(\operatorname{GL}(2,2)\) maps.  There is a simple
+connected bridgeless cubic inflation for which:
+\begin{enumerate}
+  \item every reachable boundary-changing move contracts to a move in the
+        same base component, while every additional internal move
+        contracts to the identity; and
+  \item at every reachable state, all four inequalities
+        \[
+        C\cap M_c=\varnothing\quad\Longrightarrow\quad
+        |C\cap H|\leq |C-H|                                  \tag{30}
+        \]
+        hold for every binary cycle \(C\) and every \(c\in\F_2^2\).
+\end{enumerate}
+The assertion is conditional: it does not assert that such a goal-free
+base component exists or that the displayed support is globally minimum.
+\end{proposition}
+
+\begin{proof}
+Delete an edge \(ab\) of \(K_{3,3}\), regard \(a,b\) as degree-two
+terminals, and attach one external edge at each terminal.  Call this
+two-pole \(P\).  By the parity lemma, the attachment colours in every
+proper three-edge-colouring of \(P\) are equal, say to \(t\); adding
+\(ab\) in colour \(t\) gives a Tait colouring of \(K_{3,3}\), and deletion
+is the inverse.  The two Tait-colouring classes of \(K_{3,3}\) have every
+colour pair Hamiltonian~\cite[Section~4.2]{BelcastroHaas2012}.  Therefore
+a pair containing \(t\) induces the unique terminal-to-terminal path of
+\(P\), while the other pair induces an internal circuit.  A switch of the
+first kind changes the boundary exactly as a switch on the contracted
+edge; a switch of the second kind leaves the boundary fixed.  Both retain
+the two-valued internal Kempe-class label.  Hence \(P\) preserves and
+reflects boundary-changing Kempe moves.
+
+Replace every complement edge by a chain of \(r\) copies of \(P\).  The
+shortest terminal-to-terminal path inside one copy has length three, so
+the old-endpoint distance of the chain is \(L=4r+1\).  Equal terminal
+colours propagate along a chain.  Thus every boundary-changing Kempe
+component contracts to its base component, every internal switch
+contracts to the identity, and every base move expands.  Contraction also
+preserves the endpoints of simultaneous path switches and the boundary
+action of componentwise maps.  Fresh pole vertices preserve simplicity
+and cubicity.  Bridgelessness follows because a base circuit through a
+replaced edge expands through a terminal path, while every internal pole
+edge lies on an internal bichromatic circuit or on a terminal path
+completed by such a base circuit.
+
+Choose \(L\geq|H|\).  In any reachable state, absence of a deletion means
+that every circuit component of \(H\) uses all four low values.  Fix \(c\)
+and decompose a binary cycle \(C\) avoiding \(M_c\) into edge-disjoint
+circuits.  A circuit internal to a replacement chain meets no support
+edge.  Every other circuit using complement edges traverses a whole chain,
+so it has at least \(L\) complement edges and at most \(|H|\) support
+edges.  A circuit contained in \(H\) is impossible because every support
+component meets \(M_c\).  Summing over the decomposition gives (30).
+Orbit reflection prevents a new clean or deletion boundary state, and the
+same argument applies after every reachable recolouring.
+\end{proof}
+
+\begin{remark}[exact replay and search boundary]
+The bundled dynamic Kempe frontier package contains a dependency-free
+enumeration of all twelve proper pole colourings, its two six-state Kempe
+orbits, chain distances through eight copies, and all 146,599 two-terminal
+pairings on one support circuit through order fourteen.  A separately
+written checker scans all \(3^9\) edge assignments of \(K_{3,3}\) and
+verifies the cut-incidence parity in
+Proposition~\ref{prop:twoterminalclean}.  A noncanonical exploratory search
+over 75 larger random poles found no goal-free component; this is negative
+experimental evidence, not an exhaustive theorem.
+\end{remark}
+
+The four-colour simultaneity cannot be replaced by a theorem about one
+matching.  In the Petersen graph with edge set
+\[
+\{03,06,09,14,16,18,25,26,27,37,38,47,49,58,59\},
+\]
+the matching \(M=\{06,14,25\}\) is contained in exactly two
+minimum-cardinality binary cycles:
+\[
+\{06,09,14,18,25,26,49,58\},\qquad
+\{06,09,14,16,25,27,47,59\}.
+\]
+Both have size eight, and in both cases the components of the complement
+have \(M\)-endpoint parities \(1,0,1\).  Exhausting all \(2^{15}\) edge
+subsets proves minimality.  The complete finite replay is in
+\path{scratch/petersen-minimum-tjoin-countermodel-20260729/}.  This
+obstruction does not realize four synchronized affine classes.
+
+Theorem~\ref{thm:strictlock} supplies the exact counterexample to
+Conjecture~\ref{conj:minimum}: the positive interior-shore information and
+even full global minimality do not force cleaning.  The surviving FiveCDC
+problem is therefore not to repair a minimum projection universally, but
+to select a possibly nonminimum clean projection.  No theorem in this
+note carries out that selection for every bridgeless graph.  In particular,
+the exact support-sixteen fixed-word census and matching game of
+Proposition~\ref{prop:supportsixteenfixedword} do not change the resolution
+status: they cover one word orbit, and their two adverse examples have
+empty minimum projection.
+
+\section*{AI-use and verification disclosure}
+
+This research route, proof draft, checker, computation, and exposition were
+developed by OpenAI Codex agents under Atharva Vaidya's direction.  The
+minimum-projection exchange proof, the size-at-most-five proof, and the
+span proof used at sizes six and seven are displayed in full so that they
+can be checked without trusting an AI system.  Those boundary
+classifications and the stronger direct-cleaning theorem through size ten
+are also regenerated by dependency-free exact checkers.  The
+through-eleven checker freezes every first direct-repair failure and its
+smaller-support certificate.  The through-twelve package freezes all 392
+new circuit-deletion certificates and includes a separately implemented
+full census.  The matching through-thirteen packages independently
+reproduce all five new shapes and freeze all 7,674 deletion certificates.
+The size-fourteen primary package freezes all seven shape counts and the
+224 residual rows.  A separately written full \(7+7\) enumerator
+regenerates all 333 word orbits and \(91{,}481{,}505\) charge-valid
+states, while the Kempe package freezes 724 matching-robust deletion rows
+and checks them with an independently structured literal verifier.
+Codex agents also derived the universal tensor lemma, the one-circuit
+obstruction identity, and the circuitwise-balanced corollary displayed
+above.  A separate hostile agent audit checked the expansion grouping,
+the leaf cancellation, all no-leaf graphs through seven tensor vertices,
+and all 4,096 three-vertex tensors; this remains agent review, not
+independent human verification.  Codex agents also derived
+Theorem~\ref{thm:chargerigid}.  A separately written clean-room checker
+audited simultaneous integrability and the componentwise
+translation-kernel decomposition, enumerated all 270,763 balanced charge
+tables with one through four rows and columns, and reconstructed clean
+extensions for all 85,329 admissible small boundary states in its
+circuit-balanced census.  A second independent parser reproduced the
+five-block, two-circuit charge profile of all $224+6{,}036+8$ frozen
+residual rows.  These are agent-produced checks, not independent human
+verification or peer review.  Codex agents also derived the fixed-map
+quadratic reduction and the six-map witness-neutralization identity.
+A separately written hostile checker recomputed the 16-entry local table
+and verified both identities on 126,258 balanced circuit rows through
+length eight.  This is an independent implementation by another agent,
+not independent human review.  Codex agents also found the exact
+neutralization cycle and wrote its two dynamics checkers.  The four-arrow
+cycle and the gain-four exchange descent are displayed for direct human
+checking; the forty-state strong-connectivity and 160-profile exchange
+census remain computational claims.  Codex agents also derived the
+shortest-join zero-price and support-density theorems.  Their universal
+claims rest on the displayed LP-duality proof; two separately written
+finite audits check the six-map recomputation algebra but are not a
+substitute for human review.  A hostile Codex audit separately checked
+the primal/dual formulation, the every-optimal-dual quantifier, the
+density argument, the recomputation laws, and the package hash ledger.
+The exact density-slack decomposition and equality classification were
+derived by Codex agents and are displayed in
+Proposition~\ref{prop:densityrigidity}.  Two arithmetic audits and a
+hostile logical audit checked the identity, forest inference, colour and
+topology counts, witness balance, size corollary, and hash ledger.
+The six-map colour-load inequality and its constructive descent were
+also derived by Codex agents.  Its complete functional proof is displayed
+in Proposition~\ref{prop:colorload}; two independently structured finite
+audits check the map/count identities and boundary conversion, and a
+hostile Codex audit checked every logical step and the frozen ledger.
+Codex agents also found the cube counterstate in
+Proposition~\ref{prop:rainbowloadcounterstate}.  A separate hostile audit
+reconstructed its canonical graph, flow, complement stars, six-map table,
+rainbow and load calculations, local minimality, Tait colouring, two
+checkers, and hash ledger.
+Codex agents also derived the
+two-occurrence interaction dictionary and Petersen descent.  A separate
+hostile audit checked the complete ten-orbit table, the analytic
+60-flow and 320-map counts, the literal Petersen realization, the
+globally minimum clean descendant, both smaller-size enumerators, and the
+package ledger.  This is likewise agent review rather than independent
+human verification.  Codex agents also proved
+Theorem~\ref{thm:twooccurrenceeighteen}; two independently structured
+exact checkers reproduce its \(1{,}041{,}984\)-state partition, including
+the \(1{,}019{,}952\) new support-eighteen states.  A separate agent audit
+checked the graph-shape reduction, semantics, counts, implementation
+independence, and hash ledger.  This is agent review, not independent
+human verification.  Codex agents also proved
+Theorem~\ref{thm:twooccurrenceloopsixteen}; its human reduction and exact
+checker cover the \(16{,}344\) finite loop-profile states, and a
+separately written blind audit reconstructs the marked-word orbits,
+shape list, literal endpoint tests, and ledger.  This too is agent
+review, not independent human verification.  The
+size-fifteen primary package freezes
+all eight shape counts and 6,036 residual rows.  A separately written
+induction checker canonicalizes every residual and links it to the
+matching-robust inverse-extension family.  The single-circuit anchor
+census completed all sixteen shards and found zero failures; an
+independent parser checks aggregation and agreement with the
+zero-sum-partition recurrence, but it is not an independently implemented
+full candidate census.
+Codex agents also generated the \(8{,}046{,}330\)-state fixed-word
+support-sixteen census, formulated the matching-observed game in
+Proposition~\ref{prop:supportsixteenfixedword}, generated its complete
+certificate, found both terminal reattachments, and wrote the literal
+graph audits.  The primary census and separately written residual
+evaluator agree on all eight residuals.  The matching checker and graph
+audit pass with the frozen digest displayed above.  A clean-room agent
+audit independently reconstructs the eight states, all matching
+quantifiers and counts, both 42-vertex graphs, their induced path systems,
+and their Tait colourings without importing either candidate checker.
+These are exact
+agent-produced computations and a human-readable finite reduction, not
+independent human peer review.
+The static-exchange package contains the human proof of
+Proposition~\ref{prop:staticinflation}, a primary full-cycle checker, a
+separate shortest-\(T\)-join checker for the four inequalities, and the
+complete boundary-profile Kempe graph for its example.
+Codex agents also combined that inflation with the size-fourteen
+counterstate to obtain Proposition~\ref{prop:staticfiltersurvivor}.
+Two exact implementations and two hostile audits checked the abstract
+map census, 18- and 278-vertex graphs, all four joins, contraction
+uncleanability, weighted lower bound, explicit size-seven lift, corrected
+replay instructions, frozen outputs, and hash ledger.
+Codex agents also derived the full-flow master formulation in
+Proposition~\ref{prop:fullmaster}.  One hostile audit supplied the omitted
+cut-parity derivation and extended the independent checker to reconstruct
+the full 278-vertex graph before publication.  The strict parity lock and
+the 162-vertex graph in Theorem~\ref{thm:strictlock} were then found and
+minimized by Codex agents.  Primary and independently written packages
+enumerate the two 18-vertex cycle spaces and all \(2^{14}\) lock
+placements, construct the same canonical 162-vertex graph, prove the
+unique size-54 minimum and contraction obstruction, and check multiple
+literal FiveCDC certificates.  A third hostile implementation separately
+reconstructed the graph, minimum, dirty-extension counts, and a satisfying
+FiveCDC assignment.  An initial exploratory solver call used a malformed
+three-input XOR API and was discarded; no datum from that call appears in
+the frozen certificates.  These are exact agent-produced computations and
+human-readable reductions, not independent human peer review.
+Separate packages also check the first failure of the unrestricted
+dichotomy, its 40-case map certificate, and its exhaustive 18-vertex
+realization analysis.  The standard graph-class reduction and its
+\(D_5\)-label checker were likewise written by Codex agents; a separate
+hostile agent audited the structural proof, which is still not independent
+human review.
+The order-\(18\) result is
+reproducible from canonical generation and exhaustive cycle-space
+enumeration.  The expanded census exactly replays frozen sources but
+inherits their population provenance.  Both remain computational results
+and should be independently rerun.
+The static-exchange proposition and example were found, formalized, and
+hostilely audited by Codex agents.  That audit corrected the distinction
+between the gadget's internal-terminal distance and its old-endpoint
+traversal distance; it is still not independent human review.
+The two-terminal cleaning proof and the orbit-reflecting \(K_{3,3}-e\)
+inflation were likewise proposed, formalized, checked, and hostilely
+audited by Codex agents.  The dynamic package contains two independently
+written finite checkers, but its unbounded conclusions rest on the
+displayed human proofs rather than the finite tests.  The \(K_{3,3}\)
+Kempe-class fact is prior work of Belcastro and Haas.
+
+Hu\v{s}ek and \v{S}\'amal's flow criterion and
+Hoffmann-Ostenhof's matching/join formulation are prior work.  So are the
+Xie--Zhang flow-pair formulation, Edmonds--Johnson \(T\)-join duality,
+Fano-flow terminology, the multipole parity framework, and ordinary
+edge-Kempe switching.  This draft makes no claim of a FiveCDC resolution
+and no priority claim for the minimum-projection viewpoint pending expert
+literature review.  Before public submission, a human graph theorist
+should check the proof line by line, rerun the census in a clean
+environment, audit the bibliography, and decide authorship and venue
+policy under the applicable AI-disclosure rules.
+
+\small
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

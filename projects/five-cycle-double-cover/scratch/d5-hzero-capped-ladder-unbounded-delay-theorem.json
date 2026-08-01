@@ -1,0 +1,91 @@
+{
+  "schema": "d5-hzero-capped-ladder-unbounded-delay-theorem-v1",
+  "status": "PROVED",
+  "date": "2026-07-28",
+  "scope": {
+    "graph_family": "capped ladder L_m",
+    "parameter": "m >= 2",
+    "vertices": "2m + 10",
+    "edges": "3m + 15",
+    "properties": [
+      "finite",
+      "simple",
+      "planar",
+      "cubic",
+      "bridgeless"
+    ]
+  },
+  "state": {
+    "roots": "left edge 0 and a 02-labeled edge in the right cap",
+    "root_labels": ["34", "02"],
+    "all_five_coordinates_used": true,
+    "construction_switches": [
+      {
+        "pair": "03",
+        "component": [0, 3, 4, 5, 6, 7]
+      },
+      {
+        "pair": "24",
+        "component": [0, 1, 2, 3]
+      }
+    ]
+  },
+  "hzero_line": {
+    "sequence": ["13", "34", "14"],
+    "K1": [0, 1, 2, 3],
+    "K2": [0, 3, 4, 5, 6, 7],
+    "K3": [0, 1, 2, 3],
+    "H": [],
+    "Z": [1, 2, 4, 5, 6, 7],
+    "all_intermediate_states_root_bad": true,
+    "endpoint_cut_words": [
+      "13,12,02,01,12,02,01,...",
+      "14,12,02,01,12,02,01,..."
+    ]
+  },
+  "theorem": {
+    "move_class": "factor-component switches containing exactly one root",
+    "lower_bound_from_either_endpoint": "floor((m+1)/3)",
+    "consequence": "H=0 endpoint root-transition delay is unbounded",
+    "proof_invariants": [
+      "the two labels on every nested 2-edge cut are equal",
+      "one root transition transposes a prefix or suffix of the cut word",
+      "t transitions create at most t cut-word boundaries",
+      "the unchanged tail contains floor((m+1)/3) disjoint xor-zero triples",
+      "a final through-factor is active on every final cut label",
+      "each xor-zero triple must contain a distinct transition boundary"
+    ]
+  },
+  "exact_bfs": [
+    {"m": 2, "vertices": 14, "roots": [0, 16], "distances": [2, 2]},
+    {"m": 3, "vertices": 16, "roots": [0, 20], "distances": [3, 3]},
+    {"m": 4, "vertices": 18, "roots": [0, 26], "distances": [3, 3]},
+    {"m": 5, "vertices": 20, "roots": [0, 25], "distances": [6, 6]},
+    {"m": 6, "vertices": 22, "roots": [0, 29], "distances": [8, 8]}
+  ],
+  "artifacts": [
+    {
+      "path": "scratch/d5-hzero-capped-ladder-unbounded-delay.md",
+      "sha256": "95257b66268b926a0dca184e85ad9779cd36828649c679ad8259a7a890049565"
+    },
+    {
+      "path": "scratch/check_d5_hzero_capped_ladder_delay_family.py",
+      "sha256": "807ee3cc1f609c4aa6a64b96f3092a55c60ca3c8024ce0df5d11f2df46142ecb"
+    },
+    {
+      "path": "scratch/d5-capped-ladder-delay-family.md",
+      "sha256": "ffea70acaa73ab12a0e2822709881d0083c186c2e18b770c589ad195bb325bd6"
+    },
+    {
+      "path": "scratch/check_d5_capped_ladder_delay_family.py",
+      "sha256": "6a56f9f9e47234f77ef586b9a65ebf7e88775503272f599f62f552177f2d62aa"
+    },
+    {
+      "path": "scratch/d5-hzero-capped-ladder-bfs-through22.txt",
+      "sha256": "56e052756f54820dfc4ea269019e593ee48849036845dbf74d06fcfac39d1e3d"
+    }
+  ],
+  "rooted_orbit_counterexample": false,
+  "fivecdc_counterexample": false,
+  "surviving_question": "Does every H=0 endpoint admit some finite root-transition rescue?"
+}

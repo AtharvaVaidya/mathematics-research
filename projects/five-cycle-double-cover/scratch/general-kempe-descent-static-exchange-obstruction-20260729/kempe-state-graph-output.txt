@@ -1,0 +1,6 @@
+LARGE_COMPONENT colourings=252 boundary_profiles=252
+INTEGRABLE_STATES 5094
+DIRECT_CLEAN_OR_DELETE_STATES 3294
+KEMPE_GRAPH components=1 vertices=5094 edges=64497 degree_min=19 degree_max=34
+DISPLAYED_STATE nearest_clean_or_delete_distance=2
+PASS: the complete charge-preserving boundary Kempe graph for this multipole is connected and the displayed state escapes in two rounds

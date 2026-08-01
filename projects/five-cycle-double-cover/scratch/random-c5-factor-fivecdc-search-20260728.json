@@ -1,0 +1,53 @@
+{
+  "schema": "random-c5-factor-fivecdc-search-v1",
+  "classification": "EXPLORATORY SEEDED FAMILY SCREEN; NOT A CENSUS OR FIVEDC RESOLUTION",
+  "generator": "scratch/random_c5_factor_fivecdc_search.cpp",
+  "generator_sha256": "2abe71958dd4e4669d09730f95adb74335ddd72260a6939cb73a4318d5e3967c",
+  "construction": "A disjoint union of C5 blocks plus a uniformly shuffled cross-block perfect matching, filtered for connectedness, bridgelessness, and failure of 3-edge-colourability.",
+  "solver": "CaDiCaL through the mandatory five-coordinate exactly-two and cubic vertex-parity CNF; every accepted model is then checked directly for edge weight two and vertex xor zero",
+  "runs": [
+    {
+      "blocks": 4,
+      "vertices": 20,
+      "samples": 200000,
+      "seed": 2026072704,
+      "connected_bridgeless": 199840,
+      "snarks": 1033,
+      "fivecdc_sat": 1033,
+      "fivecdc_unsat": 0
+    },
+    {
+      "blocks": 6,
+      "vertices": 30,
+      "samples": 200000,
+      "seed": 2026072706,
+      "connected_bridgeless": 199837,
+      "snarks": 391,
+      "fivecdc_sat": 391,
+      "fivecdc_unsat": 0
+    },
+    {
+      "blocks": 8,
+      "vertices": 40,
+      "samples": 200000,
+      "seed": 2026072708,
+      "connected_bridgeless": 199912,
+      "snarks": 182,
+      "fivecdc_sat": 182,
+      "fivecdc_unsat": 0
+    }
+  ],
+  "aggregate": {
+    "samples": 600000,
+    "connected_bridgeless": 599589,
+    "snarks": 1606,
+    "fivecdc_sat": 1606,
+    "fivecdc_unsat": 0
+  },
+  "limitations": [
+    "The generated graphs are not canonicalized, so isomorphic duplicates may occur.",
+    "SAT models were semantically checked in memory but were not retained row by row.",
+    "No UNSAT instance occurred; therefore this run produces no UNSAT certificate.",
+    "This seeded random screen prunes only this odd-C5-factor construction distribution."
+  ]
+}

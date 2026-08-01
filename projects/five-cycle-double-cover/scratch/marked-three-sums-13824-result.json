@@ -1,0 +1,57 @@
+{
+  "status": "COMPLETE_STRUCTURED_FINITE_SCREEN_NO_WITNESS",
+  "date": "2026-07-26",
+  "scope": {
+    "base_graph6": "S????A?O@?R?d?EGGSAK?H_?HG?Ao@A_?",
+    "base_marks": [
+      [3, 11],
+      [6, 15],
+      [7, 18]
+    ],
+    "construction": "Two labelled copies; retain any two base marks per side; delete any vertex not incident with a retained mark; glue the two three-edge boundaries by all six bijections.",
+    "expected_rows": 13824,
+    "generated_rows": 13824,
+    "fixed_output_mark_edges": [
+      [0, 1],
+      [2, 3],
+      [4, 5],
+      [6, 7]
+    ],
+    "graph_order": 38,
+    "graph_size": 57
+  },
+  "command": "python3 scratch/generate_marked_three_sums.py | scratch/tait_all_coloring_mark_separation --target 4 --required-edge-ends 0-1,2-3,4-5,6-7 --require-nonpacking --marked-cyclic-connectivity 4 --progress 0",
+  "output": {
+    "rows": 13824,
+    "universally_separated_required_mark_rows": 288,
+    "search_record_calls": 587123,
+    "witnesses": 0,
+    "target": 4
+  },
+  "interpretation": "No tested three-sum has four required marks which are universally separated, nonpacking, and satisfy the exact marked cyclic-cut condition. The search_record_calls value is an implementation trace, not a census of all Tait colourings, because a row stops when the required marks first conflict.",
+  "direct_proof": {
+    "status": "PASS",
+    "statement": "For each of the three retained mark pairs, three displayed base circuits have vertex-set intersection exactly the four mark endpoints. Hence every allowed vertex deletion leaves a circuit through both marks, giving a closed admissible state on each shore; all 13,824 three-sums therefore pack.",
+    "verified_circuits": 9,
+    "verified_allowed_deletions": 48,
+    "checker": "scratch/verify_marked_three_sum_local_theorem.py"
+  },
+  "hashes": {
+    "generated_graph6_stream_sha256": "c75f63c5a488dda9069679f67e05cd0e5b71720de15c9219b04efb8db9756acb",
+    "generator_source_sha256": "255fb20b25ccf4275868dd7228899373df1a65100f77b7bee3afdd6cd23bd56c",
+    "checker_source_sha256": "c2e797eca207c01165e5868636cc91247fa4841372fcc67a5ee2f95834e39c08",
+    "checker_binary_sha256": "c70f1f7b2e7f096afba8ec35b934e7c9887262fa1a7f327e7d058983f6543a6f",
+    "local_theorem_checker_sha256": "c549d6540deb1716353291f12a68915732b11689c6ab70bcd50cb989489da762"
+  },
+  "environment": {
+    "python": "3.10.4",
+    "networkx": "3.4.2",
+    "compiler": "Apple clang 21.0.0"
+  },
+  "limitations": [
+    "The labelled output is not quotient by isomorphism.",
+    "This is a structured family, not a complete graph census.",
+    "Zero finite witnesses is not a universal three-edge-cut theorem.",
+    "The generator and checker are AI-assisted and not independent human review."
+  ]
+}

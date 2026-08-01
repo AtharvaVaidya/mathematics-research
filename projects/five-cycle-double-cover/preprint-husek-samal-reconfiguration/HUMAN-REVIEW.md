@@ -1,0 +1,48 @@
+# Human review gate
+
+Do not submit this draft merely because it compiles or its supplied
+checkers pass.
+
+A human author should:
+
+1. Check the difference-rank, rank-two legal-order, and rank-three
+   four-move proofs line by line.
+2. Manually verify the \(K_{3,3}\) and cube flow tables, six blockers,
+   component-parity statuses, and three-step paths; independently audit the
+   complete small-order and cube flow censuses.
+3. Check the packing-to-switch proof line by line.
+4. Independently decode the order-26 graph6 record and check the displayed
+   flow, two joins, and FiveCDC labels.
+5. Reimplement the simple-cycle and legal-switch enumeration independently.
+6. Verify the cyclic-connectivity, girth, and non-Tait claims with a
+   separate program.
+7. Replay the exact distance-two path manually or independently.
+8. Audit the 40- and 60-vertex controls.
+9. Independently replay the Jaeger-star radius-two neighborhood
+   exhaustion, the three reciprocal exchanges, the canonical and
+   nonplanar metadata, and the explicit FiveCDC.
+10. Check that no prose conflates reciprocal exchanges of three-tree
+   states with legal simple-cycle switches of a fixed flow.
+11. Independently reconstruct the Petersen--Foster graph and both frozen
+    flows; replay all 168 three-move and 1,848 four-move cases and the
+    explicit five-move path.
+12. Confirm that every statement distinguishes arbitrary Eulerian-support
+    moves from connected-cycle adjacency, for which only
+    \(5\le d\le63\) is certified.
+13. Re-derive the partner-free count for cut sizes \(3,5,7\), the exact
+    aggregate-gain identity, and the claim that only old even four-cuts
+    require protection.  Independently check the order-80 Tait control
+    before treating the reduced cut-space obstruction as evidence.
+14. Decode the order-18 Blanuša graph, verify the displayed flow and all
+    64 joins, and check each of the six cut-space identities by hand.
+    Independently rerun the Petersen-flow exhaustion and the complete
+    simple cubic host census through order 16 before accepting the stated
+    minimum-order qualification.  Keep explicit that the other two
+    optimum representatives descend.
+15. Ask specialists to review the novelty and the relationship with
+    Hušek–Šámal, Esperet et al., and Cranston–Li–Su–Wang–Xu.
+16. Confirm the current publication status and bibliographic metadata of
+    arXiv:2607.24724, arXiv:2512.17342, and arXiv:2606.24685.
+17. Revise authorship and accept full scholarly responsibility.
+
+AI-use disclosure appears prominently on page one and must not be removed.

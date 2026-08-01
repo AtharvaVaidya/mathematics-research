@@ -1,0 +1,6 @@
+PASS
+D5 labels: 10
+ordered xor-zero cubic triples: 60
+parallel-pair inputs checked: 10
+ordered square-boundary pairs checked: 100
+nonextendable xor-zero cyclic word: 01,02,01,02

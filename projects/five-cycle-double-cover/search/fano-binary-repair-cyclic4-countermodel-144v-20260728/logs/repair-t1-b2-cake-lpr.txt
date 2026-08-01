@@ -1,0 +1,4 @@
+$ /Users/atharvavaidya/Documents/conjectures/.tools/cert-checkers/cake_lpr/cake_lpr /private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/cnf/repair-t1-b2.cnf /private/tmp/fano-binary-repair-cyclic4-countermodel-144v-20260728/lrat/repair-t1-b2.lrat
+s VERIFIED UNSAT
+
+exit_code=0

@@ -1,0 +1,1303 @@
+{
+  "exceptional_five": [
+    "0x2e4",
+    "0x3a4",
+    "0x3c4"
+  ],
+  "exceptional_four": [
+    "0x2b",
+    "0x53",
+    "0x119"
+  ],
+  "factorizations": {
+    "0x119": [
+      {
+        "has_exceptional_factor": true,
+        "left": "0x89",
+        "left_types": [
+          "AA",
+          "AT3",
+          "T3T3"
+        ],
+        "right": "0x119",
+        "right_types": [
+          "AA",
+          "AT3",
+          "AT4",
+          "T3T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x119",
+        "left_types": [
+          "AA",
+          "AT3",
+          "AT4",
+          "T3T4"
+        ],
+        "right": "0x89",
+        "right_types": [
+          "AA",
+          "AT3",
+          "T3T3"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x119",
+        "left_types": [
+          "AA",
+          "AT3",
+          "AT4",
+          "T3T4"
+        ],
+        "right": "0x211",
+        "right_types": [
+          "AA",
+          "AT4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x119",
+        "left_types": [
+          "AA",
+          "AT3",
+          "AT4",
+          "T3T4"
+        ],
+        "right": "0x299",
+        "right_types": [
+          "AA",
+          "AT3",
+          "AT4",
+          "T3T3",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x211",
+        "left_types": [
+          "AA",
+          "AT4",
+          "T4T4"
+        ],
+        "right": "0x119",
+        "right_types": [
+          "AA",
+          "AT3",
+          "AT4",
+          "T3T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x299",
+        "left_types": [
+          "AA",
+          "AT3",
+          "AT4",
+          "T3T3",
+          "T4T4"
+        ],
+        "right": "0x119",
+        "right_types": [
+          "AA",
+          "AT3",
+          "AT4",
+          "T3T4"
+        ]
+      }
+    ],
+    "0x2b": [
+      {
+        "has_exceptional_factor": true,
+        "left": "0x2b",
+        "left_types": [
+          "AA",
+          "AT2",
+          "AT3",
+          "T2T3"
+        ],
+        "right": "0x89",
+        "right_types": [
+          "AA",
+          "AT3",
+          "T3T3"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x2b",
+        "left_types": [
+          "AA",
+          "AT2",
+          "AT3",
+          "T2T3"
+        ],
+        "right": "0x389",
+        "right_types": [
+          "AA",
+          "AT3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x53",
+        "left_types": [
+          "AA",
+          "AT2",
+          "AT4",
+          "T2T4"
+        ],
+        "right": "0x211",
+        "right_types": [
+          "AA",
+          "AT4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x53",
+        "left_types": [
+          "AA",
+          "AT2",
+          "AT4",
+          "T2T4"
+        ],
+        "right": "0x391",
+        "right_types": [
+          "AA",
+          "AT4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x89",
+        "left_types": [
+          "AA",
+          "AT3",
+          "T3T3"
+        ],
+        "right": "0x2b",
+        "right_types": [
+          "AA",
+          "AT2",
+          "AT3",
+          "T2T3"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x211",
+        "left_types": [
+          "AA",
+          "AT4",
+          "T4T4"
+        ],
+        "right": "0x53",
+        "right_types": [
+          "AA",
+          "AT2",
+          "AT4",
+          "T2T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x389",
+        "left_types": [
+          "AA",
+          "AT3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x2b",
+        "right_types": [
+          "AA",
+          "AT2",
+          "AT3",
+          "T2T3"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x391",
+        "left_types": [
+          "AA",
+          "AT4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x53",
+        "right_types": [
+          "AA",
+          "AT2",
+          "AT4",
+          "T2T4"
+        ]
+      }
+    ],
+    "0x2e4": [
+      {
+        "has_exceptional_factor": true,
+        "left": "0x89",
+        "left_types": [
+          "AA",
+          "AT3",
+          "T3T3"
+        ],
+        "right": "0x2e4",
+        "right_types": [
+          "T2T2",
+          "T2T3",
+          "T2T4",
+          "T3T3",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": false,
+        "left": "0xa4",
+        "left_types": [
+          "T2T2",
+          "T2T3",
+          "T3T3"
+        ],
+        "right": "0x299",
+        "right_types": [
+          "AA",
+          "AT3",
+          "AT4",
+          "T3T3",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x211",
+        "left_types": [
+          "AA",
+          "AT4",
+          "T4T4"
+        ],
+        "right": "0x2e4",
+        "right_types": [
+          "T2T2",
+          "T2T3",
+          "T2T4",
+          "T3T3",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": false,
+        "left": "0x244",
+        "left_types": [
+          "T2T2",
+          "T2T4",
+          "T4T4"
+        ],
+        "right": "0x299",
+        "right_types": [
+          "AA",
+          "AT3",
+          "AT4",
+          "T3T3",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": false,
+        "left": "0x299",
+        "left_types": [
+          "AA",
+          "AT3",
+          "AT4",
+          "T3T3",
+          "T4T4"
+        ],
+        "right": "0xa4",
+        "right_types": [
+          "T2T2",
+          "T2T3",
+          "T3T3"
+        ]
+      },
+      {
+        "has_exceptional_factor": false,
+        "left": "0x299",
+        "left_types": [
+          "AA",
+          "AT3",
+          "AT4",
+          "T3T3",
+          "T4T4"
+        ],
+        "right": "0x244",
+        "right_types": [
+          "T2T2",
+          "T2T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x299",
+        "left_types": [
+          "AA",
+          "AT3",
+          "AT4",
+          "T3T3",
+          "T4T4"
+        ],
+        "right": "0x2e4",
+        "right_types": [
+          "T2T2",
+          "T2T3",
+          "T2T4",
+          "T3T3",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x2e4",
+        "left_types": [
+          "T2T2",
+          "T2T3",
+          "T2T4",
+          "T3T3",
+          "T4T4"
+        ],
+        "right": "0x89",
+        "right_types": [
+          "AA",
+          "AT3",
+          "T3T3"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x2e4",
+        "left_types": [
+          "T2T2",
+          "T2T3",
+          "T2T4",
+          "T3T3",
+          "T4T4"
+        ],
+        "right": "0x211",
+        "right_types": [
+          "AA",
+          "AT4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x2e4",
+        "left_types": [
+          "T2T2",
+          "T2T3",
+          "T2T4",
+          "T3T3",
+          "T4T4"
+        ],
+        "right": "0x299",
+        "right_types": [
+          "AA",
+          "AT3",
+          "AT4",
+          "T3T3",
+          "T4T4"
+        ]
+      }
+    ],
+    "0x3a4": [
+      {
+        "has_exceptional_factor": true,
+        "left": "0x89",
+        "left_types": [
+          "AA",
+          "AT3",
+          "T3T3"
+        ],
+        "right": "0x3a4",
+        "right_types": [
+          "T2T2",
+          "T2T3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": false,
+        "left": "0xa4",
+        "left_types": [
+          "T2T2",
+          "T2T3",
+          "T3T3"
+        ],
+        "right": "0x389",
+        "right_types": [
+          "AA",
+          "AT3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x211",
+        "left_types": [
+          "AA",
+          "AT4",
+          "T4T4"
+        ],
+        "right": "0x3c4",
+        "right_types": [
+          "T2T2",
+          "T2T4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": false,
+        "left": "0x244",
+        "left_types": [
+          "T2T2",
+          "T2T4",
+          "T4T4"
+        ],
+        "right": "0x391",
+        "right_types": [
+          "AA",
+          "AT4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": false,
+        "left": "0x389",
+        "left_types": [
+          "AA",
+          "AT3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0xa4",
+        "right_types": [
+          "T2T2",
+          "T2T3",
+          "T3T3"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x389",
+        "left_types": [
+          "AA",
+          "AT3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x3a4",
+        "right_types": [
+          "T2T2",
+          "T2T3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": false,
+        "left": "0x391",
+        "left_types": [
+          "AA",
+          "AT4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x244",
+        "right_types": [
+          "T2T2",
+          "T2T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x391",
+        "left_types": [
+          "AA",
+          "AT4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x3c4",
+        "right_types": [
+          "T2T2",
+          "T2T4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x3a4",
+        "left_types": [
+          "T2T2",
+          "T2T3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x89",
+        "right_types": [
+          "AA",
+          "AT3",
+          "T3T3"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x3a4",
+        "left_types": [
+          "T2T2",
+          "T2T3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x389",
+        "right_types": [
+          "AA",
+          "AT3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x3c4",
+        "left_types": [
+          "T2T2",
+          "T2T4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x211",
+        "right_types": [
+          "AA",
+          "AT4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x3c4",
+        "left_types": [
+          "T2T2",
+          "T2T4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x391",
+        "right_types": [
+          "AA",
+          "AT4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      }
+    ],
+    "0x3c4": [
+      {
+        "has_exceptional_factor": true,
+        "left": "0x89",
+        "left_types": [
+          "AA",
+          "AT3",
+          "T3T3"
+        ],
+        "right": "0x3c4",
+        "right_types": [
+          "T2T2",
+          "T2T4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": false,
+        "left": "0xa4",
+        "left_types": [
+          "T2T2",
+          "T2T3",
+          "T3T3"
+        ],
+        "right": "0x391",
+        "right_types": [
+          "AA",
+          "AT4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x211",
+        "left_types": [
+          "AA",
+          "AT4",
+          "T4T4"
+        ],
+        "right": "0x3a4",
+        "right_types": [
+          "T2T2",
+          "T2T3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": false,
+        "left": "0x244",
+        "left_types": [
+          "T2T2",
+          "T2T4",
+          "T4T4"
+        ],
+        "right": "0x389",
+        "right_types": [
+          "AA",
+          "AT3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": false,
+        "left": "0x389",
+        "left_types": [
+          "AA",
+          "AT3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x244",
+        "right_types": [
+          "T2T2",
+          "T2T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x389",
+        "left_types": [
+          "AA",
+          "AT3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x3c4",
+        "right_types": [
+          "T2T2",
+          "T2T4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": false,
+        "left": "0x391",
+        "left_types": [
+          "AA",
+          "AT4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0xa4",
+        "right_types": [
+          "T2T2",
+          "T2T3",
+          "T3T3"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x391",
+        "left_types": [
+          "AA",
+          "AT4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x3a4",
+        "right_types": [
+          "T2T2",
+          "T2T3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x3a4",
+        "left_types": [
+          "T2T2",
+          "T2T3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x211",
+        "right_types": [
+          "AA",
+          "AT4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x3a4",
+        "left_types": [
+          "T2T2",
+          "T2T3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x391",
+        "right_types": [
+          "AA",
+          "AT4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x3c4",
+        "left_types": [
+          "T2T2",
+          "T2T4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x89",
+        "right_types": [
+          "AA",
+          "AT3",
+          "T3T3"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x3c4",
+        "left_types": [
+          "T2T2",
+          "T2T4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x389",
+        "right_types": [
+          "AA",
+          "AT3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      }
+    ],
+    "0x53": [
+      {
+        "has_exceptional_factor": true,
+        "left": "0x2b",
+        "left_types": [
+          "AA",
+          "AT2",
+          "AT3",
+          "T2T3"
+        ],
+        "right": "0x211",
+        "right_types": [
+          "AA",
+          "AT4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x2b",
+        "left_types": [
+          "AA",
+          "AT2",
+          "AT3",
+          "T2T3"
+        ],
+        "right": "0x391",
+        "right_types": [
+          "AA",
+          "AT4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x53",
+        "left_types": [
+          "AA",
+          "AT2",
+          "AT4",
+          "T2T4"
+        ],
+        "right": "0x89",
+        "right_types": [
+          "AA",
+          "AT3",
+          "T3T3"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x53",
+        "left_types": [
+          "AA",
+          "AT2",
+          "AT4",
+          "T2T4"
+        ],
+        "right": "0x389",
+        "right_types": [
+          "AA",
+          "AT3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x89",
+        "left_types": [
+          "AA",
+          "AT3",
+          "T3T3"
+        ],
+        "right": "0x53",
+        "right_types": [
+          "AA",
+          "AT2",
+          "AT4",
+          "T2T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x211",
+        "left_types": [
+          "AA",
+          "AT4",
+          "T4T4"
+        ],
+        "right": "0x2b",
+        "right_types": [
+          "AA",
+          "AT2",
+          "AT3",
+          "T2T3"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x389",
+        "left_types": [
+          "AA",
+          "AT3",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x53",
+        "right_types": [
+          "AA",
+          "AT2",
+          "AT4",
+          "T2T4"
+        ]
+      },
+      {
+        "has_exceptional_factor": true,
+        "left": "0x391",
+        "left_types": [
+          "AA",
+          "AT4",
+          "T3T3",
+          "T3T4",
+          "T4T4"
+        ],
+        "right": "0x2b",
+        "right_types": [
+          "AA",
+          "AT2",
+          "AT3",
+          "T2T3"
+        ]
+      }
+    ]
+  },
+  "orbit_representatives": [
+    {
+      "orbit_size": 10,
+      "type": "AA",
+      "word": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "orbit_size": 60,
+      "type": "AT2",
+      "word": [
+        3,
+        3,
+        5,
+        5
+      ]
+    },
+    {
+      "orbit_size": 30,
+      "type": "T2T2",
+      "word": [
+        3,
+        3,
+        12,
+        12
+      ]
+    },
+    {
+      "orbit_size": 60,
+      "type": "AT3",
+      "word": [
+        3,
+        5,
+        3,
+        5
+      ]
+    },
+    {
+      "orbit_size": 60,
+      "type": "AT4",
+      "word": [
+        3,
+        5,
+        5,
+        3
+      ]
+    },
+    {
+      "orbit_size": 120,
+      "type": "T2T3",
+      "word": [
+        3,
+        5,
+        10,
+        12
+      ]
+    },
+    {
+      "orbit_size": 120,
+      "type": "T2T4",
+      "word": [
+        3,
+        5,
+        12,
+        10
+      ]
+    },
+    {
+      "orbit_size": 30,
+      "type": "T3T3",
+      "word": [
+        3,
+        12,
+        3,
+        12
+      ]
+    },
+    {
+      "orbit_size": 120,
+      "type": "T3T4",
+      "word": [
+        3,
+        12,
+        5,
+        10
+      ]
+    },
+    {
+      "orbit_size": 30,
+      "type": "T4T4",
+      "word": [
+        3,
+        12,
+        12,
+        3
+      ]
+    }
+  ],
+  "ordered_boundary_words": 640,
+  "published_lemma_admissible_nonempty_signatures": 259,
+  "schema": "four-pole-two-plus-two-algebra-v1",
+  "scope": "Exact boundary-orbit algebra plus MMT Lemmas 3.4--3.5 only; admissible masks are not asserted graph-realizable.",
+  "singleton_composition_table": [
+    [
+      [
+        "AA"
+      ],
+      [
+        "AT2"
+      ],
+      [
+        "T2T2"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    [
+      [
+        "AT2"
+      ],
+      [
+        "AA",
+        "AT2",
+        "T2T2"
+      ],
+      [
+        "AT2",
+        "T2T2"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    [
+      [
+        "T2T2"
+      ],
+      [
+        "AT2",
+        "T2T2"
+      ],
+      [
+        "AA",
+        "AT2"
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    [
+      [],
+      [],
+      [],
+      [
+        "AT3"
+      ],
+      [
+        "AT4"
+      ],
+      [
+        "T2T3"
+      ],
+      [
+        "T2T4"
+      ],
+      [],
+      [],
+      []
+    ],
+    [
+      [],
+      [],
+      [],
+      [
+        "AT4"
+      ],
+      [
+        "AT3"
+      ],
+      [
+        "T2T4"
+      ],
+      [
+        "T2T3"
+      ],
+      [],
+      [],
+      []
+    ],
+    [
+      [],
+      [],
+      [],
+      [
+        "T2T3"
+      ],
+      [
+        "T2T4"
+      ],
+      [
+        "AT3",
+        "T2T3"
+      ],
+      [
+        "AT4",
+        "T2T4"
+      ],
+      [],
+      [],
+      []
+    ],
+    [
+      [],
+      [],
+      [],
+      [
+        "T2T4"
+      ],
+      [
+        "T2T3"
+      ],
+      [
+        "AT4",
+        "T2T4"
+      ],
+      [
+        "AT3",
+        "T2T3"
+      ],
+      [],
+      [],
+      []
+    ],
+    [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [
+        "T3T3"
+      ],
+      [
+        "T3T4"
+      ],
+      [
+        "T4T4"
+      ]
+    ],
+    [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [
+        "T3T4"
+      ],
+      [
+        "T3T3",
+        "T3T4",
+        "T4T4"
+      ],
+      [
+        "T3T4"
+      ]
+    ],
+    [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [
+        "T4T4"
+      ],
+      [
+        "T3T4"
+      ],
+      [
+        "T3T3"
+      ]
+    ]
+  ]
+}

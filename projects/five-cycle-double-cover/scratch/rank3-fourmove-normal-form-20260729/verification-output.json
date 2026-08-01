@@ -1,0 +1,44 @@
+{
+  "canonical_lift_audit": {
+    "classification": {
+      "component_parity_blocker": 672,
+      "local_blocker": 1176
+    },
+    "dependency_weight_histogram": {
+      "2": 1008,
+      "3": 672,
+      "4": 168
+    },
+    "vertex_demand_weight_histogram": {
+      "0": 1848
+    }
+  },
+  "classification": "EXACT_RANK3_FOUR_MOVE_NORMAL_FORM_AUDIT",
+  "conclusion": "all 1848 ordered spanning four-tuples are blocked: 1176 locally and 672 by free-component parity",
+  "difference_rank": 3,
+  "order": 890,
+  "ordered_rank_three_triples": {
+    "legal": 0,
+    "spanning_ordered_triples": 168
+  },
+  "scope": "fixed-vector switches on arbitrary Eulerian supports; every intermediate flow required nowhere-zero",
+  "scrambled_lift_audit": {
+    "classification": {
+      "component_parity_blocker": 672,
+      "local_blocker": 1176
+    },
+    "dependency_weight_histogram": {
+      "2": 1008,
+      "3": 672,
+      "4": 168
+    },
+    "vertex_demand_weight_histogram": {
+      "554": 1848
+    }
+  },
+  "scrambled_lift_odd_demand_vertices": 554,
+  "size": 1335,
+  "source_certificate_sha256": "450a066619b5b21f7bf64ca239b9f2798219af6b695ee619bfbf844883e25476",
+  "source_labels_sha256": "441f2c328ff9631c3a7c9fe48ef39c6b029297a66676d7214131671dfc72b863",
+  "tiny_component_criterion_instances": 16384
+}

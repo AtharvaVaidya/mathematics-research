@@ -1,0 +1,4 @@
+>A planarg -u countermodel-order144.g6 /dev/null
+ 1 graphs input
+ 0 graphs planar
+ cpu = 0.00 sec.  nonplanar:0.356

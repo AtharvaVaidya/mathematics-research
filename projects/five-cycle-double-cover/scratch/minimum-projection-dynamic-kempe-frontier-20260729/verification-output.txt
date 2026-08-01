@@ -1,0 +1,4 @@
+K33_EDGE_DELETED_POLE proper_colourings=12 equal_terminal_colour=yes kempe_orbits=2 orbit_sizes=6,6 boundary_orbit_reflecting=yes
+CHAIN_DISTANCE copies=1..8 values=5,9,13,17,21,25,29,33 formula=4r+1
+TWO_TERMINAL_ONE_CIRCUIT pairing_counts=2:1,4:3,6:15,8:105,10:945,12:10395,14:135135 all_clean=yes
+PASS: the orbit-reflecting pole and the universal direct-cleaning construction pass all finite local audits

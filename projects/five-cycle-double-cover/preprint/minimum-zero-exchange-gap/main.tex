@@ -1,0 +1,649 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\Zer}{\operatorname{Z}}
+\newcommand{\etaext}{\eta}
+
+\title{An Unbounded Additive Gap in a Minimum-Zero\\
+Approach to Five-Cycle Double Covers}
+\author{Atharva Vaidya\thanks{Draft prepared with substantial use of
+AI systems.  See the disclosure in Section~\ref{sec:ai}.}}
+\date{Draft of July 28, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\textbf{Scope warning.}
+This paper does \emph{not} prove or disprove the Five-Cycle Double Cover
+Conjecture.  It disproves an unrestricted auxiliary assertion that was
+proposed as one possible route to that conjecture.  Every graph constructed
+here has an explicit five-cycle double cover.
+}}
+\end{center}
+
+\begin{abstract}
+For a cubic graph, a useful reformulation of the five-cycle double cover
+problem asks for a matching that is simultaneously the exact zero set of an
+\(\F_2^2\)-flow and the intersection of two binary cycles.  A natural
+proof strategy is to minimize the number of zero edges first and then try
+to extend a minimum exact-zero matching to such a certificate.  We give a
+certified \(130\)-vertex counterexample to this strategy: its minimum
+exact-zero matching size is \(5\), whereas every matching/flow/two-cycle
+certificate has size at least \(6\), and one of size \(6\) exists.
+We then prove an elementary factorization theorem for two-edge sums.
+Iterating the sum gives connected simple bridgeless cubic graphs \(G_n\)
+with
+\[
+ r_f(G_n)=r_M(G_n)=5\cdot2^n,\qquad
+ \eta(G_n)=6\cdot2^n.
+\]
+Thus the additive extension gap is unbounded.  The infinite-family
+argument is human-checkable; the finite base statement is backed by
+explicit positive witnesses and LRAT certificates checked by two
+independent proof checkers.
+\end{abstract}
+
+\section{Introduction and exact scope}
+
+A binary cycle of a finite graph is an edge set having even incidence at
+every vertex.  A standard five-cycle double cover (five-CDC) is an ordered
+list of five binary cycles such that every edge belongs to exactly two
+members of the list.  Empty members are allowed, so this convention also
+expresses ``at most five''.  The Five-Cycle Double Cover Conjecture asserts
+that every finite bridgeless graph has such a cover.  The conjecture is
+due independently to Celmins and Preissmann; a current exposition of the
+resolved unbounded-size cycle-double-cover problem explicitly records the
+five-member strengthening as still open~\cite{Oum2026}.
+
+This note studies only a proposed proof route for cubic graphs.  The route
+starts with an \(\F_2^2\)-flow having as few zero edges as possible,
+requires those zero edges to form a matching, and asks that the matching
+extend to the intersection of two binary cycles.  The unrestricted
+assertion that some cardinality-minimum exact-zero matching always extends
+is false.  The purpose of this note is to make that negative result, and
+its amplification under two-edge sums, precise and reproducible.
+
+The result has two parts.
+\begin{enumerate}
+\item A finite, computer-assisted base theorem supplies a \(130\)-vertex
+graph with extension gap \(6-5=1\).
+\item A self-contained two-edge-sum theorem proves that both minima
+factor exactly on identical rooted copies.  This turns the base graph into
+an infinite family with unbounded additive gap.
+\end{enumerate}
+Neither part produces a five-CDC counterexample.  Indeed the size-six
+certificate on the base graph, and its iterated gluing, give explicit
+five-CDCs.
+
+\paragraph{Publication status.}
+This is a research draft, not a priority claim.  The literature comparison
+in Section~\ref{sec:related} is sufficient to delimit the claim made here,
+but a specialist review and independent human verification of the finite
+certificate package are still required before submission.
+
+\section{Definitions}
+
+Throughout, graphs are finite and loopless.  The constructed graphs are
+simple, although the definitions make sense for loopless multigraphs.
+For an edge set \(D\), write \(\partial D\) for the set of vertices
+incident with an odd number of edges of \(D\).  Thus \(D\) is a binary
+cycle exactly when \(\partial D=\varnothing\).
+
+\begin{definition}
+An \(\F_2^2\)-flow on a graph \(G\) is a map
+\(\phi:E(G)\to\F_2^2\) satisfying
+\[
+ \bigoplus_{e\ni v}\phi(e)=0
+\]
+at every vertex \(v\).  Its exact zero set is
+\(\Zer(\phi)=\{e:\phi(e)=0\}\).
+\end{definition}
+
+\begin{definition}
+For a cubic graph \(G\), define
+\[
+\begin{split}
+r_f(G)&=\min_{\phi}|\Zer(\phi)|,\\
+r_M(G)&=\min_{\substack{\phi\\ \Zer(\phi)\text{ a matching}}}
+              |\Zer(\phi)|.
+\end{split}
+\]
+If the second feasible set is empty, set \(r_M(G)=+\infty\).
+\end{definition}
+
+\begin{definition}
+A matching/four-flow certificate on \(G\) is a quadruple
+\((M,A,B,\phi)\) such that
+\begin{enumerate}
+\item \(M\) is a matching;
+\item \(A\) and \(B\) are binary cycles;
+\item \(A\cap B=M=\Zer(\phi)\); and
+\item \(\phi\) is an \(\F_2^2\)-flow.
+\end{enumerate}
+Let
+\[
+ \etaext(G)=\min\{|M|:(M,A,B,\phi)
+       \text{ is a matching/four-flow certificate}\},
+\]
+with value \(+\infty\) if there is no certificate.
+\end{definition}
+
+Plainly \(r_f(G)\le r_M(G)\le\etaext(G)\) whenever the quantities on the
+right are finite.
+
+\begin{proposition}[standard certificate equivalence {\cite[Corollary
+0.6]{HoffmannOstenhof2013}}]
+\label{prop:equivalence}
+A finite loopless cubic multigraph has a standard five-CDC if and only if
+it has a matching/four-flow certificate.
+\end{proposition}
+
+For completeness, the direction used below can be checked directly.
+Given \((M,A,B,\phi)\), put \(D_0=A\triangle B\).  On \(G-M\), represent
+the three nonzero values of \(\F_2^2\) by
+\[
+ s(1)=1100,\qquad s(2)=1010,\qquad s(3)=0110,
+\]
+and put \(k=1111\).  If \(\ell(y)\) denotes coordinate zero of \(s(y)\),
+define
+\[
+ h(e)=1_{D_0}(e)+\ell(\phi(e)),\qquad
+ d(e)=s(\phi(e))+h(e)k.
+\]
+Both summands defining \(h\) are binary cycles, so \(d\) is a
+four-coordinate flow.  Each \(d(e)\) has weight two, and its coordinate
+zero is \(1_{D_0}(e)\).  If \(D_0,D_1,D_2,D_3\) are the coordinate
+supports, then
+\[
+ A,\ B,\ D_1,\ D_2,\ D_3
+\]
+double-cover every edge.  Conversely, pair-label the edges of a five-CDC;
+at each cubic vertex the three labels form a triangle in \(K_5\).
+Taking the intersection of two fixed coordinates gives the required
+matching, and quotienting the remaining four even coordinates by
+\(\langle1111\rangle\) gives the required \(\F_2^2\)-flow.
+
+\section{The certified 130-vertex base graph}
+\label{sec:base}
+
+\subsection{Explicit construction}
+
+Let \(Q\) be the \(60\)-vertex cubic graph whose graph6 encoding is
+\begin{verbatim}
+{??????O@?B?D?EGGSAK?H_?HG?Ao@A_??????????????C?G?C???M???B_???
+[???????????????????O?C??C????B_????M?????[_???????????????????????
+C??_???O?????B_?????B_?????@q?????????????????????????????C???G???
+C???????M???????B_???????[_??????????????????????????????????O????
+G???C????????B_????????M?????????[
+\end{verbatim}
+where the displayed line breaks are to be removed.  Mark the five edges
+\[
+ (22,26),\ (30,34),\ (38,42),\ (46,50),\ (54,58).
+\]
+Take two disjoint copies of \(Q\).  Subdivide the five marked edges in
+each copy, respecting the displayed order, and join corresponding new
+subdivision vertices.  Call the resulting graph \(G_0\).  It has
+\(130\) vertices and \(195\) edges.  The five joining edges form a
+matching.
+
+The ancillary package
+\begin{center}
+\texttt{search/minimum-zero-exchange-countermodel-130v-20260727/}
+\end{center}
+contains the full edge list, graph6 encoding, positive witnesses, two CNF
+instances, two LRAT proofs, a generator, and an independent verifier.
+
+\begin{theorem}[certified base theorem]
+\label{thm:base}
+The graph \(G_0\) is simple, connected, bridgeless, and cubic, and
+\[
+ r_f(G_0)=r_M(G_0)=5,\qquad \etaext(G_0)=6.
+\]
+Moreover \(G_0\) has an explicit standard five-CDC.
+\end{theorem}
+
+\begin{proof}[Certificate proof]
+The retained flow has exact zero set equal to the five joining edges.
+Direct incidence checks verify flow conservation and verify that this zero
+set is a matching.  Thus \(r_M(G_0)\le5\).
+
+The first CNF asks for an arbitrary \(\F_2^2\)-flow with at most four
+zero edges.  Its LRAT proof of unsatisfiability is accepted by both
+\texttt{lrat-check} and CakeML \texttt{cake\_lpr}.  Hence
+\(r_f(G_0)\ge5\).  Since \(r_f\le r_M\), the two inequalities prove
+\[
+ r_f(G_0)=r_M(G_0)=5.
+\]
+
+The second CNF is the complete matching/four-flow encoding with
+\(|M|\le5\).  Its LRAT proof is accepted by the same two checkers, so
+\(\etaext(G_0)\ge6\).  A retained size-six witness directly verifies
+\[
+ M=A\cap B=\Zer(\phi),
+\]
+the matching condition, the two binary-cycle conditions, and flow
+conservation.  Therefore \(\etaext(G_0)=6\).  The package also stores the
+five pair labels obtained by the reverse construction in
+Proposition~\ref{prop:equivalence}; direct parity checking verifies that
+the five coordinate supports double-cover every edge.
+
+Finally, the verifier checks simplicity, cubicity, connectedness, and
+bridgelessness directly from the reconstructed edge list.
+\end{proof}
+
+\begin{remark}
+The computer-assisted part of Theorem~\ref{thm:base} is finite and
+certificate-producing.  The positive assertions are checked directly.
+The two negative assertions rely on LRAT proofs, not on trusting the SAT
+solver that found them.  Appendix~\ref{sec:reproduce} gives replay
+instructions and fixed hashes.
+\end{remark}
+
+\section{Exact factorization across a two-edge sum}
+
+Let \(G_1,G_2\) be disjoint connected bridgeless cubic graphs with
+distinguished edges
+\[
+ e_1=u_1v_1,\qquad e_2=u_2v_2.
+\]
+Delete \(e_1,e_2\) and add
+\[
+ f=u_1u_2,\qquad g=v_1v_2.
+\]
+Denote the resulting graph by \(G_1\#_2G_2\).  The crossed pairing has the
+same properties.
+
+\begin{lemma}[graph structure]
+\label{lem:structure}
+If the factors are connected, bridgeless, and cubic, then
+\(G_1\#_2G_2\) is connected, bridgeless, and cubic.  If the factors are
+simple, the sum is simple.
+\end{lemma}
+
+\begin{proof}
+Cubicity, simplicity, and connectedness are immediate.  Each new edge
+lies on the cycle consisting of \(f,g\) and a \(u_i\)-to-\(v_i\) path in
+each \(G_i-e_i\); such paths exist because the root edges are not bridges.
+For an old edge \(h\), choose a cycle of its factor containing \(h\).
+If that cycle avoids the deleted root edge, it survives.  Otherwise,
+replace the root edge on the cycle by the path through the other factor
+and \(f,g\).  Hence every edge of the sum lies on a cycle, so the sum is
+bridgeless.
+\end{proof}
+
+\begin{lemma}[cut parity]
+\label{lem:cut}
+Let \(D\) be a binary cycle in a graph and let
+\(\{f,g\}\) be an edge cut.  Then \(D\) contains either both of \(f,g\)
+or neither.
+\end{lemma}
+
+\begin{proof}
+Sum the even-degree equations of \(D\) over one shore of the cut.
+Internal incidences cancel, leaving
+\(1_D(f)+1_D(g)=0\pmod2\).
+\end{proof}
+
+\begin{lemma}[flow restriction and zero count]
+\label{lem:flow}
+Let \(H=G_1\#_2G_2\), and let \(\phi\) be an \(\F_2^2\)-flow on \(H\).
+Then \(\phi(f)=\phi(g)=a\) for some \(a\in\F_2^2\).  Restoring \(e_i\)
+with value \(a\) gives a flow \(\phi_i\) on \(G_i\), and
+\[
+ |\Zer(\phi)|=|\Zer(\phi_1)|+|\Zer(\phi_2)|.
+\]
+If \(\Zer(\phi)\) is a matching, then each \(\Zer(\phi_i)\) is a matching.
+\end{lemma}
+
+\begin{proof}
+Sum the flow equations over \(V(G_1)\).  Every internal edge appears
+twice and cancels, leaving \(\phi(f)+\phi(g)=0\); in characteristic two
+this says \(\phi(f)=\phi(g)=a\).  Assigning \(a\) to each restored root
+edge makes the endpoint equations in each factor agree with the endpoint
+equations in \(H\).
+
+If \(a\ne0\), neither cut edge nor either restored root is zero.  If
+\(a=0\), both cut edges and both restored roots are zero.  In either case,
+the number of zeros in \(H\) is the sum of the numbers in the two
+restored factors.
+
+For the matching assertion, only the case \(a=0\) needs comment.  Since
+the two zero cut edges meet the four root endpoints, no other zero edge of
+\(\phi\) meets any of those endpoints.  Replacing the two cut edges by
+one root edge in each factor therefore preserves the matching condition.
+\end{proof}
+
+\begin{lemma}[certificate restriction]
+\label{lem:certificate}
+Every matching/four-flow certificate on \(H=G_1\#_2G_2\) restricts to a
+matching/four-flow certificate on each factor, and its matching size is
+the sum of the two restricted matching sizes.
+\end{lemma}
+
+\begin{proof}
+Let \((M,A,B,\phi)\) be a certificate.  By
+Lemma~\ref{lem:cut}, each of \(A,B\) uses both cut edges or neither.
+Restore \(e_i\) in each factor with the common membership bit for \(A\),
+the common membership bit for \(B\), and the common flow value supplied
+by Lemma~\ref{lem:flow}.  Binary-cycle parity and flow conservation are
+restored at every root endpoint.  On a root edge the identities
+\[
+ 1_M=1_A1_B,\qquad
+ 1_M=1_{\{\phi=0\}}
+\]
+hold because they held with the same states on \(f\) and \(g\).
+Lemma~\ref{lem:flow} preserves the matching condition and proves the
+additive count.
+\end{proof}
+
+\begin{theorem}[identical-rooted factorization]
+\label{thm:factor}
+Let \(G\) be a connected bridgeless cubic graph with a distinguished edge,
+and let \(H=G\#_2G\) be formed from two identically rooted copies.  Then
+\[
+ r_f(H)=2r_f(G).
+\]
+If \(r_M(G)<\infty\), then
+\[
+ r_M(H)=2r_M(G).
+\]
+If \(\etaext(G)<\infty\), then
+\[
+ \etaext(H)=2\etaext(G).
+\]
+\end{theorem}
+
+\begin{proof}
+Lemma~\ref{lem:flow}, applied to an arbitrary flow on \(H\), gives
+\[
+ r_f(H)\ge2r_f(G).
+\]
+Take a minimum flow on \(G\), put identical copies on the two factors,
+delete the two root edges, and give both new edges the common old root
+value.  The endpoint equations hold and the zero-count identity gives
+the reverse inequality.
+
+If the zero set is required to be a matching, the same restriction and
+gluing arguments preserve that condition by Lemma~\ref{lem:flow}.  This
+proves the statement for \(r_M\).
+
+Lemma~\ref{lem:certificate} gives
+\(\etaext(H)\ge2\etaext(G)\).  Conversely, glue two identical copies of a
+minimum certificate.  The two cycle-membership bits and the two flow bits
+on the roots agree by construction, so replacing the roots with \(f,g\)
+restores all parity equations and all certificate identities.  The
+matching count doubles.
+\end{proof}
+
+\begin{remark}
+For two nonisomorphic factors, the three restriction arguments still give
+the corresponding additive lower bounds.  Equality can fail if minimum
+objects in the two factors have incompatible states on their chosen root
+edges.  Identical rooted copies avoid this compatibility issue.
+\end{remark}
+
+\section{The infinite family}
+
+Set \(G_0\) equal to the graph of Theorem~\ref{thm:base}.  Having defined
+a rooted \(G_n\), form \(G_{n+1}\) from two identically rooted copies by
+the two-edge sum, and choose any surviving edge as the next distinguished
+root.
+
+\begin{corollary}[unbounded additive extension gap]
+\label{cor:family}
+For every \(n\ge0\), the graph \(G_n\) is finite, simple, connected,
+bridgeless, and cubic, with
+\[
+\boxed{
+ r_f(G_n)=r_M(G_n)=5\cdot2^n,\qquad
+ \etaext(G_n)=6\cdot2^n.
+}
+\]
+In particular,
+\[
+ \etaext(G_n)-r_M(G_n)=2^n
+\]
+is unbounded.  The graph \(G_n\) has \(130\cdot2^n\) vertices and
+\(195\cdot2^n\) edges.
+\end{corollary}
+
+\begin{proof}
+The structural assertions follow inductively from
+Lemma~\ref{lem:structure}.  The three formulas follow by applying
+Theorem~\ref{thm:factor} at every step, starting from
+Theorem~\ref{thm:base}.  A two-edge sum deletes two edges and adds two, so
+both the vertex and edge counts double.
+\end{proof}
+
+\begin{corollary}
+Every \(G_n\) has a standard five-CDC.
+\end{corollary}
+
+\begin{proof}
+The finite value of \(\etaext(G_n)\) supplies a matching/four-flow
+certificate.  Apply Proposition~\ref{prop:equivalence}.
+\end{proof}
+
+\section{What the construction does not show}
+
+The family is a counterexample family only to the unrestricted
+minimum-zero extension strategy.  It is not a counterexample family to
+the Five-Cycle Double Cover Conjecture.
+
+For \(n\ge1\), the top-level composition exposes a cyclic two-edge cut.
+The \(130\)-vertex base graph itself has girth \(4\) and cyclic
+edge-connectivity \(3\).  Consequently this construction does not address
+a version of the auxiliary assertion restricted to cyclically
+four-edge-connected, high-girth graphs arising in standard
+minimum-counterexample reductions.
+
+The result establishes an unbounded \emph{additive} gap.  The ratio
+\(\etaext(G_n)/r_M(G_n)=6/5\) is constant, so no claim of an unbounded
+multiplicative gap is made.
+
+The base theorem is computer-assisted.  The infinite factorization proof
+does not depend on a solver, but its unconditional numerical starting
+values depend on the correctness of the explicit finite witnesses, CNF
+encodings, LRAT certificates, and proof-checker implementations.
+
+\section{Related work and novelty boundary}
+\label{sec:related}
+
+The matching/four-flow characterization is not new.  Hoffmann-Ostenhof
+proved that a cubic graph has a five-CDC if and only if it has a matching
+\(M\), a nowhere-zero \(4\)-flow on \(G-M\), and two cycles whose exact
+intersection is \(M\)~\cite[Corollary 0.6]{HoffmannOstenhof2013}.  Zhang
+gave a broader characterization of five-cycle double covers through
+covering subgraphs with nowhere-zero \(4\)-flows~\cite{Zhang1996}, and
+Liu, Hao, Luo, and Zhang developed a \(4\)-flow and Catlin-reduction
+approach for five-CDCs~\cite{LiuEtAl2023}.  Proposition~\ref{prop:equivalence}
+is therefore included as the exact certificate language used by the
+computation, not as a new existence characterization.
+
+Flow resistance was formalized as an edge-uncolourability measure by
+Fiol, Mazzuoccolo, and Steffen~\cite{FiolEtAl2018}.  Allie,
+M\'a\v{c}ajov\'a, and \v{S}koviera constructed snarks with resistance
+\(n\) and flow resistance
+\(2n\)~\cite{AllieEtAl2022}, and later showed that the ratio between those
+two established parameters can be arbitrarily large~\cite{AllieEtAl2024}.
+Those results concern \(r_f\) versus ordinary resistance.  The parameter
+\(\etaext\) here instead measures the least exact-zero matching that also
+extends to the two-cycle certificate required for a five-CDC.
+
+In the sources checked for this draft, we did not find the parameter
+\(\etaext\), the assertion \(r_M=\etaext\), or the exact two-edge-sum
+factorization in Theorem~\ref{thm:factor}.  The defensible contribution is
+therefore narrow: a certificate-backed counterexample to that auxiliary
+assertion and a human-checkable composition theorem making the additive
+gap unbounded.  This is an apparent novelty statement, not a claim of
+priority.  A domain expert should still check older flow, snark
+superposition, and cycle-double-cover literature before submission.
+
+\section{Reproduction and certificate boundary}
+\label{sec:reproduce}
+
+From the project root, run
+\begin{verbatim}
+cd search/minimum-zero-exchange-countermodel-130v-20260727
+shasum -a 256 -c SHA256SUMS
+python3 verify.py
+\end{verbatim}
+The verifier reconstructs the graph independently from the \(60\)-vertex
+core and marked edges, checks graph structure and every positive witness,
+regenerates both CNFs independently, compares them clause-for-clause with
+the retained instances, and invokes both \texttt{lrat-check} and CakeML
+\texttt{cake\_lpr} on both retained LRAT proofs.
+
+The critical retained hashes are:
+\begin{center}
+\scriptsize
+\begin{tabular}{ll}
+\toprule
+Artifact & SHA-256\\
+\midrule
+\texttt{graph.json} &
+\texttt{a0cea6013ed45534441d072b8579792a643a6ad3b67f0948ec8a70eb0c5156b2}\\
+\texttt{witness.json} &
+\texttt{3dd958be4f8a6dbd88c2fbdca04e9904562468193db5e0c74f51f885adcfde79}\\
+\texttt{flow-at-most-four-zero.cnf} &
+\texttt{60c5c6a46aebf646d6d55c633052df56aa459aaf28a144b343a58bda0bf08397}\\
+\texttt{flow-at-most-four-zero.lrat} &
+\texttt{462544fce1c1d70797445136eaa9319aba159e42ae622ce9d229c662a909d626}\\
+\texttt{extension-at-most-five.cnf} &
+\texttt{df5f7e54866626c39c2f9c5a91b51a1ac4024174413707c1c700a4f319b6a6c8}\\
+\texttt{extension-at-most-five.lrat} &
+\texttt{e4a87af680d1a33d72f7e6825ab2f31f6a600eb87d200461776df51c5b5dd687}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The first CNF has two flow-bit variables and one zero-indicator per edge.
+It enforces both vertex-parity equations, the equivalence
+\[
+ z_e\longleftrightarrow
+   (\neg p_e\land\neg q_e),
+\]
+and \(\sum_ez_e\le4\).
+
+The second CNF has variables
+\[
+ m_e,\ a_e,\ b_e,\ p_e,\ q_e
+\]
+per edge.  It enforces
+\[
+ m_e\longleftrightarrow(a_e\land b_e),\qquad
+ m_e\longleftrightarrow(\neg p_e\land\neg q_e),
+\]
+matching clauses
+\(\neg m_e\lor\neg m_{e'}\) for incident pairs, four vertex-parity
+equations for \(a,b,p,q\), and \(\sum_em_e\le5\).
+Parity is expanded by its complete falsifying truth table; the cardinality
+constraints use a sequential counter.  Thus satisfiability of the second
+instance is exactly existence of a matching/four-flow certificate of size
+at most five.
+
+The additional script
+\begin{center}
+\texttt{preprint/minimum-zero-exchange-gap/audit\_two\_sum.py}
+\end{center}
+independently checks the positive base witnesses and, for every one of the
+\(195\) possible root edges, constructs the two-copy sum and checks the
+glued size-ten minimum-flow witness, the glued size-twelve certificate,
+and the glued five-CDC.
+
+\section{AI-use disclosure}
+\label{sec:ai}
+
+This research and this manuscript were produced with substantial
+assistance from OpenAI Codex agents operating under human direction.  AI
+systems participated in conjecture formulation, computational search,
+construction discovery, SAT and certificate encoding, proof exploration,
+independent-code drafting, audit suggestions, and substantial portions of
+the prose and \LaTeX{} drafting.  The two-edge-sum proof was proposed and
+checked in this AI-assisted process; it should not be represented as a
+solely human derivation.
+
+The use of AI does not replace mathematical verification.  The intended
+trust boundary is explicit:
+\begin{enumerate}
+\item The factorization theorem and infinite-family corollary are
+elementary arguments written in full in this paper and should be checked
+line by line by human readers.
+\item Positive finite claims reduce to public graph and witness data and
+direct parity checks.
+\item Negative finite claims reduce to fixed CNF files and fixed LRAT
+proofs.  They are replayed by two proof checkers, one of which is the
+CakeML verified checker used in the project package.
+\item The manuscript has not yet received independent specialist peer
+review.  Human verification, literature review, authorship review, and
+venue-specific AI disclosure are required before submission.
+\end{enumerate}
+Any public version should preserve this disclosure and should list the
+exact AI systems and versions if the submission venue requests them.
+
+\begin{thebibliography}{9}
+
+\bibitem{AllieEtAl2022}
+I.~Allie, E.~M\'a\v{c}ajov\'a, and M.~\v{S}koviera,
+\newblock Snarks with resistance \(n\) and flow resistance \(2n\),
+\newblock \emph{Electron. J. Combin.} 29 (2022), no.~1, Paper P1.44,
+\newblock \url{https://doi.org/10.37236/10633}.
+
+\bibitem{AllieEtAl2024}
+I.~Allie, E.~M\'a\v{c}ajov\'a, and M.~\v{S}koviera,
+\newblock Flow resistance to resistance ratios in cubic graphs,
+\newblock \emph{Discrete Appl. Math.} 342 (2024), 362--367,
+\newblock \url{https://doi.org/10.1016/j.dam.2023.09.026}.
+
+\bibitem{FiolEtAl2018}
+M.~A. Fiol, G.~Mazzuoccolo, and E.~Steffen,
+\newblock Measures of edge-uncolourability of cubic graphs,
+\newblock \emph{Electron. J. Combin.} 25 (2018), no.~4, Paper P4.54.
+
+\bibitem{HoffmannOstenhof2013}
+A.~Hoffmann-Ostenhof,
+\newblock A note on 5-cycle double covers,
+\newblock \emph{Graphs Combin.} 29 (2013), 977--979,
+\newblock \url{https://doi.org/10.1007/s00373-012-1169-8}.
+
+\bibitem{LiuEtAl2023}
+S.~Liu, R.-X.~Hao, R.~Luo, and C.-Q.~Zhang,
+\newblock 5-cycle double covers, 4-flows, and Catlin reduction,
+\newblock \emph{SIAM J. Discrete Math.} 37 (2023), 253--267,
+\newblock \url{https://doi.org/10.1137/22M1472425}.
+
+\bibitem{Oum2026}
+S.-I.~Oum,
+\newblock A proof of the cycle double cover conjecture by OpenAI:
+an exposition,
+\newblock arXiv:2607.16356v2 (2026),
+\newblock \url{https://arxiv.org/abs/2607.16356}.
+
+\bibitem{Zhang1996}
+C.-Q.~Zhang,
+\newblock Nowhere-zero 4-flows and cycle double covers,
+\newblock \emph{Discrete Math.} 154 (1996), 245--253,
+\newblock \url{https://doi.org/10.1016/0012-365X(95)00047-Z}.
+
+\end{thebibliography}
+
+\end{document}

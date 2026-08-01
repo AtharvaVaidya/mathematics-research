@@ -1,0 +1,11 @@
+ORDER m=2 rotations=1 feasible_flows=3 rotations_with_goal=1 universal_counterexamples=0
+ORDER m=3 rotations=1 feasible_flows=6 rotations_with_goal=1 universal_counterexamples=0
+ORDER m=4 rotations=3 feasible_flows=21 rotations_with_goal=3 universal_counterexamples=0
+FIXED_FLOW_COUNTEREXAMPLE m=5 order1=(0, 1, 2, 4, 3) flow=(1, 2, 1, 1, 3) rhs=(0, 0, 0, 1, 1) used0=[0, 1, 2, 3] used1=[0, 1, 2, 3]
+ORDER m=5 rotations=12 feasible_flows=60 rotations_with_goal=12 universal_counterexamples=0
+ORDER m=6 rotations=60 feasible_flows=183 rotations_with_goal=60 universal_counterexamples=0
+ORDER m=7 rotations=360 feasible_flows=546 rotations_with_goal=360 universal_counterexamples=0
+ORDER m=8 rotations=2520 feasible_flows=1641 rotations_with_goal=2520 universal_counterexamples=0
+ORDER m=9 rotations=20160 feasible_flows=4920 rotations_with_goal=20160 universal_counterexamples=0
+ORDER m=10 rotations=181440 feasible_flows=14763 rotations_with_goal=181440 universal_counterexamples=0
+PASS no universal two-vertex counterexample in searched range

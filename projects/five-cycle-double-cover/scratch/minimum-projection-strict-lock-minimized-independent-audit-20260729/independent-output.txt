@@ -1,0 +1,8 @@
+INDEPENDENT closure a0=7 a1=5 a1_support_ties=1
+INDEPENDENT locks base_extendable=1008 subsets=16384 minimum=8 minimizers=180 canonical_gap=1
+  minimizer_mask_sha256=d9ec473bf0150f0f97d574fe2895dfbcb26b22375705976bd2783de29e0b91b0
+INDEPENDENT graph order=162 edges=243 simple=1 cubic=1 bridgeless=1 global_minimum=54
+INDEPENDENT FiveCDC status=SAT direct_sha256=845668d8778e48ae55cf7373ed159519804407a6d7afeb9999fda02cf97ae8c7
+  labelled_graph6_sha256=52833c3cac5378b7af649575be8080dc435a10331e2b59f7202082467ce7ea7e
+  canonical_graph6_sha256=af07f960f5324e323e42eeb53b3a5721ef43a689ac5e09620349e34671aca5af
+PASS: independent minimized strict-lock and FiveCDC audit

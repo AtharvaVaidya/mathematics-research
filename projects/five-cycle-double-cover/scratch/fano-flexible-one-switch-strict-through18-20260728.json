@@ -1,0 +1,801 @@
+{
+  "elapsed_seconds": 88.00699629104929,
+  "first_countermodel": null,
+  "first_line_only_countermodel": {
+    "coordinate_cycle_masks": [
+      14104109,
+      57433326,
+      93711728
+    ],
+    "flow_values_by_edge": [
+      1,
+      2,
+      3,
+      3,
+      4,
+      7,
+      6,
+      2,
+      4,
+      1,
+      7,
+      6,
+      3,
+      5,
+      6,
+      4,
+      5,
+      1,
+      7,
+      2,
+      5,
+      2,
+      3,
+      5,
+      6,
+      2,
+      4
+    ],
+    "graph6": "Q???C@?GCoOoDO[?CcAO_?k?J??",
+    "initial_Oum_potential_audit": {
+      "compatibility_rows": 57,
+      "exhaustive": true,
+      "first_five_color_witness": null,
+      "first_witness": null,
+      "five_color_merge_exists": false,
+      "free_dimension_after_translation_gauge": 0,
+      "maximum_clique_size_profile": {
+        "6": 1
+      },
+      "maximum_missing_pair_matching": 2,
+      "merge_exists": false,
+      "potential_solutions_after_translation_gauge": 1,
+      "potential_solutions_before_translation_gauge": 8,
+      "potential_solutions_examined": 1,
+      "rank_after_translation_gauge": 54,
+      "stopping_criterion": "five-color",
+      "used_pair_count_profile": {
+        "19": 1
+      }
+    },
+    "post_switch_Oum_witness": {
+      "Oum_potential_audit": {
+        "compatibility_rows": 57,
+        "exhaustive": true,
+        "first_five_color_witness": {
+          "color_by_coordinate": [
+            0,
+            0,
+            1,
+            3,
+            2,
+            3,
+            0,
+            4
+          ],
+          "eight_cover_labels": [
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              1,
+              5
+            ]
+          ],
+          "free_assignment_index": 0,
+          "potential_word": 9852638250158720
+        },
+        "first_witness": {
+          "eight_cover_labels": [
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              1,
+              5
+            ]
+          ],
+          "forbidden_merge_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              5
+            ]
+          ],
+          "free_assignment_index": 0,
+          "potential_word": 9852638250158720
+        },
+        "five_color_merge_exists": true,
+        "free_dimension_after_translation_gauge": 0,
+        "maximum_clique_size_profile": {
+          "5": 1
+        },
+        "maximum_missing_pair_matching": 3,
+        "merge_exists": true,
+        "potential_solutions_after_translation_gauge": 1,
+        "potential_solutions_before_translation_gauge": 8,
+        "potential_solutions_examined": 1,
+        "rank_after_translation_gauge": 54,
+        "stopping_criterion": "five-color",
+        "used_pair_count_profile": {
+          "13": 1
+        }
+      },
+      "cycle_mask": 8389016,
+      "switch_value": 1,
+      "switched_flow": [
+        1,
+        2,
+        3,
+        2,
+        5,
+        7,
+        6,
+        3,
+        5,
+        1,
+        7,
+        6,
+        3,
+        5,
+        6,
+        4,
+        5,
+        1,
+        7,
+        2,
+        5,
+        2,
+        3,
+        4,
+        6,
+        2,
+        4
+      ]
+    }
+  },
+  "graph_rows": [
+    {
+      "cycle_space_size": 64,
+      "edges": 15,
+      "first_line_only_countermodel": null,
+      "graph6": "ICOf@pSb?",
+      "totals": {
+        "coordinate_triples": 4096,
+        "fixed_line_cleaning_success": 170,
+        "gl3_flow_orbit_representatives": 170,
+        "normalized_nowhere_zero_flows": 680,
+        "stabilizer_noncanonical_flows": 510
+      },
+      "vertices": 10
+    },
+    {
+      "cycle_space_size": 1024,
+      "edges": 27,
+      "first_line_only_countermodel": {
+        "coordinate_cycle_masks": [
+          14104109,
+          57433326,
+          93711728
+        ],
+        "flow_values_by_edge": [
+          1,
+          2,
+          3,
+          3,
+          4,
+          7,
+          6,
+          2,
+          4,
+          1,
+          7,
+          6,
+          3,
+          5,
+          6,
+          4,
+          5,
+          1,
+          7,
+          2,
+          5,
+          2,
+          3,
+          5,
+          6,
+          2,
+          4
+        ],
+        "graph6": "Q???C@?GCoOoDO[?CcAO_?k?J??",
+        "initial_Oum_potential_audit": {
+          "compatibility_rows": 57,
+          "exhaustive": true,
+          "first_five_color_witness": null,
+          "first_witness": null,
+          "five_color_merge_exists": false,
+          "free_dimension_after_translation_gauge": 0,
+          "maximum_clique_size_profile": {
+            "6": 1
+          },
+          "maximum_missing_pair_matching": 2,
+          "merge_exists": false,
+          "potential_solutions_after_translation_gauge": 1,
+          "potential_solutions_before_translation_gauge": 8,
+          "potential_solutions_examined": 1,
+          "rank_after_translation_gauge": 54,
+          "stopping_criterion": "five-color",
+          "used_pair_count_profile": {
+            "19": 1
+          }
+        },
+        "post_switch_Oum_witness": {
+          "Oum_potential_audit": {
+            "compatibility_rows": 57,
+            "exhaustive": true,
+            "first_five_color_witness": {
+              "color_by_coordinate": [
+                0,
+                0,
+                1,
+                3,
+                2,
+                3,
+                0,
+                4
+              ],
+              "eight_cover_labels": [
+                [
+                  2,
+                  3
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  1,
+                  5
+                ]
+              ],
+              "free_assignment_index": 0,
+              "potential_word": 9852638250158720
+            },
+            "first_witness": {
+              "eight_cover_labels": [
+                [
+                  2,
+                  3
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  1,
+                  5
+                ]
+              ],
+              "forbidden_merge_pairs": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  3,
+                  5
+                ]
+              ],
+              "free_assignment_index": 0,
+              "potential_word": 9852638250158720
+            },
+            "five_color_merge_exists": true,
+            "free_dimension_after_translation_gauge": 0,
+            "maximum_clique_size_profile": {
+              "5": 1
+            },
+            "maximum_missing_pair_matching": 3,
+            "merge_exists": true,
+            "potential_solutions_after_translation_gauge": 1,
+            "potential_solutions_before_translation_gauge": 8,
+            "potential_solutions_examined": 1,
+            "rank_after_translation_gauge": 54,
+            "stopping_criterion": "five-color",
+            "used_pair_count_profile": {
+              "13": 1
+            }
+          },
+          "cycle_mask": 8389016,
+          "switch_value": 1,
+          "switched_flow": [
+            1,
+            2,
+            3,
+            2,
+            5,
+            7,
+            6,
+            3,
+            5,
+            1,
+            7,
+            6,
+            3,
+            5,
+            6,
+            4,
+            5,
+            1,
+            7,
+            2,
+            5,
+            2,
+            3,
+            4,
+            6,
+            2,
+            4
+          ]
+        }
+      },
+      "graph6": "Q???C@?GCoOoDO[?CcAO_?k?J??",
+      "totals": {
+        "Oum_easy": 1264,
+        "Oum_hard": 624,
+        "coordinate_triples": 16777216,
+        "fixed_line_cleaning_success": 117072,
+        "flexible_one_switch_success": 608,
+        "gl3_flow_orbit_representatives": 118960,
+        "line_only_one_switch_countermodels": 16,
+        "no_fixed_line_cleaning": 1888,
+        "normalized_nowhere_zero_flows": 475840,
+        "post_switch_Oum_only_success": 16,
+        "stabilizer_noncanonical_flows": 356880
+      },
+      "vertices": 18
+    },
+    {
+      "cycle_space_size": 1024,
+      "edges": 27,
+      "first_line_only_countermodel": null,
+      "graph6": "Q??CA?_CCOW_Q_M?AD@A_@K?F??",
+      "totals": {
+        "Oum_easy": 2058,
+        "Oum_hard": 332,
+        "coordinate_triples": 16777216,
+        "fixed_line_cleaning_success": 116870,
+        "flexible_one_switch_success": 332,
+        "gl3_flow_orbit_representatives": 119260,
+        "no_fixed_line_cleaning": 2390,
+        "normalized_nowhere_zero_flows": 477040,
+        "stabilizer_noncanonical_flows": 357780
+      },
+      "vertices": 18
+    }
+  ],
+  "schema": "fano-flexible-one-switch-strict-snark-census-v1",
+  "scope": {
+    "claim_tested": "every Oum-hard flow has a flexible one-switch good Fano line",
+    "flow_scope": "one representative per GL(3,2) orbit",
+    "graph6_source": "search/order22-filter-census-20260725/strict-snarks-through18.g6",
+    "switch_scope": "every nonzero t and every nonempty binary cycle in G-M_t"
+  },
+  "totals": {
+    "Oum_easy": 3322,
+    "Oum_hard": 956,
+    "coordinate_triples": 33558528,
+    "fixed_line_cleaning_success": 234112,
+    "flexible_one_switch_success": 940,
+    "gl3_flow_orbit_representatives": 238390,
+    "line_only_one_switch_countermodels": 16,
+    "no_fixed_line_cleaning": 4278,
+    "normalized_nowhere_zero_flows": 953560,
+    "post_switch_Oum_only_success": 16,
+    "stabilizer_noncanonical_flows": 715170
+  }
+}

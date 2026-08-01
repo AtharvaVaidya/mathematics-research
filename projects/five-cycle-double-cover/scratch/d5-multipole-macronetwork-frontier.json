@@ -1,0 +1,221 @@
+{
+  "schema": "d5-multipole-macronetwork-frontier-v4",
+  "classification": "EXACT SMALL MACRO-NETWORK NO-GO / FRONTIER OPEN",
+  "relations": {
+    "c5_words": 4620,
+    "c5_color_orbits": 46,
+    "proper_four_pole_masks": [
+      "0x3ef",
+      "0x3f7",
+      "0x3fd",
+      "0x3fe"
+    ],
+    "four_pole_atoms": {
+      "C]": "three terminal-order variants: 0x3ef, 0x3f7, 0x3fd",
+      "ECxo": "terminal-symmetric relation 0x3fe"
+    }
+  },
+  "exact_labelled_pairing_census": [
+    {
+      "five_atoms": 2,
+      "four_atoms": 0,
+      "pairing_leaves": 120,
+      "connected_bridgeless_pairings": 120,
+      "tait_unsat": 10,
+      "fivecdc_unsat": 0
+    },
+    {
+      "five_atoms": 2,
+      "four_atoms": 1,
+      "four_atom": "C]",
+      "pairing_leaves": 14400,
+      "connected_bridgeless_pairings": 14400,
+      "tait_unsat": 0,
+      "fivecdc_unsat": 0
+    },
+    {
+      "five_atoms": 2,
+      "four_atoms": 1,
+      "four_atom": "ECxo",
+      "pairing_leaves": 14400,
+      "connected_bridgeless_pairings": 14400,
+      "tait_unsat": 0,
+      "fivecdc_unsat": 0
+    }
+  ],
+  "exact_two_four_pole_frontier": {
+    "loopless_pairing_leaves_per_atom_mode": 4466880,
+    "connected_bridgeless_macro_matrices": 12,
+    "connected_bridgeless_labelled_pairings_per_atom_mode": 4435200,
+    "atom_modes_cover_all_relation_pairs": [
+      "C]+C] covers all pairs among 0x3ef, 0x3f7, 0x3fd",
+      "C]+ECxo covers each of those three paired with 0x3fe",
+      "ECxo+ECxo covers 0x3fe paired with itself"
+    ],
+    "canonical_census": [
+      {
+        "four_atom_mode": "C]+C]",
+        "expanded_graph_isomorphism_classes": 252,
+        "canonical_graph6_sha256": "855bac19a88ad1ebb0f7d8f3c2c4e82095aab0f27b2487e9f0489b3f6abdab20",
+        "tait_sat": 250,
+        "tait_unsat": 2,
+        "fivecdc_sat": 252,
+        "fivecdc_unsat": 0
+      },
+      {
+        "four_atom_mode": "C]+ECxo",
+        "expanded_graph_isomorphism_classes": 765,
+        "canonical_graph6_sha256": "d77497f7d01c07983e973f1bb3e60a9812e1a3b2bf71e22f0567d44bf03d2122",
+        "tait_sat": 761,
+        "tait_unsat": 4,
+        "fivecdc_sat": 765,
+        "fivecdc_unsat": 0
+      },
+      {
+        "four_atom_mode": "ECxo+ECxo",
+        "expanded_graph_isomorphism_classes": 844,
+        "canonical_graph6_sha256": "89b119cb1f18ad8d7390a2c60f15b274a7685fe90225530f4821139aef62ac2a",
+        "tait_sat": 838,
+        "tait_unsat": 6,
+        "fivecdc_sat": 844,
+        "fivecdc_unsat": 0
+      }
+    ],
+    "total_expanded_graph_isomorphism_classes": 1861,
+    "total_non_tait_classes": 12,
+    "non_tait_witness_file": "scratch/d5-multipole-macronetwork-frontier2-nontait-witnesses.json",
+    "non_tait_witness_sha256": "d6c860fdd7dcf92740cbafa249c2e68106ac6a4d803f5b6901e821d10395821e",
+    "fivecdc_unsat": 0
+  },
+  "exact_three_four_pole_frontier": {
+    "macro_degree_sequence": [5, 5, 4, 4, 4],
+    "labelled_connected_bridgeless_macro_matrices": 178,
+    "relation_rows": {
+      "C5": 4620,
+      "C]": 580,
+      "ECxo": 630
+    },
+    "terminal_stabilizer_sizes": {
+      "C5": 10,
+      "C]": 8,
+      "ECxo": 24
+    },
+    "local_terminal_bijection_orbits": {
+      "C5": 12,
+      "C]": 3,
+      "ECxo": 1
+    },
+    "canonical_boundary_census": [
+      {
+        "four_atom_mode": "AAA",
+        "canonical_macro_matrices": 25,
+        "boundary_states": 97200,
+        "empty_d5": 0
+      },
+      {
+        "four_atom_mode": "AAB",
+        "canonical_macro_matrices": 56,
+        "boundary_states": 72576,
+        "empty_d5": 0
+      },
+      {
+        "four_atom_mode": "ABB",
+        "canonical_macro_matrices": 56,
+        "boundary_states": 24192,
+        "empty_d5": 0
+      },
+      {
+        "four_atom_mode": "BBB",
+        "canonical_macro_matrices": 25,
+        "boundary_states": 3600,
+        "empty_d5": 0
+      }
+    ],
+    "total_boundary_states": 197568,
+    "empty_d5": 0,
+    "fivecdc_unsat": 0
+  },
+  "exact_four_four_pole_frontier": {
+    "macro_degree_sequence": [5, 5, 4, 4, 4, 4],
+    "labelled_connected_bridgeless_macro_matrices": 4222,
+    "canonical_boundary_census": [
+      {
+        "four_atom_mode": "AAAA",
+        "canonical_macro_matrices": 143,
+        "boundary_states": 1667952,
+        "empty_d5": 0
+      },
+      {
+        "four_atom_mode": "AAAB",
+        "canonical_macro_matrices": 410,
+        "boundary_states": 1594080,
+        "empty_d5": 0
+      },
+      {
+        "four_atom_mode": "AABB",
+        "canonical_macro_matrices": 643,
+        "boundary_states": 833328,
+        "empty_d5": 0
+      },
+      {
+        "four_atom_mode": "ABBB",
+        "canonical_macro_matrices": 410,
+        "boundary_states": 177120,
+        "empty_d5": 0
+      },
+      {
+        "four_atom_mode": "BBBB",
+        "canonical_macro_matrices": 143,
+        "boundary_states": 20592,
+        "empty_d5": 0
+      }
+    ],
+    "total_boundary_states": 4293072,
+    "empty_d5": 0,
+    "fivecdc_unsat": 0
+  },
+  "deterministic_random_diagnostics": [
+    {
+      "seed": 20260730,
+      "trials": 50000,
+      "five_atoms": 2,
+      "four_atoms_range": [
+        0,
+        30
+      ],
+      "four_mode": "mixed",
+      "accepted": 9390,
+      "tait_unsat": 15,
+      "fivecdc_unsat": 0
+    },
+    {
+      "seed": 20260731,
+      "trials": 50000,
+      "five_atoms": 4,
+      "four_atoms_range": [
+        0,
+        30
+      ],
+      "four_mode": "mixed",
+      "accepted": 8927,
+      "tait_unsat": 2,
+      "fivecdc_unsat": 0
+    },
+    {
+      "seed": 20260732,
+      "trials": 50000,
+      "five_atoms": 2,
+      "four_atoms_range": [
+        1,
+        40
+      ],
+      "four_mode": "ECxo only",
+      "accepted": 9654,
+      "tait_unsat": 4,
+      "fivecdc_unsat": 0
+    }
+  ],
+  "fivecdc_unsat_found": false,
+  "lrat_generated": false,
+  "scope_warning": "The exact theorem stops at loopless macrographs with two C5 atoms and at most four four-pole atoms. Larger macro-networks were sampled, not exhausted; same-atom terminal pairings (macro-loops) were not searched. No semigroup-wide satisfiability invariant was proved."
+}

@@ -1,0 +1,710 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\geometry{margin=1in}
+\setlength{\emergencystretch}{2em}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\A}{\mathcal A}
+\newcommand{\FiveCDC}{\textup{FiveCDC}}
+\newcommand{\Span}{\operatorname{span}}
+\numberwithin{equation}{section}
+
+\title{Six-Point One-Hole Compression for\\
+Five-Cycle Double Covers}
+\author{Atharva Vaidya\\
+\small AI-assisted research draft for independent human verification}
+\date{July 29, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fcolorbox{red!65!black}{red!4}{
+\parbox{0.91\textwidth}{
+\textbf{Resolution status and trust boundary.}
+The standard five-cycle double cover conjecture remains open.  This
+manuscript proves an exact affine characterization after a nowhere-zero
+\(\F_2^3\)-flow, an omitted coordinate pair, and a merge pair have been
+fixed.  Existentially quantifying those choices gives exactly the original
+conjecture, not a proof of it.  The orientable conjecture is not considered.
+
+OpenAI Codex agents, under Atharva Vaidya's direction, discovered the
+normal form, derived the proof and local tables, wrote both computational
+implementations, performed the enumerations, and drafted this manuscript.
+The second implementation is independent of the first implementation, not
+independent of AI.  No human peer review is claimed.  A human author must
+check the proof, rerun or reimplement the finite audits, review prior art,
+and accept scholarly responsibility before submission.
+}}
+\end{center}
+
+\begin{abstract}
+Let \(W=\F_2^3\), let \(G\) be a finite loopless cubic multigraph, and
+fix a nowhere-zero \(W\)-flow \(f\).  The standard eight-coordinate
+triangle construction labels every edge by a two-subset of \(W\).  We
+show that this construction compresses to a five-cycle double cover if
+its labels use only six points and omit one pair among them: identify the
+two points of that unused pair.
+
+For fixed disjoint pairs \(R,M\in\binom W2\), where \(R\) is omitted
+from the support and \(M\) is the pair to be identified, existence of
+such a labelling is exactly an affine system over \(\F_2\), with three
+potential bits per graph vertex.  We give a complete human proof and
+classify every local list.  Up to affine equivalence, \(R\) and \(M\)
+are parallel or skew; the seven local list sizes are respectively
+\[
+              (4,2,2,2,2,2,2)
+       \quad\hbox{and}\quad
+              (4,4,2,2,2,1,1).
+\]
+Failure for a fixed triple \((f,R,M)\) has the elementary dual
+certificate \(y^{\mathsf T}A=0\), \(y^{\mathsf T}b=1\).
+
+Two independently written exact checkers verify the local classification
+and a strict 34-vertex fixed-flow example: all 56 five-point restrictions
+fail, while eight of the 420 six-point one-hole systems succeed.  A
+complete 900-orbit flow census on one rigid 12-vertex graph separates the
+five-point, six-point one-hole, and unrestricted five-colourable
+coordinate-potential tests.  These are structural and computational
+results about fixed flows.  They neither prove nor refute \FiveCDC.
+\end{abstract}
+
+\section{Definitions and exact scope}
+
+A \emph{cycle} in this manuscript is an Eulerian edge-subset: every
+vertex has even degree in it.  It need not be connected or 2-regular.
+A \emph{five-cycle double cover} is an indexed family
+\((C_1,\ldots,C_5)\) of such subsets in which every edge occurs exactly
+twice.  Empty members are allowed.  Thus ``five'' means ``at most five,''
+as in the standard formulation used by Oum~\cite{Oum2026}.  Parallel
+edges are distinct edge-set elements.  We exclude loops here and make no
+claim about the orientable variant.
+
+The standard conjecture, attributed independently to Celmins and
+Preissmann, asserts that every finite bridgeless graph has a five-cycle
+double cover~\cite{Celmins1984,Preissmann1981,HusekSamal2026,Oum2026}.
+It remains open.  Hu\v{s}ek and \v{S}\'amal recently gave an equivalent
+flow-selection condition for cubic graphs
+\cite[Theorem~3.16 and Conjecture~3.19]{HusekSamal2026}.  Our result is
+another exact fixed-flow normal form.  Its graph-level existential closure
+is again \FiveCDC, so the remaining quantifier cannot be omitted.
+
+There is important earlier configuration-colouring literature.
+Kr\'al', M\'a\v{c}ajov\'a, Pangr\'ac, Raspaud, Sereni, and
+\v{S}koviera developed projective, affine, and abelian colourings of
+cubic graphs, including Desargues-configuration equivalences and the
+\(F_i/A_i\) colouring framework~\cite{KralEtAl2009}.  We claim no novelty
+for those configuration or colouring equivalences.  The possible new
+contribution here is narrower: after fixing a Fano flow, we impose a
+six-point support and one missing duad, derive its affine potential system
+and complete local orbit table, and certify a strict separation from the
+five-point restriction for one fixed flow.  Hu\v{s}ek--\v{S}\'amal are
+also the prior source used here for the eight-coordinate system and its
+five-set/component-parity specialization~\cite{HusekSamal2026}.
+
+Put \(W=\F_2^3\), written additively.  A map
+\[
+                    f:E(G)\longrightarrow W-\{0\}
+\]
+is a nowhere-zero \(W\)-flow when
+\[
+                    \sum_{e\ni v}f(e)=0
+                    \qquad(v\in V(G)).
+\]
+At a cubic vertex the three incident values are the nonzero elements of
+a unique two-dimensional linear subspace \(H_v\le W\).
+
+\begin{definition}
+An \emph{eight-coordinate pair labelling} is a map
+\[
+                    P:E(G)\longrightarrow \binom W2
+\]
+such that, for every \(v\in V(G)\) and \(z\in W\), the number of
+incident edges \(e\ni v\) with \(z\in P_e\) is even.  It is
+\emph{compatible with \(f\)} when the xor of the two members of \(P_e\)
+is \(f(e)\) for every edge \(e\).
+\end{definition}
+
+Every coordinate \(z\) defines the Eulerian set
+\(\{e:z\in P_e\}\), and every edge belongs to exactly two coordinates.
+Thus a pair labelling is an eight-cycle double cover with named
+coordinates.  We next parameterize all labellings compatible with a
+fixed flow.
+
+\section{Coordinate triangles and vertex potentials}
+
+For a two-dimensional subspace \(H\le W\) and \(t\in W\), define
+\begin{equation}
+                         \Delta_H(t)=(t+H)-\{t\}.
+                         \label{eq:triangle}
+\end{equation}
+This is a three-point affine triangle.  Its three sides have differences
+equal to the three nonzero elements of \(H\).
+
+For an incidence \(e\ni v\), put \(p=f(e)\), and let \(s_{v,e}\) be
+either one of the other two flow values at \(v\).  The side of
+\(\Delta_{H_v}(t_v)\) having difference \(p\) is
+\begin{equation}
+ P_{v,e}
+ =t_v+s_{v,e}+\langle p\rangle
+ =\{t_v+s_{v,e},\,t_v+s_{v,e}+p\}.
+ \label{eq:side}
+\end{equation}
+The two possible choices of \(s_{v,e}\) differ by \(p\), so the unordered
+pair in \eqref{eq:side} is well defined.
+
+\begin{lemma}[potential parameterization]
+\label{lem:potentials}
+For a fixed nowhere-zero flow \(f\), compatible pair labellings are in
+bijection with vertex potentials \((t_v:v\in V(G))\) satisfying
+\begin{equation}
+ t_u+t_v+s_{u,e}+s_{v,e}\in\langle f(e)\rangle
+ \qquad(e=uv).
+ \label{eq:compatibility}
+\end{equation}
+The labelling is then given by \eqref{eq:side}.
+\end{lemma}
+
+\begin{proof}
+The two endpoint formulae in \eqref{eq:side} describe the same unordered
+pair exactly when their coset representatives differ by an element of
+\(\langle f(e)\rangle\), which is \eqref{eq:compatibility}.  At a vertex,
+the three pairs are the three sides of \(\Delta_{H_v}(t_v)\), so each of
+its three coordinate points occurs twice and every other point occurs
+zero times.  The coordinate parity condition follows.
+
+Conversely, at a cubic vertex, the three labels of any pair labelling
+form a triangle.  Indeed, if the first two pairs are \(A,B\), parity
+forces the third to be \(A\mathbin{\triangle}B\); since it has size two,
+\(|A\cap B|=1\).  Write the resulting triangle points as \(x,y,z\).
+Its edge differences are the three incident flow values, and
+\[
+                              t_v=x+y+z
+\]
+is the unique potential for which its point set is
+\(\Delta_{H_v}(t_v)\).  Agreement of each edge label at its endpoints
+then gives \eqref{eq:compatibility}.  The two constructions are inverse.
+\end{proof}
+
+For any nonzero \(p\in W\), membership in \(\langle p\rangle\) is
+equivalent to two scalar affine equations: apply a basis of the
+two-dimensional annihilator of \(p\) in \(W^*\).  Hence all edge
+conditions in \eqref{eq:compatibility} are affine binary equations.
+
+\section{The six-point one-hole system}
+
+Choose disjoint pairs
+\begin{equation}
+                         R,M\in\binom W2,\qquad R\cap M=\varnothing.
+                         \label{eq:pairs}
+\end{equation}
+The points of \(R\) are forbidden, so the allowed support is
+\(S=W-R\), of size six.  The pair \(M\subset S\) is also forbidden as
+an edge label.  For a Fano plane \(H\), define
+\begin{equation}
+ \A_H(R,M)=
+ \{t\in W:\Delta_H(t)\subseteq W-R,
+                 M\nsubseteq\Delta_H(t)\}.
+ \label{eq:local-list}
+\end{equation}
+The second condition says precisely that \(M\) is not one of the three
+sides of the local triangle.
+
+\begin{theorem}[affine six-point one-hole criterion]
+\label{thm:affine}
+Fix \(G,f,R,M\) as above.  There is a compatible pair labelling supported
+on \(W-R\) and not using the pair \(M\) if and only if the following
+system is soluble:
+\begin{align}
+ t_v&\in\A_{H_v}(R,M)
+                         &&(v\in V(G)), \label{eq:local-system}\\
+ t_u+t_v+s_{u,e}+s_{v,e}
+     &\in\langle f(e)\rangle
+                         &&(e=uv). \label{eq:edge-system}
+\end{align}
+Every set \(\A_H(R,M)\) is a nonempty affine subspace of \(W\), of
+dimension zero, one, or two.  Consequently
+\eqref{eq:local-system}--\eqref{eq:edge-system} is an ordinary affine
+system over \(\F_2\).
+\end{theorem}
+
+\begin{proof}
+By Lemma~\ref{lem:potentials}, condition \eqref{eq:edge-system} is
+equivalent to endpoint compatibility.  The definition
+\eqref{eq:local-list} is exactly the support and missing-pair condition
+at each vertex.  It remains only to prove that every local list is affine
+and nonempty.  This follows from the exhaustive two-case calculation in
+Theorem~\ref{thm:local-table} below.
+\end{proof}
+
+To turn a local membership condition into scalar equations, write its
+nonempty affine subspace as \(t_0+U\).  Then
+\[
+        t\in t_0+U
+        \quad\Longleftrightarrow\quad
+        \lambda(t)=\lambda(t_0)
+        \quad\hbox{for every }\lambda\in U^\perp.
+\]
+Together with the two annihilator equations per edge, this gives a
+literal matrix \(Ax=b\) with three bits per vertex.
+
+\section{Complete local classification}
+
+Translate the eight coordinate points so that
+\begin{equation}
+                    R=\{0,d\},\qquad M=\{a,b\},\qquad m=a+b.
+                    \label{eq:normal}
+\end{equation}
+Translation changes neither pair differences nor the planes \(H\).
+There are two affine orbits:
+\begin{itemize}
+\item \emph{parallel}, when \(m=d\); then
+      \(R\cup M=H_0:=\langle d,a\rangle\);
+\item \emph{skew}, when \(m\ne d\); disjointness implies that
+      \(d,m,a\) form a basis of \(W\).
+\end{itemize}
+
+\begin{theorem}[local list table]
+\label{thm:local-table}
+In the parallel case,
+\begin{equation}
+\A_H(R,M)=
+\begin{cases}
+W-H,&H=H_0,\\
+M,&d\in H,\ H\ne H_0,\\
+R,&d\notin H.
+\end{cases}
+\label{eq:parallel-table}
+\end{equation}
+Across the seven planes, the list sizes are
+\[
+                         (4,2,2,2,2,2,2).
+\]
+In the skew case,
+\begin{equation}
+\A_H(R,M)=
+\begin{cases}
+M,&d,m\in H,\\
+W-H,&d\in H,\ m\notin H,\\
+\{r\in R:a+r\notin H\},&d\notin H,\ m\in H,\\
+R,&d,m\notin H.
+\end{cases}
+\label{eq:skew-table}
+\end{equation}
+Across the seven planes, the list sizes are
+\[
+                         (4,4,2,2,2,1,1).
+\]
+In particular, every local list is a point, affine line, or affine
+plane.
+\end{theorem}
+
+\par\medskip
+\begin{proof}
+First ignore the restriction on \(M\).  If \(d\in H\), the forbidden
+points \(0,d\) lie in one \(H\)-coset.  The triangle must therefore use
+the other coset, and its omitted point \(t\) may initially be any of the
+four points of that coset.  If \(d\notin H\), the forbidden points lie in
+opposite \(H\)-cosets, and the only possible omitted points are
+\(t=0,d\).
+
+Now impose the missing-pair condition.  If \(m\notin H\), the two members
+of \(M\) lie in opposite \(H\)-cosets, so they cannot both occur in one
+triangle.  If \(m\in H\), they lie in one coset.  When that coset is the
+chosen one, one of \(a,b\) must itself be the omitted point.
+
+In the parallel case \(m=d\).  For \(H=H_0\), the allowed potentials are
+the other coset \(W-H\).  For the other two planes containing \(d\), the
+missing-pair condition leaves \(M\).  For each of the remaining four
+planes it leaves \(R\).  This is \eqref{eq:parallel-table}.
+
+In the skew case, exactly one plane contains both \(d,m\); its list is
+\(M\).  Two planes contain \(d\) but not \(m\), giving \(W-H\).  Two
+contain \(m\) but not \(d\); the initially allowed set \(R\) loses exactly
+one point according as \(a+r\in H\).  The final two planes contain
+neither \(d\) nor \(m\), and their list is \(R\).  This is
+\eqref{eq:skew-table} and gives the stated sizes.
+\end{proof}
+
+There are \(28\cdot15=420\) ordered disjoint choices of \((R,M)\):
+84 parallel and 336 skew.  The sum of either seven-entry profile is 16.
+Thus the table itself predicts
+\[
+               84\cdot16+336\cdot16=6{,}720
+\]
+admitted local triangles among the \(420\cdot7=2{,}940\)
+pair-pair-plane cases.  The two supplied programs reproduce these counts
+directly.
+
+\section{Compression to five coordinates}
+
+\begin{proposition}[one-hole quotient]
+\label{prop:quotient}
+Every solution of Theorem~\ref{thm:affine} yields a standard five-cycle
+double cover of \(G\).
+\end{proposition}
+
+\begin{proof}
+Write \(M=\{a,b\}\).  Identify \(a\) and \(b\), while leaving the other
+four members of \(S=W-R\) distinct.  This gives five coordinate names.
+No used pair collapses to a singleton, because \(M\) is the only pair
+whose endpoints are identified and it is unused.
+
+Before identification, every old coordinate has even degree at each
+graph vertex.  After identification, the degree of the merged coordinate
+is, modulo two, the sum of the old \(a\)- and \(b\)-degrees.  It is
+therefore even, as are the four unchanged coordinates.  Each edge remains
+labelled by two distinct new names, so it is covered exactly twice.
+\end{proof}
+
+The 14 permitted pair types make the compression explicit.  Six pairs
+avoid both \(a,b\) and map injectively to six target pairs.  The eight
+pairs joining one of \(a,b\) to one of the other four points map
+two-to-one to the remaining four target pairs.  This is not a fixed
+pointwise map from the seven nonzero flow values to ten target pairs:
+two preimages of one target pair have differences separated by \(a+b\).
+
+\begin{corollary}[exact graph-level scope]
+\label{cor:equivalence}
+A finite loopless cubic multigraph has a standard five-cycle double cover
+if and only if there exist a nowhere-zero \(W\)-flow \(f\) and disjoint
+pairs \(R,M\) for which
+\eqref{eq:local-system}--\eqref{eq:edge-system} is soluble.
+\end{corollary}
+
+\begin{proof}
+The reverse implication is Proposition~\ref{prop:quotient}.  Conversely,
+label each edge of a five-cycle double cover by the two cover indices
+that contain it.  At a cubic vertex every coordinate occurs zero or two
+times, so the three edge labels form a triangle, as in the proof of
+Lemma~\ref{lem:potentials}.
+
+Inject the five coordinate names into any five members of a six-set
+\(S\subset W\), leaving one point \(q\in S\) unused.  Put \(R=W-S\),
+and let \(M\) join \(q\) to any used point.  No original edge uses \(M\).
+The xor of the two endpoint names of each edge label is nonzero and sums
+to zero at every vertex, hence gives a nowhere-zero \(W\)-flow.  The
+original local triangles give potentials solving the affine system.
+\end{proof}
+
+\begin{remark}
+Corollary~\ref{cor:equivalence} is a reformulation of \FiveCDC, not a
+resolution.  The new tractability appears only after \(f,R,M\) are
+fixed.  A proof of the conjecture would still have to select a successful
+triple universally; a counterexample would have to exclude every triple.
+\end{remark}
+
+\section{Dual certificates for a fixed failure}
+
+After scalarization, write the fixed system as
+\begin{equation}
+                              Ax=b
+                              \label{eq:matrix}
+\end{equation}
+over \(\F_2\).  The variables are the three coordinate bits of every
+vertex potential.  Local rows annihilate the direction space of the
+appropriate affine list, and two edge rows annihilate each edge value.
+
+\begin{proposition}[left-kernel certificate]
+\label{prop:dual}
+The fixed system \eqref{eq:matrix} is inconsistent if and only if there
+is a binary row multiplier \(y\) such that
+\begin{equation}
+                    y^{\mathsf T}A=0,\qquad
+                    y^{\mathsf T}b=1.
+                    \label{eq:dual}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+If \eqref{eq:dual} holds, xoring the selected equations gives \(0=1\),
+so no solution exists.  Conversely, row reduction of an inconsistent
+binary affine system produces a zero coefficient row with right side one.
+Keeping the same row operations on an identity matrix expresses that row
+as a multiplier \(y\) of the original rows.
+\end{proof}
+
+This is a short human-checkable certificate for one failed choice
+\((f,R,M)\).  It is not a certificate that every choice fails.  The
+distinction is essential: a graph-level counterexample would require a
+certified universal exclusion over flows as well as pairs.
+
+\section{A strict 34-vertex fixed-flow separation}
+
+The retained simple connected bridgeless cubic graph has graph6 record
+\begin{center}
+\small
+\path{as???SK????A?A?C_@_?B?@_??G??_I?GA_AA????_??@?????B??@_?o??????_C??CGO??B@????a????__??C@O??A?_}
+\end{center}
+and 51 edges.  Its displayed Fano flow and compatible pair labels are
+frozen in the project artifact
+\begin{center}
+\small
+\path{output/jaeger-star-thinning-countermodel-34v/star-good-six-witness.json}
+\end{center}
+whose SHA-256 is
+\begin{center}
+\scriptsize
+\nolinkurl{e3160e5f6b2985823a3421e9f3b1a4582c9c8be4b9abfd1f0e2312d311eb8358}.
+\end{center}
+\par\noindent
+The literal cover uses the six points \(\{0,3,4,5,6,7\}\) and all 14
+pair types except \(\{4,5\}\).  Identifying 4 and 5 gives its displayed
+\FiveCDC.
+
+\par\medskip
+\begin{proposition}[verified strict separation]
+\label{prop:strict}
+For this fixed flow:
+\begin{enumerate}
+\item none of the 56 five-point restrictions is soluble;
+\item exactly eight of the 420 six-point one-hole systems are soluble;
+\item all eight successful choices are skew and have affine solution
+      dimension one.
+\end{enumerate}
+\end{proposition}
+
+This finite proposition is obtained by exact enumeration in two
+independently structured programs.  The primary Python checker uses full
+row reduction; the JavaScript checker uses an incremental highest-pivot
+xor basis.  Both reconstruct the graph, validate simplicity,
+connectedness, cubicity, bridgelessness, the flow, and the literal cover.
+They then test all 56 and 420 choices.
+
+Two five-row dual certificates illustrate that individual failures can
+also be checked by hand.  For the failed five-set
+\(\{0,1,2,3,4\}\), vertices 0 and 1 both have forced potential 7.
+At each vertex, take the local rows for functionals 1 and 2; their xor
+is functional 3 and their two right sides sum to zero.  Edge 0 joins
+the two vertices, has flow value 3, and its functional-3 compatibility
+row has right side one.  Xoring the five rows cancels every variable
+and yields \(0=1\).
+
+For the failed six-hole choice \(R=\{0,1\}\), \(M=\{2,3\}\), vertices
+4 and 8 both have local list \(\{2,3\}\).  At each vertex, xor the
+functional-4 row of right side zero with the functional-6 row of right
+side one; the coefficient is functional 2.  Edge 5 joins the vertices,
+has flow value 1, and its functional-2 compatibility row has right side
+one.  Again all coefficients cancel while the five right sides xor to
+one.  The audit emits and rechecks the exact row indices and metadata.
+
+The older five-point restriction has local profile
+\[
+                         (4,1,1,1,1,1,1).
+\]
+Only one Fano line carries freedom; eliminating forced variables gives
+the component-parity system of Hu\v{s}ek and \v{S}\'amal
+\cite{HusekSamal2026}.  The profiles in
+Theorem~\ref{thm:local-table} leave freedom on several lines, allowing
+their global equations to couple.  Proposition~\ref{prop:strict} proves
+that this is a genuine enlargement at fixed flow.
+
+\section{A complete all-flow calibration on 12 vertices}
+
+For the cubic graph with graph6 record
+\[
+                             \texttt{K??FEaKR@oE\_},
+\]
+a retained complete census contains 900
+\(\operatorname{GL}(3,2)\)-orbits of nowhere-zero flows, representing
+150,192 labelled flows.  Global translation reduces the 56 five-point
+supports to seven representatives and the 420 pairs \((R,M)\) to 63
+representatives.
+
+For comparison with the two restricted tests, call a compatible
+potential \emph{generally successful} when its coordinate co-occurrence
+graph on \(W\) is properly colourable with at most five colours.  Merging
+coordinates by such a colouring gives a \FiveCDC.  Conversely, every
+\FiveCDC{} embeds in this form; this is the unrestricted compatible-potential
+test for a fixed flow.
+
+\begin{proposition}[verified all-flow census]
+\label{prop:census}
+Two exact implementations independently obtain the following partition.
+\begin{center}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+fixed-flow outcome & flow orbits & labelled flows\\
+\midrule
+five-point soluble & 566 & 94,080\\
+five-point insoluble, six-hole soluble & 252 & 42,336\\
+six-hole insoluble, generally successful & 18 & 3,024\\
+not generally successful & 64 & 10,752\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{proposition}
+
+Thus six-point one-hole compression rescues 252 of the 334 flow orbits
+that fail every five-point restriction.  It is strictly broader than the
+five-point criterion, but not the most general compatible-potential
+compression: 18 further orbits need a co-occurrence pattern using more
+than six coordinate points.  The 64 remaining flows are obstructions only
+for those fixed flows, not for the graph.
+
+One rigid flow among the last 64 has edge-value word
+\[
+\begin{split}
+ &(1,2,3,4,7,3,5,3,6,5,7,2,5,1,4,6,2,4).
+\end{split}
+\]
+Its gauged compatible potential is unique and its co-occurrence graph is
+\(K_6\), using all 15 pairs on six points.  Hence translation cannot
+create a missing pair.  The same graph has other flows that pass the
+stronger five-point test, demonstrating again why the fixed-flow and
+graph-level quantifiers must be separated.
+
+\section{Reproducibility}
+
+The exact artifact package is
+\begin{center}
+\path{scratch/six-point-one-hole-affine-20260729/}
+\end{center}
+From the project root, the four principal commands are:
+\begin{verbatim}
+python3 scratch/six-point-one-hole-affine-20260729/\
+audit_six_point_one_hole_affine.py
+node scratch/six-point-one-hole-affine-20260729/\
+verify_six_point_one_hole_affine.mjs
+python3 scratch/six-point-one-hole-affine-20260729/\
+audit_all_flows_12v.py
+node scratch/six-point-one-hole-affine-20260729/\
+verify_all_flows_12v.mjs
+\end{verbatim}
+The line continuations above are typographical; the repository README
+gives literal one-line shell commands.  All four reports end with status
+\texttt{PASS}.  The package's SHA-256 ledger has digest
+\begin{center}
+\scriptsize
+\nolinkurl{8e89160b7eac0f7aaf5c4fe1b369bddbf89ae7f013211b4022257dfc09258349}.
+\end{center}
+The first two programs derive the local table, inspect all 2,940 local
+cases, and replay Proposition~\ref{prop:strict}; the latter two independently
+replay Proposition~\ref{prop:census}.  The reference-hash ledger also
+freezes every external input used by these checks.
+
+The human proof of Theorems~\ref{thm:affine} and
+\ref{thm:local-table}, Proposition~\ref{prop:quotient}, and
+Corollary~\ref{cor:equivalence} is entirely contained in this manuscript.
+The strict witness and census propositions depend on exact finite
+enumeration.  No SAT solver or uncheckable UNSAT assertion is used in
+those two propositions.
+
+\section{What is new, and what remains open}
+
+The conservative possible-novelty claim is the combination of:
+\begin{enumerate}
+\item the six-point one-hole affine normal form for fixed
+      \((f,R,M)\);
+\item the complete parallel/skew local-list classification;
+\item the left-kernel certificate interface for a failed fixed choice;
+\item the strict 34-vertex fixed-flow separation from every five-point
+      restriction; and
+\item the exact 12-vertex all-flow calibration.
+\end{enumerate}
+The project has not established priority.  The relevant literature on
+Fano flows, generalized colourings, and the new component-parity
+criterion includes Jaeger~\cite{Jaeger1979}, the projective/affine/abelian
+colouring framework of Kr\'al' et al.~\cite{KralEtAl2009},
+Oum~\cite{Oum2026}, and Hu\v{s}ek--\v{S}\'amal
+\cite{HusekSamal2026}.  In particular, no novelty is claimed for the
+Desargues-configuration equivalence, \(F_i/A_i\) colourings, the
+eight-coordinate construction, or the five-point component-parity
+criterion.  A specialist literature review is required before asserting
+novelty in a submitted version.
+
+The universal remaining statement is: for every graph in a sound
+reduced cubic class, select some nowhere-zero \(W\)-flow \(f\) and some
+disjoint \(R,M\) for which the affine system is soluble.  By
+Corollary~\ref{cor:equivalence}, this is exactly \FiveCDC.  Complete
+finite success of selected flow families is evidence, not an induction
+theorem.  Conversely, failure of one or many fixed systems is not a graph
+counterexample.  No such counterexample, and no universal selection
+proof, is supplied here.
+
+\section*{AI-use disclosure}
+
+OpenAI Codex agents using GPT-5-series models, under Atharva Vaidya's
+direction, proposed the six-point one-hole compression, derived the
+affine equations and local orbit tables, found and interpreted the finite
+examples, wrote the Python and JavaScript implementations, executed the
+computations, and drafted essentially all prose and \LaTeX{} in this
+manuscript.  Separate agents performed adversarial checks, but they were
+also AI systems.  Atharva Vaidya directed the project and is responsible
+for deciding whether and how to disseminate the work.
+
+The paper deliberately distinguishes human-checkable algebra from
+finite computation.  Reproducibility and independently structured code
+do not constitute independent human verification.  No cited researcher
+is represented as endorsing these results.  Before public submission, a
+human author should verify the displayed proofs line by line, inspect the
+graph and flow data, rerun and preferably independently reimplement the
+enumerations, conduct a specialist prior-art review, and take full
+responsibility for all claims.
+
+\begin{thebibliography}{9}
+
+\bibitem{Celmins1984}
+U.~A. Celmins.
+\newblock \emph{On Cubic Graphs That Do Not Have an Edge-3-Colouring}.
+\newblock PhD thesis, University of Waterloo, 1984.
+
+\bibitem{HusekSamal2026}
+R.~Hu\v{s}ek and R.~\v{S}\'amal.
+\newblock Exponentially many circuit double covers.
+\newblock arXiv:2607.24724 [math.CO], version 1, July 27, 2026.
+\newblock \url{https://arxiv.org/abs/2607.24724}.
+
+\bibitem{Jaeger1979}
+F.~Jaeger.
+\newblock Flows and generalized coloring theorems in graphs.
+\newblock \emph{Journal of Combinatorial Theory, Series B},
+  26(2):205--216, 1979.
+\newblock \url{https://doi.org/10.1016/0095-8956(79)90057-1}.
+
+\bibitem{KralEtAl2009}
+D.~Kr\'al', E.~M\'a\v{c}ajov\'a, O.~Pangr\'ac, A.~Raspaud,
+  J.-S.~Sereni, and M.~\v{S}koviera.
+\newblock Projective, affine, and abelian colorings of cubic graphs.
+\newblock \emph{European Journal of Combinatorics}, 30:53--69, 2009.
+\newblock \url{https://doi.org/10.1016/j.ejc.2007.11.029}.
+
+\bibitem{Oum2026}
+S.-i. Oum.
+\newblock A proof of the Cycle Double Cover Conjecture by OpenAI:
+  an exposition.
+\newblock arXiv:2607.16356 [math.CO], version 2, July 23, 2026.
+\newblock \url{https://arxiv.org/abs/2607.16356}.
+
+\bibitem{Preissmann1981}
+M.~Preissmann.
+\newblock \emph{Sur les colorations des ar\^etes des graphes cubiques}.
+\newblock PhD thesis, Universit\'e de Grenoble, 1981.
+
+\end{thebibliography}
+
+\end{document}

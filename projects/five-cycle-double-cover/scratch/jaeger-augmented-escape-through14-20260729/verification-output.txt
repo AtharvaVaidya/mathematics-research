@@ -1,0 +1,6 @@
+PASS: frozen through-order-14 augmented-escape certificate
+  source rows: 1,287; old traps: 14,643
+  augmented traps: 557 in 187 rows
+  exact distance histogram: {2: 557}
+  external source hashes: PASS
+  full replay: PASS

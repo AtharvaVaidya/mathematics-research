@@ -1,0 +1,85 @@
+{
+  "classification": "EXACT EXPLICIT SHARPNESS CHECK",
+  "core": {
+    "boundary_vertices_forcing_two_odd_circuits": [
+      9,
+      12,
+      14,
+      25,
+      37
+    ],
+    "boundary_vertices_in_source_numbering": [
+      9,
+      12,
+      14,
+      25,
+      37
+    ],
+    "factor_critical": true,
+    "locally_cyclic_four": true,
+    "order": 41,
+    "profiles": {
+      "12": {
+        "minimum_odd_internal_circuits": 2,
+        "near_perfect_matchings": 113,
+        "odd_internal_circuit_distribution": {
+          "2": 104,
+          "3": 8,
+          "4": 1
+        }
+      },
+      "14": {
+        "minimum_odd_internal_circuits": 2,
+        "near_perfect_matchings": 98,
+        "odd_internal_circuit_distribution": {
+          "2": 72,
+          "3": 24,
+          "4": 2
+        }
+      },
+      "25": {
+        "minimum_odd_internal_circuits": 2,
+        "near_perfect_matchings": 90,
+        "odd_internal_circuit_distribution": {
+          "2": 64,
+          "3": 24,
+          "4": 2
+        }
+      },
+      "37": {
+        "minimum_odd_internal_circuits": 2,
+        "near_perfect_matchings": 86,
+        "odd_internal_circuit_distribution": {
+          "2": 56,
+          "3": 30
+        }
+      },
+      "9": {
+        "minimum_odd_internal_circuits": 2,
+        "near_perfect_matchings": 65,
+        "odd_internal_circuit_distribution": {
+          "2": 60,
+          "3": 4,
+          "4": 1
+        }
+      }
+    }
+  },
+  "deleted_induced_path": [
+    10,
+    11,
+    43
+  ],
+  "logical_scope": "Shows sharpness of the sufficient at-most-two threshold; does not refute Five-CDC.",
+  "schema": "cyclic4-threshold-two-factor-critical-core-v1",
+  "source": {
+    "complementary_odd_circuit_distribution": {
+      "4": 501
+    },
+    "cyclically_four_edge_connected": true,
+    "edges": 66,
+    "order": 44,
+    "perfect_matchings": 501,
+    "provenance": "sn44_2.fig in arXiv:1901.10911 source; vertices are XFig circle order"
+  }
+}

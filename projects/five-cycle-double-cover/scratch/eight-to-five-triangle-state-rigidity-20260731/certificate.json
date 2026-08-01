@@ -1,0 +1,238 @@
+{
+  "date": "2026-07-31",
+  "graph_and_oum_cover": {
+    "bridgeless_edge_deletions": 18,
+    "connected": true,
+    "distinct_triangle_states": 11,
+    "edges": 18,
+    "flow_values_used": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "graph6": "KQh?k`CGGQ?R",
+    "old_pair_multiplicities": {
+      "01": 2,
+      "02": 2,
+      "03": 1,
+      "04": 1,
+      "05": 1,
+      "12": 2,
+      "13": 1,
+      "14": 1,
+      "15": 1,
+      "23": 1,
+      "24": 1,
+      "25": 1,
+      "34": 1,
+      "35": 1,
+      "45": 1
+    },
+    "potential": [
+      3,
+      3,
+      2,
+      5,
+      1,
+      7,
+      1,
+      7,
+      6,
+      7,
+      5,
+      2
+    ],
+    "repeated_state": "012",
+    "simple": true,
+    "vertices": 12
+  },
+  "positive_control": {
+    "fivecdc_exists": true,
+    "profiles_differ": true,
+    "proper_tait_colouring": [
+      0,
+      1,
+      1,
+      2,
+      2,
+      2,
+      0,
+      2,
+      0,
+      1,
+      0,
+      2,
+      0,
+      1,
+      1,
+      2,
+      0,
+      1
+    ],
+    "repeated_012_state_local_colour_profiles": [
+      {
+        "01": 0,
+        "02": 1,
+        "12": 2
+      },
+      {
+        "01": 1,
+        "02": 2,
+        "12": 0
+      }
+    ],
+    "target_labels_by_colour": [
+      "01",
+      "02",
+      "12"
+    ]
+  },
+  "schema": "fivecdc-eight-to-five-triangle-state-rigidity-v1",
+  "scope": "triangle-state-dependent compression only; not FiveCDC",
+  "state_transport_and_rigidity": {
+    "all_state_adjacency_graphs_connected": true,
+    "distinct_triangle_rows": 11,
+    "k6_to_r5": false,
+    "minimum_connected_state_full_rank_order": 12,
+    "pair_columns": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "12",
+      "13",
+      "14",
+      "15",
+      "23",
+      "24",
+      "25",
+      "34",
+      "35",
+      "45"
+    ],
+    "r5_clique_witness_decimal": [
+      0,
+      3,
+      5,
+      9,
+      17
+    ],
+    "r5_maximum_clique": 5,
+    "state_adjacency_profiles": {
+      "01": {
+        "cover_edges": 2,
+        "states": 3
+      },
+      "02": {
+        "cover_edges": 2,
+        "states": 3
+      },
+      "03": {
+        "cover_edges": 1,
+        "states": 2
+      },
+      "04": {
+        "cover_edges": 1,
+        "states": 2
+      },
+      "05": {
+        "cover_edges": 1,
+        "states": 2
+      },
+      "12": {
+        "cover_edges": 2,
+        "states": 3
+      },
+      "13": {
+        "cover_edges": 1,
+        "states": 2
+      },
+      "14": {
+        "cover_edges": 1,
+        "states": 2
+      },
+      "15": {
+        "cover_edges": 1,
+        "states": 2
+      },
+      "23": {
+        "cover_edges": 1,
+        "states": 2
+      },
+      "24": {
+        "cover_edges": 1,
+        "states": 2
+      },
+      "25": {
+        "cover_edges": 1,
+        "states": 2
+      },
+      "34": {
+        "cover_edges": 1,
+        "states": 2
+      },
+      "35": {
+        "cover_edges": 1,
+        "states": 2
+      },
+      "45": {
+        "cover_edges": 1,
+        "states": 2
+      }
+    },
+    "triangle_rank": 10,
+    "triangle_rank_pivots_zero_based": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "triangle_state_scalar_equations": 29,
+    "triangle_state_scalar_nullity": 5,
+    "triangle_state_scalar_rank": 28,
+    "triangle_state_scalar_solutions": 32,
+    "triangle_state_scalar_variables": 33,
+    "triangle_state_system_pivots_zero_based": [
+      2,
+      3,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ]
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,122 @@
+{
+  "complete_rows_regenerated": 81,
+  "complete_terminal_plateaus": 2659,
+  "focused_independent_semantic_replays": [
+    {
+      "all_terminal_plateaus_root_universal": true,
+      "first_failure": null,
+      "flows_mod_global_s5": 592,
+      "graph6": "K??FEb_F?wD_",
+      "index": 1,
+      "kempe_orbits_mod_global_s5": 64,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 4,
+          "plateau_size": 4,
+          "surface_chi": -2
+        },
+        {
+          "count": 24,
+          "plateau_size": 6,
+          "surface_chi": -1
+        },
+        {
+          "count": 36,
+          "plateau_size": 12,
+          "surface_chi": 0
+        }
+      ],
+      "terminal_surface_chi_plateaus": 64
+    },
+    {
+      "all_terminal_plateaus_root_universal": true,
+      "first_failure": null,
+      "flows_mod_global_s5": 296,
+      "graph6": "K?AEDDWX@oB_",
+      "index": 10,
+      "kempe_orbits_mod_global_s5": 128,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 4,
+          "plateau_size": 1,
+          "surface_chi": -3
+        },
+        {
+          "count": 28,
+          "plateau_size": 1,
+          "surface_chi": -2
+        },
+        {
+          "count": 60,
+          "plateau_size": 2,
+          "surface_chi": -1
+        },
+        {
+          "count": 36,
+          "plateau_size": 4,
+          "surface_chi": 0
+        }
+      ],
+      "terminal_surface_chi_plateaus": 128
+    },
+    {
+      "all_terminal_plateaus_root_universal": true,
+      "first_failure": null,
+      "flows_mod_global_s5": 976,
+      "graph6": "K?`CRAWK`gGg",
+      "index": 76,
+      "kempe_orbits_mod_global_s5": 4,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 112,
+          "surface_chi": 0
+        },
+        {
+          "count": 2,
+          "plateau_size": 216,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 432,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_surface_chi_plateaus": 4
+    },
+    {
+      "all_terminal_plateaus_root_universal": true,
+      "first_failure": null,
+      "flows_mod_global_s5": 488,
+      "graph6": "K?`CPagPagEG",
+      "index": 81,
+      "kempe_orbits_mod_global_s5": 8,
+      "terminal_plateau_chi_size_histogram": [
+        {
+          "count": 1,
+          "plateau_size": 20,
+          "surface_chi": -1
+        },
+        {
+          "count": 3,
+          "plateau_size": 36,
+          "surface_chi": 0
+        },
+        {
+          "count": 3,
+          "plateau_size": 72,
+          "surface_chi": 1
+        },
+        {
+          "count": 1,
+          "plateau_size": 144,
+          "surface_chi": 2
+        }
+      ],
+      "terminal_surface_chi_plateaus": 8
+    }
+  ],
+  "scope": "All graph identities and report arithmetic are checked; deterministic boundary/extremal rows are recomputed with an independently structured plateau traversal and coordinate-link counter.",
+  "status": "PASS"
+}

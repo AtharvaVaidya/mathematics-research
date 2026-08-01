@@ -1,0 +1,9 @@
+1f75a2a40f675b8674534f8369693ec0c9bd3f73020459b213e8372a7622abd6  scratch/d5-root-pair-census-20260731/HUMAN-PROOF.md
+23dc0de2eeff42f17c62f9f87ee00dd71ac3abbbcce29301db91b9606709db52  scratch/d5-root-pair-census-20260731/README.md
+cee82bd52632d77dd07ad89735302a0ecd78768d7f4de6679a0981f1ffc159ac  scratch/d5-root-pair-census-20260731/build_compact_certificate.py
+cf95db3823177cdaa03470853f8ca1004f75a55d3b8a3b54ac17edba34f6f04d  scratch/d5-root-pair-census-20260731/census.py
+29e2a2a68fa4d2372f3ebd73b882898dc383edc71c30d8a284835136830db68e  scratch/d5-root-pair-census-20260731/check_compact_certificate.py
+46e816f48274534389c5f68ebf62532c47bc5c032e5b8baae4da1a20b90dbdba  scratch/d5-root-pair-census-20260731/compact-witnesses-through24.json
+842f4e006878298023b30a49fd572b2d3c5c8e371e70276e9aef03360d850105  scratch/d5-root-pair-census-20260731/compact-witnesses-order26.json.gz
+de8efe677fb7ce8bfa8ab3b8e45ce8ff7aaefb00e72033c1339d0b61c5deafa8  scratch/d5-root-pair-census-20260731/compact-witnesses-order28.json.gz
+789f7c8dc2963e470de0b3f15657646ea8d9a6d8f70f26aed160f922758af671  scratch/d5-root-pair-census-20260731/run_all.sh

@@ -1,0 +1,5 @@
+MATCHING_CHARACTERIZATION factors=10 PASS
+PF_SPLICE moves=124 selected_port_repairs=6 simultaneous_all_ports=4 entangled_arcs=6,7 PASS
+DEPTH2_SELECTED graph6=G?zTb_ zero_one_switch=UNREACHED two_switch=CHECKED final_all_ports=1 PASS
+DEPTH2_MODE graph6=GCZJd_ internal_pair=02 zero_one_external=UNREACHED two_switch=CHECKED final_all_ports=1 PASS
+PASS

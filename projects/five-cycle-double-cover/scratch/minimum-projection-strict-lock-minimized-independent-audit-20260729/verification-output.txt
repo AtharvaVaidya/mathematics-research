@@ -1,0 +1,11 @@
+CLOSURE order=18 edges=27 dim=10 missing_sets=70780 a0=7 a0_ties=9 a0_extensions=6336 a1=5 a1_ties=1 a1_extensions=240
+BASE dim=10 cycles=1024 missing_sets=66207 extendable_supports=1008
+LOCKS subsets=16384 minimum=8 minimizers=180 canonical=0,2,3,4,7,8,9,10 gap=1 no_size_le_7=1
+EXPANDED order=162 edges=243 simple=1 cubic=1 connected=1 bridgeless=1 target=54 circuits=27+27 global_minimum=54 minimum_support_ties=1
+UNCLEAN base_target_extensions=15360 clean=0 contraction_to_expanded=valid
+FIVECDC formula_variables=1215 cnf_clauses=6885 xor_rows=810 status=SAT
+  direct_class_sizes=92,109,97,94,94 direct_sha256=845668d8778e48ae55cf7373ed159519804407a6d7afeb9999fda02cf97ae8c7
+  composition_class_sizes=88,92,92,110,104 composition_sha256=f1b77b572dfbd127e9dbf97a6b84a7b5be2e6d344393abb7f14b358af7b7fcd9
+  cnf_sha256=ed1b717acf0b00105dcfaa0b847e94c2bcb4694458321db0b0a939be35e9eef4
+  labelled_graph6_sha256=52833c3cac5378b7af649575be8080dc435a10331e2b59f7202082467ce7ea7e
+PASS: unique globally minimum size-54 projection is uncleanable; graph has FiveCDC

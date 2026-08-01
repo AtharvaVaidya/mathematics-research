@@ -1,0 +1,61 @@
+{
+  "by_order": {
+    "10": {
+      "feasible_star_fibres": 140,
+      "graphs": 18,
+      "parallel_odd_witness_star_fibres": 140
+    },
+    "12": {
+      "feasible_star_fibres": 684,
+      "graphs": 81,
+      "parallel_odd_witness_star_fibres": 684
+    },
+    "14": {
+      "feasible_star_fibres": 4774,
+      "graphs": 480,
+      "parallel_odd_witness_star_fibres": 4774
+    },
+    "16": {
+      "feasible_star_fibres": 45248,
+      "graphs": 3874,
+      "parallel_odd_witness_star_fibres": 45248
+    },
+    "4": {
+      "feasible_star_fibres": 4,
+      "graphs": 1,
+      "parallel_odd_witness_star_fibres": 4
+    },
+    "6": {
+      "feasible_star_fibres": 12,
+      "graphs": 2,
+      "parallel_odd_witness_star_fibres": 12
+    },
+    "8": {
+      "feasible_star_fibres": 32,
+      "graphs": 5,
+      "parallel_odd_witness_star_fibres": 32
+    }
+  },
+  "cadical_version": "3.0.1",
+  "claim": "Every feasible vertex-star fibre in every biconnected simple cubic graph through 16 vertices has a packing for which an odd number of the 21 parallel translation-orbit six-point systems are soluble.",
+  "classification": "EXACT FINITE PRODUCER CENSUS",
+  "connectivity_cuts": 21333614,
+  "evaluated_flow_gl_orbits": 267127,
+  "feasible_star_fibres": 50894,
+  "graph_corpus_sha256": "901acfc0b09951e2ac5c76f03a43b7aa2ff318778b238ed663a8772819af9701",
+  "graph_generator": "geng -q -C -d3 -D3 ORDER",
+  "graphs": 4461,
+  "max_order": 16,
+  "packing_models": 401995,
+  "parallel_odd_witness_star_fibres": 50894,
+  "schema": "six-point-parallel-selector-through16-v1",
+  "seconds": 132.945,
+  "semantic_note": "The lazy SAT producer enumerates omission colourings and checks every retained model as three literal spanning trees before constructing its fundamental-completion flow.",
+  "source_sha256": {
+    "source/census_jaeger_two_tree_exchange_through14.cpp": "f9f0ec9edc116328a1a70d9809cef08ef1eb2382c69b89b8b592f96d30a62686",
+    "source/search_six_point_star_perpacking_parity.cpp": "41fc56fcb2cdcdf4f99e2f2695ddfc7e6c23e47bb91b47c9279f5b141bf30218",
+    "source/search_six_point_star_perpacking_parity_sat.cpp": "e388ac290265e51c1b0a1a4257c8c3df8a001a9750cf24ecd9c6349d8aae18b7"
+  },
+  "status": "NO_COUNTERMODEL_THROUGH_BOUND",
+  "trust_boundary": "The producer supplies exhaustive finite evidence. It is AI-authored and is not an independently formalized proof of exhaustion. The universal selector and FiveCDC remain open."
+}

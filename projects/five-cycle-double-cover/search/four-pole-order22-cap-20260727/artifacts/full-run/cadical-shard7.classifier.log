@@ -1,0 +1,8 @@
+progress rows=100000 queries=399359 hits=0
+progress rows=200000 queries=798146 hits=0
+progress rows=300000 queries=1197047 hits=0
+progress rows=400000 queries=1595350 hits=0
+progress rows=500000 queries=1993969 hits=0
+progress rows=600000 queries=2392620 hits=0
+progress rows=700000 queries=2791146 hits=0
+SUMMARY implementation=cadical mode=exceptional rows=744513 queries=2968254 sat=2843816 hits=0

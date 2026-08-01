@@ -1,0 +1,1 @@
+PASS: Johnson transfer-tree endpoint rescue; labeled_trees=145, normalized_homomorphisms=165570, maximum_path=5, maximum_plan=18

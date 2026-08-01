@@ -1,0 +1,9 @@
+Retained replay environment (2026-07-31)
+
+Python 3.14.5
+CaDiCaL 3.0.1
+CryptoMiniSat 5.14.7
+
+Solver paths used by check_sat_smoke.py:
+/opt/homebrew/bin/cadical
+/opt/homebrew/bin/cryptominisat5

@@ -1,0 +1,136 @@
+GL maps: 6
+matrix order: m11,m21,m12,m22
+n=4 edges=6 configurations=56 targets=208 vars=1024 clauses=4208 status=s UNSATISFIABLE
+n=4 PASS: no abstract tensor countermodel
+n=5 edges=10 configurations=336 targets=1248 vars=10632 clauses=43616 status=s SATISFIABLE
+SOLVER COUNTERMODEL masks: 8 0 10 10 1 11 8 10 0 2
+CANONICAL COUNTERMODEL masks: 0 0 0 0 0 0 10 0 8 2
+n=5 PASS: exact countermodel verified
+{
+  "active_per_circuit_charge_blocks": 4,
+  "all_local_map_assignments": 7776,
+  "blocks": 5,
+  "charged_tensor_formula_checks": 32256,
+  "circuit_lengths": [
+    16,
+    4
+  ],
+  "clean_start_pairs_by_charge_shape": {
+    "all_equal": 0,
+    "two_pairs": 0
+  },
+  "common_shift_invariance_checks": 32256,
+  "edge_order": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      3,
+      4
+    ]
+  ],
+  "feasible_maps_by_charge_shape": {
+    "all_equal": 288,
+    "two_pairs": 1728
+  },
+  "integrable_local_map_assignments": 2016,
+  "literal_start_pairs_checked": 32256,
+  "per_circuit_source_charges": [
+    [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      0
+    ]
+  ],
+  "rank_one_realization_checks": 360,
+  "status": "VERIFIED_FOUR_CHARGE_COUNTEREXAMPLE",
+  "tensor_masks": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    10,
+    0,
+    8,
+    2
+  ],
+  "total_occurrences": 20,
+  "zero_tensor_solution_count": {
+    "by_charge_shape_gauge": {
+      "all_equal": 96,
+      "two_pairs": 288
+    },
+    "full_map_and_start_pairs": 9216,
+    "gauge_relative_translations": 384,
+    "parity": 0
+  }
+}
+{
+  "bridgeless_edge_deletion_checks": 57,
+  "complement_blocks": 5,
+  "connected": true,
+  "cubic": true,
+  "deletion_census": {
+    "direct_deletion": 240,
+    "kempe_then_deletion": 96
+  },
+  "displayed_projection_size": 20,
+  "edges": 57,
+  "gauge_integrable_component_maps": 336,
+  "global_minimum_projection_size": 0,
+  "kempe_move_signatures": {
+    "(0, (1, 2), (0, 16), (1, (1, 2), (1, 17)), (4, 3))": 24,
+    "(0, (1, 2), (0, 16), (1, (1, 2), (7, 17)), (4, 3))": 24,
+    "(0, (1, 3), (0, 16), (1, (1, 3), (1, 17)), (4, 3))": 24,
+    "(0, (1, 3), (0, 16), (1, (1, 3), (7, 17)), (4, 3))": 24
+  },
+  "minimum_clean_descendant": [],
+  "simple": true,
+  "status": "VERIFIED_CUBIC_REALIZATION_AND_DESCENT",
+  "three_edge_colouring_edges_checked": 57,
+  "vertices": 38
+}

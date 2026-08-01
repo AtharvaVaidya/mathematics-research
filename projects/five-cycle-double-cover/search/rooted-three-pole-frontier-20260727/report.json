@@ -1,0 +1,204 @@
+{
+    "base_pair_scope": {
+        "distinct_nonempty_nonbridge_masks_through_order_13": 22,
+        "inclusion_minimal_masks": [
+            "0x0c",
+            "0x12",
+            "0x21"
+        ],
+    "orders_checked": [
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17
+        ],
+        "relation_sets_between_all_realized_masks": [
+            "DI",
+            "DEI"
+        ],
+    "order_15_targeted_screen": {
+      "calls_per_implementation": 3624869,
+      "closed": 1028361,
+      "empty": 29207,
+      "graphs": 50683,
+            "nonbridge_roots": 1057568,
+      "transcript_sha256": "07e13a0c96f9aee26c84715ea61f1843d89ec9e21e1294828c113b617e2f3570",
+      "violations": 0
+    },
+    "order_17_targeted_screen": {
+      "calls_per_implementation": 52216251,
+      "closed": 15308564,
+      "empty": 337059,
+      "graphs": 654676,
+      "nonbridge_roots": 15645623,
+      "report": "order17-base-pair-report.json",
+      "report_sha256": "705644c782f86a72d5e9b0ca0093e416328327fe3d90b06bcd8dbc329123c5e5",
+      "shards": 8,
+      "violations": 0
+        },
+        "violations": 0
+    },
+    "binaries": {
+        "base_pair_cadical": "0bc5bc89e5f92d9dadd51d2ea6303e3c0334df2a4b21bf99423c2d92a047b545",
+        "base_pair_csp": "f6ac2b266c151c7a142d011dd8c7e5e5d381140b0b96670bb767d22658cb307a",
+        "cadical": "f15f32fe8d5327cc02feda372ad417c9ef490488d9a3608ea93932caca8c92b5",
+        "csp": "d0efc5172d8511541d22a4ded07057ddafb0eeebafb4e537b4fcf25ba4abdb8d",
+        "geng": "ad2f68adf733dbed7cad543841cfa329740596ee5cd136f17a0a17f6e744f5ad"
+    },
+    "classification": "FINITE INDEPENDENT EXACT ENUMERATION",
+    "orders": [
+        {
+            "crosscheck": "full per-root transcript byte-identical",
+            "graphs": 1,
+            "input_sha256": "8e71b38f493557683524eb45ca8f814efe19aa3c9d7e946c42a25658f532618e",
+            "order": 3,
+            "raw_transcript_sha256": "1eddaeb086336cc265e3306cf978644aee624967c316ba40685c831bed643ed6",
+            "retained_file": "artifacts/order3-full-transcript.tsv.gz",
+            "retained_sha256": "28d81452a058bd57b5561c6a95323f605a060c9b035ec3c530f63879cc3eb1b6",
+            "roots": 3,
+            "singleton": 0,
+            "singleton_nonbridge": 0,
+            "size_profile": {
+                "2": 3
+            }
+        },
+        {
+            "crosscheck": "full per-root transcript byte-identical",
+            "graphs": 2,
+            "input_sha256": "6aae421aba65bdee41132f23465741d6011631123115cb5dfc47648c8a63eaba",
+            "order": 5,
+            "raw_transcript_sha256": "4763c3ae6b7ae0cb359e40f263946ce7138a9808d792c1d21cd0958dccb7803e",
+            "retained_file": "artifacts/order5-full-transcript.tsv.gz",
+            "retained_sha256": "3ef401039f7d59868d5363564c1513a52820ee3ddec1ae015b4ec8fa47ba43cd",
+            "roots": 12,
+            "singleton": 0,
+            "singleton_nonbridge": 0,
+            "size_profile": {
+                "2": 3,
+                "3": 3,
+                "4": 6
+            }
+        },
+        {
+            "crosscheck": "full per-root transcript byte-identical",
+            "graphs": 10,
+            "input_sha256": "8885d4bf4914156a04b4c22a567d2218c01b2c7b732f2e2c9365cca801b37920",
+            "order": 7,
+            "raw_transcript_sha256": "e979d01a6c3e0bf6a77defdfead58a8f1e81a87abe8d944d6e345147fc12cb47",
+            "retained_file": "artifacts/order7-full-transcript.tsv.gz",
+            "retained_sha256": "75473e0887f2b490c172408876bbfc598170d75f70001735fd39a6524532fb45",
+            "roots": 90,
+            "singleton": 1,
+            "singleton_nonbridge": 0,
+            "size_profile": {
+                "1": 1,
+                "2": 19,
+                "3": 15,
+                "4": 34,
+                "5": 3,
+                "6": 12,
+                "7": 6
+            }
+        },
+        {
+            "crosscheck": "full per-root transcript byte-identical",
+            "graphs": 63,
+            "input_sha256": "272b6fddbca4fb18741ddedb7d4091efb3b599b75179e214edf542f2ddcaa09a",
+            "order": 9,
+            "raw_transcript_sha256": "cde40039afddc28a30a3cea20e6bf8cada1f6bdea336540b6ee6cfaadea2fc42",
+            "retained_file": "artifacts/order9-full-transcript.tsv.gz",
+            "retained_sha256": "b6efba6f4126ce79eefd7c04b91c25e59b1d7b3691cc8783b29834f2181b59da",
+            "roots": 756,
+            "singleton": 9,
+            "singleton_nonbridge": 0,
+            "size_profile": {
+                "0": 24,
+                "1": 9,
+                "2": 108,
+                "3": 100,
+                "4": 242,
+                "5": 23,
+                "6": 104,
+                "7": 146
+            }
+        },
+        {
+            "crosscheck": "full per-root transcript byte-identical",
+            "graphs": 482,
+            "input_sha256": "376247934e1bedde49c2309ff13aaf4ec94453070c6d4cc44428e8a8a943fdc3",
+            "order": 11,
+            "raw_transcript_sha256": "50b79134b7f7dd53c53a4c05b10a884ad5178e75f238992b0d44eb4f69b88e09",
+            "retained_file": "artifacts/order11-full-transcript.tsv.gz",
+            "retained_sha256": "1ca33c6ef1340e7451d6868b5b3a7c126b9e02f2616cc5cedbd22d30e96de053",
+            "roots": 7230,
+            "singleton": 63,
+            "singleton_nonbridge": 0,
+            "size_profile": {
+                "0": 285,
+                "1": 63,
+                "2": 754,
+                "3": 718,
+                "4": 2059,
+                "5": 188,
+                "6": 977,
+                "7": 2186
+            }
+        },
+        {
+            "crosscheck": "full per-root transcript byte-identical",
+            "graphs": 4541,
+            "input_sha256": "950611fd21c9f5b1c06ef9577024c5246a282c97f630c41452aeedc355a3c498",
+            "order": 13,
+            "raw_transcript_sha256": "76f63e9503b0ab04c9bbb3104a9dc8b2a681123bdb7e28001e0f97a6be0d06ff",
+            "retained_file": "artifacts/order13-full-transcript.tsv.gz",
+            "retained_sha256": "741f316d15879d8b3efc7db493c4a077679abe2f0b6802e8119479e25a49984e",
+            "roots": 81738,
+            "singleton": 512,
+            "singleton_nonbridge": 0,
+            "size_profile": {
+                "0": 2970,
+                "1": 512,
+                "2": 6136,
+                "3": 5936,
+                "4": 21267,
+                "5": 1580,
+                "6": 9825,
+                "7": 33512
+            }
+        },
+        {
+            "crosscheck": "nonbridge-singleton output and aggregate summary byte-identical",
+            "graphs": 50683,
+            "input_sha256": "6272ec5ae2c1cc68e9d2c638ccb64fbc803889da7d6f81facf2e36a0054cfd2a",
+            "order": 15,
+            "roots": 1064343,
+            "singleton": 4503,
+            "singleton_nonbridge": 0,
+            "size_profile": {
+                "0": 31479,
+                "1": 4503,
+                "2": 58971,
+                "3": 55207,
+                "4": 253298,
+                "5": 14375,
+                "6": 108143,
+                "7": 538367
+            },
+            "summary_sha256": "dba116e05dbff304c91bd662fd851f880d8afe64ab96eeeac2e4c1f7addd76f3",
+            "violation_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+    ],
+    "schema": "five-cdc-rooted-three-pole-frontier-v1",
+    "sources": {
+        "base_pair_cadical": "e1e590b0e9e9adca22d730d9a441acbe2a6a32a9e6a8af8107818a522f003be2",
+        "base_pair_csp": "048dfb2f982164b0d9fad096f0b481acb23986a8a0ddfc5f121f6a298d1147f5",
+        "cadical": "162d469547f92b4fea72d007ec06e67c18278bdbd59c3a0cedc372d463556b08",
+        "csp": "0330412987f54f9947e64b008778e15a242fec80912dab3bbf129a96ad1857c5"
+    },
+    "theorem": "No connected simple cubic three-pole through order 15 has a nonbridge root with a one-orbit nonempty signature.",
+    "warning": "The finite theorem does not prove universal rooted base-pair closure, the exceptional-signature conjecture, or Five-CDC."
+}

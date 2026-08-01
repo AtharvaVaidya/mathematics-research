@@ -1,0 +1,71 @@
+{
+  "bichromatic_mark_profile_counts": {
+    "0": 4,
+    "1": 10,
+    "1,0": 14,
+    "1,1": 40,
+    "1,1,0,0": 8,
+    "1,1,1": 24,
+    "1,1,1,0": 8
+  },
+  "cuts_tested_below_four": {
+    "1": 36,
+    "2": 630,
+    "3": 7140
+  },
+  "cyclic_four_cut_edge_indices": [
+    1,
+    18,
+    21,
+    27
+  ],
+  "cyclic_four_cut_edges": [
+    [
+      2,
+      3
+    ],
+    [
+      0,
+      16
+    ],
+    [
+      7,
+      17
+    ],
+    [
+      10,
+      19
+    ]
+  ],
+  "edges": 36,
+  "four_edge_subsets_until_witness": 11750,
+  "girth": 4,
+  "graph6": "W`??A???A_@_A_cO?S_Gc`_?@O@@?@OO??_????_??H_A?E",
+  "mark_edge_indices": [
+    0,
+    1,
+    34
+  ],
+  "mark_edges": [
+    [
+      0,
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      20,
+      23
+    ]
+  ],
+  "marked_subdivision_girth": 5,
+  "maximum_marks_on_one_bichromatic_component": 1,
+  "normalized_tait_colourings_sha256": "fd68c87466cb16726a47189cf8979f39155d86610c32dfab1f1c6da5af5db59f",
+  "order": 24,
+  "satisfies_every_circuit_length_plus_marks_at_least_10": false,
+  "scope": "order-24 simple connected cubic Tait-colourable graph with cyclic edge connectivity exactly four and a universally separated three-edge matching",
+  "status": "VERIFIED",
+  "tait_colourings_mod_global_s3": 36
+}

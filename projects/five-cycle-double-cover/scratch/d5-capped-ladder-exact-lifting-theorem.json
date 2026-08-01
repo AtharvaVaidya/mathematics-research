@@ -1,0 +1,55 @@
+{
+  "schema": "d5-capped-ladder-exact-lifting-theorem-v1",
+  "status": "PROVED",
+  "date": "2026-07-28",
+  "scope": {
+    "graph_family": "capped ladder L_m",
+    "states": "all D5 flows",
+    "roots": "one noncentral internal edge in each terminal diamond",
+    "moves": "factor-component switches containing a root"
+  },
+  "exact_word_model": {
+    "vertices": "root labels and nested two-edge-cut labels",
+    "target_graph": "Johnson graph J(5,2)",
+    "left_move": "coordinate transposition on the maximal active prefix",
+    "right_move": "coordinate transposition on the maximal active suffix",
+    "lifting": "every abstract endpoint move is realized by the corresponding actual root factor component"
+  },
+  "theorems": [
+    "every finite J(5,2) walk endpoint-reconfigures to an alternating two-label walk",
+    "every scoped capped-ladder state has a finite root-component rescue",
+    "there is no closed bad rooted orbit in the scoped family"
+  ],
+  "proof_lemmas": [
+    "equal labels on every two-edge cut",
+    "ladder cell straight/U-turn transfer determined by adjacent cut-label activity",
+    "noncentral cap root label is adjacent to the cut label",
+    "cap root component reaches the cut exactly when the factor is active there",
+    "any last neighbor can be recolored while fixing the penultimate walk vertex using at most two singleton suffix moves",
+    "inductive lifting transforms every walk to alternation"
+  ],
+  "finite_checks": {
+    "diamond_labelings": 180,
+    "directed_ladder_cells": 60,
+    "cell_factor_tests": 600,
+    "normalized_walks_through_length_6": 9331,
+    "actual_family_lifts": "L_2 through L_8"
+  },
+  "artifacts": [
+    {
+      "path": "scratch/d5-capped-ladder-exact-lifting-and-eventual-rescue.md",
+      "sha256": "83e174d621bf70f517943af8b8e01e69bdd5cebdf9ae1d4fa09cbcf5308bfecb"
+    },
+    {
+      "path": "scratch/check_d5_capped_ladder_exact_lifting.py",
+      "sha256": "ad2d21e269bf51d3b90b28209fcdc859a8929e798ae5a720f3a83c54289d28f1"
+    },
+    {
+      "path": "scratch/d5-capped-ladder-exact-lifting-check.txt",
+      "sha256": "b0c1b9f1f3849a57d1dac9c506f380b49239e9be287b68ed32f12d4c4846de7b"
+    }
+  ],
+  "fivecdc_counterexample": false,
+  "fivecdc_resolution": false,
+  "remaining_scope": "branching or cyclic transfer networks and arbitrary cubic graphs"
+}

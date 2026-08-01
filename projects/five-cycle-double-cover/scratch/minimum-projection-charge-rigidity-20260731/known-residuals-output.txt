@@ -1,0 +1,4 @@
+size-14 direct residuals: 224 profile=(5, 2, 2, 0)
+size-15 direct residuals: 6036 profile=(5, 2, 2, 0)
+fixed-word size-16 direct residuals: 8 profile=(5, 2, 2, 0)
+ALL 6,268 KNOWN DIRECT RESIDUAL ROWS HAVE THE PETERSEN CHARGE CORE

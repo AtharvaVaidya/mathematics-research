@@ -1,0 +1,8 @@
+minimal larger profiles: (k,q)=(3,3) and (5,1)
+k=3: admissible_multisets=28 without_partner_free_direction=0
+k=5: admissible_multisets=168 without_partner_free_direction=0
+k=7: admissible_multisets=588 without_partner_free_direction=0
+k=9: admissible_multisets=1568 without_partner_free_direction=28
+sharp k=9 no-partner-free example for b=1: 2,2,3,4,4,5,6,6,7
+nonzero cut-XOR cases checked=84
+PASS

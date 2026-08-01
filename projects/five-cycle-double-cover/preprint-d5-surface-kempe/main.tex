@@ -1,0 +1,2280 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\geometry{margin=1in}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\Dfive}{D_5}
+\newcommand{\symdiff}{\mathbin{\triangle}}
+\newcommand{\kap}{\kappa}
+\newcommand{\wt}{\operatorname{wt}}
+
+\title{Coloured Surfaces, Rooted Transitions, and Kempe Surgery for
+\(D_5\)-Flows:\\Structural Lemmas and Finite Evidence}
+\author{Working research note for independent human verification}
+\date{August 1, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The standard five-cycle-double-cover conjecture asks whether every finite
+bridgeless graph has at most five Eulerian subgraphs covering each edge
+exactly twice.  It remains unresolved.  This note records a structural
+model and exact computations arising from an attempted proof.
+
+For a loopless cubic graph, a five-cycle double cover is equivalently a
+conservative labeling of every edge by a two-subset of five coordinates,
+called a \(D_5\)-flow.  We show directly that such a flow canonically
+determines a closed triangulated surface whose faces are dual to the graph
+vertices and whose primal vertices are properly coloured with five
+colours.  The coordinate circuits are precisely the primal vertex links,
+and
+\[
+ \chi(S(q))=\sum_{i=0}^{4}\kap(C_i)-\frac{|V(G)|}{2}.
+\]
+The usual componentwise coordinate transposition is a reversible
+triangle-band recolouring and regluing surgery.  We give an exact
+permutation formula for its change in Euler characteristic and a cube
+example in which one switch changes a torus into a sphere.
+
+As a separate delimiter for compressing the new eight-cycle construction,
+we allow a graph-dependent rule to use the full local affine triangle of
+an old pair label, requiring only that equal local triangle states reuse
+the same recolouring.  A 12-vertex simple bridgeless cubic witness has
+connected state-adjacency graphs for all fifteen pairs and eleven distinct
+triangle rows spanning the binary cycle space of \(K_6\).  State transport
+therefore collapses the rule to a coboundary \(r(xy)=a_x+a_y\); weight-two
+outputs would give a homomorphism \(K_6\to R_5\), impossible because
+\(\omega(R_5)=5\).  Order twelve is sharp for this connected-state/full-rank
+mechanism.  The witness is Tait-colourable, and its positive cover uses
+different local permutations at two occurrences of the same old state, so
+this is a precise no-go for state-only compression, not a FiveCDC
+counterexample.
+
+We also prove a four-coordinate locking lemma and give a separately
+checkable 14-vertex contraction whose complete generalized-switch orbit
+has twelve normalized states, none satisfying the boundary condition
+needed to undo the contraction.  This refutes a natural reconfiguration
+lemma, not the five-cycle-double-cover conjecture.  A complementary Tait
+quotient proves that the analogous fully circuit-trapped branch is
+root-universal on cubic graphs, explaining why the degree-four trap does
+not lift unchanged.  More generally, a direct Tait-colouring formula
+realizes any prescribed circuit as exactly one bichromatic factor.
+Consequently every two edges of a 2-connected Tait-colourable cubic graph
+share a factor component, and any cubic edge insertion whose eliminated
+graph is Tait-colourable has an explicit \(D_5\)-flow.  Thus the unresolved
+edge-elimination premise is confined to non-Tait graphs.  A compact
+certificate of 30,858 explicit flows, checked without the SAT generator,
+proves that every simple cyclically 4-edge-connected cubic graph through
+order 28 is feasible for every independent root pair.  The non-Tait part
+comprises 14,009 canonically generated graphs and 10,689,351 root pairs; the
+statement is finite and conditional on the documented canonical-generator
+source boundary.  This is an explicit certification of a known stronger
+finite phenomenon, not a new order frontier: Brinkmann, Goedgebeur,
+H\"agglund, and Markstr\"om proved the corresponding strong 5-CDC statement
+through order 34~\cite[Observation~6.6]{BrinkmannEtAl2013}.  We also construct
+a planar cubic capped-ladder
+family proving that no constant number of root-component Kempe switches
+can always rescue two prescribed edges; this concerns a restricted
+strategy and does not refute rooted Kempe universality or FiveCDC.
+We prove that universal rooted feasibility on the smaller graph obtained
+by eliminating one edge of a minimum counterexample would imply
+FiveCDC; a still weaker sufficient premise only concerns independent
+roots in 3-edge-connected cubic graphs with the short-cycle geometry
+forced by edge elimination from girth ten.  We give a linear-size exact
+SAT/XOR certificate for the rooted factor-connectivity condition, using
+local transition variables whose boundary is the prescribed root pair.
+For cubic three-edge cuts we also isolate a six-state typed cap signature,
+prove an internal/external-mode gluing lemma, and exhaustively compute all
+138,144 rooted interfaces on biconnected simple cubic graphs through order
+14; every computed signature contains a double star.  The corresponding
+universal double-star premise is open.  At the same finite orders, every
+interface also has one individual flow whose external root factors
+collectively meet all three cap ports; independent enumeration reaches
+order 12 and a third implementation rechecks order 14.  This all-flow
+property is not orbitwise, and its universal form is open.  In the
+same rooted language, a compact positive certificate and separately written
+semantic checker cover all 1,301,664 interfaces on the 3,874 biconnected
+simple cubic graphs of order 16, all interfaces in retained canonical
+cyclically-four non-Tait streams through order 26, and seven literal strong
+snarks of order 34: 2,674,404 interfaces in total.  The latter rows depend
+on the documented corpus boundary and do not constitute a complete
+order-34 theorem.  In the
+marked-girth domain actually
+forced by edge elimination, a nontrivial three-cut must separate the roots;
+a self-contained edge-rooted nonbacktracking-walk count shows that each
+resulting cap has order at least 58 and the restored parent has order at
+least 116.  Two Tait caps always glue
+by external-mode states.  In any cap carrying a \(D_5\)-flow, a physical
+port adjacent to the root is automatically covered by an external state;
+the proof is a six-case local table.  The exact surviving branch therefore
+has a non-Tait cap of order at least 58 and concerns only ports independent
+of the root.  One 890-vertex non-Tait girth-ten
+control has the full six-state signature by six explicit checked flows,
+although one individual flow misses external coverage at one port.  Thus
+the marked-girth blockers do not force externality without changing the
+flow.  Literal certificates also make all 1,335 edge eliminations of this
+named graph root-good; this remains a one-graph finite result.
+For separated two- and three-edge cuts we refine the six-state union to an
+exact finite relation and prove a natural-join formula for rooted external
+coverage.  A literal checker exhausts two complete cut examples and a
+bounded census finds no bad pair among 24,039 realizable relation pairs
+through host order ten.  We also give a human-checkable weight-four
+complement translation: on an Eulerian subgraph whose labels omit one
+coordinate, complementing every label inside the other four coordinates
+preserves the flow and toggles exactly the four factors containing the
+omitted coordinate.  Explicit translations cross the previously isolated
+Kempe-orbit barriers.  A complete order-14 audit finds 12 interfaces where
+no single fixed-coordinate Eulerian complement immediately works; every one
+nevertheless has a disjoint complement five-circuit into a good Kempe orbit.
+This refutes the one-step strengthening but leaves an exact enlarged-orbit
+lemma open.  Neither the natural join nor this enlarged move proves that
+every realizable cap pair is compatible.
+Finally,
+exhaustive computations show that all 33,598 terminal
+equal-Euler-characteristic Kempe plateaus on the 480 biconnected simple
+cubic graphs of order 14 are root-universal.  A sharper fixed-distance
+descent test has 642,167 subplateaus and no failure.  These are finite
+results only.  The universal terminal-plateau statement is left
+explicitly as a conjecture.
+\end{abstract}
+
+\section{Status, conventions, and contribution boundary}
+
+A \(k\)-cycle double cover, in the convention used here, is a list of at
+most \(k\) Eulerian edge-subsets such that every edge occurs in exactly two
+members.  Empty members may be appended, so ``at most five'' and ``five,
+allowing empty members'' are equivalent.  This agrees with the convention
+in Oum's recent exposition: the general cycle-double-cover theorem gives
+eight Eulerian subgraphs, while the reduction from eight to five remains
+Conjecture~18~\cite{Oum2026}.  Recent work on five-cycle double covers also
+continues to state the five-subgraph assertion as a conjecture and proves
+special cases~\cite{LiuEtAl2023,LiuEtAl2025}.  Hu\v{s}ek and
+\v{S}\'amal give the current flow-only equivalence and a bijective
+description of the eight-cycle lifting data~\cite{HusekSamal2026}.  Their
+Theorem~3.16 and Conjecture~3.19 provide unrooted flow-only context; the
+linear rooted-transition certificate below is a separate elementary
+connectivity encoding.  We do not claim that encoding as new without a
+specialist prior-art review.
+
+Finite boundary representations and the gluing of circuit double covers on
+ordered multipoles are established tools~\cite{HusekSamal2025}.  The exact
+rooted \(D_5\) relations below specialize that general philosophy; we make
+no novelty claim for finite-state composition as such.  The weight-four
+translation law and the particular rooted state quotient appear distinct
+in the sources checked for this draft, but this is a bounded negative
+search, not proof of priority.
+
+The orientable five-cycle-double-cover conjecture adds directed Eulerian
+orientations so that each edge is used once in each direction.  It is a
+different, stronger statement; no orientation condition is imposed in
+this note.
+
+The embedding aspect is established background, not a novelty claim.
+Catlin explicitly studied embedded graphs, facial colourings, and double
+cycle covers~\cite{Catlin1990}; see also Zhang's monograph
+\cite{Zhang2012} and Mohar and Thomassen's text
+\cite{MoharThomassen2001}.  Ghanbari and \v{S}\'amal formulate the cubic
+CDC in terms of embeddings without singular edges and study both
+approximation and twist operations~\cite{GhanbariSamal2025,
+GhanbariSamal2026}.  We have not completed a publication-grade prior-art
+search for the exact \(D_5\) five-colour specialization, the
+component-switch Euler formula below, or the particular finite trap.
+Accordingly, this draft makes no categorical novelty claim.  Its present
+value is that the statements, proofs, certificates, and limitations are
+exposed in a form that can be checked independently.
+
+\textbf{Literature-search TODO.}
+Before circulation as a preprint, conduct a targeted search for prior
+work on unbounded Kempe-switch distance in two-edge-cut chains, especially
+prefix/suffix word obstructions for cycle-double-cover or nowhere-zero
+flow reconfiguration, and for typed multipole signatures or transition
+systems equivalent to the rooted certificates below.  The capped-ladder
+theorem and the internal/external cap formalism have not yet been compared
+adequately against that literature.
+
+\section{\texorpdfstring{\(D_5\)-flows}{D5-flows}}
+
+All graphs in the structural sections are finite and loopless.  Parallel
+edges are permitted unless simplicity is stated.  Edge objects, including
+parallel ones, are distinct.
+
+Put
+\[
+ \Dfive=\binom{\{0,1,2,3,4\}}2\subset\F_2^5.
+\]
+We identify a pair \(ij\) with its weight-two incidence vector.  A
+\emph{\(D_5\)-flow} on a graph \(G\) is a map
+\[
+ q:E(G)\longrightarrow D_5
+\]
+such that
+\[
+ \bigoplus_{e\ni v}q(e)=0                                    \tag{1}
+\]
+at every vertex \(v\).  Since the graphs considered here are loopless,
+each incident edge appears once in (1).
+
+\begin{proposition}[cover--flow equivalence]\label{prop:cover-flow}
+The \(D_5\)-flows on \(G\) are in bijection with ordered five-tuples
+\((C_0,\ldots,C_4)\) of Eulerian edge-subsets in which every edge occurs
+exactly twice.
+\end{proposition}
+
+\begin{proof}
+Given \(q\), put
+\[
+ C_i=\{e\in E(G):i\in q(e)\}.
+\]
+The \(i\)-th coordinate of (1) says that \(C_i\) has even degree at every
+vertex.  Every label has weight two, so every edge belongs to exactly two
+of the \(C_i\).
+
+Conversely, given the five Eulerian subsets, label an edge by the two
+indices of the members containing it.  The label has weight two, and the
+five even-degree conditions are exactly (1).  The constructions are
+inverse.
+\end{proof}
+
+The following elementary local observation drives the surface model.
+
+\begin{lemma}[local coordinate triangle]\label{lem:local-triangle}
+Let \(a,b,c\in D_5\) and \(a+b+c=0\).  Then there are three distinct
+coordinates \(i,j,k\) for which
+\[
+ \{a,b,c\}=\{ij,ik,jk\}.
+\]
+\end{lemma}
+
+\begin{proof}
+We have \(c=a+b\).  Since
+\[
+ \wt(a+b)=4-2|a\cap b|=2,
+\]
+the two pairs \(a,b\) meet in exactly one coordinate.  Their union has
+three coordinates, and \(c=a\symdiff b\) is the third side of that
+coordinate triangle.
+\end{proof}
+
+\section{A triangle-state delimiter for eight-to-five compression}
+
+Write \(W=\F_2^3\).  In the eight-cycle construction of Oum and of
+Hu\v{s}ek--\v{S}\'amal, every edge receives an unordered pair
+\(P_e\in\binom W2\), and at a cubic vertex \(v\) the three incident pair
+labels are the sides of a three-point state
+\[
+             T_v=\{x,y,z\},\qquad xy,\quad xz,\quad yz.       \tag{C1}
+\]
+Conversely, every closed cubic pair labelling with this local form is
+compatible with the lifting construction: give \(xy\) the flow value
+\(x+y\), and give the state \(xyz\) the local potential \(x+y+z\).
+This is the pair form of the lifting construction in
+\cite{Oum2026,HusekSamal2026}.
+
+\begin{definition}[triangle-state rule]
+For one fixed supplied pair-labelled cover, a triangle-state rule chooses,
+after seeing the whole graph,
+\[
+ r_T(p)\in D_5\qquad
+ (T\text{ an occurring state},\ p\in\tbinom T2).
+\]
+It must satisfy local parity
+\[
+                       \sum_{p\in\binom T2}r_T(p)=0           \tag{C2}
+\]
+at every occurring state and edge agreement
+\[
+                         r_{T_u}(p)=r_{T_v}(p)                \tag{C3}
+\]
+when an old edge \(uv\) has pair label \(p\).  Thus the rule may depend on
+the complete local affine triangle, but two vertices having the same state
+must reuse the same three output labels.
+\end{definition}
+
+For a fixed old pair \(p\), let its \emph{state-adjacency graph} \(A_p\)
+have as vertices the distinct occurring states containing \(p\).  Every
+old edge labelled \(p\) joins its two endpoint states; loops and parallel
+edges may be discarded.
+
+\begin{lemma}[state transport]\label{lem:state-transport}
+If \(A_p\) is connected, edge agreement forces \(r_T(p)\) to have one
+value \(r(p)\), independent of the state \(T\) containing \(p\).
+\end{lemma}
+
+\begin{proof}
+Equation (C3) is equality along every edge of \(A_p\), so equality
+propagates along every path.
+\end{proof}
+
+\begin{lemma}[triangle-cocycle rigidity]\label{lem:triangle-rigidity}
+Let \(S\) be a set of old coordinates.  Suppose all \(A_p\) are connected
+and the incidence rows of the occurring states span
+\(Z_1(K_S;\F_2)\).  Every triangle-state rule then has words
+\(a_x\in\F_2^5\), unique up to a common translation, such that
+\[
+                              r(xy)=a_x+a_y                   \tag{C4}
+\]
+for every old pair \(xy\).
+\end{lemma}
+
+\begin{proof}
+Lemma~\ref{lem:state-transport} first makes every value depend only on the
+old pair.  Coordinate by coordinate, equation (C2) says that the resulting
+edge cochain \(r\) is orthogonal to the supplied triangle rows.  If those
+rows span the full cycle space, \(r\) belongs to its orthogonal complement,
+the cut space.  Fixing \(o\in S\), putting \(a_o=0\) and \(a_x=r(ox)\),
+the triangle equation on \(oxy\) gives (C4).  Any two such potentials
+differ by one common word.
+\end{proof}
+
+Let \(R_5\) be the graph on \(\F_2^5\) joining two words at Hamming
+distance two.  Its clique number is five.  Indeed, translate a clique to
+contain zero.  The other words are pairwise-intersecting two-subsets of
+\([5]\); they lie in a four-edge star or, once a triangle occurs, in a
+family of size at most three.  Including zero gives at most five, attained
+by zero and the four pairs of a four-edge star.
+
+\begin{theorem}[sharp triangle-state no-go]
+\label{thm:triangle-state-no-go}
+There is a 12-vertex simple bridgeless cubic graph with a supplied
+Oum-compatible eight-cover on six active coordinates for which no
+triangle-state rule into \(D_5\) satisfies \emph{(C2)}--\emph{(C3)}.
+Order twelve is minimum for this connected-state/full-rank certificate.
+\end{theorem}
+
+\begin{proof}
+Use the following states in vertex order, with \(012\) repeated:
+\[
+\begin{array}{rrrrrr}
+012&012&013&014&023&025\\
+045&124&125&135&234&345.
+\end{array}                                                   \tag{C5}
+\]
+Pair their side occurrences into the eighteen labelled graph edges
+\[
+\begin{array}{llll}
+0\!-\!2:01&1\!-\!3:01&0\!-\!4:02&1\!-\!5:02\\
+2\!-\!4:03&3\!-\!6:04&5\!-\!6:05&0\!-\!7:12\\
+1\!-\!8:12&2\!-\!9:13&3\!-\!7:14&8\!-\!9:15\\
+4\!-\!10:23&7\!-\!10:24&5\!-\!8:25&10\!-\!11:34\\
+9\!-\!11:35&6\!-\!11:45.&&
+\end{array}                                                   \tag{C6}
+\]
+The list directly gives a simple connected cubic graph.  Deleting each of
+its eighteen edges leaves it connected, so it is bridgeless; its graph6
+record in this order is \nolinkurl{KQh?k`CGGQ?R}.  At each vertex the
+incident labels are the sides of its state in (C5), so the supplied cover
+is Oum-compatible, with old coordinates 6 and 7 empty.
+
+All fifteen pairs on \(\{0,\ldots,5\}\) occur.  Twelve occur on one edge
+between their two states.  For the other three, the two edges connect the
+repeated state \(012\) respectively to
+\[
+\begin{array}{c|c}
+01&013,014\\
+02&023,025\\
+12&124,125.
+\end{array}
+\]
+Thus every \(A_p\) is connected.  In pair-column order
+\[
+01,02,03,04,05,12,13,14,15,23,24,25,34,35,45,
+\]
+the eleven distinct rows in (C5) have binary rank ten.  This equals
+\(\dim Z_1(K_6;\F_2)=15-6+1\), so
+Lemma~\ref{lem:triangle-rigidity} applies.  A putative rule would give six
+words \(a_x\) with every difference \(a_x+a_y\) of weight two, hence a
+\(K_6\to R_5\) homomorphism, contradicting \(\omega(R_5)=5\).
+
+For sharpness of this mechanism, a smaller cubic witness could only have
+order ten: rank ten needs at least ten distinct states and cubic order is
+even.  At order ten the ten rows would be distinct and independent.  Full
+rank forces all fifteen pair columns to occur.  Their thirty incidences,
+together with positive even incidence of every pair in a closed cover,
+would make every pair occur exactly twice.  The xor of all ten triangle
+rows would then be zero, contradicting independence.  Hence order at least
+twelve is necessary, and (C5)--(C6) attains it.
+\end{proof}
+
+The restriction is visible in a positive control.  In the edge order
+(C6),
+\[
+0,1,1,2,2,2,0,2,0,1,0,2,0,1,1,2,0,1
+\]
+is a proper 3-edge-colouring; mapping its colours to \(01,02,12\) gives a
+FiveCDC.  At vertex 0, the sides \(01,02,12\) of old state \(012\) receive
+colours \(0,1,2\), while at vertex 1 the same sides receive \(1,2,0\).
+The successful cover therefore uses different local permutations at two
+occurrences of the same old state.  Allowing arbitrary vertex-specific
+local rules removes the restriction entirely: compatible vertex-specific
+output triangles are exactly a FiveCDC labelling.  The theorem excludes
+only the state-only intermediate rule, not bounded-neighbourhood rules or
+the existential FiveCDC problem.
+
+Configuration homomorphisms and the Desargues/FiveCDC equivalence are
+prior art~\cite{KralEtAl2009}.  A bounded comparison with that work and
+the two recent eight-cover sources found no exact state-transport theorem
+or this witness, but priority remains unestablished.  Two independently
+structured deterministic checkers and the source audit are in the companion
+triangle-state scratch package dated 20260731.
+
+\section{The coloured-surface dictionary}
+
+We first give a construction that does not assume an embedding in
+advance.
+
+\begin{theorem}[canonical coloured surface]\label{thm:surface}
+Let \(G\) be a connected loopless cubic graph with a \(D_5\)-flow \(q\).
+Then \(q\) canonically determines, up to colour-preserving cellular
+isomorphism, a connected closed triangulated surface \(S(q)\) with the
+following properties.
+\begin{enumerate}
+ \item The triangles of \(S(q)\) are indexed by \(V(G)\), and the dual
+ graph is \(G\).
+ \item The primal vertices are properly coloured with coordinates
+ \(0,\ldots,4\), in the sense that the three corners of every triangle
+ have distinct colours.
+ \item If \(C_i=\{e:i\in q(e)\}\), the components of \(C_i\) are in
+ bijection with the primal vertices of colour \(i\).
+\end{enumerate}
+Consequently, if \(n=|V(G)|\), then
+\[
+ \chi(S(q))=\sum_{i=0}^4\kap(C_i)-\frac n2.                  \tag{2}
+\]
+\end{theorem}
+
+\begin{proof}
+For each \(v\in V(G)\), Lemma~\ref{lem:local-triangle} gives three
+coordinate colours on the incident labels.  Take an abstract triangle
+\(\Delta_v\) with those vertex colours, and assign the side opposite the
+remaining colour to the incident graph edge whose label is the two
+endpoint colours of that side.
+
+For every graph edge \(e=uv\), glue the side of \(\Delta_u\) indexed by
+\(e\) to the side of \(\Delta_v\) indexed by \(e\), using the unique map
+that preserves its two endpoint colours.  Every triangle side is paired
+exactly once.  The quotient is therefore a closed two-dimensional
+pseudomanifold.
+
+A quotient vertex can initially have more than one link component.
+Replace it by one vertex for each link component.  Each resulting vertex
+has a circular link, so the normalized quotient is a closed triangulated
+surface.  Splitting vertices does not change the triangles, their side
+pairings, or the dual graph.  The surface is connected because its dual
+graph \(G\) is connected.
+
+Fix a coordinate \(i\).  In a triangle having an \(i\)-coloured corner,
+the two sides at that corner are exactly the two incident graph edges
+whose labels contain \(i\).  Following the link of that corner through the
+side pairings therefore follows a component of \(C_i\), and every such
+component arises this way.  This proves (1)--(3).
+
+The surface has \(n\) triangles and \(3n/2\) primal edges.  Its number of
+vertices is \(\sum_i\kap(C_i)\).  Euler's formula now gives
+\[
+ \chi(S(q))=\sum_i\kap(C_i)-\frac{3n}{2}+n,
+\]
+which is (2).
+\end{proof}
+
+For a precise converse, call a face-colouring of a cellular embedding of
+a cubic graph \emph{corner-proper} when the three face incidences at each
+graph vertex have three distinct colours.  This definition rules out a
+single face occupying two corners at one vertex.
+
+\begin{proposition}[converse]\label{prop:surface-converse}
+A corner-proper five-colouring of the faces of a cellular embedding of a
+connected cubic graph gives a \(D_5\)-flow: label an edge by the colours of
+its two incident face occurrences.  This construction and
+Theorem~\ref{thm:surface} are inverse after normalizing quotient vertices
+by link components.
+\end{proposition}
+
+\begin{proof}
+At a cubic vertex, let the three incident face colours be \(i,j,k\).  The
+three incident edge labels are \(ij,ik,jk\), whose xor is zero.  Thus the
+labels form a \(D_5\)-flow.  Taking the dual triangle at every graph vertex
+recovers the original side pairings and face-colour occurrences.
+Normalization separates exactly the distinct link components represented
+by distinct facial occurrences.
+\end{proof}
+
+\begin{remark}
+Propositions~\ref{prop:cover-flow} and~\ref{prop:surface-converse} show
+that the standard, unoriented five-cycle-double-cover problem for cubic
+graphs can be read as a problem of finding a corner-proper
+five-face-coloured cellular embedding.  This is not an orientability
+statement: \(S(q)\) may be orientable or nonorientable.
+\end{remark}
+
+\section{Bichromatic boundary curves and Kempe surgery}
+
+For \(i\ne j\), define
+\[
+ Y_{ij}=C_i\symdiff C_j
+       =\{e:|q(e)\cap\{i,j\}|=1\}.                            \tag{3}
+\]
+It is an even subgraph and, in a cubic graph, a disjoint union of
+circuits.
+
+\begin{proposition}[boundary interpretation]\label{prop:boundary}
+In \(S(q)\), let \(H_{ij}\) be the primal subgraph induced by the primal
+vertices of colours \(i,j\).  After the standard dual isotopy,
+\[
+ \partial N(H_{ij})=Y_{ij},                                  \tag{4}
+\]
+where \(N(H_{ij})\) is a sufficiently small regular neighbourhood.
+\end{proposition}
+
+\begin{proof}
+Check one primal triangle.  If it contains neither \(i\) nor \(j\), the
+neighbourhood has no boundary arc there.  If it contains exactly one of
+them, the boundary arc around that corner crosses the two triangle sides
+whose labels contain exactly one of \(i,j\).  If it contains both, the
+boundary arc around their common primal edge crosses the other two sides,
+again exactly those whose labels contain one of \(i,j\).  These local arcs
+join across paired triangle sides and give (4).
+\end{proof}
+
+Let \(K\) be a circuit component of \(Y_{ij}\).  A \emph{component Kempe
+switch} transposes \(i,j\) in the label of every edge of \(K\).
+
+\begin{lemma}[validity of a component switch]\label{lem:valid-switch}
+A component Kempe switch sends a \(D_5\)-flow to a \(D_5\)-flow and is an
+involution.
+\end{lemma}
+
+\begin{proof}
+For an active label, transposing \(i,j\) adds the vector \(ij\).  At each
+graph vertex the circuit \(K\) has degree zero or two, so the total added
+vector in the local xor equation is zero.  The switched labels still have
+weight two.  Applying the same transposition a second time restores the
+original state.
+\end{proof}
+
+On the coloured surface, this move has a concrete description.  Recolour
+the triangles traversed by \(K\) by the transposition \(i\leftrightarrow
+j\).  Active side gluings still match because both incident triangles
+are recoloured.  At an inactive \(ij\)-side incident with exactly one
+recoloured triangle, compose the side gluing with the endpoint flip.  The
+result is exactly the coloured quotient for the switched flow.  Thus the
+move is a reversible triangle-band recolouring and regluing surgery.
+It need not act on one fixed topological surface.
+
+\subsection{An exact Euler-change formula}
+
+Fix \(i,j\), and abbreviate \(A=C_i\), \(B=C_j\).  At each vertex of
+\(A\cup B\), the nonzero membership patterns in \((A,B)\) are
+\[
+ 10,\qquad 01,\qquad 11.
+\]
+Discard components of \(A\cup B\) that are pure circuits.  In every
+remaining component suppress the degree-two paths.  The result is a cubic
+multigraph \(T_{ij}\) whose three edge classes \(10,01,11\) are perfect
+matchings.  Write \(m_{10},m_{01},m_{11}\) for the associated
+fixed-point-free involutions on \(V(T_{ij})\).
+
+For a permutation \(\pi\), let \(z(\pi)\) denote its number of cycles,
+including fixed points.
+
+\begin{theorem}[one-switch Euler formula]\label{thm:euler-change}
+Let \(K\) be a component of \(Y_{ij}\) meeting \(T_{ij}\), and let \(W\)
+be the vertices on the corresponding alternating circuit of
+\(m_{10}\cup m_{01}\).  Define
+\[
+\begin{array}{c|cc}
+ &W&V(T_{ij})\setminus W\\ \hline
+m'_{10}&m_{01}&m_{10}\\
+m'_{01}&m_{10}&m_{01},
+\end{array}
+\qquad m'_{11}=m_{11}.                                      \tag{5}
+\]
+If \(q'\) is obtained by switching on \(K\), then
+\begin{equation}
+\begin{split}
+\chi(S(q'))-\chi(S(q))
+ =\frac12\bigl[&
+ z(m'_{10}m_{11})+z(m'_{01}m_{11})\\
+ &-z(m_{10}m_{11})-z(m_{01}m_{11})\bigr].
+\end{split}
+\tag{6}
+\end{equation}
+If \(K\) is a discarded pure circuit, the Euler change is zero.
+\end{theorem}
+
+\begin{proof}
+Only \(C_i=A\) and \(C_j=B\) can change, so by (2) the Euler change is
+\[
+ \Delta\kap(A)+\Delta\kap(B).                               \tag{7}
+\]
+The components of \(A\) that meet the cubic core correspond to the
+alternating circuits of the two matchings \(m_{10},m_{11}\); similarly,
+the core components of \(B\) correspond to the alternating circuits of
+\(m_{01},m_{11}\).
+
+If \(m_a,m_b\) are two perfect matchings, then on each alternating circuit
+of their union the product \(m_am_b\) has two permutation cycles.
+Therefore the number of alternating circuits is
+\(\tfrac12z(m_am_b)\).
+
+Switching \(i,j\) on \(K\) exchanges the \(10\)- and \(01\)-matching
+edges at exactly the vertices of \(W\), giving (5).  Substitute the
+before-and-after alternating-circuit counts into (7) to obtain (6).
+Pure circuit components outside the cubic core are unchanged or move
+whole from \(A\) to \(B\); their total contribution to (7) cancels.
+\end{proof}
+
+\subsection{A hand-checkable topology change}
+
+Take the cube with edge order
+\[
+\begin{array}{c|rrrrrrrrrrrr}
+e&0&1&2&3&4&5&6&7&8&9&10&11\\ \hline
+uv&01&03&04&12&17&23&26&35&45&47&56&67
+\end{array}
+\]
+and labels
+\[
+ 01,02,12,02,12,01,12,12,01,02,02,01.                      \tag{8}
+\]
+The reader can check the xor equation at each of the eight vertices
+directly from the table.  The coordinate component counts are
+\[
+ (\kap(C_0),\ldots,\kap(C_4))=(2,1,1,0,0),
+\]
+so (2) gives \(\chi=0\).  The edges \(\{0,1,3,5\}\) form one
+\(Y_{12}\)-circuit.  Transposing \(1,2\) on those four edges changes the
+component counts to
+\[
+ (2,2,2,0,0),
+\]
+so the new connected surface has \(\chi=2\).  A triangle-orientation
+propagation check shows that both surfaces are orientable.  Hence this
+single legal switch changes a torus into a sphere.  In particular, a
+global proof cannot treat all Kempe moves as curve slides on one fixed
+surface.
+
+\section{A four-coordinate locking mechanism}
+
+It is useful to distinguish component switches from a stronger move.
+For a coordinate pair \(p=ij\), a \emph{generalized factor switch}
+chooses any Eulerian edge-subset \(Z\subseteq Y_{ij}\) and adds the vector
+\(ij\) to every label on \(Z\).  This remains a \(D_5\)-flow by the same
+parity argument as Lemma~\ref{lem:valid-switch}.
+
+\begin{lemma}[four-coordinate one-step lock]\label{lem:four-lock}
+Suppose a \(D_5\)-flow uses exactly the four coordinates
+\(S=\{0,1,2,3,4\}\setminus\{t\}\), and suppose every nonempty coordinate
+class \(C_i\), \(i\in S\), is one circuit.  From this state, no generalized
+factor switch can introduce \(t\) nontrivially modulo a global coordinate
+permutation.
+\end{lemma}
+
+\begin{proof}
+A switch with pair \(p\subseteq S\) does not introduce \(t\).  For a pair
+\(p=\{i,t\}\), the absence of \(t\) gives
+\[
+ Y_{it}=C_i.
+\]
+A circuit has only two Eulerian edge-subsets, the empty set and the whole
+circuit.  The empty switch does nothing.  Switching all of \(C_i\)
+replaces \(i\) by \(t\) on every edge label containing \(i\), which is
+exactly the global coordinate transposition \(i\leftrightarrow t\).
+\end{proof}
+
+The hypothesis of Lemma~\ref{lem:four-lock} need not be preserved by all
+switches among the used coordinates.  Thus the lemma alone is a one-step
+statement, not an orbit theorem.  The following finite example separately
+certifies orbit closure.
+
+\begin{proposition}[certified generalized-switch trap]\label{prop:trap}
+There is a simple 3-connected cubic graph \(G\) on 14 vertices and an edge
+\(e\) such that, after contracting \(e\), the resulting degree-four graph
+has a generalized-factor-switch orbit with the following properties,
+modulo the global \(S_5\) action:
+\begin{enumerate}
+ \item the orbit has exactly 12 states;
+ \item every state uses four coordinates and each used coordinate class
+ is one circuit; and
+ \item every state has side xor of weight four and therefore cannot be
+ extended over the restored edge.
+\end{enumerate}
+The same contracted graph also has a different orbit containing
+extendible states.  Therefore this is not a counterexample to FiveCDC.
+\end{proposition}
+
+\begin{proof}[Finite certificate]
+The parent graph has graph6 string
+\[
+ \texttt{M?AA@BORD\_CoEOAo?}.
+\]
+In lexicographic edge order, contract edge \(15=(3,12)\).  With the
+contracted edges indexed by the inherited order, the prescribed sides at
+the degree-four vertex are
+\[
+ U=\{5,11\},\qquad V=\{15,16\}.
+\]
+One state in the orbit is
+\[
+\begin{split}
+(&01,02,03,13,03,01,23,02,03,03,02,23,23,13,12,\\
+ &01,23,12,01,02).
+\end{split}                                                  \tag{9}
+\]
+Its local xors vanish, while both side xors are
+\[
+ q(5)+q(11)=q(15)+q(16)=0123.                               \tag{10}
+\]
+
+The companion file \texttt{orbit-certificate.txt} lists all twelve
+normalized rows and the complete normalized adjacency relation.  A
+finite hand verification proceeds as follows.  For each row, check the
+local xor equations and (10).  For each coordinate pair, construct
+\(Y_{ij}\), delete one edge from every circuit to obtain a spanning
+forest, and use the remaining edges as a binary cycle-space basis.
+Switch every basis sum and normalize under the 120 coordinate
+permutations.  The resulting distinct rows are exactly the neighbours
+listed in the certificate.  The adjacency list is connected, so the
+twelve rows form one complete orbit.  Each row also directly satisfies
+the hypotheses of Lemma~\ref{lem:four-lock}.
+
+The supplied independent Python checker performs exactly these finite
+operations without a SAT solver, graph package, or canonical-labelling
+library.  It also checks cubicity, bridgelessness, and 3-connectivity of
+the parent.
+\end{proof}
+
+The proposition refutes the tempting assertion that every starting flow
+on a contraction can be repaired by generalized factor switches.  It
+does not refute the existential assertion that some flow on the
+contraction extends; in fact, the other orbit contains 968 normalized
+extendible states.
+
+\subsection{Why the degree-four trap does not lift unchanged}
+
+The contraction trap raises a natural concern: perhaps a cubic Kempe orbit
+could remain locked in four coordinates with all four coordinate classes
+connected and still fail rooted universality.  The next theorem excludes
+exactly that branch.
+
+Call a component-Kempe orbit on a cubic graph
+\emph{four-coordinate circuit-trapped} when every state uses exactly four
+coordinates and every used coordinate class is one circuit.
+
+\begin{theorem}[cubic \(D_4\) trap theorem]\label{thm:d4-trap}
+Every four-coordinate circuit-trapped component-Kempe orbit on a cubic
+graph is root-universal.  More precisely, every pair of root edges is
+rescued in the starting state or after one component switch between used
+coordinates.
+\end{theorem}
+
+\begin{proof}
+Fix a state \(q\), write \(S\) for its four used coordinates and \(t\) for
+the missing coordinate, and let \(r,s\) be distinct root edges.  For
+clarity, globally rename \(S\) as \(\{0,1,2,3\}\).
+
+Identify complementary labels in the three classes
+\[
+ \{01,23\},\qquad \{02,13\},\qquad \{03,12\}.                \tag{11}
+\]
+These are three Tait colours.  At each cubic vertex, the local xor triple
+is the triangle on three of the four coordinates, so its three labels lie
+in distinct classes in (11).  Thus the quotient is a proper
+three-edge-colouring.
+
+If \(q(r)\cap q(s)\) contains a coordinate \(i\), then both roots lie in
+\[
+ C_i=Y_{it}.
+\]
+The circuit-trap hypothesis says that \(C_i\) is one circuit, so the roots
+are already rescued.
+
+Otherwise the two root labels are disjoint.  They are complementary
+two-subsets of \(S\), hence have the same Tait colour \(A\).  Choose either
+other Tait colour \(B\).  The union of classes \(A\cup B\) is a factor
+\(Y_p\), where \(\{p,S\setminus p\}\) is the third class.  If \(r,s\) lie
+on the same component of \(Y_p\), they are already rescued.
+
+If they lie on different components, transpose the two coordinates of
+\(p\) on the component containing \(r\).  In the Tait quotient this
+interchanges the two active colours on that component: the colour of \(r\)
+changes from \(A\) to \(B\), while the colour of \(s\) remains \(A\).
+Labels from distinct complementary classes in (11) meet in exactly one
+coordinate, say \(k\).  The literal switch did not introduce \(t\), so
+both roots now lie in \(C'_k=Y'_{kt}\).  The switched state remains in the
+assumed circuit-trapped orbit, and therefore \(C'_k\) is one circuit
+containing both roots.
+\end{proof}
+
+The proof uses cubicity to obtain a proper Tait quotient and alternating
+bichromatic factor circuits.  Neither fact survives at the degree-four
+contraction vertex.  Theorem~\ref{thm:d4-trap} therefore explains why
+Proposition~\ref{prop:trap} cannot be transplanted unchanged to a cubic
+counterexample.  It closes only the fully circuit-trapped four-coordinate
+branch; a general rooted-orbit obstruction could still use five
+coordinates, a disconnected coordinate class, or transitions between
+those regimes.
+
+\section{Prescribing a factor circuit from a Tait colouring}
+
+The preceding quotient argument has a stronger constructive form that does
+not assume a circuit-trapped orbit.  Its existence conclusion is not new:
+Hoffmann-Ostenhof records the stronger fact that every 2-regular subgraph
+of a subdivision of a cubic graph with a nowhere-zero 4-flow belongs to a
+4-CDC~\cite[Lemma~0.2]{HoffmannOstenhof2012}.  Since a Tait-colourable
+cubic graph has such a flow, the theorem below is a direct explicit
+\(D_5\)-formula for that known case, followed by the root and insertion
+adaptations needed here.  Recall that, for a coordinate pair \(P\), the factor
+\[
+                  Y_P(q)=\{e:|q(e)\cap P|=1\}
+\]
+is Eulerian.
+
+\begin{theorem}[prescribed Tait factor]\label{thm:prescribed-tait-factor}
+Let \(H\) be a loopless cubic graph with a proper three-edge-colouring, and
+let \(K\) be any circuit of \(H\).  There is a \(D_5\)-flow \(q\) such that
+\[
+                         Y_{01}(q)=E(K).
+\]
+\end{theorem}
+
+\begin{proof}
+Name the three Tait colours \(2,3,4\).  If an edge \(e\) has colour \(c\),
+put
+\begin{equation}
+ q(e)=
+ \begin{cases}
+   0c,&e\in E(K),\\
+   \{2,3,4\}\setminus\{c\},&e\notin E(K).
+ \end{cases}                                                 \tag{T}\label{eq:tait-formula}
+\end{equation}
+Every label has weight two.  At a vertex outside \(K\), the three incident
+labels are \(23,24,34\), whose xor is zero.  At a vertex of \(K\), the two
+circuit edges have distinct colours \(a,b\), while the third edge has the
+remaining colour \(c\).  The three labels in \eqref{eq:tait-formula} are
+\[
+                              0a,\quad 0b,\quad ab,
+\]
+again with xor zero.  Thus \(q\) is a \(D_5\)-flow.  Coordinate \(1\)
+occurs nowhere, and a label meets \(01\) oddly exactly when it contains
+coordinate \(0\).  By \eqref{eq:tait-formula}, those edges are exactly
+\(E(K)\).
+\end{proof}
+
+\begin{corollary}[Tait root universality]\label{cor:tait-root-universal}
+If \(H\) is a 2-connected Tait-colourable cubic graph, then every two
+distinct edges \(r,s\) belong to one factor component of some
+\(D_5\)-flow.
+\end{corollary}
+
+\begin{proof}
+Every two edges of a 2-connected graph lie on a common circuit.  Indeed,
+subdivide both edges.  Subdivision preserves 2-connectivity, and the vertex
+form of Menger's theorem gives a circuit through the two new vertices.
+Suppressing them gives a circuit \(K\) of \(H\) containing \(r,s\).
+Theorem~\ref{thm:prescribed-tait-factor} makes \(K\) exactly the nonempty
+factor \(Y_{01}\).
+\end{proof}
+
+\begin{corollary}[Tait edge insertion]\label{cor:tait-edge-insertion}
+Let \(G\) be obtained from a 2-connected Tait-colourable cubic graph \(H\)
+by subdividing two distinct edges \(r,s\) with vertices \(u,v\) and adding
+the edge \(uv\).  Then \(G\) has a \(D_5\)-flow, and hence a five-even-
+subgraph double cover.
+\end{corollary}
+
+\begin{proof}
+Choose a circuit \(K\) through \(r,s\), apply
+Theorem~\ref{thm:prescribed-tait-factor}, and subdivide \(r,s\), giving
+both halves their old labels.  The subdivided \(K\) is a circuit \(K^*\)
+through \(u,v\).  Choose either \(u\)-to-\(v\) arc \(A\) of \(K^*\),
+transpose coordinates \(0,1\) on every edge of \(A\), and label the new
+edge \(uv\) by \(01\).
+
+At an internal vertex of \(A\), two incident labels are transposed, so xor
+conservation remains true.  At each of \(u,v\), exactly one old label
+changes by xor with \(01\), and the new label \(01\) cancels that defect.
+Every transposed label was \(0c\) and becomes \(1c\), so it still has
+weight two.  The resulting labels are therefore a \(D_5\)-flow on \(G\).
+Proposition~\ref{prop:cover-flow} gives the asserted cover.
+\end{proof}
+
+Thus a reduced graph produced by the two-root edge-elimination induction
+cannot obstruct extension merely by being Tait-colourable.  The remaining
+rooted premise is genuinely confined to non-Tait reduced graphs.  This is
+a reduction of that premise and an explicit adaptation of a known
+prescribed-subgraph result, not a resolution of FiveCDC.
+
+\subsection{An explicit rooted certification through order 28}
+
+Call a cubic graph \emph{independently root-universal} if, for every two
+vertex-disjoint edges \(r,s\), it has a \(D_5\)-flow in which some factor
+component contains both roots.
+
+\begin{theorem}[explicit finite certification]\label{thm:root-frontier-28}
+Every simple cyclically \(4\)-edge-connected cubic graph of order at most
+28 is independently root-universal, conditional on the documented
+completeness and option semantics of the retained Snarkhunter 2.0b graph
+streams.
+\end{theorem}
+
+The order cutoff in Theorem~\ref{thm:root-frontier-28} is not new.
+Brinkmann, Goedgebeur, H\"agglund, and Markstr\"om proved that every circuit
+in every bridgeless cubic graph through order 34 belongs to a
+5-CDC~\cite[Observation~6.6]{BrinkmannEtAl2013}.  Apply the standard
+two-edge insertion to independent roots of a graph of order at most 32.
+The inserted graph is bridgeless, cubic, and has order at most 34, so the
+published observation supplies a 5-CDC; Lemma~\ref{lem:two-root-insertion}
+then supplies the rooted flow.  Thus the existential statement below order
+28 is strictly subsumed by prior work.  The point of the theorem here is the
+literal specialized certificate and its solver-independent checker.
+
+\begin{proof}
+A cyclically $4$-edge-connected cubic graph is 2-connected: a bridge
+shore in a cubic graph necessarily contains a circuit.  Thus the
+Tait-colourable case is Corollary~\ref{cor:tait-root-universal}.  The
+Petersen graph is the smallest bridgeless non-Tait cubic graph, so for the
+remaining case the retained canonical streams begin at order ten and contain
+\[
+\begin{array}{c|rrrrrrrrrr}
+ |V|&10&12&14&16&18&20&22&24&26&28\\ \hline
+ \text{graphs}&1&0&0&0&2&6&31&155&1297&12517.
+\end{array}
+\]
+The generator logs, graph6 hashes, distinct-row counts, and an independent
+classification are part of the source package.  Thus there are 14,009
+non-Tait graphs.  A simple cubic graph of order \(n\) has
+\(\binom{3n/2}{2}-3n\) independent unordered edge pairs, giving 10,689,351
+pairs in total.
+
+The positive certificate records 30,858 literal \(D_5\)-flows.  A separately
+written standard-library checker reparses each graph6 row, verifies that
+every edge label has weight two, xors the three labels at every vertex,
+and constructs all ten factors \(Y_P\).  It then enumerates all independent
+edge pairs and verifies that each pair occurs in one component of one
+factor of at least one displayed flow.  It recomputes the totals 14,009,
+10,689,351, and 30,858.  These finite checks cover every non-Tait row, while the
+first sentence covers every remaining graph.
+\end{proof}
+
+The certificate and checker are in
+\texttt{scratch/d5-root-pair-census-20260731}.  The theorem neither bounds
+the order of a possible rooted obstruction nor proves the universal rooted
+premise.  It is not claimed as a novel finite frontier.
+
+\section{Unbounded delay for root-component rescue}
+
+Fix distinct root edges \(r,s\).  Call a state \emph{root-good} when some
+component of some \(Y_{ij}\) contains both roots.  While the state is not
+root-good, a \emph{root-component switch} means a component Kempe switch
+whose switched circuit contains exactly one root.
+
+For \(m\geq1\), define a capped ladder \(L_m\) as follows.  Its left cap
+has vertices \(a,b,p,q\), its ladder has vertices \(u_i,v_i\) for
+\(0\leq i\leq m\), and its right cap has vertices \(c,d,x,y\).  The edge
+set is
+\[
+\begin{split}
+ &ap,aq,bp,bq,pq,\quad au_0,bv_0,\\
+ &u_iv_i\quad(0\leq i\leq m),\\
+ &u_iu_{i+1},v_iv_{i+1}\quad(0\leq i<m),\\
+ &u_mc,v_md,\quad cx,cy,dx,dy,xy.
+\end{split}
+\]
+Thus the caps are copies of \(K_4-e\), and
+\[
+                  |V(L_m)|=2m+10,\qquad |E(L_m)|=3m+15.
+\]
+The graphs are simple planar cubic graphs.  They are bridgeless: cap
+edges lie on cap triangles, ladder edges lie on squares, and the
+attachment edges lie on cycles running through both rails and the caps.
+
+Put
+\[
+                         A=01,\qquad B=02,\qquad C=12.
+\]
+There is a Tait-supported \(D_5\)-flow on \(L_m\) for which the labels on
+the successive two-edge cuts from left to right form the length-\((m+2)\)
+prefix
+\[
+                         A,C,B,A,C,B,\ldots.
+\]
+Explicitly, label \(au_0,bv_0\) by \(A\), label \(u_0v_0\) by \(B\),
+and assign the rail-pair and rung labels successively so that every
+ladder vertex sees \(A,B,C\).  On the left cap take
+\[
+ q(ap)=q(bq)=B,\quad q(aq)=q(bp)=C,\quad q(pq)=A,
+\]
+and use the unique compatible Tait colouring on the right cap, up to
+exchanging its two inner vertices.  Every vertex then sees \(A,B,C\),
+so the local xor equations hold.
+
+\begin{theorem}[no constant root-component radius]
+\label{thm:unbounded-root-radius}
+Choose one root edge inside each cap of \(L_m\) in the state above.
+Every root-component-switch sequence that reaches a root-good state has
+length at least
+\[
+                         \left\lfloor\frac{m+2}{3}\right\rfloor.
+\]
+Consequently, no universal constant bounds the number of
+root-component switches required for rescue.
+\end{theorem}
+
+\begin{proof}
+Let \(D_0,\ldots,D_{m+1}\) be the nested two-edge cuts in the displayed
+word.  For an arbitrary \(D_5\)-flow, the two edges of each \(D_j\) have
+the same label: xor the vertex equations on either side of the cut;
+internal edges cancel twice, leaving the xor of the two cut labels.
+Write the resulting cut-label word as
+\(\lambda_0\lambda_1\cdots\lambda_{m+1}\).
+
+Let \(K\) be a factor component containing exactly one root.  Connectedness
+and nestedness imply that the cuts met by \(K\) form a prefix when \(K\)
+contains the left root and a suffix when it contains the right root.
+Moreover, \(K\) is Eulerian, so it meets a two-edge cut in zero or two
+edges.  A switch on \(K\) therefore applies one coordinate transposition
+to a prefix or suffix of the cut-label word.
+
+After \(t\) switches, their at most \(t\) boundaries divide the initial
+word into at most \(t+1\) intervals.  On each interval the final labels
+are obtained from the initial labels by one fixed coordinate permutation,
+namely the ordered composition of the switches covering that interval.
+
+If the final state is root-good through \(Y_h\), its component containing
+both roots crosses every \(D_j\).  Hence
+\[
+                              h\cdot\lambda_j=1
+                 \qquad(0\leq j\leq m+1),
+\]
+with dot product over \(\F_2\).
+
+Partition the initial word into
+\(\lfloor(m+2)/3\rfloor\) disjoint consecutive triples \(A,C,B\).
+No one triple can remain in a single interval.  Otherwise one coordinate
+permutation \(\pi\) would act on all three entries, and
+\[
+                \pi(A)+\pi(C)+\pi(B)=\pi(A+C+B)=0.
+\]
+Dotting with \(h\) contradicts the preceding display, because the xor of
+three ones is one, not zero.  Thus every disjoint triple contains a
+switch boundary in one of its two internal gaps.  Those gaps are disjoint
+between triples, so one boundary splits at most one triple.  Therefore
+\[
+                         t\geq\left\lfloor\frac{m+2}{3}\right\rfloor,
+\]
+as required.
+\end{proof}
+
+\begin{remark}[scope]
+The proof deliberately relaxes the actual move system and uses only its
+necessary prefix/suffix action.  It proves unbounded distance for the
+restricted root-component strategy.  It does not produce a state that is
+unrescuable by root-component switches, does not refute unrestricted
+rooted Kempe universality, and does not prove or disprove FiveCDC.
+Literal breadth-first searches find finite rescue distances
+\(3,4,5,6,8,9\) for selected roots in \(L_1,\ldots,L_6\), respectively.
+These computations are supplementary to, not inputs to, the proof.
+\end{remark}
+
+\section{Surface-Euler plateaus}
+
+Let \(\mathcal K(G)\) be the state graph whose vertices are \(D_5\)-flows
+modulo global coordinate permutations and whose edges are component
+Kempe switches.  Put
+\[
+ \Phi(q)=\chi(S(q)).
+\]
+For fixed graph edges \(r,s\), call \(q\) \emph{\((r,s)\)-good} if some
+\(Y_{ij}\)-component contains both roots.
+
+\begin{definition}
+A \(\Phi\)-plateau is a connected component after retaining only the
+equal-\(\Phi\) edges of \(\mathcal K(G)\).  It is \emph{terminal} when no
+state in it has a neighbour of larger \(\Phi\).  A set of states is
+\emph{root-universal} when, for every unordered edge pair \(r,s\), it
+contains an \((r,s)\)-good state.
+\end{definition}
+
+\begin{lemma}[connected-coordinate non-descent]\label{lem:connected-coordinates}
+Suppose every \(C_i\) is one nonempty circuit.  Then every component Kempe
+switch \(q\mapsto q'\) satisfies
+\[
+ \Phi(q')\geq\Phi(q).
+\]
+If \(q\) lies in a terminal plateau, every such first switch is
+\(\Phi\)-neutral.
+\end{lemma}
+
+\begin{proof}
+Only the two switched coordinate classes, say \(C_i,C_j\), can change.
+Initially their total component count is two.  If both resulting classes
+are nonempty, each has at least one component and their total remains at
+least two.
+
+Suppose instead that \(C'_i\) is empty.  Then the switched component
+contains all of \(C_i\), and \(C_i\cap C_j=\varnothing\), since intersection
+edges are not in \(Y_{ij}\).  The two original circuits are also
+vertex-disjoint: two edge-disjoint even subgraphs of a cubic graph cannot
+both have degree two at the same vertex.  The new \(C'_j\) therefore
+contains the two circuits as distinct components.  Its component count is
+at least two, while \(C'_i\) contributes zero.  The case \(C'_j=\varnothing\)
+is symmetric.  Thus
+\[
+ \kap(C'_i)+\kap(C'_j)\geq
+ \kap(C_i)+\kap(C_j)=2,
+\]
+and (2) proves non-descent.  Terminality excludes a strict increase.
+\end{proof}
+
+\begin{lemma}\label{lem:reach-terminal}
+Every state has a \(\Phi\)-nondecreasing Kempe path to a terminal plateau.
+\end{lemma}
+
+\begin{proof}
+Move freely inside the current equal-\(\Phi\) plateau.  If it is not
+terminal, reach a state having a neighbour of strictly larger \(\Phi\)
+and take that edge.  The state graph is finite, so \(\Phi\) can increase
+only finitely often.  The process ends at a terminal plateau.
+\end{proof}
+
+The computationally suggested statement is deliberately isolated.
+
+\begin{quote}
+\textbf{Terminal-plateau conjecture.}
+For every connected bridgeless cubic graph with a \(D_5\)-flow, every
+terminal \(\Phi\)-plateau is root-universal.
+\end{quote}
+
+This statement is unproved.  It is stronger than the finite observations
+below and is not asserted as a theorem.
+
+\subsection{Why the terminal conjecture would imply FiveCDC}
+
+The preceding conjecture is not merely a reconfiguration statement about
+graphs already known to have a \(D_5\)-flow.  Together with the standard
+minimum-counterexample reductions, it would prove FiveCDC.
+
+\begin{lemma}[two-root insertion equivalence]\label{lem:two-root-insertion}
+Let \(H\) be cubic, let \(r=u_1u_2\) and \(s=v_1v_2\) be distinct edges,
+and obtain \(G\) by subdividing \(r,s\) with new vertices \(u,v\) and
+adding \(e=uv\).  Then \(H\) has an \((r,s)\)-good \(D_5\)-flow if and
+only if \(G\) has a \(D_5\)-flow \(q\) in which \(u,v\) lie on the same
+component of \(Y_{q(e)}(q)\).
+\end{lemma}
+
+\begin{proof}
+Choose a component \(K\) of \(Y_{ij}(q)\) containing both roots.
+After subdividing \(r,s\), give both halves their old labels, so \(K\)
+becomes a circuit \(K^*\) through \(u,v\).  Choose either
+\(u\)-to-\(v\) arc of \(K^*\) and transpose \(i,j\) on its edges.
+Every internal vertex sees either zero or two changed labels.  At each
+of \(u,v\), exactly one label changes by the vector \(ij\).  Label the
+new edge \(uv\) by \(ij\); this restores xor zero at both new vertices.
+All labels still have weight two.  The new edge has label \(ij\), so it
+is inactive in \(Y_{ij}\); transposition preserves activity, and hence
+the subdivided \(K\) remains a factor circuit through \(u,v\).
+
+Conversely, let \(q\) be a flow on \(G\), put \(P=q(e)\), and let \(K\)
+be the common \(Y_P(q)\)-circuit through \(u,v\).  The edge \(e\) is
+inactive.  At \(u\), the other two labels therefore have the form
+\(a,a+P\), and the same holds at \(v\).  Transpose the two coordinates
+of \(P\) on one \(u\)-to-\(v\) arc of \(K\), and delete \(e\).
+Internal vertex xors are unchanged, while the defect \(P\) at each
+endpoint cancels the deleted label.  Exactly one of \(a,a+P\) is
+transposed at each endpoint, so the two surviving labels become equal.
+Suppressing \(u,v\) therefore gives a \(D_5\)-flow on \(H\), and the
+suppressed image of \(K\) is one \(Y_P\)-circuit containing \(r,s\).
+\end{proof}
+
+\begin{lemma}[bridgeless elimination]\label{lem:bridgeless-elimination}
+Let \(G\) be a simple cyclically \(4\)-edge-connected cubic graph of
+girth at least five.  For \(e=uv\), write
+\[
+ N(u)-v=\{u_1,u_2\},\qquad N(v)-u=\{v_1,v_2\}.
+\]
+Deleting \(u,v\) and adding \(r=u_1u_2\), \(s=v_1v_2\) produces a
+smaller simple \(3\)-edge-connected cubic graph \(G\div e\).
+\end{lemma}
+
+\begin{proof}
+The elementary edge-reduction criterion stated immediately before
+Lemma~2.1 of \cite{BrinkmannGoedgebeurMcKay2011} says that an edge of a
+connected cubic graph is irreducible only if it is a bridge, has an
+endpoint in a triangle not containing it, or has both endpoints on a
+4-cycle not containing it.  Thus the girth and connectivity hypotheses
+make \(G\div e\) connected.  The four neighbours displayed above are
+distinct, neither new edge is a loop or duplicates an old edge, and the
+two new edges are distinct; otherwise \(G\) has a triangle or a
+4-cycle.  Hence \(G\div e\) is simple.
+
+Suppose it has a bridge \(b\), with shores \(X,Y\).  If \(b=r\), then
+the endpoints of \(s\) lie on one shore while \(u_1,u_2\) lie on
+opposite shores.  Restoring \(u,v,e\) leaves the edge from \(u\) into
+the other shore as a bridge of \(G\), a contradiction.  The case
+\(b=s\) is symmetric.
+
+Otherwise \(b\) is an old edge.  Neither \(r\) nor \(s\) crosses
+\((X,Y)\), so each of the pairs \(\{u_1,u_2\}\), \(\{v_1,v_2\}\)
+lies within one shore.  If the two pairs lie on the same shore, \(b\)
+remains a bridge after restoring \(u,v,e\).  If they lie on opposite
+shores, \(\{b,e\}\) is a 2-edge-cut of \(G\).  Both conclusions
+contradict 3-edge-connectivity.
+
+It remains to exclude a 2-edge-cut \(\delta_H(X)\) in \(H=G\div e\).
+Let \(t\) be the number of roots crossing it.  If \(t=2\), put the
+reinserted vertices \(u,v\) on the same shore: one spoke from each
+replaced root crosses and \(uv\) does not, giving a 2-edge-cut of \(G\).
+If \(t=1\), put the vertex belonging to the noncrossing root on that
+root's shore and put the other new vertex there as well.  One old cut
+edge and one spoke cross, again giving a 2-edge-cut of \(G\).  If
+\(t=0\) and both root pairs lie on one shore, put both new vertices
+there; the old 2-edge-cut persists.  The only remaining placement has
+the two root pairs on opposite shores.  Placing \(u,v\) on their
+respective shores then makes the two old cut edges together with \(uv\)
+a 3-edge-cut of \(G\).
+Both shores contain circuits: a tree shore \(X\) of a 2-cut in a cubic
+graph would satisfy
+\(3|X|=2(|X|-1)+2\), which is impossible.  This contradicts cyclic
+\(4\)-edge-connectivity.  Hence \(H\) is 3-edge-connected.
+\end{proof}
+
+\begin{proposition}[fixed-five minimum reduction]
+\label{prop:fixed-five-reduction}
+If the standard Five-Cycle Double Cover Conjecture is false, it has a
+minimum counterexample that is simple, cubic, cyclically
+\(4\)-edge-connected, and not 3-edge-colourable.
+\end{proposition}
+
+\begin{proof}
+Choose a counterexample with as few edges as possible.  Components may
+be covered separately, padding each list with empty members and taking
+unions member by member.  A loop may be deleted and then inserted into
+any two members, since a loop contributes degree two at its endpoint.
+Thus the counterexample is connected and loopless.
+
+The usual minimum-counterexample proof for cycle double covers
+\cite{Zhang2012} preserves the fixed bound five.  For completeness, here
+are the two reconstructions where that point matters.  Across a
+2-edge-cut, close the two shores by one artificial edge each.  The two
+artificial edges receive labels in \(D_5\); a global permutation of the
+five coordinates makes those labels equal, after which deleting the
+artificial edges and restoring the cut edges pastes the two
+\(D_5\)-flows member by member.  Hence a minimum counterexample is
+3-edge-connected.
+
+If a vertex has degree at least four, Fleischner's splitting lemma
+\cite[Lemma~III.26]{Fleischner1990} supplies two incident edges whose
+split-off graph remains bridgeless.  In a five-cover of that smaller
+graph, replace every occurrence of the artificial edge by the
+corresponding two-edge path through the split vertex.  This changes no
+member index and preserves even degree.  Minimality therefore makes the
+counterexample have maximum degree at most three.  A degree-two vertex
+may likewise be suppressed: replace its two incident edges by one edge,
+then lift a cover by replacing every occurrence of the new edge by the
+original two-edge path.  A connected loopless bridgeless graph has no
+degree-one vertex, so the minimum counterexample is cubic.
+
+If a nontrivial 3-edge-cut remains, contract each shore in turn to a
+cubic vertex and cover the two smaller bridgeless graphs.  At a cubic
+vertex the three \(D_5\)-labels with xor zero are the three edges of a
+triangle on three coordinates.  Every bijection between two ordered
+label triangles is induced by a permutation of the five coordinates.
+After applying such a permutation to one shore, the three boundary
+labels match and the covers paste without adding a member.  Thus no
+nontrivial 3-edge-cut remains, which for a cubic graph is cyclic
+\(4\)-edge-connectivity.
+
+A proper 3-edge-colouring with colour classes \(M_1,M_2,M_3\) gives the
+three-member double cover
+\[
+ M_1\cup M_2,\qquad M_1\cup M_3,\qquad M_2\cup M_3;
+\]
+append two empty members.  The minimum counterexample is therefore not
+3-edge-colourable.  A loopless 3-edge-connected cubic multigraph with
+parallel edges is either separated by a 2-edge-cut or is the two-vertex
+graph with three parallel edges.  The latter is 3-edge-colourable, so
+the minimum counterexample is simple.
+\end{proof}
+
+\begin{proposition}[conditional resolution]\label{prop:conditional-resolution}
+The terminal-plateau conjecture implies the standard Five-Cycle Double
+Cover Conjecture.
+\end{proposition}
+
+\begin{proof}
+If FiveCDC is false, Proposition~\ref{prop:fixed-five-reduction} gives a
+simple cyclically \(4\)-edge-connected cubic minimum counterexample
+\(G\).  Huck proved
+that such a minimum FiveCDC counterexample has girth at least
+ten~\cite{Huck2000}.  Choose any edge \(e\).
+Lemma~\ref{lem:bridgeless-elimination} gives a smaller bridgeless cubic
+graph \(H=G\div e\).  By minimality, \(H\) has a \(D_5\)-flow.
+
+Lemma~\ref{lem:reach-terminal} reaches a terminal plateau in its Kempe
+orbit.  By the terminal-plateau conjecture, that plateau contains a
+state in which the two new edges \(r,s\) of \(H\) lie on one factor
+component.  Lemma~\ref{lem:two-root-insertion} extends this state over
+the inverse edge insertion, giving a \(D_5\)-flow on \(G\), a
+contradiction.
+\end{proof}
+
+\begin{remark}[a weaker sufficient premise]\label{rem:weaker-premise}
+The proof needs neither every Kempe orbit nor a prescribed starting
+flow.  It is enough to prove the following independent-pair feasibility
+statement:
+
+\begin{quote}
+Every simple \(3\)-edge-connected cubic graph \(H\) with independent
+edges \(r,s\), having girth at least eight, every 8-circuit through both
+roots, and every 9-circuit through at least one root, has the following
+property: if \(H\) has a \(D_5\)-flow, then it has one in which one
+factor component contains both roots.
+\end{quote}
+
+Indeed, for \(H=G\div e\) the new edges \(r,s\) are vertex-disjoint.  A
+circuit of \(H\) using neither, one, or both new edges lifts to a circuit
+of \(G\) of the same length, one greater, or two greater, respectively.
+Thus \(g(G)\ge10\) implies \(g(H)\ge8\); moreover, every 8-circuit uses
+both roots and every 9-circuit uses at least one.  Lemma
+\ref{lem:bridgeless-elimination} gives 3-edge-connectivity, and
+Lemma~\ref{lem:two-root-insertion} finishes the same contradiction.
+This feasibility statement is still open.
+\end{remark}
+
+\subsection{A linear rooted-transition certificate}
+
+Let \(H\) be a loopless cubic graph with \(m\) edges and let \(r,s\) be
+distinct root edges.  For each edge \(e\) and coordinate
+\(i\in\{0,\ldots,4\}\), introduce a Boolean variable \(x_{e,i}\).  Impose
+\[
+       \sum_{i=0}^4x_{e,i}=2,
+       \qquad
+       \bigoplus_{e\ni v}x_{e,i}=0                           \tag{12}
+\]
+for every edge \(e\), vertex \(v\), and coordinate \(i\).  These are
+exactly the \(D_5\)-flow constraints of
+Proposition~\ref{prop:cover-flow}.  Fix the factor \(Y_{01}\) and put
+\[
+                         y_e=x_{e,0}\oplus x_{e,1}.            \tag{13}
+\]
+At each cubic vertex \(v\), and for each unordered pair \(\{e,f\}\) of
+its three incident edges, introduce \(z_{v;\{e,f\}}\) with implications
+\[
+             z_{v;\{e,f\}}\Longrightarrow y_e,
+             \qquad z_{v;\{e,f\}}\Longrightarrow y_f.        \tag{14}
+\]
+Finally, for every graph edge \(e\), impose the transition-boundary xor
+\[
+ \bigoplus_{\substack{v\text{ endpoint of }e\\
+                       f\in E(v)\setminus\{e\}}}
+ z_{v;\{e,f\}}
+ =\begin{cases}1,&e\in\{r,s\},\\0,&e\notin\{r,s\}.
+  \end{cases}                                                 \tag{15}
+\]
+
+\begin{proposition}[linear rooted-transition characterization]
+\label{prop:linear-root-transition}
+Constraints \emph{(12)}--\emph{(15)} are satisfiable if and only if
+\(H\) has a \(D_5\)-flow in which \(r,s\) lie on one circuit component
+of \(Y_{01}\).  In a cubic graph with \(m\) edges, the direct encoding has
+\(8m\) variables.  Using native pseudo-Boolean exact-cardinality constraints
+and native xor is linear in \(m\); the explicit CNF conversion below has
+\(133m/3\) clauses.
+\end{proposition}
+
+\begin{proof}
+The xor of the two coordinate equations at a vertex makes the active
+\(y\)-degree zero or two.  Form the transition graph \(T(Y_{01})\): its
+vertices are the active graph edges, and at every active graph vertex join
+the two active incident edge-nodes.  It is a disjoint union of circuits,
+with components exactly the circuit components of \(Y_{01}\).
+
+If \(r,s\) lie on one such circuit, select the \(z\)-transitions of either
+\(r\)-to-\(s\) path in that component.  Their edge-node boundary is exactly
+\(\{r,s\}\), so (14)--(15) hold.  Conversely, (14) makes the selected
+\(z\)'s an edge subset of \(T(Y_{01})\).  Every connected component of an
+edge set has an even number of odd-degree vertices.  Equations (15) make
+\(r,s\) the only odd-degree vertices, so they lie in one selected component
+and hence in one circuit of \(T(Y_{01})\).  No explicit at-most-one
+constraint on the three \(z\)'s at a graph vertex is missing: (12)--(13)
+allow only zero or two active incident edges, so at most one local pair can
+satisfy both implications.
+
+For the size count, exact weight two among five variables uses ten negative
+triple clauses and five positive four-variable clauses, for \(15m\).
+A three-variable even-parity equation uses four clauses, contributing
+\(20n\) for the five coordinate equations at the \(n=2m/3\) vertices and
+\(4m\) for (13).  The six implications per vertex contribute
+\(6n=4m\).  Each edge-node occurs in four possible local transitions, so
+its boundary xor has eight clauses, contributing \(8m\).  The total is
+\(15m+20n+4m+4m+8m=133m/3\).  The variables number
+\(5m+m+3n=8m\).
+\end{proof}
+
+The formulation uses edge identities, so parallel edges need no change.
+Loops are excluded: a loop contributes twice, hence zero, to vertex parity,
+and would require doubled incidence in both (12) and (15).  A satisfying
+assignment is a directly checkable witness.  A solver's bare
+\textsc{unsat} response is not a certificate; a negative claim must freeze
+the instance, retain an LRAT, DRAT, VeriPB, or equivalent proof, and check
+that proof independently.  Global \(S_5\) symmetry lets any successful
+factor be renamed to \(01\), so fixing \(Y_{01}\) loses no existential
+generality.
+
+\subsection{Typed cap interfaces across a three-edge cut}
+
+A \emph{rooted cap} \((A,z,r)\) is a loopless cubic graph with a
+distinguished cap vertex \(z\), whose three incident physical ports are
+\(a,b,c\), and a proper root edge \(r\) not incident with \(z\).  Suppose a
+factor circuit \(Y_P\), for \(P\in\binom{[5]}2\), contains \(r\) and
+exactly ports \(a,b\).  Port \(c\) is inactive.  Since \(|P|=|q(c)|=2\),
+exactly one of
+\[
+               P=q(c),\qquad P\cap q(c)=\varnothing           \tag{16}
+\]
+holds; call these modes \(\mathsf{in}\) and \(\mathsf{out}\), respectively.
+The \emph{typed signature} \(\mathcal T(A,z,r)\) is the subset of
+\[
+       \{ab,ac,bc\}\times\{\mathsf{in},\mathsf{out}\}        \tag{17}
+\]
+realized by some \(D_5\)-flow, factor, and root circuit.
+
+After normalizing the ordered connector triangle to
+\[
+                  q(a)=01,\qquad q(b)=02,\qquad q(c)=12,      \tag{18}
+\]
+the possible factors using ports \(a,b\) are
+\[
+                              12,\quad03,\quad04.              \tag{19}
+\]
+The first is internal, and the last two are external and exchanged by the
+unused-coordinate transposition \(3\leftrightarrow4\), which fixes (18).
+
+\begin{proposition}[typed-port gluing]\label{prop:typed-port-gluing}
+Cut a nontrivial three-edge cut of a cubic graph and cap each shore by a
+new cubic vertex, preserving the identification of the three physical
+ports.  Let \(r,s\) be proper roots on the two shores.  If the two rooted
+cap signatures share a typed state in \emph{(17)}, then the glued graph has
+a \(D_5\)-flow in which one factor circuit contains both roots.
+\end{proposition}
+
+\begin{proof}
+Choose witnesses for the common physical port pair and common mode.
+Permute coordinates independently on the two shores so their ordered
+connector triangles both equal (18).  In internal mode (19) makes the
+factor the unique inactive connector label, so the factor pairs agree.
+In external mode the factor is \(03\) or \(04\); if the choices differ,
+apply \(3\leftrightarrow4\) on the second shore.  This fixes all three
+connector labels and makes the factor pairs equal.
+
+Delete the cap vertices and glue corresponding semiedges.  Equal connector
+labels give a \(D_5\)-flow across the cut.  On each shore, deleting the cap
+vertex opens the displayed factor circuit into a factor path through its
+root with endpoints at the same two physical ports.  Gluing the two paths
+produces one factor circuit through \(r,s\).
+\end{proof}
+
+Call a signature a \emph{double star} if, for one physical port, both modes
+occur on each of the two port pairs incident with it.  Two double stars on
+a three-port set share a physical pair and both modes there.  Therefore:
+
+\begin{corollary}[double-star gluing]\label{cor:double-star-gluing}
+Two rooted caps whose exact typed signatures each contain a double star
+always glue root-good.  More generally, the same holds if one signature
+contains a double star and the other signature covers all three physical
+ports.
+\end{corollary}
+
+\begin{proof}
+For the first statement, two two-edge stars in the three-edge port triangle
+intersect, and both signatures contain both modes on a common pair.  For
+the second, any set of port pairs covering all three ports has at least two
+members, so it meets the two pairs of the double star; on that common pair
+the double-star shore offers whichever mode the other shore realizes.
+Apply Proposition~\ref{prop:typed-port-gluing}.
+\end{proof}
+
+\subsection{Exact cut relations and complement translations}
+
+The six-bit signature above deliberately unions states realized by different
+flows.  For composition it is useful to retain the correlations within one
+flow.  Let a two- or three-edge cut separate a proper root edge \(r\) from
+the cap vertex \(z\), and suppose the cut is disjoint from the three cap
+edges.  Cut the edges into corresponding ordered semiedges on a root pole
+\(R\) and a cap pole \(Z\).  Xoring all vertex equations on either shore
+shows that the boundary labels xor to zero.  Up to a coordinate permutation,
+the ordered boundary word is therefore
+\[
+       (01,01)\quad\hbox{for a two-cut},\qquad
+       (01,02,12)\quad\hbox{for a three-cut}.                \tag{20a}
+\]
+For a fixed pair \(P\), either zero or two boundary semiedges are active in
+\(Y_P\).  In the latter case the active subgraph on either pole has a unique
+path between those semiedges.
+
+For a partial flow \(q_R\), let \(\rho(q_R)\) be the set of factors \(P\)
+whose boundary path contains \(r\).  For a partial cap flow \(q_Z\) and a
+physical cap pair \(j\in\{ab,ac,bc\}\), let \(\epsilon_j(q_Z)\) be the set
+of factors whose boundary path contains \(z\), uses physical pair \(j\),
+and is external at \(z\).  Retain the exact relations
+\[
+ \mathcal R=\{\rho(q_R):q_R\text{ has the fixed boundary word}\},
+ \qquad
+ \mathcal E=\{(\epsilon_{ab},\epsilon_{ac},\epsilon_{bc})(q_Z):
+ q_Z\text{ has that word}\}.                               \tag{20b}
+\]
+
+\begin{theorem}[rooted cut natural join]\label{thm:rooted-cut-natural-join}
+Partial flows on the two poles with the same ordered boundary word glue
+bijectively to whole \(D_5\)-flows having that word on the cut.  For a glued
+pair \((q_R,q_Z)\), the external physical-pair mask is exactly
+\[
+ \bigl\{j:\rho(q_R)\cap\epsilon_j(q_Z)\ne\varnothing\bigr\}. \tag{20c}
+\]
+Consequently, one glued flow externally covers all three physical ports if
+and only if some \((\rho,\epsilon)\in\mathcal R\times\mathcal E\) makes at
+least two of the three intersections in \emph{(20c)} nonempty.
+\end{theorem}
+
+\begin{proof}
+Matching boundary labels turn each corresponding semiedge pair back into
+one labelled edge.  All vertex equations were already satisfied, so this
+is a whole flow; restriction is the inverse operation.
+
+Fix \(P\).  If the whole \(Y_P\)-circuit through \(r\) crosses the cut, its
+restriction to \(R\) is the unique boundary path, and hence
+\(P\in\rho(q_R)\).  The circuit reaches \(z\) in external physical mode
+\(j\) precisely when its restriction to \(Z\) is the boundary path recorded
+by \(P\in\epsilon_j(q_Z)\).  Conversely, two such paths have matching
+active boundary semiedges and glue to one factor circuit through \(r,z\).
+This proves (20c).  Two distinct pairs among \(ab,ac,bc\) cover all three
+ports, proving the last assertion.
+\end{proof}
+
+For existence questions, inclusion-dominated relation rows may be deleted:
+if \(\rho\subseteq\rho'\), then \(\rho'\) succeeds against every cap row
+against which \(\rho\) succeeds, and the analogous assertion holds
+coordinatewise for cap triples.  Keeping only inclusion-maximal rows is
+therefore an exact antichain compression.  It is not sound to replace a
+relation by the coordinatewise union of rows realized by unrelated flows.
+
+There is also a legal translation not generated by ordinary pairwise Kempe
+switches.  It is elementary, but it changes the relevant flow orbit.
+
+\begin{lemma}[complement translation]\label{lem:complement-translation}
+Let \(q\) be a \(D_5\)-flow, fix \(h\in[5]\), and let \(C\) be an Eulerian
+edge-subset all of whose labels avoid \(h\).  Put \(S=[5]\setminus\{h\}\)
+and define
+\[
+ q'(e)=\begin{cases}q(e)\mathbin\triangle S,&e\in C,\\q(e),&e\notin C.
+ \end{cases}                                                \tag{20d}
+\]
+Then \(q'\) is a \(D_5\)-flow.  For every \(P\in D_5\),
+\[
+             Y_P(q')=Y_P(q)\mathbin\triangle C
+             \quad\Longleftrightarrow\quad h\in P,          \tag{20e}
+\]
+while \(Y_P(q')=Y_P(q)\) when \(h\notin P\).
+\end{lemma}
+
+\begin{proof}
+Every old label on \(C\) is a two-subset of the four-set \(S\), so its
+symmetric difference with \(S\) is again a two-subset.  At each vertex an
+even number of incident labels is changed by the same vector \(S\), so the
+flow equation is preserved.  For \(e\in C\), membership in \(Y_P\) changes
+by \(|S\cap P|\bmod2\).  Since \(|P|=2\), this parity is one exactly when
+\(h\in P\), proving (20e).
+\end{proof}
+
+\begin{proposition}[constant circuit translations]
+Suppose a fixed vector \(t\in\F_2^5\) is added to every label on a circuit,
+and every old and new label has weight two.  Apart from \(t=0\), exactly two
+cases are possible:
+\begin{enumerate}
+ \item \(|t|=2\) and every circuit label crosses \(t\); the circuit is a
+ component of \(Y_t\), so this is an ordinary component Kempe switch;
+ \item \(|t|=4\) and every circuit label avoids the coordinate outside
+ \(t\); this is Lemma~\ref{lem:complement-translation}.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For every old label \(A\),
+\[
+       |A\mathbin\triangle t|=2+|t|-2|A\cap t|=2.
+\]
+Thus \(|t|\) is even; in five coordinates only \(0,2,4\) remain.  If \(|t|=2\),
+the equation forces \(|A\cap t|=1\), so every circuit edge is active in
+\(Y_t\).  At every circuit vertex those two edges exhaust the active degree,
+and the circuit is a component.  If \(|t|=4\), the equation forces
+\(|A\cap t|=2\), so \(A\subseteq t\), which is exactly the complement case.
+\end{proof}
+
+The affine description behind the lemma is sometimes useful.  With
+\(H_h=\{e:h\notin q(e)\}\), write
+\[
+ Y_{hi}=A\cup B,
+ \quad A=\{e:h\in q(e),\ i\notin q(e)\},
+ \quad B=\{e:h\notin q(e),\ i\in q(e)\}.
+\]
+All fixed-\(h\) complement translations replace \(B\) by \(B\triangle C\)
+for an Eulerian \(C\subseteq H_h\).  Thus the reachable \(hi\)-parts in
+\(H_h\) form exactly the affine cycle-space coset of \(B\), or equivalently
+all \(X\subseteq H_h\) with \(\partial X=\partial B\).  Turning this linear
+description into the required rooted connectivity theorem remains open.
+
+A complete order-12 and order-14 audit supplies a sharp delimiter.  Among
+\(8{,}341{,}704\) ordinary-Kempe-orbit/rooted-interface pairs at order 14,
+72 orbits have no simultaneous external flow.  A single simple complement
+circuit immediately repairs 60.  On the remaining 12, every arbitrary
+Eulerian support in every fixed-\(h\) cycle space still fails immediately.
+All 12 nevertheless admit two successive complement translations, and each
+has a root/cap-disjoint five-circuit leading to an ordinary Kempe orbit that
+contains a simultaneous flow.  Thus universal immediate one-translation
+rescue is false, while the exact quotient-distance-one statement survives
+this finite census.  The two graphs supporting the 12 delimiters are
+Tait-colourable and have girth at most four, so they lie outside the
+non-Tait marked-girth cap domain.
+
+The companion checker exhausts the literal 324 normalized flows of a
+two-cut example and 27 flows of a three-cut example and verifies (20c)
+against direct whole-graph traversal.  It also checks complement translations
+that cross the ordinary Kempe-orbit delimiters at orders 12 and 14.  A
+bounded pole census through order ten finds 7 root and 9 cap relations for
+two-cuts, and 108 root and 222 cap relations for three-cuts; all
+\(63+23{,}976\) cross-pairs admit a joined flow externally covering all
+three ports.  These are finite results.
+
+Parity, local cap-triangle legality, and residual boundary symmetry do not
+by themselves imply compatibility.  The complete abstract orbit audit
+finds a two-cut forbidden pair whose root relation is the orbit of
+\(\{02\}\) and whose cap relation is the orbit of
+\((\varnothing,\{02\},\{12\})\); all 36 joins cover at most one physical
+pair.  For a three-cut, the singleton relations
+\[
+       \mathcal R=\{\{01\}\},\qquad
+       \mathcal E=\{(\varnothing,\{01\},\{02\})\}           \tag{20f}
+\]
+join only on physical pair \(ac\).  Both patterns satisfy the stated local
+axioms.  Neither pair occurs as the complete relations of the connected
+shores in the order-ten census: whenever one forbidden state orbit occurs,
+additional companion states repair the join.  Thus the exact missing lemma
+must use graph realizability or switch closure to force such companions;
+finite Boolean algebra and \(S_5\)-invariance alone are insufficient.
+
+\begin{proposition}[typed-cap finite frontier through order 14]
+\label{prop:typed-cap-frontier}
+For every biconnected simple cubic graph generated by
+\texttt{geng -Cq -d3 -D3 n}, for every even
+\(n\in\{4,6,8,10,12,14\}\), every exact rooted cap signature contains a
+double star.  The complete census is
+\[
+\begin{array}{rrrr}
+\toprule
+n&\text{graphs}&\text{rooted interfaces}&\text{failures}\\
+\midrule
+4&1&12&0\\
+6&2&72&0\\
+8&5&360&0\\
+10&18&2{,}160&0\\
+12&81&14{,}580&0\\
+14&480&120{,}960&0\\
+\midrule
+\text{total}&587&138{,}144&0\\
+\bottomrule
+\end{array}                                                   \tag{20}
+\]
+The six mask bits, in order \(ab\text{-in}\), \(ab\text{-out}\),
+\(ac\text{-in}\), \(ac\text{-out}\), \(bc\text{-in}\), and
+\(bc\text{-out}\), take only the values
+\(15,47,51,59,60,62,63\) once order ten is reached.  The inclusion-minimal
+masks \(15,51,60\) are exactly the three four-state double stars.
+\end{proposition}
+
+This proposition is a finite computer-assisted statement.  The C++
+producer enumerates every \(D_5\)-flow modulo global \(S_5\) and every
+rooted interface through order 14.  A separately structured Python program
+recomputes the full census only through order 10 and independently exhausts
+the six-state gluing algebra; orders 12 and 14 do not yet have a second full
+implementation.  Most importantly, the universal double-star premise is
+\emph{open}.  Proposition~\ref{prop:typed-cap-frontier} therefore proves
+neither universal three-cut reducibility, the rooted-feasibility premise,
+nor FiveCDC.
+
+\begin{proposition}[one-flow external frontier through order 14]
+\label{prop:simultaneous-external-frontier}
+For every rooted interface in Proposition~\ref{prop:typed-cap-frontier},
+there is one individual \(D_5\)-flow whose external root-factor components
+collectively meet all three physical cap ports.  Equivalently, that one
+flow realizes external states on at least two of the three physical port
+pairs.  The exact all-flow counts are
+\[
+\begin{array}{rrrrr}
+\toprule
+n&\text{graphs}&\text{flows}/S_5&\text{interfaces}&\text{failures}\\
+\midrule
+4&1&2&12&0\\
+6&2&13&72&0\\
+8&5&128&360&0\\
+10&18&1{,}525&2{,}160&0\\
+12&81&25{,}960&14{,}580&0\\
+14&480&537{,}418&120{,}960&0\\
+\bottomrule
+\end{array}
+\]
+\end{proposition}
+
+This strengthens the aggregate statement at the same finite orders: all
+three ports are covered in one flow, rather than by states collected from
+unrelated flows.  It is sufficient for typed gluing.  Indeed, each shore
+then offers at least two of the three physical port pairs, so the two sets
+intersect; both states are external, and a permutation of the two unused
+coordinate names aligns their factor pairs without disturbing the ordered
+cap triangle.
+
+The quantifier is over all flows, not over every fixed flow or every Kempe
+orbit.  Explicit small orbits fail the corresponding orbitwise claim.  A
+C++ census proves the displayed frontier, a structurally separate Python
+enumeration independently reaches order 12, and a third orbit-based audit
+independently rechecked order 14.  No finite cutoff principle is known, so
+the universal one-flow premise remains open and this proposition does not
+resolve FiveCDC.
+
+\begin{proposition}[certificate-checked extended interface frontier]
+\label{prop:extended-interface-frontier}
+Every proper cap/root interface satisfies the double-star,
+aggregate-external, and one-flow simultaneous-external predicates on each
+of the following finite inputs:
+\[
+\begin{array}{lrrr}
+\toprule
+\text{input}&\text{graphs}&\text{interfaces}&\text{flows}\\
+\midrule
+\text{all biconnected cubic, order 16}&3{,}874&1{,}301{,}664&65{,}185\\
+\text{cyclic-4 non-Tait, orders 18--26}&1{,}491&1{,}361{,}316&57{,}899\\
+\text{seven retained strong-snark rows, order 34}&7&11{,}424&997\\
+\midrule
+\text{total}&5{,}372&2{,}674{,}404&124{,}081\\
+\bottomrule
+\end{array}                                                    \tag{21}
+\]
+\end{proposition}
+
+The first row is regenerated by \texttt{geng} with the documented order-16
+options.  The second
+uses the retained Snarkhunter canonical streams at orders 18, 20, 22, 24,
+and 26; their completeness depends on the documented generator boundary.
+The order-34 row is deliberately a claim about seven literal retained
+graphs, not a complete strong-snark census.  The primary search emits only
+the explicit flows needed by the predicates.  A separately written Python
+checker decodes every graph, verifies every weight-two label and vertex xor,
+reconstructs all factor components, checks the graph premises, and exhausts
+all interfaces from those witnesses.  This is a finite positive certificate,
+not a cutoff or a universal theorem.
+
+\subsection{The relevant-cap cutoff}
+
+The unrestricted cap census above does not yet enter the short-cycle
+geometry of a hypothetical minimum obstruction.  That geometry gives a
+substantial analytic cutoff.
+
+\begin{theorem}[relevant-cap cutoff]\label{thm:relevant-cap-cutoff}
+Let $G$ be simple, cubic, cyclically $4$-edge-connected, and of girth at
+least ten.  Eliminate an edge to obtain $H=G\div e$, with independent
+artificial roots $r,s$.  If $H$ has a nontrivial three-edge cut, then:
+\begin{enumerate}
+ \item neither root crosses the cut, and the roots lie on opposite shores;
+ \item each capped shore $A$ is simple and $3$-edge-connected;
+ \item for the cap vertex $z$, the core $K=A-z$ is connected and
+ bridgeless, has degree sequence $2^3 3^{n-3}$, satisfies
+ $g(K)\geq9$ and $g(K-r)\geq10$, and has $n\geq57$; and
+ \item each cap has order at least 58, and $|V(G)|\geq116$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The elimination lemma makes $H$ simple and $3$-edge-connected.  Each
+shore $X$ of a nontrivial three-cut contains a circuit, because
+\[
+ |E(H[X])|=(3|X|-3)/2>|X|-1.
+\]
+
+Let $t$ roots cross the cut.  Restoring the two deleted vertices replaces
+each crossing root by exactly one crossing spoke, regardless of which shore
+receives its inserted vertex.  If $t=2$, put both inserted vertices on
+one shore; one old cut edge and two spokes give a cyclic three-cut of $G$.
+If $t=1$, put both vertices with the noncrossing root; two old cut edges
+and one spoke give such a cut.  If $t=0$ and both roots lie on one shore,
+put both vertices there and retain the original three-cut.  The shore
+circuits survive these replacements, contradicting cyclic
+$4$-edge-connectivity.  Hence the roots are noncrossing and separated.
+
+No two cut edges share a shore endpoint: deleting such an endpoint from
+its nontrivial shore would leave a nonempty set with edge boundary at most
+two in $H$.  Thus capping creates no parallel edge.  Any cut of size at
+most two in a cap gives the same cut in $H$, after taking the shore not
+containing the cap vertex; hence the cap is $3$-edge-connected.  Deleting
+the cap vertex leaves one degree-two vertex at each port and degree three
+elsewhere.  It is connected, since otherwise one component uses at most one
+port.  If an edge of the core were a bridge and one bridge shore contained
+$k$ ports, the two shores would have cap boundaries $1+k$ and
+$1+(3-k)$; both cannot be at least three.  Thus the core is bridgeless,
+and in particular $K-r$ is connected.
+
+A circuit of $K$ avoiding the shore root lifts to $G$ without changing
+length; one using the root gains one edge.  Therefore $g(K)\geq9$, and
+every 9-circuit uses $r$, equivalently $g(K-r)\geq10$.
+
+It remains to bound $n=|V(K)|$.  Put $L=K-r$ and
+$m=|E(L)|=(3n-5)/2$.  Every degree in $L$ lies in $\{1,2,3\}$, and, with
+$\delta(v)=3-d_L(v)$,
+\[
+             \sum_v\delta(v)=5,
+             \qquad \sum_v\delta(v)d_L(v)\leq10.          \tag{21}
+\]
+The second inequality includes the possibility that deleting $r$ creates
+a degree-one vertex.  Indeed, for $d=1,2$ one has $(3-d)d=2$, and there
+are at most five deficient vertices.
+
+For $j\geq1$, let $W_j$ be the number of oriented nonbacktracking walks
+of length $j$ in $L$, and let $N_j(v)$ count those ending at $v$.  By
+reversal and the maximum-degree-three bound,
+\[
+                         N_j(v)\leq d_L(v)2^{j-1}.
+\]
+Extending a walk ending at $v$ gives exactly
+$d_L(v)-1=2-\delta(v)$ choices.  Hence
+\[
+ W_{j+1}=2W_j-\sum_v\delta(v)N_j(v)
+          \geq2W_j-10\,2^{j-1}.                          \tag{21a}
+\]
+Moreover
+\[
+ W_2=\sum_v d_L(v)(d_L(v)-1)
+    =6n-25+\sum_v\delta(v)^2\geq6n-20.
+\]
+Three applications of (21a) give
+\[
+ W_3\geq12n-60,\qquad W_4\geq24n-160,
+ \qquad W_5\geq48n-400.                                 \tag{21b}
+\]
+
+Now root a nonbacktracking ball at an edge $uv$ of $L$: include $u,v$,
+and on either side include every nonbacktracking path of lengths one
+through four whose first edge is not $uv$.  All displayed endpoints are
+distinct.  A collision on one side would create a circuit of length at
+most eight; a collision across the two sides, together with $uv$, would
+create one of length at most nine.  Both contradict $g(L)\geq10$.
+Summing the resulting bound over the $m$ choices of the root edge counts
+every oriented nonbacktracking walk of lengths two through five exactly
+once, according to its first edge and orientation.  Therefore
+\[
+                         mn\geq2m+W_2+W_3+W_4+W_5.
+\]
+Substitution of $m=(3n-5)/2$ and (21b) yields
+\[
+                         3n^2-191n+1290\geq0.              \tag{21c}
+\]
+The left side is $-46$ at $n=8$, $-140$ at $n=55$, and $2$ at
+$n=56$; its vertex lies between $31$ and $32$.  Since $K$ contains a
+circuit of length at least nine, $n\geq9$, so (21c) forces $n\geq56$.
+Finally $3n-3$ is even, hence $n$ is odd and $n\geq57$.  Capping adds one
+vertex, and restoring the two eliminated vertices gives
+$|V(G)|\geq57+57+2=116$.
+
+This is an edge-rooted degree-deficit refinement in the spirit of the
+irregular Moore bound of Alon, Hoory, and Linial
+\cite{AlonHooryLinial2002}; the displayed count is self-contained.
+\end{proof}
+
+\begin{remark}[external extremal-data comparison]
+Afzaly and McKay's online extremal-graph table reports the exact maximum
+numbers of edges in girth-at-least-ten graphs on $57,59,61$ vertices as
+$80,84,87$, respectively~\cite{AfzalyMcKayExtremalData}.  The graph $L$
+would require $83,86,89$ edges at those three odd orders.  Importing those
+external exhaustive values would therefore strengthen the conclusion to
+$n\geq63$, cap order at least $64$, and parent order at least $128$.
+The source describes this as joint work with papers in preparation; this
+project does not retain an independently checkable exhaustion certificate.
+We consequently record the stronger implication as an external comparison,
+not as part of the self-contained theorem above.
+\end{remark}
+
+\begin{proposition}[Tait caps glue]\label{prop:tait-caps-glue}
+If both rooted caps in Theorem~\ref{thm:relevant-cap-cutoff} are
+Tait-colourable, then their typed signatures have a common external state,
+and the original rooted graph is root-good.
+\end{proposition}
+
+\begin{proof}
+In either cap, fix a Tait colouring.  For each physical port $a$,
+2-connectivity gives a circuit through the root and $a$, using one other
+port $b$.  Apply the formula in
+Theorem~\ref{thm:prescribed-tait-factor}; its factor is that circuit, while
+the inactive port label is disjoint from the factor pair.  Thus the external
+states of each cap cover all three ports and consequently use at least two
+of the three physical port pairs.  Two such pair sets intersect.  On an
+intersecting pair both modes are external, so
+Proposition~\ref{prop:typed-port-gluing} applies.
+\end{proof}
+
+\begin{proposition}[adjacent ports are external]
+\label{prop:adjacent-port-external}
+Let \((A,z,r)\) be a rooted cap carrying a \(D_5\)-flow.  If the proper
+root edge \(r\) shares an endpoint with a physical port \(a\), then some
+external factor circuit contains \(r\) and \(a\).
+\end{proposition}
+
+\begin{proof}
+Normalize the connector triangle as
+\[
+                 q(a)=01,\qquad q(b)=02,\qquad q(c)=12.
+\]
+At the common endpoint of \(r\) and \(a\), the local-triangle lemma makes
+\(q(r)\) one of
+\[
+                         02,03,04,12,13,14.
+\]
+The external factor pairs through physical port \(a\) are
+\(03,04,13,14\).  In the displayed root-label order, choose respectively
+\[
+                         03,04,03,13,03,04.
+\]
+The chosen pair meets both \(q(a)\) and \(q(r)\) oddly, so the adjacent
+edges \(a,r\) lie in one factor component.  At \(z\), factors \(03,04\)
+use ports \(a,b\) and leave \(12\) inactive, while factors \(13,14\) use
+ports \(a,c\) and leave \(02\) inactive.  The inactive label is disjoint
+from the factor pair in either case, which is exactly external mode.
+\end{proof}
+
+The exact surviving three-cut branch therefore has at least one non-Tait
+cap, and that cap has order at least 58.  Minimality supplies a \(D_5\)-flow
+on each cap, so Proposition~\ref{prop:adjacent-port-external} settles any
+selected port adjacent to its root.  Ports vertex-disjoint from the root
+remain open.  This is a restriction, not a proof that the cap's typed
+signature contains a double star or even that its external states cover
+all three ports.
+
+As a positive calibration, replace every Petersen vertex by the three-pole
+obtained from the Foster graph by deleting one vertex.  The resulting
+Petersen--Foster graph is non-Tait, has 890 vertices and girth ten.  For one
+cap vertex and one proper root, six literal 1,335-edge $D_5$-flows realize
+all six typed states, so the exact signature is mask 63.  The companion
+checker verifies the graph, core restrictions, every vertex xor, and every
+factor component.  This one-interface witness neither proves a census nor
+the universal double-star premise.
+
+The full signature is an aggregate over different flows.  In one retained
+flow the fixed typed signature has mask 6: one physical pair is external,
+one is internal, and the third physical port has no external state.  A
+second checker verifies both foreign-coordinate blockers on both arcs of the
+internal root circuit.  The cap is non-Tait and satisfies the exact
+3-connectivity and marked-girth geometry above.  Consequently, those
+blockers alone cannot force externality in an arbitrary fixed flow; an
+existential proof must change the flow or use additional global structure.
+The aggregate mask 63 means this is not a counterexample to external
+coverage, rooted feasibility, or FiveCDC.
+
+There is an exact pointwise description of how a component switch repairs
+such a failure.  If \(D\) is one component of \(Y_T(q)\), and \(q'\) is
+obtained by transposing the two coordinates of \(T\) on \(D\), then
+\[
+ Y_P(q')=
+ \begin{cases}
+  Y_P(q)\mathbin\triangle D,&|P\cap T|=1,\\
+  Y_P(q),&|P\cap T|\in\{0,2\}.
+ \end{cases}                                             \tag{21d}
+\]
+Indeed, outside \(D\) no label changes; on \(D\), the transposition fixes
+\(P\) in the second case and replaces it by \(P\mathbin\triangle T\) in
+the first, toggling factor membership.  Thus a Kempe move is literally a
+circuit splice, although connectivity inside the symmetric difference is
+still global.
+
+The retained Petersen--Foster flow has 124 component-switch choices.
+Exactly six repair its missing selected port, and four of those resulting
+flows simultaneously cover all three ports.  Two explicit eight-vertex
+controls show that neither selected-port externalization nor changing a
+fixed physical pair from internal to external is guaranteed in one switch:
+both first succeed after two displayed switches.  These certificates
+motivate unrestricted flow reconfiguration while ruling out a one-switch
+proof; they do not establish a universal escape theorem.
+
+\subsection{Exact finite plateau results}
+
+The state enumeration quotients only by the global \(S_5\) action.  Graphs
+were generated canonically by \texttt{geng -Cq -d3 -D3 n}.  The complete
+order-12 terminal-plateau audit gives:
+\[
+\begin{array}{lr}
+\toprule
+\text{biconnected simple cubic graphs} &81\\
+\text{normalized \(D_5\)-flows} &25{,}960\\
+\text{Kempe orbits} &2{,}650\\
+\text{terminal \(\Phi\)-plateaus} &2{,}659\\
+\text{non-root-universal terminal plateaus} &0\\
+\bottomrule
+\end{array}                                                  \tag{22}
+\]
+The terminal values range from \(-3\) to \(2\), and plateau sizes range
+from \(1\) to \(432\).  This is a complete finite census, not a proof of
+the terminal-plateau conjecture.
+
+An additional support diagnostic found 420 terminal plateaus in which
+every state uses all five coordinates.  Thus the order-12 positive result
+cannot be explained by always reaching a plateau with an unused
+coordinate and reducing to a four-coordinate argument.  This support
+diagnostic is present in the producer report but is not among the fields
+recomputed by the focused independent verifier described below.
+
+At order 14, the complete terminal-plateau computation gives:
+\[
+\begin{array}{lr}
+\toprule
+\text{biconnected simple cubic graphs} &480\\
+\text{normalized \(D_5\)-flows} &537{,}418\\
+\text{terminal \(\Phi\)-plateaus} &33{,}598\\
+\text{non-root-universal terminal plateaus} &0\\
+\bottomrule
+\end{array}                                                  \tag{23}
+\]
+This includes terminal plateaus below the global maximum of an orbit.
+
+There is a sharper finite descent test.  For fixed roots \(r,s\), let
+\(d_q(r,s)\) be the minimum number of factor components in an
+intersection chain from \(r\) to \(s\).  Thus \(d=1\) is exactly
+root-goodness.  Inside each terminal plateau, split the states of fixed
+distance \(d>1\) into components under neutral, distance-preserving
+moves.  Every such component has a neutral exit to smaller distance:
+\[
+\begin{array}{lr}
+\toprule
+\text{terminal fixed-\(d>1\) subplateaus} &642{,}167\\
+\text{maximum distance} &3\\
+\text{subplateaus without a neutral descent exit} &0\\
+\bottomrule
+\end{array}                                                  \tag{24}
+\]
+This suggests the following exact human target: every fixed-\(d>1\)
+subplateau in every terminal \(\Phi\)-plateau has a neutral edge to
+smaller \(d\).  Repeated descent would prove terminal
+root-universality.  The assertion is unproved outside the finite census.
+
+As a separate unrestricted control, all \(3{,}874\) biconnected simple
+cubic graphs of order 16 were checked.  Across \(15{,}187{,}695\)
+normalized flows, all \(223{,}926{,}065\) initially root-bad state/root
+pairs were rescued using only switches on factor components containing
+exactly one root; the maximum minimum distance was five.  No graph in
+that order-16 census has girth eight, so this computation does not
+directly reach the high-girth subclass in
+Remark~\ref{rem:weaker-premise}.  All of these statements are finite
+evidence only.
+
+The first complete high-girth edge-elimination control uses a cubic
+graph on 130 vertices that has girth ten and is cyclically
+\(4\)-edge-connected.
+For each of its 195 edges, the reduced 128-vertex rooted instance was
+solved independently.  All 195 are root-good; their reduced girths are
+nine or ten.  The complete positive labels are retained, and a separate
+checker reconstructs every reduction, enumerates the parent's
+3-edge-cuts, verifies all \(D_5\) equations, and checks factor
+connectivity.  This is one graph, not a universal theorem.
+
+For the 890-vertex Petersen--Foster graph above, a second literal package
+checks all 1,335 edge eliminations.  Every reduced 888-vertex graph has a
+displayed \(D_5\)-flow whose \(Y_{01}\)-component contains the two
+artificial roots.  A solver-independent checker reconstructs every
+elimination, verifies reduced bridgelessness and girth nine, checks every
+label xor and the displayed transition path.  The ordinary two-root
+insertion lemma then lifts each witness.  This is a complete positive certificate for one
+named graph, not an extension to its substitution family or to arbitrary
+graphs.
+
+\subsection{Reproducibility and independent checks}
+
+The complete reports, producers, and focused independent verifiers are in
+the companion repository.  From its root:
+\begin{verbatim}
+python3 scratch/audit_d5_surface_euler_switch.py
+(cd scratch/eight-to-five-triangle-state-rigidity-20260731 && ./run_all.sh)
+python3 scratch/check_d5_contraction_circuit_orbit_counterexample.py
+python3 scratch/check_d4_cubic_trap_root_universality.py
+sh scratch/d5-tait-prescribed-circuit-lift-20260731/run_all.sh
+sh scratch/d5-tait-prescribed-circuit-lift-blind-audit-20260731/run_all.sh
+python3 scratch/check_d5_capped_ladder_delay_family.py
+(cd scratch/d5-root-transition-sat-20260731 && ./run_all.sh)
+(cd scratch/d5-typed-cap-double-star-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-simultaneous-external-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-typed-cap-orbit-external-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-cut-signature-natural-join-20260801 &&
+ ./run_all.sh && ./run_abstract.sh && ./run_census.sh)
+(cd scratch/d5-complement-circuit-external-frontier-20260801 && ./run_all.sh)
+(cd scratch/d5-rooted-interface-frontier-through34-20260801 && ./run_all.sh)
+(cd scratch/d5-root-pair-census-20260731 && ./run_all.sh)
+(cd scratch/d5-existential-external-order58-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-external-port-coverage-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-external-kempe-splice-frontier-20260731 && ./run_all.sh)
+(cd scratch/petersen-foster-full-typed-cap-signature-20260731 && ./run_all.sh)
+(cd scratch/petersen-foster-all-eliminations-20260731 && ./run_all.sh)
+
+python3 scratch/verify_d5_surface_chi_plateaus_order12.py
+python3 scratch/verify_d5_root_euler_potential_reports.py
+python3 scratch/verify_d5_root_kempe_order14_report.py
+python3 scratch/verify_d5_terminal_chi_chain_lex_order14_report.py
+python3 scratch/verify_d5_root_component_distance_order16_summary.py
+python3 scratch/verify_d5_root_feasibility_lift13_girth10.py
+\end{verbatim}
+The order-12 plateau verifier regenerates all graph identities and report
+arithmetic, then independently recomputes five deterministic
+boundary/extremal rows with a separately structured traversal.  The
+order-14 fixed-distance verifier checks the frozen report digest,
+canonical graph order, per-row failure fields, and all summary arithmetic;
+its producer first reproduces the independent order-12 totals.  The
+order-16 verifier checks the frozen graph identities, girth
+stratification, and summary totals.  These report verifiers are
+independent semantic checks of selected structure and aggregate
+arithmetic, not second full enumerations; that limitation is part of the
+claim.  The triangle-state package has two independently structured
+standard-library checkers.  The rooted-transition package checks the
+semantic equivalence on deterministic instances.  The typed-cap package
+has a complete C++ enumeration through order 14, while its independent
+Python enumeration stops at order 10; this asymmetry is part of
+Proposition~\ref{prop:typed-cap-frontier}, not omitted validation.
+The simultaneous-external package has a complete C++ enumeration through
+order 14 and a separately structured Python enumeration through order 12;
+a third orbit-based implementation independently rechecks its order-14
+all-flow quantifier.  The orbit package also retains the first failures of
+the stronger orbitwise double-star, simultaneous, and aggregate assertions.
+The cut-relation package independently enumerates partial and whole flows on
+one two-cut and one three-cut example, checks the natural-join mask against
+direct whole-graph connectivity for every word, and exhausts the bounded
+relation census through host order ten.  Its complement-translation rows
+are checked directly from the displayed labels and circuits.
+The complement-circuit package separately performs the complete order-12
+and order-14 orbit/interface census, exhausts the full fixed-coordinate
+cycle spaces on all 12 strict rows, checks depth-two escapes, and replays one
+432-state delimiter without relying on the census traversal.
+The extended-interface package emits 124,081 positive flows and uses a
+separately written graph6/flow/component checker to exhaust 2,674,404 proper
+interfaces.  It also verifies the stated graph properties, but canonical
+corpus completeness beyond regenerated order 16 remains a source-generator
+boundary.
+The order-58 package independently replays the degree-deficit profiles,
+the edge-rooted walk count, the exact polynomial cutoff, and scoped
+18-cage controls.  The splice package proves the pointwise factor identity
+for a component switch and replays the Petersen--Foster repairs and two
+depth-two delimiters.  The
+Petersen--Foster package contains six literal flows, and its checker
+reconstructs the graph and validates every
+claimed typed component semantically.
+
+\section{What has and has not been established}
+
+The human-checkable results in this note are:
+\begin{enumerate}
+ \item the \(D_5\)-flow/five-even-subgraph equivalence;
+ \item the state-transport and cycle-space lemmas, and the order-sharp
+ 12-vertex obstruction to graph-dependent triangle-state compression of
+ one supplied eight-cover;
+ \item the canonical properly five-coloured surface construction and
+ Euler formula;
+ \item the boundary interpretation of the bichromatic factors;
+ \item the exact one-switch Euler-change formula;
+ \item the four-coordinate one-step locking lemma and the cubic \(D_4\)
+ trap theorem;
+ \item the construction from a Tait colouring that prescribes any circuit
+ as one factor, proves root universality in the 2-connected case, and
+ supports explicit inverse insertion;
+ \item the 30,858-flow certificate for independent root universality through
+ order 28, conditional on the documented canonical non-Tait source boundary;
+ \item the capped-ladder lower bound proving that root-component rescue
+ has no universal constant radius; and
+ \item the fixed-five minimum-counterexample reduction, bridgeless
+ edge elimination, and the rooted-feasibility implication to FiveCDC;
+ \item the linear rooted-transition characterization and its exact
+ native-XOR and CNF size counts; and
+ \item the typed-port gluing proposition and double-star corollary; and
+ \item the exact separated-cut natural join, antichain compression, and
+ complement-translation lemma; and
+ \item the one-flow simultaneous-external frontier through order 14,
+ with its all-flow/orbitwise quantifier boundary; and
+ \item the certificate-checked extended rooted-interface frontier on the
+ complete order-16 census and the explicitly scoped retained streams through
+ order 34; and
+ \item the relevant-cap order-58 cutoff, Tait-cap gluing theorem,
+ adjacent-port external-state lemma, and the six-flow full-signature
+ Petersen--Foster control.
+\end{enumerate}
+The cube topology change is a short explicit certificate.  The
+12-state contraction trap, typed-cap order-14 frontier, and plateau tables
+are finite computer-assisted results with full instances, producers, and
+the independent-checking scope stated above.
+
+No proof or disproof of the standard FiveCDC has been obtained.  No
+orientable FiveCDC result has been obtained.  The terminal-plateau
+conjecture and the universal typed-cap double-star and simultaneous-external
+premises are proof targets
+suggested by the computations, not theorems.
+A responsible public submission would require independent checking by a
+graph theorist, a broader literature comparison, and archival publication
+of the exact code and reports.
+
+\section*{AI-use disclosure}
+
+This project used OpenAI Codex agents extensively under human direction.
+The agents proposed the \(D_5\) and coloured-surface viewpoints, formulated
+the triangle-state and rooted-transition models, identified the typed-cap
+internal/external obstruction and adjacent-port table, derived candidate
+lemmas and proofs, derived the exact cut relation and complement translation,
+wrote
+and ran the enumeration programs, searched for counterexamples to
+intermediate claims, produced the finite certificates, and drafted this
+manuscript.  In particular, agents found the order-12 triangle-state
+witness, proved the typed gluing lemma, and implemented both the C++ and
+Python cap censuses.  Agents also designed the compact rooted certificate,
+generated its 30,858 flows, extended the interface certificate with 124,081
+explicit flows, derived the relevant-cap walk bound, and found
+the Petersen--Foster typed witnesses.  The semantic checker rejected an
+early exploratory Petersen--Foster witness whose labels and edges used
+different orderings; that witness was discarded, the labels were remapped
+by edge identity, and the six published flows were checked afresh.  The
+human operator selected the research objective and directed the work.  At
+the date of this draft, the manuscript has not
+received independent expert verification or peer review.
+
+AI systems are not listed as authors.  Any human who circulates or submits
+this note must personally verify the mathematical claims, take
+responsibility for the text and computations, confirm compliance with the
+venue's AI policy, and replace the working-draft author line with the
+responsible author list.  The disclosure is intentionally broad: it does
+not characterize the AI as a mere copy editor.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

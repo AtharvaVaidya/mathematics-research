@@ -1,0 +1,1 @@
+{"positive_s5_orbits":571,"s5_times_s6_orbits":11,"xor_zero_multisets":385}

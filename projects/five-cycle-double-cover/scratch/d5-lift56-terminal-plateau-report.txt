@@ -1,0 +1,17 @@
+EXHAUSTED_TERMINAL_PLATEAU
+ascent_local_chi -10
+ascent_local_delta_histogram -3:2 -2:24 -1:2 0:20
+ascent_local_neutral_classes 8
+ascent_step_1 pair=34 delta=0 component=12,14,18,20,24,26,30,32,48,52,54,58
+ascent_step_2 pair=34 delta=2 component=13,15,19,21,25,27,31,33,49,53,55,59
+plateau_chi -8
+states_mod_s5 55652
+directed_neutral_moves 1022160
+states_with_disconnected_neutral_hypergraph 1041
+uncovered_root_pairs 0
+first_disconnected_state_hex 03 03 05 05 06 06 03 03 05 05 06 06 18 18 0a 0c 12 14 11 18 03 0c 12 14 0c 0c 06 06 0a 0a 05 0c 06 06 03 0a 11 11 12 14 03 05 11 11 12 14 03 05 18 18 14 14 0c 0c 11 18 14 14 05 0c 06 06 03 0a 05 0c 06 06 0a 0a 0c 0c 11 11 12 12 11 11 12 12 14 14 14 14
+first_disconnected_delta_histogram -3:2 -2:13 -1:1 0:18
+first_disconnected_neutral_components 18
+first_disconnected_neutral_classes 2
+class_0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 76 77 78 79 80 81 82 83
+class_1 75

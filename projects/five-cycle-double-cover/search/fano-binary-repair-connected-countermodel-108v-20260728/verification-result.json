@@ -1,0 +1,28 @@
+{
+  "schema": "fano-binary-repair-connected-108-audit-v1",
+  "solver_independent_semantic_checker": true,
+  "order": 108,
+  "edges": 162,
+  "graph_metadata": {
+    "connected": true,
+    "bridgeless": true,
+    "girth": 5,
+    "cyclic_cut_counts_sizes_1_and_2": {
+      "1": 0,
+      "2": 2
+    },
+    "cyclically_4_edge_connected": false
+  },
+  "flow": "nowhere-zero F_2^3 flow",
+  "composition_recipe_reconstructed": true,
+  "explicit_standard_five_cdc": true,
+  "cnf_variables": 10227,
+  "cnf_clauses": 51193,
+  "cnf_semantics_reconstructed": true,
+  "all_21_repair_incidences_unsat": true,
+  "proof_checks": {
+    "lrat-check": "c VERIFIED",
+    "cake_lpr": "s VERIFIED UNSAT"
+  },
+  "scope": "counterexample to connected binary packing repair only; cyclic 2-edge cuts keep it outside the minimum FiveCDC counterexample domain"
+}

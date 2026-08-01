@@ -1,0 +1,7 @@
+single-component exact-change cases=1771
+single-component tight-creation cases=1761
+two-component protected cases=439569 positive-aggregate-gain cases=188563
+allowed even flip: old=(6,1)|(6,2) new=(6,0)|(6,3) potential (0,5)->(0,3)
+compensated odd loss: old=(6,1)|(8,5) new=(6,0)|(8,3) potential (0,8)->(0,5)
+necessary d=4 protection: old=(6,3)|(4,2) new=(6,2)|(4,1) potential (0,3)->(1,3)
+PASS REFINED FIXED-F FORMULA

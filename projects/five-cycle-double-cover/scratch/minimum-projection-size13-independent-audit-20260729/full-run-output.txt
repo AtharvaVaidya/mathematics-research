@@ -1,0 +1,10 @@
+shape=13 words=2583 charge_valid=155381679 dirty=129684490 direct_failures=0 dichotomy_failures=0
+shape=4+9 words=130 charge_valid=7753918 dirty=6657654 direct_failures=60 dichotomy_failures=0
+shape=5+8 words=203 charge_valid=12144485 dirty=10404652 direct_failures=3224 dichotomy_failures=0
+shape=6+7 words=242 charge_valid=14480258 dirty=12415026 direct_failures=4390 dichotomy_failures=0
+shape=4+4+5 words=4 charge_valid=238522 dirty=208144 direct_failures=0 dichotomy_failures=0
+PASS: independent exhaustive size-13 clean-or-delete audit
+total_dirty=159369966
+direct_clean_failures=7674
+failures_with_proper_circuit_deletion=7674
+clean_or_delete_failures=0

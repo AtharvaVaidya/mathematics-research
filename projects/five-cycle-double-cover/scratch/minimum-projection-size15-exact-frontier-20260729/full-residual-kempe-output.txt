@@ -1,0 +1,26 @@
+residual_states=6036
+progress=250/6036 robust=250 counterstates=0
+progress=500/6036 robust=500 counterstates=0
+progress=750/6036 robust=750 counterstates=0
+progress=1000/6036 robust=1000 counterstates=0
+progress=1250/6036 robust=1250 counterstates=0
+progress=1500/6036 robust=1500 counterstates=0
+progress=1750/6036 robust=1750 counterstates=0
+progress=2000/6036 robust=2000 counterstates=0
+progress=2250/6036 robust=2250 counterstates=0
+progress=2500/6036 robust=2500 counterstates=0
+progress=2750/6036 robust=2750 counterstates=0
+progress=3000/6036 robust=3000 counterstates=0
+progress=3250/6036 robust=3250 counterstates=0
+progress=3500/6036 robust=3500 counterstates=0
+progress=3750/6036 robust=3750 counterstates=0
+progress=4000/6036 robust=4000 counterstates=0
+progress=4250/6036 robust=4250 counterstates=0
+progress=4500/6036 robust=4500 counterstates=0
+progress=4750/6036 robust=4750 counterstates=0
+progress=5000/6036 robust=5000 counterstates=0
+progress=5250/6036 robust=5250 counterstates=0
+progress=5500/6036 robust=5500 counterstates=0
+progress=5750/6036 robust=5750 counterstates=0
+progress=6000/6036 robust=6000 counterstates=0
+RESULT checked=6036 robust=6036 kempe_counterstates=0

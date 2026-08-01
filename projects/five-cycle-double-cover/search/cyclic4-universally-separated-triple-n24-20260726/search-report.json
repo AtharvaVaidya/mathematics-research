@@ -1,0 +1,78 @@
+{
+  "classification": "EXACT_STRUCTURED_POSITIVE_SCREEN_WITH_INDEPENDENT_WITNESS_REPLAY",
+  "date": "2026-07-26",
+  "question": "Can a cyclically 4-edge-connected Tait-colourable simple cubic graph have a universally separated three-edge matching beyond the complete order-22 frontier?",
+  "answer": true,
+  "source_inventory": {
+    "path": "search/order20-mu1-candidate-census-20260725/canonical-connected-cubic-order20.g6",
+    "sha256": "bd097e9272484e531c5f79be118814c37277e67c74c6abc39bb63263f4ec717b",
+    "connected_simple_cubic_rows": 510489,
+    "tait_colourable_rows": 496430
+  },
+  "all_pair_enumeration": {
+    "command": "scratch/tait_all_coloring_mark_separation_allpairs --target 2 --cyclic-edge-connectivity 4 --emit-all-pairs --progress 100000 < search/order20-mu1-candidate-census-20260725/canonical-connected-cubic-order20.g6 > scratch/order20-cyclic4-all-separated-pairs.jsonl",
+    "rows": 510489,
+    "tait_colourings_mod_global_s3": 5015828,
+    "host_graphs": 250,
+    "literal_separated_pairs": 934,
+    "inventory_path": "scratch/order20-cyclic4-all-separated-pairs.jsonl",
+    "inventory_sha256": "7a780c3ff7eeba5193eb730cb9125de974b19ac095f80909ca5dd29969bfa6cc"
+  },
+  "generator": {
+    "path": "scratch/generate_all_separated_pair_four_sums.py",
+    "sha256": "8693ee98bb79f374dd7bb3563497540a674cacb5d757c4d80ca53bfe7c0040ec",
+    "command": "python3 scratch/generate_all_separated_pair_four_sums.py --factor-max-order 4",
+    "raw_mark_pairs": 934,
+    "marked_host_orbits": 789,
+    "raw_host_port_pairs": 257214,
+    "marked_stabilizer_host_port_orbits": 233670,
+    "k4_boundary_configuration_orbits": 3,
+    "generated_rows": 701010,
+    "stream_sha256": "ddeee79d8306991400a1e32bcc3939e05201455e7423a98e45c9a22b068a6822"
+  },
+  "checker": {
+    "source_path": "scratch/tait_all_coloring_mark_separation_allpairs.cpp",
+    "source_sha256": "b0ddcd4c12347eb830012b9ef218c6c2831515411f00641baeff8b2bbd2cdec6",
+    "binary_path": "scratch/tait_all_coloring_mark_separation_allpairs",
+    "binary_sha256": "54abde85185e6471519666997ecfb1f89d496d2af3bac25f08a6eb29d9921bdd",
+    "command": "python3 scratch/generate_all_separated_pair_four_sums.py --factor-max-order 4 | scratch/tait_all_coloring_mark_separation_allpairs --target 3 --required-edge-ends 0-1,2-3 --cyclic-edge-connectivity 4 --progress 100000",
+    "rows_decoded": 701010,
+    "partial_tait_colourings_before_early_exit": 903034,
+    "hits": 144,
+    "hit_stream_path": "search/cyclic4-universally-separated-triple-n24-20260726/search-witnesses.jsonl",
+    "hit_stream_sha256": "c398bb55aedc213c6ef09169a4dd9501c9f9093988f7285c167b0639cc38c176",
+    "distinct_emitted_graph6_rows": 142,
+    "duplicate_emission_row_pairs": [[568556, 569533], [571489, 572468]],
+    "duplicate_explanation": "Each row pair gives the same literal graph6 record and the same marked triple; the factorwise automorphism quotient does not globally deduplicate completed sums.",
+    "unmarked_graph_isomorphism_classes": 20,
+    "marked_graph_isomorphism_classes": 46,
+    "girth_distribution": {"4": 144},
+    "marked_subdivision_girth_distribution": {"5": 144},
+    "hits_satisfying_every_circuit_length_plus_marks_at_least_10": 0
+  },
+  "first_witness": {
+    "search_row": 21360,
+    "graph6": "W`??A???A_@_A_cO?S_Gc`_?@O@@?@OO??_????_??H_A?E",
+    "marks": [[0, 1], [2, 3], [20, 23]],
+    "girth": 4,
+    "marked_subdivision_girth": 5,
+    "satisfies_every_circuit_length_plus_marks_at_least_10": false,
+    "tait_colourings_mod_global_s3": 36,
+    "independent_verifier_status": "VERIFIED"
+  },
+  "marked_girth_screen": {
+    "condition": "Every circuit C satisfies |C| + |C intersect S| >= 10, equivalently girth at least 10 after subdividing every marked edge.",
+    "source_path": "scratch/tait_all_coloring_mark_separation.cpp",
+    "source_sha256": "c2e797eca207c01165e5868636cc91247fa4841372fcc67a5ee2f95834e39c08",
+    "binary_path": "scratch/tait_all_coloring_mark_separation",
+    "binary_sha256": "c70f1f7b2e7f096afba8ec35b934e7c9887262fa1a7f327e7d058983f6543a6f",
+    "command": "python3 scratch/generate_all_separated_pair_four_sums.py --factor-max-order 4 | scratch/tait_all_coloring_mark_separation --target 3 --required-edge-ends 0-1,2-3 --cyclic-edge-connectivity 4 --min-subdivided-girth 10 --progress 100000",
+    "rows_decoded": 701010,
+    "rows_with_universally_separated_pair_and_some_third_edge": 144,
+    "partial_tait_colourings_before_early_exit": 903034,
+    "qualifying_witnesses": 0,
+    "empty_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "structural_explanation": "Every sum retains a four-cycle in the K4 factor. The required pair lies in the order-20 host and one additional mark can increase the marked length of that factor circuit to at most five."
+  },
+  "scope_warning": "The screen is complete for the displayed factorwise-automorphism quotient of all order-20 cyclically-four separated-pair hosts joined to K4. It is not a complete order-24 graph census and does not resolve five-CDC."
+}

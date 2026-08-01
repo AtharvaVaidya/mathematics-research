@@ -1,0 +1,6 @@
+{"canonical_junction_orbits": 9278, "connected_cubic_graphs": 620, "cyclically_4_edge_connected_graphs": 110, "girth_at_least_5_graphs": 12, "girth_at_least_5_junction_orbits": 455, "raw_independent_positive_even_junction_sets": 20877}
+n=6 connected=2 cyclic4=1 girth5=0 junction_orbits=1 girth5_orbits=0
+n=8 connected=5 cyclic4=2 girth5=0 junction_orbits=5 girth5_orbits=0
+n=10 connected=19 cyclic4=5 girth5=1 junction_orbits=32 girth5_orbits=2
+n=12 connected=85 cyclic4=18 girth5=2 junction_orbits=445 girth5_orbits=20
+n=14 connected=509 cyclic4=84 girth5=9 junction_orbits=8795 girth5_orbits=433

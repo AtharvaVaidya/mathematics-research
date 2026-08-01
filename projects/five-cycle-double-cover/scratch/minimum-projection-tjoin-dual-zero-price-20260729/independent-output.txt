@@ -1,0 +1,1 @@
+PASS: permutation_maps=6 orbit_checks=32 cut_parity_checks=6494400

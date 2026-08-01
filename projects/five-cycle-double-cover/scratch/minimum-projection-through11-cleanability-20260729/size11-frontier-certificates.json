@@ -1,0 +1,767 @@
+{
+  "canonical_pair_orbits": [
+    {
+      "failure_indices": [
+        0
+      ],
+      "partition": "01234024133",
+      "word_pair": [
+        "01023",
+        "010123"
+      ]
+    },
+    {
+      "failure_indices": [
+        1
+      ],
+      "partition": "01234314203",
+      "word_pair": [
+        "01023",
+        "010123"
+      ]
+    },
+    {
+      "failure_indices": [
+        2,
+        3
+      ],
+      "partition": "01234024113",
+      "word_pair": [
+        "01023",
+        "010213"
+      ]
+    },
+    {
+      "failure_indices": [
+        4,
+        5
+      ],
+      "partition": "01234024413",
+      "word_pair": [
+        "01023",
+        "012013"
+      ]
+    },
+    {
+      "failure_indices": [
+        6,
+        7
+      ],
+      "partition": "01234142203",
+      "word_pair": [
+        "01023",
+        "012031"
+      ]
+    },
+    {
+      "failure_indices": [
+        8
+      ],
+      "partition": "01234033142",
+      "word_pair": [
+        "01023",
+        "012323"
+      ]
+    },
+    {
+      "failure_indices": [
+        9
+      ],
+      "partition": "01234330241",
+      "word_pair": [
+        "01023",
+        "012323"
+      ]
+    },
+    {
+      "failure_indices": [
+        10
+      ],
+      "partition": "01234031142",
+      "word_pair": [
+        "01023",
+        "021323"
+      ]
+    },
+    {
+      "failure_indices": [
+        11
+      ],
+      "partition": "01234220314",
+      "word_pair": [
+        "01023",
+        "021323"
+      ]
+    },
+    {
+      "failure_indices": [
+        12
+      ],
+      "partition": "01234031442",
+      "word_pair": [
+        "01023",
+        "023123"
+      ]
+    },
+    {
+      "failure_indices": [
+        13
+      ],
+      "partition": "01234441302",
+      "word_pair": [
+        "01023",
+        "023123"
+      ]
+    }
+  ],
+  "classification": {
+    "cycles_4_plus_7": {
+      "canonical_words": 17,
+      "charge_valid_word_partitions": 57500,
+      "direct_clean_failures": 0,
+      "dirty_word_partitions": 46786
+    },
+    "cycles_5_plus_6": {
+      "canonical_pair_orbits": 11,
+      "canonical_words": 26,
+      "charge_valid_word_partitions": 87884,
+      "direct_clean_failures": 14,
+      "dirty_word_partitions": 71170,
+      "failures_with_size5_replacement": 14
+    },
+    "one_11cycle": {
+      "canonical_words": 345,
+      "charge_valid_word_partitions": 1183710,
+      "direct_clean_failures": 0,
+      "dirty_word_partitions": 919764
+    }
+  },
+  "literal_failures": [
+    {
+      "index": 0,
+      "isomorphism_to_canonical": [
+        4,
+        5,
+        9,
+        1,
+        8,
+        10,
+        7,
+        6,
+        11,
+        2,
+        3,
+        0
+      ],
+      "partition": "01234024133",
+      "replacement_low_words": [
+        "32310",
+        "232321"
+      ],
+      "replacement_maps": [
+        "0123",
+        "0123",
+        "0123",
+        "0321",
+        "0123"
+      ],
+      "replacement_starts": [
+        0,
+        1
+      ],
+      "replacement_support": "first_5cycle",
+      "word_pair": [
+        "01023",
+        "010123"
+      ]
+    },
+    {
+      "index": 1,
+      "isomorphism_to_canonical": [
+        4,
+        5,
+        9,
+        1,
+        8,
+        2,
+        11,
+        6,
+        7,
+        10,
+        3,
+        0
+      ],
+      "partition": "01234314203",
+      "replacement_low_words": [
+        "32310",
+        "323212"
+      ],
+      "replacement_maps": [
+        "0123",
+        "0123",
+        "0123",
+        "0321",
+        "0123"
+      ],
+      "replacement_starts": [
+        0,
+        2
+      ],
+      "replacement_support": "first_5cycle",
+      "word_pair": [
+        "01023",
+        "010123"
+      ]
+    },
+    {
+      "index": 2,
+      "isomorphism_to_canonical": [
+        4,
+        10,
+        7,
+        6,
+        8,
+        5,
+        9,
+        1,
+        0,
+        2,
+        11,
+        3
+      ],
+      "partition": "01234024113",
+      "replacement_low_words": [
+        "32120",
+        "213121"
+      ],
+      "replacement_maps": [
+        "0123",
+        "0123",
+        "0312",
+        "0132",
+        "0213"
+      ],
+      "replacement_starts": [
+        0,
+        1
+      ],
+      "replacement_support": "first_5cycle",
+      "word_pair": [
+        "01023",
+        "010213"
+      ]
+    },
+    {
+      "index": 3,
+      "isomorphism_to_canonical": [
+        4,
+        5,
+        11,
+        6,
+        8,
+        0,
+        1,
+        9,
+        7,
+        10,
+        3,
+        2
+      ],
+      "partition": "01234241302",
+      "replacement_low_words": [
+        "32310",
+        "323121"
+      ],
+      "replacement_maps": [
+        "0123",
+        "0123",
+        "0132",
+        "0123",
+        "0123"
+      ],
+      "replacement_starts": [
+        0,
+        1
+      ],
+      "replacement_support": "first_5cycle",
+      "word_pair": [
+        "01023",
+        "010213"
+      ]
+    },
+    {
+      "index": 4,
+      "isomorphism_to_canonical": [
+        4,
+        5,
+        9,
+        7,
+        10,
+        8,
+        1,
+        0,
+        2,
+        11,
+        6,
+        3
+      ],
+      "partition": "01234024413",
+      "replacement_low_words": [
+        "32310",
+        "231231"
+      ],
+      "replacement_maps": [
+        "0123",
+        "0123",
+        "0123",
+        "0123",
+        "0132"
+      ],
+      "replacement_starts": [
+        0,
+        1
+      ],
+      "replacement_support": "first_5cycle",
+      "word_pair": [
+        "01023",
+        "012013"
+      ]
+    },
+    {
+      "index": 5,
+      "isomorphism_to_canonical": [
+        4,
+        5,
+        9,
+        7,
+        10,
+        0,
+        1,
+        8,
+        6,
+        11,
+        2,
+        3
+      ],
+      "partition": "01234420314",
+      "replacement_low_words": [
+        "32310",
+        "321321"
+      ],
+      "replacement_maps": [
+        "0123",
+        "0123",
+        "0123",
+        "0123",
+        "0132"
+      ],
+      "replacement_starts": [
+        0,
+        1
+      ],
+      "replacement_support": "first_5cycle",
+      "word_pair": [
+        "01023",
+        "012013"
+      ]
+    },
+    {
+      "index": 6,
+      "isomorphism_to_canonical": [
+        4,
+        10,
+        7,
+        6,
+        8,
+        1,
+        9,
+        5,
+        11,
+        2,
+        0,
+        3
+      ],
+      "partition": "01234420311",
+      "replacement_low_words": [
+        "32120",
+        "121213"
+      ],
+      "replacement_maps": [
+        "0123",
+        "0123",
+        "0312",
+        "0132",
+        "0213"
+      ],
+      "replacement_starts": [
+        0,
+        3
+      ],
+      "replacement_support": "first_5cycle",
+      "word_pair": [
+        "01023",
+        "012031"
+      ]
+    },
+    {
+      "index": 7,
+      "isomorphism_to_canonical": [
+        4,
+        5,
+        11,
+        6,
+        8,
+        9,
+        1,
+        0,
+        3,
+        10,
+        7,
+        2
+      ],
+      "partition": "01234142203",
+      "replacement_low_words": [
+        "32310",
+        "231213"
+      ],
+      "replacement_maps": [
+        "0123",
+        "0123",
+        "0132",
+        "0123",
+        "0123"
+      ],
+      "replacement_starts": [
+        0,
+        3
+      ],
+      "replacement_support": "first_5cycle",
+      "word_pair": [
+        "01023",
+        "012031"
+      ]
+    },
+    {
+      "index": 8,
+      "isomorphism_to_canonical": [
+        4,
+        5,
+        9,
+        1,
+        8,
+        10,
+        3,
+        2,
+        11,
+        6,
+        7,
+        0
+      ],
+      "partition": "01234033142",
+      "replacement_low_words": [
+        "32310",
+        "123232"
+      ],
+      "replacement_maps": [
+        "0123",
+        "0123",
+        "0123",
+        "0321",
+        "0123"
+      ],
+      "replacement_starts": [
+        0,
+        2
+      ],
+      "replacement_support": "first_5cycle",
+      "word_pair": [
+        "01023",
+        "012323"
+      ]
+    },
+    {
+      "index": 9,
+      "isomorphism_to_canonical": [
+        4,
+        5,
+        9,
+        1,
+        8,
+        2,
+        3,
+        10,
+        7,
+        6,
+        11,
+        0
+      ],
+      "partition": "01234330241",
+      "replacement_low_words": [
+        "32310",
+        "212323"
+      ],
+      "replacement_maps": [
+        "0123",
+        "0123",
+        "0123",
+        "0321",
+        "0123"
+      ],
+      "replacement_starts": [
+        0,
+        3
+      ],
+      "replacement_support": "first_5cycle",
+      "word_pair": [
+        "01023",
+        "012323"
+      ]
+    },
+    {
+      "index": 10,
+      "isomorphism_to_canonical": [
+        4,
+        10,
+        7,
+        6,
+        8,
+        5,
+        11,
+        2,
+        0,
+        1,
+        9,
+        3
+      ],
+      "partition": "01234031142",
+      "replacement_low_words": [
+        "32120",
+        "121312"
+      ],
+      "replacement_maps": [
+        "0123",
+        "0123",
+        "0312",
+        "0132",
+        "0213"
+      ],
+      "replacement_starts": [
+        0,
+        2
+      ],
+      "replacement_support": "first_5cycle",
+      "word_pair": [
+        "01023",
+        "021323"
+      ]
+    },
+    {
+      "index": 11,
+      "isomorphism_to_canonical": [
+        4,
+        5,
+        11,
+        6,
+        8,
+        0,
+        3,
+        10,
+        7,
+        9,
+        1,
+        2
+      ],
+      "partition": "01234220314",
+      "replacement_low_words": [
+        "32310",
+        "121323"
+      ],
+      "replacement_maps": [
+        "0123",
+        "0123",
+        "0132",
+        "0123",
+        "0123"
+      ],
+      "replacement_starts": [
+        0,
+        3
+      ],
+      "replacement_support": "first_5cycle",
+      "word_pair": [
+        "01023",
+        "021323"
+      ]
+    },
+    {
+      "index": 12,
+      "isomorphism_to_canonical": [
+        4,
+        5,
+        9,
+        7,
+        10,
+        8,
+        6,
+        11,
+        2,
+        0,
+        1,
+        3
+      ],
+      "partition": "01234031442",
+      "replacement_low_words": [
+        "32310",
+        "132132"
+      ],
+      "replacement_maps": [
+        "0123",
+        "0123",
+        "0123",
+        "0123",
+        "0132"
+      ],
+      "replacement_starts": [
+        0,
+        2
+      ],
+      "replacement_support": "first_5cycle",
+      "word_pair": [
+        "01023",
+        "023123"
+      ]
+    },
+    {
+      "index": 13,
+      "isomorphism_to_canonical": [
+        4,
+        5,
+        9,
+        7,
+        10,
+        0,
+        2,
+        11,
+        6,
+        8,
+        1,
+        3
+      ],
+      "partition": "01234441302",
+      "replacement_low_words": [
+        "32310",
+        "123123"
+      ],
+      "replacement_maps": [
+        "0123",
+        "0123",
+        "0123",
+        "0123",
+        "0132"
+      ],
+      "replacement_starts": [
+        0,
+        3
+      ],
+      "replacement_support": "first_5cycle",
+      "word_pair": [
+        "01023",
+        "023123"
+      ]
+    }
+  ],
+  "realization": {
+    "all_14_minimal_realizations_isomorphic": true,
+    "bridgeless": true,
+    "canonical_graph6": "Kt?G?DIPOqCo",
+    "connected": true,
+    "cubic": true,
+    "displayed_size5_replacement_cleanable": true,
+    "minimum_clean_projection_count": 6,
+    "minimum_extendable_projection_count": 6,
+    "minimum_extendable_projection_size": 5,
+    "order": 12,
+    "planarity": "nonplanar (certified Petersen minor)",
+    "representative_edges_in_target_order": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        10,
+        5
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        9
+      ],
+      [
+        11,
+        10
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    "simple": true,
+    "size": 18,
+    "tait_colourable": false,
+    "target_projection_cleanable": false,
+    "target_projection_liftable": true,
+    "target_projection_size": 11
+  },
+  "schema": "minimum-projection-through11-v1"
+}

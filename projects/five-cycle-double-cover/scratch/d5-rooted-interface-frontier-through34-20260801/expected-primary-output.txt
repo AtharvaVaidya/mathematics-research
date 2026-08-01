@@ -1,0 +1,7 @@
+STREAM graphs=3874 raw_leaves=1453609 flows_mod_s5_until_cover=1119448 max_flows_graph=5941 witness_states=65185 interfaces=1301664 double_star=1301664 aggregate_external=1301664 simultaneous_external=1301664
+STREAM graphs=2 raw_leaves=77 flows_mod_s5_until_cover=44 max_flows_graph=34 witness_states=23 interfaces=864 double_star=864 aggregate_external=864 simultaneous_external=864
+STREAM graphs=6 raw_leaves=956 flows_mod_s5_until_cover=545 max_flows_graph=344 witness_states=102 interfaces=3240 double_star=3240 aggregate_external=3240 simultaneous_external=3240
+STREAM graphs=31 raw_leaves=209103 flows_mod_s5_until_cover=104973 max_flows_graph=10116 witness_states=1039 interfaces=20460 double_star=20460 aggregate_external=20460 simultaneous_external=20460
+STREAM graphs=155 raw_leaves=210818 flows_mod_s5_until_cover=137736 max_flows_graph=12398 witness_states=5299 interfaces=122760 double_star=122760 aggregate_external=122760 simultaneous_external=122760
+STREAM graphs=1297 raw_leaves=5530261 flows_mod_s5_until_cover=3473304 max_flows_graph=161532 witness_states=51436 interfaces=1213992 double_star=1213992 aggregate_external=1213992 simultaneous_external=1213992
+STREAM graphs=7 raw_leaves=744830 flows_mod_s5_until_cover=744830 max_flows_graph=140677 witness_states=997 interfaces=11424 double_star=11424 aggregate_external=11424 simultaneous_external=11424

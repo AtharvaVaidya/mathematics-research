@@ -1,0 +1,451 @@
+{
+  "deletion_map_tuples": 0,
+  "directly_cleanable_map_tuples": 0,
+  "integrable_full_map_tuples": 320,
+  "integrable_reduced_transition_tuples": 40,
+  "partition": "01234444413024",
+  "reduced_cases": [
+    {
+      "base": "3232310|2323010",
+      "dual_blocks": "12",
+      "q_by_second_translation": [
+        "00101",
+        "10100",
+        "11011",
+        "01010"
+      ],
+      "reduced_images": "11112"
+    },
+    {
+      "base": "3232130|2101230",
+      "dual_blocks": "12",
+      "q_by_second_translation": [
+        "11011",
+        "01010",
+        "00101",
+        "10100"
+      ],
+      "reduced_images": "11132"
+    },
+    {
+      "base": "3231320|1320320",
+      "dual_blocks": "013",
+      "q_by_second_translation": [
+        "00011",
+        "10001",
+        "11110",
+        "01100"
+      ],
+      "reduced_images": "11221"
+    },
+    {
+      "base": "3231230|1231230",
+      "dual_blocks": "013",
+      "q_by_second_translation": [
+        "10001",
+        "00011",
+        "01100",
+        "11110"
+      ],
+      "reduced_images": "11231"
+    },
+    {
+      "base": "3201320|1323020",
+      "dual_blocks": "13",
+      "q_by_second_translation": [
+        "00011",
+        "10111",
+        "11000",
+        "01100"
+      ],
+      "reduced_images": "12121"
+    },
+    {
+      "base": "3201230|1232130",
+      "dual_blocks": "13",
+      "q_by_second_translation": [
+        "10111",
+        "00011",
+        "01100",
+        "11000"
+      ],
+      "reduced_images": "12131"
+    },
+    {
+      "base": "3202310|2320310",
+      "dual_blocks": "012",
+      "q_by_second_translation": [
+        "00101",
+        "10010",
+        "11101",
+        "01010"
+      ],
+      "reduced_images": "12212"
+    },
+    {
+      "base": "3202130|2102130",
+      "dual_blocks": "012",
+      "q_by_second_translation": [
+        "11101",
+        "01010",
+        "00101",
+        "10010"
+      ],
+      "reduced_images": "12232"
+    },
+    {
+      "base": "3203210|3230310",
+      "dual_blocks": "012",
+      "q_by_second_translation": [
+        "00101",
+        "10010",
+        "11110",
+        "01001"
+      ],
+      "reduced_images": "12313"
+    },
+    {
+      "base": "3203120|3103020",
+      "dual_blocks": "012",
+      "q_by_second_translation": [
+        "01001",
+        "11110",
+        "10010",
+        "00101"
+      ],
+      "reduced_images": "12323"
+    },
+    {
+      "base": "3213210|3231210",
+      "dual_blocks": "02",
+      "q_by_second_translation": [
+        "10001",
+        "00110",
+        "01100",
+        "11011"
+      ],
+      "reduced_images": "13213"
+    },
+    {
+      "base": "3213120|3102120",
+      "dual_blocks": "02",
+      "q_by_second_translation": [
+        "11011",
+        "01100",
+        "00110",
+        "10001"
+      ],
+      "reduced_images": "13223"
+    },
+    {
+      "base": "3212310|2321210",
+      "dual_blocks": "02",
+      "q_by_second_translation": [
+        "10001",
+        "00110",
+        "01111",
+        "11000"
+      ],
+      "reduced_images": "13312"
+    },
+    {
+      "base": "3212130|2103030",
+      "dual_blocks": "02",
+      "q_by_second_translation": [
+        "01111",
+        "11000",
+        "10001",
+        "00110"
+      ],
+      "reduced_images": "13332"
+    },
+    {
+      "base": "3101320|1310320",
+      "dual_blocks": "012",
+      "q_by_second_translation": [
+        "00101",
+        "11101",
+        "10010",
+        "01010"
+      ],
+      "reduced_images": "21121"
+    },
+    {
+      "base": "3101230|1201230",
+      "dual_blocks": "012",
+      "q_by_second_translation": [
+        "11101",
+        "00101",
+        "01010",
+        "10010"
+      ],
+      "reduced_images": "21131"
+    },
+    {
+      "base": "3102310|2313010",
+      "dual_blocks": "13",
+      "q_by_second_translation": [
+        "00011",
+        "11000",
+        "10111",
+        "01100"
+      ],
+      "reduced_images": "21212"
+    },
+    {
+      "base": "3102130|2131230",
+      "dual_blocks": "13",
+      "q_by_second_translation": [
+        "10111",
+        "01100",
+        "00011",
+        "11000"
+      ],
+      "reduced_images": "21232"
+    },
+    {
+      "base": "3103210|3203010",
+      "dual_blocks": "012",
+      "q_by_second_translation": [
+        "01001",
+        "10010",
+        "11110",
+        "00101"
+      ],
+      "reduced_images": "21313"
+    },
+    {
+      "base": "3103120|3130320",
+      "dual_blocks": "012",
+      "q_by_second_translation": [
+        "00101",
+        "11110",
+        "10010",
+        "01001"
+      ],
+      "reduced_images": "21323"
+    },
+    {
+      "base": "3132310|2310310",
+      "dual_blocks": "013",
+      "q_by_second_translation": [
+        "00011",
+        "11110",
+        "10001",
+        "01100"
+      ],
+      "reduced_images": "22112"
+    },
+    {
+      "base": "3132130|2132130",
+      "dual_blocks": "013",
+      "q_by_second_translation": [
+        "10001",
+        "01100",
+        "00011",
+        "11110"
+      ],
+      "reduced_images": "22132"
+    },
+    {
+      "base": "3131320|1313020",
+      "dual_blocks": "12",
+      "q_by_second_translation": [
+        "00101",
+        "11011",
+        "10100",
+        "01010"
+      ],
+      "reduced_images": "22221"
+    },
+    {
+      "base": "3131230|1202130",
+      "dual_blocks": "12",
+      "q_by_second_translation": [
+        "11011",
+        "00101",
+        "01010",
+        "10100"
+      ],
+      "reduced_images": "22231"
+    },
+    {
+      "base": "3123210|3201210",
+      "dual_blocks": "02",
+      "q_by_second_translation": [
+        "11011",
+        "00110",
+        "01100",
+        "10001"
+      ],
+      "reduced_images": "23113"
+    },
+    {
+      "base": "3123120|3132120",
+      "dual_blocks": "02",
+      "q_by_second_translation": [
+        "10001",
+        "01100",
+        "00110",
+        "11011"
+      ],
+      "reduced_images": "23123"
+    },
+    {
+      "base": "3121320|1312120",
+      "dual_blocks": "02",
+      "q_by_second_translation": [
+        "10001",
+        "01111",
+        "00110",
+        "11000"
+      ],
+      "reduced_images": "23321"
+    },
+    {
+      "base": "3121230|1203030",
+      "dual_blocks": "02",
+      "q_by_second_translation": [
+        "01111",
+        "10001",
+        "11000",
+        "00110"
+      ],
+      "reduced_images": "23331"
+    },
+    {
+      "base": "3013210|3213010",
+      "dual_blocks": "01",
+      "q_by_second_translation": [
+        "01001",
+        "10010",
+        "10100",
+        "01111"
+      ],
+      "reduced_images": "31213"
+    },
+    {
+      "base": "3013120|3120320",
+      "dual_blocks": "01",
+      "q_by_second_translation": [
+        "01111",
+        "10100",
+        "10010",
+        "01001"
+      ],
+      "reduced_images": "31223"
+    },
+    {
+      "base": "3012310|2303010",
+      "dual_blocks": "03",
+      "q_by_second_translation": [
+        "00011",
+        "11000",
+        "11101",
+        "00110"
+      ],
+      "reduced_images": "31312"
+    },
+    {
+      "base": "3012130|2121230",
+      "dual_blocks": "03",
+      "q_by_second_translation": [
+        "11101",
+        "00110",
+        "00011",
+        "11000"
+      ],
+      "reduced_images": "31332"
+    },
+    {
+      "base": "3023210|3210310",
+      "dual_blocks": "01",
+      "q_by_second_translation": [
+        "01111",
+        "10010",
+        "10100",
+        "01001"
+      ],
+      "reduced_images": "32113"
+    },
+    {
+      "base": "3023120|3123020",
+      "dual_blocks": "01",
+      "q_by_second_translation": [
+        "01001",
+        "10100",
+        "10010",
+        "01111"
+      ],
+      "reduced_images": "32123"
+    },
+    {
+      "base": "3021320|1303020",
+      "dual_blocks": "03",
+      "q_by_second_translation": [
+        "00011",
+        "11101",
+        "11000",
+        "00110"
+      ],
+      "reduced_images": "32321"
+    },
+    {
+      "base": "3021230|1212130",
+      "dual_blocks": "03",
+      "q_by_second_translation": [
+        "11101",
+        "00011",
+        "00110",
+        "11000"
+      ],
+      "reduced_images": "32331"
+    },
+    {
+      "base": "3032310|2301210",
+      "dual_blocks": "01",
+      "q_by_second_translation": [
+        "10111",
+        "01010",
+        "01001",
+        "10100"
+      ],
+      "reduced_images": "33112"
+    },
+    {
+      "base": "3032130|2123030",
+      "dual_blocks": "01",
+      "q_by_second_translation": [
+        "01001",
+        "10100",
+        "10111",
+        "01010"
+      ],
+      "reduced_images": "33132"
+    },
+    {
+      "base": "3031320|1302120",
+      "dual_blocks": "01",
+      "q_by_second_translation": [
+        "10111",
+        "01001",
+        "01010",
+        "10100"
+      ],
+      "reduced_images": "33221"
+    },
+    {
+      "base": "3031230|1213030",
+      "dual_blocks": "01",
+      "q_by_second_translation": [
+        "01001",
+        "10111",
+        "10100",
+        "01010"
+      ],
+      "reduced_images": "33231"
+    }
+  ],
+  "total_map_tuples_mod_global_GL": 1296,
+  "word": "0101023|0101232"
+}

@@ -1,0 +1,9 @@
+FIRST_ESCAPE graph=63 graph6=K?`@EQgLAcAo cap=0 root=15 missing=3 cycle_mask=41 before_hex=03050c061412051411180c14111809141105 after_hex=0305090603050503060a0903060a0c030605
+SUMMARY graphs=81 flows_mod_s5=25960 kempe_orbits_mod_s5=2650 orbit_interfaces=477000 bad_orbit_interfaces=2 one_complement_rescues=2 one_complement_failures=0 expected_failures=0 support_avoids_root_and_cap=2 lengths=3:2 PASS
+FIRST_ESCAPE graph=73 graph6=M??CB@W[CaCoB_b?? cap=5 root=6 missing=4 cycle_mask=221184 before_hex=030c14051114091118110918050c090c060a12180a after_hex=030c140511140911181109180503060c090512180a
+SUMMARY graphs=480 flows_mod_s5=537418 kempe_orbits_mod_s5=33102 orbit_interfaces=8341704 bad_orbit_interfaces=72 one_complement_rescues=60 one_complement_failures=12 expected_failures=12 support_avoids_root_and_cap=52 lengths=3:28,4:28,5:4 PASS
+GRAPH graph6=M??CB?X[E_P_H_B_? flows=1517 orbits=36 bad_orbit_interfaces=8 strict_simple_failures=4 full_cycle_space_immediate_failures=4 direct_depth_two_rescues=4 disjoint_one_complement_good_orbit_escapes=4 PASS
+GRAPH graph6=M?AACGohBAJ?AgE_? flows=2976 orbits=12 bad_orbit_interfaces=8 strict_simple_failures=8 full_cycle_space_immediate_failures=8 direct_depth_two_rescues=8 disjoint_one_complement_good_orbit_escapes=8 PASS
+TOTAL strict_simple_failures=12 full_cycle_space_immediate_failures=12 direct_depth_two_rescues=12 disjoint_one_complement_good_orbit_escapes=12 PASS
+LITERAL graph6=M?AACGohBAJ?AgE_? cap=0 root=19 bad_kempe_orbit=432 complement_cycle=5 support_disjoint=1 immediate_external=0 kempe_steps=4 final_typed=10 final_external=3 PASS
+PASS

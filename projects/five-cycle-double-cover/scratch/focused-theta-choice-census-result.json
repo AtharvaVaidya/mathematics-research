@@ -1,0 +1,142 @@
+{
+  "classification": "FINITE_EXACT_CENSUS_PASS",
+  "scope": "Every independent edge pair in the retained complete cyclically-4-edge-connected non-Tait simple cubic corpora at every even order from 10 through 28.",
+  "warning": "This is not a universal theta-choice theorem and does not resolve the Five-Cycle Double Cover Conjecture.",
+  "results": [
+    {
+      "order": 10,
+      "graphs": 1,
+      "corpus_sha256": "7aec0fba73c081d7eebc551fc46b2484e73e58b2d36718dee105dbb6226e76aa",
+      "independent_root_pairs": 75,
+      "deficiency_zero": 60,
+      "deficiency_two_theta": 15,
+      "deficiency_two_all_dumbbell": 0,
+      "deficiency_two_boundary_six": 0,
+      "deficiency_two_boundary_eight": 15,
+      "near_perfect_matchings_examined_before_early_success_or_exhaustion": 15
+    },
+    {
+      "order": 12,
+      "graphs": 0,
+      "corpus_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "independent_root_pairs": 0,
+      "deficiency_zero": 0,
+      "deficiency_two_theta": 0,
+      "deficiency_two_all_dumbbell": 0,
+      "deficiency_two_boundary_six": 0,
+      "deficiency_two_boundary_eight": 0,
+      "near_perfect_matchings_examined_before_early_success_or_exhaustion": 0
+    },
+    {
+      "order": 14,
+      "graphs": 0,
+      "corpus_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "independent_root_pairs": 0,
+      "deficiency_zero": 0,
+      "deficiency_two_theta": 0,
+      "deficiency_two_all_dumbbell": 0,
+      "deficiency_two_boundary_six": 0,
+      "deficiency_two_boundary_eight": 0,
+      "near_perfect_matchings_examined_before_early_success_or_exhaustion": 0
+    },
+    {
+      "order": 16,
+      "graphs": 0,
+      "corpus_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "independent_root_pairs": 0,
+      "deficiency_zero": 0,
+      "deficiency_two_theta": 0,
+      "deficiency_two_all_dumbbell": 0,
+      "deficiency_two_boundary_six": 0,
+      "deficiency_two_boundary_eight": 0,
+      "near_perfect_matchings_examined_before_early_success_or_exhaustion": 0
+    },
+    {
+      "order": 18,
+      "graphs": 2,
+      "corpus_sha256": "2660e7d5c8a351b4ed3d69f8df316e748e264a630c01328ea4bed43f96f78dfd",
+      "independent_root_pairs": 594,
+      "deficiency_zero": 569,
+      "deficiency_two_theta": 25,
+      "deficiency_two_all_dumbbell": 0,
+      "deficiency_two_boundary_six": 0,
+      "deficiency_two_boundary_eight": 25,
+      "near_perfect_matchings_examined_before_early_success_or_exhaustion": 50
+    },
+    {
+      "order": 20,
+      "graphs": 6,
+      "corpus_sha256": "a65153d9dc38bebffca52b2c2ec05f194807b10ca097f50a551d5aab871244f1",
+      "independent_root_pairs": 2250,
+      "deficiency_zero": 2183,
+      "deficiency_two_theta": 67,
+      "deficiency_two_all_dumbbell": 0,
+      "deficiency_two_boundary_six": 0,
+      "deficiency_two_boundary_eight": 67,
+      "near_perfect_matchings_examined_before_early_success_or_exhaustion": 101
+    },
+    {
+      "order": 22,
+      "graphs": 31,
+      "corpus_sha256": "2c3d91e55cb264450cf321e2299355f6cf0f5c2c60a83c99372a1d73ed5a4223",
+      "independent_root_pairs": 14322,
+      "deficiency_zero": 14047,
+      "deficiency_two_theta": 275,
+      "deficiency_two_all_dumbbell": 0,
+      "deficiency_two_boundary_six": 0,
+      "deficiency_two_boundary_eight": 275,
+      "near_perfect_matchings_examined_before_early_success_or_exhaustion": 613
+    },
+    {
+      "order": 24,
+      "graphs": 155,
+      "corpus_sha256": "37ef068ab597c6cc882eb2121d9743464b0717bc4beefab4348ef4221b6a7456",
+      "independent_root_pairs": 86490,
+      "deficiency_zero": 85156,
+      "deficiency_two_theta": 1334,
+      "deficiency_two_all_dumbbell": 0,
+      "deficiency_two_boundary_six": 0,
+      "deficiency_two_boundary_eight": 1334,
+      "near_perfect_matchings_examined_before_early_success_or_exhaustion": 4449
+    },
+    {
+      "order": 26,
+      "graphs": 1297,
+      "corpus_sha256": "1d2b95b9d412f5f6b8ccb788779bd685df23b3239bda8c7e9557266375519760",
+      "independent_root_pairs": 859911,
+      "deficiency_zero": 848725,
+      "deficiency_two_theta": 11186,
+      "deficiency_two_all_dumbbell": 0,
+      "deficiency_two_boundary_six": 0,
+      "deficiency_two_boundary_eight": 11186,
+      "near_perfect_matchings_examined_before_early_success_or_exhaustion": 43157
+    },
+    {
+      "order": 28,
+      "graphs": 12517,
+      "corpus_sha256": "b4f6494c23793a40158a03ccd7c0943ae2e397c90a1467e27814bd007789be1f",
+      "independent_root_pairs": 9725709,
+      "deficiency_zero": 9617033,
+      "deficiency_two_theta": 108676,
+      "deficiency_two_all_dumbbell": 0,
+      "deficiency_two_boundary_six": 0,
+      "deficiency_two_boundary_eight": 108676,
+      "near_perfect_matchings_examined_before_early_success_or_exhaustion": 512419
+    }
+  ],
+  "totals": {
+    "graphs": 14009,
+    "independent_root_pairs": 10689351,
+    "deficiency_zero": 10567773,
+    "deficiency_two_theta": 121578,
+    "deficiency_two_all_dumbbell": 0,
+    "deficiency_two_boundary_six": 0,
+    "deficiency_two_boundary_eight": 121578,
+    "near_perfect_matchings_examined_before_early_success_or_exhaustion": 560804
+  },
+  "independence": {
+    "primary": "scratch/focused-theta-choice-census.cpp",
+    "replay": "scratch/verify-focused-theta-choice-census.py",
+    "note": "The replay neither executes nor imports the primary implementation."
+  }
+}

@@ -1,0 +1,12 @@
+DEFICIT_PROFILES count=3 degree1_cases=2 bound_sum_delta_d=10 PASS
+N55 m=80 W2=310 W3=600 W4=1160 W5=2240 balls=4470 capacity=4400 CONTRADICTION PASS
+POLYNOMIAL f8=-46 f55=-140 f56=2 negative_8_through_55=1 PASS
+CUTOFF core>=57 cap>=58 parent>=116 PASS
+CAGE_SOURCE rows=18 sha256=6c5339042f2f48e9f596e154da3f0bc145d27cb835902f538618013c2439b5b2 PASS
+CAGE_GEOMETRY order=58 simple=1 cubic=1 connected=1 girth=9 PASS
+CAGE_TAIT rows=18 certificates_reconstructed=18 PASS
+CAGE_MARKED_INTERFACES candidates=0 PASS
+CAGE_FIVE_SUBDIVISIONS impossible=18 disjoint_six=16 half_integral_eleven=2 PASS
+SIM_FORMULA cases=6 variables=2145 cnf_clauses=11780 native_xors=1430 PASS
+SIM_CNF case=ab-ac-same SAT_MODEL_SEMANTICALLY_CHECKED labels_sha256=1b52b99403fe2849cb6a7b2b8413faadc855509a5382cf79768d0335c83d2d8a PASS
+SIM_XCNF cryptominisat=SAT encoding_sha256=df2548ff099a8d111f167647516a9a8f9f06587771ed51ea8eca05a10dce9b35 PASS

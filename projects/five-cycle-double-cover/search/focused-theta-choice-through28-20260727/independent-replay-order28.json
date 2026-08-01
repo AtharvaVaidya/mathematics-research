@@ -1,0 +1,19 @@
+{
+  "classification": "PASS",
+  "elapsed_seconds": 924.727,
+  "results": [
+    {
+      "corpus_sha256": "b4f6494c23793a40158a03ccd7c0943ae2e397c90a1467e27814bd007789be1f",
+      "def0": 9617033,
+      "def2_all_dumbbell": 0,
+      "def2_boundary6": 0,
+      "def2_boundary8": 108676,
+      "def2_theta": 108676,
+      "graphs": 12517,
+      "near_matchings_checked": 512419,
+      "order": 28,
+      "pairs": 9725709
+    }
+  ],
+  "warning": "These are finite exact results for the four retained corpora, not a universal theta-choice theorem."
+}

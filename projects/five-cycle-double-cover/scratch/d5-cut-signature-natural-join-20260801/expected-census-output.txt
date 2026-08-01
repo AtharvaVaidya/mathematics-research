@@ -1,0 +1,5 @@
+CUT size=2 poles=12 root_relations=7 cap_relations=9 cross_pairs=63 best2=14 best3=49 bad=0 PASS
+MINIMAL_PATTERN size=2 root_equal=0 root_contains=8 cap_equal=0 cap_contains=0 exact_pair_realized=0 PASS
+CUT size=3 poles=92 root_relations=108 cap_relations=222 cross_pairs=23976 best2=2040 best3=21936 bad=0 PASS
+MINIMAL_PATTERN size=3 root_equal=0 root_contains=64 cap_equal=0 cap_contains=5 exact_pair_realized=0 PASS
+THROUGH10 host_graphs=23 bad_relation_pairs=0 PASS
