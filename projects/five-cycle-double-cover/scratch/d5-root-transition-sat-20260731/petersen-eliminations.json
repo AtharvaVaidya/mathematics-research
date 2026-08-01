@@ -1,0 +1,667 @@
+{
+  "elimination_range": [
+    0,
+    15
+  ],
+  "parent_metadata": {
+    "bridge_edge_indices": [],
+    "bridgeless": true,
+    "edges": 15,
+    "girth": 5,
+    "graph_sha256": "f45679dc082d1e8a6bde97da8ebbfbc7d8ed74612866a45c9e2b071de3d16fae",
+    "loops": 0,
+    "parallel_edge_pairs": 0,
+    "vertices": 10
+  },
+  "results": [
+    {
+      "clauses": 532,
+      "cnf_sha256": "050f686e49b9118d85b29da11f6432ea388e946698c01fac79162e84ee80c2e2",
+      "eliminated_edge_index": 0,
+      "eliminated_parent_edge": [
+        0,
+        1
+      ],
+      "graph_sha256": "a119c5a9076f7236acb52bb858d2d19a087920b6af34f20e6aa6834be3b5ddf8",
+      "labels_sha256": "26663f4da580c07692bb7d62162857e8904541c6442e2b90753c1f309d772510",
+      "reduced_metadata": {
+        "bridge_edge_indices": [],
+        "bridgeless": true,
+        "edges": 12,
+        "girth": 4,
+        "graph_sha256": "a119c5a9076f7236acb52bb858d2d19a087920b6af34f20e6aa6834be3b5ddf8",
+        "loops": 0,
+        "parallel_edge_pairs": 0,
+        "vertices": 8
+      },
+      "root_edges": [
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "roots": [
+        5,
+        1
+      ],
+      "selected_transition_path": [
+        5,
+        8,
+        9,
+        1
+      ],
+      "status": "SAT_MODEL_CHECKED",
+      "variables": 96
+    },
+    {
+      "clauses": 532,
+      "cnf_sha256": "7017063d2020a3bfc09391d1b68e1e33a719f751d60ea9c36882f9c396ce0c2e",
+      "eliminated_edge_index": 1,
+      "eliminated_parent_edge": [
+        0,
+        4
+      ],
+      "graph_sha256": "bd2bba0f3b9a1051ba7106529106142d469123064d50c6134e3405020c8cd4f7",
+      "labels_sha256": "08869c5cf05e29c3a60bbaec6bcec7dda63c0d8a78a062a0b0e39e2ddfd0e97c",
+      "reduced_metadata": {
+        "bridge_edge_indices": [],
+        "bridgeless": true,
+        "edges": 12,
+        "girth": 4,
+        "graph_sha256": "bd2bba0f3b9a1051ba7106529106142d469123064d50c6134e3405020c8cd4f7",
+        "loops": 0,
+        "parallel_edge_pairs": 0,
+        "vertices": 8
+      },
+      "root_edges": [
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          7
+        ]
+      ],
+      "roots": [
+        1,
+        6
+      ],
+      "selected_transition_path": [
+        1,
+        8,
+        5,
+        6
+      ],
+      "status": "SAT_MODEL_CHECKED",
+      "variables": 96
+    },
+    {
+      "clauses": 532,
+      "cnf_sha256": "bb7b84138c0be50603a79ca480f7847b1669b96e29a58ab1444628ba15ff4858",
+      "eliminated_edge_index": 2,
+      "eliminated_parent_edge": [
+        0,
+        5
+      ],
+      "graph_sha256": "5badb51ad0095758d6cc8a5ad74928dce2f7947965cc634a87ccec2b2c06d17d",
+      "labels_sha256": "221e566687a1271795ead68785da9d27256af8624002485abdaac66be7ee044a",
+      "reduced_metadata": {
+        "bridge_edge_indices": [],
+        "bridgeless": true,
+        "edges": 12,
+        "girth": 4,
+        "graph_sha256": "5badb51ad0095758d6cc8a5ad74928dce2f7947965cc634a87ccec2b2c06d17d",
+        "loops": 0,
+        "parallel_edge_pairs": 0,
+        "vertices": 8
+      },
+      "root_edges": [
+        [
+          0,
+          3
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "roots": [
+        1,
+        10
+      ],
+      "selected_transition_path": [
+        1,
+        7,
+        11,
+        10
+      ],
+      "status": "SAT_MODEL_CHECKED",
+      "variables": 96
+    },
+    {
+      "clauses": 532,
+      "cnf_sha256": "aedf0fde55cf058615726f7b897a09622e1e3c3a6e659bac533fa554d3355542",
+      "eliminated_edge_index": 3,
+      "eliminated_parent_edge": [
+        1,
+        2
+      ],
+      "graph_sha256": "f977360293c376d756da75a6fac8cf724fa2c83d2d719a9f8a91216f5155674f",
+      "labels_sha256": "431a579f731cf387eb0b30c762a5307021f04e988e92b731eaa4e51d5c59806b",
+      "reduced_metadata": {
+        "bridge_edge_indices": [],
+        "bridgeless": true,
+        "edges": 12,
+        "girth": 4,
+        "graph_sha256": "f977360293c376d756da75a6fac8cf724fa2c83d2d719a9f8a91216f5155674f",
+        "loops": 0,
+        "parallel_edge_pairs": 0,
+        "vertices": 8
+      },
+      "root_edges": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "roots": [
+        2,
+        4
+      ],
+      "selected_transition_path": [
+        2,
+        10,
+        11,
+        4
+      ],
+      "status": "SAT_MODEL_CHECKED",
+      "variables": 96
+    },
+    {
+      "clauses": 532,
+      "cnf_sha256": "a6d7bf61444b0e6b88222fdc0c3b3a1fff717b70dc652d1382ef30b10d5a00fd",
+      "eliminated_edge_index": 4,
+      "eliminated_parent_edge": [
+        1,
+        6
+      ],
+      "graph_sha256": "ab2c8648c171546761039aee67ba3aa0833d65b51efe53403c0f9112622519bd",
+      "labels_sha256": "78be99b44fa814481f8db474ae56dc50802a94c3dd8f4e84bcc0839dc1e7ac1c",
+      "reduced_metadata": {
+        "bridge_edge_indices": [],
+        "bridgeless": true,
+        "edges": 12,
+        "girth": 4,
+        "graph_sha256": "ab2c8648c171546761039aee67ba3aa0833d65b51efe53403c0f9112622519bd",
+        "loops": 0,
+        "parallel_edge_pairs": 0,
+        "vertices": 8
+      },
+      "root_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "roots": [
+        0,
+        11
+      ],
+      "selected_transition_path": [
+        0,
+        4,
+        10,
+        11
+      ],
+      "status": "SAT_MODEL_CHECKED",
+      "variables": 96
+    },
+    {
+      "clauses": 532,
+      "cnf_sha256": "06769ebfb0e265d743d823f272b9526201df95cbf61ac5074e07e50f1d33f37d",
+      "eliminated_edge_index": 5,
+      "eliminated_parent_edge": [
+        2,
+        3
+      ],
+      "graph_sha256": "fbe7148bb58534f8d1128730f694da461f00c2422a95c91bfa57e75b8fb62292",
+      "labels_sha256": "86e8aaace249419e70683edf7a61eb0c9941ccbbc65c13e71de0e93b5bbae2fa",
+      "reduced_metadata": {
+        "bridge_edge_indices": [],
+        "bridgeless": true,
+        "edges": 12,
+        "girth": 4,
+        "graph_sha256": "fbe7148bb58534f8d1128730f694da461f00c2422a95c91bfa57e75b8fb62292",
+        "loops": 0,
+        "parallel_edge_pairs": 0,
+        "vertices": 8
+      },
+      "root_edges": [
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          6
+        ]
+      ],
+      "roots": [
+        4,
+        5
+      ],
+      "selected_transition_path": [
+        4,
+        11,
+        6,
+        5
+      ],
+      "status": "SAT_MODEL_CHECKED",
+      "variables": 96
+    },
+    {
+      "clauses": 532,
+      "cnf_sha256": "6e63ab74ae6dda5129abf4801f3b3767529e3ce1daec0ee485bcfba3d533da75",
+      "eliminated_edge_index": 6,
+      "eliminated_parent_edge": [
+        2,
+        7
+      ],
+      "graph_sha256": "5badb51ad0095758d6cc8a5ad74928dce2f7947965cc634a87ccec2b2c06d17d",
+      "labels_sha256": "1bf49c5d3f0bef31bf7f718f83eb6dc1a83d61eafaac1a97975412e1523797b9",
+      "reduced_metadata": {
+        "bridge_edge_indices": [],
+        "bridgeless": true,
+        "edges": 12,
+        "girth": 4,
+        "graph_sha256": "5badb51ad0095758d6cc8a5ad74928dce2f7947965cc634a87ccec2b2c06d17d",
+        "loops": 0,
+        "parallel_edge_pairs": 0,
+        "vertices": 8
+      },
+      "root_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          4,
+          7
+        ]
+      ],
+      "roots": [
+        3,
+        9
+      ],
+      "selected_transition_path": [
+        3,
+        6,
+        8,
+        9
+      ],
+      "status": "SAT_MODEL_CHECKED",
+      "variables": 96
+    },
+    {
+      "clauses": 532,
+      "cnf_sha256": "98afacadfadab0d078cf286004586411a6bbe7fd8b17bfc343c9ef5ee436df7a",
+      "eliminated_edge_index": 7,
+      "eliminated_parent_edge": [
+        3,
+        4
+      ],
+      "graph_sha256": "afd150a9ffd6c6faa491948c7d914ef15363e28bb8e29d1c291c1e48b00929be",
+      "labels_sha256": "b464c52386e4daf2d70f5de0f6d8a57594e666e1d877d9136270e7d096acabbd",
+      "reduced_metadata": {
+        "bridge_edge_indices": [],
+        "bridgeless": true,
+        "edges": 12,
+        "girth": 4,
+        "graph_sha256": "afd150a9ffd6c6faa491948c7d914ef15363e28bb8e29d1c291c1e48b00929be",
+        "loops": 0,
+        "parallel_edge_pairs": 0,
+        "vertices": 8
+      },
+      "root_edges": [
+        [
+          2,
+          6
+        ],
+        [
+          0,
+          7
+        ]
+      ],
+      "roots": [
+        6,
+        2
+      ],
+      "selected_transition_path": [
+        6,
+        5,
+        7,
+        1,
+        2
+      ],
+      "status": "SAT_MODEL_CHECKED",
+      "variables": 96
+    },
+    {
+      "clauses": 532,
+      "cnf_sha256": "a78e487a75debb5565757ace54ce9b85e5b394d6f398452878f29a04d802b1cf",
+      "eliminated_edge_index": 8,
+      "eliminated_parent_edge": [
+        3,
+        8
+      ],
+      "graph_sha256": "ab2c8648c171546761039aee67ba3aa0833d65b51efe53403c0f9112622519bd",
+      "labels_sha256": "f16dff9a48e24d5af4e35efafe6c2781c47fc5d5aeadb94e9a84d34ace8e8dd5",
+      "reduced_metadata": {
+        "bridge_edge_indices": [],
+        "bridgeless": true,
+        "edges": 12,
+        "girth": 4,
+        "graph_sha256": "ab2c8648c171546761039aee67ba3aa0833d65b51efe53403c0f9112622519bd",
+        "loops": 0,
+        "parallel_edge_pairs": 0,
+        "vertices": 8
+      },
+      "root_edges": [
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "roots": [
+        5,
+        8
+      ],
+      "selected_transition_path": [
+        5,
+        7,
+        10,
+        8
+      ],
+      "status": "SAT_MODEL_CHECKED",
+      "variables": 96
+    },
+    {
+      "clauses": 532,
+      "cnf_sha256": "bb7b84138c0be50603a79ca480f7847b1669b96e29a58ab1444628ba15ff4858",
+      "eliminated_edge_index": 9,
+      "eliminated_parent_edge": [
+        4,
+        9
+      ],
+      "graph_sha256": "5badb51ad0095758d6cc8a5ad74928dce2f7947965cc634a87ccec2b2c06d17d",
+      "labels_sha256": "221e566687a1271795ead68785da9d27256af8624002485abdaac66be7ee044a",
+      "reduced_metadata": {
+        "bridge_edge_indices": [],
+        "bridgeless": true,
+        "edges": 12,
+        "girth": 4,
+        "graph_sha256": "5badb51ad0095758d6cc8a5ad74928dce2f7947965cc634a87ccec2b2c06d17d",
+        "loops": 0,
+        "parallel_edge_pairs": 0,
+        "vertices": 8
+      },
+      "root_edges": [
+        [
+          0,
+          3
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "roots": [
+        1,
+        10
+      ],
+      "selected_transition_path": [
+        1,
+        7,
+        11,
+        10
+      ],
+      "status": "SAT_MODEL_CHECKED",
+      "variables": 96
+    },
+    {
+      "clauses": 532,
+      "cnf_sha256": "48fdf505b8810f36196d65db1e9c76bba570365ecf4ba719d9bb3b72eca4016f",
+      "eliminated_edge_index": 10,
+      "eliminated_parent_edge": [
+        5,
+        7
+      ],
+      "graph_sha256": "64cc8acb24055f06c8042b95dcc51d16298539916ea5a3dab11cf3fea7eded6b",
+      "labels_sha256": "202866271823cc0cc3a2814f5d08a0a6b07dd40b1c4c375e6c1b80cf063c281b",
+      "reduced_metadata": {
+        "bridge_edge_indices": [],
+        "bridgeless": true,
+        "edges": 12,
+        "girth": 4,
+        "graph_sha256": "64cc8acb24055f06c8042b95dcc51d16298539916ea5a3dab11cf3fea7eded6b",
+        "loops": 0,
+        "parallel_edge_pairs": 0,
+        "vertices": 8
+      },
+      "root_edges": [
+        [
+          0,
+          6
+        ],
+        [
+          2,
+          7
+        ]
+      ],
+      "roots": [
+        2,
+        6
+      ],
+      "selected_transition_path": [
+        2,
+        10,
+        4,
+        3,
+        6
+      ],
+      "status": "SAT_MODEL_CHECKED",
+      "variables": 96
+    },
+    {
+      "clauses": 532,
+      "cnf_sha256": "d1939b8d9a264c84e07686bdacbbaf1e7173e067583301a90f0e885b6697105f",
+      "eliminated_edge_index": 11,
+      "eliminated_parent_edge": [
+        5,
+        8
+      ],
+      "graph_sha256": "b5ca87f51cf5cf7ee4efa4872f60e0026163beb53c9fb788a1eef03d62c7bbb1",
+      "labels_sha256": "2154e8fdf739347da77fbfc4eb61dacee1f852efca05b62aef48915560f59f9d",
+      "reduced_metadata": {
+        "bridge_edge_indices": [],
+        "bridgeless": true,
+        "edges": 12,
+        "girth": 4,
+        "graph_sha256": "b5ca87f51cf5cf7ee4efa4872f60e0026163beb53c9fb788a1eef03d62c7bbb1",
+        "loops": 0,
+        "parallel_edge_pairs": 0,
+        "vertices": 8
+      },
+      "root_edges": [
+        [
+          0,
+          6
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "roots": [
+        2,
+        8
+      ],
+      "selected_transition_path": [
+        2,
+        11,
+        10,
+        8
+      ],
+      "status": "SAT_MODEL_CHECKED",
+      "variables": 96
+    },
+    {
+      "clauses": 532,
+      "cnf_sha256": "bc37a4bbba4670f49f16798d523da6b2b8ba00464e5fc4ac4c826628ca878f54",
+      "eliminated_edge_index": 12,
+      "eliminated_parent_edge": [
+        6,
+        8
+      ],
+      "graph_sha256": "cb10cccd5c3efbd018fbf5f72c5ab1e0d10ee1f3db6f9bd7773ab8d90e75f18f",
+      "labels_sha256": "8d18e6c33e3fbb6e2c8f74b3303418ca7044abad76aa70aa79cb0d6864e239fd",
+      "reduced_metadata": {
+        "bridge_edge_indices": [],
+        "bridgeless": true,
+        "edges": 12,
+        "girth": 4,
+        "graph_sha256": "cb10cccd5c3efbd018fbf5f72c5ab1e0d10ee1f3db6f9bd7773ab8d90e75f18f",
+        "loops": 0,
+        "parallel_edge_pairs": 0,
+        "vertices": 8
+      },
+      "root_edges": [
+        [
+          1,
+          7
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "roots": [
+        4,
+        8
+      ],
+      "selected_transition_path": [
+        4,
+        9,
+        7,
+        8
+      ],
+      "status": "SAT_MODEL_CHECKED",
+      "variables": 96
+    },
+    {
+      "clauses": 532,
+      "cnf_sha256": "eb2106505b1e832f05186ec47ab1de7b5ae417dfc0f39e0cf3fb924aa60dbf6b",
+      "eliminated_edge_index": 13,
+      "eliminated_parent_edge": [
+        6,
+        9
+      ],
+      "graph_sha256": "44729c2440a5d17d559027ef0c568fc5fbc5761ecd92607d0f0e5ba256bcabf4",
+      "labels_sha256": "a8c2f8bc6ec5b40cf970bdd10c10a41b48c857258928794067bbc752505e4fab",
+      "reduced_metadata": {
+        "bridge_edge_indices": [],
+        "bridgeless": true,
+        "edges": 12,
+        "girth": 4,
+        "graph_sha256": "44729c2440a5d17d559027ef0c568fc5fbc5761ecd92607d0f0e5ba256bcabf4",
+        "loops": 0,
+        "parallel_edge_pairs": 0,
+        "vertices": 8
+      },
+      "root_edges": [
+        [
+          1,
+          7
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "roots": [
+        4,
+        9
+      ],
+      "selected_transition_path": [
+        4,
+        8,
+        7,
+        9
+      ],
+      "status": "SAT_MODEL_CHECKED",
+      "variables": 96
+    },
+    {
+      "clauses": 532,
+      "cnf_sha256": "d3cdf6dd210b01854a4781c4d74487b9ea733a18f6bc4b99ced085f774d07dd7",
+      "eliminated_edge_index": 14,
+      "eliminated_parent_edge": [
+        7,
+        9
+      ],
+      "graph_sha256": "a03199cca41f50cb4251eb833a8b067fac56ad50bd18344d611a4a3b4ca5114f",
+      "labels_sha256": "e71e6bb8b86c625b2857f91b47c30cc1f18ebc6d8f5978742ec9730ce38685f9",
+      "reduced_metadata": {
+        "bridge_edge_indices": [],
+        "bridgeless": true,
+        "edges": 12,
+        "girth": 4,
+        "graph_sha256": "a03199cca41f50cb4251eb833a8b067fac56ad50bd18344d611a4a3b4ca5114f",
+        "loops": 0,
+        "parallel_edge_pairs": 0,
+        "vertices": 8
+      },
+      "root_edges": [
+        [
+          2,
+          5
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "roots": [
+        6,
+        9
+      ],
+      "selected_transition_path": [
+        6,
+        10,
+        11,
+        9
+      ],
+      "status": "SAT_MODEL_CHECKED",
+      "variables": 96
+    }
+  ],
+  "source": "Petersen graph",
+  "status": "ALL_SAT_MODELS_CHECKED"
+}

@@ -1,0 +1,59 @@
+{
+  "all_pair_state_graphs_connected": true,
+  "date": "2026-07-31",
+  "distinct_states": 11,
+  "graph6_edges": 18,
+  "graph6_order": 12,
+  "positive_fivecdc_control": true,
+  "profiles_differ": true,
+  "r5_five_clique": [
+    0,
+    3,
+    5,
+    9,
+    17
+  ],
+  "r5_six_cliques": 0,
+  "r5_six_subsets_checked": 906192,
+  "repeated_state_profiles_graph6_edge_order": [
+    {
+      "01": 1,
+      "02": 2,
+      "12": 0
+    },
+    {
+      "01": 2,
+      "02": 0,
+      "12": 1
+    }
+  ],
+  "scalar_cut_rules": 32,
+  "scalar_state_rules_after_transport": 32,
+  "schema": "fivecdc-eight-to-five-triangle-state-independent-v1",
+  "scope": "triangle-state rule only; not FiveCDC",
+  "state_ports": 33,
+  "state_rules_equal_cuts": true,
+  "status": "PASS",
+  "tait_colouring_graph6_edge_order": [
+    1,
+    2,
+    2,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    2,
+    2,
+    0,
+    1,
+    2,
+    2,
+    1,
+    0
+  ],
+  "tarjan_bridges": 0,
+  "transport_equality_classes": 15
+}

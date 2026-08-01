@@ -8,8 +8,9 @@ or as established journal-level novelty.
 
 The strongest publishable-looking content is:
 
-- the order-sharp full-rank delimiter for context-free old-pair compression
-  on the supplied 12-vertex eight-cover;
+- the order-sharp 12-vertex delimiter for graph-dependent full
+  triangle-state compression, including state transport and a positive
+  control that needs different local permutations at repeated state `012`;
 - the exact coloured-surface realization of \(D_5\)-flows;
 - the permutation formula for the Euler-characteristic change under one
   component switch;
@@ -21,6 +22,12 @@ The strongest publishable-looking content is:
   equivalence, which isolate an exact sufficient edge-extension premise;
 - the explicit Tait formula and insertion adaptation, with its existence
   conclusion correctly identified as a special case of known 4-CDC work;
+- the linear rooted-transition characterization and its exact native-XOR
+  and certificate-producing CNF formulations;
+- the human-checkable internal/external typed-port gluing lemma and
+  double-star corollary;
+- the complete 138,144-interface typed-cap census through order 14, stated
+  with the limitation that the independent full replay stops at order 10;
 - the complete order-14 terminal-plateau census and fixed-distance descent
   census; and
 - the complete 195-edge elimination screen on a 130-vertex cyclically
@@ -31,6 +38,9 @@ that should be advertised as new. The exact combination with proper
 five-colour \(D_5\) data, the switch formula, the rooted reduction, and the
 finite censuses may be new.  The rooted equivalence itself is elementary and
 should not be called deep merely because it identifies the right frontier.
+The triangle-state transport theorem may be new, but only a bounded source
+audit has been performed.  The universal typed-cap double-star premise is
+open; its order-14 frontier is evidence, not a reduction theorem.
 No categorical novelty claim is justified until a specialist prior-art
 review is complete.
 
@@ -44,6 +54,15 @@ review is complete.
   4-Flows, and Catlin Reduction*, SIAM J. Discrete Math. 37 (2023), 253-267.
 - S. Liu, R.-X. Hao, R. Luo, and C.-Q. Zhang, *Five-Cycle Double Cover and
   Shortest Cycle Cover*, J. Graph Theory 108 (2025), 39-49.
+- R. Hušek and R. Šámal, *Exponentially Many Circuit Double Covers*,
+  arXiv:2607.24724v1.  Theorem 3.16 and Conjecture 3.19 give current
+  unrooted flow-only context; they do not turn the rooted transition
+  certificate or typed-cap premise into a FiveCDC theorem.
+- D. Král', E. Máčajová, O. Pangrác, A. Raspaud, J.-S. Sereni, and
+  M. Škoviera, *Projective, Affine, and Abelian Colorings of Cubic Graphs*,
+  European J. Combin. 30 (2009), 53-69.  Configuration homomorphisms and
+  the Desargues/FiveCDC equivalence are prior art, not contributions of this
+  note.
 - B. Ghanbari and R. Šámal, *Facial Diagrams and Cycle Double Cover*,
   arXiv:2605.01410, which studies embeddings and twist operations in the CDC
   setting.
@@ -72,12 +91,18 @@ This is a targeted check, not a systematic prior-art review.
 3. Obtain a genuinely independent full implementation of the order-14
    terminal-plateau census, not only focused semantic verification of the
    frozen report.
-4. Archive exact source, reports, `geng` version, compiler version, and
+4. Obtain a second full implementation of the order-12 and order-14
+   typed-cap frontier; the current independent Python replay ends at order
+   10.
+5. Search specifically for prior typed multipole signatures, local
+   transition-boundary connectivity encodings, and triangle-state transport
+   criteria.
+6. Archive exact source, reports, `geng` version, compiler version, and
    checksums at an immutable commit or DOI.
-5. Decide whether the note should lead with the exact switch formula, the
+7. Decide whether the note should lead with the exact switch formula, the
    reconfiguration counterexample, or the rooted edge-extension reduction;
    each is more defensible than positive finite evidence alone.
-6. Retain the full AI-use disclosure and comply with the target venue's
+8. Retain the full AI-use disclosure and comply with the target venue's
    authorship and AI policies.
 
 Until those steps are complete, the accurate label is:

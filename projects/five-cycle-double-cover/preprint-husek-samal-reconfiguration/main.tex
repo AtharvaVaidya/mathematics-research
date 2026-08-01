@@ -39,7 +39,7 @@
 Nowhere-Zero Flows toward Five-Cycle Double Covers}
 \author{Atharva Vaidya\\
 \small AI-assisted research draft for independent human verification}
-\date{July 29, 2026}
+\date{July 31, 2026}
 
 \begin{document}
 \maketitle
@@ -107,6 +107,12 @@ positive.  A certified girth-ten cyclically-4 Tait control shows that the
 reduced cut-space coordination obstruction can still block all three
 directions of one \((5,1)\) shore.  Thus the local theorem is unconditional
 but the non-Tait global coordination step remains open.
+An 18-vertex Blanu\v{s}a snark sharpens the warning: one
+lexicographically optimal representative is blocked at both of its odd
+residual components in all six partner-free directions.  The other two
+optimal representatives for the same target class do admit descent, so
+the example refutes an arbitrary-optimum shortcut, not selection among
+all optima and not FiveCDC.
 
 We then give an exact 26-vertex obstruction to radius one.  The graph is
 simple, cubic, cyclically \(4\)-edge-connected, has girth five, and is
@@ -808,6 +814,114 @@ a Tait control rather than a counterexample in the non-Tait minimal domain.
 The unconditional result is Theorem~\ref{thm:single-shore-kill}; universal
 coordination in the non-Tait high-girth case remains open.
 
+\begin{proposition}[a representative-dependent non-Tait blocker]
+\label{prop:nontait-representative-blocker}
+There is a simple bridgeless cyclically \(4\)-edge-connected non-Tait
+cubic graph \(G\) of order \(18\), a nowhere-zero
+\(\F_2^3\)-flow, a target class \(M\), and a join \(J\) realizing the
+lexicographic optimum
+\[
+                         \Psi^*(M)=(0,8),
+\]
+such that both old odd residual components are blocked by
+\eqref{eq:reduced-cut-obstruction} in every partner-free direction.
+The two profiles are \((3,3)\) and \((5,1)\).
+
+The same target class has two other joins realizing \((0,8)\), and each
+admits an all-in fixed-residual switch to \((0,0)\).  Thus the assertion
+that an arbitrary optimum admits the reduced gate is false, while the
+assertion that some optimum admits it is not refuted.
+The host has girth five.  Among simple cyclically \(4\)-edge-connected
+non-Tait cubic hosts, order \(18\) is minimum for the precise
+arbitrary-optimum obstruction just stated.
+\end{proposition}
+
+\begin{proof}
+In the frozen edge order the labelled graph6 record is
+\begin{center}
+\nolinkurl{Q???C@?GCoOoDO[?CcAO_?k?J??},
+\end{center}
+and its canonical record is
+\begin{center}
+\nolinkurl{Qs??GODB?E@OOGG@G@@?_C?cO@_}.
+\end{center}
+The flow word is
+\[
+\begin{split}
+(&6,6,6,2,3,1,4,5,1,5,2,7,3,5,6,3,7,4,\\
+ &5,4,1,5,2,7,5,4,1).
+\end{split}
+\]
+Direct xor at the eighteen vertices checks the flow equations.  Put
+\[
+ M=\{5,8,20,26\},\qquad
+ J=\{4,7,10,11,12,14,18,21,23,24\}.
+\]
+Both sets have boundary
+\(\{4,6,7,9,10,11,15,17\}\), so
+\(M\mathbin{\dot\cup}J\) is Eulerian.  Its two odd residual shores are
+\[
+ C_0=\{0,7,10,11\},\qquad
+ C_1=\{1,2,5,8,9,13,14,16\},
+\]
+with the displayed profiles.  The complement \(G-M\) has cycle rank six.
+Adding every one of its \(2^6=64\) binary cycles to \(J\) gives all
+boundary joins; direct evaluation gives exactly three minimizers and
+lexicographic minimum \((0,8)\).
+
+Let \(C_2,C_3,C_4\) denote the old even four-cut residual shores, in the
+frozen certificate order, and put
+\[
+ W=\{1,2,4,6,8,9,13,14,15,16,17\}.
+\]
+For \(C_0\), the three partner-free directions \(3,5,7\) have the cut-space
+certificates
+\[
+\begin{array}{c|l}
+3&a_{C_0}\symdiff a_{C_4}=\{5\}=\delta_{L_3}(\{10\})\\
+5&a_{C_0}=\delta_{L_5}(\{4,11,17\})\\
+7&a_{C_0}\symdiff a_{C_2}=\{5,8,14,26\}=\delta_{L_7}(W).
+\end{array}
+\]
+For \(C_1\), the partner-free directions \(2,5,6\) have
+\[
+\begin{array}{c|l}
+2&a_{C_1}\symdiff a_{C_2}\symdiff a_{C_3}
+   =\{4,5\}=\delta_{L_2}(\{10\})\\
+5&a_{C_1}=\{20\}=\delta_{L_5}(\{15\})\\
+6&a_{C_1}\symdiff a_{C_3}\symdiff a_{C_4}
+   =\{5,8,26\}=\delta_{L_6}(W).
+\end{array}
+\]
+Every binary cycle meets a cut evenly.  Each identity therefore says
+that flipping the selected old odd shore forces either zero flip there or
+a forbidden flip at an old even four-cut.  These six literal identities
+are human-checkable certificates for the complete local stall.
+
+The other two optimum joins are
+\[
+ \{2,4,7,9,11,15,16,19,25\},\qquad
+ \{2,4,7,10,11,13,14,19,25\}.
+\]
+For each, direction \(3\) on
+\[
+ X=\{0,2,6,8,9,11,13,14,21,23\}
+\]
+passes the all-in and protected-cut tests and yields \((0,0)\).
+
+Finally, a direct perfect-matching enumeration finds twenty matchings;
+their complementary circuit lengths are \((5,13)\) sixteen times and
+\((9,9)\) four times.  Hence no complement is a union of even circuits,
+so \(G\) is non-Tait.  Exhaustive shore tests give cyclic connectivity
+four.  Canonical generation through order sixteen leaves only the
+Petersen graph in the stated non-Tait host domain.  Exhausting its
+28,560 nowhere-zero flows and all target joins finds no optimum with
+first coordinate zero and positive second coordinate.  This proves the
+minimum-order qualification.  All enumerations and the literal graph,
+flow, joins, cuts, and escapes are independently replayed in the package
+\path{scratch/bpr-second-coordinate-nontait-blocker-20260731/}.
+\end{proof}
+
 \section{The direct radius-one assertion}
 
 The most direct strengthening suggested by
@@ -1274,6 +1388,10 @@ class.  They leave open all of the following:
 \item whether the reduced cut-space equations and positive aggregate gain
       can always be coordinated in the non-Tait, cyclically-4, girth-ten
       minimum-counterexample domain;
+\item whether, among all lexicographically optimal representatives for a
+      target value class, one can always choose a representative admitting
+      the reduced gate; Proposition~\ref{prop:nontait-representative-blocker}
+      shows that an arbitrary optimum need not do so;
 \item whether every nowhere-zero \(\F_2^3\)-flow can reach an H--S-good
       flow by some finite legal cycle-switch sequence;
 \item whether a larger universal radius exists;
@@ -1317,8 +1435,9 @@ for either.  The elementary packing-to-switch bridge, the exact
 radius-one formulation, the partner-free shore theorem, the exact
 aggregate-gain gate, the rank-two legal-order criterion, the
 rank-three four-move criterion and certified distance-five pair, the
-reciprocal-exchange obstruction, and the finite certificates may be
-new, but that assessment is provisional.
+representative-dependent non-Tait blocker, the reciprocal-exchange
+obstruction, and the finite certificates may be new, but that assessment
+is provisional.
 The radius-two reciprocal assertion was formulated inside this
 AI-assisted project rather than in the cited literature.  The search and
 literature review were AI-assisted and not exhaustive in the scholarly

@@ -24,6 +24,15 @@ control shows that the resulting reduced cut-space system can still block
 all partner-free directions of one blocker; the non-Tait coordination
 problem remains open.
 
+The same update gives a human-checkable 18-vertex Blanuša-snark
+certificate showing that an arbitrary lexicographically optimal
+representative can be blocked at both old odd residual components in all
+six partner-free directions.  Two other optima for the same target class
+do descend, so this rules out only the arbitrary-optimum shortcut.  It
+does not rule out choosing a favourable optimum, BPR, or FiveCDC.  The
+order-18 minimality statement is confined to the precisely stated simple,
+cyclically-4, non-Tait host/state domain.
+
 Build:
 
 ```sh
@@ -40,6 +49,7 @@ python3 scratch/jaeger-order40-augmented-radius-two-counterexample-20260729/veri
 python3 scratch/flow-rank-two-legal-order-20260729/verify.py
 python3 scratch/petersen-foster-girth10-nontait-20260729/verify_reconfiguration.py
 python3 scratch/rank3-fourmove-normal-form-20260729/verify.py
+(cd scratch/bpr-second-coordinate-nontait-blocker-20260731 && ./run_all.sh)
 ```
 
 The manuscript and all checking artifacts require independent human

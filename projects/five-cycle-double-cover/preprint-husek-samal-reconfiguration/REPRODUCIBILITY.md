@@ -23,7 +23,10 @@ sha256sum \
   scratch/petersen-foster-girth10-nontait-20260729/audit-blind-20260729/independent-output.json \
   scratch/rank3-fourmove-normal-form-20260729/HUMAN-PROOF.md \
   scratch/rank3-fourmove-normal-form-20260729/verify.py \
-  scratch/rank3-fourmove-normal-form-20260729/verification-output.json
+  scratch/rank3-fourmove-normal-form-20260729/verification-output.json \
+  scratch/bpr-second-coordinate-nontait-blocker-20260731/HUMAN-PROOF.md \
+  scratch/bpr-second-coordinate-nontait-blocker-20260731/verify_certificate.py \
+  scratch/bpr-second-coordinate-nontait-blocker-20260731/certificate-output.txt
 
 python3 scratch/verify_husek_samal_packable_one_switch_countermodel.py
 python3 scratch/verify_husek_samal_one_switch_boundary.py
@@ -33,6 +36,7 @@ python3 scratch/flow-rank-two-legal-order-20260729/verify.py
 python3 scratch/petersen-foster-girth10-nontait-20260729/verify_reconfiguration.py
 python3 scratch/petersen-foster-girth10-nontait-20260729/audit-blind-20260729/independent_check.py
 python3 scratch/rank3-fourmove-normal-form-20260729/verify.py
+(cd scratch/bpr-second-coordinate-nontait-blocker-20260731 && ./run_all.sh)
 ```
 
 Frozen hashes used by the manuscript are regenerated after every revision
