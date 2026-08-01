@@ -8,23 +8,32 @@ certificates, and large finite computations.
 1. The cover-flow proposition: \(D_5\)-flows are equivalent to five Eulerian edge-subsets
    covering every edge twice.
 2. The local-triangle lemma: the three labels at a cubic vertex form a coordinate triangle.
-3. The surface theorem and its converse: the normalized coloured-surface construction
+3. The context-free compression delimiter: verify that the twelve supplied
+   local triangles span \(Z_1(K_6;\mathbb F_2)\), that triangle sums force
+   a coboundary, and that weight-two output would give the impossible
+   homomorphism \(K_6\to R_5\).
+4. The surface theorem and its converse: the normalized coloured-surface construction
    and its converse.
-4. The boundary proposition: \(Y_{ij}\) is the boundary of a regular neighbourhood of
+5. The boundary proposition: \(Y_{ij}\) is the boundary of a regular neighbourhood of
    the primal \(ij\)-subgraph.
-5. The Euler-change theorem. In particular, check that pure
+6. The Euler-change theorem. In particular, check that pure
    circuit components cancel and that each alternating matching circuit
    contributes two cycles to the product permutation.
-6. The four-coordinate one-step lock. Orbit closure in the certified trap
+7. The four-coordinate one-step lock. Orbit closure in the certified trap
    proposition is a separate finite claim.
-7. The cubic \(D_4\) trap theorem. Check the complementary-pair Tait quotient
+8. The cubic \(D_4\) trap theorem. Check the complementary-pair Tait quotient
    and both root-label cases; the orbit-wide circuit hypothesis is essential.
-8. The two-root insertion equivalence, in both directions.  At each new
+9. The prescribed Tait-factor formula and its insertion corollary.  Check
+   separately the \(23,24,34\) and \(0a,0b,ab\) vertex cases, the common-
+   circuit lemma for two distinct roots, and the endpoint defects after
+   insertion.  Treat existence as known via Hoffmann-Ostenhof's stronger
+   4-CDC lemma; review only the explicit adaptation presented here.
+10. The two-root insertion equivalence, in both directions.  At each new
    endpoint verify that the open-arc transposition makes the two surviving
    labels equal after deletion of the central edge.
-9. The fixed-five minimum-counterexample reductions, especially suppression
+11. The fixed-five minimum-counterexample reductions, especially suppression
    of degree-two vertices and coordinate matching across 2- and 3-edge cuts.
-10. The strengthened elimination lemma: cyclically 4-edge-connected
+12. The strengthened elimination lemma: cyclically 4-edge-connected
     girth-at-least-five parent implies a simple 3-edge-connected reduced
     graph.
 
@@ -45,6 +54,8 @@ Run:
 python3 scratch/audit_d5_surface_euler_switch.py
 python3 scratch/check_d5_contraction_circuit_orbit_counterexample.py
 python3 scratch/check_d4_cubic_trap_root_universality.py
+sh scratch/d5-tait-prescribed-circuit-lift-20260731/run_all.sh
+sh scratch/d5-tait-prescribed-circuit-lift-blind-audit-20260731/run_all.sh
 python3 scratch/verify_d5_surface_chi_plateaus_order12.py
 python3 scratch/verify_d5_root_euler_potential_reports.py
 python3 scratch/verify_d5_root_kempe_order14_report.py

@@ -29,10 +29,14 @@ A human author should:
 12. Confirm that every statement distinguishes arbitrary Eulerian-support
     moves from connected-cycle adjacency, for which only
     \(5\le d\le63\) is certified.
-13. Ask specialists to review the novelty and the relationship with
+13. Re-derive the partner-free count for cut sizes \(3,5,7\), the exact
+    aggregate-gain identity, and the claim that only old even four-cuts
+    require protection.  Independently check the order-80 Tait control
+    before treating the reduced cut-space obstruction as evidence.
+14. Ask specialists to review the novelty and the relationship with
     Hušek–Šámal, Esperet et al., and Cranston–Li–Su–Wang–Xu.
-14. Confirm the current publication status and bibliographic metadata of
+15. Confirm the current publication status and bibliographic metadata of
     arXiv:2607.24724, arXiv:2512.17342, and arXiv:2606.24685.
-15. Revise authorship and accept full scholarly responsibility.
+16. Revise authorship and accept full scholarly responsibility.
 
 AI-use disclosure appears prominently on page one and must not be removed.

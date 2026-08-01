@@ -11,6 +11,25 @@ The project does **not** currently claim a resolution.  Every result is
 classified using the status vocabulary in the lab protocol.  In particular,
 finite searches are not evidence of the universal statement.
 
+The July 31 publication update adds four independently replayable route
+delimiters.  First, a 12-vertex simple bridgeless Oum eight-cover forces
+every context-free nonlinear old-pair recolouring to be a coboundary and
+then blocks five weight-two outputs by \(K_6\not\to R_5\); the graph is
+Tait-colourable.  Second, a complementary prescribed-circuit formula from any Tait
+colouring makes every 2-connected Tait cubic graph root-universal and gives
+explicit inverse edge insertion, so the remaining rooted elimination branch
+is non-Tait.  Third, every residual blocker whose nonmatching cut has
+size three, five, or seven has a partner-free legal switch making its old
+shore terminal-even, and the fixed-residual lexicographic change is given
+by an exact aggregate-gain formula.  Only old even four-cuts need parity
+protection, but a girth-ten cyclically-4 Tait control shows the reduced
+cut-space system can still block all directions of one blocker.  Fourth,
+four charged two-circuit blocks do not force direct boundary cleaning: a
+smallest-block, 20-occurrence tensor has a short human obstruction proof,
+while its 38-vertex realization remains Tait-colourable and always
+Kempe-descends to deletion.  These results sharpen the proof frontier and
+rule out tempting shortcuts; none resolves FiveCDC.
+
 The newest focused publication candidate is
 `preprint-minimum-selection-counterexample/`.  It gives a human-checkable
 construction of a 162-vertex simple connected bridgeless cubic graph whose

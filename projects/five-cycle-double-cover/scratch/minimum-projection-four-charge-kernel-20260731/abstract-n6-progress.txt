@@ -1,0 +1,1 @@
+vertices=6 edges=15 feasible_map_gauges=2016

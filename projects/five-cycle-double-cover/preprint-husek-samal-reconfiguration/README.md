@@ -16,6 +16,14 @@ class can still require two circuit switches, 40- and 60-vertex controls,
 and an exact distance-three obstruction to a separate radius-two
 Jaeger-star reciprocal-exchange claim. It does **not** resolve FiveCDC.
 
+The July 31 update adds an unconditional single-shore parity-killing
+switch for nonmatching blocker cuts of size three, five, or seven, and an
+exact fixed-residual aggregate-gain characterization.  Only old even
+four-cuts require parity protection.  A girth-ten cyclically-4 Tait
+control shows that the resulting reduced cut-space system can still block
+all partner-free directions of one blocker; the non-Tait coordination
+problem remains open.
+
 Build:
 
 ```sh

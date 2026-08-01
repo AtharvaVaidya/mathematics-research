@@ -1,0 +1,1 @@
+PASS: blind edge-ID audit; formula_circuits=11; insertions=51; parallel_digons=checked; disconnected_control=checked

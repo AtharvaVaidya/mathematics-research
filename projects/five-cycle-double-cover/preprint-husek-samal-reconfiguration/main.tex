@@ -96,6 +96,18 @@ sequence of legal simple-cycle switches, reaches a flow satisfying the
 Hu\v{s}ek--\v{S}\'amal condition.  Connectedness of that support is
 exactly what makes one switch sufficient.
 
+We also analyze the residual blockers of one such join.  Every blocker
+whose nonmatching cut has size three, five, or seven has an occurring
+partner-free flow direction, and cycle--cut orthogonality then gives a
+legal switch making that old shore terminal-even.  Under the natural
+all-in condition we derive an exact aggregate-gain formula: from zero
+tight count, fixed-residual lexicographic descent occurs exactly when old
+even four-cuts are parity-protected and one global integer gain is
+positive.  A certified girth-ten cyclically-4 Tait control shows that the
+reduced cut-space coordination obstruction can still block all three
+directions of one \((5,1)\) shore.  Thus the local theorem is unconditional
+but the non-Tait global coordination step remains open.
+
 We then give an exact 26-vertex obstruction to radius one.  The graph is
 simple, cubic, cyclically \(4\)-edge-connected, has girth five, and is
 not Tait-colourable.  One displayed value class already admits two
@@ -169,6 +181,10 @@ Our contribution has deliberately narrow scope:
       but legal Eulerian-support distance five;
 \item a direct proof that a two-join packing yields a finite legal switch
       sequence to a Hu\v{s}ek--\v{S}\'amal-good flow;
+\item the partner-free single-shore switch theorem and the exact
+      aggregate-gain characterization for fixed-residual descent, together
+      with a certified high-girth Tait control for the remaining reduced
+      cut-space obstruction;
 \item an exact strict 26-vertex countermodel to the assertion that one
       simple-cycle switch always suffices even when a value class already
       packs, together with an exact distance-two path and a positive
@@ -621,6 +637,177 @@ components.  The theorem guarantees a finite reconfiguration sequence;
 it guarantees one step only when the support is connected.
 \end{remark}
 
+\section{Residual blockers and an exact aggregate-gain gate}
+
+Fix a nonzero target value \(b\), put \(M=M_b(f)\), \(H=G-M\), and let
+\(J\subseteq H\) be a \(T=\bd M\)-join.  Then
+\[
+                         \mathcal F=M\mathbin{\dot\cup}J
+\]
+is Eulerian.  For a component \(Q\) of \(G-\mathcal F\), put
+\[
+ k_Q=|\delta_H(Q)|=|\delta_J(Q)|,\qquad
+ q_Q=|\delta_M(Q)|,\qquad d_Q=k_Q+q_Q.
+\]
+Call \(Q\) odd when \(q_Q\) is odd.  Summing the flow equations over its
+shore gives
+\begin{equation}
+                 \bigoplus_{e\in\delta_H(Q)}f(e)=b.          \label{eq:blocker-cut-xor}
+\end{equation}
+In particular \(k_Q\) is odd and at least three.  The profile
+\((k_Q,q_Q)=(3,1)\) is called tight.  The coordinatewise-minimal non-tight
+odd profiles are \((3,3)\) and \((5,1)\).
+
+For fixed \(b\), the six values outside \(\{0,b\}\) form three partner
+pairs \(\{u,u+b\}\).  An occurring value \(t\) on
+\(\delta_H(Q)\) is \emph{partner-free} when \(b+t\) does not occur there.
+
+\begin{lemma}[partner-free direction]\label{lem:partner-free}
+If \(k_Q\in\{3,5,7\}\), then \(\delta_H(Q)\) has a partner-free occurring
+value.  If \(k_Q=3\), every occurring value is partner-free.  The bound is
+sharp for this criterion at \(k_Q=9\).
+\end{lemma}
+
+\begin{proof}
+Quotient \(W\) by \(\langle b\rangle\).  The three partner pairs map to
+the three nonzero vectors \(c_1,c_2,c_3\in\F_2^2\), with
+\(c_1+c_2+c_3=0\).  If \(n_i\) is the total multiplicity in the \(i\)-th
+pair, the projection of \eqref{eq:blocker-cut-xor} says that the three
+parities \(n_i\bmod2\) are equal.  Their sum is odd, so all three are odd.
+If no occurring value were partner-free, both members of every pair would
+occur; then every \(n_i\) would be an odd integer at least three, forcing
+\(k_Q\ge9\).  When \(k_Q=3\), every \(n_i=1\).  Sharpness is witnessed,
+for \(b=1\), by the multiset \(2,2,3,4,4,5,6,6,7\).
+\end{proof}
+
+\begin{theorem}[single-shore parity kill]\label{thm:single-shore-kill}
+Let \(Q\) be odd and let \(t\) be partner-free on its \(H\)-cut.  There is
+a legal binary \(t\)-switch support \(X\subseteq G-M_t\) such that the old
+shore \(Q\) has even target-cut parity after the switch.
+\end{theorem}
+
+\begin{proof}
+Put \(P_t=M_b\cup M_{b+t}\), \(L=G-M_t\), and
+\(S=\delta_M(Q)\).  Partner-freeness gives
+\(P_t\cap\delta_G(Q)=S\).  On \(Z_1(L;\F_2)\), consider
+\(X\mapsto|X\cap S|\bmod2\).
+
+If this functional vanished on the cycle space, cycle--cut orthogonality
+would give a shore \(U\) with \(\delta_L(U)=S\).  The full cut
+\(\delta_G(U)\) would consist of the odd number \(q_Q\) of \(b\)-edges in
+\(S\), together with some \(t\)-edges.  Its flow xor would be \(b\) or
+\(b+t\), both nonzero, contradicting the flow cut equation.  Thus some
+binary cycle \(X\subseteq L\) meets \(S\) oddly.  It is a legal
+\(t\)-switch because it contains no \(t\)-valued edge.  Under this switch,
+membership in the target class changes exactly on \(P_t\cap X\), so the
+target-cut parity of \(Q\) changes by \(|X\cap S|=1\).
+\end{proof}
+
+The theorem concerns the old shore only.  It is independent of how a new
+join is chosen, but it does not prevent a crossing or proper subshore from
+becoming odd.
+
+We now record the exact fixed-residual calculation.  Let
+\(X\subseteq G-M_t\) be a legal switch and put
+\[
+ D^-=X\cap M_b,\qquad D^+=X\cap M_{b+t}.
+\]
+Assume the \emph{all-in} condition \(D^+\subseteq J\).  Then
+\[
+ M'=(M-D^-)\mathbin{\dot\cup}D^+\subseteq\mathcal F,
+ \qquad J'=\mathcal F-M'
+\]
+is a valid new join, and the residual components and their \(d_C\)'s stay
+fixed.  For each old residual component define
+\[
+ q'_C=q_C-|D^-\cap\delta(C)|+|D^+\cap\delta(C)|,\quad
+ \Delta_C=q'_C-q_C,\quad \epsilon_C=\Delta_C\pmod2.
+\]
+Let \(\mathcal O\) and \(\mathcal E\) be the old odd and even components,
+and use subscripts 0 and 1 for the value of \(\epsilon_C\).  Put
+\[
+ S(M,J)=\sum_{C\in\mathcal O}k_C.
+\]
+Splitting into the four parity cases gives
+\begin{equation}
+\begin{split}
+ S(M',J')-S(M,J)
+={}&-\sum_{C\in\mathcal O_0}\Delta_C
+    -\sum_{C\in\mathcal O_1}k_C\\
+ &+\sum_{C\in\mathcal E_1}(d_C-q'_C).                       \label{eq:aggregate-change}
+\end{split}
+\end{equation}
+Define the aggregate gain by
+\begin{equation}
+ \mathcal G(X)=
+ \sum_{C\in\mathcal O_1}k_C
+ +\sum_{C\in\mathcal O_0}\Delta_C
+ -\sum_{C\in\mathcal E_1}(d_C-q'_C).                       \label{eq:aggregate-gain}
+\end{equation}
+
+\begin{theorem}[exact fixed-residual descent gate]
+\label{thm:aggregate-gate}
+Suppose the old tight-component count is zero and the all-in condition
+holds.  Then, for
+\[
+ \Psi(M,J)=\bigl(\#\{\text{tight residual components}\},S(M,J)\bigr),
+\]
+the fixed-\(\mathcal F\) candidate satisfies
+\(\Psi(M',J')<_{\rm lex}\Psi(M,J)\) if and only if
+\begin{enumerate}
+ \item \(\epsilon_C=0\) for every old even component with \(d_C=4\); and
+ \item \(\mathcal G(X)>0\).
+\end{enumerate}
+If \(J\) realizes the globally optimized value \(\Psi^*(M)\), these two
+conditions imply \(\Psi^*(M')<\Psi^*(M)\).
+\end{theorem}
+
+\begin{proof}
+An old odd component cannot have \(d_C=4\), because the old tight count is
+zero.  With \(d_C\) fixed, a new tight component can therefore arise only
+from an old even four-cut whose parity flips.  Conversely, such a flip
+makes the component odd with \(d_C=4\); the alternative
+\((k'_C,q'_C)=(1,3)\) is excluded by the same cut-xor argument that gives
+\(k_C\ge3\), so the new profile is \((3,1)\) and is tight.  Hence the new
+tight count is zero exactly under condition 1.  Subject to that condition,
+both first coordinates vanish, and \eqref{eq:aggregate-change} says that
+the second coordinate decreases exactly when \(\mathcal G(X)>0\).
+Global reoptimization can only improve on the admissible join \(J'\).
+\end{proof}
+
+This criterion strictly weakens componentwise monotonicity: losses on a
+surviving odd component and newly odd components of cut size greater than
+four are allowed when compensated in the aggregate.
+
+For a partner-free direction, all-in supports form the cycle space of
+\[
+ L_t=G-\bigl(M_t\cup(M_{b+t}-J)\bigr).
+\]
+Writing
+\(a_C=(M_b\cup M_{b+t})\cap E(L_t)\cap\delta_G(C)\), the parity part of
+Theorem~\ref{thm:aggregate-gate} is feasible for a selected old odd shore
+\(Q\) exactly unless
+\begin{equation}
+ \exists\mathcal I\subseteq\{C\in\mathcal E:d_C=4\}:\quad
+ a_Q\mathbin{\triangle}\mathop{\triangle}_{C\in\mathcal I}a_C
+ \in B^1(L_t;\F_2),                                         \label{eq:reduced-cut-obstruction}
+\end{equation}
+where \(B^1\) is the binary cut space.  This is the exact reduced binary
+coordination obstruction; positivity of \(\mathcal G\) is a separate
+integer condition.
+
+The archived 80-vertex control shows that
+\eqref{eq:reduced-cut-obstruction} is real even under simplicity, girth
+ten, and cyclic edge connectivity at least four.  For one displayed
+\((5,1)\) blocker, all three partner-free directions fail: two have
+\(a_Q\in B^1(L_t)\), while the third has \(a_Q\triangle a_C\in B^1(L_t)\)
+for one protected even four-cut.  Independent reconstruction checks the
+graph, flow, cuts, complete fundamental-cycle bases, and every all-in
+cycle.  The same graph has an explicit proper 3-edge-colouring, so it is
+a Tait control rather than a counterexample in the non-Tait minimal domain.
+The unconditional result is Theorem~\ref{thm:single-shore-kill}; universal
+coordination in the non-Tait high-girth case remains open.
+
 \section{The direct radius-one assertion}
 
 The most direct strengthening suggested by
@@ -1067,6 +1254,10 @@ From the project root, the exact replay commands are
 python3 scratch/verify_husek_samal_packable_one_switch_countermodel.py
 python3 scratch/verify_husek_samal_one_switch_boundary.py
 python3 scratch/verify_fano_order60_flow_repair.py
+(cd scratch/bpr-second-coordinate-descent-20260731 && ./run_all.sh)
+(cd scratch/bpr-second-coordinate-descent-blind-audit-20260731 && \
+  python3 -B independent_checker.py)
+(cd scratch/bpr-second-coordinate-refined-gate-20260731 && ./run_all.sh)
 python3 \
   scratch/jaeger-order40-augmented-radius-two-counterexample-20260729/verify.py
 python3 \
@@ -1080,6 +1271,9 @@ The finite countermodels show only that radius one is not a universal
 domination bound for H--S-good flows, even in a strict reduced-looking
 class.  They leave open all of the following:
 \begin{enumerate}
+\item whether the reduced cut-space equations and positive aggregate gain
+      can always be coordinated in the non-Tait, cyclically-4, girth-ten
+      minimum-counterexample domain;
 \item whether every nowhere-zero \(\F_2^3\)-flow can reach an H--S-good
       flow by some finite legal cycle-switch sequence;
 \item whether a larger universal radius exists;
@@ -1120,7 +1314,8 @@ fixed-value pattern as standard cycle adjacency but permits a
 disconnected Eulerian support.  Relative to the auxiliary even-support
 adjacency of Cranston et al., it is narrower in value pattern.  We make no novelty claim
 for either.  The elementary packing-to-switch bridge, the exact
-radius-one formulation, the rank-two legal-order criterion, the
+radius-one formulation, the partner-free shore theorem, the exact
+aggregate-gain gate, the rank-two legal-order criterion, the
 rank-three four-move criterion and certified distance-five pair, the
 reciprocal-exchange obstruction, and the finite certificates may be
 new, but that assessment is provisional.

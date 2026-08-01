@@ -32,6 +32,14 @@ direct residual rows at support fourteen, fifteen, and the fixed-word
 support-sixteen frontier instead share one five-block, two-circuit
 Petersen charge core with excess nullity two.  This isolates the next
 obstruction but does not resolve FiveCDC.
+The July 31 four-charge package proves that four nonzero two-circuit
+charge blocks do not by themselves force direct cleaning.  Its
+five-block, 20-occurrence tensor has a short two-case obstruction proof
+and is smallest by block order in the full arbitrary-occurrence tensor
+model.  A 38-vertex simple bridgeless cubic realization is Tait-colourable;
+all of its extensions delete directly or after two complement Kempe paths.
+This sharply limits the charge route without producing a globally minimum
+dirty projection or a FiveCDC counterexample.
 
 Build from this directory with:
 
@@ -111,6 +119,7 @@ python3 scratch/minimum-projection-charge-rigidity-20260731/verify.py
 python3 scratch/minimum-projection-charge-rigidity-20260731/audit_known_residuals.py
 python3 scratch/minimum-projection-charge-rigidity-blind-audit-20260731/independent_checker.py
 python3 scratch/minimum-projection-charge-rigidity-blind-audit-20260731/residual_profile_check.py
+sh scratch/minimum-projection-four-charge-kernel-20260731/run_all.sh
 sh scratch/two-occurrence-clean-delete-through18-20260729/run_all.sh
 python3 scratch/support16-loop-higheroccurrence-reduction-20260729/verify.py
 python3 scratch/support16-loop-theorem-blind-audit-20260729/audit.py

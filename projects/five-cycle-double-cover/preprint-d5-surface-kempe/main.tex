@@ -61,6 +61,16 @@ triangle-band recolouring and regluing surgery.  We give an exact
 permutation formula for its change in Euler characteristic and a cube
 example in which one switch changes a torus into a sphere.
 
+As a separate delimiter for compressing the new eight-cycle construction,
+we give a 12-vertex simple bridgeless cubic graph and one supplied
+eight-cover on six active coordinates.  Its twelve local coordinate
+triangles span the full binary cycle space of \(K_6\).  Consequently every
+arbitrary context-free lookup rule on old unordered coordinate pairs is
+forced to be a coboundary \(r(xy)=a_x+a_y\); requiring weight-two outputs
+would give a homomorphism \(K_6\to R_5\), impossible because
+\(\omega(R_5)=5\).  The graph is Tait-colourable, so this is a sharp
+no-go for one compression mechanism, not a FiveCDC counterexample.
+
 We also prove a four-coordinate locking lemma and give a separately
 checkable 14-vertex contraction whose complete generalized-switch orbit
 has twelve normalized states, none satisfying the boundary condition
@@ -68,7 +78,13 @@ needed to undo the contraction.  This refutes a natural reconfiguration
 lemma, not the five-cycle-double-cover conjecture.  A complementary Tait
 quotient proves that the analogous fully circuit-trapped branch is
 root-universal on cubic graphs, explaining why the degree-four trap does
-not lift unchanged.  We also construct a planar cubic capped-ladder
+not lift unchanged.  More generally, a direct Tait-colouring formula
+realizes any prescribed circuit as exactly one bichromatic factor.
+Consequently every two edges of a 2-connected Tait-colourable cubic graph
+share a factor component, and any cubic edge insertion whose eliminated
+graph is Tait-colourable has an explicit \(D_5\)-flow.  Thus the unresolved
+edge-elimination premise is confined to non-Tait graphs.  We also construct
+a planar cubic capped-ladder
 family proving that no constant number of root-component Kempe switches
 can always rescue two prescribed edges; this concerns a restricted
 strategy and does not refute rooted Kempe universality or FiveCDC.
@@ -95,7 +111,9 @@ in Oum's recent exposition: the general cycle-double-cover theorem gives
 eight Eulerian subgraphs, while the reduction from eight to five remains
 Conjecture~18~\cite{Oum2026}.  Recent work on five-cycle double covers also
 continues to state the five-subgraph assertion as a conjecture and proves
-special cases~\cite{LiuEtAl2023,LiuEtAl2025}.
+special cases~\cite{LiuEtAl2023,LiuEtAl2025}.  Hu\v{s}ek and
+\v{S}\'amal give the current flow-only equivalence and a bijective
+description of the eight-cycle lifting data~\cite{HusekSamal2026}.
 
 The orientable five-cycle-double-cover conjecture adds directed Eulerian
 orientations so that each edge is used once in each direction.  It is a
@@ -185,6 +203,120 @@ the two pairs \(a,b\) meet in exactly one coordinate.  Their union has
 three coordinates, and \(c=a\symdiff b\) is the third side of that
 coordinate triangle.
 \end{proof}
+
+\section{A local-rule delimiter for eight-to-five compression}
+
+Write \(W=\F_2^3\).  In the eight-cycle construction of Oum and of
+Hu\v{s}ek--\v{S}\'amal, every edge receives an unordered pair
+\(P_e\in\binom W2\), and at a cubic vertex the three incident pair labels
+are
+\[
+                         xy,\quad xz,\quad yz
+\]
+for distinct \(x,y,z\in W\).  Conversely, every closed cubic pair
+labelling with this local form is compatible with the lifting
+construction: give \(xy\) the flow value \(x+y\), and give the vertex
+\(xyz\) the local potential \(x+y+z\).  The three flow values are nonzero
+and xor to zero, and the local lifting formula reconstructs the labels.
+
+Let \(S\subseteq W\).  A \emph{context-free pair rule} is an arbitrary
+lookup table
+\[
+ r:\binom S2\longrightarrow D_5,
+ \qquad D_5=\{q\in\F_2^5:\wt(q)=2\}.
+\]
+It is not assumed linear in the binary names; ``context-free'' means only
+that equal old pair labels receive equal new labels.  Vertex parity on a
+triangle \(xyz\) is exactly
+\begin{equation}
+                         r(xy)+r(xz)+r(yz)=0.                 \tag{C1}
+\end{equation}
+
+\begin{lemma}[triangle-cocycle rigidity]\label{lem:triangle-rigidity}
+If equations \emph{(C1)} are imposed on triangles whose incidence vectors
+span \(Z_1(K_S;\F_2)\), then there are words \(a_x\in\F_2^5\), unique up
+to one common translation, such that
+\[
+                              r(xy)=a_x+a_y
+\]
+for every pair \(xy\).
+\end{lemma}
+
+\begin{proof}
+Coordinate by coordinate, equation (C1) says that the edge cochain \(r\)
+is orthogonal to the span of the supplied triangle rows.  If that span is
+the full cycle space, \(r\) belongs to its orthogonal complement, the cut
+space.  Equivalently, fix \(o\in S\), put \(a_o=0\) and
+\(a_x=r(ox)\); the triangle equation on \(oxy\) gives
+\(r(xy)=a_x+a_y\).  Any two such potentials differ by one common word.
+\end{proof}
+
+Let \(R_5\) be the graph on \(\F_2^5\) joining two words when their
+Hamming distance is two.  Its clique number is five.  Indeed, translate a
+clique to contain zero.  The remaining words are weight-two vectors whose
+two-element supports pairwise intersect.  Such a family is either a star,
+of size at most four, or contains a triangle, after which it has size at
+most three.  Including zero gives at most five, attained by zero and the
+four pairs in a four-edge star.
+
+\begin{theorem}[realized context-free compression no-go]
+\label{thm:context-free-no-go}
+There is a 12-vertex simple bridgeless cubic graph with a supplied
+Oum-compatible eight-cover, using six old coordinates, for which no
+context-free pair rule into \(D_5\) preserves all vertex parities.  Order
+twelve is minimum for the full-rank \(K_6\) triangle-rigidity mechanism.
+\end{theorem}
+
+\begin{proof}
+Take the twelve old-coordinate triples
+\[
+\begin{array}{rrrrrr}
+012&013&014&015&023&024\\
+025&123&134&135&245&345.
+\end{array}                                                   \tag{C2}
+\]
+Pair their equal pair occurrences into graph edges as follows:
+\[
+\begin{array}{llll}
+0\!-\!1:01&2\!-\!3:01&0\!-\!4:02&5\!-\!6:02\\
+1\!-\!4:03&2\!-\!5:04&3\!-\!6:05&0\!-\!7:12\\
+1\!-\!8:13&7\!-\!9:13&2\!-\!8:14&3\!-\!9:15\\
+4\!-\!7:23&5\!-\!10:24&6\!-\!10:25&8\!-\!11:34\\
+9\!-\!11:35&10\!-\!11:45.&&
+\end{array}                                                   \tag{C3}
+\]
+This is a simple connected cubic graph.  Direct deletion of each of its
+18 edges leaves it connected, so it is bridgeless; its graph6 record in
+the displayed order is \nolinkurl{K`o_kP_COK?F}.  At every vertex the
+three incident labels are the three sides of its triple in (C2), so this
+is an Oum-compatible eight-cover with old coordinates 6 and 7 empty.
+
+In the fifteen pair columns of \(K_6\), the twelve triangle rows in (C2)
+have binary rank ten.  Since
+\(\dim Z_1(K_6;\F_2)=15-6+1=10\),
+Lemma~\ref{lem:triangle-rigidity} applies.  A putative rule into \(D_5\)
+would therefore give six words \(a_x\) with every difference
+\(a_x+a_y\) of weight two, hence a \(K_6\to R_5\) homomorphism.  This
+contradicts \(\omega(R_5)=5\).
+
+For the order claim, every old pair occurs an even number of times in a
+closed pair-labelled cubic graph, so the xor of all local triangle rows
+is zero.  Rank ten consequently needs at least eleven rows; cubic order
+is even, so it needs at least twelve.  The construction attains twelve.
+\end{proof}
+
+The graph is not a counterexample to FiveCDC.  In the edge order (C3),
+\[
+0,1,1,1,2,0,2,2,1,1,2,0,0,2,0,0,2,1
+\]
+is a proper 3-edge-colouring.  Replacing its colours by \(01,02,12\)
+gives a three-member double cover, padded by two empty members.  Thus the
+positive cover must distinguish some edges with the same supplied old
+pair type.  The theorem rules out only a static pair-type lookup; it does
+not rule out edge-dependent recolouring, changing the supplied flow or
+potential, or component Kempe switches.  The complete literal witness,
+two independently structured checkers, and the bounded primary-source
+audit are in the scratch package dated 20260731.
 
 \section{The coloured-surface dictionary}
 
@@ -582,6 +714,96 @@ counterexample.  It closes only the fully circuit-trapped four-coordinate
 branch; a general rooted-orbit obstruction could still use five
 coordinates, a disconnected coordinate class, or transitions between
 those regimes.
+
+\section{Prescribing a factor circuit from a Tait colouring}
+
+The preceding quotient argument has a stronger constructive form that does
+not assume a circuit-trapped orbit.  Its existence conclusion is not new:
+Hoffmann-Ostenhof records the stronger fact that every 2-regular subgraph
+of a subdivision of a cubic graph with a nowhere-zero 4-flow belongs to a
+4-CDC~\cite[Lemma~0.2]{HoffmannOstenhof2012}.  Since a Tait-colourable
+cubic graph has such a flow, the theorem below is a direct explicit
+\(D_5\)-formula for that known case, followed by the root and insertion
+adaptations needed here.  Recall that, for a coordinate pair \(P\), the factor
+\[
+                  Y_P(q)=\{e:|q(e)\cap P|=1\}
+\]
+is Eulerian.
+
+\begin{theorem}[prescribed Tait factor]\label{thm:prescribed-tait-factor}
+Let \(H\) be a loopless cubic graph with a proper three-edge-colouring, and
+let \(K\) be any circuit of \(H\).  There is a \(D_5\)-flow \(q\) such that
+\[
+                         Y_{01}(q)=E(K).
+\]
+\end{theorem}
+
+\begin{proof}
+Name the three Tait colours \(2,3,4\).  If an edge \(e\) has colour \(c\),
+put
+\begin{equation}
+ q(e)=
+ \begin{cases}
+   0c,&e\in E(K),\\
+   \{2,3,4\}\setminus\{c\},&e\notin E(K).
+ \end{cases}                                                 \tag{T}\label{eq:tait-formula}
+\end{equation}
+Every label has weight two.  At a vertex outside \(K\), the three incident
+labels are \(23,24,34\), whose xor is zero.  At a vertex of \(K\), the two
+circuit edges have distinct colours \(a,b\), while the third edge has the
+remaining colour \(c\).  The three labels in \eqref{eq:tait-formula} are
+\[
+                              0a,\quad 0b,\quad ab,
+\]
+again with xor zero.  Thus \(q\) is a \(D_5\)-flow.  Coordinate \(1\)
+occurs nowhere, and a label meets \(01\) oddly exactly when it contains
+coordinate \(0\).  By \eqref{eq:tait-formula}, those edges are exactly
+\(E(K)\).
+\end{proof}
+
+\begin{corollary}[Tait root universality]\label{cor:tait-root-universal}
+If \(H\) is a 2-connected Tait-colourable cubic graph, then every two
+distinct edges \(r,s\) belong to one factor component of some
+\(D_5\)-flow.
+\end{corollary}
+
+\begin{proof}
+Every two edges of a 2-connected graph lie on a common circuit.  Indeed,
+subdivide both edges.  Subdivision preserves 2-connectivity, and the vertex
+form of Menger's theorem gives a circuit through the two new vertices.
+Suppressing them gives a circuit \(K\) of \(H\) containing \(r,s\).
+Theorem~\ref{thm:prescribed-tait-factor} makes \(K\) exactly the nonempty
+factor \(Y_{01}\).
+\end{proof}
+
+\begin{corollary}[Tait edge insertion]\label{cor:tait-edge-insertion}
+Let \(G\) be obtained from a 2-connected Tait-colourable cubic graph \(H\)
+by subdividing two distinct edges \(r,s\) with vertices \(u,v\) and adding
+the edge \(uv\).  Then \(G\) has a \(D_5\)-flow, and hence a five-even-
+subgraph double cover.
+\end{corollary}
+
+\begin{proof}
+Choose a circuit \(K\) through \(r,s\), apply
+Theorem~\ref{thm:prescribed-tait-factor}, and subdivide \(r,s\), giving
+both halves their old labels.  The subdivided \(K\) is a circuit \(K^*\)
+through \(u,v\).  Choose either \(u\)-to-\(v\) arc \(A\) of \(K^*\),
+transpose coordinates \(0,1\) on every edge of \(A\), and label the new
+edge \(uv\) by \(01\).
+
+At an internal vertex of \(A\), two incident labels are transposed, so xor
+conservation remains true.  At each of \(u,v\), exactly one old label
+changes by xor with \(01\), and the new label \(01\) cancels that defect.
+Every transposed label was \(0c\) and becomes \(1c\), so it still has
+weight two.  The resulting labels are therefore a \(D_5\)-flow on \(G\).
+Proposition~\ref{prop:cover-flow} gives the asserted cover.
+\end{proof}
+
+Thus a reduced graph produced by the two-root edge-elimination induction
+cannot obstruct extension merely by being Tait-colourable.  The remaining
+rooted premise is genuinely confined to non-Tait reduced graphs.  This is
+a reduction of that premise and an explicit adaptation of a known
+prescribed-subgraph result, not a resolution of FiveCDC.
 
 \section{Unbounded delay for root-component rescue}
 
@@ -1049,8 +1271,11 @@ The complete reports, producers, and focused independent verifiers are in
 the companion repository.  From its root:
 \begin{verbatim}
 python3 scratch/audit_d5_surface_euler_switch.py
+sh scratch/eight-to-five-compression-route-delimiter-20260731/run_all.sh
 python3 scratch/check_d5_contraction_circuit_orbit_counterexample.py
 python3 scratch/check_d4_cubic_trap_root_universality.py
+sh scratch/d5-tait-prescribed-circuit-lift-20260731/run_all.sh
+sh scratch/d5-tait-prescribed-circuit-lift-blind-audit-20260731/run_all.sh
 python3 scratch/check_d5_capped_ladder_delay_family.py
 
 python3 scratch/verify_d5_surface_chi_plateaus_order12.py
@@ -1077,12 +1302,17 @@ claim.
 The human-checkable results in this note are:
 \begin{enumerate}
  \item the \(D_5\)-flow/five-even-subgraph equivalence;
+ \item the order-sharp, 12-vertex full-rank obstruction to every
+ context-free nonlinear old-pair lookup from one supplied eight-cover;
  \item the canonical properly five-coloured surface construction and
  Euler formula;
  \item the boundary interpretation of the bichromatic factors;
  \item the exact one-switch Euler-change formula;
  \item the four-coordinate one-step locking lemma and the cubic \(D_4\)
  trap theorem;
+ \item the construction from a Tait colouring that prescribes any circuit
+ as one factor, proves root universality in the 2-connected case, and
+ supports explicit inverse insertion;
  \item the capped-ladder lower bound proving that root-component rescue
  has no universal constant radius; and
  \item the fixed-five minimum-counterexample reduction, bridgeless

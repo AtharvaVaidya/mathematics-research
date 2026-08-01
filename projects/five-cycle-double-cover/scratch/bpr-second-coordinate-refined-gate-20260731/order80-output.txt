@@ -1,0 +1,14 @@
+graph order=80 edges=120 simple=1 cubic=1 girth=10 cyclic_cut_counts={1: 0, 2: 0, 3: 0} tait=1 old_potential=(0, 44) residual_components=11 protected_even_d4=5
+Q=1 profile=(7,1) t=4 dim=10 selected_nonzero=0 protected_feasible=0 dual=() best=None
+Q=2 profile=(3,3) t=3 dim=12 selected_nonzero=1 protected_feasible=1024 dual=None best=(0, 10)
+Q=2 profile=(3,3) t=4 dim=10 selected_nonzero=1 protected_feasible=64 dual=None best=(0, 20)
+Q=2 profile=(3,3) t=6 dim=15 selected_nonzero=1 protected_feasible=1024 dual=None best=(0, 0)
+Q=3 profile=(3,3) t=3 dim=12 selected_nonzero=1 protected_feasible=1024 dual=None best=(0, 10)
+Q=3 profile=(3,3) t=4 dim=10 selected_nonzero=1 protected_feasible=64 dual=None best=(0, 20)
+Q=3 profile=(3,3) t=6 dim=15 selected_nonzero=1 protected_feasible=1024 dual=None best=(0, 0)
+Q=4 profile=(5,1) t=2 dim=9 selected_nonzero=1 protected_feasible=128 dual=None best=(0, 12)
+Q=4 profile=(5,1) t=7 dim=14 selected_nonzero=1 protected_feasible=256 dual=None best=(0, 8)
+Q=5 profile=(5,1) t=2 dim=9 selected_nonzero=0 protected_feasible=0 dual=() best=None
+Q=5 profile=(5,1) t=4 dim=10 selected_nonzero=1 protected_feasible=0 dual=(4,) best=None
+Q=5 profile=(5,1) t=7 dim=14 selected_nonzero=0 protected_feasible=0 dual=() best=None
+directions=12 selected_only_obstructed=3 reduced_parity_feasible=8 descending=8

@@ -1,0 +1,1 @@
+vertices=5 edges=10 feasible_map_gauges=336

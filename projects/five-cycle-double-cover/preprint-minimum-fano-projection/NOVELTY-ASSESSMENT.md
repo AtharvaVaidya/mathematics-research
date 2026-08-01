@@ -94,7 +94,11 @@ The manuscript proves:
     every connected block--circuit charge matrix has only its unavoidable
     all-ones scalar kernel, together with an independently implemented
     audit and the identification of one five-block, two-circuit Petersen
-    charge core in all 6,268 currently frozen direct residual rows.
+    charge core in all 6,268 currently frozen direct residual rows; and
+26. a block-order-sharp four-charge countertensor: a five-block,
+    two-circuit, 20-occurrence state with no direct clean extension, an
+    exact four-block UNSAT replay, and a Tait-colourable 38-vertex
+    realization that always Kempe-descends to deletion.
 
 This is a partial theorem about the Hušek--Šámal flow criterion.  It does
 not resolve the Five-Cycle Double Cover Conjecture.

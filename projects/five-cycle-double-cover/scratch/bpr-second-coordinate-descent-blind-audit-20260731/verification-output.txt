@@ -1,0 +1,12 @@
+minimal non-tight numerical profiles: ((3, 3), (5, 1))
+k=3: per-target=(4,0) all-targets=(28,0)
+k=5: per-target=(24,0) all-targets=(168,0)
+k=7: per-target=(84,0) all-targets=(588,0)
+k=9: per-target=(224,4) all-targets=(1568,28)
+k=9 sharp witness b=1: 2,2,3,4,4,5,6,6,7
+cycle/cut graphs=1099 functionals=59809 nonzero-flow-cut-cases=84
+binary coordination systems=299593
+Theorem 4.1 two-component arithmetic cases=49920
+parity-only counterprofile: old=(6,3)|(8,5) new=(6,2)|(8,1)
+unprotected-even counterprofile: old=(6,3)|(4,2) new=(6,2)|(4,1)
+NO COUNTEREXAMPLE TO THE STATED CONDITIONAL RESULTS

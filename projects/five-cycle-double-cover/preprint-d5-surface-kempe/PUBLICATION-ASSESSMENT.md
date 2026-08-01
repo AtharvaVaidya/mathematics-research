@@ -8,6 +8,8 @@ or as established journal-level novelty.
 
 The strongest publishable-looking content is:
 
+- the order-sharp full-rank delimiter for context-free old-pair compression
+  on the supplied 12-vertex eight-cover;
 - the exact coloured-surface realization of \(D_5\)-flows;
 - the permutation formula for the Euler-characteristic change under one
   component switch;
@@ -17,6 +19,8 @@ The strongest publishable-looking content is:
   natural contraction/reconfiguration strategy; and
 - the human-checkable fixed-five reduction and rooted edge-insertion
   equivalence, which isolate an exact sufficient edge-extension premise;
+- the explicit Tait formula and insertion adaptation, with its existence
+  conclusion correctly identified as a special case of known 4-CDC work;
 - the complete order-14 terminal-plateau census and fixed-distance descent
   census; and
 - the complete 195-edge elimination screen on a 130-vertex cyclically
@@ -51,6 +55,11 @@ review is complete.
   DOI 10.1007/978-3-642-46908-4_21.
 - B. Mohar and C. Thomassen, *Graphs on Surfaces* (2001), and C.-Q. Zhang,
   *Circuit Double Cover of Graphs* (2012), as standard background.
+- A. Hoffmann-Ostenhof, *A Note on 5-Cycle Double Covers*, Graphs and
+  Combinatorics 29 (2013), 977--979.  Lemma 0.2 records the stronger known
+  fact that any prescribed 2-regular subgraph of a cubic subdivision with a
+  nowhere-zero 4-flow belongs to a 4-CDC.  Accordingly, the Tait
+  prescribed-circuit existence result in this note is not claimed as new.
 
 This is a targeted check, not a systematic prior-art review.
 

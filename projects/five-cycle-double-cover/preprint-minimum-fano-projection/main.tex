@@ -144,6 +144,15 @@ literal direct residual rows in the completed size-fourteen and
 size-fifteen censuses and the fixed-word size-sixteen census lie just
 outside this theorem: each has the same five-block, two-circuit Petersen
 charge core with excess kernel nullity two.
+We also show that the tempting next statement is false: four charged
+blocks alone do not force direct cleaning.  A smallest-block tensor uses
+four charged blocks and one zero-charge block, has a 20-occurrence literal
+realization, and admits a two-case human obstruction proof.  Its
+38-vertex simple bridgeless cubic realization is nevertheless
+Tait-colourable, and every extension either deletes a support circuit
+directly or does so after two complementary Kempe paths.  Thus the result
+is a sharp delimiter for direct cleaning, not a minimum-projection or
+FiveCDC counterexample.
 The latter hypothesis is sharp for direct cleaning: a two-occurrence
 interaction-flow dictionary reduces the first abstract failure to the
 Petersen graph.  Its displayed two-\(5\)-circuit support has no clean
@@ -2342,6 +2351,102 @@ and a separately written audit checker are archived in the two
 charge-rigidity scratch packages dated 20260731.
 This finite statement audits the frozen residual lists; it does not
 extend their completeness beyond the ranges stated.
+
+\begin{proposition}[four charged blocks do not force direct cleaning]
+\label{prop:four-charge-countertensor}
+There is a realizable two-support-circuit boundary state with five
+complement blocks, exactly four of them carrying nonzero charge on the
+two circuits, and no directly clean extension.  No such countertensor
+exists on at most four complement blocks in the full arbitrary-occurrence
+tensor model.
+\end{proposition}
+
+\begin{proof}
+Use \(K=\F_2^2=\{0,1,2,3\}\), with xor addition, and the alternating form
+\(B(x,y)=x_1y_2+x_2y_1\).  Let blocks \(0,1,2,3\) have source charge one
+on each circuit and let block \(4\) have charge zero.  After fixing the
+common gauge, write \(t_0=1\) for the first transformed charge and
+\(t_1,t_2,t_3\ne0\) for the others.  Circuit integrability is
+\[
+                         t_1+t_2+t_3=1. \qquad\text{\rm(FC1)}
+\]
+Choose the map at block 4 and abbreviate
+\[
+ a=L_4(1),\qquad b=L_4(2),\qquad c=L_4(3)=a+b.
+\]
+In the pair order
+\[
+01,02,03,04,12,13,14,23,24,34
+\]
+take the four-entry matrix-functional masks
+\[
+                  0,0,0,0,0,0,10,0,8,2. \qquad\text{\rm(FC2)}
+\]
+Only the three edges from charged blocks \(1,2,3\) to block 4 are
+nonzero; their terms are respectively
+\[
+                         B(t_1,c),\qquad B(t_2,b),\qquad B(t_3,a).
+\]
+Let \(z\in K\) be the relative translation of the two circuits.  The
+clean equation at block 0 is \(B(z,1)=0\), hence \(z\in\{0,1\}\).
+
+If \(z=0\), the clean equations at blocks \(1,2,3\) force
+\((t_1,t_2,t_3)=(c,b,a)\), because a nonzero vector in the two-dimensional
+symplectic space is orthogonal only to itself.  Their xor is
+\(a+b+c=0\), contradicting (FC1).
+
+If \(z=1\), exactly one of \(a,b,c\) equals one.  For each of the other
+two values \(r\in\{2,3\}\), the corresponding clean equation is
+\(B(t,r+1)=0\), hence \(t=r+1\).  Those two forced charges are 2 and 3,
+whose xor is one.  The remaining charge is nonzero, so
+\(t_1+t_2+t_3=1+t_{\rm free}\ne1\), again contradicting (FC1).  The
+block-4 equation is then the xor of the other four equations and adds no
+escape.
+
+Each matrix-linear term in (FC2) is realized by the zero-charge word
+\[
+                         b(x),a(y),b(x),a(y).
+\]
+Start both circuits with the prefix
+\[
+                         0(1),1(1),2(1),3(1),
+\]
+and append the three required gadgets to the first circuit.  The resulting
+literal owner/derivative words are
+\[
+\begin{array}{c|c}
+A\text{ owners}&0123414142424343\\
+A\text{ derivatives}&1111313121211111\\
+B\text{ owners}&0123\\
+B\text{ derivatives}&1111.
+\end{array}
+\qquad\text{\rm(FC3)}
+\]
+Thus the tensor obstruction is a genuine 16+4 occurrence boundary
+state, not a relaxation.
+
+For the minimality assertion, the archived exact SAT generator fixes the
+common gauge and allows every four-bit matrix-linear functional on every
+block pair.  On four blocks it exhausts all 56 integrable gauge classes and
+all 208 clean targets; the generated 1,024-variable, 4,208-clause CNF is
+UNSAT and CaDiCaL checks its generated proof during the replay.  The
+five-block instance is SAT,
+and the independent literal enumeration checks all 7,776 map assignments,
+2,016 integrable assignments, and 32,256 start pairs against (FC3).
+These computations establish block-order minimality; they are not used in
+the preceding human proof of the five-block obstruction.
+\end{proof}
+
+The literal realization package also constructs a simple connected cubic
+graph on 38 vertices and 57 edges and checks connectedness after deletion
+of every edge.  Of its 336 gauge-integrable map assignments, 240 strictly
+delete a support circuit directly; each of the remaining 96 has two
+explicit same-colour-pair complement paths whose Kempe switches restore
+closure and then permit strict deletion.  A proper 3-edge-colouring is
+checked edge by edge, so the graph has empty, clean global minimum
+projection.  The full witness, direct proof, exact solver transcript,
+literal independent checker, realization replay, and SHA-256 ledger are
+in the scratch package dated 20260731.
 
 \begin{proposition}[Petersen boundary of the tensor repair]
 \label{prop:petersentwooccurrence}
