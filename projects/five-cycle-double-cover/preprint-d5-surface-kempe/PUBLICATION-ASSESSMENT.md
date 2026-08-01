@@ -28,6 +28,15 @@ The strongest publishable-looking content is:
   double-star corollary;
 - the complete 138,144-interface typed-cap census through order 14, stated
   with the limitation that the independent full replay stops at order 10;
+- the compact 30,858-flow certificate proving independent-root feasibility
+  for all 14,009 canonical non-Tait graphs through order 28 (10,689,351
+  root pairs),
+  together with a solver-independent semantic checker;
+- the human order-44 cutoff for caps in the actual marked-girth
+  minimum-obstruction domain, including the order-88 parent consequence and
+  the analytic Tait-cap gluing theorem;
+- the six-flow full typed signature on one 890-vertex Petersen--Foster
+  high-girth non-Tait control, stated only as one-interface calibration;
 - the complete order-14 terminal-plateau census and fixed-distance descent
   census; and
 - the complete 195-edge elimination screen on a 130-vertex cyclically

@@ -47,6 +47,13 @@ certificates, and large finite computations.
     treat the unique internal factor and the two external factors separately,
     and verify that deleting the caps joins the two rooted factor paths.
     Then check the double-star intersection corollary.
+15. The finite rooted-frontier proof boundary: the Tait case is analytic;
+    the non-Tait case through order 28 depends on the documented complete Snarkhunter streams
+    and on the literal positive-flow checker, not on accepting SAT answers.
+16. The relevant-cap theorem: recheck all three restored-cut cases, cap
+    3-edge-connectivity and bridgelessness, the marked-girth lift, and the
+    (W_1,\ldots,W_4) count yielding (n^2\ge46n-147).  Then check the
+    external-mode Tait-cap argument separately.
 
 ## Small certificates
 
@@ -74,6 +81,9 @@ sh scratch/d5-tait-prescribed-circuit-lift-20260731/run_all.sh
 sh scratch/d5-tait-prescribed-circuit-lift-blind-audit-20260731/run_all.sh
 (cd scratch/d5-root-transition-sat-20260731 && ./run_all.sh)
 (cd scratch/d5-typed-cap-double-star-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-root-pair-census-20260731 && ./run_all.sh)
+(cd scratch/d5-relevant-cap-order44-cutoff-20260731 && ./run_all.sh)
+(cd scratch/petersen-foster-full-typed-cap-signature-20260731 && ./run_all.sh)
 python3 scratch/verify_d5_surface_chi_plateaus_order12.py
 python3 scratch/verify_d5_root_euler_potential_reports.py
 python3 scratch/verify_d5_root_kempe_order14_report.py
@@ -92,7 +102,12 @@ high-girth witnesses.  The triangle-state package contains two
 independently structured exact checkers.  The typed-cap package recomputes
 all flows and interfaces independently only through order 10; the complete
 order-12 and order-14 census presently has one C++ implementation plus
-deterministic reproduction.
+deterministic reproduction.  The rooted-frontier package contains 30,858
+literal positive flows; its checker is solver-independent and exhausts all
+10,689,351 independent root pairs on the 14,009 non-Tait rows through order
+28.  The order-44 package replays the cut and walk arithmetic.  The
+Petersen--Foster checker validates six literal 1,335-edge flows and all six
+typed component claims on one interface.
 
 ## Publication checks still required
 

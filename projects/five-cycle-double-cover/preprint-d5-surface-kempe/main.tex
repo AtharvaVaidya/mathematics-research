@@ -87,7 +87,13 @@ realizes any prescribed circuit as exactly one bichromatic factor.
 Consequently every two edges of a 2-connected Tait-colourable cubic graph
 share a factor component, and any cubic edge insertion whose eliminated
 graph is Tait-colourable has an explicit \(D_5\)-flow.  Thus the unresolved
-edge-elimination premise is confined to non-Tait graphs.  We also construct
+edge-elimination premise is confined to non-Tait graphs.  A compact
+certificate of 30,858 explicit flows, checked without the SAT generator,
+proves that every simple cyclically 4-edge-connected cubic graph through
+order 28 is feasible for every independent root pair.  The non-Tait part
+comprises 14,009 canonically generated graphs and 10,689,351 root pairs; the
+statement is finite and conditional on the documented canonical-generator
+source boundary.  We also construct
 a planar cubic capped-ladder
 family proving that no constant number of root-component Kempe switches
 can always rescue two prescribed edges; this concerns a restricted
@@ -103,7 +109,14 @@ For cubic three-edge cuts we also isolate a six-state typed cap signature,
 prove an internal/external-mode gluing lemma, and exhaustively compute all
 138,144 rooted interfaces on biconnected simple cubic graphs through order
 14; every computed signature contains a double star.  The corresponding
-universal double-star premise is open.  Finally,
+universal double-star premise is open.  In the marked-girth domain actually
+forced by edge elimination, a nontrivial three-cut must separate the roots;
+a self-contained nonbacktracking-walk count proves that each resulting cap
+has order at least 44 and the parent has order at least 88.  Two Tait caps
+always glue by external-mode states, leaving a non-Tait cap of order at
+least 44 as the exact surviving branch.  One 890-vertex non-Tait girth-ten
+control has the full six-state signature by six explicit checked flows.
+Finally,
 exhaustive computations show that all 33,598 terminal
 equal-Euler-characteristic Kempe plateaus on the 480 biconnected simple
 cubic graphs of order 14 are root-universal.  A sharper fixed-distance
@@ -870,6 +883,53 @@ rooted premise is genuinely confined to non-Tait reduced graphs.  This is
 a reduction of that premise and an explicit adaptation of a known
 prescribed-subgraph result, not a resolution of FiveCDC.
 
+\subsection{A certified rooted frontier through order 28}
+
+Call a cubic graph \emph{independently root-universal} if, for every two
+vertex-disjoint edges \(r,s\), it has a \(D_5\)-flow in which some factor
+component contains both roots.
+
+\begin{theorem}[finite rooted frontier]\label{thm:root-frontier-28}
+Every simple cyclically \(4\)-edge-connected cubic graph of order at most
+28 is independently root-universal, conditional on the documented
+completeness and option semantics of the retained Snarkhunter 2.0b graph
+streams.
+\end{theorem}
+
+\begin{proof}
+A cyclically $4$-edge-connected cubic graph is 2-connected: a bridge
+shore in a cubic graph necessarily contains a circuit.  Thus the
+Tait-colourable case is Corollary~\ref{cor:tait-root-universal}.  The
+Petersen graph is the smallest bridgeless non-Tait cubic graph, so for the
+remaining case the retained canonical streams begin at order ten and contain
+\[
+\begin{array}{c|rrrrrrrrrr}
+ |V|&10&12&14&16&18&20&22&24&26&28\\ \hline
+ \text{graphs}&1&0&0&0&2&6&31&155&1297&12517.
+\end{array}
+\]
+The generator logs, graph6 hashes, distinct-row counts, and an independent
+classification are part of the source package.  Thus there are 14,009
+non-Tait graphs.  A simple cubic graph of order \(n\) has
+\(\binom{3n/2}{2}-3n\) independent unordered edge pairs, giving 10,689,351
+pairs in total.
+
+The positive certificate records 30,858 literal \(D_5\)-flows.  A separately
+written standard-library checker reparses each graph6 row, verifies that
+every edge label has weight two, xors the three labels at every vertex,
+and constructs all ten factors \(Y_P\).  It then enumerates all independent
+edge pairs and verifies that each pair occurs in one component of one
+factor of at least one displayed flow.  It recomputes the totals 14,009,
+10,689,351, and 30,858.  These finite checks cover every non-Tait row, while the
+first sentence covers every remaining graph.
+\end{proof}
+
+The certificate and checker are in
+\texttt{scratch/d5-root-pair-census-20260731}.  The theorem neither bounds
+the order of a possible rooted obstruction nor proves the universal rooted
+premise.  Its priority has not been established by a complete literature
+review.
+
 \section{Unbounded delay for root-component rescue}
 
 Fix distinct root edges \(r,s\).  Call a state \emph{root-good} when some
@@ -1442,6 +1502,130 @@ implementation.  Most importantly, the universal double-star premise is
 neither universal three-cut reducibility, the rooted-feasibility premise,
 nor FiveCDC.
 
+\subsection{The relevant-cap cutoff}
+
+The unrestricted cap census above does not yet enter the short-cycle
+geometry of a hypothetical minimum obstruction.  That geometry gives a
+substantial analytic cutoff.
+
+\begin{theorem}[relevant-cap cutoff]\label{thm:relevant-cap-cutoff}
+Let $G$ be simple, cubic, cyclically $4$-edge-connected, and of girth at
+least ten.  Eliminate an edge to obtain $H=G\div e$, with independent
+artificial roots $r,s$.  If $H$ has a nontrivial three-edge cut, then:
+\begin{enumerate}
+ \item neither root crosses the cut, and the roots lie on opposite shores;
+ \item each capped shore $A$ is simple and $3$-edge-connected;
+ \item for the cap vertex $z$, the core $K=A-z$ is connected and
+ bridgeless, has degree sequence $2^3 3^{n-3}$, satisfies
+ $g(K)\geq9$ and $g(K-r)\geq10$, and has $n\geq43$; and
+ \item each cap has order at least 44, and $|V(G)|\geq88$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The elimination lemma makes $H$ simple and $3$-edge-connected.  Each
+shore $X$ of a nontrivial three-cut contains a circuit, because
+\[
+ |E(H[X])|=(3|X|-3)/2>|X|-1.
+\]
+
+Let $t$ roots cross the cut.  Restoring the two deleted vertices replaces
+each crossing root by exactly one crossing spoke, regardless of which shore
+receives its inserted vertex.  If $t=2$, put both inserted vertices on
+one shore; one old cut edge and two spokes give a cyclic three-cut of $G$.
+If $t=1$, put both vertices with the noncrossing root; two old cut edges
+and one spoke give such a cut.  If $t=0$ and both roots lie on one shore,
+put both vertices there and retain the original three-cut.  The shore
+circuits survive these replacements, contradicting cyclic
+$4$-edge-connectivity.  Hence the roots are noncrossing and separated.
+
+No two cut edges share a shore endpoint: deleting such an endpoint from
+its nontrivial shore would leave a nonempty set with edge boundary at most
+two in $H$.  Thus capping creates no parallel edge.  Any cut of size at
+most two in a cap gives the same cut in $H$, after taking the shore not
+containing the cap vertex; hence the cap is $3$-edge-connected.  Deleting
+the cap vertex leaves one degree-two vertex at each port and degree three
+elsewhere.  It is connected, since otherwise one component uses at most one
+port.  If an edge of the core were a bridge and one bridge shore contained
+$k$ ports, the two shores would have cap boundaries $1+k$ and
+$1+(3-k)$; both cannot be at least three.  Thus the core is bridgeless,
+and in particular $K-r$ is connected.
+
+A circuit of $K$ avoiding the shore root lifts to $G$ without changing
+length; one using the root gains one edge.  Therefore $g(K)\geq9$, and
+every 9-circuit uses $r$, equivalently $g(K-r)\geq10$.
+
+It remains to bound $n=|V(K)|$.  Let $W_j$ count oriented
+nonbacktracking walks of length $j\leq4$.  Girth at least nine makes the
+endpoint and length of every such walk from a fixed initial vertex unique:
+two distinct paths to one endpoint would contain a circuit of length at
+most eight.  Hence
+\[
+ n^2\geq n+W_1+W_2+W_3+W_4.
+\]
+The degree sequence gives
+\[
+ W_1=3n-3,\qquad W_2=6n-12.
+\]
+Let $t$ be the number of edges joining two degree-two vertices.  Centering
+a length-three walk at its middle edge gives
+\[
+ W_3=2\sum_{xy\in E(K)}(d(x)-1)(d(y)-1)
+     =12n-36+2t\geq12n-36.
+\]
+For a length-four walk centered at $c$, its contribution is
+\[
+ F(c)=\sum_{x\ne y\in N(c)}(d(x)-1)(d(y)-1).
+\]
+A degree-three center with $k$ degree-two neighbours has contribution
+$24,16,10,6$ for $k=0,1,2,3$, hence at least $24-8k$.  The
+degree-three centers see $6-2t$ such incidences.  If the three degree-two
+centers have $k_1,k_2,k_3$ degree-two neighbours, then
+$\sum k_i=2t$ and their contributions are $8-5k_i+k_i^2$.  Consequently
+\[
+ W_4\geq24(n-3)-8(6-2t)
+       +\sum_{i=1}^3(8-5k_i+k_i^2)
+     =24n-96+6t+\sum_i k_i^2\geq24n-96.
+\]
+Thus $n^2\geq46n-147$.  Its roots are
+$23\pm\sqrt{382}$, with the larger strictly between 42 and 43.  The
+smaller branch has $n<4$, impossible because $K$ has girth at least
+nine and is bridgeless.  Hence $n\geq43$.  Capping adds one vertex, and
+the two core shores contain at least 86 vertices of $H$; restoring the
+two eliminated vertices gives $|V(G)|\geq88$.
+\end{proof}
+
+\begin{proposition}[Tait caps glue]\label{prop:tait-caps-glue}
+If both rooted caps in Theorem~\ref{thm:relevant-cap-cutoff} are
+Tait-colourable, then their typed signatures have a common external state,
+and the original rooted graph is root-good.
+\end{proposition}
+
+\begin{proof}
+In either cap, fix a Tait colouring.  For each physical port $a$,
+2-connectivity gives a circuit through the root and $a$, using one other
+port $b$.  Apply the formula in
+Theorem~\ref{thm:prescribed-tait-factor}; its factor is that circuit, while
+the inactive port label is disjoint from the factor pair.  Thus the external
+states of each cap cover all three ports and consequently use at least two
+of the three physical port pairs.  Two such pair sets intersect.  On an
+intersecting pair both modes are external, so
+Proposition~\ref{prop:typed-port-gluing} applies.
+\end{proof}
+
+The exact surviving three-cut branch therefore has at least one non-Tait
+cap, and that cap has order at least 44.  This is a restriction, not a proof
+that its typed signature contains a double star.
+
+As a positive calibration, replace every Petersen vertex by the three-pole
+obtained from the Foster graph by deleting one vertex.  The resulting
+Petersen--Foster graph is non-Tait, has 890 vertices and girth ten.  For one
+cap vertex and one proper root, six literal 1,335-edge $D_5$-flows realize
+all six typed states, so the exact signature is mask 63.  The companion
+checker verifies the graph, core restrictions, every vertex xor, and every
+factor component.  This one-interface witness neither proves a census nor
+the universal double-star premise.
+
 \subsection{Exact finite plateau results}
 
 The state enumeration quotients only by the global \(S_5\) action.  Graphs
@@ -1536,6 +1720,9 @@ sh scratch/d5-tait-prescribed-circuit-lift-blind-audit-20260731/run_all.sh
 python3 scratch/check_d5_capped_ladder_delay_family.py
 (cd scratch/d5-root-transition-sat-20260731 && ./run_all.sh)
 (cd scratch/d5-typed-cap-double-star-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-root-pair-census-20260731 && ./run_all.sh)
+(cd scratch/d5-relevant-cap-order44-cutoff-20260731 && ./run_all.sh)
+(cd scratch/petersen-foster-full-typed-cap-signature-20260731 && ./run_all.sh)
 
 python3 scratch/verify_d5_surface_chi_plateaus_order12.py
 python3 scratch/verify_d5_root_euler_potential_reports.py
@@ -1560,6 +1747,10 @@ semantic equivalence on deterministic instances.  The typed-cap package
 has a complete C++ enumeration through order 14, while its independent
 Python enumeration stops at order 10; this asymmetry is part of
 Proposition~\ref{prop:typed-cap-frontier}, not omitted validation.
+The order-44 package independently replays the finite cut cases and all
+degree-specific walk arithmetic.  The Petersen--Foster package contains six
+literal flows, and its checker reconstructs the graph and validates every
+claimed typed component semantically.
 
 \section{What has and has not been established}
 
@@ -1578,13 +1769,17 @@ The human-checkable results in this note are:
  \item the construction from a Tait colouring that prescribes any circuit
  as one factor, proves root universality in the 2-connected case, and
  supports explicit inverse insertion;
+ \item the 30,858-flow certificate for independent root universality through
+ order 28, conditional on the documented canonical non-Tait source boundary;
  \item the capped-ladder lower bound proving that root-component rescue
  has no universal constant radius; and
  \item the fixed-five minimum-counterexample reduction, bridgeless
  edge elimination, and the rooted-feasibility implication to FiveCDC;
  \item the linear rooted-transition characterization and its exact
  native-XOR and CNF size counts; and
- \item the typed-port gluing proposition and double-star corollary.
+ \item the typed-port gluing proposition and double-star corollary; and
+ \item the relevant-cap order-44 cutoff, Tait-cap gluing theorem, and the
+ six-flow full-signature Petersen--Foster control.
 \end{enumerate}
 The cube topology change is a short explicit certificate.  The
 12-state contraction trap, typed-cap order-14 frontier, and plateau tables
@@ -1609,8 +1804,14 @@ and ran the enumeration programs, searched for counterexamples to
 intermediate claims, produced the finite certificates, and drafted this
 manuscript.  In particular, agents found the order-12 triangle-state
 witness, proved the typed gluing lemma, and implemented both the C++ and
-Python cap censuses.  The human operator selected the research objective
-and directed the work.  At the date of this draft, the manuscript has not
+Python cap censuses.  Agents also designed the compact rooted certificate,
+generated its 30,858 flows, derived the relevant-cap walk bound, and found
+the Petersen--Foster typed witnesses.  The semantic checker rejected an
+early exploratory Petersen--Foster witness whose labels and edges used
+different orderings; that witness was discarded, the labels were remapped
+by edge identity, and the six published flows were checked afresh.  The
+human operator selected the research objective and directed the work.  At
+the date of this draft, the manuscript has not
 received independent expert verification or peer review.
 
 AI systems are not listed as authors.  Any human who circulates or submits

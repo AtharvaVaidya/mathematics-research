@@ -1,0 +1,5 @@
+CUT_TABLE unique_noncyclic4_candidate=opposite_noncrossing PASS
+WALK_LOCAL degree3=24,16,10,6 degree2=8,4,2 PASS
+ORDER_BOUND n^2>=46n-147 implies n>=43 cap_order>=44 PASS
+TAIT_EXTERNAL_COVER two_external_covers_always_intersect PASS
+PASS

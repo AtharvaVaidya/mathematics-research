@@ -1,0 +1,10 @@
+GRAPH vertices=890 edges=1335 simple=1 cubic=1 edge_connectivity=3 girth=10 non_tait=1
+CORE vertices=889 degree2=3 degree3=886 connected=1 bridgeless=1 girth=10 root_deleted_connected=1
+STATE bit=0 physical=01 mode=in pair=18 component=337 PASS
+STATE bit=1 physical=01 mode=out pair=17 component=419 PASS
+STATE bit=2 physical=02 mode=in pair=6 component=523 PASS
+STATE bit=3 physical=02 mode=out pair=6 component=383 PASS
+STATE bit=4 physical=12 mode=in pair=24 component=611 PASS
+STATE bit=5 physical=12 mode=out pair=5 component=469 PASS
+TYPED_MASK 63 FULL PASS
+PASS

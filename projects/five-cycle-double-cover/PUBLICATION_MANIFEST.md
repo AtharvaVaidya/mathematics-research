@@ -956,3 +956,31 @@ hashes and regeneration commands are retained.
 
 No fresh full order-22 census is claimed by this publication preparation.
 The frozen reports state their exact scope and provenance.
+
+## July 31, 2026 rooted-D5 update
+
+The draft-PR update additionally publishes:
+
+- `preprint-d5-surface-kempe/` — the 26-page revised working note, with a
+  full AI-use disclosure and an explicit statement that FiveCDC and its
+  orientable variant remain unresolved;
+- `scratch/d5-root-pair-census-20260731/` — 30,858 literal positive D5 flows
+  certifying independent-root universality for all 14,009 retained
+  cyclically-four non-Tait graphs through order 28, covering 10,689,351
+  independent root pairs, plus a solver-independent semantic checker;
+- `scratch/d5-relevant-cap-order44-cutoff-20260731/` — the human
+  nonbacktracking-walk proof that relevant marked-girth caps start at order
+  44 and force parent order at least 88, together with the Tait-cap gluing
+  theorem and arithmetic replay; and
+- `scratch/petersen-foster-full-typed-cap-signature-20260731/` — six literal
+  1,335-edge flows proving one high-girth non-Tait Petersen--Foster interface
+  has the full six-state typed signature.
+
+Validation before publication included all package checksum ledgers and
+`run_all.sh` scripts, the independent 10,689,351-pair certificate replay,
+the retained canonical-corpus verifier, the cap cut/walk replay, and the
+six-flow Petersen--Foster semantic checker.  Tectonic rebuilt the 26-page
+PDF without warnings; every page was rendered and visually inspected.
+These are auxiliary theorems and finite certificates, not a resolution of
+FiveCDC.  Priority for the precise new statements remains unestablished
+pending specialist review.

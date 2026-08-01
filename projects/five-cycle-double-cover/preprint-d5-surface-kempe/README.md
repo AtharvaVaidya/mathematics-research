@@ -27,6 +27,15 @@ The existence statement is a special case of a stronger known 4-CDC lemma
 of Hoffmann-Ostenhof; the note presents the explicit \(D_5\) formula and
 rooted insertion adaptation, not a novelty claim for that existence result.
 
+The July 31 certificate update proves a finite rooted frontier: every simple
+cyclically 4-edge-connected cubic graph through order 28 is feasible for
+every independent root pair, conditional on the documented Snarkhunter
+source boundary.  The non-Tait part has 14,009 graphs and 10,689,351 root
+pairs; 30,858 explicit D5 flows cover them all, and a separately written checker
+validates the flows and exhausts all pairs without importing the SAT
+generator.  This is a finite auxiliary theorem, not FiveCDC, and priority
+for this precise census has not been established.
+
 The update also gives two exact rooted tools.  A local transition-boundary
 construction characterizes factor connectivity with a linear-size native
 SAT/XOR encoding and an explicit \(8m\)-variable, \(133m/3\)-clause CNF.
@@ -36,6 +45,16 @@ of 138,144 rooted interfaces through order 14 finds a double star in every
 signature; an independent Python replay covers orders only through 10.
 The universal double-star premise remains open, so this finite frontier does
 not prove rooted feasibility or FiveCDC.
+
+The relevant minimum-obstruction domain is now sharply separated from that
+small unrestricted census.  A human nonbacktracking-walk proof shows that
+every cap cut from an eliminated girth-ten parent has order at least 44 and
+forces parent order at least 88.  If both shore caps are Tait-colourable,
+external-mode states make them glue root-good; the exact remaining branch
+has a non-Tait cap of order at least 44.  Six explicit checked flows give
+the full typed signature on one 890-vertex Petersen--Foster high-girth
+non-Tait control.  None of these statements proves the universal
+double-star premise.
 
 Files:
 
@@ -70,6 +89,9 @@ sh scratch/d5-tait-prescribed-circuit-lift-20260731/run_all.sh
 sh scratch/d5-tait-prescribed-circuit-lift-blind-audit-20260731/run_all.sh
 (cd scratch/d5-root-transition-sat-20260731 && ./run_all.sh)
 (cd scratch/d5-typed-cap-double-star-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-root-pair-census-20260731 && ./run_all.sh)
+(cd scratch/d5-relevant-cap-order44-cutoff-20260731 && ./run_all.sh)
+(cd scratch/petersen-foster-full-typed-cap-signature-20260731 && ./run_all.sh)
 python3 scratch/verify_d5_surface_chi_plateaus_order12.py
 python3 scratch/verify_d5_root_euler_potential_reports.py
 python3 scratch/verify_d5_root_kempe_order14_report.py
