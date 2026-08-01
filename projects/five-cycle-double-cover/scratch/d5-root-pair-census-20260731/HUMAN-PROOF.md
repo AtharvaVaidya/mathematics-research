@@ -30,6 +30,18 @@ The theorem is conditional only on the documented completeness and option
 semantics of the retained Snarkhunter streams.  All graph-dependent claims
 after that source boundary have literal witnesses and a separate checker.
 
+This is an explicit certification of a previously known stronger finite
+result, not a new order frontier.  Brinkmann, Goedgebeur, Hagglund, and
+Markstrom proved that every circuit in every bridgeless cubic graph through
+order 34 belongs to a 5-CDC (JCTB 103 (2013), Observation 6.6,
+doi:10.1016/j.jctb.2013.05.001).  If the standard edge-insertion operation is
+applied to independent roots of a reduced graph of order at most 32, the
+parent is a bridgeless cubic graph of order at most 34.  Their result supplies
+a 5-CDC of that parent, and the elementary two-root insertion equivalence
+supplies the rooted D5 flow.  The purpose of the present package is to retain
+literal flows and an independent direct checker for the specialized order-28
+corpus.
+
 ## 2. Why a displayed labeling is a five-cycle double cover
 
 For coordinate `i`, let
@@ -118,14 +130,12 @@ stated finite theorem.
 
 ## 6. What is not proved
 
-This theorem stops at order 28.  It does not establish the universal rooted
-theorem, does not remove the cyclically 4-edge-connected/simple/cubic
-hypotheses, and therefore does not resolve FiveCDC.  No negative solver
-answer occurs here, so no UNSAT certificate is claimed or needed.  The
-priority of this precise finite rooted census has not been established by a
-complete literature review.  A slower pair-by-pair SAT run was also
-performed through order 24; it is a cross-check, not an input to the compact
-positive-certificate proof.
+This certificate stops at order 28.  The known existential result cited
+above is stronger, but it also remains finite: neither result establishes
+the universal rooted theorem or resolves FiveCDC.  No negative solver answer
+occurs here, so no UNSAT certificate is claimed or needed.  A slower
+pair-by-pair SAT run was also performed through order 24; it is a cross-check,
+not an input to the compact positive-certificate proof.
 
 ## 7. AI disclosure
 

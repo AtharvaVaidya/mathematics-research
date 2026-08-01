@@ -28,12 +28,14 @@ The strongest publishable-looking content is:
   double-star corollary;
 - the complete 138,144-interface typed-cap census through order 14, stated
   with the limitation that the independent full replay stops at order 10;
-- the compact 30,858-flow certificate proving independent-root feasibility
+- the compact 30,858-flow certificate explicitly reproducing independent-root feasibility
   for all 14,009 canonical non-Tait graphs through order 28 (10,689,351
-  root pairs),
+  root pairs), a result existentially subsumed by Brinkmann et al. through
+  order 34,
   together with a solver-independent semantic checker;
-- the human order-44 cutoff for caps in the actual marked-girth
-  minimum-obstruction domain, including the order-88 parent consequence and
+- the human marked-root cap decomposition and elementary cutoff, sharpened
+  by the published irregular Moore bound to cap order 56 and conditional
+  parent order 112, together with
   the analytic Tait-cap gluing theorem;
 - the six-flow full typed signature on one 890-vertex Petersen--Foster
   high-girth non-Tait control, stated only as one-interface calibration;
@@ -88,6 +90,13 @@ review is complete.
   fact that any prescribed 2-regular subgraph of a cubic subdivision with a
   nowhere-zero 4-flow belongs to a 4-CDC.  Accordingly, the Tait
   prescribed-circuit existence result in this note is not claimed as new.
+- G. Brinkmann, J. Goedgebeur, J. Hagglund, and K. Markstrom,
+  *Generation and Properties of Snarks*, JCTB 103 (2013), 468--488.
+  Observation 6.6 subsumes the existential rooted-through-28 statement;
+  the present contribution is only the explicit specialized certificate.
+- N. Alon, S. Hoory, and N. Linial, *The Moore Bound for Irregular Graphs*,
+  Graphs and Combinatorics 18 (2002), 53--57.  The order-56 cap conclusion
+  imports their even-girth bound after the new marked-root reduction.
 
 This is a targeted check, not a systematic prior-art review.
 

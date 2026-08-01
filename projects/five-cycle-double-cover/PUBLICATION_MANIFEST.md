@@ -967,11 +967,14 @@ The draft-PR update additionally publishes:
 - `scratch/d5-root-pair-census-20260731/` — 30,858 literal positive D5 flows
   certifying independent-root universality for all 14,009 retained
   cyclically-four non-Tait graphs through order 28, covering 10,689,351
-  independent root pairs, plus a solver-independent semantic checker;
-- `scratch/d5-relevant-cap-order44-cutoff-20260731/` — the human
-  nonbacktracking-walk proof that relevant marked-girth caps start at order
-  44 and force parent order at least 88, together with the Tait-cap gluing
-  theorem and arithmetic replay; and
+  independent root pairs, plus a solver-independent semantic checker.  The
+  existential cutoff is subsumed by Brinkmann et al. (2013), Observation
+  6.6; this is an explicit reproduction, not a new frontier theorem;
+- `scratch/d5-relevant-cap-order56-cutoff-20260731/` — the human marked-root
+  cut analysis, elementary nonbacktracking proof, and Alon--Hoory--Linial
+  sharpening showing that relevant caps start at order 56 and conditionally
+  force parent order at least 112, together with the Tait-cap gluing theorem
+  and arithmetic replay; and
 - `scratch/petersen-foster-full-typed-cap-signature-20260731/` — six literal
   1,335-edge flows proving one high-girth non-Tait Petersen--Foster interface
   has the full six-state typed signature.

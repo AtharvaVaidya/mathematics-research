@@ -19,6 +19,15 @@ option semantics and source completeness in
 Five-Cycle Double Cover Conjecture and does not prove the unresolved rooted
 theorem for arbitrary order.
 
+The existential cutoff is **not new**.  Brinkmann, Goedgebeur, Hagglund,
+and Markstrom, JCTB 103 (2013), Observation 6.6, proved the stronger finite
+result that every circuit in every bridgeless cubic graph through order 34
+belongs to a 5-CDC.  Combined with two-edge insertion, their result already
+implies the present rooted statement (indeed through reduced order 32).
+The contribution of this directory is the explicit 30,858-flow certificate,
+its solver-independent semantic checker, and an independently reproducible
+specialized computation of that known finite phenomenon.
+
 ## Fast independent check
 
 From `projects/five-cycle-double-cover` run:

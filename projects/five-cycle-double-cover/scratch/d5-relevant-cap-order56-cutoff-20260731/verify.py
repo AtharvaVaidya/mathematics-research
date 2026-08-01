@@ -87,7 +87,25 @@ def moore_arithmetic() -> None:
     assert 19 * 19 < 382 < 20 * 20
     # 23+sqrt(382) is strictly between 42 and 43.
     assert Fraction(42 - 23) ** 2 < 382 < Fraction(43 - 23) ** 2
-    print("ORDER_BOUND n^2>=46n-147 implies n>=43 cap_order>=44 PASS")
+    print("ELEMENTARY_BOUND n^2>=46n-147 implies n>=43 cap_order>=44 PASS")
+
+
+def irregular_moore_arithmetic() -> None:
+    def rhs(n: int) -> Fraction:
+        branching = Fraction(2 * n - 5, n)
+        return 2 * sum((branching ** i for i in range(5)), Fraction(0))
+
+    # The elementary argument has already forced n >= 43.  The AHL
+    # even-girth bound requires n >= rhs(n).  Replay the exact threshold.
+    assert all(Fraction(n) < rhs(n) for n in range(43, 54))
+    assert Fraction(54) >= rhs(54)
+    assert Fraction(53) - rhs(53) == Fraction(-2300549, 7890481)
+    assert Fraction(54) - rhs(54) == Fraction(2366681, 4251528)
+
+    # The degree sum 3n-3 is even, so n is odd.  The first permitted core
+    # order is therefore 55; capping and restoring give 56 and 112.
+    assert (3 * 55 - 3) % 2 == 0
+    print("IRREGULAR_MOORE girth10 threshold=54 parity_core>=55 cap>=56 parent>=112 PASS")
 
 
 def typed_set_algebra() -> None:
@@ -108,5 +126,6 @@ if __name__ == "__main__":
     cut_table()
     local_walk_table()
     moore_arithmetic()
+    irregular_moore_arithmetic()
     typed_set_algebra()
     print("PASS")

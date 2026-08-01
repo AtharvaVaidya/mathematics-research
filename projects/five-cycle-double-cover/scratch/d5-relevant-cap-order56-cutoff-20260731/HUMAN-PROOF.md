@@ -1,4 +1,4 @@
-# The order-44 cutoff for relevant typed caps
+# The order-56 cutoff for relevant typed caps
 
 Date: **2026-07-31**
 
@@ -183,22 +183,79 @@ This proves the theorem.
 
 Combining the preceding lemmas gives the main conclusion.
 
-> **Corollary 4.2 (relevant-cap cutoff).** Every cap arising from a
+> **Corollary 4.2 (elementary cutoff).** Every cap arising from a
 > nontrivial three-cut of `H=G div e` has at least 44 vertices.  Both
 > shores have at least 43 vertices before capping, so `|V(G)|>=88` whenever
 > such a cut occurs.
 
-This is a theorem, not a finite-census observation.  In particular there
-are no relevant interfaces at cap orders 10, 12, 14, 16, ..., 42.  Order
-44 is merely the first order not excluded by this count; existence at
-order 44 is not asserted.
+This is a theorem, not a finite-census observation.  The next section
+strengthens its numerical conclusion using a standard irregular Moore
+bound.
 
-## 5. A Tait one-sided replacement
+## 5. Irregular-Moore strengthening
+
+Put `L=K-r`.  By Lemma 3.2 it has `n` vertices and girth at least ten.
+Deleting one edge from the degree profile of `K` gives
+
+\[
+ |E(L)|=(3n-5)/2,\qquad \bar d(L)=3-5/n.                   \tag{7}
+\]
+
+Alon, Hoory, and Linial proved that a graph of average degree `d>=2` and
+even girth `2s` has at least
+
+\[
+ 2\sum_{i=0}^{s-1}(d-1)^i
+\]
+
+vertices.  Their proof explicitly deletes all degree-zero and degree-one
+vertices first; this preserves every cycle and weakly raises average
+degree.  Thus it applies even if an endpoint of `r` had degree two in `K`
+and becomes a leaf in `L`.  The primary source is N. Alon, S. Hoory, and
+N. Linial, *The Moore Bound for Irregular Graphs*, Graphs and
+Combinatorics 18 (2002), 53--57, doi:10.1007/s003730200002.
+
+Using `s=5` and (7) gives
+
+\[
+ n\ge R(n):=2\sum_{i=0}^{4}(2-5/n)^i.                     \tag{8}
+\]
+
+Here is a direct exact check of the integer threshold, so no numerical
+root finder is hidden.  Let `h(n)=n-R(n)` and `x=2-5/n`.  For `n>=43`,
+
+\[
+ R'(n)=\frac{10}{n^2}(1+2x+3x^2+4x^3)
+       <\frac{490}{n^2}<1.
+\]
+
+Hence `h` is strictly increasing on the range left by Theorem 4.1.  Exact
+arithmetic gives
+
+\[
+ h(53)=-\frac{2300549}{7890481}<0,
+ \qquad
+ h(54)=\frac{2366681}{4251528}>0.
+\]
+
+Inequality (8) therefore forces `n>=54`.  Finally, the degree sum of `K`
+is `3n-3`, which is even; hence `n` is odd and in fact `n>=55`.
+
+> **Theorem 5.1 (relevant-cap cutoff).** Every relevant core has at least
+> 55 vertices, every relevant cap has at least 56 vertices, and a restored
+> parent with such a nontrivial three-cut has at least
+> `55+55+2=112` vertices.
+
+The Alon--Hoory--Linial theorem is prior work.  The contribution here is
+its application after the marked-root cut analysis, not a novelty claim for
+the irregular Moore bound itself.
+
+## 6. A Tait one-sided replacement
 
 The double-star premise is stronger than necessary on Tait-colourable
 caps.
 
-> **Proposition 5.1.** If the rooted cap `(A,z,r)` is 2-connected and
+> **Proposition 6.1.** If the rooted cap `(A,z,r)` is 2-connected and
 > Tait-colourable, then its typed signature has external-mode states whose
 > physical pairs cover all three ports.  Consequently two such caps have a
 > common external typed state and glue root-good.
@@ -209,11 +266,11 @@ At `z`, the circuit uses `a` and exactly one other port, say `b`; write
 `c` for the inactive port.  Define
 
 \[
- q(f)=
+q(f)=
  \begin{cases}
   0\alpha,&f\in E(C)\text{ and has Tait colour }\alpha,\\
   \{2,3,4\}\setminus\{\alpha\},&f\notin E(C)\text{ and has colour }\alpha.
- \end{cases}                                                \tag{7}
+\end{cases}                                                \tag{9}
 \]
 
 At a vertex outside `C` the labels are `23,24,34`; at a vertex on `C`
@@ -228,13 +285,13 @@ least two members.  Two subsets of a three-element set of size at least
 two intersect, and both states at an intersecting pair are external.
 The typed-port gluing lemma now applies.
 
-## 6. Exact open boundary
+## 7. Exact open boundary
 
-Theorem 4.1 does **not** prove that an order-44 relevant core exists, that
+Theorem 5.1 does **not** prove that an order-56 relevant cap exists, that
 every relevant signature contains a double star, or that every relevant
-cap has external port coverage.  Proposition 5.1 leaves the case in which
-at least one shore cap is non-Tait.  That non-Tait, order-at-least-44 case
-is the exact surviving typed-cap branch.
+cap has external port coverage.  Proposition 6.1 leaves the case in which
+at least one shore cap is non-Tait.  That non-Tait, order-at-least-56 case
+is the exact surviving typed-cap branch of this edge-elimination strategy.
 
 The order-14 unrestricted cap census remains correct, but none of its
 interfaces satisfies the marked-girth conditions forced here.  It cannot
