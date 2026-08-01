@@ -112,15 +112,20 @@ For cubic three-edge cuts we also isolate a six-state typed cap signature,
 prove an internal/external-mode gluing lemma, and exhaustively compute all
 138,144 rooted interfaces on biconnected simple cubic graphs through order
 14; every computed signature contains a double star.  The corresponding
-universal double-star premise is open.  In the marked-girth domain actually
+universal double-star premise is open.  At the same finite orders, every
+interface also has one individual flow whose external root factors
+collectively meet all three cap ports; independent enumeration reaches
+order 12 and a third implementation rechecks order 14.  This all-flow
+property is not orbitwise, and its universal form is open.  In the
+marked-girth domain actually
 forced by edge elimination, a nontrivial three-cut must separate the roots;
-a self-contained nonbacktracking-walk count gives a first cutoff, and the
-irregular Moore bound sharpens it so that each resulting cap has order at
-least 56 and the parent has order at least 112.  Two Tait caps always glue
+a self-contained edge-rooted nonbacktracking-walk count shows that each
+resulting cap has order at least 58 and the restored parent has order at
+least 116.  Two Tait caps always glue
 by external-mode states.  In any cap carrying a \(D_5\)-flow, a physical
 port adjacent to the root is automatically covered by an external state;
 the proof is a six-case local table.  The exact surviving branch therefore
-has a non-Tait cap of order at least 56 and concerns only ports independent
+has a non-Tait cap of order at least 58 and concerns only ports independent
 of the root.  One 890-vertex non-Tait girth-ten
 control has the full six-state signature by six explicit checked flows,
 although one individual flow misses external coverage at one port.  Thus
@@ -1523,6 +1528,45 @@ implementation.  Most importantly, the universal double-star premise is
 neither universal three-cut reducibility, the rooted-feasibility premise,
 nor FiveCDC.
 
+\begin{proposition}[one-flow external frontier through order 14]
+\label{prop:simultaneous-external-frontier}
+For every rooted interface in Proposition~\ref{prop:typed-cap-frontier},
+there is one individual \(D_5\)-flow whose external root-factor components
+collectively meet all three physical cap ports.  Equivalently, that one
+flow realizes external states on at least two of the three physical port
+pairs.  The exact all-flow counts are
+\[
+\begin{array}{rrrrr}
+\toprule
+n&\text{graphs}&\text{flows}/S_5&\text{interfaces}&\text{failures}\\
+\midrule
+4&1&2&12&0\\
+6&2&13&72&0\\
+8&5&128&360&0\\
+10&18&1{,}525&2{,}160&0\\
+12&81&25{,}960&14{,}580&0\\
+14&480&537{,}418&120{,}960&0\\
+\bottomrule
+\end{array}
+\]
+\end{proposition}
+
+This strengthens the aggregate statement at the same finite orders: all
+three ports are covered in one flow, rather than by states collected from
+unrelated flows.  It is sufficient for typed gluing.  Indeed, each shore
+then offers at least two of the three physical port pairs, so the two sets
+intersect; both states are external, and a permutation of the two unused
+coordinate names aligns their factor pairs without disturbing the ordered
+cap triangle.
+
+The quantifier is over all flows, not over every fixed flow or every Kempe
+orbit.  Explicit small orbits fail the corresponding orbitwise claim.  A
+C++ census proves the displayed frontier, a structurally separate Python
+enumeration independently reaches order 12, and a third orbit-based audit
+independently rechecked order 14.  No finite cutoff principle is known, so
+the universal one-flow premise remains open and this proposition does not
+resolve FiveCDC.
+
 \subsection{The relevant-cap cutoff}
 
 The unrestricted cap census above does not yet enter the short-cycle
@@ -1538,8 +1582,8 @@ artificial roots $r,s$.  If $H$ has a nontrivial three-edge cut, then:
  \item each capped shore $A$ is simple and $3$-edge-connected;
  \item for the cap vertex $z$, the core $K=A-z$ is connected and
  bridgeless, has degree sequence $2^3 3^{n-3}$, satisfies
- $g(K)\geq9$ and $g(K-r)\geq10$, and has $n\geq55$; and
- \item each cap has order at least 56, and $|V(G)|\geq112$.
+ $g(K)\geq9$ and $g(K-r)\geq10$, and has $n\geq57$; and
+ \item each cap has order at least 58, and $|V(G)|\geq116$.
 \end{enumerate}
 \end{theorem}
 
@@ -1576,71 +1620,80 @@ A circuit of $K$ avoiding the shore root lifts to $G$ without changing
 length; one using the root gains one edge.  Therefore $g(K)\geq9$, and
 every 9-circuit uses $r$, equivalently $g(K-r)\geq10$.
 
-It remains to bound $n=|V(K)|$.  Let $W_j$ count oriented
-nonbacktracking walks of length $j\leq4$.  Girth at least nine makes the
-endpoint and length of every such walk from a fixed initial vertex unique:
-two distinct paths to one endpoint would contain a circuit of length at
-most eight.  Hence
+It remains to bound $n=|V(K)|$.  Put $L=K-r$ and
+$m=|E(L)|=(3n-5)/2$.  Every degree in $L$ lies in $\{1,2,3\}$, and, with
+$\delta(v)=3-d_L(v)$,
 \[
- n^2\geq n+W_1+W_2+W_3+W_4.
+             \sum_v\delta(v)=5,
+             \qquad \sum_v\delta(v)d_L(v)\leq10.          \tag{21}
 \]
-The degree sequence gives
-\[
- W_1=3n-3,\qquad W_2=6n-12.
-\]
-Let $t$ be the number of edges joining two degree-two vertices.  Centering
-a length-three walk at its middle edge gives
-\[
- W_3=2\sum_{xy\in E(K)}(d(x)-1)(d(y)-1)
-     =12n-36+2t\geq12n-36.
-\]
-For a length-four walk centered at $c$, its contribution is
-\[
- F(c)=\sum_{x\ne y\in N(c)}(d(x)-1)(d(y)-1).
-\]
-A degree-three center with $k$ degree-two neighbours has contribution
-$24,16,10,6$ for $k=0,1,2,3$, hence at least $24-8k$.  The
-degree-three centers see $6-2t$ such incidences.  If the three degree-two
-centers have $k_1,k_2,k_3$ degree-two neighbours, then
-$\sum k_i=2t$ and their contributions are $8-5k_i+k_i^2$.  Consequently
-\[
- W_4\geq24(n-3)-8(6-2t)
-       +\sum_{i=1}^3(8-5k_i+k_i^2)
-     =24n-96+6t+\sum_i k_i^2\geq24n-96.
-\]
-Thus $n^2\geq46n-147$.  Its roots are
-$23\pm\sqrt{382}$, with the larger strictly between 42 and 43.  The
-smaller branch has $n<4$, impossible because $K$ has girth at least
-nine and is bridgeless.  Hence $n\geq43$.
+The second inequality includes the possibility that deleting $r$ creates
+a degree-one vertex.  Indeed, for $d=1,2$ one has $(3-d)d=2$, and there
+are at most five deficient vertices.
 
-The marked edge gives a stronger bound.  Put $L=K-r$.  It has $n$
-vertices, girth at least ten, and
+For $j\geq1$, let $W_j$ be the number of oriented nonbacktracking walks
+of length $j$ in $L$, and let $N_j(v)$ count those ending at $v$.  By
+reversal and the maximum-degree-three bound,
 \[
- \overline d(L)=\frac{3n-5}{n}=3-\frac5n.
+                         N_j(v)\leq d_L(v)2^{j-1}.
 \]
-The irregular Moore bound of Alon, Hoory, and Linial applies even when
-deleting $r$ creates degree-one vertices: their proof first removes all
-vertices of degree at most one, preserving every circuit and weakly
-raising average degree~\cite[Theorem~1]{AlonHooryLinial2002}.  Its
-even-girth form gives
+Extending a walk ending at $v$ gives exactly
+$d_L(v)-1=2-\delta(v)$ choices.  Hence
 \[
- n\geq R(n):=2\sum_{i=0}^{4}\left(2-\frac5n\right)^i.       \tag{21}
+ W_{j+1}=2W_j-\sum_v\delta(v)N_j(v)
+          \geq2W_j-10\,2^{j-1}.                          \tag{21a}
 \]
-For completeness, let $h(n)=n-R(n)$ and $x=2-5/n$.  For $n\geq43$,
+Moreover
 \[
- R'(n)=\frac{10}{n^2}(1+2x+3x^2+4x^3)
-       <\frac{490}{n^2}<1,
+ W_2=\sum_v d_L(v)(d_L(v)-1)
+    =6n-25+\sum_v\delta(v)^2\geq6n-20.
 \]
-so $h$ is strictly increasing, while
+Three applications of (21a) give
 \[
- h(53)=-\frac{2300549}{7890481}<0,
- \qquad h(54)=\frac{2366681}{4251528}>0.
+ W_3\geq12n-60,\qquad W_4\geq24n-160,
+ \qquad W_5\geq48n-400.                                 \tag{21b}
 \]
-Thus (21) forces the integer $n\geq54$.  The degree sum of $K$ is
-$3n-3$, which is even, so $n$ is odd and in fact $n\geq55$.  Capping adds
-one vertex.  The two core shores contain at least 110 vertices of $H$;
-restoring the two eliminated vertices gives $|V(G)|\geq112$.
+
+Now root a nonbacktracking ball at an edge $uv$ of $L$: include $u,v$,
+and on either side include every nonbacktracking path of lengths one
+through four whose first edge is not $uv$.  All displayed endpoints are
+distinct.  A collision on one side would create a circuit of length at
+most eight; a collision across the two sides, together with $uv$, would
+create one of length at most nine.  Both contradict $g(L)\geq10$.
+Summing the resulting bound over the $m$ choices of the root edge counts
+every oriented nonbacktracking walk of lengths two through five exactly
+once, according to its first edge and orientation.  Therefore
+\[
+                         mn\geq2m+W_2+W_3+W_4+W_5.
+\]
+Substitution of $m=(3n-5)/2$ and (21b) yields
+\[
+                         3n^2-191n+1290\geq0.              \tag{21c}
+\]
+The left side is $-46$ at $n=8$, $-140$ at $n=55$, and $2$ at
+$n=56$; its vertex lies between $31$ and $32$.  Since $K$ contains a
+circuit of length at least nine, $n\geq9$, so (21c) forces $n\geq56$.
+Finally $3n-3$ is even, hence $n$ is odd and $n\geq57$.  Capping adds one
+vertex, and restoring the two eliminated vertices gives
+$|V(G)|\geq57+57+2=116$.
+
+This is an edge-rooted degree-deficit refinement in the spirit of the
+irregular Moore bound of Alon, Hoory, and Linial
+\cite{AlonHooryLinial2002}; the displayed count is self-contained.
 \end{proof}
+
+\begin{remark}[external extremal-data comparison]
+Afzaly and McKay's online extremal-graph table reports the exact maximum
+numbers of edges in girth-at-least-ten graphs on $57,59,61$ vertices as
+$80,84,87$, respectively~\cite{AfzalyMcKayExtremalData}.  The graph $L$
+would require $83,86,89$ edges at those three odd orders.  Importing those
+external exhaustive values would therefore strengthen the conclusion to
+$n\geq63$, cap order at least $64$, and parent order at least $128$.
+The source describes this as joint work with papers in preparation; this
+project does not retain an independently checkable exhaustion certificate.
+We consequently record the stronger implication as an external comparison,
+not as part of the self-contained theorem above.
+\end{remark}
 
 \begin{proposition}[Tait caps glue]\label{prop:tait-caps-glue}
 If both rooted caps in Theorem~\ref{thm:relevant-cap-cutoff} are
@@ -1690,7 +1743,7 @@ from the factor pair in either case, which is exactly external mode.
 \end{proof}
 
 The exact surviving three-cut branch therefore has at least one non-Tait
-cap, and that cap has order at least 56.  Minimality supplies a \(D_5\)-flow
+cap, and that cap has order at least 58.  Minimality supplies a \(D_5\)-flow
 on each cap, so Proposition~\ref{prop:adjacent-port-external} settles any
 selected port adjacent to its root.  Ports vertex-disjoint from the root
 remain open.  This is a restriction, not a proof that the cap's typed
@@ -1716,6 +1769,31 @@ blockers alone cannot force externality in an arbitrary fixed flow; an
 existential proof must change the flow or use additional global structure.
 The aggregate mask 63 means this is not a counterexample to external
 coverage, rooted feasibility, or FiveCDC.
+
+There is an exact pointwise description of how a component switch repairs
+such a failure.  If \(D\) is one component of \(Y_T(q)\), and \(q'\) is
+obtained by transposing the two coordinates of \(T\) on \(D\), then
+\[
+ Y_P(q')=
+ \begin{cases}
+  Y_P(q)\mathbin\triangle D,&|P\cap T|=1,\\
+  Y_P(q),&|P\cap T|\in\{0,2\}.
+ \end{cases}                                             \tag{21d}
+\]
+Indeed, outside \(D\) no label changes; on \(D\), the transposition fixes
+\(P\) in the second case and replaces it by \(P\mathbin\triangle T\) in
+the first, toggling factor membership.  Thus a Kempe move is literally a
+circuit splice, although connectivity inside the symmetric difference is
+still global.
+
+The retained Petersen--Foster flow has 124 component-switch choices.
+Exactly six repair its missing selected port, and four of those resulting
+flows simultaneously cover all three ports.  Two explicit eight-vertex
+controls show that neither selected-port externalization nor changing a
+fixed physical pair from internal to external is guaranteed in one switch:
+both first succeed after two displayed switches.  These certificates
+motivate unrestricted flow reconfiguration while ruling out a one-switch
+proof; they do not establish a universal escape theorem.
 
 \subsection{Exact finite plateau results}
 
@@ -1821,9 +1899,12 @@ sh scratch/d5-tait-prescribed-circuit-lift-blind-audit-20260731/run_all.sh
 python3 scratch/check_d5_capped_ladder_delay_family.py
 (cd scratch/d5-root-transition-sat-20260731 && ./run_all.sh)
 (cd scratch/d5-typed-cap-double-star-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-simultaneous-external-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-typed-cap-orbit-external-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-root-pair-census-20260731 && ./run_all.sh)
-(cd scratch/d5-relevant-cap-order56-cutoff-20260731 && ./run_all.sh)
+(cd scratch/d5-existential-external-order58-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-external-port-coverage-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-external-kempe-splice-frontier-20260731 && ./run_all.sh)
 (cd scratch/petersen-foster-full-typed-cap-signature-20260731 && ./run_all.sh)
 (cd scratch/petersen-foster-all-eliminations-20260731 && ./run_all.sh)
 
@@ -1850,8 +1931,16 @@ semantic equivalence on deterministic instances.  The typed-cap package
 has a complete C++ enumeration through order 14, while its independent
 Python enumeration stops at order 10; this asymmetry is part of
 Proposition~\ref{prop:typed-cap-frontier}, not omitted validation.
-The order-56 package independently replays the finite cut cases, the
-elementary walk count, and the exact irregular-Moore threshold.  The
+The simultaneous-external package has a complete C++ enumeration through
+order 14 and a separately structured Python enumeration through order 12;
+a third orbit-based implementation independently rechecks its order-14
+all-flow quantifier.  The orbit package also retains the first failures of
+the stronger orbitwise double-star, simultaneous, and aggregate assertions.
+The order-58 package independently replays the degree-deficit profiles,
+the edge-rooted walk count, the exact polynomial cutoff, and scoped
+18-cage controls.  The splice package proves the pointwise factor identity
+for a component switch and replays the Petersen--Foster repairs and two
+depth-two delimiters.  The
 Petersen--Foster package contains six literal flows, and its checker
 reconstructs the graph and validates every
 claimed typed component semantically.
@@ -1882,7 +1971,9 @@ The human-checkable results in this note are:
  \item the linear rooted-transition characterization and its exact
  native-XOR and CNF size counts; and
  \item the typed-port gluing proposition and double-star corollary; and
- \item the relevant-cap order-56 cutoff, Tait-cap gluing theorem,
+ \item the one-flow simultaneous-external frontier through order 14,
+ with its all-flow/orbitwise quantifier boundary; and
+ \item the relevant-cap order-58 cutoff, Tait-cap gluing theorem,
  adjacent-port external-state lemma, and the six-flow full-signature
  Petersen--Foster control.
 \end{enumerate}
@@ -1893,7 +1984,8 @@ the independent-checking scope stated above.
 
 No proof or disproof of the standard FiveCDC has been obtained.  No
 orientable FiveCDC result has been obtained.  The terminal-plateau
-conjecture and the universal typed-cap double-star premise are proof targets
+conjecture and the universal typed-cap double-star and simultaneous-external
+premises are proof targets
 suggested by the computations, not theorems.
 A responsible public submission would require independent checking by a
 graph theorist, a broader literature comparison, and archival publication

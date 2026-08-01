@@ -97,8 +97,11 @@ sh scratch/d5-tait-prescribed-circuit-lift-20260731/run_all.sh
 sh scratch/d5-tait-prescribed-circuit-lift-blind-audit-20260731/run_all.sh
 (cd scratch/d5-root-transition-sat-20260731 && ./run_all.sh)
 (cd scratch/d5-typed-cap-double-star-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-simultaneous-external-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-typed-cap-orbit-external-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-root-pair-census-20260731 && ./run_all.sh)
-(cd scratch/d5-relevant-cap-order56-cutoff-20260731 && ./run_all.sh)
+(cd scratch/d5-existential-external-order58-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-external-kempe-splice-frontier-20260731 && ./run_all.sh)
 (cd scratch/petersen-foster-full-typed-cap-signature-20260731 && ./run_all.sh)
 python3 scratch/verify_d5_surface_chi_plateaus_order12.py
 python3 scratch/verify_d5_root_euler_potential_reports.py
@@ -121,8 +124,14 @@ order-12 and order-14 census presently has one C++ implementation plus
 deterministic reproduction.  The rooted-frontier package contains 30,858
 literal positive flows; its checker is solver-independent and exhausts all
 10,689,351 independent root pairs on the 14,009 non-Tait rows through order
-28.  The order-56 package replays the cut/walk arithmetic and the exact
-irregular-Moore threshold.  The
+28.  The order-58 package replays every degree-deficit profile, the
+edge-rooted walk arithmetic, the exact polynomial cutoff, and the scoped
+18-cage control.  The stronger order-64 comparison imports an external
+extremal table and is deliberately not part of the self-contained theorem.
+The simultaneous-external package has separate C++ and Python
+implementations through order 12 and a third orbit-based order-14 audit;
+all agree on the all-flow quantifier.  The orbit package separately checks
+the first failures of stronger per-orbit claims.  The
 Petersen--Foster checker validates six literal 1,335-edge flows and all six
 typed component claims on one interface.
 

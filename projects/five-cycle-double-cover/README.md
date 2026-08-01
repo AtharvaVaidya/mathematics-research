@@ -48,8 +48,17 @@ implementations through order 10.  A supplemental exact C++ census through
 order 16 covers all 1,301,664 rooted interfaces and again finds a double
 star in every signature; a monolithic run and four shards agree, but use
 the same implementation.  The universal double-star assertion remains
-unproved, and the finite census is far below the order-56 cap forced in the
+unproved, and the finite census is far below the order-58 cap forced in the
 surviving marked-girth obstruction branch.
+
+The self-contained edge-rooted refinement in
+`scratch/d5-existential-external-order58-frontier-20260731/` improves that
+cutoff to core order 57, cap order 58, and restored parent order 116.  It
+also freezes an exact six-case SAT/XOR encoding of the stronger
+single-flow simultaneous-external target.  External unpublished extremal
+tables would conditionally improve the orders again to 63, 64, and 128;
+that source has no independently checked exhaustion certificate in this
+repository and is not promoted to a project theorem.
 
 The external-coverage follow-up
 `scratch/d5-external-port-coverage-frontier-20260731/` proves by a
@@ -63,6 +72,23 @@ Indeed, a retained Petersen--Foster flow in the exact local geometry has
 typed mask 6 and misses external coverage at one port, while other flows on
 the same cap give aggregate mask 63.  This refutes arbitrary-fixed-flow and
 blocker-only strengthenings, not existential external coverage.
+
+The audited all-flow package
+`scratch/d5-simultaneous-external-frontier-20260731/` strengthens the
+bounded result: for all 138,144 interfaces through order 14, one individual
+flow has external root factors covering all three cap ports.  C++ reaches
+order 14, separate Python reaches order 12, and a third orbit-based
+implementation rechecks order 14.  The companion orbit package freezes the
+first failures of the stronger orbitwise assertions, while finding zero
+all-flow failures through order 14.  These are finite results only.
+
+The splicing package
+`scratch/d5-external-kempe-splice-frontier-20260731/` gives the exact
+symmetric-difference law for every factor under a component switch, six
+one-switch repairs of the Petersen--Foster fixed-flow obstruction, and two
+eight-vertex examples where two switches are necessary.  It is a
+human-checkable route theorem and delimiter, not universal external
+coverage.
 
 The positive certificate
 `scratch/petersen-foster-all-eliminations-20260731/` retains literal `D5`

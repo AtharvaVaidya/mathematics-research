@@ -1,0 +1,12 @@
+RECTANGLE labels=10 image_nonzero_even=7 cap=1111,1100,0011 PASS
+SWITCH active_label_factor_checks=600 projected_circuit_addition=PASS
+TAIT_SUPPORT local_four_coordinate_triangles=4 PASS
+ORDER n=4 graphs=1 flows_mod_s5=2 kempe_orbits_mod_s5=2 orbit_interfaces=24 double_star_failures=0 orbit_union_failures=0 orbit_simultaneous_failures=0 all_flow_simultaneous_failures=0 masks=15,47,51,59,60,62 PASS
+ORDER n=6 graphs=2 flows_mod_s5=13 kempe_orbits_mod_s5=12 orbit_interfaces=432 double_star_failures=0 orbit_union_failures=0 orbit_simultaneous_failures=0 all_flow_simultaneous_failures=0 masks=15,47,51,59,60,62,63 PASS
+ORDER n=8 graphs=5 flows_mod_s5=128 kempe_orbits_mod_s5=35 orbit_interfaces=2520 double_star_failures=56 orbit_union_failures=0 orbit_simultaneous_failures=0 all_flow_simultaneous_failures=0 masks=15,42,43,46,47,51,58,59,60,62,63 PASS
+ORDER n=10 graphs=18 flows_mod_s5=1525 kempe_orbits_mod_s5=323 orbit_interfaces=38760 double_star_failures=161 orbit_union_failures=0 orbit_simultaneous_failures=0 all_flow_simultaneous_failures=0 masks=15,42,43,46,47,51,58,59,60,62,63 PASS
+ORDER n=12 graphs=81 flows_mod_s5=25960 kempe_orbits_mod_s5=2650 orbit_interfaces=477000 double_star_failures=7072 orbit_union_failures=0 orbit_simultaneous_failures=2 all_flow_simultaneous_failures=0 masks=15,31,42,43,46,47,51,55,58,59,60,61,62,63 PASS
+WAGNER graph6=GCrb`o cap=0 root=7 orbit=13 typed_mask=46 double_star=0 external_ports=3 PASS
+ORDER12_ORBIT graph6=K?`@EQgLAcAo cap=0 root=15 orbit=144 aggregate_typed=47 simultaneous=0 all_flow_witness_typed=10 external=3 PASS
+ORDER14_ORBIT graph6=M??CBAPqB_B_H_B_? cap=7 root=19 orbit=12 aggregate_typed=23 external_union=1 simultaneous=0 all_flow_witness_typed=42 external=7 PASS
+PASS

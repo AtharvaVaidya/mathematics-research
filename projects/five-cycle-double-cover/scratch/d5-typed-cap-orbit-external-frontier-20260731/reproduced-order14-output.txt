@@ -1,0 +1,3 @@
+FIRST_ORBIT_SIMULTANEOUS_FAILURE graph=73 graph6=M??CB@W[CaCoB_b?? cap=5 root=6 initial_hex=030503060a0c030a09050306091811180a12061412
+FIRST_ORBIT_UNION_FAILURE graph=130 graph6=M??CBAPqB_B_H_B_? cap=7 root=19 external_mask=1 initial_hex=03050c1118091203110614120a121818120a030a09
+ORDER14 graphs=480 flows_mod_s5=537418 kempe_orbits_mod_s5=33102 orbit_interfaces=8341704 orbit_union_failures=4 orbit_simultaneous_failures=72 all_flow_simultaneous_failures=0 masks=1:4,3:886022,5:932438,6:883918,7:5639322 PASS

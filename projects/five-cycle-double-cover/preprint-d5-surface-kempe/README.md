@@ -48,13 +48,23 @@ signature; an independent Python replay covers orders only through 10.
 The universal double-star premise remains open, so this finite frontier does
 not prove rooted feasibility or FiveCDC.
 
+A separately audited all-flow census proves a stronger bounded statement:
+for every one of those 138,144 interfaces, one individual flow has
+external root factors covering all three cap ports.  A C++ enumeration
+reaches order 14, separate Python reaches order 12, and an orbit-based
+third implementation rechecks order 14.  Explicit orbit counterexamples
+show why the statement must quantify over all flows, not every Kempe orbit.
+Its universal form remains open.
+
 The relevant minimum-obstruction domain is now sharply separated from that
-small unrestricted census.  A human nonbacktracking-walk proof gives a first
-cutoff, and the published Alon--Hoory--Linial irregular Moore bound sharpens
-it: every cap cut from an eliminated girth-ten parent has order at least 56
-and conditionally forces parent order at least 112.  If both shore caps are Tait-colourable,
+small unrestricted census.  A self-contained edge-rooted
+nonbacktracking-walk proof shows that every cap cut from an eliminated
+girth-ten parent has order at least 58 and forces restored parent order at
+least 116.  External extremal-graph tables would conditionally sharpen
+these to 64 and 128, but their exhaustion is not independently certified
+inside this project.  If both shore caps are Tait-colourable,
 external-mode states make them glue root-good; the exact remaining branch
-of this strategy has a non-Tait cap of order at least 56.  A six-case
+of this strategy has a non-Tait cap of order at least 58.  A six-case
 human lemma also proves that any selected port adjacent to the root is
 automatically covered by an external state, leaving only vertex-disjoint
 root/port pairs.  Six explicit checked flows give
@@ -99,9 +109,12 @@ sh scratch/d5-tait-prescribed-circuit-lift-20260731/run_all.sh
 sh scratch/d5-tait-prescribed-circuit-lift-blind-audit-20260731/run_all.sh
 (cd scratch/d5-root-transition-sat-20260731 && ./run_all.sh)
 (cd scratch/d5-typed-cap-double-star-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-simultaneous-external-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-typed-cap-orbit-external-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-root-pair-census-20260731 && ./run_all.sh)
-(cd scratch/d5-relevant-cap-order56-cutoff-20260731 && ./run_all.sh)
+(cd scratch/d5-existential-external-order58-frontier-20260731 && ./run_all.sh)
 (cd scratch/d5-external-port-coverage-frontier-20260731 && ./run_all.sh)
+(cd scratch/d5-external-kempe-splice-frontier-20260731 && ./run_all.sh)
 (cd scratch/petersen-foster-full-typed-cap-signature-20260731 && ./run_all.sh)
 (cd scratch/petersen-foster-all-eliminations-20260731 && ./run_all.sh)
 python3 scratch/verify_d5_surface_chi_plateaus_order12.py

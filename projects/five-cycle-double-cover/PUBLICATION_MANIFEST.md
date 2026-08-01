@@ -961,7 +961,7 @@ The frozen reports state their exact scope and provenance.
 
 The draft-PR update additionally publishes:
 
-- `preprint-d5-surface-kempe/` — the 26-page revised working note, with a
+- `preprint-d5-surface-kempe/` — the 29-page revised working note, with a
   full AI-use disclosure and an explicit statement that FiveCDC and its
   orientable variant remain unresolved;
 - `scratch/d5-root-pair-census-20260731/` — 30,858 literal positive D5 flows
@@ -970,11 +970,12 @@ The draft-PR update additionally publishes:
   independent root pairs, plus a solver-independent semantic checker.  The
   existential cutoff is subsumed by Brinkmann et al. (2013), Observation
   6.6; this is an explicit reproduction, not a new frontier theorem;
-- `scratch/d5-relevant-cap-order56-cutoff-20260731/` — the human marked-root
-  cut analysis, elementary nonbacktracking proof, and Alon--Hoory--Linial
-  sharpening showing that relevant caps start at order 56 and conditionally
-  force parent order at least 112, together with the Tait-cap gluing theorem
-  and arithmetic replay;
+- `scratch/d5-existential-external-order58-frontier-20260731/` — the
+  self-contained edge-rooted degree-deficit proof that relevant cores have
+  order at least 57, caps at least 58, and restored parents at least 116;
+  the six-case simultaneous-external SAT/XOR characterization; and scoped
+  order-58 cage controls.  A stronger 64/128 comparison imports an external
+  extremal table and is not promoted to a project theorem;
 - `scratch/d5-typed-cap-double-star-frontier-20260731/` — the human typed-port
   gluing lemma and complete 138,144-interface census through order 14, with
   an independent implementation through order 10.  A supplemental C++ run
@@ -982,19 +983,36 @@ The draft-PR update additionally publishes:
   aggregate replay; its monolithic and four-shard executions use the same
   implementation, so order 16 is recorded as finite evidence rather than
   promoted to the independently checked theorem;
+- `scratch/d5-simultaneous-external-frontier-20260731/` — the complete
+  all-flow theorem through order 14 that every one of 138,144 rooted
+  interfaces has one individual flow whose external factors meet all three
+  cap ports, with separate Python through order 12 and a third orbit-based
+  order-14 audit;
+- `scratch/d5-typed-cap-orbit-external-frontier-20260731/` — the rectangle
+  projection, exact switch action, and literal first failures of orbit
+  double-star, orbit-simultaneous, and orbit-aggregate external coverage,
+  while independently confirming zero all-flow failures through order 14;
+- `scratch/d5-external-kempe-splice-frontier-20260731/` — the human
+  pointwise factor-splice and matching/four-cover lemmas, all six
+  Petersen--Foster one-switch repairs, and two exact depth-two delimiters;
 - `scratch/d5-internal-circuit-translation-no-go-20260731/` — a six-case
   human proof and exhaustive standard-library replay showing that uniform
   translation on one fixed internal factor circuit cannot manufacture a
   genuinely new external mode on that same circuit; and
 - `scratch/petersen-foster-full-typed-cap-signature-20260731/` — six literal
   1,335-edge flows proving one high-girth non-Tait Petersen--Foster interface
-  has the full six-state typed signature.
+  has the full six-state typed signature; and
+- `scratch/petersen-foster-all-eliminations-20260731/` — literal positive
+  certificates for all 1,335 edge eliminations of the named graph, with a
+  solver-independent semantic replay and separate inverse-insertion audit.
 
 Validation before publication included all package checksum ledgers and
 `run_all.sh` scripts, the independent 10,689,351-pair certificate replay,
-the retained canonical-corpus verifier, the cap cut/walk replay, and the
-six-flow Petersen--Foster semantic checker.  Tectonic rebuilt the 26-page
-PDF without warnings; every page was rendered and visually inspected.
+the retained canonical-corpus verifier, the cap cut/walk replay, both
+simultaneous-external implementations, the separate orbit-based order-14
+audit, the splice-package blind audit, and the Petersen--Foster semantic
+checkers.  Tectonic rebuilt the 29-page PDF without warnings; the changed
+pages and all section transitions were rendered and visually inspected.
 These are auxiliary theorems and finite certificates, not a resolution of
 FiveCDC.  Priority for the precise new statements remains unestablished
 pending specialist review.
